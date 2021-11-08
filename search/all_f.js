@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['r_5fd_212',['R_d',['../_constants_8_h.html#a08d0e6a452268bed60e81a08398c088a',1,'Constants.H']]],
+  ['real_213',['Real',['../structncutils_1_1_n_c_d_type.html#a7a5be35daa7dbb2cc72507cc4b5a422c',1,'ncutils::NCDType']]],
+  ['reflect_5feven_214',['reflect_even',['../structmath__bcs_1_1reflect__even.html',1,'math_bcs']]],
+  ['reflect_5feven_3c_20idir_2c_20bcbound_3a_3alower_20_3e_215',['reflect_even&lt; IDIR, BCBound::lower &gt;',['../structmath__bcs_1_1reflect__even_3_01_i_d_i_r_00_01_b_c_bound_1_1lower_01_4.html',1,'math_bcs']]],
+  ['reflect_5feven_3c_20idir_2c_20bcbound_3a_3aupper_20_3e_216',['reflect_even&lt; IDIR, BCBound::upper &gt;',['../structmath__bcs_1_1reflect__even_3_01_i_d_i_r_00_01_b_c_bound_1_1upper_01_4.html',1,'math_bcs']]],
+  ['reflect_5fodd_217',['reflect_odd',['../structmath__bcs_1_1reflect__odd.html',1,'math_bcs']]],
+  ['reflect_5fodd_3c_20idir_2c_20bcbound_3a_3alower_20_3e_218',['reflect_odd&lt; IDIR, BCBound::lower &gt;',['../structmath__bcs_1_1reflect__odd_3_01_i_d_i_r_00_01_b_c_bound_1_1lower_01_4.html',1,'math_bcs']]],
+  ['reflect_5fodd_3c_20idir_2c_20bcbound_3a_3aupper_20_3e_219',['reflect_odd&lt; IDIR, BCBound::upper &gt;',['../structmath__bcs_1_1reflect__odd_3_01_i_d_i_r_00_01_b_c_bound_1_1upper_01_4.html',1,'math_bcs']]],
+  ['region_5fhi_220',['region_hi',['../struct_tagging_parm.html#a667a7703b2c368add879a10d06456c2b',1,'TaggingParm']]],
+  ['region_5flo_221',['region_lo',['../struct_tagging_parm.html#ab9a24f9e443f6d712d628b835a13ee20',1,'TaggingParm']]],
+  ['restart_222',['restart',['../class_i_o_manager.html#ae3027a0eeaebfb1ddc523d438b966652',1,'IOManager']]],
+  ['rho_5fcomp_223',['Rho_comp',['../_index_defines_8_h.html#a27dcc910aeb002a0fd44727954dc0e49',1,'IndexDefines.H']]],
+  ['rho_5fu_224',['rho_u',['../_data_struct_8_h.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3',1,'DataStruct.H']]],
+  ['rho_5fv_225',['rho_v',['../_data_struct_8_h.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424',1,'DataStruct.H']]],
+  ['rho_5fw_226',['rho_w',['../_data_struct_8_h.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f',1,'DataStruct.H']]],
+  ['rhoscalar_5fcomp_227',['RhoScalar_comp',['../_index_defines_8_h.html#a0296f21cd48e5d8236c62ae4ce319b2f',1,'IndexDefines.H']]],
+  ['rhotheta_5fcomp_228',['RhoTheta_comp',['../_index_defines_8_h.html#a28f96fd04e1ff08fa7a8f53ccde0f877',1,'IndexDefines.H']]],
+  ['rk3_2eh_229',['RK3.H',['../_r_k3_8_h.html',1,'']]],
+  ['rk3_5fadvance_230',['RK3_advance',['../_r_k3_8_h.html#a6a5415e805412ff5d20d1a1ca62b7c26',1,'RK3_advance(int level, MultiFab &amp;cons_old, MultiFab &amp;cons_new, MultiFab &amp;U_old, MultiFab &amp;V_old, MultiFab &amp;W_old, MultiFab &amp;U_new, MultiFab &amp;V_new, MultiFab &amp;W_new, MultiFab &amp;xmom_crse, MultiFab &amp;ymom_crse, MultiFab &amp;zmom_crse, MultiFab &amp;source, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;faceflux, const amrex::Geometry crse_geom, const amrex::Geometry fine_geom, const amrex::IntVect ref_ratio, const amrex::Real *dxp, const amrex::Real dt, amrex::InterpFaceRegister *ifr, const SolverChoice &amp;solverChoice):&#160;RK3_driver.cpp'],['../_r_k3__driver_8cpp.html#a242c21a02d6a1f53e5253d1ccc0d6035',1,'RK3_advance(int level, MultiFab &amp;cons_old, MultiFab &amp;cons_new, MultiFab &amp;xvel_old, MultiFab &amp;yvel_old, MultiFab &amp;zvel_old, MultiFab &amp;xvel_new, MultiFab &amp;yvel_new, MultiFab &amp;zvel_new, MultiFab &amp;xmom_crse, MultiFab &amp;ymom_crse, MultiFab &amp;zmom_crse, MultiFab &amp;source, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;faceflux, const amrex::Geometry crse_geom, const amrex::Geometry fine_geom, const amrex::IntVect ref_ratio, const amrex::Real *dxp, const amrex::Real dt, amrex::InterpFaceRegister *ifr, const SolverChoice &amp;solverChoice):&#160;RK3_driver.cpp']]],
+  ['rk3_5fdriver_2ecpp_231',['RK3_driver.cpp',['../_r_k3__driver_8cpp.html',1,'']]],
+  ['rk3_5fstage_232',['RK3_stage',['../_r_k3_8_h.html#a0a38ab15ca2e45f97ae36031cac5d49a',1,'RK3_stage(int level, MultiFab &amp;cons_old, MultiFab &amp;cons_new, MultiFab &amp;xmom_old, MultiFab &amp;ymom_old, MultiFab &amp;zmom_old, MultiFab &amp;xmom_new, MultiFab &amp;ymom_new, MultiFab &amp;zmom_new, MultiFab &amp;xvel, MultiFab &amp;yvel, MultiFab &amp;zvel, MultiFab &amp;source, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;faceflux, const amrex::Geometry geom, const amrex::Real *dxp, const amrex::Real dt, amrex::InterpFaceRegister *ifr, const SolverChoice &amp;solverChoice):&#160;RK3_stage.cpp'],['../_r_k3__stage_8cpp.html#a4e5439da3146f35ed8118755a36e0dd0',1,'RK3_stage(int level, MultiFab &amp;cons_old, MultiFab &amp;cons_upd, MultiFab &amp;xmom_old, MultiFab &amp;ymom_old, MultiFab &amp;zmom_old, MultiFab &amp;xmom_upd, MultiFab &amp;ymom_upd, MultiFab &amp;zmom_upd, MultiFab &amp;xvel, MultiFab &amp;yvel, MultiFab &amp;zvel, MultiFab &amp;source, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;faceflux, const amrex::Geometry geom, const amrex::Real *dxp, const amrex::Real dt, amrex::InterpFaceRegister *ifr, const SolverChoice &amp;solverChoice):&#160;RK3_stage.cpp']]],
+  ['rk3_5fstage_2ecpp_233',['RK3_stage.cpp',['../_r_k3__stage_8cpp.html',1,'']]],
+  ['rk3_5futils_2ecpp_234',['RK3_utils.cpp',['../_r_k3__utils_8cpp.html',1,'']]],
+  ['root_235',['root',['../classncutils_1_1_n_c_group.html#a611b25f8209865c4a86251c30e4e4710',1,'ncutils::NCGroup']]]
+];

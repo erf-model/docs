@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['datastruct_2eh_60',['DataStruct.H',['../_data_struct_8_h.html',1,'']]],
+  ['def_5farray_61',['def_array',['../classncutils_1_1_n_c_group.html#acdfa4a8e44ca0f1901ea120a3946d1db',1,'ncutils::NCGroup']]],
+  ['def_5fdim_62',['def_dim',['../classncutils_1_1_n_c_group.html#ae0ecaad10c77614a283bd6e66d2dca41',1,'ncutils::NCGroup']]],
+  ['def_5fgroup_63',['def_group',['../classncutils_1_1_n_c_group.html#ac5c99d691660e36a00afffae6f0d6f71',1,'ncutils::NCGroup']]],
+  ['def_5fscalar_64',['def_scalar',['../classncutils_1_1_n_c_group.html#a43450deb9f15f2b0b805612d76145bbc',1,'ncutils::NCGroup']]],
+  ['def_5fvar_65',['def_var',['../classncutils_1_1_n_c_group.html#aa049e7d6f5f7f88ad840fa2ced3c61b4',1,'ncutils::NCGroup']]],
+  ['denerr_66',['denerr',['../struct_tagging_parm.html#abe3d6de8f72a1c59f3ebdc1d3c47681d',1,'TaggingParm']]],
+  ['dengrad_67',['dengrad',['../struct_tagging_parm.html#a500f5f21af1b0c145ee02886b9bcce68',1,'TaggingParm']]],
+  ['derive_2ecpp_68',['Derive.cpp',['../_derive_8cpp.html',1,'']]],
+  ['derive_2eh_69',['Derive.H',['../_derive_8_h.html',1,'']]],
+  ['diffusion_2ecpp_70',['Diffusion.cpp',['../_diffusion_8cpp.html',1,'']]],
+  ['diffusioncontributionformom_71',['DiffusionContributionForMom',['../_diffusion_8cpp.html#a033a2f27843ee0b5b0641852bc178bef',1,'DiffusionContributionForMom(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real &gt; &amp;u, const Array4&lt; Real &gt; &amp;v, const Array4&lt; Real &gt; &amp;w, const enum MomentumEqn &amp;momentumEqn, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSize, const Array4&lt; Real &gt; &amp;nut, const SolverChoice &amp;solverChoice):&#160;Diffusion.cpp'],['../_r_k3_8_h.html#a033a2f27843ee0b5b0641852bc178bef',1,'DiffusionContributionForMom(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real &gt; &amp;u, const Array4&lt; Real &gt; &amp;v, const Array4&lt; Real &gt; &amp;w, const enum MomentumEqn &amp;momentumEqn, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSize, const Array4&lt; Real &gt; &amp;nut, const SolverChoice &amp;solverChoice):&#160;Diffusion.cpp']]],
+  ['diffusioncontributionforstate_72',['DiffusionContributionForState',['../_diffusion_8cpp.html#ae62a68572b108ce1cdd4a222899fb828',1,'DiffusionContributionForState(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real &gt; &amp;cell_data, const int &amp;qty_index, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSize, const SolverChoice &amp;solverChoice):&#160;Diffusion.cpp'],['../_r_k3_8_h.html#ae62a68572b108ce1cdd4a222899fb828',1,'DiffusionContributionForState(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real &gt; &amp;cell_data, const int &amp;qty_index, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSize, const SolverChoice &amp;solverChoice):&#160;Diffusion.cpp']]],
+  ['diffusiondir_73',['DiffusionDir',['../_data_struct_8_h.html#a7264869c7035dc345642d2461b168715',1,'DataStruct.H']]],
+  ['dim_74',['dim',['../classncutils_1_1_n_c_group.html#addc8bbac9a2cfa8d9c49497b7da0310f',1,'ncutils::NCGroup']]],
+  ['dimid_75',['dimid',['../structncutils_1_1_n_c_dim.html#a1c5560c95be35dbcedaf1390972175f8',1,'ncutils::NCDim']]],
+  ['dirichlet_76',['dirichlet',['../structmath__bcs_1_1dirichlet.html',1,'math_bcs']]],
+  ['dirichlet_3c_20idir_2c_20bcbound_3a_3alower_20_3e_77',['dirichlet&lt; IDIR, BCBound::lower &gt;',['../structmath__bcs_1_1dirichlet_3_01_i_d_i_r_00_01_b_c_bound_1_1lower_01_4.html',1,'math_bcs']]],
+  ['dirichlet_3c_20idir_2c_20bcbound_3a_3aupper_20_3e_78',['dirichlet&lt; IDIR, BCBound::upper &gt;',['../structmath__bcs_1_1dirichlet_3_01_i_d_i_r_00_01_b_c_bound_1_1upper_01_4.html',1,'math_bcs']]],
+  ['display_79',['display',['../struct_solver_choice.html#abb95d84167308078ce369b4196ef979c',1,'SolverChoice']]],
+  ['dns_80',['DNS',['../_data_struct_8_h.html#ac351ecfcff92a440bc6c0c285dc16bd3aed5f2bdecbd4bd349d09412d1ff6a6fb',1,'DataStruct.H']]],
+  ['dynamicviscosity_81',['dynamicViscosity',['../struct_solver_choice.html#a6a7612dbb7d9be9b97cab4b70945ef80',1,'SolverChoice']]]
+];
