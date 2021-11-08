@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['sinphi_551',['sinphi',['../struct_solver_choice.html#a37e11e8ecf7e29761a40db13856a6496',1,'SolverChoice']]],
-  ['spatial_5forder_552',['spatial_order',['../struct_solver_choice.html#a99f6c8051f5a3e06fd2649adc2daaf65',1,'SolverChoice']]]
+  ['real_574',['Real',['../structncutils_1_1NCDType.html#a7a5be35daa7dbb2cc72507cc4b5a422c',1,'ncutils::NCDType']]],
+  ['region_5fhi_575',['region_hi',['../structTaggingParm.html#a667a7703b2c368add879a10d06456c2b',1,'TaggingParm']]],
+  ['region_5flo_576',['region_lo',['../structTaggingParm.html#ab9a24f9e443f6d712d628b835a13ee20',1,'TaggingParm']]]
 ];

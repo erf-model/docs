@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ERF
    </div>
+   <div id="projectbrief">Energy Research and Forecasting: An Atmospheric Modeling Code</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('functions_s.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -65,49 +86,52 @@ $(function() {
 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>self
-: <a class="el" href="structmath__bcs_1_1dirichlet_3_01_i_d_i_r_00_01_b_c_bound_1_1lower_01_4.html#a7d6d7172d6b247fe6456dcf551f687dc">math_bcs::dirichlet&lt; IDIR, BCBound::lower &gt;</a>
-, <a class="el" href="structmath__bcs_1_1dirichlet_3_01_i_d_i_r_00_01_b_c_bound_1_1upper_01_4.html#aeddc686f0ca1b95c7c6ebf4aa0b5ef4d">math_bcs::dirichlet&lt; IDIR, BCBound::upper &gt;</a>
-, <a class="el" href="structmath__bcs_1_1foextrap_3_01_i_d_i_r_00_01_b_c_bound_1_1lower_01_4.html#a0b1b8acce921e7603896a3c78c5de7e5">math_bcs::foextrap&lt; IDIR, BCBound::lower &gt;</a>
-, <a class="el" href="structmath__bcs_1_1foextrap_3_01_i_d_i_r_00_01_b_c_bound_1_1upper_01_4.html#abc1438d1718e3196c5c7f48a9b9cd9f6">math_bcs::foextrap&lt; IDIR, BCBound::upper &gt;</a>
-, <a class="el" href="structmath__bcs_1_1hoextrap_3_01_i_d_i_r_00_01_b_c_bound_1_1lower_01_4.html#a7db316c296d7010404e2bc924fe7911c">math_bcs::hoextrap&lt; IDIR, BCBound::lower &gt;</a>
-, <a class="el" href="structmath__bcs_1_1hoextrap_3_01_i_d_i_r_00_01_b_c_bound_1_1upper_01_4.html#a473272f633260e006f1b446dfcb74881">math_bcs::hoextrap&lt; IDIR, BCBound::upper &gt;</a>
-, <a class="el" href="structmath__bcs_1_1reflect__even_3_01_i_d_i_r_00_01_b_c_bound_1_1lower_01_4.html#af1511b11ab931a305d696bbda5ccb91b">math_bcs::reflect_even&lt; IDIR, BCBound::lower &gt;</a>
-, <a class="el" href="structmath__bcs_1_1reflect__even_3_01_i_d_i_r_00_01_b_c_bound_1_1upper_01_4.html#a7f8bc3c954d55d1f6852362c86d25f65">math_bcs::reflect_even&lt; IDIR, BCBound::upper &gt;</a>
-, <a class="el" href="structmath__bcs_1_1reflect__odd_3_01_i_d_i_r_00_01_b_c_bound_1_1lower_01_4.html#a9d4f4452864fe8c4c1b9cb186f3d1f2e">math_bcs::reflect_odd&lt; IDIR, BCBound::lower &gt;</a>
-, <a class="el" href="structmath__bcs_1_1reflect__odd_3_01_i_d_i_r_00_01_b_c_bound_1_1upper_01_4.html#ac45c1d73a9cf8aaf449d89b46a5b7ae6">math_bcs::reflect_odd&lt; IDIR, BCBound::upper &gt;</a>
-, <a class="el" href="structmath__bcs_1_1sim__bc_3_01_i_d_i_r_00_01_b_c_bound_1_1lower_01_4.html#ac3fa296e2ec866cd15b0540c375149f1">math_bcs::sim_bc&lt; IDIR, BCBound::lower &gt;</a>
-, <a class="el" href="structmath__bcs_1_1sim__bc_3_01_i_d_i_r_00_01_b_c_bound_1_1upper_01_4.html#a348fb5a95e9d1f3bfe1e9934f15a58ed">math_bcs::sim_bc&lt; IDIR, BCBound::upper &gt;</a>
-, <a class="el" href="structmath__bcs_1_1wall__scalars_3_01_i_d_i_r_00_01_b_c_bound_1_1lower_01_4.html#a1351f4cf2acab55630515eab45e54faf">math_bcs::wall_scalars&lt; IDIR, BCBound::lower &gt;</a>
-, <a class="el" href="structmath__bcs_1_1wall__scalars_3_01_i_d_i_r_00_01_b_c_bound_1_1upper_01_4.html#a117100f9574fff16b2fcbe325f6a388d">math_bcs::wall_scalars&lt; IDIR, BCBound::upper &gt;</a>
+: <a class="el" href="structmath__bcs_1_1dirichlet_3_01IDIR_00_01BCBound_1_1lower_01_4.html#a7d6d7172d6b247fe6456dcf551f687dc">math_bcs::dirichlet&lt; IDIR, BCBound::lower &gt;</a>
+, <a class="el" href="structmath__bcs_1_1dirichlet_3_01IDIR_00_01BCBound_1_1upper_01_4.html#aeddc686f0ca1b95c7c6ebf4aa0b5ef4d">math_bcs::dirichlet&lt; IDIR, BCBound::upper &gt;</a>
+, <a class="el" href="structmath__bcs_1_1foextrap_3_01IDIR_00_01BCBound_1_1lower_01_4.html#a0b1b8acce921e7603896a3c78c5de7e5">math_bcs::foextrap&lt; IDIR, BCBound::lower &gt;</a>
+, <a class="el" href="structmath__bcs_1_1foextrap_3_01IDIR_00_01BCBound_1_1upper_01_4.html#abc1438d1718e3196c5c7f48a9b9cd9f6">math_bcs::foextrap&lt; IDIR, BCBound::upper &gt;</a>
+, <a class="el" href="structmath__bcs_1_1hoextrap_3_01IDIR_00_01BCBound_1_1lower_01_4.html#a7db316c296d7010404e2bc924fe7911c">math_bcs::hoextrap&lt; IDIR, BCBound::lower &gt;</a>
+, <a class="el" href="structmath__bcs_1_1hoextrap_3_01IDIR_00_01BCBound_1_1upper_01_4.html#a473272f633260e006f1b446dfcb74881">math_bcs::hoextrap&lt; IDIR, BCBound::upper &gt;</a>
+, <a class="el" href="structmath__bcs_1_1reflect__even_3_01IDIR_00_01BCBound_1_1lower_01_4.html#af1511b11ab931a305d696bbda5ccb91b">math_bcs::reflect_even&lt; IDIR, BCBound::lower &gt;</a>
+, <a class="el" href="structmath__bcs_1_1reflect__even_3_01IDIR_00_01BCBound_1_1upper_01_4.html#a7f8bc3c954d55d1f6852362c86d25f65">math_bcs::reflect_even&lt; IDIR, BCBound::upper &gt;</a>
+, <a class="el" href="structmath__bcs_1_1reflect__odd_3_01IDIR_00_01BCBound_1_1lower_01_4.html#a9d4f4452864fe8c4c1b9cb186f3d1f2e">math_bcs::reflect_odd&lt; IDIR, BCBound::lower &gt;</a>
+, <a class="el" href="structmath__bcs_1_1reflect__odd_3_01IDIR_00_01BCBound_1_1upper_01_4.html#ac45c1d73a9cf8aaf449d89b46a5b7ae6">math_bcs::reflect_odd&lt; IDIR, BCBound::upper &gt;</a>
+, <a class="el" href="structmath__bcs_1_1sim__bc_3_01IDIR_00_01BCBound_1_1lower_01_4.html#ac3fa296e2ec866cd15b0540c375149f1">math_bcs::sim_bc&lt; IDIR, BCBound::lower &gt;</a>
+, <a class="el" href="structmath__bcs_1_1sim__bc_3_01IDIR_00_01BCBound_1_1upper_01_4.html#a348fb5a95e9d1f3bfe1e9934f15a58ed">math_bcs::sim_bc&lt; IDIR, BCBound::upper &gt;</a>
+, <a class="el" href="structmath__bcs_1_1wall__scalars_3_01IDIR_00_01BCBound_1_1lower_01_4.html#a1351f4cf2acab55630515eab45e54faf">math_bcs::wall_scalars&lt; IDIR, BCBound::lower &gt;</a>
+, <a class="el" href="structmath__bcs_1_1wall__scalars_3_01IDIR_00_01BCBound_1_1upper_01_4.html#a117100f9574fff16b2fcbe325f6a388d">math_bcs::wall_scalars&lt; IDIR, BCBound::upper &gt;</a>
 </li>
 <li>set_problem_tags()
-: <a class="el" href="struct_empty_prob_tag_struct.html#ac7050d3fbe37e28f10277e3812804a5e">EmptyProbTagStruct</a>
+: <a class="el" href="structEmptyProbTagStruct.html#ac7050d3fbe37e28f10277e3812804a5e">EmptyProbTagStruct</a>
 </li>
 <li>set_state_in_checkpoint()
-: <a class="el" href="class_i_o_manager.html#a6b7eea06a1e32b99bceee9942c8eb464">IOManager</a>
+: <a class="el" href="classIOManager.html#a6b7eea06a1e32b99bceee9942c8eb464">IOManager</a>
 </li>
 <li>setPlotVariables()
-: <a class="el" href="class_i_o_manager.html#a21c83577ab05a3626e902b5f1825c6a3">IOManager</a>
+: <a class="el" href="classIOManager.html#a21c83577ab05a3626e902b5f1825c6a3">IOManager</a>
 </li>
 <li>shape()
-: <a class="el" href="structncutils_1_1_n_c_var.html#adb6e5fe1bfe8ab79e9ecf33ca5800797">ncutils::NCVar</a>
+: <a class="el" href="structncutils_1_1NCVar.html#adb6e5fe1bfe8ab79e9ecf33ca5800797">ncutils::NCVar</a>
 </li>
 <li>sinphi
-: <a class="el" href="struct_solver_choice.html#a37e11e8ecf7e29761a40db13856a6496">SolverChoice</a>
+: <a class="el" href="structSolverChoice.html#a37e11e8ecf7e29761a40db13856a6496">SolverChoice</a>
 </li>
 <li>SolverChoice()
-: <a class="el" href="struct_solver_choice.html#a9128afbf18ff620bfb826acef094f1e2">SolverChoice</a>
+: <a class="el" href="structSolverChoice.html#a9128afbf18ff620bfb826acef094f1e2">SolverChoice</a>
 </li>
 <li>spatial_order
-: <a class="el" href="struct_solver_choice.html#a99f6c8051f5a3e06fd2649adc2daaf65">SolverChoice</a>
+: <a class="el" href="structSolverChoice.html#a99f6c8051f5a3e06fd2649adc2daaf65">SolverChoice</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

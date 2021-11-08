@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['varid_566',['varid',['../structncutils_1_1_n_c_var.html#a2dce982c1ddb8f3b89b071bc3bf15532',1,'ncutils::NCVar']]],
-  ['velerr_567',['velerr',['../struct_tagging_parm.html#a74026c0d015f28544108662fb354242b',1,'TaggingParm']]],
-  ['velgrad_568',['velgrad',['../struct_tagging_parm.html#a821abb57331a67d41aa8687fc661756c',1,'TaggingParm']]],
-  ['vfracerr_569',['vfracerr',['../struct_tagging_parm.html#a1dcb6667a41c948aa5d24605f2bd2008',1,'TaggingParm']]],
-  ['vorterr_570',['vorterr',['../struct_tagging_parm.html#a7c7b8230b7bbf42345ff56439b47084e',1,'TaggingParm']]]
+  ['use_5fcoriolis_585',['use_coriolis',['../structSolverChoice.html#aaac709fffe12632036877919191d25fc',1,'SolverChoice']]],
+  ['use_5fgravity_586',['use_gravity',['../structSolverChoice.html#a789bd991df5ff21a18d6a29a4f3a2b4c',1,'SolverChoice']]],
+  ['use_5fmomentum_5fadvection_587',['use_momentum_advection',['../structSolverChoice.html#a5d57e2fad55ff90503b1819656fa7d5c',1,'SolverChoice']]],
+  ['use_5fmomentum_5fdiffusion_588',['use_momentum_diffusion',['../structSolverChoice.html#a62ffa4f59b245f286fdc638b35b2af04',1,'SolverChoice']]],
+  ['use_5fpressure_589',['use_pressure',['../structSolverChoice.html#a4ea485f2b9ef55c87d0b88c512c12562',1,'SolverChoice']]],
+  ['use_5fscalar_5fdiffusion_590',['use_scalar_diffusion',['../structSolverChoice.html#a0fabe820e8e52ae135b52348e0ad8b24',1,'SolverChoice']]],
+  ['use_5fsmagorinsky_591',['use_smagorinsky',['../structSolverChoice.html#a135ed1eb28f8484c4716a567e23fc398',1,'SolverChoice']]],
+  ['use_5fstate_5fadvection_592',['use_state_advection',['../structSolverChoice.html#a09f72c03859c0bf48eaac861647a0bd4',1,'SolverChoice']]],
+  ['use_5fthermal_5fdiffusion_593',['use_thermal_diffusion',['../structSolverChoice.html#a1de9a915ce6448d4952e404e2dfddf3d',1,'SolverChoice']]]
 ];

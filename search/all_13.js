@@ -1,12 +1,20 @@
 var searchData=
 [
-  ['v_285',['v',['../_data_struct_8_h.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a',1,'DataStruct.H']]],
-  ['var_286',['var',['../classncutils_1_1_n_c_group.html#a79bef315da5cff7bcf8bbcfbdd122115',1,'ncutils::NCGroup']]],
-  ['varid_287',['varid',['../structncutils_1_1_n_c_var.html#a2dce982c1ddb8f3b89b071bc3bf15532',1,'ncutils::NCVar']]],
-  ['velerr_288',['velerr',['../struct_tagging_parm.html#a74026c0d015f28544108662fb354242b',1,'TaggingParm']]],
-  ['velgrad_289',['velgrad',['../struct_tagging_parm.html#a821abb57331a67d41aa8687fc661756c',1,'TaggingParm']]],
-  ['velocitytomomentum_290',['VelocityToMomentum',['../_r_k3_8_h.html#ad2116fd4bbb24142336f0e4b053fec5b',1,'VelocityToMomentum(MultiFab &amp;xvel_in, MultiFab &amp;yvel_in, MultiFab &amp;zvel_in, MultiFab &amp;cons_in, MultiFab &amp;xmom_out, MultiFab &amp;ymom_out, MultiFab &amp;zmom_out, const SolverChoice &amp;solverChoice):&#160;VelocityToMomentum.cpp'],['../_velocity_to_momentum_8cpp.html#a346b490c598027aad408c183b1ec2c92',1,'VelocityToMomentum(MultiFab &amp;xvel_in, MultiFab &amp;yvel_in, MultiFab &amp;zvel_in, MultiFab &amp;cons_in, MultiFab &amp;xmom, MultiFab &amp;ymom, MultiFab &amp;zmom, const SolverChoice &amp;solverChoice):&#160;VelocityToMomentum.cpp']]],
-  ['velocitytomomentum_2ecpp_291',['VelocityToMomentum.cpp',['../_velocity_to_momentum_8cpp.html',1,'']]],
-  ['vfracerr_292',['vfracerr',['../struct_tagging_parm.html#a1dcb6667a41c948aa5d24605f2bd2008',1,'TaggingParm']]],
-  ['vorterr_293',['vorterr',['../struct_tagging_parm.html#a7c7b8230b7bbf42345ff56439b47084e',1,'TaggingParm']]]
+  ['u_280',['u',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c',1,'DataStruct.H']]],
+  ['unity_281',['unity',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a439b3a25b555b3bc8667a09a036ae70c',1,'DataStruct.H']]],
+  ['upper_282',['upper',['../namespacemath__bcs.html#a7baa376f7fe8cdc2afba822273275b3ba25d2e0d219f68c116eb2bd3941855c60',1,'math_bcs']]],
+  ['use_5fcoriolis_283',['use_coriolis',['../structSolverChoice.html#aaac709fffe12632036877919191d25fc',1,'SolverChoice']]],
+  ['use_5fgravity_284',['use_gravity',['../structSolverChoice.html#a789bd991df5ff21a18d6a29a4f3a2b4c',1,'SolverChoice']]],
+  ['use_5fmomentum_5fadvection_285',['use_momentum_advection',['../structSolverChoice.html#a5d57e2fad55ff90503b1819656fa7d5c',1,'SolverChoice']]],
+  ['use_5fmomentum_5fdiffusion_286',['use_momentum_diffusion',['../structSolverChoice.html#a62ffa4f59b245f286fdc638b35b2af04',1,'SolverChoice']]],
+  ['use_5fpressure_287',['use_pressure',['../structSolverChoice.html#a4ea485f2b9ef55c87d0b88c512c12562',1,'SolverChoice']]],
+  ['use_5fscalar_5fdiffusion_288',['use_scalar_diffusion',['../structSolverChoice.html#a0fabe820e8e52ae135b52348e0ad8b24',1,'SolverChoice']]],
+  ['use_5fsmagorinsky_289',['use_smagorinsky',['../structSolverChoice.html#a135ed1eb28f8484c4716a567e23fc398',1,'SolverChoice']]],
+  ['use_5fstate_5fadvection_290',['use_state_advection',['../structSolverChoice.html#a09f72c03859c0bf48eaac861647a0bd4',1,'SolverChoice']]],
+  ['use_5fthermal_5fdiffusion_291',['use_thermal_diffusion',['../structSolverChoice.html#a1de9a915ce6448d4952e404e2dfddf3d',1,'SolverChoice']]],
+  ['userbc_292',['UserBC',['../ERF_8H.html#a289ab60ae34b5a5e22b6cf1997015c71',1,'ERF.H']]],
+  ['utilities_293',['Utilities',['../group__Utilities.html',1,'']]],
+  ['utils_2ecpp_294',['Utils.cpp',['../Utils_8cpp.html',1,'']]],
+  ['utils_2eh_295',['utils.H',['../utils_8H.html',1,'']]],
+  ['utils_5fk_2eh_296',['utils_K.H',['../utils__K_8H.html',1,'']]]
 ];

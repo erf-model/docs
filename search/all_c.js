@@ -1,6 +1,27 @@
 var searchData=
 [
-  ['open_193',['open',['../classncutils_1_1_n_c_file.html#a2881b70e450e11f01b474c538b8d6885',1,'ncutils::NCFile']]],
-  ['open_5fpar_194',['open_par',['../classncutils_1_1_n_c_file.html#a4ebf9e1dc5ce07255330478f050e9f1f',1,'ncutils::NCFile']]],
-  ['operator_28_29_195',['operator()',['../struct_e_r_f_hyp_fill_ext_dir.html#a5351306ebdc6f166ae9ed941df528b2d',1,'ERFHypFillExtDir::operator()()'],['../struct_f_c_fill_ext_dir_dummy.html#a4ab3d6fe49d19f03c4dfcacec2168666',1,'FCFillExtDirDummy::operator()()']]]
+  ['name_176',['name',['../structncutils_1_1NCDim.html#aaf6334138e9892f5403400e31f062fd6',1,'ncutils::NCDim::name()'],['../structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724',1,'ncutils::NCVar::name()'],['../classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0',1,'ncutils::NCGroup::name()']]],
+  ['ncdim_177',['NCDim',['../structncutils_1_1NCDim.html',1,'ncutils']]],
+  ['ncdtype_178',['NCDType',['../structncutils_1_1NCDType.html',1,'ncutils']]],
+  ['ncfile_179',['NCFile',['../classncutils_1_1NCFile.html',1,'ncutils::NCFile'],['../classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423',1,'ncutils::NCFile::NCFile()']]],
+  ['ncgroup_180',['NCGroup',['../classncutils_1_1NCGroup.html',1,'ncutils::NCGroup'],['../classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65',1,'ncutils::NCGroup::NCGroup(const int id)'],['../classncutils_1_1NCGroup.html#adcb85f8db72ad6fb60b23031d995f298',1,'ncutils::NCGroup::NCGroup(const int id, const NCGroup *par)']]],
+  ['ncid_181',['ncid',['../structncutils_1_1NCDim.html#a3272d1768518ba020b9bcd0d3699d544',1,'ncutils::NCDim::ncid()'],['../structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218',1,'ncutils::NCVar::ncid()'],['../classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd',1,'ncutils::NCGroup::ncid()']]],
+  ['ncinterface_2ecpp_182',['NCInterface.cpp',['../NCInterface_8cpp.html',1,'']]],
+  ['ncinterface_2eh_183',['NCInterface.H',['../NCInterface_8H.html',1,'']]],
+  ['ncplotfile_2ecpp_184',['NCPlotFile.cpp',['../NCPlotFile_8cpp.html',1,'']]],
+  ['ncplotfile_2eh_185',['NCPlotFile.H',['../NCPlotFile_8H.html',1,'']]],
+  ['ncutils_186',['ncutils',['../namespacencutils.html',1,'']]],
+  ['ncvar_187',['NCVar',['../structncutils_1_1NCVar.html',1,'ncutils']]],
+  ['ndim_188',['ndim',['../structncutils_1_1NCVar.html#ae0ab15dc4c1033271878c3bf5102f911',1,'ncutils::NCVar']]],
+  ['next_189',['next',['../DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214ad0cab90d8d20d57e2f2b9be52f7dd25d',1,'DataStruct.H']]],
+  ['nextorprev_190',['NextOrPrev',['../DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214',1,'DataStruct.H']]],
+  ['none_191',['None',['../DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754',1,'DataStruct.H']]],
+  ['noslipwall_192',['NoSlipWall',['../IndexDefines_8H.html#ac2dab611e4ed2408bce31896fd83a9d4',1,'IndexDefines.H']]],
+  ['num_5fadv_193',['NUM_ADV',['../IndexDefines_8H.html#ac7c21c1d1c96b568a7eefbe3c997238e',1,'IndexDefines.H']]],
+  ['num_5fattributes_194',['num_attributes',['../classncutils_1_1NCGroup.html#af7847ff27ccb8499814b7f21559e2e84',1,'ncutils::NCGroup']]],
+  ['num_5fdimensions_195',['num_dimensions',['../classncutils_1_1NCGroup.html#a44b1b3b0a86df383ffa6ab4e68a7dea6',1,'ncutils::NCGroup']]],
+  ['num_5fgroups_196',['num_groups',['../classncutils_1_1NCGroup.html#a4efddc44f72cc32a58849982bb7e8bce',1,'ncutils::NCGroup']]],
+  ['num_5fgrow_197',['NUM_GROW',['../IndexDefines_8H.html#aaf6046446c90ca7f5b9a7de90b661607',1,'IndexDefines.H']]],
+  ['num_5fvariables_198',['num_variables',['../classncutils_1_1NCGroup.html#a4721cc36bd0f188be0250112329d3ba1',1,'ncutils::NCGroup']]],
+  ['nvar_199',['NVAR',['../IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639',1,'IndexDefines.H']]]
 ];

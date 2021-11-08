@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ERF
    </div>
+   <div id="projectbrief">Energy Research and Forecasting: An Atmospheric Modeling Code</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('globals_defs.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -63,66 +84,69 @@ $(function() {
 <div class="contents">
 &#160;<ul>
 <li>abort_func
-: <a class="el" href="_n_c_interface_8cpp.html#aa67f9bcab4a9da3e92f2e2f3b4ec5979">NCInterface.cpp</a>
+: <a class="el" href="NCInterface_8cpp.html#aa67f9bcab4a9da3e92f2e2f3b4ec5979">NCInterface.cpp</a>
 </li>
 <li>c_p
-: <a class="el" href="_constants_8_h.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a">Constants.H</a>
+: <a class="el" href="Constants_8H.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a">Constants.H</a>
 </li>
 <li>CONST_GRAV
-: <a class="el" href="_constants_8_h.html#a063fd3095e4994e6136a62d78b7c5901">Constants.H</a>
+: <a class="el" href="Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901">Constants.H</a>
 </li>
 <li>ENUM_BUILDER
-: <a class="el" href="_e_r_f_8_h.html#aaed2df99459c45b969241f18d7fee1a7">ERF.H</a>
+: <a class="el" href="ERF_8H.html#aaed2df99459c45b969241f18d7fee1a7">ERF.H</a>
 </li>
 <li>Gamma
-: <a class="el" href="_constants_8_h.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Constants.H</a>
+: <a class="el" href="Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Constants.H</a>
 </li>
 <li>NoSlipWall
-: <a class="el" href="_index_defines_8_h.html#ac2dab611e4ed2408bce31896fd83a9d4">IndexDefines.H</a>
+: <a class="el" href="IndexDefines_8H.html#ac2dab611e4ed2408bce31896fd83a9d4">IndexDefines.H</a>
 </li>
 <li>NUM_ADV
-: <a class="el" href="_index_defines_8_h.html#ac7c21c1d1c96b568a7eefbe3c997238e">IndexDefines.H</a>
+: <a class="el" href="IndexDefines_8H.html#ac7c21c1d1c96b568a7eefbe3c997238e">IndexDefines.H</a>
 </li>
 <li>NUM_GROW
-: <a class="el" href="_index_defines_8_h.html#aaf6046446c90ca7f5b9a7de90b661607">IndexDefines.H</a>
+: <a class="el" href="IndexDefines_8H.html#aaf6046446c90ca7f5b9a7de90b661607">IndexDefines.H</a>
 </li>
 <li>NVAR
-: <a class="el" href="_index_defines_8_h.html#ad5195ac8f863f5a9a7eaa0db094f7639">IndexDefines.H</a>
+: <a class="el" href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">IndexDefines.H</a>
 </li>
 <li>p_0
-: <a class="el" href="_constants_8_h.html#a60be2e6257954ef746019c916741cb2c">Constants.H</a>
+: <a class="el" href="Constants_8H.html#a60be2e6257954ef746019c916741cb2c">Constants.H</a>
 </li>
 <li>PI
-: <a class="el" href="_constants_8_h.html#a598a3330b3c21701223ee0ca14316eca">Constants.H</a>
+: <a class="el" href="Constants_8H.html#a598a3330b3c21701223ee0ca14316eca">Constants.H</a>
 </li>
 <li>R_d
-: <a class="el" href="_constants_8_h.html#a08d0e6a452268bed60e81a08398c088a">Constants.H</a>
+: <a class="el" href="Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">Constants.H</a>
 </li>
 <li>Rho_comp
-: <a class="el" href="_index_defines_8_h.html#a27dcc910aeb002a0fd44727954dc0e49">IndexDefines.H</a>
+: <a class="el" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">IndexDefines.H</a>
 </li>
 <li>RhoScalar_comp
-: <a class="el" href="_index_defines_8_h.html#a0296f21cd48e5d8236c62ae4ce319b2f">IndexDefines.H</a>
+: <a class="el" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">IndexDefines.H</a>
 </li>
 <li>RhoTheta_comp
-: <a class="el" href="_index_defines_8_h.html#a28f96fd04e1ff08fa7a8f53ccde0f877">IndexDefines.H</a>
+: <a class="el" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">IndexDefines.H</a>
 </li>
 <li>SimSlipWall
-: <a class="el" href="_index_defines_8_h.html#aaa5f7acd4bd701659bb23ea5ebd0120e">IndexDefines.H</a>
+: <a class="el" href="IndexDefines_8H.html#aaa5f7acd4bd701659bb23ea5ebd0120e">IndexDefines.H</a>
 </li>
 <li>SlipWall
-: <a class="el" href="_index_defines_8_h.html#ab7772f51c4ecaa9d12aaa1ca2d381ad4">IndexDefines.H</a>
+: <a class="el" href="IndexDefines_8H.html#ab7772f51c4ecaa9d12aaa1ca2d381ad4">IndexDefines.H</a>
 </li>
 <li>UserBC
-: <a class="el" href="_e_r_f_8_h.html#a289ab60ae34b5a5e22b6cf1997015c71">ERF.H</a>
+: <a class="el" href="ERF_8H.html#a289ab60ae34b5a5e22b6cf1997015c71">ERF.H</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

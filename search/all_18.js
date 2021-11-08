@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7eiomanager_305',['~IOManager',['../class_i_o_manager.html#aa1263e627ea878bbba9406b9b38f60d8',1,'IOManager']]],
-  ['_7encfile_306',['~NCFile',['../classncutils_1_1_n_c_file.html#a4c1663f24f84dbc74152d7f040910a22',1,'ncutils::NCFile']]]
+  ['z_319',['z',['../DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7',1,'z():&#160;DataStruct.H'],['../DataStruct_8H.html#a5943cc9db33abe98a5e07cd2b4387f53afbade9e36a3f36d3d676c1b808451dd7',1,'z():&#160;DataStruct.H'],['../DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7',1,'z():&#160;DataStruct.H'],['../DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7',1,'z():&#160;DataStruct.H']]]
 ];

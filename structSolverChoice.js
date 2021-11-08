@@ -1,0 +1,26 @@
+var structSolverChoice =
+[
+    [ "SolverChoice", "structSolverChoice.html#a9128afbf18ff620bfb826acef094f1e2", null ],
+    [ "display", "structSolverChoice.html#abb95d84167308078ce369b4196ef979c", null ],
+    [ "get_gpu_array", "structSolverChoice.html#af6990e59302eb9aaedb07e585ff47f80", null ],
+    [ "abl_driver_type", "structSolverChoice.html#a4a164ce68b72a76974d80d27fb5fd822", null ],
+    [ "abl_geo_forcing", "structSolverChoice.html#a8b8d1d55e0681d45ce30a691362954f6", null ],
+    [ "abl_pressure_grad", "structSolverChoice.html#a0e6d20ebf4c85a54a0ece6796abdaa69", null ],
+    [ "alpha_C", "structSolverChoice.html#aad207d532d36f3c306a431e4cf0caf6b", null ],
+    [ "alpha_T", "structSolverChoice.html#a8de8dfbd95465cd01dbcc194cdbdd8fc", null ],
+    [ "coriolis_factor", "structSolverChoice.html#aa60641bb49bf6dc870fc07613dc7c0b2", null ],
+    [ "cosphi", "structSolverChoice.html#ac10a89429ffd40d3edd2d5a97c61c68c", null ],
+    [ "Cs", "structSolverChoice.html#adf71cefcbf89e69db9229515be3cd36f", null ],
+    [ "dynamicViscosity", "structSolverChoice.html#a6a7612dbb7d9be9b97cab4b70945ef80", null ],
+    [ "sinphi", "structSolverChoice.html#a37e11e8ecf7e29761a40db13856a6496", null ],
+    [ "spatial_order", "structSolverChoice.html#a99f6c8051f5a3e06fd2649adc2daaf65", null ],
+    [ "use_coriolis", "structSolverChoice.html#aaac709fffe12632036877919191d25fc", null ],
+    [ "use_gravity", "structSolverChoice.html#a789bd991df5ff21a18d6a29a4f3a2b4c", null ],
+    [ "use_momentum_advection", "structSolverChoice.html#a5d57e2fad55ff90503b1819656fa7d5c", null ],
+    [ "use_momentum_diffusion", "structSolverChoice.html#a62ffa4f59b245f286fdc638b35b2af04", null ],
+    [ "use_pressure", "structSolverChoice.html#a4ea485f2b9ef55c87d0b88c512c12562", null ],
+    [ "use_scalar_diffusion", "structSolverChoice.html#a0fabe820e8e52ae135b52348e0ad8b24", null ],
+    [ "use_smagorinsky", "structSolverChoice.html#a135ed1eb28f8484c4716a567e23fc398", null ],
+    [ "use_state_advection", "structSolverChoice.html#a09f72c03859c0bf48eaac861647a0bd4", null ],
+    [ "use_thermal_diffusion", "structSolverChoice.html#a1de9a915ce6448d4952e404e2dfddf3d", null ]
+];
