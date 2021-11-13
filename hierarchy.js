@@ -21,6 +21,13 @@ var hierarchy =
     [ "math_bcs::hoextrap< IDIR, Bound >", "structmath__bcs_1_1hoextrap.html", null ],
     [ "math_bcs::hoextrap< IDIR, BCBound::lower >", "structmath__bcs_1_1hoextrap_3_01IDIR_00_01BCBound_1_1lower_01_4.html", null ],
     [ "math_bcs::hoextrap< IDIR, BCBound::upper >", "structmath__bcs_1_1hoextrap_3_01IDIR_00_01BCBound_1_1upper_01_4.html", null ],
+    [ "IntegratorBase< T >", "classIntegratorBase.html", [
+      [ "FEIntegrator< T >", "classFEIntegrator.html", null ],
+      [ "RKIntegrator< T >", "classRKIntegrator.html", null ]
+    ] ],
+    [ "IntegratorOps< T, Tv >", "structIntegratorOps.html", null ],
+    [ "IntegratorOps< T, typename std::enable_if< std::is_same< amrex::MultiFab, T >::value >::type >", "structIntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amrex_1_1Mul4937fa127950ca5ba7479578070c8a7d.html", null ],
+    [ "IntegratorOps< T, typename std::enable_if< std::is_same< amrex::Vector< std::unique_ptr< amrex::MultiFab > >, T >::value >::type >", "structIntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amrex_1_1Vecaeacd66d1b00dbcabd860f758fdcfe19.html", null ],
     [ "IOManager", "classIOManager.html", null ],
     [ "LevelBld", null, [
       [ "ERFBld", "classERFBld.html", null ]
@@ -42,6 +49,7 @@ var hierarchy =
     [ "math_bcs::sim_bc< IDIR, BCBound::upper >", "structmath__bcs_1_1sim__bc_3_01IDIR_00_01BCBound_1_1upper_01_4.html", null ],
     [ "SolverChoice", "structSolverChoice.html", null ],
     [ "TaggingParm", "structTaggingParm.html", null ],
+    [ "TimeIntegrator< T >", "classTimeIntegrator.html", null ],
     [ "math_bcs::wall_scalars< IDIR, Bound >", "structmath__bcs_1_1wall__scalars.html", null ],
     [ "math_bcs::wall_scalars< IDIR, BCBound::lower >", "structmath__bcs_1_1wall__scalars_3_01IDIR_00_01BCBound_1_1lower_01_4.html", null ],
     [ "math_bcs::wall_scalars< IDIR, BCBound::upper >", "structmath__bcs_1_1wall__scalars_3_01IDIR_00_01BCBound_1_1upper_01_4.html", null ]

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['scalar_624',['scalar',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4aa27a6549ade38cc036f7b8c58a840510',1,'DataStruct.H']]],
-  ['smagorinsky_625',['Smagorinsky',['../DataStruct_8H.html#ac351ecfcff92a440bc6c0c285dc16bd3a409c5986f243d66ca7b1ef5882f4f808',1,'DataStruct.H']]]
+  ['next_731',['next',['../DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214ad0cab90d8d20d57e2f2b9be52f7dd25d',1,'DataStruct.H']]],
+  ['none_732',['None',['../DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754',1,'DataStruct.H']]],
+  ['numtypes_733',['NumTypes',['../namespaceButcherTableauTypes.html#a599609ee2ae964bdf7b2457f2ab35c00ad3f3fde66d70225cc30ee2e4daa9c7d6',1,'ButcherTableauTypes']]]
 ];

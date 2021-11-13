@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['x_632',['x',['../DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6',1,'x():&#160;DataStruct.H'],['../DataStruct_8H.html#a5943cc9db33abe98a5e07cd2b4387f53a9dd4e461268c8034f5c8564e155c67a6',1,'x():&#160;DataStruct.H'],['../DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6',1,'x():&#160;DataStruct.H'],['../DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6',1,'x():&#160;DataStruct.H']]]
+  ['u_745',['u',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c',1,'DataStruct.H']]],
+  ['unity_746',['unity',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a439b3a25b555b3bc8667a09a036ae70c',1,'DataStruct.H']]],
+  ['upper_747',['upper',['../namespacemath__bcs.html#a7baa376f7fe8cdc2afba822273275b3ba25d2e0d219f68c116eb2bd3941855c60',1,'math_bcs']]],
+  ['user_748',['User',['../namespaceButcherTableauTypes.html#a599609ee2ae964bdf7b2457f2ab35c00a351e64a8ebdf62b6db3db55ffb441dab',1,'ButcherTableauTypes']]]
 ];

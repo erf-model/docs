@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['math_5fbcs_364',['math_bcs',['../namespacemath__bcs.html',1,'']]]
+  ['butchertableautypes_430',['ButcherTableauTypes',['../namespaceButcherTableauTypes.html',1,'']]]
 ];

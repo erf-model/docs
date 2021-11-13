@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['phys_5fbcs_366',['phys_bcs',['../namespacephys__bcs.html',1,'']]]
+  ['math_5fbcs_433',['math_bcs',['../namespacemath__bcs.html',1,'']]]
 ];

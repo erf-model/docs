@@ -65,9 +65,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Advance_8cpp.html",
-"classncutils_1_1NCGroup.html#aa049e7d6f5f7f88ad840fa2ced3c61b4",
-"structmath__bcs_1_1reflect__odd_3_01IDIR_00_01BCBound_1_1upper_01_4.html#a4d090a62e1cdffeb22f346c5ae92e620"
+"AMReX__FEIntegrator_8H.html",
+"classIntegratorBase.html#a2ce725c0e8c8a894377a89a8d29bfc04",
+"structSolverChoice.html#ac10a89429ffd40d3edd2d5a97c61c68c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

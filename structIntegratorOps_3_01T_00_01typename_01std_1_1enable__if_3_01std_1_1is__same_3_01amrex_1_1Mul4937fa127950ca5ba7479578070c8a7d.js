@@ -1,0 +1,6 @@
+var structIntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amrex_1_1Mul4937fa127950ca5ba7479578070c8a7d =
+[
+    [ "Copy", "structIntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amrex_1_1Mul4937fa127950ca5ba7479578070c8a7d.html#a9b123ed17a745432319e2fcb3fa402a4", null ],
+    [ "CreateLike", "structIntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amrex_1_1Mul4937fa127950ca5ba7479578070c8a7d.html#a72140ed34743af02f6c8e50768a151c9", null ],
+    [ "Saxpy", "structIntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amrex_1_1Mul4937fa127950ca5ba7479578070c8a7d.html#a2131eb28340fe3ce7b83d78a89b03484", null ]
+];
