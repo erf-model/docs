@@ -89,17 +89,19 @@ $(document).ready(function(){initNavTree('Constants_8H_source.html',''); initRes
 <a href="Constants_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _CONSTANTS_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CONSTANTS_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="Constants_8H.html#a598a3330b3c21701223ee0ca14316eca">    4</a></span>&#160;<span class="preprocessor">#define PI 3.14159265358979323846264338327950288</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;AMReX_REAL.H&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//TODO: Change these types of macros to &#39;const&#39;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">    7</a></span>&#160;<span class="preprocessor">#define R_d     287.0 // gas constant for dry air [J/(kg-K)]</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="Constants_8H.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a">    8</a></span>&#160;<span class="preprocessor">#define c_p    1004.5 // specific heat at constant pressure for dry air [J/(kg-K)]</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="Constants_8H.html#a60be2e6257954ef746019c916741cb2c">    9</a></span>&#160;<span class="preprocessor">#define p_0    1.0e5 // reference surface pressure [Pa]</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">   10</a></span>&#160;<span class="preprocessor">#define Gamma  1.4   // C_p/C_v [-]</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901">   12</a></span>&#160;<span class="preprocessor">#define CONST_GRAV 9.81</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">    6</a></span>&#160;constexpr amrex::Real <a class="code" href="Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> = 3.14159265358979323846264338327950288;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//TODO: Change these types of macros to &#39;const&#39;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">    9</a></span>&#160;<span class="preprocessor">#define R_d     287.0 // gas constant for dry air [J/(kg-K)]</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="Constants_8H.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a">   10</a></span>&#160;<span class="preprocessor">#define c_p    1004.5 // specific heat at constant pressure for dry air [J/(kg-K)]</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="Constants_8H.html#a60be2e6257954ef746019c916741cb2c">   11</a></span>&#160;<span class="preprocessor">#define p_0    1.0e5 // reference surface pressure [Pa]</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">   12</a></span>&#160;<span class="preprocessor">#define Gamma  1.4   // C_p/C_v [-]</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901">   14</a></span>&#160;<span class="preprocessor">#define CONST_GRAV 9.81</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aBld_8cpp_html_adb42db5aeaf9ee121634f02471f0c5a6"><div class="ttname"><a href="Bld_8cpp.html#adb42db5aeaf9ee121634f02471f0c5a6">getLevelBld</a></div><div class="ttdeci">amrex::LevelBld * getLevelBld()</div><div class="ttdef"><b>Definition:</b> Bld.cpp:22</div></div>
@@ -116,6 +118,7 @@ $(document).ready(function(){initNavTree('Constants_8H_source.html',''); initRes
 <div class="ttc" id="aDerive_8H_html"><div class="ttname"><a href="Derive_8H.html">Derive.H</a></div></div>
 <div class="ttc" id="aERF_8H_html"><div class="ttname"><a href="ERF_8H.html">ERF.H</a></div></div>
 <div class="ttc" id="aclassERFBld_html_a2e4474b35edabc63b7df3e23ff5d441b"><div class="ttname"><a href="classERFBld.html#a2e4474b35edabc63b7df3e23ff5d441b">ERFBld::operator()</a></div><div class="ttdeci">virtual amrex::AmrLevel * operator()()</div><div class="ttdef"><b>Definition:</b> Bld.cpp:40</div></div>
+<div class="ttc" id="aConstants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> Constants.H:6</div></div>
 <div class="ttc" id="aIndexDefines_8H_html"><div class="ttname"><a href="IndexDefines_8H.html">IndexDefines.H</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
