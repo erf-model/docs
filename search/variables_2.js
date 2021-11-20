@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['ci_638',['CI',['../erf__params_8H.html#a23c7330ed883fdc661e876c0295a46a3',1,'erf_params.H']]],
-  ['coriolis_5ffactor_639',['coriolis_factor',['../structSolverChoice.html#aa60641bb49bf6dc870fc07613dc7c0b2',1,'SolverChoice']]],
-  ['cosphi_640',['cosphi',['../structSolverChoice.html#ac10a89429ffd40d3edd2d5a97c61c68c',1,'SolverChoice']]],
-  ['cs_641',['Cs',['../structSolverChoice.html#adf71cefcbf89e69db9229515be3cd36f',1,'SolverChoice::Cs()'],['../erf__params_8H.html#afb7577b710f7d646d2e0ef9d5a142221',1,'Cs():&#160;erf_params.H']]]
+  ['ci_627',['CI',['../structSolverChoice.html#a60f32142004abc14d6d58692a3554c82',1,'SolverChoice']]],
+  ['coriolis_5ffactor_628',['coriolis_factor',['../structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3',1,'SolverChoice']]],
+  ['cosphi_629',['cosphi',['../structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f',1,'SolverChoice']]],
+  ['cs_630',['Cs',['../structSolverChoice.html#aaf85773d50dc693905867d3acc127dd0',1,'SolverChoice']]]
 ];

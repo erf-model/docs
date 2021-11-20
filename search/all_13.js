@@ -1,22 +1,12 @@
 var searchData=
 [
-  ['u_330',['u',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c',1,'DataStruct.H']]],
-  ['unity_331',['unity',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a439b3a25b555b3bc8667a09a036ae70c',1,'DataStruct.H']]],
-  ['upper_332',['upper',['../namespacemath__bcs.html#a7baa376f7fe8cdc2afba822273275b3ba25d2e0d219f68c116eb2bd3941855c60',1,'math_bcs']]],
-  ['use_5fadaptive_5ftimestep_333',['use_adaptive_timestep',['../classRKIntegrator.html#a39b53e38c79fc02991654e5062a78ead',1,'RKIntegrator']]],
-  ['use_5fcoriolis_334',['use_coriolis',['../structSolverChoice.html#aaac709fffe12632036877919191d25fc',1,'SolverChoice']]],
-  ['use_5fgravity_335',['use_gravity',['../structSolverChoice.html#a789bd991df5ff21a18d6a29a4f3a2b4c',1,'SolverChoice']]],
-  ['use_5fmomentum_5fadvection_336',['use_momentum_advection',['../structSolverChoice.html#a5d57e2fad55ff90503b1819656fa7d5c',1,'SolverChoice']]],
-  ['use_5fmomentum_5fdiffusion_337',['use_momentum_diffusion',['../structSolverChoice.html#a62ffa4f59b245f286fdc638b35b2af04',1,'SolverChoice']]],
-  ['use_5fpressure_338',['use_pressure',['../structSolverChoice.html#a4ea485f2b9ef55c87d0b88c512c12562',1,'SolverChoice']]],
-  ['use_5fscalar_5fdiffusion_339',['use_scalar_diffusion',['../structSolverChoice.html#a0fabe820e8e52ae135b52348e0ad8b24',1,'SolverChoice']]],
-  ['use_5fsmagorinsky_340',['use_smagorinsky',['../structSolverChoice.html#a135ed1eb28f8484c4716a567e23fc398',1,'SolverChoice']]],
-  ['use_5fstate_5fadvection_341',['use_state_advection',['../structSolverChoice.html#a09f72c03859c0bf48eaac861647a0bd4',1,'SolverChoice']]],
-  ['use_5fthermal_5fdiffusion_342',['use_thermal_diffusion',['../structSolverChoice.html#a1de9a915ce6448d4952e404e2dfddf3d',1,'SolverChoice']]],
-  ['user_343',['User',['../namespaceButcherTableauTypes.html#a599609ee2ae964bdf7b2457f2ab35c00a351e64a8ebdf62b6db3db55ffb441dab',1,'ButcherTableauTypes']]],
-  ['userbc_344',['UserBC',['../ERF_8H.html#a289ab60ae34b5a5e22b6cf1997015c71',1,'ERF.H']]],
-  ['utilities_345',['Utilities',['../group__Utilities.html',1,'']]],
-  ['utils_2ecpp_346',['Utils.cpp',['../Utils_8cpp.html',1,'']]],
-  ['utils_2eh_347',['utils.H',['../utils_8H.html',1,'']]],
-  ['utils_5fk_2eh_348',['utils_K.H',['../utils__K_8H.html',1,'']]]
+  ['w_355',['w',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68',1,'DataStruct.H']]],
+  ['wall_5fscalars_356',['wall_scalars',['../structmath__bcs_1_1wall__scalars.html',1,'math_bcs']]],
+  ['wall_5fscalars_3c_20idir_2c_20bcbound_3a_3alower_20_3e_357',['wall_scalars&lt; IDIR, BCBound::lower &gt;',['../structmath__bcs_1_1wall__scalars_3_01IDIR_00_01BCBound_1_1lower_01_4.html',1,'math_bcs']]],
+  ['wall_5fscalars_3c_20idir_2c_20bcbound_3a_3aupper_20_3e_358',['wall_scalars&lt; IDIR, BCBound::upper &gt;',['../structmath__bcs_1_1wall__scalars_3_01IDIR_00_01BCBound_1_1upper_01_4.html',1,'math_bcs']]],
+  ['weights_359',['weights',['../classRKIntegrator.html#a2bc977308abbd3358b6dc55c1e4e8219',1,'RKIntegrator']]],
+  ['writebuildinfo_360',['writeBuildInfo',['../classIOManager.html#a2d47c67a7993b7e4b7bace1fc06e792a',1,'IOManager']]],
+  ['writejobinfo_361',['writeJobInfo',['../classIOManager.html#a458cd55e2e1e3cf2626b606f0ccfc223',1,'IOManager']]],
+  ['writeplotfile_362',['writePlotFile',['../classIOManager.html#af7254c361d36c4e08117a3d486d84341',1,'IOManager']]],
+  ['writesmallplotfile_363',['writeSmallPlotFile',['../classIOManager.html#a17056a1e637c37a4a424562529050d5d',1,'IOManager']]]
 ];

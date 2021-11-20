@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['real_680',['Real',['../structncutils_1_1NCDType.html#a7a5be35daa7dbb2cc72507cc4b5a422c',1,'ncutils::NCDType']]],
-  ['region_5fhi_681',['region_hi',['../structTaggingParm.html#a667a7703b2c368add879a10d06456c2b',1,'TaggingParm']]],
-  ['region_5flo_682',['region_lo',['../structTaggingParm.html#ab9a24f9e443f6d712d628b835a13ee20',1,'TaggingParm']]]
+  ['scalar_5fbc_671',['scalar_bc',['../Setup_8cpp.html#a482c494f63b3603d90c5e9cf9a916ba8',1,'Setup.cpp']]],
+  ['sinphi_672',['sinphi',['../structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf',1,'SolverChoice']]],
+  ['spatial_5forder_673',['spatial_order',['../structSolverChoice.html#a8e053ce39997ed619ac81aa4d5a1fd44',1,'SolverChoice']]]
 ];

@@ -88,17 +88,17 @@ $(document).ready(function(){initNavTree('EOS_8H.html',''); initResizable(); });
 <div class="title">EOS.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="Constants_8H_source.html">Constants.H</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="ERF__Constants_8H_source.html">ERF_Constants.H</a>&gt;</code><br />
 <code>#include &lt;AMReX.H&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for EOS.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="EOS_8H__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2EOS_8H" alt=""/></div>
 <map name="_2home_2runner_2work_2ERF_2ERF_2Source_2EOS_8H" id="_2home_2runner_2work_2ERF_2ERF_2Source_2EOS_8H">
-<area shape="rect" title=" " alt="" coords="37,5,211,47"/>
-<area shape="rect" href="Constants_8H.html" title=" " alt="" coords="16,95,117,121"/>
-<area shape="rect" title=" " alt="" coords="141,95,224,121"/>
-<area shape="rect" title=" " alt="" coords="5,169,128,196"/>
+<area shape="rect" title=" " alt="" coords="50,5,225,47"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="5,95,139,121"/>
+<area shape="rect" title=" " alt="" coords="163,95,245,121"/>
+<area shape="rect" title=" " alt="" coords="11,169,133,196"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -143,7 +143,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">// diagnostic relation for the full pressure</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">// see https://erf.readthedocs.io/en/latest/theory/NavierStokesEquations.html</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> * std::pow(<a class="code" href="Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a> * rhotheta / <a class="code" href="Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> * std::pow(<a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a> * rhotheta / <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="Derive_8H.html#a87081d6115f001e5733003946f1d808e">erf_derpres()</a>, and <a class="el" href="TimeIntegration__rhs_8cpp.html#a867cddae2b1e2f0f41fae8814fb079f7">erf_rhs()</a>.</p>
@@ -179,7 +179,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// diagnostic relation for the full pressure</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// see https://erf.readthedocs.io/en/latest/theory/NavierStokesEquations.html</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> std::pow(p*std::pow(<a class="code" href="Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>-1), 1.0 / <a class="code" href="Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>)/ <a class="code" href="Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> std::pow(p*std::pow(<a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>-1), 1.0 / <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>)/ <a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -210,8 +210,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    amrex::Real p_loc = <a class="code" href="Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> * std::pow(<a class="code" href="Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a> * rhotheta / <a class="code" href="Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">return</span> p_loc / (<a class="code" href="Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a> * rho);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    amrex::Real p_loc = <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> * std::pow(<a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a> * rhotheta / <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">return</span> p_loc / (<a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a> * rho);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="Derive_8H.html#aa1a887cdc1eeac9d059a149164a3d6ad">erf_dertemp()</a>.</p>
@@ -229,9 +229,9 @@ Here is the caller graph for this function:</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aConstants_8H_html_ae8ca591ba2325c0ad8b464de45f4c6b3"><div class="ttname"><a href="Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a></div><div class="ttdeci">#define Gamma</div><div class="ttdef"><b>Definition:</b> Constants.H:12</div></div>
-<div class="ttc" id="aConstants_8H_html_a08d0e6a452268bed60e81a08398c088a"><div class="ttname"><a href="Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a></div><div class="ttdeci">#define R_d</div><div class="ttdef"><b>Definition:</b> Constants.H:9</div></div>
-<div class="ttc" id="aConstants_8H_html_a60be2e6257954ef746019c916741cb2c"><div class="ttname"><a href="Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a></div><div class="ttdeci">#define p_0</div><div class="ttdef"><b>Definition:</b> Constants.H:11</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a60be2e6257954ef746019c916741cb2c"><div class="ttname"><a href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a></div><div class="ttdeci">#define p_0</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a08d0e6a452268bed60e81a08398c088a"><div class="ttname"><a href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a></div><div class="ttdeci">#define R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_ae8ca591ba2325c0ad8b464de45f4c6b3"><div class="ttname"><a href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a></div><div class="ttdeci">#define Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['abl_5fdriver_5ftype_0',['abl_driver_type',['../structSolverChoice.html#a4a164ce68b72a76974d80d27fb5fd822',1,'SolverChoice']]],
-  ['abl_5fgeo_5fforcing_1',['abl_geo_forcing',['../structSolverChoice.html#a8b8d1d55e0681d45ce30a691362954f6',1,'SolverChoice']]],
-  ['abl_5fpressure_5fgrad_2',['abl_pressure_grad',['../structSolverChoice.html#a0e6d20ebf4c85a54a0ece6796abdaa69',1,'SolverChoice']]],
+  ['abl_5fdriver_5ftype_0',['abl_driver_type',['../structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f',1,'SolverChoice']]],
+  ['abl_5fgeo_5fforcing_1',['abl_geo_forcing',['../structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69',1,'SolverChoice']]],
+  ['abl_5fpressure_5fgrad_2',['abl_pressure_grad',['../structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb',1,'SolverChoice']]],
   ['abldrivertype_3',['ABLDriverType',['../DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceb',1,'DataStruct.H']]],
   ['abort_5ffunc_4',['abort_func',['../NCInterface_8cpp.html#aa67f9bcab4a9da3e92f2e2f3b4ec5979',1,'NCInterface.cpp']]],
   ['add_5',['add',['../structEmptyProbDeriveStruct.html#af2ea7a0b4d5319f6bb8b72c296f6dde1',1,'EmptyProbDeriveStruct']]],
@@ -18,8 +18,8 @@ var searchData=
   ['all_5fdims_15',['all_dims',['../classncutils_1_1NCGroup.html#a8e01fe072fa48f4fa9c8be33a3a401b0',1,'ncutils::NCGroup']]],
   ['all_5fgroups_16',['all_groups',['../classncutils_1_1NCGroup.html#a82a48643f27b33b27cdd87c60e63f5f5',1,'ncutils::NCGroup']]],
   ['all_5fvars_17',['all_vars',['../classncutils_1_1NCGroup.html#affa2e62434110dd4fa47d093162e56cf',1,'ncutils::NCGroup']]],
-  ['alpha_5fc_18',['alpha_C',['../structSolverChoice.html#aad207d532d36f3c306a431e4cf0caf6b',1,'SolverChoice::alpha_C()'],['../erf__params_8H.html#a773f7c964aff956081b08c0ceb651de0',1,'alpha_C():&#160;erf_params.H']]],
-  ['alpha_5ft_19',['alpha_T',['../structSolverChoice.html#a8de8dfbd95465cd01dbcc194cdbdd8fc',1,'SolverChoice::alpha_T()'],['../erf__params_8H.html#acc44c3231ff9691f0f9720e0f1a32072',1,'alpha_T():&#160;erf_params.H']]],
+  ['alpha_5fc_18',['alpha_C',['../structSolverChoice.html#a404f875b4796e931ef346bc11b6c7dcb',1,'SolverChoice']]],
+  ['alpha_5ft_19',['alpha_T',['../structSolverChoice.html#a2b9c77c4a08b52f5519b452f6ed3a4cc',1,'SolverChoice']]],
   ['amrex_5ffeintegrator_2eh_20',['AMReX_FEIntegrator.H',['../AMReX__FEIntegrator_8H.html',1,'']]],
   ['amrex_5fintegratorbase_2eh_21',['AMReX_IntegratorBase.H',['../AMReX__IntegratorBase_8H.html',1,'']]],
   ['amrex_5frkintegrator_2eh_22',['AMReX_RKIntegrator.H',['../AMReX__RKIntegrator_8H.html',1,'']]],

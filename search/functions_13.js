@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['writebuildinfo_622',['writeBuildInfo',['../classIOManager.html#a2d47c67a7993b7e4b7bace1fc06e792a',1,'IOManager']]],
-  ['writejobinfo_623',['writeJobInfo',['../classIOManager.html#a458cd55e2e1e3cf2626b606f0ccfc223',1,'IOManager']]],
-  ['writeplotfile_624',['writePlotFile',['../classIOManager.html#af7254c361d36c4e08117a3d486d84341',1,'IOManager']]],
-  ['writesmallplotfile_625',['writeSmallPlotFile',['../classIOManager.html#a17056a1e637c37a4a424562529050d5d',1,'IOManager']]]
+  ['_7efeintegrator_615',['~FEIntegrator',['../classFEIntegrator.html#a2a5e4371407383bad34885d449533abb',1,'FEIntegrator']]],
+  ['_7eintegratorbase_616',['~IntegratorBase',['../classIntegratorBase.html#a5e4ae554505ab648bc09e69f5c44da01',1,'IntegratorBase']]],
+  ['_7eiomanager_617',['~IOManager',['../classIOManager.html#aa1263e627ea878bbba9406b9b38f60d8',1,'IOManager']]],
+  ['_7encfile_618',['~NCFile',['../classncutils_1_1NCFile.html#a4c1663f24f84dbc74152d7f040910a22',1,'ncutils::NCFile']]],
+  ['_7erkintegrator_619',['~RKIntegrator',['../classRKIntegrator.html#a34c2c7f485e2f7362d355e8ceafa895a',1,'RKIntegrator']]],
+  ['_7etimeintegrator_620',['~TimeIntegrator',['../classTimeIntegrator.html#ad4b32b172f9c2843faedde9a4b594669',1,'TimeIntegrator']]]
 ];

@@ -21,5 +21,5 @@ var searchData=
   ['dirichlet_3c_20idir_2c_20bcbound_3a_3aupper_20_3e_91',['dirichlet&lt; IDIR, BCBound::upper &gt;',['../structmath__bcs_1_1dirichlet_3_01IDIR_00_01BCBound_1_1upper_01_4.html',1,'math_bcs']]],
   ['display_92',['display',['../structSolverChoice.html#abb95d84167308078ce369b4196ef979c',1,'SolverChoice']]],
   ['dns_93',['DNS',['../DataStruct_8H.html#ac351ecfcff92a440bc6c0c285dc16bd3aed5f2bdecbd4bd349d09412d1ff6a6fb',1,'DataStruct.H']]],
-  ['dynamicviscosity_94',['dynamicViscosity',['../structSolverChoice.html#a6a7612dbb7d9be9b97cab4b70945ef80',1,'SolverChoice::dynamicViscosity()'],['../erf__params_8H.html#a36999c248f36abdf20a858486a82e13c',1,'dynamicViscosity():&#160;erf_params.H']]]
+  ['dynamicviscosity_94',['dynamicViscosity',['../structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446',1,'SolverChoice']]]
 ];

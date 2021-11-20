@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['y_372',['y',['../DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d',1,'y():&#160;DataStruct.H'],['../DataStruct_8H.html#a5943cc9db33abe98a5e07cd2b4387f53a415290769594460e2e485922904f345d',1,'y():&#160;DataStruct.H'],['../DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d',1,'y():&#160;DataStruct.H'],['../DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d',1,'y():&#160;DataStruct.H']]],
-  ['ymom_373',['ymom',['../namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faa06e9caed4d0b72c322646815c1a96ce',1,'IntVar']]]
+  ['_7efeintegrator_370',['~FEIntegrator',['../classFEIntegrator.html#a2a5e4371407383bad34885d449533abb',1,'FEIntegrator']]],
+  ['_7eintegratorbase_371',['~IntegratorBase',['../classIntegratorBase.html#a5e4ae554505ab648bc09e69f5c44da01',1,'IntegratorBase']]],
+  ['_7eiomanager_372',['~IOManager',['../classIOManager.html#aa1263e627ea878bbba9406b9b38f60d8',1,'IOManager']]],
+  ['_7encfile_373',['~NCFile',['../classncutils_1_1NCFile.html#a4c1663f24f84dbc74152d7f040910a22',1,'ncutils::NCFile']]],
+  ['_7erkintegrator_374',['~RKIntegrator',['../classRKIntegrator.html#a34c2c7f485e2f7362d355e8ceafa895a',1,'RKIntegrator']]],
+  ['_7etimeintegrator_375',['~TimeIntegrator',['../classTimeIntegrator.html#ad4b32b172f9c2843faedde9a4b594669',1,'TimeIntegrator']]]
 ];
