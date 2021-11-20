@@ -1,7 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"structTaggingParm.html#abe3d6de8f72a1c59f3ebdc1d3c47681d":[3,0,16,0],
-"structTaggingParm.html#abf6890991919a23203fca8524ddb2627":[3,0,16,2],
 "structTaggingParm.html#ac16a15946e26342564ff8c599ee5463e":[3,0,16,12],
 "structTaggingParm.html#ac42cc0bcc5bb9a54e51a6c096a9b6c17":[3,0,16,7],
 "structTaggingParm.html#ad651c2329c240f645a331468de678507":[3,0,16,22],
