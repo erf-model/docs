@@ -34,6 +34,11 @@ var DataStruct_8H =
       [ "y", "DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d", null ],
       [ "z", "DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7", null ]
     ] ],
+    [ "LESType", "DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500", [
+      [ "None", "DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "Smagorinsky", "DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808", null ],
+      [ "Deardorff", "DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf", null ]
+    ] ],
     [ "MomentumEqn", "DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9", [
       [ "x", "DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6", null ],
       [ "y", "DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d", null ],
@@ -46,6 +51,7 @@ var DataStruct_8H =
     ] ],
     [ "TurbulenceModel", "DataStruct_8H.html#ac351ecfcff92a440bc6c0c285dc16bd3", [
       [ "DNS", "DataStruct_8H.html#ac351ecfcff92a440bc6c0c285dc16bd3aed5f2bdecbd4bd349d09412d1ff6a6fb", null ],
-      [ "Smagorinsky", "DataStruct_8H.html#ac351ecfcff92a440bc6c0c285dc16bd3a409c5986f243d66ca7b1ef5882f4f808", null ]
+      [ "Smagorinsky", "DataStruct_8H.html#ac351ecfcff92a440bc6c0c285dc16bd3a409c5986f243d66ca7b1ef5882f4f808", null ],
+      [ "Deardorff", "DataStruct_8H.html#ac351ecfcff92a440bc6c0c285dc16bd3ab7106655ebb5e00e0f040302bf4129bf", null ]
     ] ]
 ];

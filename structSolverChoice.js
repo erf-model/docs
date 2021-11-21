@@ -13,6 +13,7 @@ var structSolverChoice =
     [ "cosphi", "structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f", null ],
     [ "Cs", "structSolverChoice.html#aaf85773d50dc693905867d3acc127dd0", null ],
     [ "dynamicViscosity", "structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446", null ],
+    [ "les_type", "structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0", null ],
     [ "PrT", "structSolverChoice.html#a520eca87ffc2bcc8dbfc9b8e40c82e3d", null ],
     [ "sinphi", "structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf", null ],
     [ "spatial_order", "structSolverChoice.html#a8e053ce39997ed619ac81aa4d5a1fd44", null ],
@@ -22,7 +23,6 @@ var structSolverChoice =
     [ "use_momentum_diffusion", "structSolverChoice.html#a66c79d8aca68a862e63572e7a00d5789", null ],
     [ "use_pressure", "structSolverChoice.html#a0d46d42d6d42a64fdd42828957445db9", null ],
     [ "use_scalar_diffusion", "structSolverChoice.html#a6ddc576079d42c44c6266d4a7cac36f1", null ],
-    [ "use_smagorinsky", "structSolverChoice.html#ad52c1b1dc566df797ee4e6cc0ff03015", null ],
     [ "use_state_advection", "structSolverChoice.html#a204dd54aa933d3c3bd47732475b700c3", null ],
     [ "use_thermal_diffusion", "structSolverChoice.html#a7b22b8eb1bb7971d0517574fd00132e0", null ]
 ];
