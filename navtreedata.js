@@ -66,8 +66,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AMReX__FEIntegrator_8H.html",
-"classIntegratorBase.html",
-"structTaggingParm.html#a9fa28e411fb22f9995360c3286df5f68"
+"classIOManager.html#ae3027a0eeaebfb1ddc523d438b966652",
+"structTaggingParm.html#a500f5f21af1b0c145ee02886b9bcce68"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
