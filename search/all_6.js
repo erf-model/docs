@@ -7,8 +7,10 @@ var searchData=
   ['getbcname_141',['getBCName',['../ERF_8cpp.html#a9728dd7b52a3acab6ad070edaa243d7a',1,'ERF.cpp']]],
   ['getlevelbld_142',['getLevelBld',['../Bld_8cpp.html#adb42db5aeaf9ee121634f02471f0c5a6',1,'getLevelBld():&#160;Bld.cpp'],['../main_8cpp.html#adb42db5aeaf9ee121634f02471f0c5a6',1,'getLevelBld():&#160;Bld.cpp']]],
   ['getpgivenrth_143',['getPgivenRTh',['../EOS_8H.html#a83bdb65bb1d7e8fcc7ab43be6f09683d',1,'EOS.H']]],
-  ['getrhothetagivenp_144',['getRhoThetagivenP',['../EOS_8H.html#a58f776a5ea69cd639a93731c0f696c5a',1,'EOS.H']]],
-  ['gettgivenrandrth_145',['getTgivenRandRTh',['../EOS_8H.html#a66600cf3ee2c8d4e6b05b08be6f10cd6',1,'EOS.H']]],
-  ['group_146',['group',['../classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333',1,'ncutils::NCGroup']]],
-  ['grow_5fbox_5fby_5fone_147',['grow_box_by_one',['../Setup_8cpp.html#a40fcb24d62a215250ff70f14b9233d5e',1,'Setup.cpp']]]
+  ['getpprimegivenrth_144',['getPprimegivenRTh',['../EOS_8H.html#a4c743d8bc015351f877a345a42957dea',1,'EOS.H']]],
+  ['getrhothetagivenp_145',['getRhoThetagivenP',['../EOS_8H.html#a58f776a5ea69cd639a93731c0f696c5a',1,'EOS.H']]],
+  ['gettgivenrandrth_146',['getTgivenRandRTh',['../EOS_8H.html#a66600cf3ee2c8d4e6b05b08be6f10cd6',1,'EOS.H']]],
+  ['gravity_147',['gravity',['../structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b',1,'SolverChoice']]],
+  ['group_148',['group',['../classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333',1,'ncutils::NCGroup']]],
+  ['grow_5fbox_5fby_5fone_149',['grow_box_by_one',['../Setup_8cpp.html#a40fcb24d62a215250ff70f14b9233d5e',1,'Setup.cpp']]]
 ];

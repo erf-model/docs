@@ -121,6 +121,8 @@ Functions</h2></td></tr>
 <tr class="separator:a66600cf3ee2c8d4e6b05b08be6f10cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83bdb65bb1d7e8fcc7ab43be6f09683d"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EOS_8H.html#a83bdb65bb1d7e8fcc7ab43be6f09683d">getPgivenRTh</a> (amrex::Real rhotheta)</td></tr>
 <tr class="separator:a83bdb65bb1d7e8fcc7ab43be6f09683d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c743d8bc015351f877a345a42957dea"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EOS_8H.html#a4c743d8bc015351f877a345a42957dea">getPprimegivenRTh</a> (amrex::Real rhotheta, amrex::Real pres_hse_at_k)</td></tr>
+<tr class="separator:a4c743d8bc015351f877a345a42957dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58f776a5ea69cd639a93731c0f696c5a"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EOS_8H.html#a58f776a5ea69cd639a93731c0f696c5a">getRhoThetagivenP</a> (amrex::Real p)</td></tr>
 <tr class="separator:a58f776a5ea69cd639a93731c0f696c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -146,16 +148,59 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> * std::pow(<a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a> * rhotheta / <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Derive_8H.html#a87081d6115f001e5733003946f1d808e">erf_derpres()</a>, and <a class="el" href="TimeIntegration__rhs_8cpp.html#a867cddae2b1e2f0f41fae8814fb079f7">erf_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Derive_8H.html#a87081d6115f001e5733003946f1d808e">erf_derpres()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="EOS_8H_a83bdb65bb1d7e8fcc7ab43be6f09683d_icgraph.png" border="0" usemap="#EOS_8H_a83bdb65bb1d7e8fcc7ab43be6f09683d_icgraph" alt=""/></div>
 <map name="EOS_8H_a83bdb65bb1d7e8fcc7ab43be6f09683d_icgraph" id="EOS_8H_a83bdb65bb1d7e8fcc7ab43be6f09683d_icgraph">
-<area shape="rect" title=" " alt="" coords="300,31,411,57"/>
-<area shape="rect" href="Derive_8H.html#a87081d6115f001e5733003946f1d808e" title=" " alt="" coords="156,5,252,32"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a867cddae2b1e2f0f41fae8814fb079f7" title=" " alt="" coords="171,56,237,83"/>
-<area shape="rect" href="TimeIntegration__driver_8cpp.html#af27d3ec06277b61ba5b645c0481faa1d" title=" " alt="" coords="5,56,108,83"/>
+<area shape="rect" title=" " alt="" coords="149,5,260,32"/>
+<area shape="rect" href="Derive_8H.html#a87081d6115f001e5733003946f1d808e" title=" " alt="" coords="5,5,101,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4c743d8bc015351f877a345a42957dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c743d8bc015351f877a345a42957dea">&#9670;&nbsp;</a></span>getPprimegivenRTh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPprimegivenRTh </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>rhotheta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>pres_hse_at_k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// diagnostic relation for the full pressure</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// see https://erf.readthedocs.io/en/latest/theory/NavierStokesEquations.html</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> * std::pow(<a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a> * rhotheta / <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>) - pres_hse_at_k;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="TimeIntegration__rhs_8cpp.html#af1736be3a0cab3fca1d9a9e92aefcf86">erf_rhs()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="EOS_8H_a4c743d8bc015351f877a345a42957dea_icgraph.png" border="0" usemap="#EOS_8H_a4c743d8bc015351f877a345a42957dea_icgraph" alt=""/></div>
+<map name="EOS_8H_a4c743d8bc015351f877a345a42957dea_icgraph" id="EOS_8H_a4c743d8bc015351f877a345a42957dea_icgraph">
+<area shape="rect" title=" " alt="" coords="271,5,420,32"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#af1736be3a0cab3fca1d9a9e92aefcf86" title=" " alt="" coords="156,5,223,32"/>
+<area shape="rect" href="TimeIntegration__driver_8cpp.html#ab18d532f01b7eac4abb07a191d09cc89" title=" " alt="" coords="5,5,108,32"/>
 </map>
 </div>
 
@@ -176,11 +221,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// diagnostic relation for the full pressure</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// see https://erf.readthedocs.io/en/latest/theory/NavierStokesEquations.html</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> std::pow(p*std::pow(<a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>-1), 1.0 / <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>)/ <a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// diagnostic relation for the full pressure</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// see https://erf.readthedocs.io/en/latest/theory/NavierStokesEquations.html</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> std::pow(p*std::pow(<a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>-1), 1.0 / <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>)/ <a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
