@@ -1,7 +1,7 @@
 var searchData=
 [
   ['datastruct_2eh_74',['DataStruct.H',['../DataStruct_8H.html',1,'']]],
-  ['deardorff_75',['Deardorff',['../DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf',1,'Deardorff():&#160;DataStruct.H'],['../DataStruct_8H.html#ac351ecfcff92a440bc6c0c285dc16bd3ab7106655ebb5e00e0f040302bf4129bf',1,'Deardorff():&#160;DataStruct.H']]],
+  ['deardorff_75',['Deardorff',['../DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf',1,'DataStruct.H']]],
   ['def_5farray_76',['def_array',['../classncutils_1_1NCGroup.html#acdfa4a8e44ca0f1901ea120a3946d1db',1,'ncutils::NCGroup']]],
   ['def_5fdim_77',['def_dim',['../classncutils_1_1NCGroup.html#ae0ecaad10c77614a283bd6e66d2dca41',1,'ncutils::NCGroup']]],
   ['def_5fgroup_78',['def_group',['../classncutils_1_1NCGroup.html#ac5c99d691660e36a00afffae6f0d6f71',1,'ncutils::NCGroup']]],
@@ -21,6 +21,5 @@ var searchData=
   ['dirichlet_3c_20idir_2c_20bcbound_3a_3alower_20_3e_92',['dirichlet&lt; IDIR, BCBound::lower &gt;',['../structmath__bcs_1_1dirichlet_3_01IDIR_00_01BCBound_1_1lower_01_4.html',1,'math_bcs']]],
   ['dirichlet_3c_20idir_2c_20bcbound_3a_3aupper_20_3e_93',['dirichlet&lt; IDIR, BCBound::upper &gt;',['../structmath__bcs_1_1dirichlet_3_01IDIR_00_01BCBound_1_1upper_01_4.html',1,'math_bcs']]],
   ['display_94',['display',['../structSolverChoice.html#abb95d84167308078ce369b4196ef979c',1,'SolverChoice']]],
-  ['dns_95',['DNS',['../DataStruct_8H.html#ac351ecfcff92a440bc6c0c285dc16bd3aed5f2bdecbd4bd349d09412d1ff6a6fb',1,'DataStruct.H']]],
-  ['dynamicviscosity_96',['dynamicViscosity',['../structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446',1,'SolverChoice']]]
+  ['dynamicviscosity_95',['dynamicViscosity',['../structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446',1,'SolverChoice']]]
 ];

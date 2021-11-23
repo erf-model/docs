@@ -52,10 +52,5 @@ var DataStruct_8H =
       [ "prev", "DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214afcb08b164ac83e09964deb24f2d2e80b", null ],
       [ "local", "DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2", null ],
       [ "next", "DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214ad0cab90d8d20d57e2f2b9be52f7dd25d", null ]
-    ] ],
-    [ "TurbulenceModel", "DataStruct_8H.html#ac351ecfcff92a440bc6c0c285dc16bd3", [
-      [ "DNS", "DataStruct_8H.html#ac351ecfcff92a440bc6c0c285dc16bd3aed5f2bdecbd4bd349d09412d1ff6a6fb", null ],
-      [ "Smagorinsky", "DataStruct_8H.html#ac351ecfcff92a440bc6c0c285dc16bd3a409c5986f243d66ca7b1ef5882f4f808", null ],
-      [ "Deardorff", "DataStruct_8H.html#ac351ecfcff92a440bc6c0c285dc16bd3ab7106655ebb5e00e0f040302bf4129bf", null ]
     ] ]
 ];
