@@ -101,48 +101,51 @@ $(document).ready(function(){initNavTree('BCNoSlipWall_8H_source.html',''); init
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="classphys__bcs_1_1BCNoSlipWall.html">BCNoSlipWall</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classphys__bcs_1_1BCNoSlipWall.html#a638bc49af1aa2d2909ad6a54aae0bfd7">   16</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classphys__bcs_1_1BCNoSlipWall.html#a638bc49af1aa2d2909ad6a54aae0bfd7">applyBC</a> (<span class="keyword">const</span> amrex::Geometry geom, amrex::Vector&lt;MultiFab*&gt;&amp; vars)<span class="keyword"> override </span>{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> ((geom.isPeriodic(IDIR)) || (vars.size() == 0)) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// setup boundary conditions</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span>( <span class="keyword">auto</span> i = 0; i &lt; vars.size(); ++i) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      <span class="keywordtype">int</span> nghost = vars[i]-&gt;nGrow();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <span class="keywordflow">if</span>(nghost &gt; 0) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;         <span class="keywordflow">for</span> (amrex::MFIter mfi(*vars[i], amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="comment">// get the index box</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            amrex::Box b = vars[i]-&gt;get(mfi).box();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">auto</span> ncomp = vars[i]-&gt;nComp();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            amrex::Array4&lt;amrex::Real&gt; data = vars[i]-&gt;array(mfi);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="comment">// index box type</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            amrex::IntVect type = b.type();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (type == amrex::IntVect::Zero) {  <span class="comment">// for state type variable</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;               <a class="code" href="structmath__bcs_1_1wall__scalars.html">math_bcs::wall_scalars&lt;IDIR, Bound&gt;::apply</a>(geom, b, data, ncomp);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == amrex::IntVect(AMREX_D_DECL(1, 0, 0))) { <span class="comment">// for X_VEL</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;               <a class="code" href="structmath__bcs_1_1reflect__odd.html">math_bcs::reflect_odd&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==0)&gt;(geom, b, data, ncomp);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == amrex::IntVect(AMREX_D_DECL(0, 1, 0))) { <span class="comment">// for Y_VEL</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;               <a class="code" href="structmath__bcs_1_1reflect__odd.html">math_bcs::reflect_odd&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==1)&gt;(geom, b, data, ncomp);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == amrex::IntVect(AMREX_D_DECL(0, 0, 1))) { <span class="comment">// for Z_VEL</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;               <a class="code" href="structmath__bcs_1_1reflect__odd.html">math_bcs::reflect_odd&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==2)&gt;(geom, b, data, ncomp);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;         }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classphys__bcs_1_1BCNoSlipWall.html#a05dff3e06aaefeb26e6727bf910643b5">   16</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classphys__bcs_1_1BCNoSlipWall.html#a05dff3e06aaefeb26e6727bf910643b5">isNoSlipWall</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classphys__bcs_1_1BCNoSlipWall.html#a638bc49af1aa2d2909ad6a54aae0bfd7">   18</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classphys__bcs_1_1BCNoSlipWall.html#a638bc49af1aa2d2909ad6a54aae0bfd7">applyBC</a> (<span class="keyword">const</span> amrex::Geometry geom, amrex::Vector&lt;MultiFab*&gt;&amp; vars)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> ((geom.isPeriodic(IDIR)) || (vars.size() == 0)) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// setup boundary conditions</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span>( <span class="keyword">auto</span> i = 0; i &lt; vars.size(); ++i) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keywordtype">int</span> nghost = vars[i]-&gt;nGrow();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keywordflow">if</span>(nghost &gt; 0) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;         <span class="keywordflow">for</span> (amrex::MFIter mfi(*vars[i], amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="comment">// get the index box</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            amrex::Box b = vars[i]-&gt;get(mfi).box();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keyword">auto</span> ncomp = vars[i]-&gt;nComp();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            amrex::Array4&lt;amrex::Real&gt; data = vars[i]-&gt;array(mfi);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="comment">// index box type</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            amrex::IntVect type = b.type();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">if</span> (type == amrex::IntVect::Zero) {  <span class="comment">// for state type variable</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;               <a class="code" href="structmath__bcs_1_1wall__scalars.html">math_bcs::wall_scalars&lt;IDIR, Bound&gt;::apply</a>(geom, b, data, ncomp);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == amrex::IntVect(AMREX_D_DECL(1, 0, 0))) { <span class="comment">// for X_VEL</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;               <a class="code" href="structmath__bcs_1_1reflect__odd.html">math_bcs::reflect_odd&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==0)&gt;(geom, b, data, ncomp);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == amrex::IntVect(AMREX_D_DECL(0, 1, 0))) { <span class="comment">// for Y_VEL</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;               <a class="code" href="structmath__bcs_1_1reflect__odd.html">math_bcs::reflect_odd&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==1)&gt;(geom, b, data, ncomp);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == amrex::IntVect(AMREX_D_DECL(0, 0, 1))) { <span class="comment">// for Z_VEL</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;               <a class="code" href="structmath__bcs_1_1reflect__odd.html">math_bcs::reflect_odd&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==2)&gt;(geom, b, data, ncomp);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;         }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassphys__bcs_1_1BCBase_html"><div class="ttname"><a href="classphys__bcs_1_1BCBase.html">phys_bcs::BCBase</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1284</div></div>
 <div class="ttc" id="astructmath__bcs_1_1wall__scalars_html"><div class="ttname"><a href="structmath__bcs_1_1wall__scalars.html">math_bcs::wall_scalars</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1104</div></div>
 <div class="ttc" id="aclassphys__bcs_1_1BCNoSlipWall_html"><div class="ttname"><a href="classphys__bcs_1_1BCNoSlipWall.html">phys_bcs::BCNoSlipWall</a></div><div class="ttdef"><b>Definition:</b> BCNoSlipWall.H:12</div></div>
+<div class="ttc" id="aclassphys__bcs_1_1BCNoSlipWall_html_a05dff3e06aaefeb26e6727bf910643b5"><div class="ttname"><a href="classphys__bcs_1_1BCNoSlipWall.html#a05dff3e06aaefeb26e6727bf910643b5">phys_bcs::BCNoSlipWall::isNoSlipWall</a></div><div class="ttdeci">bool isNoSlipWall() override</div><div class="ttdef"><b>Definition:</b> BCNoSlipWall.H:16</div></div>
 <div class="ttc" id="astructmath__bcs_1_1reflect__odd_html"><div class="ttname"><a href="structmath__bcs_1_1reflect__odd.html">math_bcs::reflect_odd</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:339</div></div>
 <div class="ttc" id="aERF_8H_html"><div class="ttname"><a href="ERF_8H.html">ERF.H</a></div></div>
-<div class="ttc" id="aclassphys__bcs_1_1BCNoSlipWall_html_a638bc49af1aa2d2909ad6a54aae0bfd7"><div class="ttname"><a href="classphys__bcs_1_1BCNoSlipWall.html#a638bc49af1aa2d2909ad6a54aae0bfd7">phys_bcs::BCNoSlipWall::applyBC</a></div><div class="ttdeci">void applyBC(const amrex::Geometry geom, amrex::Vector&lt; MultiFab * &gt; &amp;vars) override</div><div class="ttdef"><b>Definition:</b> BCNoSlipWall.H:16</div></div>
+<div class="ttc" id="aclassphys__bcs_1_1BCNoSlipWall_html_a638bc49af1aa2d2909ad6a54aae0bfd7"><div class="ttname"><a href="classphys__bcs_1_1BCNoSlipWall.html#a638bc49af1aa2d2909ad6a54aae0bfd7">phys_bcs::BCNoSlipWall::applyBC</a></div><div class="ttdeci">void applyBC(const amrex::Geometry geom, amrex::Vector&lt; MultiFab * &gt; &amp;vars) override</div><div class="ttdef"><b>Definition:</b> BCNoSlipWall.H:18</div></div>
 <div class="ttc" id="aBCBase_8H_html"><div class="ttname"><a href="BCBase_8H.html">BCBase.H</a></div></div>
 <div class="ttc" id="anamespacephys__bcs_html"><div class="ttname"><a href="namespacephys__bcs.html">phys_bcs</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1282</div></div>
 <!-- start footer part -->

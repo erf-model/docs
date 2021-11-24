@@ -28,5 +28,6 @@ var searchData=
   ['iomanager_2eh_181',['IOManager.H',['../IOManager_8H.html',1,'']]],
   ['is_5fopen_182',['is_open',['../classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379',1,'ncutils::NCFile']]],
   ['is_5froot_183',['is_root',['../classncutils_1_1NCGroup.html#ae5c17dd9f2962cbbd14397548450e5c1',1,'ncutils::NCGroup']]],
-  ['isinterior_184',['isInterior',['../classphys__bcs_1_1BCBase.html#a6a190d4f901b7bbcab641216f2e09161',1,'phys_bcs::BCBase::isInterior()'],['../classphys__bcs_1_1BCInterior.html#a5232d0ca62cc8819606c0818a65f6267',1,'phys_bcs::BCInterior::isInterior()']]]
+  ['isinterior_184',['isInterior',['../classphys__bcs_1_1BCBase.html#a6a190d4f901b7bbcab641216f2e09161',1,'phys_bcs::BCBase::isInterior()'],['../classphys__bcs_1_1BCInterior.html#a5232d0ca62cc8819606c0818a65f6267',1,'phys_bcs::BCInterior::isInterior()']]],
+  ['isnoslipwall_185',['isNoSlipWall',['../classphys__bcs_1_1BCBase.html#a2466079739b05371ea4624b839028731',1,'phys_bcs::BCBase::isNoSlipWall()'],['../classphys__bcs_1_1BCNoSlipWall.html#a05dff3e06aaefeb26e6727bf910643b5',1,'phys_bcs::BCNoSlipWall::isNoSlipWall()']]]
 ];
