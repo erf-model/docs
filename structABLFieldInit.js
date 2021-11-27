@@ -4,7 +4,7 @@ var structABLFieldInit =
     [ "init_params", "structABLFieldInit.html#a25586bdc7b5eb445305810f0d163fc71", null ],
     [ "init_tke", "structABLFieldInit.html#a24b31e101042b3547d7e54f01b30a3d8", null ],
     [ "operator()", "structABLFieldInit.html#a8710f7f1f3cac445b61cab7499c8afc9", null ],
-    [ "perturb_temperature", "structABLFieldInit.html#a85a880081c6dffb3dd8c7a2529073f84", null ],
+    [ "perturb_temperature", "structABLFieldInit.html#a389f46ddfb9e954ba375251bd9810e6c", null ],
     [ "m_deltaT", "structABLFieldInit.html#a43e816a06a5e4c64fd2b16ef0e663fb3", null ],
     [ "m_deltaU", "structABLFieldInit.html#a6b3553d0d012abd666beae3145fa95d2", null ],
     [ "m_deltaV", "structABLFieldInit.html#ae8bc514d345c9ebe0aa4edfbe6ea4e78", null ],
@@ -21,6 +21,8 @@ var structABLFieldInit =
     [ "m_thvv_d", "structABLFieldInit.html#a354a7826001e94310f9b97ec452640c5", null ],
     [ "m_tke_init", "structABLFieldInit.html#a04b886b2e8c0ca0f590ec9ccaf9e1438", null ],
     [ "m_Uperiods", "structABLFieldInit.html#a7db7b372ca41c004bccefa7c7172c2cc", null ],
-    [ "m_vel", "structABLFieldInit.html#a3678c6b171e07199824b49212da122e8", null ],
+    [ "m_vel_x", "structABLFieldInit.html#a7dc95a26dceae65db5a964ed03b0a743", null ],
+    [ "m_vel_y", "structABLFieldInit.html#a375ebe71fd6e8c53391a90872a3b8f51", null ],
+    [ "m_vel_z", "structABLFieldInit.html#afb760de7870e5209fdd3e5cf1d3938a3", null ],
     [ "m_Vperiods", "structABLFieldInit.html#a67fa6c3ea58c0cad42aeb50043d543c4", null ]
 ];
