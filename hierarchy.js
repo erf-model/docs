@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "ABLFieldInit", "structABLFieldInit.html", null ],
     [ "phys_bcs::BCBase", "classphys__bcs_1_1BCBase.html", [
       [ "phys_bcs::BCDirichlet< IDIR, Bound >", "classphys__bcs_1_1BCDirichlet.html", null ],
       [ "phys_bcs::BCDummy", "classphys__bcs_1_1BCDummy.html", null ],
