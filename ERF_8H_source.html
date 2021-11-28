@@ -218,341 +218,356 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordtype">void</span> erf_enforce_hse(amrex::Vector&lt;amrex::Real&gt;&amp; dens,</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                       amrex::Vector&lt;amrex::Real&gt;&amp; pres);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">  //! Initialize grid data at problem start-up.</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> initData() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keywordtype">void</span> initDataProb(amrex::MultiFab&amp; S_new,</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                    amrex::MultiFab&amp; U_new,</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    amrex::MultiFab&amp; V_new,</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    amrex::MultiFab&amp; W_new);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">  //! Get problem metrics.</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment"></span>  amrex::MultiFab* Area();</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  amrex::MultiFab&amp; Area(<span class="keywordtype">int</span> dir);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">  //! The volume of the multifab.</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"></span>  amrex::MultiFab&amp; Volume();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">  //! Initialize Rayleigh damping profiles</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> initRayleigh();</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">  //! Initialize grid data at problem start-up.</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> initData() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordtype">void</span> initDataProb(amrex::MultiFab&amp; S_new,</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                    amrex::MultiFab&amp; U_new,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                    amrex::MultiFab&amp; V_new,</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    amrex::MultiFab&amp; W_new);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">  //! Get problem metrics.</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment"></span>  amrex::MultiFab* Area();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  amrex::MultiFab&amp; Area(<span class="keywordtype">int</span> dir);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">  //! Set time levels of state data.</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> setTimeLevel(</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    amrex::Real time, amrex::Real dt_old, amrex::Real dt_new) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">  //! Initialize data on this level from another ERF (during regrid).</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> init(amrex::AmrLevel&amp; old) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">  //! The volume of the multifab.</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment"></span>  amrex::MultiFab&amp; Volume();</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">  //! Set time levels of state data.</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> setTimeLevel(</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    amrex::Real time, amrex::Real dt_old, amrex::Real dt_new) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">  /** Initialize data on this level after regridding if old level did not</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">   *  previously exist</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> init() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">  //! for the Amr class to do timed load balances.</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">int</span> WorkEstType()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> Work_Estimate_Type; }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">  //! Initialize data on this level from another ERF (during regrid).</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> init(amrex::AmrLevel&amp; old) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">  /** Initialize data on this level after regridding if old level did not</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">   *  previously exist</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> init() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">  //! Proceed with next timestep?</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">int</span> okToContinue() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">  //! for the Amr class to do timed load balances.</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">int</span> WorkEstType()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> Work_Estimate_Type; }</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">  //! Advance grids at this level in time.</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> amrex::Real</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  advance(amrex::Real time, amrex::Real dt, <span class="keywordtype">int</span> iteration, <span class="keywordtype">int</span> ncycle) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">  //! Estimate time step.</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment"></span>  amrex::Real estTimeStep(amrex::Real dt_old);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">  //! Proceed with next timestep?</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">int</span> okToContinue() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">  //! Advance grids at this level in time.</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> amrex::Real</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  advance(amrex::Real time, amrex::Real dt, <span class="keywordtype">int</span> iteration, <span class="keywordtype">int</span> ncycle) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">  //! Compute initial time step.</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment"></span>  amrex::Real initialTimeStep();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">  //! Estimate time step.</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment"></span>  amrex::Real estTimeStep(amrex::Real dt_old);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">  //! Compute initial `dt&#39;.</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> computeInitialDt(</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">int</span> finest_level,</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">int</span> sub_cycle,</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    amrex::Vector&lt;int&gt;&amp; n_cycle,</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">const</span> amrex::Vector&lt;amrex::IntVect&gt;&amp; ref_ratio,</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    amrex::Vector&lt;amrex::Real&gt;&amp; dt_level,</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    amrex::Real stop_time) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">  //! Compute new `dt&#39;.</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> computeNewDt(</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">int</span> finest_level,</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">int</span> sub_cycle,</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    amrex::Vector&lt;int&gt;&amp; n_cycle,</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">const</span> amrex::Vector&lt;amrex::IntVect&gt;&amp; ref_ratio,</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    amrex::Vector&lt;amrex::Real&gt;&amp; dt_min,</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    amrex::Vector&lt;amrex::Real&gt;&amp; dt_level,</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    amrex::Real stop_time,</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">int</span> post_regrid_flag) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">  //! Allocate data at old time.</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> allocOldData() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">  //! Compute initial time step.</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment"></span>  amrex::Real initialTimeStep();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">  //! Compute initial `dt&#39;.</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> computeInitialDt(</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">int</span> finest_level,</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordtype">int</span> sub_cycle,</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    amrex::Vector&lt;int&gt;&amp; n_cycle,</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keyword">const</span> amrex::Vector&lt;amrex::IntVect&gt;&amp; ref_ratio,</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    amrex::Vector&lt;amrex::Real&gt;&amp; dt_level,</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    amrex::Real stop_time) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">  //! Compute new `dt&#39;.</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> computeNewDt(</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">int</span> finest_level,</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">int</span> sub_cycle,</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    amrex::Vector&lt;int&gt;&amp; n_cycle,</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keyword">const</span> amrex::Vector&lt;amrex::IntVect&gt;&amp; ref_ratio,</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    amrex::Vector&lt;amrex::Real&gt;&amp; dt_min,</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    amrex::Vector&lt;amrex::Real&gt;&amp; dt_level,</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    amrex::Real stop_time,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">int</span> post_regrid_flag) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">  //! Remove data at old time.</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> removeOldData() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">  //! Allocate data at old time.</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> allocOldData() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">  //! Passes some data about the grid to a Fortran module.</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> setGridInfo();</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="comment">// Print information about energy budget.</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <span class="comment">//void do_energy_diagnostics();</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">  //! Do work after timestep().</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> post_timestep(<span class="keywordtype">int</span> iteration) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">  //! Remove data at old time.</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> removeOldData() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">  //! Passes some data about the grid to a Fortran module.</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> setGridInfo();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="comment">// Print information about energy budget.</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="comment">//void do_energy_diagnostics();</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">  //! Contains operations to be done only after a full coarse timestep.</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> postCoarseTimeStep(amrex::Real cumtime) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">  //! Do work after timestep().</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> post_timestep(<span class="keywordtype">int</span> iteration) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">  //! Do work after regrid().</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> post_regrid(<span class="keywordtype">int</span> lbase, <span class="keywordtype">int</span> new_finest) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">  //! Contains operations to be done only after a full coarse timestep.</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> postCoarseTimeStep(amrex::Real cumtime) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">  //! Do work after a restart().</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> post_restart() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">  //! Do work after regrid().</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> post_regrid(<span class="keywordtype">int</span> lbase, <span class="keywordtype">int</span> new_finest) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">  //! Do work after init().</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> post_init(amrex::Real stop_time) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">  //! Do work after a restart().</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> post_restart() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">  //! Error estimation for regridding.</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> errorEst(</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    amrex::TagBoxArray&amp; tb,</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordtype">int</span> clearval,</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">int</span> tagval,</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    amrex::Real time,</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">int</span> n_error_buf = 0,</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordtype">int</span> ngrow = 0) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">  /** Returns a MultiFab containing the derived data for this level.</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">   * The user is responsible for deleting this pointer when done</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">   * with it.  If ngrow&gt;0 the MultiFab is built on the appropriately</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">   * grown BoxArray.</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keyword">virtual</span> std::unique_ptr&lt;amrex::MultiFab&gt;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  derive(<span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">int</span> ngrow) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">  /** This version of derive() fills the dcomp&#39;th component of mf with the</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">   * derived quantity.</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> derive(</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keyword">const</span> std::string&amp; name,</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    amrex::Real time,</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    amrex::MultiFab&amp; mf,</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordtype">int</span> dcomp) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> numGrow();</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> applyBCs( <span class="keyword">const</span> amrex::Geometry geom, amrex::Vector&lt;MultiFab*&gt;&amp; vars) {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; 2*AMREX_SPACEDIM; dir++) {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      bc_recs[dir]-&gt;applyBC(geom, vars);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  }</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> lo_z_is_no_slip;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> hi_z_is_no_slip;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">  //! Do work after init().</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> post_init(amrex::Real stop_time) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">  //! Error estimation for regridding.</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> errorEst(</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    amrex::TagBoxArray&amp; tb,</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">int</span> clearval,</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordtype">int</span> tagval,</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    amrex::Real time,</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">int</span> n_error_buf = 0,</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordtype">int</span> ngrow = 0) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">  /** Returns a MultiFab containing the derived data for this level.</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">   * The user is responsible for deleting this pointer when done</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">   * with it.  If ngrow&gt;0 the MultiFab is built on the appropriately</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">   * grown BoxArray.</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keyword">virtual</span> std::unique_ptr&lt;amrex::MultiFab&gt;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  derive(<span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">int</span> ngrow) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">  /** This version of derive() fills the dcomp&#39;th component of mf with the</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">   * derived quantity.</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> derive(</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    amrex::Real time,</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    amrex::MultiFab&amp; mf,</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">int</span> dcomp) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> numGrow();</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> applyBCs( <span class="keyword">const</span> amrex::Geometry geom, amrex::Vector&lt;MultiFab*&gt;&amp; vars) {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; 2*AMREX_SPACEDIM; dir++) {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      bc_recs[dir]-&gt;applyBC(geom, vars);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  }</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  amrex::Real volWgtSum( <span class="keyword">const</span> std::string&amp; name,</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                         amrex::Real time,</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                         <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>,</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                         <span class="keywordtype">bool</span> finemask = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  amrex::Real volWgtSquaredSum( <span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  amrex::Real volWgtSumMF( <span class="keyword">const</span> amrex::MultiFab&amp; mf,</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                           <span class="keywordtype">int</span> comp,</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                           <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>,</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                           <span class="keywordtype">bool</span> finemask = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  amrex::Real volWgtSquaredSumDiff( <span class="keywordtype">int</span> comp, amrex::Real time, <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  amrex::Real maxDerive( <span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> lo_z_is_no_slip;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> hi_z_is_no_slip;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  amrex::Real volWgtSum( <span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                         amrex::Real time,</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                         <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                         <span class="keywordtype">bool</span> finemask = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  amrex::Real volWgtSquaredSum( <span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  amrex::Real volWgtSumMF( <span class="keyword">const</span> amrex::MultiFab&amp; mf,</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                           <span class="keywordtype">int</span> comp,</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                           <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                           <span class="keywordtype">bool</span> finemask = <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> FirstAdv, NumAdv;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="comment">// This MultiFab is on the coarser level.  This is useful for the coarser</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="comment">// level to mask out the finer level.  We only build this when it is needed.</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="comment">// This coarse MultiFab has to live on the fine level because it must be</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="comment">// updated even when only the fine level changes.</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  amrex::MultiFab fine_mask;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  amrex::MultiFab&amp; build_fine_mask();</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  amrex::YAFluxRegister flux_reg;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  amrex::YAFluxRegister&amp; getFluxReg();</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  amrex::YAFluxRegister&amp; getFluxReg(<span class="keywordtype">int</span> lev);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  amrex::Real volWgtSquaredSumDiff( <span class="keywordtype">int</span> comp, amrex::Real time, <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  amrex::Real maxDerive( <span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> FirstAdv, NumAdv;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="comment">// This MultiFab is on the coarser level.  This is useful for the coarser</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="comment">// level to mask out the finer level.  We only build this when it is needed.</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="comment">// This coarse MultiFab has to live on the fine level because it must be</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="comment">// updated even when only the fine level changes.</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  amrex::MultiFab fine_mask;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  amrex::MultiFab&amp; build_fine_mask();</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  amrex::YAFluxRegister flux_reg;</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="keywordtype">void</span> avgDown();</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keywordtype">void</span> avgDown(<span class="keywordtype">int</span> state_indx);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  amrex::YAFluxRegister&amp; getFluxReg();</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  amrex::YAFluxRegister&amp; getFluxReg(<span class="keywordtype">int</span> lev);</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classIOManager.html">IOManager</a>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  <span class="keywordtype">void</span> avgDown();</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="keywordtype">void</span> avgDown(<span class="keywordtype">int</span> state_indx);</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="comment">// io manager</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  std::unique_ptr&lt;IOManager&gt; io_mgr;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="comment">// Build a mask that ghost cells overlapping with interior cells in the same</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="comment">// multifab are set to 0, whereas others are set to 1.</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  amrex::Vector&lt;std::unique_ptr&lt;amrex::iMultiFab&gt;&gt; ib_mask;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  <span class="keyword">const</span> amrex::iMultiFab* build_interior_boundary_mask(<span class="keywordtype">int</span> ng);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="comment">  /// A state array with ghost zones.</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="comment"></span>  amrex::MultiFab Sborder;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> clear_prob();</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> read_params();</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> read_tagging_params();</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  <span class="keyword">template</span>&lt;<span class="keywordtype">int</span> DIM, math_bcs::BCBound Bound&gt;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="keyword">static</span> std::unique_ptr&lt;phys_bcs::BCBase&gt; initialize_bcs(<span class="keyword">const</span> std::string&amp; bc_char);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="keywordtype">void</span> init1DArrays();</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classIOManager.html">IOManager</a>;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  <span class="comment">// io manager</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  std::unique_ptr&lt;IOManager&gt; io_mgr;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <span class="comment">// Build a mask that ghost cells overlapping with interior cells in the same</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="comment">// multifab are set to 0, whereas others are set to 1.</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  amrex::Vector&lt;std::unique_ptr&lt;amrex::iMultiFab&gt;&gt; ib_mask;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keyword">const</span> amrex::iMultiFab* build_interior_boundary_mask(<span class="keywordtype">int</span> ng);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">  /// A state array with ghost zones.</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment"></span>  amrex::MultiFab Sborder;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> clear_prob();</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> read_params();</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  ERF&amp; getLevel(<span class="keywordtype">int</span> lev);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> read_tagging_params();</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  <span class="keywordtype">void</span> reflux();</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  <span class="keywordtype">void</span> buildMetrics();</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">  /// integrate derived quantities over domain</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="comment"></span>  amrex::Real</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  sumDerive(<span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  <span class="keywordtype">void</span> sum_integrated_quantities();</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  <span class="comment">//void write_info();</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  <span class="keywordtype">void</span> stopJob();</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  <span class="comment">// ***************************************************************************</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  <span class="comment">// The data or the member variables</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  amrex::MultiFab volume;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  amrex::MultiFab area[AMREX_SPACEDIM];</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  <span class="keywordtype">int</span> m_ngrow;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  <span class="comment">// ***************************************************************************</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  <span class="comment">// Static data members.</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> signalStopJob;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> dump_old;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> verbose;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  <span class="keyword">static</span> std::string coupling_type;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> do_reflux;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> do_avg_down;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> sum_interval;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  <span class="keyword">static</span> amrex::Real sum_per;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  <span class="keyword">static</span> amrex::Real initial_dt;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  <span class="keyword">static</span> amrex::Real fixed_dt;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  <span class="keyword">static</span> amrex::Real max_dt;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  <span class="keyword">static</span> amrex::Real dt_cutoff;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  <span class="keyword">static</span> amrex::Real init_shrink;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  <span class="keyword">static</span> amrex::Real change_max;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  <span class="keyword">static</span> amrex::Real cfl;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;std::unique_ptr&lt;phys_bcs::BCBase&gt; &gt; bc_recs;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">  /** for keeping track of the amount of CPU time used -- this will persist</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="comment">   * after restarts</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  <span class="keyword">static</span> amrex::Real previousCPUTimeUsed;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  <span class="keyword">static</span> amrex::Real startCPUTime;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  <span class="keyword">static</span> amrex::Real getCPUTime();</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="keywordtype">bool</span> FillPatchedOldState_ok;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="comment">  /// There can be only one Diffusion object, it covers all levels.</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="comment"></span>  <span class="keyword">static</span> <span class="keyword">class </span>Diffusion* diffusion;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  <span class="keyword">template</span>&lt;<span class="keywordtype">int</span> DIM, math_bcs::BCBound Bound&gt;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  <span class="keyword">static</span> std::unique_ptr&lt;phys_bcs::BCBase&gt; initialize_bcs(<span class="keyword">const</span> std::string&amp; bc_char);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  ERF&amp; getLevel(<span class="keywordtype">int</span> lev);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  <span class="keywordtype">void</span> reflux();</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  <span class="keywordtype">void</span> buildMetrics();</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment">  /// integrate derived quantities over domain</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment"></span>  amrex::Real</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  sumDerive(<span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <span class="keywordtype">void</span> sum_integrated_quantities();</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  <span class="comment">//void write_info();</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  <span class="keywordtype">void</span> stopJob();</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  <span class="comment">// The data or the member variables</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  amrex::MultiFab volume;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  amrex::MultiFab area[AMREX_SPACEDIM];</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <span class="keywordtype">int</span> m_ngrow;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  <span class="comment">// Static data members.</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> signalStopJob;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> dump_old;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> verbose;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  <span class="keyword">static</span> std::string coupling_type;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> do_reflux;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> do_avg_down;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> sum_interval;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  <span class="keyword">static</span> amrex::Real sum_per;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  <span class="keyword">static</span> amrex::Real initial_dt;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  <span class="keyword">static</span> amrex::Real fixed_dt;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  <span class="keyword">static</span> amrex::Real max_dt;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;  <span class="keyword">static</span> amrex::Real dt_cutoff;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  <span class="keyword">static</span> amrex::Real init_shrink;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;  <span class="keyword">static</span> amrex::Real change_max;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  <span class="keyword">static</span> amrex::Real cfl;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;std::unique_ptr&lt;phys_bcs::BCBase&gt; &gt; bc_recs;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="comment">  /** for keeping track of the amount of CPU time used -- this will persist</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">   * after restarts</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="keyword">static</span> amrex::Real previousCPUTimeUsed;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <span class="keyword">static</span> amrex::Real startCPUTime;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  <span class="keyword">static</span> amrex::Real getCPUTime();</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> num_state_type;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;int&gt; src_list;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  <span class="comment">// Base state quantities: density and pressure, 1 array per AMR level</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; h_dens_hse;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; h_pres_hse;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; d_dens_hse;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; d_pres_hse;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment">/* problem-specific includes */</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Problem_8H.html">Problem.H</a>&gt;</span></div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;};</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  <span class="keywordtype">bool</span> FillPatchedOldState_ok;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="comment">  /// There can be only one Diffusion object, it covers all levels.</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment"></span>  <span class="keyword">static</span> <span class="keyword">class </span>Diffusion* diffusion;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> num_state_type;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;int&gt; src_list;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  <span class="comment">// Base state quantities: density and pressure, 1 array per AMR level</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; h_dens_hse;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; h_pres_hse;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; d_dens_hse;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; d_pres_hse;</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="keywordtype">void</span> <a class="code" href="ERF_8H.html#aab74d50825afd64ca769b7a5438386cd">erf_bcfill_hyp</a>(</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  amrex::Box <span class="keyword">const</span>&amp; bx,</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  amrex::FArrayBox&amp; data,</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> dcomp,</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> numcomp,</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  amrex::Geometry <span class="keyword">const</span>&amp; geom,</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;  <span class="keyword">const</span> amrex::Real time,</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  <span class="keyword">const</span> amrex::Vector&lt;amrex::BCRec&gt;&amp; bcr,</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> bcomp,</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> scomp);</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="keywordtype">void</span> <a class="code" href="ERF_8H.html#ae324a6c6e286c364f21d5c291cf9ea19">erf_nullfill</a>(</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  amrex::Box <span class="keyword">const</span>&amp; bx,</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  amrex::FArrayBox&amp; data,</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> dcomp,</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> numcomp,</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  amrex::Geometry <span class="keyword">const</span>&amp; geom,</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  <span class="keyword">const</span> amrex::Real time,</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  <span class="keyword">const</span> amrex::Vector&lt;amrex::BCRec&gt;&amp; bcr,</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> bcomp,</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> scomp);</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="comment">// Inlines.</span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  <span class="comment">// Mean quantities and tau for Rayleigh damping</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; h_rayleigh_tau;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; h_rayleigh_ubar;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; h_rayleigh_vbar;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; h_rayleigh_thetabar;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; d_rayleigh_tau;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; d_rayleigh_ubar;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; d_rayleigh_vbar;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  <span class="keyword">static</span> amrex::Vector&lt;amrex::Gpu::DeviceVector&lt;amrex::Real&gt; &gt; d_rayleigh_thetabar;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="comment">/* problem-specific includes */</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Problem_8H.html">Problem.H</a>&gt;</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;};</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="keywordtype">void</span> <a class="code" href="ERF_8H.html#aab74d50825afd64ca769b7a5438386cd">erf_bcfill_hyp</a>(</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  amrex::Box <span class="keyword">const</span>&amp; bx,</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  amrex::FArrayBox&amp; data,</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> dcomp,</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> numcomp,</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  amrex::Geometry <span class="keyword">const</span>&amp; geom,</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;  <span class="keyword">const</span> amrex::Real time,</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  <span class="keyword">const</span> amrex::Vector&lt;amrex::BCRec&gt;&amp; bcr,</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> bcomp,</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> scomp);</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;ERF::numGrow()</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;{</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="IndexDefines_8H.html#aaf6046446c90ca7f5b9a7de90b661607">NUM_GROW</a>;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;}</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;amrex::MultiFab*</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;ERF::Area()</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;{</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;  <span class="keywordflow">return</span> area;</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;}</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;amrex::MultiFab&amp;</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;ERF::Area(<span class="keywordtype">int</span> dir)</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;{</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;  <span class="keywordflow">return</span> area[dir];</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;}</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;amrex::MultiFab&amp;</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;ERF::Volume()</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;{</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  <span class="keywordflow">return</span> volume;</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;}</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;ERF&amp;</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;ERF::getLevel(<span class="keywordtype">int</span> lev)</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;{</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;  <span class="keywordflow">return</span> *(ERF*)&amp;parent-&gt;getLevel(lev);</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;}</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160; </div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;ERF::stopJob()</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;{</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;  signalStopJob = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;}</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;amrex::YAFluxRegister&amp;</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;ERF::getFluxReg()</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;{</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;  <span class="keywordflow">return</span> flux_reg;</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;}</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;amrex::YAFluxRegister&amp;</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;ERF::getFluxReg(<span class="keywordtype">int</span> lev)</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;{</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;  <span class="keywordflow">return</span> getLevel(lev).getFluxReg();</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;}</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="keywordtype">void</span> <a class="code" href="ERF_8H.html#ae324a6c6e286c364f21d5c291cf9ea19">erf_nullfill</a>(</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  amrex::Box <span class="keyword">const</span>&amp; bx,</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;  amrex::FArrayBox&amp; data,</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> dcomp,</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> numcomp,</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;  amrex::Geometry <span class="keyword">const</span>&amp; geom,</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;  <span class="keyword">const</span> amrex::Real time,</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;  <span class="keyword">const</span> amrex::Vector&lt;amrex::BCRec&gt;&amp; bcr,</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> bcomp,</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> scomp);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="comment">// Inlines.</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;ERF::numGrow()</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;{</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="IndexDefines_8H.html#aaf6046446c90ca7f5b9a7de90b661607">NUM_GROW</a>;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;}</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;amrex::MultiFab*</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;ERF::Area()</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;{</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  <span class="keywordflow">return</span> area;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;}</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;amrex::MultiFab&amp;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;ERF::Area(<span class="keywordtype">int</span> dir)</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;{</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;  <span class="keywordflow">return</span> area[dir];</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;}</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; </div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;amrex::MultiFab&amp;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;ERF::Volume()</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;{</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;  <span class="keywordflow">return</span> volume;</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;}</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160; </div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;ERF&amp;</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;ERF::getLevel(<span class="keywordtype">int</span> lev)</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;{</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;  <span class="keywordflow">return</span> *(ERF*)&amp;parent-&gt;getLevel(lev);</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;}</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160; </div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;ERF::stopJob()</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;{</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;  signalStopJob = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;}</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160; </div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;amrex::YAFluxRegister&amp;</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;ERF::getFluxReg()</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;{</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;  <span class="keywordflow">return</span> flux_reg;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;}</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160; </div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;amrex::YAFluxRegister&amp;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;ERF::getFluxReg(<span class="keywordtype">int</span> lev)</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;{</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;  <span class="keywordflow">return</span> getLevel(lev).getFluxReg();</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;}</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructTaggingParm_html_a9fa28e411fb22f9995360c3286df5f68"><div class="ttname"><a href="structTaggingParm.html#a9fa28e411fb22f9995360c3286df5f68">TaggingParm::tag_region</a></div><div class="ttdeci">bool tag_region</div><div class="ttdef"><b>Definition:</b> Tagging.H:41</div></div>
@@ -569,7 +584,7 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="ttc" id="aDataStruct_8H_html"><div class="ttname"><a href="DataStruct_8H.html">DataStruct.H</a></div></div>
 <div class="ttc" id="astructTaggingParm_html_a260bb00f5b95576c4cf0f8201aaddc0c"><div class="ttname"><a href="structTaggingParm.html#a260bb00f5b95576c4cf0f8201aaddc0c">TaggingParm::max_dengrad_lev</a></div><div class="ttdeci">int max_dengrad_lev</div><div class="ttdef"><b>Definition:</b> Tagging.H:13</div></div>
 <div class="ttc" id="astructTaggingParm_html_a9592368baf3dff640f9cdba1dcac57bf"><div class="ttname"><a href="structTaggingParm.html#a9592368baf3dff640f9cdba1dcac57bf">TaggingParm::max_denerr_lev</a></div><div class="ttdeci">int max_denerr_lev</div><div class="ttdef"><b>Definition:</b> Tagging.H:11</div></div>
-<div class="ttc" id="aERF_8cpp_html_a9728dd7b52a3acab6ad070edaa243d7a"><div class="ttname"><a href="ERF_8cpp.html#a9728dd7b52a3acab6ad070edaa243d7a">getBCName</a></div><div class="ttdeci">std::string getBCName()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:73</div></div>
+<div class="ttc" id="aERF_8cpp_html_a9728dd7b52a3acab6ad070edaa243d7a"><div class="ttname"><a href="ERF_8cpp.html#a9728dd7b52a3acab6ad070edaa243d7a">getBCName</a></div><div class="ttdeci">std::string getBCName()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:82</div></div>
 <div class="ttc" id="aTagging_8H_html"><div class="ttname"><a href="Tagging_8H.html">Tagging.H</a></div></div>
 <div class="ttc" id="aclassphys__bcs_1_1BCDummy_html"><div class="ttname"><a href="classphys__bcs_1_1BCDummy.html">phys_bcs::BCDummy</a></div><div class="ttdef"><b>Definition:</b> BCDummy.H:9</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
@@ -596,7 +611,7 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="ttc" id="aclassphys__bcs_1_1BCInterior_html"><div class="ttname"><a href="classphys__bcs_1_1BCInterior.html">phys_bcs::BCInterior</a></div><div class="ttdef"><b>Definition:</b> BCInterior.H:9</div></div>
 <div class="ttc" id="astructTaggingParm_html_a8ed3c86bfebee090505be8b2fa232bed"><div class="ttname"><a href="structTaggingParm.html#a8ed3c86bfebee090505be8b2fa232bed">TaggingParm::pressgrad</a></div><div class="ttdeci">amrex::Real pressgrad</div><div class="ttdef"><b>Definition:</b> Tagging.H:17</div></div>
 <div class="ttc" id="aTagging_8cpp_html_a17e231046575d875df55479dff47312c"><div class="ttname"><a href="Tagging_8cpp.html#a17e231046575d875df55479dff47312c">tparm</a></div><div class="ttdeci">TaggingParm tparm</div><div class="ttdef"><b>Definition:</b> Tagging.cpp:6</div></div>
-<div class="ttc" id="aERF_8cpp_html_a85eb8269776aad2fdab8e269a2a03bb1"><div class="ttname"><a href="ERF_8cpp.html#a85eb8269776aad2fdab8e269a2a03bb1">BCNames</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; BCNames</div><div class="ttdef"><b>Definition:</b> ERF.cpp:71</div></div>
+<div class="ttc" id="aERF_8cpp_html_a85eb8269776aad2fdab8e269a2a03bb1"><div class="ttname"><a href="ERF_8cpp.html#a85eb8269776aad2fdab8e269a2a03bb1">BCNames</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; BCNames</div><div class="ttdef"><b>Definition:</b> ERF.cpp:80</div></div>
 <div class="ttc" id="astructTaggingParm_html_a43aa0a46b1080884adffd71848ee1e31"><div class="ttname"><a href="structTaggingParm.html#a43aa0a46b1080884adffd71848ee1e31">TaggingParm::max_temperr_lev</a></div><div class="ttdeci">int max_temperr_lev</div><div class="ttdef"><b>Definition:</b> Tagging.H:29</div></div>
 <div class="ttc" id="aDerive_8cpp_html_adfbe2a8920e709000a1908ac161bddde"><div class="ttname"><a href="Derive_8cpp.html#adfbe2a8920e709000a1908ac161bddde">erf_derpres</a></div><div class="ttdeci">void erf_derpres(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:81</div></div>
 <div class="ttc" id="aBCBase_8H_html"><div class="ttname"><a href="BCBase_8H.html">BCBase.H</a></div></div>

@@ -67,7 +67,7 @@ var NAVTREEINDEX =
 [
 "ABLFieldInit_8H.html",
 "classIOManager.html#a7d90373f66fdbcacbf31bbe42fc2b4a8",
-"structSolverChoice.html#a404f875b4796e931ef346bc11b6c7dcb"
+"structSolverChoice.html#a3dd9fcb274b4d556d88346eeb683d00a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
