@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('ProblemDerive_8H_source.html',''); ini
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structEmptyProbDeriveStruct.html">   11</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structEmptyProbDeriveStruct.html">EmptyProbDeriveStruct</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structEmptyProbDeriveStruct.html#af2ea7a0b4d5319f6bb8b72c296f6dde1">   14</a></span>&#160;  <a class="code" href="structEmptyProbDeriveStruct.html#af2ea7a0b4d5319f6bb8b72c296f6dde1">add</a>(amrex::DeriveList&amp; derive_lst, amrex::DescriptorList&amp; desc_lst)</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structEmptyProbDeriveStruct.html#ae01c9bdca117f8a309af81d976a4ef2b">   14</a></span>&#160;  <a class="code" href="structEmptyProbDeriveStruct.html#ae01c9bdca117f8a309af81d976a4ef2b">add</a>(amrex::DeriveList&amp; <span class="comment">/*derive_lst*/</span>, amrex::DescriptorList&amp; <span class="comment">/*desc_lst*/</span>)</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">// Add derives as follows and define the derive function below:</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">// derive_lst.add(</span></div>
@@ -108,19 +108,19 @@ $(document).ready(function(){initNavTree('ProblemDerive_8H_source.html',''); ini
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// derive_lst.addComponent(&quot;varname&quot;, desc_lst, State_Type, 0, NVAR);</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  }</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structEmptyProbDeriveStruct.html#a33fe1395aa9b4ab7df828c94851663a5">   23</a></span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structEmptyProbDeriveStruct.html#a33fe1395aa9b4ab7df828c94851663a5">erf_varname</a>(</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">const</span> amrex::Box&amp; bx,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    amrex::FArrayBox&amp; derfab,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> dcomp,</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structEmptyProbDeriveStruct.html#a3bb5bea88547ae343e0652ac0a2438a3">   23</a></span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structEmptyProbDeriveStruct.html#a3bb5bea88547ae343e0652ac0a2438a3">erf_varname</a>(</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">const</span> amrex::Box&amp; <span class="comment">/*bx*/</span>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    amrex::FArrayBox&amp; <span class="comment">/*derfab*/</span>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> <span class="comment">/*dcomp*/</span>,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> <span class="comment">/*ncomp*/</span>,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">const</span> amrex::FArrayBox&amp; <span class="comment">/*datfab*/</span>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">const</span> amrex::Geometry&amp; <span class="comment">/*geomdata*/</span>,</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    amrex::Real <span class="comment">/*time*/</span>,</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* <span class="comment">/*bcrec*/</span>,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> level)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> <span class="comment">/*level*/</span>)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">auto</span> arr = derfab.array();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">//auto const dat = datfab.array();</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//auto arr = derfab.array();</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// amrex::ParallelFor(</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//  bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept {</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// do something with arr</span></div>
@@ -137,10 +137,10 @@ $(document).ready(function(){initNavTree('ProblemDerive_8H_source.html',''); ini
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructEmptyProbDeriveStruct_html_a33fe1395aa9b4ab7df828c94851663a5"><div class="ttname"><a href="structEmptyProbDeriveStruct.html#a33fe1395aa9b4ab7df828c94851663a5">EmptyProbDeriveStruct::erf_varname</a></div><div class="ttdeci">static void erf_varname(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real, const int *, int level)</div><div class="ttdef"><b>Definition:</b> ProblemDerive.H:23</div></div>
-<div class="ttc" id="astructEmptyProbDeriveStruct_html_af2ea7a0b4d5319f6bb8b72c296f6dde1"><div class="ttname"><a href="structEmptyProbDeriveStruct.html#af2ea7a0b4d5319f6bb8b72c296f6dde1">EmptyProbDeriveStruct::add</a></div><div class="ttdeci">static void add(amrex::DeriveList &amp;derive_lst, amrex::DescriptorList &amp;desc_lst)</div><div class="ttdef"><b>Definition:</b> ProblemDerive.H:14</div></div>
 <div class="ttc" id="astructEmptyProbDeriveStruct_html"><div class="ttname"><a href="structEmptyProbDeriveStruct.html">EmptyProbDeriveStruct</a></div><div class="ttdef"><b>Definition:</b> ProblemDerive.H:11</div></div>
+<div class="ttc" id="astructEmptyProbDeriveStruct_html_a3bb5bea88547ae343e0652ac0a2438a3"><div class="ttname"><a href="structEmptyProbDeriveStruct.html#a3bb5bea88547ae343e0652ac0a2438a3">EmptyProbDeriveStruct::erf_varname</a></div><div class="ttdeci">static void erf_varname(const amrex::Box &amp;, amrex::FArrayBox &amp;, int, int, const amrex::FArrayBox &amp;, const amrex::Geometry &amp;, amrex::Real, const int *, int)</div><div class="ttdef"><b>Definition:</b> ProblemDerive.H:23</div></div>
 <div class="ttc" id="aERF_8H_html"><div class="ttname"><a href="ERF_8H.html">ERF.H</a></div></div>
+<div class="ttc" id="astructEmptyProbDeriveStruct_html_ae01c9bdca117f8a309af81d976a4ef2b"><div class="ttname"><a href="structEmptyProbDeriveStruct.html#ae01c9bdca117f8a309af81d976a4ef2b">EmptyProbDeriveStruct::add</a></div><div class="ttdeci">static void add(amrex::DeriveList &amp;, amrex::DescriptorList &amp;)</div><div class="ttdef"><b>Definition:</b> ProblemDerive.H:14</div></div>
 <div class="ttc" id="aProblemDerive_8H_html_ade64264c642de489427e75ebda0ea30a"><div class="ttname"><a href="ProblemDerive_8H.html#ade64264c642de489427e75ebda0ea30a">add_problem_derives</a></div><div class="ttdeci">void add_problem_derives(Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition:</b> ProblemDerive.H:45</div></div>
 <div class="ttc" id="aIndexDefines_8H_html"><div class="ttname"><a href="IndexDefines_8H.html">IndexDefines.H</a></div></div>
 <!-- start footer part -->

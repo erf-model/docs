@@ -187,7 +187,7 @@ template&lt;int IDIR, math_bcs::BCBound Bound&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classphys__bcs_1_1BCBase.html#aefec8a7063fb373aa67f6e788d6c58fb">phys_bcs::BCBase</a>.</p>
+<p>Implements <a class="el" href="classphys__bcs_1_1BCBase.html#a324a5127a569b3f816d9f20506ff137e">phys_bcs::BCBase</a>.</p>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                                                                 {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> ((geom.isPeriodic(IDIR)) || (vars.size() == 0)) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
@@ -205,26 +205,26 @@ template&lt;int IDIR, math_bcs::BCBound Bound&gt; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            amrex::IntVect type = b.type();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (type == amrex::IntVect::Zero) {  <span class="comment">// for state type variable</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;               <a class="code" href="structmath__bcs_1_1foextrap.html">math_bcs::foextrap&lt;IDIR, Bound&gt;::apply_cell_based</a>(geom, b, data, ncomp);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;               <a class="code" href="structmath__bcs_1_1reflect__even.html">math_bcs::reflect_even&lt;IDIR, Bound&gt;::apply_cell_based</a>(geom, b, data, ncomp);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == amrex::IntVect(AMREX_D_DECL(1, 0, 0))) { <span class="comment">// for X_VEL</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;               <span class="keywordflow">if</span> (IDIR == 0) { <span class="comment">// x-vel on x-faces</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                   <a class="code" href="structmath__bcs_1_1reflect__odd.html">math_bcs::reflect_odd&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==0)&gt;(geom, b, data, ncomp);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;               } <span class="keywordflow">else</span> { <span class="comment">// x-vel on y- or z-faces</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                   <a class="code" href="structmath__bcs_1_1foextrap.html">math_bcs::foextrap&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==0)&gt;(geom, b, data, ncomp);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                   <a class="code" href="structmath__bcs_1_1reflect__even.html">math_bcs::reflect_even&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==0)&gt;(geom, b, data, ncomp);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;               }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == amrex::IntVect(AMREX_D_DECL(0, 1, 0))) { <span class="comment">// for Y_VEL</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;               <span class="keywordflow">if</span> (IDIR == 1) { <span class="comment">// y-vel on y-faces</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                   <a class="code" href="structmath__bcs_1_1reflect__odd.html">math_bcs::reflect_odd&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==1)&gt;(geom, b, data, ncomp);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;               } <span class="keywordflow">else</span> { <span class="comment">// y-vel on x- or z-faces</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                   <a class="code" href="structmath__bcs_1_1foextrap.html">math_bcs::foextrap&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==1)&gt;(geom, b, data, ncomp);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                   <a class="code" href="structmath__bcs_1_1reflect__even.html">math_bcs::reflect_even&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==1)&gt;(geom, b, data, ncomp);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;               }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == amrex::IntVect(AMREX_D_DECL(0, 0, 1))) { <span class="comment">// for Z_VEL</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;               <span class="keywordflow">if</span> (IDIR == 2) { <span class="comment">// z-vel on z-faces</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                   <a class="code" href="structmath__bcs_1_1reflect__odd.html">math_bcs::reflect_odd&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==2)&gt;(geom, b, data, ncomp);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;               } <span class="keywordflow">else</span> { <span class="comment">// z-vel on x- or y-faces</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                   <a class="code" href="structmath__bcs_1_1foextrap.html">math_bcs::foextrap&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==2)&gt;(geom, b, data, ncomp);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                   <a class="code" href="structmath__bcs_1_1reflect__even.html">math_bcs::reflect_even&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==2)&gt;(geom, b, data, ncomp);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;               }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;               <a class="code" href="structmath__bcs_1_1foextrap.html">math_bcs::foextrap&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==2)&gt;(geom, b, data, ncomp);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;               <a class="code" href="structmath__bcs_1_1reflect__even.html">math_bcs::reflect_even&lt;IDIR, Bound&gt;::template</a> apply_face_based&lt;(IDIR==2)&gt;(geom, b, data, ncomp);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;         }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;     }</div>
@@ -239,8 +239,8 @@ template&lt;int IDIR, math_bcs::BCBound Bound&gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructmath__bcs_1_1foextrap_html"><div class="ttname"><a href="structmath__bcs_1_1foextrap.html">math_bcs::foextrap</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:11</div></div>
 <div class="ttc" id="astructmath__bcs_1_1reflect__odd_html"><div class="ttname"><a href="structmath__bcs_1_1reflect__odd.html">math_bcs::reflect_odd</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:339</div></div>
+<div class="ttc" id="astructmath__bcs_1_1reflect__even_html"><div class="ttname"><a href="structmath__bcs_1_1reflect__even.html">math_bcs::reflect_even</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:159</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

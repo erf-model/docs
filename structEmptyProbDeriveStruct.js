@@ -1,5 +1,5 @@
 var structEmptyProbDeriveStruct =
 [
-    [ "add", "structEmptyProbDeriveStruct.html#af2ea7a0b4d5319f6bb8b72c296f6dde1", null ],
-    [ "erf_varname", "structEmptyProbDeriveStruct.html#a33fe1395aa9b4ab7df828c94851663a5", null ]
+    [ "add", "structEmptyProbDeriveStruct.html#ae01c9bdca117f8a309af81d976a4ef2b", null ],
+    [ "erf_varname", "structEmptyProbDeriveStruct.html#a3bb5bea88547ae343e0652ac0a2438a3", null ]
 ];

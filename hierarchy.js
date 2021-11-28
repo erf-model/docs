@@ -16,12 +16,6 @@ var hierarchy =
     [ "EmptyProbTagStruct", "structEmptyProbTagStruct.html", null ],
     [ "ERFHypFillExtDir", "structERFHypFillExtDir.html", null ],
     [ "FCFillExtDirDummy", "structFCFillExtDirDummy.html", null ],
-    [ "math_bcs::foextrap< IDIR, Bound >", "structmath__bcs_1_1foextrap.html", null ],
-    [ "math_bcs::foextrap< IDIR, BCBound::lower >", "structmath__bcs_1_1foextrap_3_01IDIR_00_01BCBound_1_1lower_01_4.html", null ],
-    [ "math_bcs::foextrap< IDIR, BCBound::upper >", "structmath__bcs_1_1foextrap_3_01IDIR_00_01BCBound_1_1upper_01_4.html", null ],
-    [ "math_bcs::hoextrap< IDIR, Bound >", "structmath__bcs_1_1hoextrap.html", null ],
-    [ "math_bcs::hoextrap< IDIR, BCBound::lower >", "structmath__bcs_1_1hoextrap_3_01IDIR_00_01BCBound_1_1lower_01_4.html", null ],
-    [ "math_bcs::hoextrap< IDIR, BCBound::upper >", "structmath__bcs_1_1hoextrap_3_01IDIR_00_01BCBound_1_1upper_01_4.html", null ],
     [ "IntegratorBase< T >", "classIntegratorBase.html", [
       [ "FEIntegrator< T >", "classFEIntegrator.html", null ],
       [ "RKIntegrator< T >", "classRKIntegrator.html", null ]
@@ -33,12 +27,18 @@ var hierarchy =
     [ "LevelBld", null, [
       [ "ERFBld", "classERFBld.html", null ]
     ] ],
+    [ "math_bcs::lin_extrap< IDIR, Bound >", "structmath__bcs_1_1lin__extrap.html", null ],
+    [ "math_bcs::lin_extrap< IDIR, BCBound::lower >", "structmath__bcs_1_1lin__extrap_3_01IDIR_00_01BCBound_1_1lower_01_4.html", null ],
+    [ "math_bcs::lin_extrap< IDIR, BCBound::upper >", "structmath__bcs_1_1lin__extrap_3_01IDIR_00_01BCBound_1_1upper_01_4.html", null ],
     [ "ncutils::NCDim", "structncutils_1_1NCDim.html", null ],
     [ "ncutils::NCDType", "structncutils_1_1NCDType.html", null ],
     [ "ncutils::NCGroup", "classncutils_1_1NCGroup.html", [
       [ "ncutils::NCFile", "classncutils_1_1NCFile.html", null ]
     ] ],
     [ "ncutils::NCVar", "structncutils_1_1NCVar.html", null ],
+    [ "math_bcs::quad_extrap< IDIR, Bound >", "structmath__bcs_1_1quad__extrap.html", null ],
+    [ "math_bcs::quad_extrap< IDIR, BCBound::lower >", "structmath__bcs_1_1quad__extrap_3_01IDIR_00_01BCBound_1_1lower_01_4.html", null ],
+    [ "math_bcs::quad_extrap< IDIR, BCBound::upper >", "structmath__bcs_1_1quad__extrap_3_01IDIR_00_01BCBound_1_1upper_01_4.html", null ],
     [ "math_bcs::reflect_even< IDIR, Bound >", "structmath__bcs_1_1reflect__even.html", null ],
     [ "math_bcs::reflect_even< IDIR, BCBound::lower >", "structmath__bcs_1_1reflect__even_3_01IDIR_00_01BCBound_1_1lower_01_4.html", null ],
     [ "math_bcs::reflect_even< IDIR, BCBound::upper >", "structmath__bcs_1_1reflect__even_3_01IDIR_00_01BCBound_1_1upper_01_4.html", null ],
