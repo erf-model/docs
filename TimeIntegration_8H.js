@@ -9,6 +9,7 @@ var TimeIntegration_8H =
     [ "ComputeAdvectedQuantityForMom", "TimeIntegration_8H.html#aa1cf510c66651ac7cc4b41796fd1aa32", null ],
     [ "ComputeAdvectedQuantityForState", "TimeIntegration_8H.html#a7555f3ea9581b73befdd315ebd2ed01a", null ],
     [ "ComputeDiffusionFluxForState", "TimeIntegration_8H.html#af5ecf13dba4a36aed4c3fb3600f57874", null ],
+    [ "ComputeExpansionRate", "TimeIntegration_8H.html#ab0728e78e4e4a3f857aac7cca96bff0b", null ],
     [ "ComputeGhostCells", "TimeIntegration_8H.html#ae0317d92e01689ac723ac07807389e3e", null ],
     [ "ComputeStrainRate", "TimeIntegration_8H.html#a2fe4fe7f549852fc424b24209b5ee2ae", null ],
     [ "ComputeStressTerm", "TimeIntegration_8H.html#a042ac6a73b26b24ac787c4b61d7e2bd4", null ],
