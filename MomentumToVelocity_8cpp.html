@@ -243,22 +243,19 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        amrex::ParallelFor(tbx, tby, tbz,</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            velx(i,j,k) = momx(i,j,k)/<a class="code" href="Interpolation_8cpp.html#afc54fb7bdcea030f157ba7fee2c77cc7">InterpolateDensityFromCellToFace</a>(</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                        i, j, k, <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa22501eeeb48d3d47f802dcb78c88f7ae">cons</a>, <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214afcb08b164ac83e09964deb24f2d2e80b">NextOrPrev::prev</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a>,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                        l_spatial_order);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        },</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            vely(i,j,k) = momy(i,j,k)/<a class="code" href="Interpolation_8cpp.html#afc54fb7bdcea030f157ba7fee2c77cc7">InterpolateDensityFromCellToFace</a>(</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                        i, j, k, <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa22501eeeb48d3d47f802dcb78c88f7ae">cons</a>, <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214afcb08b164ac83e09964deb24f2d2e80b">NextOrPrev::prev</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a>,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                        l_spatial_order);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        },</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            velz(i,j,k) = momz(i,j,k)/<a class="code" href="Interpolation_8cpp.html#afc54fb7bdcea030f157ba7fee2c77cc7">InterpolateDensityFromCellToFace</a>(</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                        i, j, k, <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa22501eeeb48d3d47f802dcb78c88f7ae">cons</a>, <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214afcb08b164ac83e09964deb24f2d2e80b">NextOrPrev::prev</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a>,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                        l_spatial_order);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        });</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    } <span class="comment">// end MFIter</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            velx(i,j,k) = momx(i,j,k)/<a class="code" href="Interpolation_8cpp.html#adfd78ca2849f29f2af51416293516e59">InterpolateDensityFromCellToFace</a>(</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                        i, j, k, <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa22501eeeb48d3d47f802dcb78c88f7ae">cons</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a>, l_spatial_order);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        },</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            vely(i,j,k) = momy(i,j,k)/<a class="code" href="Interpolation_8cpp.html#adfd78ca2849f29f2af51416293516e59">InterpolateDensityFromCellToFace</a>(</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                        i, j, k, <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa22501eeeb48d3d47f802dcb78c88f7ae">cons</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a>, l_spatial_order);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        },</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            velz(i,j,k) = momz(i,j,k)/<a class="code" href="Interpolation_8cpp.html#adfd78ca2849f29f2af51416293516e59">InterpolateDensityFromCellToFace</a>(</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                        i, j, k, <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa22501eeeb48d3d47f802dcb78c88f7ae">cons</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a>, l_spatial_order);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        });</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    } <span class="comment">// end MFIter</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="TimeIntegration__driver_8cpp.html#aeb0b358778ff03f09c583208cdd78da5">erf_advance()</a>, <a class="el" href="TimeIntegration__rhs_8cpp.html#ab73de64e50e3bd5cf52370fc3eb2a75c">erf_rhs()</a>, and <a class="el" href="TimeIntegration_8H.html#a9b8064d0c16e244d679bd71336473833">MomentumToVelocity()</a>.</p>
 <div class="dynheader">
@@ -267,8 +264,8 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="MomentumToVelocity_8cpp_a877217d92a6a92cfcbb3f624499a656b_cgraph.png" border="0" usemap="#MomentumToVelocity_8cpp_a877217d92a6a92cfcbb3f624499a656b_cgraph" alt=""/></div>
 <map name="MomentumToVelocity_8cpp_a877217d92a6a92cfcbb3f624499a656b_cgraph" id="MomentumToVelocity_8cpp_a877217d92a6a92cfcbb3f624499a656b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,29,168,56"/>
-<area shape="rect" href="Interpolation_8cpp.html#afc54fb7bdcea030f157ba7fee2c77cc7" title=" " alt="" coords="216,22,417,63"/>
-<area shape="rect" href="Interpolation_8cpp.html#a2a1916c664f436d5845c870925c1c055" title=" " alt="" coords="465,29,660,56"/>
+<area shape="rect" href="Interpolation_8cpp.html#adfd78ca2849f29f2af51416293516e59" title=" " alt="" coords="216,22,417,63"/>
+<area shape="rect" href="Interpolation_8cpp.html#a52762adc9e6b5c96521e6f16dc2c4857" title=" " alt="" coords="465,29,660,56"/>
 </map>
 </div>
 <div class="dynheader">
@@ -288,10 +285,9 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
-<div class="ttc" id="aInterpolation_8cpp_html_afc54fb7bdcea030f157ba7fee2c77cc7"><div class="ttname"><a href="Interpolation_8cpp.html#afc54fb7bdcea030f157ba7fee2c77cc7">InterpolateDensityFromCellToFace</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real InterpolateDensityFromCellToFace(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real &gt; &amp;cons_in, const NextOrPrev &amp;nextOrPrev, const Coord &amp;coordDir, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Interpolation.cpp:7</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
+<div class="ttc" id="aInterpolation_8cpp_html_adfd78ca2849f29f2af51416293516e59"><div class="ttname"><a href="Interpolation_8cpp.html#adfd78ca2849f29f2af51416293516e59">InterpolateDensityFromCellToFace</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real InterpolateDensityFromCellToFace(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real &gt; &amp;cons_in, const Coord &amp;coordDir, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Interpolation.cpp:7</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
-<div class="ttc" id="aDataStruct_8H_html_ad596a227fbfe515f8446447c9582c214afcb08b164ac83e09964deb24f2d2e80b"><div class="ttname"><a href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214afcb08b164ac83e09964deb24f2d2e80b">NextOrPrev::prev</a></div><div class="ttdeci">@ prev</div></div>
 <div class="ttc" id="anamespaceIntVar_html_a801598ff83cb990c53b1669bd616996fa22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:20</div></div>
 <div class="ttc" id="aMomentumToVelocity_8cpp_html_a877217d92a6a92cfcbb3f624499a656b"><div class="ttname"><a href="MomentumToVelocity_8cpp.html#a877217d92a6a92cfcbb3f624499a656b">MomentumToVelocity</a></div><div class="ttdeci">void MomentumToVelocity(MultiFab &amp;xvel, MultiFab &amp;yvel, MultiFab &amp;zvel, MultiFab &amp;cons_in, MultiFab &amp;xmom_in, MultiFab &amp;ymom_in, MultiFab &amp;zmom_in, int ng, int l_spatial_order)</div><div class="ttdef"><b>Definition:</b> MomentumToVelocity.cpp:14</div></div>
 <!-- start footer part -->
