@@ -1,7 +1,7 @@
 var EOS_8H =
 [
-    [ "getPgivenRTh", "EOS_8H.html#a83bdb65bb1d7e8fcc7ab43be6f09683d", null ],
-    [ "getPprimegivenRTh", "EOS_8H.html#a4c743d8bc015351f877a345a42957dea", null ],
-    [ "getRhoThetagivenP", "EOS_8H.html#a58f776a5ea69cd639a93731c0f696c5a", null ],
-    [ "getTgivenRandRTh", "EOS_8H.html#a66600cf3ee2c8d4e6b05b08be6f10cd6", null ]
+    [ "getPgivenRTh", "EOS_8H.html#a292ce90ab26c75f4a444808a807b532b", null ],
+    [ "getPprimegivenRTh", "EOS_8H.html#a62f564807713abf368002e68c9b40e1e", null ],
+    [ "getRhoThetagivenP", "EOS_8H.html#aa7b634796f77c8e2c23e3e6a84596c50", null ],
+    [ "getTgivenRandRTh", "EOS_8H.html#a652d566aef658cc423ced929a816f869", null ]
 ];

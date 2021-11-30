@@ -133,6 +133,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a458cd55e2e1e3cf2626b606f0ccfc223"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIOManager.html#a458cd55e2e1e3cf2626b606f0ccfc223">writeJobInfo</a> (const std::string &amp;dir)</td></tr>
 <tr class="memdesc:a458cd55e2e1e3cf2626b606f0ccfc223"><td class="mdescLeft">&#160;</td><td class="mdescRight">write job information  <a href="classIOManager.html#a458cd55e2e1e3cf2626b606f0ccfc223">More...</a><br /></td></tr>
 <tr class="separator:a458cd55e2e1e3cf2626b606f0ccfc223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98b07fb4d16bd248d0b69ada41d85aac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIOManager.html#a98b07fb4d16bd248d0b69ada41d85aac">createNCColumnFile</a> (const std::string &amp;colfile_name, const amrex::Real xloc, const amrex::Real yloc)</td></tr>
+<tr class="memdesc:a98b07fb4d16bd248d0b69ada41d85aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create 1D vertical column output for coupling.  <a href="classIOManager.html#a98b07fb4d16bd248d0b69ada41d85aac">More...</a><br /></td></tr>
+<tr class="separator:a98b07fb4d16bd248d0b69ada41d85aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae07f10c3fde49c1e5f59b0dea6659e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIOManager.html#aae07f10c3fde49c1e5f59b0dea6659e2">writeToNCColumnFile</a> (const std::string &amp;colfile_name, const amrex::Real xloc, const amrex::Real yloc)</td></tr>
+<tr class="memdesc:aae07f10c3fde49c1e5f59b0dea6659e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a timestep to 1D vertical column output for coupling.  <a href="classIOManager.html#aae07f10c3fde49c1e5f59b0dea6659e2">More...</a><br /></td></tr>
+<tr class="separator:aae07f10c3fde49c1e5f59b0dea6659e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -284,6 +290,92 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  }</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="a98b07fb4d16bd248d0b69ada41d85aac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98b07fb4d16bd248d0b69ada41d85aac">&#9670;&nbsp;</a></span>createNCColumnFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IOManager::createNCColumnFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>colfile_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>xloc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>yloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create 1D vertical column output for coupling. </p>
+<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="comment">// TODO: Relax assumption of only a single level</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.parent-&gt;finestLevel() &gt; 0) {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    amrex::Error(<span class="stringliteral">&quot;Cannot createNCColumnFile: present implementation assumes only a single level is present&quot;</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  }</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="comment">// Create file to which column data will be written every timestep</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">auto</span> ncf = <a class="code" href="classncutils_1_1NCFile.html#a47bdccee2cc22a735ca715d9c88e4f6b">ncutils::NCFile::create</a>(colfile_name, NC_CLOBBER | NC_NETCDF4);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">const</span> std::string nt_name = <span class="stringliteral">&quot;ntime&quot;</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">const</span> std::string nh_name = <span class="stringliteral">&quot;nheight&quot;</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// Use one grow cell (on either side) to allow interpolation to boundaries</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nheights = <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.Domain().length(2) + 2;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    ncf.enter_def_mode();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    ncf.put_attr(<span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;ERF NetCDF Vertical Column Output&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    ncf.put_attr(<span class="stringliteral">&quot;units&quot;</span>, <span class="stringliteral">&quot;mks&quot;</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    amrex::Vector&lt;amrex::Real&gt; loc = {xloc, yloc};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ncf.put_attr(<span class="stringliteral">&quot;location&quot;</span>, loc);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ncf.def_dim(nt_name, NC_UNLIMITED);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    ncf.def_dim(nh_name, nheights);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;times&quot;</span>, NC_FLOAT, {nt_name});</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;heights&quot;</span>, NC_FLOAT, {nh_name});</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;wrf_momentum_u&quot;</span>, NC_FLOAT, {nt_name, nh_name});</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;wrf_momentum_v&quot;</span>, NC_FLOAT, {nt_name, nh_name});</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;wrf_temperature&quot;</span>, NC_FLOAT, {nt_name, nh_name});</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;wrf_tflux&quot;</span>, NC_FLOAT, {nt_name});</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ncf.exit_def_mode();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// Put in the Z grid, but not any actual data yet</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    amrex::Real zmin = <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.ProbLo(2);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    amrex::Real dz = <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.CellSize(2);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    amrex::Vector&lt;amrex::Real&gt; zvalues(nheights, zmin-0.5*dz);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; nheights; ++ii) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      zvalues[ii] += ii * dz;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    ncf.var(<span class="stringliteral">&quot;heights&quot;</span>).put(zvalues.data());</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    ncf.close();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classIOManager_a98b07fb4d16bd248d0b69ada41d85aac_cgraph.png" border="0" usemap="#classIOManager_a98b07fb4d16bd248d0b69ada41d85aac_cgraph" alt=""/></div>
+<map name="classIOManager_a98b07fb4d16bd248d0b69ada41d85aac_cgraph" id="classIOManager_a98b07fb4d16bd248d0b69ada41d85aac_cgraph">
+<area shape="rect" title="Create 1D vertical column output for coupling." alt="" coords="5,31,240,57"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#a47bdccee2cc22a735ca715d9c88e4f6b" title=" " alt="" coords="288,31,452,57"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0" title="Name of this group." alt="" coords="500,5,676,32"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423" title=" " alt="" coords="505,56,671,83"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ae3027a0eeaebfb1ddc523d438b966652"></a>
@@ -1210,6 +1302,181 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="aae07f10c3fde49c1e5f59b0dea6659e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae07f10c3fde49c1e5f59b0dea6659e2">&#9670;&nbsp;</a></span>writeToNCColumnFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IOManager::writeToNCColumnFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>colfile_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>xloc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>yloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write a timestep to 1D vertical column output for coupling. </p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// TODO: Relax assumption of only a single level</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.parent-&gt;finestLevel() &gt; 0) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    amrex::Error(<span class="stringliteral">&quot;Cannot writeToNCColumnFile: present implementation assumes only a single level is present&quot;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// All processors: look for the requested column and get data if it&#39;s there</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  amrex::Box probBox = <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.Domain();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">size_t</span> nheights = probBox.length(2) + 2;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  amrex::Gpu::DeviceVector&lt;amrex::Real&gt; d_column_data(nheights*3, 0.0);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  amrex::Vector&lt;amrex::Real&gt; h_column_data(nheights*3, 0.0);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  amrex::Real* ucol = &amp;d_column_data[0];</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  amrex::Real* vcol = &amp;d_column_data[nheights];</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  amrex::Real* thetacol = &amp;d_column_data[nheights*2];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// Requested point must be inside problem domain</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">if</span> (xloc &lt; <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.ProbLo(0) || xloc &gt; <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.ProbHi(0) ||</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      yloc &lt; <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.ProbLo(1) || yloc &gt; <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.ProbHi(1)) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    amrex::Error(<span class="stringliteral">&quot;Invalid xy location to save column data - outside of domain&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// get indices and interpolation coefficients</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">const</span> amrex::Real x_cell_loc = probBox.smallEnd(0) + (xloc - <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.ProbLo(0))* <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.InvCellSize(0);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">const</span> amrex::Real y_cell_loc = probBox.smallEnd(1) + (yloc - <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.ProbLo(1))* <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.InvCellSize(1);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> iloc = floor(x_cell_loc - 0.5);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> jloc = floor(y_cell_loc - 0.5);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">const</span> amrex::Real alpha_x = x_cell_loc - 0.5 - iloc;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">const</span> amrex::Real alpha_y = y_cell_loc - 0.5 - jloc;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  amrex::Array2D&lt;amrex::Real, 0, 1, 0, 1&gt; alpha_theta;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  alpha_theta(0,0) = (1.0 - alpha_x) * (1.0-alpha_y);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  alpha_theta(1,0) = (alpha_x) * (1.0-alpha_y);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  alpha_theta(0,1) = (1.0 - alpha_x) * (alpha_y);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  alpha_theta(1,1) = (alpha_x) * (alpha_y);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">// may need different indices for u,v due to not being collocated</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> iloc_shift = floor(x_cell_loc) - iloc;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> jloc_shift = floor(y_cell_loc) - jloc;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">const</span> amrex::Real alpha_x_u = x_cell_loc - iloc - iloc_shift;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">const</span> amrex::Real alpha_y_v = y_cell_loc - jloc - jloc_shift;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  amrex::Array2D&lt;amrex::Real, 0, 1, 0, 1&gt; alpha_u;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  alpha_u(0,0) = (1.0 - alpha_x_u) * (1.0-alpha_y);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  alpha_u(1,0) = (alpha_x_u) * (1.0-alpha_y);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  alpha_u(0,1) = (1.0 - alpha_x_u) * (alpha_y);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  alpha_u(1,1) = (alpha_x_u) * (alpha_y);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  amrex::Array2D&lt;amrex::Real, 0, 1, 0, 1&gt; alpha_v;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  alpha_v(0,0) = (1.0 - alpha_x) * (1.0-alpha_y_v);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  alpha_v(1,0) = (alpha_x) * (1.0-alpha_y_v);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  alpha_v(0,1) = (1.0 - alpha_x) * (alpha_y_v);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  alpha_v(1,1) = (alpha_x) * (alpha_y_v);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> kstart = probBox.smallEnd(2)-1;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> kend = probBox.bigEnd(2)+1;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">const</span> amrex::Box target_box(IntVect{iloc, jloc, kstart},</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                              IntVect{iloc+1, jloc+1, kend});</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="comment">//  Need to get these valid in one grow cell for interpolation</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  amrex::MultiFab&amp; S_new = <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.get_new_data(State_Type);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  amrex::MultiFab&amp; U_new = <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.get_new_data(X_Vel_Type);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  amrex::MultiFab&amp; V_new = <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.get_new_data(Y_Vel_Type);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  S_new.FillBoundary(<a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.periodicity());</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  U_new.FillBoundary(<a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.periodicity());</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  V_new.FillBoundary(<a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom.periodicity());</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  amrex::Vector&lt;MultiFab*&gt; all_vars{&amp;S_new, &amp;U_new, &amp;V_new};</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  ERF::applyBCs(<a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.geom,all_vars);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">// No tiling - we&#39;re just interested in one location</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">for</span> ( MFIter mfi(S_new); mfi.isValid(); ++mfi){</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">const</span> amrex::Array4&lt;Real const&gt; &amp; state = S_new.array(mfi);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">const</span> amrex::Array4&lt;Real const&gt; &amp; velx = U_new.array(mfi);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">const</span> amrex::Array4&lt;Real const&gt; &amp; vely = V_new.array(mfi);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// we want to include data at physical boundary ghost cells</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// for interpolation (i,j) or saving (k)</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    amrex::Box vbox = mfi.validbox();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idir = 0; idir &lt;=2; idir++) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      <span class="keywordflow">if</span> (vbox.smallEnd(idir) == probBox.smallEnd(idir)) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        vbox.growLo(idir,1);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      <span class="keywordflow">if</span> (vbox.bigEnd(idir) == probBox.bigEnd(idir)) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        vbox.growHi(idir,1);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// Loop over indices where our box contains data needed for interpolation</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keyword">const</span> amrex::Box overlap_box = vbox &amp; target_box;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span> (overlap_box.ok()) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      amrex::ParallelFor(overlap_box,</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> idx_vec = k - kstart;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ialpha = i - iloc;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> jalpha = j - jloc;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        ucol[idx_vec] += velx(i+iloc_shift,j,k) * alpha_u(ialpha, jalpha);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        vcol[idx_vec] += vely(i,j+jloc_shift,k) * alpha_v(ialpha, jalpha);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        thetacol[idx_vec] += state(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / state(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;          * alpha_theta(ialpha, jalpha);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      });</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="comment">// Communicate values to CPU then to the IO processor</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  amrex::Gpu::copy(amrex::Gpu::deviceToHost, d_column_data.begin(),</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    d_column_data.end(), h_column_data.begin());</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  amrex::ParallelDescriptor::ReduceRealSum(h_column_data.data(),</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    h_column_data.size(), amrex::ParallelDescriptor::IOProcessorNumber());</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="comment">// IO processor only: write the relevant data to file</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keyword">auto</span> ncf = <a class="code" href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885">ncutils::NCFile::open</a>(colfile_name, NC_WRITE | NC_NETCDF4);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">size_t</span> putloc = ncf.dim(<span class="stringliteral">&quot;ntime&quot;</span>).len();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">// Time</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    amrex::Real cumtime = <a class="code" href="classIOManager.html#aed10780741a2c90b7916a6353e560075">erf</a>.parent-&gt;cumTime();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    amrex::Vector&lt;size_t&gt; start_t {putloc};</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    amrex::Vector&lt;size_t&gt; count_t {1};</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    ncf.var(<span class="stringliteral">&quot;times&quot;</span>).put(&amp;cumtime, start_t, count_t);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">// T flux</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// TODO: Make this the actual flux rather than just a placeholder</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    amrex::Real Tflux = 0.0;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    ncf.var(<span class="stringliteral">&quot;wrf_tflux&quot;</span>).put(&amp;Tflux, start_t, count_t);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="comment">// U, V, Theta</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    std::vector&lt;size_t&gt; start = {putloc, 0};</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    std::vector&lt;size_t&gt; count = {1, nheights};</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    ncf.var(<span class="stringliteral">&quot;wrf_momentum_u&quot;</span>).put(&amp;h_column_data[0], start, count);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    ncf.var(<span class="stringliteral">&quot;wrf_momentum_v&quot;</span>).put(&amp;h_column_data[nheights], start, count);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    ncf.var(<span class="stringliteral">&quot;wrf_temperature&quot;</span>).put(&amp;h_column_data[2*nheights], start, count);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    ncf.close();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classIOManager_aae07f10c3fde49c1e5f59b0dea6659e2_cgraph.png" border="0" usemap="#classIOManager_aae07f10c3fde49c1e5f59b0dea6659e2_cgraph" alt=""/></div>
+<map name="classIOManager_aae07f10c3fde49c1e5f59b0dea6659e2_cgraph" id="classIOManager_aae07f10c3fde49c1e5f59b0dea6659e2_cgraph">
+<area shape="rect" title="Write a timestep to 1D vertical column output for coupling." alt="" coords="5,31,245,57"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885" title=" " alt="" coords="293,31,448,57"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0" title="Name of this group." alt="" coords="496,5,672,32"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423" title=" " alt="" coords="501,56,667,83"/>
+</map>
+</div>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="aed10780741a2c90b7916a6353e560075"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed10780741a2c90b7916a6353e560075">&#9670;&nbsp;</a></span>erf</h2>
@@ -1231,24 +1498,29 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classIOManager.html#a7d90373f66fdbcacbf31bbe42fc2b4a8">checkPoint()</a>, <a class="el" href="classIOManager.html#ae3027a0eeaebfb1ddc523d438b966652">restart()</a>, <a class="el" href="classIOManager.html#a6b7eea06a1e32b99bceee9942c8eb464">set_state_in_checkpoint()</a>, <a class="el" href="classIOManager.html#a458cd55e2e1e3cf2626b606f0ccfc223">writeJobInfo()</a>, <a class="el" href="classIOManager.html#af7254c361d36c4e08117a3d486d84341">writePlotFile()</a>, and <a class="el" href="classIOManager.html#a17056a1e637c37a4a424562529050d5d">writeSmallPlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classIOManager.html#a7d90373f66fdbcacbf31bbe42fc2b4a8">checkPoint()</a>, <a class="el" href="classIOManager.html#a98b07fb4d16bd248d0b69ada41d85aac">createNCColumnFile()</a>, <a class="el" href="classIOManager.html#ae3027a0eeaebfb1ddc523d438b966652">restart()</a>, <a class="el" href="classIOManager.html#a6b7eea06a1e32b99bceee9942c8eb464">set_state_in_checkpoint()</a>, <a class="el" href="classIOManager.html#a458cd55e2e1e3cf2626b606f0ccfc223">writeJobInfo()</a>, <a class="el" href="classIOManager.html#af7254c361d36c4e08117a3d486d84341">writePlotFile()</a>, <a class="el" href="classIOManager.html#a17056a1e637c37a4a424562529050d5d">writeSmallPlotFile()</a>, and <a class="el" href="classIOManager.html#aae07f10c3fde49c1e5f59b0dea6659e2">writeToNCColumnFile()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ERF/ERF/Source/IO/<a class="el" href="IOManager_8H_source.html">IOManager.H</a></li>
 <li>/home/runner/work/ERF/ERF/Source/IO/<a class="el" href="IOManager_8cpp.html">IOManager.cpp</a></li>
+<li>/home/runner/work/ERF/ERF/Source/IO/<a class="el" href="NCColumnFile_8cpp.html">NCColumnFile.cpp</a></li>
 <li>/home/runner/work/ERF/ERF/Source/IO/<a class="el" href="PlotFile_8cpp.html">PlotFile.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassIOManager_html_aed10780741a2c90b7916a6353e560075"><div class="ttname"><a href="classIOManager.html#aed10780741a2c90b7916a6353e560075">IOManager::erf</a></div><div class="ttdeci">ERF &amp; erf</div><div class="ttdef"><b>Definition:</b> IOManager.H:85</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
+<div class="ttc" id="aclassIOManager_html_aed10780741a2c90b7916a6353e560075"><div class="ttname"><a href="classIOManager.html#aed10780741a2c90b7916a6353e560075">IOManager::erf</a></div><div class="ttdeci">ERF &amp; erf</div><div class="ttdef"><b>Definition:</b> IOManager.H:91</div></div>
 <div class="ttc" id="aNCPlotFile_8H_html_aabaa127a3a319c1b86090d6c88568965"><div class="ttname"><a href="NCPlotFile_8H.html#aabaa127a3a319c1b86090d6c88568965">inputs_name</a></div><div class="ttdeci">std::string inputs_name</div><div class="ttdef"><b>Definition:</b> main.cpp:14</div></div>
 <div class="ttc" id="aclassIOManager_html_a458cd55e2e1e3cf2626b606f0ccfc223"><div class="ttname"><a href="classIOManager.html#a458cd55e2e1e3cf2626b606f0ccfc223">IOManager::writeJobInfo</a></div><div class="ttdeci">void writeJobInfo(const std::string &amp;dir)</div><div class="ttdoc">write job information</div><div class="ttdef"><b>Definition:</b> PlotFile.cpp:196</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ad5195ac8f863f5a9a7eaa0db094f7639"><div class="ttname"><a href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a></div><div class="ttdeci">#define NVAR</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ac7c21c1d1c96b568a7eefbe3c997238e"><div class="ttname"><a href="IndexDefines_8H.html#ac7c21c1d1c96b568a7eefbe3c997238e">NUM_ADV</a></div><div class="ttdeci">#define NUM_ADV</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:18</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_aaf6046446c90ca7f5b9a7de90b661607"><div class="ttname"><a href="IndexDefines_8H.html#aaf6046446c90ca7f5b9a7de90b661607">NUM_GROW</a></div><div class="ttdeci">#define NUM_GROW</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:21</div></div>
 <div class="ttc" id="aclassIOManager_html_a6b7eea06a1e32b99bceee9942c8eb464"><div class="ttname"><a href="classIOManager.html#a6b7eea06a1e32b99bceee9942c8eb464">IOManager::set_state_in_checkpoint</a></div><div class="ttdeci">void set_state_in_checkpoint(amrex::Vector&lt; int &gt; &amp;state_in_checkpoint)</div><div class="ttdoc">set state in checkpoint</div><div class="ttdef"><b>Definition:</b> PlotFile.cpp:130</div></div>
+<div class="ttc" id="aclassncutils_1_1NCFile_html_a47bdccee2cc22a735ca715d9c88e4f6b"><div class="ttname"><a href="classncutils_1_1NCFile.html#a47bdccee2cc22a735ca715d9c88e4f6b">ncutils::NCFile::create</a></div><div class="ttdeci">static NCFile create(const std::string &amp;name, const int cmode=NC_CLOBBER|NC_NETCDF4)</div><div class="ttdef"><b>Definition:</b> NCInterface.cpp:547</div></div>
+<div class="ttc" id="aclassncutils_1_1NCFile_html_a2881b70e450e11f01b474c538b8d6885"><div class="ttname"><a href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885">ncutils::NCFile::open</a></div><div class="ttdeci">static NCFile open(const std::string &amp;name, const int cmode=NC_NOWRITE)</div><div class="ttdef"><b>Definition:</b> NCInterface.cpp:554</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

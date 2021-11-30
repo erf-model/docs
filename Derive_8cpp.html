@@ -267,7 +267,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">const</span> amrex::Real rhotheta = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    pfab(i,j,k) = <a class="code" href="EOS_8H.html#a83bdb65bb1d7e8fcc7ab43be6f09683d">getPgivenRTh</a>(rhotheta);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    pfab(i,j,k) = <a class="code" href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b">getPgivenRTh</a>(rhotheta);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  });</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
@@ -276,7 +276,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="Derive_8cpp_adfbe2a8920e709000a1908ac161bddde_cgraph.png" border="0" usemap="#Derive_8cpp_adfbe2a8920e709000a1908ac161bddde_cgraph" alt=""/></div>
 <map name="Derive_8cpp_adfbe2a8920e709000a1908ac161bddde_cgraph" id="Derive_8cpp_adfbe2a8920e709000a1908ac161bddde_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,101,32"/>
-<area shape="rect" href="EOS_8H.html#a83bdb65bb1d7e8fcc7ab43be6f09683d" title=" " alt="" coords="149,5,260,32"/>
+<area shape="rect" href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b" title=" " alt="" coords="149,5,260,32"/>
 </map>
 </div>
 
@@ -356,7 +356,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">const</span> amrex::Real rho = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">const</span> amrex::Real rhotheta = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    tfab(i,j,k) = <a class="code" href="EOS_8H.html#a66600cf3ee2c8d4e6b05b08be6f10cd6">getTgivenRandRTh</a>(rho,rhotheta);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    tfab(i,j,k) = <a class="code" href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a>(rho,rhotheta);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  });</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
@@ -365,7 +365,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="Derive_8cpp_afcc4e8a2aafa561635009ba8d88e6b61_cgraph.png" border="0" usemap="#Derive_8cpp_afcc4e8a2aafa561635009ba8d88e6b61_cgraph" alt=""/></div>
 <map name="Derive_8cpp_afcc4e8a2aafa561635009ba8d88e6b61_cgraph" id="Derive_8cpp_afcc4e8a2aafa561635009ba8d88e6b61_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,108,32"/>
-<area shape="rect" href="EOS_8H.html#a66600cf3ee2c8d4e6b05b08be6f10cd6" title=" " alt="" coords="156,5,300,32"/>
+<area shape="rect" href="EOS_8H.html#a652d566aef658cc423ced929a816f869" title=" " alt="" coords="156,5,300,32"/>
 </map>
 </div>
 
@@ -454,9 +454,9 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
-<div class="ttc" id="aEOS_8H_html_a83bdb65bb1d7e8fcc7ab43be6f09683d"><div class="ttname"><a href="EOS_8H.html#a83bdb65bb1d7e8fcc7ab43be6f09683d">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:15</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
-<div class="ttc" id="aEOS_8H_html_a66600cf3ee2c8d4e6b05b08be6f10cd6"><div class="ttname"><a href="EOS_8H.html#a66600cf3ee2c8d4e6b05b08be6f10cd6">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(amrex::Real rho, amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:8</div></div>
+<div class="ttc" id="aEOS_8H_html_a292ce90ab26c75f4a444808a807b532b"><div class="ttname"><a href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:15</div></div>
+<div class="ttc" id="aEOS_8H_html_a652d566aef658cc423ced929a816f869"><div class="ttname"><a href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:8</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
