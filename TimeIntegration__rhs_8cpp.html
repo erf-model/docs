@@ -325,7 +325,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a>)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="EddyViscosity_8cpp.html#a41b8137875ed559e33ad02407ab59c80">ComputeTurbulentViscosity</a>(xvel, yvel, zvel, *S_data[<a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>],</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                  eddyViscosity, dx, solverChoice,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                  eddyViscosity, dxInv, solverChoice,</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                  lo_z_is_no_slip, klo, hi_z_is_no_slip, khi);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        eddyViscosity.FillBoundary(geom.periodicity());</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        amrex::Vector&lt;MultiFab*&gt; eddyvisc_update{&amp;eddyViscosity};</div>
