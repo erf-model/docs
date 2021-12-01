@@ -47,10 +47,5 @@ var DataStruct_8H =
       [ "x", "DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6", null ],
       [ "y", "DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d", null ],
       [ "z", "DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7", null ]
-    ] ],
-    [ "NextOrPrev", "DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214", [
-      [ "prev", "DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214afcb08b164ac83e09964deb24f2d2e80b", null ],
-      [ "local", "DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2", null ],
-      [ "next", "DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214ad0cab90d8d20d57e2f2b9be52f7dd25d", null ]
     ] ]
 ];

@@ -352,18 +352,18 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  amrex::Real volWgtSum( <span class="keyword">const</span> std::string&amp; name,</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                         amrex::Real time,</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                         <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                         <span class="keywordtype">bool</span> local = <span class="keyword">false</span>,</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                         <span class="keywordtype">bool</span> finemask = <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  amrex::Real volWgtSquaredSum( <span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  amrex::Real volWgtSquaredSum( <span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">bool</span> local = <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  amrex::Real volWgtSumMF( <span class="keyword">const</span> amrex::MultiFab&amp; mf,</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                           <span class="keywordtype">int</span> comp,</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                           <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                           <span class="keywordtype">bool</span> local = <span class="keyword">false</span>,</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                           <span class="keywordtype">bool</span> finemask = <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  amrex::Real volWgtSquaredSumDiff( <span class="keywordtype">int</span> comp, amrex::Real time, <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  amrex::Real maxDerive( <span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  amrex::Real volWgtSquaredSumDiff( <span class="keywordtype">int</span> comp, amrex::Real time, <span class="keywordtype">bool</span> local = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  amrex::Real maxDerive( <span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">bool</span> local = <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> FirstAdv, NumAdv;</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
@@ -415,7 +415,7 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="comment">  /// integrate derived quantities over domain</span></div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="comment"></span>  amrex::Real</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  sumDerive(<span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">bool</span> <a class="code" href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">local</a> = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  sumDerive(<span class="keyword">const</span> std::string&amp; name, amrex::Real time, <span class="keywordtype">bool</span> local = <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <span class="keywordtype">void</span> sum_integrated_quantities();</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
@@ -631,9 +631,8 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="ttc" id="astructTaggingParm_html_ab9a24f9e443f6d712d628b835a13ee20"><div class="ttname"><a href="structTaggingParm.html#ab9a24f9e443f6d712d628b835a13ee20">TaggingParm::region_lo</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; region_lo</div><div class="ttdef"><b>Definition:</b> Tagging.H:42</div></div>
 <div class="ttc" id="aEOS_8H_html_a292ce90ab26c75f4a444808a807b532b"><div class="ttname"><a href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:15</div></div>
 <div class="ttc" id="astructABLFieldInit_html"><div class="ttname"><a href="structABLFieldInit.html">ABLFieldInit</a></div><div class="ttdef"><b>Definition:</b> ABLFieldInit.H:10</div></div>
-<div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> DataStruct.H:49</div></div>
+<div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> DataStruct.H:43</div></div>
 <div class="ttc" id="aDerive_8cpp_html_afcc4e8a2aafa561635009ba8d88e6b61"><div class="ttname"><a href="Derive_8cpp.html#afcc4e8a2aafa561635009ba8d88e6b61">erf_dertemp</a></div><div class="ttdeci">void erf_dertemp(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:102</div></div>
-<div class="ttc" id="aDataStruct_8H_html_ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2"><div class="ttname"><a href="DataStruct_8H.html#ad596a227fbfe515f8446447c9582c214af5ddaf0ca7929578b408c909429f68f2">NextOrPrev::local</a></div><div class="ttdeci">@ local</div></div>
 <div class="ttc" id="aIOManager_8H_html"><div class="ttname"><a href="IOManager_8H.html">IOManager.H</a></div></div>
 <div class="ttc" id="aBCDirichlet_8H_html"><div class="ttname"><a href="BCDirichlet_8H.html">BCDirichlet.H</a></div></div>
 <div class="ttc" id="aIndexDefines_8H_html"><div class="ttname"><a href="IndexDefines_8H.html">IndexDefines.H</a></div></div>

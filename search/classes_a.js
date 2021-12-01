@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['sim_5fbc_460',['sim_bc',['../structmath__bcs_1_1sim__bc.html',1,'math_bcs']]],
-  ['sim_5fbc_3c_20idir_2c_20bcbound_3a_3alower_20_3e_461',['sim_bc&lt; IDIR, BCBound::lower &gt;',['../structmath__bcs_1_1sim__bc_3_01IDIR_00_01BCBound_1_1lower_01_4.html',1,'math_bcs']]],
-  ['sim_5fbc_3c_20idir_2c_20bcbound_3a_3aupper_20_3e_462',['sim_bc&lt; IDIR, BCBound::upper &gt;',['../structmath__bcs_1_1sim__bc_3_01IDIR_00_01BCBound_1_1upper_01_4.html',1,'math_bcs']]],
-  ['solverchoice_463',['SolverChoice',['../structSolverChoice.html',1,'']]]
+  ['sim_5fbc_456',['sim_bc',['../structmath__bcs_1_1sim__bc.html',1,'math_bcs']]],
+  ['sim_5fbc_3c_20idir_2c_20bcbound_3a_3alower_20_3e_457',['sim_bc&lt; IDIR, BCBound::lower &gt;',['../structmath__bcs_1_1sim__bc_3_01IDIR_00_01BCBound_1_1lower_01_4.html',1,'math_bcs']]],
+  ['sim_5fbc_3c_20idir_2c_20bcbound_3a_3aupper_20_3e_458',['sim_bc&lt; IDIR, BCBound::upper &gt;',['../structmath__bcs_1_1sim__bc_3_01IDIR_00_01BCBound_1_1upper_01_4.html',1,'math_bcs']]],
+  ['solverchoice_459',['SolverChoice',['../structSolverChoice.html',1,'']]]
 ];

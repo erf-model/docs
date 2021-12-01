@@ -1,7 +1,7 @@
 var Diffusion_8cpp =
 [
-    [ "ComputeDiffusionFluxForState", "Diffusion_8cpp.html#a385fad3cb273328a0afe09e7edbd2022", null ],
-    [ "ComputeStressTerm", "Diffusion_8cpp.html#af5bce103a225f3b4ca3c4e0a09ca3d34", null ],
-    [ "DiffusionContributionForMom", "Diffusion_8cpp.html#ac1d9fe69164fc36641279ad55c0966f0", null ],
+    [ "ComputeDiffusionFluxForState", "Diffusion_8cpp.html#aabb01aefa5f22fbd4dc1b56c6cf0ec7a", null ],
+    [ "ComputeStressTerm", "Diffusion_8cpp.html#a37f2e41b28f1f224bf8629f019fb42b8", null ],
+    [ "DiffusionContributionForMom", "Diffusion_8cpp.html#acde104c9890812501131db3d9268380f", null ],
     [ "DiffusionContributionForState", "Diffusion_8cpp.html#a8156d47401fe86508feca7b3a5087851", null ]
 ];
