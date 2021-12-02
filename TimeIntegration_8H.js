@@ -19,7 +19,7 @@ var TimeIntegration_8H =
     [ "ComputeTurbulentViscosity", "TimeIntegration_8H.html#ac513ba0997e619f777cfd2dcc313612f", null ],
     [ "DiffusionContributionForMom", "TimeIntegration_8H.html#a63ebcd2f70a317c4af3ca3c455cab318", null ],
     [ "DiffusionContributionForState", "TimeIntegration_8H.html#a3006a9f56b76840741c480db3e47d2a0", null ],
-    [ "erf_advance", "TimeIntegration_8H.html#ae5ac2d4c207d571e9d85d147e6b8b075", null ],
+    [ "erf_advance", "TimeIntegration_8H.html#afbe75ff62bd73fd1500b7ccc73cd06cf", null ],
     [ "erf_rhs", "TimeIntegration_8H.html#ab73de64e50e3bd5cf52370fc3eb2a75c", null ],
     [ "InterpolateDensityFromCellToFace", "TimeIntegration_8H.html#a03dc1013d05217da2b70884827831cd4", null ],
     [ "InterpolateDensityPertFromCellToFace", "TimeIntegration_8H.html#a356b38fa915d4432239477b19c81ada7", null ],
