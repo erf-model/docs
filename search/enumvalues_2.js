@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['explicitrungekutta_796',['ExplicitRungeKutta',['../namespaceIntegratorTypes.html#ae9ed8e5808d87252a33f7cd51e20751fadf40b06e19be1693fb51089e9386a8fb',1,'IntegratorTypes']]]
+  ['geostrophicwind_691',['GeostrophicWind',['../DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6c2c47a19d5c773bae606eb243104880',1,'DataStruct.H']]]
 ];

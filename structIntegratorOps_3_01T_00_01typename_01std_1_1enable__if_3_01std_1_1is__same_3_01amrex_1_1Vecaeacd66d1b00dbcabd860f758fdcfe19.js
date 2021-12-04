@@ -1,6 +1,0 @@
-var structIntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amrex_1_1Vecaeacd66d1b00dbcabd860f758fdcfe19 =
-[
-    [ "Copy", "structIntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amrex_1_1Vecaeacd66d1b00dbcabd860f758fdcfe19.html#aa0b8690c1e5aea4a552f8de318c85351", null ],
-    [ "CreateLike", "structIntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amrex_1_1Vecaeacd66d1b00dbcabd860f758fdcfe19.html#aa07e4e8cbdb4c3160112d65c54453a2a", null ],
-    [ "Saxpy", "structIntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amrex_1_1Vecaeacd66d1b00dbcabd860f758fdcfe19.html#ae41830eba1ca5fad072ef098b6e9d260", null ]
-];
