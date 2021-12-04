@@ -1,6 +1,29 @@
 var searchData=
 [
-  ['open_232',['open',['../classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885',1,'ncutils::NCFile']]],
-  ['open_5fpar_233',['open_par',['../classncutils_1_1NCFile.html#a4ebf9e1dc5ce07255330478f050e9f1f',1,'ncutils::NCFile']]],
-  ['operator_28_29_234',['operator()',['../structABLFieldInit.html#a8710f7f1f3cac445b61cab7499c8afc9',1,'ABLFieldInit::operator()()'],['../structERFHypFillExtDir.html#af1603128eea40fba62474bb91a621d6a',1,'ERFHypFillExtDir::operator()()'],['../classERFBld.html#a2e4474b35edabc63b7df3e23ff5d441b',1,'ERFBld::operator()()'],['../classERFBld.html#a166296e1df73dcb43e1bfe84d945a428',1,'ERFBld::operator()(amrex::Amr &amp;papa, int lev, const amrex::Geometry &amp;level_geom, const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dm, amrex::Real time)'],['../structFCFillExtDirDummy.html#a4ab3d6fe49d19f03c4dfcacec2168666',1,'FCFillExtDirDummy::operator()()']]]
+  ['name_274',['name',['../structncutils_1_1NCDim.html#aaf6334138e9892f5403400e31f062fd6',1,'ncutils::NCDim::name()'],['../structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724',1,'ncutils::NCVar::name()'],['../classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0',1,'ncutils::NCGroup::name()']]],
+  ['nccolumnfile_2ecpp_275',['NCColumnFile.cpp',['../NCColumnFile_8cpp.html',1,'']]],
+  ['ncdim_276',['NCDim',['../structncutils_1_1NCDim.html',1,'ncutils']]],
+  ['ncdtype_277',['NCDType',['../structncutils_1_1NCDType.html',1,'ncutils']]],
+  ['ncell_5fline_278',['ncell_line',['../classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1',1,'PlaneAverage']]],
+  ['ncell_5fplane_279',['ncell_plane',['../classPlaneAverage.html#aaf4e5c9b73f65af3eb0ccdc6a82e76f2',1,'PlaneAverage']]],
+  ['ncfile_280',['NCFile',['../classncutils_1_1NCFile.html',1,'ncutils::NCFile'],['../classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423',1,'ncutils::NCFile::NCFile()']]],
+  ['ncgroup_281',['NCGroup',['../classncutils_1_1NCGroup.html',1,'ncutils::NCGroup'],['../classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65',1,'ncutils::NCGroup::NCGroup(const int id)'],['../classncutils_1_1NCGroup.html#adcb85f8db72ad6fb60b23031d995f298',1,'ncutils::NCGroup::NCGroup(const int id, const NCGroup *par)']]],
+  ['ncid_282',['ncid',['../structncutils_1_1NCDim.html#a3272d1768518ba020b9bcd0d3699d544',1,'ncutils::NCDim::ncid()'],['../structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218',1,'ncutils::NCVar::ncid()'],['../classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd',1,'ncutils::NCGroup::ncid()']]],
+  ['ncinterface_2ecpp_283',['NCInterface.cpp',['../NCInterface_8cpp.html',1,'']]],
+  ['ncinterface_2eh_284',['NCInterface.H',['../NCInterface_8H.html',1,'']]],
+  ['ncomp_285',['ncomp',['../classPlaneAverage.html#a3860fd72df3e8dbb6b8decfdc360864f',1,'PlaneAverage']]],
+  ['ncplotfile_2ecpp_286',['NCPlotFile.cpp',['../NCPlotFile_8cpp.html',1,'']]],
+  ['ncplotfile_2eh_287',['NCPlotFile.H',['../NCPlotFile_8H.html',1,'']]],
+  ['ncutils_288',['ncutils',['../namespacencutils.html',1,'']]],
+  ['ncvar_289',['NCVar',['../structncutils_1_1NCVar.html',1,'ncutils']]],
+  ['ndim_290',['ndim',['../structncutils_1_1NCVar.html#ae0ab15dc4c1033271878c3bf5102f911',1,'ncutils::NCVar']]],
+  ['none_291',['None',['../DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754',1,'None():&#160;DataStruct.H'],['../DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a6adf97f83acf6453d4a6a4b1070f3754',1,'None():&#160;DataStruct.H'],['../DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6adf97f83acf6453d4a6a4b1070f3754',1,'None():&#160;DataStruct.H']]],
+  ['noslipwall_292',['NoSlipWall',['../IndexDefines_8H.html#ac2dab611e4ed2408bce31896fd83a9d4',1,'IndexDefines.H']]],
+  ['num_5fadv_293',['NUM_ADV',['../IndexDefines_8H.html#ac7c21c1d1c96b568a7eefbe3c997238e',1,'IndexDefines.H']]],
+  ['num_5fattributes_294',['num_attributes',['../classncutils_1_1NCGroup.html#af7847ff27ccb8499814b7f21559e2e84',1,'ncutils::NCGroup']]],
+  ['num_5fdimensions_295',['num_dimensions',['../classncutils_1_1NCGroup.html#a44b1b3b0a86df383ffa6ab4e68a7dea6',1,'ncutils::NCGroup']]],
+  ['num_5fgroups_296',['num_groups',['../classncutils_1_1NCGroup.html#a4efddc44f72cc32a58849982bb7e8bce',1,'ncutils::NCGroup']]],
+  ['num_5fgrow_297',['NUM_GROW',['../IndexDefines_8H.html#aaf6046446c90ca7f5b9a7de90b661607',1,'IndexDefines.H']]],
+  ['num_5fvariables_298',['num_variables',['../classncutils_1_1NCGroup.html#a4721cc36bd0f188be0250112329d3ba1',1,'ncutils::NCGroup']]],
+  ['nvar_299',['NVAR',['../IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639',1,'IndexDefines.H']]]
 ];

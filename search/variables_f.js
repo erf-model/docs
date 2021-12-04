@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['use_5fcoriolis_662',['use_coriolis',['../structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606',1,'SolverChoice']]],
-  ['use_5fgravity_663',['use_gravity',['../structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5',1,'SolverChoice']]],
-  ['use_5fmomentum_5fadvection_664',['use_momentum_advection',['../structSolverChoice.html#ad64e8b24caa6f3dd8050ce6b23df67d3',1,'SolverChoice']]],
-  ['use_5fmomentum_5fdiffusion_665',['use_momentum_diffusion',['../structSolverChoice.html#a66c79d8aca68a862e63572e7a00d5789',1,'SolverChoice']]],
-  ['use_5fpressure_666',['use_pressure',['../structSolverChoice.html#a0d46d42d6d42a64fdd42828957445db9',1,'SolverChoice']]],
-  ['use_5frayleigh_5fdamping_667',['use_rayleigh_damping',['../structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01',1,'SolverChoice']]],
-  ['use_5fscalar_5fdiffusion_668',['use_scalar_diffusion',['../structSolverChoice.html#a6ddc576079d42c44c6266d4a7cac36f1',1,'SolverChoice']]],
-  ['use_5fstate_5fadvection_669',['use_state_advection',['../structSolverChoice.html#a204dd54aa933d3c3bd47732475b700c3',1,'SolverChoice']]],
-  ['use_5fthermal_5fdiffusion_670',['use_thermal_diffusion',['../structSolverChoice.html#a7b22b8eb1bb7971d0517574fd00132e0',1,'SolverChoice']]]
+  ['sc_5ft_833',['Sc_t',['../structSolverChoice.html#a10043b88372894f67ed0f3e68bf27cb6',1,'SolverChoice']]],
+  ['sc_5ft_5finv_834',['Sc_t_inv',['../structSolverChoice.html#a5d8e6a103e2e5d61dc0990fa2141a675',1,'SolverChoice']]],
+  ['sinphi_835',['sinphi',['../structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf',1,'SolverChoice']]],
+  ['spatial_5forder_836',['spatial_order',['../structSolverChoice.html#a8e053ce39997ed619ac81aa4d5a1fd44',1,'SolverChoice']]],
+  ['surf_5ftemp_837',['surf_temp',['../structABLMost.html#a73621a1b429f2e910a29adac72b7c581',1,'ABLMost']]],
+  ['surf_5ftemp_5fflux_838',['surf_temp_flux',['../structABLMost.html#a98390481d302c2a2c7346bf2328305a8',1,'ABLMost']]]
 ];

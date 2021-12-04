@@ -21,6 +21,9 @@ var BCBase_8H =
     [ "wall_scalars", "structmath__bcs_1_1wall__scalars.html", null ],
     [ "wall_scalars< IDIR, BCBound::lower >", "structmath__bcs_1_1wall__scalars_3_01IDIR_00_01BCBound_1_1lower_01_4.html", "structmath__bcs_1_1wall__scalars_3_01IDIR_00_01BCBound_1_1lower_01_4" ],
     [ "wall_scalars< IDIR, BCBound::upper >", "structmath__bcs_1_1wall__scalars_3_01IDIR_00_01BCBound_1_1upper_01_4.html", "structmath__bcs_1_1wall__scalars_3_01IDIR_00_01BCBound_1_1upper_01_4" ],
+    [ "ablmostwall", "structmath__bcs_1_1ablmostwall.html", null ],
+    [ "ablmostwall< IDIR, BCBound::lower >", "structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1lower_01_4.html", "structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1lower_01_4" ],
+    [ "ablmostwall< IDIR, BCBound::upper >", "structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1upper_01_4.html", "structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1upper_01_4" ],
     [ "BCBase", "classphys__bcs_1_1BCBase.html", "classphys__bcs_1_1BCBase" ],
     [ "BCBound", "BCBase_8H.html#a7baa376f7fe8cdc2afba822273275b3b", [
       [ "lower", "BCBase_8H.html#a7baa376f7fe8cdc2afba822273275b3ba34106e9686005243766d1f8ba6f2f603", null ],

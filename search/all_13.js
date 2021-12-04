@@ -1,15 +1,21 @@
 var searchData=
 [
-  ['v_331',['v',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a',1,'DataStruct.H']]],
-  ['var_332',['var',['../classncutils_1_1NCGroup.html#a79bef315da5cff7bcf8bbcfbdd122115',1,'ncutils::NCGroup']]],
-  ['variablecleanup_333',['variableCleanUp',['../classERFBld.html#aba6cb2a8cb023df717d115eb5f3e1cac',1,'ERFBld']]],
-  ['variablesetup_334',['variableSetUp',['../classERFBld.html#ac8d4ae2921defaa414935d9d90f2b888',1,'ERFBld']]],
-  ['varid_335',['varid',['../structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532',1,'ncutils::NCVar']]],
-  ['vel_336',['vel',['../classphys__bcs_1_1BCDirichlet.html#afbf141824c9b5bfa15a8a111d5a67a54',1,'phys_bcs::BCDirichlet']]],
-  ['velerr_337',['velerr',['../structTaggingParm.html#a74026c0d015f28544108662fb354242b',1,'TaggingParm']]],
-  ['velgrad_338',['velgrad',['../structTaggingParm.html#a821abb57331a67d41aa8687fc661756c',1,'TaggingParm']]],
-  ['velocitytomomentum_339',['VelocityToMomentum',['../TimeIntegration_8H.html#a411bdc39c33fefab6f1d5377f90ec3f8',1,'VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom_out, MultiFab &amp;ymom_out, MultiFab &amp;zmom_out, int l_spatial_order):&#160;VelocityToMomentum.cpp'],['../VelocityToMomentum_8cpp.html#a2c2f5421d493bacbed533547be37bda2',1,'VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom, MultiFab &amp;ymom, MultiFab &amp;zmom, const int l_spatial_order):&#160;VelocityToMomentum.cpp']]],
-  ['velocitytomomentum_2ecpp_340',['VelocityToMomentum.cpp',['../VelocityToMomentum_8cpp.html',1,'']]],
-  ['vfracerr_341',['vfracerr',['../structTaggingParm.html#a1dcb6667a41c948aa5d24605f2bd2008',1,'TaggingParm']]],
-  ['vorterr_342',['vorterr',['../structTaggingParm.html#a7c7b8230b7bbf42345ff56439b47084e',1,'TaggingParm']]]
+  ['u_396',['u',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c',1,'DataStruct.H']]],
+  ['unity_397',['unity',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a439b3a25b555b3bc8667a09a036ae70c',1,'DataStruct.H']]],
+  ['update_5ffluxes_398',['update_fluxes',['../structABLMost.html#a60a52e61e65b0a35a3f506fdd9ba1668',1,'ABLMost']]],
+  ['upper_399',['upper',['../namespacemath__bcs.html#a7baa376f7fe8cdc2afba822273275b3ba25d2e0d219f68c116eb2bd3941855c60',1,'math_bcs']]],
+  ['use_5fcoriolis_400',['use_coriolis',['../structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606',1,'SolverChoice']]],
+  ['use_5fgravity_401',['use_gravity',['../structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5',1,'SolverChoice']]],
+  ['use_5fmomentum_5fadvection_402',['use_momentum_advection',['../structSolverChoice.html#ad64e8b24caa6f3dd8050ce6b23df67d3',1,'SolverChoice']]],
+  ['use_5fmomentum_5fdiffusion_403',['use_momentum_diffusion',['../structSolverChoice.html#a66c79d8aca68a862e63572e7a00d5789',1,'SolverChoice']]],
+  ['use_5fpressure_404',['use_pressure',['../structSolverChoice.html#a0d46d42d6d42a64fdd42828957445db9',1,'SolverChoice']]],
+  ['use_5frayleigh_5fdamping_405',['use_rayleigh_damping',['../structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01',1,'SolverChoice']]],
+  ['use_5fscalar_5fdiffusion_406',['use_scalar_diffusion',['../structSolverChoice.html#a6ddc576079d42c44c6266d4a7cac36f1',1,'SolverChoice']]],
+  ['use_5fstate_5fadvection_407',['use_state_advection',['../structSolverChoice.html#a204dd54aa933d3c3bd47732475b700c3',1,'SolverChoice']]],
+  ['use_5fthermal_5fdiffusion_408',['use_thermal_diffusion',['../structSolverChoice.html#a7b22b8eb1bb7971d0517574fd00132e0',1,'SolverChoice']]],
+  ['utau_409',['utau',['../structABLMost.html#a628bfedb012413ca9d61fe7d29f09227',1,'ABLMost']]],
+  ['utilities_410',['Utilities',['../group__Utilities.html',1,'']]],
+  ['utils_2ecpp_411',['Utils.cpp',['../Utils_8cpp.html',1,'']]],
+  ['utils_2eh_412',['utils.H',['../utils_8H.html',1,'']]],
+  ['utils_5fk_2eh_413',['utils_K.H',['../utils__K_8H.html',1,'']]]
 ];

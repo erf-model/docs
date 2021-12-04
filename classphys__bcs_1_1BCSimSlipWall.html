@@ -114,8 +114,8 @@ Collaboration diagram for phys_bcs::BCSimSlipWall&lt; IDIR, Bound &gt;:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afd36759aed28694e183103a83721a23a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphys__bcs_1_1BCSimSlipWall.html#afd36759aed28694e183103a83721a23a">BCSimSlipWall</a> ()=default</td></tr>
 <tr class="separator:afd36759aed28694e183103a83721a23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f0a7f155766113a46d319dc7c63269b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphys__bcs_1_1BCSimSlipWall.html#a0f0a7f155766113a46d319dc7c63269b">applyBC</a> (const amrex::Geometry geom, amrex::Vector&lt; MultiFab * &gt; &amp;vars) override</td></tr>
-<tr class="separator:a0f0a7f155766113a46d319dc7c63269b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a912d5e5b12b285851db2173fd47f6fcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphys__bcs_1_1BCSimSlipWall.html#a912d5e5b12b285851db2173fd47f6fcf">applyBC</a> (const amrex::Geometry geom, amrex::Vector&lt; MultiFab * &gt; &amp;vars, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice) override</td></tr>
+<tr class="separator:a912d5e5b12b285851db2173fd47f6fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classphys__bcs_1_1BCBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classphys__bcs_1_1BCBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classphys__bcs_1_1BCBase.html">phys_bcs::BCBase</a></td></tr>
 <tr class="memitem:a6a190d4f901b7bbcab641216f2e09161 inherit pub_methods_classphys__bcs_1_1BCBase"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classphys__bcs_1_1BCBase.html#a6a190d4f901b7bbcab641216f2e09161">isInterior</a> ()</td></tr>
 <tr class="separator:a6a190d4f901b7bbcab641216f2e09161 inherit pub_methods_classphys__bcs_1_1BCBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,8 +151,8 @@ template&lt;int IDIR, math_bcs::BCBound Bound&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0f0a7f155766113a46d319dc7c63269b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f0a7f155766113a46d319dc7c63269b">&#9670;&nbsp;</a></span>applyBC()</h2>
+<a id="a912d5e5b12b285851db2173fd47f6fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a912d5e5b12b285851db2173fd47f6fcf">&#9670;&nbsp;</a></span>applyBC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,7 +172,13 @@ template&lt;int IDIR, math_bcs::BCBound Bound&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::Vector&lt; MultiFab * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vars</em>&#160;</td>
+          <td class="paramname"><em>vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
+          <td class="paramname"><em>solverChoice</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -187,8 +193,8 @@ template&lt;int IDIR, math_bcs::BCBound Bound&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classphys__bcs_1_1BCBase.html#a324a5127a569b3f816d9f20506ff137e">phys_bcs::BCBase</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                                                                 {</div>
+<p>Implements <a class="el" href="classphys__bcs_1_1BCBase.html#a1d1fa8fa11cdd7bbca758c23d2aceec3">phys_bcs::BCBase</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                                                                                                   {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> ((geom.isPeriodic(IDIR)) || (vars.size() == 0)) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// setup boundary conditions</span></div>
@@ -225,8 +231,8 @@ template&lt;int IDIR, math_bcs::BCBound Bound&gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructmath__bcs_1_1wall__scalars_html"><div class="ttname"><a href="structmath__bcs_1_1wall__scalars.html">math_bcs::wall_scalars</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1106</div></div>
-<div class="ttc" id="astructmath__bcs_1_1sim__bc_html"><div class="ttname"><a href="structmath__bcs_1_1sim__bc.html">math_bcs::sim_bc</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:732</div></div>
+<div class="ttc" id="astructmath__bcs_1_1wall__scalars_html"><div class="ttname"><a href="structmath__bcs_1_1wall__scalars.html">math_bcs::wall_scalars</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1108</div></div>
+<div class="ttc" id="astructmath__bcs_1_1sim__bc_html"><div class="ttname"><a href="structmath__bcs_1_1sim__bc.html">math_bcs::sim_bc</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:734</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

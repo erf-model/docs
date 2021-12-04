@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['real_648',['Real',['../structncutils_1_1NCDType.html#a7a5be35daa7dbb2cc72507cc4b5a422c',1,'ncutils::NCDType']]],
-  ['region_5fhi_649',['region_hi',['../structTaggingParm.html#a667a7703b2c368add879a10d06456c2b',1,'TaggingParm']]],
-  ['region_5flo_650',['region_lo',['../structTaggingParm.html#ab9a24f9e443f6d712d628b835a13ee20',1,'TaggingParm']]],
-  ['rho0_5ftrans_651',['rho0_trans',['../structSolverChoice.html#a3dd9fcb274b4d556d88346eeb683d00a',1,'SolverChoice']]],
-  ['rhoalpha_5fc_652',['rhoAlpha_C',['../structSolverChoice.html#a3571709ee9c72dca3523638986976821',1,'SolverChoice']]],
-  ['rhoalpha_5ft_653',['rhoAlpha_T',['../structSolverChoice.html#a3436b31b3e0e439c700d07c30d22e7a3',1,'SolverChoice']]]
+  ['obukhov_5flen_820',['obukhov_len',['../structABLMost.html#a82dd0e10d3a0f8011add38d07012fca3',1,'ABLMost']]]
 ];

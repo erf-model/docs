@@ -1,12 +1,19 @@
 var searchData=
 [
-  ['w_343',['w',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68',1,'DataStruct.H']]],
-  ['wall_5fscalars_344',['wall_scalars',['../structmath__bcs_1_1wall__scalars.html',1,'math_bcs']]],
-  ['wall_5fscalars_3c_20idir_2c_20bcbound_3a_3alower_20_3e_345',['wall_scalars&lt; IDIR, BCBound::lower &gt;',['../structmath__bcs_1_1wall__scalars_3_01IDIR_00_01BCBound_1_1lower_01_4.html',1,'math_bcs']]],
-  ['wall_5fscalars_3c_20idir_2c_20bcbound_3a_3aupper_20_3e_346',['wall_scalars&lt; IDIR, BCBound::upper &gt;',['../structmath__bcs_1_1wall__scalars_3_01IDIR_00_01BCBound_1_1upper_01_4.html',1,'math_bcs']]],
-  ['writebuildinfo_347',['writeBuildInfo',['../classIOManager.html#a2d47c67a7993b7e4b7bace1fc06e792a',1,'IOManager']]],
-  ['writejobinfo_348',['writeJobInfo',['../classIOManager.html#a458cd55e2e1e3cf2626b606f0ccfc223',1,'IOManager']]],
-  ['writeplotfile_349',['writePlotFile',['../classIOManager.html#af7254c361d36c4e08117a3d486d84341',1,'IOManager']]],
-  ['writesmallplotfile_350',['writeSmallPlotFile',['../classIOManager.html#a17056a1e637c37a4a424562529050d5d',1,'IOManager']]],
-  ['writetonccolumnfile_351',['writeToNCColumnFile',['../classIOManager.html#aae07f10c3fde49c1e5f59b0dea6659e2',1,'IOManager']]]
+  ['v_414',['v',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a',1,'DataStruct.H']]],
+  ['var_415',['var',['../classncutils_1_1NCGroup.html#a79bef315da5cff7bcf8bbcfbdd122115',1,'ncutils::NCGroup']]],
+  ['variablecleanup_416',['variableCleanUp',['../classERFBld.html#aba6cb2a8cb023df717d115eb5f3e1cac',1,'ERFBld']]],
+  ['variablesetup_417',['variableSetUp',['../classERFBld.html#ac8d4ae2921defaa414935d9d90f2b888',1,'ERFBld']]],
+  ['varid_418',['varid',['../structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532',1,'ncutils::NCVar']]],
+  ['vel_419',['vel',['../classphys__bcs_1_1BCDirichlet.html#afbf141824c9b5bfa15a8a111d5a67a54',1,'phys_bcs::BCDirichlet']]],
+  ['vel_5fmean_420',['vel_mean',['../structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6',1,'ABLMost']]],
+  ['velerr_421',['velerr',['../structTaggingParm.html#a74026c0d015f28544108662fb354242b',1,'TaggingParm']]],
+  ['velgrad_422',['velgrad',['../structTaggingParm.html#a821abb57331a67d41aa8687fc661756c',1,'TaggingParm']]],
+  ['velocitytomomentum_423',['VelocityToMomentum',['../TimeIntegration_8H.html#a411bdc39c33fefab6f1d5377f90ec3f8',1,'VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom_out, MultiFab &amp;ymom_out, MultiFab &amp;zmom_out, int l_spatial_order):&#160;VelocityToMomentum.cpp'],['../VelocityToMomentum_8cpp.html#a2c2f5421d493bacbed533547be37bda2',1,'VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom, MultiFab &amp;ymom, MultiFab &amp;zmom, const int l_spatial_order):&#160;VelocityToMomentum.cpp']]],
+  ['velocitytomomentum_2ecpp_424',['VelocityToMomentum.cpp',['../VelocityToMomentum_8cpp.html',1,'']]],
+  ['velplaneaverage_425',['VelPlaneAverage',['../classVelPlaneAverage.html',1,'VelPlaneAverage'],['../classVelPlaneAverage.html#ae7880b62c30d2f73b9b644f17a7725ca',1,'VelPlaneAverage::VelPlaneAverage()']]],
+  ['velplaneaverage_2eh_426',['VelPlaneAverage.H',['../VelPlaneAverage_8H.html',1,'']]],
+  ['vfracerr_427',['vfracerr',['../structTaggingParm.html#a1dcb6667a41c948aa5d24605f2bd2008',1,'TaggingParm']]],
+  ['vmag_5fmean_428',['vmag_mean',['../structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70',1,'ABLMost']]],
+  ['vorterr_429',['vorterr',['../structTaggingParm.html#a7c7b8230b7bbf42345ff56439b47084e',1,'TaggingParm']]]
 ];

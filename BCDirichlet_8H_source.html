@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('BCDirichlet_8H_source.html',''); initR
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    vel = inputvel;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  }</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classphys__bcs_1_1BCDirichlet.html#a76f8af28fd78f4ec34bab350bd05d6a3">   21</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classphys__bcs_1_1BCDirichlet.html#a76f8af28fd78f4ec34bab350bd05d6a3">applyBC</a> (<span class="keyword">const</span> amrex::Geometry geom, amrex::Vector&lt;MultiFab*&gt;&amp; vars)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classphys__bcs_1_1BCDirichlet.html#acabda6c1c1ccc56759d966af1b4ea0ae">   21</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classphys__bcs_1_1BCDirichlet.html#acabda6c1c1ccc56759d966af1b4ea0ae">applyBC</a> (<span class="keyword">const</span> amrex::Geometry geom, amrex::Vector&lt;MultiFab*&gt;&amp; vars, <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; solverChoice)<span class="keyword"> override </span>{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span> ((geom.isPeriodic(IDIR)) || (vars.size() == 0)) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// setup boundary conditions</span></div>
@@ -142,16 +142,17 @@ $(document).ready(function(){initNavTree('BCDirichlet_8H_source.html',''); initR
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassphys__bcs_1_1BCBase_html"><div class="ttname"><a href="classphys__bcs_1_1BCBase.html">phys_bcs::BCBase</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1283</div></div>
-<div class="ttc" id="astructmath__bcs_1_1wall__scalars_html"><div class="ttname"><a href="structmath__bcs_1_1wall__scalars.html">math_bcs::wall_scalars</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1106</div></div>
+<div class="ttc" id="aclassphys__bcs_1_1BCDirichlet_html_acabda6c1c1ccc56759d966af1b4ea0ae"><div class="ttname"><a href="classphys__bcs_1_1BCDirichlet.html#acabda6c1c1ccc56759d966af1b4ea0ae">phys_bcs::BCDirichlet::applyBC</a></div><div class="ttdeci">void applyBC(const amrex::Geometry geom, amrex::Vector&lt; MultiFab * &gt; &amp;vars, const SolverChoice &amp;solverChoice) override</div><div class="ttdef"><b>Definition:</b> BCDirichlet.H:21</div></div>
+<div class="ttc" id="aclassphys__bcs_1_1BCBase_html"><div class="ttname"><a href="classphys__bcs_1_1BCBase.html">phys_bcs::BCBase</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1616</div></div>
+<div class="ttc" id="astructmath__bcs_1_1wall__scalars_html"><div class="ttname"><a href="structmath__bcs_1_1wall__scalars.html">math_bcs::wall_scalars</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1108</div></div>
 <div class="ttc" id="aclassphys__bcs_1_1BCDirichlet_html_afbf141824c9b5bfa15a8a111d5a67a54"><div class="ttname"><a href="classphys__bcs_1_1BCDirichlet.html#afbf141824c9b5bfa15a8a111d5a67a54">phys_bcs::BCDirichlet::vel</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; vel</div><div class="ttdef"><b>Definition:</b> BCDirichlet.H:13</div></div>
 <div class="ttc" id="aclassphys__bcs_1_1BCDirichlet_html"><div class="ttname"><a href="classphys__bcs_1_1BCDirichlet.html">phys_bcs::BCDirichlet</a></div><div class="ttdef"><b>Definition:</b> BCDirichlet.H:12</div></div>
 <div class="ttc" id="aERF_8H_html"><div class="ttname"><a href="ERF_8H.html">ERF.H</a></div></div>
-<div class="ttc" id="astructmath__bcs_1_1dirichlet_html"><div class="ttname"><a href="structmath__bcs_1_1dirichlet.html">math_bcs::dirichlet</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:517</div></div>
+<div class="ttc" id="astructmath__bcs_1_1dirichlet_html"><div class="ttname"><a href="structmath__bcs_1_1dirichlet.html">math_bcs::dirichlet</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:519</div></div>
 <div class="ttc" id="aBCBase_8H_html"><div class="ttname"><a href="BCBase_8H.html">BCBase.H</a></div></div>
-<div class="ttc" id="anamespacephys__bcs_html"><div class="ttname"><a href="namespacephys__bcs.html">phys_bcs</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1281</div></div>
+<div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> DataStruct.H:43</div></div>
+<div class="ttc" id="anamespacephys__bcs_html"><div class="ttname"><a href="namespacephys__bcs.html">phys_bcs</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1614</div></div>
 <div class="ttc" id="aclassphys__bcs_1_1BCDirichlet_html_ad6360b906fa48affd11759c7746d8a79"><div class="ttname"><a href="classphys__bcs_1_1BCDirichlet.html#ad6360b906fa48affd11759c7746d8a79">phys_bcs::BCDirichlet::BCDirichlet</a></div><div class="ttdeci">BCDirichlet(const amrex::Vector&lt; amrex::Real &gt; inputvel)</div><div class="ttdef"><b>Definition:</b> BCDirichlet.H:16</div></div>
-<div class="ttc" id="aclassphys__bcs_1_1BCDirichlet_html_a76f8af28fd78f4ec34bab350bd05d6a3"><div class="ttname"><a href="classphys__bcs_1_1BCDirichlet.html#a76f8af28fd78f4ec34bab350bd05d6a3">phys_bcs::BCDirichlet::applyBC</a></div><div class="ttdeci">void applyBC(const amrex::Geometry geom, amrex::Vector&lt; MultiFab * &gt; &amp;vars) override</div><div class="ttdef"><b>Definition:</b> BCDirichlet.H:21</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

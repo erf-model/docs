@@ -45,9 +45,11 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
-        [ "Typedefs", "functions_type.html", null ]
+        [ "Typedefs", "functions_type.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -56,6 +58,7 @@ var NAVTREE =
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
@@ -66,8 +69,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ABLFieldInit_8H.html",
-"classncutils_1_1NCGroup.html#a39472c18d4e16cf47ba54bd1246220b6",
-"structmath__bcs_1_1quad__extrap.html"
+"classPlaneAverage.html#a0073b5b616afc7b0d78487078096f42b",
+"structABLFieldInit.html#a6b3553d0d012abd666beae3145fa95d2",
+"structncutils_1_1NCVar.html#af036d4858171a98b8a951348a654a36c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

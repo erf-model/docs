@@ -1,5 +1,8 @@
 var namespacemath__bcs =
 [
+    [ "ablmostwall", "structmath__bcs_1_1ablmostwall.html", null ],
+    [ "ablmostwall< IDIR, BCBound::lower >", "structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1lower_01_4.html", "structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1lower_01_4" ],
+    [ "ablmostwall< IDIR, BCBound::upper >", "structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1upper_01_4.html", "structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1upper_01_4" ],
     [ "dirichlet", "structmath__bcs_1_1dirichlet.html", null ],
     [ "dirichlet< IDIR, BCBound::lower >", "structmath__bcs_1_1dirichlet_3_01IDIR_00_01BCBound_1_1lower_01_4.html", "structmath__bcs_1_1dirichlet_3_01IDIR_00_01BCBound_1_1lower_01_4" ],
     [ "dirichlet< IDIR, BCBound::upper >", "structmath__bcs_1_1dirichlet_3_01IDIR_00_01BCBound_1_1upper_01_4.html", "structmath__bcs_1_1dirichlet_3_01IDIR_00_01BCBound_1_1upper_01_4" ],

@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['quad_5fextrap_388',['quad_extrap',['../structmath__bcs_1_1quad__extrap.html',1,'math_bcs']]],
-  ['quad_5fextrap_3c_20idir_2c_20bcbound_3a_3alower_20_3e_389',['quad_extrap&lt; IDIR, BCBound::lower &gt;',['../structmath__bcs_1_1quad__extrap_3_01IDIR_00_01BCBound_1_1lower_01_4.html',1,'math_bcs']]],
-  ['quad_5fextrap_3c_20idir_2c_20bcbound_3a_3aupper_20_3e_390',['quad_extrap&lt; IDIR, BCBound::upper &gt;',['../structmath__bcs_1_1quad__extrap_3_01IDIR_00_01BCBound_1_1upper_01_4.html',1,'math_bcs']]]
+  ['ncdim_488',['NCDim',['../structncutils_1_1NCDim.html',1,'ncutils']]],
+  ['ncdtype_489',['NCDType',['../structncutils_1_1NCDType.html',1,'ncutils']]],
+  ['ncfile_490',['NCFile',['../classncutils_1_1NCFile.html',1,'ncutils']]],
+  ['ncgroup_491',['NCGroup',['../classncutils_1_1NCGroup.html',1,'ncutils']]],
+  ['ncvar_492',['NCVar',['../structncutils_1_1NCVar.html',1,'ncutils']]]
 ];
