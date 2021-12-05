@@ -10,7 +10,6 @@ var annotated_dup =
     [ "DirectionSelector< 1 >", "structDirectionSelector_3_011_01_4.html", "structDirectionSelector_3_011_01_4" ],
     [ "DirectionSelector< 2 >", "structDirectionSelector_3_012_01_4.html", "structDirectionSelector_3_012_01_4" ],
     [ "EmptyProbDeriveStruct", "structEmptyProbDeriveStruct.html", "structEmptyProbDeriveStruct" ],
-    [ "EmptyProbTagStruct", "structEmptyProbTagStruct.html", "structEmptyProbTagStruct" ],
     [ "ERFBld", "classERFBld.html", "classERFBld" ],
     [ "ERFHypFillExtDir", "structERFHypFillExtDir.html", "structERFHypFillExtDir" ],
     [ "FCFillExtDirDummy", "structFCFillExtDirDummy.html", "structFCFillExtDirDummy" ],
@@ -18,6 +17,5 @@ var annotated_dup =
     [ "IOManager", "classIOManager.html", "classIOManager" ],
     [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ],
     [ "SolverChoice", "structSolverChoice.html", "structSolverChoice" ],
-    [ "TaggingParm", "structTaggingParm.html", "structTaggingParm" ],
     [ "VelPlaneAverage", "classVelPlaneAverage.html", "classVelPlaneAverage" ]
 ];

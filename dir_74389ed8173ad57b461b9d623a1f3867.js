@@ -24,8 +24,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "Setup.cpp", "Setup_8cpp.html", "Setup_8cpp" ],
     [ "SumIQ.cpp", "SumIQ_8cpp.html", null ],
     [ "SumUtils.cpp", "SumUtils_8cpp.html", null ],
-    [ "Tagging.cpp", "Tagging_8cpp.html", "Tagging_8cpp" ],
-    [ "Tagging.H", "Tagging_8H.html", "Tagging_8H" ],
+    [ "Tagging.cpp", "Tagging_8cpp.html", null ],
     [ "Utils.cpp", "Utils_8cpp.html", "Utils_8cpp" ],
     [ "utils.H", "utils_8H.html", "utils_8H" ],
     [ "utils_K.H", "utils__K_8H.html", "utils__K_8H" ]

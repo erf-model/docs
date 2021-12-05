@@ -20,6 +20,9 @@ var dir_4c4ecb0cf2c626518fddf9d11a982ea7 =
     [ "BCNoSlipWall.H", "BCNoSlipWall_8H.html", [
       [ "BCNoSlipWall", "classphys__bcs_1_1BCNoSlipWall.html", "classphys__bcs_1_1BCNoSlipWall" ]
     ] ],
+    [ "BCOutflow.H", "BCOutflow_8H.html", [
+      [ "BCOutflow", "classphys__bcs_1_1BCOutflow.html", "classphys__bcs_1_1BCOutflow" ]
+    ] ],
     [ "BCSimSlipWall.H", "BCSimSlipWall_8H.html", [
       [ "BCSimSlipWall", "classphys__bcs_1_1BCSimSlipWall.html", "classphys__bcs_1_1BCSimSlipWall" ]
     ] ],

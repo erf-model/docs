@@ -6,6 +6,7 @@ var namespacephys__bcs =
     [ "BCInterior", "classphys__bcs_1_1BCInterior.html", "classphys__bcs_1_1BCInterior" ],
     [ "BCMostWall", "classphys__bcs_1_1BCMostWall.html", "classphys__bcs_1_1BCMostWall" ],
     [ "BCNoSlipWall", "classphys__bcs_1_1BCNoSlipWall.html", "classphys__bcs_1_1BCNoSlipWall" ],
+    [ "BCOutflow", "classphys__bcs_1_1BCOutflow.html", "classphys__bcs_1_1BCOutflow" ],
     [ "BCSimSlipWall", "classphys__bcs_1_1BCSimSlipWall.html", "classphys__bcs_1_1BCSimSlipWall" ],
     [ "BCSlipWall", "classphys__bcs_1_1BCSlipWall.html", "classphys__bcs_1_1BCSlipWall" ]
 ];

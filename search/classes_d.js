@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['taggingparm_508',['TaggingParm',['../structTaggingParm.html',1,'']]]
+  ['velplaneaverage_480',['VelPlaneAverage',['../classVelPlaneAverage.html',1,'']]]
 ];

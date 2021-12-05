@@ -11,6 +11,7 @@ var hierarchy =
       [ "phys_bcs::BCInterior", "classphys__bcs_1_1BCInterior.html", null ],
       [ "phys_bcs::BCMostWall< IDIR, Bound >", "classphys__bcs_1_1BCMostWall.html", null ],
       [ "phys_bcs::BCNoSlipWall< IDIR, Bound >", "classphys__bcs_1_1BCNoSlipWall.html", null ],
+      [ "phys_bcs::BCOutflow< IDIR, Bound >", "classphys__bcs_1_1BCOutflow.html", null ],
       [ "phys_bcs::BCSimSlipWall< IDIR, Bound >", "classphys__bcs_1_1BCSimSlipWall.html", null ],
       [ "phys_bcs::BCSlipWall< IDIR, Bound >", "classphys__bcs_1_1BCSlipWall.html", null ]
     ] ],
@@ -22,7 +23,6 @@ var hierarchy =
     [ "math_bcs::dirichlet< IDIR, BCBound::lower >", "structmath__bcs_1_1dirichlet_3_01IDIR_00_01BCBound_1_1lower_01_4.html", null ],
     [ "math_bcs::dirichlet< IDIR, BCBound::upper >", "structmath__bcs_1_1dirichlet_3_01IDIR_00_01BCBound_1_1upper_01_4.html", null ],
     [ "EmptyProbDeriveStruct", "structEmptyProbDeriveStruct.html", null ],
-    [ "EmptyProbTagStruct", "structEmptyProbTagStruct.html", null ],
     [ "ERFHypFillExtDir", "structERFHypFillExtDir.html", null ],
     [ "FCFillExtDirDummy", "structFCFillExtDirDummy.html", null ],
     [ "GetViscosity", "structGetViscosity.html", null ],
@@ -39,6 +39,9 @@ var hierarchy =
       [ "ncutils::NCFile", "classncutils_1_1NCFile.html", null ]
     ] ],
     [ "ncutils::NCVar", "structncutils_1_1NCVar.html", null ],
+    [ "math_bcs::pc_extrap< IDIR, Bound >", "structmath__bcs_1_1pc__extrap.html", null ],
+    [ "math_bcs::pc_extrap< IDIR, BCBound::lower >", "structmath__bcs_1_1pc__extrap_3_01IDIR_00_01BCBound_1_1lower_01_4.html", null ],
+    [ "math_bcs::pc_extrap< IDIR, BCBound::upper >", "structmath__bcs_1_1pc__extrap_3_01IDIR_00_01BCBound_1_1upper_01_4.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
     [ "math_bcs::quad_extrap< IDIR, Bound >", "structmath__bcs_1_1quad__extrap.html", null ],
     [ "math_bcs::quad_extrap< IDIR, BCBound::lower >", "structmath__bcs_1_1quad__extrap_3_01IDIR_00_01BCBound_1_1lower_01_4.html", null ],
@@ -53,7 +56,6 @@ var hierarchy =
     [ "math_bcs::sim_bc< IDIR, BCBound::lower >", "structmath__bcs_1_1sim__bc_3_01IDIR_00_01BCBound_1_1lower_01_4.html", null ],
     [ "math_bcs::sim_bc< IDIR, BCBound::upper >", "structmath__bcs_1_1sim__bc_3_01IDIR_00_01BCBound_1_1upper_01_4.html", null ],
     [ "SolverChoice", "structSolverChoice.html", null ],
-    [ "TaggingParm", "structTaggingParm.html", null ],
     [ "VelPlaneAverage", "classVelPlaneAverage.html", null ],
     [ "math_bcs::wall_scalars< IDIR, Bound >", "structmath__bcs_1_1wall__scalars.html", null ],
     [ "math_bcs::wall_scalars< IDIR, BCBound::lower >", "structmath__bcs_1_1wall__scalars_3_01IDIR_00_01BCBound_1_1lower_01_4.html", null ],

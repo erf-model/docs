@@ -1,5 +1,8 @@
 var BCBase_8H =
 [
+    [ "pc_extrap", "structmath__bcs_1_1pc__extrap.html", null ],
+    [ "pc_extrap< IDIR, BCBound::lower >", "structmath__bcs_1_1pc__extrap_3_01IDIR_00_01BCBound_1_1lower_01_4.html", "structmath__bcs_1_1pc__extrap_3_01IDIR_00_01BCBound_1_1lower_01_4" ],
+    [ "pc_extrap< IDIR, BCBound::upper >", "structmath__bcs_1_1pc__extrap_3_01IDIR_00_01BCBound_1_1upper_01_4.html", "structmath__bcs_1_1pc__extrap_3_01IDIR_00_01BCBound_1_1upper_01_4" ],
     [ "lin_extrap", "structmath__bcs_1_1lin__extrap.html", null ],
     [ "lin_extrap< IDIR, BCBound::lower >", "structmath__bcs_1_1lin__extrap_3_01IDIR_00_01BCBound_1_1lower_01_4.html", "structmath__bcs_1_1lin__extrap_3_01IDIR_00_01BCBound_1_1lower_01_4" ],
     [ "lin_extrap< IDIR, BCBound::upper >", "structmath__bcs_1_1lin__extrap_3_01IDIR_00_01BCBound_1_1upper_01_4.html", "structmath__bcs_1_1lin__extrap_3_01IDIR_00_01BCBound_1_1upper_01_4" ],

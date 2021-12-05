@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['inputs_5fname_766',['inputs_name',['../NCPlotFile_8H.html#aabaa127a3a319c1b86090d6c88568965',1,'inputs_name():&#160;main.cpp'],['../PlotFile_8H.html#aabaa127a3a319c1b86090d6c88568965',1,'inputs_name():&#160;main.cpp'],['../main_8cpp.html#aabaa127a3a319c1b86090d6c88568965',1,'inputs_name():&#160;main.cpp']]],
-  ['int_767',['Int',['../structncutils_1_1NCDType.html#ac5bfba212db12de3dfde52dc3ae3eb0c',1,'ncutils::NCDType']]],
-  ['is_5fopen_768',['is_open',['../classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379',1,'ncutils::NCFile']]]
+  ['kappa_732',['kappa',['../structABLMost.html#a1eafcc83d7f547d4b6946f56a3d334ed',1,'ABLMost']]]
 ];
