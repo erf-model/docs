@@ -189,139 +189,78 @@ template&lt;int IDIR&gt; </div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;    {</div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;<span class="preprocessor">#if 0</span></div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;      <span class="keywordtype">int</span> lo = geom.Domain().smallEnd(IDIR);</div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;      amrex::Print() &lt;&lt;<span class="stringliteral">&quot; HERE IWTH IDIR &quot;</span> &lt;&lt; IDIR &lt;&lt; <span class="stringliteral">&quot; in box &quot;</span> &lt;&lt; b &lt;&lt; std::endl;</div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160; </div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;      <span class="keywordflow">if</span>(b.smallEnd(IDIR) &lt; lo) {</div>
-<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;        <span class="keywordflow">if</span> (IDIR == 0) {</div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;          amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;          {</div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;            <span class="keywordflow">if</span> (i &lt; lo) {</div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;              Real vely = (*states[1])(lo,j,k);</div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;              Real velz = (*states[2])(lo,j,k);</div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;              Real rho  = (*states[3])(lo,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;              Real <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> = (*states[3])(lo,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/rho;</div>
-<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;              Real eta  = (*states[4])(lo,j,k);</div>
-<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;              Real vmag = sqrt(vely*vely+velz*velz);</div>
-<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160; </div>
-<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;              Real vgy = ((vely-most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[1])*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a> + vmag*most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[1])/(most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>;</div>
-<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;              Real vgz = ((velz-most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[2])*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a> + vmag*most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[2])/(most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>;</div>
-<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160; </div>
-<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;              Real num1  = (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>-most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>)*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>;</div>
-<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;              Real num2  = (most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>-most.<a class="code" href="structABLMost.html#a73621a1b429f2e910a29adac72b7c581">surf_temp</a>)*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>;</div>
-<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;              Real motheta = (num1+num2)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a1eafcc83d7f547d4b6946f56a3d334ed">kappa</a>/most.<a class="code" href="structABLMost.html#a8a0f5daa7b78e96a9e61859cfc526eba">phi_h</a>();</div>
-<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160; </div>
-<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;              <span class="keywordflow">if</span> (vartype == 0 &amp;&amp; n == <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) {</div>
-<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;                 data(i,j,k,n) = rho*motheta;</div>
-<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vartype == 2 ) {</div>
-<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;                 data(i,j,k,n) = vgy;</div>
-<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vartype == 3) {</div>
-<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;                 data(i,j,k,n) = vgz;</div>
-<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;              } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;                 data(i,j,k,n) = (lo-i+1)*data(lo,j,k,n) - (lo-i)*data(lo+1,j,k,n);</div>
-<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;              }</div>
-<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;            }</div>
-<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;          });</div>
-<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 1) {</div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;          amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;          {</div>
-<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;            <span class="keywordflow">if</span> (j &lt; lo) {</div>
-<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;              Real velx = (*states[0])(i,lo,k);</div>
-<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;              Real velz = (*states[2])(i,lo,k);</div>
-<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;              Real rho  = (*states[3])(i,lo,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;              Real <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> = (*states[3])(i,lo,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/rho;</div>
-<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;              Real eta  = (*states[4])(i,lo,k);</div>
-<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;              Real vmag = sqrt(velx*velx+velz*velz);</div>
-<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160; </div>
-<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;              Real vgx = ((velx-most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[0])*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a> + vmag*most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[0])/(most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>;</div>
-<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;              Real vgz = ((velz-most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[2])*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a> + vmag*most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[2])/(most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>;</div>
-<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160; </div>
-<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;              Real num1  = (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>-most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>)*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>;</div>
-<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;              Real num2  = (most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>-most.<a class="code" href="structABLMost.html#a73621a1b429f2e910a29adac72b7c581">surf_temp</a>)*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>;</div>
-<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;              Real motheta = (num1+num2)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a1eafcc83d7f547d4b6946f56a3d334ed">kappa</a>/most.<a class="code" href="structABLMost.html#a8a0f5daa7b78e96a9e61859cfc526eba">phi_h</a>();</div>
-<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160; </div>
-<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;              <span class="keywordflow">if</span> (vartype == 0 &amp;&amp; n == <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) {</div>
-<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;                 data(i,j,k,n) = rho*motheta;</div>
-<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vartype ==  1 ) { <span class="comment">// for velx, and velz</span></div>
-<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;                 data(i,j,k,n) = vgx;</div>
-<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vartype == 3) {</div>
-<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;                 data(i,j,k,n) = vgz;</div>
-<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;              } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;                 data(i,j,k,n) = (lo-j+1)*data(i,lo,k,n) - (lo-j)*data(i,lo+1,k,n);</div>
-<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;              }</div>
-<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;            }</div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;          });</div>
-<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 2) {</div>
-<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;          amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;          {</div>
-<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;            <span class="comment">//amrex::Print() &lt;&lt; &quot; HERE WITH &quot; &lt;&lt; IntVect(i,j,k) &lt;&lt; &quot; &quot; &lt;&lt; lo &lt;&lt; &quot; &quot; &lt;&lt; vartype &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;            <span class="keywordflow">if</span> (k &lt; lo) {</div>
-<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;              Real velx, vely, rho, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>, eta;</div>
-<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160; </div>
-<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;              <span class="keywordflow">if</span> (vartype == 1) {</div>
-<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;                <span class="keywordtype">int</span> hi = geom.Domain().bigEnd(0);</div>
-<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;<span class="comment">//              if (i &lt; hi) {</span></div>
-<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;                  velx  = (*states[0])(i,j,lo);</div>
-<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;                  vely  = (*states[1])(i,j,lo);</div>
-<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;                  rho   = (*states[3])(i,j,lo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;                  <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> = (*states[3])(i,j,lo,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/rho;</div>
-<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;                  eta   = (*states[4])(i,j,lo);</div>
-<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;<span class="comment">//              } else {</span></div>
-<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;<span class="comment">//                velx  = (*states[0])(i,j,lo);</span></div>
-<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;<span class="comment">//                vely  = 2.0*(*states[1])(hi-1,j,lo)-(*states[1])(hi-2,j,lo);</span></div>
-<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;<span class="comment">//                rho   = 2.0*(*states[3])(hi-1,j,lo,Rho_comp)-(*states[3])(hi-2,j,lo,Rho_comp);</span></div>
-<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;<span class="comment">//                theta = (2.0*(*states[3])(hi-1,j,lo,RhoTheta_comp)-(*states[3])(hi-2,j,lo,RhoTheta_comp))/rho;</span></div>
-<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;<span class="comment">//                eta   = 2.0*(*states[4])(hi-1,j,lo)-(*states[4])(hi-2,j,lo);</span></div>
-<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;<span class="comment">//              }</span></div>
-<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vartype == 2) {</div>
-<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;                <span class="keywordtype">int</span> hi = geom.Domain().bigEnd(1);</div>
-<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;<span class="comment">//              if (j &lt; hi) {</span></div>
-<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;                  velx  = (*states[0])(i,j,lo);</div>
-<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;                  vely  = (*states[1])(i,j,lo);</div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;                  rho   = (*states[3])(i,j,lo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;                  <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> = (*states[3])(i,j,lo,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/rho;</div>
-<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;                  eta   = (*states[4])(i,j,lo);</div>
-<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;<span class="comment">//              } else {</span></div>
-<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;<span class="comment">//                velx  = 2.0*(*states[0])(i,hi-1,lo)-(*states[0])(i,hi-2,lo);</span></div>
-<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;<span class="comment">//                vely  = (*states[1])(i,j,lo);</span></div>
-<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;<span class="comment">//                rho   = 2.0*(*states[3])(i,hi-1,lo,Rho_comp)-(*states[3])(i,hi-2,lo,Rho_comp);</span></div>
-<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;<span class="comment">//                theta = (2.0*(*states[3])(i,hi-1,lo,RhoTheta_comp)-(*states[3])(i,hi-2,lo,RhoTheta_comp))/rho;</span></div>
-<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;<span class="comment">//                eta   = 2.0*(*states[4])(i,hi-1,lo)-(*states[4])(i,hi-2,lo);</span></div>
-<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;<span class="comment">//              }</span></div>
-<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;              } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;                velx  = (*states[0])(i,j,lo);</div>
-<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;                vely  = (*states[1])(i,j,lo);</div>
-<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;                rho   = (*states[3])(i,j,lo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;                <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> = (*states[3])(i,j,lo,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/rho;</div>
-<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;                eta   = (*states[4])(i,j,lo);</div>
-<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;              }</div>
-<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160; </div>
-<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;              Real vmag  = sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;              Real vgx = ((velx-most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[0])*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a> + vmag*most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[0])/(most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>;</div>
-<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;              Real vgy = ((vely-most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[1])*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a> + vmag*most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[1])/(most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>;</div>
-<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160; </div>
-<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;              Real num1  = (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>-most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>)*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>;</div>
-<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;              Real num2  = (most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>-most.<a class="code" href="structABLMost.html#a73621a1b429f2e910a29adac72b7c581">surf_temp</a>)*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>;</div>
-<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;              Real motheta = (num1+num2)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a1eafcc83d7f547d4b6946f56a3d334ed">kappa</a>/most.<a class="code" href="structABLMost.html#a8a0f5daa7b78e96a9e61859cfc526eba">phi_h</a>();</div>
-<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160; </div>
-<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;              <span class="comment">//printf(&quot;i=%d, j=%d, k=%d, vx=%13.6e, vy=%13.6e, rho=%13.6e\n&quot;,i,j,k,vgx,vgy,rho);</span></div>
-<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160; </div>
-<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;              <span class="keywordflow">if</span> (vartype == 0 &amp;&amp; n == <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) {</div>
-<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;                 data(i,j,k,n) = rho*motheta;</div>
-<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vartype == 1) { <span class="comment">// for velx, and vely</span></div>
-<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;                 data(i,j,k,n) = vgx*rho; <span class="comment">//eta;</span></div>
-<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vartype == 2) {</div>
-<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;                 data(i,j,k,n) = vgy*rho; <span class="comment">//eta;</span></div>
-<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;              } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;                 data(i,j,k,n) = (lo-k+1)*data(i,j,lo,n) - (lo-k)*data(i,j,lo+1,n);</div>
-<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;              }</div>
-<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;            }</div>
-<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;          });</div>
-<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;        }</div>
-<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;      }</div>
-<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;    }</div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;      AMREX_ALWAYS_ASSERT(IDIR == 2);</div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;      <span class="keywordtype">int</span> lo = geom.Domain().smallEnd()[IDIR];</div>
+<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160; </div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;      <span class="keywordflow">if</span> (b.smallEnd(IDIR) &gt;= lo) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160; </div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;<span class="preprocessor">#if 0</span></div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;      amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;      {</div>
+<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;        <span class="keywordflow">if</span> (k &lt; lo) {</div>
+<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;          Real velx, vely, rho, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>, eta;</div>
+<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160; </div>
+<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;              <span class="keywordflow">if</span> (vartype == 1) {</div>
+<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;                <span class="keywordtype">int</span> hi = geom.Domain().bigEnd(0);</div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;<span class="comment">//              if (i &lt; hi) {</span></div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;                  velx  = (*states[0])(i,j,lo);</div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;                  vely  = (*states[1])(i,j,lo);</div>
+<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;                  rho   = (*states[3])(i,j,lo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;                  <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> = (*states[3])(i,j,lo,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/rho;</div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;                  eta   = (*states[4])(i,j,lo);</div>
+<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;<span class="comment">//              } else {</span></div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;<span class="comment">//                velx  = (*states[0])(i,j,lo);</span></div>
+<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;<span class="comment">//                vely  = 2.0*(*states[1])(hi-1,j,lo)-(*states[1])(hi-2,j,lo);</span></div>
+<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;<span class="comment">//                rho   = 2.0*(*states[3])(hi-1,j,lo,Rho_comp)-(*states[3])(hi-2,j,lo,Rho_comp);</span></div>
+<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;<span class="comment">//                theta = (2.0*(*states[3])(hi-1,j,lo,RhoTheta_comp)-(*states[3])(hi-2,j,lo,RhoTheta_comp))/rho;</span></div>
+<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;<span class="comment">//                eta   = 2.0*(*states[4])(hi-1,j,lo)-(*states[4])(hi-2,j,lo);</span></div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;<span class="comment">//              }</span></div>
+<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vartype == 2) {</div>
+<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;                <span class="keywordtype">int</span> hi = geom.Domain().bigEnd(1);</div>
+<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;<span class="comment">//              if (j &lt; hi) {</span></div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;                  velx  = (*states[0])(i,j,lo);</div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;                  vely  = (*states[1])(i,j,lo);</div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;                  rho   = (*states[3])(i,j,lo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;                  <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> = (*states[3])(i,j,lo,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/rho;</div>
+<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;                  eta   = (*states[4])(i,j,lo);</div>
+<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;<span class="comment">//              } else {</span></div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;<span class="comment">//                velx  = 2.0*(*states[0])(i,hi-1,lo)-(*states[0])(i,hi-2,lo);</span></div>
+<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;<span class="comment">//                vely  = (*states[1])(i,j,lo);</span></div>
+<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;<span class="comment">//                rho   = 2.0*(*states[3])(i,hi-1,lo,Rho_comp)-(*states[3])(i,hi-2,lo,Rho_comp);</span></div>
+<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;<span class="comment">//                theta = (2.0*(*states[3])(i,hi-1,lo,RhoTheta_comp)-(*states[3])(i,hi-2,lo,RhoTheta_comp))/rho;</span></div>
+<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;<span class="comment">//                eta   = 2.0*(*states[4])(i,hi-1,lo)-(*states[4])(i,hi-2,lo);</span></div>
+<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;<span class="comment">//              }</span></div>
+<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;              } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;                velx  = (*states[0])(i,j,lo);</div>
+<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;                vely  = (*states[1])(i,j,lo);</div>
+<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;                rho   = (*states[3])(i,j,lo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;                <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> = (*states[3])(i,j,lo,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/rho;</div>
+<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;                eta   = (*states[4])(i,j,lo);</div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;              }</div>
+<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160; </div>
+<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;              Real vmag  = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;              Real vgx = ((velx-most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[0])*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a> + vmag*most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[0])/(most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>;</div>
+<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;              Real vgy = ((vely-most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[1])*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a> + vmag*most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[1])/(most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>;</div>
+<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160; </div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;              Real num1  = (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>-most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>)*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>;</div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;              Real num2  = (most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>-most.<a class="code" href="structABLMost.html#a73621a1b429f2e910a29adac72b7c581">surf_temp</a>)*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>;</div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;              Real motheta = (num1+num2)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a1eafcc83d7f547d4b6946f56a3d334ed">kappa</a>/most.<a class="code" href="structABLMost.html#a8a0f5daa7b78e96a9e61859cfc526eba">phi_h</a>();</div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160; </div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;              <span class="comment">//printf(&quot;i=%d, j=%d, k=%d, vx=%13.6e, vy=%13.6e, rho=%13.6e\n&quot;,i,j,k,vgx,vgy,rho);</span></div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160; </div>
+<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;              <span class="keywordflow">if</span> (vartype == 0 &amp;&amp; n == <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) {</div>
+<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;                 data(i,j,k,n) = rho*motheta;</div>
+<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vartype == 1) { <span class="comment">// for velx, and vely</span></div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;                 data(i,j,k,n) = vgx*rho; <span class="comment">//eta;</span></div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vartype == 2) {</div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;                 data(i,j,k,n) = vgy*rho; <span class="comment">//eta;</span></div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;              } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;                 data(i,j,k,n) = (lo-k+1)*data(i,j,lo,n) - (lo-k)*data(i,j,lo+1,n);</div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;              }</div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;            }</div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;          });</div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -381,33 +320,33 @@ template&lt;int IDIR&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;                                                                                               {</div>
-<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;      <span class="keywordtype">int</span> lo = geom.Domain().smallEnd(IDIR);</div>
-<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;      <span class="keywordflow">if</span>(b.smallEnd(IDIR) &lt; lo) {</div>
-<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;        <span class="keywordflow">if</span> (IDIR == 0) {</div>
-<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;           {</div>
-<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;            <span class="keywordflow">if</span> (i &lt; lo) {</div>
-<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;              data(i,j,k,n) = 0.0;</div>
-<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;            }</div>
-<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;           });</div>
-<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 1) {</div>
-<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;           {</div>
-<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;            <span class="keywordflow">if</span> (j &lt; lo) {</div>
-<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;              data(i,j,k,n) = 0.0;</div>
-<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;            }</div>
-<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;           });</div>
-<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 2) {</div>
-<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;           {</div>
-<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;            <span class="keywordflow">if</span> (k &lt; lo) {</div>
-<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;              data(i,j,k,n) = 0.0;</div>
-<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;            }</div>
-<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;           });</div>
-<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;        }</div>
-<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;      }</div>
-<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;                                                                                               {</div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;      <span class="keywordtype">int</span> lo = geom.Domain().smallEnd(IDIR);</div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;      <span class="keywordflow">if</span>(b.smallEnd(IDIR) &lt; lo) {</div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;        <span class="keywordflow">if</span> (IDIR == 0) {</div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;           {</div>
+<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;            <span class="keywordflow">if</span> (i &lt; lo) {</div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;              data(i,j,k,n) = 0.0;</div>
+<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;            }</div>
+<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;           });</div>
+<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 1) {</div>
+<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;           {</div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;            <span class="keywordflow">if</span> (j &lt; lo) {</div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;              data(i,j,k,n) = 0.0;</div>
+<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;            }</div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;           });</div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 2) {</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;           {</div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;            <span class="keywordflow">if</span> (k &lt; lo) {</div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;              data(i,j,k,n) = 0.0;</div>
+<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;            }</div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;           });</div>
+<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;        }</div>
+<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;      }</div>
+<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

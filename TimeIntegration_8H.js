@@ -18,12 +18,9 @@ var TimeIntegration_8H =
     [ "DiffusionContributionForState", "TimeIntegration_8H.html#ac64d2b1c8a4c574869dcfba57a1dc2e3", null ],
     [ "erf_advance", "TimeIntegration_8H.html#afbe75ff62bd73fd1500b7ccc73cd06cf", null ],
     [ "erf_rhs", "TimeIntegration_8H.html#a57e4d3efa7f4efdf16402d84cfef3038", null ],
-    [ "InterpolateDensityFromCellToFace", "TimeIntegration_8H.html#a60bd0dd83daa19eba8df2013b6159e90", null ],
     [ "InterpolateDensityPertFromCellToFace", "TimeIntegration_8H.html#a311626c995e28e2504077cbd23af4e2a", null ],
     [ "InterpolateFromCellOrFace", "TimeIntegration_8H.html#ae77ea6ac68917645e7f96b81974092ea", null ],
     [ "InterpolatePertFromCell", "TimeIntegration_8H.html#a57d5440d8f07beac2235c019c8e076ce", null ],
-    [ "InterpolateRhoScalarFromCellToFace", "TimeIntegration_8H.html#a4ff819b72110b32e6382b493602a2dc7", null ],
-    [ "InterpolateRhoThetaFromCellToFace", "TimeIntegration_8H.html#a5839503feb4e39a110646368e244720a", null ],
     [ "InterpolateTurbulentViscosity", "TimeIntegration_8H.html#a72760f370a036662f62d0c1f0c2a4df5", null ],
     [ "MomentumToVelocity", "TimeIntegration_8H.html#a57facc76b77bc1540bd010f49f9cd7e2", null ],
     [ "VelocityToMomentum", "TimeIntegration_8H.html#a411bdc39c33fefab6f1d5377f90ec3f8", null ]
