@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"structABLFieldInit.html#aa5912f83502db36ff4d35c495e823b26":[3,0,3,11],
 "structABLFieldInit.html#aa9a2b8c5336a64afd60246df4459d539":[3,0,3,14],
 "structABLFieldInit.html#abe8f40fa04af3b03f6fc2e80db8c0c67":[3,0,3,8],
 "structABLFieldInit.html#ac3777729cc5682999adee5def77b4ba6":[3,0,3,12],
