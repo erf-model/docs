@@ -32,7 +32,6 @@ var structSolverChoice =
     [ "use_gravity", "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5", null ],
     [ "use_momentum_advection", "structSolverChoice.html#ad64e8b24caa6f3dd8050ce6b23df67d3", null ],
     [ "use_momentum_diffusion", "structSolverChoice.html#a66c79d8aca68a862e63572e7a00d5789", null ],
-    [ "use_pressure", "structSolverChoice.html#a0d46d42d6d42a64fdd42828957445db9", null ],
     [ "use_rayleigh_damping", "structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01", null ],
     [ "use_scalar_diffusion", "structSolverChoice.html#a6ddc576079d42c44c6266d4a7cac36f1", null ],
     [ "use_state_advection", "structSolverChoice.html#a204dd54aa933d3c3bd47732475b700c3", null ],
