@@ -17,6 +17,7 @@ var TimeIntegration_8H =
     [ "DiffusionContributionForMom", "TimeIntegration_8H.html#a63ebcd2f70a317c4af3ca3c455cab318", null ],
     [ "DiffusionContributionForState", "TimeIntegration_8H.html#ac64d2b1c8a4c574869dcfba57a1dc2e3", null ],
     [ "erf_advance", "TimeIntegration_8H.html#afbe75ff62bd73fd1500b7ccc73cd06cf", null ],
+    [ "erf_fast_rhs", "TimeIntegration_8H.html#a226f06ac89cb7fa685d292061fbc1ccf", null ],
     [ "erf_rhs", "TimeIntegration_8H.html#a57e4d3efa7f4efdf16402d84cfef3038", null ],
     [ "InterpolateDensityPertFromCellToFace", "TimeIntegration_8H.html#a311626c995e28e2504077cbd23af4e2a", null ],
     [ "InterpolateFromCellOrFace", "TimeIntegration_8H.html#ae77ea6ac68917645e7f96b81974092ea", null ],

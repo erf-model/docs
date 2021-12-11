@@ -295,9 +295,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Advection_8cpp_aee39673687d46c3c72c0b483679fb59c_icgraph.png" border="0" usemap="#Advection_8cpp_aee39673687d46c3c72c0b483679fb59c_icgraph" alt=""/></div>
 <map name="Advection_8cpp_aee39673687d46c3c72c0b483679fb59c_icgraph" id="Advection_8cpp_aee39673687d46c3c72c0b483679fb59c_icgraph">
-<area shape="rect" title=" " alt="" coords="271,5,491,32"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a57e4d3efa7f4efdf16402d84cfef3038" title=" " alt="" coords="156,5,223,32"/>
+<area shape="rect" title=" " alt="" coords="417,5,637,32"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a57e4d3efa7f4efdf16402d84cfef3038" title=" " alt="" coords="303,5,369,32"/>
 <area shape="rect" href="TimeIntegration__driver_8cpp.html#aff8d18e0bf2ee683ac83b32117491a17" title=" " alt="" coords="5,5,108,32"/>
+<area shape="rect" href="TimeIntegration__fast_8cpp.html#a226f06ac89cb7fa685d292061fbc1ccf" title=" " alt="" coords="156,31,255,57"/>
 </map>
 </div>
 
@@ -403,12 +404,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">if</span> (qty_index == <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">xflux</a>(i+1,j,k,qty_index) = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k,qty_index);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">xflux</a>(i  ,j,k,qty_index) = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i  ,j,k,qty_index);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j+1,k,qty_index) = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j+1,k,qty_index);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j  ,k,qty_index) = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j  ,k,qty_index);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k+1,qty_index) = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k+1,qty_index);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k  ,qty_index) = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k  ,qty_index);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">xflux</a>(i+1,j,k,qty_index) = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">xflux</a>(i  ,j,k,qty_index) = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i  ,j,k);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j+1,k,qty_index) = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j+1,k);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j  ,k,qty_index) = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j  ,k);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k+1,qty_index) = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k+1);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k  ,qty_index) = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k  );</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
@@ -433,7 +434,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">return</span> advectionContribution;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TimeIntegration__rhs_8cpp.html#a57e4d3efa7f4efdf16402d84cfef3038">erf_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TimeIntegration__fast_8cpp.html#a226f06ac89cb7fa685d292061fbc1ccf">erf_fast_rhs()</a>, and <a class="el" href="TimeIntegration__rhs_8cpp.html#a57e4d3efa7f4efdf16402d84cfef3038">erf_rhs()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -449,9 +450,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Advection_8cpp_a4a5f46463fe185dc62f53abaa1f23884_icgraph.png" border="0" usemap="#Advection_8cpp_a4a5f46463fe185dc62f53abaa1f23884_icgraph" alt=""/></div>
 <map name="Advection_8cpp_a4a5f46463fe185dc62f53abaa1f23884_icgraph" id="Advection_8cpp_a4a5f46463fe185dc62f53abaa1f23884_icgraph">
-<area shape="rect" title=" " alt="" coords="271,5,457,47"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a57e4d3efa7f4efdf16402d84cfef3038" title=" " alt="" coords="156,13,223,39"/>
-<area shape="rect" href="TimeIntegration__driver_8cpp.html#aff8d18e0bf2ee683ac83b32117491a17" title=" " alt="" coords="5,13,108,39"/>
+<area shape="rect" title=" " alt="" coords="417,23,604,65"/>
+<area shape="rect" href="TimeIntegration__fast_8cpp.html#a226f06ac89cb7fa685d292061fbc1ccf" title=" " alt="" coords="156,5,255,32"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a57e4d3efa7f4efdf16402d84cfef3038" title=" " alt="" coords="303,56,369,83"/>
+<area shape="rect" href="TimeIntegration__driver_8cpp.html#aff8d18e0bf2ee683ac83b32117491a17" title=" " alt="" coords="5,31,108,57"/>
 </map>
 </div>
 
@@ -624,10 +626,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Advection_8cpp_a44a92ba7e3ec9c223eb898c60cfbabfb_icgraph.png" border="0" usemap="#Advection_8cpp_a44a92ba7e3ec9c223eb898c60cfbabfb_icgraph" alt=""/></div>
 <map name="Advection_8cpp_a44a92ba7e3ec9c223eb898c60cfbabfb_icgraph" id="Advection_8cpp_a44a92ba7e3ec9c223eb898c60cfbabfb_icgraph">
-<area shape="rect" title=" " alt="" coords="539,5,789,32"/>
-<area shape="rect" href="TimeIntegration_8H.html#aa9e5cb8ba958be5a50772d2bda984824" title=" " alt="" coords="271,5,491,32"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a57e4d3efa7f4efdf16402d84cfef3038" title=" " alt="" coords="156,5,223,32"/>
+<area shape="rect" title=" " alt="" coords="685,5,936,32"/>
+<area shape="rect" href="TimeIntegration_8H.html#aa9e5cb8ba958be5a50772d2bda984824" title=" " alt="" coords="417,5,637,32"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a57e4d3efa7f4efdf16402d84cfef3038" title=" " alt="" coords="303,5,369,32"/>
 <area shape="rect" href="TimeIntegration__driver_8cpp.html#aff8d18e0bf2ee683ac83b32117491a17" title=" " alt="" coords="5,5,108,32"/>
+<area shape="rect" href="TimeIntegration__fast_8cpp.html#a226f06ac89cb7fa685d292061fbc1ccf" title=" " alt="" coords="156,31,255,57"/>
 </map>
 </div>
 
@@ -730,10 +733,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Advection_8cpp_a158200fab7d47af24678518adfea797e_icgraph.png" border="0" usemap="#Advection_8cpp_a158200fab7d47af24678518adfea797e_icgraph" alt=""/></div>
 <map name="Advection_8cpp_a158200fab7d47af24678518adfea797e_icgraph" id="Advection_8cpp_a158200fab7d47af24678518adfea797e_icgraph">
-<area shape="rect" title=" " alt="" coords="505,5,724,47"/>
-<area shape="rect" href="TimeIntegration_8H.html#a4ee8c6e3b0328d9691be388c6cfd07ba" title=" " alt="" coords="271,5,457,47"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a57e4d3efa7f4efdf16402d84cfef3038" title=" " alt="" coords="156,13,223,39"/>
-<area shape="rect" href="TimeIntegration__driver_8cpp.html#aff8d18e0bf2ee683ac83b32117491a17" title=" " alt="" coords="5,13,108,39"/>
+<area shape="rect" title=" " alt="" coords="652,23,871,65"/>
+<area shape="rect" href="TimeIntegration_8H.html#a4ee8c6e3b0328d9691be388c6cfd07ba" title=" " alt="" coords="417,23,604,65"/>
+<area shape="rect" href="TimeIntegration__fast_8cpp.html#a226f06ac89cb7fa685d292061fbc1ccf" title=" " alt="" coords="156,5,255,32"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a57e4d3efa7f4efdf16402d84cfef3038" title=" " alt="" coords="303,56,369,83"/>
+<area shape="rect" href="TimeIntegration__driver_8cpp.html#aff8d18e0bf2ee683ac83b32117491a17" title=" " alt="" coords="5,31,108,57"/>
 </map>
 </div>
 
