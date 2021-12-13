@@ -113,12 +113,12 @@ Include dependency graph for VelocityToMomentum.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2c2f5421d493bacbed533547be37bda2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VelocityToMomentum_8cpp.html#a2c2f5421d493bacbed533547be37bda2">VelocityToMomentum</a> (const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom, MultiFab &amp;ymom, MultiFab &amp;zmom, const int l_spatial_order)</td></tr>
-<tr class="separator:a2c2f5421d493bacbed533547be37bda2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7ec834eec6dd8e0b5f6ca5f5021666f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VelocityToMomentum_8cpp.html#ae7ec834eec6dd8e0b5f6ca5f5021666f">VelocityToMomentum</a> (const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom, MultiFab &amp;ymom, MultiFab &amp;zmom, const int l_spatial_order, const int ngrow)</td></tr>
+<tr class="separator:ae7ec834eec6dd8e0b5f6ca5f5021666f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a2c2f5421d493bacbed533547be37bda2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c2f5421d493bacbed533547be37bda2">&#9670;&nbsp;</a></span>VelocityToMomentum()</h2>
+<a id="ae7ec834eec6dd8e0b5f6ca5f5021666f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7ec834eec6dd8e0b5f6ca5f5021666f">&#9670;&nbsp;</a></span>VelocityToMomentum()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,7 +169,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>l_spatial_order</em>&#160;</td>
+          <td class="paramname"><em>l_spatial_order</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>ngrow</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -180,14 +186,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Convert velocity to momentum. </p>
 <div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;VelocityToMomentum()&quot;</span>,<a class="code" href="VelocityToMomentum_8cpp.html#a2c2f5421d493bacbed533547be37bda2">VelocityToMomentum</a>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;VelocityToMomentum()&quot;</span>,<a class="code" href="VelocityToMomentum_8cpp.html#ae7ec834eec6dd8e0b5f6ca5f5021666f">VelocityToMomentum</a>);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// Loop over boxes</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// Loop over boxes = valid boxes grown by ngrow</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">const</span> Box&amp; tbx = mfi.nodaltilebox(0);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">const</span> Box&amp; tby = mfi.nodaltilebox(1);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">const</span> Box&amp; tbz = mfi.nodaltilebox(2);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">const</span> Box&amp; tbx = amrex::grow(mfi.nodaltilebox(0),IntVect(0,ngrow,ngrow));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">const</span> Box&amp; tby = amrex::grow(mfi.nodaltilebox(1),IntVect(ngrow,0,ngrow));</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">const</span> Box&amp; tbz = amrex::grow(mfi.nodaltilebox(2),IntVect(ngrow,ngrow,0));</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// Conserved/state variables on cell centers -- we use this for density</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa22501eeeb48d3d47f802dcb78c88f7ae">cons</a> = cons_in.array(mfi);</div>
@@ -222,8 +228,8 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="VelocityToMomentum_8cpp_a2c2f5421d493bacbed533547be37bda2_cgraph.png" border="0" usemap="#VelocityToMomentum_8cpp_a2c2f5421d493bacbed533547be37bda2_cgraph" alt=""/></div>
-<map name="VelocityToMomentum_8cpp_a2c2f5421d493bacbed533547be37bda2_cgraph" id="VelocityToMomentum_8cpp_a2c2f5421d493bacbed533547be37bda2_cgraph">
+<div class="center"><img src="VelocityToMomentum_8cpp_ae7ec834eec6dd8e0b5f6ca5f5021666f_cgraph.png" border="0" usemap="#VelocityToMomentum_8cpp_ae7ec834eec6dd8e0b5f6ca5f5021666f_cgraph" alt=""/></div>
+<map name="VelocityToMomentum_8cpp_ae7ec834eec6dd8e0b5f6ca5f5021666f_cgraph" id="VelocityToMomentum_8cpp_ae7ec834eec6dd8e0b5f6ca5f5021666f_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,168,32"/>
 <area shape="rect" href="Interpolation_8cpp.html#aea5f8aa9d4f9d357b462f930383c71ff" title=" " alt="" coords="216,5,411,32"/>
 </map>
@@ -231,8 +237,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="VelocityToMomentum_8cpp_a2c2f5421d493bacbed533547be37bda2_icgraph.png" border="0" usemap="#VelocityToMomentum_8cpp_a2c2f5421d493bacbed533547be37bda2_icgraph" alt=""/></div>
-<map name="VelocityToMomentum_8cpp_a2c2f5421d493bacbed533547be37bda2_icgraph" id="VelocityToMomentum_8cpp_a2c2f5421d493bacbed533547be37bda2_icgraph">
+<div class="center"><img src="VelocityToMomentum_8cpp_ae7ec834eec6dd8e0b5f6ca5f5021666f_icgraph.png" border="0" usemap="#VelocityToMomentum_8cpp_ae7ec834eec6dd8e0b5f6ca5f5021666f_icgraph" alt=""/></div>
+<map name="VelocityToMomentum_8cpp_ae7ec834eec6dd8e0b5f6ca5f5021666f_icgraph" id="VelocityToMomentum_8cpp_ae7ec834eec6dd8e0b5f6ca5f5021666f_icgraph">
 <area shape="rect" title=" " alt="" coords="156,5,319,32"/>
 <area shape="rect" href="TimeIntegration__driver_8cpp.html#aff8d18e0bf2ee683ac83b32117491a17" title=" " alt="" coords="5,5,108,32"/>
 </map>
@@ -246,10 +252,10 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="anamespaceIntVar_html_a801598ff83cb990c53b1669bd616996faa06e9caed4d0b72c322646815c1a96ce"><div class="ttname"><a href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:21</div></div>
+<div class="ttc" id="aVelocityToMomentum_8cpp_html_ae7ec834eec6dd8e0b5f6ca5f5021666f"><div class="ttname"><a href="VelocityToMomentum_8cpp.html#ae7ec834eec6dd8e0b5f6ca5f5021666f">VelocityToMomentum</a></div><div class="ttdeci">void VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom, MultiFab &amp;ymom, MultiFab &amp;zmom, const int l_spatial_order, const int ngrow)</div><div class="ttdef"><b>Definition:</b> VelocityToMomentum.cpp:13</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="aInterpolation_8cpp_html_aea5f8aa9d4f9d357b462f930383c71ff"><div class="ttname"><a href="Interpolation_8cpp.html#aea5f8aa9d4f9d357b462f930383c71ff">InterpolateFromCellOrFace</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real InterpolateFromCellOrFace(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;qty, const int &amp;qty_index, const Coord &amp;coordDir, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Interpolation.cpp:22</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
-<div class="ttc" id="aVelocityToMomentum_8cpp_html_a2c2f5421d493bacbed533547be37bda2"><div class="ttname"><a href="VelocityToMomentum_8cpp.html#a2c2f5421d493bacbed533547be37bda2">VelocityToMomentum</a></div><div class="ttdeci">void VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom, MultiFab &amp;ymom, MultiFab &amp;zmom, const int l_spatial_order)</div><div class="ttdef"><b>Definition:</b> VelocityToMomentum.cpp:13</div></div>
 <div class="ttc" id="anamespaceIntVar_html_a801598ff83cb990c53b1669bd616996fa22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:19</div></div>
 <div class="ttc" id="anamespaceIntVar_html_a801598ff83cb990c53b1669bd616996fad22d96cf9b7b4dd875cea33d3ec0b481"><div class="ttname"><a href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:20</div></div>
 <!-- start footer part -->
