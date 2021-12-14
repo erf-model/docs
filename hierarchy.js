@@ -6,7 +6,6 @@ var hierarchy =
     [ "math_bcs::ablmostwall< IDIR, BCBound::lower >", "structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1lower_01_4.html", null ],
     [ "math_bcs::ablmostwall< IDIR, BCBound::upper >", "structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1upper_01_4.html", null ],
     [ "phys_bcs::BCBase", "classphys__bcs_1_1BCBase.html", [
-      [ "phys_bcs::BCDirichlet< IDIR, Bound >", "classphys__bcs_1_1BCDirichlet.html", null ],
       [ "phys_bcs::BCDummy", "classphys__bcs_1_1BCDummy.html", null ],
       [ "phys_bcs::BCInterior", "classphys__bcs_1_1BCInterior.html", null ],
       [ "phys_bcs::BCMostWall< IDIR, Bound >", "classphys__bcs_1_1BCMostWall.html", null ],

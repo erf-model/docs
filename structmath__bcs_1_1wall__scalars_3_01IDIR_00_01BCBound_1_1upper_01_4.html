@@ -168,85 +168,85 @@ template&lt;int IDIR&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;                                                                                                      {</div>
-<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;      <span class="keywordtype">int</span> hi = geom.Domain().bigEnd(IDIR);</div>
-<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160; </div>
-<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;      amrex::IntVect type = b.type();</div>
-<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;      <span class="keywordflow">if</span> (type == amrex::IntVect::Zero) {</div>
-<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160; </div>
-<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;        <span class="comment">/*    Real gravity = solverChoice.use_gravity? CONST_GRAV: 0.0;</span></div>
-<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;<span class="comment">        const    Array&lt;Real,AMREX_SPACEDIM&gt; grav{0.0, 0.0, gravity};</span></div>
-<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;<span class="comment">        const GpuArray&lt;Real,AMREX_SPACEDIM&gt; grav_gpu{grav[0], grav[1], grav[2]}; */</span></div>
-<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160; </div>
-<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;        <span class="keywordflow">if</span>(b.bigEnd(IDIR) &gt; hi) {</div>
-<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;          <span class="keywordflow">if</span> (IDIR == 0) {</div>
-<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;            amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;            {</div>
-<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;              <span class="keywordflow">if</span> (i &gt; hi) {</div>
-<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;                <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) {</div>
-<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;                    <span class="comment">//  Assume Neumann-type BCs for density (zero gradient, and extrapolation of value beyond first ghost point //</span></div>
-<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;                    data(i,j,k,n) = data(hi,j,k,n);</div>
-<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;                }</div>
-<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) {</div>
-<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;                    <span class="comment">// Ideally, the BCs for RhoTheta would be determined by the density BCs, assuming hydrostaticity must hold at wall.</span></div>
-<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;                    <span class="comment">// However, this would require passing the user-specified value of use_gravity into this scope.</span></div>
-<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;                    <span class="comment">// Barring that, we will simply apply Neuman type BCs for RhoTheta as well.</span></div>
-<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;                    <span class="comment">// This currently only impacts the vertical momentum equation at the extreme points.</span></div>
-<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;                    <span class="comment">// So there should be no problems as long as the w = 0 is enforced on the wall immediately after the w tendency update.  BJG</span></div>
-<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160; </div>
-<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;                    <span class="comment">/* Real phi = getPgivenRTh(data(hi,j,k,n));</span></div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;<span class="comment">                    Real phip1 = (grav[IDIR] * dxarray[IDIR] / 2.0) * (data(hi,j,k,Rho_comp) + data(i,j,k,Rho_comp)) + phi;</span></div>
-<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;<span class="comment">                    data(i,j,k,n) = getRhoThetagivenP(phip1); */</span></div>
-<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;                    data(i,j,k,n) = data(hi,j,k,n);</div>
-<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;                }</div>
-<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;                <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;                    <span class="comment">// For any passive scalars, also assume zero gradient //</span></div>
-<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;                    data(i,j,k,n) = data(hi,j,k,n);</div>
-<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;                }</div>
-<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;              }</div>
-<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;            });</div>
-<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 1) {</div>
-<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;            amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;            {</div>
-<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;              <span class="keywordflow">if</span> (j &gt; hi) {</div>
-<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;                <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) {</div>
-<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;                  data(i,j,k,n) = data(i,hi,k,n);</div>
-<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;                }</div>
-<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) {</div>
-<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;                  <span class="comment">/*  Real phi = getPgivenRTh(data(i,hi,k,n));</span></div>
-<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;<span class="comment">                      Real phip1 = (grav[IDIR] * dxarray[IDIR] / 2.0) * (data(i,hi,k,Rho_comp) + data(i,j,k,Rho_comp)) + phi;</span></div>
-<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;<span class="comment">                      data(i,j,k,n) = getRhoThetagivenP(phip1);  */</span></div>
-<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;                  data(i,j,k,n) = data(i,hi,k,n);</div>
-<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;                }</div>
-<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;                <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;                  data(i,j,k,n) = data(i,hi,k,n);</div>
-<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;                }</div>
-<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;              }</div>
-<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;            });</div>
-<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 2) {</div>
-<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;            amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;            {</div>
-<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;              <span class="keywordflow">if</span> (k &gt; hi) {</div>
-<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;                <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) {</div>
-<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;                  data(i,j,k,n) = data(i,j,hi,n);</div>
-<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;                }</div>
-<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) {</div>
-<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;                  <span class="comment">/* Real phi = getPgivenRTh(data(i,j,hi,n));</span></div>
-<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;<span class="comment">                  Real phip1 = (grav[IDIR] * dxarray[IDIR] / 2.0) * (data(i,j,hi,Rho_comp) + data(i,j,k,Rho_comp)) + phi;</span></div>
-<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;<span class="comment">                  data(i,j,k,n) = getRhoThetagivenP(phip1); */</span></div>
-<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;                  data(i,j,k,n) = data(i,j,hi,n);</div>
-<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;                }</div>
-<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;                <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;                  data(i,j,k,n) = data(i,j,hi,n);</div>
-<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;                }</div>
-<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;              }</div>
-<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;            });</div>
-<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;          }</div>
-<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;        }</div>
-<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;        <span class="comment">// print some message like &quot;shouldn&#39;t be here, this is for scalars only   //</span></div>
-<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;      }</div>
-<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;                                                                                                      {</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;      <span class="keywordtype">int</span> hi = geom.Domain().bigEnd(IDIR);</div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160; </div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;      amrex::IntVect type = b.type();</div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;      <span class="keywordflow">if</span> (type == amrex::IntVect::Zero) {</div>
+<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160; </div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;        <span class="comment">/*    Real gravity = solverChoice.use_gravity? CONST_GRAV: 0.0;</span></div>
+<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;<span class="comment">        const    Array&lt;Real,AMREX_SPACEDIM&gt; grav{0.0, 0.0, gravity};</span></div>
+<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;<span class="comment">        const GpuArray&lt;Real,AMREX_SPACEDIM&gt; grav_gpu{grav[0], grav[1], grav[2]}; */</span></div>
+<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160; </div>
+<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;        <span class="keywordflow">if</span>(b.bigEnd(IDIR) &gt; hi) {</div>
+<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;          <span class="keywordflow">if</span> (IDIR == 0) {</div>
+<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;            amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;            {</div>
+<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;              <span class="keywordflow">if</span> (i &gt; hi) {</div>
+<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;                <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) {</div>
+<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;                    <span class="comment">//  Assume Neumann-type BCs for density (zero gradient, and extrapolation of value beyond first ghost point //</span></div>
+<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;                    data(i,j,k,n) = data(hi,j,k,n);</div>
+<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;                }</div>
+<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) {</div>
+<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;                    <span class="comment">// Ideally, the BCs for RhoTheta would be determined by the density BCs, assuming hydrostaticity must hold at wall.</span></div>
+<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;                    <span class="comment">// However, this would require passing the user-specified value of use_gravity into this scope.</span></div>
+<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;                    <span class="comment">// Barring that, we will simply apply Neuman type BCs for RhoTheta as well.</span></div>
+<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;                    <span class="comment">// This currently only impacts the vertical momentum equation at the extreme points.</span></div>
+<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;                    <span class="comment">// So there should be no problems as long as the w = 0 is enforced on the wall immediately after the w tendency update.  BJG</span></div>
+<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160; </div>
+<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;                    <span class="comment">/* Real phi = getPgivenRTh(data(hi,j,k,n));</span></div>
+<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;<span class="comment">                    Real phip1 = (grav[IDIR] * dxarray[IDIR] / 2.0) * (data(hi,j,k,Rho_comp) + data(i,j,k,Rho_comp)) + phi;</span></div>
+<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;<span class="comment">                    data(i,j,k,n) = getRhoThetagivenP(phip1); */</span></div>
+<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;                    data(i,j,k,n) = data(hi,j,k,n);</div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;                }</div>
+<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;                <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;                    <span class="comment">// For any passive scalars, also assume zero gradient //</span></div>
+<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;                    data(i,j,k,n) = data(hi,j,k,n);</div>
+<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;                }</div>
+<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;              }</div>
+<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;            });</div>
+<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 1) {</div>
+<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;            amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;            {</div>
+<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;              <span class="keywordflow">if</span> (j &gt; hi) {</div>
+<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;                <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) {</div>
+<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;                  data(i,j,k,n) = data(i,hi,k,n);</div>
+<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;                }</div>
+<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) {</div>
+<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;                  <span class="comment">/*  Real phi = getPgivenRTh(data(i,hi,k,n));</span></div>
+<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;<span class="comment">                      Real phip1 = (grav[IDIR] * dxarray[IDIR] / 2.0) * (data(i,hi,k,Rho_comp) + data(i,j,k,Rho_comp)) + phi;</span></div>
+<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;<span class="comment">                      data(i,j,k,n) = getRhoThetagivenP(phip1);  */</span></div>
+<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;                  data(i,j,k,n) = data(i,hi,k,n);</div>
+<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;                }</div>
+<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;                <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;                  data(i,j,k,n) = data(i,hi,k,n);</div>
+<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;                }</div>
+<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;              }</div>
+<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;            });</div>
+<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 2) {</div>
+<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;            amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;            {</div>
+<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;              <span class="keywordflow">if</span> (k &gt; hi) {</div>
+<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;                <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) {</div>
+<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;                  data(i,j,k,n) = data(i,j,hi,n);</div>
+<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;                }</div>
+<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) {</div>
+<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;                  <span class="comment">/* Real phi = getPgivenRTh(data(i,j,hi,n));</span></div>
+<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;<span class="comment">                  Real phip1 = (grav[IDIR] * dxarray[IDIR] / 2.0) * (data(i,j,hi,Rho_comp) + data(i,j,k,Rho_comp)) + phi;</span></div>
+<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;<span class="comment">                  data(i,j,k,n) = getRhoThetagivenP(phip1); */</span></div>
+<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;                  data(i,j,k,n) = data(i,j,hi,n);</div>
+<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;                }</div>
+<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;                <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;                  data(i,j,k,n) = data(i,j,hi,n);</div>
+<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;                }</div>
+<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;              }</div>
+<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;            });</div>
+<div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;          }</div>
+<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;        }</div>
+<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;        <span class="comment">// print some message like &quot;shouldn&#39;t be here, this is for scalars only   //</span></div>
+<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;      }</div>
+<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

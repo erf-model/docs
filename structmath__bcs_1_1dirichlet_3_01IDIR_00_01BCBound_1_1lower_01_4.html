@@ -184,9 +184,9 @@ template&lt;bool val&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                                                                                                   {</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;      self::apply_face_based(geom, b, data, ncomp, bcval);</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                                                                                                   {</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;      self::apply_face_based(geom, b, data, ncomp, bcval);</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -245,9 +245,9 @@ template&lt;bool val&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                                                                                                   {</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;      self::apply_cell_based(geom, b, data, ncomp, bcval);</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                                                                                                   {</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;      self::apply_cell_based(geom, b, data, ncomp, bcval);</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -304,38 +304,37 @@ template&lt;int IDIR&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;      {</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;      <span class="keywordtype">int</span> lo = geom.Domain().smallEnd(IDIR);</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;      <span class="comment">// for i &lt; lo, (data(i) + data(lo)) / 2 == bcval</span></div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;      <span class="comment">//amrex::Print() &lt;&lt; &quot;apply_cell_based (lo=&quot; &lt;&lt; lo &lt;&lt; &quot;) &quot;</span></div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;      <span class="comment">//               &lt;&lt; bcval &lt;&lt; &quot; for BC &quot; &lt;&lt; IDIR &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; </div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;      <span class="keywordflow">if</span>(b.smallEnd(IDIR) &lt; lo) {</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;        <span class="keywordflow">if</span> (IDIR == 0) {</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;          amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;          {</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;             <span class="keywordflow">if</span> (i &lt; lo) {</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                  data(i,j,k,n) = -data(lo,j,k,n) + 2*bcval;</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;            }</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;          });</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 1) {</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;          amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;          {</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;            <span class="keywordflow">if</span> (j &lt; lo) {</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                  data(i,j,k,n) = -data(i,lo,k,n) + 2*bcval;</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;            }</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;          });</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 2) {</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;          amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;          {</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;            <span class="keywordflow">if</span> (k &lt; lo) {</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                  data(i,j,k,n) = -data(i,j,lo,n) + 2*bcval;</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;            }</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;          });</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        }</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;      }</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    {</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;      <span class="keywordtype">int</span> lo = geom.Domain().smallEnd(IDIR);</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;      <span class="comment">//</span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;      <span class="comment">//  Dirichlet values are assume to live on the face, not at the ghost cell centers</span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;      <span class="comment">//  This applies a Dirichlet value on the face</span></div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;      <span class="comment">//</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;      <span class="keywordflow">if</span>(b.smallEnd(IDIR) &lt; lo) {</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <span class="keywordflow">if</span> (IDIR == 0) {</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;          amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;          {</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;               <span class="keywordflow">if</span> (i &lt; lo) {</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                    data(i,j,k,n) = bcval;</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;               }</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;          });</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 1) {</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;          amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;          {</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;              <span class="keywordflow">if</span> (j &lt; lo) {</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                  data(i,j,k,n) = bcval;</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;              }</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;          });</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 2) {</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;          amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;          {</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;              <span class="keywordflow">if</span> (k &lt; lo) {</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                  data(i,j,k,n) = bcval;</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;              }</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;          });</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        }</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;      }</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -392,45 +391,40 @@ template&lt;int IDIR&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;      {</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;      <span class="keywordtype">int</span> lo = geom.Domain().smallEnd(IDIR);</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;      <span class="comment">// for i = lo, data(i) == bcval</span></div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;      <span class="comment">// for i &lt; lo, bcval - data(i) == data(lo-(i-lo)) - bcval</span></div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160; </div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;      <span class="comment">//amrex::Print() &lt;&lt; &quot;apply_face_based (lo=&quot; &lt;&lt; lo &lt;&lt; &quot;) &quot;</span></div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;      <span class="comment">//               &lt;&lt; bcval &lt;&lt; &quot; for BC &quot; &lt;&lt; IDIR &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;      <span class="keywordflow">if</span>(b.smallEnd(IDIR) &lt;= lo) {</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        <span class="keywordflow">if</span> (IDIR == 0) {</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;           {</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            <span class="keywordflow">if</span> (i &lt; lo) {</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;              data(i,j,k,n) = 2*bcval - data(2*lo-i,j,k,n);</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i == lo) {</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;              data(i,j,k,n) = bcval;</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;            }</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;           });</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 1) {</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;           {</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;            <span class="keywordflow">if</span> (j &lt; lo) {</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;              data(i,j,k,n) = 2*bcval - data(i,2*lo-j,k,n);</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == lo) {</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;              data(i,j,k,n) = bcval;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;            }</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;           });</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 2) {</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;           {</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;            <span class="keywordflow">if</span> (k &lt; lo) {</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;              data(i,j,k,n) = 2*bcval - data(i,j,2*lo-k,n);</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == lo) {</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;              data(i,j,k,n) = bcval;</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;            }</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;           });</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        }</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;      }</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;      {</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;      <span class="keywordtype">int</span> lo = geom.Domain().smallEnd(IDIR);</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160; </div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;      <span class="keywordflow">if</span>(b.smallEnd(IDIR) &lt;= lo) {</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;        <span class="keywordflow">if</span> (IDIR == 0) {</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;           {</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;            <span class="keywordflow">if</span> (i &lt; lo) {</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;              data(i,j,k,n) = 2*bcval - data(2*lo-i,j,k,n);</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i == lo) {</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;              data(i,j,k,n) = bcval;</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;            }</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;           });</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 1) {</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;           {</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;            <span class="keywordflow">if</span> (j &lt; lo) {</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;              data(i,j,k,n) = 2*bcval - data(i,2*lo-j,k,n);</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == lo) {</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;              data(i,j,k,n) = bcval;</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;            }</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;           });</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 2) {</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;           {</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;            <span class="keywordflow">if</span> (k &lt; lo) {</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;              data(i,j,k,n) = 2*bcval - data(i,j,2*lo-k,n);</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == lo) {</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;              data(i,j,k,n) = bcval;</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;            }</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;           });</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        }</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;      }</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

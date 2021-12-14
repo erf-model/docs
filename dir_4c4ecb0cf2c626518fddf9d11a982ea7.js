@@ -4,9 +4,6 @@ var dir_4c4ecb0cf2c626518fddf9d11a982ea7 =
       [ "ABLMost", "structABLMost.html", "structABLMost" ]
     ] ],
     [ "BCBase.H", "BCBase_8H.html", "BCBase_8H" ],
-    [ "BCDirichlet.H", "BCDirichlet_8H.html", [
-      [ "BCDirichlet", "classphys__bcs_1_1BCDirichlet.html", "classphys__bcs_1_1BCDirichlet" ]
-    ] ],
     [ "BCDummy.H", "BCDummy_8H.html", [
       [ "BCDummy", "classphys__bcs_1_1BCDummy.html", "classphys__bcs_1_1BCDummy" ]
     ] ],
