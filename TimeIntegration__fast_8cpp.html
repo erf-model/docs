@@ -462,16 +462,17 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <span class="comment">// Add gravity term</span></div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                Real rhobar = 0.5 * (dptr_dens_hse[k] + dptr_dens_hse[k-1]);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                Real  pibar = std::pow(0.5 * (dptr_pres_hse[k] + dptr_pres_hse[k-1]),<a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a">c_p</a>);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                rho_w_rhs(i, j, k) += grav_gpu[2] * (</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    <a class="code" href="Interpolation_8cpp.html#aea5f8aa9d4f9d357b462f930383c71ff">InterpolateFromCellOrFace</a>(i, j, k, delta_rho, 0, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a>, 2)</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    - (<a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a> / (<a class="code" href="ERF__Constants_8H.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a">c_p</a> - <a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a>)) * exner_pi_c * rhobar / pibar *</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    <a class="code" href="Interpolation_8cpp.html#aea5f8aa9d4f9d357b462f930383c71ff">InterpolateFromCellOrFace</a>(i, j, k, delta_rho_theta,             0, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a>, 2) /</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    <a class="code" href="Interpolation_8cpp.html#aea5f8aa9d4f9d357b462f930383c71ff">InterpolateFromCellOrFace</a>(i, j, k, cell_stage_data, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a>, 2) );</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            } <span class="comment">// not on coarse-fine boundary</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        });</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                Real wadv = 0.0; <span class="comment">// We will not use this since we are using 2nd order interpolation</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                rho_w_rhs(i, j, k) += grav_gpu[2] * (</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    <a class="code" href="Interpolation_8cpp.html#a3046bc73f0e1b5c442705c4fee050e45">InterpolateFromCellOrFace</a>(i, j, k, delta_rho, 0, wadv, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a>, 2)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    - (<a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a> / (<a class="code" href="ERF__Constants_8H.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a">c_p</a> - <a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a>)) * exner_pi_c * rhobar / pibar *</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    <a class="code" href="Interpolation_8cpp.html#a3046bc73f0e1b5c442705c4fee050e45">InterpolateFromCellOrFace</a>(i, j, k, delta_rho_theta,             0, wadv, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a>, 2) /</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    <a class="code" href="Interpolation_8cpp.html#a3046bc73f0e1b5c442705c4fee050e45">InterpolateFromCellOrFace</a>(i, j, k, cell_stage_data, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>, wadv, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a>, 2) );</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            } <span class="comment">// not on coarse-fine boundary</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        });</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="TimeIntegration__driver_8cpp.html#aff8d18e0bf2ee683ac83b32117491a17">erf_advance()</a>.</p>
 <div class="dynheader">
@@ -479,27 +480,28 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="TimeIntegration__fast_8cpp_aa5e7afb540d82a149adca5e9f554dd85_cgraph.png" border="0" usemap="#TimeIntegration__fast_8cpp_aa5e7afb540d82a149adca5e9f554dd85_cgraph" alt=""/></div>
 <map name="TimeIntegration__fast_8cpp_aa5e7afb540d82a149adca5e9f554dd85_cgraph" id="TimeIntegration__fast_8cpp_aa5e7afb540d82a149adca5e9f554dd85_cgraph">
-<area shape="rect" title=" " alt="" coords="5,109,104,136"/>
-<area shape="rect" href="Advection_8cpp.html#a4a5f46463fe185dc62f53abaa1f23884" title=" " alt="" coords="327,42,514,83"/>
-<area shape="rect" href="Interpolation_8cpp.html#aea5f8aa9d4f9d357b462f930383c71ff" title=" " alt="" coords="878,49,1073,76"/>
-<area shape="rect" href="TimeIntegration_8H.html#a3c687a3a181fb64d4314352075c348ba" title=" " alt="" coords="174,189,241,216"/>
-<area shape="rect" href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b" title=" " alt="" coords="152,240,263,266"/>
-<area shape="rect" href="Advection_8cpp.html#a158200fab7d47af24678518adfea797e" title=" " alt="" coords="595,42,813,83"/>
-<area shape="rect" href="Advection_8cpp.html#a10a2193da97be5f6c19fcba14d3d3d40" title=" " alt="" coords="311,108,531,134"/>
-<area shape="rect" href="TKEProduction_8H.html#af9b497aae8e3eb42cc4640a16d6edb30" title=" " alt="" coords="617,158,791,185"/>
-<area shape="rect" href="EddyViscosity_8H.html#a9a9dd15e716adbf39643ede31a3ff80c" title=" " alt="" coords="604,440,804,466"/>
-<area shape="rect" href="Diffusion_8cpp.html#a72239ee2c485e42d213d468fe983bceb" title=" " alt="" coords="314,209,527,236"/>
-<area shape="rect" href="Diffusion_8cpp.html#aae0177c8cdb565119848c21d9c60964b" title=" " alt="" coords="331,260,511,302"/>
-<area shape="rect" href="EOS_8H.html#a62f564807713abf368002e68c9b40e1e" title=" " alt="" coords="346,326,495,353"/>
-<area shape="rect" href="Interpolation_8cpp.html#a12f16f0a47f52db327791149dbad0819" title=" " alt="" coords="319,378,522,419"/>
-<area shape="rect" href="Advection_8cpp.html#a04e77b7ce757aececb4f2c4980dc2147" title=" " alt="" coords="579,108,829,134"/>
-<area shape="rect" href="ExpansionRate_8H.html#a45b98bd1c9bf76e010e784862f2b0aba" title=" " alt="" coords="886,209,1065,236"/>
-<area shape="rect" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e" title=" " alt="" coords="901,260,1050,286"/>
-<area shape="rect" href="StressTerm_8H.html#a251d43d72e693cb73b820c1dbe94e5a2" title=" " alt="" coords="877,158,1073,185"/>
-<area shape="rect" href="EddyViscosity_8H.html#a2bb03a231e1a9fceb7d2c133b3815745" title="Compute K_LES (i&#45;1/2, j+1/2, k) etc given K_LES (i, j, k) is known." alt="" coords="1121,158,1333,185"/>
-<area shape="rect" href="StressTerm_8H.html#a22d1e04f90c0ad058dfbc1a05a276b88" title=" " alt="" coords="627,209,781,236"/>
-<area shape="rect" href="Diffusion_8cpp.html#a8321eb05ea9e1a6883a67931ee393b04" title=" " alt="" coords="593,268,815,294"/>
-<area shape="rect" href="Interpolation_8cpp.html#ac14f4441806e747dbbff205bd44f2182" title=" " alt="" coords="615,385,793,412"/>
+<area shape="rect" title=" " alt="" coords="5,544,104,571"/>
+<area shape="rect" href="Advection_8cpp.html#a4a5f46463fe185dc62f53abaa1f23884" title=" " alt="" coords="332,507,519,549"/>
+<area shape="rect" href="Interpolation_8cpp.html#a3046bc73f0e1b5c442705c4fee050e45" title=" " alt="" coords="601,431,796,457"/>
+<area shape="rect" href="TimeIntegration_8H.html#a3c687a3a181fb64d4314352075c348ba" title=" " alt="" coords="174,304,241,331"/>
+<area shape="rect" href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b" title=" " alt="" coords="152,624,263,651"/>
+<area shape="rect" href="Interpolation_8cpp.html#aa03b9d0e10988f7d17fbe512ccdcbcd5" title=" " alt="" coords="895,371,1016,397"/>
+<area shape="rect" href="Advection_8cpp.html#afedb447a062c9cd2bd5cb35b3b944b6b" title=" " alt="" coords="311,456,540,483"/>
+<area shape="rect" href="Advection_8cpp.html#a2b315be59eee24e59dd50508c58e1fe6" title=" " alt="" coords="311,355,539,381"/>
+<area shape="rect" href="Advection_8cpp.html#a7c76666e085ebea061146d32482ba0d9" title=" " alt="" coords="311,405,540,432"/>
+<area shape="rect" href="TKEProduction_8H.html#af9b497aae8e3eb42cc4640a16d6edb30" title=" " alt="" coords="611,136,786,163"/>
+<area shape="rect" href="EddyViscosity_8H.html#a9a9dd15e716adbf39643ede31a3ff80c" title=" " alt="" coords="599,23,799,49"/>
+<area shape="rect" href="Diffusion_8cpp.html#a72239ee2c485e42d213d468fe983bceb" title=" " alt="" coords="319,187,532,213"/>
+<area shape="rect" href="Diffusion_8cpp.html#aae0177c8cdb565119848c21d9c60964b" title=" " alt="" coords="335,70,515,111"/>
+<area shape="rect" href="EOS_8H.html#a62f564807713abf368002e68c9b40e1e" title=" " alt="" coords="351,304,500,331"/>
+<area shape="rect" href="Interpolation_8cpp.html#a30da715cd63557a92abefcfc967a4fe8" title=" " alt="" coords="324,238,527,279"/>
+<area shape="rect" href="ExpansionRate_8H.html#a45b98bd1c9bf76e010e784862f2b0aba" title=" " alt="" coords="866,187,1045,213"/>
+<area shape="rect" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e" title=" " alt="" coords="881,85,1030,112"/>
+<area shape="rect" href="StressTerm_8H.html#a251d43d72e693cb73b820c1dbe94e5a2" title=" " alt="" coords="857,136,1053,163"/>
+<area shape="rect" href="EddyViscosity_8H.html#a2bb03a231e1a9fceb7d2c133b3815745" title="Compute K_LES (i&#45;1/2, j+1/2, k) etc given K_LES (i, j, k) is known." alt="" coords="1101,136,1313,163"/>
+<area shape="rect" href="StressTerm_8H.html#a22d1e04f90c0ad058dfbc1a05a276b88" title=" " alt="" coords="622,187,775,213"/>
+<area shape="rect" href="Diffusion_8cpp.html#a8321eb05ea9e1a6883a67931ee393b04" title=" " alt="" coords="588,77,809,104"/>
+<area shape="rect" href="Interpolation_8cpp.html#a156aef3decb40de82fa31cef7199aaba" title=" " alt="" coords="610,312,787,339"/>
 </map>
 </div>
 <div class="dynheader">
@@ -519,14 +521,14 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceIntVar_html_a801598ff83cb990c53b1669bd616996fabde409cfd9edf4a3581fe26dfa9613cd"><div class="ttname"><a href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fabde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:22</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
 <div class="ttc" id="anamespaceIntVar_html_a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be"><div class="ttname"><a href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">IntVar::xflux</a></div><div class="ttdeci">@ xflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:23</div></div>
-<div class="ttc" id="aAdvection_8cpp_html_a4a5f46463fe185dc62f53abaa1f23884"><div class="ttname"><a href="Advection_8cpp.html#a4a5f46463fe185dc62f53abaa1f23884">AdvectionContributionForState</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real AdvectionContributionForState(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;rho_w, const Array4&lt; const Real &gt; &amp;cell_data, const int &amp;qty_index, const Array4&lt; Real &gt; &amp;xflux, const Array4&lt; Real &gt; &amp;yflux, const Array4&lt; Real &gt; &amp;zflux, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Advection.cpp:192</div></div>
+<div class="ttc" id="aAdvection_8cpp_html_a4a5f46463fe185dc62f53abaa1f23884"><div class="ttname"><a href="Advection_8cpp.html#a4a5f46463fe185dc62f53abaa1f23884">AdvectionContributionForState</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real AdvectionContributionForState(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;rho_w, const Array4&lt; const Real &gt; &amp;cell_data, const int &amp;qty_index, const Array4&lt; Real &gt; &amp;xflux, const Array4&lt; Real &gt; &amp;yflux, const Array4&lt; Real &gt; &amp;zflux, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Advection.cpp:133</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a60be2e6257954ef746019c916741cb2c"><div class="ttname"><a href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a></div><div class="ttdeci">#define p_0</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a08d0e6a452268bed60e81a08398c088a"><div class="ttname"><a href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a></div><div class="ttdeci">#define R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
 <div class="ttc" id="anamespaceIntVar_html_a801598ff83cb990c53b1669bd616996faa06e9caed4d0b72c322646815c1a96ce"><div class="ttname"><a href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:21</div></div>
 <div class="ttc" id="anamespaceIntVar_html_a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51"><div class="ttname"><a href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">IntVar::zflux</a></div><div class="ttdeci">@ zflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:25</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a7f928aa35dcd2f4e48fdf6d6a3166f1a"><div class="ttname"><a href="ERF__Constants_8H.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a">c_p</a></div><div class="ttdeci">#define c_p</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
-<div class="ttc" id="aInterpolation_8cpp_html_aea5f8aa9d4f9d357b462f930383c71ff"><div class="ttname"><a href="Interpolation_8cpp.html#aea5f8aa9d4f9d357b462f930383c71ff">InterpolateFromCellOrFace</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real InterpolateFromCellOrFace(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;qty, const int &amp;qty_index, const Coord &amp;coordDir, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Interpolation.cpp:22</div></div>
+<div class="ttc" id="aInterpolation_8cpp_html_a3046bc73f0e1b5c442705c4fee050e45"><div class="ttname"><a href="Interpolation_8cpp.html#a3046bc73f0e1b5c442705c4fee050e45">InterpolateFromCellOrFace</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real InterpolateFromCellOrFace(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;qty, const int &amp;qty_index, const Real &amp;upw, const Coord &amp;coordDir, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Interpolation.cpp:49</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ae8ca591ba2325c0ad8b464de45f4c6b3"><div class="ttname"><a href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a></div><div class="ttdeci">#define Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
 <div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> DataStruct.H:237</div></div>

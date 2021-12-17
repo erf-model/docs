@@ -220,24 +220,23 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error: Molecular diffusion/viscosity model is unrecognized&quot;</span>);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// TODO: Add Deardorff model, perhaps take advantage of turbulence model indicator</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">switch</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a>) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="comment">// mu_effective = 2*mu + 2*mu_t if MolecDiffType::Constant else 2*mu_t</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            mu_effective += <a class="code" href="EddyViscosity_8H.html#a2bb03a231e1a9fceb7d2c133b3815745">InterpolateTurbulentViscosity</a>(i, j, k, momentumEqn, diffDir, K_LES); <span class="comment">// 2*mu_t</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="comment">// mu_effective = 2*mu + 2*mu_t if MolecDiffType::Constant else 2*mu_t</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            mu_effective += <a class="code" href="EddyViscosity_8H.html#a2bb03a231e1a9fceb7d2c133b3815745">InterpolateTurbulentViscosity</a>(i, j, k, momentumEqn, diffDir, K_LES); <span class="comment">// 2*mu_t</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a6adf97f83acf6453d4a6a4b1070f3754">LESType::None</a>: <span class="comment">// // mu_effective = 2*mu if MolecDiffType::Constant else 0</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error:  LES model is unrecognized&quot;</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    Real stressTerm = mu_effective * strainRateDeviatoric; <span class="comment">// tau_ij = mu_effective * sigma_ij</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> stressTerm;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">switch</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a>) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="comment">// mu_effective = 2*mu + 2*mu_t if MolecDiffType::Constant else 2*mu_t</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            mu_effective += <a class="code" href="EddyViscosity_8H.html#a2bb03a231e1a9fceb7d2c133b3815745">InterpolateTurbulentViscosity</a>(i, j, k, momentumEqn, diffDir, K_LES); <span class="comment">// 2*mu_t</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="comment">// mu_effective = 2*mu + 2*mu_t if MolecDiffType::Constant else 2*mu_t</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            mu_effective += <a class="code" href="EddyViscosity_8H.html#a2bb03a231e1a9fceb7d2c133b3815745">InterpolateTurbulentViscosity</a>(i, j, k, momentumEqn, diffDir, K_LES); <span class="comment">// 2*mu_t</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a6adf97f83acf6453d4a6a4b1070f3754">LESType::None</a>: <span class="comment">// // mu_effective = 2*mu if MolecDiffType::Constant else 0</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error:  LES model is unrecognized&quot;</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    Real stressTerm = mu_effective * strainRateDeviatoric; <span class="comment">// tau_ij = mu_effective * sigma_ij</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> stressTerm;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="StressTerm_8H.html#a22d1e04f90c0ad058dfbc1a05a276b88">ComputeStressTerm()</a>, and <a class="el" href="TKEProduction_8H.html#af9b497aae8e3eb42cc4640a16d6edb30">ComputeTKEProduction()</a>.</p>
 <div class="dynheader">
@@ -365,21 +364,21 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Here, we have computed strain rate on the fly.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// TODO: It may be better to store S11, S12 etc. at all the (m+1/2) and (m-1/2) grid points (edges) and use them here.</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Real strainRate = <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i, j, k, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>, momentumEqn, diffDir, cellSizeInv, dirichlet_lo, dirichlet_hi);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// D_ij term</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    Real expansionRate = <a class="code" href="ExpansionRate_8H.html#a45b98bd1c9bf76e010e784862f2b0aba">ComputeExpansionRate</a>(i, j, k, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>, momentumEqn, diffDir, cellSizeInv);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    Real strainRateDeviatoric = strainRate - expansionRate; <span class="comment">// sigma_ij = S_ij - D_ij</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    Real stressTerm = <a class="code" href="StressTerm_8H.html#a251d43d72e693cb73b820c1dbe94e5a2">ComputeStressGivenRates</a>(i,j,k,momentumEqn,diffDir,K_LES,solverChoice, strainRateDeviatoric);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> stressTerm;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Here, we have computed strain rate on the fly.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// TODO: It may be better to store S11, S12 etc. at all the (m+1/2) and (m-1/2) grid points (edges) and use them here.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    Real strainRate = <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i, j, k, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>, momentumEqn, diffDir, cellSizeInv, dirichlet_lo, dirichlet_hi);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// D_ij term</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    Real expansionRate = <a class="code" href="ExpansionRate_8H.html#a45b98bd1c9bf76e010e784862f2b0aba">ComputeExpansionRate</a>(i, j, k, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>, momentumEqn, diffDir, cellSizeInv);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    Real strainRateDeviatoric = strainRate - expansionRate; <span class="comment">// sigma_ij = S_ij - D_ij</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    Real stressTerm = <a class="code" href="StressTerm_8H.html#a251d43d72e693cb73b820c1dbe94e5a2">ComputeStressGivenRates</a>(i,j,k,momentumEqn,diffDir,K_LES,solverChoice, strainRateDeviatoric);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> stressTerm;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="TimeIntegration_8H.html#ad6d26259da87a27cd1991d1fc28613cf">DiffusionContributionForMom()</a>.</p>
 <div class="dynheader">
