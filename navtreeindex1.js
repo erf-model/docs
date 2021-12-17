@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"classPlaneAverage.html#a1f08f5f76700c51c42243410ffce6e66":[3,0,15,34],
+"classPlaneAverage.html#a23bbb47b85b3a3f5504a405a73161232":[3,0,15,10],
+"classPlaneAverage.html#a2e6f445e8dacd92c3fabe3781fc46024":[3,0,15,5],
+"classPlaneAverage.html#a3860fd72df3e8dbb6b8decfdc360864f":[3,0,15,18],
 "classPlaneAverage.html#a3fed71c4aefcaef0610333f17c681501":[3,0,15,4],
 "classPlaneAverage.html#a47426072131d2eb67598e72d3493879c":[3,0,15,11],
 "classPlaneAverage.html#a4d70bd4cc0cf704996869841e859266e":[3,0,15,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "structABLFieldInit.html#a67fa6c3ea58c0cad42aeb50043d543c4":[3,0,3,24],
 "structABLFieldInit.html#a6b3553d0d012abd666beae3145fa95d2":[3,0,3,6],
 "structABLFieldInit.html#a6e39ba07eb73822cfb4d1ca16094162d":[3,0,3,10],
-"structABLFieldInit.html#a7db7b372ca41c004bccefa7c7172c2cc":[3,0,3,20],
-"structABLFieldInit.html#a7dc95a26dceae65db5a964ed03b0a743":[3,0,3,21],
-"structABLFieldInit.html#a8710f7f1f3cac445b61cab7499c8afc9":[3,0,3,3],
-"structABLFieldInit.html#a9411ae252ca7753da7e6ac37e43d775c":[3,0,3,13],
-"structABLFieldInit.html#aa5912f83502db36ff4d35c495e823b26":[3,0,3,11]
+"structABLFieldInit.html#a7db7b372ca41c004bccefa7c7172c2cc":[3,0,3,20]
 };

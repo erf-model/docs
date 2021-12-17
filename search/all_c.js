@@ -22,6 +22,7 @@ var searchData=
   ['num_5fattributes_280',['num_attributes',['../classncutils_1_1NCGroup.html#af7847ff27ccb8499814b7f21559e2e84',1,'ncutils::NCGroup']]],
   ['num_5fdimensions_281',['num_dimensions',['../classncutils_1_1NCGroup.html#a44b1b3b0a86df383ffa6ab4e68a7dea6',1,'ncutils::NCGroup']]],
   ['num_5fgroups_282',['num_groups',['../classncutils_1_1NCGroup.html#a4efddc44f72cc32a58849982bb7e8bce',1,'ncutils::NCGroup']]],
-  ['num_5fvariables_283',['num_variables',['../classncutils_1_1NCGroup.html#a4721cc36bd0f188be0250112329d3ba1',1,'ncutils::NCGroup']]],
-  ['nvar_284',['NVAR',['../IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639',1,'IndexDefines.H']]]
+  ['num_5fprim_283',['NUM_PRIM',['../IndexDefines_8H.html#a76cb673ca03cd7f8ae6cc8544d6dd0fa',1,'IndexDefines.H']]],
+  ['num_5fvariables_284',['num_variables',['../classncutils_1_1NCGroup.html#a4721cc36bd0f188be0250112329d3ba1',1,'ncutils::NCGroup']]],
+  ['nvar_285',['NVAR',['../IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639',1,'IndexDefines.H']]]
 ];

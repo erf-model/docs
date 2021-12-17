@@ -121,14 +121,14 @@ Include dependency graph for Diffusion.cpp:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a72239ee2c485e42d213d468fe983bceb"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Diffusion_8cpp.html#a72239ee2c485e42d213d468fe983bceb">DiffusionContributionForMom</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, const enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a> &amp;momentumEqn, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; Real &gt; &amp;K_LES, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const bool dirichlet_at_lo_k, const bool dirichlet_at_hi_k)</td></tr>
 <tr class="separator:a72239ee2c485e42d213d468fe983bceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8321eb05ea9e1a6883a67931ee393b04"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Diffusion_8cpp.html#a8321eb05ea9e1a6883a67931ee393b04">ComputeDiffusionFluxForState</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;cell_data, const int &amp;qty_index, const amrex::Real invCellWidth, const Array4&lt; Real &gt; &amp;K_LES, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const enum <a class="el" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a> &amp;coordDir)</td></tr>
-<tr class="separator:a8321eb05ea9e1a6883a67931ee393b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae0177c8cdb565119848c21d9c60964b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Diffusion_8cpp.html#aae0177c8cdb565119848c21d9c60964b">DiffusionContributionForState</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;cell_data, const int &amp;qty_index, const Array4&lt; Real &gt; &amp;xflux, const Array4&lt; Real &gt; &amp;yflux, const Array4&lt; Real &gt; &amp;zflux, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; Real &gt; &amp;K_LES, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice)</td></tr>
-<tr class="separator:aae0177c8cdb565119848c21d9c60964b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08ac0fa411099953bb7e730c70c0349"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Diffusion_8cpp.html#aa08ac0fa411099953bb7e730c70c0349">ComputeDiffusionFluxForState</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;cell_prim, const int &amp;prim_index, const amrex::Real invCellWidth, const Array4&lt; Real &gt; &amp;K_LES, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const enum <a class="el" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a> &amp;coordDir)</td></tr>
+<tr class="separator:aa08ac0fa411099953bb7e730c70c0349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95ca376aab032dfdcb0d77248c6fa057"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Diffusion_8cpp.html#a95ca376aab032dfdcb0d77248c6fa057">DiffusionContributionForState</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;cell_prim, const int &amp;qty_index, const Array4&lt; Real &gt; &amp;xflux, const Array4&lt; Real &gt; &amp;yflux, const Array4&lt; Real &gt; &amp;zflux, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; Real &gt; &amp;K_LES, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice)</td></tr>
+<tr class="separator:a95ca376aab032dfdcb0d77248c6fa057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a8321eb05ea9e1a6883a67931ee393b04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8321eb05ea9e1a6883a67931ee393b04">&#9670;&nbsp;</a></span>ComputeDiffusionFluxForState()</h2>
+<a id="aa08ac0fa411099953bb7e730c70c0349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08ac0fa411099953bb7e730c70c0349">&#9670;&nbsp;</a></span>ComputeDiffusionFluxForState()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,13 +155,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const Array4&lt; const Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cell_data</em>, </td>
+          <td class="paramname"><em>cell_prim</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>qty_index</em>, </td>
+          <td class="paramname"><em>prim_index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -206,16 +206,16 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="comment">// Get diffusion coefficients</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  amrex::Real rhoAlpha_molec;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  amrex::Real Pr_or_Sc_turb_inv;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">switch</span>(qty_index) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>: <span class="comment">// Temperature</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">switch</span>(prim_index) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>: <span class="comment">// Temperature</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    rhoAlpha_molec = solverChoice.<a class="code" href="structSolverChoice.html#a3436b31b3e0e439c700d07c30d22e7a3">rhoAlpha_T</a>;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    Pr_or_Sc_turb_inv = solverChoice.<a class="code" href="structSolverChoice.html#aedad420dddffb0b78651c5d8b399a67b">Pr_t_inv</a>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>: <span class="comment">// Turbulent KE</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a>: <span class="comment">// Turbulent KE</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    rhoAlpha_molec = solverChoice.<a class="code" href="structSolverChoice.html#a3436b31b3e0e439c700d07c30d22e7a3">rhoAlpha_T</a>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    Pr_or_Sc_turb_inv = solverChoice.<a class="code" href="structSolverChoice.html#aedad420dddffb0b78651c5d8b399a67b">Pr_t_inv</a>;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>: <span class="comment">// Scalar</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#aa9d1308b0d214f7bfbe9b8c11c4176b7">PrimScalar_comp</a>: <span class="comment">// Scalar</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    rhoAlpha_molec = solverChoice.<a class="code" href="structSolverChoice.html#a3571709ee9c72dca3523638986976821">rhoAlpha_C</a>;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    Pr_or_Sc_turb_inv = solverChoice.<a class="code" href="structSolverChoice.html#a5d8e6a103e2e5d61dc0990fa2141a675">Sc_t_inv</a>;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">break</span>;</div>
@@ -259,21 +259,20 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="comment">// Compute the flux</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="comment">// TODO : could be more efficient to compute comp from Rho_comp before this</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  amrex::Real diffusionFlux = rhoAlpha * invCellWidth *</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      (cell_data(ir, jr, kr, qty_index) / cell_data(ir, jr, kr, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;     - cell_data(il, jl, kl, qty_index) / cell_data(il, jl, kl, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordflow">return</span> diffusionFlux;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      (cell_prim(ir, jr, kr, prim_index) - cell_prim(il, jl, kl, prim_index));</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordflow">return</span> diffusionFlux;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TimeIntegration_8H.html#ac64d2b1c8a4c574869dcfba57a1dc2e3">DiffusionContributionForState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TimeIntegration_8H.html#ae853e97cb1f903f38597c60e41c30ce9">DiffusionContributionForState()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Diffusion_8cpp_a8321eb05ea9e1a6883a67931ee393b04_icgraph.png" border="0" usemap="#Diffusion_8cpp_a8321eb05ea9e1a6883a67931ee393b04_icgraph" alt=""/></div>
-<map name="Diffusion_8cpp_a8321eb05ea9e1a6883a67931ee393b04_icgraph" id="Diffusion_8cpp_a8321eb05ea9e1a6883a67931ee393b04_icgraph">
+<div class="center"><img src="Diffusion_8cpp_aa08ac0fa411099953bb7e730c70c0349_icgraph.png" border="0" usemap="#Diffusion_8cpp_aa08ac0fa411099953bb7e730c70c0349_icgraph" alt=""/></div>
+<map name="Diffusion_8cpp_aa08ac0fa411099953bb7e730c70c0349_icgraph" id="Diffusion_8cpp_aa08ac0fa411099953bb7e730c70c0349_icgraph">
 <area shape="rect" title=" " alt="" coords="645,13,867,39"/>
-<area shape="rect" href="TimeIntegration_8H.html#ac64d2b1c8a4c574869dcfba57a1dc2e3" title=" " alt="" coords="417,5,597,47"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a3c687a3a181fb64d4314352075c348ba" title=" " alt="" coords="303,13,369,39"/>
+<area shape="rect" href="TimeIntegration_8H.html#ae853e97cb1f903f38597c60e41c30ce9" title=" " alt="" coords="417,5,597,47"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#af352e207371573cafbf44544ce45fd67" title=" " alt="" coords="303,13,369,39"/>
 <area shape="rect" href="TimeIntegration__driver_8cpp.html#aff8d18e0bf2ee683ac83b32117491a17" title=" " alt="" coords="5,13,108,39"/>
 <area shape="rect" href="TimeIntegration__fast_8cpp.html#aa5e7afb540d82a149adca5e9f554dd85" title=" " alt="" coords="156,38,255,65"/>
 </map>
@@ -439,7 +438,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> diffusionContribution;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TimeIntegration__rhs_8cpp.html#a3c687a3a181fb64d4314352075c348ba">erf_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TimeIntegration__rhs_8cpp.html#af352e207371573cafbf44544ce45fd67">erf_rhs()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -459,7 +458,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="Diffusion_8cpp_a72239ee2c485e42d213d468fe983bceb_icgraph.png" border="0" usemap="#Diffusion_8cpp_a72239ee2c485e42d213d468fe983bceb_icgraph" alt=""/></div>
 <map name="Diffusion_8cpp_a72239ee2c485e42d213d468fe983bceb_icgraph" id="Diffusion_8cpp_a72239ee2c485e42d213d468fe983bceb_icgraph">
 <area shape="rect" title=" " alt="" coords="417,5,631,32"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a3c687a3a181fb64d4314352075c348ba" title=" " alt="" coords="303,5,369,32"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#af352e207371573cafbf44544ce45fd67" title=" " alt="" coords="303,5,369,32"/>
 <area shape="rect" href="TimeIntegration__driver_8cpp.html#aff8d18e0bf2ee683ac83b32117491a17" title=" " alt="" coords="5,5,108,32"/>
 <area shape="rect" href="TimeIntegration__fast_8cpp.html#aa5e7afb540d82a149adca5e9f554dd85" title=" " alt="" coords="156,31,255,57"/>
 </map>
@@ -467,8 +466,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aae0177c8cdb565119848c21d9c60964b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae0177c8cdb565119848c21d9c60964b">&#9670;&nbsp;</a></span>DiffusionContributionForState()</h2>
+<a id="a95ca376aab032dfdcb0d77248c6fa057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95ca376aab032dfdcb0d77248c6fa057">&#9670;&nbsp;</a></span>DiffusionContributionForState()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -495,7 +494,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const Array4&lt; const Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cell_data</em>, </td>
+          <td class="paramname"><em>cell_prim</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -546,46 +545,48 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;{</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keyword">const</span> amrex::Real dx_inv = cellSizeInv[0];</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keyword">const</span> amrex::Real dy_inv = cellSizeInv[1];</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keyword">const</span> amrex::Real dz_inv = cellSizeInv[2];</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="comment">// TODO : could be more efficient to compute and save all fluxes before taking divergence (now all fluxes are computed 2x);</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">xflux</a>(i+1,j,k,qty_index) = <a class="code" href="Diffusion_8cpp.html#a8321eb05ea9e1a6883a67931ee393b04">ComputeDiffusionFluxForState</a>(i+1, j, k, cell_data, qty_index, dx_inv, K_LES, solverChoice, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a>);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">xflux</a>(i  ,j,k,qty_index) = <a class="code" href="Diffusion_8cpp.html#a8321eb05ea9e1a6883a67931ee393b04">ComputeDiffusionFluxForState</a>(i  , j, k, cell_data, qty_index, dx_inv, K_LES, solverChoice, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a>);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j+1,k,qty_index) = <a class="code" href="Diffusion_8cpp.html#a8321eb05ea9e1a6883a67931ee393b04">ComputeDiffusionFluxForState</a>(i, j+1, k, cell_data, qty_index, dy_inv, K_LES, solverChoice, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a>);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j  ,k,qty_index) = <a class="code" href="Diffusion_8cpp.html#a8321eb05ea9e1a6883a67931ee393b04">ComputeDiffusionFluxForState</a>(i, j  , k, cell_data, qty_index, dy_inv, K_LES, solverChoice, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a>);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k+1,qty_index) = <a class="code" href="Diffusion_8cpp.html#a8321eb05ea9e1a6883a67931ee393b04">ComputeDiffusionFluxForState</a>(i, j, k+1, cell_data, qty_index, dz_inv, K_LES, solverChoice, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a>);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k  ,qty_index) = <a class="code" href="Diffusion_8cpp.html#a8321eb05ea9e1a6883a67931ee393b04">ComputeDiffusionFluxForState</a>(i, j, k  , cell_data, qty_index, dz_inv, K_LES, solverChoice, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a>);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  Real diffusionContribution =</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      (<a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">xflux</a>(i+1,j,k,qty_index) - <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">xflux</a>(i  ,j,k,qty_index)) * dx_inv   <span class="comment">// Diffusive flux in x-dir</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;     +(<a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j+1,k,qty_index) - <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j  ,k,qty_index)) * dy_inv   <span class="comment">// Diffusive flux in y-dir</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;     +(<a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k+1,qty_index) - <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k  ,qty_index)) * dz_inv;  <span class="comment">// Diffusive flux in z-dir</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keywordflow">return</span> diffusionContribution;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;{</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <span class="keyword">const</span> amrex::Real dx_inv = cellSizeInv[0];</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keyword">const</span> amrex::Real dy_inv = cellSizeInv[1];</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keyword">const</span> amrex::Real dz_inv = cellSizeInv[2];</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <span class="comment">// TODO : could be more efficient to compute and save all fluxes before taking divergence (now all fluxes are computed 2x);</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">xflux</a>(i+1,j,k,qty_index) = <a class="code" href="Diffusion_8cpp.html#aa08ac0fa411099953bb7e730c70c0349">ComputeDiffusionFluxForState</a>(i+1, j, k, cell_prim, prim_index, dx_inv, K_LES, solverChoice, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">xflux</a>(i  ,j,k,qty_index) = <a class="code" href="Diffusion_8cpp.html#aa08ac0fa411099953bb7e730c70c0349">ComputeDiffusionFluxForState</a>(i  , j, k, cell_prim, prim_index, dx_inv, K_LES, solverChoice, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j+1,k,qty_index) = <a class="code" href="Diffusion_8cpp.html#aa08ac0fa411099953bb7e730c70c0349">ComputeDiffusionFluxForState</a>(i, j+1, k, cell_prim, prim_index, dy_inv, K_LES, solverChoice, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j  ,k,qty_index) = <a class="code" href="Diffusion_8cpp.html#aa08ac0fa411099953bb7e730c70c0349">ComputeDiffusionFluxForState</a>(i, j  , k, cell_prim, prim_index, dy_inv, K_LES, solverChoice, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a>);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k+1,qty_index) = <a class="code" href="Diffusion_8cpp.html#aa08ac0fa411099953bb7e730c70c0349">ComputeDiffusionFluxForState</a>(i, j, k+1, cell_prim, prim_index, dz_inv, K_LES, solverChoice, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a>);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k  ,qty_index) = <a class="code" href="Diffusion_8cpp.html#aa08ac0fa411099953bb7e730c70c0349">ComputeDiffusionFluxForState</a>(i, j, k  , cell_prim, prim_index, dz_inv, K_LES, solverChoice, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a>);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  Real diffusionContribution =</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      (<a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">xflux</a>(i+1,j,k,qty_index) - <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">xflux</a>(i  ,j,k,qty_index)) * dx_inv   <span class="comment">// Diffusive flux in x-dir</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;     +(<a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j+1,k,qty_index) - <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j  ,k,qty_index)) * dy_inv   <span class="comment">// Diffusive flux in y-dir</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;     +(<a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k+1,qty_index) - <a class="code" href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k  ,qty_index)) * dz_inv;  <span class="comment">// Diffusive flux in z-dir</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordflow">return</span> diffusionContribution;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TimeIntegration__rhs_8cpp.html#a3c687a3a181fb64d4314352075c348ba">erf_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TimeIntegration__rhs_8cpp.html#af352e207371573cafbf44544ce45fd67">erf_rhs()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Diffusion_8cpp_aae0177c8cdb565119848c21d9c60964b_cgraph.png" border="0" usemap="#Diffusion_8cpp_aae0177c8cdb565119848c21d9c60964b_cgraph" alt=""/></div>
-<map name="Diffusion_8cpp_aae0177c8cdb565119848c21d9c60964b_cgraph" id="Diffusion_8cpp_aae0177c8cdb565119848c21d9c60964b_cgraph">
+<div class="center"><img src="Diffusion_8cpp_a95ca376aab032dfdcb0d77248c6fa057_cgraph.png" border="0" usemap="#Diffusion_8cpp_a95ca376aab032dfdcb0d77248c6fa057_cgraph" alt=""/></div>
+<map name="Diffusion_8cpp_a95ca376aab032dfdcb0d77248c6fa057_cgraph" id="Diffusion_8cpp_a95ca376aab032dfdcb0d77248c6fa057_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,185,47"/>
-<area shape="rect" href="Diffusion_8cpp.html#a8321eb05ea9e1a6883a67931ee393b04" title=" " alt="" coords="233,13,455,39"/>
+<area shape="rect" href="Diffusion_8cpp.html#aa08ac0fa411099953bb7e730c70c0349" title=" " alt="" coords="233,13,455,39"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Diffusion_8cpp_aae0177c8cdb565119848c21d9c60964b_icgraph.png" border="0" usemap="#Diffusion_8cpp_aae0177c8cdb565119848c21d9c60964b_icgraph" alt=""/></div>
-<map name="Diffusion_8cpp_aae0177c8cdb565119848c21d9c60964b_icgraph" id="Diffusion_8cpp_aae0177c8cdb565119848c21d9c60964b_icgraph">
+<div class="center"><img src="Diffusion_8cpp_a95ca376aab032dfdcb0d77248c6fa057_icgraph.png" border="0" usemap="#Diffusion_8cpp_a95ca376aab032dfdcb0d77248c6fa057_icgraph" alt=""/></div>
+<map name="Diffusion_8cpp_a95ca376aab032dfdcb0d77248c6fa057_icgraph" id="Diffusion_8cpp_a95ca376aab032dfdcb0d77248c6fa057_icgraph">
 <area shape="rect" title=" " alt="" coords="417,5,597,47"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a3c687a3a181fb64d4314352075c348ba" title=" " alt="" coords="303,13,369,39"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#af352e207371573cafbf44544ce45fd67" title=" " alt="" coords="303,13,369,39"/>
 <area shape="rect" href="TimeIntegration__driver_8cpp.html#aff8d18e0bf2ee683ac83b32117491a17" title=" " alt="" coords="5,13,108,39"/>
 <area shape="rect" href="TimeIntegration__fast_8cpp.html#aa5e7afb540d82a149adca5e9f554dd85" title=" " alt="" coords="156,38,255,65"/>
 </map>
@@ -596,7 +597,6 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aDataStruct_8H_html_a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255"><div class="ttname"><a href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255">MolecDiffType::Constant</a></div><div class="ttdeci">@ Constant</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
 <div class="ttc" id="anamespaceIntVar_html_a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be"><div class="ttname"><a href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa21245d0eca9226a6441feac35602c9be">IntVar::xflux</a></div><div class="ttdeci">@ xflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:23</div></div>
 <div class="ttc" id="astructSolverChoice_html_a5d8e6a103e2e5d61dc0990fa2141a675"><div class="ttname"><a href="structSolverChoice.html#a5d8e6a103e2e5d61dc0990fa2141a675">SolverChoice::Sc_t_inv</a></div><div class="ttdeci">amrex::Real Sc_t_inv</div><div class="ttdef"><b>Definition:</b> DataStruct.H:262</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a></div><div class="ttdeci">@ y</div></div>
@@ -607,10 +607,10 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aDataStruct_8H_html_aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="astructSolverChoice_html_a53966e639b0307b7420fd6abe8412fa0"><div class="ttname"><a href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">SolverChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:252</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">AdvectedQuantity::v</a></div><div class="ttdeci">@ v</div></div>
-<div class="ttc" id="aDiffusion_8cpp_html_a8321eb05ea9e1a6883a67931ee393b04"><div class="ttname"><a href="Diffusion_8cpp.html#a8321eb05ea9e1a6883a67931ee393b04">ComputeDiffusionFluxForState</a></div><div class="ttdeci">AMREX_GPU_DEVICE amrex::Real ComputeDiffusionFluxForState(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;cell_data, const int &amp;qty_index, const amrex::Real invCellWidth, const Array4&lt; Real &gt; &amp;K_LES, const SolverChoice &amp;solverChoice, const enum Coord &amp;coordDir)</div><div class="ttdef"><b>Definition:</b> Diffusion.cpp:93</div></div>
 <div class="ttc" id="anamespaceIntVar_html_a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51"><div class="ttname"><a href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996fa9b94534904513cb3b68ef8b0c7bfed51">IntVar::zflux</a></div><div class="ttdeci">@ zflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:25</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a></div><div class="ttdeci">@ x</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:18</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a6adf97f83acf6453d4a6a4b1070f3754">LESType::None</a></div><div class="ttdeci">@ None</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="astructSolverChoice_html_aedad420dddffb0b78651c5d8b399a67b"><div class="ttname"><a href="structSolverChoice.html#aedad420dddffb0b78651c5d8b399a67b">SolverChoice::Pr_t_inv</a></div><div class="ttdeci">amrex::Real Pr_t_inv</div><div class="ttdef"><b>Definition:</b> DataStruct.H:259</div></div>
@@ -619,14 +619,15 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a></div><div class="ttdeci">@ Deardorff</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
 <div class="ttc" id="astructSolverChoice_html_affbc103f3361b47fbcf605a08b99d8ec"><div class="ttname"><a href="structSolverChoice.html#affbc103f3361b47fbcf605a08b99d8ec">SolverChoice::sigma_k</a></div><div class="ttdeci">amrex::Real sigma_k</div><div class="ttdef"><b>Definition:</b> DataStruct.H:269</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_aa9d1308b0d214f7bfbe9b8c11c4176b7"><div class="ttname"><a href="IndexDefines_8H.html#aa9d1308b0d214f7bfbe9b8c11c4176b7">PrimScalar_comp</a></div><div class="ttdeci">#define PrimScalar_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:20</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a></div><div class="ttdeci">@ x</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:11</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_a9ab6bf01b348d4b7cef99f3655c9dbb2"><div class="ttname"><a href="IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a></div><div class="ttdeci">#define PrimKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:19</div></div>
 <div class="ttc" id="astructSolverChoice_html_a3436b31b3e0e439c700d07c30d22e7a3"><div class="ttname"><a href="structSolverChoice.html#a3436b31b3e0e439c700d07c30d22e7a3">SolverChoice::rhoAlpha_T</a></div><div class="ttdeci">amrex::Real rhoAlpha_T</div><div class="ttdef"><b>Definition:</b> DataStruct.H:247</div></div>
 <div class="ttc" id="anamespaceIntVar_html_a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09"><div class="ttname"><a href="namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09">IntVar::yflux</a></div><div class="ttdeci">@ yflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:24</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a></div><div class="ttdeci">@ Smagorinsky</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a></div><div class="ttdeci">@ z</div></div>
+<div class="ttc" id="aDiffusion_8cpp_html_aa08ac0fa411099953bb7e730c70c0349"><div class="ttname"><a href="Diffusion_8cpp.html#aa08ac0fa411099953bb7e730c70c0349">ComputeDiffusionFluxForState</a></div><div class="ttdeci">AMREX_GPU_DEVICE amrex::Real ComputeDiffusionFluxForState(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;cell_prim, const int &amp;prim_index, const amrex::Real invCellWidth, const Array4&lt; Real &gt; &amp;K_LES, const SolverChoice &amp;solverChoice, const enum Coord &amp;coordDir)</div><div class="ttdef"><b>Definition:</b> Diffusion.cpp:93</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">AdvectedQuantity::u</a></div><div class="ttdeci">@ u</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
