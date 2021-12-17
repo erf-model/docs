@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"classPlaneAverage.html#a07b0a2a8fb04d915d1b626264f155600":[3,0,15,24],
 "classPlaneAverage.html#a1f08f5f76700c51c42243410ffce6e66":[3,0,15,34],
 "classPlaneAverage.html#a23bbb47b85b3a3f5504a405a73161232":[3,0,15,10],
 "classPlaneAverage.html#a2e6f445e8dacd92c3fabe3781fc46024":[3,0,15,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "structABLFieldInit.html#a5cffe83485b1c6e3692cc1dc560a3d5a":[3,0,3,17],
 "structABLFieldInit.html#a67fa6c3ea58c0cad42aeb50043d543c4":[3,0,3,24],
 "structABLFieldInit.html#a6b3553d0d012abd666beae3145fa95d2":[3,0,3,6],
-"structABLFieldInit.html#a6e39ba07eb73822cfb4d1ca16094162d":[3,0,3,10],
-"structABLFieldInit.html#a7db7b372ca41c004bccefa7c7172c2cc":[3,0,3,20]
+"structABLFieldInit.html#a6e39ba07eb73822cfb4d1ca16094162d":[3,0,3,10]
 };

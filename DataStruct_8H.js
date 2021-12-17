@@ -41,7 +41,8 @@ var DataStruct_8H =
     ] ],
     [ "MolecDiffType", "DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735", [
       [ "None", "DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6adf97f83acf6453d4a6a4b1070f3754", null ],
-      [ "Constant", "DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255", null ]
+      [ "Constant", "DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255", null ],
+      [ "ConstantDiffusivity", "DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a653d20a7905620052d73399042e92923", null ]
     ] ],
     [ "MomentumEqn", "DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9", [
       [ "x", "DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6", null ],
