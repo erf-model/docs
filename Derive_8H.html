@@ -121,6 +121,8 @@ Functions</h2></td></tr>
 <tr class="separator:aa8753429fb0184b24c6c737b19deaa13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87081d6115f001e5733003946f1d808e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Derive_8H.html#a87081d6115f001e5733003946f1d808e">erf_derpres</a> (const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real time, const int *bcrec, const int level)</td></tr>
 <tr class="separator:a87081d6115f001e5733003946f1d808e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29f65232ba48b9e3ebb6ff571f66bab9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Derive_8H.html#a29f65232ba48b9e3ebb6ff571f66bab9">erf_dersoundspeed</a> (const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real time, const int *bcrec, const int level)</td></tr>
+<tr class="separator:a29f65232ba48b9e3ebb6ff571f66bab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1a887cdc1eeac9d059a149164a3d6ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Derive_8H.html#aa1a887cdc1eeac9d059a149164a3d6ad">erf_dertemp</a> (const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real time, const int *bcrec, const int level)</td></tr>
 <tr class="separator:aa1a887cdc1eeac9d059a149164a3d6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91838ffd7c48b4d1f7533490106c188f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Derive_8H.html#a91838ffd7c48b4d1f7533490106c188f">erf_dertheta</a> (const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real time, const int *bcrec, const int level)</td></tr>
@@ -288,6 +290,95 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a29f65232ba48b9e3ebb6ff571f66bab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29f65232ba48b9e3ebb6ff571f66bab9">&#9670;&nbsp;</a></span>erf_dersoundspeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void erf_dersoundspeed </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::FArrayBox &amp;&#160;</td>
+          <td class="paramname"><em>derfab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dcomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::FArrayBox &amp;&#160;</td>
+          <td class="paramname"><em>datfab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geomdata</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>bcrec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>level</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">auto</span> cfab      = derfab.array();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> amrex::Real rhotheta = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> amrex::Real rho      = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    cfab(i,j,k) = std::sqrt(<a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a> * <a class="code" href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b">getPgivenRTh</a>(rhotheta) / rho);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  });</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="Derive_8H_a29f65232ba48b9e3ebb6ff571f66bab9_cgraph.png" border="0" usemap="#Derive_8H_a29f65232ba48b9e3ebb6ff571f66bab9_cgraph" alt=""/></div>
+<map name="Derive_8H_a29f65232ba48b9e3ebb6ff571f66bab9_cgraph" id="Derive_8H_a29f65232ba48b9e3ebb6ff571f66bab9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,152,32"/>
+<area shape="rect" href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b" title=" " alt="" coords="200,5,311,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="aa1a887cdc1eeac9d059a149164a3d6ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa1a887cdc1eeac9d059a149164a3d6ad">&#9670;&nbsp;</a></span>erf_dertemp()</h2>
 
@@ -355,16 +446,16 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">auto</span> tfab      = derfab.array();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> amrex::Real rho = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> amrex::Real rhotheta = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    tfab(i,j,k) = <a class="code" href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a>(rho,rhotheta);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  });</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">auto</span> tfab      = derfab.array();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> amrex::Real rho = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> amrex::Real rhotheta = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    tfab(i,j,k) = <a class="code" href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a>(rho,rhotheta);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  });</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -444,22 +535,23 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">auto</span> thetafab  = derfab.array();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> amrex::Real rho      = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> amrex::Real rhotheta = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    thetafab(i,j,k) = rhotheta / rho;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  });</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">auto</span> thetafab  = derfab.array();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">const</span> amrex::Real rho      = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">const</span> amrex::Real rhotheta = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    thetafab(i,j,k) = rhotheta / rho;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  });</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_ae8ca591ba2325c0ad8b464de45f4c6b3"><div class="ttname"><a href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a></div><div class="ttdeci">#define Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
 <div class="ttc" id="aEOS_8H_html_a292ce90ab26c75f4a444808a807b532b"><div class="ttname"><a href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:15</div></div>
 <div class="ttc" id="aEOS_8H_html_a652d566aef658cc423ced929a816f869"><div class="ttname"><a href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:8</div></div>
