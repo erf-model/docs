@@ -17,11 +17,12 @@ var searchData=
   ['smagorinsky_353',['Smagorinsky',['../DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808',1,'DataStruct.H']]],
   ['solverchoice_354',['SolverChoice',['../structSolverChoice.html',1,'']]],
   ['spatial_5forder_355',['spatial_order',['../structSolverChoice.html#a8e053ce39997ed619ac81aa4d5a1fd44',1,'SolverChoice']]],
-  ['strainrate_2eh_356',['StrainRate.H',['../StrainRate_8H.html',1,'']]],
-  ['stressterm_2eh_357',['StressTerm.H',['../StressTerm_8H.html',1,'']]],
-  ['sumiq_2ecpp_358',['SumIQ.cpp',['../SumIQ_8cpp.html',1,'']]],
-  ['sumutils_2ecpp_359',['SumUtils.cpp',['../SumUtils_8cpp.html',1,'']]],
-  ['surf_5ftemp_360',['surf_temp',['../structABLMost.html#a73621a1b429f2e910a29adac72b7c581',1,'ABLMost']]],
-  ['surf_5ftemp_5fflux_361',['surf_temp_flux',['../structABLMost.html#a98390481d302c2a2c7346bf2328305a8',1,'ABLMost']]],
-  ['surface_5ftemperature_362',['SURFACE_TEMPERATURE',['../structABLMost.html#a46fbd9260d2adfa7c18edad6452f9baba7898337114347af29e54cea604ec4829',1,'ABLMost']]]
+  ['spatialstencils_2eh_356',['SpatialStencils.H',['../SpatialStencils_8H.html',1,'']]],
+  ['strainrate_2eh_357',['StrainRate.H',['../StrainRate_8H.html',1,'']]],
+  ['stressterm_2eh_358',['StressTerm.H',['../StressTerm_8H.html',1,'']]],
+  ['sumiq_2ecpp_359',['SumIQ.cpp',['../SumIQ_8cpp.html',1,'']]],
+  ['sumutils_2ecpp_360',['SumUtils.cpp',['../SumUtils_8cpp.html',1,'']]],
+  ['surf_5ftemp_361',['surf_temp',['../structABLMost.html#a73621a1b429f2e910a29adac72b7c581',1,'ABLMost']]],
+  ['surf_5ftemp_5fflux_362',['surf_temp_flux',['../structABLMost.html#a98390481d302c2a2c7346bf2328305a8',1,'ABLMost']]],
+  ['surface_5ftemperature_363',['SURFACE_TEMPERATURE',['../structABLMost.html#a46fbd9260d2adfa7c18edad6452f9baba7898337114347af29e54cea604ec4829',1,'ABLMost']]]
 ];
