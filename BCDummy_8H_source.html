@@ -96,20 +96,22 @@ $(document).ready(function(){initNavTree('BCDummy_8H_source.html',''); initResiz
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classphys__bcs_1_1BCDummy.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classphys__bcs_1_1BCDummy.html">BCDummy</a> : <span class="keyword">public</span> <a class="code" href="classphys__bcs_1_1BCBase.html">BCBase</a> {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classphys__bcs_1_1BCDummy.html#addd86ea337b935ed5c0ffdeaaeb88275">   11</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classphys__bcs_1_1BCDummy.html#addd86ea337b935ed5c0ffdeaaeb88275">applyBC</a> (<span class="keyword">const</span> amrex::Geometry <span class="comment">/*geom*/</span>, amrex::Vector&lt;MultiFab*&gt;&amp; <span class="comment">/*vars*/</span>, <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; <span class="comment">/*solverChoice*/</span>)<span class="keyword"> override </span>{}</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classphys__bcs_1_1BCDummy.html#aae4be4c9619293730eb56518a01cced7">   11</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classphys__bcs_1_1BCDummy.html#aae4be4c9619293730eb56518a01cced7">BCDummy</a>(ERF&amp; erf) : <a class="code" href="classphys__bcs_1_1BCBase.html">BCBase</a>(erf) {}</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classphys__bcs_1_1BCDummy.html#a5e439b6d66fe297fa461425c918d0814">   12</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classphys__bcs_1_1BCDummy.html#a5e439b6d66fe297fa461425c918d0814">applyBC</a> (<span class="keyword">const</span> amrex::Geometry <span class="comment">/*geom*/</span>, amrex::Vector&lt;MultiFab*&gt;&amp; <span class="comment">/*vars*/</span>, <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; <span class="comment">/*solverChoice*/</span>, <span class="keywordtype">bool</span> is_derived)<span class="keyword"> override </span>{}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;};</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassphys__bcs_1_1BCBase_html"><div class="ttname"><a href="classphys__bcs_1_1BCBase.html">phys_bcs::BCBase</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1611</div></div>
+<div class="ttc" id="aclassphys__bcs_1_1BCBase_html"><div class="ttname"><a href="classphys__bcs_1_1BCBase.html">phys_bcs::BCBase</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1787</div></div>
+<div class="ttc" id="aclassphys__bcs_1_1BCDummy_html_a5e439b6d66fe297fa461425c918d0814"><div class="ttname"><a href="classphys__bcs_1_1BCDummy.html#a5e439b6d66fe297fa461425c918d0814">phys_bcs::BCDummy::applyBC</a></div><div class="ttdeci">void applyBC(const amrex::Geometry, amrex::Vector&lt; MultiFab * &gt; &amp;, const SolverChoice &amp;, bool is_derived) override</div><div class="ttdef"><b>Definition:</b> BCDummy.H:12</div></div>
 <div class="ttc" id="aclassphys__bcs_1_1BCDummy_html"><div class="ttname"><a href="classphys__bcs_1_1BCDummy.html">phys_bcs::BCDummy</a></div><div class="ttdef"><b>Definition:</b> BCDummy.H:9</div></div>
+<div class="ttc" id="aclassphys__bcs_1_1BCDummy_html_aae4be4c9619293730eb56518a01cced7"><div class="ttname"><a href="classphys__bcs_1_1BCDummy.html#aae4be4c9619293730eb56518a01cced7">phys_bcs::BCDummy::BCDummy</a></div><div class="ttdeci">BCDummy(ERF &amp;erf)</div><div class="ttdef"><b>Definition:</b> BCDummy.H:11</div></div>
 <div class="ttc" id="aERF_8H_html"><div class="ttname"><a href="ERF_8H.html">ERF.H</a></div></div>
 <div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> DataStruct.H:43</div></div>
-<div class="ttc" id="anamespacephys__bcs_html"><div class="ttname"><a href="namespacephys__bcs.html">phys_bcs</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1609</div></div>
-<div class="ttc" id="aclassphys__bcs_1_1BCDummy_html_addd86ea337b935ed5c0ffdeaaeb88275"><div class="ttname"><a href="classphys__bcs_1_1BCDummy.html#addd86ea337b935ed5c0ffdeaaeb88275">phys_bcs::BCDummy::applyBC</a></div><div class="ttdeci">void applyBC(const amrex::Geometry, amrex::Vector&lt; MultiFab * &gt; &amp;, const SolverChoice &amp;) override</div><div class="ttdef"><b>Definition:</b> BCDummy.H:11</div></div>
+<div class="ttc" id="anamespacephys__bcs_html"><div class="ttname"><a href="namespacephys__bcs.html">phys_bcs</a></div><div class="ttdef"><b>Definition:</b> BCBase.H:1785</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

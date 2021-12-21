@@ -1,5 +1,5 @@
 var classphys__bcs_1_1BCSlipWall =
 [
-    [ "BCSlipWall", "classphys__bcs_1_1BCSlipWall.html#a084902a1cd09786444f7af3aec8080ad", null ],
-    [ "applyBC", "classphys__bcs_1_1BCSlipWall.html#afc7607029a1a41e2f170222621afbca8", null ]
+    [ "BCSlipWall", "classphys__bcs_1_1BCSlipWall.html#a9515d3299a991d6af98c5e58cccc37e5", null ],
+    [ "applyBC", "classphys__bcs_1_1BCSlipWall.html#a5c1b86ad75d3394bf8668bbad331bf1d", null ]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ERF: GetViscosity Struct Reference</title>
+<title>ERF: getViscosity Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('structGetViscosity.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('structgetViscosity.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -84,9 +84,9 @@ $(document).ready(function(){initNavTree('structGetViscosity.html',''); initResi
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="structGetViscosity-members.html">List of all members</a>  </div>
+<a href="structgetViscosity-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">GetViscosity Struct Reference</div>  </div>
+<div class="title">getViscosity Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -94,12 +94,12 @@ $(document).ready(function(){initNavTree('structGetViscosity.html',''); initResi
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:afeb2918e9a784b23922c3a476c2e770b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGetViscosity.html#afeb2918e9a784b23922c3a476c2e770b">get</a> (MultiFab *velx, MultiFab *vely, MultiFab *velz, MultiFab *states, MultiFab *eta, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSize, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const bool &amp;no_slip_lo_k, const int &amp;klo, const bool &amp;no_slip_hi_k, const int &amp;khi)</td></tr>
-<tr class="separator:afeb2918e9a784b23922c3a476c2e770b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc2a53741fec91a571fb0c31e805263"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgetViscosity.html#a3cc2a53741fec91a571fb0c31e805263">get</a> (const MultiFab &amp;velx, const MultiFab &amp;vely, const MultiFab &amp;velz, const MultiFab &amp;states, MultiFab &amp;eta, const Geometry &amp;geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice)</td></tr>
+<tr class="separator:a3cc2a53741fec91a571fb0c31e805263"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="afeb2918e9a784b23922c3a476c2e770b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afeb2918e9a784b23922c3a476c2e770b">&#9670;&nbsp;</a></span>get()</h2>
+<a id="a3cc2a53741fec91a571fb0c31e805263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cc2a53741fec91a571fb0c31e805263">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -108,70 +108,46 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void GetViscosity::get </td>
+          <td class="memname">static void getViscosity::get </td>
           <td>(</td>
-          <td class="paramtype">MultiFab *&#160;</td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
           <td class="paramname"><em>velx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">MultiFab *&#160;</td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
           <td class="paramname"><em>vely</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">MultiFab *&#160;</td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
           <td class="paramname"><em>velz</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">MultiFab *&#160;</td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
           <td class="paramname"><em>states</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">MultiFab *&#160;</td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
           <td class="paramname"><em>eta</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cellSize</em>, </td>
+          <td class="paramtype">const Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
-          <td class="paramname"><em>solverChoice</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>no_slip_lo_k</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>klo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>no_slip_hi_k</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>khi</em>&#160;</td>
+          <td class="paramname"><em>solverChoice</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -185,28 +161,32 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                                             {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;     <a class="code" href="EddyViscosity_8H.html#a9a9dd15e716adbf39643ede31a3ff80c">ComputeTurbulentViscosity</a>(*velx, *vely, *velz, *states, *eta, cellSize, solverChoice, no_slip_lo_k, klo, no_slip_hi_k, khi);</div>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                                     {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;     <span class="keywordtype">int</span> klo = geom.Domain().smallEnd()[2];</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;     <span class="keywordtype">int</span> khi = geom.Domain().bigEnd()[2];</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;     <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dx = geom.CellSizeArray();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;     <a class="code" href="EddyViscosity_8H.html#a9a9dd15e716adbf39643ede31a3ff80c">ComputeTurbulentViscosity</a>(velx, vely, velz, states, eta, dx, solverChoice, <span class="keyword">false</span>, klo, <span class="keyword">false</span>, khi);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;     eta.FillBoundary(geom.periodicity());</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classphys__bcs_1_1BCMostWall.html#a5244321259c4d3a07169ec51e9ffb323">phys_bcs::BCMostWall&lt; IDIR, Bound &gt;::applyBC()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classphys__bcs_1_1BCMostWall.html#a7dc1c3ce6b3273c20088f0bb3eb31004">phys_bcs::BCMostWall&lt; IDIR, Bound &gt;::applyBC()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structGetViscosity_afeb2918e9a784b23922c3a476c2e770b_cgraph.png" border="0" usemap="#structGetViscosity_afeb2918e9a784b23922c3a476c2e770b_cgraph" alt=""/></div>
-<map name="structGetViscosity_afeb2918e9a784b23922c3a476c2e770b_cgraph" id="structGetViscosity_afeb2918e9a784b23922c3a476c2e770b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,137,32"/>
-<area shape="rect" href="EddyViscosity_8H.html#a9a9dd15e716adbf39643ede31a3ff80c" title=" " alt="" coords="185,5,385,32"/>
-<area shape="rect" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e" title=" " alt="" coords="433,5,583,32"/>
+<div class="center"><img src="structgetViscosity_a3cc2a53741fec91a571fb0c31e805263_cgraph.png" border="0" usemap="#structgetViscosity_a3cc2a53741fec91a571fb0c31e805263_cgraph" alt=""/></div>
+<map name="structgetViscosity_a3cc2a53741fec91a571fb0c31e805263_cgraph" id="structgetViscosity_a3cc2a53741fec91a571fb0c31e805263_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,136,32"/>
+<area shape="rect" href="EddyViscosity_8H.html#a9a9dd15e716adbf39643ede31a3ff80c" title=" " alt="" coords="184,5,384,32"/>
+<area shape="rect" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e" title=" " alt="" coords="432,5,581,32"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structGetViscosity_afeb2918e9a784b23922c3a476c2e770b_icgraph.png" border="0" usemap="#structGetViscosity_afeb2918e9a784b23922c3a476c2e770b_icgraph" alt=""/></div>
-<map name="structGetViscosity_afeb2918e9a784b23922c3a476c2e770b_icgraph" id="structGetViscosity_afeb2918e9a784b23922c3a476c2e770b_icgraph">
-<area shape="rect" title=" " alt="" coords="221,13,353,39"/>
-<area shape="rect" href="classphys__bcs_1_1BCMostWall.html#a5244321259c4d3a07169ec51e9ffb323" title=" " alt="" coords="5,5,173,47"/>
+<div class="center"><img src="structgetViscosity_a3cc2a53741fec91a571fb0c31e805263_icgraph.png" border="0" usemap="#structgetViscosity_a3cc2a53741fec91a571fb0c31e805263_icgraph" alt=""/></div>
+<map name="structgetViscosity_a3cc2a53741fec91a571fb0c31e805263_icgraph" id="structgetViscosity_a3cc2a53741fec91a571fb0c31e805263_icgraph">
+<area shape="rect" title=" " alt="" coords="221,13,352,39"/>
+<area shape="rect" href="classphys__bcs_1_1BCMostWall.html#a7dc1c3ce6b3273c20088f0bb3eb31004" title=" " alt="" coords="5,5,173,47"/>
 </map>
 </div>
 
@@ -221,7 +201,7 @@ Here is the caller graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="structGetViscosity.html">GetViscosity</a></li>
+    <li class="navelem"><a class="el" href="structgetViscosity.html">getViscosity</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

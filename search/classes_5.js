@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getviscosity_454',['GetViscosity',['../structGetViscosity.html',1,'']]]
+  ['getviscosity_451',['getViscosity',['../structgetViscosity.html',1,'']]]
 ];

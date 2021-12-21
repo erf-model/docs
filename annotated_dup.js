@@ -13,7 +13,7 @@ var annotated_dup =
     [ "ERFBld", "classERFBld.html", "classERFBld" ],
     [ "ERFHypFillExtDir", "structERFHypFillExtDir.html", "structERFHypFillExtDir" ],
     [ "FCFillExtDirDummy", "structFCFillExtDirDummy.html", "structFCFillExtDirDummy" ],
-    [ "GetViscosity", "structGetViscosity.html", "structGetViscosity" ],
+    [ "getViscosity", "structgetViscosity.html", "structgetViscosity" ],
     [ "IOManager", "classIOManager.html", "classIOManager" ],
     [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ],
     [ "SolverChoice", "structSolverChoice.html", "structSolverChoice" ],

@@ -100,10 +100,10 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:adabf0440ac43f60d052cd72c46d77518"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1upper_01_4.html#adabf0440ac43f60d052cd72c46d77518">apply_cell_based</a> (const amrex::Geometry &amp;, const Box &amp;, amrex::Vector&lt; Array4&lt; Real &gt; * &gt; &amp;, Array4&lt; Real &gt; &amp;, const <a class="el" href="structABLMost.html">ABLMost</a> &amp;, int, int ncomp=1)</td></tr>
-<tr class="separator:adabf0440ac43f60d052cd72c46d77518"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04d8a6d196c3e90a2dacf229be8f43b7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1upper_01_4.html#a04d8a6d196c3e90a2dacf229be8f43b7">apply_face_based</a> (const amrex::Geometry &amp;, const Box &amp;, Array4&lt; Real &gt; &amp;, int ncomp=1)</td></tr>
-<tr class="separator:a04d8a6d196c3e90a2dacf229be8f43b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acff949f9a62575d07f5fd24df4320126"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1upper_01_4.html#acff949f9a62575d07f5fd24df4320126">apply_cell_based</a> (const amrex::Geometry &amp;geom, const Box &amp;b, amrex::Vector&lt; Array4&lt; Real &gt; * &gt; &amp;states, Array4&lt; Real &gt; &amp;data, const <a class="el" href="structABLMost.html">ABLMost</a> &amp;most, bool is_derived, int ncomp=1)</td></tr>
+<tr class="separator:acff949f9a62575d07f5fd24df4320126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae061f77b59fa76696f7bbfae9d7eeaf5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1upper_01_4.html#ae061f77b59fa76696f7bbfae9d7eeaf5">apply_face_based</a> (const amrex::Geometry &amp;geom, const Box &amp;b, Array4&lt; Real &gt; &amp;data, int ncomp=1)</td></tr>
+<tr class="separator:ae061f77b59fa76696f7bbfae9d7eeaf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a647d87d84bb3f39f1cff3fa6a6612b46"></a>
@@ -123,8 +123,8 @@ template&lt;int IDIR&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="adabf0440ac43f60d052cd72c46d77518"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adabf0440ac43f60d052cd72c46d77518">&#9670;&nbsp;</a></span>apply_cell_based()</h2>
+<a id="acff949f9a62575d07f5fd24df4320126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acff949f9a62575d07f5fd24df4320126">&#9670;&nbsp;</a></span>apply_cell_based()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,37 +138,37 @@ template&lt;int IDIR&gt; </div>
           <td class="memname">static void <a class="el" href="structmath__bcs_1_1ablmostwall.html">math_bcs::ablmostwall</a>&lt; IDIR, BCBound::upper &gt;::apply_cell_based </td>
           <td>(</td>
           <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>geom</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const Box &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::Vector&lt; Array4&lt; Real &gt; * &gt; &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>states</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Array4&lt; Real &gt; &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structABLMost.html">ABLMost</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>most</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_derived</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -188,12 +188,140 @@ template&lt;int IDIR&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01599"></a><span class="lineno"> 1599</span>&#160;                                                           {};</div>
-</div><!-- fragment -->
+<p>for zone centered variables, the face centered velocity need to be interpolated to zone center. NOTE: the number of ghost zone for state variables are different from face centered variables in the new version.</p>
+<div class="fragment"><div class="line"><a name="l01631"></a><span class="lineno"> 1631</span>&#160;                                                                                                                                                                                            {</div>
+<div class="line"><a name="l01632"></a><span class="lineno"> 1632</span>&#160;      <span class="keywordtype">int</span> hi = geom.Domain().bigEnd(IDIR);</div>
+<div class="line"><a name="l01633"></a><span class="lineno"> 1633</span>&#160;      <span class="keyword">auto</span> type = b.type();</div>
+<div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160;      <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dx = geom.CellSizeArray();</div>
+<div class="line"><a name="l01635"></a><span class="lineno"> 1635</span>&#160; </div>
+<div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160;      <span class="keywordflow">if</span>(b.bigEnd(IDIR) &gt; hi) {</div>
+<div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160;        <span class="keywordflow">if</span> (IDIR == 0) {</div>
+<div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160;           amrex::Print() &lt;&lt; <span class="stringliteral">&quot; ABLMost not available for x-dimension &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l01639"></a><span class="lineno"> 1639</span>&#160; </div>
+<div class="line"><a name="l01640"></a><span class="lineno"> 1640</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 1) {</div>
+<div class="line"><a name="l01641"></a><span class="lineno"> 1641</span>&#160;           amrex::Print() &lt;&lt; <span class="stringliteral">&quot; ABLMost not available for y-dimension &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l01642"></a><span class="lineno"> 1642</span>&#160; </div>
+<div class="line"><a name="l01643"></a><span class="lineno"> 1643</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 2) {</div>
+<div class="line"><a name="l01644"></a><span class="lineno"> 1644</span>&#160;          amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l01645"></a><span class="lineno"> 1645</span>&#160;          {</div>
+<div class="line"><a name="l01646"></a><span class="lineno"> 1646</span>&#160;            <span class="comment">// Not tested yet, FIX ME if you find bugs</span></div>
+<div class="line"><a name="l01647"></a><span class="lineno"> 1647</span>&#160;            <span class="keywordflow">if</span> (k &gt; hi) {</div>
+<div class="line"><a name="l01648"></a><span class="lineno"> 1648</span>&#160;              Real velx, vely, rho, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>, eta;</div>
+<div class="line"><a name="l01649"></a><span class="lineno"> 1649</span>&#160;              <span class="keywordtype">int</span> ix, jx, iy, jy, ie, je;</div>
+<div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160;              <span class="keywordflow">if</span> (type == IntVect(AMREX_D_DECL(0, 0, 0)) &amp;&amp; n == <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) {<span class="comment"></span></div>
+<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;<span class="comment">                 /**</span></div>
+<div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;<span class="comment">                   * for zone centered variables, the face centered velocity need to be interpolated to</span></div>
+<div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;<span class="comment">                   * zone center.</span></div>
+<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;<span class="comment">                   * NOTE: the number of ghost zone for state variables are different from face centered</span></div>
+<div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;<span class="comment">                   *       variables in the new version.</span></div>
+<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;<span class="comment">                   */</span></div>
+<div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;                 ix = i &lt; lbound(*states[0]).x ? lbound(*states[0]).x : i;</div>
+<div class="line"><a name="l01658"></a><span class="lineno"> 1658</span>&#160;                 jx = j &lt; lbound(*states[0]).y ? lbound(*states[0]).y : j;</div>
+<div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;                 ix = i &gt; ubound(*states[0]).x ? ubound(*states[0]).x-1 : i;</div>
+<div class="line"><a name="l01660"></a><span class="lineno"> 1660</span>&#160;                 jx = j &gt; ubound(*states[0]).y ? ubound(*states[0]).y : j;</div>
+<div class="line"><a name="l01661"></a><span class="lineno"> 1661</span>&#160; </div>
+<div class="line"><a name="l01662"></a><span class="lineno"> 1662</span>&#160;                 iy = i &lt; lbound(*states[1]).x ? lbound(*states[1]).x : i;</div>
+<div class="line"><a name="l01663"></a><span class="lineno"> 1663</span>&#160;                 jy = j &lt; lbound(*states[1]).y ? lbound(*states[1]).y : j;</div>
+<div class="line"><a name="l01664"></a><span class="lineno"> 1664</span>&#160;                 iy = i &gt; ubound(*states[1]).x ? ubound(*states[1]).x : i;</div>
+<div class="line"><a name="l01665"></a><span class="lineno"> 1665</span>&#160;                 jy = j &gt; ubound(*states[1]).y ? ubound(*states[1]).y-1 : j;</div>
+<div class="line"><a name="l01666"></a><span class="lineno"> 1666</span>&#160; </div>
+<div class="line"><a name="l01667"></a><span class="lineno"> 1667</span>&#160;                 ie = i &lt; lbound(*states[3]).x ? lbound(*states[3]).x : i;</div>
+<div class="line"><a name="l01668"></a><span class="lineno"> 1668</span>&#160;                 je = j &lt; lbound(*states[3]).y ? lbound(*states[3]).y : j;</div>
+<div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160;                 ie = i &gt; ubound(*states[3]).x ? ubound(*states[3]).x : i;</div>
+<div class="line"><a name="l01670"></a><span class="lineno"> 1670</span>&#160;                 je = j &gt; ubound(*states[3]).y ? ubound(*states[3]).y : j;</div>
+<div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160; </div>
+<div class="line"><a name="l01672"></a><span class="lineno"> 1672</span>&#160;                 velx  = 0.5*((*states[0])(ix,jx,hi)+(*states[0])(ix+1,jx,hi));</div>
+<div class="line"><a name="l01673"></a><span class="lineno"> 1673</span>&#160;                 vely  = 0.5*((*states[1])(iy,jy,hi)+(*states[0])(iy,jy+1,hi));</div>
+<div class="line"><a name="l01674"></a><span class="lineno"> 1674</span>&#160;                 rho   = (*states[4])(i,j,hi,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01675"></a><span class="lineno"> 1675</span>&#160;                 <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> = (*states[4])(i,j,hi,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/rho;</div>
+<div class="line"><a name="l01676"></a><span class="lineno"> 1676</span>&#160;                 eta   = (*states[3])(ie,je,hi);</div>
+<div class="line"><a name="l01677"></a><span class="lineno"> 1677</span>&#160; </div>
+<div class="line"><a name="l01678"></a><span class="lineno"> 1678</span>&#160;                 Real vmag    = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l01679"></a><span class="lineno"> 1679</span>&#160;                 Real num1    = (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>-most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>)*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>;</div>
+<div class="line"><a name="l01680"></a><span class="lineno"> 1680</span>&#160;                 Real num2    = (most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>-most.<a class="code" href="structABLMost.html#a73621a1b429f2e910a29adac72b7c581">surf_temp</a>)*vmag;</div>
+<div class="line"><a name="l01681"></a><span class="lineno"> 1681</span>&#160;                 Real motheta = (num1+num2)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a1eafcc83d7f547d4b6946f56a3d334ed">kappa</a>/most.<a class="code" href="structABLMost.html#a61e6487745d2c39b4fb3768c771b09af">phi_h</a>();</div>
+<div class="line"><a name="l01682"></a><span class="lineno"> 1682</span>&#160; </div>
+<div class="line"><a name="l01683"></a><span class="lineno"> 1683</span>&#160;                 <span class="comment">//printf(&quot;i=%d,j=%d,k=%d,theta=%13.6e,rho=%13.6e,eta=%13.6e,tau=%13.6e,val=%13.6e\n&quot;,i,j,k,motheta,rho,(*states[3])(60,10,1),most.utau,motheta*rho/eta);</span></div>
+<div class="line"><a name="l01684"></a><span class="lineno"> 1684</span>&#160;                 <span class="keywordflow">if</span> (!is_derived) {</div>
+<div class="line"><a name="l01685"></a><span class="lineno"> 1685</span>&#160;                    data(i,j,k,n) = rho*(data(i,j,hi,n) - motheta*rho/eta);</div>
+<div class="line"><a name="l01686"></a><span class="lineno"> 1686</span>&#160;                 } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01687"></a><span class="lineno"> 1687</span>&#160;                    data(i,j,k,n) = data(i,j,hi,n) - motheta/eta;</div>
+<div class="line"><a name="l01688"></a><span class="lineno"> 1688</span>&#160;                 }</div>
+<div class="line"><a name="l01689"></a><span class="lineno"> 1689</span>&#160; </div>
+<div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == IntVect(AMREX_D_DECL(1, 0, 0))) { <span class="comment">//for velx</span></div>
+<div class="line"><a name="l01691"></a><span class="lineno"> 1691</span>&#160;                 iy = i &lt; lbound(*states[1]).x ? lbound(*states[1]).x : i;</div>
+<div class="line"><a name="l01692"></a><span class="lineno"> 1692</span>&#160;                 jy = j &lt; lbound(*states[1]).y ? lbound(*states[1]).y : j;</div>
+<div class="line"><a name="l01693"></a><span class="lineno"> 1693</span>&#160;                 iy = i &gt; ubound(*states[1]).x ? ubound(*states[1]).x : i;</div>
+<div class="line"><a name="l01694"></a><span class="lineno"> 1694</span>&#160;                 jy = j &gt; ubound(*states[1]).y ? ubound(*states[1]).y-1 : j;</div>
+<div class="line"><a name="l01695"></a><span class="lineno"> 1695</span>&#160; </div>
+<div class="line"><a name="l01696"></a><span class="lineno"> 1696</span>&#160;                 ie = i &lt; lbound(*states[3]).x ? lbound(*states[3]).x : i;</div>
+<div class="line"><a name="l01697"></a><span class="lineno"> 1697</span>&#160;                 je = j &lt; lbound(*states[3]).y ? lbound(*states[3]).y : j;</div>
+<div class="line"><a name="l01698"></a><span class="lineno"> 1698</span>&#160;                 ie = i &gt; ubound(*states[3]).x ? ubound(*states[3]).x-1 : i;</div>
+<div class="line"><a name="l01699"></a><span class="lineno"> 1699</span>&#160;                 je = j &gt; ubound(*states[3]).y ? ubound(*states[3]).y : j;</div>
+<div class="line"><a name="l01700"></a><span class="lineno"> 1700</span>&#160; </div>
+<div class="line"><a name="l01701"></a><span class="lineno"> 1701</span>&#160;                 velx  = (*states[0])(i,j,hi);</div>
+<div class="line"><a name="l01702"></a><span class="lineno"> 1702</span>&#160;                 vely  = 0.5*((*states[1])(iy,jy,hi)+(*states[1])(iy,jy+1,hi));</div>
+<div class="line"><a name="l01703"></a><span class="lineno"> 1703</span>&#160;                 rho   = 0.5*((*states[4])(i,j,hi,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)+(*states[4])(i+1,j,hi,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l01704"></a><span class="lineno"> 1704</span>&#160;                 eta   = 0.5*((*states[3])(ie,je,hi)+(*states[3])(ie+1,je,hi));</div>
+<div class="line"><a name="l01705"></a><span class="lineno"> 1705</span>&#160;                 Real vmag  = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l01706"></a><span class="lineno"> 1706</span>&#160;                 Real vgx   = ((velx-most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[0])*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a> + vmag*most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[0])/(most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>;</div>
+<div class="line"><a name="l01707"></a><span class="lineno"> 1707</span>&#160;                 Real vgy   = ((vely-most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[1])*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a> + vmag*most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[1])/(most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>;</div>
+<div class="line"><a name="l01708"></a><span class="lineno"> 1708</span>&#160; </div>
+<div class="line"><a name="l01709"></a><span class="lineno"> 1709</span>&#160;                 <span class="comment">//printf(&quot;i=%d,j=%d,k=%d,vx=%13.6e,rho=%13.6e,eta=%13.6e,tau=%13.6e,val=%13.6e\n&quot;,i,j,k,vgx,rho,eta,most.utau,vgx*rho/eta);</span></div>
+<div class="line"><a name="l01710"></a><span class="lineno"> 1710</span>&#160; </div>
+<div class="line"><a name="l01711"></a><span class="lineno"> 1711</span>&#160;                <span class="keywordflow">if</span> (!is_derived) {</div>
+<div class="line"><a name="l01712"></a><span class="lineno"> 1712</span>&#160;                    data(i,j,k,n) = data(i,j,hi,n) + vgx*rho/eta;</div>
+<div class="line"><a name="l01713"></a><span class="lineno"> 1713</span>&#160;                 } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01714"></a><span class="lineno"> 1714</span>&#160;                    data(i,j,k,n) = data(i,j,hi,n) + vgx/eta;</div>
+<div class="line"><a name="l01715"></a><span class="lineno"> 1715</span>&#160;                 }</div>
+<div class="line"><a name="l01716"></a><span class="lineno"> 1716</span>&#160; </div>
+<div class="line"><a name="l01717"></a><span class="lineno"> 1717</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == IntVect(AMREX_D_DECL(0, 1, 0))) { <span class="comment">//for vely</span></div>
+<div class="line"><a name="l01718"></a><span class="lineno"> 1718</span>&#160;                 ix = i &lt; lbound(*states[0]).x ? lbound(*states[0]).x : i;</div>
+<div class="line"><a name="l01719"></a><span class="lineno"> 1719</span>&#160;                 jx = j &lt; lbound(*states[0]).y ? lbound(*states[0]).y : j;</div>
+<div class="line"><a name="l01720"></a><span class="lineno"> 1720</span>&#160;                 ix = i &gt; ubound(*states[0]).x ? ubound(*states[0]).x : i;</div>
+<div class="line"><a name="l01721"></a><span class="lineno"> 1721</span>&#160;                 jx = j &gt; ubound(*states[0]).y ? ubound(*states[0]).y-1 : j;</div>
+<div class="line"><a name="l01722"></a><span class="lineno"> 1722</span>&#160; </div>
+<div class="line"><a name="l01723"></a><span class="lineno"> 1723</span>&#160;                 ie = i &lt; lbound(*states[3]).x ? lbound(*states[3]).x : i;</div>
+<div class="line"><a name="l01724"></a><span class="lineno"> 1724</span>&#160;                 je = j &lt; lbound(*states[3]).y ? lbound(*states[3]).y : j;</div>
+<div class="line"><a name="l01725"></a><span class="lineno"> 1725</span>&#160;                 ie = i &gt; ubound(*states[3]).x ? ubound(*states[3]).x : i;</div>
+<div class="line"><a name="l01726"></a><span class="lineno"> 1726</span>&#160;                 je = j &gt; ubound(*states[3]).y ? ubound(*states[3]).y-1 : j;</div>
+<div class="line"><a name="l01727"></a><span class="lineno"> 1727</span>&#160; </div>
+<div class="line"><a name="l01728"></a><span class="lineno"> 1728</span>&#160;                 velx  = 0.5*((*states[0])(ix,jx,hi)+(*states[0])(ix,jx+1,hi));</div>
+<div class="line"><a name="l01729"></a><span class="lineno"> 1729</span>&#160;                 vely  = (*states[1])(i,j,hi);</div>
+<div class="line"><a name="l01730"></a><span class="lineno"> 1730</span>&#160;                 rho   = 0.5*((*states[4])(i,j,hi,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)+(*states[4])(i,j+1,hi,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l01731"></a><span class="lineno"> 1731</span>&#160;                 eta   = 0.5*((*states[3])(ie,je,hi)+(*states[3])(ie,je+1,hi));</div>
+<div class="line"><a name="l01732"></a><span class="lineno"> 1732</span>&#160;                 Real vmag  = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l01733"></a><span class="lineno"> 1733</span>&#160;                 Real vgx   = ((velx-most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[0])*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a> + vmag*most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[0])/(most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>;</div>
+<div class="line"><a name="l01734"></a><span class="lineno"> 1734</span>&#160;                 Real vgy   = ((vely-most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[1])*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a> + vmag*most.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[1])/(most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>*most.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>)*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>*most.<a class="code" href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">utau</a>;</div>
+<div class="line"><a name="l01735"></a><span class="lineno"> 1735</span>&#160; </div>
+<div class="line"><a name="l01736"></a><span class="lineno"> 1736</span>&#160;                 <span class="comment">//printf(&quot;i=%d,j=%d,k=%d,vy=%13.6e,rho=%13.6e,eta=%13.6e,tau=%13.6e,val=%13.6e\n&quot;,i,j,k,vgy,rho,eta,most.utau,vgy*rho/eta);</span></div>
+<div class="line"><a name="l01737"></a><span class="lineno"> 1737</span>&#160;                 <span class="keywordflow">if</span> (!is_derived) {</div>
+<div class="line"><a name="l01738"></a><span class="lineno"> 1738</span>&#160;                    data(i,j,k,n) = data(i,j,hi,n) + vgy*rho/eta;</div>
+<div class="line"><a name="l01739"></a><span class="lineno"> 1739</span>&#160;                 } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01740"></a><span class="lineno"> 1740</span>&#160;                    data(i,j,k,n) = data(i,j,hi,n) + vgy/eta;</div>
+<div class="line"><a name="l01741"></a><span class="lineno"> 1741</span>&#160;                 }</div>
+<div class="line"><a name="l01742"></a><span class="lineno"> 1742</span>&#160;              } <span class="keywordflow">else</span> { <span class="comment">// other variables</span></div>
+<div class="line"><a name="l01743"></a><span class="lineno"> 1743</span>&#160;                 data(i,j,k,n) = (k-hi+1)*data(i,j,hi,n) - (k-hi)*data(i,j,hi-1,n);</div>
+<div class="line"><a name="l01744"></a><span class="lineno"> 1744</span>&#160;              }</div>
+<div class="line"><a name="l01745"></a><span class="lineno"> 1745</span>&#160;            }</div>
+<div class="line"><a name="l01746"></a><span class="lineno"> 1746</span>&#160;          });</div>
+<div class="line"><a name="l01747"></a><span class="lineno"> 1747</span>&#160;        }</div>
+<div class="line"><a name="l01748"></a><span class="lineno"> 1748</span>&#160;      }</div>
+<div class="line"><a name="l01749"></a><span class="lineno"> 1749</span>&#160;    }</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1upper_01_4_acff949f9a62575d07f5fd24df4320126_cgraph.png" border="0" usemap="#structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1upper_01_4_acff949f9a62575d07f5fd24df4320126_cgraph" alt=""/></div>
+<map name="structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1upper_01_4_acff949f9a62575d07f5fd24df4320126_cgraph" id="structmath__bcs_1_1ablmostwall_3_01IDIR_00_01BCBound_1_1upper_01_4_acff949f9a62575d07f5fd24df4320126_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,181,61"/>
+<area shape="rect" href="structABLMost.html#a61e6487745d2c39b4fb3768c771b09af" title=" " alt="" coords="229,20,352,47"/>
+</map>
+</div>
+
 </div>
 </div>
-<a id="a04d8a6d196c3e90a2dacf229be8f43b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04d8a6d196c3e90a2dacf229be8f43b7">&#9670;&nbsp;</a></span>apply_face_based()</h2>
+<a id="ae061f77b59fa76696f7bbfae9d7eeaf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae061f77b59fa76696f7bbfae9d7eeaf5">&#9670;&nbsp;</a></span>apply_face_based()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,19 +335,19 @@ template&lt;int IDIR&gt; </div>
           <td class="memname">static void <a class="el" href="structmath__bcs_1_1ablmostwall.html">math_bcs::ablmostwall</a>&lt; IDIR, BCBound::upper &gt;::apply_face_based </td>
           <td>(</td>
           <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>geom</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const Box &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Array4&lt; Real &gt; &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -239,7 +367,33 @@ template&lt;int IDIR&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01602"></a><span class="lineno"> 1602</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l01753"></a><span class="lineno"> 1753</span>&#160;                                                                                               {</div>
+<div class="line"><a name="l01754"></a><span class="lineno"> 1754</span>&#160;      <span class="keywordtype">int</span> lo = geom.Domain().smallEnd(IDIR);</div>
+<div class="line"><a name="l01755"></a><span class="lineno"> 1755</span>&#160;      <span class="keywordflow">if</span>(b.smallEnd(IDIR) &lt; lo) {</div>
+<div class="line"><a name="l01756"></a><span class="lineno"> 1756</span>&#160;        <span class="keywordflow">if</span> (IDIR == 0) {</div>
+<div class="line"><a name="l01757"></a><span class="lineno"> 1757</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l01758"></a><span class="lineno"> 1758</span>&#160;           {</div>
+<div class="line"><a name="l01759"></a><span class="lineno"> 1759</span>&#160;            <span class="keywordflow">if</span> (i &lt; lo) {</div>
+<div class="line"><a name="l01760"></a><span class="lineno"> 1760</span>&#160;              data(i,j,k,n) = 0.0;</div>
+<div class="line"><a name="l01761"></a><span class="lineno"> 1761</span>&#160;            }</div>
+<div class="line"><a name="l01762"></a><span class="lineno"> 1762</span>&#160;           });</div>
+<div class="line"><a name="l01763"></a><span class="lineno"> 1763</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 1) {</div>
+<div class="line"><a name="l01764"></a><span class="lineno"> 1764</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l01765"></a><span class="lineno"> 1765</span>&#160;           {</div>
+<div class="line"><a name="l01766"></a><span class="lineno"> 1766</span>&#160;            <span class="keywordflow">if</span> (j &lt; lo) {</div>
+<div class="line"><a name="l01767"></a><span class="lineno"> 1767</span>&#160;              data(i,j,k,n) = 0.0;</div>
+<div class="line"><a name="l01768"></a><span class="lineno"> 1768</span>&#160;            }</div>
+<div class="line"><a name="l01769"></a><span class="lineno"> 1769</span>&#160;           });</div>
+<div class="line"><a name="l01770"></a><span class="lineno"> 1770</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IDIR == 2) {</div>
+<div class="line"><a name="l01771"></a><span class="lineno"> 1771</span>&#160;           amrex::ParallelFor(b, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l01772"></a><span class="lineno"> 1772</span>&#160;           {</div>
+<div class="line"><a name="l01773"></a><span class="lineno"> 1773</span>&#160;            <span class="keywordflow">if</span> (k &lt; lo) {</div>
+<div class="line"><a name="l01774"></a><span class="lineno"> 1774</span>&#160;              data(i,j,k,n) = 0.0;</div>
+<div class="line"><a name="l01775"></a><span class="lineno"> 1775</span>&#160;            }</div>
+<div class="line"><a name="l01776"></a><span class="lineno"> 1776</span>&#160;           });</div>
+<div class="line"><a name="l01777"></a><span class="lineno"> 1777</span>&#160;        }</div>
+<div class="line"><a name="l01778"></a><span class="lineno"> 1778</span>&#160;      }</div>
+<div class="line"><a name="l01779"></a><span class="lineno"> 1779</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -248,6 +402,16 @@ template&lt;int IDIR&gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
+<div class="ttc" id="astructABLMost_html_a61e6487745d2c39b4fb3768c771b09af"><div class="ttname"><a href="structABLMost.html#a61e6487745d2c39b4fb3768c771b09af">ABLMost::phi_h</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real phi_h() const</div><div class="ttdef"><b>Definition:</b> ABLMost.H:61</div></div>
+<div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">AdvectedQuantity::theta</a></div><div class="ttdeci">@ theta</div></div>
+<div class="ttc" id="astructABLMost_html_a96b43a807d32a81a730d8aa41e2658e6"><div class="ttname"><a href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">ABLMost::vel_mean</a></div><div class="ttdeci">amrex::Real vel_mean[AMREX_SPACEDIM]</div><div class="ttdoc">Mean velocity (at zref)</div><div class="ttdef"><b>Definition:</b> ABLMost.H:33</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
+<div class="ttc" id="astructABLMost_html_a111a9f63ca6482dc15d2ecaa4d873b70"><div class="ttname"><a href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">ABLMost::vmag_mean</a></div><div class="ttdeci">amrex::Real vmag_mean</div><div class="ttdoc">Mean wind speed (at zref)</div><div class="ttdef"><b>Definition:</b> ABLMost.H:34</div></div>
+<div class="ttc" id="astructABLMost_html_a370187c5e0a3e3ca6260e515efe4a181"><div class="ttname"><a href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">ABLMost::theta_mean</a></div><div class="ttdeci">amrex::Real theta_mean</div><div class="ttdoc">Mean potential temperature.</div><div class="ttdef"><b>Definition:</b> ABLMost.H:35</div></div>
+<div class="ttc" id="astructABLMost_html_a628bfedb012413ca9d61fe7d29f09227"><div class="ttname"><a href="structABLMost.html#a628bfedb012413ca9d61fe7d29f09227">ABLMost::utau</a></div><div class="ttdeci">amrex::Real utau</div><div class="ttdoc">Friction velocity (m/s)</div><div class="ttdef"><b>Definition:</b> ABLMost.H:28</div></div>
+<div class="ttc" id="astructABLMost_html_a1eafcc83d7f547d4b6946f56a3d334ed"><div class="ttname"><a href="structABLMost.html#a1eafcc83d7f547d4b6946f56a3d334ed">ABLMost::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> ABLMost.H:29</div></div>
+<div class="ttc" id="astructABLMost_html_a73621a1b429f2e910a29adac72b7c581"><div class="ttname"><a href="structABLMost.html#a73621a1b429f2e910a29adac72b7c581">ABLMost::surf_temp</a></div><div class="ttdeci">amrex::Real surf_temp</div><div class="ttdoc">Instantaneous surface temperature.</div><div class="ttdef"><b>Definition:</b> ABLMost.H:38</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

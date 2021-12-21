@@ -11,7 +11,7 @@ var dir_4c4ecb0cf2c626518fddf9d11a982ea7 =
       [ "BCInterior", "classphys__bcs_1_1BCInterior.html", "classphys__bcs_1_1BCInterior" ]
     ] ],
     [ "BCMostWall.H", "BCMostWall_8H.html", [
-      [ "GetViscosity", "structGetViscosity.html", "structGetViscosity" ],
+      [ "getViscosity", "structgetViscosity.html", "structgetViscosity" ],
       [ "BCMostWall", "classphys__bcs_1_1BCMostWall.html", "classphys__bcs_1_1BCMostWall" ]
     ] ],
     [ "BCNoSlipWall.H", "BCNoSlipWall_8H.html", [

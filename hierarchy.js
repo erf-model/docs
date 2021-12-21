@@ -24,7 +24,7 @@ var hierarchy =
     [ "EmptyProbDeriveStruct", "structEmptyProbDeriveStruct.html", null ],
     [ "ERFHypFillExtDir", "structERFHypFillExtDir.html", null ],
     [ "FCFillExtDirDummy", "structFCFillExtDirDummy.html", null ],
-    [ "GetViscosity", "structGetViscosity.html", null ],
+    [ "getViscosity", "structgetViscosity.html", null ],
     [ "IOManager", "classIOManager.html", null ],
     [ "LevelBld", null, [
       [ "ERFBld", "classERFBld.html", null ]

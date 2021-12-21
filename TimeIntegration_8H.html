@@ -133,14 +133,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" href="TimeIntegration__fast_8cpp.html" title=" " alt="" coords="5511,109,5718,165"/>
 <area shape="rect" href="TimeIntegration__utils_8cpp.html" title=" " alt="" coords="5742,109,5949,165"/>
 <area shape="rect" href="VelocityToMomentum_8cpp.html" title=" " alt="" coords="5973,109,6179,165"/>
-<area shape="rect" href="BCMostWall_8H.html" title=" " alt="" coords="3269,221,3486,262"/>
-<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="3290,325,3465,366"/>
+<area shape="rect" href="BCMostWall_8H.html" title=" " alt="" coords="3374,221,3591,262"/>
+<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="3395,325,3570,366"/>
+<area shape="rect" href="ABLMost_8H.html" title=" " alt="" coords="4281,429,4477,470"/>
 <area shape="rect" href="BCBase_8H.html" title=" " alt="" coords="3759,525,3948,567"/>
 <area shape="rect" href="BCOutflow_8H.html" title=" " alt="" coords="862,615,1069,656"/>
 <area shape="rect" href="BCSlipWall_8H.html" title=" " alt="" coords="3511,615,3721,656"/>
 <area shape="rect" href="BCNoSlipWall_8H.html" title=" " alt="" coords="3745,615,3972,656"/>
 <area shape="rect" href="BCSimSlipWall_8H.html" title=" " alt="" coords="4409,615,4644,656"/>
-<area shape="rect" href="ABLMost_8H.html" title=" " alt="" coords="4281,429,4477,470"/>
 <area shape="rect" href="BCDummy_8H.html" title=" " alt="" coords="3822,429,4029,470"/>
 <area shape="rect" href="BCInterior_8H.html" title=" " alt="" coords="4053,429,4256,470"/>
 <area shape="rect" href="PlaneAverage_8H.html" title=" " alt="" coords="415,429,643,470"/>
@@ -1743,7 +1743,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="comment">// Apply BC on velocity data on faces</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="comment">// Note that the BC was already applied on momentum</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        amrex::Vector&lt;MultiFab*&gt; vel_vars{&amp;xvel_new, &amp;yvel_new, &amp;zvel_new};</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        ERF::applyBCs(fine_geom, vel_vars);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        ERF::applyBCs(fine_geom, vel_vars, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    };</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    interpolate_coarse_fine_faces(state_old);</div>
@@ -2128,10 +2128,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    zvel_new.FillBoundary(fine_geom.periodicity());</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; </div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <span class="comment">// One final application of non-periodic BCs</span></div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    amrex::Vector&lt;MultiFab*&gt; vars{&amp;cons_new, &amp;xvel_new, &amp;yvel_new, &amp;zvel_new};</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    ERF::applyBCs(fine_geom, vars);</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    amrex::Vector&lt;MultiFab*&gt; cons_vars{&amp;cons_new};</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    ERF::applyBCs(fine_geom, cons_vars);</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; </div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;}</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    amrex::Vector&lt;MultiFab*&gt; vel_vars{&amp;xvel_new, &amp;yvel_new, &amp;zvel_new};</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    ERF::applyBCs(fine_geom, vel_vars, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2750,7 +2752,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                      lo_z_is_dirichlet, klo, hi_z_is_dirichlet, khi);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        eddyViscosity.FillBoundary(geom.periodicity());</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        amrex::Vector&lt;MultiFab*&gt; eddyvisc_update{&amp;eddyViscosity};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        ERF::applyBCs(geom, eddyvisc_update);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        ERF::applyBCs(geom, eddyvisc_update, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">const</span> iMultiFab *mlo_mf_x, *mhi_mf_x;</div>
