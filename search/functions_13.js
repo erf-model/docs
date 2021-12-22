@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['writebuildinfo_698',['writeBuildInfo',['../classIOManager.html#a2d47c67a7993b7e4b7bace1fc06e792a',1,'IOManager']]],
-  ['writejobinfo_699',['writeJobInfo',['../classIOManager.html#a458cd55e2e1e3cf2626b606f0ccfc223',1,'IOManager']]],
-  ['writeplotfile_700',['writePlotFile',['../classIOManager.html#af7254c361d36c4e08117a3d486d84341',1,'IOManager']]],
-  ['writesmallplotfile_701',['writeSmallPlotFile',['../classIOManager.html#a17056a1e637c37a4a424562529050d5d',1,'IOManager']]],
-  ['writetonccolumnfile_702',['writeToNCColumnFile',['../classIOManager.html#aae07f10c3fde49c1e5f59b0dea6659e2',1,'IOManager']]]
+  ['_7eerf_663',['~ERF',['../classERF.html#a9980a8792a2ab137ad7c9121a5cf58bf',1,'ERF']]],
+  ['_7eerfphysbcfunct_664',['~ERFPhysBCFunct',['../classERFPhysBCFunct.html#abb1797f0742dd01ee978be02d594fc43',1,'ERFPhysBCFunct']]],
+  ['_7encfile_665',['~NCFile',['../classncutils_1_1NCFile.html#a4c1663f24f84dbc74152d7f040910a22',1,'ncutils::NCFile']]],
+  ['_7etimeinterpolateddata_666',['~TimeInterpolatedData',['../structTimeInterpolatedData.html#af14b2d5c5d55331a4dbc9cec9288af53',1,'TimeInterpolatedData']]]
 ];

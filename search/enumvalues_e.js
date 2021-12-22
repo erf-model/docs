@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['y_843',['y',['../DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d',1,'y():&#160;DataStruct.H'],['../DataStruct_8H.html#a5943cc9db33abe98a5e07cd2b4387f53a415290769594460e2e485922904f345d',1,'y():&#160;DataStruct.H'],['../DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d',1,'y():&#160;DataStruct.H'],['../DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d',1,'y():&#160;DataStruct.H']]],
-  ['yflux_844',['yflux',['../namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faf204c2311e68c84ad19b3759183bdd09',1,'IntVar']]],
-  ['ymom_845',['ymom',['../namespaceIntVar.html#a801598ff83cb990c53b1669bd616996faa06e9caed4d0b72c322646815c1a96ce',1,'IntVar']]]
+  ['scalar_852',['Scalar',['../namespacePrim.html#a2e4b5e877848b0711e7c017f386e9081afedd432e3ecc9fd06a3a9a68d749c1af',1,'Prim::Scalar()'],['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4aa27a6549ade38cc036f7b8c58a840510',1,'scalar():&#160;DataStruct.H']]],
+  ['slip_5fwall_853',['slip_wall',['../classERF.html#a31df09a4c2420058694420a43fd7ec4ba03ee6de9fd100444c5c0567ea01bd538',1,'ERF']]],
+  ['smagorinsky_854',['Smagorinsky',['../DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808',1,'DataStruct.H']]],
+  ['symmetry_855',['symmetry',['../classERF.html#a31df09a4c2420058694420a43fd7ec4ba40e712f30d56083318ab20a2402921d2',1,'ERF']]]
 ];

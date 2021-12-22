@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['erf_726',['erf',['../classphys__bcs_1_1BCBase.html#ae7b334cd2a8fd8982cab30199350dd3b',1,'phys_bcs::BCBase::erf()'],['../classIOManager.html#aed10780741a2c90b7916a6353e560075',1,'IOManager::erf()']]],
-  ['erf_5fbld_727',['ERF_bld',['../Bld_8cpp.html#a79ce1a6f3281bc189dd8faf1703fd85e',1,'Bld.cpp']]]
+  ['fine_5fmask_708',['fine_mask',['../classERF.html#a83c244120a15f0d9b9bca54e93976428',1,'ERF']]],
+  ['fixed_5fdt_709',['fixed_dt',['../classERF.html#a6e9d302b096a12999c8ff4a6bfa9a072',1,'ERF']]],
+  ['flux_5fregisters_710',['flux_registers',['../classERF.html#a2ef8ab09aed437467e2e87a37bcd999d',1,'ERF']]]
 ];

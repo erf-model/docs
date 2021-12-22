@@ -1,15 +1,15 @@
 var searchData=
 [
-  ['v_386',['v',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a',1,'DataStruct.H']]],
-  ['var_387',['var',['../classncutils_1_1NCGroup.html#a79bef315da5cff7bcf8bbcfbdd122115',1,'ncutils::NCGroup']]],
-  ['variablecleanup_388',['variableCleanUp',['../classERFBld.html#aba6cb2a8cb023df717d115eb5f3e1cac',1,'ERFBld']]],
-  ['variablesetup_389',['variableSetUp',['../classERFBld.html#ac8d4ae2921defaa414935d9d90f2b888',1,'ERFBld']]],
-  ['varid_390',['varid',['../structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532',1,'ncutils::NCVar']]],
-  ['vel_391',['vel',['../classphys__bcs_1_1BCNoSlipWall.html#a492cd2de6517d090f8b5f368ecb147db',1,'phys_bcs::BCNoSlipWall']]],
-  ['vel_5fmean_392',['vel_mean',['../structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6',1,'ABLMost']]],
-  ['velocitytomomentum_393',['VelocityToMomentum',['../SpatialStencils_8H.html#ad17f1f70d6a9616055ab4aa46d1bd453',1,'VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom_out, MultiFab &amp;ymom_out, MultiFab &amp;zmom_out, const int l_spatial_order, const int ngrow):&#160;VelocityToMomentum.cpp'],['../VelocityToMomentum_8cpp.html#ae7ec834eec6dd8e0b5f6ca5f5021666f',1,'VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom, MultiFab &amp;ymom, MultiFab &amp;zmom, const int l_spatial_order, const int ngrow):&#160;VelocityToMomentum.cpp']]],
-  ['velocitytomomentum_2ecpp_394',['VelocityToMomentum.cpp',['../VelocityToMomentum_8cpp.html',1,'']]],
-  ['velplaneaverage_395',['VelPlaneAverage',['../classVelPlaneAverage.html',1,'VelPlaneAverage'],['../classVelPlaneAverage.html#ae7880b62c30d2f73b9b644f17a7725ca',1,'VelPlaneAverage::VelPlaneAverage()']]],
-  ['velplaneaverage_2eh_396',['VelPlaneAverage.H',['../VelPlaneAverage_8H.html',1,'']]],
-  ['vmag_5fmean_397',['vmag_mean',['../structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70',1,'ABLMost']]]
+  ['v_408',['v',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a',1,'DataStruct.H']]],
+  ['var_409',['var',['../classncutils_1_1NCGroup.html#a79bef315da5cff7bcf8bbcfbdd122115',1,'ncutils::NCGroup']]],
+  ['varid_410',['varid',['../structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532',1,'ncutils::NCVar']]],
+  ['vars_411',['Vars',['../namespaceVars.html',1,'']]],
+  ['vars_5fnew_412',['vars_new',['../classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b',1,'ERF']]],
+  ['vars_5fold_413',['vars_old',['../classERF.html#af31e928baa970a1507dfb0233b352542',1,'ERF']]],
+  ['velocity_5fnames_414',['velocity_names',['../classERF.html#a2f2ea7f5eeeb3634944550e5a1de8f7a',1,'ERF']]],
+  ['velocitytomomentum_415',['VelocityToMomentum',['../SpatialStencils_8H.html#a4af131697a873e41e44a162ec40fd5a8',1,'VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom_out, MultiFab &amp;ymom_out, MultiFab &amp;zmom_out, const IntVect &amp;ngrow):&#160;VelocityToMomentum.cpp'],['../VelocityToMomentum_8cpp.html#a74241e06851a54dac1b61dcb122dc996',1,'VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom, MultiFab &amp;ymom, MultiFab &amp;zmom, const IntVect &amp;ngrow):&#160;VelocityToMomentum.cpp']]],
+  ['velocitytomomentum_2ecpp_416',['VelocityToMomentum.cpp',['../VelocityToMomentum_8cpp.html',1,'']]],
+  ['vels_417',['vels',['../namespaceBCVars.html#a00367571247ba920989360b94c156f4aafd83a163af66406e1ecfb9dd6936485f',1,'BCVars']]],
+  ['verbose_418',['verbose',['../classERF.html#a43d0b17f6e155691a1e9474526df3af5',1,'ERF']]],
+  ['volwgtsummf_419',['volWgtSumMF',['../classERF.html#a2cdc63885e5fec54f89cdcaffcbdc188',1,'ERF']]]
 ];

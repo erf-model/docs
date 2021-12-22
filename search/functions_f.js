@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['set_5fprecision_687',['set_precision',['../classPlaneAverage.html#a6933fa8d1b71a55f5276250050c54216',1,'PlaneAverage']]],
-  ['set_5fstate_5fin_5fcheckpoint_688',['set_state_in_checkpoint',['../classIOManager.html#a6b7eea06a1e32b99bceee9942c8eb464',1,'IOManager']]],
-  ['setplotvariables_689',['setPlotVariables',['../classIOManager.html#a21c83577ab05a3626e902b5f1825c6a3',1,'IOManager']]],
-  ['shape_690',['shape',['../structncutils_1_1NCVar.html#adb6e5fe1bfe8ab79e9ecf33ca5800797',1,'ncutils::NCVar']]]
+  ['set_5ftime_649',['set_time',['../structTimeInterpolatedData.html#a18b52c226e66519cb94b0ab441a0465a',1,'TimeInterpolatedData']]],
+  ['setplotvariables_650',['setPlotVariables',['../classERF.html#aef40b8ba6cb32fe3b11b8d9381f16cef',1,'ERF']]],
+  ['setrecorddatainfo_651',['setRecordDataInfo',['../classERF.html#a2486b49bb0d7917f812318822e42a03c',1,'ERF']]],
+  ['shape_652',['shape',['../structncutils_1_1NCVar.html#adb6e5fe1bfe8ab79e9ecf33ca5800797',1,'ncutils::NCVar']]],
+  ['sum_5fintegrated_5fquantities_653',['sum_integrated_quantities',['../classERF.html#a14beee83853b2d0c675beda011cbff9e',1,'ERF']]]
 ];

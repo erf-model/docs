@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['restart_685',['restart',['../classIOManager.html#ae3027a0eeaebfb1ddc523d438b966652',1,'IOManager']]],
-  ['root_686',['root',['../classncutils_1_1NCGroup.html#a611b25f8209865c4a86251c30e4e4710',1,'ncutils::NCGroup']]]
+  ['readcheckpointfile_645',['ReadCheckpointFile',['../classERF.html#af285247b24b173cd851fe49799d17f42',1,'ERF']]],
+  ['readparameters_646',['ReadParameters',['../classERF.html#a2d39cd3bdc3d90609ad3b14e266d190a',1,'ERF']]],
+  ['refinement_5fcriteria_5fsetup_647',['refinement_criteria_setup',['../classERF.html#aa90c9756f684404f8b69b8a23568b535',1,'ERF']]],
+  ['remakelevel_648',['RemakeLevel',['../classERF.html#aae7a3a76e08e54c618cf79b30ed2d73d',1,'ERF']]]
 ];

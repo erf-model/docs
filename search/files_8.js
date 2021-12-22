@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['planeaverage_2eh_524',['PlaneAverage.H',['../PlaneAverage_8H.html',1,'']]],
-  ['plotfile_2ecpp_525',['PlotFile.cpp',['../PlotFile_8cpp.html',1,'']]],
-  ['plotfile_2eh_526',['PlotFile.H',['../PlotFile_8H.html',1,'']]],
-  ['problem_2eh_527',['Problem.H',['../Problem_8H.html',1,'']]],
-  ['problemderive_2eh_528',['ProblemDerive.H',['../ProblemDerive_8H.html',1,'']]]
+  ['spatialstencils_2eh_499',['SpatialStencils.H',['../SpatialStencils_8H.html',1,'']]],
+  ['strainrate_2eh_500',['StrainRate.H',['../StrainRate_8H.html',1,'']]],
+  ['stressterm_2eh_501',['StressTerm.H',['../StressTerm_8H.html',1,'']]]
 ];

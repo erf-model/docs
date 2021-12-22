@@ -1,7 +1,12 @@
 var namespaces_dup =
 [
+    [ "BCVars", "namespaceBCVars.html", null ],
+    [ "Cons", "namespaceCons.html", null ],
+    [ "derived", "namespacederived.html", null ],
+    [ "ERFBCType", "namespaceERFBCType.html", null ],
+    [ "InterpType", "namespaceInterpType.html", null ],
     [ "IntVar", "namespaceIntVar.html", null ],
-    [ "math_bcs", "namespacemath__bcs.html", null ],
     [ "ncutils", "namespacencutils.html", null ],
-    [ "phys_bcs", "namespacephys__bcs.html", null ]
+    [ "Prim", "namespacePrim.html", null ],
+    [ "Vars", "namespaceVars.html", null ]
 ];

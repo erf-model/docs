@@ -1,21 +1,11 @@
 var annotated_dup =
 [
-    [ "math_bcs", "namespacemath__bcs.html", "namespacemath__bcs" ],
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
-    [ "phys_bcs", "namespacephys__bcs.html", "namespacephys__bcs" ],
     [ "ABLFieldInit", "structABLFieldInit.html", "structABLFieldInit" ],
-    [ "ABLMost", "structABLMost.html", "structABLMost" ],
-    [ "DirectionSelector", "structDirectionSelector.html", "structDirectionSelector" ],
-    [ "DirectionSelector< 0 >", "structDirectionSelector_3_010_01_4.html", "structDirectionSelector_3_010_01_4" ],
-    [ "DirectionSelector< 1 >", "structDirectionSelector_3_011_01_4.html", "structDirectionSelector_3_011_01_4" ],
-    [ "DirectionSelector< 2 >", "structDirectionSelector_3_012_01_4.html", "structDirectionSelector_3_012_01_4" ],
-    [ "EmptyProbDeriveStruct", "structEmptyProbDeriveStruct.html", "structEmptyProbDeriveStruct" ],
-    [ "ERFBld", "classERFBld.html", "classERFBld" ],
-    [ "ERFHypFillExtDir", "structERFHypFillExtDir.html", "structERFHypFillExtDir" ],
+    [ "ERF", "classERF.html", "classERF" ],
+    [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", "classERFPhysBCFunct" ],
     [ "FCFillExtDirDummy", "structFCFillExtDirDummy.html", "structFCFillExtDirDummy" ],
-    [ "getViscosity", "structgetViscosity.html", "structgetViscosity" ],
-    [ "IOManager", "classIOManager.html", "classIOManager" ],
-    [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ],
+    [ "NullFill", "structNullFill.html", "structNullFill" ],
     [ "SolverChoice", "structSolverChoice.html", "structSolverChoice" ],
-    [ "VelPlaneAverage", "classVelPlaneAverage.html", "classVelPlaneAverage" ]
+    [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ]
 ];

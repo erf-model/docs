@@ -92,81 +92,81 @@ $(document).ready(function(){initNavTree('Derive_8H_source.html',''); initResiza
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;AMReX_FArrayBox.H&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;AMReX_Geometry.H&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Derive_8H.html#aa8753429fb0184b24c6c737b19deaa13">erf_dernull</a>(</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  amrex::FArrayBox&amp; derfab,</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordtype">int</span> dcomp,</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  amrex::Real time,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Derive_8H.html#a87081d6115f001e5733003946f1d808e">erf_derpres</a>(</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  amrex::FArrayBox&amp; derfab,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">int</span> dcomp,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  amrex::Real time,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Derive_8H.html#a29f65232ba48b9e3ebb6ff571f66bab9">erf_dersoundspeed</a>(</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  amrex::FArrayBox&amp; derfab,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">int</span> dcomp,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  amrex::Real time,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Derive_8H.html#aa1a887cdc1eeac9d059a149164a3d6ad">erf_dertemp</a>(</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  amrex::FArrayBox&amp; derfab,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">int</span> dcomp,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  amrex::Real time,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Derive_8H.html#a91838ffd7c48b4d1f7533490106c188f">erf_dertheta</a>(</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  amrex::FArrayBox&amp; derfab,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">int</span> dcomp,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  amrex::Real time,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacederived.html">derived</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacederived.html#af8efb799157f5dbb8fe00416458db9e1">erf_dernull</a>(</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  amrex::FArrayBox&amp; derfab,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordtype">int</span> dcomp,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  amrex::Real time,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacederived.html#ab144cda2ef3e2bd18cbd0837ce723521">erf_derpres</a>(</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  amrex::FArrayBox&amp; derfab,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">int</span> dcomp,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  amrex::Real time,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacederived.html#ae13ef28ab10c6102bf43c9a7fbe99f35">erf_dersoundspeed</a>(</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  amrex::FArrayBox&amp; derfab,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">int</span> dcomp,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  amrex::Real time,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacederived.html#ab3c82aef26b750dfedc3d29ca9fae7e3">erf_dertemp</a>(</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  amrex::FArrayBox&amp; derfab,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">int</span> dcomp,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  amrex::Real time,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacederived.html#ab8895d9d9775ea0b8f643483a5a4127e">erf_dertheta</a>(</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  amrex::FArrayBox&amp; derfab,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">int</span> dcomp,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  amrex::Real time,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
-<div class="ttc" id="aDerive_8H_html_a87081d6115f001e5733003946f1d808e"><div class="ttname"><a href="Derive_8H.html#a87081d6115f001e5733003946f1d808e">erf_derpres</a></div><div class="ttdeci">void erf_derpres(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real time, const int *bcrec, const int level)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:21</div></div>
+<div class="ttc" id="anamespacederived_html_ab8895d9d9775ea0b8f643483a5a4127e"><div class="ttname"><a href="namespacederived.html#ab8895d9d9775ea0b8f643483a5a4127e">derived::erf_dertheta</a></div><div class="ttdeci">void erf_dertheta(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:88</div></div>
 <div class="ttc" id="aEOS_8H_html"><div class="ttname"><a href="EOS_8H.html">EOS.H</a></div></div>
-<div class="ttc" id="aDerive_8H_html_aa8753429fb0184b24c6c737b19deaa13"><div class="ttname"><a href="Derive_8H.html#aa8753429fb0184b24c6c737b19deaa13">erf_dernull</a></div><div class="ttdeci">void erf_dernull(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real time, const int *bcrec, const int level)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:6</div></div>
+<div class="ttc" id="anamespacederived_html_af8efb799157f5dbb8fe00416458db9e1"><div class="ttname"><a href="namespacederived.html#af8efb799157f5dbb8fe00416458db9e1">derived::erf_dernull</a></div><div class="ttdeci">void erf_dernull(const amrex::Box &amp;, amrex::FArrayBox &amp;, int, int, const amrex::FArrayBox &amp;, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:8</div></div>
+<div class="ttc" id="anamespacederived_html"><div class="ttname"><a href="namespacederived.html">derived</a></div><div class="ttdef"><b>Definition:</b> Derive.cpp:5</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ae8ca591ba2325c0ad8b464de45f4c6b3"><div class="ttname"><a href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a></div><div class="ttdeci">#define Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
+<div class="ttc" id="anamespacederived_html_ab3c82aef26b750dfedc3d29ca9fae7e3"><div class="ttname"><a href="namespacederived.html#ab3c82aef26b750dfedc3d29ca9fae7e3">derived::erf_dertemp</a></div><div class="ttdeci">void erf_dertemp(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:66</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
 <div class="ttc" id="aDerive_8H_html"><div class="ttname"><a href="Derive_8H.html">Derive.H</a></div></div>
-<div class="ttc" id="aDerive_8cpp_html_a5a0bcb8682615d9bf3910e1934ef6923"><div class="ttname"><a href="Derive_8cpp.html#a5a0bcb8682615d9bf3910e1934ef6923">erf_dernull</a></div><div class="ttdeci">void erf_dernull(const amrex::Box &amp;, amrex::FArrayBox &amp;, int, int, const amrex::FArrayBox &amp;, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:6</div></div>
-<div class="ttc" id="aDerive_8H_html_aa1a887cdc1eeac9d059a149164a3d6ad"><div class="ttname"><a href="Derive_8H.html#aa1a887cdc1eeac9d059a149164a3d6ad">erf_dertemp</a></div><div class="ttdeci">void erf_dertemp(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real time, const int *bcrec, const int level)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:64</div></div>
-<div class="ttc" id="aDerive_8cpp_html_adfbe2a8920e709000a1908ac161bddde"><div class="ttname"><a href="Derive_8cpp.html#adfbe2a8920e709000a1908ac161bddde">erf_derpres</a></div><div class="ttdeci">void erf_derpres(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:21</div></div>
-<div class="ttc" id="aEOS_8H_html_a292ce90ab26c75f4a444808a807b532b"><div class="ttname"><a href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:15</div></div>
-<div class="ttc" id="aDerive_8cpp_html_afcc4e8a2aafa561635009ba8d88e6b61"><div class="ttname"><a href="Derive_8cpp.html#afcc4e8a2aafa561635009ba8d88e6b61">erf_dertemp</a></div><div class="ttdeci">void erf_dertemp(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:64</div></div>
-<div class="ttc" id="aDerive_8cpp_html_accaca0c93adf6b06eebae5cc35eb34ea"><div class="ttname"><a href="Derive_8cpp.html#accaca0c93adf6b06eebae5cc35eb34ea">erf_dertheta</a></div><div class="ttdeci">void erf_dertheta(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:86</div></div>
-<div class="ttc" id="aEOS_8H_html_a652d566aef658cc423ced929a816f869"><div class="ttname"><a href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:8</div></div>
-<div class="ttc" id="aDerive_8cpp_html_a60c296717f1d779cdc13215f4d6809c7"><div class="ttname"><a href="Derive_8cpp.html#a60c296717f1d779cdc13215f4d6809c7">erf_dersoundspeed</a></div><div class="ttdeci">void erf_dersoundspeed(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:42</div></div>
-<div class="ttc" id="aDerive_8H_html_a91838ffd7c48b4d1f7533490106c188f"><div class="ttname"><a href="Derive_8H.html#a91838ffd7c48b4d1f7533490106c188f">erf_dertheta</a></div><div class="ttdeci">void erf_dertheta(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real time, const int *bcrec, const int level)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:86</div></div>
+<div class="ttc" id="anamespacederived_html_ae13ef28ab10c6102bf43c9a7fbe99f35"><div class="ttname"><a href="namespacederived.html#ae13ef28ab10c6102bf43c9a7fbe99f35">derived::erf_dersoundspeed</a></div><div class="ttdeci">void erf_dersoundspeed(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:44</div></div>
+<div class="ttc" id="aEOS_8H_html_a292ce90ab26c75f4a444808a807b532b"><div class="ttname"><a href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:16</div></div>
+<div class="ttc" id="anamespacederived_html_ab144cda2ef3e2bd18cbd0837ce723521"><div class="ttname"><a href="namespacederived.html#ab144cda2ef3e2bd18cbd0837ce723521">derived::erf_derpres</a></div><div class="ttdeci">void erf_derpres(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:23</div></div>
+<div class="ttc" id="aEOS_8H_html_a652d566aef658cc423ced929a816f869"><div class="ttname"><a href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:9</div></div>
 <div class="ttc" id="aIndexDefines_8H_html"><div class="ttname"><a href="IndexDefines_8H.html">IndexDefines.H</a></div></div>
-<div class="ttc" id="aDerive_8H_html_a29f65232ba48b9e3ebb6ff571f66bab9"><div class="ttname"><a href="Derive_8H.html#a29f65232ba48b9e3ebb6ff571f66bab9">erf_dersoundspeed</a></div><div class="ttdeci">void erf_dersoundspeed(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real time, const int *bcrec, const int level)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:42</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

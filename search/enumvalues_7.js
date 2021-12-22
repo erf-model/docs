@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['rho_5fu_828',['rho_u',['../DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3',1,'DataStruct.H']]],
-  ['rho_5fv_829',['rho_v',['../DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424',1,'DataStruct.H']]],
-  ['rho_5fw_830',['rho_w',['../DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f',1,'DataStruct.H']]]
+  ['inflow_830',['inflow',['../classERF.html#a31df09a4c2420058694420a43fd7ec4bad37e67db17cfd059f2852e2673b9e8ef',1,'ERF']]],
+  ['int_5fdir_831',['int_dir',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca9f18284526a1054d4e7a4783852ead30',1,'ERFBCType']]]
 ];

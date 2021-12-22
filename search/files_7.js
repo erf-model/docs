@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['nccolumnfile_2ecpp_519',['NCColumnFile.cpp',['../NCColumnFile_8cpp.html',1,'']]],
-  ['ncinterface_2ecpp_520',['NCInterface.cpp',['../NCInterface_8cpp.html',1,'']]],
-  ['ncinterface_2eh_521',['NCInterface.H',['../NCInterface_8H.html',1,'']]],
-  ['ncplotfile_2ecpp_522',['NCPlotFile.cpp',['../NCPlotFile_8cpp.html',1,'']]],
-  ['ncplotfile_2eh_523',['NCPlotFile.H',['../NCPlotFile_8H.html',1,'']]]
+  ['plotfile_2ecpp_497',['Plotfile.cpp',['../Plotfile_8cpp.html',1,'']]],
+  ['prob_5fcommon_2eh_498',['prob_common.H',['../prob__common_8H.html',1,'']]]
 ];

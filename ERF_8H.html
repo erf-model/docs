@@ -83,84 +83,82 @@ $(document).ready(function(){initNavTree('ERF_8H.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ERF.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;AMReX_BC_TYPES.H&gt;</code><br />
-<code>#include &lt;AMReX_AmrLevel.H&gt;</code><br />
-<code>#include &lt;AMReX_iMultiFab.H&gt;</code><br />
-<code>#include &lt;AMReX_ErrorList.H&gt;</code><br />
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;AMReX_AmrCore.H&gt;</code><br />
+<code>#include &lt;AMReX_BCRec.H&gt;</code><br />
+<code>#include &lt;AMReX_ParallelDescriptor.H&gt;</code><br />
+<code>#include &lt;AMReX_ParmParse.H&gt;</code><br />
+<code>#include &lt;AMReX_MultiFabUtil.H&gt;</code><br />
+<code>#include &lt;AMReX_FillPatchUtil.H&gt;</code><br />
+<code>#include &lt;AMReX_PlotFileUtil.H&gt;</code><br />
+<code>#include &lt;AMReX_VisMF.H&gt;</code><br />
+<code>#include &lt;AMReX_PhysBCFunct.H&gt;</code><br />
 <code>#include &lt;AMReX_FluxRegister.H&gt;</code><br />
-<code>#include &quot;<a class="el" href="DataStruct_8H_source.html">DataStruct.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IndexDefines_8H_source.html">IndexDefines.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="IOManager_8H_source.html">IOManager.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ABLMost_8H_source.html">BC/ABLMost.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BCBase_8H_source.html">BC/BCBase.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BCDummy_8H_source.html">BC/BCDummy.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BCInterior_8H_source.html">BC/BCInterior.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BCOutflow_8H_source.html">BC/BCOutflow.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BCSlipWall_8H_source.html">BC/BCSlipWall.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BCNoSlipWall_8H_source.html">BC/BCNoSlipWall.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BCSimSlipWall_8H_source.html">BC/BCSimSlipWall.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BCMostWall_8H_source.html">BC/BCMostWall.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ABLFieldInit_8H_source.html">ABLFieldInit.H</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="Problem_8H_source.html">Problem.H</a>&gt;</code><br />
+<code>#include &lt;AMReX_ErrorList.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="IndexDefines_8H_source.html">IndexDefines.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="TimeInterpolatedData_8H_source.html">TimeInterpolatedData.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__PhysBCFunct_8H_source.html">ERF_PhysBCFunct.H</a>&gt;</code><br />
+<code>#include &lt;AMReX_TimeIntegrator.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="TimeIntegration_8H_source.html">TimeIntegration.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="DataStruct_8H_source.html">DataStruct.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ABLFieldInit_8H_source.html">ABLFieldInit.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="Derive_8H_source.html">Derive.H</a>&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF_8H__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2ERF_8H" alt=""/></div>
 <map name="_2home_2runner_2work_2ERF_2ERF_2Source_2ERF_8H" id="_2home_2runner_2work_2ERF_2ERF_2Source_2ERF_8H">
-<area shape="rect" title=" " alt="" coords="1429,5,1603,47"/>
-<area shape="rect" title=" " alt="" coords="1393,169,1473,196"/>
-<area shape="rect" title=" " alt="" coords="1961,95,2116,121"/>
-<area shape="rect" title=" " alt="" coords="1497,169,1649,196"/>
-<area shape="rect" title=" " alt="" coords="1673,169,1823,196"/>
-<area shape="rect" title=" " alt="" coords="2140,95,2284,121"/>
-<area shape="rect" title=" " alt="" coords="2308,95,2479,121"/>
-<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="222,319,327,345"/>
-<area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="77,319,198,345"/>
-<area shape="rect" href="IOManager_8H.html" title=" " alt="" coords="1831,95,1937,121"/>
-<area shape="rect" href="ABLMost_8H.html" title=" " alt="" coords="1235,244,1349,271"/>
-<area shape="rect" href="BCBase_8H.html" title=" " alt="" coords="1186,169,1294,196"/>
-<area shape="rect" href="BCDummy_8H.html" title=" " alt="" coords="2503,95,2630,121"/>
-<area shape="rect" href="BCInterior_8H.html" title=" " alt="" coords="2655,95,2777,121"/>
-<area shape="rect" href="BCOutflow_8H.html" title=" " alt="" coords="1303,95,1428,121"/>
-<area shape="rect" href="BCSlipWall_8H.html" title=" " alt="" coords="1452,95,1580,121"/>
-<area shape="rect" href="BCNoSlipWall_8H.html" title=" " alt="" coords="879,95,1025,121"/>
-<area shape="rect" href="BCSimSlipWall_8H.html" title=" " alt="" coords="1050,95,1203,121"/>
-<area shape="rect" href="BCMostWall_8H.html" title=" " alt="" coords="668,95,804,121"/>
-<area shape="rect" href="ABLFieldInit_8H.html" title=" " alt="" coords="730,244,843,271"/>
-<area shape="rect" href="Problem_8H.html" title=" " alt="" coords="2801,95,2892,121"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="208,393,341,420"/>
-<area shape="rect" title=" " alt="" coords="1646,393,1805,420"/>
-<area shape="rect" title=" " alt="" coords="161,468,284,495"/>
-<area shape="rect" title=" " alt="" coords="5,393,133,420"/>
-<area shape="rect" title=" " alt="" coords="1847,169,1921,196"/>
-<area shape="rect" title=" " alt="" coords="1945,169,2004,196"/>
-<area shape="rect" title=" " alt="" coords="2028,169,2087,196"/>
-<area shape="rect" title=" " alt="" coords="2111,169,2235,196"/>
-<area shape="rect" title=" " alt="" coords="2260,169,2303,196"/>
-<area shape="rect" title=" " alt="" coords="2327,169,2404,196"/>
-<area shape="rect" title=" " alt="" coords="2428,169,2556,196"/>
-<area shape="rect" title=" " alt="" coords="2580,169,2727,196"/>
-<area shape="rect" title=" " alt="" coords="2751,169,2881,196"/>
-<area shape="rect" title=" " alt="" coords="2906,169,3022,196"/>
-<area shape="rect" href="EddyViscosity_8H.html" title=" " alt="" coords="617,169,743,196"/>
-<area shape="rect" href="PlaneAverage_8H.html" title=" " alt="" coords="767,169,892,196"/>
-<area shape="rect" href="VelPlaneAverage_8H.html" title=" " alt="" coords="967,169,1113,196"/>
-<area shape="rect" href="TimeIntegration_8H.html" title=" " alt="" coords="557,244,697,271"/>
-<area shape="rect" href="StrainRate_8H.html" title=" " alt="" coords="868,244,972,271"/>
-<area shape="rect" title=" " alt="" coords="585,319,668,345"/>
-<area shape="rect" title=" " alt="" coords="866,319,1011,345"/>
-<area shape="rect" title=" " alt="" coords="692,319,841,345"/>
-<area shape="rect" title=" " alt="" coords="351,319,561,345"/>
-<area shape="rect" href="DirectionSelector_8H.html" title=" " alt="" coords="1012,244,1159,271"/>
-<area shape="rect" title=" " alt="" coords="1176,319,1291,345"/>
-<area shape="rect" title=" " alt="" coords="1035,319,1151,345"/>
+<area shape="rect" title=" " alt="" coords="1381,5,1555,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,64,121"/>
+<area shape="rect" title=" " alt="" coords="88,95,147,121"/>
+<area shape="rect" title=" " alt="" coords="171,95,248,121"/>
+<area shape="rect" title=" " alt="" coords="272,95,419,121"/>
+<area shape="rect" title=" " alt="" coords="1350,169,1482,196"/>
+<area shape="rect" title=" " alt="" coords="1671,95,1875,121"/>
+<area shape="rect" title=" " alt="" coords="194,244,353,271"/>
+<area shape="rect" title=" " alt="" coords="1900,95,2068,121"/>
+<area shape="rect" title=" " alt="" coords="2093,95,2259,121"/>
+<area shape="rect" title=" " alt="" coords="2283,95,2445,121"/>
+<area shape="rect" title=" " alt="" coords="2469,95,2597,121"/>
+<area shape="rect" title=" " alt="" coords="2622,95,2797,121"/>
+<area shape="rect" title=" " alt="" coords="2821,95,2992,121"/>
+<area shape="rect" title=" " alt="" coords="3016,95,3160,121"/>
+<area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="638,169,759,196"/>
+<area shape="rect" href="TimeInterpolatedData_8H.html" title=" " alt="" coords="1557,169,1736,196"/>
+<area shape="rect" href="ERF__PhysBCFunct_8H.html" title=" " alt="" coords="1392,95,1544,121"/>
+<area shape="rect" title=" " alt="" coords="3184,95,3371,121"/>
+<area shape="rect" href="TimeIntegration_8H.html" title=" " alt="" coords="926,95,1066,121"/>
+<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="266,169,371,196"/>
+<area shape="rect" href="ABLFieldInit_8H.html" title=" " alt="" coords="545,95,658,121"/>
+<area shape="rect" href="Derive_8H.html" title=" " alt="" coords="1569,95,1647,121"/>
+<area shape="rect" title=" " alt="" coords="3395,95,3475,121"/>
+<area shape="rect" title=" " alt="" coords="615,319,737,345"/>
+<area shape="rect" title=" " alt="" coords="713,244,841,271"/>
+<area shape="rect" title=" " alt="" coords="1139,244,1285,271"/>
+<area shape="rect" title=" " alt="" coords="1581,244,1712,271"/>
+<area shape="rect" title=" " alt="" coords="1939,169,2069,196"/>
+<area shape="rect" title=" " alt="" coords="2585,169,2738,196"/>
+<area shape="rect" title=" " alt="" coords="1176,169,1325,196"/>
+<area shape="rect" title=" " alt="" coords="2093,169,2232,196"/>
+<area shape="rect" title=" " alt="" coords="2256,169,2397,196"/>
+<area shape="rect" title=" " alt="" coords="2421,169,2560,196"/>
+<area shape="rect" title=" " alt="" coords="1760,169,1915,196"/>
+<area shape="rect" title=" " alt="" coords="784,169,867,196"/>
+<area shape="rect" title=" " alt="" coords="891,169,1101,196"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="483,244,616,271"/>
+<area shape="rect" title=" " alt="" coords="395,169,511,196"/>
+<area shape="rect" title=" " alt="" coords="2762,169,2918,196"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -168,203 +166,80 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF_8H__dep__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2ERF_8Hdep" alt=""/></div>
 <map name="_2home_2runner_2work_2ERF_2ERF_2Source_2ERF_8Hdep" id="_2home_2runner_2work_2ERF_2ERF_2Source_2ERF_8Hdep">
-<area shape="rect" title=" " alt="" coords="1115,5,1289,47"/>
-<area shape="rect" href="Advance_8cpp.html" title=" " alt="" coords="71,102,258,143"/>
-<area shape="rect" href="ABLMost_8H.html" title=" " alt="" coords="701,102,897,143"/>
-<area shape="rect" href="BCBase_8H.html" title=" " alt="" coords="506,199,695,240"/>
-<area shape="rect" href="BCOutflow_8H.html" title=" " alt="" coords="5,288,212,329"/>
-<area shape="rect" href="BCSlipWall_8H.html" title=" " alt="" coords="236,288,445,329"/>
-<area shape="rect" href="BCNoSlipWall_8H.html" title=" " alt="" coords="470,288,697,329"/>
-<area shape="rect" href="BCSimSlipWall_8H.html" title=" " alt="" coords="721,288,955,329"/>
-<area shape="rect" href="BCMostWall_8H.html" title=" " alt="" coords="980,288,1197,329"/>
-<area shape="rect" href="BCDummy_8H.html" title=" " alt="" coords="1099,102,1305,143"/>
-<area shape="rect" href="BCInterior_8H.html" title=" " alt="" coords="1330,102,1533,143"/>
-<area shape="rect" href="PlaneAverage_8H.html" title=" " alt="" coords="997,199,1225,240"/>
-<area shape="rect" href="VelPlaneAverage_8H.html" title=" " alt="" coords="1250,199,1498,240"/>
-<area shape="rect" href="BCfill_8cpp.html" title=" " alt="" coords="1557,102,1732,143"/>
-<area shape="rect" href="Bld_8cpp.html" title=" " alt="" coords="1756,102,1931,143"/>
-<area shape="rect" href="Cleanup_8cpp.html" title=" " alt="" coords="1955,102,2137,143"/>
-<area shape="rect" href="ERF_8cpp.html" title=" " alt="" coords="2161,102,2336,143"/>
-<area shape="rect" href="NCColumnFile_8cpp.html" title=" " alt="" coords="2361,102,2601,143"/>
-<area shape="rect" href="NCPlotFile_8cpp.html" title=" " alt="" coords="2625,102,2840,143"/>
-<area shape="rect" href="PlotFile_8cpp.html" title=" " alt="" coords="2864,102,3060,143"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="3084,102,3259,143"/>
-<area shape="rect" href="ProblemDerive_8H.html" title=" " alt="" coords="3283,102,3497,143"/>
-<area shape="rect" href="Setup_8cpp.html" title=" " alt="" coords="3521,102,3696,143"/>
-<area shape="rect" href="SumIQ_8cpp.html" title=" " alt="" coords="3720,102,3895,143"/>
-<area shape="rect" href="SumUtils_8cpp.html" title=" " alt="" coords="3919,102,4109,143"/>
-<area shape="rect" href="Tagging_8cpp.html" title=" " alt="" coords="4133,102,4313,143"/>
-<area shape="rect" href="TimeIntegration__driver_8cpp.html" title=" " alt="" coords="4337,95,4544,151"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html" title=" " alt="" coords="4568,95,4775,151"/>
+<area shape="rect" title=" " alt="" coords="1898,5,2073,47"/>
+<area shape="rect" href="NCReadFile_8cpp.html" title=" " alt="" coords="5,95,200,151"/>
+<area shape="rect" href="ERF_8cpp.html" title=" " alt="" coords="225,102,399,143"/>
+<area shape="rect" href="ERF__ComputeTimestep_8cpp.html" title=" " alt="" coords="424,102,707,143"/>
+<area shape="rect" href="ERF__FillPatch_8cpp.html" title=" " alt="" coords="731,102,947,143"/>
+<area shape="rect" href="ERF__init1d_8cpp.html" title=" " alt="" coords="971,102,1170,143"/>
+<area shape="rect" href="ERF__init__bcs_8cpp.html" title=" " alt="" coords="1194,95,1369,151"/>
+<area shape="rect" href="ERF__SumIQ_8cpp.html" title=" " alt="" coords="1393,102,1599,143"/>
+<area shape="rect" href="ERF__Tagging_8cpp.html" title=" " alt="" coords="1623,102,1835,143"/>
+<area shape="rect" href="ERF__TimeStepping_8cpp.html" title=" " alt="" coords="1859,102,2111,143"/>
+<area shape="rect" href="Checkpoint_8cpp.html" title=" " alt="" coords="2136,102,2357,143"/>
+<area shape="rect" href="NCColumnFile_8cpp.html" title=" " alt="" coords="2381,102,2621,143"/>
+<area shape="rect" href="NCPlotFile_8cpp.html" title=" " alt="" coords="2646,102,2861,143"/>
+<area shape="rect" href="Plotfile_8cpp.html" title=" " alt="" coords="2885,102,3078,143"/>
+<area shape="rect" href="writeJobInfo_8cpp.html" title=" " alt="" coords="3103,102,3329,143"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="3354,102,3529,143"/>
+<area shape="rect" href="TimeIntegration__driver_8cpp.html" title=" " alt="" coords="3553,95,3759,151"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html" title=" " alt="" coords="3783,95,3990,151"/>
 </map>
 </div>
 </div>
 <p><a href="ERF_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:aaed2df99459c45b969241f18d7fee1a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF_8H.html#aaed2df99459c45b969241f18d7fee1a7">ENUM_BUILDER</a>(name, ...)</td></tr>
-<tr class="separator:aaed2df99459c45b969241f18d7fee1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html">ERF</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceInterpType"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceInterpType.html">InterpType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ac65aa6d3ffa2549732d15f959cff81ab"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="namespaceInterpType.html#ac65aa6d3ffa2549732d15f959cff81aba6ece140c8e1d325d1a2b3615064284c3">InterpType::PCInterp</a> = 0, 
+<a class="el" href="namespaceInterpType.html#ac65aa6d3ffa2549732d15f959cff81abaa8e5f7bd547098a67d20537514465dd9">InterpType::NodeBilinear</a>, 
+<a class="el" href="namespaceInterpType.html#ac65aa6d3ffa2549732d15f959cff81abab0ad7795a42bdee1bdd33474214bc822">InterpType::CellConservativeLinear</a>, 
+<a class="el" href="namespaceInterpType.html#ac65aa6d3ffa2549732d15f959cff81aba39d869532e57e69c15b845ee6e38a9de">InterpType::CellBilinear</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceInterpType.html#ac65aa6d3ffa2549732d15f959cff81abab57fb74e35b4c4d31f44d6cafe66cf69">InterpType::CellQuadratic</a>, 
+<a class="el" href="namespaceInterpType.html#ac65aa6d3ffa2549732d15f959cff81abacb9bd14749e9f8c08885b9bc981992de">InterpType::CellConservativeProtected</a>, 
+<a class="el" href="namespaceInterpType.html#ac65aa6d3ffa2549732d15f959cff81aba0291df397377f0f90f7353e49f5a8f20">InterpType::CellConservativeQuartic</a>
+<br />
+ }</td></tr>
+<tr class="separator:ac65aa6d3ffa2549732d15f959cff81ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aab74d50825afd64ca769b7a5438386cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF_8H.html#aaed2df99459c45b969241f18d7fee1a7">ENUM_BUILDER</a>(StateType, State_Type, X_Vel_Type, Y_Vel_Type, Z_Vel_Type, Work_Estimate_Type) class ERF void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF_8H.html#aab74d50825afd64ca769b7a5438386cd">erf_bcfill_hyp</a> (amrex::Box const &amp;bx, amrex::FArrayBox &amp;data, const int dcomp, const int numcomp, amrex::Geometry const &amp;geom, const amrex::Real time, const amrex::Vector&lt; amrex::BCRec &gt; &amp;bcr, const int bcomp, const int scomp)</td></tr>
-<tr class="separator:aab74d50825afd64ca769b7a5438386cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae324a6c6e286c364f21d5c291cf9ea19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF_8H.html#ae324a6c6e286c364f21d5c291cf9ea19">erf_nullfill</a> (amrex::Box const &amp;bx, amrex::FArrayBox &amp;data, const int dcomp, const int numcomp, amrex::Geometry const &amp;geom, const amrex::Real time, const amrex::Vector&lt; amrex::BCRec &gt; &amp;bcr, const int bcomp, const int scomp)</td></tr>
-<tr class="separator:ae324a6c6e286c364f21d5c291cf9ea19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69f963085e19564f2d09048097206131"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF_8H.html#a69f963085e19564f2d09048097206131">ComputeGhostCells</a> (const int &amp;spatial_order)</td></tr>
-<tr class="separator:a69f963085e19564f2d09048097206131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f8554e7b211b0acfc202e8a600e7d67"><td class="memTemplParams" colspan="2">template&lt;typename V , typename T &gt; </td></tr>
+<tr class="memitem:a1f8554e7b211b0acfc202e8a600e7d67"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a> (const V &amp;iterable, const T &amp;query)</td></tr>
+<tr class="separator:a1f8554e7b211b0acfc202e8a600e7d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="aaed2df99459c45b969241f18d7fee1a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaed2df99459c45b969241f18d7fee1a7">&#9670;&nbsp;</a></span>ENUM_BUILDER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ENUM_BUILDER</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">name, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">enum</span> name { __VA_ARGS__ }; \</div>
-<div class="line">inline std::string EnumToString(name value) {              \</div>
-<div class="line">std::string str = #__VA_ARGS__;                            \</div>
-<div class="line">std::string rs;                                            \</div>
-<div class="line">int len = str.length();                                    \</div>
-<div class="line">std::vector&lt;std::string&gt; strings;                          \</div>
-<div class="line">std::ostringstream ss;                                     \</div>
-<div class="line">for(<span class="keywordtype">int</span> i = 0; i &lt; len; i ++) {                            \</div>
-<div class="line">    if(isspace(str[i])) <span class="keywordflow">continue</span>;                          \</div>
-<div class="line">    else <span class="keywordflow">if</span>(str[i] == <span class="charliteral">&#39;,&#39;</span>) {                               \</div>
-<div class="line">        strings.push_back(ss.str());                       \</div>
-<div class="line">        ss.str(std::string());                             \</div>
-<div class="line">        }                                                  \</div>
-<div class="line">    else ss&lt;&lt;str[i];                                       \</div>
-<div class="line">}                                                          \</div>
-<div class="line">strings.push_back(ss.str());                               \</div>
-<div class="line">rs = strings[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(value)];                     \</div>
-<div class="line">return rs; }</div>
-</div><!-- fragment -->
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a69f963085e19564f2d09048097206131"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69f963085e19564f2d09048097206131">&#9670;&nbsp;</a></span>ComputeGhostCells()</h2>
+<a id="a1f8554e7b211b0acfc202e8a600e7d67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f8554e7b211b0acfc202e8a600e7d67">&#9670;&nbsp;</a></span>containerHasElement()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename V , typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">AMREX_FORCE_INLINE int ComputeGhostCells </td>
+          <td class="memname">bool containerHasElement </td>
           <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>spatial_order</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                                            {</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;  <span class="keywordtype">int</span> nGhostCells;</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;  <span class="keywordflow">switch</span> (spatial_order) {</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;      nGhostCells = 1;</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="keywordflow">case</span> 3:</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;      nGhostCells = 2;</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <span class="keywordflow">case</span> 4:</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;      nGhostCells = 2;</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="keywordflow">case</span> 5:</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;      nGhostCells = 2;</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <span class="keywordflow">case</span> 6:</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;      nGhostCells = 3;</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;      amrex::Error(<span class="stringliteral">&quot;Must specify spatial order to be 2,3,4,5 or 6&quot;</span>);</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;  }</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160; </div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;  <span class="keywordflow">return</span> nGhostCells;</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aab74d50825afd64ca769b7a5438386cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab74d50825afd64ca769b7a5438386cd">&#9670;&nbsp;</a></span>erf_bcfill_hyp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="ERF_8H.html#aaed2df99459c45b969241f18d7fee1a7">ENUM_BUILDER</a> (StateType, State_Type, X_Vel_Type, Y_Vel_Type, Z_Vel_Type, Work_Estimate_Type) class ERF void erf_bcfill_hyp </td>
-          <td>(</td>
-          <td class="paramtype">amrex::Box const &amp;&#160;</td>
-          <td class="paramname"><em>bx</em>, </td>
+          <td class="paramtype">const V &amp;&#160;</td>
+          <td class="paramname"><em>iterable</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::FArrayBox &amp;&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>dcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>numcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Geometry const &amp;&#160;</td>
-          <td class="paramname"><em>geom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Real&#160;</td>
-          <td class="paramname"><em>time</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Vector&lt; amrex::BCRec &gt; &amp;&#160;</td>
-          <td class="paramname"><em>bcr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>bcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>scomp</em>&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>query</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -373,83 +248,22 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>AmrLevel-derived class for solving equations for atmospheric flows </p>
-<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  hyp_bndry_func(bx, data, dcomp, numcomp, geom, time, bcr, bcomp, scomp);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                            {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> std::find(iterable.begin(), iterable.end(), query) != iterable.end();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#aef40b8ba6cb32fe3b11b8d9381f16cef">ERF::setPlotVariables()</a>, and <a class="el" href="classERF.html#a387af22acce3cefeb515eb151c3d1b5a">ERF::WritePlotFile()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF_8H_a1f8554e7b211b0acfc202e8a600e7d67_icgraph.png" border="0" usemap="#ERF_8H_a1f8554e7b211b0acfc202e8a600e7d67_icgraph" alt=""/></div>
+<map name="ERF_8H_a1f8554e7b211b0acfc202e8a600e7d67_icgraph" id="ERF_8H_a1f8554e7b211b0acfc202e8a600e7d67_icgraph">
+<area shape="rect" title=" " alt="" coords="212,31,375,57"/>
+<area shape="rect" href="classERF.html#aef40b8ba6cb32fe3b11b8d9381f16cef" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" href="classERF.html#a387af22acce3cefeb515eb151c3d1b5a" title=" " alt="" coords="16,56,153,83"/>
+</map>
 </div>
-</div>
-<a id="ae324a6c6e286c364f21d5c291cf9ea19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae324a6c6e286c364f21d5c291cf9ea19">&#9670;&nbsp;</a></span>erf_nullfill()</h2>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void erf_nullfill </td>
-          <td>(</td>
-          <td class="paramtype">amrex::Box const &amp;&#160;</td>
-          <td class="paramname"><em>bx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::FArrayBox &amp;&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>dcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>numcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Geometry const &amp;&#160;</td>
-          <td class="paramname"><em>geom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Real&#160;</td>
-          <td class="paramname"><em>time</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Vector&lt; amrex::BCRec &gt; &amp;&#160;</td>
-          <td class="paramname"><em>bcr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>bcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>scomp</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
-</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

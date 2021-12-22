@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lower_825',['lower',['../namespacemath__bcs.html#a7baa376f7fe8cdc2afba822273275b3ba34106e9686005243766d1f8ba6f2f603',1,'math_bcs']]]
+  ['foextrap_826',['foextrap',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846',1,'ERFBCType']]]
 ];
