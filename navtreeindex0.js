@@ -219,12 +219,13 @@ var NAVTREEINDEX0 =
 "VelocityToMomentum_8cpp.html#a74241e06851a54dac1b61dcb122dc996":[4,0,0,2,10,0],
 "annotated.html":[3,0],
 "classERF.html":[3,0,2],
+"classERF.html#a02722d16f3c26efe590702200f1296d7":[3,0,2,97],
 "classERF.html#a039a764a1d942c484e8aea49e87bc046":[3,0,2,33],
-"classERF.html#a0634154e8e58379c495c3e7fe7c5e4d6":[3,0,2,102],
+"classERF.html#a0634154e8e58379c495c3e7fe7c5e4d6":[3,0,2,104],
 "classERF.html#a0be12798b46f52fa4b5a995f147c3f96":[3,0,2,16],
 "classERF.html#a0f5b892bf373e46ae54597683e0f9685":[3,0,2,9],
-"classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b":[3,0,2,123],
-"classERF.html#a123e428e6385285dfb646bc6f85ce654":[3,0,2,107],
+"classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b":[3,0,2,126],
+"classERF.html#a123e428e6385285dfb646bc6f85ce654":[3,0,2,109],
 "classERF.html#a14beee83853b2d0c675beda011cbff9e":[3,0,2,48],
 "classERF.html#a18cd93c567c9ca162e07433ed7345608":[3,0,2,17],
 "classERF.html#a18e6dbbf968b4492e78aa427791620f4":[3,0,2,14],
@@ -237,7 +238,7 @@ var NAVTREEINDEX0 =
 "classERF.html#a2d39cd3bdc3d90609ad3b14e266d190a":[3,0,2,43],
 "classERF.html#a2e1874d47d95c7c858c2a2336fd0eee6":[3,0,2,31],
 "classERF.html#a2ef8ab09aed437467e2e87a37bcd999d":[3,0,2,84],
-"classERF.html#a2f2ea7f5eeeb3634944550e5a1de8f7a":[3,0,2,125],
+"classERF.html#a2f2ea7f5eeeb3634944550e5a1de8f7a":[3,0,2,128],
 "classERF.html#a30129012dd367825e5e4fd1406694f58":[3,0,2,1],
 "classERF.html#a30a1b51c733c3a20dc6948f9a3620bbb":[3,0,2,66],
 "classERF.html#a31df09a4c2420058694420a43fd7ec4b":[3,0,2,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "classERF.html#a31df09a4c2420058694420a43fd7ec4bacac0c32caf84a889ec9b2b4cb2d56972":[3,0,2,0,2],
 "classERF.html#a31df09a4c2420058694420a43fd7ec4bacb8c716b8d9b499d9bc323d8f8a410d3":[3,0,2,0,3],
 "classERF.html#a31df09a4c2420058694420a43fd7ec4bad37e67db17cfd059f2852e2673b9e8ef":[3,0,2,0,1],
-"classERF.html#a31df09a4c2420058694420a43fd7ec4bae6ffdec5e14fce371eb7ae99edebbbee":[3,0,2,0,5],
-"classERF.html#a32852749915a776b8ca1e2a9de1f2f03":[3,0,2,85]
+"classERF.html#a31df09a4c2420058694420a43fd7ec4bae6ffdec5e14fce371eb7ae99edebbbee":[3,0,2,0,5]
 };
