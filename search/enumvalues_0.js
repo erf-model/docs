@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bogus_821',['bogus',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca5e7251ff4badd9a198c0601a7929b1c4',1,'ERFBCType']]]
+  ['bogus_825',['bogus',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca5e7251ff4badd9a198c0601a7929b1c4',1,'ERFBCType']]]
 ];
