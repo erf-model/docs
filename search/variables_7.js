@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['h_5fdens_5fhse_719',['h_dens_hse',['../classERF.html#a32852749915a776b8ca1e2a9de1f2f03',1,'ERF']]],
-  ['h_5fpres_5fhse_720',['h_pres_hse',['../classERF.html#a729e17904ee4faf42876daeed9399e16',1,'ERF']]],
-  ['h_5frayleigh_5ftau_721',['h_rayleigh_tau',['../classERF.html#af509140199e639d4390dfe7bb93eba8b',1,'ERF']]],
-  ['h_5frayleigh_5fthetabar_722',['h_rayleigh_thetabar',['../classERF.html#ad1583fb172de6efc4ce775ee678aa0be',1,'ERF']]],
-  ['h_5frayleigh_5fubar_723',['h_rayleigh_ubar',['../classERF.html#a4dede19e7fd1f3d0854642a62ec4ed7f',1,'ERF']]],
-  ['h_5frayleigh_5fvbar_724',['h_rayleigh_vbar',['../classERF.html#a72cc88a626dfd32c423d86d6e2eb8ace',1,'ERF']]],
-  ['hi_5fz_5fis_5fdirichlet_725',['hi_z_is_dirichlet',['../classERF.html#a8870d5fbaaeabdacd8bec5b008e39400',1,'ERF']]]
+  ['init_5fabl_720',['init_abl',['../classERF.html#a27359f3d7c9c73415896bfaf1a3448a4',1,'ERF']]],
+  ['init_5fshrink_721',['init_shrink',['../classERF.html#aa30548378350788543d15076cdcd404d',1,'ERF']]],
+  ['inputs_5fname_722',['inputs_name',['../NCPlotFile_8H.html#aabaa127a3a319c1b86090d6c88568965',1,'inputs_name():&#160;main.cpp'],['../writeJobInfo_8cpp.html#aabaa127a3a319c1b86090d6c88568965',1,'inputs_name():&#160;main.cpp'],['../main_8cpp.html#aabaa127a3a319c1b86090d6c88568965',1,'inputs_name():&#160;main.cpp']]],
+  ['int_723',['Int',['../structncutils_1_1NCDType.html#ac5bfba212db12de3dfde52dc3ae3eb0c',1,'ncutils::NCDType']]],
+  ['integrator_724',['integrator',['../classERF.html#a49d7feba58f66172128ac730eaefdb00',1,'ERF']]],
+  ['interpolation_5ftype_725',['interpolation_type',['../classERF.html#a5f6b5de114df74ff7a5b872c0649b844',1,'ERF']]],
+  ['is_5fopen_726',['is_open',['../classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379',1,'ncutils::NCFile']]],
+  ['istep_727',['istep',['../classERF.html#aefa640a036c25b7b770e88a5f838eb2a',1,'ERF']]]
 ];

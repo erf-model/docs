@@ -71,7 +71,6 @@ var classERF =
     [ "change_max", "classERF.html#ac793fe23b026c18bb7dcce791317c6c3", null ],
     [ "check_file", "classERF.html#ae701564fbe3da5bbd88587e5a08eca4e", null ],
     [ "check_int", "classERF.html#a1f48ec3caf326a6b1b986d061d36ee90", null ],
-    [ "checkpoint_type", "classERF.html#a6eb0df796bda45f8bc377fcb7d6be15a", null ],
     [ "column_file_name", "classERF.html#a48bba6b1c1b39940b09aefbe56311e2f", null ],
     [ "column_interval", "classERF.html#afa0bef6d3146788302b81c0d4f4802d1", null ],
     [ "column_loc_x", "classERF.html#ab10bfe15c2d15fdd22201b64722a4022", null ],

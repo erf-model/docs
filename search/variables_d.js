@@ -1,13 +1,10 @@
 var searchData=
 [
-  ['pi_777',['PI',['../ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428',1,'ERF_Constants.H']]],
-  ['plot_5fderiv_5fnames_778',['plot_deriv_names',['../classERF.html#a123e428e6385285dfb646bc6f85ce654',1,'ERF']]],
-  ['plot_5ffile_779',['plot_file',['../classERF.html#ad02c77d3f4a7dfa0ad679877f0f05fc1',1,'ERF']]],
-  ['plot_5ffile_5fon_5frestart_780',['plot_file_on_restart',['../classERF.html#adc00038dfe4c332e5d15f621184c69e8',1,'ERF']]],
-  ['plot_5fint_781',['plot_int',['../classERF.html#abe64c2ff781da4cc0642ee1d29c912d6',1,'ERF']]],
-  ['plot_5fstate_5fnames_782',['plot_state_names',['../classERF.html#a5239b3dae0bf9ba78876bf2e8d497016',1,'ERF']]],
-  ['plotfile_5ftype_783',['plotfile_type',['../classERF.html#ae7b9991150042eb38e2abc89399c0c7c',1,'ERF']]],
-  ['pr_5ft_784',['Pr_t',['../structSolverChoice.html#ac6ce37592bdc2abee5231a47802c316b',1,'SolverChoice']]],
-  ['pr_5ft_5finv_785',['Pr_t_inv',['../structSolverChoice.html#aedad420dddffb0b78651c5d8b399a67b',1,'SolverChoice']]],
-  ['previouscputimeused_786',['previousCPUTimeUsed',['../classERF.html#a7948479fe1497dc592dd748c9567fdaa',1,'ERF']]]
+  ['real_781',['Real',['../structncutils_1_1NCDType.html#a7a5be35daa7dbb2cc72507cc4b5a422c',1,'ncutils::NCDType']]],
+  ['ref_5ftags_782',['ref_tags',['../classERF.html#ac81b3dfd7c6f21ba8479834e2ff1e652',1,'ERF']]],
+  ['regrid_5fint_783',['regrid_int',['../classERF.html#a3937527f96c81674fa38dc34ed24f3f5',1,'ERF']]],
+  ['restart_5fchkfile_784',['restart_chkfile',['../classERF.html#a8e758060d3dede9694fbfcabddc17169',1,'ERF']]],
+  ['rho0_5ftrans_785',['rho0_trans',['../structSolverChoice.html#a3dd9fcb274b4d556d88346eeb683d00a',1,'SolverChoice']]],
+  ['rhoalpha_5fc_786',['rhoAlpha_C',['../structSolverChoice.html#a3571709ee9c72dca3523638986976821',1,'SolverChoice']]],
+  ['rhoalpha_5ft_787',['rhoAlpha_T',['../structSolverChoice.html#a3436b31b3e0e439c700d07c30d22e7a3',1,'SolverChoice']]]
 ];

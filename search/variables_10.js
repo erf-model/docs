@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['t_5fnew_804',['t_new',['../classERF.html#a65741b6379d273c19a25cf48bb947614',1,'ERF']]],
-  ['t_5fold_805',['t_old',['../classERF.html#a7085d7d5fc94a0f84efc06957267d58e',1,'ERF']]]
+  ['use_5fcoriolis_800',['use_coriolis',['../structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606',1,'SolverChoice']]],
+  ['use_5fgravity_801',['use_gravity',['../structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5',1,'SolverChoice']]],
+  ['use_5frayleigh_5fdamping_802',['use_rayleigh_damping',['../structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01',1,'SolverChoice']]]
 ];
