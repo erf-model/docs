@@ -29,7 +29,7 @@ var searchData=
   ['erf_5ftimestepping_2ecpp_139',['ERF_TimeStepping.cpp',['../ERF__TimeStepping_8cpp.html',1,'']]],
   ['erf_5futils_2ecpp_140',['ERF_Utils.cpp',['../ERF__Utils_8cpp.html',1,'']]],
   ['erfbctype_141',['ERFBCType',['../namespaceERFBCType.html',1,'']]],
-  ['erfphysbcfunct_142',['ERFPhysBCFunct',['../classERFPhysBCFunct.html',1,'ERFPhysBCFunct'],['../classERFPhysBCFunct.html#a90d58f377e55d51d9803074952ed4114',1,'ERFPhysBCFunct::ERFPhysBCFunct()']]],
+  ['erfphysbcfunct_142',['ERFPhysBCFunct',['../classERFPhysBCFunct.html',1,'ERFPhysBCFunct'],['../classERFPhysBCFunct.html#a692553c3c8e3d4f1b25777e5a7e844af',1,'ERFPhysBCFunct::ERFPhysBCFunct()']]],
   ['errorest_143',['ErrorEst',['../classERF.html#a18e6dbbf968b4492e78aa427791620f4',1,'ERF']]],
   ['esttimestep_144',['estTimeStep',['../classERF.html#a1af27a9e7f1c52502a49b9e9d02f0380',1,'ERF']]],
   ['evolve_145',['Evolve',['../classERF.html#a0be12798b46f52fa4b5a995f147c3f96',1,'ERF']]],
