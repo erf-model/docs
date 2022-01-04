@@ -8,5 +8,5 @@ var searchData=
   ['cons_828',['cons',['../namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b',1,'Vars::cons()'],['../namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae',1,'IntVar::cons()']]],
   ['cons_5fbc_829',['cons_bc',['../namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec',1,'BCVars']]],
   ['constant_830',['Constant',['../DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255',1,'DataStruct.H']]],
-  ['constantdiffusivity_831',['ConstantDiffusivity',['../DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a653d20a7905620052d73399042e92923',1,'DataStruct.H']]]
+  ['constantalpha_831',['ConstantAlpha',['../DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288',1,'DataStruct.H']]]
 ];

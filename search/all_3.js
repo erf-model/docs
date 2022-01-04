@@ -36,7 +36,7 @@ var searchData=
   ['cons_5fnames_68',['cons_names',['../classERF.html#afd8cd5a477754776135befa668fdd0c9',1,'ERF']]],
   ['const_5fgrav_69',['CONST_GRAV',['../ERF__Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901',1,'ERF_Constants.H']]],
   ['constant_70',['Constant',['../DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255',1,'DataStruct.H']]],
-  ['constantdiffusivity_71',['ConstantDiffusivity',['../DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a653d20a7905620052d73399042e92923',1,'DataStruct.H']]],
+  ['constantalpha_71',['ConstantAlpha',['../DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288',1,'DataStruct.H']]],
   ['containerhaselement_72',['containerHasElement',['../ERF_8H.html#a1f8554e7b211b0acfc202e8a600e7d67',1,'ERF.H']]],
   ['coord_73',['Coord',['../DataStruct_8H.html#a627f1f843904477f763577ad1460de01',1,'DataStruct.H']]],
   ['coriolis_5ffactor_74',['coriolis_factor',['../structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3',1,'SolverChoice']]],
