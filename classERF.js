@@ -86,6 +86,7 @@ var classERF =
     [ "derived_names", "classERF.html#a9fc0f6e6ca35036d2e3a36dd42e66435", null ],
     [ "do_avg_down", "classERF.html#a778cdd6547e8cf1613cda8b4a8274bf0", null ],
     [ "do_reflux", "classERF.html#af25f70d7d9e4edeedcc40c117cc15505", null ],
+    [ "domain_bc_type", "classERF.html#ae5968f1bed602fa87cdd5cb7905b7e5e", null ],
     [ "domain_bcs_type", "classERF.html#a574521986a6e403159f83c8b8123ba90", null ],
     [ "domain_bcs_type_d", "classERF.html#a8a99e22b1111c803e31b4afd5fcdea60", null ],
     [ "dt", "classERF.html#ad34bae243fdb6c3029f5abe4fb4bca2d", null ],

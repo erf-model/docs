@@ -28,8 +28,9 @@ var searchData=
   ['display_106',['display',['../structSolverChoice.html#abb95d84167308078ce369b4196ef979c',1,'SolverChoice']]],
   ['do_5favg_5fdown_107',['do_avg_down',['../classERF.html#a778cdd6547e8cf1613cda8b4a8274bf0',1,'ERF']]],
   ['do_5freflux_108',['do_reflux',['../classERF.html#af25f70d7d9e4edeedcc40c117cc15505',1,'ERF']]],
-  ['domain_5fbcs_5ftype_109',['domain_bcs_type',['../classERF.html#a574521986a6e403159f83c8b8123ba90',1,'ERF']]],
-  ['domain_5fbcs_5ftype_5fd_110',['domain_bcs_type_d',['../classERF.html#a8a99e22b1111c803e31b4afd5fcdea60',1,'ERF']]],
-  ['dt_111',['dt',['../classERF.html#ad34bae243fdb6c3029f5abe4fb4bca2d',1,'ERF']]],
-  ['dynamicviscosity_112',['dynamicViscosity',['../structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446',1,'SolverChoice']]]
+  ['domain_5fbc_5ftype_109',['domain_bc_type',['../classERF.html#ae5968f1bed602fa87cdd5cb7905b7e5e',1,'ERF']]],
+  ['domain_5fbcs_5ftype_110',['domain_bcs_type',['../classERF.html#a574521986a6e403159f83c8b8123ba90',1,'ERF']]],
+  ['domain_5fbcs_5ftype_5fd_111',['domain_bcs_type_d',['../classERF.html#a8a99e22b1111c803e31b4afd5fcdea60',1,'ERF']]],
+  ['dt_112',['dt',['../classERF.html#ad34bae243fdb6c3029f5abe4fb4bca2d',1,'ERF']]],
+  ['dynamicviscosity_113',['dynamicViscosity',['../structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446',1,'SolverChoice']]]
 ];
