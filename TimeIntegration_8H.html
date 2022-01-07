@@ -90,9 +90,8 @@ $(document).ready(function(){initNavTree('TimeIntegration_8H.html',''); initResi
 <div class="title">TimeIntegration.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;AMReX.H&gt;</code><br />
-<code>#include &lt;AMReX_MultiFab.H&gt;</code><br />
-<code>#include &lt;AMReX_ArrayLim.H&gt;</code><br />
+<div class="textblock"><code>#include &lt;AMReX_MultiFab.H&gt;</code><br />
+<code>#include &lt;AMReX_BCRec.H&gt;</code><br />
 <code>#include &lt;AMReX_InterpFaceRegister.H&gt;</code><br />
 <code>#include &quot;<a class="el" href="DataStruct_8H_source.html">DataStruct.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="IndexDefines_8H_source.html">IndexDefines.H</a>&quot;</code><br />
@@ -101,17 +100,16 @@ Include dependency graph for TimeIntegration.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="TimeIntegration_8H__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TimeIntegration_8H" alt=""/></div>
 <map name="_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TimeIntegration_8H" id="_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TimeIntegration_8H">
-<area shape="rect" title=" " alt="" coords="355,5,562,61"/>
-<area shape="rect" title=" " alt="" coords="5,109,88,136"/>
-<area shape="rect" title=" " alt="" coords="113,109,258,136"/>
-<area shape="rect" title=" " alt="" coords="283,109,432,136"/>
-<area shape="rect" title=" " alt="" coords="456,109,667,136"/>
-<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="690,109,795,136"/>
-<area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="819,109,941,136"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="515,184,648,211"/>
-<area shape="rect" title=" " alt="" coords="673,184,831,211"/>
-<area shape="rect" title=" " alt="" coords="664,259,787,285"/>
-<area shape="rect" title=" " alt="" coords="907,184,1035,211"/>
+<area shape="rect" title=" " alt="" coords="333,5,540,61"/>
+<area shape="rect" title=" " alt="" coords="5,109,151,136"/>
+<area shape="rect" title=" " alt="" coords="175,109,307,136"/>
+<area shape="rect" title=" " alt="" coords="331,109,542,136"/>
+<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="565,109,671,136"/>
+<area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="695,109,816,136"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="390,184,523,211"/>
+<area shape="rect" title=" " alt="" coords="548,184,707,211"/>
+<area shape="rect" title=" " alt="" coords="539,259,662,285"/>
+<area shape="rect" title=" " alt="" coords="782,184,910,211"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -119,30 +117,29 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="TimeIntegration_8H__dep__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TimeIntegration_8Hdep" alt=""/></div>
 <map name="_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TimeIntegration_8Hdep" id="_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TimeIntegration_8Hdep">
-<area shape="rect" title=" " alt="" coords="3814,5,4021,61"/>
-<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="2029,117,2203,158"/>
-<area shape="rect" href="TimeIntegration__driver_8cpp.html" title=" " alt="" coords="3605,213,3811,269"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html" title=" " alt="" coords="3746,421,3953,477"/>
-<area shape="rect" href="EddyViscosity_8H.html" title=" " alt="" coords="3886,109,4085,165"/>
-<area shape="rect" href="StressTerm_8H.html" title=" " alt="" coords="4022,213,4221,269"/>
-<area shape="rect" href="TimeIntegration__fast_8cpp.html" title=" " alt="" coords="4159,109,4366,165"/>
-<area shape="rect" href="NCReadFile_8cpp.html" title=" " alt="" coords="5,213,200,269"/>
-<area shape="rect" href="ERF_8cpp.html" title=" " alt="" coords="225,221,399,262"/>
-<area shape="rect" href="ERF__ComputeTimestep_8cpp.html" title=" " alt="" coords="424,221,707,262"/>
-<area shape="rect" href="ERF__FillPatch_8cpp.html" title=" " alt="" coords="731,221,947,262"/>
-<area shape="rect" href="ERF__init1d_8cpp.html" title=" " alt="" coords="971,221,1170,262"/>
-<area shape="rect" href="ERF__init__bcs_8cpp.html" title=" " alt="" coords="1194,213,1369,269"/>
-<area shape="rect" href="ERF__SumIQ_8cpp.html" title=" " alt="" coords="1393,221,1599,262"/>
-<area shape="rect" href="ERF__Tagging_8cpp.html" title=" " alt="" coords="1623,221,1835,262"/>
-<area shape="rect" href="ERF__TimeStepping_8cpp.html" title=" " alt="" coords="1859,221,2111,262"/>
-<area shape="rect" href="Checkpoint_8cpp.html" title=" " alt="" coords="2136,221,2357,262"/>
-<area shape="rect" href="NCColumnFile_8cpp.html" title=" " alt="" coords="2381,221,2621,262"/>
-<area shape="rect" href="NCPlotFile_8cpp.html" title=" " alt="" coords="2646,221,2861,262"/>
-<area shape="rect" href="Plotfile_8cpp.html" title=" " alt="" coords="2885,221,3078,262"/>
-<area shape="rect" href="writeJobInfo_8cpp.html" title=" " alt="" coords="3103,221,3329,262"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="3354,221,3529,262"/>
-<area shape="rect" href="Diffusion_8cpp.html" title=" " alt="" coords="3886,317,4085,373"/>
-<area shape="rect" href="TKEProduction_8H.html" title=" " alt="" coords="4109,317,4307,373"/>
+<area shape="rect" title=" " alt="" coords="3761,5,3967,61"/>
+<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="2033,117,2207,158"/>
+<area shape="rect" href="TimeIntegration__driver_8cpp.html" title=" " alt="" coords="3553,213,3759,269"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html" title=" " alt="" coords="3783,213,3990,269"/>
+<area shape="rect" href="EddyViscosity_8H.html" title=" " alt="" coords="3833,109,4031,165"/>
+<area shape="rect" href="StressTerm_8H.html" title=" " alt="" coords="4014,213,4213,269"/>
+<area shape="rect" href="TimeIntegration__fast_8cpp.html" title=" " alt="" coords="4106,109,4313,165"/>
+<area shape="rect" href="NCReadFile_8cpp.html" title=" " alt="" coords="1423,213,1617,269"/>
+<area shape="rect" href="ERF_8cpp.html" title=" " alt="" coords="1642,221,1817,262"/>
+<area shape="rect" href="ERF__ComputeTimestep_8cpp.html" title=" " alt="" coords="1841,221,2124,262"/>
+<area shape="rect" href="ERF__FillPatch_8cpp.html" title=" " alt="" coords="2148,221,2364,262"/>
+<area shape="rect" href="ERF__init1d_8cpp.html" title=" " alt="" coords="2389,221,2587,262"/>
+<area shape="rect" href="ERF__init__bcs_8cpp.html" title=" " alt="" coords="2611,213,2786,269"/>
+<area shape="rect" href="ERF__SumIQ_8cpp.html" title=" " alt="" coords="2811,221,3016,262"/>
+<area shape="rect" href="ERF__Tagging_8cpp.html" title=" " alt="" coords="3041,221,3253,262"/>
+<area shape="rect" href="ERF__TimeStepping_8cpp.html" title=" " alt="" coords="3277,221,3529,262"/>
+<area shape="rect" href="Checkpoint_8cpp.html" title=" " alt="" coords="5,221,227,262"/>
+<area shape="rect" href="NCColumnFile_8cpp.html" title=" " alt="" coords="251,221,491,262"/>
+<area shape="rect" href="NCPlotFile_8cpp.html" title=" " alt="" coords="515,221,730,262"/>
+<area shape="rect" href="Plotfile_8cpp.html" title=" " alt="" coords="754,221,947,262"/>
+<area shape="rect" href="writeJobInfo_8cpp.html" title=" " alt="" coords="972,221,1199,262"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="1223,221,1398,262"/>
+<area shape="rect" href="Diffusion_8cpp.html" title=" " alt="" coords="4014,317,4213,373"/>
 </map>
 </div>
 </div>
@@ -172,8 +169,8 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:afbe75ff62bd73fd1500b7ccc73cd06cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#afbe75ff62bd73fd1500b7ccc73cd06cf">erf_advance</a> (int level, MultiFab &amp;cons_old, MultiFab &amp;cons_new, MultiFab &amp;U_old, MultiFab &amp;V_old, MultiFab &amp;W_old, MultiFab &amp;U_new, MultiFab &amp;V_new, MultiFab &amp;W_new, MultiFab &amp;xmom_crse, MultiFab &amp;ymom_crse, MultiFab &amp;zmom_crse, MultiFab &amp;source, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;flux, const amrex::Geometry crse_geom, const amrex::Geometry fine_geom, const amrex::IntVect ref_ratio, const amrex::Real dt, const amrex::Real time, amrex::InterpFaceRegister *ifr, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Real *dptr_dens_hse, const amrex::Real *dptr_pres_hse, const amrex::Real *dptr_rayleigh_tau, const amrex::Real *dptr_rayleigh_ubar, const amrex::Real *dptr_rayleigh_vbar, const amrex::Real *dptr_rayleigh_thetabar)</td></tr>
 <tr class="separator:afbe75ff62bd73fd1500b7ccc73cd06cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af352e207371573cafbf44544ce45fd67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#af352e207371573cafbf44544ce45fd67">erf_rhs</a> (int level, Vector&lt; MultiFab &gt; &amp;S_rhs, const Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, MultiFab &amp;source, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;advflux, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;diffflux, const amrex::Geometry geom, const amrex::Real dt, amrex::InterpFaceRegister *ifr, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const bool lo_z_is_dirichlet, const bool hi_z_is_dirichlet, const amrex::Real *dptr_dens_hse, const amrex::Real *dptr_pres_hse, const amrex::Real *dptr_rayleigh_tau, const amrex::Real *dptr_rayleigh_ubar, const amrex::Real *dptr_rayleigh_vbar, const amrex::Real *dptr_rayleigh_thetabar)</td></tr>
-<tr class="separator:af352e207371573cafbf44544ce45fd67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7659f9efa28ad0865569a0d6358724f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#ae7659f9efa28ad0865569a0d6358724f">erf_rhs</a> (int level, Vector&lt; MultiFab &gt; &amp;S_rhs, const Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, MultiFab &amp;source, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;advflux, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;diffflux, const amrex::Geometry geom, const amrex::Real dt, amrex::InterpFaceRegister *ifr, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; domain_bcs_type_d, const amrex::Real *dptr_dens_hse, const amrex::Real *dptr_pres_hse, const amrex::Real *dptr_rayleigh_tau, const amrex::Real *dptr_rayleigh_ubar, const amrex::Real *dptr_rayleigh_vbar, const amrex::Real *dptr_rayleigh_thetabar)</td></tr>
+<tr class="separator:ae7659f9efa28ad0865569a0d6358724f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0359a8285a88a0608583ea5781989550"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#a0359a8285a88a0608583ea5781989550">erf_fast_rhs</a> (int level, Vector&lt; MultiFab &gt; &amp;S_rhs, const Vector&lt; MultiFab &gt; &amp;S_stage_data, const Vector&lt; MultiFab &gt; &amp;S_data, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;advflux, const amrex::Geometry geom, amrex::InterpFaceRegister *ifr, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Real *dptr_dens_hse, const amrex::Real *dptr_pres_hse)</td></tr>
 <tr class="separator:a0359a8285a88a0608583ea5781989550"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -458,7 +455,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;erf_rhs()&quot;</span>,<a class="code" href="TimeIntegration_8H.html#af352e207371573cafbf44544ce45fd67">erf_rhs</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;erf_rhs()&quot;</span>,<a class="code" href="TimeIntegration_8H.html#ae7659f9efa28ad0865569a0d6358724f">erf_rhs</a>);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> klo = geom.Domain().smallEnd()[2];</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> khi = geom.Domain().bigEnd()[2];</div>
@@ -705,28 +702,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="TimeIntegration_8H_a0359a8285a88a0608583ea5781989550_cgraph.png" border="0" usemap="#TimeIntegration_8H_a0359a8285a88a0608583ea5781989550_cgraph" alt=""/></div>
 <map name="TimeIntegration_8H_a0359a8285a88a0608583ea5781989550_cgraph" id="TimeIntegration_8H_a0359a8285a88a0608583ea5781989550_cgraph">
-<area shape="rect" title=" " alt="" coords="5,129,104,156"/>
-<area shape="rect" href="Advection_8cpp.html#a43527bb5620b941442840af9a8e838b8" title=" " alt="" coords="332,42,519,83"/>
-<area shape="rect" href="Interpolation_8cpp.html#a3046bc73f0e1b5c442705c4fee050e45" title=" " alt="" coords="601,209,796,236"/>
-<area shape="rect" href="TimeIntegration_8H.html#af352e207371573cafbf44544ce45fd67" title=" " alt="" coords="174,235,241,261"/>
-<area shape="rect" href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b" title=" " alt="" coords="152,285,263,312"/>
-<area shape="rect" href="Interpolation_8cpp.html#aa03b9d0e10988f7d17fbe512ccdcbcd5" title=" " alt="" coords="903,268,1024,295"/>
-<area shape="rect" href="Advection_8cpp.html#afedb447a062c9cd2bd5cb35b3b944b6b" title=" " alt="" coords="311,209,540,236"/>
-<area shape="rect" href="Advection_8cpp.html#a2b315be59eee24e59dd50508c58e1fe6" title=" " alt="" coords="311,260,539,287"/>
-<area shape="rect" href="Advection_8cpp.html#a7c76666e085ebea061146d32482ba0d9" title=" " alt="" coords="311,108,540,135"/>
-<area shape="rect" href="TKEProduction_8H.html#af9b497aae8e3eb42cc4640a16d6edb30" title=" " alt="" coords="338,428,513,455"/>
-<area shape="rect" href="EddyViscosity_8H.html#af2b2facc834d95961b105faca86e13a8" title=" " alt="" coords="325,479,525,505"/>
-<area shape="rect" href="Diffusion_8cpp.html#afc80a0bfd4d535adf2fcf7048b826ce2" title=" " alt="" coords="319,311,532,337"/>
-<area shape="rect" href="Diffusion_8cpp.html#aa19b680a6c355e45fea24d98c03244bf" title=" " alt="" coords="335,530,515,571"/>
-<area shape="rect" href="EOS_8H.html#a62f564807713abf368002e68c9b40e1e" title=" " alt="" coords="351,159,500,185"/>
-<area shape="rect" href="Interpolation_8cpp.html#a30da715cd63557a92abefcfc967a4fe8" title=" " alt="" coords="324,362,527,403"/>
-<area shape="rect" href="ExpansionRate_8H.html#a45b98bd1c9bf76e010e784862f2b0aba" title=" " alt="" coords="609,377,788,404"/>
-<area shape="rect" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e" title=" " alt="" coords="624,479,773,505"/>
-<area shape="rect" href="StressTerm_8H.html#a251d43d72e693cb73b820c1dbe94e5a2" title=" " alt="" coords="601,428,797,455"/>
-<area shape="rect" href="EddyViscosity_8H.html#a2bb03a231e1a9fceb7d2c133b3815745" title="Compute K_LES (i&#45;1/2, j+1/2, k) etc given K_LES (i, j, k) is known." alt="" coords="857,428,1069,455"/>
-<area shape="rect" href="SpatialStencils_8H.html#a208a71a46754cfb93fada68bb76bcce2" title=" " alt="" coords="622,276,775,303"/>
-<area shape="rect" href="Diffusion_8cpp.html#a5ec2d56ddbcd4aecfb90abd06e99cc00" title=" " alt="" coords="588,537,809,564"/>
-<area shape="rect" href="Interpolation_8cpp.html#a156aef3decb40de82fa31cef7199aaba" title=" " alt="" coords="610,327,787,353"/>
+<area shape="rect" title=" " alt="" coords="5,97,104,123"/>
+<area shape="rect" href="Advection_8cpp.html#a43527bb5620b941442840af9a8e838b8" title=" " alt="" coords="152,5,339,47"/>
+<area shape="rect" href="Interpolation_8cpp.html#a3046bc73f0e1b5c442705c4fee050e45" title=" " alt="" coords="387,42,581,69"/>
+<area shape="rect" href="TimeIntegration_8H.html#ae7659f9efa28ad0865569a0d6358724f" title=" " alt="" coords="212,122,279,149"/>
+<area shape="rect" href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b" title=" " alt="" coords="190,173,301,199"/>
+<area shape="rect" href="Interpolation_8cpp.html#aa03b9d0e10988f7d17fbe512ccdcbcd5" title=" " alt="" coords="629,42,751,69"/>
 </map>
 </div>
 <div class="dynheader">
@@ -743,8 +724,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="af352e207371573cafbf44544ce45fd67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af352e207371573cafbf44544ce45fd67">&#9670;&nbsp;</a></span>erf_rhs()</h2>
+<a id="ae7659f9efa28ad0865569a0d6358724f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7659f9efa28ad0865569a0d6358724f">&#9670;&nbsp;</a></span>erf_rhs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -836,14 +817,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>lo_z_is_dirichlet</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>hi_z_is_dirichlet</em>, </td>
+          <td class="paramtype">const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt;&#160;</td>
+          <td class="paramname"><em>domain_bcs_type_d</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -888,395 +863,13 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;erf_rhs()&quot;</span>,<a class="code" href="TimeIntegration__rhs_8cpp.html#af352e207371573cafbf44544ce45fd67">erf_rhs</a>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> l_spatial_order = solverChoice.<a class="code" href="structSolverChoice.html#a8e053ce39997ed619ac81aa4d5a1fd44">spatial_order</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">int</span> klo = geom.Domain().smallEnd()[2];</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> khi = geom.Domain().bigEnd()[2];</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dx    = geom.CellSizeArray();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dxInv = geom.InvCellSizeArray();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ba = S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].boxArray();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dm = S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].DistributionMap();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// *************************************************************************</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Set gravity as a vector</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">const</span>    Array&lt;Real,AMREX_SPACEDIM&gt; grav{0.0, 0.0, -solverChoice.<a class="code" href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">gravity</a>};</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real,AMREX_SPACEDIM&gt; grav_gpu{grav[0], grav[1], grav[2]};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// *************************************************************************</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Calculate cell-centered eddy viscosity</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Notes -- we fill all the data in ghost cells before calling this so</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//    that we can fill the eddy viscosity in the ghost regions and</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//    not have to call a boundary filler on this data itself</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// *************************************************************************</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    MultiFab eddyViscosity(S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].boxArray(),S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].DistributionMap(),1,1);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a> ||</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a>)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="EddyViscosity_8H.html#af2b2facc834d95961b105faca86e13a8">ComputeTurbulentViscosity</a>(<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">yvel</a>, <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">zvel</a>, S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>],</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                      eddyViscosity, geom, solverChoice,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                      lo_z_is_dirichlet, klo, hi_z_is_dirichlet, khi);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="EddyViscosity_8H.html#af2b2facc834d95961b105faca86e13a8">ComputeTurbulentViscosity</a>(<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">yvel</a>, <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">zvel</a>, S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>],</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                      eddyViscosity, geom, solverChoice,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                      lo_z_is_dirichlet, klo, hi_z_is_dirichlet, khi);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">const</span> iMultiFab *mlo_mf_x, *mhi_mf_x;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">const</span> iMultiFab *mlo_mf_y, *mhi_mf_y;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">const</span> iMultiFab *mlo_mf_z, *mhi_mf_z;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">bool</span> l_use_deardorff = (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    Real l_Delta         = std::pow(dx[0] * dx[1] * dx[2],1./3.);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    Real l_C_e           = solverChoice.<a class="code" href="structSolverChoice.html#ac28e6ad4be78bfb7b25c9cf88d43724a">Ce</a>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (level &gt; 0)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        mlo_mf_x = &amp;(ifr-&gt;mask(Orientation(0,Orientation::low)));</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        mhi_mf_x = &amp;(ifr-&gt;mask(Orientation(0,Orientation::high)));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        mlo_mf_y = &amp;(ifr-&gt;mask(Orientation(1,Orientation::low)));</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        mhi_mf_y = &amp;(ifr-&gt;mask(Orientation(1,Orientation::high)));</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        mlo_mf_z = &amp;(ifr-&gt;mask(Orientation(2,Orientation::low)));</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        mhi_mf_z = &amp;(ifr-&gt;mask(Orientation(2,Orientation::high)));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// *************************************************************************</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// Define updates and fluxes in the current RK stage</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// *************************************************************************</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>],TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">const</span> Box&amp; tbx = mfi.nodaltilebox(0);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">const</span> Box&amp; tby = mfi.nodaltilebox(1);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">const</span> Box&amp; tbz = mfi.nodaltilebox(2);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        Box <span class="keyword">const</span>&amp; valid_bx = mfi.validbox();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">int</span> vlo_x = valid_bx.smallEnd(0);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">int</span> vhi_x = valid_bx.bigEnd(0);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">int</span> vlo_y = valid_bx.smallEnd(1);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">int</span> vhi_y = valid_bx.bigEnd(1);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">int</span> vlo_z = valid_bx.smallEnd(2);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">int</span> vhi_z = valid_bx.bigEnd(2);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">auto</span> mlo_x = (level &gt; 0) ? mlo_mf_x-&gt;const_array(mfi) : Array4&lt;const int&gt;{};</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keyword">auto</span> mhi_x = (level &gt; 0) ? mhi_mf_x-&gt;const_array(mfi) : Array4&lt;const int&gt;{};</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keyword">auto</span> mlo_y = (level &gt; 0) ? mlo_mf_y-&gt;const_array(mfi) : Array4&lt;const int&gt;{};</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">auto</span> mhi_y = (level &gt; 0) ? mhi_mf_y-&gt;const_array(mfi) : Array4&lt;const int&gt;{};</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keyword">auto</span> mlo_z = (level &gt; 0) ? mlo_mf_z-&gt;const_array(mfi) : Array4&lt;const int&gt;{};</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">auto</span> mhi_z = (level &gt; 0) ? mhi_mf_z-&gt;const_array(mfi) : Array4&lt;const int&gt;{};</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_prim  = S_prim.array(mfi);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt; &amp; cell_rhs   = S_rhs[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt; &amp; source_fab = source.array(mfi);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a> = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">xvel</a>.array(mfi);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a> = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">yvel</a>.array(mfi);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a> = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">zvel</a>.array(mfi);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a> = S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a>].array(mfi);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a> = S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a>].array(mfi);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a> = S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567abde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a>].array(mfi);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; rho_u_rhs = S_rhs[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a>].array(mfi);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; rho_v_rhs = S_rhs[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a>].array(mfi);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; rho_w_rhs = S_rhs[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567abde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a>].array(mfi);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; xflux_rhs = S_rhs[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a21245d0eca9226a6441feac35602c9be">IntVar::xflux</a>].array(mfi);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; yflux_rhs = S_rhs[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567af204c2311e68c84ad19b3759183bdd09">IntVar::yflux</a>].array(mfi);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; zflux_rhs = S_rhs[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a9b94534904513cb3b68ef8b0c7bfed51">IntVar::zflux</a>].array(mfi);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="comment">// These are temporaries we use to add to the S_rhs for the fluxes</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; advflux_x = advflux[0].array(mfi);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; advflux_y = advflux[1].array(mfi);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; advflux_z = advflux[2].array(mfi);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="comment">// These are temporaries we use to add to the S_rhs for the fluxes</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; diffflux_x = diffflux[0].array(mfi);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; diffflux_y = diffflux[1].array(mfi);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; diffflux_z = diffflux[2].array(mfi);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; K_LES = eddyViscosity.array(mfi);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="comment">// **************************************************************************</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="comment">// Define updates in the RHS of continuity, temperature, and scalar equations</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="comment">// **************************************************************************</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        amrex::ParallelFor(bx, S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].nComp(),</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;       [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            cell_rhs(i, j, k, n) = 0.0; <span class="comment">// Initialize the updated state eqn term to zero.</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="comment">// Add advection terms.</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">if</span> ((n != <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) || l_use_deardorff)</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                cell_rhs(i, j, k, n) += -<a class="code" href="Advection_8cpp.html#a43527bb5620b941442840af9a8e838b8">AdvectionContributionForState</a>(i, j, k, rho_u, rho_v, rho_w, cell_prim, n,</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                         advflux_x, advflux_y, advflux_z, dxInv, l_spatial_order);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="comment">// Add diffusive terms.</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                cell_rhs(i, j, k, n) += <a class="code" href="Diffusion_8cpp.html#aa19b680a6c355e45fea24d98c03244bf">DiffusionContributionForState</a>(i, j, k, cell_data, cell_prim, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>,</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                        diffflux_x, diffflux_y, diffflux_z, dxInv, K_LES, solverChoice);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">if</span> (n == <a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>)</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                cell_rhs(i, j, k, n) += <a class="code" href="Diffusion_8cpp.html#aa19b680a6c355e45fea24d98c03244bf">DiffusionContributionForState</a>(i, j, k, cell_data, cell_prim, <a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>,</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                        diffflux_x, diffflux_y, diffflux_z, dxInv, K_LES, solverChoice);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">if</span> (l_use_deardorff &amp;&amp; n == <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                cell_rhs(i, j, k, n) += <a class="code" href="Diffusion_8cpp.html#aa19b680a6c355e45fea24d98c03244bf">DiffusionContributionForState</a>(i, j, k, cell_data, cell_prim, <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>,</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                        diffflux_x, diffflux_y, diffflux_z, dxInv, K_LES, solverChoice);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="comment">// Add Rayleigh damping</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a> &amp;&amp; n == <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                Real <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> = cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                cell_rhs(i, j, k, n) -= dptr_rayleigh_tau[k] * (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> - dptr_rayleigh_thetabar[k]) * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keywordflow">if</span> (l_use_deardorff &amp;&amp; n == <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>)</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordtype">bool</span> dirichlet_at_lo_k = ( (k == klo) &amp;&amp; lo_z_is_dirichlet );</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                <span class="keywordtype">bool</span> dirichlet_at_hi_k = ( (k == khi) &amp;&amp; hi_z_is_dirichlet );</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                cell_rhs(i, j, k, n) += <a class="code" href="TKEProduction_8H.html#af9b497aae8e3eb42cc4640a16d6edb30">ComputeTKEProduction</a>(i,j,k,u,v,w,dxInv,K_LES,solverChoice,</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                                                             dirichlet_at_lo_k, dirichlet_at_hi_k)</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                     +  cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * l_C_e *</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                    std::pow(cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a>),1.5) / l_Delta;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            }</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="comment">// Add source terms. TODO: Put this under an if condition when we implement source term</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            cell_rhs(i, j, k, n) += source_fab(i, j, k, n);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        );</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">// Compute the RHS for the flux terms from this stage -- we do it this way so we don&#39;t double count</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">//         fluxes at fine-fine interfaces</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        amrex::ParallelFor(tbx, S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].nComp(),</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;             xflux_rhs(i,j,k,n) = advflux_x(i,j,k,n) + diffflux_x(i,j,k,n);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        });</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        amrex::ParallelFor(tby, S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].nComp(),</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;             yflux_rhs(i,j,k,n) = advflux_y(i,j,k,n) + diffflux_y(i,j,k,n);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        });</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        amrex::ParallelFor(tbz, S_data[<a class="code" href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].nComp(),</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;             zflux_rhs(i,j,k,n) = advflux_z(i,j,k,n) + diffflux_z(i,j,k,n);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        });</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="comment">// *********************************************************************</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="comment">// Define updates in the RHS of {x, y, z}-momentum equations</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">// *********************************************************************</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        amrex::ParallelFor(tbx, tby, tbz,</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) { <span class="comment">// x-momentum equation</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            rho_u_rhs(i, j, k) = 0.0; <span class="comment">// Initialize the updated x-mom eqn term to zero</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <span class="keywordtype">bool</span> on_coarse_fine_boundary = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <span class="keywordflow">if</span> (level &gt; 0)</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;               on_coarse_fine_boundary =</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                 ( (i == vlo_x &amp;&amp; mlo_x(i,j,k)) || (i == vhi_x+1 &amp;&amp; mhi_x(i,j,k)) );</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            }</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordflow">if</span> (!on_coarse_fine_boundary)</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            {</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="comment">// Add advective terms</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            rho_u_rhs(i, j, k) += -<a class="code" href="Advection_8cpp.html#afedb447a062c9cd2bd5cb35b3b944b6b">AdvectionContributionForXMom</a>(i, j, k, rho_u, rho_v, rho_w, u,</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                                                dxInv, l_spatial_order);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="comment">// Add diffusive terms</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordtype">bool</span> dirichlet_at_lo_k = ( (k == klo) &amp;&amp; lo_z_is_dirichlet);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordtype">bool</span> dirichlet_at_hi_k = ( (k == khi) &amp;&amp; hi_z_is_dirichlet);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            rho_u_rhs(i, j, k) += <a class="code" href="Diffusion_8cpp.html#afc80a0bfd4d535adf2fcf7048b826ce2">DiffusionContributionForMom</a>(i, j, k, u, v, w, cell_data,</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                                                              <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>, dxInv, K_LES, solverChoice,</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                                              dirichlet_at_lo_k, dirichlet_at_hi_k);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="comment">// Add pressure gradient</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            rho_u_rhs(i, j, k) += (-dxInv[0]) *</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                (<a class="code" href="EOS_8H.html#a62f564807713abf368002e68c9b40e1e">getPprimegivenRTh</a>(cell_data(i    , j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),dptr_pres_hse[k]) -</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                 <a class="code" href="EOS_8H.html#a62f564807713abf368002e68c9b40e1e">getPprimegivenRTh</a>(cell_data(i - 1, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),dptr_pres_hse[k]));</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="comment">// Add driving pressure gradient</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f">abl_driver_type</a> == <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba527d74300afe17c5171b0e5e015918e6">ABLDriverType::PressureGradient</a>)</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                rho_u_rhs(i, j, k) += -solverChoice.<a class="code" href="structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb">abl_pressure_grad</a>[0];</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                Real rho_v_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j+1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i-1,j+1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i-1,j,k));</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                Real rho_w_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k+1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j-1,k+1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j-1,k));</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                rho_u_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> *</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                        (rho_v_loc * solverChoice.<a class="code" href="structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf">sinphi</a> - rho_w_loc * solverChoice.<a class="code" href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">cosphi</a>);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="comment">// Add geostrophic forcing</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f">abl_driver_type</a> == <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6c2c47a19d5c773bae606eb243104880">ABLDriverType::GeostrophicWind</a>)</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                rho_u_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69">abl_geo_forcing</a>[0];</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="comment">// Add Rayleigh damping</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                Real uu = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                rho_u_rhs(i, j, k) -= dptr_rayleigh_tau[k] * (uu - dptr_rayleigh_ubar[k]) * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            }</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            } <span class="comment">// not on coarse-fine boundary</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        },</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) { <span class="comment">// y-momentum equation</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            rho_v_rhs(i, j, k) = 0.0; <span class="comment">// Initialize the updated y-mom eqn term to zero</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <span class="keywordtype">bool</span> on_coarse_fine_boundary = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keywordflow">if</span> (level &gt; 0)</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;               on_coarse_fine_boundary =</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                 ( (j == vlo_y &amp;&amp; mlo_y(i,j,k)) || (j == vhi_y+1 &amp;&amp; mhi_y(i,j,k)) );</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            }</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordflow">if</span> (!on_coarse_fine_boundary)</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="comment">// Add advective terms</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            rho_v_rhs(i, j, k) += -<a class="code" href="Advection_8cpp.html#a2b315be59eee24e59dd50508c58e1fe6">AdvectionContributionForYMom</a>(i, j, k, rho_u, rho_v, rho_w, v,</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                                                                dxInv, l_spatial_order);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            <span class="comment">// Add diffusive terms</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="keywordtype">bool</span> dirichlet_at_lo_k = ( (k == klo) &amp;&amp; lo_z_is_dirichlet);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="keywordtype">bool</span> dirichlet_at_hi_k = ( (k == khi) &amp;&amp; hi_z_is_dirichlet);</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            rho_v_rhs(i, j, k) += <a class="code" href="Diffusion_8cpp.html#afc80a0bfd4d535adf2fcf7048b826ce2">DiffusionContributionForMom</a>(i, j, k, u, v, w, cell_data,</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                                                              <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a>, dxInv, K_LES, solverChoice,</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                                                              dirichlet_at_lo_k, dirichlet_at_hi_k);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="comment">// Add pressure gradient</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            rho_v_rhs(i, j, k) += (-dxInv[1]) *</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                (<a class="code" href="EOS_8H.html#a62f564807713abf368002e68c9b40e1e">getPprimegivenRTh</a>(cell_data(i, j    , k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),dptr_pres_hse[k]) -</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                 <a class="code" href="EOS_8H.html#a62f564807713abf368002e68c9b40e1e">getPprimegivenRTh</a>(cell_data(i, j - 1, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),dptr_pres_hse[k]));</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <span class="comment">// Add driving pressure gradient</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f">abl_driver_type</a> == <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba527d74300afe17c5171b0e5e015918e6">ABLDriverType::PressureGradient</a>)</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                rho_v_rhs(i, j, k) += -solverChoice.<a class="code" href="structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb">abl_pressure_grad</a>[1];</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                Real rho_u_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j-1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j-1,k));</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                rho_v_rhs(i, j, k) += -solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf">sinphi</a>;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            }</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="comment">// Add geostrophic forcing</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f">abl_driver_type</a> == <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6c2c47a19d5c773bae606eb243104880">ABLDriverType::GeostrophicWind</a>)</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                rho_v_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69">abl_geo_forcing</a>[1];</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <span class="comment">// Add Rayleigh damping</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                Real vv = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j,k) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                rho_v_rhs(i, j, k) -= dptr_rayleigh_tau[k] * (vv - dptr_rayleigh_vbar[k]) * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            }</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            } <span class="comment">// not on coarse-fine boundary</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        },</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) { <span class="comment">// z-momentum equation</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            rho_w_rhs(i, j, k) = 0.0; <span class="comment">// Initialize the updated z-mom eqn term to zero</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="keywordtype">bool</span> on_coarse_fine_boundary = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            <span class="keywordflow">if</span> (level &gt; 0)</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            {</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;               on_coarse_fine_boundary =</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                 ( (k == vlo_z &amp;&amp; mlo_z(i,j,k)) || (k == vhi_z+1 &amp;&amp; mhi_z(i,j,k)) );</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            }</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            <span class="keywordflow">if</span> (!on_coarse_fine_boundary)</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            {</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <span class="comment">// Add advective terms</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            rho_w_rhs(i, j, k) += -<a class="code" href="Advection_8cpp.html#a7c76666e085ebea061146d32482ba0d9">AdvectionContributionForZMom</a>(i, j, k, rho_u, rho_v, rho_w, w,</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                                                                dxInv, l_spatial_order);</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <span class="comment">// Add diffusive terms</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            rho_w_rhs(i, j, k) += <a class="code" href="Diffusion_8cpp.html#afc80a0bfd4d535adf2fcf7048b826ce2">DiffusionContributionForMom</a>(i, j, k, u, v, w, cell_data,</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                                                              <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a>, dxInv, K_LES, solverChoice,</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                                                              <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            <span class="comment">// Add pressure gradient</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            rho_w_rhs(i, j, k) += (-dxInv[2]) *</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                (<a class="code" href="EOS_8H.html#a62f564807713abf368002e68c9b40e1e">getPprimegivenRTh</a>(cell_data(i, j, k    , <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),dptr_pres_hse[k  ]) -</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                 <a class="code" href="EOS_8H.html#a62f564807713abf368002e68c9b40e1e">getPprimegivenRTh</a>(cell_data(i, j, k - 1, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),dptr_pres_hse[k-1]));</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            <span class="comment">// Add gravity term</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5">use_gravity</a>)</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            {</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                <span class="keywordtype">int</span> local_spatial_order = 2;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                rho_w_rhs(i, j, k) += grav_gpu[2] *</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                     <a class="code" href="Interpolation_8cpp.html#a30da715cd63557a92abefcfc967a4fe8">InterpolateDensityPertFromCellToFace</a>(i, j, k, cell_data, <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k),</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                                                          <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a>, local_spatial_order, dptr_dens_hse);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            }</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <span class="comment">// Add driving pressure gradient</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f">abl_driver_type</a> == <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba527d74300afe17c5171b0e5e015918e6">ABLDriverType::PressureGradient</a>)</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                rho_w_rhs(i, j, k) += -solverChoice.<a class="code" href="structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb">abl_pressure_grad</a>[2];</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            {</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                Real rho_u_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k-1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k-1));</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                rho_w_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">cosphi</a>;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            }</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="comment">// Add geostrophic forcing</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f">abl_driver_type</a> == <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6c2c47a19d5c773bae606eb243104880">ABLDriverType::GeostrophicWind</a>)</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                rho_w_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69">abl_geo_forcing</a>[2];</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            <span class="comment">// Add Rayleigh damping</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            {</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                rho_w_rhs(i, j, k) -= dptr_rayleigh_tau[k] * <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            }</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            } <span class="comment">// not on coarse-fine boundary</span></div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        });</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    }</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;}</div>
-</div><!-- fragment -->
+
 <p class="reference">Referenced by <a class="el" href="classERF.html#a959da838e9554ce4a5b217289da415e9">ERF::erf_advance()</a>, and <a class="el" href="TimeIntegration__fast_8cpp.html#a0359a8285a88a0608583ea5781989550">erf_fast_rhs()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="TimeIntegration_8H_af352e207371573cafbf44544ce45fd67_cgraph.png" border="0" usemap="#TimeIntegration_8H_af352e207371573cafbf44544ce45fd67_cgraph" alt=""/></div>
-<map name="TimeIntegration_8H_af352e207371573cafbf44544ce45fd67_cgraph" id="TimeIntegration_8H_af352e207371573cafbf44544ce45fd67_cgraph">
-<area shape="rect" title=" " alt="" coords="5,253,72,280"/>
-<area shape="rect" href="Advection_8cpp.html#a43527bb5620b941442840af9a8e838b8" title=" " alt="" coords="141,107,328,149"/>
-<area shape="rect" href="Advection_8cpp.html#afedb447a062c9cd2bd5cb35b3b944b6b" title=" " alt="" coords="120,173,349,200"/>
-<area shape="rect" href="Advection_8cpp.html#a2b315be59eee24e59dd50508c58e1fe6" title=" " alt="" coords="121,5,349,32"/>
-<area shape="rect" href="Advection_8cpp.html#a7c76666e085ebea061146d32482ba0d9" title=" " alt="" coords="120,56,349,83"/>
-<area shape="rect" href="TKEProduction_8H.html#af9b497aae8e3eb42cc4640a16d6edb30" title=" " alt="" coords="147,392,322,419"/>
-<area shape="rect" href="EddyViscosity_8H.html#af2b2facc834d95961b105faca86e13a8" title=" " alt="" coords="135,341,335,368"/>
-<area shape="rect" href="Diffusion_8cpp.html#afc80a0bfd4d535adf2fcf7048b826ce2" title=" " alt="" coords="128,224,341,251"/>
-<area shape="rect" href="Diffusion_8cpp.html#aa19b680a6c355e45fea24d98c03244bf" title=" " alt="" coords="145,494,325,535"/>
-<area shape="rect" href="EOS_8H.html#a62f564807713abf368002e68c9b40e1e" title=" " alt="" coords="160,443,309,469"/>
-<area shape="rect" href="Interpolation_8cpp.html#a30da715cd63557a92abefcfc967a4fe8" title=" " alt="" coords="133,275,336,317"/>
-<area shape="rect" href="Interpolation_8cpp.html#a3046bc73f0e1b5c442705c4fee050e45" title=" " alt="" coords="411,144,605,171"/>
-<area shape="rect" href="Interpolation_8cpp.html#aa03b9d0e10988f7d17fbe512ccdcbcd5" title=" " alt="" coords="712,209,833,236"/>
-<area shape="rect" href="ExpansionRate_8H.html#a45b98bd1c9bf76e010e784862f2b0aba" title=" " alt="" coords="419,392,597,419"/>
-<area shape="rect" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e" title=" " alt="" coords="433,341,583,368"/>
-<area shape="rect" href="StressTerm_8H.html#a251d43d72e693cb73b820c1dbe94e5a2" title=" " alt="" coords="410,443,606,469"/>
-<area shape="rect" href="EddyViscosity_8H.html#a2bb03a231e1a9fceb7d2c133b3815745" title="Compute K_LES (i&#45;1/2, j+1/2, k) etc given K_LES (i, j, k) is known." alt="" coords="667,443,879,469"/>
-<area shape="rect" href="SpatialStencils_8H.html#a208a71a46754cfb93fada68bb76bcce2" title=" " alt="" coords="431,224,585,251"/>
-<area shape="rect" href="Diffusion_8cpp.html#a5ec2d56ddbcd4aecfb90abd06e99cc00" title=" " alt="" coords="397,501,619,528"/>
-<area shape="rect" href="Interpolation_8cpp.html#a156aef3decb40de82fa31cef7199aaba" title=" " alt="" coords="419,279,597,305"/>
-</map>
-</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="TimeIntegration_8H_af352e207371573cafbf44544ce45fd67_icgraph.png" border="0" usemap="#TimeIntegration_8H_af352e207371573cafbf44544ce45fd67_icgraph" alt=""/></div>
-<map name="TimeIntegration_8H_af352e207371573cafbf44544ce45fd67_icgraph" id="TimeIntegration_8H_af352e207371573cafbf44544ce45fd67_icgraph">
+<div class="center"><img src="TimeIntegration_8H_ae7659f9efa28ad0865569a0d6358724f_icgraph.png" border="0" usemap="#TimeIntegration_8H_ae7659f9efa28ad0865569a0d6358724f_icgraph" alt=""/></div>
+<map name="TimeIntegration_8H_ae7659f9efa28ad0865569a0d6358724f_icgraph" id="TimeIntegration_8H_ae7659f9efa28ad0865569a0d6358724f_icgraph">
 <area shape="rect" title=" " alt="" coords="655,5,721,32"/>
 <area shape="rect" href="classERF.html#a959da838e9554ce4a5b217289da415e9" title=" " alt="" coords="325,5,460,32"/>
 <area shape="rect" href="TimeIntegration__fast_8cpp.html#a0359a8285a88a0608583ea5781989550" title=" " alt="" coords="508,31,607,57"/>
@@ -1290,67 +883,25 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
-<div class="ttc" id="aTimeIntegration__rhs_8cpp_html_af352e207371573cafbf44544ce45fd67"><div class="ttname"><a href="TimeIntegration__rhs_8cpp.html#af352e207371573cafbf44544ce45fd67">erf_rhs</a></div><div class="ttdeci">void erf_rhs(int level, Vector&lt; MultiFab &gt; &amp;S_rhs, const Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, MultiFab &amp;source, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;advflux, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;diffflux, const amrex::Geometry geom, const amrex::Real dt, amrex::InterpFaceRegister *ifr, const SolverChoice &amp;solverChoice, const bool lo_z_is_dirichlet, const bool hi_z_is_dirichlet, const amrex::Real *dptr_dens_hse, const amrex::Real *dptr_pres_hse, const amrex::Real *dptr_rayleigh_tau, const amrex::Real *dptr_rayleigh_ubar, const amrex::Real *dptr_rayleigh_vbar, const amrex::Real *dptr_rayleigh_thetabar)</div><div class="ttdef"><b>Definition:</b> TimeIntegration_rhs.cpp:14</div></div>
-<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567abde409cfd9edf4a3581fe26dfa9613cd"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567abde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:22</div></div>
+<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567abde409cfd9edf4a3581fe26dfa9613cd"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567abde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:21</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a60be2e6257954ef746019c916741cb2c"><div class="ttname"><a href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a></div><div class="ttdeci">#define p_0</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
-<div class="ttc" id="aAdvection_8cpp_html_afedb447a062c9cd2bd5cb35b3b944b6b"><div class="ttname"><a href="Advection_8cpp.html#afedb447a062c9cd2bd5cb35b3b944b6b">AdvectionContributionForXMom</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real AdvectionContributionForXMom(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;rho_w, const Array4&lt; const Real &gt; &amp;u, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Advection.cpp:7</div></div>
+<div class="ttc" id="aTimeIntegration_8H_html_ae7659f9efa28ad0865569a0d6358724f"><div class="ttname"><a href="TimeIntegration_8H.html#ae7659f9efa28ad0865569a0d6358724f">erf_rhs</a></div><div class="ttdeci">void erf_rhs(int level, Vector&lt; MultiFab &gt; &amp;S_rhs, const Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, MultiFab &amp;source, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;advflux, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;diffflux, const amrex::Geometry geom, const amrex::Real dt, amrex::InterpFaceRegister *ifr, const SolverChoice &amp;solverChoice, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; domain_bcs_type_d, const amrex::Real *dptr_dens_hse, const amrex::Real *dptr_pres_hse, const amrex::Real *dptr_rayleigh_tau, const amrex::Real *dptr_rayleigh_ubar, const amrex::Real *dptr_rayleigh_vbar, const amrex::Real *dptr_rayleigh_thetabar)</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a08d0e6a452268bed60e81a08398c088a"><div class="ttname"><a href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a></div><div class="ttdeci">#define R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
-<div class="ttc" id="astructSolverChoice_html_a27ced9266434a4680ef175e7b2ba8f01"><div class="ttname"><a href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">SolverChoice::use_rayleigh_damping</a></div><div class="ttdeci">bool use_rayleigh_damping</div><div class="ttdef"><b>Definition:</b> DataStruct.H:249</div></div>
-<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567af204c2311e68c84ad19b3759183bdd09"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567af204c2311e68c84ad19b3759183bdd09">IntVar::yflux</a></div><div class="ttdeci">@ yflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:24</div></div>
-<div class="ttc" id="aDataStruct_8H_html_aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a></div><div class="ttdeci">@ z</div></div>
-<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567a9b94534904513cb3b68ef8b0c7bfed51"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a9b94534904513cb3b68ef8b0c7bfed51">IntVar::zflux</a></div><div class="ttdeci">@ zflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:25</div></div>
-<div class="ttc" id="astructSolverChoice_html_a53966e639b0307b7420fd6abe8412fa0"><div class="ttname"><a href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">SolverChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:266</div></div>
-<div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">AdvectedQuantity::theta</a></div><div class="ttdeci">@ theta</div></div>
-<div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">AdvectedQuantity::v</a></div><div class="ttdeci">@ v</div></div>
-<div class="ttc" id="aDataStruct_8H_html_a90da675b718151491fd0c934a0ad3ceba527d74300afe17c5171b0e5e015918e6"><div class="ttname"><a href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba527d74300afe17c5171b0e5e015918e6">ABLDriverType::PressureGradient</a></div><div class="ttdeci">@ PressureGradient</div></div>
-<div class="ttc" id="aAdvection_8cpp_html_a2b315be59eee24e59dd50508c58e1fe6"><div class="ttname"><a href="Advection_8cpp.html#a2b315be59eee24e59dd50508c58e1fe6">AdvectionContributionForYMom</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real AdvectionContributionForYMom(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;rho_w, const Array4&lt; const Real &gt; &amp;v, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Advection.cpp:50</div></div>
-<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567aa06e9caed4d0b72c322646815c1a96ce"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:21</div></div>
+<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567af204c2311e68c84ad19b3759183bdd09"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567af204c2311e68c84ad19b3759183bdd09">IntVar::yflux</a></div><div class="ttdeci">@ yflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:23</div></div>
+<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567a9b94534904513cb3b68ef8b0c7bfed51"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a9b94534904513cb3b68ef8b0c7bfed51">IntVar::zflux</a></div><div class="ttdeci">@ zflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:24</div></div>
+<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567aa06e9caed4d0b72c322646815c1a96ce"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:20</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
-<div class="ttc" id="aDataStruct_8H_html_aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a7f928aa35dcd2f4e48fdf6d6a3166f1a"><div class="ttname"><a href="ERF__Constants_8H.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a">c_p</a></div><div class="ttdeci">#define c_p</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:18</div></div>
-<div class="ttc" id="aTimeIntegration_8H_html_af352e207371573cafbf44544ce45fd67"><div class="ttname"><a href="TimeIntegration_8H.html#af352e207371573cafbf44544ce45fd67">erf_rhs</a></div><div class="ttdeci">void erf_rhs(int level, Vector&lt; MultiFab &gt; &amp;S_rhs, const Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, MultiFab &amp;source, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;advflux, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;diffflux, const amrex::Geometry geom, const amrex::Real dt, amrex::InterpFaceRegister *ifr, const SolverChoice &amp;solverChoice, const bool lo_z_is_dirichlet, const bool hi_z_is_dirichlet, const amrex::Real *dptr_dens_hse, const amrex::Real *dptr_pres_hse, const amrex::Real *dptr_rayleigh_tau, const amrex::Real *dptr_rayleigh_ubar, const amrex::Real *dptr_rayleigh_vbar, const amrex::Real *dptr_rayleigh_thetabar)</div><div class="ttdef"><b>Definition:</b> TimeIntegration_rhs.cpp:14</div></div>
-<div class="ttc" id="astructSolverChoice_html_a69e2f0b874cba8faae57987ead4e3ebb"><div class="ttname"><a href="structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb">SolverChoice::abl_pressure_grad</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; abl_pressure_grad</div><div class="ttdef"><b>Definition:</b> DataStruct.H:294</div></div>
 <div class="ttc" id="aInterpolation_8cpp_html_a3046bc73f0e1b5c442705c4fee050e45"><div class="ttname"><a href="Interpolation_8cpp.html#a3046bc73f0e1b5c442705c4fee050e45">InterpolateFromCellOrFace</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real InterpolateFromCellOrFace(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;qty, const int &amp;qty_index, const Real &amp;upw, const Coord &amp;coordDir, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Interpolation.cpp:49</div></div>
-<div class="ttc" id="aInterpolation_8cpp_html_a30da715cd63557a92abefcfc967a4fe8"><div class="ttname"><a href="Interpolation_8cpp.html#a30da715cd63557a92abefcfc967a4fe8">InterpolateDensityPertFromCellToFace</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real InterpolateDensityPertFromCellToFace(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;cons_in, const Real &amp;upw, const Coord &amp;coordDir, const int &amp;spatial_order, const amrex::Real *dptr_hse)</div><div class="ttdef"><b>Definition:</b> Interpolation.cpp:33</div></div>
-<div class="ttc" id="aEddyViscosity_8H_html_af2b2facc834d95961b105faca86e13a8"><div class="ttname"><a href="EddyViscosity_8H.html#af2b2facc834d95961b105faca86e13a8">ComputeTurbulentViscosity</a></div><div class="ttdeci">void ComputeTurbulentViscosity(const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, const MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const SolverChoice &amp;solverChoice, const bool &amp;dirichlet_at_lo_k, const int &amp;klo, const bool &amp;dirichlet_at_hi_k, const int &amp;khi)</div><div class="ttdef"><b>Definition:</b> EddyViscosity.H:14</div></div>
-<div class="ttc" id="astructSolverChoice_html_a5147634b7c1414a7694c59c1b4a88d69"><div class="ttname"><a href="structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69">SolverChoice::abl_geo_forcing</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; abl_geo_forcing</div><div class="ttdef"><b>Definition:</b> DataStruct.H:295</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ae8ca591ba2325c0ad8b464de45f4c6b3"><div class="ttname"><a href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a></div><div class="ttdeci">#define Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
-<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567a21245d0eca9226a6441feac35602c9be"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a21245d0eca9226a6441feac35602c9be">IntVar::xflux</a></div><div class="ttdeci">@ xflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:23</div></div>
-<div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">AdvectedQuantity::w</a></div><div class="ttdeci">@ w</div></div>
-<div class="ttc" id="astructSolverChoice_html_ac28e6ad4be78bfb7b25c9cf88d43724a"><div class="ttname"><a href="structSolverChoice.html#ac28e6ad4be78bfb7b25c9cf88d43724a">SolverChoice::Ce</a></div><div class="ttdeci">amrex::Real Ce</div><div class="ttdef"><b>Definition:</b> DataStruct.H:279</div></div>
-<div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a></div><div class="ttdeci">@ Deardorff</div></div>
-<div class="ttc" id="astructSolverChoice_html_a3ab48411073a3c1f75435292d7b407e5"><div class="ttname"><a href="structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5">SolverChoice::use_gravity</a></div><div class="ttdeci">bool use_gravity</div><div class="ttdef"><b>Definition:</b> DataStruct.H:247</div></div>
+<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567a21245d0eca9226a6441feac35602c9be"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a21245d0eca9226a6441feac35602c9be">IntVar::xflux</a></div><div class="ttdeci">@ xflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:22</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
-<div class="ttc" id="aDiffusion_8cpp_html_afc80a0bfd4d535adf2fcf7048b826ce2"><div class="ttname"><a href="Diffusion_8cpp.html#afc80a0bfd4d535adf2fcf7048b826ce2">DiffusionContributionForMom</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real DiffusionContributionForMom(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, const Array4&lt; const Real &gt; &amp;cons, const enum MomentumEqn &amp;momentumEqn, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; Real &gt; &amp;K_LES, const SolverChoice &amp;solverChoice, const bool dirichlet_at_lo_k, const bool dirichlet_at_hi_k)</div><div class="ttdef"><b>Definition:</b> Diffusion.cpp:11</div></div>
-<div class="ttc" id="aDataStruct_8H_html_a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3"><div class="ttname"><a href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">AdvectingQuantity::rho_u</a></div><div class="ttdeci">@ rho_u</div></div>
-<div class="ttc" id="aTKEProduction_8H_html_af9b497aae8e3eb42cc4640a16d6edb30"><div class="ttname"><a href="TKEProduction_8H.html#af9b497aae8e3eb42cc4640a16d6edb30">ComputeTKEProduction</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeTKEProduction(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; Real &gt; &amp;K_LES, const SolverChoice &amp;solverChoice, bool dirichlet_lo, bool dirichlet_hi)</div><div class="ttdef"><b>Definition:</b> TKEProduction.H:9</div></div>
-<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:19</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:11</div></div>
-<div class="ttc" id="aDataStruct_8H_html_a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f"><div class="ttname"><a href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">AdvectingQuantity::rho_w</a></div><div class="ttdeci">@ rho_w</div></div>
-<div class="ttc" id="astructSolverChoice_html_a6426e150ba9c1ba2e14151228bf6ffaf"><div class="ttname"><a href="structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf">SolverChoice::sinphi</a></div><div class="ttdeci">amrex::Real sinphi</div><div class="ttdef"><b>Definition:</b> DataStruct.H:288</div></div>
-<div class="ttc" id="anamespaceVars_html_a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:41</div></div>
-<div class="ttc" id="aDataStruct_8H_html_a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424"><div class="ttname"><a href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">AdvectingQuantity::rho_v</a></div><div class="ttdeci">@ rho_v</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
+<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:18</div></div>
 <div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> DataStruct.H:251</div></div>
-<div class="ttc" id="astructSolverChoice_html_abe7f2d933204e7a6127469a006240f8f"><div class="ttname"><a href="structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f">SolverChoice::abl_driver_type</a></div><div class="ttdeci">ABLDriverType abl_driver_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:293</div></div>
-<div class="ttc" id="aDataStruct_8H_html_a90da675b718151491fd0c934a0ad3ceba6c2c47a19d5c773bae606eb243104880"><div class="ttname"><a href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6c2c47a19d5c773bae606eb243104880">ABLDriverType::GeostrophicWind</a></div><div class="ttdeci">@ GeostrophicWind</div></div>
 <div class="ttc" id="aEOS_8H_html_a292ce90ab26c75f4a444808a807b532b"><div class="ttname"><a href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:16</div></div>
-<div class="ttc" id="aDiffusion_8cpp_html_aa19b680a6c355e45fea24d98c03244bf"><div class="ttname"><a href="Diffusion_8cpp.html#aa19b680a6c355e45fea24d98c03244bf">DiffusionContributionForState</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real DiffusionContributionForState(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;cell_data, const Array4&lt; const Real &gt; &amp;cell_prim, const int &amp;qty_index, const Array4&lt; Real &gt; &amp;xflux, const Array4&lt; Real &gt; &amp;yflux, const Array4&lt; Real &gt; &amp;zflux, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; Real &gt; &amp;K_LES, const SolverChoice &amp;solverChoice)</div><div class="ttdef"><b>Definition:</b> Diffusion.cpp:187</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_a9ab6bf01b348d4b7cef99f3655c9dbb2"><div class="ttname"><a href="IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a></div><div class="ttdeci">#define PrimKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:19</div></div>
-<div class="ttc" id="anamespaceVars_html_a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:42</div></div>
-<div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a></div><div class="ttdeci">@ Smagorinsky</div></div>
-<div class="ttc" id="aAdvection_8cpp_html_a7c76666e085ebea061146d32482ba0d9"><div class="ttname"><a href="Advection_8cpp.html#a7c76666e085ebea061146d32482ba0d9">AdvectionContributionForZMom</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real AdvectionContributionForZMom(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;rho_w, const Array4&lt; const Real &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Advection.cpp:92</div></div>
 <div class="ttc" id="aAdvection_8cpp_html_a43527bb5620b941442840af9a8e838b8"><div class="ttname"><a href="Advection_8cpp.html#a43527bb5620b941442840af9a8e838b8">AdvectionContributionForState</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real AdvectionContributionForState(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;rho_w, const Array4&lt; const Real &gt; &amp;cell_prim, const int &amp;qty_index, const Array4&lt; Real &gt; &amp;xflux, const Array4&lt; Real &gt; &amp;yflux, const Array4&lt; Real &gt; &amp;zflux, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Advection.cpp:134</div></div>
-<div class="ttc" id="aDataStruct_8H_html_aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a></div><div class="ttdeci">@ y</div></div>
-<div class="ttc" id="aEOS_8H_html_a62f564807713abf368002e68c9b40e1e"><div class="ttname"><a href="EOS_8H.html#a62f564807713abf368002e68c9b40e1e">getPprimegivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPprimegivenRTh(const amrex::Real rhotheta, const amrex::Real pres_hse_at_k)</div><div class="ttdef"><b>Definition:</b> EOS.H:30</div></div>
-<div class="ttc" id="anamespaceVars_html_a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:40</div></div>
-<div class="ttc" id="astructSolverChoice_html_a9e86533aa6df5bf6408d91f0dfd23606"><div class="ttname"><a href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">SolverChoice::use_coriolis</a></div><div class="ttdeci">bool use_coriolis</div><div class="ttdef"><b>Definition:</b> DataStruct.H:248</div></div>
-<div class="ttc" id="astructSolverChoice_html_a1163778ed56af6977001ef4ec55a3da3"><div class="ttname"><a href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">SolverChoice::coriolis_factor</a></div><div class="ttdeci">amrex::Real coriolis_factor</div><div class="ttdef"><b>Definition:</b> DataStruct.H:286</div></div>
-<div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">AdvectedQuantity::u</a></div><div class="ttdeci">@ u</div></div>
-<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567ad22d96cf9b7b4dd875cea33d3ec0b481"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:20</div></div>
+<div class="ttc" id="anamespaceIntVar_html_a6c429c0b18657afa3aaf94bec3658567ad22d96cf9b7b4dd875cea33d3ec0b481"><div class="ttname"><a href="namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:19</div></div>
 <div class="ttc" id="astructSolverChoice_html_a8e053ce39997ed619ac81aa4d5a1fd44"><div class="ttname"><a href="structSolverChoice.html#a8e053ce39997ed619ac81aa4d5a1fd44">SolverChoice::spatial_order</a></div><div class="ttdeci">int spatial_order</div><div class="ttdef"><b>Definition:</b> DataStruct.H:291</div></div>
-<div class="ttc" id="astructSolverChoice_html_a411fbfea721cd40033e113cf54a8047f"><div class="ttname"><a href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">SolverChoice::cosphi</a></div><div class="ttdeci">amrex::Real cosphi</div><div class="ttdef"><b>Definition:</b> DataStruct.H:287</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -9,5 +9,5 @@ var TimeIntegration_8H =
     [ "zflux", "TimeIntegration_8H.html#a6c429c0b18657afa3aaf94bec3658567a9b94534904513cb3b68ef8b0c7bfed51", null ],
     [ "erf_advance", "TimeIntegration_8H.html#afbe75ff62bd73fd1500b7ccc73cd06cf", null ],
     [ "erf_fast_rhs", "TimeIntegration_8H.html#a0359a8285a88a0608583ea5781989550", null ],
-    [ "erf_rhs", "TimeIntegration_8H.html#af352e207371573cafbf44544ce45fd67", null ]
+    [ "erf_rhs", "TimeIntegration_8H.html#ae7659f9efa28ad0865569a0d6358724f", null ]
 ];

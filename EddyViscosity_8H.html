@@ -95,19 +95,18 @@ Include dependency graph for EddyViscosity.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="EddyViscosity_8H__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2SpatialStencils_2EddyViscosity_8H" alt=""/></div>
 <map name="_2home_2runner_2work_2ERF_2ERF_2Source_2SpatialStencils_2EddyViscosity_8H" id="_2home_2runner_2work_2ERF_2ERF_2Source_2SpatialStencils_2EddyViscosity_8H">
-<area shape="rect" title=" " alt="" coords="433,5,631,61"/>
-<area shape="rect" href="TimeIntegration_8H.html" title=" " alt="" coords="389,109,529,136"/>
-<area shape="rect" href="StrainRate_8H.html" title=" " alt="" coords="553,109,657,136"/>
-<area shape="rect" title=" " alt="" coords="5,184,88,211"/>
-<area shape="rect" title=" " alt="" coords="113,184,258,211"/>
-<area shape="rect" title=" " alt="" coords="283,184,432,211"/>
-<area shape="rect" title=" " alt="" coords="456,184,667,211"/>
-<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="690,184,795,211"/>
-<area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="819,184,941,211"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="515,259,648,285"/>
-<area shape="rect" title=" " alt="" coords="673,259,831,285"/>
-<area shape="rect" title=" " alt="" coords="664,333,787,360"/>
-<area shape="rect" title=" " alt="" coords="907,259,1035,285"/>
+<area shape="rect" title=" " alt="" coords="411,5,609,61"/>
+<area shape="rect" href="TimeIntegration_8H.html" title=" " alt="" coords="367,109,507,136"/>
+<area shape="rect" href="StrainRate_8H.html" title=" " alt="" coords="531,109,635,136"/>
+<area shape="rect" title=" " alt="" coords="5,184,151,211"/>
+<area shape="rect" title=" " alt="" coords="175,184,307,211"/>
+<area shape="rect" title=" " alt="" coords="331,184,542,211"/>
+<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="565,184,671,211"/>
+<area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="695,184,816,211"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="390,259,523,285"/>
+<area shape="rect" title=" " alt="" coords="548,259,707,285"/>
+<area shape="rect" title=" " alt="" coords="539,333,662,360"/>
+<area shape="rect" title=" " alt="" coords="782,259,910,285"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -115,11 +114,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="EddyViscosity_8H__dep__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2SpatialStencils_2EddyViscosity_8Hdep" alt=""/></div>
 <map name="_2home_2runner_2work_2ERF_2ERF_2Source_2SpatialStencils_2EddyViscosity_8Hdep" id="_2home_2runner_2work_2ERF_2ERF_2Source_2SpatialStencils_2EddyViscosity_8Hdep">
-<area shape="rect" title=" " alt="" coords="73,5,272,61"/>
+<area shape="rect" title=" " alt="" coords="119,5,317,61"/>
+<area shape="rect" href="StressTerm_8H.html" title=" " alt="" coords="5,109,204,165"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html" title=" " alt="" coords="228,109,435,165"/>
 <area shape="rect" href="Diffusion_8cpp.html" title=" " alt="" coords="5,213,204,269"/>
-<area shape="rect" href="StressTerm_8H.html" title=" " alt="" coords="141,109,340,165"/>
-<area shape="rect" href="TKEProduction_8H.html" title=" " alt="" coords="228,213,427,269"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html" title=" " alt="" coords="224,317,431,373"/>
 </map>
 </div>
 </div>
@@ -127,15 +125,275 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af2b2facc834d95961b105faca86e13a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EddyViscosity_8H.html#af2b2facc834d95961b105faca86e13a8">ComputeTurbulentViscosity</a> (const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, const MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const bool &amp;dirichlet_at_lo_k, const int &amp;klo, const bool &amp;dirichlet_at_hi_k, const int &amp;khi)</td></tr>
-<tr class="separator:af2b2facc834d95961b105faca86e13a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef3de1b7815cb5904b1ede44b78a4407"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EddyViscosity_8H.html#aef3de1b7815cb5904b1ede44b78a4407">ComputeSmnSmn</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</td></tr>
+<tr class="separator:aef3de1b7815cb5904b1ede44b78a4407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70a2519d7595ba89638ba175ddf01708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EddyViscosity_8H.html#a70a2519d7595ba89638ba175ddf01708">ComputeTurbulentViscosity</a> (const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, const MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const Gpu::DeviceVector&lt; amrex::BCRec &gt; domain_bcs_type_d)</td></tr>
+<tr class="separator:a70a2519d7595ba89638ba175ddf01708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d58c543b73a15cb69c837ec5bd07a52"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EddyViscosity_8H.html#a6d58c543b73a15cb69c837ec5bd07a52">ComputeTKEProduction</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, const Array4&lt; Real &gt; &amp;K_LES, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const Box &amp;domain, const amrex::BCRec *bc_ptr)</td></tr>
+<tr class="separator:a6d58c543b73a15cb69c837ec5bd07a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bb03a231e1a9fceb7d2c133b3815745"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EddyViscosity_8H.html#a2bb03a231e1a9fceb7d2c133b3815745">InterpolateTurbulentViscosity</a> (const int &amp;i, const int &amp;j, const int &amp;k, const enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a> &amp;momentumEqn, const enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a> &amp;diffDir, const Array4&lt; Real &gt; &amp;K_LES)</td></tr>
 <tr class="memdesc:a2bb03a231e1a9fceb7d2c133b3815745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute K_LES (i-1/2, j+1/2, k) etc given K_LES (i, j, k) is known.  <a href="EddyViscosity_8H.html#a2bb03a231e1a9fceb7d2c133b3815745">More...</a><br /></td></tr>
 <tr class="separator:a2bb03a231e1a9fceb7d2c133b3815745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af2b2facc834d95961b105faca86e13a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2b2facc834d95961b105faca86e13a8">&#9670;&nbsp;</a></span>ComputeTurbulentViscosity()</h2>
+<a id="aef3de1b7815cb5904b1ede44b78a4407"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef3de1b7815cb5904b1ede44b78a4407">&#9670;&nbsp;</a></span>ComputeSmnSmn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE Real ComputeSmnSmn </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; Real const &gt; &amp;&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; Real const &gt; &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; Real const &gt; &amp;&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cellSizeInv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Box &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::BCRec *&#160;</td>
+          <td class="paramname"><em>bc_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Real S11 = <a class="code" href="StrainRate_8H.html#a82bb551ca28959c8356aeee62bc1ed5c">ComputeS11</a>(i+1, j, k, u, cellSizeInv);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Real S22 = <a class="code" href="StrainRate_8H.html#a7ac70c4b50d149dd43690e2e95d78a81">ComputeS22</a>(i, j+1, k, v, cellSizeInv);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    Real S33 = <a class="code" href="StrainRate_8H.html#ae0ebde9f77b481921039800f03f76d75">ComputeS33</a>(i, j, k+1, w, cellSizeInv);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    Real S12 = 0.25* (</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;              <a class="code" href="StrainRate_8H.html#adc15459e0217f6a78a0d945f2576c577">ComputeS12</a>(i  , j  , k, u, v, w, cellSizeInv, domain, bc_ptr)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            + <a class="code" href="StrainRate_8H.html#adc15459e0217f6a78a0d945f2576c577">ComputeS12</a>(i  , j+1, k, u, v, w, cellSizeInv, domain, bc_ptr)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            + <a class="code" href="StrainRate_8H.html#adc15459e0217f6a78a0d945f2576c577">ComputeS12</a>(i+1, j  , k, u, v, w, cellSizeInv, domain, bc_ptr)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            + <a class="code" href="StrainRate_8H.html#adc15459e0217f6a78a0d945f2576c577">ComputeS12</a>(i+1, j+1, k, u, v, w, cellSizeInv, domain, bc_ptr)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    Real S13 = 0.25* (</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;              <a class="code" href="StrainRate_8H.html#a951e9a3715b884aeb0677cde8e5c6c1b">ComputeS13</a>(i  , j, k  , u, v, w,  cellSizeInv, domain, bc_ptr)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            + <a class="code" href="StrainRate_8H.html#a951e9a3715b884aeb0677cde8e5c6c1b">ComputeS13</a>(i  , j, k+1, u, v, w,  cellSizeInv, domain, bc_ptr)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            + <a class="code" href="StrainRate_8H.html#a951e9a3715b884aeb0677cde8e5c6c1b">ComputeS13</a>(i+1, j, k  , u, v, w,  cellSizeInv, domain, bc_ptr)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            + <a class="code" href="StrainRate_8H.html#a951e9a3715b884aeb0677cde8e5c6c1b">ComputeS13</a>(i+1, j, k+1, u, v, w,  cellSizeInv, domain, bc_ptr)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    Real S23 = 0.25* (</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;              <a class="code" href="StrainRate_8H.html#aaf8a948886d8aad9cb65eedd6b49a76e">ComputeS23</a>(i, j  , k  , u, v, w,  cellSizeInv, domain, bc_ptr)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            + <a class="code" href="StrainRate_8H.html#aaf8a948886d8aad9cb65eedd6b49a76e">ComputeS23</a>(i, j  , k+1, u, v, w,  cellSizeInv, domain, bc_ptr)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            + <a class="code" href="StrainRate_8H.html#aaf8a948886d8aad9cb65eedd6b49a76e">ComputeS23</a>(i, j+1, k  , u, v, w,  cellSizeInv, domain, bc_ptr)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            + <a class="code" href="StrainRate_8H.html#aaf8a948886d8aad9cb65eedd6b49a76e">ComputeS23</a>(i, j+1, k+1, u, v, w,  cellSizeInv, domain, bc_ptr)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    Real SmnSmn = S11*S11 + S22*S22 + S33*S33 + 2.0*S12*S12 + 2.0*S13*S13 + 2.0*S23*S23;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> SmnSmn;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="EddyViscosity_8H.html#a6d58c543b73a15cb69c837ec5bd07a52">ComputeTKEProduction()</a>, and <a class="el" href="EddyViscosity_8H.html#a70a2519d7595ba89638ba175ddf01708">ComputeTurbulentViscosity()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="EddyViscosity_8H_aef3de1b7815cb5904b1ede44b78a4407_cgraph.png" border="0" usemap="#EddyViscosity_8H_aef3de1b7815cb5904b1ede44b78a4407_cgraph" alt=""/></div>
+<map name="EddyViscosity_8H_aef3de1b7815cb5904b1ede44b78a4407_cgraph" id="EddyViscosity_8H_aef3de1b7815cb5904b1ede44b78a4407_cgraph">
+<area shape="rect" title=" " alt="" coords="5,132,144,159"/>
+<area shape="rect" href="StrainRate_8H.html#a82bb551ca28959c8356aeee62bc1ed5c" title=" " alt="" coords="192,5,297,32"/>
+<area shape="rect" href="StrainRate_8H.html#adc15459e0217f6a78a0d945f2576c577" title=" " alt="" coords="192,56,297,83"/>
+<area shape="rect" href="StrainRate_8H.html#a951e9a3715b884aeb0677cde8e5c6c1b" title=" " alt="" coords="192,107,297,133"/>
+<area shape="rect" href="StrainRate_8H.html#a7ac70c4b50d149dd43690e2e95d78a81" title=" " alt="" coords="192,157,297,184"/>
+<area shape="rect" href="StrainRate_8H.html#aaf8a948886d8aad9cb65eedd6b49a76e" title=" " alt="" coords="192,208,297,235"/>
+<area shape="rect" href="StrainRate_8H.html#ae0ebde9f77b481921039800f03f76d75" title=" " alt="" coords="192,259,297,285"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="EddyViscosity_8H_aef3de1b7815cb5904b1ede44b78a4407_icgraph.png" border="0" usemap="#EddyViscosity_8H_aef3de1b7815cb5904b1ede44b78a4407_icgraph" alt=""/></div>
+<map name="EddyViscosity_8H_aef3de1b7815cb5904b1ede44b78a4407_icgraph" id="EddyViscosity_8H_aef3de1b7815cb5904b1ede44b78a4407_icgraph">
+<area shape="rect" title=" " alt="" coords="368,31,507,57"/>
+<area shape="rect" href="EddyViscosity_8H.html#a6d58c543b73a15cb69c837ec5bd07a52" title=" " alt="" coords="133,5,307,32"/>
+<area shape="rect" href="EddyViscosity_8H.html#a70a2519d7595ba89638ba175ddf01708" title=" " alt="" coords="120,56,320,83"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a687056de9f04bb2f9338de2fbe0a9ade" title=" " alt="" coords="5,31,72,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6d58c543b73a15cb69c837ec5bd07a52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d58c543b73a15cb69c837ec5bd07a52">&#9670;&nbsp;</a></span>ComputeTKEProduction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE Real ComputeTKEProduction </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; const Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; const Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; const Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>K_LES</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cellSizeInv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
+          <td class="paramname"><em>solverChoice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Box &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::BCRec *&#160;</td>
+          <td class="paramname"><em>bc_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    amrex::Real TKE_production = K_LES(i,j,k) * <a class="code" href="EddyViscosity_8H.html#aef3de1b7815cb5904b1ede44b78a4407">ComputeSmnSmn</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">return</span> TKE_production;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="TimeIntegration__rhs_8cpp.html#a687056de9f04bb2f9338de2fbe0a9ade">erf_rhs()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="EddyViscosity_8H_a6d58c543b73a15cb69c837ec5bd07a52_cgraph.png" border="0" usemap="#EddyViscosity_8H_a6d58c543b73a15cb69c837ec5bd07a52_cgraph" alt=""/></div>
+<map name="EddyViscosity_8H_a6d58c543b73a15cb69c837ec5bd07a52_cgraph" id="EddyViscosity_8H_a6d58c543b73a15cb69c837ec5bd07a52_cgraph">
+<area shape="rect" title=" " alt="" coords="5,132,180,159"/>
+<area shape="rect" href="EddyViscosity_8H.html#aef3de1b7815cb5904b1ede44b78a4407" title=" " alt="" coords="228,132,367,159"/>
+<area shape="rect" href="StrainRate_8H.html#a82bb551ca28959c8356aeee62bc1ed5c" title=" " alt="" coords="415,5,520,32"/>
+<area shape="rect" href="StrainRate_8H.html#adc15459e0217f6a78a0d945f2576c577" title=" " alt="" coords="415,56,520,83"/>
+<area shape="rect" href="StrainRate_8H.html#a951e9a3715b884aeb0677cde8e5c6c1b" title=" " alt="" coords="415,107,520,133"/>
+<area shape="rect" href="StrainRate_8H.html#a7ac70c4b50d149dd43690e2e95d78a81" title=" " alt="" coords="415,157,520,184"/>
+<area shape="rect" href="StrainRate_8H.html#aaf8a948886d8aad9cb65eedd6b49a76e" title=" " alt="" coords="415,208,520,235"/>
+<area shape="rect" href="StrainRate_8H.html#ae0ebde9f77b481921039800f03f76d75" title=" " alt="" coords="415,259,520,285"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="EddyViscosity_8H_a6d58c543b73a15cb69c837ec5bd07a52_icgraph.png" border="0" usemap="#EddyViscosity_8H_a6d58c543b73a15cb69c837ec5bd07a52_icgraph" alt=""/></div>
+<map name="EddyViscosity_8H_a6d58c543b73a15cb69c837ec5bd07a52_icgraph" id="EddyViscosity_8H_a6d58c543b73a15cb69c837ec5bd07a52_icgraph">
+<area shape="rect" title=" " alt="" coords="120,5,295,32"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a687056de9f04bb2f9338de2fbe0a9ade" title=" " alt="" coords="5,5,72,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a70a2519d7595ba89638ba175ddf01708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70a2519d7595ba89638ba175ddf01708">&#9670;&nbsp;</a></span>ComputeTurbulentViscosity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,26 +446,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>dirichlet_at_lo_k</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>klo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>dirichlet_at_hi_k</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>khi</em>&#160;</td>
+          <td class="paramtype">const Gpu::DeviceVector&lt; amrex::BCRec &gt;&#160;</td>
+          <td class="paramname"><em>domain_bcs_type_d</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -222,145 +462,114 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Compute Eddy Viscosity </p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; cellSizeInv = geom.InvCellSizeArray();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">const</span> Real cellVol = 1.0 / (cellSizeInv[0] * cellSizeInv[1] * cellSizeInv[2]);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">const</span> Real Delta = std::pow(cellVol,1.0/3.0);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; domain = geom.Domain();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_lo = amrex::lbound(domain);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_hi = amrex::ubound(domain);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a>)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      Real Cs = solverChoice.<a class="code" href="structSolverChoice.html#aaf85773d50dc693905867d3acc127dd0">Cs</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      Real CsDeltaSqr = Cs*Cs*Delta*Delta;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keywordflow">for</span> ( MFIter mfi(eddyViscosity,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">const</span> Box &amp;bx = mfi.growntilebox(1);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const &gt; &amp;cell_data = cons_in.array(mfi);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt; &amp;K = eddyViscosity.array(mfi);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt; &amp;<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a> = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">xvel</a>.array(mfi);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt; &amp;<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a> = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">yvel</a>.array(mfi);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt; &amp;<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a> = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">zvel</a>.array(mfi);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            Real S11 = <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i+1, j, k, u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>, cellSizeInv, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            Real S22 = <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i, j+1, k, u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>, cellSizeInv, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            Real S33 = <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i, j, k+1, u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>, cellSizeInv, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            Real S12 = 0.25* (</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                      <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i  , j  , k, u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>, cellSizeInv, <span class="keyword">false</span>, <span class="keyword">false</span>)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    + <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i  , j+1, k, u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>, cellSizeInv, <span class="keyword">false</span>, <span class="keyword">false</span>)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    + <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i+1, j  , k, u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>, cellSizeInv, <span class="keyword">false</span>, <span class="keyword">false</span>)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    + <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i+1, j+1, k, u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>, cellSizeInv, <span class="keyword">false</span>, <span class="keyword">false</span>)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    );</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordtype">bool</span> dirichlet_lo = (dirichlet_at_lo_k &amp;&amp; (k == klo));</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordtype">bool</span> dirichlet_hi = (dirichlet_at_hi_k &amp;&amp; (k == khi));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            Real S13 = 0.25* (</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                      <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i  , j, k  , u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>, cellSizeInv,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                       dirichlet_lo, <span class="keyword">false</span>)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    + <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i  , j, k+1, u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>, cellSizeInv,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                       <span class="keyword">false</span>, dirichlet_hi)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    + <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i+1, j, k  , u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>, cellSizeInv,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                       dirichlet_lo, <span class="keyword">false</span>)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    + <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i+1, j, k+1, u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>, cellSizeInv,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                       <span class="keyword">false</span>, dirichlet_hi)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    );</div>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; cellSizeInv = geom.InvCellSizeArray();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> Real cellVol = 1.0 / (cellSizeInv[0] * cellSizeInv[1] * cellSizeInv[2]);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">const</span> Real Delta = std::pow(cellVol,1.0/3.0);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; domain = geom.Domain();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_lo = amrex::lbound(domain);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_hi = amrex::ubound(domain);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      Real Cs = solverChoice.<a class="code" href="structSolverChoice.html#aaf85773d50dc693905867d3acc127dd0">Cs</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      Real CsDeltaSqr = Cs*Cs*Delta*Delta;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            Real S23 = 0.25* (</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                      <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i, j  , k  , u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>, cellSizeInv,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                       dirichlet_lo, <span class="keyword">false</span>)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    + <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i, j  , k+1, u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>, cellSizeInv,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                       <span class="keyword">false</span>, dirichlet_hi)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    + <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i, j+1, k  , u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>, cellSizeInv,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                       dirichlet_lo, <span class="keyword">false</span>)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    + <a class="code" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a>(i, j+1, k+1, u, v, w, <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a>, <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>, cellSizeInv,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                       <span class="keyword">false</span>, dirichlet_hi)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keywordflow">for</span> ( MFIter mfi(eddyViscosity,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">const</span> Box &amp;bx = mfi.growntilebox(1);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const &gt; &amp;cell_data = cons_in.array(mfi);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt; &amp;K = eddyViscosity.array(mfi);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt; &amp;<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a> = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">xvel</a>.array(mfi);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt; &amp;<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a> = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">yvel</a>.array(mfi);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt; &amp;<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a> = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">zvel</a>.array(mfi);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            Real SmnSmn = S11*S11 + S22*S22 + S33*S33 + 2.0*S12*S12 + 2.0*S13*S13 + 2.0*S23*S23;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="comment">// Note the positive sign, which aligns well with the positive sign in the diffusion term for momentum equation</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            K(i, j, k, 0) = 2.0 * CsDeltaSqr * cell_data(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::sqrt(2.0*SmnSmn);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        });</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// Fill values outside the domain by straightforwad extrapolation.  Note this must be</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// done separately from the loop above so all the interior values are filled</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span> (i &lt; dom_lo.x) K(i,j,k,0) = K(dom_lo.x,j,k,0);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            if (j &lt; dom_lo.y) K(i,j,k,0) = K(i,dom_lo.y,k,0);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            if (k &lt; dom_lo.z) K(i,j,k,0) = K(i,j,dom_lo.z,0);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            if (i &gt; dom_hi.x) K(i,j,k,0) = K(dom_hi.x,j,k,0);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            if (j &gt; dom_hi.y) K(i,j,k,0) = K(i,dom_hi.y,k,0);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            if (k &gt; dom_hi.z) K(i,j,k,0) = K(i,j,dom_hi.z,0);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        });</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      } <span class="comment">//mfi</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      Real l_C_k = solverChoice.<a class="code" href="structSolverChoice.html#a57a93f28b746dae8cbfa9b0df0960f27">Ck</a>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="keywordflow">for</span> ( MFIter mfi(eddyViscosity,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keyword">const</span> Box &amp;bx = mfi.growntilebox(1);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const &gt; &amp;cell_data = cons_in.array(mfi);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt; &amp;K = eddyViscosity.array(mfi);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">const</span> amrex::BCRec* bc_ptr = domain_bcs_type_d.data();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            Real SmnSmn = <a class="code" href="EddyViscosity_8H.html#aef3de1b7815cb5904b1ede44b78a4407">ComputeSmnSmn</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="comment">// Note the positive sign, which aligns well with the positive sign in the diffusion term for momentum equation</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            K(i, j, k, 0) = 2.0 * CsDeltaSqr * cell_data(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::sqrt(2.0*SmnSmn);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        });</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">// Fill values outside the domain by straightforwad extrapolation.  Note this must be</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">// done separately from the loop above so all the interior values are filled</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">if</span> (i &lt; dom_lo.x) K(i,j,k,0) = K(dom_lo.x,j,k,0);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            if (j &lt; dom_lo.y) K(i,j,k,0) = K(i,dom_lo.y,k,0);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            if (k &lt; dom_lo.z) K(i,j,k,0) = K(i,j,dom_lo.z,0);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            if (i &gt; dom_hi.x) K(i,j,k,0) = K(dom_hi.x,j,k,0);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            if (j &gt; dom_hi.y) K(i,j,k,0) = K(i,dom_hi.y,k,0);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            if (k &gt; dom_hi.z) K(i,j,k,0) = K(i,j,dom_hi.z,0);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        });</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      } <span class="comment">//mfi</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      Real l_C_k = solverChoice.<a class="code" href="structSolverChoice.html#a57a93f28b746dae8cbfa9b0df0960f27">Ck</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="keywordflow">for</span> ( MFIter mfi(eddyViscosity,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            K(i,j,k,0) = l_C_k * Delta *  cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) *</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                std::sqrt(cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>));</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        });</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment">// Fill values outside the domain by straightforwad extrapolation.  Note this must be</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="comment">// done separately from the loop above so all the interior values are filled</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordflow">if</span> (i &lt; dom_lo.x) K(i,j,k,0) = K(dom_lo.x,j,k,0);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            if (j &lt; dom_lo.y) K(i,j,k,0) = K(i,dom_lo.y,k,0);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            if (k &lt; dom_lo.z) K(i,j,k,0) = K(i,j,dom_lo.z,0);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            if (i &gt; dom_hi.x) K(i,j,k,0) = K(dom_hi.x,j,k,0);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            if (j &gt; dom_hi.y) K(i,j,k,0) = K(i,dom_hi.y,k,0);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            if (k &gt; dom_hi.z) K(i,j,k,0) = K(i,j,dom_hi.z,0);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        });</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      } <span class="comment">//mfi</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// Fill interior ghost cells and any ghost cells outside a periodic domain</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    eddyViscosity.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;} <span class="comment">// function call</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keyword">const</span> Box &amp;bx = mfi.growntilebox(1);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const &gt; &amp;cell_data = cons_in.array(mfi);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt; &amp;K = eddyViscosity.array(mfi);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            K(i,j,k,0) = l_C_k * Delta *  cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) *</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                std::sqrt(cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>));</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        });</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment">// Fill values outside the domain by straightforwad extrapolation.  Note this must be</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="comment">// done separately from the loop above so all the interior values are filled</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">if</span> (i &lt; dom_lo.x) K(i,j,k,0) = K(dom_lo.x,j,k,0);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            if (j &lt; dom_lo.y) K(i,j,k,0) = K(i,dom_lo.y,k,0);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            if (k &lt; dom_lo.z) K(i,j,k,0) = K(i,j,dom_lo.z,0);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            if (i &gt; dom_hi.x) K(i,j,k,0) = K(dom_hi.x,j,k,0);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            if (j &gt; dom_hi.y) K(i,j,k,0) = K(i,dom_hi.y,k,0);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            if (k &gt; dom_hi.z) K(i,j,k,0) = K(i,j,dom_hi.z,0);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        });</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      } <span class="comment">//mfi</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// Fill interior ghost cells and any ghost cells outside a periodic domain</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    eddyViscosity.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;} <span class="comment">// function call</span></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TimeIntegration__rhs_8cpp.html#af352e207371573cafbf44544ce45fd67">erf_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TimeIntegration__rhs_8cpp.html#a687056de9f04bb2f9338de2fbe0a9ade">erf_rhs()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="EddyViscosity_8H_af2b2facc834d95961b105faca86e13a8_cgraph.png" border="0" usemap="#EddyViscosity_8H_af2b2facc834d95961b105faca86e13a8_cgraph" alt=""/></div>
-<map name="EddyViscosity_8H_af2b2facc834d95961b105faca86e13a8_cgraph" id="EddyViscosity_8H_af2b2facc834d95961b105faca86e13a8_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,205,32"/>
-<area shape="rect" href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e" title=" " alt="" coords="253,5,403,32"/>
+<div class="center"><img src="EddyViscosity_8H_a70a2519d7595ba89638ba175ddf01708_cgraph.png" border="0" usemap="#EddyViscosity_8H_a70a2519d7595ba89638ba175ddf01708_cgraph" alt=""/></div>
+<map name="EddyViscosity_8H_a70a2519d7595ba89638ba175ddf01708_cgraph" id="EddyViscosity_8H_a70a2519d7595ba89638ba175ddf01708_cgraph">
+<area shape="rect" title=" " alt="" coords="5,132,205,159"/>
+<area shape="rect" href="EddyViscosity_8H.html#aef3de1b7815cb5904b1ede44b78a4407" title=" " alt="" coords="253,132,392,159"/>
+<area shape="rect" href="StrainRate_8H.html#a82bb551ca28959c8356aeee62bc1ed5c" title=" " alt="" coords="440,5,545,32"/>
+<area shape="rect" href="StrainRate_8H.html#adc15459e0217f6a78a0d945f2576c577" title=" " alt="" coords="440,56,545,83"/>
+<area shape="rect" href="StrainRate_8H.html#a951e9a3715b884aeb0677cde8e5c6c1b" title=" " alt="" coords="440,107,545,133"/>
+<area shape="rect" href="StrainRate_8H.html#a7ac70c4b50d149dd43690e2e95d78a81" title=" " alt="" coords="440,157,545,184"/>
+<area shape="rect" href="StrainRate_8H.html#aaf8a948886d8aad9cb65eedd6b49a76e" title=" " alt="" coords="440,208,545,235"/>
+<area shape="rect" href="StrainRate_8H.html#ae0ebde9f77b481921039800f03f76d75" title=" " alt="" coords="440,259,545,285"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="EddyViscosity_8H_af2b2facc834d95961b105faca86e13a8_icgraph.png" border="0" usemap="#EddyViscosity_8H_af2b2facc834d95961b105faca86e13a8_icgraph" alt=""/></div>
-<map name="EddyViscosity_8H_af2b2facc834d95961b105faca86e13a8_icgraph" id="EddyViscosity_8H_af2b2facc834d95961b105faca86e13a8_icgraph">
-<area shape="rect" title=" " alt="" coords="769,5,969,32"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html#af352e207371573cafbf44544ce45fd67" title=" " alt="" coords="655,5,721,32"/>
-<area shape="rect" href="classERF.html#a959da838e9554ce4a5b217289da415e9" title=" " alt="" coords="325,5,460,32"/>
-<area shape="rect" href="TimeIntegration__fast_8cpp.html#a0359a8285a88a0608583ea5781989550" title=" " alt="" coords="508,31,607,57"/>
-<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="167,5,277,32"/>
-<area shape="rect" href="classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f" title=" " alt="" coords="5,5,119,32"/>
+<div class="center"><img src="EddyViscosity_8H_a70a2519d7595ba89638ba175ddf01708_icgraph.png" border="0" usemap="#EddyViscosity_8H_a70a2519d7595ba89638ba175ddf01708_icgraph" alt=""/></div>
+<map name="EddyViscosity_8H_a70a2519d7595ba89638ba175ddf01708_icgraph" id="EddyViscosity_8H_a70a2519d7595ba89638ba175ddf01708_icgraph">
+<area shape="rect" title=" " alt="" coords="120,5,320,32"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a687056de9f04bb2f9338de2fbe0a9ade" title=" " alt="" coords="5,5,72,32"/>
 </map>
 </div>
 
@@ -426,62 +635,62 @@ Here is the caller graph for this function:</div>
 
 <p>Compute K_LES (i-1/2, j+1/2, k) etc given K_LES (i, j, k) is known. </p>
 <p>Compute K (i-1/2, j+1/2, k) etc given K(i, j, k) or nut (i, j, k) is known </p>
-<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                                         {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="comment">// Assuming we already have &#39;K_LES&#39; computed for all (i, j, k)</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  Real turbViscInterpolated = 1.0;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">switch</span> (momentumEqn) {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>: <span class="comment">// Reference face is x-face index (i, j, k)</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">switch</span> (diffDir) {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>:</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      turbViscInterpolated = K_LES(i-1, j, k);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>:</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      turbViscInterpolated = 0.25*( K_LES(i-1, j, k) + K_LES(i, j, k) + K_LES(i-1, j-1, k) + K_LES(i, j-1, k) );</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>:</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      turbViscInterpolated = 0.25*( K_LES(i-1, j, k) + K_LES(i, j, k) + K_LES(i-1, j, k-1) + K_LES(i, j, k-1) );</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a>: <span class="comment">// Reference face is y-face index (i, j, k)</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">switch</span> (diffDir) {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>:</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      turbViscInterpolated = 0.25*( K_LES(i, j-1, k) + K_LES(i, j, k) + K_LES(i-1, j-1, k) + K_LES(i-1, j, k) );</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>:</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      turbViscInterpolated = K_LES(i, j-1, k);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>:</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      turbViscInterpolated = 0.25*( K_LES(i, j-1, k) + K_LES(i, j, k) + K_LES(i, j-1, k-1) + K_LES(i, j, k-1) );</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a>: <span class="comment">// Reference face is z-face index (i, j, k)</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">switch</span> (diffDir) {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>:</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      turbViscInterpolated = 0.25*( K_LES(i, j, k-1) + K_LES(i, j, k) + K_LES(i-1, j, k-1) + K_LES(i-1, j, k) );</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>:</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      turbViscInterpolated = 0.25*( K_LES(i, j, k-1) + K_LES(i, j, k) + K_LES(i, j-1, k-1) + K_LES(i, j-1, k) );</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>:</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      turbViscInterpolated = K_LES(i, j, k-1);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    amrex::Abort(<span class="stringliteral">&quot;Error: Momentum equation is unrecognized&quot;</span>);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  }</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordflow">return</span> turbViscInterpolated;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                                         {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="comment">// Assuming we already have &#39;K_LES&#39; computed for all (i, j, k)</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  Real turbViscInterpolated = 1.0;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">switch</span> (momentumEqn) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>: <span class="comment">// Reference face is x-face index (i, j, k)</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">switch</span> (diffDir) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>:</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      turbViscInterpolated = K_LES(i-1, j, k);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>:</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;      turbViscInterpolated = 0.25*( K_LES(i-1, j, k) + K_LES(i, j, k) + K_LES(i-1, j-1, k) + K_LES(i, j-1, k) );</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>:</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      turbViscInterpolated = 0.25*( K_LES(i-1, j, k) + K_LES(i, j, k) + K_LES(i-1, j, k-1) + K_LES(i, j, k-1) );</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a>: <span class="comment">// Reference face is y-face index (i, j, k)</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">switch</span> (diffDir) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>:</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      turbViscInterpolated = 0.25*( K_LES(i, j-1, k) + K_LES(i, j, k) + K_LES(i-1, j-1, k) + K_LES(i-1, j, k) );</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>:</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;      turbViscInterpolated = K_LES(i, j-1, k);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>:</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      turbViscInterpolated = 0.25*( K_LES(i, j-1, k) + K_LES(i, j, k) + K_LES(i, j-1, k-1) + K_LES(i, j, k-1) );</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a>: <span class="comment">// Reference face is z-face index (i, j, k)</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">switch</span> (diffDir) {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>:</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      turbViscInterpolated = 0.25*( K_LES(i, j, k-1) + K_LES(i, j, k) + K_LES(i-1, j, k-1) + K_LES(i-1, j, k) );</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>:</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      turbViscInterpolated = 0.25*( K_LES(i, j, k-1) + K_LES(i, j, k) + K_LES(i, j-1, k-1) + K_LES(i, j-1, k) );</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>:</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      turbViscInterpolated = K_LES(i, j, k-1);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    amrex::Abort(<span class="stringliteral">&quot;Error: Momentum equation is unrecognized&quot;</span>);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <span class="keywordflow">return</span> turbViscInterpolated;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="StressTerm_8H.html#a251d43d72e693cb73b820c1dbe94e5a2">ComputeStressGivenRates()</a>.</p>
 <div class="dynheader">
@@ -489,15 +698,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="EddyViscosity_8H_a2bb03a231e1a9fceb7d2c133b3815745_icgraph.png" border="0" usemap="#EddyViscosity_8H_a2bb03a231e1a9fceb7d2c133b3815745_icgraph" alt=""/></div>
 <map name="EddyViscosity_8H_a2bb03a231e1a9fceb7d2c133b3815745_icgraph" id="EddyViscosity_8H_a2bb03a231e1a9fceb7d2c133b3815745_icgraph">
-<area shape="rect" title="Compute K_LES (i&#45;1/2, j+1/2, k) etc given K_LES (i, j, k) is known." alt="" coords="1236,31,1448,57"/>
-<area shape="rect" href="StressTerm_8H.html#a251d43d72e693cb73b820c1dbe94e5a2" title=" " alt="" coords="992,31,1188,57"/>
-<area shape="rect" href="StressTerm_8H.html#a22d1e04f90c0ad058dfbc1a05a276b88" title=" " alt="" coords="780,5,933,32"/>
-<area shape="rect" href="TKEProduction_8H.html#af9b497aae8e3eb42cc4640a16d6edb30" title=" " alt="" coords="769,56,944,83"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html#af352e207371573cafbf44544ce45fd67" title=" " alt="" coords="655,56,721,83"/>
-<area shape="rect" href="classERF.html#a959da838e9554ce4a5b217289da415e9" title=" " alt="" coords="325,56,460,83"/>
-<area shape="rect" href="TimeIntegration__fast_8cpp.html#a0359a8285a88a0608583ea5781989550" title=" " alt="" coords="508,81,607,108"/>
-<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="167,56,277,83"/>
-<area shape="rect" href="classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f" title=" " alt="" coords="5,56,119,83"/>
+<area shape="rect" title="Compute K_LES (i&#45;1/2, j+1/2, k) etc given K_LES (i, j, k) is known." alt="" coords="827,5,1039,32"/>
+<area shape="rect" href="StressTerm_8H.html#a251d43d72e693cb73b820c1dbe94e5a2" title=" " alt="" coords="583,5,779,32"/>
+<area shape="rect" href="StressTerm_8H.html#a7fef7d0cfd1ee970c5f1deb97f86ba2d" title=" " alt="" coords="381,5,535,32"/>
+<area shape="rect" href="SpatialStencils_8H.html#a9dee13320a621a02bc6077566933f729" title=" " alt="" coords="120,5,333,32"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a687056de9f04bb2f9338de2fbe0a9ade" title=" " alt="" coords="5,5,72,32"/>
 </map>
 </div>
 
@@ -505,23 +710,29 @@ Here is the caller graph for this function:</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aEddyViscosity_8H_html_aef3de1b7815cb5904b1ede44b78a4407"><div class="ttname"><a href="EddyViscosity_8H.html#aef3de1b7815cb5904b1ede44b78a4407">ComputeSmnSmn</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeSmnSmn(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> EddyViscosity.H:13</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
 <div class="ttc" id="astructSolverChoice_html_aaf85773d50dc693905867d3acc127dd0"><div class="ttname"><a href="structSolverChoice.html#aaf85773d50dc693905867d3acc127dd0">SolverChoice::Cs</a></div><div class="ttdeci">amrex::Real Cs</div><div class="ttdef"><b>Definition:</b> DataStruct.H:268</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a></div><div class="ttdeci">@ y</div></div>
+<div class="ttc" id="aStrainRate_8H_html_a82bb551ca28959c8356aeee62bc1ed5c"><div class="ttname"><a href="StrainRate_8H.html#a82bb551ca28959c8356aeee62bc1ed5c">ComputeS11</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS11(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:14</div></div>
+<div class="ttc" id="aStrainRate_8H_html_a951e9a3715b884aeb0677cde8e5c6c1b"><div class="ttname"><a href="StrainRate_8H.html#a951e9a3715b884aeb0677cde8e5c6c1b">ComputeS13</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS13(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:71</div></div>
+<div class="ttc" id="aStrainRate_8H_html_aaf8a948886d8aad9cb65eedd6b49a76e"><div class="ttname"><a href="StrainRate_8H.html#aaf8a948886d8aad9cb65eedd6b49a76e">ComputeS23</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS23(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:102</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="astructSolverChoice_html_a53966e639b0307b7420fd6abe8412fa0"><div class="ttname"><a href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">SolverChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:266</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">AdvectedQuantity::v</a></div><div class="ttdeci">@ v</div></div>
+<div class="ttc" id="aStrainRate_8H_html_a7ac70c4b50d149dd43690e2e95d78a81"><div class="ttname"><a href="StrainRate_8H.html#a7ac70c4b50d149dd43690e2e95d78a81">ComputeS22</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS22(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;v, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:23</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a></div><div class="ttdeci">@ x</div></div>
+<div class="ttc" id="aStrainRate_8H_html_adc15459e0217f6a78a0d945f2576c577"><div class="ttname"><a href="StrainRate_8H.html#adc15459e0217f6a78a0d945f2576c577">ComputeS12</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS12(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:41</div></div>
 <div class="ttc" id="astructSolverChoice_html_a57a93f28b746dae8cbfa9b0df0960f27"><div class="ttname"><a href="structSolverChoice.html#a57a93f28b746dae8cbfa9b0df0960f27">SolverChoice::Ck</a></div><div class="ttdeci">amrex::Real Ck</div><div class="ttdef"><b>Definition:</b> DataStruct.H:281</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">AdvectedQuantity::w</a></div><div class="ttdeci">@ w</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a></div><div class="ttdeci">@ Deardorff</div></div>
-<div class="ttc" id="aStrainRate_8H_html_a1887f5d39981ca762c7c837d571c2f5e"><div class="ttname"><a href="StrainRate_8H.html#a1887f5d39981ca762c7c837d571c2f5e">ComputeStrainRate</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeStrainRate(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const enum MomentumEqn &amp;momentumEqn, const enum DiffusionDir &amp;diffDir, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, bool dirichlet_lo, bool dirichlet_hi)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:8</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:11</div></div>
 <div class="ttc" id="anamespaceVars_html_a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:41</div></div>
 <div class="ttc" id="anamespaceVars_html_a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:42</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a></div><div class="ttdeci">@ Smagorinsky</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a></div><div class="ttdeci">@ y</div></div>
+<div class="ttc" id="aStrainRate_8H_html_ae0ebde9f77b481921039800f03f76d75"><div class="ttname"><a href="StrainRate_8H.html#ae0ebde9f77b481921039800f03f76d75">ComputeS33</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS33(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:32</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="anamespaceVars_html_a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:40</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">AdvectedQuantity::u</a></div><div class="ttdeci">@ u</div></div>
