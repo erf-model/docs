@@ -101,6 +101,8 @@ Functions</h2></td></tr>
 <tr class="separator:ab3c82aef26b750dfedc3d29ca9fae7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8895d9d9775ea0b8f643483a5a4127e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederived.html#ab8895d9d9775ea0b8f643483a5a4127e">erf_dertheta</a> (const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</td></tr>
 <tr class="separator:ab8895d9d9775ea0b8f643483a5a4127e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d9c0cabf04515367f2b721320dcddab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederived.html#a2d9c0cabf04515367f2b721320dcddab">erf_derscalar</a> (const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</td></tr>
+<tr class="separator:a2d9c0cabf04515367f2b721320dcddab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="af8efb799157f5dbb8fe00416458db9e1"></a>
@@ -280,6 +282,97 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="namespacederived_ab144cda2ef3e2bd18cbd0837ce723521_icgraph.png" border="0" usemap="#namespacederived_ab144cda2ef3e2bd18cbd0837ce723521_icgraph" alt=""/></div>
 <map name="namespacederived_ab144cda2ef3e2bd18cbd0837ce723521_icgraph" id="namespacederived_ab144cda2ef3e2bd18cbd0837ce723521_icgraph">
 <area shape="rect" title=" " alt="" coords="191,5,344,32"/>
+<area shape="rect" href="classERF.html#a387af22acce3cefeb515eb151c3d1b5a" title=" " alt="" coords="5,5,143,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2d9c0cabf04515367f2b721320dcddab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d9c0cabf04515367f2b721320dcddab">&#9670;&nbsp;</a></span>erf_derscalar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void derived::erf_derscalar </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::FArrayBox &amp;&#160;</td>
+          <td class="paramname"><em>derfab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::FArrayBox &amp;&#160;</td>
+          <td class="paramname"><em>datfab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keyword">auto</span> adv0fab   = derfab.array();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keyword">const</span> amrex::Real rho      = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">const</span> amrex::Real rho_adv0 = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    adv0fab(i,j,k) = rho_adv0 / rho;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  });</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a387af22acce3cefeb515eb151c3d1b5a">ERF::WritePlotFile()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacederived_a2d9c0cabf04515367f2b721320dcddab_icgraph.png" border="0" usemap="#namespacederived_a2d9c0cabf04515367f2b721320dcddab_icgraph" alt=""/></div>
+<map name="namespacederived_a2d9c0cabf04515367f2b721320dcddab_icgraph" id="namespacederived_a2d9c0cabf04515367f2b721320dcddab_icgraph">
+<area shape="rect" title=" " alt="" coords="191,5,355,32"/>
 <area shape="rect" href="classERF.html#a387af22acce3cefeb515eb151c3d1b5a" title=" " alt="" coords="5,5,143,32"/>
 </map>
 </div>
@@ -582,6 +675,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ae8ca591ba2325c0ad8b464de45f4c6b3"><div class="ttname"><a href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a></div><div class="ttdeci">#define Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
 <div class="ttc" id="aEOS_8H_html_a292ce90ab26c75f4a444808a807b532b"><div class="ttname"><a href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:16</div></div>
 <div class="ttc" id="aEOS_8H_html_a652d566aef658cc423ced929a816f869"><div class="ttname"><a href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:9</div></div>
 <!-- start footer part -->
