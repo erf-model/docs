@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['erfbctype_473',['ERFBCType',['../namespaceERFBCType.html',1,'']]]
+  ['erfbctype_472',['ERFBCType',['../namespaceERFBCType.html',1,'']]]
 ];

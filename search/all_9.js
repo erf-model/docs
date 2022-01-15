@@ -23,10 +23,9 @@ var searchData=
   ['interpolatepertfromcell_226',['InterpolatePertFromCell',['../Interpolation_8cpp.html#a156aef3decb40de82fa31cef7199aaba',1,'InterpolatePertFromCell(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;qty, const int &amp;qty_index, const Real &amp;upw, const Coord &amp;coordDir, const int &amp;spatial_order, const amrex::Real *dptr_hse):&#160;Interpolation.cpp'],['../SpatialStencils_8H.html#af0518f28eeb88a8a4b0686bb2171234a',1,'InterpolatePertFromCell(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;qty, const int &amp;qty_index, const Real &amp;uadv, const enum Coord &amp;coordDir, const int &amp;spatial_order, const amrex::Real *dptr_hse):&#160;SpatialStencils.H']]],
   ['interpolateturbulentviscosity_227',['InterpolateTurbulentViscosity',['../EddyViscosity_8H.html#a2bb03a231e1a9fceb7d2c133b3815745',1,'InterpolateTurbulentViscosity(const int &amp;i, const int &amp;j, const int &amp;k, const enum MomentumEqn &amp;momentumEqn, const enum DiffusionDir &amp;diffDir, const Array4&lt; Real &gt; &amp;K_LES):&#160;EddyViscosity.H'],['../SpatialStencils_8H.html#a72760f370a036662f62d0c1f0c2a4df5',1,'InterpolateTurbulentViscosity(const int &amp;i, const int &amp;j, const int &amp;k, const enum MomentumEqn &amp;momentumEqn, const enum DiffusionDir &amp;diffDir, const Array4&lt; Real &gt; &amp;Ksmag):&#160;EddyViscosity.H']]],
   ['interpolation_2ecpp_228',['Interpolation.cpp',['../Interpolation_8cpp.html',1,'']]],
-  ['interpolation_5ftype_229',['interpolation_type',['../classERF.html#a5f6b5de114df74ff7a5b872c0649b844',1,'ERF']]],
-  ['interptype_230',['InterpType',['../namespaceInterpType.html',1,'']]],
-  ['intvar_231',['IntVar',['../namespaceIntVar.html',1,'']]],
-  ['is_5fit_5ftime_5ffor_5faction_232',['is_it_time_for_action',['../classERF.html#ad4c61fad53912d1e8d0f774d365bcf0f',1,'ERF']]],
-  ['is_5fopen_233',['is_open',['../classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379',1,'ncutils::NCFile']]],
-  ['istep_234',['istep',['../classERF.html#aefa640a036c25b7b770e88a5f838eb2a',1,'ERF']]]
+  ['interptype_229',['InterpType',['../namespaceInterpType.html',1,'']]],
+  ['intvar_230',['IntVar',['../namespaceIntVar.html',1,'']]],
+  ['is_5fit_5ftime_5ffor_5faction_231',['is_it_time_for_action',['../classERF.html#ad4c61fad53912d1e8d0f774d365bcf0f',1,'ERF']]],
+  ['is_5fopen_232',['is_open',['../classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379',1,'ncutils::NCFile']]],
+  ['istep_233',['istep',['../classERF.html#aefa640a036c25b7b770e88a5f838eb2a',1,'ERF']]]
 ];
