@@ -101,7 +101,6 @@ var classERF =
     [ "h_rayleigh_vbar", "classERF.html#a6e0624ac1d76fbde394c7ba4b01ed7eb", null ],
     [ "init_abl", "classERF.html#a27359f3d7c9c73415896bfaf1a3448a4", null ],
     [ "init_shrink", "classERF.html#aa30548378350788543d15076cdcd404d", null ],
-    [ "integrator", "classERF.html#a49d7feba58f66172128ac730eaefdb00", null ],
     [ "istep", "classERF.html#aefa640a036c25b7b770e88a5f838eb2a", null ],
     [ "last_check_file_step", "classERF.html#a02722d16f3c26efe590702200f1296d7", null ],
     [ "last_plot_file_step", "classERF.html#a4e3d0f4486b62037fce08fca0aa2d0a9", null ],
