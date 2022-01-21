@@ -1,9 +1,14 @@
 var searchData=
 [
-  ['w_431',['w',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68',1,'DataStruct.H']]],
-  ['writebuildinfo_432',['writeBuildInfo',['../classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa',1,'ERF']]],
-  ['writecheckpointfile_433',['WriteCheckpointFile',['../classERF.html#ad101fd46096db2d6b21544bfede6551f',1,'ERF']]],
-  ['writejobinfo_434',['writeJobInfo',['../classERF.html#aa2d8099655a8779836e63e3e98ea4372',1,'ERF']]],
-  ['writejobinfo_2ecpp_435',['writeJobInfo.cpp',['../writeJobInfo_8cpp.html',1,'']]],
-  ['writeplotfile_436',['WritePlotFile',['../classERF.html#a387af22acce3cefeb515eb151c3d1b5a',1,'ERF']]]
+  ['v_428',['v',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a',1,'DataStruct.H']]],
+  ['var_429',['var',['../classncutils_1_1NCGroup.html#a79bef315da5cff7bcf8bbcfbdd122115',1,'ncutils::NCGroup']]],
+  ['varid_430',['varid',['../structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532',1,'ncutils::NCVar']]],
+  ['vars_431',['Vars',['../namespaceVars.html',1,'']]],
+  ['vars_5fnew_432',['vars_new',['../classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b',1,'ERF']]],
+  ['vars_5fold_433',['vars_old',['../classERF.html#af31e928baa970a1507dfb0233b352542',1,'ERF']]],
+  ['velocity_5fnames_434',['velocity_names',['../classERF.html#a2f2ea7f5eeeb3634944550e5a1de8f7a',1,'ERF']]],
+  ['velocitytomomentum_435',['VelocityToMomentum',['../SpatialStencils_8H.html#a4af131697a873e41e44a162ec40fd5a8',1,'VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom_out, MultiFab &amp;ymom_out, MultiFab &amp;zmom_out, const IntVect &amp;ngrow):&#160;VelocityToMomentum.cpp'],['../VelocityToMomentum_8cpp.html#a74241e06851a54dac1b61dcb122dc996',1,'VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom, MultiFab &amp;ymom, MultiFab &amp;zmom, const IntVect &amp;ngrow):&#160;VelocityToMomentum.cpp']]],
+  ['velocitytomomentum_2ecpp_436',['VelocityToMomentum.cpp',['../VelocityToMomentum_8cpp.html',1,'']]],
+  ['verbose_437',['verbose',['../classERF.html#a43d0b17f6e155691a1e9474526df3af5',1,'ERF']]],
+  ['volwgtsummf_438',['volWgtSumMF',['../classERF.html#a2cdc63885e5fec54f89cdcaffcbdc188',1,'ERF']]]
 ];

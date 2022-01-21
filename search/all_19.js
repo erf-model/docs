@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['_7eerf_452',['~ERF',['../classERF.html#a9980a8792a2ab137ad7c9121a5cf58bf',1,'ERF']]],
-  ['_7eerfphysbcfunct_453',['~ERFPhysBCFunct',['../classERFPhysBCFunct.html#abb1797f0742dd01ee978be02d594fc43',1,'ERFPhysBCFunct']]],
-  ['_7encfile_454',['~NCFile',['../classncutils_1_1NCFile.html#a4c1663f24f84dbc74152d7f040910a22',1,'ncutils::NCFile']]],
-  ['_7etimeinterpolateddata_455',['~TimeInterpolatedData',['../structTimeInterpolatedData.html#af14b2d5c5d55331a4dbc9cec9288af53',1,'TimeInterpolatedData']]]
+  ['z_455',['z',['../DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7',1,'z():&#160;DataStruct.H'],['../DataStruct_8H.html#a5943cc9db33abe98a5e07cd2b4387f53afbade9e36a3f36d3d676c1b808451dd7',1,'z():&#160;DataStruct.H'],['../DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7',1,'z():&#160;DataStruct.H'],['../DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7',1,'z():&#160;DataStruct.H']]],
+  ['zflux_456',['zflux',['../namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567a9b94534904513cb3b68ef8b0c7bfed51',1,'IntVar']]],
+  ['zmom_457',['zmom',['../namespaceIntVar.html#a6c429c0b18657afa3aaf94bec3658567abde409cfd9edf4a3581fe26dfa9613cd',1,'IntVar']]],
+  ['zvel_458',['zvel',['../namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b',1,'Vars']]],
+  ['zvel_5fbc_459',['zvel_bc',['../namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34',1,'BCVars']]]
 ];

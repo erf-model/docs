@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['u_883',['u',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c',1,'DataStruct.H']]],
-  ['undefined_884',['undefined',['../classERF.html#a31df09a4c2420058694420a43fd7ec4ba5e543256c480ac577d30f76f9120eb74',1,'ERF']]],
-  ['unity_885',['unity',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a439b3a25b555b3bc8667a09a036ae70c',1,'DataStruct.H']]]
+  ['theta_895',['Theta',['../namespacePrim.html#a2e4b5e877848b0711e7c017f386e9081a83429f0fa4859ad7f81d7c6b8451ccb5',1,'Prim::Theta()'],['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91',1,'theta():&#160;DataStruct.H']]]
 ];

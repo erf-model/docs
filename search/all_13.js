@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['u_411',['u',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c',1,'DataStruct.H']]],
-  ['undefined_412',['undefined',['../classERF.html#a31df09a4c2420058694420a43fd7ec4ba5e543256c480ac577d30f76f9120eb74',1,'ERF']]],
-  ['unity_413',['unity',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a439b3a25b555b3bc8667a09a036ae70c',1,'DataStruct.H']]],
-  ['use_5fcoriolis_414',['use_coriolis',['../structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606',1,'SolverChoice']]],
-  ['use_5fgravity_415',['use_gravity',['../structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5',1,'SolverChoice']]],
-  ['use_5frayleigh_5fdamping_416',['use_rayleigh_damping',['../structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01',1,'SolverChoice']]],
-  ['utilities_417',['Utilities',['../group__Utilities.html',1,'']]],
-  ['utils_2eh_418',['utils.H',['../utils_8H.html',1,'']]],
-  ['utils_5fk_2eh_419',['utils_K.H',['../utils__K_8H.html',1,'']]]
+  ['t_5fnew_409',['t_new',['../classERF.html#a65741b6379d273c19a25cf48bb947614',1,'ERF']]],
+  ['t_5fold_410',['t_old',['../classERF.html#a7085d7d5fc94a0f84efc06957267d58e',1,'ERF']]],
+  ['theta_411',['Theta',['../namespacePrim.html#a2e4b5e877848b0711e7c017f386e9081a83429f0fa4859ad7f81d7c6b8451ccb5',1,'Prim::Theta()'],['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91',1,'theta():&#160;DataStruct.H']]],
+  ['timeintegration_2eh_412',['TimeIntegration.H',['../TimeIntegration_8H.html',1,'']]],
+  ['timeintegration_5fdriver_2ecpp_413',['TimeIntegration_driver.cpp',['../TimeIntegration__driver_8cpp.html',1,'']]],
+  ['timeintegration_5ffast_2ecpp_414',['TimeIntegration_fast.cpp',['../TimeIntegration__fast_8cpp.html',1,'']]],
+  ['timeintegration_5frhs_2ecpp_415',['TimeIntegration_rhs.cpp',['../TimeIntegration__rhs_8cpp.html',1,'']]],
+  ['timeinterpolateddata_416',['TimeInterpolatedData',['../structTimeInterpolatedData.html',1,'TimeInterpolatedData'],['../structTimeInterpolatedData.html#af9e82f258d3d78331e0805ec7eca0a2e',1,'TimeInterpolatedData::TimeInterpolatedData()'],['../structTimeInterpolatedData.html#a4a51506e9b8da6c5b9ccfd77cefdd3a8',1,'TimeInterpolatedData::TimeInterpolatedData(Real time)']]],
+  ['timeinterpolateddata_2eh_417',['TimeInterpolatedData.H',['../TimeInterpolatedData_8H.html',1,'']]],
+  ['timestep_418',['timeStep',['../classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f',1,'ERF']]]
 ];

@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['theta_882',['Theta',['../namespacePrim.html#a2e4b5e877848b0711e7c017f386e9081a83429f0fa4859ad7f81d7c6b8451ccb5',1,'Prim::Theta()'],['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91',1,'theta():&#160;DataStruct.H']]]
+  ['scalar_891',['scalar',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4aa27a6549ade38cc036f7b8c58a840510',1,'scalar():&#160;DataStruct.H'],['../namespacePrim.html#a2e4b5e877848b0711e7c017f386e9081afedd432e3ecc9fd06a3a9a68d749c1af',1,'Prim::Scalar()']]],
+  ['slip_5fwall_892',['slip_wall',['../classERF.html#a31df09a4c2420058694420a43fd7ec4ba03ee6de9fd100444c5c0567ea01bd538',1,'ERF']]],
+  ['smagorinsky_893',['Smagorinsky',['../DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808',1,'DataStruct.H']]],
+  ['symmetry_894',['symmetry',['../classERF.html#a31df09a4c2420058694420a43fd7ec4ba40e712f30d56083318ab20a2402921d2',1,'ERF']]]
 ];
