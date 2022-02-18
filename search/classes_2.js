@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['fcfillextdirdummy_467',['FCFillExtDirDummy',['../structFCFillExtDirDummy.html',1,'']]]
+  ['erf_560',['ERF',['../classERF.html',1,'']]],
+  ['erfphysbcfunct_561',['ERFPhysBCFunct',['../classERFPhysBCFunct.html',1,'']]]
 ];

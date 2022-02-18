@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['writebuildinfo_690',['writeBuildInfo',['../classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa',1,'ERF']]],
-  ['writecheckpointfile_691',['WriteCheckpointFile',['../classERF.html#ad101fd46096db2d6b21544bfede6551f',1,'ERF']]],
-  ['writejobinfo_692',['writeJobInfo',['../classERF.html#aa2d8099655a8779836e63e3e98ea4372',1,'ERF']]],
-  ['writeplotfile_693',['WritePlotFile',['../classERF.html#a387af22acce3cefeb515eb151c3d1b5a',1,'ERF']]]
+  ['var_823',['var',['../classncutils_1_1NCGroup.html#a79bef315da5cff7bcf8bbcfbdd122115',1,'ncutils::NCGroup']]],
+  ['velocitytomomentum_824',['VelocityToMomentum',['../SpatialStencils_8H.html#a4af131697a873e41e44a162ec40fd5a8',1,'VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom_out, MultiFab &amp;ymom_out, MultiFab &amp;zmom_out, const IntVect &amp;ngrow):&#160;VelocityToMomentum.cpp'],['../VelocityToMomentum_8cpp.html#a74241e06851a54dac1b61dcb122dc996',1,'VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom, MultiFab &amp;ymom, MultiFab &amp;zmom, const IntVect &amp;ngrow):&#160;VelocityToMomentum.cpp']]],
+  ['velplaneaverage_825',['VelPlaneAverage',['../classVelPlaneAverage.html#ae7880b62c30d2f73b9b644f17a7725ca',1,'VelPlaneAverage']]],
+  ['volwgtsummf_826',['volWgtSumMF',['../classERF.html#a2cdc63885e5fec54f89cdcaffcbdc188',1,'ERF']]]
 ];

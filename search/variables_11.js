@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['varid_827',['varid',['../structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532',1,'ncutils::NCVar']]],
-  ['vars_5fnew_828',['vars_new',['../classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b',1,'ERF']]],
-  ['vars_5fold_829',['vars_old',['../classERF.html#af31e928baa970a1507dfb0233b352542',1,'ERF']]],
-  ['velocity_5fnames_830',['velocity_names',['../classERF.html#a2f2ea7f5eeeb3634944550e5a1de8f7a',1,'ERF']]],
-  ['verbose_831',['verbose',['../classERF.html#a43d0b17f6e155691a1e9474526df3af5',1,'ERF']]]
+  ['use_5fcoriolis_996',['use_coriolis',['../structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606',1,'SolverChoice']]],
+  ['use_5fgravity_997',['use_gravity',['../structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5',1,'SolverChoice']]],
+  ['use_5frayleigh_5fdamping_998',['use_rayleigh_damping',['../structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01',1,'SolverChoice']]],
+  ['utau_999',['utau',['../structABLMost.html#a628bfedb012413ca9d61fe7d29f09227',1,'ABLMost']]]
 ];

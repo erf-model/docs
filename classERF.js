@@ -1,15 +1,5 @@
 var classERF =
 [
-    [ "BC", "classERF.html#a31df09a4c2420058694420a43fd7ec4b", [
-      [ "symmetry", "classERF.html#a31df09a4c2420058694420a43fd7ec4ba40e712f30d56083318ab20a2402921d2", null ],
-      [ "inflow", "classERF.html#a31df09a4c2420058694420a43fd7ec4bad37e67db17cfd059f2852e2673b9e8ef", null ],
-      [ "outflow", "classERF.html#a31df09a4c2420058694420a43fd7ec4bacac0c32caf84a889ec9b2b4cb2d56972", null ],
-      [ "no_slip_wall", "classERF.html#a31df09a4c2420058694420a43fd7ec4bacb8c716b8d9b499d9bc323d8f8a410d3", null ],
-      [ "slip_wall", "classERF.html#a31df09a4c2420058694420a43fd7ec4ba03ee6de9fd100444c5c0567ea01bd538", null ],
-      [ "periodic", "classERF.html#a31df09a4c2420058694420a43fd7ec4bae6ffdec5e14fce371eb7ae99edebbbee", null ],
-      [ "MOST", "classERF.html#a31df09a4c2420058694420a43fd7ec4ba882dd232c0425bb9366544f84f0a7b6c", null ],
-      [ "undefined", "classERF.html#a31df09a4c2420058694420a43fd7ec4ba5e543256c480ac577d30f76f9120eb74", null ]
-    ] ],
     [ "ERF", "classERF.html#a30129012dd367825e5e4fd1406694f58", null ],
     [ "~ERF", "classERF.html#a9980a8792a2ab137ad7c9121a5cf58bf", null ],
     [ "Advance", "classERF.html#a47413fe5588f7dd71a1d5087a9e804f9", null ],
@@ -32,6 +22,8 @@ var classERF =
     [ "FillIntermediatePatch", "classERF.html#af622a736cd2c0c846945e6b54c961d26", null ],
     [ "FillPatch", "classERF.html#ad4b5cfafa3b805287e62d230ae51428f", null ],
     [ "get_flux_reg", "classERF.html#afd3cbffc97b8a89e58042e029c5c6b7c", null ],
+    [ "get_most", "classERF.html#ab8748d5fee9fee8cac5c7a85c4c85846", null ],
+    [ "get_most", "classERF.html#a2363133ceed700776c8ee6dfa0258fc6", null ],
     [ "getCPUTime", "classERF.html#a5cafd68de724845533efea8d284aacb4", null ],
     [ "GetDataAtTime", "classERF.html#a377c73050eb059a960e7d3b5e60ca640", null ],
     [ "GotoNextLine", "classERF.html#aaee255b031e63bd9b5807f6612739dbd", null ],
@@ -56,6 +48,7 @@ var classERF =
     [ "RemakeLevel", "classERF.html#aae7a3a76e08e54c618cf79b30ed2d73d", null ],
     [ "setPlotVariables", "classERF.html#aef40b8ba6cb32fe3b11b8d9381f16cef", null ],
     [ "setRecordDataInfo", "classERF.html#a2486b49bb0d7917f812318822e42a03c", null ],
+    [ "setupABLMost", "classERF.html#a67da556b4b4cbdc891da06eb5e17aac8", null ],
     [ "sum_integrated_quantities", "classERF.html#a14beee83853b2d0c675beda011cbff9e", null ],
     [ "timeStep", "classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f", null ],
     [ "volWgtSumMF", "classERF.html#a2cdc63885e5fec54f89cdcaffcbdc188", null ],
@@ -106,6 +99,7 @@ var classERF =
     [ "last_plot_file_step", "classERF.html#a4e3d0f4486b62037fce08fca0aa2d0a9", null ],
     [ "m_bc_extdir_vals", "classERF.html#a7d5ea71a2772d2ce602b90d80e32ad37", null ],
     [ "max_step", "classERF.html#a0634154e8e58379c495c3e7fe7c5e4d6", null ],
+    [ "most", "classERF.html#ae068972239adcd3c5fe6024fcdaa545e", null ],
     [ "ng_dens_hse", "classERF.html#addf0fb2aae0efaa649c69685a4dcca83", null ],
     [ "ng_pres_hse", "classERF.html#a87dc6c0720462bfd088c909289cdca0b", null ],
     [ "nsubsteps", "classERF.html#aa3db2dd1b65310c66c4038650c22aaee", null ],

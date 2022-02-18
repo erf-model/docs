@@ -1,0 +1,26 @@
+var classVelPlaneAverage =
+[
+    [ "VelPlaneAverage", "classVelPlaneAverage.html#ae7880b62c30d2f73b9b644f17a7725ca", null ],
+    [ "~VelPlaneAverage", "classVelPlaneAverage.html#ac8556a8301cea33dfbde7822184c9a74", null ],
+    [ "compute_hvelmag_averages", "classVelPlaneAverage.html#a53135b775cced0ed5175ec2c81363140", null ],
+    [ "compute_line_hvelmag_derivatives", "classVelPlaneAverage.html#a6855af169ebc547125b3e11ee99294e5", null ],
+    [ "field", "classVelPlaneAverage.html#a30bef20dae2e57ebada612da35a2765c", null ],
+    [ "line_hvelmag_average", "classVelPlaneAverage.html#a004d87aa37fa1ec1cce76bd87235ad8f", null ],
+    [ "line_hvelmag_average_cell", "classVelPlaneAverage.html#ab354cae49f9b49e2e921d410611df789", null ],
+    [ "line_hvelmag_average_interpolated", "classVelPlaneAverage.html#aecc7774f0ad70f4437db9502c2192c7a", null ],
+    [ "line_hvelmag_derivative_interpolated", "classVelPlaneAverage.html#a2266e932c7861a19d00fa2d41291f00e", null ],
+    [ "line_hvelmag_derivative_of_average_cell", "classVelPlaneAverage.html#a0d1f689b0b21c0895128f82b8f928458", null ],
+    [ "operator()", "classVelPlaneAverage.html#a6172ecd21d22aa879e8848ea94905e6f", null ],
+    [ "m_axis", "classVelPlaneAverage.html#aa1d29c68171b8fe14713b5a6581107f5", null ],
+    [ "m_comp_deriv", "classVelPlaneAverage.html#af258dc898a77e7ecf735ddca6106a4d8", null ],
+    [ "m_dx", "classVelPlaneAverage.html#a595b07be394cf6ae1b0763ba079186e4", null ],
+    [ "m_geom", "classVelPlaneAverage.html#a56b48722db5d25e5ab147c831d86f3f1", null ],
+    [ "m_line_hvelmag_average", "classVelPlaneAverage.html#a98530a2a6b182613697317faf80fa278", null ],
+    [ "m_line_hvelmag_deriv", "classVelPlaneAverage.html#a13572efe8855809a00b35562c55ef73e", null ],
+    [ "m_line_xcentroid", "classVelPlaneAverage.html#a1dc39045d5e8676573d41c6a6a89af53", null ],
+    [ "m_mfab", "classVelPlaneAverage.html#ae4837d3e0672ec7ba17a77087e0353ac", null ],
+    [ "m_ncell_line", "classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862", null ],
+    [ "m_ncell_plane", "classVelPlaneAverage.html#a0e172ce8d86cd386074fdbd186a9f2dc", null ],
+    [ "m_ncomp", "classVelPlaneAverage.html#a2b1c704ef554d23777b6c2afdcb0efe3", null ],
+    [ "m_xlo", "classVelPlaneAverage.html#ae4d8d977f3023c9ec40e85dd5e8eacfd", null ]
+];

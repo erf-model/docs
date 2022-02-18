@@ -7,9 +7,13 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ABLFieldInit.H", "ABLFieldInit_8H.html", [
       [ "ABLFieldInit", "structABLFieldInit.html", "structABLFieldInit" ]
     ] ],
+    [ "ABLMost.H", "ABLMost_8H.html", [
+      [ "ABLMost", "structABLMost.html", "structABLMost" ]
+    ] ],
     [ "DataStruct.H", "DataStruct_8H.html", "DataStruct_8H" ],
     [ "Derive.cpp", "Derive_8cpp.html", "Derive_8cpp" ],
     [ "Derive.H", "Derive_8H.html", "Derive_8H" ],
+    [ "DirectionSelector.H", "DirectionSelector_8H.html", "DirectionSelector_8H" ],
     [ "EOS.H", "EOS_8H.html", "EOS_8H" ],
     [ "ERF.cpp", "ERF_8cpp.html", "ERF_8cpp" ],
     [ "ERF.H", "ERF_8H.html", "ERF_8H" ],
@@ -28,10 +32,16 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ERF_Utils.cpp", "ERF__Utils_8cpp.html", "ERF__Utils_8cpp" ],
     [ "IndexDefines.H", "IndexDefines_8H.html", "IndexDefines_8H" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
+    [ "PlaneAverage.H", "PlaneAverage_8H.html", [
+      [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ]
+    ] ],
     [ "prob_common.H", "prob__common_8H.html", "prob__common_8H" ],
     [ "TimeInterpolatedData.H", "TimeInterpolatedData_8H.html", [
       [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ]
     ] ],
     [ "utils.H", "utils_8H.html", "utils_8H" ],
-    [ "utils_K.H", "utils__K_8H.html", "utils__K_8H" ]
+    [ "utils_K.H", "utils__K_8H.html", "utils__K_8H" ],
+    [ "VelPlaneAverage.H", "VelPlaneAverage_8H.html", [
+      [ "VelPlaneAverage", "classVelPlaneAverage.html", "classVelPlaneAverage" ]
+    ] ]
 ];
