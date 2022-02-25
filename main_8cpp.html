@@ -258,7 +258,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;main()&quot;</span>, pmain);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// wallclock time</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> Real strt_total = amrex::second();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> strt_total = amrex::second();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">// constructor - reads in parameters from inputs file</span></div>
@@ -272,7 +272,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        erf.<a class="code" href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96">Evolve</a>();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">// wallclock time</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        Real end_total = amrex::second() - strt_total;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> end_total = amrex::second() - strt_total;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">// print wallclock time</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        ParallelDescriptor::ReduceRealMax(end_total ,ParallelDescriptor::IOProcessorNumber());</div>
@@ -325,6 +325,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_ae6afed5b3a72ca80ccf0d791b08516aa"><div class="ttname"><a href="classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa">ERF::writeBuildInfo</a></div><div class="ttdeci">static void writeBuildInfo(std::ostream &amp;os)</div><div class="ttdef"><b>Definition:</b> writeJobInfo.cpp:135</div></div>
 <div class="ttc" id="amain_8cpp_html_a183e783116d02836167ccbed3b28c1d3"><div class="ttname"><a href="main_8cpp.html#a183e783116d02836167ccbed3b28c1d3">add_par</a></div><div class="ttdeci">void add_par()</div><div class="ttdef"><b>Definition:</b> main.cpp:17</div></div>
 <div class="ttc" id="aclassERF_html_ad5d585e110291969767013a515719224"><div class="ttname"><a href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData</a></div><div class="ttdeci">void InitData()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:270</div></div>
+<div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
 <div class="ttc" id="aclassERF_html"><div class="ttname"><a href="classERF.html">ERF</a></div><div class="ttdef"><b>Definition:</b> ERF.H:68</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

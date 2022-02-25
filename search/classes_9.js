@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writebndryplanes_614',['WriteBndryPlanes',['../classWriteBndryPlanes.html',1,'']]]
+  ['solverchoice_635',['SolverChoice',['../structSolverChoice.html',1,'']]]
 ];

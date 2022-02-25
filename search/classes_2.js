@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['erf_601',['ERF',['../classERF.html',1,'']]],
-  ['erfphysbcfunct_602',['ERFPhysBCFunct',['../classERFPhysBCFunct.html',1,'']]]
+  ['directionselector_618',['DirectionSelector',['../structDirectionSelector.html',1,'']]],
+  ['directionselector_3c_200_20_3e_619',['DirectionSelector&lt; 0 &gt;',['../structDirectionSelector_3_010_01_4.html',1,'']]],
+  ['directionselector_3c_201_20_3e_620',['DirectionSelector&lt; 1 &gt;',['../structDirectionSelector_3_011_01_4.html',1,'']]],
+  ['directionselector_3c_202_20_3e_621',['DirectionSelector&lt; 2 &gt;',['../structDirectionSelector_3_012_01_4.html',1,'']]]
 ];

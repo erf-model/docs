@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['ncdim_603',['NCDim',['../structncutils_1_1NCDim.html',1,'ncutils']]],
-  ['ncdtype_604',['NCDType',['../structncutils_1_1NCDType.html',1,'ncutils']]],
-  ['ncfile_605',['NCFile',['../classncutils_1_1NCFile.html',1,'ncutils']]],
-  ['ncgroup_606',['NCGroup',['../classncutils_1_1NCGroup.html',1,'ncutils']]],
-  ['ncvar_607',['NCVar',['../structncutils_1_1NCVar.html',1,'ncutils']]],
-  ['nullfill_608',['NullFill',['../structNullFill.html',1,'']]]
+  ['erf_622',['ERF',['../classERF.html',1,'']]],
+  ['erf_5fic_5fbc_623',['ERF_IC_BC',['../classERF__IC__BC.html',1,'']]],
+  ['erfphysbcfunct_624',['ERFPhysBCFunct',['../classERFPhysBCFunct.html',1,'']]]
 ];

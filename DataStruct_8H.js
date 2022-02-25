@@ -34,6 +34,10 @@ var DataStruct_8H =
       [ "y", "DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d", null ],
       [ "z", "DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7", null ]
     ] ],
+    [ "IC_BC_Type", "DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36", [
+      [ "Ideal", "DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a22b7c2abfb7dcf0f672899fb2b6f1670", null ],
+      [ "Real", "DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1", null ]
+    ] ],
     [ "LESType", "DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500", [
       [ "None", "DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a6adf97f83acf6453d4a6a4b1070f3754", null ],
       [ "Smagorinsky", "DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808", null ],

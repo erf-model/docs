@@ -113,11 +113,11 @@ Include dependency graph for Interpolation.cpp:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a7321650cd25732fac66a766e7c20d477"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Interpolation_8cpp.html#a7321650cd25732fac66a766e7c20d477">interpolatedVal</a> (const Real &amp;avg1, const Real &amp;avg2, const Real &amp;avg3, const Real &amp;diff1, const Real &amp;diff2, const Real &amp;diff3, const Real &amp;scaled_upw, const int &amp;spatial_order)</td></tr>
 <tr class="separator:a7321650cd25732fac66a766e7c20d477"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30da715cd63557a92abefcfc967a4fe8"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Interpolation_8cpp.html#a30da715cd63557a92abefcfc967a4fe8">InterpolateDensityPertFromCellToFace</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;cons_in, const Real &amp;upw, const <a class="el" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a> &amp;coordDir, const int &amp;spatial_order, const amrex::Real *dptr_hse)</td></tr>
+<tr class="memitem:a30da715cd63557a92abefcfc967a4fe8"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Interpolation_8cpp.html#a30da715cd63557a92abefcfc967a4fe8">InterpolateDensityPertFromCellToFace</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;cons_in, const Real &amp;upw, const <a class="el" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a> &amp;coordDir, const int &amp;spatial_order, const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> *dptr_hse)</td></tr>
 <tr class="separator:a30da715cd63557a92abefcfc967a4fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3046bc73f0e1b5c442705c4fee050e45"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Interpolation_8cpp.html#a3046bc73f0e1b5c442705c4fee050e45">InterpolateFromCellOrFace</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;qty, const int &amp;qty_index, const Real &amp;upw, const <a class="el" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a> &amp;coordDir, const int &amp;spatial_order)</td></tr>
 <tr class="separator:a3046bc73f0e1b5c442705c4fee050e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a156aef3decb40de82fa31cef7199aaba"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Interpolation_8cpp.html#a156aef3decb40de82fa31cef7199aaba">InterpolatePertFromCell</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;qty, const int &amp;qty_index, const Real &amp;upw, const <a class="el" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a> &amp;coordDir, const int &amp;spatial_order, const amrex::Real *dptr_hse)</td></tr>
+<tr class="memitem:a156aef3decb40de82fa31cef7199aaba"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Interpolation_8cpp.html#a156aef3decb40de82fa31cef7199aaba">InterpolatePertFromCell</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;qty, const int &amp;qty_index, const Real &amp;upw, const <a class="el" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a> &amp;coordDir, const int &amp;spatial_order, const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> *dptr_hse)</td></tr>
 <tr class="separator:a156aef3decb40de82fa31cef7199aaba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -172,7 +172,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> *&#160;</td>
           <td class="paramname"><em>dptr_hse</em>&#160;</td>
         </tr>
         <tr>
@@ -272,7 +272,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    Real myInterpolatedVal;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> myInterpolatedVal;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">switch</span> (spatial_order) {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">case</span> 2:</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            myInterpolatedVal = 0.5 * avg1;</div>
@@ -381,9 +381,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    Real avg1 = 0.; Real avg2 = 0.; Real avg3 = 0.;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Real diff1 = 0.; Real diff2 = 0.; Real diff3 = 0.;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    Real scaled_upw = 0.;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> avg1 = 0.; <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> avg2 = 0.; <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> avg3 = 0.;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> diff1 = 0.; <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> diff2 = 0.; <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> diff3 = 0.;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> scaled_upw = 0.;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// The value that comes in has not been normalized so we do that here</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (upw != 0.)</div>
@@ -521,7 +521,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> *&#160;</td>
           <td class="paramname"><em>dptr_hse</em>&#160;</td>
         </tr>
         <tr>
@@ -532,9 +532,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    Real avg1 = 0.; Real avg2 = 0.; Real avg3 = 0.;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    Real diff1 = 0.; Real diff2 = 0.; Real diff3 = 0.;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    Real scaled_upw = 0.;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> avg1 = 0.; <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> avg2 = 0.; <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> avg3 = 0.;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> diff1 = 0.; <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> diff2 = 0.; <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> diff3 = 0.;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> scaled_upw = 0.;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// The value that comes in has not been normalized so we do that here</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">if</span> (upw != 0.)</div>
@@ -613,6 +613,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aInterpolation_8cpp_html_a156aef3decb40de82fa31cef7199aaba"><div class="ttname"><a href="Interpolation_8cpp.html#a156aef3decb40de82fa31cef7199aaba">InterpolatePertFromCell</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real InterpolatePertFromCell(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;qty, const int &amp;qty_index, const Real &amp;upw, const Coord &amp;coordDir, const int &amp;spatial_order, const amrex::Real *dptr_hse)</div><div class="ttdef"><b>Definition:</b> Interpolation.cpp:114</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
+<div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
 <div class="ttc" id="aInterpolation_8cpp_html_a7321650cd25732fac66a766e7c20d477"><div class="ttname"><a href="Interpolation_8cpp.html#a7321650cd25732fac66a766e7c20d477">interpolatedVal</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real interpolatedVal(const Real &amp;avg1, const Real &amp;avg2, const Real &amp;avg3, const Real &amp;diff1, const Real &amp;diff2, const Real &amp;diff3, const Real &amp;scaled_upw, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Interpolation.cpp:7</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
