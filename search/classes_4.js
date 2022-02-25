@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fcfillextdirdummy_626',['FCFillExtDirDummy',['../structFCFillExtDirDummy.html',1,'']]]
+  ['planeaverage_609',['PlaneAverage',['../classPlaneAverage.html',1,'']]]
 ];

@@ -29,7 +29,6 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ERF_SumIQ.cpp", "ERF__SumIQ_8cpp.html", null ],
     [ "ERF_Tagging.cpp", "ERF__Tagging_8cpp.html", null ],
     [ "ERF_TimeStepping.cpp", "ERF__TimeStepping_8cpp.html", null ],
-    [ "ERF_Utils.cpp", "ERF__Utils_8cpp.html", "ERF__Utils_8cpp" ],
     [ "IndexDefines.H", "IndexDefines_8H.html", "IndexDefines_8H" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
     [ "PlaneAverage.H", "PlaneAverage_8H.html", [
@@ -39,8 +38,6 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "TimeInterpolatedData.H", "TimeInterpolatedData_8H.html", [
       [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ]
     ] ],
-    [ "utils.H", "utils_8H.html", "utils_8H" ],
-    [ "utils_K.H", "utils__K_8H.html", "utils__K_8H" ],
     [ "VelPlaneAverage.H", "VelPlaneAverage_8H.html", [
       [ "VelPlaneAverage", "classVelPlaneAverage.html", "classVelPlaneAverage" ]
     ] ]

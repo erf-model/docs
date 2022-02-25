@@ -10,8 +10,6 @@ var classWriteBndryPlanes =
     [ "m_in_times", "classWriteBndryPlanes.html#a15fa114f52237b735599b6a5cac40d26", null ],
     [ "m_in_timesteps", "classWriteBndryPlanes.html#a7cab948881900ffa97145c47221dcb44", null ],
     [ "m_out_rad", "classWriteBndryPlanes.html#a2ce490f5166966b52112f126c9dc4dd8", null ],
-    [ "m_plane_names", "classWriteBndryPlanes.html#a9d8837c664a0cb48321d663307b94c93", null ],
-    [ "m_planes", "classWriteBndryPlanes.html#a3d78ae0ededba005e75a4922187e07aa", null ],
     [ "m_time_file", "classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1", null ],
     [ "m_var_names", "classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b", null ],
     [ "target_box", "classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379", null ]

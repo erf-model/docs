@@ -30,7 +30,6 @@ var NAVTREE =
       [ "Development Model", "index.html#dev_model", null ],
       [ "Acknowledgement", "index.html#Acknowledgement", null ]
     ] ],
-    [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -70,9 +69,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ABLFieldInit_8H.html",
-"StressTerm_8H.html#a7fef7d0cfd1ee970c5f1deb97f86ba2d",
-"classReadBndryPlanes.html#ae151e133976467ae756f80cc1cbdb57b",
-"structABLMost.html#a16425f77882d39c6468e7d277b4197d3"
+"StressTerm_8H.html#a251d43d72e693cb73b820c1dbe94e5a2",
+"classVelPlaneAverage.html#a2266e932c7861a19d00fa2d41291f00e",
+"structDirectionSelector.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -126,6 +126,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:afbebd7a5caa9e22797c3b0336613cda4"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a> (int bc_in)</td></tr>
+<tr class="separator:afbebd7a5caa9e22797c3b0336613cda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82bb551ca28959c8356aeee62bc1ed5c"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StrainRate_8H.html#a82bb551ca28959c8356aeee62bc1ed5c">ComputeS11</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</td></tr>
 <tr class="separator:a82bb551ca28959c8356aeee62bc1ed5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ac70c4b50d149dd43690e2e95d78a81"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StrainRate_8H.html#a7ac70c4b50d149dd43690e2e95d78a81">ComputeS22</a> (const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;v, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</td></tr>
@@ -199,10 +201,10 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  Real dx_inv = cellSizeInv[0];</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i-1, j, k))*dx_inv;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  Real dx_inv = cellSizeInv[0];</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i-1, j, k))*dx_inv;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="EddyViscosity_8H.html#aef3de1b7815cb5904b1ede44b78a4407">ComputeSmnSmn()</a>, and <a class="el" href="StrainRate_8H.html#a0a5dd98571e553933e53adc26fdcc7b3">ComputeStrainRate()</a>.</p>
 <div class="dynheader">
@@ -299,31 +301,40 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    Real dx_inv = cellSizeInv[0];</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    Real dy_inv = cellSizeInv[1];</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    Real strainRate = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (j == domain.smallEnd(1) &amp;&amp; bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        strainRate =  (-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j-1,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j+1,k))*dy_inv;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == domain.bigEnd(1)+1 &amp;&amp; bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].hi(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        strainRate = -(-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j-1,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j-2,k))*dy_inv;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        strainRate  = (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i, j-1, k))*dy_inv;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (i == domain.smallEnd(0) &amp;&amp; bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        strainRate =  (-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i-1,j,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i+1,j,k))*dx_inv;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i == domain.bigEnd(0)+1 &amp;&amp; bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].hi(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        strainRate = -(-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i-1,j,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i-2,j,k))*dx_inv;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        strainRate += (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i-1, j, k)) * dx_inv;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    strainRate *= 0.5;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> strainRate;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Real dx_inv = cellSizeInv[0];</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    Real dy_inv = cellSizeInv[1];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    Real strainRate = 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> (j == domain.smallEnd(1) &amp;&amp; <a class="code" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a>(bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].lo(1))) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        strainRate =  (-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j-1,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j+1,k))*dy_inv;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == domain.bigEnd(1)+1 &amp;&amp; <a class="code" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a>(bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].hi(1))) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        strainRate = -(-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j-1,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j-2,k))*dy_inv;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        strainRate  = (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i, j-1, k))*dy_inv;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span> (i == domain.smallEnd(0) &amp;&amp; <a class="code" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a>(bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].lo(0))) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        strainRate =  (-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i-1,j,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i+1,j,k))*dx_inv;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i == domain.bigEnd(0)+1 &amp;&amp; <a class="code" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a>(bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].hi(0))) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        strainRate = -(-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i-1,j,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i-2,j,k))*dx_inv;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        strainRate += (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i-1, j, k)) * dx_inv;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    strainRate *= 0.5;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> strainRate;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="StrainRate_8H.html#a0fb9a6d0bd517516e305b45ee804752a">ComputeS21()</a>, <a class="el" href="EddyViscosity_8H.html#aef3de1b7815cb5904b1ede44b78a4407">ComputeSmnSmn()</a>, and <a class="el" href="StrainRate_8H.html#a0a5dd98571e553933e53adc26fdcc7b3">ComputeStrainRate()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="StrainRate_8H_a8773ef9271754b275a341e16dbafb4fa_cgraph.png" border="0" usemap="#StrainRate_8H_a8773ef9271754b275a341e16dbafb4fa_cgraph" alt=""/></div>
+<map name="StrainRate_8H_a8773ef9271754b275a341e16dbafb4fa_cgraph" id="StrainRate_8H_a8773ef9271754b275a341e16dbafb4fa_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,111,32"/>
+<area shape="rect" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4" title=" " alt="" coords="159,5,249,32"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -419,32 +430,41 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    Real dx_inv = cellSizeInv[0];</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    Real dz_inv = cellSizeInv[2];</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    Real strainRate;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (k == domain.smallEnd(2) &amp;&amp; bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        strainRate =  (-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k-1) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k+1))*dz_inv;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == domain.bigEnd(2)+1 &amp;&amp; bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        strainRate = -(-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k-1) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k-2))*dz_inv;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        strainRate = (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i, j, k-1))*dz_inv;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (i == domain.smallEnd(0) &amp;&amp; bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        strainRate =  (-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i-1,j,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i+1,j,k))*dx_inv;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i == domain.bigEnd(0)+1 &amp;&amp; bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>].hi(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        strainRate = -(-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i-1,j,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i-2,j,k))*dx_inv;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        strainRate += (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i-1, j, k)) * dx_inv;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    strainRate *= 0.5;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> strainRate;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    Real dx_inv = cellSizeInv[0];</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    Real dz_inv = cellSizeInv[2];</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    Real strainRate;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (k == domain.smallEnd(2) &amp;&amp; <a class="code" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a>(bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].lo(2))) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        strainRate =  (-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k-1) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k+1))*dz_inv;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == domain.bigEnd(2)+1 &amp;&amp; <a class="code" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a>(bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].hi(2))) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        strainRate = -(-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k-1) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k-2))*dz_inv;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        strainRate = (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i, j, k-1))*dz_inv;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span> (i == domain.smallEnd(0) &amp;&amp; <a class="code" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a>(bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>].lo(0))) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        strainRate =  (-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i-1,j,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i+1,j,k))*dx_inv;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i == domain.bigEnd(0)+1 &amp;&amp; <a class="code" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a>(bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>].hi(0))) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        strainRate = -(-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i-1,j,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i-2,j,k))*dx_inv;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        strainRate += (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i-1, j, k)) * dx_inv;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    strainRate *= 0.5;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> strainRate;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="StrainRate_8H.html#ab95c481d8780dfb9772adb9b3b57b23e">ComputeS31()</a>, <a class="el" href="EddyViscosity_8H.html#aef3de1b7815cb5904b1ede44b78a4407">ComputeSmnSmn()</a>, and <a class="el" href="StrainRate_8H.html#a0a5dd98571e553933e53adc26fdcc7b3">ComputeStrainRate()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="StrainRate_8H_a14f15d0129f95fa6d87538cf40fc3246_cgraph.png" border="0" usemap="#StrainRate_8H_a14f15d0129f95fa6d87538cf40fc3246_cgraph" alt=""/></div>
+<map name="StrainRate_8H_a14f15d0129f95fa6d87538cf40fc3246_cgraph" id="StrainRate_8H_a14f15d0129f95fa6d87538cf40fc3246_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,111,32"/>
+<area shape="rect" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4" title=" " alt="" coords="159,5,249,32"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -540,9 +560,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;{</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="StrainRate_8H.html#a8773ef9271754b275a341e16dbafb4fa">ComputeS12</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;{</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="StrainRate_8H.html#a8773ef9271754b275a341e16dbafb4fa">ComputeS12</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="StrainRate_8H.html#a0a5dd98571e553933e53adc26fdcc7b3">ComputeStrainRate()</a>.</p>
 <div class="dynheader">
@@ -552,6 +572,7 @@ Here is the call graph for this function:</div>
 <map name="StrainRate_8H_a0fb9a6d0bd517516e305b45ee804752a_cgraph" id="StrainRate_8H_a0fb9a6d0bd517516e305b45ee804752a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,111,32"/>
 <area shape="rect" href="StrainRate_8H.html#a8773ef9271754b275a341e16dbafb4fa" title=" " alt="" coords="159,5,264,32"/>
+<area shape="rect" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4" title=" " alt="" coords="312,5,403,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -620,10 +641,10 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  Real dy_inv = cellSizeInv[1];</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i, j-1, k))*dy_inv;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  Real dy_inv = cellSizeInv[1];</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i, j-1, k))*dy_inv;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="EddyViscosity_8H.html#aef3de1b7815cb5904b1ede44b78a4407">ComputeSmnSmn()</a>, and <a class="el" href="StrainRate_8H.html#a0a5dd98571e553933e53adc26fdcc7b3">ComputeStrainRate()</a>.</p>
 <div class="dynheader">
@@ -720,32 +741,41 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    Real dy_inv = cellSizeInv[1];</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    Real dz_inv = cellSizeInv[2];</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    Real strainRate;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (k == domain.smallEnd(2) &amp;&amp; bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        strainRate =  (-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k-1) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k  ) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k+1))*dz_inv;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == domain.bigEnd(2)+1 &amp;&amp; bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        strainRate = -(-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k  ) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k-1) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k-2))*dz_inv;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        strainRate = (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i, j, k-1))*dz_inv;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> (j == domain.smallEnd(1) &amp;&amp; bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        strainRate =  (-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j-1,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j  ,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j+1,k))*dy_inv;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == domain.bigEnd(1)+1 &amp;&amp; bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>].hi(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        strainRate = -(-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j  ,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j-1,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j-2,k))*dy_inv;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        strainRate += (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i, j-1, k))*dy_inv;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    strainRate *= 0.5;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> strainRate;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    Real dy_inv = cellSizeInv[1];</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    Real dz_inv = cellSizeInv[2];</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    Real strainRate;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span> (k == domain.smallEnd(2) &amp;&amp; <a class="code" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a>(bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].lo(2))) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        strainRate =  (-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k-1) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k  ) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k+1))*dz_inv;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == domain.bigEnd(2)+1 &amp;&amp; <a class="code" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a>(bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].hi(2))) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        strainRate = -(-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k  ) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k-1) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k-2))*dz_inv;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        strainRate = (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i, j, k-1))*dz_inv;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> (j == domain.smallEnd(1) &amp;&amp; <a class="code" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a>(bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>].lo(1))) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        strainRate =  (-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j-1,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j  ,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j+1,k))*dy_inv;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == domain.bigEnd(1)+1 &amp;&amp; <a class="code" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a>(bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>].hi(1))) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        strainRate = -(-(8./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j  ,k) + 3. * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j-1,k) - (1./3.) * <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i,j-2,k))*dy_inv;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        strainRate += (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i, j-1, k))*dy_inv;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    strainRate *= 0.5;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">return</span> strainRate;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="StrainRate_8H.html#a46804763ce9ec78b676cd619fe067772">ComputeS32()</a>, <a class="el" href="EddyViscosity_8H.html#aef3de1b7815cb5904b1ede44b78a4407">ComputeSmnSmn()</a>, and <a class="el" href="StrainRate_8H.html#a0a5dd98571e553933e53adc26fdcc7b3">ComputeStrainRate()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="StrainRate_8H_a0f2db0d45006784f78de04288d1f7dee_cgraph.png" border="0" usemap="#StrainRate_8H_a0f2db0d45006784f78de04288d1f7dee_cgraph" alt=""/></div>
+<map name="StrainRate_8H_a0f2db0d45006784f78de04288d1f7dee_cgraph" id="StrainRate_8H_a0f2db0d45006784f78de04288d1f7dee_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,111,32"/>
+<area shape="rect" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4" title=" " alt="" coords="159,5,249,32"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -841,9 +871,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="StrainRate_8H.html#a14f15d0129f95fa6d87538cf40fc3246">ComputeS13</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="StrainRate_8H.html#a14f15d0129f95fa6d87538cf40fc3246">ComputeS13</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="StrainRate_8H.html#a0a5dd98571e553933e53adc26fdcc7b3">ComputeStrainRate()</a>.</p>
 <div class="dynheader">
@@ -853,6 +883,7 @@ Here is the call graph for this function:</div>
 <map name="StrainRate_8H_ab95c481d8780dfb9772adb9b3b57b23e_cgraph" id="StrainRate_8H_ab95c481d8780dfb9772adb9b3b57b23e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,111,32"/>
 <area shape="rect" href="StrainRate_8H.html#a14f15d0129f95fa6d87538cf40fc3246" title=" " alt="" coords="159,5,264,32"/>
+<area shape="rect" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4" title=" " alt="" coords="312,5,403,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -945,9 +976,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="StrainRate_8H.html#a0f2db0d45006784f78de04288d1f7dee">ComputeS23</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="StrainRate_8H.html#a0f2db0d45006784f78de04288d1f7dee">ComputeS23</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="StrainRate_8H.html#a0a5dd98571e553933e53adc26fdcc7b3">ComputeStrainRate()</a>.</p>
 <div class="dynheader">
@@ -957,6 +988,7 @@ Here is the call graph for this function:</div>
 <map name="StrainRate_8H_a46804763ce9ec78b676cd619fe067772_cgraph" id="StrainRate_8H_a46804763ce9ec78b676cd619fe067772_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,111,32"/>
 <area shape="rect" href="StrainRate_8H.html#a0f2db0d45006784f78de04288d1f7dee" title=" " alt="" coords="159,5,264,32"/>
+<area shape="rect" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4" title=" " alt="" coords="312,5,403,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1025,10 +1057,10 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  Real dz_inv = cellSizeInv[2];</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i, j, k-1))*dz_inv;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  Real dz_inv = cellSizeInv[2];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i, j, k) - <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>(i, j, k-1))*dz_inv;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="EddyViscosity_8H.html#aef3de1b7815cb5904b1ede44b78a4407">ComputeSmnSmn()</a>, and <a class="el" href="StrainRate_8H.html#a0a5dd98571e553933e53adc26fdcc7b3">ComputeStrainRate()</a>.</p>
 <div class="dynheader">
@@ -1137,60 +1169,60 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    Real strainRate;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">switch</span> (momentumEqn) {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>:</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">switch</span> (diffDir) {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>: <span class="comment">// S11</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#a82bb551ca28959c8356aeee62bc1ed5c">ComputeS11</a>(i,j,k,u,cellSizeInv);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>: <span class="comment">// S12</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#a8773ef9271754b275a341e16dbafb4fa">ComputeS12</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>: <span class="comment">// S13</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;             strainRate = <a class="code" href="StrainRate_8H.html#a14f15d0129f95fa6d87538cf40fc3246">ComputeS13</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;             <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;          <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;             amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;          }</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;          <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a>:</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">switch</span> (diffDir) {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>: <span class="comment">// S21</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#a0fb9a6d0bd517516e305b45ee804752a">ComputeS21</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>: <span class="comment">// S22</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#a7ac70c4b50d149dd43690e2e95d78a81">ComputeS22</a>(i,j,k,v,cellSizeInv);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>: <span class="comment">// S23</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#a0f2db0d45006784f78de04288d1f7dee">ComputeS23</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;          <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        }</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a>:</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">switch</span> (diffDir) {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>: <span class="comment">// S31</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#ab95c481d8780dfb9772adb9b3b57b23e">ComputeS31</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>: <span class="comment">// S32</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#a46804763ce9ec78b676cd619fe067772">ComputeS32</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>: <span class="comment">// S33</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#ae0ebde9f77b481921039800f03f76d75">ComputeS33</a>(i,j,k,w,cellSizeInv);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;          <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;          amrex::Abort(<span class="stringliteral">&quot;Error: Momentum equation is unrecognized&quot;</span>);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keywordflow">return</span> strainRate;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    Real strainRate;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">switch</span> (momentumEqn) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>:</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">switch</span> (diffDir) {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>: <span class="comment">// S11</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#a82bb551ca28959c8356aeee62bc1ed5c">ComputeS11</a>(i,j,k,u,cellSizeInv);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>: <span class="comment">// S12</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#a8773ef9271754b275a341e16dbafb4fa">ComputeS12</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>: <span class="comment">// S13</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;             strainRate = <a class="code" href="StrainRate_8H.html#a14f15d0129f95fa6d87538cf40fc3246">ComputeS13</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;             <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;          <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;             amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;          }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;          <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a>:</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">switch</span> (diffDir) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>: <span class="comment">// S21</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#a0fb9a6d0bd517516e305b45ee804752a">ComputeS21</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>: <span class="comment">// S22</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#a7ac70c4b50d149dd43690e2e95d78a81">ComputeS22</a>(i,j,k,v,cellSizeInv);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>: <span class="comment">// S23</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#a0f2db0d45006784f78de04288d1f7dee">ComputeS23</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;          <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a>:</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">switch</span> (diffDir) {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>: <span class="comment">// S31</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#ab95c481d8780dfb9772adb9b3b57b23e">ComputeS31</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>: <span class="comment">// S32</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#a46804763ce9ec78b676cd619fe067772">ComputeS32</a>(i,j,k,u,v,w,cellSizeInv,domain,bc_ptr);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;          <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>: <span class="comment">// S33</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            strainRate = <a class="code" href="StrainRate_8H.html#ae0ebde9f77b481921039800f03f76d75">ComputeS33</a>(i,j,k,w,cellSizeInv);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;          <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;          amrex::Abort(<span class="stringliteral">&quot;Error: Momentum equation is unrecognized&quot;</span>);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordflow">return</span> strainRate;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="StressTerm_8H.html#a7fef7d0cfd1ee970c5f1deb97f86ba2d">ComputeStressTerm()</a>.</p>
 <div class="dynheader">
@@ -1200,14 +1232,15 @@ Here is the call graph for this function:</div>
 <map name="StrainRate_8H_a0a5dd98571e553933e53adc26fdcc7b3_cgraph" id="StrainRate_8H_a0a5dd98571e553933e53adc26fdcc7b3_cgraph">
 <area shape="rect" title=" " alt="" coords="5,208,155,235"/>
 <area shape="rect" href="StrainRate_8H.html#a82bb551ca28959c8356aeee62bc1ed5c" title=" " alt="" coords="203,5,308,32"/>
-<area shape="rect" href="StrainRate_8H.html#a8773ef9271754b275a341e16dbafb4fa" title=" " alt="" coords="356,81,461,108"/>
-<area shape="rect" href="StrainRate_8H.html#a14f15d0129f95fa6d87538cf40fc3246" title=" " alt="" coords="356,183,461,209"/>
+<area shape="rect" href="StrainRate_8H.html#a8773ef9271754b275a341e16dbafb4fa" title=" " alt="" coords="356,107,461,133"/>
+<area shape="rect" href="StrainRate_8H.html#a14f15d0129f95fa6d87538cf40fc3246" title=" " alt="" coords="356,208,461,235"/>
 <area shape="rect" href="StrainRate_8H.html#a0fb9a6d0bd517516e305b45ee804752a" title=" " alt="" coords="203,107,308,133"/>
 <area shape="rect" href="StrainRate_8H.html#a7ac70c4b50d149dd43690e2e95d78a81" title=" " alt="" coords="203,208,308,235"/>
-<area shape="rect" href="StrainRate_8H.html#a0f2db0d45006784f78de04288d1f7dee" title=" " alt="" coords="356,335,461,361"/>
+<area shape="rect" href="StrainRate_8H.html#a0f2db0d45006784f78de04288d1f7dee" title=" " alt="" coords="356,309,461,336"/>
 <area shape="rect" href="StrainRate_8H.html#ab95c481d8780dfb9772adb9b3b57b23e" title=" " alt="" coords="203,259,308,285"/>
 <area shape="rect" href="StrainRate_8H.html#a46804763ce9ec78b676cd619fe067772" title=" " alt="" coords="203,360,308,387"/>
 <area shape="rect" href="StrainRate_8H.html#ae0ebde9f77b481921039800f03f76d75" title=" " alt="" coords="203,411,308,437"/>
+<area shape="rect" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4" title=" " alt="" coords="509,208,600,235"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1224,29 +1257,88 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="afbebd7a5caa9e22797c3b0336613cda4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbebd7a5caa9e22797c3b0336613cda4">&#9670;&nbsp;</a></span>is_on_face()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE bool is_on_face </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bc_in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">if</span> ( (bc_in == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) || (bc_in == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) ) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="StrainRate_8H.html#a8773ef9271754b275a341e16dbafb4fa">ComputeS12()</a>, <a class="el" href="StrainRate_8H.html#a14f15d0129f95fa6d87538cf40fc3246">ComputeS13()</a>, and <a class="el" href="StrainRate_8H.html#a0f2db0d45006784f78de04288d1f7dee">ComputeS23()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="StrainRate_8H_afbebd7a5caa9e22797c3b0336613cda4_icgraph.png" border="0" usemap="#StrainRate_8H_afbebd7a5caa9e22797c3b0336613cda4_icgraph" alt=""/></div>
+<map name="StrainRate_8H_afbebd7a5caa9e22797c3b0336613cda4_icgraph" id="StrainRate_8H_afbebd7a5caa9e22797c3b0336613cda4_icgraph">
+<area shape="rect" title=" " alt="" coords="1265,157,1356,184"/>
+<area shape="rect" href="StrainRate_8H.html#a8773ef9271754b275a341e16dbafb4fa" title=" " alt="" coords="1112,81,1217,108"/>
+<area shape="rect" href="StrainRate_8H.html#a14f15d0129f95fa6d87538cf40fc3246" title=" " alt="" coords="1112,233,1217,260"/>
+<area shape="rect" href="StrainRate_8H.html#a0f2db0d45006784f78de04288d1f7dee" title=" " alt="" coords="1112,157,1217,184"/>
+<area shape="rect" href="StrainRate_8H.html#a0fb9a6d0bd517516e305b45ee804752a" title=" " alt="" coords="942,5,1047,32"/>
+<area shape="rect" href="StrainRate_8H.html#a0a5dd98571e553933e53adc26fdcc7b3" title=" " alt="" coords="703,157,852,184"/>
+<area shape="rect" href="EddyViscosity_8H.html#aef3de1b7815cb5904b1ede44b78a4407" title=" " alt="" coords="925,56,1064,83"/>
+<area shape="rect" href="StressTerm_8H.html#a7fef7d0cfd1ee970c5f1deb97f86ba2d" title=" " alt="" coords="429,157,582,184"/>
+<area shape="rect" href="SpatialStencils_8H.html#a9dee13320a621a02bc6077566933f729" title=" " alt="" coords="120,157,333,184"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#a6d53f4b20b93e079bb43aa870ac5159c" title=" " alt="" coords="5,107,72,133"/>
+<area shape="rect" href="EddyViscosity_8H.html#aa2815d103b0ec79cdea2730e8039affa" title=" " alt="" coords="139,107,314,133"/>
+<area shape="rect" href="EddyViscosity_8H.html#a70a2519d7595ba89638ba175ddf01708" title=" " alt="" coords="677,56,877,83"/>
+<area shape="rect" href="classERFPhysBCFunct.html#a9a8a0314d57f0797916284b18c758c16" title=" " alt="" coords="381,5,629,32"/>
+<area shape="rect" href="StrainRate_8H.html#ab95c481d8780dfb9772adb9b3b57b23e" title=" " alt="" coords="942,259,1047,285"/>
+<area shape="rect" href="StrainRate_8H.html#a46804763ce9ec78b676cd619fe067772" title=" " alt="" coords="942,208,1047,235"/>
+</map>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aStrainRate_8H_html_a8773ef9271754b275a341e16dbafb4fa"><div class="ttname"><a href="StrainRate_8H.html#a8773ef9271754b275a341e16dbafb4fa">ComputeS12</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS12(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:41</div></div>
+<div class="ttc" id="aStrainRate_8H_html_a8773ef9271754b275a341e16dbafb4fa"><div class="ttname"><a href="StrainRate_8H.html#a8773ef9271754b275a341e16dbafb4fa">ComputeS12</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS12(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:52</div></div>
+<div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a></div><div class="ttdeci">@ ext_dir_ingested</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:93</div></div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a></div><div class="ttdeci">@ xvel_bc</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:33</div></div>
-<div class="ttc" id="aStrainRate_8H_html_a14f15d0129f95fa6d87538cf40fc3246"><div class="ttname"><a href="StrainRate_8H.html#a14f15d0129f95fa6d87538cf40fc3246">ComputeS13</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS13(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:71</div></div>
+<div class="ttc" id="aStrainRate_8H_html_a14f15d0129f95fa6d87538cf40fc3246"><div class="ttname"><a href="StrainRate_8H.html#a14f15d0129f95fa6d87538cf40fc3246">ComputeS13</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS13(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:82</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a></div><div class="ttdeci">@ y</div></div>
-<div class="ttc" id="aStrainRate_8H_html_a82bb551ca28959c8356aeee62bc1ed5c"><div class="ttname"><a href="StrainRate_8H.html#a82bb551ca28959c8356aeee62bc1ed5c">ComputeS11</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS11(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:14</div></div>
+<div class="ttc" id="aStrainRate_8H_html_a82bb551ca28959c8356aeee62bc1ed5c"><div class="ttname"><a href="StrainRate_8H.html#a82bb551ca28959c8356aeee62bc1ed5c">ComputeS11</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS11(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:25</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a></div><div class="ttdeci">@ ext_dir</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:89</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a></div><div class="ttdeci">@ z</div></div>
+<div class="ttc" id="aStrainRate_8H_html_afbebd7a5caa9e22797c3b0336613cda4"><div class="ttname"><a href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4">is_on_face</a></div><div class="ttdeci">AMREX_GPU_DEVICE bool is_on_face(int bc_in)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:14</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">AdvectedQuantity::v</a></div><div class="ttdeci">@ v</div></div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a></div><div class="ttdeci">@ zvel_bc</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:35</div></div>
-<div class="ttc" id="aStrainRate_8H_html_a7ac70c4b50d149dd43690e2e95d78a81"><div class="ttname"><a href="StrainRate_8H.html#a7ac70c4b50d149dd43690e2e95d78a81">ComputeS22</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS22(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;v, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:23</div></div>
-<div class="ttc" id="aStrainRate_8H_html_a46804763ce9ec78b676cd619fe067772"><div class="ttname"><a href="StrainRate_8H.html#a46804763ce9ec78b676cd619fe067772">ComputeS32</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS32(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:153</div></div>
-<div class="ttc" id="aStrainRate_8H_html_a0f2db0d45006784f78de04288d1f7dee"><div class="ttname"><a href="StrainRate_8H.html#a0f2db0d45006784f78de04288d1f7dee">ComputeS23</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS23(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:102</div></div>
+<div class="ttc" id="aStrainRate_8H_html_a7ac70c4b50d149dd43690e2e95d78a81"><div class="ttname"><a href="StrainRate_8H.html#a7ac70c4b50d149dd43690e2e95d78a81">ComputeS22</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS22(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;v, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:34</div></div>
+<div class="ttc" id="aStrainRate_8H_html_a46804763ce9ec78b676cd619fe067772"><div class="ttname"><a href="StrainRate_8H.html#a46804763ce9ec78b676cd619fe067772">ComputeS32</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS32(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:164</div></div>
+<div class="ttc" id="aStrainRate_8H_html_a0f2db0d45006784f78de04288d1f7dee"><div class="ttname"><a href="StrainRate_8H.html#a0f2db0d45006784f78de04288d1f7dee">ComputeS23</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS23(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:113</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">AdvectedQuantity::w</a></div><div class="ttdeci">@ w</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a></div><div class="ttdeci">@ x</div></div>
-<div class="ttc" id="aStrainRate_8H_html_ab95c481d8780dfb9772adb9b3b57b23e"><div class="ttname"><a href="StrainRate_8H.html#ab95c481d8780dfb9772adb9b3b57b23e">ComputeS31</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS31(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:143</div></div>
+<div class="ttc" id="aStrainRate_8H_html_ab95c481d8780dfb9772adb9b3b57b23e"><div class="ttname"><a href="StrainRate_8H.html#ab95c481d8780dfb9772adb9b3b57b23e">ComputeS31</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS31(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:154</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a></div><div class="ttdeci">@ y</div></div>
-<div class="ttc" id="aStrainRate_8H_html_ae0ebde9f77b481921039800f03f76d75"><div class="ttname"><a href="StrainRate_8H.html#ae0ebde9f77b481921039800f03f76d75">ComputeS33</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS33(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:32</div></div>
+<div class="ttc" id="aStrainRate_8H_html_ae0ebde9f77b481921039800f03f76d75"><div class="ttname"><a href="StrainRate_8H.html#ae0ebde9f77b481921039800f03f76d75">ComputeS33</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS33(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:43</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">AdvectedQuantity::u</a></div><div class="ttdeci">@ u</div></div>
-<div class="ttc" id="aStrainRate_8H_html_a0fb9a6d0bd517516e305b45ee804752a"><div class="ttname"><a href="StrainRate_8H.html#a0fb9a6d0bd517516e305b45ee804752a">ComputeS21</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS21(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:133</div></div>
+<div class="ttc" id="aStrainRate_8H_html_a0fb9a6d0bd517516e305b45ee804752a"><div class="ttname"><a href="StrainRate_8H.html#a0fb9a6d0bd517516e305b45ee804752a">ComputeS21</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeS21(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; Real const &gt; &amp;u, const Array4&lt; Real const &gt; &amp;v, const Array4&lt; Real const &gt; &amp;w, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:144</div></div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a></div><div class="ttdeci">@ yvel_bc</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:34</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
