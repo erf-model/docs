@@ -5,6 +5,7 @@ var hierarchy =
     [ "AmrCore", null, [
       [ "ERF", "classERF.html", null ]
     ] ],
+    [ "BufferData", "structBufferData.html", null ],
     [ "DirectionSelector< Index >", "structDirectionSelector.html", null ],
     [ "DirectionSelector< 0 >", "structDirectionSelector_3_010_01_4.html", null ],
     [ "DirectionSelector< 1 >", "structDirectionSelector_3_011_01_4.html", null ],
@@ -19,7 +20,9 @@ var hierarchy =
     [ "ncutils::NCVar", "structncutils_1_1NCVar.html", null ],
     [ "NullFill", "structNullFill.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
+    [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
     [ "SolverChoice", "structSolverChoice.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
-    [ "VelPlaneAverage", "classVelPlaneAverage.html", null ]
+    [ "VelPlaneAverage", "classVelPlaneAverage.html", null ],
+    [ "WriteBndryPlanes", "classWriteBndryPlanes.html", null ]
 ];
