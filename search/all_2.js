@@ -11,6 +11,7 @@ var searchData=
   ['bndry_5foutput_5fplanes_5fstart_5ftime_41',['bndry_output_planes_start_time',['../classERF.html#ac2be0759e68086d0e9026c61492fa225',1,'ERF']]],
   ['bogus_42',['bogus',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca5e7251ff4badd9a198c0601a7929b1c4',1,'ERFBCType']]],
   ['boundarydata_43',['BoundaryData',['../structBoundaryData.html',1,'']]],
-  ['build_5fcoriolis_5fforcings_44',['build_coriolis_forcings',['../structSolverChoice.html#a3b31e3a91b502cabfc9fd8778492ad46',1,'SolverChoice']]],
-  ['build_5ffine_5fmask_45',['build_fine_mask',['../classERF.html#a419ba9adca32073e70aae4a8fe8cfcee',1,'ERF']]]
+  ['br_5fshift_44',['br_shift',['../ERF__WriteBndryPlanes_8cpp.html#a2e5b521cf8c47b60ad3cb68612b847cb',1,'ERF_WriteBndryPlanes.cpp']]],
+  ['build_5fcoriolis_5fforcings_45',['build_coriolis_forcings',['../structSolverChoice.html#a3b31e3a91b502cabfc9fd8778492ad46',1,'SolverChoice']]],
+  ['build_5ffine_5fmask_46',['build_fine_mask',['../classERF.html#a419ba9adca32073e70aae4a8fe8cfcee',1,'ERF']]]
 ];

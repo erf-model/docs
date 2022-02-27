@@ -2,10 +2,8 @@ var dir_4c48f420b74c1f1cc31b316243ca788c =
 [
     [ "Checkpoint.cpp", "Checkpoint_8cpp.html", null ],
     [ "ERF_ReadBndryPlanes.cpp", "ERF__ReadBndryPlanes_8cpp.html", "ERF__ReadBndryPlanes_8cpp" ],
-    [ "ERF_ReadBndryPlanes.H", "ERF__ReadBndryPlanes_8H.html", [
-      [ "ReadBndryPlanes", "classReadBndryPlanes.html", "classReadBndryPlanes" ]
-    ] ],
-    [ "ERF_WriteBndryPlanes.cpp", "ERF__WriteBndryPlanes_8cpp.html", null ],
+    [ "ERF_ReadBndryPlanes.H", "ERF__ReadBndryPlanes_8H.html", "ERF__ReadBndryPlanes_8H" ],
+    [ "ERF_WriteBndryPlanes.cpp", "ERF__WriteBndryPlanes_8cpp.html", "ERF__WriteBndryPlanes_8cpp" ],
     [ "ERF_WriteBndryPlanes.H", "ERF__WriteBndryPlanes_8H.html", [
       [ "WriteBndryPlanes", "classWriteBndryPlanes.html", "classWriteBndryPlanes" ]
     ] ],
