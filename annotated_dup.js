@@ -13,6 +13,7 @@ var annotated_dup =
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", "classERFPhysBCFunct" ],
     [ "InitialData", "structInitialData.html", "structInitialData" ],
     [ "Metgrid_Output", "classMetgrid__Output.html", "classMetgrid__Output" ],
+    [ "NDArray", "structNDArray.html", "structNDArray" ],
     [ "NullFill", "structNullFill.html", "structNullFill" ],
     [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", "classReadBndryPlanes" ],

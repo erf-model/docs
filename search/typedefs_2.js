@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ydir_1159',['YDir',['../DirectionSelector_8H.html#a92990a19f43dc3cbbbd630362d1ece71',1,'DirectionSelector.H']]]
+  ['rtype_1194',['RType',['../structncutils_1_1NCDType.html#a079bbf4314ad09362b5c8124670c821f',1,'ncutils::NCDType']]]
 ];

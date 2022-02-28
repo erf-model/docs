@@ -20,6 +20,7 @@ var hierarchy =
       [ "ncutils::NCFile", "classncutils_1_1NCFile.html", null ]
     ] ],
     [ "ncutils::NCVar", "structncutils_1_1NCVar.html", null ],
+    [ "NDArray< DataType >", "structNDArray.html", null ],
     [ "NullFill", "structNullFill.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
