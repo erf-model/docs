@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"SpatialStencils_8H.html#af0518f28eeb88a8a4b0686bb2171234a":[3,0,0,2,6,10],
+"SpatialStencils_8H_source.html":[3,0,0,2,6],
 "StrainRate_8H.html":[3,0,0,2,7],
 "StrainRate_8H.html#a0a5dd98571e553933e53adc26fdcc7b3":[3,0,0,2,7,9],
 "StrainRate_8H.html#a0f2db0d45006784f78de04288d1f7dee":[3,0,0,2,7,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "classPlaneAverage.html#af07d85c4bd48f4bedc0b180001c728dc":[2,0,15,33],
 "classPlaneAverage.html#af132c240458ea563de6755880639b37d":[2,0,15,26],
 "classPlaneAverage.html#af988bfa059e19a3779bc3bcc84a0ff53":[2,0,15,21],
-"classReadBndryPlanes.html":[2,0,16],
-"classReadBndryPlanes.html#a14bf0864afdd66d2f497ad5372d526ff":[2,0,16,19],
-"classReadBndryPlanes.html#a16ed881bb428b7abb89e4284b356c8d6":[2,0,16,1]
+"classReadBndryPlanes.html":[2,0,16]
 };
