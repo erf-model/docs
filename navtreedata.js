@@ -69,9 +69,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ABLFieldInit_8H.html",
-"SpatialStencils_8H.html#af0518f28eeb88a8a4b0686bb2171234a",
-"classReadBndryPlanes.html#a14bf0864afdd66d2f497ad5372d526ff",
-"structABLFieldInit.html#a354a7826001e94310f9b97ec452640c5"
+"SpatialStencils_8H.html#aa45ee5af6ea1b220a2f844a88e3c92b8",
+"classPlaneAverage.html#af07d85c4bd48f4bedc0b180001c728dc",
+"structABLFieldInit.html#a1b229b0ee25e1c6bd3bbe9c8b4d34273"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
