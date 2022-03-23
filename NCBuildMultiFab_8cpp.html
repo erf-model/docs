@@ -94,78 +94,238 @@ $(document).ready(function(){initNavTree('NCBuildMultiFab_8cpp.html',''); initRe
 <code>#include &lt;atomic&gt;</code><br />
 <code>#include &quot;<a class="el" href="ERF_8H_source.html">ERF.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="NCInterface_8H_source.html">NCInterface.H</a>&quot;</code><br />
+<code>#include &quot;AMReX_Print.H&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for NCBuildMultiFab.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="NCBuildMultiFab_8cpp__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2IO_2NCBuildMultiFab_8cpp" alt=""/></div>
 <map name="_2home_2runner_2work_2ERF_2ERF_2Source_2IO_2NCBuildMultiFab_8cpp" id="_2home_2runner_2work_2ERF_2ERF_2Source_2IO_2NCBuildMultiFab_8cpp">
-<area shape="rect" title=" " alt="" coords="4523,5,4730,61"/>
-<area shape="rect" title=" " alt="" coords="2897,109,2972,136"/>
-<area shape="rect" title=" " alt="" coords="4545,184,4604,211"/>
-<area shape="rect" title=" " alt="" coords="4758,109,4817,136"/>
-<area shape="rect" title=" " alt="" coords="4841,109,4908,136"/>
-<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="2996,109,3054,136"/>
-<area shape="rect" href="NCInterface_8H.html" title=" " alt="" coords="4620,109,4734,136"/>
-<area shape="rect" title=" " alt="" coords="4310,184,4369,211"/>
-<area shape="rect" title=" " alt="" coords="4393,184,4470,211"/>
-<area shape="rect" title=" " alt="" coords="54,333,201,360"/>
-<area shape="rect" title=" " alt="" coords="1319,408,1451,435"/>
-<area shape="rect" title=" " alt="" coords="2163,184,2367,211"/>
-<area shape="rect" title=" " alt="" coords="3442,483,3600,509"/>
-<area shape="rect" title=" " alt="" coords="2392,184,2560,211"/>
-<area shape="rect" title=" " alt="" coords="2584,184,2751,211"/>
-<area shape="rect" title=" " alt="" coords="2775,184,2936,211"/>
-<area shape="rect" title=" " alt="" coords="2961,184,3089,211"/>
-<area shape="rect" title=" " alt="" coords="3114,184,3288,211"/>
-<area shape="rect" title=" " alt="" coords="3313,184,3484,211"/>
-<area shape="rect" title=" " alt="" coords="3508,184,3652,211"/>
-<area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="382,408,503,435"/>
-<area shape="rect" href="TimeInterpolatedData_8H.html" title=" " alt="" coords="553,259,732,285"/>
-<area shape="rect" href="ERF__PhysBCFunct_8H.html" title=" " alt="" coords="1360,184,1512,211"/>
-<area shape="rect" href="ERF__ReadBndryPlanes_8H.html" title=" " alt="" coords="244,259,427,285"/>
-<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="2342,408,2447,435"/>
-<area shape="rect" href="TimeIntegration_8H.html" title=" " alt="" coords="1043,333,1183,360"/>
-<area shape="rect" title=" " alt="" coords="3676,184,3862,211"/>
-<area shape="rect" href="ABLFieldInit_8H.html" title=" " alt="" coords="432,333,546,360"/>
-<area shape="rect" href="Derive_8H.html" title=" " alt="" coords="1958,184,2036,211"/>
-<area shape="rect" href="PlaneAverage_8H.html" title=" " alt="" coords="3886,184,4012,211"/>
-<area shape="rect" href="VelPlaneAverage_8H.html" title=" " alt="" coords="4036,184,4182,211"/>
-<area shape="rect" href="ERF__WriteBndryPlanes_8H.html" title=" " alt="" coords="36,259,220,285"/>
-<area shape="rect" title=" " alt="" coords="4206,184,4286,211"/>
-<area shape="rect" title=" " alt="" coords="604,483,726,509"/>
-<area shape="rect" title=" " alt="" coords="378,483,506,509"/>
-<area shape="rect" title=" " alt="" coords="776,408,922,435"/>
-<area shape="rect" title=" " alt="" coords="570,333,701,360"/>
-<area shape="rect" title=" " alt="" coords="1422,259,1553,285"/>
-<area shape="rect" title=" " alt="" coords="2292,259,2446,285"/>
-<area shape="rect" title=" " alt="" coords="1577,259,1726,285"/>
-<area shape="rect" title=" " alt="" coords="1750,259,1889,285"/>
-<area shape="rect" title=" " alt="" coords="1913,259,2054,285"/>
-<area shape="rect" title=" " alt="" coords="2078,259,2217,285"/>
-<area shape="rect" title=" " alt="" coords="857,259,1012,285"/>
-<area shape="rect" title=" " alt="" coords="1036,259,1198,285"/>
-<area shape="rect" href="EddyViscosity_8H.html" title=" " alt="" coords="1222,259,1348,285"/>
-<area shape="rect" title=" " alt="" coords="4755,184,4879,211"/>
-<area shape="rect" title=" " alt="" coords="4903,184,4966,211"/>
-<area shape="rect" title=" " alt="" coords="4990,184,5065,211"/>
-<area shape="rect" title=" " alt="" coords="4628,184,4731,211"/>
+<area shape="rect" title=" " alt="" coords="2989,5,3196,61"/>
+<area shape="rect" title=" " alt="" coords="1947,109,2022,136"/>
+<area shape="rect" title=" " alt="" coords="3134,184,3193,211"/>
+<area shape="rect" title=" " alt="" coords="2977,109,3035,136"/>
+<area shape="rect" title=" " alt="" coords="3059,109,3126,136"/>
+<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="2046,109,2105,136"/>
+<area shape="rect" href="NCInterface_8H.html" title=" " alt="" coords="3212,109,3325,136"/>
+<area shape="rect" title=" " alt="" coords="3350,109,3470,136"/>
+<area shape="rect" title=" " alt="" coords="2950,184,3009,211"/>
+<area shape="rect" title=" " alt="" coords="3033,184,3110,211"/>
+<area shape="rect" title=" " alt="" coords="2606,333,2753,360"/>
+<area shape="rect" title=" " alt="" coords="407,408,539,435"/>
+<area shape="rect" title=" " alt="" coords="113,184,317,211"/>
+<area shape="rect" title=" " alt="" coords="5,483,164,509"/>
+<area shape="rect" title=" " alt="" coords="393,184,561,211"/>
+<area shape="rect" title=" " alt="" coords="585,184,752,211"/>
+<area shape="rect" title=" " alt="" coords="776,184,937,211"/>
+<area shape="rect" title=" " alt="" coords="962,184,1090,211"/>
+<area shape="rect" title=" " alt="" coords="1115,184,1289,211"/>
+<area shape="rect" title=" " alt="" coords="1314,184,1485,211"/>
+<area shape="rect" title=" " alt="" coords="1509,184,1653,211"/>
+<area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="2127,408,2248,435"/>
+<area shape="rect" href="TimeInterpolatedData_8H.html" title=" " alt="" coords="690,259,869,285"/>
+<area shape="rect" href="ERF__PhysBCFunct_8H.html" title=" " alt="" coords="1778,184,1930,211"/>
+<area shape="rect" href="ERF__ReadBndryPlanes_8H.html" title=" " alt="" coords="2717,259,2900,285"/>
+<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="196,408,301,435"/>
+<area shape="rect" href="TimeIntegration_8H.html" title=" " alt="" coords="511,333,651,360"/>
+<area shape="rect" title=" " alt="" coords="2163,184,2350,211"/>
+<area shape="rect" href="ABLFieldInit_8H.html" title=" " alt="" coords="2179,333,2292,360"/>
+<area shape="rect" href="Derive_8H.html" title=" " alt="" coords="1959,184,2037,211"/>
+<area shape="rect" href="PlaneAverage_8H.html" title=" " alt="" coords="2475,184,2601,211"/>
+<area shape="rect" href="VelPlaneAverage_8H.html" title=" " alt="" coords="2625,184,2771,211"/>
+<area shape="rect" href="ERF__WriteBndryPlanes_8H.html" title=" " alt="" coords="2458,259,2642,285"/>
+<area shape="rect" title=" " alt="" coords="2846,184,2926,211"/>
+<area shape="rect" title=" " alt="" coords="1355,483,1478,509"/>
+<area shape="rect" title=" " alt="" coords="2123,483,2251,509"/>
+<area shape="rect" title=" " alt="" coords="881,408,1027,435"/>
+<area shape="rect" title=" " alt="" coords="675,333,806,360"/>
+<area shape="rect" title=" " alt="" coords="943,259,1074,285"/>
+<area shape="rect" title=" " alt="" coords="2179,259,2332,285"/>
+<area shape="rect" title=" " alt="" coords="1098,259,1247,285"/>
+<area shape="rect" title=" " alt="" coords="1271,259,1410,285"/>
+<area shape="rect" title=" " alt="" coords="1434,259,1575,285"/>
+<area shape="rect" title=" " alt="" coords="1599,259,1738,285"/>
+<area shape="rect" title=" " alt="" coords="1762,259,1917,285"/>
+<area shape="rect" title=" " alt="" coords="1941,259,2103,285"/>
+<area shape="rect" href="EddyViscosity_8H.html" title=" " alt="" coords="541,259,666,285"/>
+<area shape="rect" title=" " alt="" coords="3217,184,3341,211"/>
+<area shape="rect" title=" " alt="" coords="3365,184,3428,211"/>
+<area shape="rect" title=" " alt="" coords="3453,184,3527,211"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4ef3f277b0fe6c346ed8461918f3b7c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NCBuildMultiFab_8cpp.html#a4ef3f277b0fe6c346ed8461918f3b7c7">BuildMultiFabFromNCFile</a> (const std::string &amp;fname)</td></tr>
-<tr class="separator:a4ef3f277b0fe6c346ed8461918f3b7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86b695de60dd362063aba86f25700a00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NCBuildMultiFab_8cpp.html#a86b695de60dd362063aba86f25700a00">BuildMultiFabFromMetgridOutputFileDemo</a> (const std::string &amp;fname)</td></tr>
+<tr class="separator:a86b695de60dd362063aba86f25700a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34bc3863a080414f5fa43d5a15ba8267"><td class="memItemLeft" align="right" valign="top">Box&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NCBuildMultiFab_8cpp.html#a34bc3863a080414f5fa43d5a15ba8267">BuildMultiFabFromIdealOutputFile</a> (const std::string &amp;fname, const std::string &amp;nc_var_name, MultiFab &amp;mf_var, Array4&lt; Real &gt; &amp;array4_var, const enum <a class="el" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06">NC_Data_Dims_Type</a> &amp;nc_data_dims_type)</td></tr>
+<tr class="separator:a34bc3863a080414f5fa43d5a15ba8267"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a4ef3f277b0fe6c346ed8461918f3b7c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ef3f277b0fe6c346ed8461918f3b7c7">&#9670;&nbsp;</a></span>BuildMultiFabFromNCFile()</h2>
+<a id="a34bc3863a080414f5fa43d5a15ba8267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34bc3863a080414f5fa43d5a15ba8267">&#9670;&nbsp;</a></span>BuildMultiFabFromIdealOutputFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void BuildMultiFabFromNCFile </td>
+          <td class="memname">Box BuildMultiFabFromIdealOutputFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>nc_var_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>mf_var</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Array4&lt; Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array4_var</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const enum <a class="el" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06">NC_Data_Dims_Type</a> &amp;&#160;</td>
+          <td class="paramname"><em>nc_data_dims_type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                                                                                                {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading the NetCDF File: &quot;</span> &lt;&lt; fname &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;NetCDF var name: &quot; &lt;&lt; nc_var_name &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">using</span> RARRAY = <a class="code" href="structNDArray.html">NDArray&lt;float&gt;</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    amrex::Vector&lt;RARRAY&gt; arrays(1);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="NCWpsFile_8H.html#aa9b548192d5c7993ebb88f5bf5567d21">ReadIdealOutputFile</a>(fname, {nc_var_name}, arrays);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// build the box first using the shape information</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;Building MultiFab from the netcdf variable just read: &quot; &lt;&lt; nc_var_name &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    amrex::IntVect smallEnd{0,0,0};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    amrex::IntVect boxType{0, 0, 0};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    amrex::IntVect bigEnd{0, 0, 0};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;Assigning shapes to the box based on dimensions read from NetCDF file. &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">//    bigEnd[0] = arrays[0].get_vshape()[1] - 1;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">//    bigEnd[1] = arrays[0].get_vshape()[2] - 1;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">//    bigEnd[2] = arrays[0].get_vshape()[3] - 1;</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">switch</span> (nc_data_dims_type) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aa3968158227ea04595d4003503cca22b">NC_Data_Dims_Type::Time_BT_SN_WE</a>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            bigEnd[0] = arrays[0].get_vshape()[3] - 1;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            bigEnd[1] = arrays[0].get_vshape()[2] - 1;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            bigEnd[2] = arrays[0].get_vshape()[1] - 1;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a5f93bace93896872075eae75770cadc4">NC_Data_Dims_Type::Time_SN_WE</a>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            bigEnd[0] = arrays[0].get_vshape()[2] - 1;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            bigEnd[1] = arrays[0].get_vshape()[1] - 1;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            bigEnd[2] = 0;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a539ca443eab3c322b2b37046e896dc62">NC_Data_Dims_Type::Time_BT</a>:</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            bigEnd[0] = 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            bigEnd[1] = 0;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            bigEnd[2] = arrays[0].get_vshape()[1] - 1;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aa76d4ef5f3f6a672bbfab2865563e530">NC_Data_Dims_Type::Time</a>:</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            bigEnd[0] = 0;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            bigEnd[1] = 0;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            bigEnd[2] = 0;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            amrex::Error(<span class="stringliteral">&quot;Unrecognized NetCDF data dimensions type&quot;</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">int</span> tot_size = (bigEnd[0] + 1) * (bigEnd[1] + 1) * (bigEnd[2] + 1);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Total points in the box constructed from netCDF variable: &quot;</span> &lt;&lt; tot_size &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    amrex::Box box = amrex::Box(smallEnd, bigEnd, boxType);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    BoxArray ba;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    ba.define(box);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;Creating distribution mapping. &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// create a distribution mapping</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">//DistributionMapping dm { ba, ParallelDescriptor::NProcs() };</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    DistributionMapping dm { ba };</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;Successfully created distribution mapping. &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    mf_var.define(convert(ba,IntVect(0,0,0)), dm, 1, 0);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    MFIter::allowMultipleMFIters(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    Box box_nc;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// assign the data to multifab</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;Now filling the MultiFab. &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(mf_var); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="comment">// Retrieve some attributes of the MultiFab (Sanity Check)</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keyword">auto</span> ncomp   = mf_var.nComp();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        box_nc     = mf_var.get(mfi).box();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE( (bigEnd == box_nc.bigEnd() &amp;&amp; smallEnd == box_nc.smallEnd()),</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                <span class="stringliteral">&quot;Dimensions of box used to define the Multifab and the box retrieved don&#39;t match&quot;</span>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keyword">auto</span> num_pts = mf_var.get(mfi).numPts();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="comment">//auto type = mf_var.get(mfi).getType();</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(0); k &lt; ncomp; ++k) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keyword">auto</span> dataPtr = mf_var.get(mfi).dataPtr(k);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n(0); n &lt; num_pts; ++n) {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                *(dataPtr+n) = <span class="keyword">static_cast&lt;</span>amrex::Real<span class="keyword">&gt;</span>(*(arrays[0].get_data()+n));</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">//                if (n % 100 == 0)</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">//                    amrex::Print() &lt;&lt; &quot;n: &quot; &lt;&lt; n &lt;&lt; &quot;, data[n]: &quot; &lt;&lt; *(dataPtr+n) &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        array4_var = mf_var.array(mfi);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Done filling the MultiFab. &quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> box_nc;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="prob__common_8H.html#a9a03b0cf05190f4492b4fa7014d21782">erf_init_from_netcdf()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="NCBuildMultiFab_8cpp_a34bc3863a080414f5fa43d5a15ba8267_cgraph.png" border="0" usemap="#NCBuildMultiFab_8cpp_a34bc3863a080414f5fa43d5a15ba8267_cgraph" alt=""/></div>
+<map name="NCBuildMultiFab_8cpp_a34bc3863a080414f5fa43d5a15ba8267_cgraph" id="NCBuildMultiFab_8cpp_a34bc3863a080414f5fa43d5a15ba8267_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,248,57"/>
+<area shape="rect" href="NCWpsFile_8H.html#aa9b548192d5c7993ebb88f5bf5567d21" title=" " alt="" coords="296,31,451,57"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885" title=" " alt="" coords="499,31,653,57"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0" title="Name of this group." alt="" coords="701,5,877,32"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423" title=" " alt="" coords="707,56,872,83"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="NCBuildMultiFab_8cpp_a34bc3863a080414f5fa43d5a15ba8267_icgraph.png" border="0" usemap="#NCBuildMultiFab_8cpp_a34bc3863a080414f5fa43d5a15ba8267_icgraph" alt=""/></div>
+<map name="NCBuildMultiFab_8cpp_a34bc3863a080414f5fa43d5a15ba8267_icgraph" id="NCBuildMultiFab_8cpp_a34bc3863a080414f5fa43d5a15ba8267_icgraph">
+<area shape="rect" title=" " alt="" coords="491,5,733,32"/>
+<area shape="rect" href="prob__common_8H.html#a9a03b0cf05190f4492b4fa7014d21782" title=" " alt="" coords="288,5,443,32"/>
+<area shape="rect" href="classERF.html#aaf10bbf8c9a5dbc257a88c4c1b650fee" title=" " alt="" coords="5,5,240,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a86b695de60dd362063aba86f25700a00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86b695de60dd362063aba86f25700a00">&#9670;&nbsp;</a></span>BuildMultiFabFromMetgridOutputFileDemo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BuildMultiFabFromMetgridOutputFileDemo </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>fname</em></td><td>)</td>
@@ -173,71 +333,72 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                     {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;   <span class="keyword">using</span> RARRAY = <a class="code" href="structNDArray.html">NDArray&lt;float&gt;</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;   amrex::Vector&lt;RARRAY&gt; arrays(1);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;   <a class="code" href="NCWpsFile_8H.html#a245a9ec082f78e1f4c72cc7501babac6">ReadNCWpsFile</a>(fname, {<span class="stringliteral">&quot;PRES&quot;</span>}, arrays);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;   <span class="comment">//</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;   <span class="comment">// build the box first using the shape information</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   <span class="comment">//</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   amrex::IntVect smallEnd{0,0,0};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   amrex::IntVect boxtyp{0,0,0};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;   amrex::IntVect bigEnd(3);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;   bigEnd[0] = arrays[0].get_vshape()[1];</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   bigEnd[1] = arrays[0].get_vshape()[2];</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   bigEnd[2] = arrays[0].get_vshape()[3];</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   amrex::Box box = amrex::Box(smallEnd, bigEnd, boxtyp);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   BoxArray ba;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;   ba.set(0, box);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   <span class="comment">// create a distribution mapping</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;   DistributionMapping dm { ba, ParallelDescriptor::NProcs() };</div>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                                    {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;   <span class="keyword">using</span> RARRAY = <a class="code" href="structNDArray.html">NDArray&lt;float&gt;</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;   amrex::Vector&lt;RARRAY&gt; arrays(1);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   amrex::Vector&lt;std::string&gt; nc_vars = {<span class="stringliteral">&quot;PRES&quot;</span>};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;   <a class="code" href="NCWpsFile_8H.html#a15d31559fe4a6f734b29be369ab0c3ce">ReadMetgridOutputFile</a>(fname, nc_vars, arrays);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   <span class="comment">// build the box first using the shape information</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Building MultiFab from the netcdf variable just read: &quot;</span> &lt;&lt; nc_vars[0] &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;   <span class="comment">//amrex::Print() &lt;&lt; &quot;Creating dimension, box types, etc. &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   amrex::IntVect smallEnd{0,0,0};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;   amrex::IntVect boxtyp{0,0,0};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   amrex::IntVect bigEnd(3);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="comment">// amrex::Print() &lt;&lt; &quot;Assigning shapes to the box based on dimensions read from NetCDF file. &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   bigEnd[0] = arrays[0].get_vshape()[2] - 1;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   bigEnd[1] = arrays[0].get_vshape()[3] - 1;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   bigEnd[2] = arrays[0].get_vshape()[1] - 1;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;   <span class="keywordtype">int</span> tot_size = arrays[0].get_vshape()[1]*arrays[0].get_vshape()[2]*arrays[0].get_vshape()[3];</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;   amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Total points in the box: &quot;</span> &lt;&lt; tot_size &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;   amrex::Box box = amrex::Box(smallEnd, bigEnd, boxtyp);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   MultiFab pres;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;   pres.define(convert(ba,IntVect(0,0,0)), dm, 1, 0);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   BoxArray ba;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;   ba.define(box);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <span class="comment">// assign the data to multifab</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;   <span class="keywordflow">for</span> (amrex::MFIter mfi(pres); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;       <span class="keyword">auto</span> ncomp   = pres.nComp();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;       <span class="keyword">auto</span> box     = pres.get(mfi).box();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;       <span class="keyword">auto</span> num_pts = pres.get(mfi).numPts();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <span class="comment">//amrex::Print() &lt;&lt; &quot;Creating distribution mapping. &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;   <span class="comment">// create a distribution mapping</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   <span class="comment">//DistributionMapping dm { ba, ParallelDescriptor::NProcs() };</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   DistributionMapping dm (ba);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   <span class="comment">//amrex::Print() &lt;&lt; &quot;Successfully created distribution mapping. &quot; &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;       <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(0); k &lt; ncomp; ++k) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;          <span class="keyword">auto</span> dataPtr = pres.get(mfi).dataPtr(k);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n(0); n &lt; num_pts; ++n) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            *(dataPtr+n) = <span class="keyword">static_cast&lt;</span>amrex::Real<span class="keyword">&gt;</span>(*(arrays[0].get_data()+n));</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;          }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;       }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData()</a>.</p>
-<div class="dynheader">
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   MultiFab pres;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   pres.define(convert(ba,IntVect(0,0,0)), dm, 1, 0);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    MFIter::allowMultipleMFIters(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   <span class="comment">//amrex::Print() &lt;&lt; &quot;Now filling the MultiFab. &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   <span class="comment">// assign the data to multifab</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   <span class="keywordflow">for</span> (amrex::MFIter mfi(pres); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;       <span class="keyword">auto</span> ncomp   = pres.nComp();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;       <span class="keyword">auto</span> box     = pres.get(mfi).box();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;       <span class="keyword">auto</span> num_pts = pres.get(mfi).numPts();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;       <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(0); k &lt; ncomp; ++k) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;          <span class="keyword">auto</span> dataPtr = pres.get(mfi).dataPtr(k);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n(0); n &lt; num_pts; ++n) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            *(dataPtr+n) = <span class="keyword">static_cast&lt;</span>amrex::Real<span class="keyword">&gt;</span>(*(arrays[0].get_data()+n));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//            if ((n &gt;= tot_size - 100) &amp;&amp; (n - tot_size)%10 == 0)</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">//            if (n % 200 == 0)</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//                amrex::Print() &lt;&lt; &quot;n: &quot; &lt;&lt; n &lt;&lt; &quot;, data[n]: &quot; &lt;&lt; *(dataPtr+n) &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;          }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;       }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">//amrex::Print() &lt;&lt; &quot;Done filling he MultiFab. &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="NCBuildMultiFab_8cpp_a4ef3f277b0fe6c346ed8461918f3b7c7_cgraph.png" border="0" usemap="#NCBuildMultiFab_8cpp_a4ef3f277b0fe6c346ed8461918f3b7c7_cgraph" alt=""/></div>
-<map name="NCBuildMultiFab_8cpp_a4ef3f277b0fe6c346ed8461918f3b7c7_cgraph" id="NCBuildMultiFab_8cpp_a4ef3f277b0fe6c346ed8461918f3b7c7_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,191,57"/>
-<area shape="rect" href="NCWpsFile_8H.html#a245a9ec082f78e1f4c72cc7501babac6" title=" " alt="" coords="239,31,364,57"/>
-<area shape="rect" href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885" title=" " alt="" coords="412,31,567,57"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0" title="Name of this group." alt="" coords="615,5,791,32"/>
-<area shape="rect" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423" title=" " alt="" coords="620,56,785,83"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="NCBuildMultiFab_8cpp_a4ef3f277b0fe6c346ed8461918f3b7c7_icgraph.png" border="0" usemap="#NCBuildMultiFab_8cpp_a4ef3f277b0fe6c346ed8461918f3b7c7_icgraph" alt=""/></div>
-<map name="NCBuildMultiFab_8cpp_a4ef3f277b0fe6c346ed8461918f3b7c7_icgraph" id="NCBuildMultiFab_8cpp_a4ef3f277b0fe6c346ed8461918f3b7c7_icgraph">
-<area shape="rect" title=" " alt="" coords="263,5,448,32"/>
-<area shape="rect" href="classERF.html#ad5d585e110291969767013a515719224" title=" " alt="" coords="108,5,215,32"/>
-<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
+<div class="center"><img src="NCBuildMultiFab_8cpp_a86b695de60dd362063aba86f25700a00_cgraph.png" border="0" usemap="#NCBuildMultiFab_8cpp_a86b695de60dd362063aba86f25700a00_cgraph" alt=""/></div>
+<map name="NCBuildMultiFab_8cpp_a86b695de60dd362063aba86f25700a00_cgraph" id="NCBuildMultiFab_8cpp_a86b695de60dd362063aba86f25700a00_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,199,65"/>
+<area shape="rect" href="NCWpsFile_8H.html#a15d31559fe4a6f734b29be369ab0c3ce" title=" " alt="" coords="247,31,419,57"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885" title=" " alt="" coords="467,31,621,57"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0" title="Name of this group." alt="" coords="669,5,845,32"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423" title=" " alt="" coords="675,56,840,83"/>
 </map>
 </div>
 
@@ -245,8 +406,13 @@ Here is the caller graph for this function:</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructNDArray_html"><div class="ttname"><a href="structNDArray.html">NDArray</a></div><div class="ttdef"><b>Definition:</b> NCWpsFile.H:22</div></div>
-<div class="ttc" id="aNCWpsFile_8H_html_a245a9ec082f78e1f4c72cc7501babac6"><div class="ttname"><a href="NCWpsFile_8H.html#a245a9ec082f78e1f4c72cc7501babac6">ReadNCWpsFile</a></div><div class="ttdeci">void ReadNCWpsFile(const std::string &amp;fname, amrex::Vector&lt; std::string &gt; names, amrex::Vector&lt; NDArray&lt; DType &gt; &gt; &amp;arrays)</div><div class="ttdef"><b>Definition:</b> NCWpsFile.H:107</div></div>
+<div class="ttc" id="aNCWpsFile_8H_html_a147911bcb83952a10f7560fd4e9d8f06a539ca443eab3c322b2b37046e896dc62"><div class="ttname"><a href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a539ca443eab3c322b2b37046e896dc62">NC_Data_Dims_Type::Time_BT</a></div><div class="ttdeci">@ Time_BT</div></div>
+<div class="ttc" id="aNCWpsFile_8H_html_a15d31559fe4a6f734b29be369ab0c3ce"><div class="ttname"><a href="NCWpsFile_8H.html#a15d31559fe4a6f734b29be369ab0c3ce">ReadMetgridOutputFile</a></div><div class="ttdeci">void ReadMetgridOutputFile(const std::string &amp;fname, amrex::Vector&lt; std::string &gt; names, amrex::Vector&lt; NDArray&lt; DType &gt; &gt; &amp;arrays)</div><div class="ttdef"><b>Definition:</b> NCWpsFile.H:123</div></div>
+<div class="ttc" id="aNCWpsFile_8H_html_a147911bcb83952a10f7560fd4e9d8f06aa76d4ef5f3f6a672bbfab2865563e530"><div class="ttname"><a href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aa76d4ef5f3f6a672bbfab2865563e530">NC_Data_Dims_Type::Time</a></div><div class="ttdeci">@ Time</div></div>
+<div class="ttc" id="aNCWpsFile_8H_html_aa9b548192d5c7993ebb88f5bf5567d21"><div class="ttname"><a href="NCWpsFile_8H.html#aa9b548192d5c7993ebb88f5bf5567d21">ReadIdealOutputFile</a></div><div class="ttdeci">void ReadIdealOutputFile(const std::string &amp;fname, amrex::Vector&lt; std::string &gt; names, amrex::Vector&lt; NDArray&lt; DType &gt; &gt; &amp;arrays)</div><div class="ttdef"><b>Definition:</b> NCWpsFile.H:178</div></div>
+<div class="ttc" id="astructNDArray_html"><div class="ttname"><a href="structNDArray.html">NDArray</a></div><div class="ttdef"><b>Definition:</b> NCWpsFile.H:38</div></div>
+<div class="ttc" id="aNCWpsFile_8H_html_a147911bcb83952a10f7560fd4e9d8f06aa3968158227ea04595d4003503cca22b"><div class="ttname"><a href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aa3968158227ea04595d4003503cca22b">NC_Data_Dims_Type::Time_BT_SN_WE</a></div><div class="ttdeci">@ Time_BT_SN_WE</div></div>
+<div class="ttc" id="aNCWpsFile_8H_html_a147911bcb83952a10f7560fd4e9d8f06a5f93bace93896872075eae75770cadc4"><div class="ttname"><a href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a5f93bace93896872075eae75770cadc4">NC_Data_Dims_Type::Time_SN_WE</a></div><div class="ttdeci">@ Time_SN_WE</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
