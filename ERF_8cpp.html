@@ -368,11 +368,11 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;    z_phy_mf.define(ba, dm, 1, 0);</div>
 <div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(z_phy_mf); mfi.isValid(); ++mfi )</div>
 <div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;    {</div>
-<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;        <span class="keyword">const</span> Box&amp; zbx = mfi.tilebox();</div>
+<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;        <span class="keyword">const</span> Box&amp; z_tilebx = mfi.tilebox();</div>
 <div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;        z_phy_arr = z_phy_mf.array(mfi);</div>
-<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;        amrex::ParallelFor(zbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;        amrex::ParallelFor(z_tilebx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;            z_phy_arr(i, j, k) = phb_arr(i, j, k) / <a class="code" href="ERF__Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901">CONST_GRAV</a>;</div>
-<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;<span class="comment">//            if (i == zbx.smallEnd()[0] || i == zbx.bigEnd()[0])</span></div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;<span class="comment">//            if (i == z_tilebx.smallEnd()[0] || i == z_tilebx.bigEnd()[0])</span></div>
 <div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;<span class="comment">//                Print() &lt;&lt; &quot;z_physical (i, j, k) =  var (&quot; &lt;&lt; i &lt;&lt; &quot;, &quot; &lt;&lt; j &lt;&lt; &quot;, &quot; &lt;&lt; k &lt;&lt; &quot;) = &quot; &lt;&lt; z_phy_arr(i, j, k) &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;                       <span class="comment">// &lt;&lt; &quot;, z (i, j, k) from ERF geom = &quot; &lt;&lt; geomdata.prob_domain &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;        });</div>
