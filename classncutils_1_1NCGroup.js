@@ -1,7 +1,7 @@
 var classncutils_1_1NCGroup =
 [
     [ "NCGroup", "classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65", null ],
-    [ "NCGroup", "classncutils_1_1NCGroup.html#adcb85f8db72ad6fb60b23031d995f298", null ],
+    [ "NCGroup", "classncutils_1_1NCGroup.html#a6c43a3f92aaf1df239595cebdc8c9a16", null ],
     [ "all_dims", "classncutils_1_1NCGroup.html#a8e01fe072fa48f4fa9c8be33a3a401b0", null ],
     [ "all_groups", "classncutils_1_1NCGroup.html#a82a48643f27b33b27cdd87c60e63f5f5", null ],
     [ "all_vars", "classncutils_1_1NCGroup.html#affa2e62434110dd4fa47d093162e56cf", null ],

@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classPlaneAverage.html#a6a25218bd5754ec121caab7e4acfc537":[2,0,15,27],
 "classPlaneAverage.html#a6f5c2b2afbd4b0cea0a097746e91bf00":[2,0,15,7],
 "classPlaneAverage.html#a798c446ba3b279be6aefb2da9dede29d":[2,0,15,29],
 "classPlaneAverage.html#a80400f4a7f75149f5ffcaae8d0dd937e":[2,0,15,14],
@@ -123,6 +122,7 @@ var NAVTREEINDEX2 =
 "classncutils_1_1NCGroup.html#a4721cc36bd0f188be0250112329d3ba1":[2,0,0,3,27],
 "classncutils_1_1NCGroup.html#a4efddc44f72cc32a58849982bb7e8bce":[2,0,0,3,26],
 "classncutils_1_1NCGroup.html#a56f4429492300eabd16fa0d4bd55b8c7":[2,0,0,3,13],
+"classncutils_1_1NCGroup.html#a6c43a3f92aaf1df239595cebdc8c9a16":[2,0,0,3,1],
 "classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333":[2,0,0,3,18],
 "classncutils_1_1NCGroup.html#a79bef315da5cff7bcf8bbcfbdd122115":[2,0,0,3,32],
 "classncutils_1_1NCGroup.html#a82a48643f27b33b27cdd87c60e63f5f5":[2,0,0,3,3],
@@ -139,7 +139,6 @@ var NAVTREEINDEX2 =
 "classncutils_1_1NCGroup.html#acdfa4a8e44ca0f1901ea120a3946d1db":[2,0,0,3,5],
 "classncutils_1_1NCGroup.html#acf2801c26458fb99bd82733b1302285a":[2,0,0,3,31],
 "classncutils_1_1NCGroup.html#acf73ea254afaf7d74596fa07523b322f":[2,0,0,3,28],
-"classncutils_1_1NCGroup.html#adcb85f8db72ad6fb60b23031d995f298":[2,0,0,3,1],
 "classncutils_1_1NCGroup.html#addc8bbac9a2cfa8d9c49497b7da0310f":[2,0,0,3,10],
 "classncutils_1_1NCGroup.html#ae0ecaad10c77614a283bd6e66d2dca41":[2,0,0,3,6],
 "classncutils_1_1NCGroup.html#aef6b6e2be36e6179a001d9873e94df82":[2,0,0,3,11],
@@ -198,8 +197,8 @@ var NAVTREEINDEX2 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,18],
 "functions_v.html":[2,3,0,19],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "namespaceCons.html":[1,0,1],
 "namespaceERFBCType.html":[1,0,3],
 "namespaceIntVar.html":[1,0,5],
-"namespaceInterpType.html":[1,0,4]
+"namespaceInterpType.html":[1,0,4],
+"namespacePrim.html":[1,0,7]
 };
