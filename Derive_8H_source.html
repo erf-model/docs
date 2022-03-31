@@ -176,8 +176,19 @@ $(document).ready(function(){initNavTree('Derive_8H_source.html',''); initResiza
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  amrex::Real time,</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacederived.html#aa850437283651e137b82322c0437d487">erf_derQKE</a>(</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  amrex::FArrayBox&amp; derfab,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">int</span> dcomp,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  amrex::Real time,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
@@ -194,11 +205,13 @@ $(document).ready(function(){initNavTree('Derive_8H_source.html',''); initResiza
 <div class="ttc" id="anamespacederived_html_a9935603239fe8510b11179da8e76c39c"><div class="ttname"><a href="namespacederived.html#a9935603239fe8510b11179da8e76c39c">derived::erf_derrhodivide</a></div><div class="ttdeci">void erf_derrhodivide(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, const amrex::FArrayBox &amp;datfab, const int scalar_index)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:7</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
 <div class="ttc" id="anamespacederived_html_a2d9c0cabf04515367f2b721320dcddab"><div class="ttname"><a href="namespacederived.html#a2d9c0cabf04515367f2b721320dcddab">derived::erf_derscalar</a></div><div class="ttdeci">void erf_derscalar(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:120</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:11</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
 <div class="ttc" id="aEOS_8H_html_a292ce90ab26c75f4a444808a807b532b"><div class="ttname"><a href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:23</div></div>
 <div class="ttc" id="anamespacederived_html_ab144cda2ef3e2bd18cbd0837ce723521"><div class="ttname"><a href="namespacederived.html#ab144cda2ef3e2bd18cbd0837ce723521">derived::erf_derpres</a></div><div class="ttdeci">void erf_derpres(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:40</div></div>
 <div class="ttc" id="aEOS_8H_html_a652d566aef658cc423ced929a816f869"><div class="ttname"><a href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:9</div></div>
 <div class="ttc" id="aIndexDefines_8H_html"><div class="ttname"><a href="IndexDefines_8H.html">IndexDefines.H</a></div></div>
+<div class="ttc" id="aIndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:11</div></div>
+<div class="ttc" id="anamespacederived_html_aa850437283651e137b82322c0437d487"><div class="ttname"><a href="namespacederived.html#aa850437283651e137b82322c0437d487">derived::erf_derQKE</a></div><div class="ttdeci">void erf_derQKE(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:150</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -10,6 +10,7 @@ var structABLFieldInit =
     [ "m_deltaV", "structABLFieldInit.html#ae8bc514d345c9ebe0aa4edfbe6ea4e78", null ],
     [ "m_perturb_theta", "structABLFieldInit.html#abe8f40fa04af3b03f6fc2e80db8c0c67", null ],
     [ "m_perturb_vel", "structABLFieldInit.html#a1b229b0ee25e1c6bd3bbe9c8b4d34273", null ],
+    [ "m_qke_init", "structABLFieldInit.html#a460de8e438d7b59c506a8815d61ae308", null ],
     [ "m_ref_height", "structABLFieldInit.html#a6e39ba07eb73822cfb4d1ca16094162d", null ],
     [ "m_rho", "structABLFieldInit.html#aa5912f83502db36ff4d35c495e823b26", null ],
     [ "m_theta_cutoff_height", "structABLFieldInit.html#ac3777729cc5682999adee5def77b4ba6", null ],
