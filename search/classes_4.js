@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['initialdata_715',['InitialData',['../structInitialData.html',1,'']]]
+  ['initialdata_744',['InitialData',['../structInitialData.html',1,'']]],
+  ['integratorbase_745',['IntegratorBase',['../classIntegratorBase.html',1,'']]]
 ];

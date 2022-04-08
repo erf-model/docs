@@ -108,14 +108,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="EOS_8H__dep__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2EOS_8Hdep" alt=""/></div>
 <map name="_2home_2runner_2work_2ERF_2ERF_2Source_2EOS_8Hdep" id="_2home_2runner_2work_2ERF_2ERF_2Source_2EOS_8Hdep">
-<area shape="rect" title=" " alt="" coords="735,5,909,47"/>
+<area shape="rect" title=" " alt="" coords="851,5,1025,47"/>
 <area shape="rect" href="Derive_8cpp.html" title=" " alt="" coords="5,102,180,143"/>
 <area shape="rect" href="ERF_8cpp.html" title=" " alt="" coords="204,102,379,143"/>
 <area shape="rect" href="ERF__ComputeTimestep_8cpp.html" title=" " alt="" coords="403,102,686,143"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html" title=" " alt="" coords="710,95,934,151"/>
 <area shape="rect" href="Plotfile_8cpp.html" title=" " alt="" coords="959,102,1152,143"/>
 <area shape="rect" href="TimeIntegration__fast_8cpp.html" title=" " alt="" coords="1176,95,1383,151"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html" title=" " alt="" coords="1407,95,1613,151"/>
+<area shape="rect" href="TimeIntegration__fast__implicit_8cpp.html" title=" " alt="" coords="1407,95,1653,151"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html" title=" " alt="" coords="1677,95,1884,151"/>
 </map>
 </div>
 </div>
@@ -133,6 +134,8 @@ Functions</h2></td></tr>
 <tr class="separator:a912ac5b146f25c3a6d0a2104f4fbe644"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62f564807713abf368002e68c9b40e1e"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EOS_8H.html#a62f564807713abf368002e68c9b40e1e">getPprimegivenRTh</a> (const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> rhotheta, const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> pres_hse_at_k)</td></tr>
 <tr class="separator:a62f564807713abf368002e68c9b40e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7699bc24a134b44f2b6de545901a182"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EOS_8H.html#ab7699bc24a134b44f2b6de545901a182">getExnergivenRTh</a> (const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> rhotheta)</td></tr>
+<tr class="separator:ab7699bc24a134b44f2b6de545901a182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7b634796f77c8e2c23e3e6a84596c50"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EOS_8H.html#aa7b634796f77c8e2c23e3e6a84596c50">getRhoThetagivenP</a> (const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> p)</td></tr>
 <tr class="separator:aa7b634796f77c8e2c23e3e6a84596c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -168,6 +171,43 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="ab7699bc24a134b44f2b6de545901a182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7699bc24a134b44f2b6de545901a182">&#9670;&nbsp;</a></span>getExnergivenRTh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> getExnergivenRTh </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>rhotheta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Exner function pi in terms of (rho theta)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> std::pow(<a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a> * rhotheta / <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>*<a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a">c_p</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="TimeIntegration__fast_8cpp.html#ad810006ff41e561d908b00b493bd437e">erf_fast_rhs()</a>, and <a class="el" href="TimeIntegration__fast__implicit_8cpp.html#a87ecce1a52c309d02c04812aa091d217">erf_implicit_fast_rhs()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="EOS_8H_ab7699bc24a134b44f2b6de545901a182_icgraph.png" border="0" usemap="#EOS_8H_ab7699bc24a134b44f2b6de545901a182_icgraph" alt=""/></div>
+<map name="EOS_8H_ab7699bc24a134b44f2b6de545901a182_icgraph" id="EOS_8H_ab7699bc24a134b44f2b6de545901a182_icgraph">
+<area shape="rect" title=" " alt="" coords="857,31,997,57"/>
+<area shape="rect" href="TimeIntegration__fast_8cpp.html#ad810006ff41e561d908b00b493bd437e" title=" " alt="" coords="711,5,809,32"/>
+<area shape="rect" href="TimeIntegration__fast__implicit_8cpp.html#a87ecce1a52c309d02c04812aa091d217" title=" " alt="" coords="508,56,663,83"/>
+<area shape="rect" href="classERF.html#a76e972714e74aa2ba1b1806b980bb9a2" title=" " alt="" coords="325,31,460,57"/>
+<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="167,31,277,57"/>
+<area shape="rect" href="classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f" title=" " alt="" coords="5,31,119,57"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a292ce90ab26c75f4a444808a807b532b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a292ce90ab26c75f4a444808a807b532b">&#9670;&nbsp;</a></span>getPgivenRTh()</h2>
 
@@ -189,23 +229,19 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> * std::pow(<a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a> * rhotheta / <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespacederived.html#ab144cda2ef3e2bd18cbd0837ce723521">derived::erf_derpres()</a>, <a class="el" href="namespacederived.html#ae13ef28ab10c6102bf43c9a7fbe99f35">derived::erf_dersoundspeed()</a>, <a class="el" href="TimeIntegration__fast_8cpp.html#a0359a8285a88a0608583ea5781989550">erf_fast_rhs()</a>, <a class="el" href="classERF.html#a1af27a9e7f1c52502a49b9e9d02f0380">ERF::estTimeStep()</a>, <a class="el" href="classERF.html#a01987b2556834788694f2f3741a2afe4">ERF::MakeHorizontalAverages()</a>, and <a class="el" href="classERF.html#a387af22acce3cefeb515eb151c3d1b5a">ERF::WritePlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespacederived.html#ab144cda2ef3e2bd18cbd0837ce723521">derived::erf_derpres()</a>, <a class="el" href="namespacederived.html#ae13ef28ab10c6102bf43c9a7fbe99f35">derived::erf_dersoundspeed()</a>, <a class="el" href="classERF.html#a6b1d727e63de2e49aa4f8e00b0dda1d5">ERF::estTimeStep()</a>, <a class="el" href="classERF.html#a01987b2556834788694f2f3741a2afe4">ERF::MakeHorizontalAverages()</a>, and <a class="el" href="classERF.html#a387af22acce3cefeb515eb151c3d1b5a">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="EOS_8H_a292ce90ab26c75f4a444808a807b532b_icgraph.png" border="0" usemap="#EOS_8H_a292ce90ab26c75f4a444808a807b532b_icgraph" alt=""/></div>
 <map name="EOS_8H_a292ce90ab26c75f4a444808a807b532b_icgraph" id="EOS_8H_a292ce90ab26c75f4a444808a807b532b_icgraph">
-<area shape="rect" title=" " alt="" coords="775,132,885,159"/>
-<area shape="rect" href="namespacederived.html#ab144cda2ef3e2bd18cbd0837ce723521" title=" " alt="" coords="542,5,695,32"/>
-<area shape="rect" href="classERF.html#a387af22acce3cefeb515eb151c3d1b5a" title=" " alt="" coords="325,56,463,83"/>
-<area shape="rect" href="namespacederived.html#ae13ef28ab10c6102bf43c9a7fbe99f35" title=" " alt="" coords="517,107,720,133"/>
-<area shape="rect" href="TimeIntegration__fast_8cpp.html#a0359a8285a88a0608583ea5781989550" title=" " alt="" coords="569,157,668,184"/>
-<area shape="rect" href="classERF.html#a1af27a9e7f1c52502a49b9e9d02f0380" title=" " alt="" coords="551,208,687,235"/>
-<area shape="rect" href="classERF.html#a01987b2556834788694f2f3741a2afe4" title=" " alt="" coords="511,259,727,285"/>
-<area shape="rect" href="classERF.html#a76e972714e74aa2ba1b1806b980bb9a2" title=" " alt="" coords="327,157,461,184"/>
-<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="167,157,277,184"/>
-<area shape="rect" href="classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f" title=" " alt="" coords="5,157,119,184"/>
-<area shape="rect" href="classERF.html#a62a5ed3c3806eaa918257e0ad1382df5" title=" " alt="" coords="330,208,458,235"/>
+<area shape="rect" title=" " alt="" coords="455,107,565,133"/>
+<area shape="rect" href="namespacederived.html#ab144cda2ef3e2bd18cbd0837ce723521" title=" " alt="" coords="222,5,375,32"/>
+<area shape="rect" href="classERF.html#a387af22acce3cefeb515eb151c3d1b5a" title=" " alt="" coords="5,56,143,83"/>
+<area shape="rect" href="namespacederived.html#ae13ef28ab10c6102bf43c9a7fbe99f35" title=" " alt="" coords="197,107,400,133"/>
+<area shape="rect" href="classERF.html#a6b1d727e63de2e49aa4f8e00b0dda1d5" title=" " alt="" coords="231,157,367,184"/>
+<area shape="rect" href="classERF.html#a01987b2556834788694f2f3741a2afe4" title=" " alt="" coords="191,208,407,235"/>
+<area shape="rect" href="classERF.html#a62a5ed3c3806eaa918257e0ad1382df5" title=" " alt="" coords="10,157,138,184"/>
 </map>
 </div>
 
@@ -270,11 +306,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// diagnostic relation for the full pressure</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// see https://erf.readthedocs.io/en/latest/theory/NavierStokesEquations.html</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> std::pow(p*std::pow(<a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>-1), 1.0 / <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>)/ <a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// diagnostic relation for the full pressure</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// see https://erf.readthedocs.io/en/latest/theory/NavierStokesEquations.html</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> std::pow(p*std::pow(<a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>, <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>-1), 1.0 / <a class="code" href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a>)/ <a class="code" href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

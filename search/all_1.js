@@ -13,7 +13,7 @@ var searchData=
   ['add_5fpar_11',['add_par',['../main_8cpp.html#a183e783116d02836167ccbed3b28c1d3',1,'main.cpp']]],
   ['add_5ftemperature_5fperturbations_12',['add_temperature_perturbations',['../structABLFieldInit.html#a329751c25497dbe3a91d9605043a3090',1,'ABLFieldInit']]],
   ['add_5fvar_13',['add_var',['../structTimeInterpolatedData.html#a427162ff55f08bccd3ee4948944ac652',1,'TimeInterpolatedData']]],
-  ['advance_14',['Advance',['../classERF.html#a47413fe5588f7dd71a1d5087a9e804f9',1,'ERF']]],
+  ['advance_14',['Advance',['../classERF.html#a47413fe5588f7dd71a1d5087a9e804f9',1,'ERF::Advance()'],['../classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b',1,'MRISplitIntegrator::advance()']]],
   ['advect_5fqke_15',['advect_QKE',['../structSolverChoice.html#a38dc1d6637afc39c42b09560735f8191',1,'SolverChoice']]],
   ['advectedquantity_16',['AdvectedQuantity',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4',1,'DataStruct.H']]],
   ['advectingquantity_17',['AdvectingQuantity',['../DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432',1,'DataStruct.H']]],
