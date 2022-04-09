@@ -367,7 +367,7 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nrk = 0; nrk &lt; 3; nrk++)</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Starting RK3: Step &quot;</span> &lt;&lt; nrk+1 &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="comment">// amrex::Print() &lt;&lt; &quot;Starting RK3: Step &quot; &lt;&lt; nrk+1 &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">if</span> (nrk == 0) { nsubsteps = 1;               dtau = BaseT::timestep / 3.0_rt; }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">if</span> (nrk == 1) { nsubsteps = substep_ratio/2; dtau = sub_timestep;}</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">if</span> (nrk == 2) { nsubsteps = substep_ratio;   dtau = sub_timestep;}</div>
