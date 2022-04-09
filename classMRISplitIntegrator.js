@@ -19,6 +19,5 @@ var classMRISplitIntegrator =
     [ "post_substep", "classMRISplitIntegrator.html#a80d92932b5093d8930abe88858ea9ce5", null ],
     [ "S_sum", "classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1", null ],
     [ "S_sum_old", "classMRISplitIntegrator.html#a1b4f0501b31fde19ae6582d87bd5dc05", null ],
-    [ "T_store", "classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80", null ],
-    [ "use_implicit_fast_rhs", "classMRISplitIntegrator.html#aac16f22f7807669e8e44d2a962a520f5", null ]
+    [ "T_store", "classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80", null ]
 ];

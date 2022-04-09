@@ -1,8 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classERFPhysBCFunct.html#a6fe3cc72142d573a8fb240e7674dcba8":[2,0,10,9],
-"classERFPhysBCFunct.html#a9eb8f98363cea7292108adb947124e2f":[2,0,10,4],
-"classERFPhysBCFunct.html#aa55dd51e38249c965b8472c9f819e838":[2,0,10,12],
 "classERFPhysBCFunct.html#aa9ba493b15a38630b7f5bc59b9df00df":[2,0,10,5],
 "classERFPhysBCFunct.html#abb1797f0742dd01ee978be02d594fc43":[2,0,10,1],
 "classERFPhysBCFunct.html#ada7479538c1fabdb5703ec9f0ad84c0a":[2,0,10,11],
@@ -34,7 +31,6 @@ var NAVTREEINDEX2 =
 "classMRISplitIntegrator.html#a8fe3068c562900c56e3174c23af4ab99":[2,0,14,8],
 "classMRISplitIntegrator.html#a9ea1c36a75e04596ffe0fa29e614b6e2":[2,0,14,2],
 "classMRISplitIntegrator.html#a9f6b581c6c5f2b8af49f0684098ec551":[2,0,14,0],
-"classMRISplitIntegrator.html#aac16f22f7807669e8e44d2a962a520f5":[2,0,14,20],
 "classMRISplitIntegrator.html#abe16bffbdae733268ab637f4f71c1301":[2,0,14,1],
 "classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1":[2,0,14,17],
 "classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b":[2,0,14,4],
@@ -222,8 +218,8 @@ var NAVTREEINDEX2 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1],
 "functions_func.html":[2,3,1,0],
+"functions_func.html":[2,3,1],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
@@ -249,5 +245,9 @@ var NAVTREEINDEX2 =
 "functions_h.html":[2,3,0,7],
 "functions_i.html":[2,3,0,8],
 "functions_k.html":[2,3,0,9],
-"functions_l.html":[2,3,0,10]
+"functions_l.html":[2,3,0,10],
+"functions_m.html":[2,3,0,11],
+"functions_n.html":[2,3,0,12],
+"functions_o.html":[2,3,0,13],
+"functions_p.html":[2,3,0,14]
 };
