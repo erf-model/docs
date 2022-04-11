@@ -28,6 +28,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ERF_TimeStepping.cpp", "ERF__TimeStepping_8cpp.html", null ],
     [ "IndexDefines.H", "IndexDefines_8H.html", "IndexDefines_8H" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
+    [ "Metrics.cpp", "Metrics_8cpp.html", null ],
     [ "PlaneAverage.H", "PlaneAverage_8H.html", [
       [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ]
     ] ],

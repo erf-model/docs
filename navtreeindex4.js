@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724":[2,0,0,4,14],
 "structncutils_1_1NCVar.html#a533478371e0bd09a6f4944bf5fe00684":[2,0,0,4,1],
 "structncutils_1_1NCVar.html#a5f4dc3a5bf52f9574bffc89c29f4335c":[2,0,0,4,26],
 "structncutils_1_1NCVar.html#a69c358988ebdd589d7e465ca6a5f07e9":[2,0,0,4,29],

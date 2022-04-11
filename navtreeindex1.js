@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"NCInterface_8cpp.html#aa67f9bcab4a9da3e92f2e2f3b4ec5979":[3,0,0,1,8,0],
 "NCMultiFabFile_8cpp.html":[3,0,0,1,10],
 "NCPlotFile_8H.html":[3,0,0,1,12],
 "NCPlotFile_8H.html#aabaa127a3a319c1b86090d6c88568965":[3,0,0,1,12,0],
@@ -24,8 +25,8 @@ var NAVTREEINDEX1 =
 "PBLModels_8H.html#a636c70ae989e2ff9f7e7b2e05836aa24":[3,0,0,2,6,0],
 "PBLModels_8H.html#a9ea10b2f61a18afb14ef847f637c3b1d":[3,0,0,2,6,1],
 "PBLModels_8H_source.html":[3,0,0,2,6],
-"PlaneAverage_8H.html":[3,0,0,24],
-"PlaneAverage_8H_source.html":[3,0,0,24],
+"PlaneAverage_8H.html":[3,0,0,25],
+"PlaneAverage_8H_source.html":[3,0,0,25],
 "Plotfile_8cpp.html":[3,0,0,1,14],
 "SpatialStencils_8H.html":[3,0,0,2,7],
 "SpatialStencils_8H.html#a02209be7e02b348761df25746390fe8e":[3,0,0,2,7,3],
@@ -76,15 +77,15 @@ var NAVTREEINDEX1 =
 "TimeIntegration__fast__implicit_8cpp.html#a87ecce1a52c309d02c04812aa091d217":[3,0,0,3,3,0],
 "TimeIntegration__rhs_8cpp.html":[3,0,0,3,4],
 "TimeIntegration__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64":[3,0,0,3,4,0],
-"TimeInterpolatedData_8H.html":[3,0,0,26],
-"TimeInterpolatedData_8H_source.html":[3,0,0,26],
-"VelPlaneAverage_8H.html":[3,0,0,27],
-"VelPlaneAverage_8H_source.html":[3,0,0,27],
+"TimeInterpolatedData_8H.html":[3,0,0,27],
+"TimeInterpolatedData_8H_source.html":[3,0,0,27],
+"VelPlaneAverage_8H.html":[3,0,0,28],
+"VelPlaneAverage_8H_source.html":[3,0,0,28],
 "VelocityToMomentum_8cpp.html":[3,0,0,2,10],
 "VelocityToMomentum_8cpp.html#a74241e06851a54dac1b61dcb122dc996":[3,0,0,2,10,0],
-"WPS__Interface_8H.html":[3,0,0,29],
-"WPS__Interface_8H_source.html":[3,0,0,29],
-"WPS__Interface_8cpp.html":[3,0,0,28],
+"WPS__Interface_8H.html":[3,0,0,30],
+"WPS__Interface_8H_source.html":[3,0,0,30],
+"WPS__Interface_8cpp.html":[3,0,0,29],
 "annotated.html":[2,0],
 "classERF.html":[2,0,8],
 "classERF.html#a01987b2556834788694f2f3741a2afe4":[2,0,8,35],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "classERFPhysBCFunct.html#a4040ee6c9928e0423c278d4ffff9e408":[2,0,10,13],
 "classERFPhysBCFunct.html#a60f6184296c0c4016a7b8f7b8294387c":[2,0,10,7],
 "classERFPhysBCFunct.html#a6fe3cc72142d573a8fb240e7674dcba8":[2,0,10,9],
-"classERFPhysBCFunct.html#a9eb8f98363cea7292108adb947124e2f":[2,0,10,4],
-"classERFPhysBCFunct.html#aa55dd51e38249c965b8472c9f819e838":[2,0,10,12]
+"classERFPhysBCFunct.html#a9eb8f98363cea7292108adb947124e2f":[2,0,10,4]
 };
