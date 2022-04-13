@@ -888,12 +888,12 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;{</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = finest_level-1; lev &gt;= 0; --lev)</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    {</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;        <a class="code" href="classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41">AverageDownTo</a>(lev);</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    }</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;{</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = finest_level-1; lev &gt;= 0; --lev)</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    {</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;        <a class="code" href="classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41">AverageDownTo</a>(lev);</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    }</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -920,17 +920,17 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;{</div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>; ++var_idx) {</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        <span class="keyword">const</span> BoxArray&amp; ba(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[crse_lev][var_idx].boxArray());</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;        <span class="keywordflow">if</span> (ba[0].type() == IntVect::TheZeroVector())</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;            amrex::average_down(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[crse_lev+1][var_idx], <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[crse_lev][var_idx],</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;                                0, <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[crse_lev][var_idx].nComp(), refRatio(crse_lev));</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;        <span class="keywordflow">else</span> <span class="comment">// We assume the arrays are face-centered if not cell-centered</span></div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;            amrex::average_down_faces(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[crse_lev+1][var_idx], <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[crse_lev][var_idx],</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;                                      refRatio(crse_lev),geom[crse_lev]);</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;    }</div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;{</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>; ++var_idx) {</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;        <span class="keyword">const</span> BoxArray&amp; ba(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[crse_lev][var_idx].boxArray());</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;        <span class="keywordflow">if</span> (ba[0].type() == IntVect::TheZeroVector())</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;            amrex::average_down(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[crse_lev+1][var_idx], <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[crse_lev][var_idx],</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;                                0, <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[crse_lev][var_idx].nComp(), refRatio(crse_lev));</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        <span class="keywordflow">else</span> <span class="comment">// We assume the arrays are face-centered if not cell-centered</span></div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;            amrex::average_down_faces(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[crse_lev+1][var_idx], <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[crse_lev][var_idx],</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;                                      refRatio(crse_lev),geom[crse_lev]);</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;    }</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f">timeStep()</a>.</p>
 <div class="dynheader">
@@ -1562,103 +1562,104 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                fine_geom, ifr, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>,</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <a class="code" href="classERF.html#ab8748d5fee9fee8cac5c7a85c4c85846">get_most</a>(), <a class="code" href="classERF.html#a8a99e22b1111c803e31b4afd5fcdea60">domain_bcs_type_d</a>,</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;#ifdef ERF_USE_TERRAIN</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                r0, p0,</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;#<span class="keywordflow">else</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                dptr_dens_hse, dptr_pres_hse,</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;#endif</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                dptr_rayleigh_tau, dptr_rayleigh_ubar,</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                dptr_rayleigh_vbar, dptr_rayleigh_thetabar);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    };</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keyword">auto</span> implicit_fast_rhs_fun = [&amp;](      Vector&lt;MultiFab&gt;&amp; S_rhs,</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                                           Vector&lt;MultiFab&gt;&amp; S_slow_rhs,</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                                           Vector&lt;MultiFab&gt;&amp; S_stage_data,</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                                     <span class="keyword">const</span> Vector&lt;MultiFab&gt;&amp; S_data,</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                                     <span class="keyword">const</span> Vector&lt;MultiFab&gt;&amp; S_data_old,</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                                     <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time, <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> fast_dt)</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    {</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a>) Print() &lt;&lt; <span class="stringliteral">&quot;Calling fast rhs, time = &quot;</span> &lt;&lt; time &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <a class="code" href="TimeIntegration_8H.html#acad3c7435626323ed85a6e17f2f03ebb">erf_implicit_fast_rhs</a>(level, S_rhs, S_slow_rhs, S_stage_data, S_prim,</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                              S_data, S_data_old, advflux, fine_geom, ifr, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>,</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;#ifdef ERF_USE_TERRAIN</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                              r0, p0,</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;#<span class="keywordflow">else</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                              dptr_dens_hse, dptr_pres_hse,</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;#endif</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                              time, fast_dt);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    };</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keyword">auto</span> post_update_fun = [&amp;](Vector&lt;MultiFab&gt;&amp; S_data, <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time_for_fp)</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        apply_bcs(S_data, time_for_fp);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        cons_to_prim(S_data[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>], S_prim);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    };</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keyword">auto</span> post_substep_fun = [&amp;](Vector&lt;MultiFab&gt;&amp; S_data, <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time_for_fp)</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    {</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        apply_bcs(S_data, time_for_fp);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    };</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="comment">// ***************************************************************************************</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="comment">// Setup the integrator</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a4a279f0f572da168852d954df55abe2e">use_native_mri</a>) {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      <a class="code" href="classMRISplitIntegrator.html">MRISplitIntegrator&lt;Vector&lt;MultiFab&gt;</a> &gt; lev_integrator(state_old);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      <span class="comment">// define rhs and &#39;post update&#39; utility function that is called after calculating</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      <span class="comment">// any state data (e.g. at RK stages or at the end of a timestep)</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      lev_integrator.set_rhs(rhs_fun);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      lev_integrator.set_implicit_fast_rhs(implicit_fast_rhs_fun);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      lev_integrator.set_slow_fast_timestep_ratio(<a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> &gt; 0 ? <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> : <a class="code" href="classERF.html#a3cf7cb2e51eb7b69cb4079ffc6722459">dt_mri_ratio</a>[level]);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      lev_integrator.set_post_update(post_update_fun);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      lev_integrator.set_post_substep(post_substep_fun);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      <span class="comment">// Integrate for a single timestep</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;      lev_integrator.advance(state_old, state_new, old_time, dt_advance);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      TimeIntegrator&lt;Vector&lt;MultiFab&gt; &gt; lev_integrator(state_old);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      <span class="comment">// define rhs and &#39;post update&#39; utility function that is called after calculating</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      <span class="comment">// any state data (e.g. at RK stages or at the end of a timestep)</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      lev_integrator.set_rhs(rhs_fun);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classERF.html#aa30dffc28e24ac50c880539ca2e36ffd">fixed_fast_dt</a> &gt; 0.0)</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        lev_integrator.set_fast_timestep(<a class="code" href="classERF.html#aa30dffc28e24ac50c880539ca2e36ffd">fixed_fast_dt</a>);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        lev_integrator.set_slow_fast_timestep_ratio(<a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> &gt; 0 ? <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> : <a class="code" href="classERF.html#a3cf7cb2e51eb7b69cb4079ffc6722459">dt_mri_ratio</a>[level]);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;      lev_integrator.set_post_update(post_update_fun);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      <span class="comment">// Integrate for a single timestep</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      lev_integrator.advance(state_old, state_new, old_time, dt_advance);</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">// Convert updated momentum to updated velocity on faces after we have taken a timestep</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <a class="code" href="MomentumToVelocity_8cpp.html#a0b9d03467b066db285ea07f546f84b49">MomentumToVelocity</a>(xvel_new, yvel_new, zvel_new,</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                       state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>],</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                       state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a>],</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                       state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511faa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a>],</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                       state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fabde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a>],</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                       IntVect::TheZeroVector());</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="comment">// Get the final cell centered variables after the step</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="comment">// (do this at the very end because its a swap not a copy)</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    std::swap(cons_new, state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>]);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    std::swap(flux[0], state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa21245d0eca9226a6441feac35602c9be">IntVar::xflux</a>]);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    std::swap(flux[1], state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511faf204c2311e68c84ad19b3759183bdd09">IntVar::yflux</a>]);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    std::swap(flux[2], state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa9b94534904513cb3b68ef8b0c7bfed51">IntVar::zflux</a>]);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="comment">// One final BC fill</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    amrex::Real new_time = old_time + dt_advance;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <a class="code" href="classERF.html#aabb427c8e4cbc3e1aac5126427bd8c8d">FillIntermediatePatch</a>(level, new_time, {cons_new, xvel_new, yvel_new, zvel_new});</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                z_phys_nd[level], detJ_cc[level],</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                r0, p0,</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;#<span class="keywordflow">else</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                dptr_dens_hse, dptr_pres_hse,</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;#endif</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                dptr_rayleigh_tau, dptr_rayleigh_ubar,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                dptr_rayleigh_vbar, dptr_rayleigh_thetabar);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    };</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keyword">auto</span> implicit_fast_rhs_fun = [&amp;](      Vector&lt;MultiFab&gt;&amp; S_rhs,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                                           Vector&lt;MultiFab&gt;&amp; S_slow_rhs,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                                           Vector&lt;MultiFab&gt;&amp; S_stage_data,</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                                     <span class="keyword">const</span> Vector&lt;MultiFab&gt;&amp; S_data,</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                                     <span class="keyword">const</span> Vector&lt;MultiFab&gt;&amp; S_data_old,</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                                     <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time, <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> fast_dt)</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a>) Print() &lt;&lt; <span class="stringliteral">&quot;Calling fast rhs, time = &quot;</span> &lt;&lt; time &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <a class="code" href="TimeIntegration_8H.html#acad3c7435626323ed85a6e17f2f03ebb">erf_implicit_fast_rhs</a>(level, S_rhs, S_slow_rhs, S_stage_data, S_prim,</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                              S_data, S_data_old, advflux, fine_geom, ifr, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;#ifdef ERF_USE_TERRAIN</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                              r0, p0,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;#<span class="keywordflow">else</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                              dptr_dens_hse, dptr_pres_hse,</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;#endif</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                              time, fast_dt);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    };</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keyword">auto</span> post_update_fun = [&amp;](Vector&lt;MultiFab&gt;&amp; S_data, <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time_for_fp)</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        apply_bcs(S_data, time_for_fp);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        cons_to_prim(S_data[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>], S_prim);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    };</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keyword">auto</span> post_substep_fun = [&amp;](Vector&lt;MultiFab&gt;&amp; S_data, <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time_for_fp)</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        apply_bcs(S_data, time_for_fp);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    };</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="comment">// ***************************************************************************************</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">// Setup the integrator</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a4a279f0f572da168852d954df55abe2e">use_native_mri</a>) {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      <a class="code" href="classMRISplitIntegrator.html">MRISplitIntegrator&lt;Vector&lt;MultiFab&gt;</a> &gt; lev_integrator(state_old);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      <span class="comment">// define rhs and &#39;post update&#39; utility function that is called after calculating</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      <span class="comment">// any state data (e.g. at RK stages or at the end of a timestep)</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      lev_integrator.set_rhs(rhs_fun);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      lev_integrator.set_implicit_fast_rhs(implicit_fast_rhs_fun);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      lev_integrator.set_slow_fast_timestep_ratio(<a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> &gt; 0 ? <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> : <a class="code" href="classERF.html#a3cf7cb2e51eb7b69cb4079ffc6722459">dt_mri_ratio</a>[level]);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      lev_integrator.set_post_update(post_update_fun);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      lev_integrator.set_post_substep(post_substep_fun);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      <span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      <span class="comment">// Integrate for a single timestep</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;      <span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      lev_integrator.advance(state_old, state_new, old_time, dt_advance);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      TimeIntegrator&lt;Vector&lt;MultiFab&gt; &gt; lev_integrator(state_old);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      <span class="comment">// define rhs and &#39;post update&#39; utility function that is called after calculating</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      <span class="comment">// any state data (e.g. at RK stages or at the end of a timestep)</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      lev_integrator.set_rhs(rhs_fun);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classERF.html#aa30dffc28e24ac50c880539ca2e36ffd">fixed_fast_dt</a> &gt; 0.0)</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        lev_integrator.set_fast_timestep(<a class="code" href="classERF.html#aa30dffc28e24ac50c880539ca2e36ffd">fixed_fast_dt</a>);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        lev_integrator.set_slow_fast_timestep_ratio(<a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> &gt; 0 ? <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> : <a class="code" href="classERF.html#a3cf7cb2e51eb7b69cb4079ffc6722459">dt_mri_ratio</a>[level]);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      lev_integrator.set_post_update(post_update_fun);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      <span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      <span class="comment">// Integrate for a single timestep</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;      lev_integrator.advance(state_old, state_new, old_time, dt_advance);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="comment">// Convert updated momentum to updated velocity on faces after we have taken a timestep</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <a class="code" href="MomentumToVelocity_8cpp.html#a0b9d03467b066db285ea07f546f84b49">MomentumToVelocity</a>(xvel_new, yvel_new, zvel_new,</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                       state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>],</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                       state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a>],</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                       state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511faa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a>],</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                       state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fabde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a>],</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                       IntVect::TheZeroVector());</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="comment">// Get the final cell centered variables after the step</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">// (do this at the very end because its a swap not a copy)</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    std::swap(cons_new, state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>]);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    std::swap(flux[0], state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa21245d0eca9226a6441feac35602c9be">IntVar::xflux</a>]);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    std::swap(flux[1], state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511faf204c2311e68c84ad19b3759183bdd09">IntVar::yflux</a>]);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    std::swap(flux[2], state_new[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa9b94534904513cb3b68ef8b0c7bfed51">IntVar::zflux</a>]);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// One final BC fill</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    amrex::Real new_time = old_time + dt_advance;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <a class="code" href="classERF.html#aabb427c8e4cbc3e1aac5126427bd8c8d">FillIntermediatePatch</a>(level, new_time, {cons_new, xvel_new, yvel_new, zvel_new});</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9">Advance()</a>.</p>
 <div class="dynheader">
@@ -1729,39 +1730,39 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    AMREX_ALWAYS_ASSERT(dens.size() == pres.size());</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    amrex::Real l_gravity = <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">gravity</a>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> geomdata = geom[lev].data();</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dz = geomdata.CellSize(2);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">int</span> nz = geom[lev].Domain().length(2);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">// We start by assuming pressure on the ground is p_0 (in ERF_Constants.H)</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// Note that gravity is positive</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a>* hptr_dens = <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev].data() + <a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a>* hptr_pres = <a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>[lev].data() + <a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dens_interp;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="comment">// We integrate to the first cell (and below) by using rho in this cell</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">// If gravity == 0 this is constant pressure</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">// If gravity != 0, hence this is a wall, this gives gp0 = dens[0] * gravity</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">// (dens_hse*gravity would also be dens[0]*gravity because we use foextrap for rho at k = -1)</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">// Note ng_pres_hse = 1</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    hptr_pres[-1] = <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> + (0.5*dz) * dens[0] * l_gravity;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    hptr_pres[ 0] = <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> - (0.5*dz) * dens[0] * l_gravity;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;erf_enforce_hse: p[-1] = &quot; &lt;&lt; hptr_pres[-1] &lt;&lt; &quot; (ghost)&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;erf_enforce_hse: p[ 0] = &quot; &lt;&lt; hptr_pres[ 0] &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt; nz+<a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>; k++)</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;       dens_interp = 0.5*(hptr_dens[k] + hptr_dens[k-1]);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;       hptr_pres[k] = hptr_pres[k-1] - dz * dens_interp * l_gravity;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;{</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    AMREX_ALWAYS_ASSERT(dens.size() == pres.size());</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    amrex::Real l_gravity = <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">gravity</a>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> geomdata = geom[lev].data();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dz = geomdata.CellSize(2);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">int</span> nz = geom[lev].Domain().length(2);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">// We start by assuming pressure on the ground is p_0 (in ERF_Constants.H)</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="comment">// Note that gravity is positive</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a>* hptr_dens = <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev].data() + <a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a>* hptr_pres = <a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>[lev].data() + <a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dens_interp;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">// We integrate to the first cell (and below) by using rho in this cell</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="comment">// If gravity == 0 this is constant pressure</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="comment">// If gravity != 0, hence this is a wall, this gives gp0 = dens[0] * gravity</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="comment">// (dens_hse*gravity would also be dens[0]*gravity because we use foextrap for rho at k = -1)</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// Note ng_pres_hse = 1</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    hptr_pres[-1] = <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> + (0.5*dz) * dens[0] * l_gravity;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    hptr_pres[ 0] = <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> - (0.5*dz) * dens[0] * l_gravity;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;erf_enforce_hse: p[-1] = &quot; &lt;&lt; hptr_pres[-1] &lt;&lt; &quot; (ghost)&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;erf_enforce_hse: p[ 0] = &quot; &lt;&lt; hptr_pres[ 0] &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt; nz+<a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>; k++)</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;       dens_interp = 0.5*(hptr_dens[k] + hptr_dens[k-1]);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;       hptr_pres[k] = hptr_pres[k-1] - dz * dens_interp * l_gravity;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a92c020bfaa43e40fb5ffc449427a0318">initHSE()</a>.</p>
 <div class="dynheader">
@@ -3819,92 +3820,92 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;{</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    <span class="comment">// We need to create horizontal averages for 5 variables:</span></div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    <span class="comment">// density, temperature, pressure, qc, qv</span></div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160; </div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    <span class="comment">// First, average down all levels</span></div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    <a class="code" href="classERF.html#a8202de1f8f372e3e6fdc483447c6a55f">AverageDown</a>();</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160; </div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    <span class="comment">// get the number of cells in z at level 0</span></div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    <span class="keywordtype">int</span> dir_z = AMREX_SPACEDIM-1;</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <span class="keyword">auto</span> domain = geom[0].Domain();</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <span class="keywordtype">int</span> size_z = domain.length(dir_z);</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <span class="keywordtype">int</span> start_z = domain.smallEnd()[dir_z];</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160; </div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> area_z = <span class="keyword">static_cast&lt;</span><a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a><span class="keyword">&gt;</span>(domain.length(0));</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM == 3)</span></div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    area_z *= domain.length(1);</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160; </div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    <span class="comment">// resize the level 0 horizontal average vectors</span></div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>.resize(size_z, 0.0_rt);</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a>.resize(size_z, 0.0_rt);</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>.resize(size_z, 0.0_rt);</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>.resize(size_z, 0.0_rt);</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    <a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>.resize(size_z, 0.0_rt);</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160; </div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <span class="comment">// get the cell centered data and construct sums</span></div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    <span class="keyword">auto</span>&amp; mf_cons = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[0][<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>];</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(mf_cons); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;        <span class="keyword">const</span> Box&amp; box = mfi.validbox();</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;        <span class="keyword">const</span> IntVect&amp; se = box.smallEnd();</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;        <span class="keyword">const</span> IntVect&amp; be = box.bigEnd();</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        <span class="keyword">auto</span>  arr_cons = mf_cons[mfi].array();</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160; </div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        FArrayBox fab_reduce(box, 5);</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        Elixir elx_reduce = fab_reduce.elixir();</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        <span class="keyword">auto</span> arr_reduce = fab_reduce.array();</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160; </div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        ParallelFor(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dens = arr_cons(i, j, k, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aa5c9c77ea576137ca2664783567e7f588">Cons::Rho</a>);</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;            arr_reduce(i, j, k, 0) = dens;</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;            arr_reduce(i, j, k, 1) = arr_cons(i, j, k, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aa7ba34ebd02f164da2892ceb823948315">Cons::RhoTheta</a>) / dens;</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;            arr_reduce(i, j, k, 2) = <a class="code" href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b">getPgivenRTh</a>(arr_cons(i, j, k, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aa7ba34ebd02f164da2892ceb823948315">Cons::RhoTheta</a>));</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;            arr_reduce(i, j, k, 3) = arr_cons(i, j, k, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aac25c3fadaaa0102066c47cb018fa5fc8">Cons::RhoQv</a>) / dens;</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            arr_reduce(i, j, k, 4) = arr_cons(i, j, k, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aa2c90906df6c48097353eba34ffb6f119">Cons::RhoQc</a>) / dens;</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        });</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160; </div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=se[dir_z]; k &lt;= be[dir_z]; ++k) {</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;            Box kbox(box); kbox.setSmall(dir_z,k); kbox.setBig(dir_z,k);</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            <a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>     [k-start_z] += fab_reduce.sum&lt;RunOn::Device&gt;(kbox,0);</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            <a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a> [k-start_z] += fab_reduce.sum&lt;RunOn::Device&gt;(kbox,1);</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            <a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>    [k-start_z] += fab_reduce.sum&lt;RunOn::Device&gt;(kbox,2);</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            <a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>          [k-start_z] += fab_reduce.sum&lt;RunOn::Device&gt;(kbox,3);</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            <a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>          [k-start_z] += fab_reduce.sum&lt;RunOn::Device&gt;(kbox,4);</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        }</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    }</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160; </div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    <span class="comment">// combine sums from different MPI ranks</span></div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    ParallelDescriptor::ReduceRealSum(<a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>.dataPtr(), <a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>.size());</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    ParallelDescriptor::ReduceRealSum(<a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a>.dataPtr(), <a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a>.size());</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    ParallelDescriptor::ReduceRealSum(<a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>.dataPtr(), <a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>.size());</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    ParallelDescriptor::ReduceRealSum(<a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>.dataPtr(), <a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>.size());</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    ParallelDescriptor::ReduceRealSum(<a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>.dataPtr(), <a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>.size());</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    <span class="comment">// divide by the total number of cells we are averaging over</span></div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; size_z; ++k) {</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        <a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>[k]     /= area_z;</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;        <a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a>[k] /= area_z;</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        <a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>[k]    /= area_z;</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        <a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>[k]          /= area_z;</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        <a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>[k]          /= area_z;</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;    }</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160; </div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    <span class="comment">// resize device vectors</span></div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    <a class="code" href="classERF.html#a84cf7616e7b3928f08f4bd56112db01e">d_havg_density</a>.resize(size_z, 0.0_rt);</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    <a class="code" href="classERF.html#a20350959b7b3e252ee3a802e7998ca8d">d_havg_temperature</a>.resize(size_z, 0.0_rt);</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    <a class="code" href="classERF.html#a9a4f076c56f31fbb5e68c09706605a05">d_havg_pressure</a>.resize(size_z, 0.0_rt);</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    <a class="code" href="classERF.html#a2b0085123e02051ac4c2a72e9972e6ee">d_havg_qv</a>.resize(size_z, 0.0_rt);</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;    <a class="code" href="classERF.html#a8199cc1ec38b9dfd47262ccc7df6a941">d_havg_qc</a>.resize(size_z, 0.0_rt);</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160; </div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    <span class="comment">// copy host vectors to device vectors</span></div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>.begin(), <a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>.end(), <a class="code" href="classERF.html#a84cf7616e7b3928f08f4bd56112db01e">d_havg_density</a>.begin());</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a>.begin(), <a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a>.end(), <a class="code" href="classERF.html#a20350959b7b3e252ee3a802e7998ca8d">d_havg_temperature</a>.begin());</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>.begin(), <a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>.end(), <a class="code" href="classERF.html#a9a4f076c56f31fbb5e68c09706605a05">d_havg_pressure</a>.begin());</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;    amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>.begin(), <a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>.end(), <a class="code" href="classERF.html#a2b0085123e02051ac4c2a72e9972e6ee">d_havg_qv</a>.begin());</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>.begin(), <a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>.end(), <a class="code" href="classERF.html#a8199cc1ec38b9dfd47262ccc7df6a941">d_havg_qc</a>.begin());</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;{</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    <span class="comment">// We need to create horizontal averages for 5 variables:</span></div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    <span class="comment">// density, temperature, pressure, qc, qv</span></div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160; </div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <span class="comment">// First, average down all levels</span></div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    <a class="code" href="classERF.html#a8202de1f8f372e3e6fdc483447c6a55f">AverageDown</a>();</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160; </div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <span class="comment">// get the number of cells in z at level 0</span></div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <span class="keywordtype">int</span> dir_z = AMREX_SPACEDIM-1;</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <span class="keyword">auto</span> domain = geom[0].Domain();</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <span class="keywordtype">int</span> size_z = domain.length(dir_z);</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <span class="keywordtype">int</span> start_z = domain.smallEnd()[dir_z];</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160; </div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> area_z = <span class="keyword">static_cast&lt;</span><a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a><span class="keyword">&gt;</span>(domain.length(0));</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM == 3)</span></div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    area_z *= domain.length(1);</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160; </div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <span class="comment">// resize the level 0 horizontal average vectors</span></div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>.resize(size_z, 0.0_rt);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a>.resize(size_z, 0.0_rt);</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    <a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>.resize(size_z, 0.0_rt);</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>.resize(size_z, 0.0_rt);</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>.resize(size_z, 0.0_rt);</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160; </div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <span class="comment">// get the cell centered data and construct sums</span></div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    <span class="keyword">auto</span>&amp; mf_cons = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[0][<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>];</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(mf_cons); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;        <span class="keyword">const</span> Box&amp; box = mfi.validbox();</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        <span class="keyword">const</span> IntVect&amp; se = box.smallEnd();</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        <span class="keyword">const</span> IntVect&amp; be = box.bigEnd();</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        <span class="keyword">auto</span>  arr_cons = mf_cons[mfi].array();</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160; </div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        FArrayBox fab_reduce(box, 5);</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        Elixir elx_reduce = fab_reduce.elixir();</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        <span class="keyword">auto</span> arr_reduce = fab_reduce.array();</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160; </div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        ParallelFor(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dens = arr_cons(i, j, k, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aa5c9c77ea576137ca2664783567e7f588">Cons::Rho</a>);</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;            arr_reduce(i, j, k, 0) = dens;</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;            arr_reduce(i, j, k, 1) = arr_cons(i, j, k, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aa7ba34ebd02f164da2892ceb823948315">Cons::RhoTheta</a>) / dens;</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            arr_reduce(i, j, k, 2) = <a class="code" href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b">getPgivenRTh</a>(arr_cons(i, j, k, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aa7ba34ebd02f164da2892ceb823948315">Cons::RhoTheta</a>));</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;            arr_reduce(i, j, k, 3) = arr_cons(i, j, k, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aac25c3fadaaa0102066c47cb018fa5fc8">Cons::RhoQv</a>) / dens;</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;            arr_reduce(i, j, k, 4) = arr_cons(i, j, k, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aa2c90906df6c48097353eba34ffb6f119">Cons::RhoQc</a>) / dens;</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        });</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160; </div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=se[dir_z]; k &lt;= be[dir_z]; ++k) {</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            Box kbox(box); kbox.setSmall(dir_z,k); kbox.setBig(dir_z,k);</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            <a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>     [k-start_z] += fab_reduce.sum&lt;RunOn::Device&gt;(kbox,0);</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            <a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a> [k-start_z] += fab_reduce.sum&lt;RunOn::Device&gt;(kbox,1);</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            <a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>    [k-start_z] += fab_reduce.sum&lt;RunOn::Device&gt;(kbox,2);</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            <a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>          [k-start_z] += fab_reduce.sum&lt;RunOn::Device&gt;(kbox,3);</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            <a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>          [k-start_z] += fab_reduce.sum&lt;RunOn::Device&gt;(kbox,4);</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        }</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    }</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    <span class="comment">// combine sums from different MPI ranks</span></div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    ParallelDescriptor::ReduceRealSum(<a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>.dataPtr(), <a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>.size());</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    ParallelDescriptor::ReduceRealSum(<a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a>.dataPtr(), <a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a>.size());</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    ParallelDescriptor::ReduceRealSum(<a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>.dataPtr(), <a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>.size());</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    ParallelDescriptor::ReduceRealSum(<a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>.dataPtr(), <a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>.size());</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    ParallelDescriptor::ReduceRealSum(<a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>.dataPtr(), <a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>.size());</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160; </div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    <span class="comment">// divide by the total number of cells we are averaging over</span></div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; size_z; ++k) {</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        <a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>[k]     /= area_z;</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        <a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a>[k] /= area_z;</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        <a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>[k]    /= area_z;</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        <a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>[k]          /= area_z;</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        <a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>[k]          /= area_z;</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    }</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160; </div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    <span class="comment">// resize device vectors</span></div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    <a class="code" href="classERF.html#a84cf7616e7b3928f08f4bd56112db01e">d_havg_density</a>.resize(size_z, 0.0_rt);</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    <a class="code" href="classERF.html#a20350959b7b3e252ee3a802e7998ca8d">d_havg_temperature</a>.resize(size_z, 0.0_rt);</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;    <a class="code" href="classERF.html#a9a4f076c56f31fbb5e68c09706605a05">d_havg_pressure</a>.resize(size_z, 0.0_rt);</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    <a class="code" href="classERF.html#a2b0085123e02051ac4c2a72e9972e6ee">d_havg_qv</a>.resize(size_z, 0.0_rt);</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    <a class="code" href="classERF.html#a8199cc1ec38b9dfd47262ccc7df6a941">d_havg_qc</a>.resize(size_z, 0.0_rt);</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160; </div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    <span class="comment">// copy host vectors to device vectors</span></div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>.begin(), <a class="code" href="classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a">h_havg_density</a>.end(), <a class="code" href="classERF.html#a84cf7616e7b3928f08f4bd56112db01e">d_havg_density</a>.begin());</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;    amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a>.begin(), <a class="code" href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">h_havg_temperature</a>.end(), <a class="code" href="classERF.html#a20350959b7b3e252ee3a802e7998ca8d">d_havg_temperature</a>.begin());</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>.begin(), <a class="code" href="classERF.html#a413293737b0021c97b50c62756561446">h_havg_pressure</a>.end(), <a class="code" href="classERF.html#a9a4f076c56f31fbb5e68c09706605a05">d_havg_pressure</a>.begin());</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;    amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>.begin(), <a class="code" href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">h_havg_qv</a>.end(), <a class="code" href="classERF.html#a2b0085123e02051ac4c2a72e9972e6ee">d_havg_qv</a>.begin());</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>.begin(), <a class="code" href="classERF.html#a45233bcc95ac50c112b7146595164a8d">h_havg_qc</a>.end(), <a class="code" href="classERF.html#a8199cc1ec38b9dfd47262ccc7df6a941">d_havg_qc</a>.begin());</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4127,36 +4128,38 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;          init_from_netcdf(bx, cons_fab, xvel_fab, yvel_fab, zvel_fab);</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        }</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        make_metrics(lev);</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    }</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160; </div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="comment">// Ensure that the face-based data are the same on both sides of a periodic domain.</span></div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <span class="comment">// The data associated with the lower grid ID is considered the correct value.</span></div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>].OverrideSync(geom[lev].periodicity());</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>].OverrideSync(geom[lev].periodicity());</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>].OverrideSync(geom[lev].periodicity());</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160; </div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="comment">// configure ABLMost params if used MostWall boundary condition</span></div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <span class="keywordflow">for</span> (OrientationIter oitr; oitr; ++oitr) {</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        <span class="keyword">const</span> Orientation face = oitr();</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ab8f4a61c714936efc1c669447b009c29">phys_bc_type</a>[face] == <a class="code" href="IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0fa882dd232c0425bb9366544f84f0a7b6c">BC::MOST</a> &amp;&amp; lev == 0) <a class="code" href="classERF.html#a67da556b4b4cbdc891da06eb5e17aac8">setupABLMost</a>(lev);</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    }</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160; </div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <span class="comment">// Fill ghost cells/faces</span></div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <a class="code" href="classERF.html#ad4b5cfafa3b805287e62d230ae51428f">FillPatch</a>(lev, time, lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>], 0, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aa5934ebcc17d4dfd56ed8cf6221c9a5ed">Cons::NumVars</a>, <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>);</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <a class="code" href="classERF.html#ad4b5cfafa3b805287e62d230ae51428f">FillPatch</a>(lev, time, lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>], 0, 1, <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>);</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <a class="code" href="classERF.html#ad4b5cfafa3b805287e62d230ae51428f">FillPatch</a>(lev, time, lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>], 0, 1, <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>);</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <a class="code" href="classERF.html#ad4b5cfafa3b805287e62d230ae51428f">FillPatch</a>(lev, time, lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>], 0, 1, <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>);</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="comment">// Copy from new into old just in case</span></div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <span class="keywordtype">int</span> ngs   = lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nGrow();</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="keywordtype">int</span> ngvel = lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>].nGrow();</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    MultiFab::Copy(lev_old[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],0,0,<a class="code" href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a>,ngs);</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    MultiFab::Copy(lev_old[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],0,0,1,ngvel);</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    MultiFab::Copy(lev_old[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],0,0,1,ngvel);</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    MultiFab::Copy(lev_old[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>],lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>],0,0,1,ngvel);</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;}</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        make_metrics(lev);</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    }</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="comment">// Ensure that the face-based data are the same on both sides of a periodic domain.</span></div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="comment">// The data associated with the lower grid ID is considered the correct value.</span></div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>].OverrideSync(geom[lev].periodicity());</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>].OverrideSync(geom[lev].periodicity());</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>].OverrideSync(geom[lev].periodicity());</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160; </div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <span class="comment">// configure ABLMost params if used MostWall boundary condition</span></div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="keywordflow">for</span> (OrientationIter oitr; oitr; ++oitr) {</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        <span class="keyword">const</span> Orientation face = oitr();</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ab8f4a61c714936efc1c669447b009c29">phys_bc_type</a>[face] == <a class="code" href="IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0fa882dd232c0425bb9366544f84f0a7b6c">BC::MOST</a> &amp;&amp; lev == 0) <a class="code" href="classERF.html#a67da556b4b4cbdc891da06eb5e17aac8">setupABLMost</a>(lev);</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    }</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160; </div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <span class="comment">// Fill ghost cells/faces</span></div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <a class="code" href="classERF.html#ad4b5cfafa3b805287e62d230ae51428f">FillPatch</a>(lev, time, lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>], 0, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aa5934ebcc17d4dfd56ed8cf6221c9a5ed">Cons::NumVars</a>, <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>);</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <a class="code" href="classERF.html#ad4b5cfafa3b805287e62d230ae51428f">FillPatch</a>(lev, time, lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>], 0, 1, <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>);</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <a class="code" href="classERF.html#ad4b5cfafa3b805287e62d230ae51428f">FillPatch</a>(lev, time, lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>], 0, 1, <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>);</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <a class="code" href="classERF.html#ad4b5cfafa3b805287e62d230ae51428f">FillPatch</a>(lev, time, lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>], 0, 1, <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>);</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="comment">// Copy from new into old just in case</span></div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="keywordtype">int</span> ngs   = lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nGrow();</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="keywordtype">int</span> ngvel = lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>].nGrow();</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    MultiFab::Copy(lev_old[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],0,0,<a class="code" href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a>,ngs);</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    MultiFab::Copy(lev_old[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],0,0,1,ngvel);</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    MultiFab::Copy(lev_old[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],0,0,1,ngvel);</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    MultiFab::Copy(lev_old[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>],lev_new[<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>],0,0,1,ngvel);</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4618,129 +4621,129 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;{</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    {</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        ParmParse pp;  <span class="comment">// Traditionally, max_step and stop_time do not have prefix.</span></div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;        pp.query(<span class="stringliteral">&quot;max_step&quot;</span>, <a class="code" href="classERF.html#a0634154e8e58379c495c3e7fe7c5e4d6">max_step</a>);</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        pp.query(<span class="stringliteral">&quot;stop_time&quot;</span>, <a class="code" href="classERF.html#a405556a52bef334ab68294c1a540e107">stop_time</a>);</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    }</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160; </div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    {</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        ParmParse pp(<span class="stringliteral">&quot;amr&quot;</span>); <span class="comment">// Traditionally, these have prefix, amr.</span></div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160; </div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        pp.query(<span class="stringliteral">&quot;regrid_int&quot;</span>, <a class="code" href="classERF.html#a3937527f96c81674fa38dc34ed24f3f5">regrid_int</a>);</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        pp.query(<span class="stringliteral">&quot;plot_file&quot;</span>, <a class="code" href="classERF.html#ad02c77d3f4a7dfa0ad679877f0f05fc1">plot_file</a>);</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        pp.query(<span class="stringliteral">&quot;plot_type&quot;</span>, <a class="code" href="classERF.html#a3aa38bc97a888d859a640220d2bc4456">plot_type</a>);</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        pp.query(<span class="stringliteral">&quot;plot_int&quot;</span>, <a class="code" href="classERF.html#abe64c2ff781da4cc0642ee1d29c912d6">plot_int</a>);</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        pp.query(<span class="stringliteral">&quot;check_file&quot;</span>, <a class="code" href="classERF.html#ae701564fbe3da5bbd88587e5a08eca4e">check_file</a>);</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        pp.query(<span class="stringliteral">&quot;check_type&quot;</span>, <a class="code" href="classERF.html#a32e0d0f5ae0db18ee81f9d4325a14f64">check_type</a>);</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        pp.query(<span class="stringliteral">&quot;check_int&quot;</span>, <a class="code" href="classERF.html#a1f48ec3caf326a6b1b986d061d36ee90">check_int</a>);</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        pp.query(<span class="stringliteral">&quot;restart&quot;</span>, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>);</div>
+<div class="fragment"><div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;{</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    {</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        ParmParse pp;  <span class="comment">// Traditionally, max_step and stop_time do not have prefix.</span></div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;        pp.query(<span class="stringliteral">&quot;max_step&quot;</span>, <a class="code" href="classERF.html#a0634154e8e58379c495c3e7fe7c5e4d6">max_step</a>);</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        pp.query(<span class="stringliteral">&quot;stop_time&quot;</span>, <a class="code" href="classERF.html#a405556a52bef334ab68294c1a540e107">stop_time</a>);</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    }</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160; </div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    {</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        ParmParse pp(<span class="stringliteral">&quot;amr&quot;</span>); <span class="comment">// Traditionally, these have prefix, amr.</span></div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160; </div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        pp.query(<span class="stringliteral">&quot;regrid_int&quot;</span>, <a class="code" href="classERF.html#a3937527f96c81674fa38dc34ed24f3f5">regrid_int</a>);</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        pp.query(<span class="stringliteral">&quot;plot_file&quot;</span>, <a class="code" href="classERF.html#ad02c77d3f4a7dfa0ad679877f0f05fc1">plot_file</a>);</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        pp.query(<span class="stringliteral">&quot;plot_type&quot;</span>, <a class="code" href="classERF.html#a3aa38bc97a888d859a640220d2bc4456">plot_type</a>);</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        pp.query(<span class="stringliteral">&quot;plot_int&quot;</span>, <a class="code" href="classERF.html#abe64c2ff781da4cc0642ee1d29c912d6">plot_int</a>);</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        pp.query(<span class="stringliteral">&quot;check_file&quot;</span>, <a class="code" href="classERF.html#ae701564fbe3da5bbd88587e5a08eca4e">check_file</a>);</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        pp.query(<span class="stringliteral">&quot;check_type&quot;</span>, <a class="code" href="classERF.html#a32e0d0f5ae0db18ee81f9d4325a14f64">check_type</a>);</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        pp.query(<span class="stringliteral">&quot;check_int&quot;</span>, <a class="code" href="classERF.html#a1f48ec3caf326a6b1b986d061d36ee90">check_int</a>);</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160; </div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        <span class="keywordflow">if</span> (pp.contains(<span class="stringliteral">&quot;data_log&quot;</span>))</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        {</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;            <span class="keywordtype">int</span> num_datalogs = pp.countval(<span class="stringliteral">&quot;data_log&quot;</span>);</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;            <a class="code" href="classERF.html#aa04d07db1802b6549ae904a1690fe1ab">datalog</a>.resize(num_datalogs);</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;            <a class="code" href="classERF.html#accdb4ef4b795ab8a15c581c7dfa54ce6">datalogname</a>.resize(num_datalogs);</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;            pp.queryarr(<span class="stringliteral">&quot;data_log&quot;</span>,<a class="code" href="classERF.html#accdb4ef4b795ab8a15c581c7dfa54ce6">datalogname</a>,0,num_datalogs);</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_datalogs; i++)</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                <a class="code" href="classERF.html#a2486b49bb0d7917f812318822e42a03c">setRecordDataInfo</a>(i,<a class="code" href="classERF.html#accdb4ef4b795ab8a15c581c7dfa54ce6">datalogname</a>[i]);</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        }</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    }</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160; </div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    {</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;        ParmParse pp(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160; </div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        <span class="comment">// Verbosity</span></div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;        pp.query(<span class="stringliteral">&quot;v&quot;</span>, <a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a>);</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160; </div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;        <span class="comment">// Use the native ERF MRI integrator</span></div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        pp.query(<span class="stringliteral">&quot;use_native_mri&quot;</span>, <a class="code" href="classERF.html#a4a279f0f572da168852d954df55abe2e">use_native_mri</a>);</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160; </div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;        <span class="comment">// Frequency of diagnostic output</span></div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;        pp.query(<span class="stringliteral">&quot;sum_interval&quot;</span>, <a class="code" href="classERF.html#a5232e98479611a24fe97994640c61faa">sum_interval</a>);</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;        pp.query(<span class="stringliteral">&quot;sum_period&quot;</span>  , <a class="code" href="classERF.html#a6f9e05e91a9b4a16d615af290966a973">sum_per</a>);</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; </div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;        <span class="comment">// Time step controls</span></div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;        pp.query(<span class="stringliteral">&quot;cfl&quot;</span>, <a class="code" href="classERF.html#ae52fe861ffb051a11920238c8210d69f">cfl</a>);</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;        pp.query(<span class="stringliteral">&quot;init_shrink&quot;</span>, <a class="code" href="classERF.html#aa30548378350788543d15076cdcd404d">init_shrink</a>);</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;        pp.query(<span class="stringliteral">&quot;change_max&quot;</span>, <a class="code" href="classERF.html#ac793fe23b026c18bb7dcce791317c6c3">change_max</a>);</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160; </div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;        pp.query(<span class="stringliteral">&quot;fixed_dt&quot;</span>, <a class="code" href="classERF.html#a6e9d302b096a12999c8ff4a6bfa9a072">fixed_dt</a>);</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;        pp.query(<span class="stringliteral">&quot;fixed_fast_dt&quot;</span>, <a class="code" href="classERF.html#aa30dffc28e24ac50c880539ca2e36ffd">fixed_fast_dt</a>);</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;        pp.query(<span class="stringliteral">&quot;fixed_mri_dt_ratio&quot;</span>, <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a>);</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;        pp.query(<span class="stringliteral">&quot;use_lowM_dt&quot;</span>, <a class="code" href="classERF.html#aad09820d3e29638db7c3d499304c8aed">use_lowM_dt</a>);</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; </div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a6e9d302b096a12999c8ff4a6bfa9a072">fixed_dt</a> &gt; 0. &amp;&amp; <a class="code" href="classERF.html#aa30dffc28e24ac50c880539ca2e36ffd">fixed_fast_dt</a> &gt; 0.) {</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> &gt; 0 &amp;&amp;</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;               <a class="code" href="classERF.html#a6e9d302b096a12999c8ff4a6bfa9a072">fixed_dt</a> / <a class="code" href="classERF.html#aa30dffc28e24ac50c880539ca2e36ffd">fixed_fast_dt</a> != <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a>)</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;            {</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                amrex::Abort(<span class="stringliteral">&quot;Dt is over-specfied&quot;</span>);</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> = <a class="code" href="classERF.html#a6e9d302b096a12999c8ff4a6bfa9a072">fixed_dt</a> / <a class="code" href="classERF.html#aa30dffc28e24ac50c880539ca2e36ffd">fixed_fast_dt</a>;</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a>%2 != 0)</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                    <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> += 1; <span class="comment">// This ratio must be even</span></div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;            }</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;        }</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        AMREX_ASSERT(<a class="code" href="classERF.html#ae52fe861ffb051a11920238c8210d69f">cfl</a> &gt; 0. || <a class="code" href="classERF.html#a6e9d302b096a12999c8ff4a6bfa9a072">fixed_dt</a> &gt; 0.);</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    }</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160; </div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    {  <span class="comment">// How to initialize</span></div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        ParmParse pp(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        pp.query(<span class="stringliteral">&quot;init_type&quot;</span>,<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a>);</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a> != <span class="stringliteral">&quot;ideal&quot;</span> &amp;&amp; <a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a> != <span class="stringliteral">&quot;real&quot;</span>)</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        {</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;            amrex::Error(<span class="stringliteral">&quot;init_type must be ideal or real&quot;</span>);</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        }</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160; </div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;        <span class="comment">// NetCDF initialization file</span></div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;        pp.query(<span class="stringliteral">&quot;nc_init_file&quot;</span>, <a class="code" href="classERF.html#adb8ba5f58320473ff7fefca006af4553">nc_init_file</a>);</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    }</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; </div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    {  <span class="comment">// Mesh refinement</span></div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        pp.query(<span class="stringliteral">&quot;restart&quot;</span>, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>);</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        <span class="keywordflow">if</span> (pp.contains(<span class="stringliteral">&quot;data_log&quot;</span>))</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        {</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;            <span class="keywordtype">int</span> num_datalogs = pp.countval(<span class="stringliteral">&quot;data_log&quot;</span>);</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;            <a class="code" href="classERF.html#aa04d07db1802b6549ae904a1690fe1ab">datalog</a>.resize(num_datalogs);</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            <a class="code" href="classERF.html#accdb4ef4b795ab8a15c581c7dfa54ce6">datalogname</a>.resize(num_datalogs);</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            pp.queryarr(<span class="stringliteral">&quot;data_log&quot;</span>,<a class="code" href="classERF.html#accdb4ef4b795ab8a15c581c7dfa54ce6">datalogname</a>,0,num_datalogs);</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_datalogs; i++)</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                <a class="code" href="classERF.html#a2486b49bb0d7917f812318822e42a03c">setRecordDataInfo</a>(i,<a class="code" href="classERF.html#accdb4ef4b795ab8a15c581c7dfa54ce6">datalogname</a>[i]);</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        }</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    }</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160; </div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    {</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        ParmParse pp(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160; </div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        <span class="comment">// Verbosity</span></div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;        pp.query(<span class="stringliteral">&quot;v&quot;</span>, <a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a>);</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160; </div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;        <span class="comment">// Use the native ERF MRI integrator</span></div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;        pp.query(<span class="stringliteral">&quot;use_native_mri&quot;</span>, <a class="code" href="classERF.html#a4a279f0f572da168852d954df55abe2e">use_native_mri</a>);</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160; </div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;        <span class="comment">// Frequency of diagnostic output</span></div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;        pp.query(<span class="stringliteral">&quot;sum_interval&quot;</span>, <a class="code" href="classERF.html#a5232e98479611a24fe97994640c61faa">sum_interval</a>);</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;        pp.query(<span class="stringliteral">&quot;sum_period&quot;</span>  , <a class="code" href="classERF.html#a6f9e05e91a9b4a16d615af290966a973">sum_per</a>);</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; </div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;        <span class="comment">// Time step controls</span></div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;        pp.query(<span class="stringliteral">&quot;cfl&quot;</span>, <a class="code" href="classERF.html#ae52fe861ffb051a11920238c8210d69f">cfl</a>);</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;        pp.query(<span class="stringliteral">&quot;init_shrink&quot;</span>, <a class="code" href="classERF.html#aa30548378350788543d15076cdcd404d">init_shrink</a>);</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;        pp.query(<span class="stringliteral">&quot;change_max&quot;</span>, <a class="code" href="classERF.html#ac793fe23b026c18bb7dcce791317c6c3">change_max</a>);</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160; </div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;        pp.query(<span class="stringliteral">&quot;fixed_dt&quot;</span>, <a class="code" href="classERF.html#a6e9d302b096a12999c8ff4a6bfa9a072">fixed_dt</a>);</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;        pp.query(<span class="stringliteral">&quot;fixed_fast_dt&quot;</span>, <a class="code" href="classERF.html#aa30dffc28e24ac50c880539ca2e36ffd">fixed_fast_dt</a>);</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        pp.query(<span class="stringliteral">&quot;fixed_mri_dt_ratio&quot;</span>, <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a>);</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        pp.query(<span class="stringliteral">&quot;use_lowM_dt&quot;</span>, <a class="code" href="classERF.html#aad09820d3e29638db7c3d499304c8aed">use_lowM_dt</a>);</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a6e9d302b096a12999c8ff4a6bfa9a072">fixed_dt</a> &gt; 0. &amp;&amp; <a class="code" href="classERF.html#aa30dffc28e24ac50c880539ca2e36ffd">fixed_fast_dt</a> &gt; 0.) {</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> &gt; 0 &amp;&amp;</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;               <a class="code" href="classERF.html#a6e9d302b096a12999c8ff4a6bfa9a072">fixed_dt</a> / <a class="code" href="classERF.html#aa30dffc28e24ac50c880539ca2e36ffd">fixed_fast_dt</a> != <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a>)</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;            {</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                amrex::Abort(<span class="stringliteral">&quot;Dt is over-specfied&quot;</span>);</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> = <a class="code" href="classERF.html#a6e9d302b096a12999c8ff4a6bfa9a072">fixed_dt</a> / <a class="code" href="classERF.html#aa30dffc28e24ac50c880539ca2e36ffd">fixed_fast_dt</a>;</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a>%2 != 0)</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                    <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> += 1; <span class="comment">// This ratio must be even</span></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;            }</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        }</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160; </div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        AMREX_ASSERT(<a class="code" href="classERF.html#ae52fe861ffb051a11920238c8210d69f">cfl</a> &gt; 0. || <a class="code" href="classERF.html#a6e9d302b096a12999c8ff4a6bfa9a072">fixed_dt</a> &gt; 0.);</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    }</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160; </div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    {  <span class="comment">// How to initialize</span></div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        ParmParse pp(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        pp.query(<span class="stringliteral">&quot;init_type&quot;</span>,<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a>);</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a> != <span class="stringliteral">&quot;ideal&quot;</span> &amp;&amp; <a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a> != <span class="stringliteral">&quot;real&quot;</span>)</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        {</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            amrex::Error(<span class="stringliteral">&quot;init_type must be ideal or real&quot;</span>);</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;        }</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; </div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;        <span class="comment">// NetCDF initialization file</span></div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;        pp.query(<span class="stringliteral">&quot;nc_init_file&quot;</span>, <a class="code" href="classERF.html#adb8ba5f58320473ff7fefca006af4553">nc_init_file</a>);</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    }</div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160; </div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;        ParmParse pp(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    {  <span class="comment">// Mesh refinement</span></div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160; </div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;        pp.query(<span class="stringliteral">&quot;coupling_type&quot;</span>,<a class="code" href="classERF.html#a4615db015b395b3a44f1fbf6d6e4fe43">coupling_type</a>);</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a4615db015b395b3a44f1fbf6d6e4fe43">coupling_type</a> == <span class="stringliteral">&quot;OneWay&quot;</span>)</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;        {</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;            <a class="code" href="classERF.html#af25f70d7d9e4edeedcc40c117cc15505">do_reflux</a> = 0;</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;            <a class="code" href="classERF.html#a778cdd6547e8cf1613cda8b4a8274bf0">do_avg_down</a> = 0;</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        }</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a4615db015b395b3a44f1fbf6d6e4fe43">coupling_type</a> == <span class="stringliteral">&quot;TwoWay&quot;</span>)</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        {</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;            <a class="code" href="classERF.html#af25f70d7d9e4edeedcc40c117cc15505">do_reflux</a> = 1;</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;            <a class="code" href="classERF.html#a778cdd6547e8cf1613cda8b4a8274bf0">do_avg_down</a> = 1;</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;            amrex::Error(<span class="stringliteral">&quot;Unknown coupling type&quot;</span>);</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        }</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    }</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    {  <span class="comment">// Output format</span></div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        ParmParse pp(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        pp.query(<span class="stringliteral">&quot;plotfile_type&quot;</span>, <a class="code" href="classERF.html#ae7b9991150042eb38e2abc89399c0c7c">plotfile_type</a>);</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160; </div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        pp.query(<span class="stringliteral">&quot;output_1d_column&quot;</span>, <a class="code" href="classERF.html#ad17ff2753e754ff3eb1330612b820b5f">output_1d_column</a>);</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        pp.query(<span class="stringliteral">&quot;column_per&quot;</span>, <a class="code" href="classERF.html#a9fedd41de89817a23b1c3b3c6ef7443f">column_per</a>);</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        pp.query(<span class="stringliteral">&quot;column_interval&quot;</span>, <a class="code" href="classERF.html#afa0bef6d3146788302b81c0d4f4802d1">column_interval</a>);</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        pp.query(<span class="stringliteral">&quot;column_loc_x&quot;</span>, <a class="code" href="classERF.html#ab10bfe15c2d15fdd22201b64722a4022">column_loc_x</a>);</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        pp.query(<span class="stringliteral">&quot;column_loc_y&quot;</span>, <a class="code" href="classERF.html#a30a1b51c733c3a20dc6948f9a3620bbb">column_loc_y</a>);</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        pp.query(<span class="stringliteral">&quot;column_file_name&quot;</span>, <a class="code" href="classERF.html#a48bba6b1c1b39940b09aefbe56311e2f">column_file_name</a>);</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160; </div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        <span class="comment">// Specify information about outputting planes of data</span></div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        pp.query(<span class="stringliteral">&quot;output_bndry_planes&quot;</span>, <a class="code" href="classERF.html#a7c448670f7a5cadd6fe56f7e615c9eb6">output_bndry_planes</a>);</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        pp.query(<span class="stringliteral">&quot;bndry_output_planes_interval&quot;</span>, <a class="code" href="classERF.html#aab4575d8fb57595a2f1aaf088c60447a">bndry_output_planes_interval</a>);</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        pp.query(<span class="stringliteral">&quot;bndry_output_planes_per&quot;</span>, <a class="code" href="classERF.html#a479132ab37232f208597c7a27c132866">bndry_output_planes_per</a>);</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        pp.query(<span class="stringliteral">&quot;bndry_output_start_time&quot;</span>, <a class="code" href="classERF.html#ac2be0759e68086d0e9026c61492fa225">bndry_output_planes_start_time</a>);</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        <span class="comment">// Specify whether ingest boundary planes of data</span></div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        pp.query(<span class="stringliteral">&quot;input_bndry_planes&quot;</span>, <a class="code" href="classERF.html#a80ad08512968ec45635df68abe66b1fc">input_bndry_planes</a>);</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    }</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a4829661b558b213e32970a02e147077f">init_params</a>();</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;}</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;        ParmParse pp(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160; </div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;        pp.query(<span class="stringliteral">&quot;coupling_type&quot;</span>,<a class="code" href="classERF.html#a4615db015b395b3a44f1fbf6d6e4fe43">coupling_type</a>);</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a4615db015b395b3a44f1fbf6d6e4fe43">coupling_type</a> == <span class="stringliteral">&quot;OneWay&quot;</span>)</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        {</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;            <a class="code" href="classERF.html#af25f70d7d9e4edeedcc40c117cc15505">do_reflux</a> = 0;</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;            <a class="code" href="classERF.html#a778cdd6547e8cf1613cda8b4a8274bf0">do_avg_down</a> = 0;</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        }</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a4615db015b395b3a44f1fbf6d6e4fe43">coupling_type</a> == <span class="stringliteral">&quot;TwoWay&quot;</span>)</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        {</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;            <a class="code" href="classERF.html#af25f70d7d9e4edeedcc40c117cc15505">do_reflux</a> = 1;</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;            <a class="code" href="classERF.html#a778cdd6547e8cf1613cda8b4a8274bf0">do_avg_down</a> = 1;</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;            amrex::Error(<span class="stringliteral">&quot;Unknown coupling type&quot;</span>);</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        }</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    }</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    {  <span class="comment">// Output format</span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        ParmParse pp(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        pp.query(<span class="stringliteral">&quot;plotfile_type&quot;</span>, <a class="code" href="classERF.html#ae7b9991150042eb38e2abc89399c0c7c">plotfile_type</a>);</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160; </div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        pp.query(<span class="stringliteral">&quot;output_1d_column&quot;</span>, <a class="code" href="classERF.html#ad17ff2753e754ff3eb1330612b820b5f">output_1d_column</a>);</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        pp.query(<span class="stringliteral">&quot;column_per&quot;</span>, <a class="code" href="classERF.html#a9fedd41de89817a23b1c3b3c6ef7443f">column_per</a>);</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        pp.query(<span class="stringliteral">&quot;column_interval&quot;</span>, <a class="code" href="classERF.html#afa0bef6d3146788302b81c0d4f4802d1">column_interval</a>);</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        pp.query(<span class="stringliteral">&quot;column_loc_x&quot;</span>, <a class="code" href="classERF.html#ab10bfe15c2d15fdd22201b64722a4022">column_loc_x</a>);</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        pp.query(<span class="stringliteral">&quot;column_loc_y&quot;</span>, <a class="code" href="classERF.html#a30a1b51c733c3a20dc6948f9a3620bbb">column_loc_y</a>);</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        pp.query(<span class="stringliteral">&quot;column_file_name&quot;</span>, <a class="code" href="classERF.html#a48bba6b1c1b39940b09aefbe56311e2f">column_file_name</a>);</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160; </div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        <span class="comment">// Specify information about outputting planes of data</span></div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        pp.query(<span class="stringliteral">&quot;output_bndry_planes&quot;</span>, <a class="code" href="classERF.html#a7c448670f7a5cadd6fe56f7e615c9eb6">output_bndry_planes</a>);</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        pp.query(<span class="stringliteral">&quot;bndry_output_planes_interval&quot;</span>, <a class="code" href="classERF.html#aab4575d8fb57595a2f1aaf088c60447a">bndry_output_planes_interval</a>);</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        pp.query(<span class="stringliteral">&quot;bndry_output_planes_per&quot;</span>, <a class="code" href="classERF.html#a479132ab37232f208597c7a27c132866">bndry_output_planes_per</a>);</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        pp.query(<span class="stringliteral">&quot;bndry_output_start_time&quot;</span>, <a class="code" href="classERF.html#ac2be0759e68086d0e9026c61492fa225">bndry_output_planes_start_time</a>);</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        <span class="comment">// Specify whether ingest boundary planes of data</span></div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        pp.query(<span class="stringliteral">&quot;input_bndry_planes&quot;</span>, <a class="code" href="classERF.html#a80ad08512968ec45635df68abe66b1fc">input_bndry_planes</a>);</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    }</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160; </div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a4829661b558b213e32970a02e147077f">init_params</a>();</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -5123,42 +5126,42 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;{</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;    amrex::ParmParse pp(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160; </div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;    pp.query(<span class="stringliteral">&quot;most.surf_temp&quot;</span>, <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a73621a1b429f2e910a29adac72b7c581">surf_temp</a>);</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    pp.query(<span class="stringliteral">&quot;most.zref&quot;</span>, <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>);</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;    pp.query(<span class="stringliteral">&quot;most.z0&quot;</span>, <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ab52bd6dbda342764e5f1023e311c46fc">z0</a>);</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160; </div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;    MultiFab&amp; S_new = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>];</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;    MultiFab&amp; U_new = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;    MultiFab&amp; V_new = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;    MultiFab&amp; W_new = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>];</div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160; </div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> save (&amp;S_new, geom[0], 2, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> vxave(&amp;U_new, geom[0], 2, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> vyave(&amp;V_new, geom[0], 2, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> vzave(&amp;W_new, geom[0], 2, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;    <a class="code" href="classVelPlaneAverage.html">VelPlaneAverage</a> vmagave({&amp;U_new,&amp;V_new,&amp;W_new}, geom[0], 2, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160; </div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;    save. compute_averages(<a class="code" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), save.field());</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;    vxave.compute_averages(<a class="code" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), vxave.field());</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;    vyave.compute_averages(<a class="code" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), vyave.field());</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;    vzave.compute_averages(<a class="code" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), vzave.field());</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;    vmagave.compute_hvelmag_averages(<a class="code" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), 0, 1, vmagave.field());</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160; </div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dx = geom[0].CellSizeArray();</div>
+<div class="fragment"><div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;{</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;    amrex::ParmParse pp(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160; </div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;    pp.query(<span class="stringliteral">&quot;most.surf_temp&quot;</span>, <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a73621a1b429f2e910a29adac72b7c581">surf_temp</a>);</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;    pp.query(<span class="stringliteral">&quot;most.zref&quot;</span>, <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>);</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;    pp.query(<span class="stringliteral">&quot;most.z0&quot;</span>, <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ab52bd6dbda342764e5f1023e311c46fc">z0</a>);</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160; </div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;    MultiFab&amp; S_new = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>];</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;    MultiFab&amp; U_new = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;    MultiFab&amp; V_new = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;    MultiFab&amp; W_new = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>];</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160; </div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> save (&amp;S_new, geom[0], 2, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> vxave(&amp;U_new, geom[0], 2, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> vyave(&amp;V_new, geom[0], 2, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> vzave(&amp;W_new, geom[0], 2, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;    <a class="code" href="classVelPlaneAverage.html">VelPlaneAverage</a> vmagave({&amp;U_new,&amp;V_new,&amp;W_new}, geom[0], 2, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160; </div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;    save. compute_averages(<a class="code" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), save.field());</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;    vxave.compute_averages(<a class="code" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), vxave.field());</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;    vyave.compute_averages(<a class="code" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), vyave.field());</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;    vzave.compute_averages(<a class="code" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), vzave.field());</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;    vmagave.compute_hvelmag_averages(<a class="code" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), 0, 1, vmagave.field());</div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160; </div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;    <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[0] = vxave.line_average_interpolated(<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>, 0);</div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[1] = vyave.line_average_interpolated(<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>, 0);</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[2] = vzave.line_average_interpolated(<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>, 0);</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>   = vmagave.line_hvelmag_average_interpolated(<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>);</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;    <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>  = save.line_average_interpolated(<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aa7ba34ebd02f164da2892ceb823948315">Cons::RhoTheta</a>);</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160; </div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;    printf(<span class="stringliteral">&quot;vmag_mean=%13.6e,theta_mean=%13.6e, zref=%13.6e, dx=%13.6e\n&quot;</span>,<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>,<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>,<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>,dx[2]);</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dx = geom[0].CellSizeArray();</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160; </div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[0] = vxave.line_average_interpolated(<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>, 0);</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[1] = vyave.line_average_interpolated(<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>, 0);</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;    <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6">vel_mean</a>[2] = vzave.line_average_interpolated(<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>, 0);</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>   = vmagave.line_hvelmag_average_interpolated(<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>);</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;    <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>  = save.line_average_interpolated(<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>, <a class="code" href="namespaceCons.html#afd4a26596f9faf651026a92cf01b023aa7ba34ebd02f164da2892ceb823948315">Cons::RhoTheta</a>);</div>
 <div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160; </div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;    <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a71a5c1fb4d962032d0ae591c7372ae4c">update_fluxes</a>();</div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;}</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;    printf(<span class="stringliteral">&quot;vmag_mean=%13.6e,theta_mean=%13.6e, zref=%13.6e, dx=%13.6e\n&quot;</span>,<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70">vmag_mean</a>,<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>,<a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#ac132a8302297b80d12b628941b555370">zref</a>,dx[2]);</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160; </div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;    <a class="code" href="classERF.html#ae068972239adcd3c5fe6024fcdaa545e">most</a>.<a class="code" href="structABLMost.html#a71a5c1fb4d962032d0ae591c7372ae4c">update_fluxes</a>();</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9">Advance()</a>.</p>
 <div class="dynheader">
@@ -8426,7 +8429,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_ae8de26569516b41e5dc3cbb3419e891c"><div class="ttname"><a href="classERF.html#ae8de26569516b41e5dc3cbb3419e891c">ERF::h_havg_qv</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; h_havg_qv</div><div class="ttdef"><b>Definition:</b> ERF.H:483</div></div>
 <div class="ttc" id="aclassERF_html_a3aa38bc97a888d859a640220d2bc4456"><div class="ttname"><a href="classERF.html#a3aa38bc97a888d859a640220d2bc4456">ERF::plot_type</a></div><div class="ttdeci">std::string plot_type</div><div class="ttdef"><b>Definition:</b> ERF.H:410</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9">ERFBCType::reflect_even</a></div><div class="ttdeci">@ reflect_even</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:111</div></div>
-<div class="ttc" id="aclassERF_html_a8202de1f8f372e3e6fdc483447c6a55f"><div class="ttname"><a href="classERF.html#a8202de1f8f372e3e6fdc483447c6a55f">ERF::AverageDown</a></div><div class="ttdeci">void AverageDown()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:828</div></div>
+<div class="ttc" id="aclassERF_html_a8202de1f8f372e3e6fdc483447c6a55f"><div class="ttname"><a href="classERF.html#a8202de1f8f372e3e6fdc483447c6a55f">ERF::AverageDown</a></div><div class="ttdeci">void AverageDown()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:830</div></div>
 <div class="ttc" id="aprob__common_8H_html_a6c31bddccd7cf77924e26dea29e835b0"><div class="ttname"><a href="prob__common_8H.html#a6c31bddccd7cf77924e26dea29e835b0">erf_init_prob</a></div><div class="ttdeci">void erf_init_prob(const amrex::Box &amp;bx, amrex::Array4&lt; amrex::Real &gt; const &amp;state, amrex::Array4&lt; amrex::Real &gt; const &amp;x_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;y_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;z_vel, amrex::GeometryData const &amp;geomdata)</div></div>
 <div class="ttc" id="aclassERF_html_a84cf7616e7b3928f08f4bd56112db01e"><div class="ttname"><a href="classERF.html#a84cf7616e7b3928f08f4bd56112db01e">ERF::d_havg_density</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::Real &gt; d_havg_density</div><div class="ttdef"><b>Definition:</b> ERF.H:485</div></div>
 <div class="ttc" id="aclassERF_html_a92c020bfaa43e40fb5ffc449427a0318"><div class="ttname"><a href="classERF.html#a92c020bfaa43e40fb5ffc449427a0318">ERF::initHSE</a></div><div class="ttdeci">void initHSE()</div><div class="ttdoc">Initialize HSE.</div><div class="ttdef"><b>Definition:</b> ERF_init1d.cpp:46</div></div>
@@ -8469,7 +8472,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="astructTimeInterpolatedData_html_a5c31ed3f919e1755032c3fa4561d9945"><div class="ttname"><a href="structTimeInterpolatedData.html#a5c31ed3f919e1755032c3fa4561d9945">TimeInterpolatedData::get_var</a></div><div class="ttdeci">MultiFab &amp; get_var(int var_idx)</div><div class="ttdef"><b>Definition:</b> TimeInterpolatedData.H:30</div></div>
 <div class="ttc" id="aclassERF_html_a123e428e6385285dfb646bc6f85ce654"><div class="ttname"><a href="classERF.html#a123e428e6385285dfb646bc6f85ce654">ERF::plot_deriv_names</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; plot_deriv_names</div><div class="ttdef"><b>Definition:</b> ERF.H:419</div></div>
 <div class="ttc" id="aTimeIntegration_8H_html_a65274b46aea0b51c7778708cb587fe90"><div class="ttname"><a href="TimeIntegration_8H.html#a65274b46aea0b51c7778708cb587fe90">erf_rhs</a></div><div class="ttdeci">void erf_rhs(int level, Vector&lt; MultiFab &gt; &amp;S_rhs, const Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, MultiFab &amp;source, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;advflux, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;diffflux, const amrex::Geometry geom, amrex::InterpFaceRegister *ifr, const SolverChoice &amp;solverChoice, const ABLMost &amp;most, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; domain_bcs_type_d, const amrex::Real *dptr_dens_hse, const amrex::Real *dptr_pres_hse, const amrex::Real *dptr_rayleigh_tau, const amrex::Real *dptr_rayleigh_ubar, const amrex::Real *dptr_rayleigh_vbar, const amrex::Real *dptr_rayleigh_thetabar)</div></div>
-<div class="ttc" id="aclassERF_html_a2d39cd3bdc3d90609ad3b14e266d190a"><div class="ttname"><a href="classERF.html#a2d39cd3bdc3d90609ad3b14e266d190a">ERF::ReadParameters</a></div><div class="ttdeci">void ReadParameters()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:611</div></div>
+<div class="ttc" id="aclassERF_html_a2d39cd3bdc3d90609ad3b14e266d190a"><div class="ttname"><a href="classERF.html#a2d39cd3bdc3d90609ad3b14e266d190a">ERF::ReadParameters</a></div><div class="ttdeci">void ReadParameters()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:613</div></div>
 <div class="ttc" id="astructSolverChoice_html_a27ced9266434a4680ef175e7b2ba8f01"><div class="ttname"><a href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">SolverChoice::use_rayleigh_damping</a></div><div class="ttdeci">bool use_rayleigh_damping</div><div class="ttdef"><b>Definition:</b> DataStruct.H:312</div></div>
 <div class="ttc" id="aclassERF_html_a7948479fe1497dc592dd748c9567fdaa"><div class="ttname"><a href="classERF.html#a7948479fe1497dc592dd748c9567fdaa">ERF::previousCPUTimeUsed</a></div><div class="ttdeci">static amrex::Real previousCPUTimeUsed</div><div class="ttdef"><b>Definition:</b> ERF.H:557</div></div>
 <div class="ttc" id="anamespaceVars_html_a598b48260ed293a4c3795d13ad2297bdaa92727db248ec616aa835c2faa22f44c"><div class="ttname"><a href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bdaa92727db248ec616aa835c2faa22f44c">Vars::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:51</div></div>
@@ -8536,7 +8539,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a4615db015b395b3a44f1fbf6d6e4fe43"><div class="ttname"><a href="classERF.html#a4615db015b395b3a44f1fbf6d6e4fe43">ERF::coupling_type</a></div><div class="ttdeci">static std::string coupling_type</div><div class="ttdef"><b>Definition:</b> ERF.H:433</div></div>
 <div class="ttc" id="aclassERF_html_ab10bfe15c2d15fdd22201b64722a4022"><div class="ttname"><a href="classERF.html#ab10bfe15c2d15fdd22201b64722a4022">ERF::column_loc_x</a></div><div class="ttdeci">static amrex::Real column_loc_x</div><div class="ttdef"><b>Definition:</b> ERF.H:454</div></div>
 <div class="ttc" id="aclassERF_html_accdb4ef4b795ab8a15c581c7dfa54ce6"><div class="ttname"><a href="classERF.html#accdb4ef4b795ab8a15c581c7dfa54ce6">ERF::datalogname</a></div><div class="ttdeci">Vector&lt; std::string &gt; datalogname</div><div class="ttdef"><b>Definition:</b> ERF.H:588</div></div>
-<div class="ttc" id="aclassERF_html_a67da556b4b4cbdc891da06eb5e17aac8"><div class="ttname"><a href="classERF.html#a67da556b4b4cbdc891da06eb5e17aac8">ERF::setupABLMost</a></div><div class="ttdeci">void setupABLMost(int lev)</div><div class="ttdef"><b>Definition:</b> ERF.cpp:852</div></div>
+<div class="ttc" id="aclassERF_html_a67da556b4b4cbdc891da06eb5e17aac8"><div class="ttname"><a href="classERF.html#a67da556b4b4cbdc891da06eb5e17aac8">ERF::setupABLMost</a></div><div class="ttdeci">void setupABLMost(int lev)</div><div class="ttdef"><b>Definition:</b> ERF.cpp:854</div></div>
 <div class="ttc" id="aclassERF_html_abe64c2ff781da4cc0642ee1d29c912d6"><div class="ttname"><a href="classERF.html#abe64c2ff781da4cc0642ee1d29c912d6">ERF::plot_int</a></div><div class="ttdeci">int plot_int</div><div class="ttdef"><b>Definition:</b> ERF.H:411</div></div>
 <div class="ttc" id="aclassERF_html_a879501e88824fa6a00ffe1509059b21e"><div class="ttname"><a href="classERF.html#a879501e88824fa6a00ffe1509059b21e">ERF::d_rayleigh_vbar</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt; d_rayleigh_vbar</div><div class="ttdef"><b>Definition:</b> ERF.H:477</div></div>
 <div class="ttc" id="aclassERF_html_a2cdc63885e5fec54f89cdcaffcbdc188"><div class="ttname"><a href="classERF.html#a2cdc63885e5fec54f89cdcaffcbdc188">ERF::volWgtSumMF</a></div><div class="ttdeci">amrex::Real volWgtSumMF(int lev, const amrex::MultiFab &amp;mf, int comp, bool local, bool finemask)</div><div class="ttdef"><b>Definition:</b> ERF_SumIQ.cpp:69</div></div>
@@ -8619,9 +8622,9 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a7990255d32f7bca694acab7521101b93"><div class="ttname"><a href="classERF.html#a7990255d32f7bca694acab7521101b93">ERF::d_pres_hse</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt; d_pres_hse</div><div class="ttdef"><b>Definition:</b> ERF.H:356</div></div>
 <div class="ttc" id="anamespaceVars_html_a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:48</div></div>
 <div class="ttc" id="aclassERF_html_ad02c77d3f4a7dfa0ad679877f0f05fc1"><div class="ttname"><a href="classERF.html#ad02c77d3f4a7dfa0ad679877f0f05fc1">ERF::plot_file</a></div><div class="ttdeci">std::string plot_file</div><div class="ttdef"><b>Definition:</b> ERF.H:409</div></div>
-<div class="ttc" id="aclassERF_html_ae994c0e7f0d87b787de9bb971f0da64c"><div class="ttname"><a href="classERF.html#ae994c0e7f0d87b787de9bb971f0da64c">ERF::erf_enforce_hse</a></div><div class="ttdeci">void erf_enforce_hse(int lev, amrex::Vector&lt; amrex::Real &gt; &amp;dens, amrex::Vector&lt; amrex::Real &gt; &amp;pres)</div><div class="ttdef"><b>Definition:</b> ERF_init1d.cpp:152</div></div>
+<div class="ttc" id="aclassERF_html_ae994c0e7f0d87b787de9bb971f0da64c"><div class="ttname"><a href="classERF.html#ae994c0e7f0d87b787de9bb971f0da64c">ERF::erf_enforce_hse</a></div><div class="ttdeci">void erf_enforce_hse(int lev, amrex::Vector&lt; amrex::Real &gt; &amp;dens, amrex::Vector&lt; amrex::Real &gt; &amp;pres)</div><div class="ttdef"><b>Definition:</b> ERF_init1d.cpp:197</div></div>
 <div class="ttc" id="aclassERF_html_a413293737b0021c97b50c62756561446"><div class="ttname"><a href="classERF.html#a413293737b0021c97b50c62756561446">ERF::h_havg_pressure</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; h_havg_pressure</div><div class="ttdef"><b>Definition:</b> ERF.H:482</div></div>
-<div class="ttc" id="aclassERF_html_a40ebca562ac79fcc9250e17e0f4a5b41"><div class="ttname"><a href="classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41">ERF::AverageDownTo</a></div><div class="ttdeci">void AverageDownTo(int crse_lev)</div><div class="ttdef"><b>Definition:</b> ERF.cpp:838</div></div>
+<div class="ttc" id="aclassERF_html_a40ebca562ac79fcc9250e17e0f4a5b41"><div class="ttname"><a href="classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41">ERF::AverageDownTo</a></div><div class="ttdeci">void AverageDownTo(int crse_lev)</div><div class="ttdef"><b>Definition:</b> ERF.cpp:840</div></div>
 <div class="ttc" id="aclassERF_html_ad4b5cfafa3b805287e62d230ae51428f"><div class="ttname"><a href="classERF.html#ad4b5cfafa3b805287e62d230ae51428f">ERF::FillPatch</a></div><div class="ttdeci">void FillPatch(int lev, amrex::Real time, amrex::MultiFab &amp;mf, int icomp, int ncomp, int var_idx)</div><div class="ttdef"><b>Definition:</b> ERF_FillPatch.cpp:55</div></div>
 <div class="ttc" id="aclassERF_html_a43d0b17f6e155691a1e9474526df3af5"><div class="ttname"><a href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">ERF::verbose</a></div><div class="ttdeci">static int verbose</div><div class="ttdef"><b>Definition:</b> ERF.H:429</div></div>
 <div class="ttc" id="aclassERF_html_a80ad08512968ec45635df68abe66b1fc"><div class="ttname"><a href="classERF.html#a80ad08512968ec45635df68abe66b1fc">ERF::input_bndry_planes</a></div><div class="ttdeci">static int input_bndry_planes</div><div class="ttdef"><b>Definition:</b> ERF.H:465</div></div>
