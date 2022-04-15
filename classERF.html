@@ -6086,82 +6086,87 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            MultiFab::Copy(mf[lev],z_phys_cc[lev],0,mf_comp,1,0);</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            mf_comp ++;</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        }</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    }</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keyword">const</span> std::string&amp; plotfilename = <a class="code" href="classERF.html#a54f6c5d799e51521ad10bb57d29d0c44">PlotFileName</a>(<a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>[0]);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Writing plotfile &quot;</span> &lt;&lt; plotfilename &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">if</span> (finest_level == 0)</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ae7b9991150042eb38e2abc89399c0c7c">plotfile_type</a> == <span class="stringliteral">&quot;amrex&quot;</span>) {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            amrex::WriteMultiLevelPlotfile(plotfilename, finest_level+1, GetVecOfConstPtrs(mf), varnames,</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                                           Geom(), <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0], <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, refRatio());</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <a class="code" href="classERF.html#aa2d8099655a8779836e63e3e98ea4372">writeJobInfo</a>(plotfilename);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;             writeNCPlotFile(plotfilename, GetVecOfConstPtrs(mf), varnames, <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0]);</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        }</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        amrex::Vector&lt;IntVect&gt;   r2(finest_level);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        amrex::Vector&lt;Geometry&gt;  g2(finest_level+1);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        amrex::Vector&lt;MultiFab&gt; mf2(finest_level+1);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        mf2[0].define(grids[0], dmap[0], ncomp_mf, 0);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="comment">// Copy level 0 as is</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        MultiFab::Copy(mf2[0],mf[0],0,0,mf[0].nComp(),0);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="classERF.html#a123e428e6385285dfb646bc6f85ce654">plot_deriv_names</a>, <span class="stringliteral">&quot;detJ&quot;</span>))</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        {</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            MultiFab::Copy(mf[lev],detJ_cc[lev],0,mf_comp,1,0);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            mf_comp ++;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        }</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    }</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keyword">const</span> std::string&amp; plotfilename = <a class="code" href="classERF.html#a54f6c5d799e51521ad10bb57d29d0c44">PlotFileName</a>(<a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>[0]);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Writing plotfile &quot;</span> &lt;&lt; plotfilename &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> (finest_level == 0)</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ae7b9991150042eb38e2abc89399c0c7c">plotfile_type</a> == <span class="stringliteral">&quot;amrex&quot;</span>) {</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            amrex::WriteMultiLevelPlotfile(plotfilename, finest_level+1, GetVecOfConstPtrs(mf), varnames,</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                                           Geom(), <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0], <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, refRatio());</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <a class="code" href="classERF.html#aa2d8099655a8779836e63e3e98ea4372">writeJobInfo</a>(plotfilename);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;             writeNCPlotFile(plotfilename, GetVecOfConstPtrs(mf), varnames, <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0]);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        }</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        amrex::Vector&lt;IntVect&gt;   r2(finest_level);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        amrex::Vector&lt;Geometry&gt;  g2(finest_level+1);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        amrex::Vector&lt;MultiFab&gt; mf2(finest_level+1);</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="comment">// Define a new multi-level array of Geometry&#39;s so that we pass the new &quot;domain&quot; at lev &gt; 0</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        Array&lt;int,AMREX_SPACEDIM&gt; periodicity =</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                     {Geom()[0].isPeriodic(0),Geom()[0].isPeriodic(1),Geom()[0].isPeriodic(2)};</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        g2[0].define(Geom()[0].Domain(),&amp;(Geom()[0].ProbDomain()),0,periodicity.data());</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        mf2[0].define(grids[0], dmap[0], ncomp_mf, 0);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="comment">// Copy level 0 as is</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        MultiFab::Copy(mf2[0],mf[0],0,0,mf[0].nComp(),0);</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        r2[0] = IntVect(1,1,ref_ratio[0][0]);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 1; lev &lt;= finest_level; ++lev) {</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            <span class="keywordflow">if</span> (lev &gt; 1) {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                r2[lev-1][0] = 1;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                r2[lev-1][1] = 1;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                r2[lev-1][2] = r2[lev-2][2] * ref_ratio[lev-1][0];</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            }</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            mf2[lev].define(amrex::refine(grids[lev],r2[lev-1]), dmap[lev], ncomp_mf, 0);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <span class="comment">// Set the new problem domain</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            Box d2(Geom()[lev].Domain());</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            d2.refine(r2[lev-1]);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            g2[lev].define(d2,&amp;(Geom()[lev].ProbDomain()),0,periodicity.data());</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        }</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="comment">// Do piecewise interpolation of mf into mf2</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 1; lev &lt;= finest_level; ++lev) {</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(mf2[lev], TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                pcinterp_interp(bx,mf2[lev].array(mfi), 0, mf[lev].nComp(), mf[lev].const_array(mfi),0,r2[lev-1]);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            }</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        }</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="comment">// Define an effective ref_ratio which is isotropic to be passed into WriteMultiLevelPlotfile</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        amrex::Vector&lt;IntVect&gt; rr(finest_level);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; finest_level; ++lev) {</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            rr[lev] = IntVect(ref_ratio[lev][0],ref_ratio[lev][1],ref_ratio[lev][0]);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ae7b9991150042eb38e2abc89399c0c7c">plotfile_type</a> == <span class="stringliteral">&quot;amrex&quot;</span>) {</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            amrex::WriteMultiLevelPlotfile(plotfilename, finest_level+1, GetVecOfConstPtrs(mf2), varnames,</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                                           g2, <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0], <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, rr);</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            <a class="code" href="classERF.html#aa2d8099655a8779836e63e3e98ea4372">writeJobInfo</a>(plotfilename);</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;             writeNCPlotFile(plotfilename, GetVecOfConstPtrs(mf2), varnames, <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0]);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        }</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    } <span class="comment">// end multi-level</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;}</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="comment">// Define a new multi-level array of Geometry&#39;s so that we pass the new &quot;domain&quot; at lev &gt; 0</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        Array&lt;int,AMREX_SPACEDIM&gt; periodicity =</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                     {Geom()[0].isPeriodic(0),Geom()[0].isPeriodic(1),Geom()[0].isPeriodic(2)};</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        g2[0].define(Geom()[0].Domain(),&amp;(Geom()[0].ProbDomain()),0,periodicity.data());</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        r2[0] = IntVect(1,1,ref_ratio[0][0]);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 1; lev &lt;= finest_level; ++lev) {</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            <span class="keywordflow">if</span> (lev &gt; 1) {</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                r2[lev-1][0] = 1;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                r2[lev-1][1] = 1;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                r2[lev-1][2] = r2[lev-2][2] * ref_ratio[lev-1][0];</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            }</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            mf2[lev].define(amrex::refine(grids[lev],r2[lev-1]), dmap[lev], ncomp_mf, 0);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            <span class="comment">// Set the new problem domain</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            Box d2(Geom()[lev].Domain());</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            d2.refine(r2[lev-1]);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            g2[lev].define(d2,&amp;(Geom()[lev].ProbDomain()),0,periodicity.data());</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        }</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="comment">// Do piecewise interpolation of mf into mf2</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 1; lev &lt;= finest_level; ++lev) {</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(mf2[lev], TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                pcinterp_interp(bx,mf2[lev].array(mfi), 0, mf[lev].nComp(), mf[lev].const_array(mfi),0,r2[lev-1]);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            }</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        }</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="comment">// Define an effective ref_ratio which is isotropic to be passed into WriteMultiLevelPlotfile</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        amrex::Vector&lt;IntVect&gt; rr(finest_level);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; finest_level; ++lev) {</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            rr[lev] = IntVect(ref_ratio[lev][0],ref_ratio[lev][1],ref_ratio[lev][0]);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        }</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ae7b9991150042eb38e2abc89399c0c7c">plotfile_type</a> == <span class="stringliteral">&quot;amrex&quot;</span>) {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            amrex::WriteMultiLevelPlotfile(plotfilename, finest_level+1, GetVecOfConstPtrs(mf2), varnames,</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                                           g2, <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0], <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, rr);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <a class="code" href="classERF.html#aa2d8099655a8779836e63e3e98ea4372">writeJobInfo</a>(plotfilename);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;             writeNCPlotFile(plotfilename, GetVecOfConstPtrs(mf2), varnames, <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0]);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        }</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    } <span class="comment">// end multi-level</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -6870,7 +6875,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{<span class="stringliteral">&quot;pressure&quot;</span>, <span class="stringliteral">&quot;soundspeed&quot;</span>, <span class="stringliteral">&quot;temp&quot;</span>, <span class="stringliteral">&quot;theta&quot;</span>, <span class="stringliteral">&quot;KE&quot;</span>, <span class="stringliteral">&quot;QKE&quot;</span>,</div>
-<div class="line">                                                    <span class="stringliteral">&quot;scalar&quot;</span>,<span class="stringliteral">&quot;pres_hse&quot;</span>, <span class="stringliteral">&quot;dens_hse&quot;</span>, <span class="stringliteral">&quot;pert_pres&quot;</span>, <span class="stringliteral">&quot;pert_dens&quot;</span>, <span class="stringliteral">&quot;z_phys&quot;</span>}</div>
+<div class="line">                                                    <span class="stringliteral">&quot;scalar&quot;</span>,<span class="stringliteral">&quot;pres_hse&quot;</span>, <span class="stringliteral">&quot;dens_hse&quot;</span>, <span class="stringliteral">&quot;pert_pres&quot;</span>, <span class="stringliteral">&quot;pert_dens&quot;</span>, <span class="stringliteral">&quot;z_phys&quot;</span>, <span class="stringliteral">&quot;detJ&quot;</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aef40b8ba6cb32fe3b11b8d9381f16cef">setPlotVariables()</a>.</p>
 
