@@ -159,7 +159,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">int</span> ncomp = b1[ori].nComp();</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (ori.coordDir() &lt; 2) {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">for</span> (amrex::FabSetIter bfsi(b1[ori]); bfsi.isValid(); ++bfsi) {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordtype">int</span> idx = bfsi.index();</div>
