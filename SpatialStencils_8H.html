@@ -307,7 +307,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordflow">return</span> advectionContribution;</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="TimeIntegration__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64">erf_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TimeIntegration__fast__implicit_8cpp.html#a87ecce1a52c309d02c04812aa091d217">erf_implicit_fast_rhs()</a>, and <a class="el" href="TimeIntegration__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64">erf_rhs()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -323,8 +323,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="SpatialStencils_8H_ad05687c88f2391cfec63a2a5731176eb_icgraph.png" border="0" usemap="#SpatialStencils_8H_ad05687c88f2391cfec63a2a5731176eb_icgraph" alt=""/></div>
 <map name="SpatialStencils_8H_ad05687c88f2391cfec63a2a5731176eb_icgraph" id="SpatialStencils_8H_ad05687c88f2391cfec63a2a5731176eb_icgraph">
-<area shape="rect" title=" " alt="" coords="120,5,307,47"/>
-<area shape="rect" href="TimeIntegration__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64" title=" " alt="" coords="5,13,72,39"/>
+<area shape="rect" title=" " alt="" coords="711,23,897,65"/>
+<area shape="rect" href="TimeIntegration__fast__implicit_8cpp.html#a87ecce1a52c309d02c04812aa091d217" title=" " alt="" coords="508,5,663,32"/>
+<area shape="rect" href="TimeIntegration__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64" title=" " alt="" coords="552,56,619,83"/>
+<area shape="rect" href="classERF.html#a76e972714e74aa2ba1b1806b980bb9a2" title=" " alt="" coords="325,5,460,32"/>
+<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="167,5,277,32"/>
+<area shape="rect" href="classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f" title=" " alt="" coords="5,5,119,32"/>
 </map>
 </div>
 
@@ -1636,68 +1640,68 @@ Here is the caller graph for this function:</div>
 
 <p>Compute K_turb (i-1/2, j+1/2, k) etc given K_turb (i, j, k) is known. </p>
 <p>Compute K (i-1/2, j+1/2, k) etc given K(i, j, k) or nut (i, j, k) is known </p>
-<div class="fragment"><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                                          {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="comment">// Assuming we already have &#39;K_turb&#39; computed for all (i, j, k)</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> turbViscInterpolated = 1.0;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <span class="keywordflow">switch</span> (momentumEqn) {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>: <span class="comment">// Reference face is x-face index (i, j, k)</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">switch</span> (diffDir) {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>:</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;      turbViscInterpolated = K_turb(i-1, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>:</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;      turbViscInterpolated = 0.25*( K_turb(i-1, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) + K_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>)</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                    + K_turb(i-1, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) + K_turb(i, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) );</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>:</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      turbViscInterpolated = 0.25*( K_turb(i-1, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                    + K_turb(i-1, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a>: <span class="comment">// Reference face is y-face index (i, j, k)</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">switch</span> (diffDir) {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>:</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      turbViscInterpolated = 0.25*( K_turb(i, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) + K_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>)</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    + K_turb(i-1, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) + K_turb(i-1, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) );</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>:</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      turbViscInterpolated = K_turb(i, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>:</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      turbViscInterpolated = 0.25*( K_turb(i, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    + K_turb(i, j-1, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a>: <span class="comment">// Reference face is z-face index (i, j, k)</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">switch</span> (diffDir) {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>:</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      turbViscInterpolated = 0.25*( K_turb(i, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    + K_turb(i-1, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i-1, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>:</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      turbViscInterpolated = 0.25*( K_turb(i, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                    + K_turb(i, j-1, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>:</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      turbViscInterpolated = K_turb(i, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;      amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    amrex::Abort(<span class="stringliteral">&quot;Error: Momentum equation is unrecognized&quot;</span>);</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keywordflow">return</span> turbViscInterpolated;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                                          {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="comment">// Assuming we already have &#39;K_turb&#39; computed for all (i, j, k)</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> turbViscInterpolated = 1.0;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordflow">switch</span> (momentumEqn) {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6">MomentumEqn::x</a>: <span class="comment">// Reference face is x-face index (i, j, k)</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">switch</span> (diffDir) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>:</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      turbViscInterpolated = K_turb(i-1, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>:</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      turbViscInterpolated = 0.25*( K_turb(i-1, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) + K_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>)</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    + K_turb(i-1, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) + K_turb(i, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) );</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>:</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      turbViscInterpolated = 0.25*( K_turb(i-1, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    + K_turb(i-1, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d">MomentumEqn::y</a>: <span class="comment">// Reference face is y-face index (i, j, k)</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">switch</span> (diffDir) {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>:</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;      turbViscInterpolated = 0.25*( K_turb(i, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) + K_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>)</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                    + K_turb(i-1, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) + K_turb(i-1, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) );</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>:</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      turbViscInterpolated = K_turb(i, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>:</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;      turbViscInterpolated = 0.25*( K_turb(i, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    + K_turb(i, j-1, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;      amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a>: <span class="comment">// Reference face is z-face index (i, j, k)</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">switch</span> (diffDir) {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6">DiffusionDir::x</a>:</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      turbViscInterpolated = 0.25*( K_turb(i, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                    + K_turb(i-1, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i-1, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d">DiffusionDir::y</a>:</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;      turbViscInterpolated = 0.25*( K_turb(i, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                    + K_turb(i, j-1, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + K_turb(i, j-1, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7">DiffusionDir::z</a>:</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      turbViscInterpolated = K_turb(i, j, k-1, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;      amrex::Abort(<span class="stringliteral">&quot;Error: Diffusion direction is unrecognized&quot;</span>);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    amrex::Abort(<span class="stringliteral">&quot;Error: Momentum equation is unrecognized&quot;</span>);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <span class="keywordflow">return</span> turbViscInterpolated;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="StressTerm_8H.html#a9b090db4b996c9c21945e3097f9b35bf">ComputeStressGivenRates()</a>.</p>
 <div class="dynheader">
@@ -1781,37 +1785,40 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;MomentumToVelocity()&quot;</span>,<a class="code" href="MomentumToVelocity_8cpp.html#a0b9d03467b066db285ea07f546f84b49">MomentumToVelocity</a>);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// Loop over boxes = valid boxes grown by ngrow</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">const</span> Box&amp; tbx = amrex::grow(mfi.nodaltilebox(0),ngrow);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">const</span> Box&amp; tby = amrex::grow(mfi.nodaltilebox(1),ngrow);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">const</span> Box&amp; tbz = amrex::grow(mfi.nodaltilebox(2),ngrow);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">// Conserved variables on cell centers -- we use this for density</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a> = cons_in.array(mfi);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">const</span> Box&amp; tbx = amrex::grow(mfi.nodaltilebox(0),ngrow);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> Box&amp; tby = amrex::grow(mfi.nodaltilebox(1),ngrow);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">const</span> Box&amp; tbz = amrex::grow(mfi.nodaltilebox(2),ngrow);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// Momentum on faces</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; momx = xmom_in.array(mfi);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; momy = ymom_in.array(mfi);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; momz = zmom_in.array(mfi);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// Velocity on faces</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; velx = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">xvel</a>.array(mfi);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; vely = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">yvel</a>.array(mfi);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; velz = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">zvel</a>.array(mfi);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        amrex::ParallelFor(tbx, tby, tbz,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            velx(i,j,k) = momx(i,j,k)/(0.5 * (<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i-1,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)));</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        },</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// Conserved variables on cell centers -- we use this for density</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a> = cons_in.array(mfi);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// Momentum on faces</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; momx = xmom_in.array(mfi);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; momy = ymom_in.array(mfi);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; momz = zmom_in.array(mfi);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">// Velocity on faces</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; velx = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">xvel</a>.array(mfi);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; vely = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">yvel</a>.array(mfi);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; velz = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">zvel</a>.array(mfi);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        amrex::ParallelFor(tbx, tby, tbz,</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            vely(i,j,k) = momy(i,j,k)/(0.5 * (<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j-1,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            velx(i,j,k) = momx(i,j,k)/(0.5 * (<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i-1,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)));</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        },</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            velz(i,j,k) = momz(i,j,k)/(0.5 * (<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)));</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        });</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    } <span class="comment">// end MFIter</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            vely(i,j,k) = momy(i,j,k)/(0.5 * (<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j-1,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        },</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            velz(i,j,k) = momz(i,j,k)/(0.5 * (<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        });</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    } <span class="comment">// end MFIter</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a76e972714e74aa2ba1b1806b980bb9a2">ERF::erf_advance()</a>, and <a class="el" href="SpatialStencils_8H.html#a5b4fc28379294678f039f03e1e3bab71">MomentumToVelocity()</a>.</p>
 <div class="dynheader">
@@ -1903,37 +1910,40 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;VelocityToMomentum()&quot;</span>,<a class="code" href="VelocityToMomentum_8cpp.html#a74241e06851a54dac1b61dcb122dc996">VelocityToMomentum</a>);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// Loop over boxes = valid boxes grown by ngrow</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">const</span> Box&amp; tbx = amrex::grow(mfi.nodaltilebox(0),ngrow);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">const</span> Box&amp; tby = amrex::grow(mfi.nodaltilebox(1),ngrow);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">const</span> Box&amp; tbz = amrex::grow(mfi.nodaltilebox(2),ngrow);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// Conserved/state variables on cell centers -- we use this for density</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a> = cons_in.array(mfi);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">const</span> Box&amp; tbx = amrex::grow(mfi.nodaltilebox(0),ngrow);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">const</span> Box&amp; tby = amrex::grow(mfi.nodaltilebox(1),ngrow);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> Box&amp; tbz = amrex::grow(mfi.nodaltilebox(2),ngrow);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// Momentum on faces, to be computed</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        Array4&lt;Real&gt; <span class="keyword">const</span>&amp; momx = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda35b6db75aef9a4eca57e85396dc5dc12">xmom</a>.array(mfi);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        Array4&lt;Real&gt; <span class="keyword">const</span>&amp; momy = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bdaa92727db248ec616aa835c2faa22f44c">ymom</a>.array(mfi);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        Array4&lt;Real&gt; <span class="keyword">const</span>&amp; momz = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bdada7d061afb1d0d7089d9dfe4874c965d">zmom</a>.array(mfi);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">// Velocity on faces, used in computation</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; velx = xvel_in.array(mfi);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; vely = yvel_in.array(mfi);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; velz = zvel_in.array(mfi);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        amrex::ParallelFor(tbx, tby, tbz,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            momx(i,j,k) = velx(i,j,k) * 0.5 * (<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i-1,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        },</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// Conserved/state variables on cell centers -- we use this for density</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a> = cons_in.array(mfi);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// Momentum on faces, to be computed</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        Array4&lt;Real&gt; <span class="keyword">const</span>&amp; momx = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda35b6db75aef9a4eca57e85396dc5dc12">xmom</a>.array(mfi);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        Array4&lt;Real&gt; <span class="keyword">const</span>&amp; momy = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bdaa92727db248ec616aa835c2faa22f44c">ymom</a>.array(mfi);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        Array4&lt;Real&gt; <span class="keyword">const</span>&amp; momz = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bdada7d061afb1d0d7089d9dfe4874c965d">zmom</a>.array(mfi);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">// Velocity on faces, used in computation</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; velx = xvel_in.array(mfi);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; vely = yvel_in.array(mfi);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; velz = zvel_in.array(mfi);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        amrex::ParallelFor(tbx, tby, tbz,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            momy(i,j,k) = vely(i,j,k) * 0.5 * (<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j-1,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            momx(i,j,k) = velx(i,j,k) * 0.5 * (<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i-1,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        },</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            momz(i,j,k) = velz(i,j,k) * 0.5 * (<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        });</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    } <span class="comment">// end MFIter</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            momy(i,j,k) = vely(i,j,k) * 0.5 * (<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j-1,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        },</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            momz(i,j,k) = velz(i,j,k) * 0.5 * (<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        });</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    } <span class="comment">// end MFIter</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9">ERF::Advance()</a>, and <a class="el" href="classERF.html#a76e972714e74aa2ba1b1806b980bb9a2">ERF::erf_advance()</a>.</p>
 <div class="dynheader">
