@@ -1,10 +1,10 @@
 var dir_759b90b1f3ea3c20e13693c83a3534b7 =
 [
+    [ "ERF_fast_rhs.cpp", "ERF__fast__rhs_8cpp.html", "ERF__fast__rhs_8cpp" ],
     [ "ERF_MRI.H", "ERF__MRI_8H.html", [
       [ "MRISplitIntegrator", "classMRISplitIntegrator.html", "classMRISplitIntegrator" ]
     ] ],
+    [ "ERF_slow_rhs.cpp", "ERF__slow__rhs_8cpp.html", "ERF__slow__rhs_8cpp" ],
     [ "TimeIntegration.H", "TimeIntegration_8H.html", "TimeIntegration_8H" ],
-    [ "TimeIntegration_driver.cpp", "TimeIntegration__driver_8cpp.html", null ],
-    [ "TimeIntegration_fast_implicit.cpp", "TimeIntegration__fast__implicit_8cpp.html", "TimeIntegration__fast__implicit_8cpp" ],
-    [ "TimeIntegration_rhs.cpp", "TimeIntegration__rhs_8cpp.html", "TimeIntegration__rhs_8cpp" ]
+    [ "TimeIntegration_driver.cpp", "TimeIntegration__driver_8cpp.html", null ]
 ];

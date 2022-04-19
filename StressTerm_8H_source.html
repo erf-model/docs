@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('StressTerm_8H_source.html',''); initRe
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// NOTE: we do not allow LES with MolecDiffType::ConstantAlpha so we don&#39;t have to worry about the</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//       density-weighting of the LES term in this case.  When using MolecDiffType::ConstantAlpha,</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//       we multiply the entire stress term by (rho / rho0_trans) in DiffusionContributionForMom</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//       we multiply the entire stress term by (rho / rho0_trans) in DiffusionSrcForMom</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//       (which is calling this routine)</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> ( (solverChoice.<a class="code" href="structSolverChoice.html#a8d16d654d2a02cec62427b38498c2462">molec_diff_type</a> == <a class="code" href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255">MolecDiffType::Constant</a>) ||</div>

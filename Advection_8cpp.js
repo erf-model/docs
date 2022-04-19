@@ -1,7 +1,7 @@
 var Advection_8cpp =
 [
-    [ "AdvectionContributionForState", "Advection_8cpp.html#a43527bb5620b941442840af9a8e838b8", null ],
-    [ "AdvectionContributionForXMom", "Advection_8cpp.html#afedb447a062c9cd2bd5cb35b3b944b6b", null ],
-    [ "AdvectionContributionForYMom", "Advection_8cpp.html#a2b315be59eee24e59dd50508c58e1fe6", null ],
-    [ "AdvectionContributionForZMom", "Advection_8cpp.html#a7c76666e085ebea061146d32482ba0d9", null ]
+    [ "AdvectionSrcForState", "Advection_8cpp.html#a2c241b071a05c0aaec40b59ec24caa9f", null ],
+    [ "AdvectionSrcForXMom", "Advection_8cpp.html#a0ffa6a8e256960ea70b649cdd87936b7", null ],
+    [ "AdvectionSrcForYMom", "Advection_8cpp.html#ab87576e21eae735694d8601d0b7b6250", null ],
+    [ "AdvectionSrcForZMom", "Advection_8cpp.html#a0b55bbda13467685763fbef8fe1c6344", null ]
 ];

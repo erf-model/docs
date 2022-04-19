@@ -121,185 +121,184 @@ $(document).ready(function(){initNavTree('PBLModels_8H_source.html',''); initRes
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keyword">const</span> Array4&lt;Real&gt; &amp;K_turb = eddyViscosity.array(mfi);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keyword">const</span> Array4&lt;Real const&gt; &amp;uvel = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda2a10a6e726515894b07621908abd4c0c">xvel</a>.array(mfi);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keyword">const</span> Array4&lt;Real const&gt; &amp;vvel = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda81793b83204cfa56d4683bc676fbbfb6">yvel</a>.array(mfi);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keyword">const</span> Array4&lt;Real const&gt; &amp;wvel = <a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">zvel</a>.array(mfi);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="comment">// Compute some quantities that are constant in each column</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="comment">// Sbox is shrunk to only include the interior of the domain in the vertical direction to compute integrals</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <span class="comment">// NOTE: Here we requite that sbx covers the entire vertical domain</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keyword">const</span> Box &amp;dbx = geom.Domain();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      Box sbx(bx.smallEnd(), bx.bigEnd());</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      sbx.grow(2,-1);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      AMREX_ALWAYS_ASSERT(sbx.smallEnd(2) == dbx.smallEnd(2) &amp;&amp; sbx.bigEnd(2) == dbx.bigEnd(2));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keyword">const</span> GeometryData gdata = geom.data();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keyword">const</span> Box xybx = PerpendicularBox&lt;ZDir&gt;(bx, IntVect{0,0,0});</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      FArrayBox qintegral(xybx,2);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      qintegral.setVal&lt;RunOn::Device&gt;(0.0);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      FArrayBox qturb(bx,1);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keyword">const</span> Array4&lt;amrex::Real&gt; qint = qintegral.array();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keyword">const</span> Array4&lt;amrex::Real&gt; qvel= qturb.array();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      amrex::ParallelFor(Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), bx,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                         [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, Gpu::Handler <span class="keyword">const</span>&amp; handler) noexcept</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;          <span class="keyword">const</span> amrex::Real Zval = gdata.ProbLo(2) + (k + 0.5)*gdata.CellSize(2);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;          <span class="keyword">const</span> amrex::Real rho = cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;          qvel(i,j,k) = std::sqrt(cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / rho);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;          <span class="comment">// We will divide by qvel later</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;          AMREX_ASSERT_WITH_MESSAGE(qvel(i,j,k) &gt; 0.0, <span class="stringliteral">&quot;QKE must have a positive value&quot;</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;          <span class="keywordflow">if</span> (sbx.contains(i,j,k)) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;              Gpu::deviceReduceSum(&amp;qint(i,j,0,0), Zval*qvel(i,j,k), handler);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;              Gpu::deviceReduceSum(&amp;qint(i,j,0,1), qvel(i,j,k), handler);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      });</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      amrex::Real dz_inv = geom.InvCellSize(2);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordtype">int</span> izmin = geom.Domain().smallEnd(2);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordtype">int</span> izmax = geom.Domain().bigEnd(2);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keyword">const</span> amrex::Real l_obukhov = most.<a class="code" href="structABLMost.html#a82dd0e10d3a0f8011add38d07012fca3">obukhov_len</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keyword">const</span> amrex::Real surface_heat_flux = most.<a class="code" href="structABLMost.html#a98390481d302c2a2c7346bf2328305a8">surf_temp_flux</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="keyword">const</span> amrex::Real theta0 = most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>; <span class="comment">//(TODO: IS THIS ACTUALLY RHOTHETA)</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;          <span class="comment">// Compute some partial derivatives that we will need (1st order at domain boundary)</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;          <span class="comment">// U and V derivatives are interpolated to account for staggered grid</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;          amrex::Real dthetadz, dudz, dvdz;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;          <span class="keywordflow">if</span> (k == izmax) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;              dthetadz = (cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) -</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                          cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>))*dz_inv;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;              dudz = 0.5*(uvel(i,j,k) - uvel(i,j,k-1) + uvel(i+1,j,k) - uvel(i+1,j,k-1))*dz_inv;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;              dvdz = 0.5*(vvel(i,j,k) - vvel(i,j,k-1) + vvel(i,j+1,k) - vvel(i,j+1,k-1))*dz_inv;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == izmin){</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;              dthetadz = (cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) -</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                          cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>))*dz_inv;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;              dudz = 0.5*(uvel(i,j,k+1) - uvel(i,j,k) + uvel(i+1,j,k+1) - uvel(i+1,j,k))*dz_inv;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;              dvdz = 0.5*(vvel(i,j,k+1) - vvel(i,j,k) + vvel(i,j+1,k+1) - vvel(i,j+1,k))*dz_inv;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;          } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;              dthetadz = 0.5*(cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) -</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                              cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>))*dz_inv;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;              dudz = 0.25*(uvel(i,j,k+1) - uvel(i,j,k-1) + uvel(i+1,j,k+1) - uvel(i+1,j,k-1))*dz_inv;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;              dvdz = 0.25*(vvel(i,j,k+1) - vvel(i,j,k-1) + vvel(i,j+1,k+1) - vvel(i,j+1,k-1))*dz_inv;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;          }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;          <span class="comment">// First Length Scale</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;          AMREX_ASSERT(l_obukhov != 0);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;          <span class="keyword">const</span> amrex::Real zval = gdata.ProbLo(2) + (k + 0.5)*gdata.CellSize(2);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;          <span class="keyword">const</span> amrex::Real zeta = zval/l_obukhov;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;          amrex::Real l_S;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;          <span class="keywordflow">if</span> (zeta &gt;= 1.0) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;              l_S = <a class="code" href="ERF__Constants_8H.html#acd1636d4e71f645d469c49a7ba8e18a4">KAPPA</a>*zval/3.7;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (zeta &gt;= 0) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;              l_S = <a class="code" href="ERF__Constants_8H.html#acd1636d4e71f645d469c49a7ba8e18a4">KAPPA</a>*zval/(1+2.7*zeta);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;          } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;              l_S = <a class="code" href="ERF__Constants_8H.html#acd1636d4e71f645d469c49a7ba8e18a4">KAPPA</a>*zval*std::pow(1.0 - 100.0 * zeta, 0.2);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;          }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;          <span class="comment">// Second Length Scale</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;          amrex::Real l_T;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;          <span class="keywordflow">if</span> (qint(i,j,0,1) &gt; 0.0) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;              l_T = 0.23*qint(i,j,0,0)/qint(i,j,0,1);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;          } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;              l_T = std::numeric_limits&lt;amrex::Real&gt;::max();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;          }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;          <span class="comment">// Third Length Scale</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;          amrex::Real l_B;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;          <span class="keywordflow">if</span> (dthetadz &gt; 0) {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;              amrex::Real N_brunt_vaisala = <a class="code" href="ERF__Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901">CONST_GRAV</a>/theta0 * std::sqrt(dthetadz);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;              <span class="keywordflow">if</span> (zeta &lt; 0) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                  amrex::Real qc = <a class="code" href="ERF__Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901">CONST_GRAV</a>/theta0 * surface_heat_flux * l_T;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                  qc = std::pow(qc,1.0/3.0);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                  l_B = (1.0 + 5.0*std::sqrt(qc/(N_brunt_vaisala * l_T))) * qvel(i,j,k)/N_brunt_vaisala;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;              } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                  l_B = qvel(i,j,k) / N_brunt_vaisala;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;              }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;          } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;              l_B = std::numeric_limits&lt;amrex::Real&gt;::max();</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;          }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;          <span class="comment">// Overall Length Scale</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;          amrex::Real l_comb = 1.0 / (1.0/l_S + 1.0/l_T + 1.0/l_B);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;          <span class="comment">// Compute non-dimensional parameters</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;          amrex::Real l2_over_q2 = l_comb*l_comb/(qvel(i,j,k)*qvel(i,j,k));</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;          amrex::Real GM = l2_over_q2 * (dudz*dudz + dvdz*dvdz);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;          amrex::Real GH = -l2_over_q2 / theta0 * dthetadz;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;          amrex::Real E1 = 1.0 + 6.0*A1*A1*GM - 9.0*A1*A2*(1.0-C2)*GH;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;          amrex::Real E2 = -3.0*A1*(4.0*A1 + 3.0*A2*(1.0-C5))*(1.0-C2)*GH;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;          amrex::Real E3 = 6.0*A2*A1*GM;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;          amrex::Real E4 = 1.0 - 12.0*A2*A1*(1.0-C2)*GH -3.0*A2*B2*(1.0-C3)*GH;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;          amrex::Real R1 = A1*(1.0-3.0*C1);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;          amrex::Real SM = (A2*E2 - R1*E4)/(E2*E3 - E1*E4);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;          amrex::Real SH = (R1*E3 - A2*E1)/(E2*E3 - E1*E4);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;          amrex::Real SQ = 3.0 * SM;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;          <span class="comment">// Finally, compute the eddy viscosity/diffusivities</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;          <span class="keyword">const</span> amrex::Real rho = cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;          K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)   = rho * l_comb * qvel(i,j,k) * SM;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;          K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>) = rho * l_comb * qvel(i,j,k) * SH;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;          K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232ab74402005c035d247402e5f247827dcc">EddyDiff::QKE_v</a>)   = rho * l_comb * qvel(i,j,k) * 3.0 * SQ;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;          K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a6a553b28d62930bdda7b473e28464b73">EddyDiff::PBL_lengthscale</a>) = l_comb;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;          <span class="comment">// TODO: How should this be done for other components (scalars, moisture)</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      });</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  }</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;AMREX_GPU_DEVICE</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">inline</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="PBLModels_8H.html#a636c70ae989e2ff9f7e7b2e05836aa24">  165</a></span>&#160;<a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> <a class="code" href="PBLModels_8H.html#a636c70ae989e2ff9f7e7b2e05836aa24">ComputeQKESourceTerms</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k,</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                           <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; uvel, <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; vvel,</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                           <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cell_data, <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cell_prim,</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                           <span class="keyword">const</span> Array4&lt;Real&gt;&amp; K_turb,</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                           <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt;&amp; cellSizeInv, <span class="keyword">const</span> Box&amp; domain,</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                           <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; solverChoice, <span class="keyword">const</span> <a class="code" href="structABLMost.html">ABLMost</a>&amp; most)</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;{</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="comment">// Compute some relevant derivatives</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  amrex::Real dz_inv = cellSizeInv[2];</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordtype">int</span> izmin = domain.smallEnd(2);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordtype">int</span> izmax = domain.bigEnd(2);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  amrex::Real dthetadz, dudz, dvdz;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  amrex::Real source_term = 0.0;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <span class="keywordflow">if</span> (k == izmax) {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    dthetadz = (cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - cell_prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>))*dz_inv;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    dudz = 0.5*(uvel(i,j,k) - uvel(i,j,k-1) + uvel(i+1,j,k) - uvel(i+1,j,k-1))*dz_inv;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    dvdz = 0.5*(vvel(i,j,k) - vvel(i,j,k-1) + vvel(i,j+1,k) - vvel(i,j+1,k-1))*dz_inv;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == izmin){</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    dthetadz = (cell_prim(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>))*dz_inv;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    dudz = 0.5*(uvel(i,j,k+1) - uvel(i,j,k) + uvel(i+1,j,k+1) - uvel(i+1,j,k))*dz_inv;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    dvdz = 0.5*(vvel(i,j,k+1) - vvel(i,j,k) + vvel(i,j+1,k+1) - vvel(i,j+1,k))*dz_inv;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    dthetadz = 0.5*(cell_prim(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - cell_prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>))*dz_inv;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    dudz = 0.25*(uvel(i,j,k+1) - uvel(i,j,k-1) + uvel(i+1,j,k+1) - uvel(i+1,j,k-1))*dz_inv;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    dvdz = 0.25*(vvel(i,j,k+1) - vvel(i,j,k-1) + vvel(i,j+1,k+1) - vvel(i,j+1,k-1))*dz_inv;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  }</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="comment">// Bouyancy</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  source_term += 2*<a class="code" href="ERF__Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901">CONST_GRAV</a>/most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>)*dthetadz;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="comment">// Production</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  source_term += K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * (dudz*dudz + dvdz*dvdz);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="comment">// Dissipation</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  amrex::Real qke = cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#ad6174e899597e766afde82f9c11def75">PrimQKE_comp</a>);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="keywordflow">if</span> (std::abs(qke) &gt; 0.0) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    source_term += 2.0 * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,1.5) /</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      (solverChoice.<a class="code" href="structSolverChoice.html#a83092085c4e0f7ea1c5c3dd9ee822d98">pbl_B1</a> * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a6a553b28d62930bdda7b473e28464b73">EddyDiff::PBL_lengthscale</a>));</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <span class="keywordflow">return</span> source_term;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="comment">// Compute some quantities that are constant in each column</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="comment">// Sbox is shrunk to only include the interior of the domain in the vertical direction to compute integrals</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="comment">// NOTE: Here we requite that sbx covers the entire vertical domain</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <span class="keyword">const</span> Box &amp;dbx = geom.Domain();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      Box sbx(bx.smallEnd(), bx.bigEnd());</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      sbx.grow(2,-1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      AMREX_ALWAYS_ASSERT(sbx.smallEnd(2) == dbx.smallEnd(2) &amp;&amp; sbx.bigEnd(2) == dbx.bigEnd(2));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keyword">const</span> GeometryData gdata = geom.data();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keyword">const</span> Box xybx = PerpendicularBox&lt;ZDir&gt;(bx, IntVect{0,0,0});</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      FArrayBox qintegral(xybx,2);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      qintegral.setVal&lt;RunOn::Device&gt;(0.0);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      FArrayBox qturb(bx,1);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keyword">const</span> Array4&lt;amrex::Real&gt; qint = qintegral.array();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keyword">const</span> Array4&lt;amrex::Real&gt; qvel= qturb.array();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      amrex::ParallelFor(Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), bx,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                         [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, Gpu::Handler <span class="keyword">const</span>&amp; handler) noexcept</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;          <span class="keyword">const</span> amrex::Real Zval = gdata.ProbLo(2) + (k + 0.5)*gdata.CellSize(2);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;          <span class="keyword">const</span> amrex::Real rho = cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;          qvel(i,j,k) = std::sqrt(cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / rho);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;          <span class="comment">// We will divide by qvel later</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;          AMREX_ASSERT_WITH_MESSAGE(qvel(i,j,k) &gt; 0.0, <span class="stringliteral">&quot;QKE must have a positive value&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;          <span class="keywordflow">if</span> (sbx.contains(i,j,k)) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;              Gpu::deviceReduceSum(&amp;qint(i,j,0,0), Zval*qvel(i,j,k), handler);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;              Gpu::deviceReduceSum(&amp;qint(i,j,0,1), qvel(i,j,k), handler);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;          }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      });</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      amrex::Real dz_inv = geom.InvCellSize(2);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keywordtype">int</span> izmin = geom.Domain().smallEnd(2);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordtype">int</span> izmax = geom.Domain().bigEnd(2);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keyword">const</span> amrex::Real l_obukhov = most.<a class="code" href="structABLMost.html#a82dd0e10d3a0f8011add38d07012fca3">obukhov_len</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keyword">const</span> amrex::Real surface_heat_flux = most.<a class="code" href="structABLMost.html#a98390481d302c2a2c7346bf2328305a8">surf_temp_flux</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keyword">const</span> amrex::Real theta0 = most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>; <span class="comment">//(TODO: IS THIS ACTUALLY RHOTHETA)</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;          <span class="comment">// Compute some partial derivatives that we will need (1st order at domain boundary)</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;          <span class="comment">// U and V derivatives are interpolated to account for staggered grid</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;          amrex::Real dthetadz, dudz, dvdz;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;          <span class="keywordflow">if</span> (k == izmax) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;              dthetadz = (cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) -</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                          cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>))*dz_inv;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;              dudz = 0.5*(uvel(i,j,k) - uvel(i,j,k-1) + uvel(i+1,j,k) - uvel(i+1,j,k-1))*dz_inv;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;              dvdz = 0.5*(vvel(i,j,k) - vvel(i,j,k-1) + vvel(i,j+1,k) - vvel(i,j+1,k-1))*dz_inv;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == izmin){</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;              dthetadz = (cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) -</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                          cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>))*dz_inv;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;              dudz = 0.5*(uvel(i,j,k+1) - uvel(i,j,k) + uvel(i+1,j,k+1) - uvel(i+1,j,k))*dz_inv;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;              dvdz = 0.5*(vvel(i,j,k+1) - vvel(i,j,k) + vvel(i,j+1,k+1) - vvel(i,j+1,k))*dz_inv;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;          } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;              dthetadz = 0.5*(cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) -</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                              cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>))*dz_inv;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;              dudz = 0.25*(uvel(i,j,k+1) - uvel(i,j,k-1) + uvel(i+1,j,k+1) - uvel(i+1,j,k-1))*dz_inv;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;              dvdz = 0.25*(vvel(i,j,k+1) - vvel(i,j,k-1) + vvel(i,j+1,k+1) - vvel(i,j+1,k-1))*dz_inv;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;          }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;          <span class="comment">// First Length Scale</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;          AMREX_ASSERT(l_obukhov != 0);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;          <span class="keyword">const</span> amrex::Real zval = gdata.ProbLo(2) + (k + 0.5)*gdata.CellSize(2);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;          <span class="keyword">const</span> amrex::Real zeta = zval/l_obukhov;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;          amrex::Real l_S;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;          <span class="keywordflow">if</span> (zeta &gt;= 1.0) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;              l_S = <a class="code" href="ERF__Constants_8H.html#acd1636d4e71f645d469c49a7ba8e18a4">KAPPA</a>*zval/3.7;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (zeta &gt;= 0) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;              l_S = <a class="code" href="ERF__Constants_8H.html#acd1636d4e71f645d469c49a7ba8e18a4">KAPPA</a>*zval/(1+2.7*zeta);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;          } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;              l_S = <a class="code" href="ERF__Constants_8H.html#acd1636d4e71f645d469c49a7ba8e18a4">KAPPA</a>*zval*std::pow(1.0 - 100.0 * zeta, 0.2);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;          }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;          <span class="comment">// Second Length Scale</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;          amrex::Real l_T;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;          <span class="keywordflow">if</span> (qint(i,j,0,1) &gt; 0.0) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;              l_T = 0.23*qint(i,j,0,0)/qint(i,j,0,1);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;          } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;              l_T = std::numeric_limits&lt;amrex::Real&gt;::max();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;          }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;          <span class="comment">// Third Length Scale</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;          amrex::Real l_B;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;          <span class="keywordflow">if</span> (dthetadz &gt; 0) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;              amrex::Real N_brunt_vaisala = <a class="code" href="ERF__Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901">CONST_GRAV</a>/theta0 * std::sqrt(dthetadz);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;              <span class="keywordflow">if</span> (zeta &lt; 0) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                  amrex::Real qc = <a class="code" href="ERF__Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901">CONST_GRAV</a>/theta0 * surface_heat_flux * l_T;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                  qc = std::pow(qc,1.0/3.0);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                  l_B = (1.0 + 5.0*std::sqrt(qc/(N_brunt_vaisala * l_T))) * qvel(i,j,k)/N_brunt_vaisala;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;              } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                  l_B = qvel(i,j,k) / N_brunt_vaisala;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;              }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;          } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;              l_B = std::numeric_limits&lt;amrex::Real&gt;::max();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;          }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;          <span class="comment">// Overall Length Scale</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;          amrex::Real l_comb = 1.0 / (1.0/l_S + 1.0/l_T + 1.0/l_B);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;          <span class="comment">// Compute non-dimensional parameters</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;          amrex::Real l2_over_q2 = l_comb*l_comb/(qvel(i,j,k)*qvel(i,j,k));</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;          amrex::Real GM = l2_over_q2 * (dudz*dudz + dvdz*dvdz);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;          amrex::Real GH = -l2_over_q2 / theta0 * dthetadz;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;          amrex::Real E1 = 1.0 + 6.0*A1*A1*GM - 9.0*A1*A2*(1.0-C2)*GH;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;          amrex::Real E2 = -3.0*A1*(4.0*A1 + 3.0*A2*(1.0-C5))*(1.0-C2)*GH;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;          amrex::Real E3 = 6.0*A2*A1*GM;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;          amrex::Real E4 = 1.0 - 12.0*A2*A1*(1.0-C2)*GH -3.0*A2*B2*(1.0-C3)*GH;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;          amrex::Real R1 = A1*(1.0-3.0*C1);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;          amrex::Real SM = (A2*E2 - R1*E4)/(E2*E3 - E1*E4);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;          amrex::Real SH = (R1*E3 - A2*E1)/(E2*E3 - E1*E4);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;          amrex::Real SQ = 3.0 * SM;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;          <span class="comment">// Finally, compute the eddy viscosity/diffusivities</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;          <span class="keyword">const</span> amrex::Real rho = cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;          K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)   = rho * l_comb * qvel(i,j,k) * SM;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;          K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>) = rho * l_comb * qvel(i,j,k) * SH;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;          K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232ab74402005c035d247402e5f247827dcc">EddyDiff::QKE_v</a>)   = rho * l_comb * qvel(i,j,k) * 3.0 * SQ;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;          K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a6a553b28d62930bdda7b473e28464b73">EddyDiff::PBL_lengthscale</a>) = l_comb;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;          <span class="comment">// TODO: How should this be done for other components (scalars, moisture)</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      });</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="PBLModels_8H.html#a636c70ae989e2ff9f7e7b2e05836aa24">  164</a></span>&#160;<a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> <a class="code" href="PBLModels_8H.html#a636c70ae989e2ff9f7e7b2e05836aa24">ComputeQKESourceTerms</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                           <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; uvel, <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; vvel,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                           <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cell_data, <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cell_prim,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                           <span class="keyword">const</span> Array4&lt;Real&gt;&amp; K_turb,</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                           <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt;&amp; cellSizeInv, <span class="keyword">const</span> Box&amp; domain,</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                           <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; solverChoice, <span class="keyword">const</span> <a class="code" href="structABLMost.html">ABLMost</a>&amp; most)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="comment">// Compute some relevant derivatives</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  amrex::Real dz_inv = cellSizeInv[2];</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordtype">int</span> izmin = domain.smallEnd(2);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordtype">int</span> izmax = domain.bigEnd(2);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  amrex::Real dthetadz, dudz, dvdz;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  amrex::Real source_term = 0.0;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keywordflow">if</span> (k == izmax) {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    dthetadz = (cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - cell_prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>))*dz_inv;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    dudz = 0.5*(uvel(i,j,k) - uvel(i,j,k-1) + uvel(i+1,j,k) - uvel(i+1,j,k-1))*dz_inv;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    dvdz = 0.5*(vvel(i,j,k) - vvel(i,j,k-1) + vvel(i,j+1,k) - vvel(i,j+1,k-1))*dz_inv;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == izmin){</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    dthetadz = (cell_prim(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>))*dz_inv;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    dudz = 0.5*(uvel(i,j,k+1) - uvel(i,j,k) + uvel(i+1,j,k+1) - uvel(i+1,j,k))*dz_inv;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    dvdz = 0.5*(vvel(i,j,k+1) - vvel(i,j,k) + vvel(i,j+1,k+1) - vvel(i,j+1,k))*dz_inv;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    dthetadz = 0.5*(cell_prim(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - cell_prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>))*dz_inv;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    dudz = 0.25*(uvel(i,j,k+1) - uvel(i,j,k-1) + uvel(i+1,j,k+1) - uvel(i+1,j,k-1))*dz_inv;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    dvdz = 0.25*(vvel(i,j,k+1) - vvel(i,j,k-1) + vvel(i,j+1,k+1) - vvel(i,j+1,k-1))*dz_inv;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="comment">// Bouyancy</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  source_term += 2*<a class="code" href="ERF__Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901">CONST_GRAV</a>/most.<a class="code" href="structABLMost.html#a370187c5e0a3e3ca6260e515efe4a181">theta_mean</a>*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>)*dthetadz;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="comment">// Production</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  source_term += K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * (dudz*dudz + dvdz*dvdz);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="comment">// Dissipation</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  amrex::Real qke = cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#ad6174e899597e766afde82f9c11def75">PrimQKE_comp</a>);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordflow">if</span> (std::abs(qke) &gt; 0.0) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    source_term += 2.0 * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,1.5) /</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      (solverChoice.<a class="code" href="structSolverChoice.html#a83092085c4e0f7ea1c5c3dd9ee822d98">pbl_B1</a> * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a6a553b28d62930bdda7b473e28464b73">EddyDiff::PBL_lengthscale</a>));</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="keywordflow">return</span> source_term;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a063fd3095e4994e6136a62d78b7c5901"><div class="ttname"><a href="ERF__Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901">CONST_GRAV</a></div><div class="ttdeci">#define CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:14</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ad6174e899597e766afde82f9c11def75"><div class="ttname"><a href="IndexDefines_8H.html#ad6174e899597e766afde82f9c11def75">PrimQKE_comp</a></div><div class="ttdeci">#define PrimQKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:20</div></div>
 <div class="ttc" id="aSpatialStencils_8H_html"><div class="ttname"><a href="SpatialStencils_8H.html">SpatialStencils.H</a></div></div>
-<div class="ttc" id="aPBLModels_8H_html_a636c70ae989e2ff9f7e7b2e05836aa24"><div class="ttname"><a href="PBLModels_8H.html#a636c70ae989e2ff9f7e7b2e05836aa24">ComputeQKESourceTerms</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeQKESourceTerms(int i, int j, int k, const Array4&lt; const Real &gt; &amp;uvel, const Array4&lt; const Real &gt; &amp;vvel, const Array4&lt; const Real &gt; &amp;cell_data, const Array4&lt; const Real &gt; &amp;cell_prim, const Array4&lt; Real &gt; &amp;K_turb, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const SolverChoice &amp;solverChoice, const ABLMost &amp;most)</div><div class="ttdef"><b>Definition:</b> PBLModels.H:165</div></div>
+<div class="ttc" id="aPBLModels_8H_html_a636c70ae989e2ff9f7e7b2e05836aa24"><div class="ttname"><a href="PBLModels_8H.html#a636c70ae989e2ff9f7e7b2e05836aa24">ComputeQKESourceTerms</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real ComputeQKESourceTerms(int i, int j, int k, const Array4&lt; const Real &gt; &amp;uvel, const Array4&lt; const Real &gt; &amp;vvel, const Array4&lt; const Real &gt; &amp;cell_data, const Array4&lt; const Real &gt; &amp;cell_prim, const Array4&lt; Real &gt; &amp;K_turb, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Box &amp;domain, const SolverChoice &amp;solverChoice, const ABLMost &amp;most)</div><div class="ttdef"><b>Definition:</b> PBLModels.H:164</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_ada15f516d3d1be3a86e96b6acc4c3232ab74402005c035d247402e5f247827dcc"><div class="ttname"><a href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232ab74402005c035d247402e5f247827dcc">EddyDiff::QKE_v</a></div><div class="ttdeci">@ QKE_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:92</div></div>
 <div class="ttc" id="astructABLMost_html"><div class="ttname"><a href="structABLMost.html">ABLMost</a></div><div class="ttdef"><b>Definition:</b> ABLMost.H:18</div></div>
