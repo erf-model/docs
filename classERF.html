@@ -1795,39 +1795,39 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;{</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    AMREX_ALWAYS_ASSERT(dens.size() == pres.size());</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    amrex::Real l_gravity = <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">gravity</a>;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> geomdata = geom[lev].data();</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dz = geomdata.CellSize(2);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">int</span> nz = geom[lev].Domain().length(2);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">// We start by assuming pressure on the ground is p_0 (in ERF_Constants.H)</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="comment">// Note that gravity is positive</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a>* hptr_dens = <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev].data() + <a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a>* hptr_pres = <a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>[lev].data() + <a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dens_interp;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">// We integrate to the first cell (and below) by using rho in this cell</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="comment">// If gravity == 0 this is constant pressure</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="comment">// If gravity != 0, hence this is a wall, this gives gp0 = dens[0] * gravity</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="comment">// (dens_hse*gravity would also be dens[0]*gravity because we use foextrap for rho at k = -1)</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// Note ng_pres_hse = 1</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    hptr_pres[-1] = <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> + (0.5*dz) * dens[0] * l_gravity;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    hptr_pres[ 0] = <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> - (0.5*dz) * dens[0] * l_gravity;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;erf_enforce_hse: p[-1] = &quot; &lt;&lt; hptr_pres[-1] &lt;&lt; &quot; (ghost)&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;erf_enforce_hse: p[ 0] = &quot; &lt;&lt; hptr_pres[ 0] &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt; nz+<a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>; k++)</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;       dens_interp = 0.5*(hptr_dens[k] + hptr_dens[k-1]);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;       hptr_pres[k] = hptr_pres[k-1] - dz * dens_interp * l_gravity;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    AMREX_ALWAYS_ASSERT(dens.size() == pres.size());</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    amrex::Real l_gravity = <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">gravity</a>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> geomdata = geom[lev].data();</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dz = geomdata.CellSize(2);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">int</span> nz = geom[lev].Domain().length(2);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">// We start by assuming pressure on the ground is p_0 (in ERF_Constants.H)</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">// Note that gravity is positive</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a>* hptr_dens = <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev].data() + <a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a>* hptr_pres = <a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>[lev].data() + <a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dens_interp;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">// We integrate to the first cell (and below) by using rho in this cell</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// If gravity == 0 this is constant pressure</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="comment">// If gravity != 0, hence this is a wall, this gives gp0 = dens[0] * gravity</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">// (dens_hse*gravity would also be dens[0]*gravity because we use foextrap for rho at k = -1)</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="comment">// Note ng_pres_hse = 1</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    hptr_pres[-1] = <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> + (0.5*dz) * dens[0] * l_gravity;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    hptr_pres[ 0] = <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a> - (0.5*dz) * dens[0] * l_gravity;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;erf_enforce_hse: p[-1] = &quot; &lt;&lt; hptr_pres[-1] &lt;&lt; &quot; (ghost)&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;erf_enforce_hse: p[ 0] = &quot; &lt;&lt; hptr_pres[ 0] &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt; nz+<a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>; k++)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;       dens_interp = 0.5*(hptr_dens[k] + hptr_dens[k-1]);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;       hptr_pres[k] = hptr_pres[k-1] - dz * dens_interp * l_gravity;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a92c020bfaa43e40fb5ffc449427a0318">initHSE()</a>.</p>
 <div class="dynheader">
@@ -3599,66 +3599,47 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Initialize HSE. </p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(pres_hse[lev], TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            Array4&lt;Real&gt; rho_arr = dens_hse[lev].array(mfi);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">// Create a flat box with same horizontal extent but only one cell in vertical</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="comment">//const Box&amp; tbz = mfi.nodaltilebox(2);</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">//amrex::Box b2d = tbz; // Copy constructor</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">//int klo = tbz.smallEnd(2);</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">//int khi = tbz.bigEnd(2);</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">//b2d.setRange(2,0);</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">//ParallelFor(b2d, [=] AMREX_GPU_DEVICE (int i, int j, int k) {</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="comment">//  for (int k = 0; k &lt;= nz; k++) {</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="comment">//     rho_arr(i,j,k) = 1.0;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="comment">//  }</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment">//});</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keyword">const</span> Box&amp; bx = mfi.growntilebox(1);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                rho_arr(i,j,k) = 1.0;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            });</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classERF.html#ae994c0e7f0d87b787de9bb971f0da64c">erf_enforce_hse</a>(lev, dens_hse[lev], pres_hse[lev]);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// Setup Base State Arrays</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>.resize(max_level+1, amrex::Vector&lt;Real&gt;(0));</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>.resize(max_level+1, amrex::Vector&lt;Real&gt;(0));</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="classERF.html#a3407564246f176655d0dc97733997e52">d_dens_hse</a>.resize(max_level+1, amrex::Gpu::DeviceVector&lt;Real&gt;(0));</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="classERF.html#a7990255d32f7bca694acab7521101b93">d_pres_hse</a>.resize(max_level+1, amrex::Gpu::DeviceVector&lt;Real&gt;(0));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> zlen_dens = geom[lev].Domain().length(2) + 2*<a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev].resize(zlen_dens, 0.0_rt);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="classERF.html#a3407564246f176655d0dc97733997e52">d_dens_hse</a>[lev].resize(zlen_dens, 0.0_rt);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> zlen_pres = geom[lev].Domain().length(2) + 2*<a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>[lev].resize(zlen_pres, <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="classERF.html#a7990255d32f7bca694acab7521101b93">d_pres_hse</a>[lev].resize(zlen_pres, <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a>* hptr_dens = <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev].data() + <a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="prob__common_8H.html#ae1b3e66694fef92a0c9fd18b186d6d5d">erf_init_dens_hse</a>(hptr_dens,geom[lev],<a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="classERF.html#ae994c0e7f0d87b787de9bb971f0da64c">erf_enforce_hse</a>(lev,<a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev],<a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>[lev]);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">// Copy from host version to device version</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev].begin(), <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev].end(),</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                         <a class="code" href="classERF.html#a3407564246f176655d0dc97733997e52">d_dens_hse</a>[lev].begin());</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>[lev].begin(), <a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>[lev].end(),</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                     <a class="code" href="classERF.html#a7990255d32f7bca694acab7521101b93">d_pres_hse</a>[lev].begin());</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="prob__common_8H.html#ae1b3e66694fef92a0c9fd18b186d6d5d">erf_init_dens_hse</a>(dens_hse[lev], geom[lev]);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classERF.html#ae994c0e7f0d87b787de9bb971f0da64c">erf_enforce_hse</a>(lev, dens_hse[lev], pres_hse[lev]);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Setup Base State Arrays</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>.resize(max_level+1, amrex::Vector&lt;Real&gt;(0));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>.resize(max_level+1, amrex::Vector&lt;Real&gt;(0));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classERF.html#a3407564246f176655d0dc97733997e52">d_dens_hse</a>.resize(max_level+1, amrex::Gpu::DeviceVector&lt;Real&gt;(0));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classERF.html#a7990255d32f7bca694acab7521101b93">d_pres_hse</a>.resize(max_level+1, amrex::Gpu::DeviceVector&lt;Real&gt;(0));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> zlen_dens = geom[lev].Domain().length(2) + 2*<a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev].resize(zlen_dens, 0.0_rt);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="classERF.html#a3407564246f176655d0dc97733997e52">d_dens_hse</a>[lev].resize(zlen_dens, 0.0_rt);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> zlen_pres = geom[lev].Domain().length(2) + 2*<a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>[lev].resize(zlen_pres, <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="classERF.html#a7990255d32f7bca694acab7521101b93">d_pres_hse</a>[lev].resize(zlen_pres, <a class="code" href="ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c">p_0</a>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a>* hptr_dens = <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev].data() + <a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="prob__common_8H.html#ae1b3e66694fef92a0c9fd18b186d6d5d">erf_init_dens_hse</a>(hptr_dens,geom[lev],<a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="classERF.html#ae994c0e7f0d87b787de9bb971f0da64c">erf_enforce_hse</a>(lev,<a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev],<a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>[lev]);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">// Copy from host version to device version</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev].begin(), <a class="code" href="classERF.html#a7e89a339e79b2b4f177a05e9f0df32fa">h_dens_hse</a>[lev].end(),</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                         <a class="code" href="classERF.html#a3407564246f176655d0dc97733997e52">d_dens_hse</a>[lev].begin());</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>[lev].begin(), <a class="code" href="classERF.html#aff6f5d2bd989b5a0f7c28e2e10e27e8c">h_pres_hse</a>[lev].end(),</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                     <a class="code" href="classERF.html#a7990255d32f7bca694acab7521101b93">d_pres_hse</a>[lev].begin());</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3757,44 +3738,44 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Initialize Rayleigh damping profiles. </p>
-<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    AMREX_ALWAYS_ASSERT(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classERF.html#a1bc503c07e76f2a4791a76e6907e6dd7">h_rayleigh_tau</a>.resize(max_level+1, amrex::Vector&lt;Real&gt;(0));</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classERF.html#ac4dc443840da3593fe66b8693803f006">h_rayleigh_ubar</a>.resize(max_level+1, amrex::Vector&lt;Real&gt;(0));</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classERF.html#a6e0624ac1d76fbde394c7ba4b01ed7eb">h_rayleigh_vbar</a>.resize(max_level+1, amrex::Vector&lt;Real&gt;(0));</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classERF.html#a0f074d984fb0a319cf7a781b2efc3d63">h_rayleigh_thetabar</a>.resize(max_level+1, amrex::Vector&lt;Real&gt;(0));</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classERF.html#a91e9618892751232c4067c253f904a3d">d_rayleigh_tau</a>.resize(max_level+1, amrex::Gpu::DeviceVector&lt;Real&gt;(0));</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classERF.html#af33ee878e24ced10b3da319795723db0">d_rayleigh_ubar</a>.resize(max_level+1, amrex::Gpu::DeviceVector&lt;Real&gt;(0));</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classERF.html#a879501e88824fa6a00ffe1509059b21e">d_rayleigh_vbar</a>.resize(max_level+1, amrex::Gpu::DeviceVector&lt;Real&gt;(0));</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classERF.html#a4c992f63bcc9d7e7693990bf046bfc4b">d_rayleigh_thetabar</a>.resize(max_level+1, amrex::Gpu::DeviceVector&lt;Real&gt;(0));</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> zlen_rayleigh = geom[lev].Domain().length(2);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classERF.html#a1bc503c07e76f2a4791a76e6907e6dd7">h_rayleigh_tau</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classERF.html#a91e9618892751232c4067c253f904a3d">d_rayleigh_tau</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classERF.html#ac4dc443840da3593fe66b8693803f006">h_rayleigh_ubar</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classERF.html#af33ee878e24ced10b3da319795723db0">d_rayleigh_ubar</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classERF.html#a6e0624ac1d76fbde394c7ba4b01ed7eb">h_rayleigh_vbar</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classERF.html#a879501e88824fa6a00ffe1509059b21e">d_rayleigh_vbar</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classERF.html#a0f074d984fb0a319cf7a781b2efc3d63">h_rayleigh_thetabar</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classERF.html#a4c992f63bcc9d7e7693990bf046bfc4b">d_rayleigh_thetabar</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="prob__common_8H.html#ad0da799211f82f28a9e0d53008febb1b">erf_init_rayleigh</a>(<a class="code" href="classERF.html#a1bc503c07e76f2a4791a76e6907e6dd7">h_rayleigh_tau</a>[lev], <a class="code" href="classERF.html#ac4dc443840da3593fe66b8693803f006">h_rayleigh_ubar</a>[lev], <a class="code" href="classERF.html#a6e0624ac1d76fbde394c7ba4b01ed7eb">h_rayleigh_vbar</a>[lev],</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                          <a class="code" href="classERF.html#a0f074d984fb0a319cf7a781b2efc3d63">h_rayleigh_thetabar</a>[lev], geom[lev]);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// Copy from host version to device version</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a1bc503c07e76f2a4791a76e6907e6dd7">h_rayleigh_tau</a>[lev].begin(), <a class="code" href="classERF.html#a1bc503c07e76f2a4791a76e6907e6dd7">h_rayleigh_tau</a>[lev].end(),</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                         <a class="code" href="classERF.html#a91e9618892751232c4067c253f904a3d">d_rayleigh_tau</a>[lev].begin());</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#ac4dc443840da3593fe66b8693803f006">h_rayleigh_ubar</a>[lev].begin(), <a class="code" href="classERF.html#ac4dc443840da3593fe66b8693803f006">h_rayleigh_ubar</a>[lev].end(),</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                         <a class="code" href="classERF.html#af33ee878e24ced10b3da319795723db0">d_rayleigh_ubar</a>[lev].begin());</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a6e0624ac1d76fbde394c7ba4b01ed7eb">h_rayleigh_vbar</a>[lev].begin(), <a class="code" href="classERF.html#a6e0624ac1d76fbde394c7ba4b01ed7eb">h_rayleigh_vbar</a>[lev].end(),</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                         <a class="code" href="classERF.html#a879501e88824fa6a00ffe1509059b21e">d_rayleigh_vbar</a>[lev].begin());</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a0f074d984fb0a319cf7a781b2efc3d63">h_rayleigh_thetabar</a>[lev].begin(), <a class="code" href="classERF.html#a0f074d984fb0a319cf7a781b2efc3d63">h_rayleigh_thetabar</a>[lev].end(),</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                         <a class="code" href="classERF.html#a4c992f63bcc9d7e7693990bf046bfc4b">d_rayleigh_thetabar</a>[lev].begin());</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    AMREX_ALWAYS_ASSERT(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classERF.html#a1bc503c07e76f2a4791a76e6907e6dd7">h_rayleigh_tau</a>.resize(max_level+1, amrex::Vector&lt;Real&gt;(0));</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classERF.html#ac4dc443840da3593fe66b8693803f006">h_rayleigh_ubar</a>.resize(max_level+1, amrex::Vector&lt;Real&gt;(0));</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classERF.html#a6e0624ac1d76fbde394c7ba4b01ed7eb">h_rayleigh_vbar</a>.resize(max_level+1, amrex::Vector&lt;Real&gt;(0));</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classERF.html#a0f074d984fb0a319cf7a781b2efc3d63">h_rayleigh_thetabar</a>.resize(max_level+1, amrex::Vector&lt;Real&gt;(0));</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classERF.html#a91e9618892751232c4067c253f904a3d">d_rayleigh_tau</a>.resize(max_level+1, amrex::Gpu::DeviceVector&lt;Real&gt;(0));</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classERF.html#af33ee878e24ced10b3da319795723db0">d_rayleigh_ubar</a>.resize(max_level+1, amrex::Gpu::DeviceVector&lt;Real&gt;(0));</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classERF.html#a879501e88824fa6a00ffe1509059b21e">d_rayleigh_vbar</a>.resize(max_level+1, amrex::Gpu::DeviceVector&lt;Real&gt;(0));</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classERF.html#a4c992f63bcc9d7e7693990bf046bfc4b">d_rayleigh_thetabar</a>.resize(max_level+1, amrex::Gpu::DeviceVector&lt;Real&gt;(0));</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> zlen_rayleigh = geom[lev].Domain().length(2);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classERF.html#a1bc503c07e76f2a4791a76e6907e6dd7">h_rayleigh_tau</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classERF.html#a91e9618892751232c4067c253f904a3d">d_rayleigh_tau</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classERF.html#ac4dc443840da3593fe66b8693803f006">h_rayleigh_ubar</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classERF.html#af33ee878e24ced10b3da319795723db0">d_rayleigh_ubar</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classERF.html#a6e0624ac1d76fbde394c7ba4b01ed7eb">h_rayleigh_vbar</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classERF.html#a879501e88824fa6a00ffe1509059b21e">d_rayleigh_vbar</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classERF.html#a0f074d984fb0a319cf7a781b2efc3d63">h_rayleigh_thetabar</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classERF.html#a4c992f63bcc9d7e7693990bf046bfc4b">d_rayleigh_thetabar</a>[lev].resize(zlen_rayleigh, 0.0_rt);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="prob__common_8H.html#ad0da799211f82f28a9e0d53008febb1b">erf_init_rayleigh</a>(<a class="code" href="classERF.html#a1bc503c07e76f2a4791a76e6907e6dd7">h_rayleigh_tau</a>[lev], <a class="code" href="classERF.html#ac4dc443840da3593fe66b8693803f006">h_rayleigh_ubar</a>[lev], <a class="code" href="classERF.html#a6e0624ac1d76fbde394c7ba4b01ed7eb">h_rayleigh_vbar</a>[lev],</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                          <a class="code" href="classERF.html#a0f074d984fb0a319cf7a781b2efc3d63">h_rayleigh_thetabar</a>[lev], geom[lev]);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// Copy from host version to device version</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a1bc503c07e76f2a4791a76e6907e6dd7">h_rayleigh_tau</a>[lev].begin(), <a class="code" href="classERF.html#a1bc503c07e76f2a4791a76e6907e6dd7">h_rayleigh_tau</a>[lev].end(),</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                         <a class="code" href="classERF.html#a91e9618892751232c4067c253f904a3d">d_rayleigh_tau</a>[lev].begin());</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#ac4dc443840da3593fe66b8693803f006">h_rayleigh_ubar</a>[lev].begin(), <a class="code" href="classERF.html#ac4dc443840da3593fe66b8693803f006">h_rayleigh_ubar</a>[lev].end(),</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                         <a class="code" href="classERF.html#af33ee878e24ced10b3da319795723db0">d_rayleigh_ubar</a>[lev].begin());</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a6e0624ac1d76fbde394c7ba4b01ed7eb">h_rayleigh_vbar</a>[lev].begin(), <a class="code" href="classERF.html#a6e0624ac1d76fbde394c7ba4b01ed7eb">h_rayleigh_vbar</a>[lev].end(),</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                         <a class="code" href="classERF.html#a879501e88824fa6a00ffe1509059b21e">d_rayleigh_vbar</a>[lev].begin());</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, <a class="code" href="classERF.html#a0f074d984fb0a319cf7a781b2efc3d63">h_rayleigh_thetabar</a>[lev].begin(), <a class="code" href="classERF.html#a0f074d984fb0a319cf7a781b2efc3d63">h_rayleigh_thetabar</a>[lev].end(),</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                         <a class="code" href="classERF.html#a4c992f63bcc9d7e7693990bf046bfc4b">d_rayleigh_thetabar</a>[lev].begin());</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -8531,7 +8512,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a8202de1f8f372e3e6fdc483447c6a55f"><div class="ttname"><a href="classERF.html#a8202de1f8f372e3e6fdc483447c6a55f">ERF::AverageDown</a></div><div class="ttdeci">void AverageDown()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:836</div></div>
 <div class="ttc" id="aprob__common_8H_html_a6c31bddccd7cf77924e26dea29e835b0"><div class="ttname"><a href="prob__common_8H.html#a6c31bddccd7cf77924e26dea29e835b0">erf_init_prob</a></div><div class="ttdeci">void erf_init_prob(const amrex::Box &amp;bx, amrex::Array4&lt; amrex::Real &gt; const &amp;state, amrex::Array4&lt; amrex::Real &gt; const &amp;x_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;y_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;z_vel, amrex::GeometryData const &amp;geomdata)</div></div>
 <div class="ttc" id="aclassERF_html_a84cf7616e7b3928f08f4bd56112db01e"><div class="ttname"><a href="classERF.html#a84cf7616e7b3928f08f4bd56112db01e">ERF::d_havg_density</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::Real &gt; d_havg_density</div><div class="ttdef"><b>Definition:</b> ERF.H:485</div></div>
-<div class="ttc" id="aclassERF_html_a92c020bfaa43e40fb5ffc449427a0318"><div class="ttname"><a href="classERF.html#a92c020bfaa43e40fb5ffc449427a0318">ERF::initHSE</a></div><div class="ttdeci">void initHSE()</div><div class="ttdoc">Initialize HSE.</div><div class="ttdef"><b>Definition:</b> ERF_init1d.cpp:46</div></div>
+<div class="ttc" id="aclassERF_html_a92c020bfaa43e40fb5ffc449427a0318"><div class="ttname"><a href="classERF.html#a92c020bfaa43e40fb5ffc449427a0318">ERF::initHSE</a></div><div class="ttdeci">void initHSE()</div><div class="ttdoc">Initialize HSE.</div><div class="ttdef"><b>Definition:</b> ERF_init1d.cpp:47</div></div>
 <div class="ttc" id="aclassERF_html_a574521986a6e403159f83c8b8123ba90"><div class="ttname"><a href="classERF.html#a574521986a6e403159f83c8b8123ba90">ERF::domain_bcs_type</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BCRec &gt; domain_bcs_type</div><div class="ttdef"><b>Definition:</b> ERF.H:365</div></div>
 <div class="ttc" id="aclassERF_html_a9a4f076c56f31fbb5e68c09706605a05"><div class="ttname"><a href="classERF.html#a9a4f076c56f31fbb5e68c09706605a05">ERF::d_havg_pressure</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::Real &gt; d_havg_pressure</div><div class="ttdef"><b>Definition:</b> ERF.H:487</div></div>
 <div class="ttc" id="aclassERF_html_a6e0624ac1d76fbde394c7ba4b01ed7eb"><div class="ttname"><a href="classERF.html#a6e0624ac1d76fbde394c7ba4b01ed7eb">ERF::h_rayleigh_vbar</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; h_rayleigh_vbar</div><div class="ttdef"><b>Definition:</b> ERF.H:473</div></div>
@@ -8594,7 +8575,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF_8H_html_a1f8554e7b211b0acfc202e8a600e7d67"><div class="ttname"><a href="ERF_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a></div><div class="ttdeci">bool containerHasElement(const V &amp;iterable, const T &amp;query)</div><div class="ttdef"><b>Definition:</b> ERF.H:67</div></div>
 <div class="ttc" id="aclassERF_html_ac793fe23b026c18bb7dcce791317c6c3"><div class="ttname"><a href="classERF.html#ac793fe23b026c18bb7dcce791317c6c3">ERF::change_max</a></div><div class="ttdeci">static amrex::Real change_max</div><div class="ttdef"><b>Definition:</b> ERF.H:396</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">AdvectedQuantity::v</a></div><div class="ttdeci">@ v</div></div>
-<div class="ttc" id="aclassERF_html_a039a764a1d942c484e8aea49e87bc046"><div class="ttname"><a href="classERF.html#a039a764a1d942c484e8aea49e87bc046">ERF::initRayleigh</a></div><div class="ttdeci">void initRayleigh()</div><div class="ttdoc">Initialize Rayleigh damping profiles.</div><div class="ttdef"><b>Definition:</b> ERF_init1d.cpp:5</div></div>
+<div class="ttc" id="aclassERF_html_a039a764a1d942c484e8aea49e87bc046"><div class="ttname"><a href="classERF.html#a039a764a1d942c484e8aea49e87bc046">ERF::initRayleigh</a></div><div class="ttdeci">void initRayleigh()</div><div class="ttdoc">Initialize Rayleigh damping profiles.</div><div class="ttdef"><b>Definition:</b> ERF_init1d.cpp:6</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca9f18284526a1054d4e7a4783852ead30"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca9f18284526a1054d4e7a4783852ead30">ERFBCType::int_dir</a></div><div class="ttdeci">@ int_dir</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:110</div></div>
 <div class="ttc" id="awriteJobInfo_8cpp_html_aabaa127a3a319c1b86090d6c88568965"><div class="ttname"><a href="writeJobInfo_8cpp.html#aabaa127a3a319c1b86090d6c88568965">inputs_name</a></div><div class="ttdeci">std::string inputs_name</div><div class="ttdef"><b>Definition:</b> main.cpp:9</div></div>
 <div class="ttc" id="aDirectionSelector_8H_html_aca321ed7fddfe43ff7549b4632a3c0d1"><div class="ttname"><a href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a></div><div class="ttdeci">DirectionSelector&lt; 2 &gt; ZDir</div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:35</div></div>
@@ -8721,7 +8702,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a7990255d32f7bca694acab7521101b93"><div class="ttname"><a href="classERF.html#a7990255d32f7bca694acab7521101b93">ERF::d_pres_hse</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt; d_pres_hse</div><div class="ttdef"><b>Definition:</b> ERF.H:356</div></div>
 <div class="ttc" id="anamespaceVars_html_a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:48</div></div>
 <div class="ttc" id="aclassERF_html_ad02c77d3f4a7dfa0ad679877f0f05fc1"><div class="ttname"><a href="classERF.html#ad02c77d3f4a7dfa0ad679877f0f05fc1">ERF::plot_file</a></div><div class="ttdeci">std::string plot_file</div><div class="ttdef"><b>Definition:</b> ERF.H:409</div></div>
-<div class="ttc" id="aclassERF_html_ae994c0e7f0d87b787de9bb971f0da64c"><div class="ttname"><a href="classERF.html#ae994c0e7f0d87b787de9bb971f0da64c">ERF::erf_enforce_hse</a></div><div class="ttdeci">void erf_enforce_hse(int lev, amrex::Vector&lt; amrex::Real &gt; &amp;dens, amrex::Vector&lt; amrex::Real &gt; &amp;pres)</div><div class="ttdef"><b>Definition:</b> ERF_init1d.cpp:197</div></div>
+<div class="ttc" id="aclassERF_html_ae994c0e7f0d87b787de9bb971f0da64c"><div class="ttname"><a href="classERF.html#ae994c0e7f0d87b787de9bb971f0da64c">ERF::erf_enforce_hse</a></div><div class="ttdeci">void erf_enforce_hse(int lev, amrex::Vector&lt; amrex::Real &gt; &amp;dens, amrex::Vector&lt; amrex::Real &gt; &amp;pres)</div><div class="ttdef"><b>Definition:</b> ERF_init1d.cpp:180</div></div>
 <div class="ttc" id="aclassERF_html_a413293737b0021c97b50c62756561446"><div class="ttname"><a href="classERF.html#a413293737b0021c97b50c62756561446">ERF::h_havg_pressure</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; h_havg_pressure</div><div class="ttdef"><b>Definition:</b> ERF.H:482</div></div>
 <div class="ttc" id="aclassERF_html_a40ebca562ac79fcc9250e17e0f4a5b41"><div class="ttname"><a href="classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41">ERF::AverageDownTo</a></div><div class="ttdeci">void AverageDownTo(int crse_lev)</div><div class="ttdef"><b>Definition:</b> ERF.cpp:846</div></div>
 <div class="ttc" id="aclassERF_html_ad4b5cfafa3b805287e62d230ae51428f"><div class="ttname"><a href="classERF.html#ad4b5cfafa3b805287e62d230ae51428f">ERF::FillPatch</a></div><div class="ttdeci">void FillPatch(int lev, amrex::Real time, amrex::MultiFab &amp;mf, int icomp, int ncomp, int var_idx)</div><div class="ttdef"><b>Definition:</b> ERF_FillPatch.cpp:55</div></div>
