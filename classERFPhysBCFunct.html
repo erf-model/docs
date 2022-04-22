@@ -652,7 +652,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    <span class="comment">// Now handle the MOST bc if we have any</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                    <span class="comment">// Note: if we use MOST for one variable we use it for all, so we can just test on one component</span></div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    <span class="keywordflow">if</span> (bc_ptr[0].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42d0838b4e8d40ee76fbaf2d55c3402e">ERFBCType::MOST</a> &amp;&amp; bx.smallEnd()[2] &lt; zlo)</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    <span class="keywordflow">if</span> (bcrs[0].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42d0838b4e8d40ee76fbaf2d55c3402e">ERFBCType::MOST</a> &amp;&amp; bx.smallEnd()[2] &lt; zlo)</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    {</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                        <span class="comment">// check m_var_idx to distinguish between Vars::Dvel and Vars::Dmom</span></div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                        <span class="comment">// (in Legacy this was controlled by the is_derived flag)</span></div>
