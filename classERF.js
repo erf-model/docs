@@ -122,6 +122,7 @@ var classERF =
     [ "m_w2d", "classERF.html#aa53035f34ba133b86172e180abda4209", null ],
     [ "max_step", "classERF.html#a0634154e8e58379c495c3e7fe7c5e4d6", null ],
     [ "most", "classERF.html#ae068972239adcd3c5fe6024fcdaa545e", null ],
+    [ "nc_bdy_file", "classERF.html#a7e9040f32464f1a6dee6e0384393451d", null ],
     [ "nc_init_file", "classERF.html#adb8ba5f58320473ff7fefca006af4553", null ],
     [ "ng_dens_hse", "classERF.html#addf0fb2aae0efaa649c69685a4dcca83", null ],
     [ "ng_pres_hse", "classERF.html#a87dc6c0720462bfd088c909289cdca0b", null ],
