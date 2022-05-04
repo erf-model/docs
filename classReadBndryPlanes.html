@@ -706,7 +706,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="comment">// We need to initialize all the components because we may not fill all of them from files,</span></div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="comment">//    but the loop in the interpolate routine goes over all the components anyway</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordtype">int</span> ncomp = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa0b88b0a3a03a3e787a7b27717ec64de7">BCVars::NumTypes</a>;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordtype">int</span> ncomp_for_bc = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa0b88b0a3a03a3e787a7b27717ec64de7">BCVars::NumTypes</a>;</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">for</span> (amrex::OrientationIter oit; oit != <span class="keyword">nullptr</span>; ++oit) {</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keyword">auto</span> ori = oit();</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">if</span> (ori.coordDir() &lt; 2) {</div>
@@ -714,7 +714,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; bx = d.box();</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            amrex::Array4&lt;amrex::Real&gt; d_arr    = d.array();</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            amrex::ParallelFor(</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                bx, ncomp, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                bx, ncomp_for_bc, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept {</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                d_arr(i,j,k,n) = 0.;</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            });</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        }</div>
@@ -727,141 +727,140 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        std::string filename1 = amrex::MultiFabFileFullPrefix(lev, chkname1, level_prefix, var_name);</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordtype">int</span> ncomp;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;velocity&quot;</span>) {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            ncomp = AMREX_SPACEDIM;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            ncomp = 1;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        }</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordtype">int</span> n_offset;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;density&quot;</span>)     n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa559799ff291d4e692283c4056bac8db1">BCVars::Rho_bc_comp</a>;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;theta&quot;</span>)       n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa417d2de099d125a0f6b3e32cde3733d1">BCVars::RhoTheta_bc_comp</a>;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;temperature&quot;</span>) n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa417d2de099d125a0f6b3e32cde3733d1">BCVars::RhoTheta_bc_comp</a>;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;KE&quot;</span>)          n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa1556c0a3817c6fab60fbb6952cf0124f">BCVars::RhoKE_bc_comp</a>;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;QKE&quot;</span>)         n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa3fd5e6f8378f1e1e80146b207c062cd8">BCVars::RhoQKE_bc_comp</a>;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;scalar&quot;</span>)      n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa029ef491930290dea3a984ebdb6d6ae4">BCVars::RhoScalar_bc_comp</a>;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MOISTURE</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;qv&quot;</span>)          n_offset = BCVars::RhoQv_bc_comp;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;qc&quot;</span>)          n_offset = BCVars::RhoQc_bc_comp;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;velocity&quot;</span>)    n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="comment">// amrex::Print() &lt;&lt; &quot;Reading &quot; &lt;&lt; chkname1 &lt;&lt; &quot; for variable &quot; &lt;&lt; var_name &lt;&lt; &quot; with n_offset == &quot; &lt;&lt; n_offset &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        amrex::BndryRegister bndry(ba, dm, <a class="code" href="classReadBndryPlanes.html#a8269a127a4db1fd93794dcb8062f5fa9">m_in_rad</a>, <a class="code" href="classReadBndryPlanes.html#acb820b3ebc4c07d210831e6081c47aa9">m_out_rad</a>, <a class="code" href="classReadBndryPlanes.html#ae341a8d70430128e78f7cac75e0d4e8a">m_extent_rad</a>, ncomp);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        bndry.setVal(1.0e13);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="comment">// *********************************************************</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="comment">// Read in the BndryReg for all non-z faces</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="comment">// *********************************************************</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keywordflow">for</span> (amrex::OrientationIter oit; oit != <span class="keyword">nullptr</span>; ++oit) {</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;          <span class="keyword">auto</span> ori = oit();</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;          <span class="keywordflow">if</span> (ori.coordDir() &lt; 2) {</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            std::string facename1 = amrex::Concatenate(filename1 + <span class="charliteral">&#39;_&#39;</span>, ori, 1);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            bndry[ori].read(facename1);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> normal = ori.coordDir();</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keyword">const</span> amrex::IntVect v_offset = <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#ab855a6ecddfd4a8962d682e43ba46f5b">offset</a>(ori.faceDir(), normal);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; bbx = (*data_to_fill[ori])[lev].box();</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="comment">// *********************************************************</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="comment">// Copy from the BndryReg into a MultiFab then use copyTo</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="comment">//     to write from the MultiFab to a single FAB for each face</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="comment">// *********************************************************</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            amrex::MultiFab bndryMF(</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                bndry[ori].boxArray(), bndry[ori].DistributionMap(),</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                ncomp, 0, amrex::MFInfo());</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <span class="keywordflow">for</span> (amrex::MFIter mfi(bndryMF); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; vbx = mfi.validbox();</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; bndry_read_arr = bndry[ori].array(mfi);</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; bndry_mf_arr   = bndryMF.array(mfi);</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; bx = bbx &amp; vbx;</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                <span class="keywordflow">if</span> (bx.isEmpty()) {</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                }</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                <span class="comment">// We average the two cell-centered data points in the normal direction</span></div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                <span class="comment">//    to define a Dirichlet value on the face itself.</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                <span class="comment">// This is the scalars -- they all get multiplied by rho, and in the case of</span></div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                <span class="comment">//   reading in temperature, we must convert to theta first</span></div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                <span class="keywordflow">if</span> (n_for_density &gt;= 0) {</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                  <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;temperature&quot;</span>) {</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                    amrex::ParallelFor(</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                        bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                             amrex::Real R1 =  bndry_read_arr(i, j, k, n_for_density);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                             amrex::Real R2 =  bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2],n_for_density);</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                             amrex::Real T1 =  bndry_read_arr(i, j, k, 0);</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                             amrex::Real T2 =  bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2],0);</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                             amrex::Real Th1 = <a class="code" href="EOS_8H.html#ab51ca751b821a3a5a43685b2175ee61f">getThgivenRandT</a>(R1,T1);</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                             amrex::Real Th2 = <a class="code" href="EOS_8H.html#ab51ca751b821a3a5a43685b2175ee61f">getThgivenRandT</a>(R2,T2);</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                             bndry_mf_arr(i, j, k, 0) = 0.5 * (R1*Th1 + R2*Th2);</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                        });</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;scalar&quot;</span> || var_name == <span class="stringliteral">&quot;qv&quot;</span> || var_name == <span class="stringliteral">&quot;qc&quot;</span> ||</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                             var_name == <span class="stringliteral">&quot;KE&quot;</span> || var_name == <span class="stringliteral">&quot;QKE&quot;</span>) {</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                    amrex::ParallelFor(</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                        bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                             amrex::Real R1 =  bndry_read_arr(i, j, k, n_for_density);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                             amrex::Real R2 =  bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2],n_for_density);</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                             bndry_mf_arr(i, j, k, 0) = 0.5 *</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                                  ( R1 * bndry_read_arr(i, j, k, 0) +</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                                    R2 * bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2], 0));</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                        });</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                   } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;density&quot;</span>) {</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                    amrex::ParallelFor(</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                        bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                             bndry_mf_arr(i, j, k, 0) = 0.5 *</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                                  ( bndry_read_arr(i, j, k, 0) +</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                                    bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2], 0));</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                        });</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                   }</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="classReadBndryPlanes.html#ab54133701e8e086315fa7299257199a2">ingested_density</a>()) {</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                  <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;temperature&quot;</span>) {</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                    amrex::ParallelFor(</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                        bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                             amrex::Real R1  = l_bc_extdir_vals_d[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa559799ff291d4e692283c4056bac8db1">BCVars::Rho_bc_comp</a>][ori];</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                             amrex::Real R2  = l_bc_extdir_vals_d[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa559799ff291d4e692283c4056bac8db1">BCVars::Rho_bc_comp</a>][ori];</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                             amrex::Real T1  = bndry_read_arr(i, j, k, 0);</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                             amrex::Real T2  = bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2], 0);</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                             amrex::Real Th1 = <a class="code" href="EOS_8H.html#ab51ca751b821a3a5a43685b2175ee61f">getThgivenRandT</a>(R1,T1);</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                             amrex::Real Th2 = <a class="code" href="EOS_8H.html#ab51ca751b821a3a5a43685b2175ee61f">getThgivenRandT</a>(R2,T2);</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                             bndry_mf_arr(i, j, k, 0) = 0.5 * (R1*Th1 + R2*Th2);</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                        });</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;scalar&quot;</span> || var_name == <span class="stringliteral">&quot;qv&quot;</span> || var_name == <span class="stringliteral">&quot;qc&quot;</span> ||</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;                             var_name == <span class="stringliteral">&quot;KE&quot;</span> || var_name == <span class="stringliteral">&quot;QKE&quot;</span>) {</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                      amrex::ParallelFor(</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                        bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                             amrex::Real R1  = l_bc_extdir_vals_d[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa559799ff291d4e692283c4056bac8db1">BCVars::Rho_bc_comp</a>][ori];</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                             amrex::Real R2  = l_bc_extdir_vals_d[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa559799ff291d4e692283c4056bac8db1">BCVars::Rho_bc_comp</a>][ori];</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                             bndry_mf_arr(i, j, k, 0) = 0.5 *</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                                (R1 * bndry_read_arr(i, j, k, 0) +</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                                 R2 * bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2], 0));</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                        });</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                  }</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                }</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                <span class="comment">// This is velocity</span></div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;velocity&quot;</span>) {</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                    amrex::ParallelFor(</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                        bx, ncomp, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept {</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                                bndry_mf_arr(i, j, k, n) = 0.5 *</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                                  (bndry_read_arr(i, j, k, n) +</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                                   bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2], n));</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                        });</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                }</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;            } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;            bndryMF.copyTo((*data_to_fill[ori])[lev], 0, n_offset, ncomp);</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;          } <span class="comment">// coordDir &lt; 2</span></div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;        } <span class="comment">// ori</span></div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    } <span class="comment">// var_name</span></div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;}</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;velocity&quot;</span>) {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            ncomp = AMREX_SPACEDIM;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            ncomp = 1;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordtype">int</span> n_offset;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;density&quot;</span>)     n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa559799ff291d4e692283c4056bac8db1">BCVars::Rho_bc_comp</a>;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;theta&quot;</span>)       n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa417d2de099d125a0f6b3e32cde3733d1">BCVars::RhoTheta_bc_comp</a>;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;temperature&quot;</span>) n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa417d2de099d125a0f6b3e32cde3733d1">BCVars::RhoTheta_bc_comp</a>;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;KE&quot;</span>)          n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa1556c0a3817c6fab60fbb6952cf0124f">BCVars::RhoKE_bc_comp</a>;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;QKE&quot;</span>)         n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa3fd5e6f8378f1e1e80146b207c062cd8">BCVars::RhoQKE_bc_comp</a>;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;scalar&quot;</span>)      n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa029ef491930290dea3a984ebdb6d6ae4">BCVars::RhoScalar_bc_comp</a>;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MOISTURE</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;qv&quot;</span>)          n_offset = BCVars::RhoQv_bc_comp;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;qc&quot;</span>)          n_offset = BCVars::RhoQc_bc_comp;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;velocity&quot;</span>)    n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="comment">// amrex::Print() &lt;&lt; &quot;Reading &quot; &lt;&lt; chkname1 &lt;&lt; &quot; for variable &quot; &lt;&lt; var_name &lt;&lt; &quot; with n_offset == &quot; &lt;&lt; n_offset &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        amrex::BndryRegister bndry(ba, dm, <a class="code" href="classReadBndryPlanes.html#a8269a127a4db1fd93794dcb8062f5fa9">m_in_rad</a>, <a class="code" href="classReadBndryPlanes.html#acb820b3ebc4c07d210831e6081c47aa9">m_out_rad</a>, <a class="code" href="classReadBndryPlanes.html#ae341a8d70430128e78f7cac75e0d4e8a">m_extent_rad</a>, ncomp);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        bndry.setVal(1.0e13);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="comment">// *********************************************************</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="comment">// Read in the BndryReg for all non-z faces</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="comment">// *********************************************************</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">for</span> (amrex::OrientationIter oit; oit != <span class="keyword">nullptr</span>; ++oit) {</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;          <span class="keyword">auto</span> ori = oit();</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;          <span class="keywordflow">if</span> (ori.coordDir() &lt; 2) {</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            std::string facename1 = amrex::Concatenate(filename1 + <span class="charliteral">&#39;_&#39;</span>, ori, 1);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            bndry[ori].read(facename1);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> normal = ori.coordDir();</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            <span class="keyword">const</span> amrex::IntVect v_offset = <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#ab855a6ecddfd4a8962d682e43ba46f5b">offset</a>(ori.faceDir(), normal);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; bbx = (*data_to_fill[ori])[lev].box();</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="comment">// *********************************************************</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="comment">// Copy from the BndryReg into a MultiFab then use copyTo</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="comment">//     to write from the MultiFab to a single FAB for each face</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="comment">// *********************************************************</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            amrex::MultiFab bndryMF(</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                bndry[ori].boxArray(), bndry[ori].DistributionMap(),</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                ncomp, 0, amrex::MFInfo());</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="keywordflow">for</span> (amrex::MFIter mfi(bndryMF); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; vbx = mfi.validbox();</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; bndry_read_arr = bndry[ori].array(mfi);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; bndry_mf_arr   = bndryMF.array(mfi);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; bx = bbx &amp; vbx;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <span class="keywordflow">if</span> (bx.isEmpty()) {</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                }</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                <span class="comment">// We average the two cell-centered data points in the normal direction</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                <span class="comment">//    to define a Dirichlet value on the face itself.</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                <span class="comment">// This is the scalars -- they all get multiplied by rho, and in the case of</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                <span class="comment">//   reading in temperature, we must convert to theta first</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                <span class="keywordflow">if</span> (n_for_density &gt;= 0) {</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                  <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;temperature&quot;</span>) {</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                    amrex::ParallelFor(</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                        bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                             amrex::Real R1 =  bndry_read_arr(i, j, k, n_for_density);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                             amrex::Real R2 =  bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2],n_for_density);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                             amrex::Real T1 =  bndry_read_arr(i, j, k, 0);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                             amrex::Real T2 =  bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2],0);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                             amrex::Real Th1 = <a class="code" href="EOS_8H.html#ab51ca751b821a3a5a43685b2175ee61f">getThgivenRandT</a>(R1,T1);</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                             amrex::Real Th2 = <a class="code" href="EOS_8H.html#ab51ca751b821a3a5a43685b2175ee61f">getThgivenRandT</a>(R2,T2);</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                             bndry_mf_arr(i, j, k, 0) = 0.5 * (R1*Th1 + R2*Th2);</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                        });</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;scalar&quot;</span> || var_name == <span class="stringliteral">&quot;qv&quot;</span> || var_name == <span class="stringliteral">&quot;qc&quot;</span> ||</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                             var_name == <span class="stringliteral">&quot;KE&quot;</span> || var_name == <span class="stringliteral">&quot;QKE&quot;</span>) {</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                    amrex::ParallelFor(</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                        bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                             amrex::Real R1 =  bndry_read_arr(i, j, k, n_for_density);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                             amrex::Real R2 =  bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2],n_for_density);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                             bndry_mf_arr(i, j, k, 0) = 0.5 *</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                                  ( R1 * bndry_read_arr(i, j, k, 0) +</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                                    R2 * bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2], 0));</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                        });</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                   } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;density&quot;</span>) {</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                    amrex::ParallelFor(</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                        bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                             bndry_mf_arr(i, j, k, 0) = 0.5 *</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                                  ( bndry_read_arr(i, j, k, 0) +</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                                    bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2], 0));</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                        });</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                   }</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="classReadBndryPlanes.html#ab54133701e8e086315fa7299257199a2">ingested_density</a>()) {</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                  <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;temperature&quot;</span>) {</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                    amrex::ParallelFor(</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                        bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                             amrex::Real R1  = l_bc_extdir_vals_d[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa559799ff291d4e692283c4056bac8db1">BCVars::Rho_bc_comp</a>][ori];</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                             amrex::Real R2  = l_bc_extdir_vals_d[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa559799ff291d4e692283c4056bac8db1">BCVars::Rho_bc_comp</a>][ori];</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                             amrex::Real T1  = bndry_read_arr(i, j, k, 0);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                             amrex::Real T2  = bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2], 0);</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                             amrex::Real Th1 = <a class="code" href="EOS_8H.html#ab51ca751b821a3a5a43685b2175ee61f">getThgivenRandT</a>(R1,T1);</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                             amrex::Real Th2 = <a class="code" href="EOS_8H.html#ab51ca751b821a3a5a43685b2175ee61f">getThgivenRandT</a>(R2,T2);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                             bndry_mf_arr(i, j, k, 0) = 0.5 * (R1*Th1 + R2*Th2);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                        });</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;scalar&quot;</span> || var_name == <span class="stringliteral">&quot;qv&quot;</span> || var_name == <span class="stringliteral">&quot;qc&quot;</span> ||</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                             var_name == <span class="stringliteral">&quot;KE&quot;</span> || var_name == <span class="stringliteral">&quot;QKE&quot;</span>) {</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;                      amrex::ParallelFor(</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                        bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                             amrex::Real R1  = l_bc_extdir_vals_d[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa559799ff291d4e692283c4056bac8db1">BCVars::Rho_bc_comp</a>][ori];</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                             amrex::Real R2  = l_bc_extdir_vals_d[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa559799ff291d4e692283c4056bac8db1">BCVars::Rho_bc_comp</a>][ori];</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                             bndry_mf_arr(i, j, k, 0) = 0.5 *</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                                (R1 * bndry_read_arr(i, j, k, 0) +</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                                 R2 * bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2], 0));</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                        });</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                  }</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                }</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160; </div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;                <span class="comment">// This is velocity</span></div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;velocity&quot;</span>) {</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                    amrex::ParallelFor(</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                        bx, ncomp, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept {</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                                bndry_mf_arr(i, j, k, n) = 0.5 *</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                                  (bndry_read_arr(i, j, k, n) +</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                                   bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2], n));</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                        });</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                }</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160; </div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;            } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;            bndryMF.copyTo((*data_to_fill[ori])[lev], 0, n_offset, ncomp);</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;          } <span class="comment">// coordDir &lt; 2</span></div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;        } <span class="comment">// ori</span></div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    } <span class="comment">// var_name</span></div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classReadBndryPlanes.html#a4529a2b7d7ae43891ea4ef44b7c6e579">read_input_files()</a>.</p>
 <div class="dynheader">
