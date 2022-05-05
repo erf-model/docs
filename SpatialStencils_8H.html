@@ -138,6 +138,8 @@ Functions</h2></td></tr>
 <tr class="separator:a14015cdf2ab04ff0d4a26260f814eb78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3d52db43690b5fa0b9c207835cd3a70"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SpatialStencils_8H.html#ae3d52db43690b5fa0b9c207835cd3a70">WFromOmega</a> (int i, int j, int k, <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> omega, const amrex::Array4&lt; const Real &gt; &amp;u, const amrex::Array4&lt; const Real &gt; &amp;v, const amrex::Array4&lt; const Real &gt; &amp;z_nd, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv)</td></tr>
 <tr class="separator:ae3d52db43690b5fa0b9c207835cd3a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a513d62208f7d8846365eb6181d1beb26"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SpatialStencils_8H.html#a513d62208f7d8846365eb6181d1beb26">WFromOmegaBC</a> (int i, int j, int k, <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> omega, const amrex::Array4&lt; const Real &gt; &amp;u, const amrex::Array4&lt; const Real &gt; &amp;v, const amrex::Array4&lt; const Real &gt; &amp;z_nd, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv)</td></tr>
+<tr class="separator:a513d62208f7d8846365eb6181d1beb26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b4fc28379294678f039f03e1e3bab71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SpatialStencils_8H.html#a5b4fc28379294678f039f03e1e3bab71">MomentumToVelocity</a> (MultiFab &amp;xvel_out, MultiFab &amp;yvel_out, MultiFab &amp;zvel_out, const MultiFab &amp;cons_in, const MultiFab &amp;xmom_in, const MultiFab &amp;ymom_in, const MultiFab &amp;zmom_in, const IntVect &amp;ngrow)</td></tr>
 <tr class="separator:a5b4fc28379294678f039f03e1e3bab71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4af131697a873e41e44a162ec40fd5a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SpatialStencils_8H.html#a4af131697a873e41e44a162ec40fd5a8">VelocityToMomentum</a> (const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom_out, MultiFab &amp;ymom_out, MultiFab &amp;zmom_out, const IntVect &amp;ngrow)</td></tr>
@@ -2179,6 +2181,127 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classERF.html#a76e972714e74aa2ba1b1806b980bb9a2" title=" " alt="" coords="325,5,460,32"/>
 <area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="167,5,277,32"/>
 <area shape="rect" href="classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f" title=" " alt="" coords="5,5,119,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a513d62208f7d8846365eb6181d1beb26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a513d62208f7d8846365eb6181d1beb26">&#9670;&nbsp;</a></span>WFromOmegaBC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> WFromOmegaBC </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>omega</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>z_nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dxInv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Clip metric indices for ghost cell BCs</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    Dim3 hi = ubound(z_nd);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    Dim3 lo = lbound(z_nd);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">int</span>  im = (i  &gt;= hi.x) ? (hi.x-1) : i;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;         im = (im &lt;= lo.x) ? (lo.x+1) : im;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span>  jm = (j  &gt;= hi.y) ? (hi.y-1) : j;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;         jm = (jm &lt;= lo.y) ? (lo.y+1) : jm;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">int</span>  km = (k  &gt;= hi.z) ? (hi.z-1) : k;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;         km = (km &lt;= lo.z) ? (lo.z+1) : km;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// This is dh/dxi at z-face (i,j,k-1/2)</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_zlo_xi   = 0.5 * dxInv[0] *</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                              ( z_nd(im+1,jm+1,km  ) + z_nd(im+1,jm  ,km  )    <span class="comment">// hi i, lo k</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                               -z_nd(im  ,jm+1,km  ) - z_nd(im  ,jm  ,km  ) ); <span class="comment">// lo i, lo k</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// This is dh/deta at z-face (i,j,k-1/2)</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_zlo_eta  = 0.5 * dxInv[1] *</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                              ( z_nd(im+1,jm+1,km  ) + z_nd(im  ,jm+1,km  )    <span class="comment">// hi j, lo k</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                               -z_nd(im+1,jm  ,km  ) - z_nd(im  ,jm  ,km  ) ); <span class="comment">// lo j, lo k</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Clip velocity indices for ghost cell BCs</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vec_zlo_xi;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vec_zlo_eta;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    hi = ubound(u);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    lo = lbound(u);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    hi.z = hi.z + 1; <span class="comment">// nodal for zvelocity</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span>( k == hi.z) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <span class="comment">// foextrap to highest k-face</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      vec_zlo_xi  = 0.75*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k-1)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k-1) ) - 0.25*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k-2)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k-2) );</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      vec_zlo_eta = 0.75*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k-1)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k-1) ) - 0.25*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k-2)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k-2) );</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == lo.z) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="comment">// foextrap to lowest k-face</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      vec_zlo_xi  = 0.75*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k) ) - 0.25*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k+1)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k+1) );</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      vec_zlo_eta = 0.75*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k) ) - 0.25*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k+1)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k+1) );</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="comment">// Valid ghost cell for u &amp; v</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      vec_zlo_xi  = 0.25 * ( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k-1) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k-1) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k) );</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      vec_zlo_eta = 0.25 * ( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k-1) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k-1) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k) );</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a> = met_zlo_xi * vec_zlo_xi + met_zlo_eta * vec_zlo_eta + omega;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERFPhysBCFunct.html#a26d577ff44666999c399d0b4e8a00d71">ERFPhysBCFunct::operator()()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="SpatialStencils_8H_a513d62208f7d8846365eb6181d1beb26_icgraph.png" border="0" usemap="#SpatialStencils_8H_a513d62208f7d8846365eb6181d1beb26_icgraph" alt=""/></div>
+<map name="SpatialStencils_8H_a513d62208f7d8846365eb6181d1beb26_icgraph" id="SpatialStencils_8H_a513d62208f7d8846365eb6181d1beb26_icgraph">
+<area shape="rect" title=" " alt="" coords="525,5,659,32"/>
+<area shape="rect" href="classERFPhysBCFunct.html#a26d577ff44666999c399d0b4e8a00d71" title=" " alt="" coords="273,5,477,32"/>
+<area shape="rect" href="classERFPhysBCFunct.html#af503bf6e422a63982e9cc502f0be2178" title=" " alt="" coords="5,5,225,32"/>
 </map>
 </div>
 

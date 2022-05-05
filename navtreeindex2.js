@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classERFPhysBCFunct.html#af8a9bab9bddd79dd5e2c2a4700ed583f":[2,0,10,8],
 "classERF__IC__BC.html":[2,0,9],
 "classERF__IC__BC.html#a15786ea35a766964dbe04f3571feb1c2":[2,0,9,3],
 "classERF__IC__BC.html#a26cc0146474a70cb3cec45625f0760f8":[2,0,9,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "functions_r.html":[2,3,0,15],
 "functions_s.html":[2,3,0,16],
 "functions_t.html":[2,3,0,17],
-"functions_type.html":[2,3,3],
-"functions_u.html":[2,3,0,18]
+"functions_type.html":[2,3,3]
 };

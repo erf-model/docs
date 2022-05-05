@@ -15,5 +15,6 @@ var SpatialStencils_8H =
     [ "MomentumToVelocity", "SpatialStencils_8H.html#a5b4fc28379294678f039f03e1e3bab71", null ],
     [ "OmegaFromW", "SpatialStencils_8H.html#a14015cdf2ab04ff0d4a26260f814eb78", null ],
     [ "VelocityToMomentum", "SpatialStencils_8H.html#a4af131697a873e41e44a162ec40fd5a8", null ],
-    [ "WFromOmega", "SpatialStencils_8H.html#ae3d52db43690b5fa0b9c207835cd3a70", null ]
+    [ "WFromOmega", "SpatialStencils_8H.html#ae3d52db43690b5fa0b9c207835cd3a70", null ],
+    [ "WFromOmegaBC", "SpatialStencils_8H.html#a513d62208f7d8846365eb6181d1beb26", null ]
 ];

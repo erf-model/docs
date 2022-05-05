@@ -35,6 +35,7 @@ var NAVTREEINDEX1 =
 "SpatialStencils_8H.html#a2d6f11feb044a6ced445a46d06dd70ce":[3,0,0,2,7,7],
 "SpatialStencils_8H.html#a3bcd8c1491edfb26db789f6fc5c0a1bd":[3,0,0,2,7,2],
 "SpatialStencils_8H.html#a4af131697a873e41e44a162ec40fd5a8":[3,0,0,2,7,14],
+"SpatialStencils_8H.html#a513d62208f7d8846365eb6181d1beb26":[3,0,0,2,7,16],
 "SpatialStencils_8H.html#a5b4fc28379294678f039f03e1e3bab71":[3,0,0,2,7,12],
 "SpatialStencils_8H.html#a72760f370a036662f62d0c1f0c2a4df5":[3,0,0,2,7,11],
 "SpatialStencils_8H.html#a768eaef608fbe90b37efc93ee2b63f24":[3,0,0,2,7,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "classERFPhysBCFunct.html#aa9ba493b15a38630b7f5bc59b9df00df":[2,0,10,5],
 "classERFPhysBCFunct.html#abb1797f0742dd01ee978be02d594fc43":[2,0,10,1],
 "classERFPhysBCFunct.html#ada7479538c1fabdb5703ec9f0ad84c0a":[2,0,10,11],
-"classERFPhysBCFunct.html#af503bf6e422a63982e9cc502f0be2178":[2,0,10,2],
-"classERFPhysBCFunct.html#af8a9bab9bddd79dd5e2c2a4700ed583f":[2,0,10,8]
+"classERFPhysBCFunct.html#af503bf6e422a63982e9cc502f0be2178":[2,0,10,2]
 };
