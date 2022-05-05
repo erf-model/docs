@@ -71,8 +71,8 @@ var NAVTREEINDEX =
 "ABLFieldInit_8H.html",
 "NCPlotFile_8cpp.html",
 "classERFPhysBCFunct.html#af8a9bab9bddd79dd5e2c2a4700ed583f",
-"functions_u.html",
-"structncutils_1_1NCVar.html#a72558ae45f30bed210d68c26ec57cb13"
+"functions_vars_b.html",
+"structncutils_1_1NCVar.html#a8a96107d02633e5a53aef296052716d1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
