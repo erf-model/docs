@@ -164,6 +164,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0a1082e40bee181e99e04ca81311bb70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab994c2ebc61623888b2e3fc6bf399bff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structncutils_1_1NCVar.html#ab994c2ebc61623888b2e3fc6bf399bff">get</a> (int *, const std::vector&lt; size_t &gt; &amp;, const std::vector&lt; size_t &gt; &amp;, const std::vector&lt; ptrdiff_t &gt; &amp;) const</td></tr>
 <tr class="separator:ab994c2ebc61623888b2e3fc6bf399bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3718c080c0f3ac27c6abced87d84317"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structncutils_1_1NCVar.html#af3718c080c0f3ac27c6abced87d84317">get</a> (char **, const std::vector&lt; size_t &gt; &amp;, const std::vector&lt; size_t &gt; &amp;) const</td></tr>
+<tr class="memdesc:af3718c080c0f3ac27c6abced87d84317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a chunk of data from the file.  <a href="structncutils_1_1NCVar.html#af3718c080c0f3ac27c6abced87d84317">More...</a><br /></td></tr>
+<tr class="separator:af3718c080c0f3ac27c6abced87d84317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd2fdc27eeb735720d1485616238ab79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structncutils_1_1NCVar.html#acd2fdc27eeb735720d1485616238ab79">get</a> (char **, const std::vector&lt; size_t &gt; &amp;, const std::vector&lt; size_t &gt; &amp;, const std::vector&lt; ptrdiff_t &gt; &amp;) const</td></tr>
+<tr class="memdesc:acd2fdc27eeb735720d1485616238ab79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a chunk of data with strides.  <a href="structncutils_1_1NCVar.html#acd2fdc27eeb735720d1485616238ab79">More...</a><br /></td></tr>
+<tr class="separator:acd2fdc27eeb735720d1485616238ab79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a4ddce55f60e3accbaf02441b6484cf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf">has_attr</a> (const std::string &amp;<a class="el" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>) const</td></tr>
 <tr class="separator:a0a4ddce55f60e3accbaf02441b6484cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f60ebf70762d1d8e0962afb01118a31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structncutils_1_1NCVar.html#a9f60ebf70762d1d8e0962afb01118a31">put_attr</a> (const std::string &amp;<a class="el" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>, const std::string &amp;value) const</td></tr>
@@ -195,8 +201,94 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Representation of a NetCDF variable. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af3718c080c0f3ac27c6abced87d84317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3718c080c0f3ac27c6abced87d84317">&#9670;&nbsp;</a></span>get() <span class="overload">[1/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ncutils::NCVar::get </td>
+          <td>(</td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>dptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read a chunk of data from the file. </p>
+<div class="fragment"><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;{</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    check_nc_error(</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            nc_get_vara_string(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, start.data(), count.data(), dptr));</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acd2fdc27eeb735720d1485616238ab79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd2fdc27eeb735720d1485616238ab79">&#9670;&nbsp;</a></span>get() <span class="overload">[2/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ncutils::NCVar::get </td>
+          <td>(</td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>dptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; ptrdiff_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>stride</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read a chunk of data with strides. </p>
+<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    check_nc_error(nc_get_vars_string(</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, start.data(), count.data(), stride.data(), dptr));</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ac88fd209afde1f05e4f8f62e4c628bba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac88fd209afde1f05e4f8f62e4c628bba">&#9670;&nbsp;</a></span>get() <span class="overload">[1/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac88fd209afde1f05e4f8f62e4c628bba">&#9670;&nbsp;</a></span>get() <span class="overload">[3/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,7 +311,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a533478371e0bd09a6f4944bf5fe00684"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a533478371e0bd09a6f4944bf5fe00684">&#9670;&nbsp;</a></span>get() <span class="overload">[2/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a533478371e0bd09a6f4944bf5fe00684">&#9670;&nbsp;</a></span>get() <span class="overload">[4/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -259,7 +351,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ab3b5bad54cdc792e734690fcb5f4ecec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3b5bad54cdc792e734690fcb5f4ecec">&#9670;&nbsp;</a></span>get() <span class="overload">[3/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3b5bad54cdc792e734690fcb5f4ecec">&#9670;&nbsp;</a></span>get() <span class="overload">[5/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -305,7 +397,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ab39527f40ff0417de3c1ff8c441ced93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab39527f40ff0417de3c1ff8c441ced93">&#9670;&nbsp;</a></span>get() <span class="overload">[4/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab39527f40ff0417de3c1ff8c441ced93">&#9670;&nbsp;</a></span>get() <span class="overload">[6/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -326,7 +418,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ad6fc629cd035e5779e9e891fd37e68ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6fc629cd035e5779e9e891fd37e68ae">&#9670;&nbsp;</a></span>get() <span class="overload">[5/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6fc629cd035e5779e9e891fd37e68ae">&#9670;&nbsp;</a></span>get() <span class="overload">[7/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -366,7 +458,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="af036d4858171a98b8a951348a654a36c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af036d4858171a98b8a951348a654a36c">&#9670;&nbsp;</a></span>get() <span class="overload">[6/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af036d4858171a98b8a951348a654a36c">&#9670;&nbsp;</a></span>get() <span class="overload">[8/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -412,7 +504,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a0a7990c37360c27e7ba2fb47617f5255"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a7990c37360c27e7ba2fb47617f5255">&#9670;&nbsp;</a></span>get() <span class="overload">[7/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a7990c37360c27e7ba2fb47617f5255">&#9670;&nbsp;</a></span>get() <span class="overload">[9/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -433,7 +525,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a0a1082e40bee181e99e04ca81311bb70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a1082e40bee181e99e04ca81311bb70">&#9670;&nbsp;</a></span>get() <span class="overload">[8/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a1082e40bee181e99e04ca81311bb70">&#9670;&nbsp;</a></span>get() <span class="overload">[10/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -471,7 +563,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ab994c2ebc61623888b2e3fc6bf399bff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab994c2ebc61623888b2e3fc6bf399bff">&#9670;&nbsp;</a></span>get() <span class="overload">[9/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab994c2ebc61623888b2e3fc6bf399bff">&#9670;&nbsp;</a></span>get() <span class="overload">[11/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -529,14 +621,14 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    std::vector&lt;char&gt; aval;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), &amp;lenp));</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    aval.resize(lenp);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    check_nc_error(nc_get_att_text(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), aval.data()));</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">return</span> std::string{aval.begin(), aval.end()};</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;{</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    std::vector&lt;char&gt; aval;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), &amp;lenp));</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    aval.resize(lenp);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    check_nc_error(nc_get_att_text(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), aval.data()));</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">return</span> std::string{aval.begin(), aval.end()};</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -574,12 +666,12 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;{</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), &amp;lenp));</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    values.resize(lenp);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    check_nc_error(nc_get_att_double(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), values.data()));</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;{</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), &amp;lenp));</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    values.resize(lenp);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    check_nc_error(nc_get_att_double(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), values.data()));</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -617,12 +709,12 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;{</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), &amp;lenp));</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    values.resize(lenp);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    check_nc_error(nc_get_att_float(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), values.data()));</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;{</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), &amp;lenp));</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    values.resize(lenp);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    check_nc_error(nc_get_att_float(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), values.data()));</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -660,12 +752,12 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;{</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), &amp;lenp));</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    values.resize(lenp);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    check_nc_error(nc_get_att_int(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), values.data()));</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), &amp;lenp));</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    values.resize(lenp);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    check_nc_error(nc_get_att_int(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), values.data()));</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -693,12 +785,12 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;{</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordtype">int</span> ierr;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    ierr = nc_inq_att(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), NULL, &amp;lenp);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">return</span> (ierr == NC_NOERR);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordtype">int</span> ierr;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    ierr = nc_inq_att(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), NULL, &amp;lenp);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">return</span> (ierr == NC_NOERR);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1206,10 +1298,10 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;{</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    check_nc_error(</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        nc_put_att_text(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), value.size(), value.data()));</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;{</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    check_nc_error(</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        nc_put_att_text(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), value.size(), value.data()));</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1247,10 +1339,10 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;{</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    check_nc_error(nc_put_att_double(</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), NC_DOUBLE, value.size(), value.data()));</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;{</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    check_nc_error(nc_put_att_double(</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), NC_DOUBLE, value.size(), value.data()));</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1288,10 +1380,10 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;{</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    check_nc_error(nc_put_att_float(</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), NC_FLOAT, value.size(), value.data()));</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;{</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    check_nc_error(nc_put_att_float(</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), NC_FLOAT, value.size(), value.data()));</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1329,10 +1421,10 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;{</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    check_nc_error(nc_put_att_int(</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), NC_INT, value.size(), value.data()));</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;{</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    check_nc_error(nc_put_att_int(</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), NC_INT, value.size(), value.data()));</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

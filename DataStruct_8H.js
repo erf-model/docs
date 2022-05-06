@@ -56,5 +56,11 @@ var DataStruct_8H =
     [ "PBLType", "DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5", [
       [ "None", "DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754", null ],
       [ "MYNN25", "DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601", null ]
+    ] ],
+    [ "Stagger", "DataStruct_8H.html#af22a7de290327224f6e1b45f125cb77d", [
+      [ "None", "DataStruct_8H.html#af22a7de290327224f6e1b45f125cb77da6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "x", "DataStruct_8H.html#af22a7de290327224f6e1b45f125cb77da9dd4e461268c8034f5c8564e155c67a6", null ],
+      [ "y", "DataStruct_8H.html#af22a7de290327224f6e1b45f125cb77da415290769594460e2e485922904f345d", null ],
+      [ "z", "DataStruct_8H.html#af22a7de290327224f6e1b45f125cb77dafbade9e36a3f36d3d676c1b808451dd7", null ]
     ] ]
 ];
