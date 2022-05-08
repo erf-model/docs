@@ -13,7 +13,7 @@ var hierarchy =
     [ "ERF_IC_BC", "classERF__IC__BC.html", null ],
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", null ],
     [ "InitialData", "structInitialData.html", null ],
-    [ "IntegratorBase", "classIntegratorBase.html", [
+    [ "IntegratorBase", null, [
       [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ]
     ] ],
     [ "Metgrid_Output", "classMetgrid__Output.html", null ],

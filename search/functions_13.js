@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['wfromomega_1058',['WFromOmega',['../SpatialStencils_8H.html#ae3d52db43690b5fa0b9c207835cd3a70',1,'SpatialStencils.H']]],
-  ['wfromomegabc_1059',['WFromOmegaBC',['../SpatialStencils_8H.html#a513d62208f7d8846365eb6181d1beb26',1,'SpatialStencils.H']]],
+  ['wfromomega_1058',['WFromOmega',['../SpatialStencils_8H.html#a81366cf4ca04adcfbf0988099b906cd7',1,'SpatialStencils.H']]],
+  ['wfromomegabc_1059',['WFromOmegaBC',['../SpatialStencils_8H.html#a53e0e7cd03af064f28541639fb10bb42',1,'SpatialStencils.H']]],
   ['write_5fplanes_1060',['write_planes',['../classWriteBndryPlanes.html#abd077cea0b42e78c3d6ccb429b4d779e',1,'WriteBndryPlanes']]],
   ['writebndryplanes_1061',['WriteBndryPlanes',['../classWriteBndryPlanes.html#a460f7f20cb59e7f2f8546ebf423585d5',1,'WriteBndryPlanes']]],
   ['writebuildinfo_1062',['writeBuildInfo',['../classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa',1,'ERF']]],

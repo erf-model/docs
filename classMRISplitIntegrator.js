@@ -1,6 +1,6 @@
 var classMRISplitIntegrator =
 [
-    [ "BaseT", "classMRISplitIntegrator.html#a9f6b581c6c5f2b8af49f0684098ec551", null ],
+    [ "BaseT", "classMRISplitIntegrator.html#a6475fe61cf994d34fa182d15cfcb6954", null ],
     [ "MRISplitIntegrator", "classMRISplitIntegrator.html#abe16bffbdae733268ab637f4f71c1301", null ],
     [ "MRISplitIntegrator", "classMRISplitIntegrator.html#a9ea1c36a75e04596ffe0fa29e614b6e2", null ],
     [ "~MRISplitIntegrator", "classMRISplitIntegrator.html#a187f7c5361e290319bcc8e3cb97af289", null ],
