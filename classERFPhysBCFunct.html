@@ -661,57 +661,57 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                        ParallelFor(bx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                        {</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                            <span class="keywordflow">if</span> (i &lt; dom_lo.x &amp;&amp; bc_ptr[n].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                int jb = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                                int kb = amrex::min(amrex::max(k,dom_lo.z),dom_hi.z);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                int jb = std::min(std::max(j,dom_lo.y),dom_hi.y);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                                int kb = std::min(std::max(k,dom_lo.z),dom_hi.z);</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                                dest_array(i,j,k,icomp+n) = bdatxlo(dom_lo.x-1,jb,kb,bccomp+n);</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                            }</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                            if (j &lt; dom_lo.y &amp;&amp; bc_ptr[n].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                                int ib = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                                int kb = amrex::min(amrex::max(k,dom_lo.z),dom_hi.z);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                                int ib = std::min(std::max(i,dom_lo.x),dom_hi.x);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                                int kb = std::min(std::max(k,dom_lo.z),dom_hi.z);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                                dest_array(i,j,k,icomp+n) = bdatylo(ib,dom_lo.y-1,kb,bccomp+n);</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                            }</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                            if (k &lt; dom_lo.z &amp;&amp; bc_ptr[n].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                                <span class="comment">// int ib = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                                <span class="comment">// int jb = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                                <span class="comment">// int ib = std::min(std::max(i,dom_lo.x),dom_hi.x);</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                                <span class="comment">// int jb = std::min(std::max(j,dom_lo.y),dom_hi.y);</span></div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                                <span class="comment">// dest_array(i,j,k,icomp+n) = bdatzlo(ib,jb,dom_lo.z-1,bccomp+n);</span></div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                            }</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                            if (i &gt; dom_hi.x &amp;&amp; bc_ptr[n].hi(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                                int jb = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                                int kb = amrex::min(amrex::max(k,dom_lo.z),dom_hi.z);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                                int jb = std::min(std::max(j,dom_lo.y),dom_hi.y);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                                int kb = std::min(std::max(k,dom_lo.z),dom_hi.z);</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                                dest_array(i,j,k,icomp+n) = bdatxhi(dom_hi.x+1,jb,kb,bccomp+n);</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                            }</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                            if (j &gt; dom_hi.y &amp;&amp; bc_ptr[n].hi(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                                int ib = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                                int kb = amrex::min(amrex::max(k,dom_lo.z),dom_hi.z);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                                int ib = std::min(std::max(i,dom_lo.x),dom_hi.x);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                                int kb = std::min(std::max(k,dom_lo.z),dom_hi.z);</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                                dest_array(i,j,k,icomp+n) = bdatyhi(ib,dom_hi.y+1,kb,bccomp+n);</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                            }</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                            if (k &gt; dom_hi.z &amp;&amp; bc_ptr[n].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                                <span class="comment">// int ib = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                                <span class="comment">// int jb = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                                <span class="comment">// int ib = std::min(std::max(i,dom_lo.x),dom_hi.x);</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                                <span class="comment">// int jb = std::min(std::max(j,dom_lo.y),dom_hi.y);</span></div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                <span class="comment">// dest_array(i,j,k,icomp+n) = bdatzhi(ib,jb,dom_hi.z+1,bccomp+n);</span></div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                            }</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                            if (bccomp == <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>)</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                            {</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                                <span class="keywordflow">if</span> (i == dom_lo.x &amp;&amp; bc_ptr[n].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                                    int jb = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                                    int kb = amrex::min(amrex::max(k,dom_lo.z),dom_hi.z);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                                    int jb = std::min(std::max(j,dom_lo.y),dom_hi.y);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                                    int kb = std::min(std::max(k,dom_lo.z),dom_hi.z);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                                    dest_array(i,j,k,icomp+n) = bdatxlo(dom_lo.x-1,jb,kb,bccomp+n);</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                                }</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                            }</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                            <span class="keywordflow">if</span> (bccomp == <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>)</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                            {</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                                <span class="keywordflow">if</span> (j == dom_lo.y &amp;&amp; bc_ptr[n].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                                    int ib = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                                    int kb = amrex::min(amrex::max(k,dom_lo.z),dom_hi.z);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                                    int ib = std::min(std::max(i,dom_lo.x),dom_hi.x);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                                    int kb = std::min(std::max(k,dom_lo.z),dom_hi.z);</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                                    dest_array(i,j,k,icomp+n) = bdatylo(ib,dom_lo.y-1,kb,bccomp+n);</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                                }</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                            }</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                            <span class="keywordflow">if</span> (bccomp == <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>)</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                            {</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                                <span class="keywordflow">if</span> (k == dom_lo.z &amp;&amp; bc_ptr[n].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                                    <span class="comment">// int ib = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                    <span class="comment">// int jb = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                                    <span class="comment">// int ib = std::min(std::max(i,dom_lo.x),dom_hi.x);</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                    <span class="comment">// int jb = std::min(std::max(j,dom_lo.y),dom_hi.y);</span></div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                    <span class="comment">// dest_array(i,j,k,icomp+n) = bdatzlo(ib,jb,dom_lo.z-1,bccomp+n);</span></div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                                }</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                            }</div>
@@ -764,38 +764,38 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                        ParallelFor(bx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                        {</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                            <span class="keywordflow">if</span> (i &lt; dom_lo.x &amp;&amp; bc_ptr[n].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                int jb = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                                int kb = amrex::min(amrex::max(k,dom_lo.z),dom_hi.z);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                int jb = std::min(std::max(j,dom_lo.y),dom_hi.y);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                                int kb = std::min(std::max(k,dom_lo.z),dom_hi.z);</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                                dest_array(i,j,k,icomp+n) = oma * bdatxlo_n  (dom_lo.x-1,jb,kb,bccomp+n)</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                                                        + alpha * bdatxlo_np1(dom_lo.x-1,jb,kb,bccomp+n);</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                            }</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                            if (j &lt; dom_lo.y &amp;&amp; bc_ptr[n].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                                int ib = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                                int kb = amrex::min(amrex::max(k,dom_lo.z),dom_hi.z);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                                int ib = std::min(std::max(i,dom_lo.x),dom_hi.x);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                                int kb = std::min(std::max(k,dom_lo.z),dom_hi.z);</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                                dest_array(i,j,k,icomp+n) = oma * bdatylo_n  (ib,dom_lo.y-1,kb,bccomp+n)</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                                                        + alpha * bdatylo_np1(ib,dom_lo.y-1,kb,bccomp+n);</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                            }</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                            if (k &lt; dom_lo.z &amp;&amp; bc_ptr[n].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                                <span class="comment">// int ib = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                                <span class="comment">// int jb = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                                <span class="comment">// int ib = std::min(std::max(i,dom_lo.x),dom_hi.x);</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                                <span class="comment">// int jb = std::min(std::max(j,dom_lo.y),dom_hi.y);</span></div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                                <span class="comment">// dest_array(i,j,k,icomp+n) = oma * bdatzlo_n  (ib,jb,dom_lo.z-1,bccomp+n)</span></div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                                <span class="comment">//                         + alpha * bdatzlo_np1(ib,jb,dom_lo.z-1,bccomp+n);</span></div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                            }</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                            if (i &gt; dom_hi.x &amp;&amp; bc_ptr[n].hi(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                                int jb = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                                int kb = amrex::min(amrex::max(k,dom_lo.z),dom_hi.z);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                                int jb = std::min(std::max(j,dom_lo.y),dom_hi.y);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                                int kb = std::min(std::max(k,dom_lo.z),dom_hi.z);</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                                dest_array(i,j,k,icomp+n) = oma * bdatxhi_n  (dom_hi.x+1,jb,kb,bccomp+n)</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                                                        + alpha * bdatxhi_np1(dom_hi.x+1,jb,kb,bccomp+n);</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                            }</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                            if (j &gt; dom_hi.y &amp;&amp; bc_ptr[n].hi(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                                int ib = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                                int kb = amrex::min(amrex::max(k,dom_lo.z),dom_hi.z);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                                int ib = std::min(std::max(i,dom_lo.x),dom_hi.x);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                                int kb = std::min(std::max(k,dom_lo.z),dom_hi.z);</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                                dest_array(i,j,k,icomp+n) = oma * bdatyhi_n  (ib,dom_hi.y+1,kb,bccomp+n)</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                                                        + alpha * bdatyhi_np1(ib,dom_hi.y+1,kb,bccomp+n);</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                            }</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                            if (k &gt; dom_hi.z &amp;&amp; bc_ptr[n].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                                <span class="comment">// int ib = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                                <span class="comment">// int jb = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                                <span class="comment">// int ib = std::min(std::max(i,dom_lo.x),dom_hi.x);</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                                <span class="comment">// int jb = std::min(std::max(j,dom_lo.y),dom_hi.y);</span></div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                <span class="comment">// dest_array(i,j,k,icomp+n) = oma * bdatzhi_n  (ib,jb,dom_hi.z+1,bccomp+n)</span></div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                                <span class="comment">//                         + alpha * bdatzhi_np1(ib,jb,dom_hi.z+1,bccomp+n);</span></div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                            }</div>
@@ -803,8 +803,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                            if (bccomp == <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>)</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                            {</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                                <span class="keywordflow">if</span> (i == dom_lo.x &amp;&amp; bc_ptr[n].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                                    int jb = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                                    int kb = amrex::min(amrex::max(k,dom_lo.z),dom_hi.z);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                                    int jb = std::min(std::max(j,dom_lo.y),dom_hi.y);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                                    int kb = std::min(std::max(k,dom_lo.z),dom_hi.z);</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                                    dest_array(i,j,k,icomp+n) = oma * bdatxlo_n  (dom_lo.x-1,jb,kb,bccomp+n)</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                                                            + alpha * bdatxlo_np1(dom_lo.x-1,jb,kb,bccomp+n);</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                                }</div>
@@ -812,8 +812,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                            <span class="keywordflow">if</span> (bccomp == <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>)</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                            {</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                                <span class="keywordflow">if</span> (j == dom_lo.y &amp;&amp; bc_ptr[n].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                                    int ib = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                                    int kb = amrex::min(amrex::max(k,dom_lo.z),dom_hi.z);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                                    int ib = std::min(std::max(i,dom_lo.x),dom_hi.x);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                                    int kb = std::min(std::max(k,dom_lo.z),dom_hi.z);</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                                    dest_array(i,j,k,icomp+n) = oma * bdatylo_n  (ib,dom_lo.y-1,kb,bccomp+n)</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                                                            + alpha * bdatylo_np1(ib,dom_lo.y-1,kb,bccomp+n);</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                                }</div>
@@ -821,8 +821,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                            <span class="keywordflow">if</span> (bccomp == <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>)</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                            {</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                                <span class="keywordflow">if</span> (k == dom_lo.z &amp;&amp; bc_ptr[n].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462">ERFBCType::ext_dir_ingested</a>) {</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                                    <span class="comment">// int ib = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                                    <span class="comment">// int jb = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                                    <span class="comment">// int ib = std::min(std::max(i,dom_lo.x),dom_hi.x);</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                                    <span class="comment">// int jb = std::min(std::max(j,dom_lo.y),dom_hi.y);</span></div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                                    <span class="comment">// dest_array(i,j,k,icomp+n) = oma * bdatzlo_n  (ib,jb,dom_lo.z-1,bccomp+n)</span></div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                                    <span class="comment">//                         + alpha * bdatzlo_np1(ib,jb,dom_lo.z-1,bccomp+n);</span></div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                                }</div>

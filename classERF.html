@@ -1016,9 +1016,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dt_0 = dt_tmp[0];</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> n_factor = 1;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev) {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        dt_tmp[lev] = std::min(dt_tmp[lev], <a class="code" href="classERF.html#ac793fe23b026c18bb7dcce791317c6c3">change_max</a>*<a class="code" href="classERF.html#ad34bae243fdb6c3029f5abe4fb4bca2d">dt</a>[lev]);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        dt_tmp[lev] = amrex::min(dt_tmp[lev], <a class="code" href="classERF.html#ac793fe23b026c18bb7dcce791317c6c3">change_max</a>*<a class="code" href="classERF.html#ad34bae243fdb6c3029f5abe4fb4bca2d">dt</a>[lev]);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        n_factor *= <a class="code" href="classERF.html#aa3db2dd1b65310c66c4038650c22aaee">nsubsteps</a>[lev];</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        dt_0 = std::min(dt_0, n_factor*dt_tmp[lev]);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        dt_0 = amrex::min(dt_0, n_factor*dt_tmp[lev]);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Limit dt&#39;s by the value of stop_time.</span></div>
