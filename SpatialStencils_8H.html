@@ -156,8 +156,8 @@ Functions</h2></td></tr>
 <tr class="separator:a0c022b2a2d9620d60b1da6625b831164"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40d3f657c70774642a712d8c1ac77d41"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SpatialStencils_8H.html#a40d3f657c70774642a712d8c1ac77d41">AdvectionSrcForZMom</a> (const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_w, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;w, const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSize, const int &amp;spatial_order)</td></tr>
 <tr class="separator:a40d3f657c70774642a712d8c1ac77d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94fe72f7d4ef9e7c92f1e82f837dbcdf"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SpatialStencils_8H.html#a94fe72f7d4ef9e7c92f1e82f837dbcdf">AdvectionSrcForState</a> (const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_w, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;cell_prim, const int &amp;qty_index, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;flux_x, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;flux_y, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;flux_z, const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSize, const int &amp;spatial_order)</td></tr>
-<tr class="separator:a94fe72f7d4ef9e7c92f1e82f837dbcdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17b6e96a4b69e332776ba3c5e7b2029c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SpatialStencils_8H.html#a17b6e96a4b69e332776ba3c5e7b2029c">AdvectionSrcForState</a> (const amrex::Box &amp;bx, const int &amp;start_comp, const int &amp;num_comp, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_w, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;cell_prim, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;src, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;flux_x, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;flux_y, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;flux_z, const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSize, const int &amp;spatial_order, const int &amp;use_deardorff, const int &amp;use_QKE)</td></tr>
+<tr class="separator:a17b6e96a4b69e332776ba3c5e7b2029c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dee15657b126730187a45dd5712db4f"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SpatialStencils_8H.html#a8dee15657b126730187a45dd5712db4f">InterpolateTurbulentViscosity</a> (const int &amp;i, const int &amp;j, const int &amp;k, const enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a> &amp;momentumEqn, const enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a> &amp;diffDir, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;Ksmag)</td></tr>
 <tr class="memdesc:a8dee15657b126730187a45dd5712db4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute K_turb (i-1/2, j+1/2, k) etc given K_turb (i, j, k) is known.  <a href="SpatialStencils_8H.html#a8dee15657b126730187a45dd5712db4f">More...</a><br /></td></tr>
 <tr class="separator:a8dee15657b126730187a45dd5712db4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,29 +171,29 @@ Functions</h2></td></tr>
 <tr class="separator:a57fdaa07cedc8706f0883614a4943d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a94fe72f7d4ef9e7c92f1e82f837dbcdf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94fe72f7d4ef9e7c92f1e82f837dbcdf">&#9670;&nbsp;</a></span>AdvectionSrcForState()</h2>
+<a id="a17b6e96a4b69e332776ba3c5e7b2029c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17b6e96a4b69e332776ba3c5e7b2029c">&#9670;&nbsp;</a></span>AdvectionSrcForState()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AMREX_GPU_DEVICE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> AdvectionSrcForState </td>
+          <td class="memname">void AdvectionSrcForState </td>
           <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>j</em>, </td>
+          <td class="paramname"><em>start_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>k</em>, </td>
+          <td class="paramname"><em>num_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -222,8 +222,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>qty_index</em>, </td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -253,7 +253,19 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>spatial_order</em>&#160;</td>
+          <td class="paramname"><em>spatial_order</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>use_deardorff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>use_QKE</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -262,7 +274,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Meant for the continuity, energy, and scalar equations </p>
+<p>Compute advection source for the continuity, energy, and scalar equations </p>
 
 </div>
 </div>
@@ -1369,14 +1381,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> omega;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Advection_8cpp.html#a2c241b071a05c0aaec40b59ec24caa9f">AdvectionSrcForState()</a>, and <a class="el" href="ERF__fast__rhs_8cpp.html#a87ecce1a52c309d02c04812aa091d217">erf_implicit_fast_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Advection_8cpp.html#aa3340ec12693f3f7157373ddd51ffb4a">AdvectionSrcForState()</a>, and <a class="el" href="ERF__fast__rhs_8cpp.html#a87ecce1a52c309d02c04812aa091d217">erf_implicit_fast_rhs()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="SpatialStencils_8H_a002996309aac722698ccbc1e66f2e28c_icgraph.png" border="0" usemap="#SpatialStencils_8H_a002996309aac722698ccbc1e66f2e28c_icgraph" alt=""/></div>
 <map name="SpatialStencils_8H_a002996309aac722698ccbc1e66f2e28c_icgraph" id="SpatialStencils_8H_a002996309aac722698ccbc1e66f2e28c_icgraph">
 <area shape="rect" title=" " alt="" coords="600,31,715,57"/>
-<area shape="rect" href="Advection_8cpp.html#a2c241b071a05c0aaec40b59ec24caa9f" title=" " alt="" coords="391,56,552,83"/>
+<area shape="rect" href="Advection_8cpp.html#aa3340ec12693f3f7157373ddd51ffb4a" title=" " alt="" coords="391,56,552,83"/>
 <area shape="rect" href="ERF__fast__rhs_8cpp.html#a87ecce1a52c309d02c04812aa091d217" title=" " alt="" coords="188,5,343,32"/>
 <area shape="rect" href="ERF__slow__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64" title=" " alt="" coords="232,56,299,83"/>
 <area shape="rect" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc" title=" " alt="" coords="5,31,140,57"/>
