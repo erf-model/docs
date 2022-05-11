@@ -4119,7 +4119,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">return</span> amrex::Concatenate(<a class="code" href="classERF.html#ad02c77d3f4a7dfa0ad679877f0f05fc1">plot_file</a>, lev, 5);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">return</span> Concatenate(<a class="code" href="classERF.html#ad02c77d3f4a7dfa0ad679877f0f05fc1">plot_file</a>, lev, 5);</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -4844,7 +4844,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// check to see if we found all the requested vairables</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> plot_name : <a class="code" href="classERF.html#a5239b3dae0bf9ba78876bf2e8d497016">plot_state_names</a>) {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keywordflow">if</span> (!<a class="code" href="ERF_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(tmp_plot_names, plot_name)) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    amrex::Warning(<span class="stringliteral">&quot;\nWARNING: Requested to plot variable &#39;&quot;</span> + plot_name + <span class="stringliteral">&quot;&#39; but it is not available&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    Warning(<span class="stringliteral">&quot;\nWARNING: Requested to plot variable &#39;&quot;</span> + plot_name + <span class="stringliteral">&quot;&#39; but it is not available&quot;</span>);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classERF.html#a5239b3dae0bf9ba78876bf2e8d497016">plot_state_names</a> = tmp_plot_names;</div>
@@ -4893,7 +4893,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// check to see if we found all the requested vairables</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> plot_name : <a class="code" href="classERF.html#a123e428e6385285dfb646bc6f85ce654">plot_deriv_names</a>) {</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="ERF_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(tmp_deriv_names, plot_name)) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            amrex::Warning(<span class="stringliteral">&quot;\nWARNING: Requested to plot derived variable &#39;&quot;</span> + plot_name + <span class="stringliteral">&quot;&#39; but it is not available&quot;</span>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            Warning(<span class="stringliteral">&quot;\nWARNING: Requested to plot derived variable &#39;&quot;</span> + plot_name + <span class="stringliteral">&quot;&#39; but it is not available&quot;</span>);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
@@ -5750,7 +5750,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                                     <span class="keyword">const</span> decltype(<a class="code" href="namespacederived.html#af8efb799157f5dbb8fe00416458db9e1">derived::erf_dernull</a>)&amp; der_function)</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        {</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="classERF.html#a123e428e6385285dfb646bc6f85ce654">plot_deriv_names</a>, der_name)) {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                MultiFab dmf(mf[lev], amrex::make_alias, mf_comp, 1);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                MultiFab dmf(mf[lev], make_alias, mf_comp, 1);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="keywordflow">for</span> (MFIter mfi(dmf, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                {</div>
@@ -5779,11 +5779,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            MultiFab::Copy(mf[lev],pres_hse[lev],0,mf_comp,1,0);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keyword">auto</span> d_pres_hse_lev = <a class="code" href="classERF.html#a7990255d32f7bca694acab7521101b93">d_pres_hse</a>[lev].dataPtr();</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordflow">for</span> ( amrex::MFIter mfi(mf[lev],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(mf[lev],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            {</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt;&amp; derdat = mf[lev].array(mfi);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                amrex::ParallelFor(bx, [=, <a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>=<a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                ParallelFor(bx, [=, <a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>=<a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    derdat(i, j, k, mf_comp) = d_pres_hse_lev[k+<a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>];</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                });</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            }</div>
@@ -5797,11 +5797,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            MultiFab::Copy(mf[lev],dens_hse[lev],0,mf_comp,1,0);</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keyword">auto</span> d_dens_hse_lev = <a class="code" href="classERF.html#a3407564246f176655d0dc97733997e52">d_dens_hse</a>[lev].dataPtr();</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordflow">for</span> ( amrex::MFIter mfi(mf[lev],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(mf[lev],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            {</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt;&amp; derdat = mf[lev].array(mfi);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                amrex::ParallelFor(bx, [=, <a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>=<a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                ParallelFor(bx, [=, <a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>=<a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    derdat(i, j, k, mf_comp) = d_dens_hse_lev[k+<a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>];</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                });</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            }</div>
@@ -5814,7 +5814,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="preprocessor">#ifndef ERF_USE_TERRAIN</span></div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keyword">auto</span> d_pres_hse_lev = <a class="code" href="classERF.html#a7990255d32f7bca694acab7521101b93">d_pres_hse</a>[lev].dataPtr();</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordflow">for</span> ( amrex::MFIter mfi(mf[lev],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(mf[lev],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            {</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt;&amp; derdat = mf[lev].array(mfi);</div>
@@ -5822,7 +5822,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; p0_arr = pres_hse[lev].const_array(mfi);</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; S_arr = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a598b48260ed293a4c3795d13ad2297bda47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].const_array(mfi);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                amrex::ParallelFor(bx, [=, <a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>=<a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                ParallelFor(bx, [=, <a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>=<a class="code" href="classERF.html#a87dc6c0720462bfd088c909289cdca0b">ng_pres_hse</a>] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                    <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rhotheta = S_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                    derdat(i, j, k, mf_comp) = <a class="code" href="EOS_8H.html#a292ce90ab26c75f4a444808a807b532b">getPgivenRTh</a>(rhotheta) - p0_arr(i,j,k);</div>
@@ -5839,7 +5839,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor">#ifndef ERF_USE_TERRAIN</span></div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keyword">auto</span> d_dens_hse_lev = <a class="code" href="classERF.html#a3407564246f176655d0dc97733997e52">d_dens_hse</a>[lev].dataPtr();</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keywordflow">for</span> ( amrex::MFIter mfi(mf[lev],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(mf[lev],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            {</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt;&amp; derdat  = mf[lev].array(mfi);</div>
@@ -5847,7 +5847,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; r0_arr = dens_hse[lev].const_array(mfi);</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                amrex::ParallelFor(bx, [=, <a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>=<a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                ParallelFor(bx, [=, <a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>=<a class="code" href="classERF.html#addf0fb2aae0efaa649c69685a4dcca83">ng_dens_hse</a>] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                    derdat(i, j, k, mf_comp) = S_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) - r0_arr(i,j,k);</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="preprocessor">#else</span></div>
@@ -5897,7 +5897,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                                               varnames,</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                                               Geom(), <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0], <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, refRatio());</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            amrex::WriteMultiLevelPlotfile(plotfilename, finest_level+1,</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            WriteMultiLevelPlotfile(plotfilename, finest_level+1,</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                                           GetVecOfConstPtrs(mf),</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                                           varnames,</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                                           Geom(), <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0], <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, refRatio());</div>
@@ -5911,9 +5911,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        amrex::Vector&lt;IntVect&gt;   r2(finest_level);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        amrex::Vector&lt;Geometry&gt;  g2(finest_level+1);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        amrex::Vector&lt;MultiFab&gt; mf2(finest_level+1);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        Vector&lt;IntVect&gt;   r2(finest_level);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        Vector&lt;Geometry&gt;  g2(finest_level+1);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        Vector&lt;MultiFab&gt; mf2(finest_level+1);</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        mf2[0].define(grids[0], dmap[0], ncomp_mf, 0);</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
@@ -5933,7 +5933,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                r2[lev-1][2] = r2[lev-2][2] * ref_ratio[lev-1][0];</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            }</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            mf2[lev].define(amrex::refine(grids[lev],r2[lev-1]), dmap[lev], ncomp_mf, 0);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            mf2[lev].define(refine(grids[lev],r2[lev-1]), dmap[lev], ncomp_mf, 0);</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            <span class="comment">// Set the new problem domain</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            Box d2(Geom()[lev].Domain());</div>
@@ -5951,13 +5951,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        }</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="comment">// Define an effective ref_ratio which is isotropic to be passed into WriteMultiLevelPlotfile</span></div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        amrex::Vector&lt;IntVect&gt; rr(finest_level);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        Vector&lt;IntVect&gt; rr(finest_level);</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; finest_level; ++lev) {</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            rr[lev] = IntVect(ref_ratio[lev][0],ref_ratio[lev][1],ref_ratio[lev][0]);</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        }</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ae7b9991150042eb38e2abc89399c0c7c">plotfile_type</a> == <span class="stringliteral">&quot;amrex&quot;</span>) {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            amrex::WriteMultiLevelPlotfile(plotfilename, finest_level+1, GetVecOfConstPtrs(mf2), varnames,</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            WriteMultiLevelPlotfile(plotfilename, finest_level+1, GetVecOfConstPtrs(mf2), varnames,</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                                           g2, <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0], <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, rr);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            <a class="code" href="classERF.html#aa2d8099655a8779836e63e3e98ea4372">writeJobInfo</a>(plotfilename);</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
