@@ -12,6 +12,7 @@ var annotated_dup =
     [ "ERF_IC_BC", "classERF__IC__BC.html", "classERF__IC__BC" ],
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", "classERFPhysBCFunct" ],
     [ "InitialData", "structInitialData.html", "structInitialData" ],
+    [ "InputSoundingData", "structInputSoundingData.html", "structInputSoundingData" ],
     [ "Metgrid_Output", "classMetgrid__Output.html", "classMetgrid__Output" ],
     [ "MRISplitIntegrator", "classMRISplitIntegrator.html", "classMRISplitIntegrator" ],
     [ "NDArray", "structNDArray.html", "structNDArray" ],

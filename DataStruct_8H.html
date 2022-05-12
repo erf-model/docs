@@ -89,17 +89,25 @@ $(document).ready(function(){initNavTree('DataStruct_8H.html',''); initResizable
 <div class="title">DataStruct.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="ERF__Constants_8H_source.html">ERF_Constants.H</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;AMReX_ParmParse.H&gt;</code><br />
+<code>#include &lt;AMReX_Print.H&gt;</code><br />
+<code>#include &lt;AMReX_Gpu.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__Constants_8H_source.html">ERF_Constants.H</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for DataStruct.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="DataStruct_8H__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2DataStruct_8H" alt=""/></div>
 <map name="_2home_2runner_2work_2ERF_2ERF_2Source_2DataStruct_8H" id="_2home_2runner_2work_2ERF_2ERF_2Source_2DataStruct_8H">
-<area shape="rect" title=" " alt="" coords="64,5,251,47"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="5,95,139,121"/>
-<area shape="rect" title=" " alt="" coords="163,95,322,121"/>
-<area shape="rect" title=" " alt="" coords="11,169,133,196"/>
+<area shape="rect" title=" " alt="" coords="260,5,447,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,64,121"/>
+<area shape="rect" title=" " alt="" coords="88,95,168,121"/>
+<area shape="rect" title=" " alt="" coords="193,95,351,121"/>
+<area shape="rect" title=" " alt="" coords="376,95,496,121"/>
+<area shape="rect" title=" " alt="" coords="521,95,637,121"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="661,95,795,121"/>
+<area shape="rect" title=" " alt="" coords="667,169,789,196"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -153,6 +161,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolverChoice.html">SolverChoice</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structInputSoundingData.html">InputSoundingData</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -248,9 +258,9 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a90da675b718151491fd0c934a0ad3ceba527d74300afe17c5171b0e5e015918e6"></a>PressureGradient&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a90da675b718151491fd0c934a0ad3ceba6c2c47a19d5c773bae606eb243104880"></a>GeostrophicWind&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                         {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba527d74300afe17c5171b0e5e015918e6">PressureGradient</a>, <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6c2c47a19d5c773bae606eb243104880">GeostrophicWind</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                         {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba527d74300afe17c5171b0e5e015918e6">PressureGradient</a>, <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6c2c47a19d5c773bae606eb243104880">GeostrophicWind</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -281,9 +291,9 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91"></a>theta&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a07130f00a795700d6b2b83f773b807b4aa27a6549ade38cc036f7b8c58a840510"></a>scalar&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                            {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a439b3a25b555b3bc8667a09a036ae70c">unity</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4aa27a6549ade38cc036f7b8c58a840510">scalar</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                            {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a439b3a25b555b3bc8667a09a036ae70c">unity</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4aa27a6549ade38cc036f7b8c58a840510">scalar</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -311,9 +321,9 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424"></a>rho_v&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f"></a>rho_w&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                             {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>, <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>, <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                             {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>, <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>, <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -341,9 +351,9 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a5943cc9db33abe98a5e07cd2b4387f53a415290769594460e2e485922904f345d"></a>y&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a5943cc9db33abe98a5e07cd2b4387f53afbade9e36a3f36d3d676c1b808451dd7"></a>z&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -371,9 +381,9 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"></a>y&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"></a>z&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                 {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                 {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -401,9 +411,9 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a7264869c7035dc345642d2461b168715a415290769594460e2e485922904f345d"></a>y&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7264869c7035dc345642d2461b168715afbade9e36a3f36d3d676c1b808451dd7"></a>z&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -430,9 +440,9 @@ Enumerations</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa307030d99f8c225e1a1adb20224ed36a22b7c2abfb7dcf0f672899fb2b6f1670"></a>Ideal&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"></a>Real&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                      {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a22b7c2abfb7dcf0f672899fb2b6f1670">Ideal</a>, <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                      {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a22b7c2abfb7dcf0f672899fb2b6f1670">Ideal</a>, <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -460,9 +470,9 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808"></a>Smagorinsky&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf"></a>Deardorff&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                   {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">Smagorinsky</a>, <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">Deardorff</a></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                   {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">Smagorinsky</a>, <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">Deardorff</a></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -490,9 +500,9 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255"></a>Constant&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288"></a>ConstantAlpha&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                         {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="code" href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255">Constant</a>, <a class="code" href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">ConstantAlpha</a></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                         {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="code" href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255">Constant</a>, <a class="code" href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">ConstantAlpha</a></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -520,9 +530,9 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="aae430a2a4cb35dd03bcc13e8bc002dd9a415290769594460e2e485922904f345d"></a>y&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7"></a>z&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                       {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                       {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -549,9 +559,9 @@ Enumerations</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601"></a>MYNN25&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                   {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">MYNN25</a></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                   {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">MYNN25</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -580,9 +590,9 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="af22a7de290327224f6e1b45f125cb77da415290769594460e2e485922904f345d"></a>y&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="af22a7de290327224f6e1b45f125cb77dafbade9e36a3f36d3d676c1b808451dd7"></a>z&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                   {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                   {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>

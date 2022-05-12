@@ -13,6 +13,7 @@ var hierarchy =
     [ "ERF_IC_BC", "classERF__IC__BC.html", null ],
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", null ],
     [ "InitialData", "structInitialData.html", null ],
+    [ "InputSoundingData", "structInputSoundingData.html", null ],
     [ "IntegratorBase", null, [
       [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ]
     ] ],
