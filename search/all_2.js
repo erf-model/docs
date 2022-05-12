@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['baset_34',['BaseT',['../classMRISplitIntegrator.html#a6475fe61cf994d34fa182d15cfcb6954',1,'MRISplitIntegrator']]],
   ['bc_35',['BC',['../IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0f',1,'IndexDefines.H']]],
   ['bcnames_36',['BCNames',['../ERF_8cpp.html#a85eb8269776aad2fdab8e269a2a03bb1',1,'ERF.cpp']]],
   ['bcvars_37',['BCVars',['../namespaceBCVars.html',1,'']]],

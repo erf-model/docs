@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rtype_1336',['RType',['../structncutils_1_1NCDType.html#a079bbf4314ad09362b5c8124670c821f',1,'ncutils::NCDType']]]
+  ['xdir_1362',['XDir',['../DirectionSelector_8H.html#a68edfbe7326d0d1476e796beb668072f',1,'DirectionSelector.H']]]
 ];

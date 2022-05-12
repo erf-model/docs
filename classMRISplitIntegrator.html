@@ -84,7 +84,6 @@ $(document).ready(function(){initNavTree('classMRISplitIntegrator.html',''); ini
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classMRISplitIntegrator-members.html">List of all members</a>  </div>
@@ -108,12 +107,16 @@ Collaboration diagram for MRISplitIntegrator&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMRISplitIntegrator__coll__graph.png" border="0" usemap="#MRISplitIntegrator_3_01T_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="MRISplitIntegrator_3_01T_01_4_coll__map" id="MRISplitIntegrator_3_01T_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="373,153,552,180"/>
-<area shape="rect" title=" " alt="" coords="5,5,212,32"/>
-<area shape="rect" title=" " alt="" coords="34,57,183,98"/>
-<area shape="rect" title=" " alt="" coords="88,139,129,165"/>
-<area shape="rect" title=" " alt="" coords="8,190,209,261"/>
-<area shape="rect" title=" " alt="" coords="33,285,184,326"/>
+<area shape="rect" title=" " alt="" coords="392,267,571,294"/>
+<area shape="rect" title=" " alt="" coords="5,8,212,35"/>
+<area shape="rect" title=" " alt="" coords="34,60,183,101"/>
+<area shape="rect" title=" " alt="" coords="88,151,129,178"/>
+<area shape="rect" title=" " alt="" coords="89,202,128,228"/>
+<area shape="rect" title=" " alt="" coords="21,252,197,308"/>
+<area shape="rect" title=" " alt="" coords="29,332,189,388"/>
+<area shape="rect" title=" " alt="" coords="19,413,198,484"/>
+<area shape="rect" title=" " alt="" coords="33,508,184,549"/>
+<area shape="rect" title=" " alt="" coords="83,574,134,600"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -127,25 +130,34 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7b54e96150eb521642b711f8e77b0454"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a187f7c5361e290319bcc8e3cb97af289"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a187f7c5361e290319bcc8e3cb97af289">~MRISplitIntegrator</a> ()</td></tr>
 <tr class="separator:a187f7c5361e290319bcc8e3cb97af289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac38ae5a790188591e71289d62746e4ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#ac38ae5a790188591e71289d62746e4ea">set_rhs</a> (std::function&lt; void(T &amp;, const T &amp;, const amrex::Real, int)&gt; F)</td></tr>
+<tr class="separator:ac38ae5a790188591e71289d62746e4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c7d34b0ebbea32725fefcfa6053c9a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a2c7d34b0ebbea32725fefcfa6053c9a8">set_slow_rhs</a> (std::function&lt; void(T &amp;, const T &amp;, T &amp;, const amrex::Real, int)&gt; F)</td></tr>
+<tr class="separator:a2c7d34b0ebbea32725fefcfa6053c9a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26a7a9dca99cfa7c2b5884085e4a4916"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a26a7a9dca99cfa7c2b5884085e4a4916">set_fast_rhs</a> (std::function&lt; void(T &amp;, T &amp;, T &amp;, const T &amp;, T &amp;, const amrex::Real, const amrex::Real)&gt; F)</td></tr>
+<tr class="separator:a26a7a9dca99cfa7c2b5884085e4a4916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba59b32b1427818ae71ba6d83a4e0fb"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, T &amp;, T &amp;, const T &amp;, const amrex::Real, const amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#acba59b32b1427818ae71ba6d83a4e0fb">get_fast_rhs</a> ()</td></tr>
+<tr class="separator:acba59b32b1427818ae71ba6d83a4e0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad31fb2cda1fc2dce80820ed7c4a3c052"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#ad31fb2cda1fc2dce80820ed7c4a3c052">set_slow_fast_timestep_ratio</a> (const int timestep_ratio=1)</td></tr>
+<tr class="separator:ad31fb2cda1fc2dce80820ed7c4a3c052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba63019a6ac3ea9135772dcd91f49c86"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86">get_slow_fast_timestep_ratio</a> ()</td></tr>
+<tr class="separator:aba63019a6ac3ea9135772dcd91f49c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f725549d38dfef0890da90e604e7192"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a2f725549d38dfef0890da90e604e7192">set_post_update</a> (std::function&lt; void(T &amp;, amrex::Real)&gt; F)</td></tr>
+<tr class="separator:a2f725549d38dfef0890da90e604e7192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8fc7299736dd82bc73206afce2af746"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#af8fc7299736dd82bc73206afce2af746">set_post_substep</a> (std::function&lt; void(T &amp;, amrex::Real)&gt; F)</td></tr>
 <tr class="separator:af8fc7299736dd82bc73206afce2af746"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb09ef21f656d3ff625201ba7129456"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#adeb09ef21f656d3ff625201ba7129456">get_post_update</a> ()</td></tr>
+<tr class="separator:adeb09ef21f656d3ff625201ba7129456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf865e066a3c327ff296c99cd0566373"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, const T &amp;, const amrex::Real, int)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#aaf865e066a3c327ff296c99cd0566373">get_rhs</a> ()</td></tr>
+<tr class="separator:aaf865e066a3c327ff296c99cd0566373"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae77a835d01cb4a78b05417f34e168bda"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#ae77a835d01cb4a78b05417f34e168bda">get_post_substep</a> ()</td></tr>
 <tr class="separator:ae77a835d01cb4a78b05417f34e168bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11b4db42a073541e6c76c8eacb6f8ab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a11b4db42a073541e6c76c8eacb6f8ab1">set_implicit_fast_rhs</a> (std::function&lt; void(T &amp;, T &amp;, T &amp;, const T &amp;, const T &amp;, const amrex::Real, const amrex::Real)&gt; F)</td></tr>
-<tr class="separator:a11b4db42a073541e6c76c8eacb6f8ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaa4cbafb29262529bfcb16395fd7572"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, T &amp;, T &amp;, const T &amp;, const amrex::Real, const amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#afaa4cbafb29262529bfcb16395fd7572">get_implicit_fast_rhs</a> ()</td></tr>
-<tr class="separator:afaa4cbafb29262529bfcb16395fd7572"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad78b5d1908a131c3597232a041ca267b"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b">advance</a> (T &amp;S_old, T &amp;S_new, amrex::Real time, const amrex::Real time_step)</td></tr>
 <tr class="separator:ad78b5d1908a131c3597232a041ca267b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75b57e64c54104778f916f41b0558d32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a75b57e64c54104778f916f41b0558d32">time_interpolate</a> (const T &amp;, const T &amp;S_old, amrex::Real timestep_fraction, T &amp;data)</td></tr>
 <tr class="separator:a75b57e64c54104778f916f41b0558d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14fd551d7a7ff5bf6c58500740a64547"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a14fd551d7a7ff5bf6c58500740a64547">map_data</a> (std::function&lt; void(T &amp;)&gt; Map)</td></tr>
 <tr class="separator:a14fd551d7a7ff5bf6c58500740a64547"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
-Private Types</h2></td></tr>
-<tr class="memitem:a6475fe61cf994d34fa182d15cfcb6954"><td class="memItemLeft" align="right" valign="top">typedef amrex::IntegratorBase&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a6475fe61cf994d34fa182d15cfcb6954">BaseT</a></td></tr>
-<tr class="separator:a6475fe61cf994d34fa182d15cfcb6954"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -154,46 +166,35 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:ae9de7711da1f322fd503ef2a87c8c64f"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, const T &amp;, const amrex::Real, int)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#ae9de7711da1f322fd503ef2a87c8c64f">rhs</a></td></tr>
+<tr class="memdesc:ae9de7711da1f322fd503ef2a87c8c64f"><td class="mdescLeft">&#160;</td><td class="mdescRight">rhs is the right-hand-side function the integrator will use.  <a href="classMRISplitIntegrator.html#ae9de7711da1f322fd503ef2a87c8c64f">More...</a><br /></td></tr>
+<tr class="separator:ae9de7711da1f322fd503ef2a87c8c64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb6529d9e2b7809c741e9b7dc7ada53a"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, const T &amp;, T &amp;, const amrex::Real, int)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#aeb6529d9e2b7809c741e9b7dc7ada53a">slow_rhs</a></td></tr>
+<tr class="separator:aeb6529d9e2b7809c741e9b7dc7ada53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a277e8b72d4914caeb9914ce49e3cb984"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, T &amp;, T &amp;, const T &amp;, T &amp;, const amrex::Real, const amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a277e8b72d4914caeb9914ce49e3cb984">fast_rhs</a></td></tr>
+<tr class="separator:a277e8b72d4914caeb9914ce49e3cb984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f21bedf222ce95136d4889012401612"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612">timestep</a></td></tr>
+<tr class="memdesc:a3f21bedf222ce95136d4889012401612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integrator timestep size (Real)  <a href="classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612">More...</a><br /></td></tr>
+<tr class="separator:a3f21bedf222ce95136d4889012401612"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac627f7a16fd409d33916eeccb9ab3c3f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#ac627f7a16fd409d33916eeccb9ab3c3f">slow_fast_timestep_ratio</a> = 0</td></tr>
+<tr class="memdesc:ac627f7a16fd409d33916eeccb9ab3c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ratio of slow timestep size / fast timestep size (int)  <a href="classMRISplitIntegrator.html#ac627f7a16fd409d33916eeccb9ab3c3f">More...</a><br /></td></tr>
+<tr class="separator:ac627f7a16fd409d33916eeccb9ab3c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a559131bc1c3fdf4f0d6ff6526fb8507f"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a559131bc1c3fdf4f0d6ff6526fb8507f">post_update</a></td></tr>
+<tr class="memdesc:a559131bc1c3fdf4f0d6ff6526fb8507f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The post_update function is called by the integrator on state data before using it to evaluate a right-hand side.  <a href="classMRISplitIntegrator.html#a559131bc1c3fdf4f0d6ff6526fb8507f">More...</a><br /></td></tr>
+<tr class="separator:a559131bc1c3fdf4f0d6ff6526fb8507f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80d92932b5093d8930abe88858ea9ce5"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a80d92932b5093d8930abe88858ea9ce5">post_substep</a></td></tr>
 <tr class="separator:a80d92932b5093d8930abe88858ea9ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10eb727b44c0636fd979a08935b1f02f"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, T &amp;, T &amp;, const T &amp;, const T &amp;, const amrex::Real, const amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a10eb727b44c0636fd979a08935b1f02f">implicit_fast_rhs</a></td></tr>
-<tr class="separator:a10eb727b44c0636fd979a08935b1f02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10fa09211f3b0a6b7357ab79dbadbb80"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::unique_ptr&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a></td></tr>
 <tr class="separator:a10fa09211f3b0a6b7357ab79dbadbb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad570588876d21506bc7232884841cab1"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a></td></tr>
 <tr class="separator:ad570588876d21506bc7232884841cab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b4f0501b31fde19ae6582d87bd5dc05"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a1b4f0501b31fde19ae6582d87bd5dc05">S_sum_old</a></td></tr>
-<tr class="separator:a1b4f0501b31fde19ae6582d87bd5dc05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bcdee4380cd503256cb460b558184aa"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa">S_scratch</a></td></tr>
+<tr class="separator:a6bcdee4380cd503256cb460b558184aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a088e107111ca012e026908b0c0b3cef7"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a></td></tr>
 <tr class="separator:a088e107111ca012e026908b0c0b3cef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afac330a82d779844c328de9bed26eb37"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMRISplitIntegrator.html#afac330a82d779844c328de9bed26eb37">F_pert</a></td></tr>
 <tr class="separator:afac330a82d779844c328de9bed26eb37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a6475fe61cf994d34fa182d15cfcb6954"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6475fe61cf994d34fa182d15cfcb6954">&#9670;&nbsp;</a></span>BaseT</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef amrex::IntegratorBase&lt;T&gt; <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::<a class="el" href="classMRISplitIntegrator.html#a6475fe61cf994d34fa182d15cfcb6954">BaseT</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abe16bffbdae733268ab637f4f71c1301"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe16bffbdae733268ab637f4f71c1301">&#9670;&nbsp;</a></span>MRISplitIntegrator() <span class="overload">[1/2]</span></h2>
@@ -219,7 +220,7 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -248,9 +249,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a8fe3068c562900c56e3174c23af4ab99">initialize_data</a>(S_data);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a8fe3068c562900c56e3174c23af4ab99">initialize_data</a>(S_data);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -287,7 +288,7 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -339,86 +340,135 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        BaseT::timestep = time_step;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> substep_ratio = BaseT::get_slow_fast_timestep_ratio();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        AMREX_ALWAYS_ASSERT(substep_ratio &gt; 1 &amp;&amp; substep_ratio % 2 == 0);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">const</span> amrex::Real sub_timestep = BaseT::timestep / substep_ratio;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// Assume before advance() that S_old is valid data at the current time (&quot;time&quot; argument)</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// And that if data is a MultiFab, both S_old and S_new contain ghost cells for evaluating a stencil based RHS</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">// We need this from S_old. This is convenient for S_new to have so we can use it</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// as scratch space for stage values without creating a new scratch MultiFab with ghost cells.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// NOTE: In the following, we use S_new to hold S*, S**, and finally, S^(n+1) at the new time</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// DEFINITIONS:</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// S_old  = S^n</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">// S_sum  = S(t)</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">// F_slow = F(S_stage)</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">// F_pert = G(S(t)-S_stage, S_stage)</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">        /**********************************************/</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">/* RK3 Integration with Acoustuc Sub-stepping */</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">        /**********************************************/</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">// Start with S_new (aka S_stage) holding S_old</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        amrex::IntegratorOps&lt;T&gt;::Copy(S_new, S_old);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        BaseT::post_update(S_new, time);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">// Timestep taken by the fast integrator</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        amrex::Real dtau;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="comment">// How many timesteps taken by the fast integrator</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">int</span> nsubsteps;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nrk = 0; nrk &lt; 3; nrk++)</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="comment">// amrex::Print() &lt;&lt; &quot;Starting RK3: Step &quot; &lt;&lt; nrk+1 &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">if</span> (nrk == 0) { nsubsteps = 1;               dtau = BaseT::timestep / 3.0; }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">if</span> (nrk == 1) { nsubsteps = substep_ratio/2; dtau = sub_timestep;}</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">if</span> (nrk == 2) { nsubsteps = substep_ratio;   dtau = sub_timestep;}</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="comment">// step 1 starts with S_stage = S^n  and we always start substepping at the old time</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="comment">// step 2 starts with S_stage = S^*  and we always start substepping at the old time</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="comment">// step 3 starts with S_stage = S^** and we always start substepping at the old time</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            amrex::IntegratorOps&lt;T&gt;::Copy(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>    , S_old);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            amrex::IntegratorOps&lt;T&gt;::Copy(*<a class="code" href="classMRISplitIntegrator.html#a1b4f0501b31fde19ae6582d87bd5dc05">S_sum_old</a>, S_old);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="comment">// Evaluate F_slow(S_stage)</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            BaseT::rhs(*<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, S_new, time);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nsubsteps; ++k)</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="comment">// Evaluate F_pert(S_pert, S_old)</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="comment">// S_sum is used in the fast RHS to internally define S_pert = (S_sum - S_stage)</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <a class="code" href="classMRISplitIntegrator.html#a10eb727b44c0636fd979a08935b1f02f">implicit_fast_rhs</a>(*<a class="code" href="classMRISplitIntegrator.html#afac330a82d779844c328de9bed26eb37">F_pert</a>, *<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, S_new, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, *<a class="code" href="classMRISplitIntegrator.html#a1b4f0501b31fde19ae6582d87bd5dc05">S_sum_old</a>, time + k*dtau, dtau);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="comment">// Update S_sum = S_pert + S_stage</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                amrex::IntegratorOps&lt;T&gt;::Saxpy(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, dtau, *<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                amrex::IntegratorOps&lt;T&gt;::Saxpy(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, dtau, *<a class="code" href="classMRISplitIntegrator.html#afac330a82d779844c328de9bed26eb37">F_pert</a>);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                amrex::IntegratorOps&lt;T&gt;::Copy(*<a class="code" href="classMRISplitIntegrator.html#a1b4f0501b31fde19ae6582d87bd5dc05">S_sum_old</a>, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <span class="comment">// Call the post-substep hook for S_sum at t = time + (k+1) * sub_dt</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <a class="code" href="classMRISplitIntegrator.html#a80d92932b5093d8930abe88858ea9ce5">post_substep</a>(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>    , time + (k+1) * dtau);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                <a class="code" href="classMRISplitIntegrator.html#a80d92932b5093d8930abe88858ea9ce5">post_substep</a>(*<a class="code" href="classMRISplitIntegrator.html#a1b4f0501b31fde19ae6582d87bd5dc05">S_sum_old</a>, time + (k+1) * dtau);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="comment">// Define the solution at the next stage</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            amrex::IntegratorOps&lt;T&gt;::Copy(S_new, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>);</div>
+<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612">timestep</a> = time_step;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> substep_ratio = <a class="code" href="classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86">get_slow_fast_timestep_ratio</a>();</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        AMREX_ALWAYS_ASSERT(substep_ratio &gt; 1 &amp;&amp; substep_ratio % 2 == 0);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keyword">const</span> amrex::Real sub_timestep = <a class="code" href="classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612">timestep</a> / substep_ratio;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="comment">// Assume before advance() that S_old is valid data at the current time (&quot;time&quot; argument)</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="comment">// And that if data is a MultiFab, both S_old and S_new contain ghost cells for evaluating a stencil based RHS</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="comment">// We need this from S_old. This is convenient for S_new to have so we can use it</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="comment">// as scratch space for stage values without creating a new scratch MultiFab with ghost cells.</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="comment">// Call the post-update hook for S_new after all the fine steps completed</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            BaseT::post_update(S_new, time + nsubsteps*dtau);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">// Return timestep</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">return</span> BaseT::timestep;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="comment">// NOTE: In the following, we use S_new to hold S*, S**, and finally, S^(n+1) at the new time</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="comment">// DEFINITIONS:</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="comment">// S_old  = S^n</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="comment">// S_sum  = S(t)</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">// F_slow = F(S_stage)</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="comment">// F_pert = G(S(t)-S_stage, S_stage)</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">        /**********************************************/</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">/* RK3 Integration with Acoustic Sub-stepping */</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">        /**********************************************/</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="comment">// Start with S_new (aka S_stage) holding S_old</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        amrex::IntegratorOps&lt;T&gt;::Copy(S_new, S_old);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a559131bc1c3fdf4f0d6ff6526fb8507f">post_update</a>(S_new, time);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="comment">// Timestep taken by the fast integrator</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        amrex::Real dtau;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="comment">// How many timesteps taken by the fast integrator</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordtype">int</span> nsubsteps;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordtype">int</span> nav = <a class="code" href="namespaceCons.html#ab92931555eff5e3d0d9eb62ae0225cc1a5934ebcc17d4dfd56ed8cf6221c9a5ed">Cons::NumVars</a>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keyword">const</span> amrex::Vector&lt;int&gt; scomp_all = {0,0,0,0,0,0,0};</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keyword">const</span> amrex::Vector&lt;int&gt; ncomp_all = {nav,1,1,1,nav,nav,nav};</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keyword">const</span> amrex::Vector&lt;int&gt; scomp_fast = {0,0,0,0,0,0,0};</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keyword">const</span> amrex::Vector&lt;int&gt; ncomp_fast = {2,1,1,1,2,2,2};</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordtype">int</span> nsv = <a class="code" href="namespaceCons.html#ab92931555eff5e3d0d9eb62ae0225cc1a5934ebcc17d4dfd56ed8cf6221c9a5ed">Cons::NumVars</a>-2;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">const</span> amrex::Vector&lt;int&gt; scomp_slow = {  2,0,0,0,  2,  2,  2};</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keyword">const</span> amrex::Vector&lt;int&gt; ncomp_slow = {nsv,0,0,0,nsv,nsv,nsv};</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keyword">const</span> amrex::Vector&lt;int&gt; scomp_rth  = {1,0,0,0,0,0,0};</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keyword">const</span> amrex::Vector&lt;int&gt; ncomp_rth  = {1,0,0,0,0,0,0};</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nrk = 0; nrk &lt; 3; nrk++)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="comment">// amrex::Print() &lt;&lt; &quot;Starting RK3: Step &quot; &lt;&lt; nrk+1 &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keywordflow">if</span> (nrk == 0) { nsubsteps = 1;               dtau = <a class="code" href="classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612">timestep</a> / 3.0; }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">if</span> (nrk == 1) { nsubsteps = substep_ratio/2; dtau = sub_timestep;}</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">if</span> (nrk == 2) { nsubsteps = substep_ratio;   dtau = sub_timestep;}</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="comment">// step 1 starts with S_stage = S^n  and we always start substepping at the old time</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="comment">// step 2 starts with S_stage = S^*  and we always start substepping at the old time</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="comment">// step 3 starts with S_stage = S^** and we always start substepping at the old time</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="comment">// We fill the fast variables with the data from the start of the RK iteration, while</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="comment">// we fill the slow variables with the most recent RK stage data</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            amrex::IntegratorOps&lt;T&gt;::Copy(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>    , S_old, scomp_fast, ncomp_fast);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            amrex::IntegratorOps&lt;T&gt;::Copy(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>    , S_new, scomp_slow, ncomp_slow);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="comment">// S_scratch will hold (rho theta) from the previous fast timestep</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            amrex::IntegratorOps&lt;T&gt;::Copy(*<a class="code" href="classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa">S_scratch</a>, S_old, scomp_rth, ncomp_rth);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="comment">// S_scratch also holds the average momenta over the fast iterations --</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="comment">//    to be used to update the slow variables -- we will initialize with</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="comment">//    the momenta used in the first call to the slow_rhs, then update</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="comment">//    inside fast_rhs, then use these values in the later call to slow_rhs</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="comment">// Evaluate F_slow(S_stage) only for the fast variables</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <a class="code" href="classMRISplitIntegrator.html#aeb6529d9e2b7809c741e9b7dc7ada53a">slow_rhs</a>(*<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, S_new, *<a class="code" href="classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa">S_scratch</a>, time, <a class="code" href="namespaceRHSVar.html#a9c3323327b60ac367bfd4f28e8f81459a3be7d05d61be85bbfadeef639af8013f">RHSVar::fast</a>);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            amrex::Real inv_fac = 1.0 / <span class="keyword">static_cast&lt;</span>amrex::Real<span class="keyword">&gt;</span>(nsubsteps);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nsubsteps; ++k)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                <span class="comment">// Evaluate F_fast(S_pert, S_old) on the fast variables</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                <span class="comment">// S_sum is used in the fast RHS to internally define S_pert = (S_sum - S_stage)</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                <a class="code" href="classMRISplitIntegrator.html#a277e8b72d4914caeb9914ce49e3cb984">fast_rhs</a>(*<a class="code" href="classMRISplitIntegrator.html#afac330a82d779844c328de9bed26eb37">F_pert</a>, *<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, S_new, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, *<a class="code" href="classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa">S_scratch</a>, dtau, inv_fac);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                <span class="comment">// Update S_sum = S_pert + S_stage only for the fast variables</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                amrex::IntegratorOps&lt;T&gt;::Saxpy(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, dtau, *<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, scomp_fast, ncomp_fast);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                amrex::IntegratorOps&lt;T&gt;::Saxpy(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, dtau, *<a class="code" href="classMRISplitIntegrator.html#afac330a82d779844c328de9bed26eb37">F_pert</a>, scomp_fast, ncomp_fast);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <span class="comment">// Call the post-substep hook for S_sum at t = time + (k+1) * sub_dt</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <span class="comment">// Only call the post_substep on the fast variables</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <a class="code" href="classMRISplitIntegrator.html#a80d92932b5093d8930abe88858ea9ce5">post_substep</a>(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>    , time + (k+1) * dtau);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <span class="comment">// Copy only (rho theta), including ghost cells</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                amrex::IntegratorOps&lt;T&gt;::Copy(*<a class="code" href="classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa">S_scratch</a>, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, scomp_rth, ncomp_rth, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="comment">// Evaluate F_slow(S_stage) only for the slow variables</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="comment">// Note that we are using the current stage versions (in S_new) of the slow variables</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="comment">//      (because we didn&#39;t update the slow variables in the substepping)</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <span class="comment">//       but we are using the &quot;new&quot; versions (in S_sum) of the velocities</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="comment">//      (because we did    update the fast variables in the substepping)</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <a class="code" href="classMRISplitIntegrator.html#aeb6529d9e2b7809c741e9b7dc7ada53a">slow_rhs</a>(*<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, *<a class="code" href="classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa">S_scratch</a>, time, <a class="code" href="namespaceRHSVar.html#a9c3323327b60ac367bfd4f28e8f81459ae601862ca8d00b1c87baf8202d758ecf">RHSVar::slow</a>);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="comment">// Apply F_slow only for the slow variables</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            amrex::IntegratorOps&lt;T&gt;::Copy(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>    , S_old, scomp_slow, ncomp_slow);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            amrex::IntegratorOps&lt;T&gt;::Saxpy(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, nsubsteps*dtau, *<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, scomp_slow, ncomp_slow);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="comment">// Copy into S_new which holds the stage data</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            amrex::IntegratorOps&lt;T&gt;::Copy(S_new, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, scomp_all, ncomp_all);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="comment">// Call the post-update hook for S_new after all the fine steps completed</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="comment">// This will update S_prim that is used in the slow RHS</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <a class="code" href="classMRISplitIntegrator.html#a559131bc1c3fdf4f0d6ff6526fb8507f">post_update</a>(S_new, time + nsubsteps*dtau);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        }</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="comment">// Return timestep</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612">timestep</a>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc">ERF::erf_advance()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMRISplitIntegrator_ad78b5d1908a131c3597232a041ca267b_cgraph.png" border="0" usemap="#classMRISplitIntegrator_ad78b5d1908a131c3597232a041ca267b_cgraph" alt=""/></div>
+<map name="classMRISplitIntegrator_ad78b5d1908a131c3597232a041ca267b_cgraph" id="classMRISplitIntegrator_ad78b5d1908a131c3597232a041ca267b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,145,47"/>
+<area shape="rect" href="classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86" title=" " alt="" coords="193,5,416,47"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -431,8 +481,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="afaa4cbafb29262529bfcb16395fd7572"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afaa4cbafb29262529bfcb16395fd7572">&#9670;&nbsp;</a></span>get_implicit_fast_rhs()</h2>
+<a id="acba59b32b1427818ae71ba6d83a4e0fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba59b32b1427818ae71ba6d83a4e0fb">&#9670;&nbsp;</a></span>get_fast_rhs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -443,7 +493,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::function&lt;void(T&amp;, T&amp;, T&amp;, const T&amp;, const amrex::Real, const amrex::Real)&gt; <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::get_implicit_fast_rhs </td>
+          <td class="memname">std::function&lt;void(T&amp;, T&amp;, T&amp;, const T&amp;, const amrex::Real, const amrex::Real)&gt; <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::get_fast_rhs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -455,9 +505,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMRISplitIntegrator.html#a10eb727b44c0636fd979a08935b1f02f">implicit_fast_rhs</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMRISplitIntegrator.html#a277e8b72d4914caeb9914ce49e3cb984">fast_rhs</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -485,10 +535,112 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMRISplitIntegrator.html#a80d92932b5093d8930abe88858ea9ce5">post_substep</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMRISplitIntegrator.html#a80d92932b5093d8930abe88858ea9ce5">post_substep</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="adeb09ef21f656d3ff625201ba7129456"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeb09ef21f656d3ff625201ba7129456">&#9670;&nbsp;</a></span>get_post_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void (T&amp;, amrex::Real)&gt; <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::get_post_update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMRISplitIntegrator.html#a559131bc1c3fdf4f0d6ff6526fb8507f">post_update</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaf865e066a3c327ff296c99cd0566373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf865e066a3c327ff296c99cd0566373">&#9670;&nbsp;</a></span>get_rhs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void(T&amp;, const T&amp;, const amrex::Real, int)&gt; <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::get_rhs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMRISplitIntegrator.html#ae9de7711da1f322fd503ef2a87c8c64f">rhs</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aba63019a6ac3ea9135772dcd91f49c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba63019a6ac3ea9135772dcd91f49c86">&#9670;&nbsp;</a></span>get_slow_fast_timestep_ratio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::get_slow_fast_timestep_ratio </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMRISplitIntegrator.html#ac627f7a16fd409d33916eeccb9ab3c3f">slow_fast_timestep_ratio</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b">MRISplitIntegrator&lt; T &gt;::advance()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMRISplitIntegrator_aba63019a6ac3ea9135772dcd91f49c86_icgraph.png" border="0" usemap="#classMRISplitIntegrator_aba63019a6ac3ea9135772dcd91f49c86_icgraph" alt=""/></div>
+<map name="classMRISplitIntegrator_aba63019a6ac3ea9135772dcd91f49c86_icgraph" id="classMRISplitIntegrator_aba63019a6ac3ea9135772dcd91f49c86_icgraph">
+<area shape="rect" title=" " alt="" coords="376,5,599,47"/>
+<area shape="rect" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b" title=" " alt="" coords="188,5,328,47"/>
+<area shape="rect" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc" title=" " alt="" coords="5,13,140,39"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a7b54e96150eb521642b711f8e77b0454"></a>
@@ -516,9 +668,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a8fe3068c562900c56e3174c23af4ab99">initialize_data</a>(S_data);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a8fe3068c562900c56e3174c23af4ab99">initialize_data</a>(S_data);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -556,17 +708,19 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> include_ghost = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        amrex::IntegratorOps&lt;T&gt;::CreateLike(<a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>, S_data, include_ghost);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a> = <a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>[0].get();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        amrex::IntegratorOps&lt;T&gt;::CreateLike(<a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>, S_data, include_ghost);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a1b4f0501b31fde19ae6582d87bd5dc05">S_sum_old</a> = <a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>[1].get();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        amrex::IntegratorOps&lt;T&gt;::CreateLike(<a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>, S_data, include_ghost);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a> = <a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>[2].get();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        amrex::IntegratorOps&lt;T&gt;::CreateLike(<a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>, S_data, include_ghost);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#afac330a82d779844c328de9bed26eb37">F_pert</a> = <a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>[3].get();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">// TODO: We can optimize memory by making the cell-centered part of S_sum, S_scratch and F_pert</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">//       have only 2 components, not Cons::NumVars components</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> include_ghost = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        amrex::IntegratorOps&lt;T&gt;::CreateLike(<a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>, S_data, include_ghost);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a> = <a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>[0].get();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        amrex::IntegratorOps&lt;T&gt;::CreateLike(<a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>, S_data, include_ghost);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa">S_scratch</a> = <a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>[1].get();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        amrex::IntegratorOps&lt;T&gt;::CreateLike(<a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>, S_data, include_ghost);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a> = <a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>[2].get();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        amrex::IntegratorOps&lt;T&gt;::CreateLike(<a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>, S_data, include_ghost);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#afac330a82d779844c328de9bed26eb37">F_pert</a> = <a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>[3].get();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMRISplitIntegrator.html#a7b54e96150eb521642b711f8e77b0454">MRISplitIntegrator&lt; T &gt;::initialize()</a>, and <a class="el" href="classMRISplitIntegrator.html#a9ea1c36a75e04596ffe0fa29e614b6e2">MRISplitIntegrator&lt; T &gt;::MRISplitIntegrator()</a>.</p>
 <div class="dynheader">
@@ -607,16 +761,16 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; F : <a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>) {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            Map(*F);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; F : <a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>) {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            Map(*F);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a11b4db42a073541e6c76c8eacb6f8ab1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11b4db42a073541e6c76c8eacb6f8ab1">&#9670;&nbsp;</a></span>set_implicit_fast_rhs()</h2>
+<a id="a26a7a9dca99cfa7c2b5884085e4a4916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26a7a9dca99cfa7c2b5884085e4a4916">&#9670;&nbsp;</a></span>set_fast_rhs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -627,9 +781,9 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::set_implicit_fast_rhs </td>
+          <td class="memname">void <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::set_fast_rhs </td>
           <td>(</td>
-          <td class="paramtype">std::function&lt; void(T &amp;, T &amp;, T &amp;, const T &amp;, const T &amp;, const amrex::Real, const amrex::Real)&gt;&#160;</td>
+          <td class="paramtype">std::function&lt; void(T &amp;, T &amp;, T &amp;, const T &amp;, T &amp;, const amrex::Real, const amrex::Real)&gt;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -640,17 +794,17 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a10eb727b44c0636fd979a08935b1f02f">implicit_fast_rhs</a> = F;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a277e8b72d4914caeb9914ce49e3cb984">fast_rhs</a> = F;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc">ERF::erf_advance()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMRISplitIntegrator_a11b4db42a073541e6c76c8eacb6f8ab1_icgraph.png" border="0" usemap="#classMRISplitIntegrator_a11b4db42a073541e6c76c8eacb6f8ab1_icgraph" alt=""/></div>
-<map name="classMRISplitIntegrator_a11b4db42a073541e6c76c8eacb6f8ab1_icgraph" id="classMRISplitIntegrator_a11b4db42a073541e6c76c8eacb6f8ab1_icgraph">
-<area shape="rect" title=" " alt="" coords="188,5,353,47"/>
+<div class="center"><img src="classMRISplitIntegrator_a26a7a9dca99cfa7c2b5884085e4a4916_icgraph.png" border="0" usemap="#classMRISplitIntegrator_a26a7a9dca99cfa7c2b5884085e4a4916_icgraph" alt=""/></div>
+<map name="classMRISplitIntegrator_a26a7a9dca99cfa7c2b5884085e4a4916_icgraph" id="classMRISplitIntegrator_a26a7a9dca99cfa7c2b5884085e4a4916_icgraph">
+<area shape="rect" title=" " alt="" coords="188,5,328,47"/>
 <area shape="rect" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc" title=" " alt="" coords="5,13,140,39"/>
 </map>
 </div>
@@ -682,9 +836,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a80d92932b5093d8930abe88858ea9ce5">post_substep</a> = F;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a80d92932b5093d8930abe88858ea9ce5">post_substep</a> = F;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc">ERF::erf_advance()</a>.</p>
 <div class="dynheader">
@@ -693,6 +847,163 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classMRISplitIntegrator_af8fc7299736dd82bc73206afce2af746_icgraph.png" border="0" usemap="#classMRISplitIntegrator_af8fc7299736dd82bc73206afce2af746_icgraph" alt=""/></div>
 <map name="classMRISplitIntegrator_af8fc7299736dd82bc73206afce2af746_icgraph" id="classMRISplitIntegrator_af8fc7299736dd82bc73206afce2af746_icgraph">
 <area shape="rect" title=" " alt="" coords="188,5,331,47"/>
+<area shape="rect" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc" title=" " alt="" coords="5,13,140,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2f725549d38dfef0890da90e604e7192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f725549d38dfef0890da90e604e7192">&#9670;&nbsp;</a></span>set_post_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::set_post_update </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(T &amp;, amrex::Real)&gt;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a559131bc1c3fdf4f0d6ff6526fb8507f">post_update</a> = F;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc">ERF::erf_advance()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMRISplitIntegrator_a2f725549d38dfef0890da90e604e7192_icgraph.png" border="0" usemap="#classMRISplitIntegrator_a2f725549d38dfef0890da90e604e7192_icgraph" alt=""/></div>
+<map name="classMRISplitIntegrator_a2f725549d38dfef0890da90e604e7192_icgraph" id="classMRISplitIntegrator_a2f725549d38dfef0890da90e604e7192_icgraph">
+<area shape="rect" title=" " alt="" coords="188,5,328,47"/>
+<area shape="rect" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc" title=" " alt="" coords="5,13,140,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac38ae5a790188591e71289d62746e4ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac38ae5a790188591e71289d62746e4ea">&#9670;&nbsp;</a></span>set_rhs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::set_rhs </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(T &amp;, const T &amp;, const amrex::Real, int)&gt;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#ae9de7711da1f322fd503ef2a87c8c64f">rhs</a> = F;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad31fb2cda1fc2dce80820ed7c4a3c052"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31fb2cda1fc2dce80820ed7c4a3c052">&#9670;&nbsp;</a></span>set_slow_fast_timestep_ratio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::set_slow_fast_timestep_ratio </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>timestep_ratio</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#ac627f7a16fd409d33916eeccb9ab3c3f">slow_fast_timestep_ratio</a> = timestep_ratio;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc">ERF::erf_advance()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMRISplitIntegrator_ad31fb2cda1fc2dce80820ed7c4a3c052_icgraph.png" border="0" usemap="#classMRISplitIntegrator_ad31fb2cda1fc2dce80820ed7c4a3c052_icgraph" alt=""/></div>
+<map name="classMRISplitIntegrator_ad31fb2cda1fc2dce80820ed7c4a3c052_icgraph" id="classMRISplitIntegrator_ad31fb2cda1fc2dce80820ed7c4a3c052_icgraph">
+<area shape="rect" title=" " alt="" coords="188,5,409,47"/>
+<area shape="rect" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc" title=" " alt="" coords="5,13,140,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2c7d34b0ebbea32725fefcfa6053c9a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c7d34b0ebbea32725fefcfa6053c9a8">&#9670;&nbsp;</a></span>set_slow_rhs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::set_slow_rhs </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(T &amp;, const T &amp;, T &amp;, const amrex::Real, int)&gt;&#160;</td>
+          <td class="paramname"><em>F</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#aeb6529d9e2b7809c741e9b7dc7ada53a">slow_rhs</a> = F;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc">ERF::erf_advance()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMRISplitIntegrator_a2c7d34b0ebbea32725fefcfa6053c9a8_icgraph.png" border="0" usemap="#classMRISplitIntegrator_a2c7d34b0ebbea32725fefcfa6053c9a8_icgraph" alt=""/></div>
+<map name="classMRISplitIntegrator_a2c7d34b0ebbea32725fefcfa6053c9a8_icgraph" id="classMRISplitIntegrator_a2c7d34b0ebbea32725fefcfa6053c9a8_icgraph">
+<area shape="rect" title=" " alt="" coords="188,5,328,47"/>
 <area shape="rect" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc" title=" " alt="" coords="5,13,140,39"/>
 </map>
 </div>
@@ -746,7 +1057,7 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -803,8 +1114,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a10eb727b44c0636fd979a08935b1f02f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10eb727b44c0636fd979a08935b1f02f">&#9670;&nbsp;</a></span>implicit_fast_rhs</h2>
+<a id="a277e8b72d4914caeb9914ce49e3cb984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a277e8b72d4914caeb9914ce49e3cb984">&#9670;&nbsp;</a></span>fast_rhs</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -815,7 +1126,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::function&lt;void(T&amp;, T&amp;, T&amp;, const T&amp;, const T&amp;, const amrex::Real, const amrex::Real)&gt; <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::implicit_fast_rhs</td>
+          <td class="memname">std::function&lt;void(T&amp;, T&amp;, T&amp;, const T&amp;, T&amp;, const amrex::Real, const amrex::Real)&gt; <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::fast_rhs</td>
         </tr>
       </table>
   </td>
@@ -825,7 +1136,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b">MRISplitIntegrator&lt; T &gt;::advance()</a>, <a class="el" href="classMRISplitIntegrator.html#afaa4cbafb29262529bfcb16395fd7572">MRISplitIntegrator&lt; T &gt;::get_implicit_fast_rhs()</a>, and <a class="el" href="classMRISplitIntegrator.html#a11b4db42a073541e6c76c8eacb6f8ab1">MRISplitIntegrator&lt; T &gt;::set_implicit_fast_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b">MRISplitIntegrator&lt; T &gt;::advance()</a>, <a class="el" href="classMRISplitIntegrator.html#acba59b32b1427818ae71ba6d83a4e0fb">MRISplitIntegrator&lt; T &gt;::get_fast_rhs()</a>, and <a class="el" href="classMRISplitIntegrator.html#a26a7a9dca99cfa7c2b5884085e4a4916">MRISplitIntegrator&lt; T &gt;::set_fast_rhs()</a>.</p>
 
 </div>
 </div>
@@ -855,6 +1166,88 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="a559131bc1c3fdf4f0d6ff6526fb8507f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a559131bc1c3fdf4f0d6ff6526fb8507f">&#9670;&nbsp;</a></span>post_update</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void (T&amp;, amrex::Real)&gt; <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::post_update</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The post_update function is called by the integrator on state data before using it to evaluate a right-hand side. </p>
+
+<p class="reference">Referenced by <a class="el" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b">MRISplitIntegrator&lt; T &gt;::advance()</a>, <a class="el" href="classMRISplitIntegrator.html#adeb09ef21f656d3ff625201ba7129456">MRISplitIntegrator&lt; T &gt;::get_post_update()</a>, and <a class="el" href="classMRISplitIntegrator.html#a2f725549d38dfef0890da90e604e7192">MRISplitIntegrator&lt; T &gt;::set_post_update()</a>.</p>
+
+</div>
+</div>
+<a id="ae9de7711da1f322fd503ef2a87c8c64f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9de7711da1f322fd503ef2a87c8c64f">&#9670;&nbsp;</a></span>rhs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void(T&amp;, const T&amp;, const amrex::Real, int)&gt; <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::rhs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>rhs is the right-hand-side function the integrator will use. </p>
+
+<p class="reference">Referenced by <a class="el" href="classMRISplitIntegrator.html#aaf865e066a3c327ff296c99cd0566373">MRISplitIntegrator&lt; T &gt;::get_rhs()</a>, and <a class="el" href="classMRISplitIntegrator.html#ac38ae5a790188591e71289d62746e4ea">MRISplitIntegrator&lt; T &gt;::set_rhs()</a>.</p>
+
+</div>
+</div>
+<a id="a6bcdee4380cd503256cb460b558184aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bcdee4380cd503256cb460b558184aa">&#9670;&nbsp;</a></span>S_scratch</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::S_scratch</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b">MRISplitIntegrator&lt; T &gt;::advance()</a>, and <a class="el" href="classMRISplitIntegrator.html#a8fe3068c562900c56e3174c23af4ab99">MRISplitIntegrator&lt; T &gt;::initialize_data()</a>.</p>
+
+</div>
+</div>
 <a id="ad570588876d21506bc7232884841cab1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad570588876d21506bc7232884841cab1">&#9670;&nbsp;</a></span>S_sum</h2>
 
@@ -881,8 +1274,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a1b4f0501b31fde19ae6582d87bd5dc05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b4f0501b31fde19ae6582d87bd5dc05">&#9670;&nbsp;</a></span>S_sum_old</h2>
+<a id="ac627f7a16fd409d33916eeccb9ab3c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac627f7a16fd409d33916eeccb9ab3c3f">&#9670;&nbsp;</a></span>slow_fast_timestep_ratio</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -893,7 +1286,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::S_sum_old</td>
+          <td class="memname">int <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::slow_fast_timestep_ratio = 0</td>
         </tr>
       </table>
   </td>
@@ -903,7 +1296,35 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b">MRISplitIntegrator&lt; T &gt;::advance()</a>, and <a class="el" href="classMRISplitIntegrator.html#a8fe3068c562900c56e3174c23af4ab99">MRISplitIntegrator&lt; T &gt;::initialize_data()</a>.</p>
+<p>The ratio of slow timestep size / fast timestep size (int) </p>
+
+<p class="reference">Referenced by <a class="el" href="classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86">MRISplitIntegrator&lt; T &gt;::get_slow_fast_timestep_ratio()</a>, and <a class="el" href="classMRISplitIntegrator.html#ad31fb2cda1fc2dce80820ed7c4a3c052">MRISplitIntegrator&lt; T &gt;::set_slow_fast_timestep_ratio()</a>.</p>
+
+</div>
+</div>
+<a id="aeb6529d9e2b7809c741e9b7dc7ada53a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb6529d9e2b7809c741e9b7dc7ada53a">&#9670;&nbsp;</a></span>slow_rhs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void(T&amp;, const T&amp;, T&amp;, const amrex::Real, int)&gt; <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::slow_rhs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b">MRISplitIntegrator&lt; T &gt;::advance()</a>, and <a class="el" href="classMRISplitIntegrator.html#a2c7d34b0ebbea32725fefcfa6053c9a8">MRISplitIntegrator&lt; T &gt;::set_slow_rhs()</a>.</p>
 
 </div>
 </div>
@@ -933,19 +1354,56 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="a3f21bedf222ce95136d4889012401612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f21bedf222ce95136d4889012401612">&#9670;&nbsp;</a></span>timestep</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Real <a class="el" href="classMRISplitIntegrator.html">MRISplitIntegrator</a>&lt; T &gt;::timestep</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Integrator timestep size (Real) </p>
+
+<p class="reference">Referenced by <a class="el" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b">MRISplitIntegrator&lt; T &gt;::advance()</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/runner/work/ERF/ERF/Source/TimeIntegration/<a class="el" href="ERF__MRI_8H_source.html">ERF_MRI.H</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassMRISplitIntegrator_html_a80d92932b5093d8930abe88858ea9ce5"><div class="ttname"><a href="classMRISplitIntegrator.html#a80d92932b5093d8930abe88858ea9ce5">MRISplitIntegrator::post_substep</a></div><div class="ttdeci">std::function&lt; void(T &amp;, amrex::Real)&gt; post_substep</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:16</div></div>
-<div class="ttc" id="aclassMRISplitIntegrator_html_afac330a82d779844c328de9bed26eb37"><div class="ttname"><a href="classMRISplitIntegrator.html#afac330a82d779844c328de9bed26eb37">MRISplitIntegrator::F_pert</a></div><div class="ttdeci">T * F_pert</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:23</div></div>
-<div class="ttc" id="aclassMRISplitIntegrator_html_a8fe3068c562900c56e3174c23af4ab99"><div class="ttname"><a href="classMRISplitIntegrator.html#a8fe3068c562900c56e3174c23af4ab99">MRISplitIntegrator::initialize_data</a></div><div class="ttdeci">void initialize_data(const T &amp;S_data)</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:25</div></div>
-<div class="ttc" id="aclassMRISplitIntegrator_html_a088e107111ca012e026908b0c0b3cef7"><div class="ttname"><a href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">MRISplitIntegrator::F_slow</a></div><div class="ttdeci">T * F_slow</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:22</div></div>
-<div class="ttc" id="aclassMRISplitIntegrator_html_a10eb727b44c0636fd979a08935b1f02f"><div class="ttname"><a href="classMRISplitIntegrator.html#a10eb727b44c0636fd979a08935b1f02f">MRISplitIntegrator::implicit_fast_rhs</a></div><div class="ttdeci">std::function&lt; void(T &amp;, T &amp;, T &amp;, const T &amp;, const T &amp;, const amrex::Real, const amrex::Real)&gt; implicit_fast_rhs</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:17</div></div>
-<div class="ttc" id="aclassMRISplitIntegrator_html_ad570588876d21506bc7232884841cab1"><div class="ttname"><a href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">MRISplitIntegrator::S_sum</a></div><div class="ttdeci">T * S_sum</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:20</div></div>
-<div class="ttc" id="aclassMRISplitIntegrator_html_a1b4f0501b31fde19ae6582d87bd5dc05"><div class="ttname"><a href="classMRISplitIntegrator.html#a1b4f0501b31fde19ae6582d87bd5dc05">MRISplitIntegrator::S_sum_old</a></div><div class="ttdeci">T * S_sum_old</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:21</div></div>
-<div class="ttc" id="aclassMRISplitIntegrator_html_a10fa09211f3b0a6b7357ab79dbadbb80"><div class="ttname"><a href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">MRISplitIntegrator::T_store</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; T &gt; &gt; T_store</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:19</div></div>
+<div class="ttc" id="anamespaceRHSVar_html_a9c3323327b60ac367bfd4f28e8f81459ae601862ca8d00b1c87baf8202d758ecf"><div class="ttname"><a href="namespaceRHSVar.html#a9c3323327b60ac367bfd4f28e8f81459ae601862ca8d00b1c87baf8202d758ecf">RHSVar::slow</a></div><div class="ttdeci">@ slow</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:56</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_ae9de7711da1f322fd503ef2a87c8c64f"><div class="ttname"><a href="classMRISplitIntegrator.html#ae9de7711da1f322fd503ef2a87c8c64f">MRISplitIntegrator::rhs</a></div><div class="ttdeci">std::function&lt; void(T &amp;, const T &amp;, const amrex::Real, int)&gt; rhs</div><div class="ttdoc">rhs is the right-hand-side function the integrator will use.</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:17</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_aeb6529d9e2b7809c741e9b7dc7ada53a"><div class="ttname"><a href="classMRISplitIntegrator.html#aeb6529d9e2b7809c741e9b7dc7ada53a">MRISplitIntegrator::slow_rhs</a></div><div class="ttdeci">std::function&lt; void(T &amp;, const T &amp;, T &amp;, const amrex::Real, int)&gt; slow_rhs</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:18</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_a80d92932b5093d8930abe88858ea9ce5"><div class="ttname"><a href="classMRISplitIntegrator.html#a80d92932b5093d8930abe88858ea9ce5">MRISplitIntegrator::post_substep</a></div><div class="ttdeci">std::function&lt; void(T &amp;, amrex::Real)&gt; post_substep</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:36</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_afac330a82d779844c328de9bed26eb37"><div class="ttname"><a href="classMRISplitIntegrator.html#afac330a82d779844c328de9bed26eb37">MRISplitIntegrator::F_pert</a></div><div class="ttdeci">T * F_pert</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:43</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_ac627f7a16fd409d33916eeccb9ab3c3f"><div class="ttname"><a href="classMRISplitIntegrator.html#ac627f7a16fd409d33916eeccb9ab3c3f">MRISplitIntegrator::slow_fast_timestep_ratio</a></div><div class="ttdeci">int slow_fast_timestep_ratio</div><div class="ttdoc">The ratio of slow timestep size / fast timestep size (int)</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:29</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_a6bcdee4380cd503256cb460b558184aa"><div class="ttname"><a href="classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa">MRISplitIntegrator::S_scratch</a></div><div class="ttdeci">T * S_scratch</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:41</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_aba63019a6ac3ea9135772dcd91f49c86"><div class="ttname"><a href="classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86">MRISplitIntegrator::get_slow_fast_timestep_ratio</a></div><div class="ttdeci">int get_slow_fast_timestep_ratio()</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:100</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_a3f21bedf222ce95136d4889012401612"><div class="ttname"><a href="classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612">MRISplitIntegrator::timestep</a></div><div class="ttdeci">amrex::Real timestep</div><div class="ttdoc">Integrator timestep size (Real)</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:24</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_a277e8b72d4914caeb9914ce49e3cb984"><div class="ttname"><a href="classMRISplitIntegrator.html#a277e8b72d4914caeb9914ce49e3cb984">MRISplitIntegrator::fast_rhs</a></div><div class="ttdeci">std::function&lt; void(T &amp;, T &amp;, T &amp;, const T &amp;, T &amp;, const amrex::Real, const amrex::Real)&gt; fast_rhs</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:19</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_a8fe3068c562900c56e3174c23af4ab99"><div class="ttname"><a href="classMRISplitIntegrator.html#a8fe3068c562900c56e3174c23af4ab99">MRISplitIntegrator::initialize_data</a></div><div class="ttdeci">void initialize_data(const T &amp;S_data)</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:45</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_a088e107111ca012e026908b0c0b3cef7"><div class="ttname"><a href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">MRISplitIntegrator::F_slow</a></div><div class="ttdeci">T * F_slow</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:42</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_a559131bc1c3fdf4f0d6ff6526fb8507f"><div class="ttname"><a href="classMRISplitIntegrator.html#a559131bc1c3fdf4f0d6ff6526fb8507f">MRISplitIntegrator::post_update</a></div><div class="ttdeci">std::function&lt; void(T &amp;, amrex::Real)&gt; post_update</div><div class="ttdoc">The post_update function is called by the integrator on state data before using it to evaluate a righ...</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:34</div></div>
+<div class="ttc" id="anamespaceRHSVar_html_a9c3323327b60ac367bfd4f28e8f81459a3be7d05d61be85bbfadeef639af8013f"><div class="ttname"><a href="namespaceRHSVar.html#a9c3323327b60ac367bfd4f28e8f81459a3be7d05d61be85bbfadeef639af8013f">RHSVar::fast</a></div><div class="ttdeci">@ fast</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:57</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_ad570588876d21506bc7232884841cab1"><div class="ttname"><a href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">MRISplitIntegrator::S_sum</a></div><div class="ttdeci">T * S_sum</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:40</div></div>
+<div class="ttc" id="aclassMRISplitIntegrator_html_a10fa09211f3b0a6b7357ab79dbadbb80"><div class="ttname"><a href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">MRISplitIntegrator::T_store</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; T &gt; &gt; T_store</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:39</div></div>
+<div class="ttc" id="anamespaceCons_html_ab92931555eff5e3d0d9eb62ae0225cc1a5934ebcc17d4dfd56ed8cf6221c9a5ed"><div class="ttname"><a href="namespaceCons.html#ab92931555eff5e3d0d9eb62ae0225cc1a5934ebcc17d4dfd56ed8cf6221c9a5ed">Cons::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:86</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

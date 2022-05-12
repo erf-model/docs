@@ -281,33 +281,33 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> zflux_lo = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k  );</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160; </div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <span class="comment">// ****************************************************************************************</span></div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="comment">// Now that we have the correctly weighted vector components, we can multiply by the</span></div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <span class="comment">//     scalar (such as theta or C) on the respective faces</span></div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="comment">// ****************************************************************************************</span></div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> invdetJ = 1.0 / detJ(i,j,k);</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160; </div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = icomp; n &lt; icomp+ncomp; n++)</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    {</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        <span class="keywordflow">if</span> ((n != <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a> &amp;&amp; n != <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) ||</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            (  use_deardorff &amp;&amp; n == <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) ||</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;            (  use_QKE       &amp;&amp; n == <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) )</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        {</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xflux_hi_n, xflux_lo_n, yflux_hi_n, yflux_lo_n, zflux_hi_n, zflux_lo_n;</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            <span class="keywordflow">if</span> (n != <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;            {</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = n - <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>;</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                <span class="comment">// These are only used to construct the sign to be used in upwinding</span></div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> uadv_hi = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k);</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> uadv_lo = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i  ,j,k);</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vadv_hi = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j+1,k);</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vadv_lo = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j  ,k);</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> wadv_hi = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k+1);</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> wadv_lo = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k  );</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <span class="comment">// These are only used to construct the sign to be used in upwinding</span></div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> uadv_hi = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k);</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> uadv_lo = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i  ,j,k);</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vadv_hi = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j+1,k);</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vadv_lo = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j  ,k);</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> wadv_hi = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k+1);</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> wadv_lo = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k  );</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160; </div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="comment">// ****************************************************************************************</span></div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="comment">// Now that we have the correctly weighted vector components, we can multiply by the</span></div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="comment">//     scalar (such as theta or C) on the respective faces</span></div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <span class="comment">// ****************************************************************************************</span></div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160; </div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> invdetJ = 1.0 / detJ(i,j,k);</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160; </div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = icomp; n &lt; icomp+ncomp; n++)</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    {</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        <span class="keywordflow">if</span> ((n != <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a> &amp;&amp; n != <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) ||</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            (  use_deardorff &amp;&amp; n == <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) ||</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            (  use_QKE       &amp;&amp; n == <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) )</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        {</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xflux_hi_n, xflux_lo_n, yflux_hi_n, yflux_lo_n, zflux_hi_n, zflux_lo_n;</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            <span class="keywordflow">if</span> (n != <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;            {</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = n - <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>;</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160; </div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                xflux_hi_n = xflux_hi * <a class="code" href="Interpolation_8cpp.html#a3046bc73f0e1b5c442705c4fee050e45">InterpolateFromCellOrFace</a>(i+1, j, k, cell_prim, prim_index, uadv_hi, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a>, spatial_order);</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                xflux_lo_n = xflux_lo * <a class="code" href="Interpolation_8cpp.html#a3046bc73f0e1b5c442705c4fee050e45">InterpolateFromCellOrFace</a>(i  , j, k, cell_prim, prim_index, uadv_lo, <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a>, spatial_order);</div>
@@ -325,12 +325,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                zflux_hi_n = zflux_hi; zflux_lo_n = zflux_lo;</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;            }</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            <a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa21245d0eca9226a6441feac35602c9be">xflux</a>(i+1,j,k,n) = xflux_hi_n;</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;            <a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa21245d0eca9226a6441feac35602c9be">xflux</a>(i  ,j,k,n) = xflux_lo_n;</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            <a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j+1,k,n) = yflux_hi_n;</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            <a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j  ,k,n) = yflux_lo_n;</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            <a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k+1,n) = zflux_hi_n;</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            <a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k  ,n) = zflux_lo_n;</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da21245d0eca9226a6441feac35602c9be">xflux</a>(i+1,j,k,n) = xflux_hi_n;</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;            <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da21245d0eca9226a6441feac35602c9be">xflux</a>(i  ,j,k,n) = xflux_lo_n;</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76daf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j+1,k,n) = yflux_hi_n;</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76daf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j  ,k,n) = yflux_lo_n;</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k+1,n) = zflux_hi_n;</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k  ,n) = zflux_lo_n;</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160; </div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            advectionSrc(i,j,k,n) = -( (xflux_hi_n - xflux_lo_n) * dxInv</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                                      +(yflux_hi_n - yflux_lo_n) * dyInv</div>
@@ -339,20 +339,21 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;            advectionSrc(i,j,k,n) *= invdetJ;</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            <a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa21245d0eca9226a6441feac35602c9be">xflux</a>(i+1,j,k,n) = 0.;</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            <a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa21245d0eca9226a6441feac35602c9be">xflux</a>(i  ,j,k,n) = 0.;</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;            <a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j+1,k,n) = 0.;</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;            <a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511faf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j  ,k,n) = 0.;</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            <a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k+1,n) = 0.;</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;            <a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k  ,n) = 0.;</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160; </div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;            advectionSrc(i,j,k,n) = 0.;</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;        }</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    } <span class="comment">// n</span></div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    });</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;}</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160; </div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da21245d0eca9226a6441feac35602c9be">xflux</a>(i+1,j,k,n) = 0.;</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;            <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da21245d0eca9226a6441feac35602c9be">xflux</a>(i  ,j,k,n) = 0.;</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;            <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76daf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j+1,k,n) = 0.;</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76daf204c2311e68c84ad19b3759183bdd09">yflux</a>(i,j  ,k,n) = 0.;</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;            <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k+1,n) = 0.;</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;            <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da9b94534904513cb3b68ef8b0c7bfed51">zflux</a>(i,j,k  ,n) = 0.;</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;            advectionSrc(i,j,k,n) = 0.;</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;        }</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    } <span class="comment">// n</span></div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    });</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__fast__rhs_8cpp.html#a87ecce1a52c309d02c04812aa091d217">erf_implicit_fast_rhs()</a>, and <a class="el" href="ERF__slow__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64">erf_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__fast__rhs_8cpp.html#a18222666585d1c3a0c934fc2fadcfd48">erf_fast_rhs()</a>, and <a class="el" href="ERF__slow__rhs_8cpp.html#a1f0f3fe19feddf4ead5de648f7528be0">erf_slow_rhs()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -369,9 +370,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Advection_8cpp_aa3340ec12693f3f7157373ddd51ffb4a_icgraph.png" border="0" usemap="#Advection_8cpp_aa3340ec12693f3f7157373ddd51ffb4a_icgraph" alt=""/></div>
 <map name="Advection_8cpp_aa3340ec12693f3f7157373ddd51ffb4a_icgraph" id="Advection_8cpp_aa3340ec12693f3f7157373ddd51ffb4a_icgraph">
-<area shape="rect" title=" " alt="" coords="391,31,552,57"/>
-<area shape="rect" href="ERF__fast__rhs_8cpp.html#a87ecce1a52c309d02c04812aa091d217" title=" " alt="" coords="188,5,343,32"/>
-<area shape="rect" href="ERF__slow__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64" title=" " alt="" coords="232,56,299,83"/>
+<area shape="rect" title=" " alt="" coords="340,31,501,57"/>
+<area shape="rect" href="ERF__fast__rhs_8cpp.html#a18222666585d1c3a0c934fc2fadcfd48" title=" " alt="" coords="191,5,289,32"/>
+<area shape="rect" href="ERF__slow__rhs_8cpp.html#a1f0f3fe19feddf4ead5de648f7528be0" title=" " alt="" coords="188,56,292,83"/>
 <area shape="rect" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc" title=" " alt="" coords="5,31,140,57"/>
 </map>
 </div>
@@ -480,7 +481,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">return</span> advectionSrc;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64">erf_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs_8cpp.html#a1f0f3fe19feddf4ead5de648f7528be0">erf_slow_rhs()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -496,8 +497,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Advection_8cpp_a0ffa6a8e256960ea70b649cdd87936b7_icgraph.png" border="0" usemap="#Advection_8cpp_a0ffa6a8e256960ea70b649cdd87936b7_icgraph" alt=""/></div>
 <map name="Advection_8cpp_a0ffa6a8e256960ea70b649cdd87936b7_icgraph" id="Advection_8cpp_a0ffa6a8e256960ea70b649cdd87936b7_icgraph">
-<area shape="rect" title=" " alt="" coords="303,5,472,32"/>
-<area shape="rect" href="ERF__slow__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64" title=" " alt="" coords="188,5,255,32"/>
+<area shape="rect" title=" " alt="" coords="340,5,509,32"/>
+<area shape="rect" href="ERF__slow__rhs_8cpp.html#a1f0f3fe19feddf4ead5de648f7528be0" title=" " alt="" coords="188,5,292,32"/>
 <area shape="rect" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc" title=" " alt="" coords="5,5,140,32"/>
 </map>
 </div>
@@ -606,7 +607,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">return</span> advectionSrc;</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64">erf_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs_8cpp.html#a1f0f3fe19feddf4ead5de648f7528be0">erf_slow_rhs()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -622,8 +623,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Advection_8cpp_ab87576e21eae735694d8601d0b7b6250_icgraph.png" border="0" usemap="#Advection_8cpp_ab87576e21eae735694d8601d0b7b6250_icgraph" alt=""/></div>
 <map name="Advection_8cpp_ab87576e21eae735694d8601d0b7b6250_icgraph" id="Advection_8cpp_ab87576e21eae735694d8601d0b7b6250_icgraph">
-<area shape="rect" title=" " alt="" coords="303,5,471,32"/>
-<area shape="rect" href="ERF__slow__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64" title=" " alt="" coords="188,5,255,32"/>
+<area shape="rect" title=" " alt="" coords="340,5,508,32"/>
+<area shape="rect" href="ERF__slow__rhs_8cpp.html#a1f0f3fe19feddf4ead5de648f7528be0" title=" " alt="" coords="188,5,292,32"/>
 <area shape="rect" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc" title=" " alt="" coords="5,5,140,32"/>
 </map>
 </div>
@@ -732,7 +733,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keywordflow">return</span> advectionSrc;</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64">erf_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs_8cpp.html#a1f0f3fe19feddf4ead5de648f7528be0">erf_slow_rhs()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -748,8 +749,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Advection_8cpp_a0b55bbda13467685763fbef8fe1c6344_icgraph.png" border="0" usemap="#Advection_8cpp_a0b55bbda13467685763fbef8fe1c6344_icgraph" alt=""/></div>
 <map name="Advection_8cpp_a0b55bbda13467685763fbef8fe1c6344_icgraph" id="Advection_8cpp_a0b55bbda13467685763fbef8fe1c6344_icgraph">
-<area shape="rect" title=" " alt="" coords="303,5,472,32"/>
-<area shape="rect" href="ERF__slow__rhs_8cpp.html#ab0120e6b1faf03c966b7ba549d34df64" title=" " alt="" coords="188,5,255,32"/>
+<area shape="rect" title=" " alt="" coords="340,5,509,32"/>
+<area shape="rect" href="ERF__slow__rhs_8cpp.html#a1f0f3fe19feddf4ead5de648f7528be0" title=" " alt="" coords="188,5,292,32"/>
 <area shape="rect" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc" title=" " alt="" coords="5,5,140,32"/>
 </map>
 </div>
@@ -760,19 +761,19 @@ Here is the caller graph for this function:</div>
 </div><!-- doc-content -->
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
-<div class="ttc" id="anamespaceIntVar_html_aa6dd400c056a0c4cf030e06f39c4511fa9b94534904513cb3b68ef8b0c7bfed51"><div class="ttname"><a href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa9b94534904513cb3b68ef8b0c7bfed51">IntVar::zflux</a></div><div class="ttdeci">@ zflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:19</div></div>
+<div class="ttc" id="anamespaceIntVar_html_ae96c1cd796f723e15dfbf718f1a9c76daf204c2311e68c84ad19b3759183bdd09"><div class="ttname"><a href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76daf204c2311e68c84ad19b3759183bdd09">IntVar::yflux</a></div><div class="ttdeci">@ yflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:18</div></div>
 <div class="ttc" id="aSpatialStencils_8H_html_a002996309aac722698ccbc1e66f2e28c"><div class="ttname"><a href="SpatialStencils_8H.html#a002996309aac722698ccbc1e66f2e28c">OmegaFromW</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real OmegaFromW(int i, int j, int k, amrex::Real w, const amrex::Array4&lt; const amrex::Real &gt; u, const amrex::Array4&lt; const amrex::Real &gt; v, const amrex::Array4&lt; const amrex::Real &gt; z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> SpatialStencils.H:12</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
-<div class="ttc" id="anamespaceIntVar_html_aa6dd400c056a0c4cf030e06f39c4511faf204c2311e68c84ad19b3759183bdd09"><div class="ttname"><a href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511faf204c2311e68c84ad19b3759183bdd09">IntVar::yflux</a></div><div class="ttdeci">@ yflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:18</div></div>
 <div class="ttc" id="aInterpolation_8cpp_html_a3046bc73f0e1b5c442705c4fee050e45"><div class="ttname"><a href="Interpolation_8cpp.html#a3046bc73f0e1b5c442705c4fee050e45">InterpolateFromCellOrFace</a></div><div class="ttdeci">AMREX_GPU_DEVICE Real InterpolateFromCellOrFace(const int &amp;i, const int &amp;j, const int &amp;k, const Array4&lt; const Real &gt; &amp;qty, const int &amp;qty_index, const Real &amp;upw, const Coord &amp;coordDir, const int &amp;spatial_order)</div><div class="ttdef"><b>Definition:</b> Interpolation.cpp:60</div></div>
+<div class="ttc" id="anamespaceIntVar_html_ae96c1cd796f723e15dfbf718f1a9c76da9b94534904513cb3b68ef8b0c7bfed51"><div class="ttname"><a href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da9b94534904513cb3b68ef8b0c7bfed51">IntVar::zflux</a></div><div class="ttdeci">@ zflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:19</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3"><div class="ttname"><a href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">AdvectingQuantity::rho_u</a></div><div class="ttdeci">@ rho_u</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f"><div class="ttname"><a href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">AdvectingQuantity::rho_w</a></div><div class="ttdeci">@ rho_w</div></div>
+<div class="ttc" id="anamespaceIntVar_html_ae96c1cd796f723e15dfbf718f1a9c76da21245d0eca9226a6441feac35602c9be"><div class="ttname"><a href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da21245d0eca9226a6441feac35602c9be">IntVar::xflux</a></div><div class="ttdeci">@ xflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:17</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424"><div class="ttname"><a href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">AdvectingQuantity::rho_v</a></div><div class="ttdeci">@ rho_v</div></div>
-<div class="ttc" id="anamespaceIntVar_html_aa6dd400c056a0c4cf030e06f39c4511fa21245d0eca9226a6441feac35602c9be"><div class="ttname"><a href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa21245d0eca9226a6441feac35602c9be">IntVar::xflux</a></div><div class="ttdeci">@ xflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:17</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:11</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

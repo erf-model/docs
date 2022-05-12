@@ -1,4 +1,4 @@
 var ERF__fast__rhs_8cpp =
 [
-    [ "erf_implicit_fast_rhs", "ERF__fast__rhs_8cpp.html#a87ecce1a52c309d02c04812aa091d217", null ]
+    [ "erf_fast_rhs", "ERF__fast__rhs_8cpp.html#a18222666585d1c3a0c934fc2fadcfd48", null ]
 ];
