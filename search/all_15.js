@@ -1,20 +1,15 @@
 var searchData=
 [
-  ['v_697',['v',['../structBoundaryData.html#a1b8edb6f17ba7f0035a9f88c18b9ec88',1,'BoundaryData::v()'],['../structInitialData.html#a2a9d0d9d8fe8bc316c97f9ca399d4405',1,'InitialData::v()'],['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a',1,'v():&#160;DataStruct.H']]],
-  ['v_5finp_5fsound_698',['V_inp_sound',['../structInputSoundingData.html#a97a1970935e36fc0ba9a69fa0032883d',1,'InputSoundingData']]],
-  ['v_5finp_5fsound_5fd_699',['V_inp_sound_d',['../structInputSoundingData.html#a22697746622cd5f3239120eaaa71abdc',1,'InputSoundingData']]],
-  ['var_700',['var',['../classncutils_1_1NCGroup.html#a79bef315da5cff7bcf8bbcfbdd122115',1,'ncutils::NCGroup']]],
-  ['varid_701',['varid',['../structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532',1,'ncutils::NCVar']]],
-  ['vars_702',['Vars',['../namespaceVars.html',1,'']]],
-  ['vars_5fnew_703',['vars_new',['../classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b',1,'ERF']]],
-  ['vars_5fold_704',['vars_old',['../classERF.html#af31e928baa970a1507dfb0233b352542',1,'ERF']]],
-  ['vel_5fmean_705',['vel_mean',['../structABLMost.html#a96b43a807d32a81a730d8aa41e2658e6',1,'ABLMost']]],
-  ['velocity_5fnames_706',['velocity_names',['../classERF.html#a2f2ea7f5eeeb3634944550e5a1de8f7a',1,'ERF']]],
-  ['velocitytomomentum_707',['VelocityToMomentum',['../SpatialStencils_8H.html#a297b4cde72c2ffcc59f45897e82b6f1c',1,'VelocityToMomentum(const amrex::MultiFab &amp;xvel_in, const amrex::MultiFab &amp;yvel_in, const amrex::MultiFab &amp;zvel_in, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;xmom_out, amrex::MultiFab &amp;ymom_out, amrex::MultiFab &amp;zmom_out, const amrex::IntVect &amp;ngrow):&#160;SpatialStencils.H'],['../VelocityToMomentum_8cpp.html#a74241e06851a54dac1b61dcb122dc996',1,'VelocityToMomentum(const MultiFab &amp;xvel_in, const MultiFab &amp;yvel_in, const MultiFab &amp;zvel_in, const MultiFab &amp;cons_in, MultiFab &amp;xmom, MultiFab &amp;ymom, MultiFab &amp;zmom, const IntVect &amp;ngrow):&#160;VelocityToMomentum.cpp']]],
-  ['velocitytomomentum_2ecpp_708',['VelocityToMomentum.cpp',['../VelocityToMomentum_8cpp.html',1,'']]],
-  ['velplaneaverage_709',['VelPlaneAverage',['../classVelPlaneAverage.html',1,'VelPlaneAverage'],['../classVelPlaneAverage.html#ae7e5058ec55a8862a1875db75f508c5b',1,'VelPlaneAverage::VelPlaneAverage()']]],
-  ['velplaneaverage_2eh_710',['VelPlaneAverage.H',['../VelPlaneAverage_8H.html',1,'']]],
-  ['verbose_711',['verbose',['../classERF.html#a43d0b17f6e155691a1e9474526df3af5',1,'ERF']]],
-  ['vmag_5fmean_712',['vmag_mean',['../structABLMost.html#a111a9f63ca6482dc15d2ecaa4d873b70',1,'ABLMost']]],
-  ['volwgtsummf_713',['volWgtSumMF',['../classERF.html#a2cdc63885e5fec54f89cdcaffcbdc188',1,'ERF']]]
+  ['w_712',['w',['../structBoundaryData.html#ad6f08ac14b0a0907a8946e4e2ffd882e',1,'BoundaryData::w()'],['../structInitialData.html#a36d25894082a109e3593d5b9a0e779e1',1,'InitialData::w()'],['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68',1,'w():&#160;DataStruct.H']]],
+  ['wfromomega_713',['WFromOmega',['../SpatialStencils_8H.html#a81366cf4ca04adcfbf0988099b906cd7',1,'SpatialStencils.H']]],
+  ['wfromomegabc_714',['WFromOmegaBC',['../SpatialStencils_8H.html#a53e0e7cd03af064f28541639fb10bb42',1,'SpatialStencils.H']]],
+  ['wps_5finterface_2ecpp_715',['WPS_Interface.cpp',['../WPS__Interface_8cpp.html',1,'']]],
+  ['wps_5finterface_2eh_716',['WPS_Interface.H',['../WPS__Interface_8H.html',1,'']]],
+  ['write_5fplanes_717',['write_planes',['../classWriteBndryPlanes.html#abd077cea0b42e78c3d6ccb429b4d779e',1,'WriteBndryPlanes']]],
+  ['writebndryplanes_718',['WriteBndryPlanes',['../classWriteBndryPlanes.html',1,'WriteBndryPlanes'],['../classWriteBndryPlanes.html#a460f7f20cb59e7f2f8546ebf423585d5',1,'WriteBndryPlanes::WriteBndryPlanes()']]],
+  ['writebuildinfo_719',['writeBuildInfo',['../classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa',1,'ERF']]],
+  ['writecheckpointfile_720',['WriteCheckpointFile',['../classERF.html#ad101fd46096db2d6b21544bfede6551f',1,'ERF']]],
+  ['writejobinfo_721',['writeJobInfo',['../classERF.html#aa2d8099655a8779836e63e3e98ea4372',1,'ERF']]],
+  ['writejobinfo_2ecpp_722',['writeJobInfo.cpp',['../writeJobInfo_8cpp.html',1,'']]],
+  ['writeplotfile_723',['WritePlotFile',['../classERF.html#a387af22acce3cefeb515eb151c3d1b5a',1,'ERF']]]
 ];

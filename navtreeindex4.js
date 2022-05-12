@@ -1,9 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"structSolverChoice.html#ad2131ca7eb643083fbcf8f453cf00d05":[2,0,19,25],
-"structSolverChoice.html#ad8f19f1ba25a4de9578af14ec787c0cc":[2,0,19,15],
-"structSolverChoice.html#aedad420dddffb0b78651c5d8b399a67b":[2,0,19,32],
-"structSolverChoice.html#afcc25193e0d39cda02479ee2067f49c2":[2,0,19,28],
 "structSolverChoice.html#affbc103f3361b47fbcf605a08b99d8ec":[2,0,19,38],
 "structTimeInterpolatedData.html":[2,0,20],
 "structTimeInterpolatedData.html#a0d6dcefbf7407a24669d2a37c7f558d4":[2,0,20,8],
@@ -66,6 +62,6 @@ var NAVTREEINDEX4 =
 "structncutils_1_1NCVar.html#af036d4858171a98b8a951348a654a36c":[2,0,0,4,7],
 "structncutils_1_1NCVar.html#af09b0c94dceb8666a7be0d6167bfc4b4":[2,0,0,4,13],
 "structncutils_1_1NCVar.html#af3718c080c0f3ac27c6abced87d84317":[2,0,0,4,0],
-"writeJobInfo_8cpp.html":[3,0,0,1,15],
-"writeJobInfo_8cpp.html#aabaa127a3a319c1b86090d6c88568965":[3,0,0,1,15,0]
+"writeJobInfo_8cpp.html":[3,0,0,0,15],
+"writeJobInfo_8cpp.html#aabaa127a3a319c1b86090d6c88568965":[3,0,0,0,15,0]
 };

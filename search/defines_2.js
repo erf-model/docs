@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['c_5fp_1533',['c_p',['../ERF__Constants_8H.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a',1,'ERF_Constants.H']]],
-  ['const_5fgrav_1534',['CONST_GRAV',['../ERF__Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901',1,'ERF_Constants.H']]]
+  ['gamma_1531',['Gamma',['../ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3',1,'ERF_Constants.H']]]
 ];

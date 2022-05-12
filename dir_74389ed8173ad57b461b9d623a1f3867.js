@@ -1,6 +1,5 @@
 var dir_74389ed8173ad57b461b9d623a1f3867 =
 [
-    [ "DataIngestion", "dir_26649fc72b7e01e36637dc682ced7b39.html", "dir_26649fc72b7e01e36637dc682ced7b39" ],
     [ "IO", "dir_4c48f420b74c1f1cc31b316243ca788c.html", "dir_4c48f420b74c1f1cc31b316243ca788c" ],
     [ "SpatialStencils", "dir_355f330b8d85407e56bdd3ad6c7bf36f.html", "dir_355f330b8d85407e56bdd3ad6c7bf36f" ],
     [ "TimeIntegration", "dir_759b90b1f3ea3c20e13693c83a3534b7.html", "dir_759b90b1f3ea3c20e13693c83a3534b7" ],
@@ -20,6 +19,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ERF_ComputeTimestep.cpp", "ERF__ComputeTimestep_8cpp.html", null ],
     [ "ERF_Constants.H", "ERF__Constants_8H.html", "ERF__Constants_8H" ],
     [ "ERF_FillPatch.cpp", "ERF__FillPatch_8cpp.html", null ],
+    [ "ERF_init.cpp", "ERF__init_8cpp.html", null ],
     [ "ERF_init1d.cpp", "ERF__init1d_8cpp.html", null ],
     [ "ERF_init_bcs.cpp", "ERF__init__bcs_8cpp.html", null ],
     [ "ERF_Math.H", "ERF__Math_8H.html", "ERF__Math_8H" ],

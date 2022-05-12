@@ -1,7 +1,21 @@
 var searchData=
 [
-  ['kappa_343',['kappa',['../structABLMost.html#a1eafcc83d7f547d4b6946f56a3d334ed',1,'ABLMost::kappa()'],['../ERF__Constants_8H.html#acd1636d4e71f645d469c49a7ba8e18a4',1,'KAPPA():&#160;ERF_Constants.H']]],
-  ['ke_344',['KE',['../namespacePrim.html#a65f567687417821214564c7d1ea9dcc9ab86ada63e1e95198c83319b5646d6ff0',1,'Prim']]],
-  ['ke_5fh_345',['KE_h',['../namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977afa0c87454b22a819e328491f78bf6767',1,'EddyDiff']]],
-  ['ke_5fv_346',['KE_v',['../namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a937c191d351b2c26cd7ea07878978b94',1,'EddyDiff']]]
+  ['last_5fcheck_5ffile_5fstep_347',['last_check_file_step',['../classERF.html#a02722d16f3c26efe590702200f1296d7',1,'ERF']]],
+  ['last_5ffile_5fread_348',['last_file_read',['../classReadBndryPlanes.html#a6a62ba4a2a722033004ff0d169b6382f',1,'ReadBndryPlanes']]],
+  ['last_5fplot_5ffile_5fstep_349',['last_plot_file_step',['../classERF.html#a4e3d0f4486b62037fce08fca0aa2d0a9',1,'ERF']]],
+  ['len_350',['len',['../structncutils_1_1NCDim.html#af22c5abe9e67d9825f372f4102c0c06f',1,'ncutils::NCDim']]],
+  ['les_5ftype_351',['les_type',['../structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0',1,'SolverChoice']]],
+  ['lestype_352',['LESType',['../DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500',1,'DataStruct.H']]],
+  ['level_353',['level',['../classPlaneAverage.html#a86402b90cf369ad0613ff325328e05b4',1,'PlaneAverage']]],
+  ['line_5faverage_354',['line_average',['../classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949',1,'PlaneAverage::line_average() const'],['../classPlaneAverage.html#a5a8e84b15b78128e8fc0f563de23e1d4',1,'PlaneAverage::line_average(int comp, amrex::Vector&lt; amrex::Real &gt; &amp;l_vec)']]],
+  ['line_5faverage_5fcell_355',['line_average_cell',['../classPlaneAverage.html#aa1438536a30a5ffdc13c74ef2b420d5b',1,'PlaneAverage']]],
+  ['line_5faverage_5finterpolated_356',['line_average_interpolated',['../classPlaneAverage.html#a0eca0d267e2f46fb639a29d2f06a6f5d',1,'PlaneAverage']]],
+  ['line_5fcentroids_357',['line_centroids',['../classPlaneAverage.html#a57dc07bb4c25aa8f20bd5b1921c5f2f7',1,'PlaneAverage']]],
+  ['line_5fderivative_5finterpolated_358',['line_derivative_interpolated',['../classPlaneAverage.html#afc0d9dcc2fe7e9835adb7b05ddd75ebe',1,'PlaneAverage']]],
+  ['line_5fderivative_5fof_5faverage_5fcell_359',['line_derivative_of_average_cell',['../classPlaneAverage.html#a69bfb3825e62160cfbb956e6b7b498fc',1,'PlaneAverage']]],
+  ['line_5fhvelmag_5faverage_360',['line_hvelmag_average',['../classVelPlaneAverage.html#a40d22fac5018b7fe2bc9ecb1dfa9b643',1,'VelPlaneAverage']]],
+  ['line_5fhvelmag_5faverage_5fcell_361',['line_hvelmag_average_cell',['../classVelPlaneAverage.html#af4769b71d61064a1ca6dbe16f4fce5d3',1,'VelPlaneAverage']]],
+  ['line_5fhvelmag_5faverage_5finterpolated_362',['line_hvelmag_average_interpolated',['../classVelPlaneAverage.html#aacaf9ad329c97a5ae17bef90ec9b1918',1,'VelPlaneAverage']]],
+  ['line_5fhvelmag_5fderivative_5finterpolated_363',['line_hvelmag_derivative_interpolated',['../classVelPlaneAverage.html#a7ed313245c83cad9a62370c15df91d9e',1,'VelPlaneAverage']]],
+  ['line_5fhvelmag_5fderivative_5fof_5faverage_5fcell_364',['line_hvelmag_derivative_of_average_cell',['../classVelPlaneAverage.html#af8a39982fa5798917b2ab26692aa87cd',1,'VelPlaneAverage']]]
 ];

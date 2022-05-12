@@ -1,15 +1,12 @@
 var searchData=
 [
-  ['w_714',['w',['../structBoundaryData.html#ad6f08ac14b0a0907a8946e4e2ffd882e',1,'BoundaryData::w()'],['../structInitialData.html#a36d25894082a109e3593d5b9a0e779e1',1,'InitialData::w()'],['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68',1,'w():&#160;DataStruct.H']]],
-  ['wfromomega_715',['WFromOmega',['../SpatialStencils_8H.html#a81366cf4ca04adcfbf0988099b906cd7',1,'SpatialStencils.H']]],
-  ['wfromomegabc_716',['WFromOmegaBC',['../SpatialStencils_8H.html#a53e0e7cd03af064f28541639fb10bb42',1,'SpatialStencils.H']]],
-  ['wps_5finterface_2ecpp_717',['WPS_Interface.cpp',['../WPS__Interface_8cpp.html',1,'']]],
-  ['wps_5finterface_2eh_718',['WPS_Interface.H',['../WPS__Interface_8H.html',1,'']]],
-  ['write_5fplanes_719',['write_planes',['../classWriteBndryPlanes.html#abd077cea0b42e78c3d6ccb429b4d779e',1,'WriteBndryPlanes']]],
-  ['writebndryplanes_720',['WriteBndryPlanes',['../classWriteBndryPlanes.html',1,'WriteBndryPlanes'],['../classWriteBndryPlanes.html#a460f7f20cb59e7f2f8546ebf423585d5',1,'WriteBndryPlanes::WriteBndryPlanes()']]],
-  ['writebuildinfo_721',['writeBuildInfo',['../classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa',1,'ERF']]],
-  ['writecheckpointfile_722',['WriteCheckpointFile',['../classERF.html#ad101fd46096db2d6b21544bfede6551f',1,'ERF']]],
-  ['writejobinfo_723',['writeJobInfo',['../classERF.html#aa2d8099655a8779836e63e3e98ea4372',1,'ERF']]],
-  ['writejobinfo_2ecpp_724',['writeJobInfo.cpp',['../writeJobInfo_8cpp.html',1,'']]],
-  ['writeplotfile_725',['WritePlotFile',['../classERF.html#a387af22acce3cefeb515eb151c3d1b5a',1,'ERF']]]
+  ['x_724',['x',['../DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6',1,'x():&#160;DataStruct.H'],['../DataStruct_8H.html#af22a7de290327224f6e1b45f125cb77da9dd4e461268c8034f5c8564e155c67a6',1,'x():&#160;DataStruct.H'],['../DataStruct_8H.html#a5943cc9db33abe98a5e07cd2b4387f53a9dd4e461268c8034f5c8564e155c67a6',1,'x():&#160;DataStruct.H'],['../DataStruct_8H.html#a7264869c7035dc345642d2461b168715a9dd4e461268c8034f5c8564e155c67a6',1,'x():&#160;DataStruct.H'],['../DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9a9dd4e461268c8034f5c8564e155c67a6',1,'x():&#160;DataStruct.H']]],
+  ['x_5fhi_725',['x_hi',['../classERF__IC__BC.html#ad76544507ecd9f2e226c6cf651c2caa8',1,'ERF_IC_BC']]],
+  ['x_5flo_726',['x_lo',['../classERF__IC__BC.html#ade120222b67fd936c3c6ba5d3316e637',1,'ERF_IC_BC']]],
+  ['xdir_727',['XDir',['../DirectionSelector_8H.html#a68edfbe7326d0d1476e796beb668072f',1,'DirectionSelector.H']]],
+  ['xflux_728',['xflux',['../namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da21245d0eca9226a6441feac35602c9be',1,'IntVar']]],
+  ['xlo_729',['xlo',['../classPlaneAverage.html#a9ed43e3c2cfd2ef0f3fb23d2097a1b6d',1,'PlaneAverage']]],
+  ['xmom_730',['xmom',['../namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca35b6db75aef9a4eca57e85396dc5dc12',1,'Vars::xmom()'],['../namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76dad22d96cf9b7b4dd875cea33d3ec0b481',1,'IntVar::xmom()']]],
+  ['xvel_731',['xvel',['../namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c',1,'Vars']]],
+  ['xvel_5fbc_732',['xvel_bc',['../namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4',1,'BCVars']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gamma_1535',['Gamma',['../ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3',1,'ERF_Constants.H']]]
+  ['kappa_1532',['KAPPA',['../ERF__Constants_8H.html#acd1636d4e71f645d469c49a7ba8e18a4',1,'ERF_Constants.H']]]
 ];
