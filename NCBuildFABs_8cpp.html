@@ -223,7 +223,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor())</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">// We only read in data at one resolution, which we assume to be that of level 0</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">int</span> lev = 0;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">//int lev = 0;</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        Vector&lt;std::string&gt; nc_var_names;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        Vector&lt;enum NC_Data_Dims_Type&gt; NC_dim_types;</div>
@@ -355,7 +355,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="comment">// amrex::Print() &lt;&lt; &quot;BX OF INPUT DATA &quot; &lt;&lt; bx &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="comment">//auto num_pts = bdy_data_xlo[0].box().numPts();</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordtype">int</span> ncomp  = bdy_data_xlo[0].nComp();</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="comment">//int ncomp  = bdy_data_xlo[0].nComp();</span></div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordtype">long</span> num_pts;</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a>* data_ptr;</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            std::string last3 = nc_var_names[i].substr(nc_var_names[i].size()-3, 3);</div>
