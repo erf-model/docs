@@ -13,8 +13,5 @@ var SpatialStencils_8H =
     [ "InterpolatePertFromCell", "SpatialStencils_8H.html#a576897b4420cdcfd384c1a898fcb7127", null ],
     [ "InterpolateTurbulentViscosity", "SpatialStencils_8H.html#a8dee15657b126730187a45dd5712db4f", null ],
     [ "MomentumToVelocity", "SpatialStencils_8H.html#aa55c3dff3461a66c487ecedec8468d38", null ],
-    [ "OmegaFromW", "SpatialStencils_8H.html#a002996309aac722698ccbc1e66f2e28c", null ],
-    [ "VelocityToMomentum", "SpatialStencils_8H.html#a297b4cde72c2ffcc59f45897e82b6f1c", null ],
-    [ "WFromOmega", "SpatialStencils_8H.html#a81366cf4ca04adcfbf0988099b906cd7", null ],
-    [ "WFromOmegaBC", "SpatialStencils_8H.html#a53e0e7cd03af064f28541639fb10bb42", null ]
+    [ "VelocityToMomentum", "SpatialStencils_8H.html#a297b4cde72c2ffcc59f45897e82b6f1c", null ]
 ];
