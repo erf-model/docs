@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"NCBuildFABs_8cpp.html":[3,0,0,0,5],
 "NCBuildFABs_8cpp.html#a07c70a057f7021b64d51a69dc9e883e4":[3,0,0,0,5,1],
 "NCBuildFABs_8cpp.html#a60014a8d74bed0d5ae984e600c68dc85":[3,0,0,0,5,0],
 "NCBuildFABs_8cpp.html#aa4b4478621252ced3cd137e40875020e":[3,0,0,0,5,2],
@@ -33,8 +34,8 @@ var NAVTREEINDEX1 =
 "PBLModels_8H.html#aabe51984e983da06864753704573dc16":[3,0,0,1,6,1],
 "PBLModels_8H.html#ad3955b88d66431c02477de2161e1bb26":[3,0,0,1,6,0],
 "PBLModels_8H_source.html":[3,0,0,1,6],
-"PlaneAverage_8H.html":[3,0,0,27],
-"PlaneAverage_8H_source.html":[3,0,0,27],
+"PlaneAverage_8H.html":[3,0,0,28],
+"PlaneAverage_8H_source.html":[3,0,0,28],
 "Plotfile_8cpp.html":[3,0,0,0,14],
 "SpatialStencils_8H.html":[3,0,0,1,7],
 "SpatialStencils_8H.html#a002996309aac722698ccbc1e66f2e28c":[3,0,0,1,7,13],
@@ -84,15 +85,15 @@ var NAVTREEINDEX1 =
 "TimeIntegration_8H.html#ae96c1cd796f723e15dfbf718f1a9c76daf204c2311e68c84ad19b3759183bdd09":[3,0,0,2,3,5],
 "TimeIntegration_8H_source.html":[3,0,0,2,3],
 "TimeIntegration__driver_8cpp.html":[3,0,0,2,4],
-"TimeInterpolatedData_8H.html":[3,0,0,29],
-"TimeInterpolatedData_8H_source.html":[3,0,0,29],
-"VelPlaneAverage_8H.html":[3,0,0,30],
-"VelPlaneAverage_8H_source.html":[3,0,0,30],
+"TimeInterpolatedData_8H.html":[3,0,0,30],
+"TimeInterpolatedData_8H_source.html":[3,0,0,30],
+"VelPlaneAverage_8H.html":[3,0,0,31],
+"VelPlaneAverage_8H_source.html":[3,0,0,31],
 "VelocityToMomentum_8cpp.html":[3,0,0,1,10],
 "VelocityToMomentum_8cpp.html#a74241e06851a54dac1b61dcb122dc996":[3,0,0,1,10,0],
-"WPS__Interface_8H.html":[3,0,0,32],
-"WPS__Interface_8H_source.html":[3,0,0,32],
-"WPS__Interface_8cpp.html":[3,0,0,31],
+"WPS__Interface_8H.html":[3,0,0,33],
+"WPS__Interface_8H_source.html":[3,0,0,33],
+"WPS__Interface_8cpp.html":[3,0,0,32],
 "annotated.html":[2,0],
 "classERF.html":[2,0,8],
 "classERF.html#a01987b2556834788694f2f3741a2afe4":[2,0,8,36],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7":[2,0,8,113],
 "classERF.html#afa0bef6d3146788302b81c0d4f4802d1":[2,0,8,72],
 "classERF.html#afbf411b8cb24554d9aad7c76b0210e92":[2,0,8,10],
-"classERF.html#afd3cbffc97b8a89e58042e029c5c6b7c":[2,0,8,21],
-"classERF.html#afd8cd5a477754776135befa668fdd0c9":[2,0,8,76]
+"classERF.html#afd3cbffc97b8a89e58042e029c5c6b7c":[2,0,8,21]
 };

@@ -3,6 +3,7 @@ var classERFPhysBCFunct =
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html#a826e1cf28a5c1353c26556ba18c31ab9", null ],
     [ "~ERFPhysBCFunct", "classERFPhysBCFunct.html#abb1797f0742dd01ee978be02d594fc43", null ],
     [ "FillBoundary", "classERFPhysBCFunct.html#ac593242574da88bcc47f9ed8d448d23b", null ],
+    [ "impose_most_bcs", "classERFPhysBCFunct.html#a1890797c45a5aff7083578af51c93cd0", null ],
     [ "operator()", "classERFPhysBCFunct.html#a9fcd83c89c19094652a10992a19f5133", null ],
     [ "m_bc_extdir_vals", "classERFPhysBCFunct.html#a16cdf4a3ab611f388823cef5e52b60f4", null ],
     [ "m_data", "classERFPhysBCFunct.html#aa9ba493b15a38630b7f5bc59b9df00df", null ],

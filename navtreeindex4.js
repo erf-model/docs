@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"structSolverChoice.html#aedad420dddffb0b78651c5d8b399a67b":[2,0,19,32],
+"structSolverChoice.html#afcc25193e0d39cda02479ee2067f49c2":[2,0,19,28],
 "structSolverChoice.html#affbc103f3361b47fbcf605a08b99d8ec":[2,0,19,38],
 "structTimeInterpolatedData.html":[2,0,20],
 "structTimeInterpolatedData.html#a0d6dcefbf7407a24669d2a37c7f558d4":[2,0,20,8],
