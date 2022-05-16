@@ -5131,8 +5131,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;    MultiFab&amp; V_new = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
 <div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;    MultiFab&amp; W_new = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>];</div>
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160; </div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;    <a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>-&gt;update_fluxes(lev,S_new,U_new,V_new,W_new);</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;}</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;    <span class="comment">// Multifab to store primitive Theta, which is what we want to average</span></div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;    MultiFab Theta_prim(S_new.boxArray(), S_new.DistributionMap(), 1, 0);</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;    MultiFab::Copy(Theta_prim, S_new, <a class="code" href="namespaceCons.html#ab92931555eff5e3d0d9eb62ae0225cc1a7ba34ebd02f164da2892ceb823948315">Cons::RhoTheta</a>, 0, 1, 0);</div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;    MultiFab::Divide(Theta_prim, S_new, <a class="code" href="namespaceCons.html#ab92931555eff5e3d0d9eb62ae0225cc1a5c9c77ea576137ca2664783567e7f588">Cons::Rho</a>, 0, 1, 0);</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160; </div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    <a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>-&gt;update_fluxes(lev,Theta_prim,U_new,V_new,W_new);</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
