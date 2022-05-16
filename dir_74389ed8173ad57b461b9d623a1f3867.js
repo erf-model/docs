@@ -6,8 +6,9 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ABLFieldInit.H", "ABLFieldInit_8H.html", [
       [ "ABLFieldInit", "structABLFieldInit.html", "structABLFieldInit" ]
     ] ],
+    [ "ABLMost.cpp", "ABLMost_8cpp.html", null ],
     [ "ABLMost.H", "ABLMost_8H.html", [
-      [ "ABLMost", "structABLMost.html", "structABLMost" ]
+      [ "ABLMost", "classABLMost.html", "classABLMost" ]
     ] ],
     [ "DataStruct.H", "DataStruct_8H.html", "DataStruct_8H" ],
     [ "Derive.cpp", "Derive_8cpp.html", "Derive_8cpp" ],
@@ -23,7 +24,6 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ERF_init1d.cpp", "ERF__init1d_8cpp.html", null ],
     [ "ERF_init_bcs.cpp", "ERF__init__bcs_8cpp.html", null ],
     [ "ERF_Math.H", "ERF__Math_8H.html", "ERF__Math_8H" ],
-    [ "ERF_MOST.cpp", "ERF__MOST_8cpp.html", null ],
     [ "ERF_PhysBCFunct.cpp", "ERF__PhysBCFunct_8cpp.html", null ],
     [ "ERF_PhysBCFunct.H", "ERF__PhysBCFunct_8H.html", "ERF__PhysBCFunct_8H" ],
     [ "ERF_SumIQ.cpp", "ERF__SumIQ_8cpp.html", null ],
