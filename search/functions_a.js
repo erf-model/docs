@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['main_1052',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['makehorizontalaverages_1053',['MakeHorizontalAverages',['../classERF.html#a01987b2556834788694f2f3741a2afe4',1,'ERF']]],
-  ['makenewlevelfromcoarse_1054',['MakeNewLevelFromCoarse',['../classERF.html#abb6175c28b36d23f5dda2994ca4a85e7',1,'ERF']]],
-  ['makenewlevelfromscratch_1055',['MakeNewLevelFromScratch',['../classERF.html#aaf10bbf8c9a5dbc257a88c4c1b650fee',1,'ERF']]],
-  ['map_5fdata_1056',['map_data',['../classMRISplitIntegrator.html#a14fd551d7a7ff5bf6c58500740a64547',1,'MRISplitIntegrator']]],
-  ['metgrid_5foutput_1057',['Metgrid_Output',['../classMetgrid__Output.html#a9e29f145e34c0547373d64eaf485648b',1,'Metgrid_Output']]],
-  ['momentumtovelocity_1058',['MomentumToVelocity',['../MomentumToVelocity_8cpp.html#a0b9d03467b066db285ea07f546f84b49',1,'MomentumToVelocity(MultiFab &amp;xvel, MultiFab &amp;yvel, MultiFab &amp;zvel, const MultiFab &amp;cons_in, const MultiFab &amp;xmom_in, const MultiFab &amp;ymom_in, const MultiFab &amp;zmom_in, const IntVect &amp;ngrow):&#160;MomentumToVelocity.cpp'],['../SpatialStencils_8H.html#aa55c3dff3461a66c487ecedec8468d38',1,'MomentumToVelocity(amrex::MultiFab &amp;xvel_out, amrex::MultiFab &amp;yvel_out, amrex::MultiFab &amp;zvel_out, const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;xmom_in, const amrex::MultiFab &amp;ymom_in, const amrex::MultiFab &amp;zmom_in, const amrex::IntVect &amp;ngrow):&#160;SpatialStencils.H']]],
-  ['mrisplitintegrator_1059',['MRISplitIntegrator',['../classMRISplitIntegrator.html#abe16bffbdae733268ab637f4f71c1301',1,'MRISplitIntegrator::MRISplitIntegrator()'],['../classMRISplitIntegrator.html#a9ea1c36a75e04596ffe0fa29e614b6e2',1,'MRISplitIntegrator::MRISplitIntegrator(const T &amp;S_data)']]]
+  ['main_1056',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['makehorizontalaverages_1057',['MakeHorizontalAverages',['../classERF.html#a01987b2556834788694f2f3741a2afe4',1,'ERF']]],
+  ['makenewlevelfromcoarse_1058',['MakeNewLevelFromCoarse',['../classERF.html#abb6175c28b36d23f5dda2994ca4a85e7',1,'ERF']]],
+  ['makenewlevelfromscratch_1059',['MakeNewLevelFromScratch',['../classERF.html#aaf10bbf8c9a5dbc257a88c4c1b650fee',1,'ERF']]],
+  ['map_5fdata_1060',['map_data',['../classMRISplitIntegrator.html#a14fd551d7a7ff5bf6c58500740a64547',1,'MRISplitIntegrator']]],
+  ['metgrid_5foutput_1061',['Metgrid_Output',['../classMetgrid__Output.html#a9e29f145e34c0547373d64eaf485648b',1,'Metgrid_Output']]],
+  ['momentumtovelocity_1062',['MomentumToVelocity',['../MomentumToVelocity_8cpp.html#a0b9d03467b066db285ea07f546f84b49',1,'MomentumToVelocity(MultiFab &amp;xvel, MultiFab &amp;yvel, MultiFab &amp;zvel, const MultiFab &amp;cons_in, const MultiFab &amp;xmom_in, const MultiFab &amp;ymom_in, const MultiFab &amp;zmom_in, const IntVect &amp;ngrow):&#160;MomentumToVelocity.cpp'],['../SpatialStencils_8H.html#aa55c3dff3461a66c487ecedec8468d38',1,'MomentumToVelocity(amrex::MultiFab &amp;xvel_out, amrex::MultiFab &amp;yvel_out, amrex::MultiFab &amp;zvel_out, const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;xmom_in, const amrex::MultiFab &amp;ymom_in, const amrex::MultiFab &amp;zmom_in, const amrex::IntVect &amp;ngrow):&#160;SpatialStencils.H']]],
+  ['mrisplitintegrator_1063',['MRISplitIntegrator',['../classMRISplitIntegrator.html#abe16bffbdae733268ab637f4f71c1301',1,'MRISplitIntegrator::MRISplitIntegrator()'],['../classMRISplitIntegrator.html#a9ea1c36a75e04596ffe0fa29e614b6e2',1,'MRISplitIntegrator::MRISplitIntegrator(const T &amp;S_data)']]]
 ];

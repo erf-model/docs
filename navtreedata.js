@@ -70,9 +70,9 @@ var NAVTREEINDEX =
 [
 "ABLFieldInit_8H.html",
 "NCBuildFABs_8cpp.html",
-"classERF.html#ab8f4a61c714936efc1c669447b009c29",
-"classncutils_1_1NCGroup.html#ac25f1ca78fc2cd66e7b80fdcc30f512f",
-"structSolverChoice.html#aa5c348a8cfd2d8b134541a0a00fdad2c"
+"classERF.html#aaf10bbf8c9a5dbc257a88c4c1b650fee",
+"classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192",
+"structSolverChoice.html#a9877b8426152bbfc8c65589924662c8f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

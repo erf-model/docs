@@ -3,6 +3,7 @@ var annotated_dup =
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
     [ "ABLFieldInit", "structABLFieldInit.html", "structABLFieldInit" ],
     [ "ABLMost", "classABLMost.html", "classABLMost" ],
+    [ "ABLMostData", "classABLMostData.html", "classABLMostData" ],
     [ "BoundaryData", "structBoundaryData.html", "structBoundaryData" ],
     [ "DirectionSelector", "structDirectionSelector.html", "structDirectionSelector" ],
     [ "DirectionSelector< 0 >", "structDirectionSelector_3_010_01_4.html", "structDirectionSelector_3_010_01_4" ],
