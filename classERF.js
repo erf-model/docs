@@ -20,7 +20,7 @@ var classERF =
     [ "FillCoarsePatch", "classERF.html#a7ba9c9e09efe07e5f2404be80a9af5d2", null ],
     [ "FillCoarsePatchAllVars", "classERF.html#a252eec287326f8dcc72dee7f3cc105c4", null ],
     [ "FillIntermediatePatch", "classERF.html#a74d150e7d7c74e1cae2e94f79a8b1d53", null ],
-    [ "FillPatch", "classERF.html#ad4b5cfafa3b805287e62d230ae51428f", null ],
+    [ "FillPatch", "classERF.html#a3d8f63f2178b1cb5ba78a433ece34e1c", null ],
     [ "get_flux_reg", "classERF.html#afd3cbffc97b8a89e58042e029c5c6b7c", null ],
     [ "getCPUTime", "classERF.html#a5cafd68de724845533efea8d284aacb4", null ],
     [ "GetDataAtTime", "classERF.html#a92248817d31fce8771fba3532d819421", null ],
