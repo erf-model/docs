@@ -13,6 +13,5 @@ var classERFPhysBCFunct =
     [ "m_lev", "classERFPhysBCFunct.html#ae94d450d26c33e469b1e09d543d21f52", null ],
     [ "m_most", "classERFPhysBCFunct.html#aa76084a2d0d6dd7916ecc7f706f40d5d", null ],
     [ "m_r2d", "classERFPhysBCFunct.html#ada7479538c1fabdb5703ec9f0ad84c0a", null ],
-    [ "m_var_idx", "classERFPhysBCFunct.html#aa55dd51e38249c965b8472c9f819e838", null ],
-    [ "m_viscosity", "classERFPhysBCFunct.html#a237127987c315ded22a994303a05321f", null ]
+    [ "m_var_idx", "classERFPhysBCFunct.html#aa55dd51e38249c965b8472c9f819e838", null ]
 ];

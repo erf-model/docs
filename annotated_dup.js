@@ -1,7 +1,6 @@
 var annotated_dup =
 [
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
-    [ "ABLFieldInit", "structABLFieldInit.html", "structABLFieldInit" ],
     [ "ABLMost", "classABLMost.html", "classABLMost" ],
     [ "ABLMostData", "classABLMostData.html", "classABLMostData" ],
     [ "BoundaryData", "structBoundaryData.html", "structBoundaryData" ],

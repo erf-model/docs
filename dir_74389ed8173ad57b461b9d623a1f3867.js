@@ -3,9 +3,6 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "IO", "dir_4c48f420b74c1f1cc31b316243ca788c.html", "dir_4c48f420b74c1f1cc31b316243ca788c" ],
     [ "SpatialStencils", "dir_355f330b8d85407e56bdd3ad6c7bf36f.html", "dir_355f330b8d85407e56bdd3ad6c7bf36f" ],
     [ "TimeIntegration", "dir_759b90b1f3ea3c20e13693c83a3534b7.html", "dir_759b90b1f3ea3c20e13693c83a3534b7" ],
-    [ "ABLFieldInit.H", "ABLFieldInit_8H.html", [
-      [ "ABLFieldInit", "structABLFieldInit.html", "structABLFieldInit" ]
-    ] ],
     [ "ABLMost.cpp", "ABLMost_8cpp.html", null ],
     [ "ABLMost.H", "ABLMost_8H.html", [
       [ "ABLMostData", "classABLMostData.html", "classABLMostData" ],

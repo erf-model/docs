@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "ABLFieldInit", "structABLFieldInit.html", null ],
     [ "ABLMostData", "classABLMostData.html", [
       [ "ABLMost", "classABLMost.html", null ]
     ] ],
