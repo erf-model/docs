@@ -57,7 +57,7 @@ var classERF =
     [ "writeBuildInfo", "classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa", null ],
     [ "WriteCheckpointFile", "classERF.html#ad101fd46096db2d6b21544bfede6551f", null ],
     [ "writeJobInfo", "classERF.html#aa2d8099655a8779836e63e3e98ea4372", null ],
-    [ "WritePlotFile", "classERF.html#a387af22acce3cefeb515eb151c3d1b5a", null ],
+    [ "WritePlotFile", "classERF.html#abed910c4bcc14524b3c1a7d353d40de5", null ],
     [ "bdy_data_xhi", "classERF.html#a4ac5b4b865dc8a029812bf1a20cd9b9b", null ],
     [ "bdy_data_xlo", "classERF.html#a35360b65d1afd233a6e6461938fa4522", null ],
     [ "bdy_data_yhi", "classERF.html#aaa1c7e25ca002544fc80dcea620bda8d", null ],

@@ -11,5 +11,5 @@ var searchData=
   ['writecheckpointfile_695',['WriteCheckpointFile',['../classERF.html#ad101fd46096db2d6b21544bfede6551f',1,'ERF']]],
   ['writejobinfo_696',['writeJobInfo',['../classERF.html#aa2d8099655a8779836e63e3e98ea4372',1,'ERF']]],
   ['writejobinfo_2ecpp_697',['writeJobInfo.cpp',['../writeJobInfo_8cpp.html',1,'']]],
-  ['writeplotfile_698',['WritePlotFile',['../classERF.html#a387af22acce3cefeb515eb151c3d1b5a',1,'ERF']]]
+  ['writeplotfile_698',['WritePlotFile',['../classERF.html#abed910c4bcc14524b3c1a7d353d40de5',1,'ERF']]]
 ];
