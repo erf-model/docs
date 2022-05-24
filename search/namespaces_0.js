@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bcvars_763',['BCVars',['../namespaceBCVars.html',1,'']]]
+  ['bcvars_766',['BCVars',['../namespaceBCVars.html',1,'']]]
 ];

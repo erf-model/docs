@@ -11,6 +11,7 @@ var dir_355f330b8d85407e56bdd3ad6c7bf36f =
     [ "SpatialStencils.H", "SpatialStencils_8H.html", "SpatialStencils_8H" ],
     [ "StrainRate.H", "StrainRate_8H.html", "StrainRate_8H" ],
     [ "StressTerm.H", "StressTerm_8H.html", "StressTerm_8H" ],
+    [ "TerrainMetrics.cpp", "TerrainMetrics_8cpp.html", "TerrainMetrics_8cpp" ],
     [ "TerrainMetrics.H", "TerrainMetrics_8H.html", "TerrainMetrics_8H" ],
     [ "VelocityToMomentum.cpp", "VelocityToMomentum_8cpp.html", "VelocityToMomentum_8cpp" ]
 ];
