@@ -184,7 +184,8 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;   pp.add(<span class="stringliteral">&quot;max_grid_size&quot;</span>,2048);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;   pp.add(<span class="stringliteral">&quot;blocking_factor&quot;</span>,1);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   pp.add(<span class="stringliteral">&quot;n_error_buf&quot;</span>,0);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
 <div class="dynheader">
@@ -224,55 +225,55 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// Check to see if the command line contains --describe</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (argc &gt;= 2) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 1; i &lt; argc; i++) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span> (std::string(argv[i]) == <span class="stringliteral">&quot;--describe&quot;</span>) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <a class="code" href="classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa">ERF::writeBuildInfo</a>(std::cout);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    amrex::Initialize(argc,argv,<span class="keyword">true</span>,MPI_COMM_WORLD,<a class="code" href="main_8cpp.html#a183e783116d02836167ccbed3b28c1d3">add_par</a>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Save the inputs file name for later.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (!strchr(argv[1], <span class="charliteral">&#39;=&#39;</span>)) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <a class="code" href="main_8cpp.html#aabaa127a3a319c1b86090d6c88568965">inputs_name</a> = argv[1];</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// timer for profiling</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;main()&quot;</span>, pmain);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// wallclock time</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> strt_total = amrex::second();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">// constructor - reads in parameters from inputs file</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">//             - sizes multilevel arrays and data structures</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classERF.html">ERF</a> erf;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// initialize AMR data</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        erf.<a class="code" href="classERF.html#ad5d585e110291969767013a515719224">InitData</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">// advance solution to final time</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        erf.<a class="code" href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96">Evolve</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">// wallclock time</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> end_total = amrex::second() - strt_total;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">// print wallclock time</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        ParallelDescriptor::ReduceRealMax(end_total ,ParallelDescriptor::IOProcessorNumber());</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (erf.Verbose()) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\nTotal Time: &quot;</span> &lt;&lt; end_total &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// destroy timer for profiling</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    BL_PROFILE_VAR_STOP(pmain);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    amrex::Finalize();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Check to see if the command line contains --describe</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (argc &gt;= 2) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 1; i &lt; argc; i++) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> (std::string(argv[i]) == <span class="stringliteral">&quot;--describe&quot;</span>) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa">ERF::writeBuildInfo</a>(std::cout);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    amrex::Initialize(argc,argv,<span class="keyword">true</span>,MPI_COMM_WORLD,<a class="code" href="main_8cpp.html#a183e783116d02836167ccbed3b28c1d3">add_par</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Save the inputs file name for later.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (!strchr(argv[1], <span class="charliteral">&#39;=&#39;</span>)) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <a class="code" href="main_8cpp.html#aabaa127a3a319c1b86090d6c88568965">inputs_name</a> = argv[1];</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// timer for profiling</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;main()&quot;</span>, pmain);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// wallclock time</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> strt_total = amrex::second();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">// constructor - reads in parameters from inputs file</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">//             - sizes multilevel arrays and data structures</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classERF.html">ERF</a> erf;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">// initialize AMR data</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        erf.<a class="code" href="classERF.html#ad5d585e110291969767013a515719224">InitData</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">// advance solution to final time</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        erf.<a class="code" href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96">Evolve</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">// wallclock time</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> end_total = amrex::second() - strt_total;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// print wallclock time</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        ParallelDescriptor::ReduceRealMax(end_total ,ParallelDescriptor::IOProcessorNumber());</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (erf.Verbose()) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\nTotal Time: &quot;</span> &lt;&lt; end_total &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// destroy timer for profiling</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    BL_PROFILE_VAR_STOP(pmain);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    amrex::Finalize();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -308,10 +309,10 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="amain_8cpp_html_aabaa127a3a319c1b86090d6c88568965"><div class="ttname"><a href="main_8cpp.html#aabaa127a3a319c1b86090d6c88568965">inputs_name</a></div><div class="ttdeci">std::string inputs_name</div><div class="ttdef"><b>Definition:</b> main.cpp:9</div></div>
-<div class="ttc" id="aclassERF_html_a0be12798b46f52fa4b5a995f147c3f96"><div class="ttname"><a href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96">ERF::Evolve</a></div><div class="ttdeci">void Evolve()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:171</div></div>
+<div class="ttc" id="aclassERF_html_a0be12798b46f52fa4b5a995f147c3f96"><div class="ttname"><a href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96">ERF::Evolve</a></div><div class="ttdeci">void Evolve()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:163</div></div>
 <div class="ttc" id="aclassERF_html_ae6afed5b3a72ca80ccf0d791b08516aa"><div class="ttname"><a href="classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa">ERF::writeBuildInfo</a></div><div class="ttdeci">static void writeBuildInfo(std::ostream &amp;os)</div><div class="ttdef"><b>Definition:</b> writeJobInfo.cpp:135</div></div>
 <div class="ttc" id="amain_8cpp_html_a183e783116d02836167ccbed3b28c1d3"><div class="ttname"><a href="main_8cpp.html#a183e783116d02836167ccbed3b28c1d3">add_par</a></div><div class="ttdeci">void add_par()</div><div class="ttdef"><b>Definition:</b> main.cpp:17</div></div>
-<div class="ttc" id="aclassERF_html_ad5d585e110291969767013a515719224"><div class="ttname"><a href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData</a></div><div class="ttdeci">void InitData()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:301</div></div>
+<div class="ttc" id="aclassERF_html_ad5d585e110291969767013a515719224"><div class="ttname"><a href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData</a></div><div class="ttdeci">void InitData()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:293</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
 <div class="ttc" id="aclassERF_html"><div class="ttname"><a href="classERF.html">ERF</a></div><div class="ttdef"><b>Definition:</b> ERF.H:65</div></div>
 <!-- start footer part -->
