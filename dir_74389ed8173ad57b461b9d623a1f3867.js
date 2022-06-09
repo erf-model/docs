@@ -38,12 +38,5 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     ] ],
     [ "VelPlaneAverage.H", "VelPlaneAverage_8H.html", [
       [ "VelPlaneAverage", "classVelPlaneAverage.html", "classVelPlaneAverage" ]
-    ] ],
-    [ "WPS_Interface.cpp", "WPS__Interface_8cpp.html", null ],
-    [ "WPS_Interface.H", "WPS__Interface_8H.html", [
-      [ "Metgrid_Output", "classMetgrid__Output.html", "classMetgrid__Output" ],
-      [ "BoundaryData", "structBoundaryData.html", "structBoundaryData" ],
-      [ "InitialData", "structInitialData.html", "structInitialData" ],
-      [ "ERF_IC_BC", "classERF__IC__BC.html", "classERF__IC__BC" ]
     ] ]
 ];

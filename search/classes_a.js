@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['timeinterpolateddata_763',['TimeInterpolatedData',['../structTimeInterpolatedData.html',1,'']]]
+  ['velplaneaverage_744',['VelPlaneAverage',['../classVelPlaneAverage.html',1,'']]]
 ];
