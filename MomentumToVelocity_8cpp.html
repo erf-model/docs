@@ -117,12 +117,12 @@ Include dependency graph for MomentumToVelocity.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0b9d03467b066db285ea07f546f84b49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MomentumToVelocity_8cpp.html#a0b9d03467b066db285ea07f546f84b49">MomentumToVelocity</a> (MultiFab &amp;xvel, MultiFab &amp;yvel, MultiFab &amp;zvel, const MultiFab &amp;cons_in, const MultiFab &amp;xmom_in, const MultiFab &amp;ymom_in, const MultiFab &amp;zmom_in, const IntVect &amp;ngrow)</td></tr>
-<tr class="separator:a0b9d03467b066db285ea07f546f84b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79080d9506305b3b98f783cc6c2cda47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MomentumToVelocity_8cpp.html#a79080d9506305b3b98f783cc6c2cda47">MomentumToVelocity</a> (MultiFab &amp;xvel, const IntVect &amp;xvel_ngrow, MultiFab &amp;yvel, const IntVect &amp;yvel_ngrow, MultiFab &amp;zvel, const IntVect &amp;zvel_ngrow, const MultiFab &amp;cons_in, const MultiFab &amp;xmom_in, const MultiFab &amp;ymom_in, const MultiFab &amp;zmom_in)</td></tr>
+<tr class="separator:a79080d9506305b3b98f783cc6c2cda47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a0b9d03467b066db285ea07f546f84b49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b9d03467b066db285ea07f546f84b49">&#9670;&nbsp;</a></span>MomentumToVelocity()</h2>
+<a id="a79080d9506305b3b98f783cc6c2cda47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79080d9506305b3b98f783cc6c2cda47">&#9670;&nbsp;</a></span>MomentumToVelocity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -136,14 +136,32 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const IntVect &amp;&#160;</td>
+          <td class="paramname"><em>xvel_ngrow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">MultiFab &amp;&#160;</td>
           <td class="paramname"><em>yvel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const IntVect &amp;&#160;</td>
+          <td class="paramname"><em>yvel_ngrow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">MultiFab &amp;&#160;</td>
           <td class="paramname"><em>zvel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IntVect &amp;&#160;</td>
+          <td class="paramname"><em>zvel_ngrow</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -167,13 +185,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>zmom_in</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const IntVect &amp;&#160;</td>
-          <td class="paramname"><em>ngrow</em>&#160;</td>
+          <td class="paramname"><em>zmom_in</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -183,51 +195,51 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Convert updated momentum to updated velocity </p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;MomentumToVelocity()&quot;</span>,<a class="code" href="MomentumToVelocity_8cpp.html#a0b9d03467b066db285ea07f546f84b49">MomentumToVelocity</a>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// Loop over boxes = valid boxes grown by ngrow</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">const</span> Box&amp; tbx = amrex::grow(mfi.nodaltilebox(0),ngrow);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> Box&amp; tby = amrex::grow(mfi.nodaltilebox(1),ngrow);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">const</span> Box&amp; tbz = amrex::grow(mfi.nodaltilebox(2),ngrow);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// Conserved variables on cell centers -- we use this for density</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a> = cons_in.array(mfi);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// Momentum on faces</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; momx = xmom_in.array(mfi);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; momy = ymom_in.array(mfi);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; momz = zmom_in.array(mfi);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">// Velocity on faces</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; velx = <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">xvel</a>.array(mfi);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; vely = <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">yvel</a>.array(mfi);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; velz = <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca48ee63b17bc216e9661511c33c68bd8b">zvel</a>.array(mfi);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        amrex::ParallelFor(tbx, tby, tbz,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            velx(i,j,k) = momx(i,j,k)/(0.5 * (<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a>(i-1,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)));</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        },</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            vely(i,j,k) = momy(i,j,k)/(0.5 * (<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a>(i,j-1,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)));</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        },</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            velz(i,j,k) = momz(i,j,k)/(0.5 * (<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)));</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        });</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    } <span class="comment">// end MFIter</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;MomentumToVelocity()&quot;</span>,<a class="code" href="MomentumToVelocity_8cpp.html#a79080d9506305b3b98f783cc6c2cda47">MomentumToVelocity</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// Loop over boxes = valid boxes grown by ngrow</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">const</span> Box&amp; tbx = amrex::grow(mfi.nodaltilebox(0),xvel_ngrow);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> Box&amp; tby = amrex::grow(mfi.nodaltilebox(1),yvel_ngrow);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">const</span> Box&amp; tbz = amrex::grow(mfi.nodaltilebox(2),zvel_ngrow);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">// Conserved variables on cell centers -- we use this for density</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a> = cons_in.array(mfi);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">// Momentum on faces</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; momx = xmom_in.array(mfi);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; momy = ymom_in.array(mfi);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; momz = zmom_in.array(mfi);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// Velocity on faces</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; velx = <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">xvel</a>.array(mfi);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; vely = <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">yvel</a>.array(mfi);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; velz = <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca48ee63b17bc216e9661511c33c68bd8b">zvel</a>.array(mfi);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        amrex::ParallelFor(tbx, tby, tbz,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            velx(i,j,k) = momx(i,j,k)/(0.5 * (<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a>(i-1,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        },</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            vely(i,j,k) = momy(i,j,k)/(0.5 * (<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a>(i,j-1,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        },</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            velz(i,j,k) = momz(i,j,k)/(0.5 * (<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        });</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    } <span class="comment">// end MFIter</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc">ERF::erf_advance()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="MomentumToVelocity_8cpp_a0b9d03467b066db285ea07f546f84b49_icgraph.png" border="0" usemap="#MomentumToVelocity_8cpp_a0b9d03467b066db285ea07f546f84b49_icgraph" alt=""/></div>
-<map name="MomentumToVelocity_8cpp_a0b9d03467b066db285ea07f546f84b49_icgraph" id="MomentumToVelocity_8cpp_a0b9d03467b066db285ea07f546f84b49_icgraph">
+<div class="center"><img src="MomentumToVelocity_8cpp_a79080d9506305b3b98f783cc6c2cda47_icgraph.png" border="0" usemap="#MomentumToVelocity_8cpp_a79080d9506305b3b98f783cc6c2cda47_icgraph" alt=""/></div>
+<map name="MomentumToVelocity_8cpp_a79080d9506305b3b98f783cc6c2cda47_icgraph" id="MomentumToVelocity_8cpp_a79080d9506305b3b98f783cc6c2cda47_icgraph">
 <area shape="rect" title=" " alt="" coords="188,5,351,32"/>
 <area shape="rect" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc" title=" " alt="" coords="5,5,140,32"/>
 </map>
@@ -239,9 +251,9 @@ Here is the caller graph for this function:</div>
 </div><!-- doc-content -->
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
 <div class="ttc" id="anamespaceVars_html_a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:66</div></div>
-<div class="ttc" id="aMomentumToVelocity_8cpp_html_a0b9d03467b066db285ea07f546f84b49"><div class="ttname"><a href="MomentumToVelocity_8cpp.html#a0b9d03467b066db285ea07f546f84b49">MomentumToVelocity</a></div><div class="ttdeci">void MomentumToVelocity(MultiFab &amp;xvel, MultiFab &amp;yvel, MultiFab &amp;zvel, const MultiFab &amp;cons_in, const MultiFab &amp;xmom_in, const MultiFab &amp;ymom_in, const MultiFab &amp;zmom_in, const IntVect &amp;ngrow)</div><div class="ttdef"><b>Definition:</b> MomentumToVelocity.cpp:14</div></div>
 <div class="ttc" id="anamespaceVars_html_a2aa680f90abb6ff6d5c1875f8beb4b1ca48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:67</div></div>
 <div class="ttc" id="anamespaceVars_html_a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:65</div></div>
+<div class="ttc" id="aMomentumToVelocity_8cpp_html_a79080d9506305b3b98f783cc6c2cda47"><div class="ttname"><a href="MomentumToVelocity_8cpp.html#a79080d9506305b3b98f783cc6c2cda47">MomentumToVelocity</a></div><div class="ttdeci">void MomentumToVelocity(MultiFab &amp;xvel, const IntVect &amp;xvel_ngrow, MultiFab &amp;yvel, const IntVect &amp;yvel_ngrow, MultiFab &amp;zvel, const IntVect &amp;zvel_ngrow, const MultiFab &amp;cons_in, const MultiFab &amp;xmom_in, const MultiFab &amp;ymom_in, const MultiFab &amp;zmom_in)</div><div class="ttdef"><b>Definition:</b> MomentumToVelocity.cpp:14</div></div>
 <div class="ttc" id="anamespaceVars_html_a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:64</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

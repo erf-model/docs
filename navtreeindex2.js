@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classERF.html#aa6fd6592c50f03c55ca0f0c9137c7e48":[2,0,7,27],
 "classERF.html#aa90c9756f684404f8b69b8a23568b535":[2,0,7,45],
 "classERF.html#aaa1c7e25ca002544fc80dcea620bda8d":[2,0,7,60],
 "classERF.html#aab4575d8fb57595a2f1aaf088c60447a":[2,0,7,62],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1,0],
-"functions_func.html":[2,3,1]
+"functions_func.html":[2,3,1,0]
 };

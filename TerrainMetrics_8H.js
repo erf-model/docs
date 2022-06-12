@@ -1,5 +1,6 @@
 var TerrainMetrics_8H =
 [
+    [ "Compute_h_zeta_AtCellCenter", "TerrainMetrics_8H.html#a44f42ed1ea13cf804f43f1b751cc9a40", null ],
     [ "ComputeMetricAtCellCenter", "TerrainMetrics_8H.html#a8bb170f2d3986875cd06c2c3d0174a59", null ],
     [ "ComputeMetricAtEdgeCenterI", "TerrainMetrics_8H.html#a512cfaebd0adca34a13ea48f21e79333", null ],
     [ "ComputeMetricAtEdgeCenterJ", "TerrainMetrics_8H.html#a05e466267ebfe9e53f9f59c40004e349", null ],
