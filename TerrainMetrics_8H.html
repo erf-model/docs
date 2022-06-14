@@ -142,8 +142,6 @@ Functions</h2></td></tr>
 <tr class="separator:adb62ee7692551a4bacfa38a3e8592fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81366cf4ca04adcfbf0988099b906cd7"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7">WFromOmega</a> (int i, int j, int k, <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> omega, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;z_nd, const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;dxInv)</td></tr>
 <tr class="separator:a81366cf4ca04adcfbf0988099b906cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07f94645c9c578c19a3c879b490d4b70"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#a07f94645c9c578c19a3c879b490d4b70">WFromOmegaBC</a> (int i, int j, int k, <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> omega, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;z_nd, const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;dxInv)</td></tr>
-<tr class="separator:a07f94645c9c578c19a3c879b490d4b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53363537d3e953e585899d27b19b0f7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#a53363537d3e953e585899d27b19b0f7f">make_metrics</a> (amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::MultiFab &amp;z_phys_cc, amrex::MultiFab &amp;detJ_cc)</td></tr>
 <tr class="separator:a53363537d3e953e585899d27b19b0f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -1247,33 +1245,39 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;{</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <span class="keyword">auto</span> dx = geom.CellSize();</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    amrex::Real dzInv = 1.0/dx[2];</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160; </div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <span class="keywordflow">for</span> ( amrex::MFIter mfi(z_phys_cc, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    {</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; gbx = mfi.growntilebox(amrex::IntVect(1,1,1));</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        amrex::Array4&lt;amrex::Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        amrex::Array4&lt;amrex::Real      &gt; z_cc = z_phys_cc.array(mfi);</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        amrex::Array4&lt;amrex::Real      &gt; detJ = detJ_cc.array(mfi);</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        amrex::ParallelFor(gbx, [=]</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;           AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;             <span class="keywordflow">if</span> (k &gt;= 0) {</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;               z_cc(i, j, k) = .125 * (</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                       z_nd(i,j,k  ) + z_nd(i+1,j,k  ) + z_nd(i,j+1,k  ) + z_nd(i+1,j+1,k  )</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                      +z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1) );</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;               detJ(i, j, k) = .25 * dzInv * (</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                       z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1)</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                      -z_nd(i,j,k  ) - z_nd(i+1,j,k  ) - z_nd(i,j+1,k  ) - z_nd(i+1,j+1,k  ) );</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;             }</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;           });</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    }</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    detJ_cc.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;{</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <span class="keyword">auto</span> dx = geom.CellSize();</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    amrex::Real dzInv = 1.0/dx[2];</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160; </div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <span class="comment">// Domain valid box (z_nd is nodal)</span></div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <span class="keyword">const</span> amrex::Box&amp; domain = geom.Domain();</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="keywordtype">int</span> domlo_z = domain.smallEnd(2);</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160; </div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <span class="comment">// Number of ghost cells</span></div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <span class="keywordtype">int</span> ngrow = z_phys_cc.nGrow();</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160; </div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <span class="keywordflow">for</span> ( amrex::MFIter mfi(z_phys_cc, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    {</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; gbx = mfi.growntilebox(ngrow);</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        amrex::Array4&lt;amrex::Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        amrex::Array4&lt;amrex::Real      &gt; z_cc = z_phys_cc.array(mfi);</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        amrex::Array4&lt;amrex::Real      &gt; detJ = detJ_cc.array(mfi);</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        amrex::ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;            <span class="keywordflow">if</span> (k &gt;= domlo_z) {</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;               z_cc(i, j, k) = .125 * (</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                       z_nd(i,j,k  ) + z_nd(i+1,j,k  ) + z_nd(i,j+1,k  ) + z_nd(i+1,j+1,k  )</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                      +z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1) );</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;               detJ(i, j, k) = .25 * dzInv * (</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                       z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1)</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                      -z_nd(i,j,k  ) - z_nd(i+1,j,k  ) - z_nd(i,j+1,k  ) - z_nd(i+1,j+1,k  ) );</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;            }</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;       });</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    }</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    detJ_cc.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData()</a>.</p>
 <div class="dynheader">
@@ -1470,144 +1474,23 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;  <span class="comment">// Use extrapolation instead of interpolation if at the bottom boundary</span></div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;  amrex::Real vec_zlo_xi   = (k == 0) ? 1.5 * (0.5*(<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k))) - 0.5*(0.5*(<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k+1)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k+1))) :</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    0.25 * ( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k-1) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k-1) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k) );</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;  amrex::Real vec_zlo_eta  = (k == 0) ? 1.5 * (0.5*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k))) - 0.5*(0.5*(<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k+1)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k+1))) :</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;  amrex::Real vec_zlo_eta  = (k == 0) ? 1.5 * (0.5*(<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k))) - 0.5*(0.5*(<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k+1)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k+1))) :</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    0.25 * ( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k-1) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k-1) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k) );</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;  amrex::Real <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a> = met_zlo_xi * vec_zlo_xi + met_zlo_eta * vec_zlo_eta + omega;</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>;</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__fast__rhs_8cpp.html#a18222666585d1c3a0c934fc2fadcfd48">erf_fast_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__fast__rhs_8cpp.html#a18222666585d1c3a0c934fc2fadcfd48">erf_fast_rhs()</a>, and <a class="el" href="classERFPhysBCFunct.html#a9fcd83c89c19094652a10992a19f5133">ERFPhysBCFunct::operator()()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="TerrainMetrics_8H_a81366cf4ca04adcfbf0988099b906cd7_icgraph.png" border="0" usemap="#TerrainMetrics_8H_a81366cf4ca04adcfbf0988099b906cd7_icgraph" alt=""/></div>
 <map name="TerrainMetrics_8H_a81366cf4ca04adcfbf0988099b906cd7_icgraph" id="TerrainMetrics_8H_a81366cf4ca04adcfbf0988099b906cd7_icgraph">
-<area shape="rect" title=" " alt="" coords="335,5,449,32"/>
-<area shape="rect" href="ERF__fast__rhs_8cpp.html#a18222666585d1c3a0c934fc2fadcfd48" title=" " alt="" coords="188,5,287,32"/>
+<area shape="rect" title=" " alt="" coords="440,31,555,57"/>
+<area shape="rect" href="ERF__fast__rhs_8cpp.html#a18222666585d1c3a0c934fc2fadcfd48" title=" " alt="" coords="241,5,339,32"/>
+<area shape="rect" href="classERFPhysBCFunct.html#a9fcd83c89c19094652a10992a19f5133" title=" " alt="" coords="188,56,392,83"/>
 <area shape="rect" href="classERF.html#aa3151f4f965fcd44456952f69a9c28fc" title=" " alt="" coords="5,5,140,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a07f94645c9c578c19a3c879b490d4b70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07f94645c9c578c19a3c879b490d4b70">&#9670;&nbsp;</a></span>WFromOmegaBC()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">AMREX_GPU_DEVICE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> WFromOmegaBC </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>j</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>k</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td>
-          <td class="paramname"><em>omega</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>u</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>z_nd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;&#160;</td>
-          <td class="paramname"><em>dxInv</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;{</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;  <span class="comment">// Clip metric indices for ghost cell BCs</span></div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;  amrex::Dim3 hi = ubound(z_nd);</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;  amrex::Dim3 lo = lbound(z_nd);</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160; </div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;  <span class="comment">// This is dh/dxi at z-face (i,j,k-1/2)</span></div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;  amrex::Real met_zlo_xi   = 0.5 * dxInv[0] *</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i+1,j  ,k  )    <span class="comment">// hi i, lo k</span></div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;     -z_nd(i  ,j+1,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo i, lo k</span></div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; </div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;  <span class="comment">// This is dh/deta at z-face (i,j,k-1/2)</span></div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;  amrex::Real met_zlo_eta  = 0.5 * dxInv[1] *</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i  ,j+1,k  )    <span class="comment">// hi j, lo k</span></div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;     -z_nd(i+1,j  ,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo j, lo k</span></div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160; </div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;  <span class="comment">// Clip velocity indices for ghost cell BCs</span></div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;  amrex::Real vec_zlo_xi;</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;  amrex::Real vec_zlo_eta;</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;  hi = ubound(u);</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;  lo = lbound(u);</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;  hi.z += 1; <span class="comment">// nodal for W-velocity</span></div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160; </div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;  <span class="keywordflow">if</span>( k == hi.z) {</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <span class="comment">// foextrap to highest k-face</span></div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    vec_zlo_xi  = 0.75*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k-1)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k-1) ) - 0.25*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k-2)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k-2) );</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    vec_zlo_eta = 0.75*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k-1)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k-1) ) - 0.25*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k-2)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k-2) );</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == lo.z) {</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="comment">// foextrap to lowest k-face</span></div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    vec_zlo_xi  = 0.75*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k) ) - 0.25*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k+1)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k+1) );</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    vec_zlo_eta = 0.75*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k) ) - 0.25*( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k+1)+<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k+1) );</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <span class="comment">// Valid ghost cell for u &amp; v</span></div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    vec_zlo_xi  = 0.25 * ( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k-1) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k-1) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>(i+1,j,k) );</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    vec_zlo_eta = 0.25 * ( <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k-1) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k-1) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>(i,j+1,k) );</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;  }</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160; </div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;  amrex::Real <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a> = met_zlo_xi * vec_zlo_xi + met_zlo_eta * vec_zlo_eta + omega;</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>;</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERFPhysBCFunct.html#a9fcd83c89c19094652a10992a19f5133">ERFPhysBCFunct::operator()()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="TerrainMetrics_8H_a07f94645c9c578c19a3c879b490d4b70_icgraph.png" border="0" usemap="#TerrainMetrics_8H_a07f94645c9c578c19a3c879b490d4b70_icgraph" alt=""/></div>
-<map name="TerrainMetrics_8H_a07f94645c9c578c19a3c879b490d4b70_icgraph" id="TerrainMetrics_8H_a07f94645c9c578c19a3c879b490d4b70_icgraph">
-<area shape="rect" title=" " alt="" coords="257,5,391,32"/>
-<area shape="rect" href="classERFPhysBCFunct.html#a9fcd83c89c19094652a10992a19f5133" title=" " alt="" coords="5,5,209,32"/>
 </map>
 </div>
 

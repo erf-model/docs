@@ -11,6 +11,5 @@ var TerrainMetrics_8H =
     [ "init_terrain_grid", "TerrainMetrics_8H.html#a5a751d10fd4f8426e59b205e04571e1e", null ],
     [ "make_metrics", "TerrainMetrics_8H.html#a53363537d3e953e585899d27b19b0f7f", null ],
     [ "OmegaFromW", "TerrainMetrics_8H.html#adb62ee7692551a4bacfa38a3e8592fdf", null ],
-    [ "WFromOmega", "TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7", null ],
-    [ "WFromOmegaBC", "TerrainMetrics_8H.html#a07f94645c9c578c19a3c879b490d4b70", null ]
+    [ "WFromOmega", "TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7", null ]
 ];
