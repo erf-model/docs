@@ -1132,8 +1132,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            if (bc_ptr[n].lo(0) == ERFBCType::ext_dir) {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                dest_array(i,j,k,icomp+n) = l_bc_extdir_vals_d[n][0];</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;#ifdef ERF_USE_TERRAIN</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                dest_array(i,j,k,icomp+n) = WFromOmegaBC(i,j,k,dest_array(i,j,k,icomp+n),</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                         velx_array,vely_array,z_nd,dxInv);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                dest_array(i,j,k,icomp+n) = WFromOmega(i,j,k,dest_array(i,j,k,icomp+n),</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                       velx_array,vely_array,z_nd,dxInv);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;#endif</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            } <span class="keywordflow">else</span> if (bc_ptr[n].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                dest_array(i,j,k,icomp+n) =  dest_array(dom_lo.x,j,k,icomp+n);</div>
@@ -1149,8 +1149,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">if</span> (bc_ptr[n].hi(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                dest_array(i,j,k,icomp+n) = l_bc_extdir_vals_d[n][3];</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                dest_array(i,j,k,icomp+n) = WFromOmegaBC(i,j,k,dest_array(i,j,k,icomp+n),</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                         velx_array,vely_array,z_nd,dxInv);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                dest_array(i,j,k,icomp+n) = <a class="code" href="TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7">WFromOmega</a>(i,j,k,dest_array(i,j,k,icomp+n),</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                       velx_array,vely_array,z_nd,dxInv);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[n].hi(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                dest_array(i,j,k,icomp+n) =  dest_array(dom_hi.x,j,k,icomp+n);</div>
@@ -1167,8 +1167,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">if</span> (bc_ptr[n].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                dest_array(i,j,k,icomp+n) = l_bc_extdir_vals_d[n][1];</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                dest_array(i,j,k,icomp+n) = WFromOmegaBC(i,j,k,dest_array(i,j,k,icomp+n),</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                                         velx_array,vely_array,z_nd,dxInv);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                dest_array(i,j,k,icomp+n) = <a class="code" href="TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7">WFromOmega</a>(i,j,k,dest_array(i,j,k,icomp+n),</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                                       velx_array,vely_array,z_nd,dxInv);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[n].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                dest_array(i,j,k,icomp+n) =  dest_array(i,dom_lo.y,k,icomp+n);</div>
@@ -1184,8 +1184,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">if</span> (bc_ptr[n].hi(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                dest_array(i,j,k,icomp+n) = l_bc_extdir_vals_d[n][4];</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                dest_array(i,j,k,icomp+n) = WFromOmegaBC(i,j,k,dest_array(i,j,k,icomp+n),</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                                         velx_array,vely_array,z_nd,dxInv);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                dest_array(i,j,k,icomp+n) = <a class="code" href="TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7">WFromOmega</a>(i,j,k,dest_array(i,j,k,icomp+n),</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                                       velx_array,vely_array,z_nd,dxInv);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr[n].hi(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                dest_array(i,j,k,icomp+n) =  dest_array(i,dom_hi.y,k,icomp+n);</div>
@@ -1230,20 +1230,29 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span> (k == dom_lo.z &amp;&amp; bc_ptr[n].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            dest_array(i,j,k,icomp+n) = l_bc_extdir_vals_d[n][2];</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            dest_array(i,j,k,icomp+n) = WFromOmegaBC(i,j,k,l_bc_extdir_vals_d[n][2],</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                                     velx_array,vely_array,z_nd,dxInv);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            dest_array(i,j,k,icomp+n) = <a class="code" href="TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7">WFromOmega</a>(i,j,k,l_bc_extdir_vals_d[n][2],</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                                   velx_array,vely_array,z_nd,dxInv);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == dom_hi.z+1 &amp;&amp; bc_ptr[n].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            dest_array(i,j,k,icomp+n) = l_bc_extdir_vals_d[n][5];</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            dest_array(i,j,k,icomp+n) = WFromOmegaBC(i,j,k,l_bc_extdir_vals_d[n][5],</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                                                     velx_array,vely_array,z_nd,dxInv);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            dest_array(i,j,k,icomp+n) = <a class="code" href="TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7">WFromOmega</a>(i,j,k,l_bc_extdir_vals_d[n][5],</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                                                   velx_array,vely_array,z_nd,dxInv);</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    });</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERFPhysBCFunct.html#a9fcd83c89c19094652a10992a19f5133">operator()()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classERFPhysBCFunct_a30ad2802f637da669a14b822f6fdcf4d_cgraph.png" border="0" usemap="#classERFPhysBCFunct_a30ad2802f637da669a14b822f6fdcf4d_cgraph" alt=""/></div>
+<map name="classERFPhysBCFunct_a30ad2802f637da669a14b822f6fdcf4d_cgraph" id="classERFPhysBCFunct_a30ad2802f637da669a14b822f6fdcf4d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,192,47"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7" title=" " alt="" coords="240,13,355,39"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1609,6 +1618,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classERFPhysBCFunct.html#a9361cebc3ecea9b1c944184714571bc3" title=" " alt="" coords="257,136,444,177"/>
 <area shape="rect" href="classERFPhysBCFunct.html#ae533ad52910d765e64f77709e4809b8b" title=" " alt="" coords="257,201,444,243"/>
 <area shape="rect" href="classERFPhysBCFunct.html#a30ad2802f637da669a14b822f6fdcf4d" title=" " alt="" coords="257,267,444,308"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7" title=" " alt="" coords="492,274,607,301"/>
 </map>
 </div>
 
@@ -1834,6 +1844,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a></div><div class="ttdeci">@ zvel_bc</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:49</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ad5195ac8f863f5a9a7eaa0db094f7639"><div class="ttname"><a href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a></div><div class="ttdeci">#define NVAR</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:19</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a></div><div class="ttdeci">@ foextrap</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:135</div></div>
+<div class="ttc" id="aTerrainMetrics_8H_html_a81366cf4ca04adcfbf0988099b906cd7"><div class="ttname"><a href="TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7">WFromOmega</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real WFromOmega(int i, int j, int k, amrex::Real omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:501</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705">ERFBCType::reflect_odd</a></div><div class="ttdeci">@ reflect_odd</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:132</div></div>
 <div class="ttc" id="anamespaceVars_html_a2aa680f90abb6ff6d5c1875f8beb4b1ca48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:67</div></div>
 <div class="ttc" id="aclassERFPhysBCFunct_html_a9361cebc3ecea9b1c944184714571bc3"><div class="ttname"><a href="classERFPhysBCFunct.html#a9361cebc3ecea9b1c944184714571bc3">ERFPhysBCFunct::impose_xvel_bcs</a></div><div class="ttdeci">void impose_xvel_bcs(const amrex::Array4&lt; Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int icomp, int ncomp, amrex::Real time, int bccomp)</div><div class="ttdef"><b>Definition:</b> BoundaryConditions_xvel.cpp:15</div></div>
