@@ -198,10 +198,10 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    amrex::Real dyInv = cellSizeInv[1];</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    amrex::Real met_h_zeta = 0.25 * dyInv *</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      ( z_nd(i,j+1,k) + z_nd(i+1,j+1,k) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;       -z_nd(i,j  ,k) - z_nd(i+1,j  ,k) - z_nd(i,j  ,k+1) - z_nd(i+1,j  ,k+1) );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    amrex::Real dzInv = cellSizeInv[2];</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    amrex::Real met_h_zeta = 0.25 * dzInv *</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      ( z_nd(i+1,j,k+1) + z_nd(i+1,j+1,k+1) + z_nd(i,j,k+1) + z_nd(i,j+1,k+1)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;       -z_nd(i+1,j,k  ) - z_nd(i+1,j+1,k  ) - z_nd(i,j,k  ) - z_nd(i,j+1,k  ) );</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> met_h_zeta;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 </div><!-- fragment -->
