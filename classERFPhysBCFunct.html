@@ -1323,20 +1323,22 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">// Populate face values on z-boundaries themselves only if EXT_DIR</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">if</span> (k == dom_lo.z &amp;&amp; bc_ptr[n].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            dest_arr(i,j,k,icomp+n) = l_bc_extdir_vals_d[n][2];</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            dest_arr(i,j,k,icomp+n) = <a class="code" href="TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7">WFromOmega</a>(i,j,k,l_bc_extdir_vals_d[n][2],</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                                   velx_arr,vely_arr,z_nd_arr,dxInv);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == dom_hi.z+1 &amp;&amp; bc_ptr[n].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            dest_arr(i,j,k,icomp+n) = l_bc_extdir_vals_d[n][5];</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            dest_arr(i,j,k,icomp+n) = <a class="code" href="TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7">WFromOmega</a>(i,j,k,l_bc_extdir_vals_d[n][2],</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                                 velx_arr,vely_arr,z_nd_arr,dxInv);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            dest_arr(i,j,k,icomp+n) = l_bc_extdir_vals_d[n][2];</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == dom_hi.z+1 &amp;&amp; bc_ptr[n].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#ifdef ERF_USE_TERRAIN</span></div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            dest_arr(i,j,k,icomp+n) = <a class="code" href="TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7">WFromOmega</a>(i,j,k,l_bc_extdir_vals_d[n][5],</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                                   velx_arr,vely_arr,z_nd_arr,dxInv);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    });</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                                 velx_arr,vely_arr,z_nd_arr,dxInv);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            dest_arr(i,j,k,icomp+n) = l_bc_extdir_vals_d[n][5];</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    });</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERFPhysBCFunct.html#a9fcd83c89c19094652a10992a19f5133">operator()()</a>.</p>
 <div class="dynheader">
