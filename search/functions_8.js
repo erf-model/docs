@@ -2,9 +2,9 @@ var searchData=
 [
   ['impose_5fcons_5fbcs_964',['impose_cons_bcs',['../classERFPhysBCFunct.html#acfa0b4c18aa48d4e3d41c737f7f61e4b',1,'ERFPhysBCFunct']]],
   ['impose_5fmost_5fbcs_965',['impose_most_bcs',['../classABLMost.html#ac3001fb9ef1ca38bcf32e7e0c901ab77',1,'ABLMost']]],
-  ['impose_5fxvel_5fbcs_966',['impose_xvel_bcs',['../classERFPhysBCFunct.html#a9361cebc3ecea9b1c944184714571bc3',1,'ERFPhysBCFunct']]],
-  ['impose_5fyvel_5fbcs_967',['impose_yvel_bcs',['../classERFPhysBCFunct.html#ae533ad52910d765e64f77709e4809b8b',1,'ERFPhysBCFunct']]],
-  ['impose_5fzvel_5fbcs_968',['impose_zvel_bcs',['../classERFPhysBCFunct.html#a30ad2802f637da669a14b822f6fdcf4d',1,'ERFPhysBCFunct']]],
+  ['impose_5fxvel_5fbcs_966',['impose_xvel_bcs',['../classERFPhysBCFunct.html#ab0837724a04ea5685eb237fd2ba31082',1,'ERFPhysBCFunct']]],
+  ['impose_5fyvel_5fbcs_967',['impose_yvel_bcs',['../classERFPhysBCFunct.html#ac9b1fa39a58455908b4f64f8646e5e16',1,'ERFPhysBCFunct']]],
+  ['impose_5fzvel_5fbcs_968',['impose_zvel_bcs',['../classERFPhysBCFunct.html#a11e9ec336556f4a90c29d741d1d4c558',1,'ERFPhysBCFunct']]],
   ['ingested_5fdensity_969',['ingested_density',['../classReadBndryPlanes.html#ab54133701e8e086315fa7299257199a2',1,'ReadBndryPlanes']]],
   ['ingested_5fke_970',['ingested_KE',['../classReadBndryPlanes.html#a85a5f25c283db679f67e10167cc6ee5c',1,'ReadBndryPlanes']]],
   ['ingested_5fqke_971',['ingested_QKE',['../classReadBndryPlanes.html#a65d7253b6c2237c3aa60343740d25dd6',1,'ReadBndryPlanes']]],
