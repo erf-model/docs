@@ -2,6 +2,7 @@ var classERFPhysBCFunct =
 [
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html#af36d33a5b1f87acd6c4d30f108d9311b", null ],
     [ "~ERFPhysBCFunct", "classERFPhysBCFunct.html#abb1797f0742dd01ee978be02d594fc43", null ],
+    [ "fill_from_bndryregs", "classERFPhysBCFunct.html#ae87c0f620b2120bf5f1402cb12cc2a07", null ],
     [ "FillBoundary", "classERFPhysBCFunct.html#ac593242574da88bcc47f9ed8d448d23b", null ],
     [ "impose_cons_bcs", "classERFPhysBCFunct.html#acfa0b4c18aa48d4e3d41c737f7f61e4b", null ],
     [ "impose_xvel_bcs", "classERFPhysBCFunct.html#ab0837724a04ea5685eb237fd2ba31082", null ],
