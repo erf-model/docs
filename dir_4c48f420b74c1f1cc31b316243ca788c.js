@@ -7,7 +7,6 @@ var dir_4c48f420b74c1f1cc31b316243ca788c =
     [ "ERF_WriteBndryPlanes.H", "ERF__WriteBndryPlanes_8H.html", [
       [ "WriteBndryPlanes", "classWriteBndryPlanes.html", "classWriteBndryPlanes" ]
     ] ],
-    [ "NC_Read_WRF_WPS.cpp", "NC__Read__WRF__WPS_8cpp.html", null ],
     [ "NCBuildFABs.cpp", "NCBuildFABs_8cpp.html", "NCBuildFABs_8cpp" ],
     [ "NCCheckpoint.cpp", "NCCheckpoint_8cpp.html", null ],
     [ "NCColumnFile.cpp", "NCColumnFile_8cpp.html", null ],
@@ -24,5 +23,7 @@ var dir_4c48f420b74c1f1cc31b316243ca788c =
     [ "NCPlotFile.H", "NCPlotFile_8H.html", "NCPlotFile_8H" ],
     [ "NCWpsFile.H", "NCWpsFile_8H.html", "NCWpsFile_8H" ],
     [ "Plotfile.cpp", "Plotfile_8cpp.html", null ],
+    [ "ReadFromWRFBdy.cpp", "ReadFromWRFBdy_8cpp.html", null ],
+    [ "ReadFromWRFInput.cpp", "ReadFromWRFInput_8cpp.html", null ],
     [ "writeJobInfo.cpp", "writeJobInfo_8cpp.html", "writeJobInfo_8cpp" ]
 ];
