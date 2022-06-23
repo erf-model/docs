@@ -82,6 +82,8 @@ $(document).ready(function(){initNavTree('ReadFromWRFBdy_8cpp.html',''); initRes
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ReadFromWRFBdy.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -120,7 +122,52 @@ Include dependency graph for ReadFromWRFBdy.cpp:</div>
 <area shape="rect" title=" " alt="" coords="895,244,1018,271"/>
 </map>
 </div>
-</div></div><!-- contents -->
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a30c3732779a421fb8e36081f0ed442f0"><td class="memItemLeft" align="right" valign="top">std::time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ReadFromWRFBdy_8cpp.html#a30c3732779a421fb8e36081f0ed442f0">getEpochTime</a> (const std::wstring &amp;dateTime)</td></tr>
+<tr class="separator:a30c3732779a421fb8e36081f0ed442f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a30c3732779a421fb8e36081f0ed442f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c3732779a421fb8e36081f0ed442f0">&#9670;&nbsp;</a></span>getEpochTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::time_t getEpochTime </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>dateTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// Let&#39;s consider we are getting all the input in</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// this format: &#39;2014-07-25_20:17:22&#39;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// A better approach would be to pass in the format as well.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::wstring dateTimeFormat{ L<span class="stringliteral">&quot;%Y-%m-%d_%H:%M:%S&quot;</span> };</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Create a stream which we will use to parse the string,</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// which we provide to constructor of stream to fill the buffer.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::wistringstream ss{ dateTime };</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// Create a tm object to store the parsed date and time.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::tm dt;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Now we read from buffer using get_time manipulator</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// and formatting the input appropriately.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    ss &gt;&gt; std::get_time(&amp;dt, dateTimeFormat.c_str());</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// Convert the tm structure to time_t value and return.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> std::mktime(&amp;dt);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

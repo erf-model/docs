@@ -1,7 +1,7 @@
 var structncutils_1_1NCVar =
 [
-    [ "get", "structncutils_1_1NCVar.html#af3718c080c0f3ac27c6abced87d84317", null ],
-    [ "get", "structncutils_1_1NCVar.html#acd2fdc27eeb735720d1485616238ab79", null ],
+    [ "get", "structncutils_1_1NCVar.html#a7fe596943d518530da29a356d393090d", null ],
+    [ "get", "structncutils_1_1NCVar.html#ad73293d8faae951e5f91cc3ba49d0f8c", null ],
     [ "get", "structncutils_1_1NCVar.html#ac88fd209afde1f05e4f8f62e4c628bba", null ],
     [ "get", "structncutils_1_1NCVar.html#a533478371e0bd09a6f4944bf5fe00684", null ],
     [ "get", "structncutils_1_1NCVar.html#ab3b5bad54cdc792e734690fcb5f4ecec", null ],

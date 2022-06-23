@@ -23,7 +23,7 @@ var dir_4c48f420b74c1f1cc31b316243ca788c =
     [ "NCPlotFile.H", "NCPlotFile_8H.html", "NCPlotFile_8H" ],
     [ "NCWpsFile.H", "NCWpsFile_8H.html", "NCWpsFile_8H" ],
     [ "Plotfile.cpp", "Plotfile_8cpp.html", null ],
-    [ "ReadFromWRFBdy.cpp", "ReadFromWRFBdy_8cpp.html", null ],
+    [ "ReadFromWRFBdy.cpp", "ReadFromWRFBdy_8cpp.html", "ReadFromWRFBdy_8cpp" ],
     [ "ReadFromWRFInput.cpp", "ReadFromWRFInput_8cpp.html", null ],
     [ "writeJobInfo.cpp", "writeJobInfo_8cpp.html", "writeJobInfo_8cpp" ]
 ];
