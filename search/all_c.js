@@ -42,8 +42,8 @@ var searchData=
   ['num_5fvariables_469',['num_variables',['../classncutils_1_1NCGroup.html#a4721cc36bd0f188be0250112329d3ba1',1,'ncutils::NCGroup']]],
   ['num_5fvars_470',['num_vars',['../structTimeInterpolatedData.html#a69fdc01eabf8ded65ff6cac13e59c0c0',1,'TimeInterpolatedData']]],
   ['numdatalogs_471',['NumDataLogs',['../classERF.html#ac1238c1616826c66df1dfd9076e6a3da',1,'ERF']]],
-  ['numdiffs_472',['NumDiffs',['../namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977aa3900ab375460932d825b615bb532446',1,'EddyDiff']]],
-  ['numtypes_473',['NumTypes',['../namespaceBCVars.html#a00367571247ba920989360b94c156f4aa0b88b0a3a03a3e787a7b27717ec64de7',1,'BCVars::NumTypes()'],['../namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca5deccaa24d5e74279425d7749f7d1494',1,'Vars::NumTypes()']]],
-  ['numvars_474',['NumVars',['../namespaceCons.html#ab92931555eff5e3d0d9eb62ae0225cc1a5934ebcc17d4dfd56ed8cf6221c9a5ed',1,'Cons::NumVars()'],['../namespacePrim.html#a65f567687417821214564c7d1ea9dcc9a00d5af81f147f949563064a95c66f5d3',1,'Prim::NumVars()']]],
+  ['numdiffs_472',['NumDiffs',['../namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149eaa3900ab375460932d825b615bb532446',1,'EddyDiff']]],
+  ['numtypes_473',['NumTypes',['../namespaceBCVars.html#a00367571247ba920989360b94c156f4aa0b88b0a3a03a3e787a7b27717ec64de7',1,'BCVars::NumTypes()'],['../namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a5deccaa24d5e74279425d7749f7d1494',1,'Vars::NumTypes()']]],
+  ['numvars_474',['NumVars',['../namespaceCons.html#aa5b867507379ab774c4d0a32dfb1dc7ba5934ebcc17d4dfd56ed8cf6221c9a5ed',1,'Cons::NumVars()'],['../namespacePrim.html#acb87058f5aed3526b2addad665ec5715a00d5af81f147f949563064a95c66f5d3',1,'Prim::NumVars()']]],
   ['nvar_475',['NVAR',['../IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639',1,'IndexDefines.H']]]
 ];

@@ -10,5 +10,6 @@ var namespaces_dup =
     [ "ncutils", "namespacencutils.html", null ],
     [ "Prim", "namespacePrim.html", null ],
     [ "RHSVar", "namespaceRHSVar.html", null ],
-    [ "Vars", "namespaceVars.html", null ]
+    [ "Vars", "namespaceVars.html", null ],
+    [ "WRFBdyVars", "namespaceWRFBdyVars.html", null ]
 ];
