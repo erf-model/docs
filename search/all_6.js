@@ -26,10 +26,11 @@ var searchData=
   ['getindx_267',['getIndx',['../structDirectionSelector.html#a3950b636303028f398441fdc43d66dba',1,'DirectionSelector::getIndx()'],['../structDirectionSelector_3_010_01_4.html#aca1761dba346d6d54758ef421a19a356',1,'DirectionSelector&lt; 0 &gt;::getIndx()'],['../structDirectionSelector_3_011_01_4.html#a0de196a10202d19214fe0d88d3b4dab3',1,'DirectionSelector&lt; 1 &gt;::getIndx()'],['../structDirectionSelector_3_012_01_4.html#a907464acec0b7ce2ab690a7d1b630703',1,'DirectionSelector&lt; 2 &gt;::getIndx()']]],
   ['getpgivenrth_268',['getPgivenRTh',['../EOS_8H.html#a292ce90ab26c75f4a444808a807b532b',1,'EOS.H']]],
   ['getpprimegivenrth_269',['getPprimegivenRTh',['../EOS_8H.html#a62f564807713abf368002e68c9b40e1e',1,'EOS.H']]],
-  ['getrhothetagivenp_270',['getRhoThetagivenP',['../EOS_8H.html#aa7b634796f77c8e2c23e3e6a84596c50',1,'EOS.H']]],
-  ['gettgivenrandrth_271',['getTgivenRandRTh',['../EOS_8H.html#a652d566aef658cc423ced929a816f869',1,'EOS.H']]],
-  ['getthgivenrandt_272',['getThgivenRandT',['../EOS_8H.html#ab51ca751b821a3a5a43685b2175ee61f',1,'EOS.H']]],
-  ['gotonextline_273',['GotoNextLine',['../classERF.html#aaee255b031e63bd9b5807f6612739dbd',1,'ERF']]],
-  ['gravity_274',['gravity',['../classABLMostData.html#af6c3901ae4c9ab1fefc9e71db20e3348',1,'ABLMostData::gravity()'],['../structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b',1,'SolverChoice::gravity()']]],
-  ['group_275',['group',['../classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333',1,'ncutils::NCGroup']]]
+  ['getrhogiventhetapress_270',['getRhoGivenThetaPress',['../EOS_8H.html#ad25a565a583f9d8df46ef188b33bbb9c',1,'EOS.H']]],
+  ['getrhothetagivenp_271',['getRhoThetagivenP',['../EOS_8H.html#aa7b634796f77c8e2c23e3e6a84596c50',1,'EOS.H']]],
+  ['gettgivenrandrth_272',['getTgivenRandRTh',['../EOS_8H.html#a652d566aef658cc423ced929a816f869',1,'EOS.H']]],
+  ['getthgivenrandt_273',['getThgivenRandT',['../EOS_8H.html#ab51ca751b821a3a5a43685b2175ee61f',1,'EOS.H']]],
+  ['gotonextline_274',['GotoNextLine',['../classERF.html#aaee255b031e63bd9b5807f6612739dbd',1,'ERF']]],
+  ['gravity_275',['gravity',['../classABLMostData.html#af6c3901ae4c9ab1fefc9e71db20e3348',1,'ABLMostData::gravity()'],['../structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b',1,'SolverChoice::gravity()']]],
+  ['group_276',['group',['../classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333',1,'ncutils::NCGroup']]]
 ];
