@@ -11,5 +11,6 @@ var namespaces_dup =
     [ "Prim", "namespacePrim.html", null ],
     [ "RHSVar", "namespaceRHSVar.html", null ],
     [ "Vars", "namespaceVars.html", null ],
+    [ "WRFBdyTypes", "namespaceWRFBdyTypes.html", null ],
     [ "WRFBdyVars", "namespaceWRFBdyVars.html", null ]
 ];
