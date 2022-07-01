@@ -420,8 +420,8 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="comment">// *** *** Vectors (over levels) of FArrayBox&#39;s for holding the INITIAL data</span></div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="comment">// Data read from the wrfinput NetCDF file</span></div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt; NC_xvel_fab, NC_yvel_fab, NC_zvel_fab;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt; NC_rho_fab, NC_rhotheta_fab;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt; NC_p_base_fab, NC_p_pert_fab;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt; NC_rho_fab, NC_rho_pert_fab, NC_rhotheta_fab;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="comment">//amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt; NC_p_base_fab, NC_p_pert_fab;</span></div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">// *** *** FArrayBox&#39;s for holding the SURFACE data</span></div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">// Data read from the wrfinput NetCDF file</span></div>
@@ -435,7 +435,7 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    amrex::FArrayBox NC_SST_fab;    <span class="comment">// Sea Surface Temperature; Defined even for land area</span></div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    amrex::FArrayBox NC_TSK_fab;    <span class="comment">// Surface Skin Temperature; Appears to be same as SST...</span></div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    amrex::FArrayBox NC_eta_fab, NC_phb_fab, NC_z_phy_fab, NC_rho_inv_pert_fab;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    amrex::FArrayBox NC_eta_fab, NC_phb_fab, NC_z_phy_fab;</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="comment">// *** *** FArrayBox&#39;s for holding the LATERAL BOUNDARY data (the four sides)</span></div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="comment">// Data read from the wrfbdy NetCDF file</span></div>
