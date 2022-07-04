@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['w_695',['w',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68',1,'w():&#160;DataStruct.H'],['../namespaceWRFBdyVars.html#aa68ca75ab2607d45e4ba7611c9a6e559a38f18b99102745d9833bd93ed5e220d3',1,'WRFBdyVars::W()']]],
+  ['w_695',['w',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68',1,'DataStruct.H']]],
   ['wfromomega_696',['WFromOmega',['../TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7',1,'TerrainMetrics.H']]],
   ['wrfbdytypes_697',['WRFBdyTypes',['../namespaceWRFBdyTypes.html',1,'']]],
   ['wrfbdyvars_698',['WRFBdyVars',['../namespaceWRFBdyVars.html',1,'']]],

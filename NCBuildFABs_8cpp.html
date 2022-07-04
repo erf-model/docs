@@ -131,8 +131,8 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a745c7bdb7aee05185d04550c1381e99d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NCBuildFABs_8cpp.html#a745c7bdb7aee05185d04550c1381e99d">BuildFABsFromWRFInputFile</a> (const std::string &amp;fname, Vector&lt; std::string &gt; nc_var_names, Vector&lt; amrex::FArrayBox * &gt; fab_vars)</td></tr>
-<tr class="separator:a745c7bdb7aee05185d04550c1381e99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a99dca2d6573ce443c17ca6c25151c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NCBuildFABs_8cpp.html#a6a99dca2d6573ce443c17ca6c25151c6">BuildFABsFromWRFInputFile</a> (const std::string &amp;fname, Vector&lt; std::string &gt; nc_var_names, Vector&lt; enum <a class="el" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06">NC_Data_Dims_Type</a> &gt; NC_dim_types, Vector&lt; amrex::FArrayBox * &gt; fab_vars)</td></tr>
+<tr class="separator:a6a99dca2d6573ce443c17ca6c25151c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a60014a8d74bed0d5ae984e600c68dc85"></a>
@@ -150,8 +150,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a745c7bdb7aee05185d04550c1381e99d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a745c7bdb7aee05185d04550c1381e99d">&#9670;&nbsp;</a></span>BuildFABsFromWRFInputFile()</h2>
+<a id="a6a99dca2d6573ce443c17ca6c25151c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a99dca2d6573ce443c17ca6c25151c6">&#9670;&nbsp;</a></span>BuildFABsFromWRFInputFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,6 +171,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Vector&lt; enum <a class="el" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06">NC_Data_Dims_Type</a> &gt;&#160;</td>
+          <td class="paramname"><em>NC_dim_types</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">Vector&lt; amrex::FArrayBox * &gt;&#160;</td>
           <td class="paramname"><em>fab_vars</em>&#160;</td>
         </tr>
@@ -186,84 +192,56 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">using</span> RARRAY = <a class="code" href="structNDArray.html">NDArray&lt;float&gt;</a>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        amrex::Vector&lt;RARRAY&gt; arrays(nc_var_names.size());</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="NCWpsFile_8H.html#ab12ef5d11c5e6d113befe1e72ac1e232">ReadWRFInputFile</a>(fname, nc_var_names, arrays);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iv = 0; iv &lt; nc_var_names.size(); iv++)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Building FAB for the the NetCDF variable : &quot;</span> &lt;&lt; nc_var_names[iv] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="comment">/*</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">            switch (NC_dim_types[iv]) {</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">                case NC_Data_Dims_Type::Time_BT_SN_WE:</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">                    bigEnd[0] = arrays[iv].get_vshape()[3] - 1;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">                    bigEnd[1] = arrays[iv].get_vshape()[2] - 1;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">                    bigEnd[2] = arrays[iv].get_vshape()[1] - 1;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">                    break;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">                case NC_Data_Dims_Type::Time_SN_WE:</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">                    bigEnd[0] = arrays[iv].get_vshape()[2] - 1;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">                    bigEnd[1] = arrays[iv].get_vshape()[1] - 1;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">                    bigEnd[2] = 0;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">                    break;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">                case NC_Data_Dims_Type::Time_BT:</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">                    bigEnd[0] = 0;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">                    bigEnd[1] = 0;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">                    bigEnd[2] = arrays[iv].get_vshape()[1] - 1;</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">                    break;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">                case NC_Data_Dims_Type::Time:</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">                    bigEnd[0] = 0;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">                    bigEnd[1] = 0;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">                    bigEnd[2] = 0;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">                    break;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">                default:</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">                    amrex::Error(&quot;Unrecognized NetCDF data dimensions type&quot;);</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">            }</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">            */</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">// amrex::Print() &lt;&lt; &quot;FAB IN BUILD &quot; &lt;&lt; fab_vars[iv]-&gt;box() &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">int</span> ncomp  = 1;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keyword">auto</span> num_pts = fab_vars[iv]-&gt;box().numPts();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="comment">// The two versions shown below are equivalent -- we keep both for clarity</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#if 0</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kcomp(0); kcomp &lt; ncomp; ++kcomp)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keyword">auto</span> dataPtr = fab_vars[iv]-&gt;dataPtr(kcomp);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n(0); n &lt; num_pts; ++n) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    *(dataPtr+n) = <span class="keyword">static_cast&lt;</span><a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a><span class="keyword">&gt;</span>(*(arrays[iv].get_data()+n));</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            Array4&lt;Real&gt; fab_arr = fab_vars[iv]-&gt;array();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordtype">int</span> ns2 = arrays[iv].get_vshape()[2];</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordtype">int</span> ns3 = arrays[iv].get_vshape()[3];</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordtype">int</span> ioff = fab_vars[iv]-&gt;box().smallEnd()[0];</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordtype">int</span> joff = fab_vars[iv]-&gt;box().smallEnd()[1];</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kcomp(0); kcomp &lt; ncomp; ++kcomp)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n(0); n &lt; num_pts; ++n) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    <span class="keywordtype">int</span> k  = n / (ns2*ns3);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    <span class="keywordtype">int</span> j  = (n - k*(ns2*ns3)) / ns3 + joff;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    <span class="keywordtype">int</span> i  = n - k*(ns2*ns3) - (j-joff) * ns3 + ioff;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    fab_arr(i,j,k,kcomp) = <span class="keyword">static_cast&lt;</span><a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a><span class="keyword">&gt;</span>(*(arrays[iv].get_data()+n));</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    } <span class="comment">// if IOProcessor</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="NCWpsFile_8H.html#af81f068f2d98e3fc655a650e656fdaf8">ReadWRFFile</a>(fname, nc_var_names, arrays);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iv = 0; iv &lt; nc_var_names.size(); iv++)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Building FAB for the the NetCDF variable : &quot;</span> &lt;&lt; nc_var_names[iv] &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="comment">// amrex::Print() &lt;&lt; &quot;  with box &quot; &lt;&lt; fab_vars[iv]-&gt;box() &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            Array4&lt;Real&gt; fab_arr = fab_vars[iv]-&gt;array();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordtype">int</span> ioff = fab_vars[iv]-&gt;box().smallEnd()[0];</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordtype">int</span> joff = fab_vars[iv]-&gt;box().smallEnd()[1];</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">auto</span> bx = fab_vars[iv]-&gt;box();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">auto</span> num_pts = bx.numPts();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordtype">int</span> ns2, ns3;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> (NC_dim_types[iv] == <a class="code" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a539ca443eab3c322b2b37046e896dc62">NC_Data_Dims_Type::Time_BT</a>) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                ns2 = 1;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                ns3 = 1;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (NC_dim_types[iv] == <a class="code" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a5f93bace93896872075eae75770cadc4">NC_Data_Dims_Type::Time_SN_WE</a>) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                ns2 = arrays[iv].get_vshape()[1];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                ns3 = arrays[iv].get_vshape()[2];</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                AMREX_ALWAYS_ASSERT(num_pts == ns2 * ns3);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (NC_dim_types[iv] == <a class="code" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aa3968158227ea04595d4003503cca22b">NC_Data_Dims_Type::Time_BT_SN_WE</a>) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                ns2 = arrays[iv].get_vshape()[2];</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                ns3 = arrays[iv].get_vshape()[3];</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                amrex::Abort(<span class="stringliteral">&quot;Dont know this NC_Data_Dims_Type&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n(0); n &lt; num_pts; ++n) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordtype">int</span> k  = n / (ns2*ns3);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordtype">int</span> j  = (n - k*(ns2*ns3)) / ns3 + joff;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordtype">int</span> i  = n - k*(ns2*ns3) - (j-joff) * ns3 + ioff;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                fab_arr(i,j,k,0) = <span class="keyword">static_cast&lt;</span><a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a><span class="keyword">&gt;</span>(*(arrays[iv].get_data()+n));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        } <span class="comment">// iv</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    } <span class="comment">// if IOProcessor</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="NCBuildFABs_8cpp_a745c7bdb7aee05185d04550c1381e99d_cgraph.png" border="0" usemap="#NCBuildFABs_8cpp_a745c7bdb7aee05185d04550c1381e99d_cgraph" alt=""/></div>
-<map name="NCBuildFABs_8cpp_a745c7bdb7aee05185d04550c1381e99d_cgraph" id="NCBuildFABs_8cpp_a745c7bdb7aee05185d04550c1381e99d_cgraph">
+<div class="center"><img src="NCBuildFABs_8cpp_a6a99dca2d6573ce443c17ca6c25151c6_cgraph.png" border="0" usemap="#NCBuildFABs_8cpp_a6a99dca2d6573ce443c17ca6c25151c6_cgraph" alt=""/></div>
+<map name="NCBuildFABs_8cpp_a6a99dca2d6573ce443c17ca6c25151c6_cgraph" id="NCBuildFABs_8cpp_a6a99dca2d6573ce443c17ca6c25151c6_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,211,57"/>
-<area shape="rect" href="NCWpsFile_8H.html#ab12ef5d11c5e6d113befe1e72ac1e232" title=" " alt="" coords="259,31,400,57"/>
-<area shape="rect" href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885" title=" " alt="" coords="448,31,603,57"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0" title="Name of this group." alt="" coords="651,5,827,32"/>
-<area shape="rect" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423" title=" " alt="" coords="656,56,821,83"/>
+<area shape="rect" href="NCWpsFile_8H.html#af81f068f2d98e3fc655a650e656fdaf8" title=" " alt="" coords="259,31,367,57"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885" title=" " alt="" coords="415,31,569,57"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0" title="Name of this group." alt="" coords="617,5,793,32"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423" title=" " alt="" coords="623,56,788,83"/>
 </map>
 </div>
 
@@ -271,9 +249,12 @@ Here is the call graph for this function:</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aNCWpsFile_8H_html_ab12ef5d11c5e6d113befe1e72ac1e232"><div class="ttname"><a href="NCWpsFile_8H.html#ab12ef5d11c5e6d113befe1e72ac1e232">ReadWRFInputFile</a></div><div class="ttdeci">void ReadWRFInputFile(const std::string &amp;fname, amrex::Vector&lt; std::string &gt; names, amrex::Vector&lt; NDArray&lt; DType &gt; &gt; &amp;arrays)</div><div class="ttdef"><b>Definition:</b> NCWpsFile.H:200</div></div>
+<div class="ttc" id="aNCWpsFile_8H_html_a147911bcb83952a10f7560fd4e9d8f06a539ca443eab3c322b2b37046e896dc62"><div class="ttname"><a href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a539ca443eab3c322b2b37046e896dc62">NC_Data_Dims_Type::Time_BT</a></div><div class="ttdeci">@ Time_BT</div></div>
+<div class="ttc" id="aNCWpsFile_8H_html_af81f068f2d98e3fc655a650e656fdaf8"><div class="ttname"><a href="NCWpsFile_8H.html#af81f068f2d98e3fc655a650e656fdaf8">ReadWRFFile</a></div><div class="ttdeci">void ReadWRFFile(const std::string &amp;fname, amrex::Vector&lt; std::string &gt; names, amrex::Vector&lt; NDArray&lt; DType &gt; &gt; &amp;arrays)</div><div class="ttdef"><b>Definition:</b> NCWpsFile.H:192</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
 <div class="ttc" id="astructNDArray_html"><div class="ttname"><a href="structNDArray.html">NDArray</a></div><div class="ttdef"><b>Definition:</b> NCWpsFile.H:58</div></div>
+<div class="ttc" id="aNCWpsFile_8H_html_a147911bcb83952a10f7560fd4e9d8f06aa3968158227ea04595d4003503cca22b"><div class="ttname"><a href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aa3968158227ea04595d4003503cca22b">NC_Data_Dims_Type::Time_BT_SN_WE</a></div><div class="ttdeci">@ Time_BT_SN_WE</div></div>
+<div class="ttc" id="aNCWpsFile_8H_html_a147911bcb83952a10f7560fd4e9d8f06a5f93bace93896872075eae75770cadc4"><div class="ttname"><a href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a5f93bace93896872075eae75770cadc4">NC_Data_Dims_Type::Time_SN_WE</a></div><div class="ttdeci">@ Time_SN_WE</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
