@@ -12,5 +12,6 @@ var searchData=
   ['use_5fnative_5fmri_674',['use_native_mri',['../classERF.html#a4a279f0f572da168852d954df55abe2e',1,'ERF']]],
   ['use_5fqke_675',['use_QKE',['../structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5',1,'SolverChoice']]],
   ['use_5frayleigh_5fdamping_676',['use_rayleigh_damping',['../structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01',1,'SolverChoice']]],
-  ['utau_677',['utau',['../classABLMostData.html#abda6015587af275eb459a829b557325f',1,'ABLMostData']]]
+  ['use_5fterrain_677',['use_terrain',['../structSolverChoice.html#a063a88594452100497651e8aaf1f68d7',1,'SolverChoice']]],
+  ['utau_678',['utau',['../classABLMostData.html#abda6015587af275eb459a829b557325f',1,'ABLMostData']]]
 ];

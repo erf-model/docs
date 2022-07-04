@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classncutils_1_1NCGroup.html#ae0ecaad10c77614a283bd6e66d2dca41":[2,0,0,3,6],
 "classncutils_1_1NCGroup.html#aef6b6e2be36e6179a001d9873e94df82":[2,0,0,3,11],
 "classncutils_1_1NCGroup.html#af7847ff27ccb8499814b7f21559e2e84":[2,0,0,3,24],
 "classncutils_1_1NCGroup.html#affa2e62434110dd4fa47d093162e56cf":[2,0,0,3,4],
@@ -9,8 +10,8 @@ var NAVTREEINDEX3 =
 "dir_74389ed8173ad57b461b9d623a1f3867.html":[3,0,0],
 "dir_759b90b1f3ea3c20e13693c83a3534b7.html":[3,0,0,3],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -18,8 +19,8 @@ var NAVTREEINDEX3 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1],
 "functions_func.html":[2,3,1,0],
+"functions_func.html":[2,3,1],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
@@ -171,6 +172,7 @@ var NAVTREEINDEX3 =
 "structNullFill.html":[2,0,12],
 "structNullFill.html#aa99884033b158cc275721f825c06d6df":[2,0,12,0],
 "structSolverChoice.html":[2,0,15],
+"structSolverChoice.html#a063a88594452100497651e8aaf1f68d7":[2,0,15,45],
 "structSolverChoice.html#a0a031373331c9aca22a47b0995729f46":[2,0,15,30],
 "structSolverChoice.html#a10043b88372894f67ed0f3e68bf27cb6":[2,0,15,36],
 "structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3":[2,0,15,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "structncutils_1_1NCVar.html#a16984e6a3ad571e12401321b749f44ea":[2,0,0,4,26],
 "structncutils_1_1NCVar.html#a1cdbbfc072d285144de7f9b6e0fbac42":[2,0,0,4,19],
 "structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218":[2,0,0,4,34],
-"structncutils_1_1NCVar.html#a2520db8c1541561c274be5c372fa5597":[2,0,0,4,24],
-"structncutils_1_1NCVar.html#a2d41b9484dd6453e36be2d54fe824962":[2,0,0,4,21],
-"structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532":[2,0,0,4,35]
+"structncutils_1_1NCVar.html#a2520db8c1541561c274be5c372fa5597":[2,0,0,4,24]
 };
