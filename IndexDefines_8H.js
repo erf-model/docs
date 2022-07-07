@@ -24,6 +24,7 @@ var IndexDefines_8H =
     [ "U", "IndexDefines_8H.html#aa68ca75ab2607d45e4ba7611c9a6e559aa53bdf551bf25340a362d722eac4ab6f", null ],
     [ "V", "IndexDefines_8H.html#aa68ca75ab2607d45e4ba7611c9a6e559a4d00543cd0d6f68475152e954f5dfa43", null ],
     [ "T", "IndexDefines_8H.html#aa68ca75ab2607d45e4ba7611c9a6e559a1e7df4966430ffdaa4bb7bbd0f8a6d02", null ],
+    [ "QV", "IndexDefines_8H.html#aa68ca75ab2607d45e4ba7611c9a6e559a3b5140db1e7e68b5103cb3372b24faf5", null ],
     [ "MU", "IndexDefines_8H.html#aa68ca75ab2607d45e4ba7611c9a6e559a9d2d300be8f8f15441322fce35c9c92e", null ],
     [ "PC", "IndexDefines_8H.html#aa68ca75ab2607d45e4ba7611c9a6e559a56079d34fee7d4d15412dfffaa370ad9", null ],
     [ "NumTypes", "IndexDefines_8H.html#aa68ca75ab2607d45e4ba7611c9a6e559a6d1cade25038e11a813d4b72b651b04c", null ],
