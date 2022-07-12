@@ -66,6 +66,13 @@ var IndexDefines_8H =
     [ "Scalar_v", "IndexDefines_8H.html#a45268689de46663ab6458f48c6878fc5a2b82a72be137b3159e7d4945735fcbf5", null ],
     [ "PBL_lengthscale", "IndexDefines_8H.html#a45268689de46663ab6458f48c6878fc5a6a553b28d62930bdda7b473e28464b73", null ],
     [ "NumDiffs", "IndexDefines_8H.html#a45268689de46663ab6458f48c6878fc5aa3900ab375460932d825b615bb532446", null ],
+    [ "h_xi", "IndexDefines_8H.html#a34a43e8378fdc005b5ce0b1b7a1d1d36aeaa890bd64e320b00f405104d59a1d2d", null ],
+    [ "h_eta", "IndexDefines_8H.html#a34a43e8378fdc005b5ce0b1b7a1d1d36adb8f7ecba5b40da0cb92768188af74e3", null ],
+    [ "h_zeta", "IndexDefines_8H.html#a34a43e8378fdc005b5ce0b1b7a1d1d36ae1f2368ff4d838895054474ee157f9a8", null ],
+    [ "h_xi_eta", "IndexDefines_8H.html#a34a43e8378fdc005b5ce0b1b7a1d1d36a16dbf3b31d35b78d38f5b0a400217720", null ],
+    [ "h_xi_zeta", "IndexDefines_8H.html#a34a43e8378fdc005b5ce0b1b7a1d1d36a03691e90b1018d69322877ea80fe8520", null ],
+    [ "h_eta_zeta", "IndexDefines_8H.html#a34a43e8378fdc005b5ce0b1b7a1d1d36a1aff3fa1ea28d2dc5cfe8a0d521844a4", null ],
+    [ "all", "IndexDefines_8H.html#a34a43e8378fdc005b5ce0b1b7a1d1d36a55241740af286ead1d5a89a646688467", null ],
     [ "BC", "IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0f", [
       [ "symmetry", "IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0fa40e712f30d56083318ab20a2402921d2", null ],
       [ "inflow", "IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0fad37e67db17cfd059f2852e2673b9e8ef", null ],

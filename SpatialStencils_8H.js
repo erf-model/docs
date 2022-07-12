@@ -7,6 +7,7 @@ var SpatialStencils_8H =
     [ "ComputeDiffusionFluxForState", "SpatialStencils_8H.html#a859adccf3e77c3f9b25ccdeb6ebe2485", null ],
     [ "ComputeStressTerm", "SpatialStencils_8H.html#a064b000717a0cd0ee754310df4a8bf91", null ],
     [ "DiffusionSrcForMom", "SpatialStencils_8H.html#a6d1e86cf5fe859dcfe145316087fc52c", null ],
+    [ "DiffusionSrcForMomWithTerrain", "SpatialStencils_8H.html#acd0993503ce6d7b35b5da330c8921563", null ],
     [ "DiffusionSrcForState", "SpatialStencils_8H.html#a57fdaa07cedc8706f0883614a4943d33", null ],
     [ "InterpolateDensityPertFromCellToFace", "SpatialStencils_8H.html#a1b08bf626e0c3017472b858611e1d2e9", null ],
     [ "InterpolateFromCellOrFace", "SpatialStencils_8H.html#afc6ffdc02af75cb3cd9049449e240756", null ],

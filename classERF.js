@@ -29,6 +29,7 @@ var classERF =
     [ "init_bcs", "classERF.html#a618e8fdff3239cc79d4145d02b1ecaa2", null ],
     [ "init_bx_from_input_sounding", "classERF.html#a8ce9ab15fef40044926f8ec168827438", null ],
     [ "init_custom", "classERF.html#a604939a8058f7efa36a427adb889739c", null ],
+    [ "init_custom_terrain", "classERF.html#ab7392a4a97fbfaaa09b4d3f65be36bc1", null ],
     [ "init_from_input_sounding", "classERF.html#a2908bcd920ab5e3fef171a37302853ec", null ],
     [ "init_only", "classERF.html#a80981e20939a6a38ba17478da2253ff1", null ],
     [ "InitData", "classERF.html#ad5d585e110291969767013a515719224", null ],
@@ -58,7 +59,9 @@ var classERF =
     [ "volWgtSumMF", "classERF.html#a2cdc63885e5fec54f89cdcaffcbdc188", null ],
     [ "writeBuildInfo", "classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa", null ],
     [ "WriteCheckpointFile", "classERF.html#ad101fd46096db2d6b21544bfede6551f", null ],
+    [ "WriteGenericPlotfileHeaderWithTerrain", "classERF.html#a16e49fd65c68e2afc2140bd9e97bcbe9", null ],
     [ "writeJobInfo", "classERF.html#aa2d8099655a8779836e63e3e98ea4372", null ],
+    [ "WriteMultiLevelPlotfileWithTerrain", "classERF.html#a898410553492b2add00a72374dcec6ba", null ],
     [ "WritePlotFile", "classERF.html#abed910c4bcc14524b3c1a7d353d40de5", null ],
     [ "bndry_output_planes_interval", "classERF.html#aab4575d8fb57595a2f1aaf088c60447a", null ],
     [ "bndry_output_planes_per", "classERF.html#a479132ab37232f208597c7a27c132866", null ],
@@ -88,6 +91,7 @@ var classERF =
     [ "datalog", "classERF.html#a1cade630b005dbcc0f644987ef3db287", null ],
     [ "datalogname", "classERF.html#a9248a4eb025c2647e003f838cba52a21", null ],
     [ "derived_names", "classERF.html#a9fc0f6e6ca35036d2e3a36dd42e66435", null ],
+    [ "detJ_cc", "classERF.html#a667e6e5fc3a21492cb1262eb84845741", null ],
     [ "do_avg_down", "classERF.html#a778cdd6547e8cf1613cda8b4a8274bf0", null ],
     [ "do_reflux", "classERF.html#af25f70d7d9e4edeedcc40c117cc15505", null ],
     [ "domain_bc_type", "classERF.html#ae5968f1bed602fa87cdd5cb7905b7e5e", null ],
@@ -156,5 +160,6 @@ var classERF =
     [ "vars_old", "classERF.html#af31e928baa970a1507dfb0233b352542", null ],
     [ "velocity_names", "classERF.html#a2f2ea7f5eeeb3634944550e5a1de8f7a", null ],
     [ "verbose", "classERF.html#a43d0b17f6e155691a1e9474526df3af5", null ],
+    [ "z_phys_cc", "classERF.html#a3912a2a00e03d55761463396a7346d0c", null ],
     [ "z_phys_nd", "classERF.html#afab6d30fd4a74430bbf514d29c51344a", null ]
 ];
