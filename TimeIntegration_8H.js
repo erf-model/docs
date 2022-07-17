@@ -7,6 +7,6 @@ var TimeIntegration_8H =
     [ "xflux", "TimeIntegration_8H.html#ab59d4f3d936a4b80d95dc5324b47fc12a21245d0eca9226a6441feac35602c9be", null ],
     [ "yflux", "TimeIntegration_8H.html#ab59d4f3d936a4b80d95dc5324b47fc12af204c2311e68c84ad19b3759183bdd09", null ],
     [ "zflux", "TimeIntegration_8H.html#ab59d4f3d936a4b80d95dc5324b47fc12a9b94534904513cb3b68ef8b0c7bfed51", null ],
-    [ "erf_fast_rhs", "TimeIntegration_8H.html#a2ae5a05b1de75ceadae1a27f0677e999", null ],
-    [ "erf_slow_rhs", "TimeIntegration_8H.html#a6180325e88f12b63c46ca170bd536e90", null ]
+    [ "erf_fast_rhs", "TimeIntegration_8H.html#a475cf408f3902434f58ea7bb396ca7af", null ],
+    [ "erf_slow_rhs", "TimeIntegration_8H.html#affb92afaa582480e631ede52c144c69c", null ]
 ];

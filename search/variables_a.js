@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['m_5faxis_1264',['m_axis',['../classPlaneAverage.html#ab1c325b8a1241cb446bad96fa558e770',1,'PlaneAverage']]],
-  ['m_5fbc_5fextdir_5fvals_1265',['m_bc_extdir_vals',['../classERFPhysBCFunct.html#a16cdf4a3ab611f388823cef5e52b60f4',1,'ERFPhysBCFunct::m_bc_extdir_vals()'],['../classERF.html#a7d5ea71a2772d2ce602b90d80e32ad37',1,'ERF::m_bc_extdir_vals()']]],
-  ['m_5fdata_1266',['m_data',['../classERFPhysBCFunct.html#aa9ba493b15a38630b7f5bc59b9df00df',1,'ERFPhysBCFunct::m_data()'],['../structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc',1,'TimeInterpolatedData::m_data()']]],
-  ['m_5fdata_5finterp_1267',['m_data_interp',['../classReadBndryPlanes.html#a5468d5d8813dc471dac1335611ec8dc9',1,'ReadBndryPlanes']]],
-  ['m_5fdata_5fn_1268',['m_data_n',['../classReadBndryPlanes.html#acc6e94621293c94d1322a8cafbf61ad4',1,'ReadBndryPlanes']]],
-  ['m_5fdata_5fnp1_1269',['m_data_np1',['../classReadBndryPlanes.html#ae34737833f599f3cb5ef945ac3f57f4b',1,'ReadBndryPlanes']]],
-  ['m_5fdata_5fnp2_1270',['m_data_np2',['../classReadBndryPlanes.html#a5338493101cfbb8eb27301f83aeca290',1,'ReadBndryPlanes']]],
+  ['m_5faxis_1263',['m_axis',['../classPlaneAverage.html#ab1c325b8a1241cb446bad96fa558e770',1,'PlaneAverage']]],
+  ['m_5fbc_5fextdir_5fvals_1264',['m_bc_extdir_vals',['../classERFPhysBCFunct.html#a16cdf4a3ab611f388823cef5e52b60f4',1,'ERFPhysBCFunct::m_bc_extdir_vals()'],['../classERF.html#a7d5ea71a2772d2ce602b90d80e32ad37',1,'ERF::m_bc_extdir_vals()']]],
+  ['m_5fdata_1265',['m_data',['../classERFPhysBCFunct.html#aa9ba493b15a38630b7f5bc59b9df00df',1,'ERFPhysBCFunct::m_data()'],['../structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc',1,'TimeInterpolatedData::m_data()']]],
+  ['m_5fdata_5finterp_1266',['m_data_interp',['../classReadBndryPlanes.html#a5468d5d8813dc471dac1335611ec8dc9',1,'ReadBndryPlanes']]],
+  ['m_5fdata_5fn_1267',['m_data_n',['../classReadBndryPlanes.html#acc6e94621293c94d1322a8cafbf61ad4',1,'ReadBndryPlanes']]],
+  ['m_5fdata_5fnp1_1268',['m_data_np1',['../classReadBndryPlanes.html#ae34737833f599f3cb5ef945ac3f57f4b',1,'ReadBndryPlanes']]],
+  ['m_5fdata_5fnp2_1269',['m_data_np2',['../classReadBndryPlanes.html#a5338493101cfbb8eb27301f83aeca290',1,'ReadBndryPlanes']]],
+  ['m_5fdetj_5fcc_1270',['m_detJ_cc',['../classERFPhysBCFunct.html#a3ced8eff532a6cbf0fed66c939d10e3e',1,'ERFPhysBCFunct']]],
   ['m_5fdomain_5fbcs_5ftype_1271',['m_domain_bcs_type',['../classERFPhysBCFunct.html#af16fde6da4412aa09d866fd094d63a5a',1,'ERFPhysBCFunct']]],
   ['m_5fdomain_5fbcs_5ftype_5fd_1272',['m_domain_bcs_type_d',['../classERFPhysBCFunct.html#a2f63808a7040c853c877cc521741a119',1,'ERFPhysBCFunct']]],
   ['m_5fdx_1273',['m_dx',['../classPlaneAverage.html#ade7352e3a72a2e09561e031acd32cc8a',1,'PlaneAverage']]],
@@ -41,8 +42,9 @@ var searchData=
   ['m_5fvar_5fnames_1302',['m_var_names',['../classReadBndryPlanes.html#aa5f533fb198d42785bfebe5cd8ae7131',1,'ReadBndryPlanes::m_var_names()'],['../classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b',1,'WriteBndryPlanes::m_var_names()']]],
   ['m_5fw2d_1303',['m_w2d',['../classERF.html#aa53035f34ba133b86172e180abda4209',1,'ERF']]],
   ['m_5fxlo_1304',['m_xlo',['../classPlaneAverage.html#a42c7dfa900a0b69ba1d294455ca8ba51',1,'PlaneAverage::m_xlo()'],['../classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855',1,'VelPlaneAverage::m_xlo()']]],
-  ['max_5fstep_1305',['max_step',['../classERF.html#a0634154e8e58379c495c3e7fe7c5e4d6',1,'ERF']]],
-  ['moisture_5finp_5fsound_1306',['moisture_inp_sound',['../structInputSoundingData.html#a1bc7a5f380471cdc337067456a347d10',1,'InputSoundingData']]],
-  ['moisture_5finp_5fsound_5fd_1307',['moisture_inp_sound_d',['../structInputSoundingData.html#a19a42e3bff9ea724831597afe033f17e',1,'InputSoundingData']]],
-  ['molec_5fdiff_5ftype_1308',['molec_diff_type',['../structSolverChoice.html#a8d16d654d2a02cec62427b38498c2462',1,'SolverChoice']]]
+  ['m_5fz_5fphys_5fnd_1305',['m_z_phys_nd',['../classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3',1,'ERFPhysBCFunct']]],
+  ['max_5fstep_1306',['max_step',['../classERF.html#a0634154e8e58379c495c3e7fe7c5e4d6',1,'ERF']]],
+  ['moisture_5finp_5fsound_1307',['moisture_inp_sound',['../structInputSoundingData.html#a1bc7a5f380471cdc337067456a347d10',1,'InputSoundingData']]],
+  ['moisture_5finp_5fsound_5fd_1308',['moisture_inp_sound_d',['../structInputSoundingData.html#a19a42e3bff9ea724831597afe033f17e',1,'InputSoundingData']]],
+  ['molec_5fdiff_5ftype_1309',['molec_diff_type',['../structSolverChoice.html#a8d16d654d2a02cec62427b38498c2462',1,'SolverChoice']]]
 ];
