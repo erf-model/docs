@@ -188,6 +188,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af09b0c94dceb8666a7be0d6167bfc4b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a720f935c1949f56e31eb057dbc1e7ea6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structncutils_1_1NCVar.html#a720f935c1949f56e31eb057dbc1e7ea6">get_attr</a> (const std::string &amp;<a class="el" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>, std::vector&lt; int &gt; &amp;value) const</td></tr>
 <tr class="separator:a720f935c1949f56e31eb057dbc1e7ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86dd2db6591b22c7440228c7152cab45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structncutils_1_1NCVar.html#a86dd2db6591b22c7440228c7152cab45">par_access</a> (const int cmode) const</td></tr>
+<tr class="separator:a86dd2db6591b22c7440228c7152cab45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -874,6 +876,27 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a86dd2db6591b22c7440228c7152cab45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86dd2db6591b22c7440228c7152cab45">&#9670;&nbsp;</a></span>par_access()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ncutils::NCVar::par_access </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>cmode</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;{</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    check_nc_error(nc_var_par_access(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, cmode));</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a7d575f25e77d2a5e2dbac86047ca318c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d575f25e77d2a5e2dbac86047ca318c">&#9670;&nbsp;</a></span>put() <span class="overload">[1/11]</span></h2>
 
@@ -1493,7 +1516,7 @@ Here is the call graph for this function:</div>
 
 <p>File/Group identifier. </p>
 
-<p class="reference">Referenced by <a class="el" href="structncutils_1_1NCVar.html#ac88fd209afde1f05e4f8f62e4c628bba">get()</a>, <a class="el" href="structncutils_1_1NCVar.html#a774b3bda4e9dc903ecfa35af38e863c6">get_attr()</a>, <a class="el" href="structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf">has_attr()</a>, <a class="el" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name()</a>, <a class="el" href="structncutils_1_1NCVar.html#ae0ab15dc4c1033271878c3bf5102f911">ndim()</a>, <a class="el" href="structncutils_1_1NCVar.html#a7e026621e99a5df32de407384d929791">put()</a>, <a class="el" href="structncutils_1_1NCVar.html#a9f60ebf70762d1d8e0962afb01118a31">put_attr()</a>, and <a class="el" href="structncutils_1_1NCVar.html#adb6e5fe1bfe8ab79e9ecf33ca5800797">shape()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structncutils_1_1NCVar.html#ac88fd209afde1f05e4f8f62e4c628bba">get()</a>, <a class="el" href="structncutils_1_1NCVar.html#a774b3bda4e9dc903ecfa35af38e863c6">get_attr()</a>, <a class="el" href="structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf">has_attr()</a>, <a class="el" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name()</a>, <a class="el" href="structncutils_1_1NCVar.html#ae0ab15dc4c1033271878c3bf5102f911">ndim()</a>, <a class="el" href="structncutils_1_1NCVar.html#a86dd2db6591b22c7440228c7152cab45">par_access()</a>, <a class="el" href="structncutils_1_1NCVar.html#a7e026621e99a5df32de407384d929791">put()</a>, <a class="el" href="structncutils_1_1NCVar.html#a9f60ebf70762d1d8e0962afb01118a31">put_attr()</a>, and <a class="el" href="structncutils_1_1NCVar.html#adb6e5fe1bfe8ab79e9ecf33ca5800797">shape()</a>.</p>
 
 </div>
 </div>
@@ -1511,7 +1534,7 @@ Here is the call graph for this function:</div>
 
 <p>Variable ID used with NetCDF API. </p>
 
-<p class="reference">Referenced by <a class="el" href="structncutils_1_1NCVar.html#ac88fd209afde1f05e4f8f62e4c628bba">get()</a>, <a class="el" href="structncutils_1_1NCVar.html#a774b3bda4e9dc903ecfa35af38e863c6">get_attr()</a>, <a class="el" href="structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf">has_attr()</a>, <a class="el" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name()</a>, <a class="el" href="structncutils_1_1NCVar.html#ae0ab15dc4c1033271878c3bf5102f911">ndim()</a>, <a class="el" href="structncutils_1_1NCVar.html#a7e026621e99a5df32de407384d929791">put()</a>, <a class="el" href="structncutils_1_1NCVar.html#a9f60ebf70762d1d8e0962afb01118a31">put_attr()</a>, and <a class="el" href="structncutils_1_1NCVar.html#adb6e5fe1bfe8ab79e9ecf33ca5800797">shape()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structncutils_1_1NCVar.html#ac88fd209afde1f05e4f8f62e4c628bba">get()</a>, <a class="el" href="structncutils_1_1NCVar.html#a774b3bda4e9dc903ecfa35af38e863c6">get_attr()</a>, <a class="el" href="structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf">has_attr()</a>, <a class="el" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name()</a>, <a class="el" href="structncutils_1_1NCVar.html#ae0ab15dc4c1033271878c3bf5102f911">ndim()</a>, <a class="el" href="structncutils_1_1NCVar.html#a86dd2db6591b22c7440228c7152cab45">par_access()</a>, <a class="el" href="structncutils_1_1NCVar.html#a7e026621e99a5df32de407384d929791">put()</a>, <a class="el" href="structncutils_1_1NCVar.html#a9f60ebf70762d1d8e0962afb01118a31">put_attr()</a>, and <a class="el" href="structncutils_1_1NCVar.html#adb6e5fe1bfe8ab79e9ecf33ca5800797">shape()</a>.</p>
 
 </div>
 </div>

@@ -18,6 +18,7 @@ var structncutils_1_1NCVar =
     [ "has_attr", "structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf", null ],
     [ "name", "structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724", null ],
     [ "ndim", "structncutils_1_1NCVar.html#ae0ab15dc4c1033271878c3bf5102f911", null ],
+    [ "par_access", "structncutils_1_1NCVar.html#a86dd2db6591b22c7440228c7152cab45", null ],
     [ "put", "structncutils_1_1NCVar.html#a7d575f25e77d2a5e2dbac86047ca318c", null ],
     [ "put", "structncutils_1_1NCVar.html#a1cdbbfc072d285144de7f9b6e0fbac42", null ],
     [ "put", "structncutils_1_1NCVar.html#a7e026621e99a5df32de407384d929791", null ],

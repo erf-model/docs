@@ -84,5 +84,6 @@ var searchData=
   ['cosphi_135',['cosphi',['../structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f',1,'SolverChoice']]],
   ['coupling_5ftype_136',['coupling_type',['../classERF.html#a4615db015b395b3a44f1fbf6d6e4fe43',1,'ERF']]],
   ['create_137',['create',['../classncutils_1_1NCFile.html#a47bdccee2cc22a735ca715d9c88e4f6b',1,'ncutils::NCFile']]],
-  ['cs_138',['Cs',['../structSolverChoice.html#aaf85773d50dc693905867d3acc127dd0',1,'SolverChoice']]]
+  ['create_5fpar_138',['create_par',['../classncutils_1_1NCFile.html#a6607bd5f3f75b451e2436ff713931f19',1,'ncutils::NCFile']]],
+  ['cs_139',['Cs',['../structSolverChoice.html#aaf85773d50dc693905867d3acc127dd0',1,'SolverChoice']]]
 ];
