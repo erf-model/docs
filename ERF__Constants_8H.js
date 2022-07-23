@@ -6,5 +6,6 @@ var ERF__Constants_8H =
     [ "KAPPA", "ERF__Constants_8H.html#acd1636d4e71f645d469c49a7ba8e18a4", null ],
     [ "p_0", "ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c", null ],
     [ "R_d", "ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a", null ],
+    [ "R_v", "ERF__Constants_8H.html#a11498f79dee60ed596c08594fcde6868", null ],
     [ "PI", "ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428", null ]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['velplaneaverage_795',['VelPlaneAverage',['../classVelPlaneAverage.html',1,'']]]
+  ['velplaneaverage_796',['VelPlaneAverage',['../classVelPlaneAverage.html',1,'']]]
 ];

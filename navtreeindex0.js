@@ -129,9 +129,10 @@ var NAVTREEINDEX0 =
 "ERF__Constants_8H.html":[3,0,0,10],
 "ERF__Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901":[3,0,0,10,1],
 "ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a":[3,0,0,10,5],
+"ERF__Constants_8H.html#a11498f79dee60ed596c08594fcde6868":[3,0,0,10,6],
 "ERF__Constants_8H.html#a60be2e6257954ef746019c916741cb2c":[3,0,0,10,4],
 "ERF__Constants_8H.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a":[3,0,0,10,0],
-"ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428":[3,0,0,10,6],
+"ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428":[3,0,0,10,7],
 "ERF__Constants_8H.html#acd1636d4e71f645d469c49a7ba8e18a4":[3,0,0,10,3],
 "ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3":[3,0,0,10,2],
 "ERF__Constants_8H_source.html":[3,0,0,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "IndexDefines_8H.html#a76cb673ca03cd7f8ae6cc8544d6dd0fa":[3,0,0,17,0],
 "IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040":[3,0,0,17,5],
 "IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2":[3,0,0,17,2],
-"IndexDefines_8H.html#aa68ca75ab2607d45e4ba7611c9a6e559a1e7df4966430ffdaa4bb7bbd0f8a6d02":[3,0,0,17,23],
-"IndexDefines_8H.html#aa68ca75ab2607d45e4ba7611c9a6e559a3b5140db1e7e68b5103cb3372b24faf5":[3,0,0,17,24]
+"IndexDefines_8H.html#aa68ca75ab2607d45e4ba7611c9a6e559a1e7df4966430ffdaa4bb7bbd0f8a6d02":[3,0,0,17,23]
 };
