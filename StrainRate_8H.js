@@ -16,8 +16,8 @@ var StrainRate_8H =
     [ "ComputeS31WithTerrain", "StrainRate_8H.html#ae93d4e435e8c1ff13825ada3da1cbcb4", null ],
     [ "ComputeS32", "StrainRate_8H.html#acd99df2bffb1593b07b1dc9ab816bf9f", null ],
     [ "ComputeS32WithTerrain", "StrainRate_8H.html#ab93fedf8e161d95c7b8d247633d01348", null ],
-    [ "ComputeS33", "StrainRate_8H.html#a92ba368343a7bf7fea37976eb6e5e82b", null ],
-    [ "ComputeS33WithTerrain", "StrainRate_8H.html#ab5b37d0c414d7405c3e6ec6dd20bb955", null ],
+    [ "ComputeS33", "StrainRate_8H.html#a188a155292f59392d8e4324df9ad3f48", null ],
+    [ "ComputeS33WithTerrain", "StrainRate_8H.html#a6c89d0ed6fb6d46570e2bd022963226d", null ],
     [ "ComputeStrainRate", "StrainRate_8H.html#a859d45bf3d575320908933f1dac6198d", null ],
     [ "ComputeStrainRateWithTerrain", "StrainRate_8H.html#a1fcbda39facba5c28508bdd82c5fb63b", null ],
     [ "is_on_face", "StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4", null ]
