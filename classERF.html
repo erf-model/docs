@@ -1586,10 +1586,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    std::swap(flux[1], state_new[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12af204c2311e68c84ad19b3759183bdd09">IntVar::yflux</a>]);</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    std::swap(flux[2], state_new[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a9b94534904513cb3b68ef8b0c7bfed51">IntVar::zflux</a>]);</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="comment">// One final BC fill</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    amrex::Real new_time = old_time + dt_advance;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <a class="code" href="classERF.html#ac6125ea6e69c84145d821b3d31e62dc9">FillIntermediatePatch</a>(level, new_time, {cons_new, xvel_new, yvel_new, zvel_new},</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                          cons_new.nGrow(), xvel_new.nGrow());</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="comment">// One final BC fill -- don&#39;t think we need this though </span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="comment">// amrex::Real new_time = old_time + dt_advance;</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// FillIntermediatePatch(level, new_time, {cons_new, xvel_new, yvel_new, zvel_new},</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="comment">//                       cons_new.nGrow(), xvel_new.nGrow());</span></div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a>) Print() &lt;&lt; <span class="stringliteral">&quot;Done with advance at level &quot;</span> &lt;&lt; level &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
