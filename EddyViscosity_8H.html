@@ -654,43 +654,46 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;{</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment">// In LES mode, the turbulent viscosity is isotropic, so the LES model sets both horizontal and vertical viscosities</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="comment">// In PBL mode, the primary purpose of the PBL model is to control vertical transport, so the PBL model sets the vertical viscosity.</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="comment">// Optionally, the PBL model can be run in conjunction with an LES model that sets the horizontal viscosity</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="comment">// (this isn’t truly LES, but the model form is the same as Smagorinsky).</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="comment">// ComputeTurbulentViscosityLES populates the LES viscosity for both horizontal and vertical components.</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">// ComputeTurbulentViscosityPBL computes the PBL viscosity just for the vertical component.</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    eddyViscosity.setVal(0.0);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">if</span> (most) {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a> ||</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                         solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>   ||</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                         solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> == <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a>,</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                         <span class="stringliteral">&quot;Must use an LES or PBL model to compute turbulent viscosity for MOST boundaries&quot;</span>);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        AMREX_ALWAYS_ASSERT(!vert_only);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">if</span> ( (  vert_only  &amp;&amp;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;           (solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> == <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754">PBLType::None</a>) ) ||</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;         (  !vert_only &amp;&amp;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;          ((solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a>) ||</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;           (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>  )) ) ) {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <a class="code" href="ComputeTurbulentViscosity_8cpp.html#a2f1a03ceadfdae92cffc0005a119ce1e">ComputeTurbulentViscosityLES</a>(<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">yvel</a>, <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">zvel</a>, cons_in, eddyViscosity,</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                         geom, solverChoice,</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                                         domain_bcs_type_d, vert_only);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> != <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754">PBLType::None</a>) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <a class="code" href="PBLModels_8H.html#a6b7b829386b28f2bcdc63d51b754896c">ComputeTurbulentViscosityPBL</a>(<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                                         geom, solverChoice, most, vert_only);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment">// In LES mode, the turbulent viscosity is isotropic, so the LES model sets both horizontal and vertical viscosities</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="comment">// In PBL mode, the primary purpose of the PBL model is to control vertical transport, so the PBL model sets the vertical viscosity.</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">// Optionally, the PBL model can be run in conjunction with an LES model that sets the horizontal viscosity</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="comment">// (this isn’t truly LES, but the model form is the same as Smagorinsky).</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="comment">// ComputeTurbulentViscosityLES populates the LES viscosity for both horizontal and vertical components.</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="comment">// ComputeTurbulentViscosityPBL computes the PBL viscosity just for the vertical component.</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="comment">// We must initialize all the components to 0 because we may not set all of them below</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">//    (which ones depends on which LES / PBL scheme we are using)</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    eddyViscosity.setVal(0.0);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span> (most) {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a> ||</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                                         solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>   ||</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                         solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> == <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a>,</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                         <span class="stringliteral">&quot;Must use an LES or PBL model to compute turbulent viscosity for MOST boundaries&quot;</span>);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        AMREX_ALWAYS_ASSERT(!vert_only);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">if</span> ( (  vert_only  &amp;&amp;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;           (solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> == <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754">PBLType::None</a>) ) ||</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;         (  !vert_only &amp;&amp;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;          ((solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a>) ||</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;           (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>  )) ) ) {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <a class="code" href="ComputeTurbulentViscosity_8cpp.html#a2f1a03ceadfdae92cffc0005a119ce1e">ComputeTurbulentViscosityLES</a>(<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">yvel</a>, <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">zvel</a>, cons_in, eddyViscosity,</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                                         geom, solverChoice,</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                         domain_bcs_type_d, vert_only);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> != <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754">PBLType::None</a>) {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <a class="code" href="PBLModels_8H.html#a6b7b829386b28f2bcdc63d51b754896c">ComputeTurbulentViscosityPBL</a>(<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                         geom, solverChoice, most, vert_only);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__slow__rhs_8cpp.html#aec0cedb85ddc0b1badfa638a1875b0d9">erf_slow_rhs()</a>, <a class="el" href="classERF.html#ac6125ea6e69c84145d821b3d31e62dc9">ERF::FillIntermediatePatch()</a>, and <a class="el" href="classERF.html#a3d8f63f2178b1cb5ba78a433ece34e1c">ERF::FillPatch()</a>.</p>
 <div class="dynheader">

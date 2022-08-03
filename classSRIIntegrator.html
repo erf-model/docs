@@ -342,7 +342,7 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="comment">// Fill S_new with the solution value for evaluating F at the current stage</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="comment">// Copy S_new = S_old</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            amrex::IntegratorOps&lt;T&gt;::Copy(S_new, S_old, scomp_all, ncomp_all);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            amrex::IntegratorOps&lt;T&gt;::Copy(S_new, S_old);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keywordflow">if</span> (i &gt; 0) {</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <span class="comment">// Saxpy across the tableau row:</span></div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="comment">// S_new += h * Aij * Fj</span></div>
@@ -364,7 +364,7 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="comment">// Fill new State, starting with S_new = S_old.</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="comment">// Then Saxpy S_new += h * Wi * Fi for integration weights Wi</span></div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="comment">// We should fuse these kernels ...</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        amrex::IntegratorOps&lt;T&gt;::Copy(S_new, S_old, scomp_all, ncomp_all);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        amrex::IntegratorOps&lt;T&gt;::Copy(S_new, S_old);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classSRIIntegrator.html#a5fb8c24de643d74a5a703565db0ce816">number_nodes</a>; ++i)</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        {</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            amrex::IntegratorOps&lt;T&gt;::Saxpy(S_new, time_step * <a class="code" href="classSRIIntegrator.html#a009669304b7c0a1d7c87673173454d2c">weights</a>[i], *<a class="code" href="classSRIIntegrator.html#a07fa70ef1c924617254f1b109cf7f9a4">F_nodes</a>[i], scomp_all, ncomp_all);</div>
