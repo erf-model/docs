@@ -394,10 +394,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="comment">//    so that we don&#39;t have to fill ghost cells of the new MultiFabs</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="comment">// Initialize New_rho_u/v/w to Delta_rho_u/v/w so that</span></div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="comment">// the ghost cells in New_rho_u/v/w will match old_drho_u/v/w</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keyword">const</span> Box&amp; gbx  = mfi.growntilebox(1);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keyword">const</span> Box&amp; gtbx = mfi.nodaltilebox(0).grow(1);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keyword">const</span> Box&amp; gtby = mfi.nodaltilebox(1).grow(1);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">const</span> Box&amp; gtbz = mfi.nodaltilebox(2).grow(IntVect(1,1,0));</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keyword">const</span> Box gbx  = mfi.growntilebox(1);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keyword">const</span> Box gtbx = mfi.nodaltilebox(0).grow(1);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keyword">const</span> Box gtby = mfi.nodaltilebox(1).grow(1);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">const</span> Box gtbz = mfi.nodaltilebox(2).grow(IntVect(1,1,0));</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        amrex::ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            old_drho(i,j,k) = cur_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) - cell_stage(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
