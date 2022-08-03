@@ -6,6 +6,7 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
       [ "MRISplitIntegrator", "classMRISplitIntegrator.html", "classMRISplitIntegrator" ]
     ] ],
     [ "ERF_slow_rhs.cpp", "ERF__slow__rhs_8cpp.html", "ERF__slow__rhs_8cpp" ],
+    [ "ERF_SRI.H", "ERF__SRI_8H.html", "ERF__SRI_8H" ],
     [ "ERF_TimeStepping.cpp", "ERF__TimeStepping_8cpp.html", null ],
     [ "TimeIntegration.H", "TimeIntegration_8H.html", "TimeIntegration_8H" ],
     [ "TimeIntegration_driver.cpp", "TimeIntegration__driver_8cpp.html", null ]

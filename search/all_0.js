@@ -11,7 +11,7 @@ var searchData=
   ['abort_5ffunc_8',['abort_func',['../NCInterface_8cpp.html#aa67f9bcab4a9da3e92f2e2f3b4ec5979',1,'NCInterface.cpp']]],
   ['add_5fpar_9',['add_par',['../main_8cpp.html#a183e783116d02836167ccbed3b28c1d3',1,'main.cpp']]],
   ['add_5fvar_10',['add_var',['../structTimeInterpolatedData.html#a3b9292eb3012672361abacc2ab7d9b2c',1,'TimeInterpolatedData']]],
-  ['advance_11',['Advance',['../classERF.html#a47413fe5588f7dd71a1d5087a9e804f9',1,'ERF::Advance()'],['../classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b',1,'MRISplitIntegrator::advance()']]],
+  ['advance_11',['Advance',['../classERF.html#a47413fe5588f7dd71a1d5087a9e804f9',1,'ERF::Advance()'],['../classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b',1,'MRISplitIntegrator::advance()'],['../classSRIIntegrator.html#a4aeeaede505226f9dd62f5167e58f08e',1,'SRIIntegrator::advance()']]],
   ['advect_5fqke_12',['advect_QKE',['../structSolverChoice.html#a38dc1d6637afc39c42b09560735f8191',1,'SolverChoice']]],
   ['advectedquantity_13',['AdvectedQuantity',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4',1,'DataStruct.H']]],
   ['advectingquantity_14',['AdvectingQuantity',['../DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432',1,'DataStruct.H']]],

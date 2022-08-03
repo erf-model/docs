@@ -10,6 +10,7 @@ var namespaces_dup =
     [ "ncutils", "namespacencutils.html", null ],
     [ "Prim", "namespacePrim.html", null ],
     [ "RHSVar", "namespaceRHSVar.html", null ],
+    [ "SRI", "namespaceSRI.html", null ],
     [ "TerrainMet", "namespaceTerrainMet.html", null ],
     [ "Vars", "namespaceVars.html", null ],
     [ "WRFBdyTypes", "namespaceWRFBdyTypes.html", null ],

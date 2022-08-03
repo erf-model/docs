@@ -16,6 +16,7 @@ var annotated_dup =
     [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", "classReadBndryPlanes" ],
     [ "SolverChoice", "structSolverChoice.html", "structSolverChoice" ],
+    [ "SRIIntegrator", "classSRIIntegrator.html", "classSRIIntegrator" ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ],
     [ "VelPlaneAverage", "classVelPlaneAverage.html", "classVelPlaneAverage" ],
     [ "WriteBndryPlanes", "classWriteBndryPlanes.html", "classWriteBndryPlanes" ]
