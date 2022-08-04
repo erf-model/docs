@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['h_5fhavg_5fdensity_1272',['h_havg_density',['../classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a',1,'ERF']]],
-  ['h_5fhavg_5fpressure_1273',['h_havg_pressure',['../classERF.html#a413293737b0021c97b50c62756561446',1,'ERF']]],
-  ['h_5fhavg_5ftemperature_1274',['h_havg_temperature',['../classERF.html#a9683c7b07c287e57856ee5a9c99917a1',1,'ERF']]],
-  ['h_5frayleigh_5ftau_1275',['h_rayleigh_tau',['../classERF.html#a1bc503c07e76f2a4791a76e6907e6dd7',1,'ERF']]],
-  ['h_5frayleigh_5fthetabar_1276',['h_rayleigh_thetabar',['../classERF.html#a0f074d984fb0a319cf7a781b2efc3d63',1,'ERF']]],
-  ['h_5frayleigh_5fubar_1277',['h_rayleigh_ubar',['../classERF.html#ac4dc443840da3593fe66b8693803f006',1,'ERF']]],
-  ['h_5frayleigh_5fvbar_1278',['h_rayleigh_vbar',['../classERF.html#a6e0624ac1d76fbde394c7ba4b01ed7eb',1,'ERF']]]
+  ['gamma_5fh_1300',['gamma_h',['../classABLMostData.html#a9eaae12d609ae5aa391024bb82d01eb5',1,'ABLMostData']]],
+  ['gamma_5fm_1301',['gamma_m',['../classABLMostData.html#a0e68bde6a436fe0659ea7e003a179cc7',1,'ABLMostData']]],
+  ['gravity_1302',['gravity',['../classABLMostData.html#af6c3901ae4c9ab1fefc9e71db20e3348',1,'ABLMostData::gravity()'],['../structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b',1,'SolverChoice::gravity()']]]
 ];

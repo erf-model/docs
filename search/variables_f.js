@@ -1,20 +1,14 @@
 var searchData=
 [
-  ['s_5fscratch_1407',['S_scratch',['../classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa',1,'MRISplitIntegrator']]],
-  ['s_5fsum_1408',['S_sum',['../classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1',1,'MRISplitIntegrator']]],
-  ['sc_5ft_1409',['Sc_t',['../structSolverChoice.html#a10043b88372894f67ed0f3e68bf27cb6',1,'SolverChoice']]],
-  ['sc_5ft_5finv_1410',['Sc_t_inv',['../structSolverChoice.html#a5d8e6a103e2e5d61dc0990fa2141a675',1,'SolverChoice']]],
-  ['shape_1411',['shape',['../structNDArray.html#a99d704051dda7b5635b12cbe785d7bb5',1,'NDArray']]],
-  ['sigma_5fk_1412',['sigma_k',['../structSolverChoice.html#affbc103f3361b47fbcf605a08b99d8ec',1,'SolverChoice']]],
-  ['sinphi_1413',['sinphi',['../structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf',1,'SolverChoice']]],
-  ['slow_5ffast_5ftimestep_5fratio_1414',['slow_fast_timestep_ratio',['../classMRISplitIntegrator.html#ac627f7a16fd409d33916eeccb9ab3c3f',1,'MRISplitIntegrator']]],
-  ['slow_5frhs_1415',['slow_rhs',['../classMRISplitIntegrator.html#aeb6529d9e2b7809c741e9b7dc7ada53a',1,'MRISplitIntegrator']]],
-  ['solverchoice_1416',['solverChoice',['../classERF.html#a32dd48049e8acbe95decdd4b01b782c4',1,'ERF']]],
-  ['spatial_5forder_1417',['spatial_order',['../structSolverChoice.html#a8e053ce39997ed619ac81aa4d5a1fd44',1,'SolverChoice']]],
-  ['startcputime_1418',['startCPUTime',['../classERF.html#a3890ee3bf2586cf0ef2822b671c5d8c4',1,'ERF']]],
-  ['stop_5ftime_1419',['stop_time',['../classERF.html#a405556a52bef334ab68294c1a540e107',1,'ERF']]],
-  ['sum_5finterval_1420',['sum_interval',['../classERF.html#a5232e98479611a24fe97994640c61faa',1,'ERF']]],
-  ['sum_5fper_1421',['sum_per',['../classERF.html#a6f9e05e91a9b4a16d615af290966a973',1,'ERF']]],
-  ['surf_5ftemp_1422',['surf_temp',['../classABLMostData.html#a766d02b24965cfd0dd6a0c593df31969',1,'ABLMostData']]],
-  ['surf_5ftemp_5fflux_1423',['surf_temp_flux',['../classABLMostData.html#a81414345b94239ca479eeda6b405a5af',1,'ABLMostData']]]
+  ['real_1429',['Real',['../structncutils_1_1NCDType.html#a7a5be35daa7dbb2cc72507cc4b5a422c',1,'ncutils::NCDType']]],
+  ['ref_5fcounted_1430',['ref_counted',['../structNDArray.html#a8a0bbff40020f6aea23346ac656bf972',1,'NDArray']]],
+  ['ref_5ftags_1431',['ref_tags',['../classERF.html#ac81b3dfd7c6f21ba8479834e2ff1e652',1,'ERF']]],
+  ['ref_5ftemp_1432',['ref_temp',['../classABLMostData.html#a557d93bd31f60c63ac5b5b3d31c20312',1,'ABLMostData']]],
+  ['regrid_5fint_1433',['regrid_int',['../classERF.html#a3937527f96c81674fa38dc34ed24f3f5',1,'ERF']]],
+  ['restart_5fchkfile_1434',['restart_chkfile',['../classERF.html#a8e758060d3dede9694fbfcabddc17169',1,'ERF']]],
+  ['restart_5ftype_1435',['restart_type',['../classERF.html#a30a0b9e3a037c71580d1feb3b30a8258',1,'ERF']]],
+  ['rho0_5ftrans_1436',['rho0_trans',['../structSolverChoice.html#a3dd9fcb274b4d556d88346eeb683d00a',1,'SolverChoice']]],
+  ['rhoalpha_5fc_1437',['rhoAlpha_C',['../structSolverChoice.html#a3571709ee9c72dca3523638986976821',1,'SolverChoice']]],
+  ['rhoalpha_5ft_1438',['rhoAlpha_T',['../structSolverChoice.html#a3436b31b3e0e439c700d07c30d22e7a3',1,'SolverChoice']]],
+  ['rhs_1439',['rhs',['../classMRISplitIntegrator.html#ae9de7711da1f322fd503ef2a87c8c64f',1,'MRISplitIntegrator::rhs()'],['../classSRIIntegrator.html#a804e3c551e815ed9b9aa5a447e5c1a89',1,'SRIIntegrator::rhs()']]]
 ];

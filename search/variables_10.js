@@ -1,13 +1,20 @@
 var searchData=
 [
-  ['t_5fnew_1424',['t_new',['../classERF.html#a65741b6379d273c19a25cf48bb947614',1,'ERF']]],
-  ['t_5fold_1425',['t_old',['../classERF.html#a7085d7d5fc94a0f84efc06957267d58e',1,'ERF']]],
-  ['t_5fstore_1426',['T_store',['../classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80',1,'MRISplitIntegrator']]],
-  ['tableau_1427',['tableau',['../classSRIIntegrator.html#aac6575b36ad4a7840542f4fa3b867163',1,'SRIIntegrator']]],
-  ['target_5fbox_1428',['target_box',['../classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379',1,'WriteBndryPlanes']]],
-  ['theta_5finp_5fsound_1429',['theta_inp_sound',['../structInputSoundingData.html#acf38db2cecabcd07fe794b41974ba866',1,'InputSoundingData']]],
-  ['theta_5finp_5fsound_5fd_1430',['theta_inp_sound_d',['../structInputSoundingData.html#ae990e8cfad78f0fa5a603db3154d0124',1,'InputSoundingData']]],
-  ['theta_5fmean_1431',['theta_mean',['../classABLMostData.html#af59c59c3f8a5d68c55126bf1222acccb',1,'ABLMostData']]],
-  ['theta_5fref_5finp_5fsound_1432',['theta_ref_inp_sound',['../structInputSoundingData.html#a15782809644a4daa0e8de9c3cc4c346a',1,'InputSoundingData']]],
-  ['timestep_1433',['timestep',['../classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612',1,'MRISplitIntegrator::timestep()'],['../classSRIIntegrator.html#ac80ef194b6d09d9986d7c6c0a09040ec',1,'SRIIntegrator::timestep()']]]
+  ['s_5fscratch_1440',['S_scratch',['../classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa',1,'MRISplitIntegrator']]],
+  ['s_5fsum_1441',['S_sum',['../classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1',1,'MRISplitIntegrator']]],
+  ['sc_5ft_1442',['Sc_t',['../structSolverChoice.html#a10043b88372894f67ed0f3e68bf27cb6',1,'SolverChoice']]],
+  ['sc_5ft_5finv_1443',['Sc_t_inv',['../structSolverChoice.html#a5d8e6a103e2e5d61dc0990fa2141a675',1,'SolverChoice']]],
+  ['shape_1444',['shape',['../structNDArray.html#a99d704051dda7b5635b12cbe785d7bb5',1,'NDArray']]],
+  ['sigma_5fk_1445',['sigma_k',['../structSolverChoice.html#affbc103f3361b47fbcf605a08b99d8ec',1,'SolverChoice']]],
+  ['sinphi_1446',['sinphi',['../structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf',1,'SolverChoice']]],
+  ['slow_5ffast_5ftimestep_5fratio_1447',['slow_fast_timestep_ratio',['../classMRISplitIntegrator.html#ac627f7a16fd409d33916eeccb9ab3c3f',1,'MRISplitIntegrator']]],
+  ['slow_5frhs_1448',['slow_rhs',['../classMRISplitIntegrator.html#aeb6529d9e2b7809c741e9b7dc7ada53a',1,'MRISplitIntegrator']]],
+  ['solverchoice_1449',['solverChoice',['../classERF.html#a32dd48049e8acbe95decdd4b01b782c4',1,'ERF']]],
+  ['spatial_5forder_1450',['spatial_order',['../structSolverChoice.html#a8e053ce39997ed619ac81aa4d5a1fd44',1,'SolverChoice']]],
+  ['startcputime_1451',['startCPUTime',['../classERF.html#a3890ee3bf2586cf0ef2822b671c5d8c4',1,'ERF']]],
+  ['stop_5ftime_1452',['stop_time',['../classERF.html#a405556a52bef334ab68294c1a540e107',1,'ERF']]],
+  ['sum_5finterval_1453',['sum_interval',['../classERF.html#a5232e98479611a24fe97994640c61faa',1,'ERF']]],
+  ['sum_5fper_1454',['sum_per',['../classERF.html#a6f9e05e91a9b4a16d615af290966a973',1,'ERF']]],
+  ['surf_5ftemp_1455',['surf_temp',['../classABLMostData.html#a766d02b24965cfd0dd6a0c593df31969',1,'ABLMostData']]],
+  ['surf_5ftemp_5fflux_1456',['surf_temp_flux',['../classABLMostData.html#a81414345b94239ca479eeda6b405a5af',1,'ABLMostData']]]
 ];

@@ -31,6 +31,7 @@ var structSolverChoice =
     [ "pbl_C4", "structSolverChoice.html#afcc25193e0d39cda02479ee2067f49c2", null ],
     [ "pbl_C5", "structSolverChoice.html#a590d8e09995c80faf7aa033f6925616b", null ],
     [ "pbl_type", "structSolverChoice.html#a0a031373331c9aca22a47b0995729f46", null ],
+    [ "pp_prefix", "structSolverChoice.html#a4b0edf29a032ff18b10a42825fa9e4b6", null ],
     [ "Pr_t", "structSolverChoice.html#ac6ce37592bdc2abee5231a47802c316b", null ],
     [ "Pr_t_inv", "structSolverChoice.html#aedad420dddffb0b78651c5d8b399a67b", null ],
     [ "rho0_trans", "structSolverChoice.html#a3dd9fcb274b4d556d88346eeb683d00a", null ],

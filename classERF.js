@@ -144,6 +144,7 @@ var classERF =
     [ "plot_var_names_1", "classERF.html#a6865cf87abbb5aab0db00ff3b1ce94ac", null ],
     [ "plot_var_names_2", "classERF.html#a79705c02d6f25fbdcec14ca2432e5da1", null ],
     [ "plotfile_type", "classERF.html#ae7b9991150042eb38e2abc89399c0c7c", null ],
+    [ "pp_prefix", "classERF.html#a59df30e7a5537c8543bb00772bd98b58", null ],
     [ "pres_hse", "classERF.html#a093c3548fdd8bee8175a4b1545ac171f", null ],
     [ "previousCPUTimeUsed", "classERF.html#a7948479fe1497dc592dd748c9567fdaa", null ],
     [ "ref_tags", "classERF.html#ac81b3dfd7c6f21ba8479834e2ff1e652", null ],
