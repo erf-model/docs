@@ -159,25 +159,25 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;     : <a class="code" href="classVelPlaneAverage.html#ac4bde7d62667e291305709b74152ba1b">m_geom</a>(geom_in)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855">m_xlo</a>   = <a class="code" href="classVelPlaneAverage.html#ac4bde7d62667e291305709b74152ba1b">m_geom</a>.ProbLo(2);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">m_dz</a>    = <a class="code" href="classVelPlaneAverage.html#ac4bde7d62667e291305709b74152ba1b">m_geom</a>.CellSize(2);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    amrex::Box domain = <a class="code" href="classVelPlaneAverage.html#ac4bde7d62667e291305709b74152ba1b">m_geom</a>.Domain();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    amrex::IntVect dom_lo(domain.loVect());</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    amrex::IntVect dom_hi(domain.hiVect());</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a>  =  dom_hi[2] - dom_lo[2] + 1;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classVelPlaneAverage.html#a0e172ce8d86cd386074fdbd186a9f2dc">m_ncell_plane</a> = (dom_hi[0] - dom_lo[0] + 1) * (dom_hi[1] - dom_lo[1] + 1);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classVelPlaneAverage.html#a6a6d4af0b0c15dd403dd81ba7d88561a">m_line_xcentroid</a>.resize(<a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a>; ++i) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;       <a class="code" href="classVelPlaneAverage.html#a6a6d4af0b0c15dd403dd81ba7d88561a">m_line_xcentroid</a>[i] = <a class="code" href="classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855">m_xlo</a> + (i + 0.5) * <a class="code" href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">m_dz</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.resize(<a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a>, 0.0);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;     : <a class="code" href="classVelPlaneAverage.html#ac4bde7d62667e291305709b74152ba1b">m_geom</a>(geom_in)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855">m_xlo</a>   = <a class="code" href="classVelPlaneAverage.html#ac4bde7d62667e291305709b74152ba1b">m_geom</a>.ProbLo(2);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">m_dz</a>    = <a class="code" href="classVelPlaneAverage.html#ac4bde7d62667e291305709b74152ba1b">m_geom</a>.CellSize(2);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    amrex::Box domain = <a class="code" href="classVelPlaneAverage.html#ac4bde7d62667e291305709b74152ba1b">m_geom</a>.Domain();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    amrex::IntVect dom_lo(domain.loVect());</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    amrex::IntVect dom_hi(domain.hiVect());</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a>  =  dom_hi[2] - dom_lo[2] + 1;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classVelPlaneAverage.html#a0e172ce8d86cd386074fdbd186a9f2dc">m_ncell_plane</a> = (dom_hi[0] - dom_lo[0] + 1) * (dom_hi[1] - dom_lo[1] + 1);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classVelPlaneAverage.html#a6a6d4af0b0c15dd403dd81ba7d88561a">m_line_xcentroid</a>.resize(<a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a>; ++i) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;       <a class="code" href="classVelPlaneAverage.html#a6a6d4af0b0c15dd403dd81ba7d88561a">m_line_xcentroid</a>[i] = <a class="code" href="classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855">m_xlo</a> + (i + 0.5) * <a class="code" href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">m_dz</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.resize(<a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a>, 0.0);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -233,48 +233,48 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>line storage for the average horizontal velocity magnitude </p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">const</span> amrex::Real denom = 1.0 / (amrex::Real)<a class="code" href="classVelPlaneAverage.html#a0e172ce8d86cd386074fdbd186a9f2dc">m_ncell_plane</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    amrex::Box domain = <a class="code" href="classVelPlaneAverage.html#ac4bde7d62667e291305709b74152ba1b">m_geom</a>.Domain();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dom_lo_z = domain.smallEnd(2);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dom_hi_z = domain.bigEnd(2);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = dom_lo_z; k &lt; dom_hi_z; k++) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>[k] = 0.;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    amrex::AsyncArray&lt;amrex::Real&gt; lavg(<a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.data(), <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.size());</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    amrex::Real* line_avg = lavg.data();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(u_mf, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        amrex::Box bx = amrex::enclosedCells(mfi.tilebox());</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">auto</span> u_arr = u_mf.const_array(mfi);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">auto</span> v_arr = v_mf.const_array(mfi);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        bx.setSmall(2, dom_lo_z);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        bx.setBig(2, dom_hi_z-1); <span class="comment">// the -1 is because in the k loop we start from k = dom_lo_z</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                  <span class="comment">// and continue while k &lt; dom_hi_z</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">xvel</a> = 0.5 * (u_arr(i,j,k) + u_arr(i+1,j,k));</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">yvel</a> = 0.5 * (v_arr(i,j,k) + v_arr(i,j+1,k));</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keyword">const</span> amrex::Real hvelmag = std::sqrt(<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">xvel</a>*<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">xvel</a> + <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">yvel</a>*<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">yvel</a>);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            amrex::Gpu::Atomic::AddNoRet(&amp;line_avg[k], hvelmag);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        });</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> amrex::Real denom = 1.0 / (amrex::Real)<a class="code" href="classVelPlaneAverage.html#a0e172ce8d86cd386074fdbd186a9f2dc">m_ncell_plane</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    amrex::Box domain = <a class="code" href="classVelPlaneAverage.html#ac4bde7d62667e291305709b74152ba1b">m_geom</a>.Domain();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dom_lo_z = domain.smallEnd(2);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> dom_hi_z = domain.bigEnd(2);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = dom_lo_z; k &lt; dom_hi_z; k++) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>[k] = 0.;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    amrex::AsyncArray&lt;amrex::Real&gt; lavg(<a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.data(), <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.size());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    amrex::Real* line_avg = lavg.data();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(u_mf, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        amrex::Box bx = amrex::enclosedCells(mfi.tilebox());</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">auto</span> u_arr = u_mf.const_array(mfi);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">auto</span> v_arr = v_mf.const_array(mfi);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        bx.setSmall(2, dom_lo_z);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        bx.setBig(2, dom_hi_z-1); <span class="comment">// the -1 is because in the k loop we start from k = dom_lo_z</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                  <span class="comment">// and continue while k &lt; dom_hi_z</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">xvel</a> = 0.5 * (u_arr(i,j,k) + u_arr(i+1,j,k));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">yvel</a> = 0.5 * (v_arr(i,j,k) + v_arr(i,j+1,k));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keyword">const</span> amrex::Real hvelmag = std::sqrt(<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">xvel</a>*<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">xvel</a> + <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">yvel</a>*<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">yvel</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            amrex::Gpu::Atomic::AddNoRet(&amp;line_avg[k], hvelmag);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        });</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    lavg.copyToHost(<a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.data(), <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.size());</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = dom_lo_z; k &lt; dom_hi_z; k++) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>[k] *= denom;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    amrex::ParallelDescriptor::ReduceRealSum(<a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.data(), <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.size());</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    lavg.copyToHost(<a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.data(), <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.size());</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = dom_lo_z; k &lt; dom_hi_z; k++) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>[k] *= denom;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    amrex::ParallelDescriptor::ReduceRealSum(<a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.data(), <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>.size());</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classABLMost.html#ad21eacf338bb550a0819aa618fa56d84">ABLMost::update_fluxes()</a>.</p>
 <div class="dynheader">
@@ -312,9 +312,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>return vector containing horizontal velocity magnitude average </p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    };</div>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -342,22 +342,22 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>evaluate line haverage at specific location for horizontal velocity magnitude </p>
-<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    amrex::Real c = 0.0;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">int</span> ind = 0;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt; <a class="code" href="classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855">m_xlo</a> + 0.5 * <a class="code" href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">m_dz</a>) {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        ind = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(floor((<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - <a class="code" href="classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855">m_xlo</a>) / <a class="code" href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">m_dz</a> - 0.5));</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">const</span> amrex::Real x1 = <a class="code" href="classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855">m_xlo</a> + (ind + 0.5) * <a class="code" href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">m_dz</a>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        c = (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - x1) / <a class="code" href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">m_dz</a>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">if</span> (ind + 1 &gt;= <a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a>) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        ind = <a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a> - 2;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        c = 1.0;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    AMREX_ALWAYS_ASSERT(ind &gt;= 0 &amp;&amp; ind + 1 &lt; <a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>[ind] * (1.0 - c) +</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;           <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>[ind + 1] * c;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    amrex::Real c = 0.0;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">int</span> ind = 0;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt; <a class="code" href="classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855">m_xlo</a> + 0.5 * <a class="code" href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">m_dz</a>) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        ind = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(floor((<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - <a class="code" href="classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855">m_xlo</a>) / <a class="code" href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">m_dz</a> - 0.5));</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keyword">const</span> amrex::Real x1 = <a class="code" href="classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855">m_xlo</a> + (ind + 0.5) * <a class="code" href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">m_dz</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        c = (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - x1) / <a class="code" href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">m_dz</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (ind + 1 &gt;= <a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a>) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        ind = <a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a> - 2;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        c = 1.0;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    AMREX_ALWAYS_ASSERT(ind &gt;= 0 &amp;&amp; ind + 1 &lt; <a class="code" href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">m_ncell_line</a>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>[ind] * (1.0 - c) +</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;           <a class="code" href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">m_line_hvelmag_average</a>[ind + 1] * c;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classABLMost.html#ad21eacf338bb550a0819aa618fa56d84">ABLMost::update_fluxes()</a>.</p>
 <div class="dynheader">
@@ -551,16 +551,16 @@ Here is the caller graph for this function:</div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassVelPlaneAverage_html_acf626dcf7ca942bb7f221de72cdd74ab"><div class="ttname"><a href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">VelPlaneAverage::m_dz</a></div><div class="ttdeci">amrex::Real m_dz</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:15</div></div>
-<div class="ttc" id="aclassVelPlaneAverage_html_ac4bde7d62667e291305709b74152ba1b"><div class="ttname"><a href="classVelPlaneAverage.html#ac4bde7d62667e291305709b74152ba1b">VelPlaneAverage::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:19</div></div>
+<div class="ttc" id="aclassVelPlaneAverage_html_acf626dcf7ca942bb7f221de72cdd74ab"><div class="ttname"><a href="classVelPlaneAverage.html#acf626dcf7ca942bb7f221de72cdd74ab">VelPlaneAverage::m_dz</a></div><div class="ttdeci">amrex::Real m_dz</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:16</div></div>
+<div class="ttc" id="aclassVelPlaneAverage_html_ac4bde7d62667e291305709b74152ba1b"><div class="ttname"><a href="classVelPlaneAverage.html#ac4bde7d62667e291305709b74152ba1b">VelPlaneAverage::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:20</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:85</div></div>
-<div class="ttc" id="aclassVelPlaneAverage_html_a0e172ce8d86cd386074fdbd186a9f2dc"><div class="ttname"><a href="classVelPlaneAverage.html#a0e172ce8d86cd386074fdbd186a9f2dc">VelPlaneAverage::m_ncell_plane</a></div><div class="ttdeci">int m_ncell_plane</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:17</div></div>
+<div class="ttc" id="aclassVelPlaneAverage_html_a0e172ce8d86cd386074fdbd186a9f2dc"><div class="ttname"><a href="classVelPlaneAverage.html#a0e172ce8d86cd386074fdbd186a9f2dc">VelPlaneAverage::m_ncell_plane</a></div><div class="ttdeci">int m_ncell_plane</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:18</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
-<div class="ttc" id="aclassVelPlaneAverage_html_a67f35043ad864b6935891396e17dfa89"><div class="ttname"><a href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">VelPlaneAverage::m_line_hvelmag_average</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_line_hvelmag_average</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:21</div></div>
+<div class="ttc" id="aclassVelPlaneAverage_html_a67f35043ad864b6935891396e17dfa89"><div class="ttname"><a href="classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89">VelPlaneAverage::m_line_hvelmag_average</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_line_hvelmag_average</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:22</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:86</div></div>
-<div class="ttc" id="aclassVelPlaneAverage_html_a6a6d4af0b0c15dd403dd81ba7d88561a"><div class="ttname"><a href="classVelPlaneAverage.html#a6a6d4af0b0c15dd403dd81ba7d88561a">VelPlaneAverage::m_line_xcentroid</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_line_xcentroid</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:14</div></div>
-<div class="ttc" id="aclassVelPlaneAverage_html_a7a7ecb3b3c65a0ce57faa07abee40862"><div class="ttname"><a href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">VelPlaneAverage::m_ncell_line</a></div><div class="ttdeci">int m_ncell_line</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:18</div></div>
-<div class="ttc" id="aclassVelPlaneAverage_html_af70327b935ddca4e60f0ad91e9ad4855"><div class="ttname"><a href="classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855">VelPlaneAverage::m_xlo</a></div><div class="ttdeci">amrex::Real m_xlo</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:16</div></div>
+<div class="ttc" id="aclassVelPlaneAverage_html_a6a6d4af0b0c15dd403dd81ba7d88561a"><div class="ttname"><a href="classVelPlaneAverage.html#a6a6d4af0b0c15dd403dd81ba7d88561a">VelPlaneAverage::m_line_xcentroid</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_line_xcentroid</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:15</div></div>
+<div class="ttc" id="aclassVelPlaneAverage_html_a7a7ecb3b3c65a0ce57faa07abee40862"><div class="ttname"><a href="classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862">VelPlaneAverage::m_ncell_line</a></div><div class="ttdeci">int m_ncell_line</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:19</div></div>
+<div class="ttc" id="aclassVelPlaneAverage_html_af70327b935ddca4e60f0ad91e9ad4855"><div class="ttname"><a href="classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855">VelPlaneAverage::m_xlo</a></div><div class="ttdeci">amrex::Real m_xlo</div><div class="ttdef"><b>Definition:</b> VelPlaneAverage.H:17</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
