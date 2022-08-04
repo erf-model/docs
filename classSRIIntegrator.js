@@ -17,9 +17,12 @@ var classSRIIntegrator =
     [ "F_nodes", "classSRIIntegrator.html#a07fa70ef1c924617254f1b109cf7f9a4", null ],
     [ "nodes", "classSRIIntegrator.html#ab52c01e6fa3160a97d960d6acac0df9f", null ],
     [ "number_nodes", "classSRIIntegrator.html#a5fb8c24de643d74a5a703565db0ce816", null ],
+    [ "p_weights_d", "classSRIIntegrator.html#ab48b9dab6bf16c9524b818d993f5f61a", null ],
     [ "post_update", "classSRIIntegrator.html#a652fa25579414e76f91027a35f619033", null ],
     [ "rhs", "classSRIIntegrator.html#a804e3c551e815ed9b9aa5a447e5c1a89", null ],
     [ "tableau", "classSRIIntegrator.html#aac6575b36ad4a7840542f4fa3b867163", null ],
+    [ "tableau_d", "classSRIIntegrator.html#a7cd8c3be1b18f5946be4e459f2791ae5", null ],
     [ "timestep", "classSRIIntegrator.html#ac80ef194b6d09d9986d7c6c0a09040ec", null ],
-    [ "weights", "classSRIIntegrator.html#a009669304b7c0a1d7c87673173454d2c", null ]
+    [ "weights", "classSRIIntegrator.html#a009669304b7c0a1d7c87673173454d2c", null ],
+    [ "weights_d", "classSRIIntegrator.html#af1efdc9f2c6024d1953f5d34d950de99", null ]
 ];
