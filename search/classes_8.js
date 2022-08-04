@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['solverchoice_837',['SolverChoice',['../structSolverChoice.html',1,'']]],
-  ['sriintegrator_838',['SRIIntegrator',['../classSRIIntegrator.html',1,'']]]
+  ['solverchoice_836',['SolverChoice',['../structSolverChoice.html',1,'']]],
+  ['sriintegrator_837',['SRIIntegrator',['../classSRIIntegrator.html',1,'']]]
 ];
