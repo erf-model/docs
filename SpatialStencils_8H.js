@@ -9,9 +9,6 @@ var SpatialStencils_8H =
     [ "DiffusionSrcForMom", "SpatialStencils_8H.html#a0a0d289a507ec58877ad77f6d02f9d5e", null ],
     [ "DiffusionSrcForMomWithTerrain", "SpatialStencils_8H.html#acd0993503ce6d7b35b5da330c8921563", null ],
     [ "DiffusionSrcForState", "SpatialStencils_8H.html#a57fdaa07cedc8706f0883614a4943d33", null ],
-    [ "InterpolateDensityPertFromCellToFace", "SpatialStencils_8H.html#a36e6958117f6bdc4cc99d8d5e3b7042d", null ],
-    [ "InterpolateFromCellOrFace", "SpatialStencils_8H.html#afc6ffdc02af75cb3cd9049449e240756", null ],
-    [ "InterpolatePertFromCell", "SpatialStencils_8H.html#af4dd2c92b6cad8222db97812b618b285", null ],
     [ "InterpolateTurbulentViscosity", "SpatialStencils_8H.html#a8dee15657b126730187a45dd5712db4f", null ],
     [ "MomentumToVelocity", "SpatialStencils_8H.html#a25f24b933f7413f072607b7700146d65", null ],
     [ "VelocityToMomentum", "SpatialStencils_8H.html#afc02a222736ea1f0219b287fb472a765", null ]
