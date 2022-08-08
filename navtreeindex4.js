@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"structNDArray.html#a1f33dbd861944bc1494f4790f4f8543d":[2,0,12,2],
+"structNDArray.html#a4d7550e3c00d13d8397f1cfbdfd2ab48":[2,0,12,6],
 "structNDArray.html#a54f69e355d97f10089f82fb1087fb0af":[2,0,12,3],
 "structNDArray.html#a63dda01f8d55fd1fc75437b125eb27b3":[2,0,12,9],
 "structNDArray.html#a6a0a485b6da8ce09dda81fc51607da73":[2,0,12,10],
