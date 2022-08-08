@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('Interpolation_8H_source.html',''); ini
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// The value that comes in has not been normalized so we do that here</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (upw != 0.)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        scaled_upw = upw / std::abs(upw);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      scaled_upw = (upw &gt; 0) ? 1. : -1.;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (coordDir ==  <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a>) {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        avg1  = (qty(i, j, k, qty_index) + qty(i-1, j, k, qty_index));</div>
