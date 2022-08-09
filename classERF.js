@@ -154,6 +154,7 @@ var classERF =
     [ "restart_type", "classERF.html#a30a0b9e3a037c71580d1feb3b30a8258", null ],
     [ "solverChoice", "classERF.html#a32dd48049e8acbe95decdd4b01b782c4", null ],
     [ "sri_integrator_mem", "classERF.html#a6fc49c38930ad2a22555ce8fdd688998", null ],
+    [ "sst", "classERF.html#a4441c087b0b9c08729a7bd413ad12ded", null ],
     [ "startCPUTime", "classERF.html#a3890ee3bf2586cf0ef2822b671c5d8c4", null ],
     [ "stop_time", "classERF.html#a405556a52bef334ab68294c1a540e107", null ],
     [ "sum_interval", "classERF.html#a5232e98479611a24fe97994640c61faa", null ],
