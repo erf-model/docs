@@ -10,7 +10,7 @@ var searchData=
   ['pbl_5fc4_1418',['pbl_C4',['../structSolverChoice.html#afcc25193e0d39cda02479ee2067f49c2',1,'SolverChoice']]],
   ['pbl_5fc5_1419',['pbl_C5',['../structSolverChoice.html#a590d8e09995c80faf7aa033f6925616b',1,'SolverChoice']]],
   ['pbl_5ftype_1420',['pbl_type',['../structSolverChoice.html#a0a031373331c9aca22a47b0995729f46',1,'SolverChoice']]],
-  ['phys_5fbc_5ftype_1421',['phys_bc_type',['../classERF.html#ab8f4a61c714936efc1c669447b009c29',1,'ERF']]],
+  ['phys_5fbc_5ftype_1421',['phys_bc_type',['../classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15',1,'ERF']]],
   ['pi_1422',['PI',['../ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428',1,'ERF_Constants.H']]],
   ['plot_5ffile_5f1_1423',['plot_file_1',['../classERF.html#aa54aaa938a18d34caa4d86e977647899',1,'ERF']]],
   ['plot_5ffile_5f2_1424',['plot_file_2',['../classERF.html#a18fa84b06132715757d97ec38678aa2c',1,'ERF']]],

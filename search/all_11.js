@@ -4,7 +4,7 @@ var searchData=
   ['s_5fsum_653',['S_sum',['../classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1',1,'MRISplitIntegrator']]],
   ['sc_5ft_654',['Sc_t',['../structSolverChoice.html#a10043b88372894f67ed0f3e68bf27cb6',1,'SolverChoice']]],
   ['sc_5ft_5finv_655',['Sc_t_inv',['../structSolverChoice.html#a5d8e6a103e2e5d61dc0990fa2141a675',1,'SolverChoice']]],
-  ['scalar_656',['Scalar',['../namespacePrim.html#ae6378f5d4272bb8368424f704f141fc0afedd432e3ecc9fd06a3a9a68d749c1af',1,'Prim::Scalar()'],['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4aa27a6549ade38cc036f7b8c58a840510',1,'scalar():&#160;DataStruct.H']]],
+  ['scalar_656',['scalar',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4aa27a6549ade38cc036f7b8c58a840510',1,'scalar():&#160;DataStruct.H'],['../namespacePrim.html#ae6378f5d4272bb8368424f704f141fc0afedd432e3ecc9fd06a3a9a68d749c1af',1,'Prim::Scalar()']]],
   ['scalar_5fh_657',['Scalar_h',['../namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a85d322ae06bc4f66f791d4eda0a13ae6',1,'EddyDiff']]],
   ['scalar_5fv_658',['Scalar_v',['../namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a2b82a72be137b3159e7d4945735fcbf5',1,'EddyDiff']]],
   ['set_5ffast_5frhs_659',['set_fast_rhs',['../classMRISplitIntegrator.html#a26a7a9dca99cfa7c2b5884085e4a4916',1,'MRISplitIntegrator']]],
@@ -25,7 +25,7 @@ var searchData=
   ['sigma_5fk_674',['sigma_k',['../structSolverChoice.html#affbc103f3361b47fbcf605a08b99d8ec',1,'SolverChoice']]],
   ['sinphi_675',['sinphi',['../structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf',1,'SolverChoice']]],
   ['size_676',['size',['../structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240',1,'InputSoundingData']]],
-  ['slip_5fwall_677',['slip_wall',['../IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0fa03ee6de9fd100444c5c0567ea01bd538',1,'IndexDefines.H']]],
+  ['slip_5fwall_677',['slip_wall',['../IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a03ee6de9fd100444c5c0567ea01bd538',1,'IndexDefines.H']]],
   ['slow_678',['slow',['../namespaceRHSVar.html#adb9b87b6805100d0e912cd1a26b4dbc4ae601862ca8d00b1c87baf8202d758ecf',1,'RHSVar']]],
   ['slow_5ffast_5ftimestep_5fratio_679',['slow_fast_timestep_ratio',['../classMRISplitIntegrator.html#ac627f7a16fd409d33916eeccb9ab3c3f',1,'MRISplitIntegrator']]],
   ['slow_5frhs_680',['slow_rhs',['../classMRISplitIntegrator.html#aeb6529d9e2b7809c741e9b7dc7ada53a',1,'MRISplitIntegrator']]],
@@ -49,5 +49,5 @@ var searchData=
   ['surf_5ftemp_698',['surf_temp',['../classABLMostData.html#a766d02b24965cfd0dd6a0c593df31969',1,'ABLMostData']]],
   ['surf_5ftemp_5fflux_699',['surf_temp_flux',['../classABLMostData.html#a81414345b94239ca479eeda6b405a5af',1,'ABLMostData']]],
   ['surface_5ftemperature_700',['SURFACE_TEMPERATURE',['../classABLMost.html#a46fbd9260d2adfa7c18edad6452f9baba7898337114347af29e54cea604ec4829',1,'ABLMost']]],
-  ['symmetry_701',['symmetry',['../IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0fa40e712f30d56083318ab20a2402921d2',1,'IndexDefines.H']]]
+  ['symmetry_701',['symmetry',['../IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a40e712f30d56083318ab20a2402921d2',1,'IndexDefines.H']]]
 ];

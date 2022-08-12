@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['thetacalctype_1530',['ThetaCalcType',['../classABLMost.html#a46fbd9260d2adfa7c18edad6452f9bab',1,'ABLMost']]]
+  ['stagger_1529',['Stagger',['../DataStruct_8H.html#af22a7de290327224f6e1b45f125cb77d',1,'DataStruct.H']]]
 ];

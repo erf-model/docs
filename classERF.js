@@ -136,7 +136,7 @@ var classERF =
     [ "num_files_at_level", "classERF.html#a610a988f46e0496e6dbd0471ae817f75", null ],
     [ "output_1d_column", "classERF.html#ad17ff2753e754ff3eb1330612b820b5f", null ],
     [ "output_bndry_planes", "classERF.html#a7c448670f7a5cadd6fe56f7e615c9eb6", null ],
-    [ "phys_bc_type", "classERF.html#ab8f4a61c714936efc1c669447b009c29", null ],
+    [ "phys_bc_type", "classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15", null ],
     [ "plot_file_1", "classERF.html#aa54aaa938a18d34caa4d86e977647899", null ],
     [ "plot_file_2", "classERF.html#a18fa84b06132715757d97ec38678aa2c", null ],
     [ "plot_file_on_restart", "classERF.html#adc00038dfe4c332e5d15f621184c69e8", null ],

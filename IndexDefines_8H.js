@@ -73,15 +73,15 @@ var IndexDefines_8H =
     [ "h_xi_zeta", "IndexDefines_8H.html#a34a43e8378fdc005b5ce0b1b7a1d1d36a03691e90b1018d69322877ea80fe8520", null ],
     [ "h_eta_zeta", "IndexDefines_8H.html#a34a43e8378fdc005b5ce0b1b7a1d1d36a1aff3fa1ea28d2dc5cfe8a0d521844a4", null ],
     [ "all", "IndexDefines_8H.html#a34a43e8378fdc005b5ce0b1b7a1d1d36a55241740af286ead1d5a89a646688467", null ],
-    [ "BC", "IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0f", [
-      [ "symmetry", "IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0fa40e712f30d56083318ab20a2402921d2", null ],
-      [ "inflow", "IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0fad37e67db17cfd059f2852e2673b9e8ef", null ],
-      [ "outflow", "IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0facac0c32caf84a889ec9b2b4cb2d56972", null ],
-      [ "no_slip_wall", "IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0facb8c716b8d9b499d9bc323d8f8a410d3", null ],
-      [ "slip_wall", "IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0fa03ee6de9fd100444c5c0567ea01bd538", null ],
-      [ "periodic", "IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0fae6ffdec5e14fce371eb7ae99edebbbee", null ],
-      [ "MOST", "IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0fa882dd232c0425bb9366544f84f0a7b6c", null ],
-      [ "undefined", "IndexDefines_8H.html#a6e1412fca31cbd35d0f50f12fcc70b0fa5e543256c480ac577d30f76f9120eb74", null ]
+    [ "ERF_BC", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9", [
+      [ "symmetry", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a40e712f30d56083318ab20a2402921d2", null ],
+      [ "inflow", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9ad37e67db17cfd059f2852e2673b9e8ef", null ],
+      [ "outflow", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acac0c32caf84a889ec9b2b4cb2d56972", null ],
+      [ "no_slip_wall", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3", null ],
+      [ "slip_wall", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a03ee6de9fd100444c5c0567ea01bd538", null ],
+      [ "periodic", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9ae6ffdec5e14fce371eb7ae99edebbbee", null ],
+      [ "MOST", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a882dd232c0425bb9366544f84f0a7b6c", null ],
+      [ "undefined", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a5e543256c480ac577d30f76f9120eb74", null ]
     ] ],
     [ "mathematicalBndryTypes", "IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01c", [
       [ "bogus", "IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca5e7251ff4badd9a198c0601a7929b1c4", null ],
