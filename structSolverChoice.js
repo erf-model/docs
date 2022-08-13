@@ -42,6 +42,7 @@ var structSolverChoice =
     [ "sigma_k", "structSolverChoice.html#affbc103f3361b47fbcf605a08b99d8ec", null ],
     [ "sinphi", "structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf", null ],
     [ "spatial_order", "structSolverChoice.html#a8e053ce39997ed619ac81aa4d5a1fd44", null ],
+    [ "terrain_type", "structSolverChoice.html#a6cf7cd64adcf678e8065b1c4261cefd8", null ],
     [ "use_coriolis", "structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606", null ],
     [ "use_gravity", "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5", null ],
     [ "use_QKE", "structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5", null ],

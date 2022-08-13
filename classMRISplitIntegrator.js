@@ -18,6 +18,7 @@ var classMRISplitIntegrator =
     [ "set_rhs", "classMRISplitIntegrator.html#ac38ae5a790188591e71289d62746e4ea", null ],
     [ "set_slow_fast_timestep_ratio", "classMRISplitIntegrator.html#ad31fb2cda1fc2dce80820ed7c4a3c052", null ],
     [ "set_slow_rhs", "classMRISplitIntegrator.html#a2c7d34b0ebbea32725fefcfa6053c9a8", null ],
+    [ "setUseFluxes", "classMRISplitIntegrator.html#af182218fec4312defcbfc2bdf6c84d49", null ],
     [ "time_interpolate", "classMRISplitIntegrator.html#a10d223efbc486b8eba3cf4d94c4e2394", null ],
     [ "F_pert", "classMRISplitIntegrator.html#afac330a82d779844c328de9bed26eb37", null ],
     [ "F_slow", "classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7", null ],
@@ -30,5 +31,6 @@ var classMRISplitIntegrator =
     [ "slow_fast_timestep_ratio", "classMRISplitIntegrator.html#ac627f7a16fd409d33916eeccb9ab3c3f", null ],
     [ "slow_rhs", "classMRISplitIntegrator.html#aeb6529d9e2b7809c741e9b7dc7ada53a", null ],
     [ "T_store", "classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80", null ],
-    [ "timestep", "classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612", null ]
+    [ "timestep", "classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612", null ],
+    [ "use_fluxes", "classMRISplitIntegrator.html#a24309b8fe0496aa59a67d7f60e4ae76b", null ]
 ];

@@ -33,6 +33,7 @@ var classERF =
     [ "init_only", "classERF.html#a80981e20939a6a38ba17478da2253ff1", null ],
     [ "InitData", "classERF.html#ad5d585e110291969767013a515719224", null ],
     [ "initHSE", "classERF.html#a92c020bfaa43e40fb5ffc449427a0318", null ],
+    [ "initialize_integrator", "classERF.html#a5600f8ce250d4811012719fdf5e85f00", null ],
     [ "InitializeFromFile", "classERF.html#a2e1874d47d95c7c858c2a2336fd0eee6", null ],
     [ "InitializeLevelFromData", "classERF.html#a914f576acc2d1a54203a220cce10df62", null ],
     [ "initRayleigh", "classERF.html#a039a764a1d942c484e8aea49e87bc046", null ],
@@ -90,6 +91,7 @@ var classERF =
     [ "dens_hse", "classERF.html#ae0ad04c898b38e7a17af7b5e154c1b54", null ],
     [ "derived_names", "classERF.html#a9fc0f6e6ca35036d2e3a36dd42e66435", null ],
     [ "detJ_cc", "classERF.html#a30f8b851ed29d38695d44cff257f14e6", null ],
+    [ "detJ_cc_new", "classERF.html#ae39bf64c5306b1dd939d82d9df728daa", null ],
     [ "do_avg_down", "classERF.html#a778cdd6547e8cf1613cda8b4a8274bf0", null ],
     [ "do_reflux", "classERF.html#af25f70d7d9e4edeedcc40c117cc15505", null ],
     [ "domain_bc_type", "classERF.html#ae5968f1bed602fa87cdd5cb7905b7e5e", null ],
@@ -168,5 +170,7 @@ var classERF =
     [ "velocity_names", "classERF.html#a2f2ea7f5eeeb3634944550e5a1de8f7a", null ],
     [ "verbose", "classERF.html#a43d0b17f6e155691a1e9474526df3af5", null ],
     [ "z_phys_cc", "classERF.html#a31be0f1ae705c52c8ccc520369013284", null ],
-    [ "z_phys_nd", "classERF.html#a93e63e5af35efa564fd4195e8703f84c", null ]
+    [ "z_phys_cc_new", "classERF.html#afe87e3daa73a296ff523de4aaf9d1c22", null ],
+    [ "z_phys_nd", "classERF.html#a93e63e5af35efa564fd4195e8703f84c", null ],
+    [ "z_phys_nd_new", "classERF.html#a4ef635c22e72c715f5703a6b95a7abe5", null ]
 ];

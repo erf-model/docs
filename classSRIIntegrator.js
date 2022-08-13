@@ -12,6 +12,7 @@ var classSRIIntegrator =
     [ "map_data", "classSRIIntegrator.html#a6e2de94f8208dc461e2f0aed51dce427", null ],
     [ "set_post_update", "classSRIIntegrator.html#a7b25a508864e41e429cd0a798cb28603", null ],
     [ "set_rhs", "classSRIIntegrator.html#a2b907e32b89a99f84e911d5abcf37a2f", null ],
+    [ "setUseFluxes", "classSRIIntegrator.html#a74958d1e39a25d22c249bf85b248bd9a", null ],
     [ "time_interpolate", "classSRIIntegrator.html#a31c6cbc35d326d812b1e46f285cf9ef4", null ],
     [ "butcher_type", "classSRIIntegrator.html#a348575876ef6539d8f3fc6addccf71bd", null ],
     [ "F_nodes", "classSRIIntegrator.html#a07fa70ef1c924617254f1b109cf7f9a4", null ],
@@ -22,6 +23,7 @@ var classSRIIntegrator =
     [ "tableau", "classSRIIntegrator.html#aac6575b36ad4a7840542f4fa3b867163", null ],
     [ "tableau_d", "classSRIIntegrator.html#a7cd8c3be1b18f5946be4e459f2791ae5", null ],
     [ "timestep", "classSRIIntegrator.html#ac80ef194b6d09d9986d7c6c0a09040ec", null ],
+    [ "use_fluxes", "classSRIIntegrator.html#a86e8009c814bbfe697e02b242035d48f", null ],
     [ "weights", "classSRIIntegrator.html#a009669304b7c0a1d7c87673173454d2c", null ],
     [ "weights_d", "classSRIIntegrator.html#af1efdc9f2c6024d1953f5d34d950de99", null ]
 ];
