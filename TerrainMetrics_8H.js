@@ -8,8 +8,8 @@ var TerrainMetrics_8H =
     [ "ComputeMetricAtIface", "TerrainMetrics_8H.html#aa583c7ebfef25f449af86111b0572533", null ],
     [ "ComputeMetricAtJface", "TerrainMetrics_8H.html#adcaa7dd1b91191b54eb2f59a4cbb567b", null ],
     [ "ComputeMetricAtKface", "TerrainMetrics_8H.html#a9b9ea28f72372c04f5a671bfb72ef285", null ],
-    [ "init_terrain_grid", "TerrainMetrics_8H.html#a5a751d10fd4f8426e59b205e04571e1e", null ],
-    [ "make_metrics", "TerrainMetrics_8H.html#a53363537d3e953e585899d27b19b0f7f", null ],
+    [ "init_terrain_grid", "TerrainMetrics_8H.html#a73878488be6786efc0865079c3a281fb", null ],
+    [ "make_metrics", "TerrainMetrics_8H.html#a55f4a92935f0efe394664231cd73b9fe", null ],
     [ "OmegaFromW", "TerrainMetrics_8H.html#adb62ee7692551a4bacfa38a3e8592fdf", null ],
     [ "WFromOmega", "TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7", null ]
 ];

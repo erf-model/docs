@@ -98,17 +98,17 @@ Collaboration diagram for SRIIntegrator&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSRIIntegrator__coll__graph.png" border="0" usemap="#SRIIntegrator_3_01T_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="SRIIntegrator_3_01T_01_4_coll__map" id="SRIIntegrator_3_01T_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="328,299,473,325"/>
-<area shape="rect" title=" " alt="" coords="5,5,179,61"/>
-<area shape="rect" title=" " alt="" coords="7,86,177,127"/>
-<area shape="rect" title=" " alt="" coords="7,151,177,193"/>
-<area shape="rect" title=" " alt="" coords="13,217,171,244"/>
-<area shape="rect" title=" " alt="" coords="73,268,111,295"/>
-<area shape="rect" title=" " alt="" coords="6,319,178,345"/>
-<area shape="rect" title=" " alt="" coords="12,369,172,425"/>
-<area shape="rect" title=" " alt="" coords="17,450,167,491"/>
-<area shape="rect" title=" " alt="" coords="9,515,175,557"/>
-<area shape="rect" title=" " alt="" coords="67,581,117,608"/>
+<area shape="rect" title=" " alt="" coords="349,299,495,325"/>
+<area shape="rect" title=" " alt="" coords="16,5,189,61"/>
+<area shape="rect" title=" " alt="" coords="17,86,188,127"/>
+<area shape="rect" title=" " alt="" coords="18,151,187,193"/>
+<area shape="rect" title=" " alt="" coords="23,217,182,244"/>
+<area shape="rect" title=" " alt="" coords="83,268,122,295"/>
+<area shape="rect" title=" " alt="" coords="17,319,189,345"/>
+<area shape="rect" title=" " alt="" coords="5,370,200,441"/>
+<area shape="rect" title=" " alt="" coords="27,465,178,506"/>
+<area shape="rect" title=" " alt="" coords="20,530,185,571"/>
+<area shape="rect" title=" " alt="" coords="77,596,128,623"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -124,8 +124,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9dde9e8d28b6351d48f63a194f1b5f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74958d1e39a25d22c249bf85b248bd9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSRIIntegrator.html#a74958d1e39a25d22c249bf85b248bd9a">setUseFluxes</a> (int _use_fluxes)</td></tr>
 <tr class="separator:a74958d1e39a25d22c249bf85b248bd9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b907e32b89a99f84e911d5abcf37a2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSRIIntegrator.html#a2b907e32b89a99f84e911d5abcf37a2f">set_rhs</a> (std::function&lt; void(T &amp;, const T &amp;, T &amp;, const amrex::Real, int)&gt; F)</td></tr>
-<tr class="separator:a2b907e32b89a99f84e911d5abcf37a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a189ce128d2136c96a991e9ca7f38f841"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSRIIntegrator.html#a189ce128d2136c96a991e9ca7f38f841">set_rhs</a> (std::function&lt; void(T &amp;, const T &amp;, T &amp;, const amrex::Real, const amrex::Real, int)&gt; F)</td></tr>
+<tr class="separator:a189ce128d2136c96a991e9ca7f38f841"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b25a508864e41e429cd0a798cb28603"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSRIIntegrator.html#a7b25a508864e41e429cd0a798cb28603">set_post_update</a> (std::function&lt; void(T &amp;, amrex::Real, int, int)&gt; F)</td></tr>
 <tr class="separator:a7b25a508864e41e429cd0a798cb28603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43b8e6cecb774b51806de12cbdd9d79e"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, amrex::Real, int, int)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSRIIntegrator.html#a43b8e6cecb774b51806de12cbdd9d79e">get_post_update</a> ()</td></tr>
@@ -148,9 +148,9 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a804e3c551e815ed9b9aa5a447e5c1a89"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, const T &amp;, T &amp;, const amrex::Real, int)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSRIIntegrator.html#a804e3c551e815ed9b9aa5a447e5c1a89">rhs</a></td></tr>
-<tr class="memdesc:a804e3c551e815ed9b9aa5a447e5c1a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">rhs is the right-hand-side function the integrator will use.  <a href="classSRIIntegrator.html#a804e3c551e815ed9b9aa5a447e5c1a89">More...</a><br /></td></tr>
-<tr class="separator:a804e3c551e815ed9b9aa5a447e5c1a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b00fea92a73d51487b7b5c21fc4a425"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, const T &amp;, T &amp;, const amrex::Real, const amrex::Real, int)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSRIIntegrator.html#a5b00fea92a73d51487b7b5c21fc4a425">rhs</a></td></tr>
+<tr class="memdesc:a5b00fea92a73d51487b7b5c21fc4a425"><td class="mdescLeft">&#160;</td><td class="mdescRight">rhs is the right-hand-side function the integrator will use.  <a href="classSRIIntegrator.html#a5b00fea92a73d51487b7b5c21fc4a425">More...</a><br /></td></tr>
+<tr class="separator:a5b00fea92a73d51487b7b5c21fc4a425"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac80ef194b6d09d9986d7c6c0a09040ec"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSRIIntegrator.html#ac80ef194b6d09d9986d7c6c0a09040ec">timestep</a></td></tr>
 <tr class="memdesc:ac80ef194b6d09d9986d7c6c0a09040ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integrator timestep size (Real)  <a href="classSRIIntegrator.html#ac80ef194b6d09d9986d7c6c0a09040ec">More...</a><br /></td></tr>
 <tr class="separator:ac80ef194b6d09d9986d7c6c0a09040ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -479,7 +479,7 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="comment">// Fill F[i], the RHS at the current stage</span></div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <span class="comment">// F[i] = RHS(y, t) at y = stage_value, t = stage_time</span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <a class="code" href="classSRIIntegrator.html#a804e3c551e815ed9b9aa5a447e5c1a89">rhs</a>(*<a class="code" href="classSRIIntegrator.html#a07fa70ef1c924617254f1b109cf7f9a4">F_nodes</a>[in], S_new, S_scratch, stage_time, <a class="code" href="namespaceRHSVar.html#adb9b87b6805100d0e912cd1a26b4dbc4a663b433383c61be43231a25243ec832d">RHSVar::all</a>);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <a class="code" href="classSRIIntegrator.html#a5b00fea92a73d51487b7b5c21fc4a425">rhs</a>(*<a class="code" href="classSRIIntegrator.html#a07fa70ef1c924617254f1b109cf7f9a4">F_nodes</a>[in], S_new, S_scratch, time, stage_time, <a class="code" href="namespaceRHSVar.html#adb9b87b6805100d0e912cd1a26b4dbc4a663b433383c61be43231a25243ec832d">RHSVar::all</a>);</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        }</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="comment">// Fill new State, starting with S_new = S_old.</span></div>
@@ -674,7 +674,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSRIIntegrator.html#a804e3c551e815ed9b9aa5a447e5c1a89">rhs</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSRIIntegrator.html#a5b00fea92a73d51487b7b5c21fc4a425">rhs</a>;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
@@ -955,8 +955,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a2b907e32b89a99f84e911d5abcf37a2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b907e32b89a99f84e911d5abcf37a2f">&#9670;&nbsp;</a></span>set_rhs()</h2>
+<a id="a189ce128d2136c96a991e9ca7f38f841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a189ce128d2136c96a991e9ca7f38f841">&#9670;&nbsp;</a></span>set_rhs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -969,7 +969,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classSRIIntegrator.html">SRIIntegrator</a>&lt; T &gt;::set_rhs </td>
           <td>(</td>
-          <td class="paramtype">std::function&lt; void(T &amp;, const T &amp;, T &amp;, const amrex::Real, int)&gt;&#160;</td>
+          <td class="paramtype">std::function&lt; void(T &amp;, const T &amp;, T &amp;, const amrex::Real, const amrex::Real, int)&gt;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -981,15 +981,15 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="classSRIIntegrator.html#a804e3c551e815ed9b9aa5a447e5c1a89">rhs</a> = F;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="classSRIIntegrator.html#a5b00fea92a73d51487b7b5c21fc4a425">rhs</a> = F;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa5b3a1ee491aa04f30439de7569d65e0">ERF::erf_advance()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classSRIIntegrator_a2b907e32b89a99f84e911d5abcf37a2f_icgraph.png" border="0" usemap="#classSRIIntegrator_a2b907e32b89a99f84e911d5abcf37a2f_icgraph" alt=""/></div>
-<map name="classSRIIntegrator_a2b907e32b89a99f84e911d5abcf37a2f_icgraph" id="classSRIIntegrator_a2b907e32b89a99f84e911d5abcf37a2f_icgraph">
+<div class="center"><img src="classSRIIntegrator_a189ce128d2136c96a991e9ca7f38f841_icgraph.png" border="0" usemap="#classSRIIntegrator_a189ce128d2136c96a991e9ca7f38f841_icgraph" alt=""/></div>
+<map name="classSRIIntegrator_a189ce128d2136c96a991e9ca7f38f841_icgraph" id="classSRIIntegrator_a189ce128d2136c96a991e9ca7f38f841_icgraph">
 <area shape="rect" title=" " alt="" coords="188,5,351,32"/>
 <area shape="rect" href="classERF.html#aa5b3a1ee491aa04f30439de7569d65e0" title=" " alt="" coords="5,5,140,32"/>
 </map>
@@ -1212,8 +1212,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a804e3c551e815ed9b9aa5a447e5c1a89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a804e3c551e815ed9b9aa5a447e5c1a89">&#9670;&nbsp;</a></span>rhs</h2>
+<a id="a5b00fea92a73d51487b7b5c21fc4a425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b00fea92a73d51487b7b5c21fc4a425">&#9670;&nbsp;</a></span>rhs</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1224,7 +1224,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::function&lt;void(T&amp;, const T&amp;, T&amp;, const amrex::Real, int)&gt; <a class="el" href="classSRIIntegrator.html">SRIIntegrator</a>&lt; T &gt;::rhs</td>
+          <td class="memname">std::function&lt;void(T&amp;, const T&amp;, T&amp;, const amrex::Real, const amrex::Real, int)&gt; <a class="el" href="classSRIIntegrator.html">SRIIntegrator</a>&lt; T &gt;::rhs</td>
         </tr>
       </table>
   </td>
@@ -1236,7 +1236,7 @@ template&lt;class T &gt; </div>
 
 <p>rhs is the right-hand-side function the integrator will use. </p>
 
-<p class="reference">Referenced by <a class="el" href="classSRIIntegrator.html#a4aeeaede505226f9dd62f5167e58f08e">SRIIntegrator&lt; T &gt;::advance()</a>, <a class="el" href="classSRIIntegrator.html#aee8759f742fbcd2dc5897f196649b48b">SRIIntegrator&lt; T &gt;::get_rhs()</a>, and <a class="el" href="classSRIIntegrator.html#a2b907e32b89a99f84e911d5abcf37a2f">SRIIntegrator&lt; T &gt;::set_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSRIIntegrator.html#a4aeeaede505226f9dd62f5167e58f08e">SRIIntegrator&lt; T &gt;::advance()</a>, <a class="el" href="classSRIIntegrator.html#aee8759f742fbcd2dc5897f196649b48b">SRIIntegrator&lt; T &gt;::get_rhs()</a>, and <a class="el" href="classSRIIntegrator.html#a189ce128d2136c96a991e9ca7f38f841">SRIIntegrator&lt; T &gt;::set_rhs()</a>.</p>
 
 </div>
 </div>
@@ -1432,8 +1432,8 @@ template&lt;class T &gt; </div>
 <div class="ttc" id="aclassSRIIntegrator_html_a348575876ef6539d8f3fc6addccf71bd"><div class="ttname"><a href="classSRIIntegrator.html#a348575876ef6539d8f3fc6addccf71bd">SRIIntegrator::butcher_type</a></div><div class="ttdeci">SRI::ButcherTableauTypes butcher_type</div><div class="ttdef"><b>Definition:</b> ERF_SRI.H:46</div></div>
 <div class="ttc" id="anamespaceSRI_html_a35587dafe23588be01c30749d3f0a4e6"><div class="ttname"><a href="namespaceSRI.html#a35587dafe23588be01c30749d3f0a4e6">SRI::ButcherTableauTypes</a></div><div class="ttdeci">ButcherTableauTypes</div><div class="ttdef"><b>Definition:</b> ERF_SRI.H:12</div></div>
 <div class="ttc" id="aclassSRIIntegrator_html_a7cc12565a604327935be01113b28110e"><div class="ttname"><a href="classSRIIntegrator.html#a7cc12565a604327935be01113b28110e">SRIIntegrator::initialize_preset_tableau</a></div><div class="ttdeci">void initialize_preset_tableau(SRI::ButcherTableauTypes tableau_type)</div><div class="ttdef"><b>Definition:</b> ERF_SRI.H:55</div></div>
+<div class="ttc" id="aclassSRIIntegrator_html_a5b00fea92a73d51487b7b5c21fc4a425"><div class="ttname"><a href="classSRIIntegrator.html#a5b00fea92a73d51487b7b5c21fc4a425">SRIIntegrator::rhs</a></div><div class="ttdeci">std::function&lt; void(T &amp;, const T &amp;, T &amp;, const amrex::Real, const amrex::Real, int)&gt; rhs</div><div class="ttdoc">rhs is the right-hand-side function the integrator will use.</div><div class="ttdef"><b>Definition:</b> ERF_SRI.H:29</div></div>
 <div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12a21245d0eca9226a6441feac35602c9be"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a21245d0eca9226a6441feac35602c9be">IntVar::xflux</a></div><div class="ttdeci">@ xflux</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:17</div></div>
-<div class="ttc" id="aclassSRIIntegrator_html_a804e3c551e815ed9b9aa5a447e5c1a89"><div class="ttname"><a href="classSRIIntegrator.html#a804e3c551e815ed9b9aa5a447e5c1a89">SRIIntegrator::rhs</a></div><div class="ttdeci">std::function&lt; void(T &amp;, const T &amp;, T &amp;, const amrex::Real, int)&gt; rhs</div><div class="ttdoc">rhs is the right-hand-side function the integrator will use.</div><div class="ttdef"><b>Definition:</b> ERF_SRI.H:29</div></div>
 <div class="ttc" id="aclassSRIIntegrator_html_ab52c01e6fa3160a97d960d6acac0df9f"><div class="ttname"><a href="classSRIIntegrator.html#ab52c01e6fa3160a97d960d6acac0df9f">SRIIntegrator::nodes</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; nodes</div><div class="ttdef"><b>Definition:</b> ERF_SRI.H:53</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

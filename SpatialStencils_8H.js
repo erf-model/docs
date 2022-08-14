@@ -1,9 +1,9 @@
 var SpatialStencils_8H =
 [
-    [ "AdvectionSrcForState", "SpatialStencils_8H.html#ac8f5538610e51007c69a1a1f6cc3f807", null ],
-    [ "AdvectionSrcForXMom", "SpatialStencils_8H.html#a4b180dccfa63ee32ad8cf058797ac005", null ],
-    [ "AdvectionSrcForYMom", "SpatialStencils_8H.html#a660715acf6aa68171a4b8dea355dfafa", null ],
-    [ "AdvectionSrcForZMom", "SpatialStencils_8H.html#aca2acaabb6c1f42828782410a7e3d30f", null ],
+    [ "AdvectionSrcForState", "SpatialStencils_8H.html#a83861f4237d17dadd6340cf09e284e6a", null ],
+    [ "AdvectionSrcForXMom", "SpatialStencils_8H.html#a0f5b3bc4b01418f2476ab5dd06933c18", null ],
+    [ "AdvectionSrcForYMom", "SpatialStencils_8H.html#af3bcd10d6710d59f1659a534afdc6b90", null ],
+    [ "AdvectionSrcForZMom", "SpatialStencils_8H.html#a6f09934daf89dffc18655a1f20bc0d08", null ],
     [ "ComputeDiffusionFluxForState", "SpatialStencils_8H.html#a859adccf3e77c3f9b25ccdeb6ebe2485", null ],
     [ "ComputeStressTerm", "SpatialStencils_8H.html#a3320b837a28798d2ce250f25d73ebcad", null ],
     [ "DiffusionSrcForMom", "SpatialStencils_8H.html#a0a0d289a507ec58877ad77f6d02f9d5e", null ],
