@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('TI__slow__rhs__fun_8H_source.html','')
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">if</span> (verbose) Print() &lt;&lt; <span class="stringliteral">&quot;Making new geometry at stage_time &quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> dz = fine_geom.CellSizeArray()[2];</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> old_time = step_time;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> old_step_time = step_time;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="prob__common_8H.html#a00938a7e96931475ce127c85a9d2b931">init_custom_terrain</a>(fine_geom,*z_phys_nd_new[level],stage_time); <span class="comment">// This defines h(i,j,k=0,t)</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="TerrainMetrics_8cpp.html#a164b37e7ca02d7284ddd6c32cd95f2db">init_terrain_grid</a>  (fine_geom,*z_phys_nd_new[level]);        <span class="comment">// This defines z_phys for all k given h</span></div>
@@ -132,9 +132,9 @@ $(document).ready(function(){initNavTree('TI__slow__rhs__fun_8H_source.html','')
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dX = fine_geom.CellSizeArray();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="comment">// Loop over horizontal plane</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                amrex::ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                amrex::ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    z_t_arr(i,j,0) = <a class="code" href="prob__common_8H.html#a998b20dd24e44faaed7df8596f21f95c">dhdt</a>(i,j,dX,old_time);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    z_t_arr(i,j,0) = <a class="code" href="prob__common_8H.html#a998b20dd24e44faaed7df8596f21f95c">dhdt</a>(i,j,dX,old_step_time);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt;= khi; k++)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        <span class="comment">// NOTE: J in this code is (1/J) in Sullivan et al (JAS 2014)</span></div>

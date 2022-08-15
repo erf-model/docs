@@ -10,7 +10,7 @@ var searchData=
   ['get_5ffast_5frhs_283',['get_fast_rhs',['../classMRISplitIntegrator.html#acba59b32b1427818ae71ba6d83a4e0fb',1,'MRISplitIntegrator']]],
   ['get_5fflux_5freg_284',['get_flux_reg',['../classERF.html#afd3cbffc97b8a89e58042e029c5c6b7c',1,'ERF']]],
   ['get_5fmost_5fdata_285',['get_most_data',['../classABLMost.html#a4a8f61b0315a2ffbf2df59a3fdfa215f',1,'ABLMost']]],
-  ['get_5fpost_5fsubstep_286',['get_post_substep',['../classMRISplitIntegrator.html#ac06e34a6c57a35fc2a1e94c24c9eeddc',1,'MRISplitIntegrator']]],
+  ['get_5fpost_5fsubstep_286',['get_post_substep',['../classMRISplitIntegrator.html#ae4f955a3a53736d73b274c3953e0d9bb',1,'MRISplitIntegrator']]],
   ['get_5fpost_5fupdate_287',['get_post_update',['../classMRISplitIntegrator.html#adb7eb9475b02803599d29b6f602f2fdd',1,'MRISplitIntegrator::get_post_update()'],['../classSRIIntegrator.html#a43b8e6cecb774b51806de12cbdd9d79e',1,'SRIIntegrator::get_post_update()']]],
   ['get_5frhs_288',['get_rhs',['../classMRISplitIntegrator.html#aaf865e066a3c327ff296c99cd0566373',1,'MRISplitIntegrator::get_rhs()'],['../classSRIIntegrator.html#aee8759f742fbcd2dc5897f196649b48b',1,'SRIIntegrator::get_rhs()']]],
   ['get_5fslow_5ffast_5ftimestep_5fratio_289',['get_slow_fast_timestep_ratio',['../classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86',1,'MRISplitIntegrator']]],

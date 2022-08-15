@@ -133,6 +133,7 @@ var classERF =
     [ "nc_init_file", "classERF.html#a99757524a49a79368069f66f71797c9d", null ],
     [ "ng_dens_hse", "classERF.html#addf0fb2aae0efaa649c69685a4dcca83", null ],
     [ "ng_pres_hse", "classERF.html#a87dc6c0720462bfd088c909289cdca0b", null ],
+    [ "no_substepping", "classERF.html#a776c819f06e6f9d5f893aa6846fccb8a", null ],
     [ "nsubsteps", "classERF.html#aa3db2dd1b65310c66c4038650c22aaee", null ],
     [ "num_boxes_at_level", "classERF.html#adcd9f23975ffa605247b41d391c2a2f0", null ],
     [ "num_files_at_level", "classERF.html#a610a988f46e0496e6dbd0471ae817f75", null ],

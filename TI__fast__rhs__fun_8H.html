@@ -124,13 +124,12 @@ Variables</h2></td></tr>
 <div class="line">                                  Vector&lt;MultiFab&gt;&amp; S_stage_data,</div>
 <div class="line">                            <span class="keyword">const</span> Vector&lt;MultiFab&gt;&amp; S_data,</div>
 <div class="line">                                  Vector&lt;MultiFab&gt;&amp; S_scratch,</div>
-<div class="line">                            <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> fast_dt, <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> inv_fac)</div>
+<div class="line">                            <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dtau, <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> inv_fac)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="keywordflow">if</span> (verbose) amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Calling fast rhs at level &quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot; with dt = &quot;</span> &lt;&lt; fast_dt &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">if</span> (verbose) amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Calling fast rhs at level &quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot; with dt = &quot;</span> &lt;&lt; dtau &lt;&lt; std::endl;</div>
 <div class="line">        <a class="code" href="ERF__fast__rhs_8cpp.html#a9953152330dcda267c83914351d1a8d2">erf_fast_rhs</a>(level, S_fast_rhs, S_slow_rhs, S_stage_data, S_prim,</div>
 <div class="line">                     S_data, S_scratch, advflux, fine_geom, ifr, solverChoice,</div>
-<div class="line">                     z_phys_nd[level], detJ_cc[level], r0, p0,</div>
-<div class="line">                     fast_dt, inv_fac);</div>
+<div class="line">                     z_phys_nd[level], detJ_cc[level], r0, p0, dtau, inv_fac);</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa5b3a1ee491aa04f30439de7569d65e0">ERF::erf_advance()</a>.</p>
@@ -148,19 +147,13 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= [&amp;](Vector&lt;MultiFab&gt;&amp; S_data, <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time_for_fp, <span class="keywordtype">int</span> ng_cons, <span class="keywordtype">int</span> ng_vel)</div>
-<div class="line">    {</div>
-<div class="line">        <span class="keywordtype">bool</span> fast_only = <span class="keyword">true</span>;</div>
-<div class="line">        <a class="code" href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(S_data, time_for_fp, ng_cons, ng_vel, fast_only);</div>
-<div class="line">    }</div>
-</div><!-- fragment -->
+
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa5b3a1ee491aa04f30439de7569d65e0">ERF::erf_advance()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aTI__utils_8H_html_a5e7934b18ef63bc8c4c16db42277c52f"><div class="ttname"><a href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a></div><div class="ttdeci">auto apply_bcs</div><div class="ttdef"><b>Definition:</b> TI_utils.H:38</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
 <div class="ttc" id="aERF__fast__rhs_8cpp_html_a9953152330dcda267c83914351d1a8d2"><div class="ttname"><a href="ERF__fast__rhs_8cpp.html#a9953152330dcda267c83914351d1a8d2">erf_fast_rhs</a></div><div class="ttdeci">void erf_fast_rhs(int level, Vector&lt; MultiFab &gt; &amp;S_rhs, Vector&lt; MultiFab &gt; &amp;S_slow_rhs, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const Vector&lt; MultiFab &gt; &amp;S_data, Vector&lt; MultiFab &gt; &amp;S_scratch, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;advflux, const amrex::Geometry geom, amrex::InterpFaceRegister *ifr, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc, const MultiFab *r0, const MultiFab *p0, const amrex::Real dtau, const amrex::Real facinv)</div><div class="ttdef"><b>Definition:</b> ERF_fast_rhs.cpp:15</div></div>
 <!-- start footer part -->

@@ -46,7 +46,7 @@ var searchData=
   ['erf_5fwritebndryplanes_2ecpp_241',['ERF_WriteBndryPlanes.cpp',['../ERF__WriteBndryPlanes_8cpp.html',1,'']]],
   ['erf_5fwritebndryplanes_2eh_242',['ERF_WriteBndryPlanes.H',['../ERF__WriteBndryPlanes_8H.html',1,'']]],
   ['erfbctype_243',['ERFBCType',['../namespaceERFBCType.html',1,'']]],
-  ['erfphysbcfunct_244',['ERFPhysBCFunct',['../classERFPhysBCFunct.html',1,'ERFPhysBCFunct'],['../classERFPhysBCFunct.html#a4b1db15aad0ef81d1ecda07cd0fa3351',1,'ERFPhysBCFunct::ERFPhysBCFunct()']]],
+  ['erfphysbcfunct_244',['ERFPhysBCFunct',['../classERFPhysBCFunct.html',1,'ERFPhysBCFunct'],['../classERFPhysBCFunct.html#a39967b2af1320cc846177b6bfa03c579',1,'ERFPhysBCFunct::ERFPhysBCFunct()']]],
   ['errorest_245',['ErrorEst',['../classERF.html#a18e6dbbf968b4492e78aa427791620f4',1,'ERF']]],
   ['esttimestep_246',['estTimeStep',['../classERF.html#a6b1d727e63de2e49aa4f8e00b0dda1d5',1,'ERF']]],
   ['evolve_247',['Evolve',['../classERF.html#a0be12798b46f52fa4b5a995f147c3f96',1,'ERF']]],
