@@ -124,8 +124,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="StressTerm_8H__dep__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2SpatialStencils_2StressTerm_8Hdep" alt=""/></div>
 <map name="_2home_2runner_2work_2ERF_2ERF_2Source_2SpatialStencils_2StressTerm_8Hdep" id="_2home_2runner_2work_2ERF_2ERF_2Source_2SpatialStencils_2StressTerm_8Hdep">
-<area shape="rect" title=" " alt="" coords="5,5,204,61"/>
-<area shape="rect" href="Diffusion_8cpp.html" title=" " alt="" coords="5,109,204,165"/>
+<area shape="rect" title=" " alt="" coords="120,5,319,61"/>
+<area shape="rect" href="DiffusionSrcForMom_8H.html" title=" " alt="" coords="9,109,208,165"/>
+<area shape="rect" href="DiffusionSrcForState_8cpp.html" title=" " alt="" coords="232,109,431,165"/>
+<area shape="rect" href="ERF__slow__rhs_8cpp.html" title=" " alt="" coords="5,213,212,269"/>
 </map>
 </div>
 </div>
@@ -133,51 +135,48 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae08c36d0cdab8a95d0e4042d55dc4d94"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StressTerm_8H.html#ae08c36d0cdab8a95d0e4042d55dc4d94">ComputeStressGivenRates</a> (const int &amp;i, const int &amp;j, const int &amp;k, const enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a> &amp;momentumEqn, const enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a> &amp;diffDir, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;K_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> strainRateDeviatoric)</td></tr>
-<tr class="separator:ae08c36d0cdab8a95d0e4042d55dc4d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba19602e1bd20cdd819b195f72680b93"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StressTerm_8H.html#aba19602e1bd20cdd819b195f72680b93">ComputeStressTermWithTerrain</a> (const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;w, const enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a> &amp;momentumEqn, const enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a> &amp;diffDir, const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;K_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;z_nd, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr)</td></tr>
-<tr class="separator:aba19602e1bd20cdd819b195f72680b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5037d63a3ae2fe3cd7603a74ce32b7b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StressTerm_8H.html#ad5037d63a3ae2fe3cd7603a74ce32b7b">ComputeStressTerm</a> (const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;w, const enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a> &amp;momentumEqn, const enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a> &amp;diffDir, const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;K_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr, <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> expansionRate)</td></tr>
-<tr class="separator:ad5037d63a3ae2fe3cd7603a74ce32b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad54e5c342eeaf40ea9993a4c2686437"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StressTerm_8H.html#aad54e5c342eeaf40ea9993a4c2686437">ComputeStressGivenRates</a> (int i, int j, int k, enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a> momentumEqn, enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a> &amp;diffDir, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;K_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> strainRateDeviatoric)</td></tr>
+<tr class="separator:aad54e5c342eeaf40ea9993a4c2686437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a099894e56752a55444fb9cd93a321138"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StressTerm_8H.html#a099894e56752a55444fb9cd93a321138">ComputeStressTermWithTerrain</a> (int i, int j, int k, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;w, enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a> momentumEqn, enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a> diffDir, const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;K_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;z_nd, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr)</td></tr>
+<tr class="separator:a099894e56752a55444fb9cd93a321138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6d02b39a6c10e7fbfcfd78305bc4a1a"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StressTerm_8H.html#ae6d02b39a6c10e7fbfcfd78305bc4a1a">ComputeStressTerm</a> (int i, int j, int k, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;w, enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a> momentumEqn, enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a> diffDir, const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;K_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr, <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> expansionRate)</td></tr>
+<tr class="separator:ae6d02b39a6c10e7fbfcfd78305bc4a1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae08c36d0cdab8a95d0e4042d55dc4d94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae08c36d0cdab8a95d0e4042d55dc4d94">&#9670;&nbsp;</a></span>ComputeStressGivenRates()</h2>
+<a id="aad54e5c342eeaf40ea9993a4c2686437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad54e5c342eeaf40ea9993a4c2686437">&#9670;&nbsp;</a></span>ComputeStressGivenRates()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AMREX_GPU_DEVICE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> ComputeStressGivenRates </td>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> ComputeStressGivenRates </td>
           <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>j</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>k</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a> &amp;&#160;</td>
+          <td class="paramtype">enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a>&#160;</td>
           <td class="paramname"><em>momentumEqn</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a> &amp;&#160;</td>
+          <td class="paramtype">enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a> &amp;&#160;</td>
           <td class="paramname"><em>diffDir</em>, </td>
         </tr>
         <tr>
@@ -204,86 +203,78 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    amrex::Real mu_effective = 0.0;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// NOTE: we do not allow LES with MolecDiffType::ConstantAlpha so we don&#39;t have to worry about the</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">//       density-weighting of the LES term in this case.  When using MolecDiffType::ConstantAlpha,</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">//       we multiply the entire stress term by (rho / rho0_trans) in DiffusionSrcForMom</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">//       (which is calling this routine)</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> ( (solverChoice.<a class="code" href="structSolverChoice.html#a8d16d654d2a02cec62427b38498c2462">molec_diff_type</a> == <a class="code" href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255">MolecDiffType::Constant</a>) ||</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;         (solverChoice.<a class="code" href="structSolverChoice.html#a8d16d654d2a02cec62427b38498c2462">molec_diff_type</a> == <a class="code" href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a>) ) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        mu_effective += 2.0 * solverChoice.<a class="code" href="structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446">dynamicViscosity</a>; <span class="comment">// 2*mu</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> ( (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a>) ||</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;         (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>  ) ||</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;         (solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> == <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a>     )  ) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        mu_effective += <a class="code" href="EddyViscosity_8H.html#aed6c43b7b84b923b263d91a394866d6c">InterpolateTurbulentViscosity</a>(i, j, k, momentumEqn, diffDir, K_turb); <span class="comment">// 2*mu_t</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    amrex::Real stressTerm = mu_effective * strainRateDeviatoric; <span class="comment">// tau_ij = mu_effective * sigma_ij</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> stressTerm;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    amrex::Real mu_effective = 0.0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// NOTE: we do not allow LES with MolecDiffType::ConstantAlpha so we don&#39;t have to worry about the</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">//       density-weighting of the LES term in this case.  When using MolecDiffType::ConstantAlpha,</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">//       we multiply the entire stress term by (rho / rho0_trans) in DiffusionSrcForMom</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//       (which is calling this routine)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> ( (solverChoice.<a class="code" href="structSolverChoice.html#a8d16d654d2a02cec62427b38498c2462">molec_diff_type</a> == <a class="code" href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255">MolecDiffType::Constant</a>) ||</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;         (solverChoice.<a class="code" href="structSolverChoice.html#a8d16d654d2a02cec62427b38498c2462">molec_diff_type</a> == <a class="code" href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a>) ) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        mu_effective += 2.0 * solverChoice.<a class="code" href="structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446">dynamicViscosity</a>; <span class="comment">// 2*mu</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> ( (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a>) ||</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;         (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>  ) ||</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;         (solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> == <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a>     )  ) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        mu_effective += <a class="code" href="EddyViscosity_8H.html#a33f2c7e0b886868ab9eebdb8943d9d39">InterpolateTurbulentViscosity</a>(i, j, k, momentumEqn, diffDir, K_turb); <span class="comment">// 2*mu_t</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    amrex::Real stressTerm = mu_effective * strainRateDeviatoric; <span class="comment">// tau_ij = mu_effective * sigma_ij</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> stressTerm;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="StressTerm_8H.html#ad5037d63a3ae2fe3cd7603a74ce32b7b">ComputeStressTerm()</a>, and <a class="el" href="StressTerm_8H.html#aba19602e1bd20cdd819b195f72680b93">ComputeStressTermWithTerrain()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="StressTerm_8H.html#ae6d02b39a6c10e7fbfcfd78305bc4a1a">ComputeStressTerm()</a>, and <a class="el" href="StressTerm_8H.html#a099894e56752a55444fb9cd93a321138">ComputeStressTermWithTerrain()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="StressTerm_8H_ae08c36d0cdab8a95d0e4042d55dc4d94_cgraph.png" border="0" usemap="#StressTerm_8H_ae08c36d0cdab8a95d0e4042d55dc4d94_cgraph" alt=""/></div>
-<map name="StressTerm_8H_ae08c36d0cdab8a95d0e4042d55dc4d94_cgraph" id="StressTerm_8H_ae08c36d0cdab8a95d0e4042d55dc4d94_cgraph">
+<div class="center"><img src="StressTerm_8H_aad54e5c342eeaf40ea9993a4c2686437_cgraph.png" border="0" usemap="#StressTerm_8H_aad54e5c342eeaf40ea9993a4c2686437_cgraph" alt=""/></div>
+<map name="StressTerm_8H_aad54e5c342eeaf40ea9993a4c2686437_cgraph" id="StressTerm_8H_aad54e5c342eeaf40ea9993a4c2686437_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,201,32"/>
-<area shape="rect" href="EddyViscosity_8H.html#aed6c43b7b84b923b263d91a394866d6c" title="Compute K_turb (i&#45;1/2, j+1/2, k) etc given K_turb (i, j, k) is known." alt="" coords="249,5,461,32"/>
+<area shape="rect" href="EddyViscosity_8H.html#a33f2c7e0b886868ab9eebdb8943d9d39" title="Compute K_turb (i&#45;1/2, j+1/2, k) etc given K_turb (i, j, k) is known." alt="" coords="249,5,461,32"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="StressTerm_8H_ae08c36d0cdab8a95d0e4042d55dc4d94_icgraph.png" border="0" usemap="#StressTerm_8H_ae08c36d0cdab8a95d0e4042d55dc4d94_icgraph" alt=""/></div>
-<map name="StressTerm_8H_ae08c36d0cdab8a95d0e4042d55dc4d94_icgraph" id="StressTerm_8H_ae08c36d0cdab8a95d0e4042d55dc4d94_icgraph">
+<div class="center"><img src="StressTerm_8H_aad54e5c342eeaf40ea9993a4c2686437_icgraph.png" border="0" usemap="#StressTerm_8H_aad54e5c342eeaf40ea9993a4c2686437_icgraph" alt=""/></div>
+<map name="StressTerm_8H_aad54e5c342eeaf40ea9993a4c2686437_icgraph" id="StressTerm_8H_aad54e5c342eeaf40ea9993a4c2686437_icgraph">
 <area shape="rect" title=" " alt="" coords="707,31,903,57"/>
-<area shape="rect" href="StressTerm_8H.html#ad5037d63a3ae2fe3cd7603a74ce32b7b" title=" " alt="" coords="469,5,622,32"/>
-<area shape="rect" href="StressTerm_8H.html#aba19602e1bd20cdd819b195f72680b93" title=" " alt="" coords="432,56,659,83"/>
-<area shape="rect" href="Diffusion_8cpp.html#af6acd9bfb2e3e76930549a664521ceca" title=" " alt="" coords="194,5,347,32"/>
+<area shape="rect" href="StressTerm_8H.html#ae6d02b39a6c10e7fbfcfd78305bc4a1a" title=" " alt="" coords="469,5,622,32"/>
+<area shape="rect" href="StressTerm_8H.html#a099894e56752a55444fb9cd93a321138" title=" " alt="" coords="432,56,659,83"/>
+<area shape="rect" href="DiffusionSrcForMom_8H.html#adedf83d9a89c21a0b02e2987d4258ed3" title=" " alt="" coords="194,5,347,32"/>
 <area shape="rect" href="ERF__slow__rhs_8cpp.html#aedcf27cf4f5a8639dd3f54a1b72b3720" title=" " alt="" coords="5,31,109,57"/>
-<area shape="rect" href="Diffusion_8cpp.html#aa45631464006ae27f720ff1ad3f8c078" title=" " alt="" coords="157,56,384,83"/>
+<area shape="rect" href="DiffusionSrcForMom_8H.html#ac474488841ee0eacef9645589b709bb6" title=" " alt="" coords="157,56,384,83"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ad5037d63a3ae2fe3cd7603a74ce32b7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5037d63a3ae2fe3cd7603a74ce32b7b">&#9670;&nbsp;</a></span>ComputeStressTerm()</h2>
+<a id="ae6d02b39a6c10e7fbfcfd78305bc4a1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6d02b39a6c10e7fbfcfd78305bc4a1a">&#9670;&nbsp;</a></span>ComputeStressTerm()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AMREX_GPU_DEVICE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> ComputeStressTerm </td>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> ComputeStressTerm </td>
           <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>j</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>k</em>, </td>
         </tr>
         <tr>
@@ -307,26 +298,26 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a> &amp;&#160;</td>
+          <td class="paramtype">enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a>&#160;</td>
           <td class="paramname"><em>momentumEqn</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a> &amp;&#160;</td>
+          <td class="paramtype">enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a>&#160;</td>
           <td class="paramname"><em>diffDir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cellSize</em>, </td>
+          <td class="paramname"><em>cellSizeInv</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Ksmag</em>, </td>
+          <td class="paramname"><em>K_turb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -349,8 +340,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td>
-          <td class="paramname"><em>er_at_face</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>expansionRate</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -358,90 +349,81 @@ Here is the caller graph for this function:</div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<p>Compute tau_ij (m + 1/2), tau_ij (m - 1/2) where m = {i, j, k} for DNS or Smagorinsky </p>
-<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_lo = amrex::lbound(domain);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// We don&#39;t want to compute strain or expansion below the bottom surface</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">int</span> kk = std::max(k,dom_lo.z);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// S_ij term</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    amrex::Real strainRate = <a class="code" href="StrainRate_8H.html#a859d45bf3d575320908933f1dac6198d">ComputeStrainRate</a>(i, j, kk, u, v, w, momentumEqn, diffDir, cellSizeInv, domain, bc_ptr);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// sigma_ij = S_ij - D_ij</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    amrex::Real strainRateDeviatoric = strainRate - (1.0/3.0)*expansionRate;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    amrex::Real stressTerm = <a class="code" href="StressTerm_8H.html#ae08c36d0cdab8a95d0e4042d55dc4d94">ComputeStressGivenRates</a>(i, j, k, momentumEqn, diffDir, K_turb, solverChoice, strainRateDeviatoric);</div>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_lo = amrex::lbound(domain);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// We don&#39;t want to compute strain or expansion below the bottom surface</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> kk = std::max(k,dom_lo.z);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// S_ij term</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    amrex::Real strainRate = <a class="code" href="StrainRate_8H.html#acd66cfd0cbd9628a5d8e890de6ba2b40">ComputeStrainRate</a>(i, j, kk, u, v, w, momentumEqn, diffDir, cellSizeInv, domain, bc_ptr);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// sigma_ij = S_ij - D_ij</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    amrex::Real strainRateDeviatoric = strainRate - (1.0/3.0)*expansionRate;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> stressTerm;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    amrex::Real stressTerm = <a class="code" href="StressTerm_8H.html#aad54e5c342eeaf40ea9993a4c2686437">ComputeStressGivenRates</a>(i, j, k, momentumEqn, diffDir, K_turb, solverChoice, strainRateDeviatoric);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">return</span> stressTerm;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Diffusion_8cpp.html#af6acd9bfb2e3e76930549a664521ceca">DiffusionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DiffusionSrcForMom_8H.html#adedf83d9a89c21a0b02e2987d4258ed3">DiffusionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="StressTerm_8H_ad5037d63a3ae2fe3cd7603a74ce32b7b_cgraph.png" border="0" usemap="#StressTerm_8H_ad5037d63a3ae2fe3cd7603a74ce32b7b_cgraph" alt=""/></div>
-<map name="StressTerm_8H_ad5037d63a3ae2fe3cd7603a74ce32b7b_cgraph" id="StressTerm_8H_ad5037d63a3ae2fe3cd7603a74ce32b7b_cgraph">
+<div class="center"><img src="StressTerm_8H_ae6d02b39a6c10e7fbfcfd78305bc4a1a_cgraph.png" border="0" usemap="#StressTerm_8H_ae6d02b39a6c10e7fbfcfd78305bc4a1a_cgraph" alt=""/></div>
+<map name="StressTerm_8H_ae6d02b39a6c10e7fbfcfd78305bc4a1a_cgraph" id="StressTerm_8H_ae6d02b39a6c10e7fbfcfd78305bc4a1a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,335,159,361"/>
-<area shape="rect" href="StrainRate_8H.html#a859d45bf3d575320908933f1dac6198d" title=" " alt="" coords="230,233,379,260"/>
-<area shape="rect" href="StressTerm_8H.html#ae08c36d0cdab8a95d0e4042d55dc4d94" title=" " alt="" coords="207,360,403,387"/>
-<area shape="rect" href="StrainRate_8H.html#a8ac68f19d36d81499a2455b68156a452" title=" " alt="" coords="504,5,609,32"/>
-<area shape="rect" href="StrainRate_8H.html#a1875a27a119f7d397b90cea2db6d78fb" title=" " alt="" coords="711,107,816,133"/>
-<area shape="rect" href="StrainRate_8H.html#a418dc497481811accc55011eab2ccc40" title=" " alt="" coords="711,208,816,235"/>
-<area shape="rect" href="StrainRate_8H.html#a2fbe1b896e549d0b060c491e495f593c" title=" " alt="" coords="504,107,609,133"/>
-<area shape="rect" href="StrainRate_8H.html#a215aa33cfd329b4856b0623dd43e942f" title=" " alt="" coords="504,208,609,235"/>
-<area shape="rect" href="StrainRate_8H.html#a5e8c93e1026165d28a35772151daa5a5" title=" " alt="" coords="711,309,816,336"/>
-<area shape="rect" href="StrainRate_8H.html#acdaf0797abe21f888ac81a01be4355b9" title=" " alt="" coords="504,259,609,285"/>
-<area shape="rect" href="StrainRate_8H.html#acd99df2bffb1593b07b1dc9ab816bf9f" title=" " alt="" coords="504,360,609,387"/>
-<area shape="rect" href="StrainRate_8H.html#a188a155292f59392d8e4324df9ad3f48" title=" " alt="" coords="504,411,609,437"/>
-<area shape="rect" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4" title=" " alt="" coords="864,208,955,235"/>
-<area shape="rect" href="EddyViscosity_8H.html#aed6c43b7b84b923b263d91a394866d6c" title="Compute K_turb (i&#45;1/2, j+1/2, k) etc given K_turb (i, j, k) is known." alt="" coords="451,461,663,488"/>
+<area shape="rect" href="StrainRate_8H.html#acd66cfd0cbd9628a5d8e890de6ba2b40" title=" " alt="" coords="230,233,379,260"/>
+<area shape="rect" href="StressTerm_8H.html#aad54e5c342eeaf40ea9993a4c2686437" title=" " alt="" coords="207,360,403,387"/>
+<area shape="rect" href="StrainRate_8H.html#a5026f81e97583e9f423b51ddc3efa785" title=" " alt="" coords="504,5,609,32"/>
+<area shape="rect" href="StrainRate_8H.html#a307cda26785adef10e2358bae9df18c0" title=" " alt="" coords="711,107,816,133"/>
+<area shape="rect" href="StrainRate_8H.html#aa228fab98b0024fff6141d4d3173b06e" title=" " alt="" coords="711,208,816,235"/>
+<area shape="rect" href="StrainRate_8H.html#a98cd1a7f5f7268eaec59ca6a0983c624" title=" " alt="" coords="504,107,609,133"/>
+<area shape="rect" href="StrainRate_8H.html#a4197039b89cfd58052e1e922b30db1b6" title=" " alt="" coords="504,208,609,235"/>
+<area shape="rect" href="StrainRate_8H.html#a63e9c4556eba525265ba333dfbc16ca8" title=" " alt="" coords="711,309,816,336"/>
+<area shape="rect" href="StrainRate_8H.html#aea896ac09b248d0bdd3e4f524d9d3180" title=" " alt="" coords="504,259,609,285"/>
+<area shape="rect" href="StrainRate_8H.html#a1d9ccb24933557825130af86732f6788" title=" " alt="" coords="504,360,609,387"/>
+<area shape="rect" href="StrainRate_8H.html#a29819d58e2c3158318ba906a92207b71" title=" " alt="" coords="504,411,609,437"/>
+<area shape="rect" href="StrainRate_8H.html#a4deed2d46a8194a99e07f7060fac3f30" title=" " alt="" coords="864,208,955,235"/>
+<area shape="rect" href="EddyViscosity_8H.html#a33f2c7e0b886868ab9eebdb8943d9d39" title="Compute K_turb (i&#45;1/2, j+1/2, k) etc given K_turb (i, j, k) is known." alt="" coords="451,461,663,488"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="StressTerm_8H_ad5037d63a3ae2fe3cd7603a74ce32b7b_icgraph.png" border="0" usemap="#StressTerm_8H_ad5037d63a3ae2fe3cd7603a74ce32b7b_icgraph" alt=""/></div>
-<map name="StressTerm_8H_ad5037d63a3ae2fe3cd7603a74ce32b7b_icgraph" id="StressTerm_8H_ad5037d63a3ae2fe3cd7603a74ce32b7b_icgraph">
+<div class="center"><img src="StressTerm_8H_ae6d02b39a6c10e7fbfcfd78305bc4a1a_icgraph.png" border="0" usemap="#StressTerm_8H_ae6d02b39a6c10e7fbfcfd78305bc4a1a_icgraph" alt=""/></div>
+<map name="StressTerm_8H_ae6d02b39a6c10e7fbfcfd78305bc4a1a_icgraph" id="StressTerm_8H_ae6d02b39a6c10e7fbfcfd78305bc4a1a_icgraph">
 <area shape="rect" title=" " alt="" coords="359,5,512,32"/>
-<area shape="rect" href="Diffusion_8cpp.html#af6acd9bfb2e3e76930549a664521ceca" title=" " alt="" coords="157,5,311,32"/>
+<area shape="rect" href="DiffusionSrcForMom_8H.html#adedf83d9a89c21a0b02e2987d4258ed3" title=" " alt="" coords="157,5,311,32"/>
 <area shape="rect" href="ERF__slow__rhs_8cpp.html#aedcf27cf4f5a8639dd3f54a1b72b3720" title=" " alt="" coords="5,5,109,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aba19602e1bd20cdd819b195f72680b93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba19602e1bd20cdd819b195f72680b93">&#9670;&nbsp;</a></span>ComputeStressTermWithTerrain()</h2>
+<a id="a099894e56752a55444fb9cd93a321138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a099894e56752a55444fb9cd93a321138">&#9670;&nbsp;</a></span>ComputeStressTermWithTerrain()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AMREX_GPU_DEVICE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> ComputeStressTermWithTerrain </td>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> ComputeStressTermWithTerrain </td>
           <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>j</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>k</em>, </td>
         </tr>
         <tr>
@@ -465,13 +447,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a> &amp;&#160;</td>
+          <td class="paramtype">enum <a class="el" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9">MomentumEqn</a>&#160;</td>
           <td class="paramname"><em>momentumEqn</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a> &amp;&#160;</td>
+          <td class="paramtype">enum <a class="el" href="DataStruct_8H.html#a7264869c7035dc345642d2461b168715">DiffusionDir</a>&#160;</td>
           <td class="paramname"><em>diffDir</em>, </td>
         </tr>
         <tr>
@@ -516,91 +498,86 @@ Here is the caller graph for this function:</div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_lo = amrex::lbound(domain);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_hi = amrex::ubound(domain);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// We don&#39;t want to compute strain or expansion below the bottom surface</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> kk = std::max(k,dom_lo.z);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    amrex::Real strainRate, expansionRate;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// S_ij term</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> ( (momentumEqn == <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a> &amp;&amp; k &lt;= dom_hi.z) ||</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;         (momentumEqn != <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a> &amp;&amp; k &lt;  dom_hi.z) )</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        strainRate = <a class="code" href="StrainRate_8H.html#a1fcbda39facba5c28508bdd82c5fb63b">ComputeStrainRateWithTerrain</a>(i, j, kk, u, v, w, momentumEqn, diffDir, cellSizeInv, z_nd, domain, bc_ptr);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        strainRate = <a class="code" href="StrainRate_8H.html#a859d45bf3d575320908933f1dac6198d">ComputeStrainRate</a>(i, j, kk, u, v, w, momentumEqn, diffDir, cellSizeInv, domain, bc_ptr);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// D_ij term</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> ( (momentumEqn == <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a> &amp;&amp; k &lt;= dom_hi.z) ||</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;         (momentumEqn != <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a> &amp;&amp; k &lt;  dom_hi.z) )</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        expansionRate = <a class="code" href="ExpansionRate_8H.html#a45332d593bb88a7e8c42342b6af02ec7">ComputeExpansionRateWithTerrain</a>(i, j, kk, u, v, w, momentumEqn, diffDir, z_nd, cellSizeInv);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        expansionRate = <a class="code" href="ExpansionRate_8H.html#a62040e6a2ff50d4c39f83bea3c2da1c1">ComputeExpansionRate</a>(i, j, k, u, v, w, momentumEqn, diffDir, cellSizeInv);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// sigma_ij = S_ij - D_ij</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    amrex::Real strainRateDeviatoric = strainRate - expansionRate;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    amrex::Real stressTerm = <a class="code" href="StressTerm_8H.html#ae08c36d0cdab8a95d0e4042d55dc4d94">ComputeStressGivenRates</a>(i, j, k, momentumEqn, diffDir, K_turb, solverChoice, strainRateDeviatoric);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> stressTerm;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_lo = amrex::lbound(domain);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_hi = amrex::ubound(domain);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// We don&#39;t want to compute strain or expansion below the bottom surface</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">int</span> kk = std::max(k,dom_lo.z);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    amrex::Real strainRate, expansionRate;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// S_ij term</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> ( (momentumEqn == <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a> &amp;&amp; k &lt;= dom_hi.z) ||</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;         (momentumEqn != <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a> &amp;&amp; k &lt;  dom_hi.z) )</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        strainRate = <a class="code" href="StrainRate_8H.html#a645fddf58335cdf8cc9e4361ee755453">ComputeStrainRateWithTerrain</a>(i, j, kk, u, v, w, momentumEqn, diffDir, cellSizeInv, z_nd, domain, bc_ptr);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        strainRate = <a class="code" href="StrainRate_8H.html#acd66cfd0cbd9628a5d8e890de6ba2b40">ComputeStrainRate</a>(i, j, kk, u, v, w, momentumEqn, diffDir, cellSizeInv, domain, bc_ptr);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// D_ij term</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> ( (momentumEqn == <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a> &amp;&amp; k &lt;= dom_hi.z) ||</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;         (momentumEqn != <a class="code" href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a> &amp;&amp; k &lt;  dom_hi.z) )</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        expansionRate = <a class="code" href="ExpansionRate_8H.html#a17d9761564fa9b218b1eae1bc9cf3bf7">ComputeExpansionRateWithTerrain</a>(i, j, kk, u, v, w, momentumEqn, diffDir, z_nd, cellSizeInv);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        expansionRate = <a class="code" href="ExpansionRate_8H.html#ad3f9b77b330e301cd7ff174294500a28">ComputeExpansionRate</a>(i, j, k, u, v, w, momentumEqn, diffDir, cellSizeInv);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// sigma_ij = S_ij - D_ij</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    amrex::Real strainRateDeviatoric = strainRate - expansionRate;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    amrex::Real stressTerm = <a class="code" href="StressTerm_8H.html#aad54e5c342eeaf40ea9993a4c2686437">ComputeStressGivenRates</a>(i, j, k, momentumEqn, diffDir, K_turb, solverChoice, strainRateDeviatoric);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> stressTerm;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Diffusion_8cpp.html#aa45631464006ae27f720ff1ad3f8c078">DiffusionSrcForMomWithTerrain()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DiffusionSrcForMom_8H.html#ac474488841ee0eacef9645589b709bb6">DiffusionSrcForMomWithTerrain()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="StressTerm_8H_aba19602e1bd20cdd819b195f72680b93_cgraph.png" border="0" usemap="#StressTerm_8H_aba19602e1bd20cdd819b195f72680b93_cgraph" alt=""/></div>
-<map name="StressTerm_8H_aba19602e1bd20cdd819b195f72680b93_cgraph" id="StressTerm_8H_aba19602e1bd20cdd819b195f72680b93_cgraph">
+<div class="center"><img src="StressTerm_8H_a099894e56752a55444fb9cd93a321138_cgraph.png" border="0" usemap="#StressTerm_8H_a099894e56752a55444fb9cd93a321138_cgraph" alt=""/></div>
+<map name="StressTerm_8H_a099894e56752a55444fb9cd93a321138_cgraph" id="StressTerm_8H_a099894e56752a55444fb9cd93a321138_cgraph">
 <area shape="rect" title=" " alt="" coords="5,817,232,844"/>
-<area shape="rect" href="ExpansionRate_8H.html#a62040e6a2ff50d4c39f83bea3c2da1c1" title=" " alt="" coords="302,311,481,337"/>
-<area shape="rect" href="ExpansionRate_8H.html#a45332d593bb88a7e8c42342b6af02ec7" title=" " alt="" coords="287,1114,495,1155"/>
-<area shape="rect" href="StrainRate_8H.html#a859d45bf3d575320908933f1dac6198d" title=" " alt="" coords="317,817,466,844"/>
-<area shape="rect" href="StrainRate_8H.html#a1fcbda39facba5c28508bdd82c5fb63b" title=" " alt="" coords="280,361,503,388"/>
-<area shape="rect" href="StressTerm_8H.html#ae08c36d0cdab8a95d0e4042d55dc4d94" title=" " alt="" coords="293,1227,489,1253"/>
-<area shape="rect" href="TerrainMetrics_8H.html#a8bb170f2d3986875cd06c2c3d0174a59" title=" " alt="" coords="559,919,763,945"/>
-<area shape="rect" href="TerrainMetrics_8H.html#aa583c7ebfef25f449af86111b0572533" title=" " alt="" coords="577,1121,745,1148"/>
-<area shape="rect" href="TerrainMetrics_8H.html#adcaa7dd1b91191b54eb2f59a4cbb567b" title=" " alt="" coords="577,1172,745,1199"/>
-<area shape="rect" href="TerrainMetrics_8H.html#adb62ee7692551a4bacfa38a3e8592fdf" title=" " alt="" coords="603,1223,718,1249"/>
-<area shape="rect" href="StrainRate_8H.html#a8ac68f19d36d81499a2455b68156a452" title=" " alt="" coords="608,615,713,641"/>
-<area shape="rect" href="StrainRate_8H.html#a1875a27a119f7d397b90cea2db6d78fb" title=" " alt="" coords="855,868,961,895"/>
-<area shape="rect" href="StrainRate_8H.html#a418dc497481811accc55011eab2ccc40" title=" " alt="" coords="855,767,961,793"/>
-<area shape="rect" href="StrainRate_8H.html#a2fbe1b896e549d0b060c491e495f593c" title=" " alt="" coords="608,868,713,895"/>
-<area shape="rect" href="StrainRate_8H.html#a215aa33cfd329b4856b0623dd43e942f" title=" " alt="" coords="608,1020,713,1047"/>
-<area shape="rect" href="StrainRate_8H.html#a5e8c93e1026165d28a35772151daa5a5" title=" " alt="" coords="855,665,961,692"/>
-<area shape="rect" href="StrainRate_8H.html#acdaf0797abe21f888ac81a01be4355b9" title=" " alt="" coords="608,817,713,844"/>
-<area shape="rect" href="StrainRate_8H.html#acd99df2bffb1593b07b1dc9ab816bf9f" title=" " alt="" coords="608,716,713,743"/>
-<area shape="rect" href="StrainRate_8H.html#a188a155292f59392d8e4324df9ad3f48" title=" " alt="" coords="608,1071,713,1097"/>
-<area shape="rect" href="StrainRate_8H.html#afbebd7a5caa9e22797c3b0336613cda4" title=" " alt="" coords="1045,615,1136,641"/>
-<area shape="rect" href="TerrainMetrics_8H.html#a512cfaebd0adca34a13ea48f21e79333" title=" " alt="" coords="553,311,768,337"/>
-<area shape="rect" href="TerrainMetrics_8H.html#a05e466267ebfe9e53f9f59c40004e349" title=" " alt="" coords="553,361,768,388"/>
-<area shape="rect" href="TerrainMetrics_8H.html#a2eaaf5b97dc24b0c637c95bc6f200b1e" title=" " alt="" coords="551,412,771,439"/>
-<area shape="rect" href="StrainRate_8H.html#a016fd0466868022bd8dc31c999ce35a5" title=" " alt="" coords="571,463,750,489"/>
-<area shape="rect" href="StrainRate_8H.html#abebc6c2f4eb79f9a90ae025e76c27d1f" title=" " alt="" coords="819,564,997,591"/>
-<area shape="rect" href="StrainRate_8H.html#a54da964731e6046c4061192296648de0" title=" " alt="" coords="819,57,997,84"/>
-<area shape="rect" href="StrainRate_8H.html#a26a2938110510d3135afb99fa8bfe6ff" title=" " alt="" coords="571,564,750,591"/>
-<area shape="rect" href="StrainRate_8H.html#a28cc072b3120fd9cfedbd6601a87fe0f" title=" " alt="" coords="571,209,750,236"/>
-<area shape="rect" href="StrainRate_8H.html#a09d8a6147380b76116b8103c2ab365de" title=" " alt="" coords="819,159,997,185"/>
-<area shape="rect" href="StrainRate_8H.html#ae93d4e435e8c1ff13825ada3da1cbcb4" title=" " alt="" coords="571,57,750,84"/>
-<area shape="rect" href="StrainRate_8H.html#ab93fedf8e161d95c7b8d247633d01348" title=" " alt="" coords="571,159,750,185"/>
-<area shape="rect" href="StrainRate_8H.html#a6c89d0ed6fb6d46570e2bd022963226d" title=" " alt="" coords="571,260,750,287"/>
-<area shape="rect" href="EddyViscosity_8H.html#aed6c43b7b84b923b263d91a394866d6c" title="Compute K_turb (i&#45;1/2, j+1/2, k) etc given K_turb (i, j, k) is known." alt="" coords="555,1273,767,1300"/>
+<area shape="rect" href="ExpansionRate_8H.html#ad3f9b77b330e301cd7ff174294500a28" title=" " alt="" coords="302,311,481,337"/>
+<area shape="rect" href="ExpansionRate_8H.html#a17d9761564fa9b218b1eae1bc9cf3bf7" title=" " alt="" coords="287,1114,495,1155"/>
+<area shape="rect" href="StrainRate_8H.html#acd66cfd0cbd9628a5d8e890de6ba2b40" title=" " alt="" coords="317,817,466,844"/>
+<area shape="rect" href="StrainRate_8H.html#a645fddf58335cdf8cc9e4361ee755453" title=" " alt="" coords="280,361,503,388"/>
+<area shape="rect" href="StressTerm_8H.html#aad54e5c342eeaf40ea9993a4c2686437" title=" " alt="" coords="293,1227,489,1253"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a95f41823cbd8c598de71ddcbc7173cbc" title=" " alt="" coords="559,919,763,945"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a30b23828cd40d8137e1780c9c8294d44" title=" " alt="" coords="577,1121,745,1148"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a397ab624cd274ee60790a2b1b7f1296b" title=" " alt="" coords="577,1172,745,1199"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a002996309aac722698ccbc1e66f2e28c" title=" " alt="" coords="603,1223,718,1249"/>
+<area shape="rect" href="StrainRate_8H.html#a5026f81e97583e9f423b51ddc3efa785" title=" " alt="" coords="608,615,713,641"/>
+<area shape="rect" href="StrainRate_8H.html#a307cda26785adef10e2358bae9df18c0" title=" " alt="" coords="855,868,961,895"/>
+<area shape="rect" href="StrainRate_8H.html#aa228fab98b0024fff6141d4d3173b06e" title=" " alt="" coords="855,767,961,793"/>
+<area shape="rect" href="StrainRate_8H.html#a98cd1a7f5f7268eaec59ca6a0983c624" title=" " alt="" coords="608,868,713,895"/>
+<area shape="rect" href="StrainRate_8H.html#a4197039b89cfd58052e1e922b30db1b6" title=" " alt="" coords="608,1020,713,1047"/>
+<area shape="rect" href="StrainRate_8H.html#a63e9c4556eba525265ba333dfbc16ca8" title=" " alt="" coords="855,665,961,692"/>
+<area shape="rect" href="StrainRate_8H.html#aea896ac09b248d0bdd3e4f524d9d3180" title=" " alt="" coords="608,817,713,844"/>
+<area shape="rect" href="StrainRate_8H.html#a1d9ccb24933557825130af86732f6788" title=" " alt="" coords="608,716,713,743"/>
+<area shape="rect" href="StrainRate_8H.html#a29819d58e2c3158318ba906a92207b71" title=" " alt="" coords="608,1071,713,1097"/>
+<area shape="rect" href="StrainRate_8H.html#a4deed2d46a8194a99e07f7060fac3f30" title=" " alt="" coords="1045,615,1136,641"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a814e866f06312e508b42efe4a99812bf" title=" " alt="" coords="553,311,768,337"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a4819616a46d9632e68a548c0fcf6731e" title=" " alt="" coords="553,361,768,388"/>
+<area shape="rect" href="TerrainMetrics_8H.html#ad79fef554cbb9d33702dd5e3cde8af6d" title=" " alt="" coords="551,412,771,439"/>
+<area shape="rect" href="StrainRate_8H.html#a2b97cd55d6896a3c1dfe34ed35196406" title=" " alt="" coords="571,463,750,489"/>
+<area shape="rect" href="StrainRate_8H.html#a6c7bda6080603c799df9c1cf23431715" title=" " alt="" coords="819,564,997,591"/>
+<area shape="rect" href="StrainRate_8H.html#a56a9ab10b7752977d24beff3e095eb5e" title=" " alt="" coords="819,57,997,84"/>
+<area shape="rect" href="StrainRate_8H.html#ab293d929533e103fa163edfa9fd9a82e" title=" " alt="" coords="571,564,750,591"/>
+<area shape="rect" href="StrainRate_8H.html#a86c1e626631f56dc2cd4e674f486d7f5" title=" " alt="" coords="571,209,750,236"/>
+<area shape="rect" href="StrainRate_8H.html#acd1c3c35ef6438615b34fb89abac1832" title=" " alt="" coords="819,159,997,185"/>
+<area shape="rect" href="StrainRate_8H.html#ad1df258c740d1fe83cf342c5cbdbae28" title=" " alt="" coords="571,57,750,84"/>
+<area shape="rect" href="StrainRate_8H.html#aa8206255293083aedc7003efbc237a47" title=" " alt="" coords="571,159,750,185"/>
+<area shape="rect" href="StrainRate_8H.html#a95d1850997b2e154ad787c287bd4d214" title=" " alt="" coords="571,260,750,287"/>
+<area shape="rect" href="EddyViscosity_8H.html#a33f2c7e0b886868ab9eebdb8943d9d39" title="Compute K_turb (i&#45;1/2, j+1/2, k) etc given K_turb (i, j, k) is known." alt="" coords="555,1273,767,1300"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="StressTerm_8H_aba19602e1bd20cdd819b195f72680b93_icgraph.png" border="0" usemap="#StressTerm_8H_aba19602e1bd20cdd819b195f72680b93_icgraph" alt=""/></div>
-<map name="StressTerm_8H_aba19602e1bd20cdd819b195f72680b93_icgraph" id="StressTerm_8H_aba19602e1bd20cdd819b195f72680b93_icgraph">
+<div class="center"><img src="StressTerm_8H_a099894e56752a55444fb9cd93a321138_icgraph.png" border="0" usemap="#StressTerm_8H_a099894e56752a55444fb9cd93a321138_icgraph" alt=""/></div>
+<map name="StressTerm_8H_a099894e56752a55444fb9cd93a321138_icgraph" id="StressTerm_8H_a099894e56752a55444fb9cd93a321138_icgraph">
 <area shape="rect" title=" " alt="" coords="432,5,659,32"/>
-<area shape="rect" href="Diffusion_8cpp.html#aa45631464006ae27f720ff1ad3f8c078" title=" " alt="" coords="157,5,384,32"/>
+<area shape="rect" href="DiffusionSrcForMom_8H.html#ac474488841ee0eacef9645589b709bb6" title=" " alt="" coords="157,5,384,32"/>
 <area shape="rect" href="ERF__slow__rhs_8cpp.html#aedcf27cf4f5a8639dd3f54a1b72b3720" title=" " alt="" coords="5,5,109,32"/>
 </map>
 </div>
@@ -610,21 +587,21 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aDataStruct_8H_html_a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255"><div class="ttname"><a href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255">MolecDiffType::Constant</a></div><div class="ttdeci">@ Constant</div></div>
-<div class="ttc" id="aEddyViscosity_8H_html_aed6c43b7b84b923b263d91a394866d6c"><div class="ttname"><a href="EddyViscosity_8H.html#aed6c43b7b84b923b263d91a394866d6c">InterpolateTurbulentViscosity</a></div><div class="ttdeci">AMREX_GPU_DEVICE amrex::Real InterpolateTurbulentViscosity(const int &amp;i, const int &amp;j, const int &amp;k, const enum MomentumEqn &amp;momentumEqn, const enum DiffusionDir &amp;diffDir, const amrex::Array4&lt; amrex::Real &gt; &amp;K_turb)</div><div class="ttdoc">Compute K_turb (i-1/2, j+1/2, k) etc given K_turb (i, j, k) is known.</div><div class="ttdef"><b>Definition:</b> EddyViscosity.H:130</div></div>
+<div class="ttc" id="aStrainRate_8H_html_a645fddf58335cdf8cc9e4361ee755453"><div class="ttname"><a href="StrainRate_8H.html#a645fddf58335cdf8cc9e4361ee755453">ComputeStrainRateWithTerrain</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeStrainRateWithTerrain(int i, int j, int k, const amrex::Array4&lt; amrex::Real const &gt; &amp;u, const amrex::Array4&lt; amrex::Real const &gt; &amp;v, const amrex::Array4&lt; amrex::Real const &gt; &amp;w, enum MomentumEqn momentumEqn, enum DiffusionDir diffDir, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:294</div></div>
 <div class="ttc" id="astructSolverChoice_html_a8d16d654d2a02cec62427b38498c2462"><div class="ttname"><a href="structSolverChoice.html#a8d16d654d2a02cec62427b38498c2462">SolverChoice::molec_diff_type</a></div><div class="ttdeci">MolecDiffType molec_diff_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:339</div></div>
+<div class="ttc" id="aEddyViscosity_8H_html_a33f2c7e0b886868ab9eebdb8943d9d39"><div class="ttname"><a href="EddyViscosity_8H.html#a33f2c7e0b886868ab9eebdb8943d9d39">InterpolateTurbulentViscosity</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real InterpolateTurbulentViscosity(int i, int j, int k, enum MomentumEqn momentumEqn, enum DiffusionDir diffDir, const amrex::Array4&lt; amrex::Real &gt; &amp;K_turb)</div><div class="ttdoc">Compute K_turb (i-1/2, j+1/2, k) etc given K_turb (i, j, k) is known.</div><div class="ttdef"><b>Definition:</b> EddyViscosity.H:135</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9afbade9e36a3f36d3d676c1b808451dd7">MomentumEqn::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="astructSolverChoice_html_a53966e639b0307b7420fd6abe8412fa0"><div class="ttname"><a href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">SolverChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:351</div></div>
-<div class="ttc" id="aStrainRate_8H_html_a1fcbda39facba5c28508bdd82c5fb63b"><div class="ttname"><a href="StrainRate_8H.html#a1fcbda39facba5c28508bdd82c5fb63b">ComputeStrainRateWithTerrain</a></div><div class="ttdeci">AMREX_GPU_DEVICE amrex::Real ComputeStrainRateWithTerrain(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;u, const amrex::Array4&lt; amrex::Real const &gt; &amp;v, const amrex::Array4&lt; amrex::Real const &gt; &amp;w, const enum MomentumEqn &amp;momentumEqn, const enum DiffusionDir &amp;diffDir, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:292</div></div>
+<div class="ttc" id="aStressTerm_8H_html_aad54e5c342eeaf40ea9993a4c2686437"><div class="ttname"><a href="StressTerm_8H.html#aad54e5c342eeaf40ea9993a4c2686437">ComputeStressGivenRates</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeStressGivenRates(int i, int j, int k, enum MomentumEqn momentumEqn, enum DiffusionDir &amp;diffDir, const amrex::Array4&lt; amrex::Real &gt; &amp;K_turb, const SolverChoice &amp;solverChoice, amrex::Real strainRateDeviatoric)</div><div class="ttdef"><b>Definition:</b> StressTerm.H:13</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601"><div class="ttname"><a href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a></div><div class="ttdeci">@ MYNN25</div></div>
-<div class="ttc" id="aExpansionRate_8H_html_a62040e6a2ff50d4c39f83bea3c2da1c1"><div class="ttname"><a href="ExpansionRate_8H.html#a62040e6a2ff50d4c39f83bea3c2da1c1">ComputeExpansionRate</a></div><div class="ttdeci">AMREX_GPU_DEVICE amrex::Real ComputeExpansionRate(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const enum MomentumEqn &amp;momentumEqn, const enum DiffusionDir &amp;diffDir, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</div><div class="ttdef"><b>Definition:</b> ExpansionRate.H:165</div></div>
-<div class="ttc" id="aExpansionRate_8H_html_a45332d593bb88a7e8c42342b6af02ec7"><div class="ttname"><a href="ExpansionRate_8H.html#a45332d593bb88a7e8c42342b6af02ec7">ComputeExpansionRateWithTerrain</a></div><div class="ttdeci">AMREX_GPU_DEVICE amrex::Real ComputeExpansionRateWithTerrain(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const enum MomentumEqn &amp;momentumEqn, const enum DiffusionDir &amp;diffDir, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</div><div class="ttdef"><b>Definition:</b> ExpansionRate.H:9</div></div>
+<div class="ttc" id="aExpansionRate_8H_html_ad3f9b77b330e301cd7ff174294500a28"><div class="ttname"><a href="ExpansionRate_8H.html#ad3f9b77b330e301cd7ff174294500a28">ComputeExpansionRate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeExpansionRate(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, enum MomentumEqn momentumEqn, enum DiffusionDir diffDir, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</div><div class="ttdef"><b>Definition:</b> ExpansionRate.H:166</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a></div><div class="ttdeci">@ Deardorff</div></div>
 <div class="ttc" id="astructSolverChoice_html_a0a031373331c9aca22a47b0995729f46"><div class="ttname"><a href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">SolverChoice::pbl_type</a></div><div class="ttdeci">PBLType pbl_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:371</div></div>
 <div class="ttc" id="astructSolverChoice_html_a244a1303b78fa79d217bd86d124f0446"><div class="ttname"><a href="structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446">SolverChoice::dynamicViscosity</a></div><div class="ttdeci">amrex::Real dynamicViscosity</div><div class="ttdef"><b>Definition:</b> DataStruct.H:348</div></div>
-<div class="ttc" id="aStrainRate_8H_html_a859d45bf3d575320908933f1dac6198d"><div class="ttname"><a href="StrainRate_8H.html#a859d45bf3d575320908933f1dac6198d">ComputeStrainRate</a></div><div class="ttdeci">AMREX_GPU_DEVICE amrex::Real ComputeStrainRate(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;u, const amrex::Array4&lt; amrex::Real const &gt; &amp;v, const amrex::Array4&lt; amrex::Real const &gt; &amp;w, const enum MomentumEqn &amp;momentumEqn, const enum DiffusionDir &amp;diffDir, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:567</div></div>
+<div class="ttc" id="aStrainRate_8H_html_acd66cfd0cbd9628a5d8e890de6ba2b40"><div class="ttname"><a href="StrainRate_8H.html#acd66cfd0cbd9628a5d8e890de6ba2b40">ComputeStrainRate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeStrainRate(int i, int j, int k, const amrex::Array4&lt; amrex::Real const &gt; &amp;u, const amrex::Array4&lt; amrex::Real const &gt; &amp;v, const amrex::Array4&lt; amrex::Real const &gt; &amp;w, enum MomentumEqn momentumEqn, enum DiffusionDir diffDir, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> StrainRate.H:577</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288"><div class="ttname"><a href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a></div><div class="ttdeci">@ ConstantAlpha</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a></div><div class="ttdeci">@ Smagorinsky</div></div>
-<div class="ttc" id="aStressTerm_8H_html_ae08c36d0cdab8a95d0e4042d55dc4d94"><div class="ttname"><a href="StressTerm_8H.html#ae08c36d0cdab8a95d0e4042d55dc4d94">ComputeStressGivenRates</a></div><div class="ttdeci">AMREX_GPU_DEVICE amrex::Real ComputeStressGivenRates(const int &amp;i, const int &amp;j, const int &amp;k, const enum MomentumEqn &amp;momentumEqn, const enum DiffusionDir &amp;diffDir, const amrex::Array4&lt; amrex::Real &gt; &amp;K_turb, const SolverChoice &amp;solverChoice, amrex::Real strainRateDeviatoric)</div><div class="ttdef"><b>Definition:</b> StressTerm.H:12</div></div>
+<div class="ttc" id="aExpansionRate_8H_html_a17d9761564fa9b218b1eae1bc9cf3bf7"><div class="ttname"><a href="ExpansionRate_8H.html#a17d9761564fa9b218b1eae1bc9cf3bf7">ComputeExpansionRateWithTerrain</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeExpansionRateWithTerrain(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, enum MomentumEqn momentumEqn, enum DiffusionDir diffDir, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv)</div><div class="ttdef"><b>Definition:</b> ExpansionRate.H:10</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

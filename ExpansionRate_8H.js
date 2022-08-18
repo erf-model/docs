@@ -1,5 +1,5 @@
 var ExpansionRate_8H =
 [
-    [ "ComputeExpansionRate", "ExpansionRate_8H.html#a62040e6a2ff50d4c39f83bea3c2da1c1", null ],
-    [ "ComputeExpansionRateWithTerrain", "ExpansionRate_8H.html#a45332d593bb88a7e8c42342b6af02ec7", null ]
+    [ "ComputeExpansionRate", "ExpansionRate_8H.html#ad3f9b77b330e301cd7ff174294500a28", null ],
+    [ "ComputeExpansionRateWithTerrain", "ExpansionRate_8H.html#a17d9761564fa9b218b1eae1bc9cf3bf7", null ]
 ];
