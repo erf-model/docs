@@ -25,7 +25,7 @@ var searchData=
   ['derived_5fnames_168',['derived_names',['../classERF.html#a9fc0f6e6ca35036d2e3a36dd42e66435',1,'ERF']]],
   ['detj_5fcc_169',['detJ_cc',['../classERF.html#a30f8b851ed29d38695d44cff257f14e6',1,'ERF']]],
   ['detj_5fcc_5fnew_170',['detJ_cc_new',['../classERF.html#ae39bf64c5306b1dd939d82d9df728daa',1,'ERF']]],
-  ['dhdt_171',['dhdt',['../prob__common_8H.html#a998b20dd24e44faaed7df8596f21f95c',1,'prob_common.H']]],
+  ['dhdt_171',['dhdt',['../prob__common_8H.html#af4dc8ea8db1ca701fbe3b3f357da6c33',1,'prob_common.H']]],
   ['diffuse_5fqke_5f3d_172',['diffuse_QKE_3D',['../structSolverChoice.html#ad8f19f1ba25a4de9578af14ec787c0cc',1,'SolverChoice']]],
   ['diffusion_2ecpp_173',['Diffusion.cpp',['../Diffusion_8cpp.html',1,'']]],
   ['diffusiondir_174',['DiffusionDir',['../DataStruct_8H.html#a7264869c7035dc345642d2461b168715',1,'DataStruct.H']]],
