@@ -1392,35 +1392,23 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b">advance</a>(state_old, state_new, old_time, dt_advance);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// Convert updated momentum to updated velocity on faces after we have taken a timestep</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="MomentumToVelocity_8cpp.html#a79080d9506305b3b98f783cc6c2cda47">MomentumToVelocity</a>(xvel_new, IntVect::TheZeroVector(),</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                       yvel_new, IntVect::TheZeroVector(),</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                       zvel_new, IntVect::TheZeroVector(),</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                       state_new[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>],</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                       state_new[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a>],</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                       state_new[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a>],</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                       state_new[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12abde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a>]);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a>) Print() &lt;&lt; <span class="stringliteral">&quot;Done with advance at level &quot;</span> &lt;&lt; level &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a>) Print() &lt;&lt; <span class="stringliteral">&quot;Done with advance at level &quot;</span> &lt;&lt; level &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERF_a8f38196e85ebfe11ea2113e9890e6ca2_cgraph.png" border="0" usemap="#classERF_a8f38196e85ebfe11ea2113e9890e6ca2_cgraph" alt=""/></div>
 <map name="classERF_a8f38196e85ebfe11ea2113e9890e6ca2_cgraph" id="classERF_a8f38196e85ebfe11ea2113e9890e6ca2_cgraph">
-<area shape="rect" title=" " alt="" coords="5,294,140,321"/>
+<area shape="rect" title=" " alt="" coords="5,274,140,301"/>
 <area shape="rect" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b" title=" " alt="" coords="229,5,369,47"/>
-<area shape="rect" href="MomentumToVelocity_8cpp.html#a79080d9506305b3b98f783cc6c2cda47" title=" " alt="" coords="217,71,380,98"/>
-<area shape="rect" href="classMRISplitIntegrator.html#af38c1c68c88d43bcd33997707067eacc" title=" " alt="" coords="229,123,369,164"/>
-<area shape="rect" href="classMRISplitIntegrator.html#a316db6eeed87013e7d3549a71608f3fc" title=" " alt="" coords="215,188,382,229"/>
-<area shape="rect" href="classMRISplitIntegrator.html#a67d8d337d497c6b2d3001b1416710555" title=" " alt="" coords="227,253,370,295"/>
-<area shape="rect" href="classMRISplitIntegrator.html#a6c8889da629b1f2ea96e8d1f2cd52342" title=" " alt="" coords="229,319,369,360"/>
-<area shape="rect" href="classMRISplitIntegrator.html#ad31fb2cda1fc2dce80820ed7c4a3c052" title=" " alt="" coords="188,384,409,425"/>
-<area shape="rect" href="classMRISplitIntegrator.html#a9a758851a3695f4098c9d4ae06d6007b" title=" " alt="" coords="224,449,373,491"/>
-<area shape="rect" href="classMRISplitIntegrator.html#ab7c3060464f20a8a7d009330bcde7536" title=" " alt="" coords="227,515,370,556"/>
-<area shape="rect" href="SpatialStencils_8H.html#afc02a222736ea1f0219b287fb472a765" title=" " alt="" coords="217,581,380,607"/>
+<area shape="rect" href="classMRISplitIntegrator.html#af38c1c68c88d43bcd33997707067eacc" title=" " alt="" coords="229,71,369,112"/>
+<area shape="rect" href="classMRISplitIntegrator.html#a316db6eeed87013e7d3549a71608f3fc" title=" " alt="" coords="215,136,382,177"/>
+<area shape="rect" href="classMRISplitIntegrator.html#a67d8d337d497c6b2d3001b1416710555" title=" " alt="" coords="227,201,370,243"/>
+<area shape="rect" href="classMRISplitIntegrator.html#a6c8889da629b1f2ea96e8d1f2cd52342" title=" " alt="" coords="229,267,369,308"/>
+<area shape="rect" href="classMRISplitIntegrator.html#ad31fb2cda1fc2dce80820ed7c4a3c052" title=" " alt="" coords="188,332,409,373"/>
+<area shape="rect" href="classMRISplitIntegrator.html#a9a758851a3695f4098c9d4ae06d6007b" title=" " alt="" coords="224,397,373,439"/>
+<area shape="rect" href="classMRISplitIntegrator.html#ab7c3060464f20a8a7d009330bcde7536" title=" " alt="" coords="227,463,370,504"/>
+<area shape="rect" href="SpatialStencils_8H.html#afc02a222736ea1f0219b287fb472a765" title=" " alt="" coords="217,529,380,555"/>
 <area shape="rect" href="classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86" title=" " alt="" coords="457,5,680,47"/>
 </map>
 </div>
@@ -9624,7 +9612,6 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a413293737b0021c97b50c62756561446"><div class="ttname"><a href="classERF.html#a413293737b0021c97b50c62756561446">ERF::h_havg_pressure</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; h_havg_pressure</div><div class="ttdef"><b>Definition:</b> ERF.H:614</div></div>
 <div class="ttc" id="aclassERF_html_a40ebca562ac79fcc9250e17e0f4a5b41"><div class="ttname"><a href="classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41">ERF::AverageDownTo</a></div><div class="ttdeci">void AverageDownTo(int crse_lev)</div><div class="ttdef"><b>Definition:</b> ERF.cpp:1037</div></div>
 <div class="ttc" id="aclassERF_html_a43d0b17f6e155691a1e9474526df3af5"><div class="ttname"><a href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">ERF::verbose</a></div><div class="ttdeci">static int verbose</div><div class="ttdef"><b>Definition:</b> ERF.H:554</div></div>
-<div class="ttc" id="aMomentumToVelocity_8cpp_html_a79080d9506305b3b98f783cc6c2cda47"><div class="ttname"><a href="MomentumToVelocity_8cpp.html#a79080d9506305b3b98f783cc6c2cda47">MomentumToVelocity</a></div><div class="ttdeci">void MomentumToVelocity(MultiFab &amp;xvel, const IntVect &amp;xvel_ngrow, MultiFab &amp;yvel, const IntVect &amp;yvel_ngrow, MultiFab &amp;zvel, const IntVect &amp;zvel_ngrow, const MultiFab &amp;cons_in, const MultiFab &amp;xmom_in, const MultiFab &amp;ymom_in, const MultiFab &amp;zmom_in)</div><div class="ttdef"><b>Definition:</b> MomentumToVelocity.cpp:15</div></div>
 <div class="ttc" id="aclassERF_html_a80ad08512968ec45635df68abe66b1fc"><div class="ttname"><a href="classERF.html#a80ad08512968ec45635df68abe66b1fc">ERF::input_bndry_planes</a></div><div class="ttdeci">static int input_bndry_planes</div><div class="ttdef"><b>Definition:</b> ERF.H:597</div></div>
 <div class="ttc" id="anamespaceCons_html_a219e8c6ed34261992bcf3198eb4a21c5a5c9c77ea576137ca2664783567e7f588"><div class="ttname"><a href="namespaceCons.html#a219e8c6ed34261992bcf3198eb4a21c5a5c9c77ea576137ca2664783567e7f588">Cons::Rho</a></div><div class="ttdeci">@ Rho</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:97</div></div>
 <div class="ttc" id="aclassERF_html_af5ac3d88a33a1a284bcc120ce0599cf7"><div class="ttname"><a href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">ERF::init_type</a></div><div class="ttdeci">static std::string init_type</div><div class="ttdef"><b>Definition:</b> ERF.H:571</div></div>
@@ -9641,7 +9628,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_ae39bf64c5306b1dd939d82d9df728daa"><div class="ttname"><a href="classERF.html#ae39bf64c5306b1dd939d82d9df728daa">ERF::detJ_cc_new</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; detJ_cc_new</div><div class="ttdef"><b>Definition:</b> ERF.H:463</div></div>
 <div class="ttc" id="aclassERF_html_a8e758060d3dede9694fbfcabddc17169"><div class="ttname"><a href="classERF.html#a8e758060d3dede9694fbfcabddc17169">ERF::restart_chkfile</a></div><div class="ttdeci">std::string restart_chkfile</div><div class="ttdef"><b>Definition:</b> ERF.H:506</div></div>
 <div class="ttc" id="aclassERF_html_ae7b9991150042eb38e2abc89399c0c7c"><div class="ttname"><a href="classERF.html#ae7b9991150042eb38e2abc89399c0c7c">ERF::plotfile_type</a></div><div class="ttdeci">static std::string plotfile_type</div><div class="ttdef"><b>Definition:</b> ERF.H:568</div></div>
-<div class="ttc" id="aTI__fast__rhs__fun_8H_html_a2ac0d597cd1d1b1de90ac422b0c74d7b"><div class="ttname"><a href="TI__fast__rhs__fun_8H.html#a2ac0d597cd1d1b1de90ac422b0c74d7b">post_substep_fun</a></div><div class="ttdeci">auto post_substep_fun</div><div class="ttdef"><b>Definition:</b> TI_fast_rhs_fun.H:127</div></div>
+<div class="ttc" id="aTI__fast__rhs__fun_8H_html_a2ac0d597cd1d1b1de90ac422b0c74d7b"><div class="ttname"><a href="TI__fast__rhs__fun_8H.html#a2ac0d597cd1d1b1de90ac422b0c74d7b">post_substep_fun</a></div><div class="ttdeci">auto post_substep_fun</div><div class="ttdef"><b>Definition:</b> TI_fast_rhs_fun.H:128</div></div>
 <div class="ttc" id="aclassMRISplitIntegrator_html_ad31fb2cda1fc2dce80820ed7c4a3c052"><div class="ttname"><a href="classMRISplitIntegrator.html#ad31fb2cda1fc2dce80820ed7c4a3c052">MRISplitIntegrator::set_slow_fast_timestep_ratio</a></div><div class="ttdeci">void set_slow_fast_timestep_ratio(const int timestep_ratio=1)</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:111</div></div>
 <div class="ttc" id="aclassERF_html_ac2be0759e68086d0e9026c61492fa225"><div class="ttname"><a href="classERF.html#ac2be0759e68086d0e9026c61492fa225">ERF::bndry_output_planes_start_time</a></div><div class="ttdeci">static amrex::Real bndry_output_planes_start_time</div><div class="ttdef"><b>Definition:</b> ERF.H:594</div></div>
 <div class="ttc" id="aclassERF_html_a32dd48049e8acbe95decdd4b01b782c4"><div class="ttname"><a href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">ERF::solverChoice</a></div><div class="ttdeci">static SolverChoice solverChoice</div><div class="ttdef"><b>Definition:</b> ERF.H:552</div></div>
