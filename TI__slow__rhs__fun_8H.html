@@ -88,23 +88,7 @@ $(document).ready(function(){initNavTree('TI__slow__rhs__fun_8H.html',''); initR
 <div class="title">TI_slow_rhs_fun.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="TerrainMetrics_8H_source.html">TerrainMetrics.H</a>&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for TI_slow_rhs_fun.H:</div>
-<div class="dyncontent">
-<div class="center"><img src="TI__slow__rhs__fun_8H__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TI__slow__rhs__fun_8H" alt=""/></div>
-<map name="_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TI__slow__rhs__fun_8H" id="_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TI__slow__rhs__fun_8H">
-<area shape="rect" title=" " alt="" coords="173,5,379,61"/>
-<area shape="rect" href="TerrainMetrics_8H.html" title=" " alt="" coords="212,109,340,136"/>
-<area shape="rect" title=" " alt="" coords="5,184,88,211"/>
-<area shape="rect" title=" " alt="" coords="113,184,266,211"/>
-<area shape="rect" title=" " alt="" coords="290,184,435,211"/>
-<area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="459,184,581,211"/>
-<area shape="rect" title=" " alt="" coords="384,259,507,285"/>
-<area shape="rect" title=" " alt="" coords="531,259,659,285"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
+<div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="TI__slow__rhs__fun_8H__dep__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TI__slow__rhs__fun_8Hdep" alt=""/></div>
@@ -118,10 +102,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:acda5d8506c971a0eafd12defdacd136f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__slow__rhs__fun_8H.html#acda5d8506c971a0eafd12defdacd136f">slow_rhs_fun</a></td></tr>
-<tr class="separator:acda5d8506c971a0eafd12defdacd136f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a963142d364408ee1775dbef20383b244"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__slow__rhs__fun_8H.html#a963142d364408ee1775dbef20383b244">slow_rhs_fun_pre</a></td></tr>
+<tr class="separator:a963142d364408ee1775dbef20383b244"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd90eac481ef47af3b095c56653098e8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__slow__rhs__fun_8H.html#afd90eac481ef47af3b095c56653098e8">post_update_fun</a></td></tr>
 <tr class="separator:afd90eac481ef47af3b095c56653098e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af460c930508105e92f60fd868d23ebcf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__slow__rhs__fun_8H.html#af460c930508105e92f60fd868d23ebcf">slow_rhs_fun_post</a></td></tr>
+<tr class="separator:af460c930508105e92f60fd868d23ebcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="afd90eac481ef47af3b095c56653098e8"></a>
@@ -136,8 +122,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= [&amp;](Vector&lt;MultiFab&gt;&amp; S_data,</div>
-<div class="line">                              <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time_for_fp, <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> delta_t,</div>
-<div class="line">                              <span class="keywordtype">int</span> ng_cons, <span class="keywordtype">int</span> ng_vel)</div>
+<div class="line">                               <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time_for_fp, <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> delta_t,</div>
+<div class="line">                               <span class="keywordtype">int</span> ng_cons, <span class="keywordtype">int</span> ng_vel)</div>
 <div class="line">    {</div>
 <div class="line">        </div>
 <div class="line">        <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time_mt = time_for_fp - 0.5*delta_t;</div>
@@ -147,23 +133,39 @@ Variables</h2></td></tr>
 <div class="line">        <a class="code" href="TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a>(S_data[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>], S_prim, ng_cons);</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#aa5b3a1ee491aa04f30439de7569d65e0">ERF::erf_advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a8f38196e85ebfe11ea2113e9890e6ca2">ERF::erf_advance()</a>.</p>
 
 </div>
 </div>
-<a id="acda5d8506c971a0eafd12defdacd136f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acda5d8506c971a0eafd12defdacd136f">&#9670;&nbsp;</a></span>slow_rhs_fun</h2>
+<a id="af460c930508105e92f60fd868d23ebcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af460c930508105e92f60fd868d23ebcf">&#9670;&nbsp;</a></span>slow_rhs_fun_post</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto slow_rhs_fun</td>
+          <td class="memname">auto slow_rhs_fun_post</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#aa5b3a1ee491aa04f30439de7569d65e0">ERF::erf_advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a8f38196e85ebfe11ea2113e9890e6ca2">ERF::erf_advance()</a>.</p>
+
+</div>
+</div>
+<a id="a963142d364408ee1775dbef20383b244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a963142d364408ee1775dbef20383b244">&#9670;&nbsp;</a></span>slow_rhs_fun_pre</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto slow_rhs_fun_pre</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classERF.html#a8f38196e85ebfe11ea2113e9890e6ca2">ERF::erf_advance()</a>.</p>
 
 </div>
 </div>

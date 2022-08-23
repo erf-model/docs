@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['coord_1571',['Coord',['../DataStruct_8H.html#a627f1f843904477f763577ad1460de01',1,'DataStruct.H']]]
+  ['diffusiondir_1551',['DiffusionDir',['../DataStruct_8H.html#a7264869c7035dc345642d2461b168715',1,'DataStruct.H']]]
 ];

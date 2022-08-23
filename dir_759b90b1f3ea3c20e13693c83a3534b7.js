@@ -5,8 +5,8 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_MRI.H", "ERF__MRI_8H.html", [
       [ "MRISplitIntegrator", "classMRISplitIntegrator.html", "classMRISplitIntegrator" ]
     ] ],
-    [ "ERF_slow_rhs.cpp", "ERF__slow__rhs_8cpp.html", "ERF__slow__rhs_8cpp" ],
-    [ "ERF_SRI.H", "ERF__SRI_8H.html", "ERF__SRI_8H" ],
+    [ "ERF_slow_rhs_post.cpp", "ERF__slow__rhs__post_8cpp.html", "ERF__slow__rhs__post_8cpp" ],
+    [ "ERF_slow_rhs_pre.cpp", "ERF__slow__rhs__pre_8cpp.html", "ERF__slow__rhs__pre_8cpp" ],
     [ "ERF_TimeStepping.cpp", "ERF__TimeStepping_8cpp.html", null ],
     [ "TI_fast_rhs_fun.H", "TI__fast__rhs__fun_8H.html", "TI__fast__rhs__fun_8H" ],
     [ "TI_slow_rhs_fun.H", "TI__slow__rhs__fun_8H.html", "TI__slow__rhs__fun_8H" ],

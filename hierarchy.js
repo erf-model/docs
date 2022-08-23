@@ -27,7 +27,6 @@ var hierarchy =
     [ "PlaneAverage", "classPlaneAverage.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
     [ "SolverChoice", "structSolverChoice.html", null ],
-    [ "SRIIntegrator< T >", "classSRIIntegrator.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
     [ "VelPlaneAverage", "classVelPlaneAverage.html", null ],
     [ "WriteBndryPlanes", "classWriteBndryPlanes.html", null ]

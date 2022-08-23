@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['erf_5fbc_1573',['ERF_BC',['../IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9',1,'IndexDefines.H']]]
+  ['ic_5fbc_5ftype_1553',['IC_BC_Type',['../DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36',1,'DataStruct.H']]]
 ];

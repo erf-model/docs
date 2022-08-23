@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['mathematicalbndrytypes_1576',['mathematicalBndryTypes',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c',1,'ERFBCType']]],
-  ['molecdifftype_1577',['MolecDiffType',['../DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735',1,'DataStruct.H']]],
-  ['momentumeqn_1578',['MomentumEqn',['../DataStruct_8H.html#aae430a2a4cb35dd03bcc13e8bc002dd9',1,'DataStruct.H']]]
+  ['nc_5fdata_5fdims_5ftype_1558',['NC_Data_Dims_Type',['../NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06',1,'NCWpsFile.H']]]
 ];
