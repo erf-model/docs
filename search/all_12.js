@@ -33,6 +33,6 @@ var searchData=
   ['timeintegration_2eh_748',['TimeIntegration.H',['../TimeIntegration_8H.html',1,'']]],
   ['timeinterpolateddata_749',['TimeInterpolatedData',['../structTimeInterpolatedData.html',1,'TimeInterpolatedData'],['../structTimeInterpolatedData.html#af9e82f258d3d78331e0805ec7eca0a2e',1,'TimeInterpolatedData::TimeInterpolatedData()'],['../structTimeInterpolatedData.html#ae8db82a30cc400c01b3cb5a2ee83a778',1,'TimeInterpolatedData::TimeInterpolatedData(amrex::Real time)']]],
   ['timeinterpolateddata_2eh_750',['TimeInterpolatedData.H',['../TimeInterpolatedData_8H.html',1,'']]],
-  ['timestep_751',['timeStep',['../classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f',1,'ERF::timeStep()'],['../classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612',1,'MRISplitIntegrator::timestep()']]],
+  ['timestep_751',['timestep',['../classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612',1,'MRISplitIntegrator::timestep()'],['../classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f',1,'ERF::timeStep()']]],
   ['tinterp_752',['tinterp',['../classReadBndryPlanes.html#a6f54411420eb4d57e4dc201b256f3d5e',1,'ReadBndryPlanes']]]
 ];

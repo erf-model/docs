@@ -172,5 +172,6 @@ var classERF =
     [ "z_phys_cc", "classERF.html#a31be0f1ae705c52c8ccc520369013284", null ],
     [ "z_phys_cc_new", "classERF.html#afe87e3daa73a296ff523de4aaf9d1c22", null ],
     [ "z_phys_nd", "classERF.html#a93e63e5af35efa564fd4195e8703f84c", null ],
-    [ "z_phys_nd_new", "classERF.html#a4ef635c22e72c715f5703a6b95a7abe5", null ]
+    [ "z_phys_nd_new", "classERF.html#a4ef635c22e72c715f5703a6b95a7abe5", null ],
+    [ "z_t_rk", "classERF.html#a72a59614c6d5ab840b924c84d5682270", null ]
 ];

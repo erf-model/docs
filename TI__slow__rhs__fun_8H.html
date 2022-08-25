@@ -148,7 +148,32 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">= [&amp;](      Vector&lt;MultiFab&gt;&amp; S_rhs,</div>
+<div class="line">                                 <span class="keyword">const</span> Vector&lt;MultiFab&gt;&amp; S_data,</div>
+<div class="line">                                       Vector&lt;MultiFab&gt;&amp; S_scratch,</div>
+<div class="line">                                 <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> step_time, <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> stage_time,</div>
+<div class="line">                                 <span class="keyword">const</span> <span class="keywordtype">int</span> rhs_vars=<a class="code" href="namespaceRHSVar.html#adb9b87b6805100d0e912cd1a26b4dbc4a663b433383c61be43231a25243ec832d">RHSVar::all</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (verbose) Print() &lt;&lt; <span class="stringliteral">&quot;Calling slow rhs for slow variables at level &quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot; for advancing from &quot;</span></div>
+<div class="line">                             &lt;&lt; step_time &lt;&lt; <span class="stringliteral">&quot; to &quot;</span> &lt;&lt; stage_time &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">if</span> ( solverChoice.use_terrain &amp;&amp;  (solverChoice.terrain_type == 1) )</div>
+<div class="line">        {</div>
+<div class="line">            <a class="code" href="ERF__slow__rhs__post_8cpp.html#ae2d16578375620690f6c30b5b9b91b59">erf_slow_rhs_post</a>(level, S_rhs, S_data, S_prim, S_scratch,</div>
+<div class="line">                              xvel_new, yvel_new, zvel_new,</div>
+<div class="line">                              z_t_rk[level], source, eddyDiffs, diffflux,</div>
+<div class="line">                              fine_geom, solverChoice, m_most, domain_bcs_type_d,</div>
+<div class="line">                              z_phys_nd_new[level], detJ_cc_new[level]);</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            <a class="code" href="ERF__slow__rhs__post_8cpp.html#ae2d16578375620690f6c30b5b9b91b59">erf_slow_rhs_post</a>(level, S_rhs, S_data, S_prim, S_scratch,</div>
+<div class="line">                              xvel_new, yvel_new, zvel_new,</div>
+<div class="line">                              z_t_rk[level], source, eddyDiffs, diffflux,</div>
+<div class="line">                              fine_geom, solverChoice, m_most, domain_bcs_type_d,</div>
+<div class="line">                              z_phys_nd[level], detJ_cc[level]);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a8f38196e85ebfe11ea2113e9890e6ca2">ERF::erf_advance()</a>.</p>
 
 </div>
@@ -174,7 +199,9 @@ Variables</h2></td></tr>
 <div class="ttc" id="aTI__utils_8H_html_a76b27b6105fe279f9a43296072c843b3"><div class="ttname"><a href="TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a></div><div class="ttdeci">auto cons_to_prim</div><div class="ttdef"><b>Definition:</b> TI_utils.H:12</div></div>
 <div class="ttc" id="aTI__utils_8H_html_a5e7934b18ef63bc8c4c16db42277c52f"><div class="ttname"><a href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a></div><div class="ttdeci">auto apply_bcs</div><div class="ttdef"><b>Definition:</b> TI_utils.H:36</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
+<div class="ttc" id="anamespaceRHSVar_html_adb9b87b6805100d0e912cd1a26b4dbc4a663b433383c61be43231a25243ec832d"><div class="ttname"><a href="namespaceRHSVar.html#adb9b87b6805100d0e912cd1a26b4dbc4a663b433383c61be43231a25243ec832d">RHSVar::all</a></div><div class="ttdeci">@ all</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:78</div></div>
 <div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> TimeIntegration.H:13</div></div>
+<div class="ttc" id="aERF__slow__rhs__post_8cpp_html_ae2d16578375620690f6c30b5b9b91b59"><div class="ttname"><a href="ERF__slow__rhs__post_8cpp.html#ae2d16578375620690f6c30b5b9b91b59">erf_slow_rhs_post</a></div><div class="ttdeci">void erf_slow_rhs_post(int level, Vector&lt; MultiFab &gt; &amp;S_rhs, const Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, Vector&lt; MultiFab &gt; &amp;S_scratch, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, std::unique_ptr&lt; MultiFab &gt; &amp;z_t_mf, const MultiFab &amp;source, const MultiFab &amp;eddyDiffs, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;diffflux, const amrex::Geometry geom, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; ABLMost &gt; &amp;most, const Gpu::DeviceVector&lt; amrex::BCRec &gt; domain_bcs_type_d, std::unique_ptr&lt; MultiFab &gt; &amp;z0, std::unique_ptr&lt; MultiFab &gt; &amp;dJ)</div><div class="ttdef"><b>Definition:</b> ERF_slow_rhs_post.cpp:17</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
