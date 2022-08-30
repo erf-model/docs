@@ -1,5 +1,6 @@
 var SpatialStencils_8H =
 [
+    [ "AdvectionSrcForMom", "SpatialStencils_8H.html#af038cbc72b13832caa5f9253d7872c3c", null ],
     [ "AdvectionSrcForRhoAndTheta", "SpatialStencils_8H.html#ae276f545b45d6e456920d88229986e66", null ],
     [ "AdvectionSrcForScalars", "SpatialStencils_8H.html#a8ee7efc0bb651b3f7a2fcf49b6c4951b", null ],
     [ "DiffusionSrcForState", "SpatialStencils_8H.html#a7c4f788bf47f268fbc3b69b6e2a65123", null ],

@@ -125,15 +125,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="SpatialStencils_8H__dep__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2SpatialStencils_2SpatialStencils_8Hdep" alt=""/></div>
 <map name="_2home_2runner_2work_2ERF_2ERF_2Source_2SpatialStencils_2SpatialStencils_8Hdep" id="_2home_2runner_2work_2ERF_2ERF_2Source_2SpatialStencils_2SpatialStencils_8Hdep">
-<area shape="rect" title=" " alt="" coords="1227,5,1425,61"/>
+<area shape="rect" title=" " alt="" coords="1313,5,1512,61"/>
 <area shape="rect" href="ERF_8cpp.html" title=" " alt="" coords="5,117,180,158"/>
-<area shape="rect" href="AdvectionSrcForMom_8cpp.html" title=" " alt="" coords="141,213,340,269"/>
+<area shape="rect" href="AdvectionSrcForMom_8cpp.html" title=" " alt="" coords="187,213,385,269"/>
 <area shape="rect" href="AdvectionSrcForMom_8H.html" title=" " alt="" coords="255,109,453,165"/>
-<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html" title=" " alt="" coords="387,213,593,269"/>
-<area shape="rect" href="AdvectionSrcForState_8cpp.html" title=" " alt="" coords="527,109,725,165"/>
-<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html" title=" " alt="" coords="750,109,979,165"/>
-<area shape="rect" href="DiffusionFluxForState_8H.html" title=" " alt="" coords="1227,109,1425,165"/>
-<area shape="rect" href="DiffusionSrcForMom_8H.html" title=" " alt="" coords="1004,109,1203,165"/>
+<area shape="rect" href="AdvectionSrcForState_8cpp.html" title=" " alt="" coords="477,109,676,165"/>
+<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html" title=" " alt="" coords="701,109,930,165"/>
+<area shape="rect" href="DiffusionFluxForState_8H.html" title=" " alt="" coords="955,109,1153,165"/>
+<area shape="rect" href="DiffusionSrcForMom_8H.html" title=" " alt="" coords="1177,109,1376,165"/>
+<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html" title=" " alt="" coords="1243,213,1449,269"/>
 <area shape="rect" href="MomentumToVelocity_8cpp.html" title=" " alt="" coords="1449,109,1648,165"/>
 <area shape="rect" href="PBLModels_8cpp.html" title=" " alt="" coords="1672,109,1871,165"/>
 <area shape="rect" href="VelocityToMomentum_8cpp.html" title=" " alt="" coords="1895,109,2093,165"/>
@@ -141,7 +141,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" href="ERF__slow__rhs__post_8cpp.html" title=" " alt="" coords="2348,109,2555,165"/>
 <area shape="rect" href="ERF__TimeStepping_8cpp.html" title=" " alt="" coords="2579,109,2785,165"/>
 <area shape="rect" href="TimeIntegration_8cpp.html" title=" " alt="" coords="2809,109,3016,165"/>
-<area shape="rect" href="DiffusionSrcForState_8cpp.html" title=" " alt="" coords="1227,213,1425,269"/>
+<area shape="rect" href="DiffusionSrcForState_8cpp.html" title=" " alt="" coords="955,213,1153,269"/>
 </map>
 </div>
 </div>
@@ -159,10 +159,178 @@ Functions</h2></td></tr>
 <tr class="separator:ae276f545b45d6e456920d88229986e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ee7efc0bb651b3f7a2fcf49b6c4951b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SpatialStencils_8H.html#a8ee7efc0bb651b3f7a2fcf49b6c4951b">AdvectionSrcForScalars</a> (const amrex::Box &amp;bx, const int &amp;start_comp, const int &amp;num_comp, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_w, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;z_t, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;cell_prim, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;src, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;z_nd, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;detJ, const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSize, const int &amp;spatial_order, const int &amp;use_terrain, const int &amp;use_deardorff, const int &amp;use_QKE)</td></tr>
 <tr class="separator:a8ee7efc0bb651b3f7a2fcf49b6c4951b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af038cbc72b13832caa5f9253d7872c3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SpatialStencils_8H.html#af038cbc72b13832caa5f9253d7872c3c">AdvectionSrcForMom</a> (int level, const amrex::Box &amp;bx, const amrex::Box &amp;valid_bx, const amrex::Array4&lt; const int &gt; &amp;mlo_x, const amrex::Array4&lt; const int &gt; &amp;mlo_y, const amrex::Array4&lt; const int &gt; &amp;mlo_z, const amrex::Array4&lt; const int &gt; &amp;mhi_x, const amrex::Array4&lt; const int &gt; &amp;mhi_y, const amrex::Array4&lt; const int &gt; &amp;mhi_z, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_u_rhs, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_v_rhs, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;w, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;rho_w, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;z_t, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;z_nd, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;detJ, const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const int spatial_order, const int use_terrain, const int domhi_z)</td></tr>
+<tr class="separator:af038cbc72b13832caa5f9253d7872c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c4f788bf47f268fbc3b69b6e2a65123"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SpatialStencils_8H.html#a7c4f788bf47f268fbc3b69b6e2a65123">DiffusionSrcForState</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, int n_start, int n_end, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;w, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;cell_data, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;cell_prim, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;source_fab, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;cell_rhs, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;xflux, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;yflux, const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;zflux, const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;K_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &amp;theta_mean, const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; grav_gpu, const amrex::BCRec *bc_ptr)</td></tr>
 <tr class="separator:a7c4f788bf47f268fbc3b69b6e2a65123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="af038cbc72b13832caa5f9253d7872c3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af038cbc72b13832caa5f9253d7872c3c">&#9670;&nbsp;</a></span>AdvectionSrcForMom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AdvectionSrcForMom </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>valid_bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mlo_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mlo_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mlo_z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mhi_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mhi_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mhi_z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rho_u_rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rho_v_rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rho_w_rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rho_u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rho_v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rho_w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>z_t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>z_nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>detJ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::GpuArray&lt; <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cellSizeInv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>spatial_order</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>use_terrain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>domhi_z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae276f545b45d6e456920d88229986e66"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae276f545b45d6e456920d88229986e66">&#9670;&nbsp;</a></span>AdvectionSrcForRhoAndTheta()</h2>
 
@@ -620,7 +788,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__post_8cpp.html#ae2d16578375620690f6c30b5b9b91b59">erf_slow_rhs_post()</a>, and <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a9da061fb705beaee648ae1004fb75c52">erf_slow_rhs_pre()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__post_8cpp.html#ae2d16578375620690f6c30b5b9b91b59">erf_slow_rhs_post()</a>, and <a class="el" href="ERF__slow__rhs__pre_8cpp.html#afaf80cde7c4061d3af76f18f5c2c93fd">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -654,7 +822,7 @@ Here is the caller graph for this function:</div>
 <map name="SpatialStencils_8H_a7c4f788bf47f268fbc3b69b6e2a65123_icgraph" id="SpatialStencils_8H_a7c4f788bf47f268fbc3b69b6e2a65123_icgraph">
 <area shape="rect" title=" " alt="" coords="192,31,347,57"/>
 <area shape="rect" href="ERF__slow__rhs__post_8cpp.html#ae2d16578375620690f6c30b5b9b91b59" title=" " alt="" coords="5,5,144,32"/>
-<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a9da061fb705beaee648ae1004fb75c52" title=" " alt="" coords="9,56,141,83"/>
+<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#afaf80cde7c4061d3af76f18f5c2c93fd" title=" " alt="" coords="9,56,141,83"/>
 </map>
 </div>
 
