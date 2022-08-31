@@ -125,12 +125,12 @@ Include dependency graph for AdvectionSrcForMom.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a580db2385ccd57bfa1776cd9513c0605"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AdvectionSrcForMom_8cpp.html#a580db2385ccd57bfa1776cd9513c0605">AdvectionSrcForMom</a> (int level, const Box &amp;bx, const Box &amp;valid_bx, const Array4&lt; const int &gt; &amp;mlo_x, const Array4&lt; const int &gt; &amp;mlo_y, const Array4&lt; const int &gt; &amp;mlo_z, const Array4&lt; const int &gt; &amp;mhi_x, const Array4&lt; const int &gt; &amp;mhi_y, const Array4&lt; const int &gt; &amp;mhi_z, const Array4&lt; Real &gt; &amp;rho_u_rhs, const Array4&lt; Real &gt; &amp;rho_v_rhs, const Array4&lt; Real &gt; &amp;rho_w_rhs, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;rho_w, const Array4&lt; const Real &gt; &amp;z_t, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const int spatial_order, const int use_terrain, const int domhi_z)</td></tr>
-<tr class="separator:a580db2385ccd57bfa1776cd9513c0605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7275b22f00ccc43a39851f7dcead398c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AdvectionSrcForMom_8cpp.html#a7275b22f00ccc43a39851f7dcead398c">AdvectionSrcForMom</a> (int level, const Box &amp;bx, const Box &amp;valid_bx, const Array4&lt; const int &gt; &amp;mlo_x, const Array4&lt; const int &gt; &amp;mlo_y, const Array4&lt; const int &gt; &amp;mhi_x, const Array4&lt; const int &gt; &amp;mhi_y, const Array4&lt; Real &gt; &amp;rho_u_rhs, const Array4&lt; Real &gt; &amp;rho_v_rhs, const Array4&lt; Real &gt; &amp;rho_w_rhs, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;rho_w, const Array4&lt; const Real &gt; &amp;z_t, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const int spatial_order, const int use_terrain, const int domhi_z)</td></tr>
+<tr class="separator:a7275b22f00ccc43a39851f7dcead398c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a580db2385ccd57bfa1776cd9513c0605"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a580db2385ccd57bfa1776cd9513c0605">&#9670;&nbsp;</a></span>AdvectionSrcForMom()</h2>
+<a id="a7275b22f00ccc43a39851f7dcead398c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7275b22f00ccc43a39851f7dcead398c">&#9670;&nbsp;</a></span>AdvectionSrcForMom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,12 +169,6 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const Array4&lt; const int &gt; &amp;&#160;</td>
-          <td class="paramname"><em>mlo_z</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Array4&lt; const int &gt; &amp;&#160;</td>
           <td class="paramname"><em>mhi_x</em>, </td>
         </tr>
         <tr>
@@ -182,12 +176,6 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">const Array4&lt; const int &gt; &amp;&#160;</td>
           <td class="paramname"><em>mhi_y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Array4&lt; const int &gt; &amp;&#160;</td>
-          <td class="paramname"><em>mhi_z</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -292,60 +280,59 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;AdvectionSrcForMom&quot;</span>, <a class="code" href="AdvectionSrcForMom_8cpp.html#a580db2385ccd57bfa1776cd9513c0605">AdvectionSrcForMom</a>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">auto</span> dxInv = cellSizeInv[0], dyInv = cellSizeInv[1], dzInv = cellSizeInv[2];</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Box bxx = surroundingNodes(bx,0);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Box bxy = surroundingNodes(bx,1);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    Box bxz = surroundingNodes(bx,2);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> vlo_x = valid_bx.smallEnd(0); <span class="keywordtype">int</span> vhi_x = valid_bx.bigEnd(0);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> vlo_y = valid_bx.smallEnd(1); <span class="keywordtype">int</span> vhi_y = valid_bx.bigEnd(1);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">int</span> vlo_z = valid_bx.smallEnd(2); <span class="keywordtype">int</span> vhi_z = valid_bx.bigEnd(2);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;AdvectionSrcForMom&quot;</span>, <a class="code" href="AdvectionSrcForMom_8cpp.html#a7275b22f00ccc43a39851f7dcead398c">AdvectionSrcForMom</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Box bxx = surroundingNodes(bx,0);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Box bxy = surroundingNodes(bx,1);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Box bxz = surroundingNodes(bx,2);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> vlo_x = valid_bx.smallEnd(0); <span class="keywordtype">int</span> vhi_x = valid_bx.bigEnd(0);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> vlo_y = valid_bx.smallEnd(1); <span class="keywordtype">int</span> vhi_y = valid_bx.bigEnd(1);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> vlo_z = valid_bx.smallEnd(2); <span class="keywordtype">int</span> vhi_z = valid_bx.bigEnd(2);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// ******************************************************************</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// This assumes that refined regions are always rectangular</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// This assumes that refined regions are always rectangular</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span> left_edge_dirichlet = ( level &gt; 0 &amp;&amp; mlo_x(vlo_x,vlo_y,vlo_z) );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> rght_edge_dirichlet = ( level &gt; 0 &amp;&amp; mhi_x(vhi_x,vhi_y,vhi_z) );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span>  bot_edge_dirichlet = ( level &gt; 0 &amp;&amp; mlo_y(vlo_x,vlo_y,vlo_z) );</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">bool</span>  top_edge_dirichlet = ( level &gt; 0 &amp;&amp; mhi_y(vhi_x,vhi_y,vhi_z) );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (left_edge_dirichlet) bxx.growLo(0,-1);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (rght_edge_dirichlet) bxx.growHi(0,-1);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> ( bot_edge_dirichlet) bxy.growLo(1,-1);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> ( top_edge_dirichlet) bxy.growHi(1,-1);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    amrex::ParallelFor(</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            rho_u_rhs(i, j, k) = -<a class="code" href="AdvectionSrcForMom_8H.html#acc96504143fae4939331fc1b61c1ce9e">AdvectionSrcForXMom</a>(i, j, k, rho_u, rho_v, rho_w, z_t, u, z_nd, detJ,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                      cellSizeInv, spatial_order, use_terrain);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    );</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    amrex::ParallelFor(</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            rho_v_rhs(i, j, k) = -<a class="code" href="AdvectionSrcForMom_8H.html#ac074e8388e485fc29ece14619967fb4e">AdvectionSrcForYMom</a>(i, j, k, rho_u, rho_v, rho_w, z_t, v, z_nd, detJ,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                      cellSizeInv, spatial_order, use_terrain);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    );</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    amrex::ParallelFor(</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            rho_w_rhs(i, j, k) = -<a class="code" href="AdvectionSrcForMom_8H.html#a8fff5c4fae90f152324dfe6e2aa96540">AdvectionSrcForZMom</a>(i, j, k, rho_u, rho_v, rho_w, z_t, w, z_nd, detJ,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                                      cellSizeInv, spatial_order, use_terrain, domhi_z);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    );</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> left_edge_dirichlet = ( level &gt; 0 &amp;&amp; mlo_x(vlo_x,vlo_y,vlo_z) );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> rght_edge_dirichlet = ( level &gt; 0 &amp;&amp; mhi_x(vhi_x,vhi_y,vhi_z) );</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span>  bot_edge_dirichlet = ( level &gt; 0 &amp;&amp; mlo_y(vlo_x,vlo_y,vlo_z) );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span>  top_edge_dirichlet = ( level &gt; 0 &amp;&amp; mhi_y(vhi_x,vhi_y,vhi_z) );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (left_edge_dirichlet) bxx.growLo(0,-1);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (rght_edge_dirichlet) bxx.growHi(0,-1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> ( bot_edge_dirichlet) bxy.growLo(1,-1);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> ( top_edge_dirichlet) bxy.growHi(1,-1);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    amrex::ParallelFor(</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            rho_u_rhs(i, j, k) = -<a class="code" href="AdvectionSrcForMom_8H.html#acc96504143fae4939331fc1b61c1ce9e">AdvectionSrcForXMom</a>(i, j, k, rho_u, rho_v, rho_w, z_t, u, z_nd, detJ,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                                      cellSizeInv, spatial_order, use_terrain);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    amrex::ParallelFor(</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            rho_v_rhs(i, j, k) = -<a class="code" href="AdvectionSrcForMom_8H.html#ac074e8388e485fc29ece14619967fb4e">AdvectionSrcForYMom</a>(i, j, k, rho_u, rho_v, rho_w, z_t, v, z_nd, detJ,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                      cellSizeInv, spatial_order, use_terrain);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    );</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    amrex::ParallelFor(</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            rho_w_rhs(i, j, k) = -<a class="code" href="AdvectionSrcForMom_8H.html#a8fff5c4fae90f152324dfe6e2aa96540">AdvectionSrcForZMom</a>(i, j, k, rho_u, rho_v, rho_w, z_t, w, z_nd, detJ,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                      cellSizeInv, spatial_order, use_terrain, domhi_z);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__pre_8cpp.html#afaf80cde7c4061d3af76f18f5c2c93fd">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="AdvectionSrcForMom_8cpp_a580db2385ccd57bfa1776cd9513c0605_cgraph.png" border="0" usemap="#AdvectionSrcForMom_8cpp_a580db2385ccd57bfa1776cd9513c0605_cgraph" alt=""/></div>
-<map name="AdvectionSrcForMom_8cpp_a580db2385ccd57bfa1776cd9513c0605_cgraph" id="AdvectionSrcForMom_8cpp_a580db2385ccd57bfa1776cd9513c0605_cgraph">
+<div class="center"><img src="AdvectionSrcForMom_8cpp_a7275b22f00ccc43a39851f7dcead398c_cgraph.png" border="0" usemap="#AdvectionSrcForMom_8cpp_a7275b22f00ccc43a39851f7dcead398c_cgraph" alt=""/></div>
+<map name="AdvectionSrcForMom_8cpp_a7275b22f00ccc43a39851f7dcead398c_cgraph" id="AdvectionSrcForMom_8cpp_a7275b22f00ccc43a39851f7dcead398c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,107,165,133"/>
 <area shape="rect" href="AdvectionSrcForMom_8H.html#acc96504143fae4939331fc1b61c1ce9e" title=" " alt="" coords="213,107,383,133"/>
 <area shape="rect" href="AdvectionSrcForMom_8H.html#ac074e8388e485fc29ece14619967fb4e" title=" " alt="" coords="214,56,382,83"/>
@@ -363,8 +350,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="AdvectionSrcForMom_8cpp_a580db2385ccd57bfa1776cd9513c0605_icgraph.png" border="0" usemap="#AdvectionSrcForMom_8cpp_a580db2385ccd57bfa1776cd9513c0605_icgraph" alt=""/></div>
-<map name="AdvectionSrcForMom_8cpp_a580db2385ccd57bfa1776cd9513c0605_icgraph" id="AdvectionSrcForMom_8cpp_a580db2385ccd57bfa1776cd9513c0605_icgraph">
+<div class="center"><img src="AdvectionSrcForMom_8cpp_a7275b22f00ccc43a39851f7dcead398c_icgraph.png" border="0" usemap="#AdvectionSrcForMom_8cpp_a7275b22f00ccc43a39851f7dcead398c_icgraph" alt=""/></div>
+<map name="AdvectionSrcForMom_8cpp_a7275b22f00ccc43a39851f7dcead398c_icgraph" id="AdvectionSrcForMom_8cpp_a7275b22f00ccc43a39851f7dcead398c_icgraph">
 <area shape="rect" title=" " alt="" coords="185,5,345,32"/>
 <area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#afaf80cde7c4061d3af76f18f5c2c93fd" title=" " alt="" coords="5,5,137,32"/>
 </map>
@@ -374,7 +361,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aAdvectionSrcForMom_8cpp_html_a580db2385ccd57bfa1776cd9513c0605"><div class="ttname"><a href="AdvectionSrcForMom_8cpp.html#a580db2385ccd57bfa1776cd9513c0605">AdvectionSrcForMom</a></div><div class="ttdeci">void AdvectionSrcForMom(int level, const Box &amp;bx, const Box &amp;valid_bx, const Array4&lt; const int &gt; &amp;mlo_x, const Array4&lt; const int &gt; &amp;mlo_y, const Array4&lt; const int &gt; &amp;mlo_z, const Array4&lt; const int &gt; &amp;mhi_x, const Array4&lt; const int &gt; &amp;mhi_y, const Array4&lt; const int &gt; &amp;mhi_z, const Array4&lt; Real &gt; &amp;rho_u_rhs, const Array4&lt; Real &gt; &amp;rho_v_rhs, const Array4&lt; Real &gt; &amp;rho_w_rhs, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;rho_w, const Array4&lt; const Real &gt; &amp;z_t, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const int spatial_order, const int use_terrain, const int domhi_z)</div><div class="ttdef"><b>Definition:</b> AdvectionSrcForMom.cpp:10</div></div>
+<div class="ttc" id="aAdvectionSrcForMom_8cpp_html_a7275b22f00ccc43a39851f7dcead398c"><div class="ttname"><a href="AdvectionSrcForMom_8cpp.html#a7275b22f00ccc43a39851f7dcead398c">AdvectionSrcForMom</a></div><div class="ttdeci">void AdvectionSrcForMom(int level, const Box &amp;bx, const Box &amp;valid_bx, const Array4&lt; const int &gt; &amp;mlo_x, const Array4&lt; const int &gt; &amp;mlo_y, const Array4&lt; const int &gt; &amp;mhi_x, const Array4&lt; const int &gt; &amp;mhi_y, const Array4&lt; Real &gt; &amp;rho_u_rhs, const Array4&lt; Real &gt; &amp;rho_v_rhs, const Array4&lt; Real &gt; &amp;rho_w_rhs, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;rho_w, const Array4&lt; const Real &gt; &amp;z_t, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const int spatial_order, const int use_terrain, const int domhi_z)</div><div class="ttdef"><b>Definition:</b> AdvectionSrcForMom.cpp:10</div></div>
 <div class="ttc" id="aAdvectionSrcForMom_8H_html_ac074e8388e485fc29ece14619967fb4e"><div class="ttname"><a href="AdvectionSrcForMom_8H.html#ac074e8388e485fc29ece14619967fb4e">AdvectionSrcForYMom</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real AdvectionSrcForYMom(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_w, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_t, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, int spatial_order, int use_terrain)</div><div class="ttdef"><b>Definition:</b> AdvectionSrcForMom.H:129</div></div>
 <div class="ttc" id="aAdvectionSrcForMom_8H_html_acc96504143fae4939331fc1b61c1ce9e"><div class="ttname"><a href="AdvectionSrcForMom_8H.html#acc96504143fae4939331fc1b61c1ce9e">AdvectionSrcForXMom</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real AdvectionSrcForXMom(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_w, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_t, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, int spatial_order, int use_terrain)</div><div class="ttdef"><b>Definition:</b> AdvectionSrcForMom.H:9</div></div>
 <div class="ttc" id="aAdvectionSrcForMom_8H_html_a8fff5c4fae90f152324dfe6e2aa96540"><div class="ttname"><a href="AdvectionSrcForMom_8H.html#a8fff5c4fae90f152324dfe6e2aa96540">AdvectionSrcForZMom</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real AdvectionSrcForZMom(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_w, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_t, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, int spatial_order, int use_terrain, int domhi_z)</div><div class="ttdef"><b>Definition:</b> AdvectionSrcForMom.H:249</div></div>
