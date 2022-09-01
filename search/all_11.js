@@ -7,7 +7,7 @@ var searchData=
   ['scalar_671',['Scalar',['../namespacePrim.html#ae6378f5d4272bb8368424f704f141fc0afedd432e3ecc9fd06a3a9a68d749c1af',1,'Prim::Scalar()'],['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4aa27a6549ade38cc036f7b8c58a840510',1,'scalar():&#160;DataStruct.H']]],
   ['scalar_5fh_672',['Scalar_h',['../namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a85d322ae06bc4f66f791d4eda0a13ae6',1,'EddyDiff']]],
   ['scalar_5fv_673',['Scalar_v',['../namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a2b82a72be137b3159e7d4945735fcbf5',1,'EddyDiff']]],
-  ['set_5ffast_5frhs_674',['set_fast_rhs',['../classMRISplitIntegrator.html#af38c1c68c88d43bcd33997707067eacc',1,'MRISplitIntegrator']]],
+  ['set_5ffast_5frhs_674',['set_fast_rhs',['../classMRISplitIntegrator.html#aeb4bf3886d07672cee8b26ae2ec493e7',1,'MRISplitIntegrator']]],
   ['set_5fpost_5fno_5fsubstep_675',['set_post_no_substep',['../classMRISplitIntegrator.html#a316db6eeed87013e7d3549a71608f3fc',1,'MRISplitIntegrator']]],
   ['set_5fpost_5fsubstep_676',['set_post_substep',['../classMRISplitIntegrator.html#a67d8d337d497c6b2d3001b1416710555',1,'MRISplitIntegrator']]],
   ['set_5fpost_5fupdate_677',['set_post_update',['../classMRISplitIntegrator.html#a6c8889da629b1f2ea96e8d1f2cd52342',1,'MRISplitIntegrator']]],
