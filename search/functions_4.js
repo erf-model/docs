@@ -2,7 +2,7 @@ var searchData=
 [
   ['enter_5fdef_5fmode_1063',['enter_def_mode',['../classncutils_1_1NCGroup.html#aef6b6e2be36e6179a001d9873e94df82',1,'ncutils::NCGroup']]],
   ['erf_1064',['ERF',['../classERF.html#a30129012dd367825e5e4fd1406694f58',1,'ERF']]],
-  ['erf_5fadvance_1065',['erf_advance',['../classERF.html#a8f38196e85ebfe11ea2113e9890e6ca2',1,'ERF']]],
+  ['erf_5fadvance_1065',['erf_advance',['../classERF.html#a0046045da37166500f7a489d6496bd01',1,'ERF']]],
   ['erf_5fderke_1066',['erf_derKE',['../namespacederived.html#aa1fcac44ae779cdfa2fd5266bc206e2d',1,'derived']]],
   ['erf_5fdernull_1067',['erf_dernull',['../namespacederived.html#af8efb799157f5dbb8fe00416458db9e1',1,'derived']]],
   ['erf_5fderpres_1068',['erf_derpres',['../namespacederived.html#ab144cda2ef3e2bd18cbd0837ce723521',1,'derived']]],

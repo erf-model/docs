@@ -11,7 +11,7 @@ var classERF =
     [ "ComputeGhostCells", "classERF.html#a0f5b892bf373e46ae54597683e0f9685", null ],
     [ "DataLog", "classERF.html#aa2c3ee1910008b828b9da79ccdfe3871", null ],
     [ "DataLogName", "classERF.html#afbf411b8cb24554d9aad7c76b0210e92", null ],
-    [ "erf_advance", "classERF.html#a8f38196e85ebfe11ea2113e9890e6ca2", null ],
+    [ "erf_advance", "classERF.html#a0046045da37166500f7a489d6496bd01", null ],
     [ "erf_enforce_hse", "classERF.html#a51359f40b1f4cac756e5c3453c843eb2", null ],
     [ "ErrorEst", "classERF.html#a18e6dbbf968b4492e78aa427791620f4", null ],
     [ "estTimeStep", "classERF.html#a6b1d727e63de2e49aa4f8e00b0dda1d5", null ],
