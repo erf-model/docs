@@ -1,6 +1,7 @@
 var EOS_8H =
 [
     [ "getdPdRgivenConstantTheta", "EOS_8H.html#a912ac5b146f25c3a6d0a2104f4fbe644", null ],
+    [ "getExnergivenP", "EOS_8H.html#a68f290e73d591bbee258d949dbb88fbf", null ],
     [ "getExnergivenRTh", "EOS_8H.html#ab7699bc24a134b44f2b6de545901a182", null ],
     [ "getPgivenRTh", "EOS_8H.html#a292ce90ab26c75f4a444808a807b532b", null ],
     [ "getPprimegivenRTh", "EOS_8H.html#a62f564807713abf368002e68c9b40e1e", null ],

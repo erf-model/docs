@@ -475,7 +475,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            amrex::ParallelFor(tmpbox, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            {</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                pi_a(i,j,k,0) = <a class="code" href="EOS_8H.html#ab7699bc24a134b44f2b6de545901a182">getExnergivenRTh</a>(cell_stage_cons(i  ,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                pi_a(i,j,k,1) = <a class="code" href="EOS_8H.html#ab7699bc24a134b44f2b6de545901a182">getExnergivenRTh</a>(p0_arr(i,j,k));</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                pi_a(i,j,k,1) = <a class="code" href="EOS_8H.html#a68f290e73d591bbee258d949dbb88fbf">getExnergivenP</a>  (p0_arr(i,j,k));</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            });</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        } <span class="comment">// end profile</span></div>
@@ -746,8 +746,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__fast__rhs__N_8cpp_a4ca326475be968698fdb326ad4dbf274_cgraph.png" border="0" usemap="#ERF__fast__rhs__N_8cpp_a4ca326475be968698fdb326ad4dbf274_cgraph" alt=""/></div>
 <map name="ERF__fast__rhs__N_8cpp_a4ca326475be968698fdb326ad4dbf274_cgraph" id="ERF__fast__rhs__N_8cpp_a4ca326475be968698fdb326ad4dbf274_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,121,32"/>
-<area shape="rect" href="EOS_8H.html#ab7699bc24a134b44f2b6de545901a182" title=" " alt="" coords="169,5,309,32"/>
+<area shape="rect" title=" " alt="" coords="5,31,121,57"/>
+<area shape="rect" href="EOS_8H.html#a68f290e73d591bbee258d949dbb88fbf" title=" " alt="" coords="177,5,301,32"/>
+<area shape="rect" href="EOS_8H.html#ab7699bc24a134b44f2b6de545901a182" title=" " alt="" coords="169,56,309,83"/>
 </map>
 </div>
 
@@ -756,7 +757,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
-<div class="ttc" id="aEOS_8H_html_ab7699bc24a134b44f2b6de545901a182"><div class="ttname"><a href="EOS_8H.html#ab7699bc24a134b44f2b6de545901a182">getExnergivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenRTh(const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:50</div></div>
+<div class="ttc" id="aEOS_8H_html_ab7699bc24a134b44f2b6de545901a182"><div class="ttname"><a href="EOS_8H.html#ab7699bc24a134b44f2b6de545901a182">getExnergivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenRTh(const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:57</div></div>
 <div class="ttc" id="astructSolverChoice_html_a063a88594452100497651e8aaf1f68d7"><div class="ttname"><a href="structSolverChoice.html#a063a88594452100497651e8aaf1f68d7">SolverChoice::use_terrain</a></div><div class="ttdeci">bool use_terrain</div><div class="ttdef"><b>Definition:</b> DataStruct.H:328</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a08d0e6a452268bed60e81a08398c088a"><div class="ttname"><a href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a></div><div class="ttdeci">#define R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
 <div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:177</div></div>
@@ -769,6 +770,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
 <div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> DataStruct.H:336</div></div>
 <div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:176</div></div>
+<div class="ttc" id="aEOS_8H_html_a68f290e73d591bbee258d949dbb88fbf"><div class="ttname"><a href="EOS_8H.html#a68f290e73d591bbee258d949dbb88fbf">getExnergivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenP(const amrex::Real P)</div><div class="ttdef"><b>Definition:</b> EOS.H:50</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
