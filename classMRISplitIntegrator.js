@@ -15,8 +15,8 @@ var classMRISplitIntegrator =
     [ "set_post_update", "classMRISplitIntegrator.html#a6c8889da629b1f2ea96e8d1f2cd52342", null ],
     [ "set_rhs", "classMRISplitIntegrator.html#a9bdf9dde3004d5cca027474dccaf9009", null ],
     [ "set_slow_fast_timestep_ratio", "classMRISplitIntegrator.html#ad31fb2cda1fc2dce80820ed7c4a3c052", null ],
-    [ "set_slow_rhs_post", "classMRISplitIntegrator.html#a705a49449d719463071d7e29e1feb6c6", null ],
-    [ "set_slow_rhs_pre", "classMRISplitIntegrator.html#af98b6a568419f00c38144e5557653fd7", null ],
+    [ "set_slow_rhs_post", "classMRISplitIntegrator.html#a9358628eb4fe05bb63225cc12c6fcbca", null ],
+    [ "set_slow_rhs_pre", "classMRISplitIntegrator.html#a5003399f4615afc9209f168e4deddedf", null ],
     [ "setNoSubstepping", "classMRISplitIntegrator.html#a6ca4eef257ddfcb793de89d2309ac9a1", null ],
     [ "time_interpolate", "classMRISplitIntegrator.html#a10d223efbc486b8eba3cf4d94c4e2394", null ],
     [ "F_slow", "classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7", null ],
@@ -28,8 +28,8 @@ var classMRISplitIntegrator =
     [ "S_scratch", "classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa", null ],
     [ "S_sum", "classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1", null ],
     [ "slow_fast_timestep_ratio", "classMRISplitIntegrator.html#ac627f7a16fd409d33916eeccb9ab3c3f", null ],
-    [ "slow_rhs_post", "classMRISplitIntegrator.html#ae921dd1f7aa8f441fc9fa19ef00e6cfa", null ],
-    [ "slow_rhs_pre", "classMRISplitIntegrator.html#a98bec59fc296505a3df34d4dea2c33c7", null ],
+    [ "slow_rhs_post", "classMRISplitIntegrator.html#a1637dd50c6033d647c899646cdc4dac9", null ],
+    [ "slow_rhs_pre", "classMRISplitIntegrator.html#ae10f7a1b8a281037a08c00d7dcd3e695", null ],
     [ "T_store", "classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80", null ],
     [ "timestep", "classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612", null ]
 ];

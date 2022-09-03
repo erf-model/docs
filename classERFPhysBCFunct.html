@@ -1086,57 +1086,56 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                <span class="keywordtype">int</span> k0 = 0;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="comment">// Get the dz cell size</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                GeometryData <span class="keyword">const</span>&amp; geomdata = <a class="code" href="classERFPhysBCFunct.html#ad5a6f06771b8fa848753a2741219366b">m_geom</a>.data();</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dz = geomdata.CellSize(2);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="comment">// Fill all the Neumann srcs with terrain</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                ParallelFor(xybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    <span class="comment">// Clip indices for ghost-cells</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                    <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                    <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    <span class="comment">// Get metrics</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_xi,met_h_eta,met_h_zeta;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    <a class="code" href="TerrainMetrics_8H.html#a30b23828cd40d8137e1780c9c8294d44">ComputeMetricAtIface</a>(ii,jj,k0,met_h_xi,met_h_eta,met_h_zeta,dxInv,z_nd,<a class="code" href="namespaceTerrainMet.html#a34a43e8378fdc005b5ce0b1b7a1d1d36a55241740af286ead1d5a89a646688467">TerrainMet::all</a>);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    <span class="comment">// GradX at IJK location inside domain -- this relies on the assumption that we have</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradVarx, GradVary;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    <span class="keywordflow">if</span> (i &lt; dom_lo.x-1 || i &gt; dom_hi.x+1)</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                        GradVarx = 0.0;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i+1 &gt; bx_hi.x)</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        GradVarx =       dxInv[0] * (dest_arr(i  ,j,k0) - dest_arr(i-1,j,k0));</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i-1 &lt; bx_lo.x)</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        GradVarx =       dxInv[0] * (dest_arr(i+1,j,k0) - dest_arr(i  ,j,k0));</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        GradVarx = 0.5 * dxInv[0] * (dest_arr(i+1,j,k0) - dest_arr(i-1,j,k0));</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    <span class="comment">// GradY at IJK location inside domain -- this relies on the assumption that we have</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    <span class="keywordflow">if</span> (j &lt; dom_lo.y-1 || j &gt; dom_hi.y+1)</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                        GradVary = 0.0;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j+1 &gt; bx_hi.y)</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                        GradVary =       dxInv[1] * (dest_arr(i,j  ,k0) - dest_arr(i,j-1,k0));</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j-1 &lt; bx_lo.y)</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                        GradVary =       dxInv[1] * (dest_arr(i,j+1,k0) - dest_arr(i,j  ,k0));</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                        GradVary = 0.5 * dxInv[1] * (dest_arr(i,j+1,k0) - dest_arr(i,j-1,k0));</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    <span class="comment">// Prefactor</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_fac =  met_h_zeta / ( met_h_xi*met_h_xi + met_h_eta*met_h_eta + 1. );</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    <span class="comment">// Accumulate in bottom ghost cell (EXTRAP already populated)</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                    dest_arr(i,j,k) -= dz * met_fac * ( met_h_xi * GradVarx + met_h_eta * GradVary );</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                });</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            } <span class="comment">// foextrap</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        } <span class="comment">// ncomp</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    } <span class="comment">//m_z_phys_nd</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    Gpu::streamSynchronize();</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dz = geomdata.CellSize(2);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <span class="comment">// Fill all the Neumann srcs with terrain</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                ParallelFor(xybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                    <span class="comment">// Clip indices for ghost-cells</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                    <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    <span class="comment">// Get metrics</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_xi,met_h_eta,met_h_zeta;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    <a class="code" href="TerrainMetrics_8H.html#a30b23828cd40d8137e1780c9c8294d44">ComputeMetricAtIface</a>(ii,jj,k0,met_h_xi,met_h_eta,met_h_zeta,dxInv,z_nd,<a class="code" href="namespaceTerrainMet.html#a34a43e8378fdc005b5ce0b1b7a1d1d36a55241740af286ead1d5a89a646688467">TerrainMet::all</a>);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    <span class="comment">// GradX at IJK location inside domain -- this relies on the assumption that we have</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradVarx, GradVary;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                    <span class="keywordflow">if</span> (i &lt; dom_lo.x-1 || i &gt; dom_hi.x+1)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                        GradVarx = 0.0;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i+1 &gt; bx_hi.x)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        GradVarx =       dxInv[0] * (dest_arr(i  ,j,k0) - dest_arr(i-1,j,k0));</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i-1 &lt; bx_lo.x)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        GradVarx =       dxInv[0] * (dest_arr(i+1,j,k0) - dest_arr(i  ,j,k0));</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                        GradVarx = 0.5 * dxInv[0] * (dest_arr(i+1,j,k0) - dest_arr(i-1,j,k0));</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    <span class="comment">// GradY at IJK location inside domain -- this relies on the assumption that we have</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    <span class="keywordflow">if</span> (j &lt; dom_lo.y-1 || j &gt; dom_hi.y+1)</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                        GradVary = 0.0;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j+1 &gt; bx_hi.y)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                        GradVary =       dxInv[1] * (dest_arr(i,j  ,k0) - dest_arr(i,j-1,k0));</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j-1 &lt; bx_lo.y)</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                        GradVary =       dxInv[1] * (dest_arr(i,j+1,k0) - dest_arr(i,j  ,k0));</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                        GradVary = 0.5 * dxInv[1] * (dest_arr(i,j+1,k0) - dest_arr(i,j-1,k0));</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    <span class="comment">// Prefactor</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_fac =  met_h_zeta / ( met_h_xi*met_h_xi + met_h_eta*met_h_eta + 1. );</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                    <span class="comment">// Accumulate in bottom ghost cell (EXTRAP already populated)</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    dest_arr(i,j,k) -= dz * met_fac * ( met_h_xi * GradVarx + met_h_eta * GradVary );</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                });</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            } <span class="comment">// foextrap</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        } <span class="comment">// ncomp</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    } <span class="comment">//m_z_phys_nd</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1373,56 +1372,55 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="keywordtype">int</span> k0 = 0;</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <span class="comment">// Get the dz cell size</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                amrex::GeometryData <span class="keyword">const</span>&amp; geomdata = <a class="code" href="classERFPhysBCFunct.html#ad5a6f06771b8fa848753a2741219366b">m_geom</a>.data();</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dz = geomdata.CellSize(2);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                <span class="comment">// Fill all the Neumann srcs with terrain</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                ParallelFor(xybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                    <span class="comment">// Clip indices for ghost-cells</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                    <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    <span class="comment">// Get metrics</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_xi,met_h_eta,met_h_zeta;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    <a class="code" href="TerrainMetrics_8H.html#a397ab624cd274ee60790a2b1b7f1296b">ComputeMetricAtJface</a>(ii,jj,k0,met_h_xi,met_h_eta,met_h_zeta,dxInv,z_nd,<a class="code" href="namespaceTerrainMet.html#a34a43e8378fdc005b5ce0b1b7a1d1d36a55241740af286ead1d5a89a646688467">TerrainMet::all</a>);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    <span class="comment">// GradX at IJK location inside domain -- this relies on the assumption that we have</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                    <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradVarx, GradVary;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    <span class="keywordflow">if</span> (i &lt; dom_lo.x-1 || i &gt; dom_hi.x+1)</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        GradVarx = 0.0;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i+1 &gt; bx_hi.x)</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        GradVarx =       dxInv[0] * (dest_arr(i  ,j,k0) - dest_arr(i-1,j,k0));</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i-1 &lt; bx_lo.x)</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                        GradVarx =       dxInv[0] * (dest_arr(i+1,j,k0) - dest_arr(i  ,j,k0));</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                        GradVarx = 0.5 * dxInv[0] * (dest_arr(i+1,j,k0) - dest_arr(i-1,j,k0));</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    <span class="comment">// GradY at IJK location inside domain -- this relies on the assumption that we have</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    <span class="keywordflow">if</span> (j &lt; dom_lo.y-1 || j &gt; dom_hi.y+1)</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                        GradVary = 0.0;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j+1 &gt; bx_hi.y)</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                        GradVary =       dxInv[1] * (dest_arr(i,j  ,k0) - dest_arr(i,j-1,k0));</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j-1 &lt; bx_lo.y)</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                        GradVary =       dxInv[1] * (dest_arr(i,j+1,k0) - dest_arr(i,j  ,k0));</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                        GradVary = 0.5 * dxInv[1] * (dest_arr(i,j+1,k0) - dest_arr(i,j-1,k0));</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                    <span class="comment">// Prefactor</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_fac =  met_h_zeta / ( met_h_xi*met_h_xi + met_h_eta*met_h_eta + 1. );</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                    <span class="comment">// Accumulate in bottom ghost cell (EXTRAP already populated)</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                    dest_arr(i,j,k) -= dz * met_fac * ( met_h_xi * GradVarx + met_h_eta * GradVary );</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                });</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            } <span class="comment">// foextrap</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        } <span class="comment">// ncomp</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    } <span class="comment">//m_z_phys_nd</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    Gpu::streamSynchronize();</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dz = geomdata.CellSize(2);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                <span class="comment">// Fill all the Neumann srcs with terrain</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                ParallelFor(xybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    <span class="comment">// Clip indices for ghost-cells</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                    <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                    <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    <span class="comment">// Get metrics</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_xi,met_h_eta,met_h_zeta;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    <a class="code" href="TerrainMetrics_8H.html#a397ab624cd274ee60790a2b1b7f1296b">ComputeMetricAtJface</a>(ii,jj,k0,met_h_xi,met_h_eta,met_h_zeta,dxInv,z_nd,<a class="code" href="namespaceTerrainMet.html#a34a43e8378fdc005b5ce0b1b7a1d1d36a55241740af286ead1d5a89a646688467">TerrainMet::all</a>);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    <span class="comment">// GradX at IJK location inside domain -- this relies on the assumption that we have</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradVarx, GradVary;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    <span class="keywordflow">if</span> (i &lt; dom_lo.x-1 || i &gt; dom_hi.x+1)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                        GradVarx = 0.0;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i+1 &gt; bx_hi.x)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        GradVarx =       dxInv[0] * (dest_arr(i  ,j,k0) - dest_arr(i-1,j,k0));</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i-1 &lt; bx_lo.x)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        GradVarx =       dxInv[0] * (dest_arr(i+1,j,k0) - dest_arr(i  ,j,k0));</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        GradVarx = 0.5 * dxInv[0] * (dest_arr(i+1,j,k0) - dest_arr(i-1,j,k0));</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    <span class="comment">// GradY at IJK location inside domain -- this relies on the assumption that we have</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    <span class="keywordflow">if</span> (j &lt; dom_lo.y-1 || j &gt; dom_hi.y+1)</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                        GradVary = 0.0;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j+1 &gt; bx_hi.y)</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                        GradVary =       dxInv[1] * (dest_arr(i,j  ,k0) - dest_arr(i,j-1,k0));</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j-1 &lt; bx_lo.y)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                        GradVary =       dxInv[1] * (dest_arr(i,j+1,k0) - dest_arr(i,j  ,k0));</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                        GradVary = 0.5 * dxInv[1] * (dest_arr(i,j+1,k0) - dest_arr(i,j-1,k0));</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    <span class="comment">// Prefactor</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_fac =  met_h_zeta / ( met_h_xi*met_h_xi + met_h_eta*met_h_eta + 1. );</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    <span class="comment">// Accumulate in bottom ghost cell (EXTRAP already populated)</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                    dest_arr(i,j,k) -= dz * met_fac * ( met_h_xi * GradVarx + met_h_eta * GradVary );</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                });</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            } <span class="comment">// foextrap</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        } <span class="comment">// ncomp</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    } <span class="comment">//m_z_phys_nd</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
