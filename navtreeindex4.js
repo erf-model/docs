@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"structInputSoundingData.html#a19a42e3bff9ea724831597afe033f17e":[2,0,9,6],
 "structInputSoundingData.html#a1bc7a5f380471cdc337067456a347d10":[2,0,9,5],
 "structInputSoundingData.html#a22697746622cd5f3239120eaaa71abdc":[2,0,9,14],
 "structInputSoundingData.html#a6c176f22c90b76170e1fa254d4583de3":[2,0,9,2],

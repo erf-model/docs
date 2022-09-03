@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['set_5ffast_5frhs_1232',['set_fast_rhs',['../classMRISplitIntegrator.html#ad9f57980e9c1ec86773b26a94c658242',1,'MRISplitIntegrator']]],
-  ['set_5fpost_5fno_5fsubstep_1233',['set_post_no_substep',['../classMRISplitIntegrator.html#a316db6eeed87013e7d3549a71608f3fc',1,'MRISplitIntegrator']]],
+  ['set_5ffast_5frhs_1232',['set_fast_rhs',['../classMRISplitIntegrator.html#ab9b65f2503c09543dedeaa30f0323d01',1,'MRISplitIntegrator']]],
+  ['set_5fno_5fsubstep_1233',['set_no_substep',['../classMRISplitIntegrator.html#a825efb33e69853b14d8e7085ea86edf6',1,'MRISplitIntegrator']]],
   ['set_5fpost_5fupdate_1234',['set_post_update',['../classMRISplitIntegrator.html#a6c8889da629b1f2ea96e8d1f2cd52342',1,'MRISplitIntegrator']]],
   ['set_5fprecision_1235',['set_precision',['../classPlaneAverage.html#a6933fa8d1b71a55f5276250050c54216',1,'PlaneAverage']]],
   ['set_5frhs_1236',['set_rhs',['../classMRISplitIntegrator.html#a9bdf9dde3004d5cca027474dccaf9009',1,'MRISplitIntegrator']]],
