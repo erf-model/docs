@@ -683,45 +683,44 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                <span class="comment">// Add gravity term</span></div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5">use_gravity</a>)</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                {</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                    <span class="keywordtype">int</span> local_spatial_order = 2;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_prime = 0.5 * (cell_data(i,j,k) + cell_data(i,j,k-1) - r0_arr(i,j,k) - r0_arr(i,j,k-1));</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                    rho_w_rhs(i, j, k) += grav_gpu[2] * rho_prime;</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                }</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                <span class="comment">// Add driving pressure gradient</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f">abl_driver_type</a> == <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba527d74300afe17c5171b0e5e015918e6">ABLDriverType::PressureGradient</a>)</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                    rho_w_rhs(i, j, k) += -solverChoice.<a class="code" href="structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb">abl_pressure_grad</a>[2];</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                {</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_u_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k-1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k-1));</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                    rho_w_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">cosphi</a>;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                }</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                <span class="comment">// Add geostrophic forcing</span></div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f">abl_driver_type</a> == <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6c2c47a19d5c773bae606eb243104880">ABLDriverType::GeostrophicWind</a>)</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                    rho_w_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69">abl_geo_forcing</a>[2];</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                <span class="comment">// Add Rayleigh damping</span></div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                {</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                    rho_w_rhs(i, j, k) -= dptr_rayleigh_tau[k] * <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k);</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                }</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                <span class="comment">// Enforce no forcing term at bottom boundary</span></div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                <span class="keywordflow">if</span> (k == 0) {</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                    rho_w_rhs(i,j,k) = 0.;</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == domhi_z+1) {</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                    rho_w_rhs(i, j, k) = 0.;</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                }</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                <span class="comment">// on coarse-fine boundary</span></div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                rho_w_rhs(i, j, k) = 0.0;</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            }</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        });</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    }</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;}</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_prime = 0.5 * (cell_data(i,j,k) + cell_data(i,j,k-1) - r0_arr(i,j,k) - r0_arr(i,j,k-1));</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                    rho_w_rhs(i, j, k) += grav_gpu[2] * rho_prime;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                }</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                <span class="comment">// Add driving pressure gradient</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f">abl_driver_type</a> == <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba527d74300afe17c5171b0e5e015918e6">ABLDriverType::PressureGradient</a>)</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                    rho_w_rhs(i, j, k) += -solverChoice.<a class="code" href="structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb">abl_pressure_grad</a>[2];</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                {</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_u_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k-1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k-1));</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                    rho_w_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">cosphi</a>;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                }</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                <span class="comment">// Add geostrophic forcing</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f">abl_driver_type</a> == <a class="code" href="DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6c2c47a19d5c773bae606eb243104880">ABLDriverType::GeostrophicWind</a>)</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                    rho_w_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69">abl_geo_forcing</a>[2];</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                <span class="comment">// Add Rayleigh damping</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                {</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                    rho_w_rhs(i, j, k) -= dptr_rayleigh_tau[k] * <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                }</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                <span class="comment">// Enforce no forcing term at bottom boundary</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                <span class="keywordflow">if</span> (k == 0) {</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                    rho_w_rhs(i,j,k) = 0.;</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == domhi_z+1) {</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                    rho_w_rhs(i, j, k) = 0.;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                }</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                <span class="comment">// on coarse-fine boundary</span></div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                rho_w_rhs(i, j, k) = 0.0;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            }</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        });</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    }</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
