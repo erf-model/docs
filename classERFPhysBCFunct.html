@@ -732,7 +732,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    {</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="comment">// Populate ghost cells on lo-y and hi-y domain boundaries</span></div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        Box bx_ylo(bx);  bx_ylo.setBig  (1,dom_lo.y-1); bx_ylo.setSmall(2,dom_lo.z); bx_ylo.setBig(2,dom_hi.z);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        Box bx_yhi(bx);  bx_yhi.setSmall(1,dom_hi.x+1); bx_yhi.setSmall(2,dom_lo.z); bx_yhi.setBig(2,dom_hi.z);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        Box bx_yhi(bx);  bx_yhi.setSmall(1,dom_hi.y+1); bx_yhi.setSmall(2,dom_lo.z); bx_yhi.setBig(2,dom_hi.z);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        ParallelFor(</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            bx_ylo, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) {</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="keywordtype">int</span> jflip = dom_lo.y - 1 - j;</div>
@@ -1835,7 +1835,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(mf); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt;&amp; dest_arr = mf.array(mfi);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.fabbox();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                Box bx = mfi.validbox(); bx.grow(nghost);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                Array4&lt;const Real&gt; z_nd_arr;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                Array4&lt;const Real&gt; velx_arr;</div>
