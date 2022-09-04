@@ -1,5 +1,10 @@
 var NAVTREEINDEX3 =
 {
+"classPlaneAverage.html#ade7352e3a72a2e09561e031acd32cc8a":[2,0,14,20],
+"classPlaneAverage.html#ae359b042dfa8a0b951a3d34706c3c385":[2,0,14,22],
+"classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a":[2,0,14,3],
+"classPlaneAverage.html#af07d85c4bd48f4bedc0b180001c728dc":[2,0,14,28],
+"classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949":[2,0,14,9],
 "classReadBndryPlanes.html":[2,0,15],
 "classReadBndryPlanes.html#a14bf0864afdd66d2f497ad5372d526ff":[2,0,15,19],
 "classReadBndryPlanes.html#a16ed881bb428b7abb89e4284b356c8d6":[2,0,15,1],
@@ -117,8 +122,8 @@ var NAVTREEINDEX3 =
 "dir_74389ed8173ad57b461b9d623a1f3867.html":[3,0,0],
 "dir_759b90b1f3ea3c20e13693c83a3534b7.html":[3,0,0,3],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -225,8 +230,8 @@ var NAVTREEINDEX3 =
 "namespacemembers_enum.html":[1,1,2],
 "namespacemembers_eval.html":[1,1,3],
 "namespacemembers_func.html":[1,1,1],
-"namespacencutils.html":[2,0,0],
 "namespacencutils.html":[1,0,7],
+"namespacencutils.html":[2,0,0],
 "namespaces.html":[1,0],
 "pages.html":[],
 "prob__common_8H.html":[3,0,0,21],
@@ -244,10 +249,5 @@ var NAVTREEINDEX3 =
 "structDirectionSelector_3_011_01_4.html":[2,0,5],
 "structDirectionSelector_3_011_01_4.html#a0de196a10202d19214fe0d88d3b4dab3":[2,0,5,0],
 "structDirectionSelector_3_012_01_4.html":[2,0,6],
-"structDirectionSelector_3_012_01_4.html#a907464acec0b7ce2ab690a7d1b630703":[2,0,6,0],
-"structInputSoundingData.html":[2,0,9],
-"structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa":[2,0,9,7],
-"structInputSoundingData.html#a0a3d15e3959ce900c213a09230e6646c":[2,0,9,15],
-"structInputSoundingData.html#a12d70bacf9062cb4fce0111a4b475de5":[2,0,9,4],
-"structInputSoundingData.html#a15782809644a4daa0e8de9c3cc4c346a":[2,0,9,10]
+"structDirectionSelector_3_012_01_4.html#a907464acec0b7ce2ab690a7d1b630703":[2,0,6,0]
 };

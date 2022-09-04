@@ -69,10 +69,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ABLMost_8H.html",
-"IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705",
-"classERF.html#a2486b49bb0d7917f812318822e42a03c",
-"classReadBndryPlanes.html",
-"structInputSoundingData.html#a19a42e3bff9ea724831597afe033f17e"
+"IndexDefines_8H.html#a34a43e8378fdc005b5ce0b1b7a1d1d36adb8f7ecba5b40da0cb92768188af74e3",
+"classERF.html#a1e8afee1508b720dab56f5d044deb301",
+"classPlaneAverage.html#ade7352e3a72a2e09561e031acd32cc8a",
+"structInputSoundingData.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

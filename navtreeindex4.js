@@ -1,5 +1,10 @@
 var NAVTREEINDEX4 =
 {
+"structInputSoundingData.html":[2,0,9],
+"structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa":[2,0,9,7],
+"structInputSoundingData.html#a0a3d15e3959ce900c213a09230e6646c":[2,0,9,15],
+"structInputSoundingData.html#a12d70bacf9062cb4fce0111a4b475de5":[2,0,9,4],
+"structInputSoundingData.html#a15782809644a4daa0e8de9c3cc4c346a":[2,0,9,10],
 "structInputSoundingData.html#a19a42e3bff9ea724831597afe033f17e":[2,0,9,6],
 "structInputSoundingData.html#a1bc7a5f380471cdc337067456a347d10":[2,0,9,5],
 "structInputSoundingData.html#a22697746622cd5f3239120eaaa71abdc":[2,0,9,14],
