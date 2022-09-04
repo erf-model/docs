@@ -104,6 +104,8 @@ This graph shows which files directly or indirectly include this file:</div>
 Variables</h2></td></tr>
 <tr class="memitem:a963142d364408ee1775dbef20383b244"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__slow__rhs__fun_8H.html#a963142d364408ee1775dbef20383b244">slow_rhs_fun_pre</a></td></tr>
 <tr class="separator:a963142d364408ee1775dbef20383b244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadc7f4c039b08417963410e7f76bb2dd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__slow__rhs__fun_8H.html#aadc7f4c039b08417963410e7f76bb2dd">pre_update_fun</a></td></tr>
+<tr class="separator:aadc7f4c039b08417963410e7f76bb2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd90eac481ef47af3b095c56653098e8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__slow__rhs__fun_8H.html#afd90eac481ef47af3b095c56653098e8">post_update_fun</a></td></tr>
 <tr class="separator:afd90eac481ef47af3b095c56653098e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af460c930508105e92f60fd868d23ebcf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__slow__rhs__fun_8H.html#af460c930508105e92f60fd868d23ebcf">slow_rhs_fun_post</a></td></tr>
@@ -130,7 +132,26 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">        <span class="keywordtype">bool</span> fast_only = <span class="keyword">false</span>;</div>
 <div class="line">        <a class="code" href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(S_data, time_for_fp, time_mt, delta_t, ng_cons, ng_vel, fast_only);</div>
-<div class="line">        <a class="code" href="TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a>(S_data[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>], S_prim, ng_cons);</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#aa7df86926bbc5da3453f7b45861f67d3">ERF::erf_advance()</a>.</p>
+
+</div>
+</div>
+<a id="aadc7f4c039b08417963410e7f76bb2dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadc7f4c039b08417963410e7f76bb2dd">&#9670;&nbsp;</a></span>pre_update_fun</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto pre_update_fun</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= [&amp;](Vector&lt;MultiFab&gt;&amp; S_data, <span class="keywordtype">int</span> ng_cons)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code" href="TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a>(S_data[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>], ng_cons);</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa7df86926bbc5da3453f7b45861f67d3">ERF::erf_advance()</a>.</p>
@@ -199,9 +220,9 @@ Variables</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aTI__utils_8H_html_a76b27b6105fe279f9a43296072c843b3"><div class="ttname"><a href="TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a></div><div class="ttdeci">auto cons_to_prim</div><div class="ttdef"><b>Definition:</b> TI_utils.H:12</div></div>
+<div class="ttc" id="aTI__utils_8H_html_a76b27b6105fe279f9a43296072c843b3"><div class="ttname"><a href="TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a></div><div class="ttdeci">auto cons_to_prim</div><div class="ttdef"><b>Definition:</b> TI_utils.H:4</div></div>
 <div class="ttc" id="aERF__slow__rhs__post_8cpp_html_ad91b020255b4141f260d80325f386480"><div class="ttname"><a href="ERF__slow__rhs__post_8cpp.html#ad91b020255b4141f260d80325f386480">erf_slow_rhs_post</a></div><div class="ttdeci">void erf_slow_rhs_post(int level, Real dt, Vector&lt; MultiFab &gt; &amp;S_rhs, Vector&lt; MultiFab &gt; &amp;S_old, Vector&lt; MultiFab &gt; &amp;S_new, Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, Vector&lt; MultiFab &gt; &amp;S_scratch, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, std::unique_ptr&lt; MultiFab &gt; &amp;z_t_mf, const MultiFab &amp;source, const MultiFab &amp;eddyDiffs, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;diffflux, const amrex::Geometry geom, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; ABLMost &gt; &amp;most, const Gpu::DeviceVector&lt; amrex::BCRec &gt; domain_bcs_type_d, std::unique_ptr&lt; MultiFab &gt; &amp;z0, std::unique_ptr&lt; MultiFab &gt; &amp;dJ)</div><div class="ttdef"><b>Definition:</b> ERF_slow_rhs_post.cpp:17</div></div>
-<div class="ttc" id="aTI__utils_8H_html_a5e7934b18ef63bc8c4c16db42277c52f"><div class="ttname"><a href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a></div><div class="ttdeci">auto apply_bcs</div><div class="ttdef"><b>Definition:</b> TI_utils.H:38</div></div>
+<div class="ttc" id="aTI__utils_8H_html_a5e7934b18ef63bc8c4c16db42277c52f"><div class="ttname"><a href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a></div><div class="ttdeci">auto apply_bcs</div><div class="ttdef"><b>Definition:</b> TI_utils.H:35</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
 <div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:176</div></div>
 <!-- start footer part -->

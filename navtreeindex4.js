@@ -1,5 +1,8 @@
 var NAVTREEINDEX4 =
 {
+"structDirectionSelector_3_011_01_4.html#a0de196a10202d19214fe0d88d3b4dab3":[2,0,5,0],
+"structDirectionSelector_3_012_01_4.html":[2,0,6],
+"structDirectionSelector_3_012_01_4.html#a907464acec0b7ce2ab690a7d1b630703":[2,0,6,0],
 "structInputSoundingData.html":[2,0,9],
 "structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa":[2,0,9,7],
 "structInputSoundingData.html#a0a3d15e3959ce900c213a09230e6646c":[2,0,9,15],
