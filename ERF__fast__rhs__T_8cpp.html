@@ -852,14 +852,14 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;          RHS_a(i,j,hi.z+1)     =  0.0;</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;          <span class="comment">// w = 0 at k = 0</span></div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;          soln(i,j,0) = RHS_a(i,j,0) * inv_coeffB_a(i,j,0);</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;          soln_a(i,j,0) = RHS_a(i,j,0) * inv_coeffB_a(i,j,0);</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt;= hi.z+1; k++) {</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;              soln(i,j,k) = (RHS_a(i,j,k)-coeffA_a(i,j,k)*soln(i,j,k-1)) * inv_coeffB_a(i,j,k);</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;              soln_a(i,j,k) = (RHS_a(i,j,k)-coeffA_a(i,j,k)*soln_a(i,j,k-1)) * inv_coeffB_a(i,j,k);</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;          }</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;          cur_zmom(i,j,hi.z+1) = stage_zmom(i,j,hi.z+1) + soln(i,j,hi.z+1);</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;          cur_zmom(i,j,hi.z+1) = stage_zmom(i,j,hi.z+1) + soln_a(i,j,hi.z+1);</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = hi.z; k &gt;= 0; k--) {</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;              soln(i,j,k) -= ( coeffC_a(i,j,k) * inv_coeffB_a(i,j,k) ) *soln(i,j,k+1);</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;              soln_a(i,j,k) -= ( coeffC_a(i,j,k) * inv_coeffB_a(i,j,k) ) *soln_a(i,j,k+1);</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;          }</div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;      });</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;<span class="preprocessor">#else</span></div>

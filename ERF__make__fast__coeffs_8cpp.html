@@ -455,14 +455,14 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;          coeffC_a(i,j,0) =  0.0;</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;          <span class="comment">// w_khi = 0</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;          coeffA_a(i,j,klen) =  0.0;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;          coeffB_a(i,j,klen) =  1.0;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;          coeffC_a(i,j,klen) =  0.0;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;          coeffA_a(i,j,hi.z+1) =  0.0;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;          coeffB_a(i,j,hi.z+1) =  1.0;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;          coeffC_a(i,j,hi.z+1) =  0.0;</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;          <span class="comment">// w = 0 at k = 0</span></div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;          <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> bet = coeffB_a(i,j,0);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt;= klen; k++) {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt;= hi.z+1; k++) {</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;              gam_a(i,j,k) = coeffC_a(i,j,k-1) / bet;</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;              bet = coeffB_a(i,j,k) - coeffA_a(i,j,k)*gam_a(i,j,k);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;              coeffB_a(i,j,k) = bet;</div>
