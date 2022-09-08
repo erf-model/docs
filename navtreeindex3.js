@@ -1,9 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"classPlaneAverage.html#aad9a66709a740e6941dae91813305c65":[2,0,14,11],
-"classPlaneAverage.html#aaf4e5c9b73f65af3eb0ccdc6a82e76f2":[2,0,14,14],
-"classPlaneAverage.html#ab1c325b8a1241cb446bad96fa558e770":[2,0,14,19],
-"classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1":[2,0,14,13],
 "classPlaneAverage.html#abf7bfae5c1b6fed56ff09fd06368b12c":[2,0,14,6],
 "classPlaneAverage.html#adb7364b09239a1862482277295e0d7d4":[2,0,14,10],
 "classPlaneAverage.html#ade7352e3a72a2e09561e031acd32cc8a":[2,0,14,20],
@@ -137,8 +133,8 @@ var NAVTREEINDEX3 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1],
 "functions_func.html":[2,3,1,0],
+"functions_func.html":[2,3,1],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
@@ -249,5 +245,9 @@ var NAVTREEINDEX3 =
 "prob__common_8H.html#afef32e2116829d24b864c64caebf5ea6":[3,0,0,21,0],
 "prob__common_8H_source.html":[3,0,0,21],
 "structDirectionSelector.html":[2,0,3],
-"structDirectionSelector.html#a3950b636303028f398441fdc43d66dba":[2,0,3,0]
+"structDirectionSelector.html#a3950b636303028f398441fdc43d66dba":[2,0,3,0],
+"structDirectionSelector_3_010_01_4.html":[2,0,4],
+"structDirectionSelector_3_010_01_4.html#aca1761dba346d6d54758ef421a19a356":[2,0,4,0],
+"structDirectionSelector_3_011_01_4.html":[2,0,5],
+"structDirectionSelector_3_011_01_4.html#a0de196a10202d19214fe0d88d3b4dab3":[2,0,5,0]
 };

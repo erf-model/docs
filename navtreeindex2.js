@@ -1,9 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classERF.html#a18e6dbbf968b4492e78aa427791620f4":[2,0,7,13],
-"classERF.html#a18fa84b06132715757d97ec38678aa2c":[2,0,7,141],
-"classERF.html#a1bc503c07e76f2a4791a76e6907e6dd7":[2,0,7,107],
-"classERF.html#a1cade630b005dbcc0f644987ef3db287":[2,0,7,87],
 "classERF.html#a1e8afee1508b720dab56f5d044deb301":[2,0,7,125],
 "classERF.html#a1f48ec3caf326a6b1b986d061d36ee90":[2,0,7,71],
 "classERF.html#a1fcb440c67da60c86372aec1fe871cb7":[2,0,7,51],
@@ -249,5 +245,9 @@ var NAVTREEINDEX2 =
 "classPlaneAverage.html#a98ad1b7801e75ac43ddd3d06b0c5d7da":[2,0,14,27],
 "classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d":[2,0,14,24],
 "classPlaneAverage.html#a9ed43e3c2cfd2ef0f3fb23d2097a1b6d":[2,0,14,18],
-"classPlaneAverage.html#aab8235d99bd3e841f0a2a5fb563c0bfa":[2,0,14,1]
+"classPlaneAverage.html#aab8235d99bd3e841f0a2a5fb563c0bfa":[2,0,14,1],
+"classPlaneAverage.html#aad9a66709a740e6941dae91813305c65":[2,0,14,11],
+"classPlaneAverage.html#aaf4e5c9b73f65af3eb0ccdc6a82e76f2":[2,0,14,14],
+"classPlaneAverage.html#ab1c325b8a1241cb446bad96fa558e770":[2,0,14,19],
+"classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1":[2,0,14,13]
 };
