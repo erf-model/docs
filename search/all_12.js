@@ -9,7 +9,7 @@ var searchData=
   ['terrainmet_736',['TerrainMet',['../namespaceTerrainMet.html',1,'']]],
   ['terrainmetrics_2ecpp_737',['TerrainMetrics.cpp',['../TerrainMetrics_8cpp.html',1,'']]],
   ['terrainmetrics_2eh_738',['TerrainMetrics.H',['../TerrainMetrics_8H.html',1,'']]],
-  ['theta_739',['theta',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91',1,'theta():&#160;DataStruct.H'],['../namespacePrim.html#ae6378f5d4272bb8368424f704f141fc0a83429f0fa4859ad7f81d7c6b8451ccb5',1,'Prim::Theta()']]],
+  ['theta_739',['Theta',['../namespacePrim.html#ae6378f5d4272bb8368424f704f141fc0a83429f0fa4859ad7f81d7c6b8451ccb5',1,'Prim::Theta()'],['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91',1,'theta():&#160;DataStruct.H']]],
   ['theta_5fh_740',['Theta_h',['../namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5ad0cfc6c50b43867895cbc2c02eb2b99a',1,'EddyDiff']]],
   ['theta_5finp_5fsound_741',['theta_inp_sound',['../structInputSoundingData.html#acf38db2cecabcd07fe794b41974ba866',1,'InputSoundingData']]],
   ['theta_5finp_5fsound_5fd_742',['theta_inp_sound_d',['../structInputSoundingData.html#ae990e8cfad78f0fa5a603db3154d0124',1,'InputSoundingData']]],

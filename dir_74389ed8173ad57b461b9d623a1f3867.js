@@ -1,9 +1,11 @@
 var dir_74389ed8173ad57b461b9d623a1f3867 =
 [
+    [ "Advection", "dir_87c27e56fd01e6f1a6e2085b6fe8a1a5.html", "dir_87c27e56fd01e6f1a6e2085b6fe8a1a5" ],
     [ "BoundaryConditions", "dir_528efc400cc48bc5f175d9531879efeb.html", "dir_528efc400cc48bc5f175d9531879efeb" ],
+    [ "Diffusion", "dir_fc0c15590968603ac439df7b0a572228.html", "dir_fc0c15590968603ac439df7b0a572228" ],
     [ "IO", "dir_4c48f420b74c1f1cc31b316243ca788c.html", "dir_4c48f420b74c1f1cc31b316243ca788c" ],
-    [ "SpatialStencils", "dir_355f330b8d85407e56bdd3ad6c7bf36f.html", "dir_355f330b8d85407e56bdd3ad6c7bf36f" ],
     [ "TimeIntegration", "dir_759b90b1f3ea3c20e13693c83a3534b7.html", "dir_759b90b1f3ea3c20e13693c83a3534b7" ],
+    [ "Utils", "dir_5c09e96eccedf512ae411d636afd2712.html", "dir_5c09e96eccedf512ae411d636afd2712" ],
     [ "DataStruct.H", "DataStruct_8H.html", "DataStruct_8H" ],
     [ "Derive.cpp", "Derive_8cpp.html", "Derive_8cpp" ],
     [ "Derive.H", "Derive_8H.html", "Derive_8H" ],
