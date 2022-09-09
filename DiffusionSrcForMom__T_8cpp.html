@@ -327,45 +327,48 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                         z_nd, detJ,</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                         domain, bc_ptr, er_arr);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            diff_update = <a class="code" href="DiffusionSrcForMom__N_8H.html#a5b6b778012fe3b5d408ae1978eb125c8">DiffusionSrcForXMom</a>(i, j, k, u, v, w, cell_data,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                              dxInv, K_turb, solverChoice,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                              domain, bc_ptr, er_arr);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        rho_u_rhs(i, j, k) += diff_update;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    },</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        amrex::Real diff_update;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (k &lt; domhi_z) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            diff_update = <a class="code" href="DiffusionSrcForMom__T_8H.html#a4245f263cd83a94a5f5a8254bc1f5b7d">DiffusionSrcForYMomWithTerrain</a>(i, j, k, u, v, w, cell_data,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                         dxInv, K_turb, solverChoice,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                                         z_nd, detJ,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                         domain, bc_ptr, er_arr);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            diff_update = <a class="code" href="DiffusionSrcForMom__N_8H.html#a199b251f48ea03275bc4ead584bc926e">DiffusionSrcForYMom</a>(i, j, k, u, v, w, cell_data,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                              dxInv, K_turb, solverChoice,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                              domain, bc_ptr, er_arr);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        rho_v_rhs(i, j, k) += diff_update;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    },</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">int</span> k_diff = (k == domhi_z+1) ? domhi_z : k;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        amrex::Real diff_update;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> (k &lt; domhi_z) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            diff_update = <a class="code" href="DiffusionSrcForMom__T_8H.html#a3ccbbdb261f04badd40a3be6cf063b13">DiffusionSrcForZMomWithTerrain</a>(i, j, k_diff, u, v, w, cell_data,</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                                         dxInv, K_turb, solverChoice,</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                                         z_nd, detJ,</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                         domain, bc_ptr, er_arr);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            diff_update = <a class="code" href="DiffusionSrcForMom__N_8H.html#a4624574cd84898e5b799050d68961b39">DiffusionSrcForZMom</a>(i, j, k_diff, u, v, w, cell_data,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                              dxInv, K_turb, solverChoice,</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                              domain, bc_ptr, er_arr);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        rho_w_rhs(i, j, k) += diff_update;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    });</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt;&amp; dxInv_terr = {dxInv[0], dxInv[1], dxInv[2]/detJ(i,j,k)};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            diff_update = <a class="code" href="DiffusionSrcForMom__N_8H.html#a5b6b778012fe3b5d408ae1978eb125c8">DiffusionSrcForXMom</a>(i, j, k, u, v, w, cell_data,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                              dxInv_terr, K_turb, solverChoice,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                              domain, bc_ptr, er_arr);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        rho_u_rhs(i, j, k) += diff_update;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    },</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        amrex::Real diff_update;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (k &lt; domhi_z) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            diff_update = <a class="code" href="DiffusionSrcForMom__T_8H.html#a4245f263cd83a94a5f5a8254bc1f5b7d">DiffusionSrcForYMomWithTerrain</a>(i, j, k, u, v, w, cell_data,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                                         dxInv, K_turb, solverChoice,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                         z_nd, detJ,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                         domain, bc_ptr, er_arr);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt;&amp; dxInv_terr = {dxInv[0], dxInv[1], dxInv[2]/detJ(i,j,k)};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            diff_update = <a class="code" href="DiffusionSrcForMom__N_8H.html#a199b251f48ea03275bc4ead584bc926e">DiffusionSrcForYMom</a>(i, j, k, u, v, w, cell_data,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                              dxInv_terr, K_turb, solverChoice,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                              domain, bc_ptr, er_arr);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        rho_v_rhs(i, j, k) += diff_update;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    },</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        amrex::Real diff_update;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">if</span> (k &lt; domhi_z) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            diff_update = <a class="code" href="DiffusionSrcForMom__T_8H.html#a3ccbbdb261f04badd40a3be6cf063b13">DiffusionSrcForZMomWithTerrain</a>(i, j, k, u, v, w, cell_data,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                                         dxInv, K_turb, solverChoice,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                         z_nd, detJ,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                                         domain, bc_ptr, er_arr);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordtype">int</span> k_diff = domhi_z;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt;&amp; dxInv_terr = {dxInv[0], dxInv[1], dxInv[2]/detJ(i,j,k_diff)};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            diff_update = <a class="code" href="DiffusionSrcForMom__N_8H.html#a4624574cd84898e5b799050d68961b39">DiffusionSrcForZMom</a>(i, j, k_diff, u, v, w, cell_data,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                              dxInv_terr, K_turb, solverChoice,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                              domain, bc_ptr, er_arr);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        rho_w_rhs(i, j, k) += diff_update;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    });</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__pre_8cpp.html#ae95c5df1f2e1efc83f2604361c54fc02">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
