@@ -707,7 +707,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        b2d.setSmall(2,0);</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        b2d.setBig(2,0);</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="comment">// Enforce no forcing term at top and bottom boundaries</span></div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        amrex::ParallelFor(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        amrex::ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            rho_w_rhs(i,j,        0) = 0.;</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            rho_w_rhs(i,j,domhi_z+1) = 0.;</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        });</div>
