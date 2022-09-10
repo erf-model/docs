@@ -795,7 +795,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;          Elixir dhdt_eli = dhdtfab.elixir();</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160; </div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;          <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time_mt  = time - 0.5*dtau;</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;          <a class="code" href="prob__common_8H.html#a0c2fbec525173fa58feafd7d491cfd00">fill_dhdt</a>(dhdt_arr,b2d,dx,time_mt,dtau);,</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;          <a class="code" href="prob__common_8H.html#a0c2fbec525173fa58feafd7d491cfd00">fill_dhdt</a>(dhdt_arr,b2d,dx,time_mt,dtau);</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;          ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;          {</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;              <span class="comment">// Moving terrain</span></div>
@@ -827,7 +827,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;              RHS_a(i,j,hi.z+1) =  0.0;</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160; </div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;              <span class="comment">// w = 0 at k = 0</span></div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;              soln_a(i,j,0) = 0.</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;              soln_a(i,j,0) = 0.;</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt;= hi.z+1; k++) {</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;                  soln_a(i,j,k) = (RHS_a(i,j,k)-coeffA_a(i,j,k)*soln_a(i,j,k-1)) * inv_coeffB_a(i,j,k);</div>
