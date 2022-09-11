@@ -88,7 +88,19 @@ $(document).ready(function(){initNavTree('TI__slow__rhs__fun_8H.html',''); initR
 <div class="title">TI_slow_rhs_fun.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &quot;<a class="el" href="prob__common_8H_source.html">prob_common.H</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for TI_slow_rhs_fun.H:</div>
+<div class="dyncontent">
+<div class="center"><img src="TI__slow__rhs__fun_8H__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TI__slow__rhs__fun_8H" alt=""/></div>
+<map name="_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TI__slow__rhs__fun_8H" id="_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TI__slow__rhs__fun_8H">
+<area shape="rect" title=" " alt="" coords="68,5,275,61"/>
+<area shape="rect" href="prob__common_8H.html" title=" " alt="" coords="107,109,236,136"/>
+<area shape="rect" title=" " alt="" coords="5,184,159,211"/>
+<area shape="rect" title=" " alt="" coords="183,184,339,211"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="TI__slow__rhs__fun_8H__dep__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2TimeIntegration_2TI__slow__rhs__fun_8Hdep" alt=""/></div>
@@ -184,15 +196,15 @@ Variables</h2></td></tr>
 <div class="line">        </div>
 <div class="line">        <span class="keywordflow">if</span> ( solverChoice.use_terrain &amp;&amp;  (solverChoice.terrain_type == 1) )</div>
 <div class="line">        {</div>
-<div class="line">            <a class="code" href="ERF__slow__rhs__post_8cpp.html#ad91b020255b4141f260d80325f386480">erf_slow_rhs_post</a>(level, slow_dt, S_rhs, S_old, S_new, S_data, S_prim, S_scratch,</div>
+<div class="line">            <a class="code" href="ERF__slow__rhs__post_8cpp.html#a97e21218fd693280ed9cf32580a032ff">erf_slow_rhs_post</a>(level, slow_dt, S_rhs, S_old, S_new, S_data, S_prim, S_scratch,</div>
 <div class="line">                              xvel_new, yvel_new, zvel_new,</div>
-<div class="line">                              z_t_rk[level], source, eddyDiffs, diffflux,</div>
+<div class="line">                              source, eddyDiffs, diffflux,</div>
 <div class="line">                              fine_geom, solverChoice, m_most, domain_bcs_type_d,</div>
 <div class="line">                              z_phys_nd_new[level], detJ_cc_new[level]);</div>
 <div class="line">        } <span class="keywordflow">else</span> {</div>
-<div class="line">            <a class="code" href="ERF__slow__rhs__post_8cpp.html#ad91b020255b4141f260d80325f386480">erf_slow_rhs_post</a>(level, slow_dt, S_rhs, S_old, S_new, S_data, S_prim, S_scratch,</div>
+<div class="line">            <a class="code" href="ERF__slow__rhs__post_8cpp.html#a97e21218fd693280ed9cf32580a032ff">erf_slow_rhs_post</a>(level, slow_dt, S_rhs, S_old, S_new, S_data, S_prim, S_scratch,</div>
 <div class="line">                              xvel_new, yvel_new, zvel_new,</div>
-<div class="line">                              z_t_rk[level], source, eddyDiffs, diffflux,</div>
+<div class="line">                              source, eddyDiffs, diffflux,</div>
 <div class="line">                              fine_geom, solverChoice, m_most, domain_bcs_type_d,</div>
 <div class="line">                              z_phys_nd[level], detJ_cc[level]);</div>
 <div class="line">        }</div>
@@ -220,9 +232,9 @@ Variables</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aTI__utils_8H_html_a76b27b6105fe279f9a43296072c843b3"><div class="ttname"><a href="TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a></div><div class="ttdeci">auto cons_to_prim</div><div class="ttdef"><b>Definition:</b> TI_utils.H:4</div></div>
-<div class="ttc" id="aERF__slow__rhs__post_8cpp_html_ad91b020255b4141f260d80325f386480"><div class="ttname"><a href="ERF__slow__rhs__post_8cpp.html#ad91b020255b4141f260d80325f386480">erf_slow_rhs_post</a></div><div class="ttdeci">void erf_slow_rhs_post(int level, Real dt, Vector&lt; MultiFab &gt; &amp;S_rhs, Vector&lt; MultiFab &gt; &amp;S_old, Vector&lt; MultiFab &gt; &amp;S_new, Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, Vector&lt; MultiFab &gt; &amp;S_scratch, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, std::unique_ptr&lt; MultiFab &gt; &amp;z_t_mf, const MultiFab &amp;source, const MultiFab &amp;eddyDiffs, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;diffflux, const amrex::Geometry geom, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; ABLMost &gt; &amp;most, const Gpu::DeviceVector&lt; amrex::BCRec &gt; domain_bcs_type_d, std::unique_ptr&lt; MultiFab &gt; &amp;z0, std::unique_ptr&lt; MultiFab &gt; &amp;dJ)</div><div class="ttdef"><b>Definition:</b> ERF_slow_rhs_post.cpp:18</div></div>
-<div class="ttc" id="aTI__utils_8H_html_a5e7934b18ef63bc8c4c16db42277c52f"><div class="ttname"><a href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a></div><div class="ttdeci">auto apply_bcs</div><div class="ttdef"><b>Definition:</b> TI_utils.H:35</div></div>
+<div class="ttc" id="aTI__utils_8H_html_a76b27b6105fe279f9a43296072c843b3"><div class="ttname"><a href="TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a></div><div class="ttdeci">auto cons_to_prim</div><div class="ttdef"><b>Definition:</b> TI_utils.H:6</div></div>
+<div class="ttc" id="aERF__slow__rhs__post_8cpp_html_a97e21218fd693280ed9cf32580a032ff"><div class="ttname"><a href="ERF__slow__rhs__post_8cpp.html#a97e21218fd693280ed9cf32580a032ff">erf_slow_rhs_post</a></div><div class="ttdeci">void erf_slow_rhs_post(int, Real dt, Vector&lt; MultiFab &gt; &amp;S_rhs, Vector&lt; MultiFab &gt; &amp;S_old, Vector&lt; MultiFab &gt; &amp;S_new, Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, Vector&lt; MultiFab &gt; &amp;S_scratch, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, const MultiFab &amp;source, const MultiFab &amp;eddyDiffs, std::array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;diffflux, const amrex::Geometry geom, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; ABLMost &gt; &amp;most, const Gpu::DeviceVector&lt; amrex::BCRec &gt; domain_bcs_type_d, std::unique_ptr&lt; MultiFab &gt; &amp;z0, std::unique_ptr&lt; MultiFab &gt; &amp;dJ)</div><div class="ttdef"><b>Definition:</b> ERF_slow_rhs_post.cpp:18</div></div>
+<div class="ttc" id="aTI__utils_8H_html_a5e7934b18ef63bc8c4c16db42277c52f"><div class="ttname"><a href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a></div><div class="ttdeci">auto apply_bcs</div><div class="ttdef"><b>Definition:</b> TI_utils.H:37</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
 <div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:176</div></div>
 <!-- start footer part -->

@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"structDirectionSelector.html":[2,0,3],
+"structDirectionSelector.html#a3950b636303028f398441fdc43d66dba":[2,0,3,0],
 "structDirectionSelector_3_010_01_4.html":[2,0,4],
 "structDirectionSelector_3_010_01_4.html#aca1761dba346d6d54758ef421a19a356":[2,0,4,0],
 "structDirectionSelector_3_011_01_4.html":[2,0,5],

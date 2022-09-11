@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"classPlaneAverage.html#aad9a66709a740e6941dae91813305c65":[2,0,14,11],
+"classPlaneAverage.html#aaf4e5c9b73f65af3eb0ccdc6a82e76f2":[2,0,14,14],
 "classPlaneAverage.html#ab1c325b8a1241cb446bad96fa558e770":[2,0,14,19],
 "classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1":[2,0,14,13],
 "classPlaneAverage.html#abf7bfae5c1b6fed56ff09fd06368b12c":[2,0,14,6],
@@ -128,8 +130,8 @@ var NAVTREEINDEX3 =
 "dir_87c27e56fd01e6f1a6e2085b6fe8a1a5.html":[3,0,0,0],
 "dir_fc0c15590968603ac439df7b0a572228.html":[3,0,0,2],
 "files.html":[3,0],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -175,8 +177,8 @@ var NAVTREEINDEX3 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,18],
 "functions_v.html":[2,3,0,19],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -208,8 +210,8 @@ var NAVTREEINDEX3 =
 "globals_type.html":[3,1,3],
 "globals_vars.html":[3,1,2],
 "hierarchy.html":[2,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "prob__common_8H.html#a8b1996207bd0127c378e38a0749acecb":[3,0,0,22,1],
 "prob__common_8H.html#ad0da799211f82f28a9e0d53008febb1b":[3,0,0,22,2],
 "prob__common_8H.html#afef32e2116829d24b864c64caebf5ea6":[3,0,0,22,0],
-"prob__common_8H_source.html":[3,0,0,22],
-"structDirectionSelector.html":[2,0,3],
-"structDirectionSelector.html#a3950b636303028f398441fdc43d66dba":[2,0,3,0]
+"prob__common_8H_source.html":[3,0,0,22]
 };
