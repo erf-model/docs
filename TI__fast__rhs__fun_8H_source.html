@@ -169,31 +169,30 @@ $(document).ready(function(){initNavTree('TI__fast__rhs__fun_8H_source.html','')
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                               S_data, S_scratch, fine_geom, ifr, solverChoice, Omega, z_t_pert,</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                               z_phys_nd[level], detJ_cc[level], r0, pi0, dtau, inv_fac);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="comment">// If this is not the first substep we pass in S_data as the previous step&#39;s solution</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">if</span> (fast_step == 0) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="comment">// If this is the first substep we pass in S_old as the previous step&#39;s solution</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="ERF__fast__rhs__N_8cpp.html#aaa86f1d93d3adde60fbd703afb92eb33">erf_fast_rhs_N</a>(fast_step, level, new_time, S_slow_rhs, S_old, S_stage, S_prim, pi_stage, fast_coeffs,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                               S_data, S_scratch, fine_geom, ifr, solverChoice, z_t_pert,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                               z_phys_nd[level], detJ_cc[level], dtau, inv_fac);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="comment">// If this is not the first substep we pass in S_data as the previous step&#39;s solution</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <a class="code" href="ERF__fast__rhs__N_8cpp.html#aaa86f1d93d3adde60fbd703afb92eb33">erf_fast_rhs_N</a>(fast_step, level, new_time, S_slow_rhs, S_data, S_stage, S_prim, pi_stage, fast_coeffs,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                               S_data, S_scratch, fine_geom, ifr, solverChoice, z_t_pert,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                               z_phys_nd[level], detJ_cc[level], dtau, inv_fac);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">// Moving terrain</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time_mt = new_time - 0.5*dtau;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment">// Even if we update all the conserved variables we don&#39;t need to fillpatch the slow ones every acoustic substep</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">int</span> ng_cons    = 1;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">int</span> ng_vel     = 1;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(S_data, new_time, time_mt, dtau, ng_cons, ng_vel, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        MultiFab::Copy(S_scratch[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>], S_data[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>], <a class="code" href="namespaceCons.html#a219e8c6ed34261992bcf3198eb4a21c5a7ba34ebd02f164da2892ceb823948315">Cons::RhoTheta</a>, <a class="code" href="namespaceCons.html#a219e8c6ed34261992bcf3198eb4a21c5a7ba34ebd02f164da2892ceb823948315">Cons::RhoTheta</a>, 1, ng_cons);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    };</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> (fast_step == 0) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="comment">// If this is the first substep we pass in S_old as the previous step&#39;s solution</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <a class="code" href="ERF__fast__rhs__N_8cpp.html#aaa86f1d93d3adde60fbd703afb92eb33">erf_fast_rhs_N</a>(fast_step, level, new_time, S_slow_rhs, S_old, S_stage, S_prim, pi_stage, fast_coeffs,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                               S_data, S_scratch, fine_geom, ifr, solverChoice, z_t_pert,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                               z_phys_nd[level], detJ_cc[level], dtau, inv_fac);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="comment">// If this is not the first substep we pass in S_data as the previous step&#39;s solution</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <a class="code" href="ERF__fast__rhs__N_8cpp.html#aaa86f1d93d3adde60fbd703afb92eb33">erf_fast_rhs_N</a>(fast_step, level, new_time, S_slow_rhs, S_data, S_stage, S_prim, pi_stage, fast_coeffs,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                               S_data, S_scratch, fine_geom, ifr, solverChoice, z_t_pert,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                               z_phys_nd[level], detJ_cc[level], dtau, inv_fac);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment">// Moving terrain</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time_mt = new_time - 0.5*dtau;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">// Even if we update all the conserved variables we don&#39;t need to fillpatch the slow ones every acoustic substep</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">int</span> ng_cons    = 1;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">int</span> ng_vel     = 1;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(S_data, new_time, time_mt, dtau, ng_cons, ng_vel, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        MultiFab::Copy(S_scratch[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>], S_data[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>], <a class="code" href="namespaceCons.html#a219e8c6ed34261992bcf3198eb4a21c5a7ba34ebd02f164da2892ceb823948315">Cons::RhoTheta</a>, <a class="code" href="namespaceCons.html#a219e8c6ed34261992bcf3198eb4a21c5a7ba34ebd02f164da2892ceb823948315">Cons::RhoTheta</a>, 1, ng_cons);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    };</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
