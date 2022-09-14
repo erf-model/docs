@@ -1,5 +1,17 @@
 var NAVTREEINDEX2 =
 {
+"classERF.html#a02722d16f3c26efe590702200f1296d7":[2,0,7,117],
+"classERF.html#a039a764a1d942c484e8aea49e87bc046":[2,0,7,36],
+"classERF.html#a050dbd236c9bf246554a53008e09f683":[2,0,7,67],
+"classERF.html#a051364b2373d8d86151c0b4a958035bd":[2,0,7,121],
+"classERF.html#a0634154e8e58379c495c3e7fe7c5e4d6":[2,0,7,127],
+"classERF.html#a09017292c9943ac2ed20ce7ed5c3c767":[2,0,7,119],
+"classERF.html#a09d0fb2bd609c898a665d9530a744585":[2,0,7,128],
+"classERF.html#a0b0b4140e117163895e5e2c89a68d12a":[2,0,7,62],
+"classERF.html#a0be12798b46f52fa4b5a995f147c3f96":[2,0,7,15],
+"classERF.html#a0f074d984fb0a319cf7a781b2efc3d63":[2,0,7,108],
+"classERF.html#a0f5b892bf373e46ae54597683e0f9685":[2,0,7,8],
+"classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b":[2,0,7,164],
 "classERF.html#a16e49fd65c68e2afc2140bd9e97bcbe9":[2,0,7,59],
 "classERF.html#a18cd93c567c9ca162e07433ed7345608":[2,0,7,16],
 "classERF.html#a18e6dbbf968b4492e78aa427791620f4":[2,0,7,13],
@@ -237,17 +249,5 @@ var NAVTREEINDEX2 =
 "classPlaneAverage.html#a0b4bb610551a2f07eb05b8e8b7d91820":[2,0,14,4],
 "classPlaneAverage.html#a1f08f5f76700c51c42243410ffce6e66":[2,0,14,29],
 "classPlaneAverage.html#a25aeb78bc5bf19b8c4ce136e2e410cd4":[2,0,14,16],
-"classPlaneAverage.html#a34db2f938bd249c23d2f4c2cdca7ee4e":[2,0,14,0],
-"classPlaneAverage.html#a3860fd72df3e8dbb6b8decfdc360864f":[2,0,14,15],
-"classPlaneAverage.html#a42c7dfa900a0b69ba1d294455ca8ba51":[2,0,14,30],
-"classPlaneAverage.html#a560dbd7059fb6cbb0421635c5d405d2b":[2,0,14,25],
-"classPlaneAverage.html#a57dc07bb4c25aa8f20bd5b1921c5f2f7":[2,0,14,12],
-"classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e":[2,0,14,5],
-"classPlaneAverage.html#a6933fa8d1b71a55f5276250050c54216":[2,0,14,17],
-"classPlaneAverage.html#a6a25218bd5754ec121caab7e4acfc537":[2,0,14,23],
-"classPlaneAverage.html#a6c29e3eafbbb7028e801c513b29a1c09":[2,0,14,21],
-"classPlaneAverage.html#a86402b90cf369ad0613ff325328e05b4":[2,0,14,8],
-"classPlaneAverage.html#a961decb14c2137f36e17ceeaf560b452":[2,0,14,2],
-"classPlaneAverage.html#a98ad1b7801e75ac43ddd3d06b0c5d7da":[2,0,14,27],
-"classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d":[2,0,14,24]
+"classPlaneAverage.html#a34db2f938bd249c23d2f4c2cdca7ee4e":[2,0,14,0]
 };
