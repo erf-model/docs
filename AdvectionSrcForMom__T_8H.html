@@ -226,14 +226,14 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// X-fluxes (at cell centers)</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// ****************************************************************************************</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    met_h_zeta = detJ(i,j,k);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a>(i  ,j  ,k  ,cellSizeInv,z_nd);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    rho_u_avg = 0.5 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1, j, k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i, j, k));</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    amrex::Real centFluxXXNext = rho_u_avg * met_h_zeta *</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                          <a class="code" href="Interpolation_8H.html#a400206f0a38c82153724e460cc3ff10f">InterpolateInX</a>(i+1, j, k, u, 0, rho_u_avg, spatial_order);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    met_h_zeta = detJ(i-1,j,k);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a>(i-1,j  ,k  ,cellSizeInv,z_nd);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    rho_u_avg = 0.5 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i-1, j, k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i, j, k));</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    amrex::Real centFluxXXPrev = rho_u_avg * met_h_zeta *</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                          <a class="code" href="Interpolation_8H.html#a400206f0a38c82153724e460cc3ff10f">InterpolateInX</a>(i  , j, k, u, 0, rho_u_avg, spatial_order);</div>
@@ -286,12 +286,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="AdvectionSrcForMom__T_8H_a7d2f8cf023321bb834d8462fdd871511_cgraph.png" border="0" usemap="#AdvectionSrcForMom__T_8H_a7d2f8cf023321bb834d8462fdd871511_cgraph" alt=""/></div>
 <map name="AdvectionSrcForMom__T_8H_a7d2f8cf023321bb834d8462fdd871511_cgraph" id="AdvectionSrcForMom__T_8H_a7d2f8cf023321bb834d8462fdd871511_cgraph">
-<area shape="rect" title=" " alt="" coords="5,81,189,108"/>
-<area shape="rect" href="TerrainMetrics_8H.html#ad79fef554cbb9d33702dd5e3cde8af6d" title=" " alt="" coords="237,5,457,32"/>
-<area shape="rect" href="Interpolation_8H.html#a400206f0a38c82153724e460cc3ff10f" title=" " alt="" coords="290,56,405,83"/>
-<area shape="rect" href="Interpolation_8H.html#a8646c3324acc178c35e6aa1dfa6f55c1" title=" " alt="" coords="291,107,404,133"/>
-<area shape="rect" href="Interpolation_8H.html#a5e18e863acabb5607a6f560750ee1885" title=" " alt="" coords="290,157,405,184"/>
-<area shape="rect" href="Interpolation_8H.html#a71fca84dbe981db2b26af15f7201ce57" title=" " alt="" coords="505,107,627,133"/>
+<area shape="rect" title=" " alt="" coords="5,107,189,133"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987" title=" " alt="" coords="237,5,457,32"/>
+<area shape="rect" href="TerrainMetrics_8H.html#ad79fef554cbb9d33702dd5e3cde8af6d" title=" " alt="" coords="237,56,457,83"/>
+<area shape="rect" href="Interpolation_8H.html#a400206f0a38c82153724e460cc3ff10f" title=" " alt="" coords="290,107,405,133"/>
+<area shape="rect" href="Interpolation_8H.html#a8646c3324acc178c35e6aa1dfa6f55c1" title=" " alt="" coords="291,157,404,184"/>
+<area shape="rect" href="Interpolation_8H.html#a5e18e863acabb5607a6f560750ee1885" title=" " alt="" coords="290,208,405,235"/>
+<area shape="rect" href="Interpolation_8H.html#a71fca84dbe981db2b26af15f7201ce57" title=" " alt="" coords="505,157,627,184"/>
 </map>
 </div>
 <div class="dynheader">
@@ -416,14 +417,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// y-fluxes (at cell centers)</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// ****************************************************************************************</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    met_h_zeta = detJ(i,j,k),</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a>(i  ,j  ,k  ,cellSizeInv,z_nd);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    rho_v_avg = 0.5 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i, j+1, k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i, j, k));</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    amrex::Real centFluxYYNext = rho_v_avg * met_h_zeta *</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                          <a class="code" href="Interpolation_8H.html#a8646c3324acc178c35e6aa1dfa6f55c1">InterpolateInY</a>(i, j+1, k, v, 0, rho_v_avg, spatial_order);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    met_h_zeta = detJ(i,j-1,k),</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a>(i  ,j-1,k  ,cellSizeInv,z_nd);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    rho_v_avg = 0.5 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i, j-1, k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i, j, k));</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    amrex::Real centFluxYYPrev = rho_v_avg * met_h_zeta *</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                          <a class="code" href="Interpolation_8H.html#a8646c3324acc178c35e6aa1dfa6f55c1">InterpolateInY</a>(i  , j, k, v, 0, rho_v_avg, spatial_order);</div>
@@ -459,12 +460,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="AdvectionSrcForMom__T_8H_ab7bfc74e19d33ffc289b26b5e39e2b12_cgraph.png" border="0" usemap="#AdvectionSrcForMom__T_8H_ab7bfc74e19d33ffc289b26b5e39e2b12_cgraph" alt=""/></div>
 <map name="AdvectionSrcForMom__T_8H_ab7bfc74e19d33ffc289b26b5e39e2b12_cgraph" id="AdvectionSrcForMom__T_8H_ab7bfc74e19d33ffc289b26b5e39e2b12_cgraph">
-<area shape="rect" title=" " alt="" coords="5,81,188,108"/>
-<area shape="rect" href="TerrainMetrics_8H.html#ad79fef554cbb9d33702dd5e3cde8af6d" title=" " alt="" coords="236,5,456,32"/>
-<area shape="rect" href="Interpolation_8H.html#a400206f0a38c82153724e460cc3ff10f" title=" " alt="" coords="289,56,403,83"/>
-<area shape="rect" href="Interpolation_8H.html#a8646c3324acc178c35e6aa1dfa6f55c1" title=" " alt="" coords="289,107,403,133"/>
-<area shape="rect" href="Interpolation_8H.html#a5e18e863acabb5607a6f560750ee1885" title=" " alt="" coords="289,157,403,184"/>
-<area shape="rect" href="Interpolation_8H.html#a71fca84dbe981db2b26af15f7201ce57" title=" " alt="" coords="504,107,625,133"/>
+<area shape="rect" title=" " alt="" coords="5,107,188,133"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987" title=" " alt="" coords="236,5,456,32"/>
+<area shape="rect" href="TerrainMetrics_8H.html#ad79fef554cbb9d33702dd5e3cde8af6d" title=" " alt="" coords="236,56,456,83"/>
+<area shape="rect" href="Interpolation_8H.html#a400206f0a38c82153724e460cc3ff10f" title=" " alt="" coords="289,107,403,133"/>
+<area shape="rect" href="Interpolation_8H.html#a8646c3324acc178c35e6aa1dfa6f55c1" title=" " alt="" coords="289,157,403,184"/>
+<area shape="rect" href="Interpolation_8H.html#a5e18e863acabb5607a6f560750ee1885" title=" " alt="" coords="289,208,403,235"/>
+<area shape="rect" href="Interpolation_8H.html#a71fca84dbe981db2b26af15f7201ce57" title=" " alt="" coords="504,157,625,184"/>
 </map>
 </div>
 <div class="dynheader">
@@ -634,7 +636,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                 + (edgeFluxZYNext - edgeFluxZYPrev) * dyInv</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                 + (centFluxZZNext - centFluxZZPrev) * dzInv;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    amrex::Real denom = (k == 0) ? detJ(i,j,k) : 0.5*(detJ(i,j,k) + detJ(i,j,k-1));</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    amrex::Real denom = 0.5*(detJ(i,j,k) + detJ(i,j,k-1));</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    advectionSrc /= denom;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">return</span> advectionSrc;</div>
@@ -671,14 +673,15 @@ Here is the caller graph for this function:</div>
 </div><!-- doc-content -->
 <div class="ttc" id="aInterpolation_8H_html_a8646c3324acc178c35e6aa1dfa6f55c1"><div class="ttname"><a href="Interpolation_8H.html#a8646c3324acc178c35e6aa1dfa6f55c1">InterpolateInY</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real InterpolateInY(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;qty, int qty_index, amrex::Real upw, int spatial_order)</div><div class="ttdef"><b>Definition:</b> Interpolation.H:70</div></div>
 <div class="ttc" id="aInterpolation_8H_html_a400206f0a38c82153724e460cc3ff10f"><div class="ttname"><a href="Interpolation_8H.html#a400206f0a38c82153724e460cc3ff10f">InterpolateInX</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real InterpolateInX(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;qty, int qty_index, amrex::Real upw, int spatial_order)</div><div class="ttdef"><b>Definition:</b> Interpolation.H:38</div></div>
-<div class="ttc" id="aTerrainMetrics_8H_html_a814e866f06312e508b42efe4a99812bf"><div class="ttname"><a href="TerrainMetrics_8H.html#a814e866f06312e508b42efe4a99812bf">ComputeMetricAtEdgeCenterI</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void ComputeMetricAtEdgeCenterI(int i, int j, int k, amrex::Real &amp;met_h_xi, amrex::Real &amp;met_h_eta, amrex::Real &amp;met_h_zeta, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, int flag)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:422</div></div>
+<div class="ttc" id="aTerrainMetrics_8H_html_a814e866f06312e508b42efe4a99812bf"><div class="ttname"><a href="TerrainMetrics_8H.html#a814e866f06312e508b42efe4a99812bf">ComputeMetricAtEdgeCenterI</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void ComputeMetricAtEdgeCenterI(int i, int j, int k, amrex::Real &amp;met_h_xi, amrex::Real &amp;met_h_eta, amrex::Real &amp;met_h_zeta, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, int flag)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:381</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">AdvectedQuantity::w</a></div><div class="ttdeci">@ w</div></div>
-<div class="ttc" id="aTerrainMetrics_8H_html_a4819616a46d9632e68a548c0fcf6731e"><div class="ttname"><a href="TerrainMetrics_8H.html#a4819616a46d9632e68a548c0fcf6731e">ComputeMetricAtEdgeCenterJ</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void ComputeMetricAtEdgeCenterJ(const int &amp;i, const int &amp;j, const int &amp;k, amrex::Real &amp;met_h_xi, amrex::Real &amp;met_h_eta, amrex::Real &amp;met_h_zeta, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, int flag)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:363</div></div>
+<div class="ttc" id="aTerrainMetrics_8H_html_a4819616a46d9632e68a548c0fcf6731e"><div class="ttname"><a href="TerrainMetrics_8H.html#a4819616a46d9632e68a548c0fcf6731e">ComputeMetricAtEdgeCenterJ</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void ComputeMetricAtEdgeCenterJ(const int &amp;i, const int &amp;j, const int &amp;k, amrex::Real &amp;met_h_xi, amrex::Real &amp;met_h_eta, amrex::Real &amp;met_h_zeta, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, int flag)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:322</div></div>
 <div class="ttc" id="aInterpolation_8H_html_a5e18e863acabb5607a6f560750ee1885"><div class="ttname"><a href="Interpolation_8H.html#a5e18e863acabb5607a6f560750ee1885">InterpolateInZ</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real InterpolateInZ(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;qty, int qty_index, amrex::Real upw, int spatial_order)</div><div class="ttdef"><b>Definition:</b> Interpolation.H:101</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3"><div class="ttname"><a href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">AdvectingQuantity::rho_u</a></div><div class="ttdeci">@ rho_u</div></div>
 <div class="ttc" id="anamespaceTerrainMet_html_a34a43e8378fdc005b5ce0b1b7a1d1d36ae1f2368ff4d838895054474ee157f9a8"><div class="ttname"><a href="namespaceTerrainMet.html#a34a43e8378fdc005b5ce0b1b7a1d1d36ae1f2368ff4d838895054474ee157f9a8">TerrainMet::h_zeta</a></div><div class="ttdeci">@ h_zeta</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:167</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424"><div class="ttname"><a href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">AdvectingQuantity::rho_v</a></div><div class="ttdeci">@ rho_v</div></div>
-<div class="ttc" id="aTerrainMetrics_8H_html_ad79fef554cbb9d33702dd5e3cde8af6d"><div class="ttname"><a href="TerrainMetrics_8H.html#ad79fef554cbb9d33702dd5e3cde8af6d">ComputeMetricAtEdgeCenterK</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void ComputeMetricAtEdgeCenterK(int i, int j, int k, amrex::Real &amp;met_h_xi, amrex::Real &amp;met_h_eta, amrex::Real &amp;met_h_zeta, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, int flag)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:300</div></div>
+<div class="ttc" id="aTerrainMetrics_8H_html_a32eeeb066c70da970aa6a60918515987"><div class="ttname"><a href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE amrex::Real Compute_h_zeta_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:19</div></div>
+<div class="ttc" id="aTerrainMetrics_8H_html_ad79fef554cbb9d33702dd5e3cde8af6d"><div class="ttname"><a href="TerrainMetrics_8H.html#ad79fef554cbb9d33702dd5e3cde8af6d">ComputeMetricAtEdgeCenterK</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void ComputeMetricAtEdgeCenterK(int i, int j, int k, amrex::Real &amp;met_h_xi, amrex::Real &amp;met_h_eta, amrex::Real &amp;met_h_zeta, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, int flag)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:259</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

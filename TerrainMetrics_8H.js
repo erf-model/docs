@@ -1,7 +1,8 @@
 var TerrainMetrics_8H =
 [
+    [ "Compute_h_eta_AtCellCenter", "TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2", null ],
+    [ "Compute_h_xi_AtCellCenter", "TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee", null ],
     [ "Compute_h_zeta_AtCellCenter", "TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987", null ],
-    [ "ComputeMetricAtCellCenter", "TerrainMetrics_8H.html#a95f41823cbd8c598de71ddcbc7173cbc", null ],
     [ "ComputeMetricAtEdgeCenterI", "TerrainMetrics_8H.html#a814e866f06312e508b42efe4a99812bf", null ],
     [ "ComputeMetricAtEdgeCenterJ", "TerrainMetrics_8H.html#a4819616a46d9632e68a548c0fcf6731e", null ],
     [ "ComputeMetricAtEdgeCenterK", "TerrainMetrics_8H.html#ad79fef554cbb9d33702dd5e3cde8af6d", null ],
