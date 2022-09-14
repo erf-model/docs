@@ -603,7 +603,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> Omega_k   = prev_zmom(i,j,k  ) - stage_zmom(i,j,k  );</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> Omega_km1 = prev_zmom(i,j,k-1) - stage_zmom(i,j,k-1);</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            R_tmp += ( dtau * beta_2 * halfg ) *</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                     ( beta_1 * dzi * (Omega_kp1 - Omega_k) + temp_rhs_arr(i,j,k) );</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                     ( beta_1 * dzi * (Omega_kp1 - Omega_k) + temp_rhs_arr(i,j,k,0) );</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <span class="comment">// line 6 (reuse Omega &amp; metrics) (order dtau^2)</span></div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            R_tmp += -( dtau * beta_2 * coeff_P ) *</div>
