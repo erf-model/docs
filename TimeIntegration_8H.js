@@ -1,8 +1,9 @@
 var TimeIntegration_8H =
 [
-    [ "erf_fast_rhs_N", "TimeIntegration_8H.html#a19f8346e4bafe7cebadfccc5ed671541", null ],
-    [ "erf_fast_rhs_T", "TimeIntegration_8H.html#a282d1b69d3f66f05a83bdc5032e30ff3", null ],
-    [ "erf_slow_rhs_post", "TimeIntegration_8H.html#ae290644ae59afe6b65d72a7a6ee95749", null ],
+    [ "erf_fast_rhs_MT", "TimeIntegration_8H.html#acdccedf600c3c95de97392ce15818de0", null ],
+    [ "erf_fast_rhs_N", "TimeIntegration_8H.html#a832b3d0cdfe9f71bdda97f0c9ff6cc60", null ],
+    [ "erf_fast_rhs_T", "TimeIntegration_8H.html#a69b71fc057f0763c878cad162add1013", null ],
+    [ "erf_slow_rhs_post", "TimeIntegration_8H.html#ae62043771564646122cb8022c4ae51ef", null ],
     [ "erf_slow_rhs_pre", "TimeIntegration_8H.html#ab710fb998342dcb8938bfe7415606107", null ],
     [ "make_fast_coeffs", "TimeIntegration_8H.html#a5399122ad9e2b408d31c707f4afbf317", null ]
 ];
