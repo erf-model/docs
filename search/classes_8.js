@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['solverchoice_890',['SolverChoice',['../structSolverChoice.html',1,'']]]
+  ['solverchoice_893',['SolverChoice',['../structSolverChoice.html',1,'']]]
 ];
