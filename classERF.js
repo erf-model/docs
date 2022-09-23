@@ -92,6 +92,7 @@ var classERF =
     [ "derived_names", "classERF.html#a9fc0f6e6ca35036d2e3a36dd42e66435", null ],
     [ "detJ_cc", "classERF.html#a30f8b851ed29d38695d44cff257f14e6", null ],
     [ "detJ_cc_new", "classERF.html#ae39bf64c5306b1dd939d82d9df728daa", null ],
+    [ "detJ_cc_src", "classERF.html#a9a411e0ea9d9bdbfab957c8081229091", null ],
     [ "do_avg_down", "classERF.html#a778cdd6547e8cf1613cda8b4a8274bf0", null ],
     [ "do_reflux", "classERF.html#af25f70d7d9e4edeedcc40c117cc15505", null ],
     [ "domain_bc_type", "classERF.html#ae5968f1bed602fa87cdd5cb7905b7e5e", null ],
@@ -170,7 +171,9 @@ var classERF =
     [ "verbose", "classERF.html#a43d0b17f6e155691a1e9474526df3af5", null ],
     [ "z_phys_cc", "classERF.html#a31be0f1ae705c52c8ccc520369013284", null ],
     [ "z_phys_cc_new", "classERF.html#afe87e3daa73a296ff523de4aaf9d1c22", null ],
+    [ "z_phys_cc_src", "classERF.html#abfa333375bd02a72cc80ba1e7552aba5", null ],
     [ "z_phys_nd", "classERF.html#a93e63e5af35efa564fd4195e8703f84c", null ],
     [ "z_phys_nd_new", "classERF.html#a4ef635c22e72c715f5703a6b95a7abe5", null ],
+    [ "z_phys_nd_src", "classERF.html#a30dcf40e8f104fb6b6132805d2eff47c", null ],
     [ "z_t_rk", "classERF.html#a72a59614c6d5ab840b924c84d5682270", null ]
 ];
