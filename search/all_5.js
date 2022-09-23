@@ -3,7 +3,7 @@ var searchData=
   ['f_5fslow_297',['F_slow',['../classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7',1,'MRISplitIntegrator']]],
   ['fast_298',['fast',['../namespaceRHSVar.html#adb9b87b6805100d0e912cd1a26b4dbc4a3be7d05d61be85bbfadeef639af8013f',1,'RHSVar']]],
   ['fast_5frhs_299',['fast_rhs',['../classMRISplitIntegrator.html#a98e8987788ed0f3047e79a5c546adbe4',1,'MRISplitIntegrator']]],
-  ['fast_5frhs_5ffun_300',['fast_rhs_fun',['../TI__fast__rhs__fun_8H.html#ac6afbd55bf5b7264098d44d9b8928f57',1,'TI_fast_rhs_fun.H']]],
+  ['fast_5frhs_5ffun_300',['fast_rhs_fun',['../NEW_2TI__fast__rhs__fun_8H.html#ac6afbd55bf5b7264098d44d9b8928f57',1,'fast_rhs_fun():&#160;TI_fast_rhs_fun.H'],['../TI__fast__rhs__fun_8H.html#ac6afbd55bf5b7264098d44d9b8928f57',1,'fast_rhs_fun():&#160;TI_fast_rhs_fun.H']]],
   ['field_301',['field',['../classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5',1,'PlaneAverage']]],
   ['fill_5fdhdt_302',['fill_dhdt',['../prob__common_8H.html#a0c2fbec525173fa58feafd7d491cfd00',1,'prob_common.H']]],
   ['fill_5ffrom_5fbndryregs_303',['fill_from_bndryregs',['../classERFPhysBCFunct.html#a185793c1663529a39ca49aa02d11d8ba',1,'ERFPhysBCFunct']]],
