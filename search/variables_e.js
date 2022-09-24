@@ -21,12 +21,12 @@ var searchData=
   ['plot_5fvar_5fnames_5f2_1541',['plot_var_names_2',['../classERF.html#a79705c02d6f25fbdcec14ca2432e5da1',1,'ERF']]],
   ['plotfile_5ftype_1542',['plotfile_type',['../classERF.html#ae7b9991150042eb38e2abc89399c0c7c',1,'ERF']]],
   ['post_5fupdate_1543',['post_update',['../classMRISplitIntegrator.html#a3eed41c579d2ccda063451f9a3ee4112',1,'MRISplitIntegrator']]],
-  ['post_5fupdate_5ffun_1544',['post_update_fun',['../NEW_2TI__slow__rhs__fun_8H.html#afd90eac481ef47af3b095c56653098e8',1,'post_update_fun():&#160;TI_slow_rhs_fun.H'],['../TI__slow__rhs__fun_8H.html#afd90eac481ef47af3b095c56653098e8',1,'post_update_fun():&#160;TI_slow_rhs_fun.H']]],
+  ['post_5fupdate_5ffun_1544',['post_update_fun',['../TI__slow__rhs__fun_8H.html#afd90eac481ef47af3b095c56653098e8',1,'TI_slow_rhs_fun.H']]],
   ['pp_5fprefix_1545',['pp_prefix',['../structSolverChoice.html#a4b0edf29a032ff18b10a42825fa9e4b6',1,'SolverChoice::pp_prefix()'],['../classERF.html#a59df30e7a5537c8543bb00772bd98b58',1,'ERF::pp_prefix()']]],
   ['pr_5ft_1546',['Pr_t',['../structSolverChoice.html#ac6ce37592bdc2abee5231a47802c316b',1,'SolverChoice']]],
   ['pr_5ft_5finv_1547',['Pr_t_inv',['../structSolverChoice.html#aedad420dddffb0b78651c5d8b399a67b',1,'SolverChoice']]],
   ['pre_5fupdate_1548',['pre_update',['../classMRISplitIntegrator.html#a5c76e162725bceaa3f6c0dac2928bcd6',1,'MRISplitIntegrator']]],
-  ['pre_5fupdate_5ffun_1549',['pre_update_fun',['../NEW_2TI__slow__rhs__fun_8H.html#aadc7f4c039b08417963410e7f76bb2dd',1,'pre_update_fun():&#160;TI_slow_rhs_fun.H'],['../TI__slow__rhs__fun_8H.html#aadc7f4c039b08417963410e7f76bb2dd',1,'pre_update_fun():&#160;TI_slow_rhs_fun.H']]],
+  ['pre_5fupdate_5ffun_1549',['pre_update_fun',['../TI__slow__rhs__fun_8H.html#aadc7f4c039b08417963410e7f76bb2dd',1,'TI_slow_rhs_fun.H']]],
   ['press_5fref_5finp_5fsound_1550',['press_ref_inp_sound',['../structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa',1,'InputSoundingData']]],
   ['previouscputimeused_1551',['previousCPUTimeUsed',['../classERF.html#a7948479fe1497dc592dd748c9567fdaa',1,'ERF']]]
 ];
