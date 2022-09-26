@@ -402,11 +402,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> theta_t_hi  = 0.5 * ( prim(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) + prim(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) );</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <span class="comment">// LHS for tri-diagonal system</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> D = dtau * dtau * beta_2 * beta_2 * dzi / detJ_on_kface;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> D = dtau * dtau * beta_2 * beta_2 * dzi;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                coeffA_a(i,j,k) = D * ( halfg - coeff_Q * theta_t_lo );</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                coeffC_a(i,j,k) = D * (-halfg + coeff_P * theta_t_hi );</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                coeffB_a(i,j,k) = 1.0 + D * (coeff_Q - coeff_P) * theta_t_mid;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                coeffB_a(i,j,k) = detJ_on_kface + D * (coeff_Q - coeff_P) * theta_t_mid;</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            });</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        } <span class="keywordflow">else</span> {</div>
