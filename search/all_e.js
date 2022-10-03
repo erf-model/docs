@@ -38,7 +38,7 @@ var searchData=
   ['plotfilename_627',['PlotFileName',['../classERF.html#a54f6c5d799e51521ad10bb57d29d0c44',1,'ERF']]],
   ['plotfilevarnames_628',['PlotFileVarNames',['../classERF.html#a968a657e2a7bd02a9c43f736657d5e0a',1,'ERF']]],
   ['post_5ftimestep_629',['post_timestep',['../classERF.html#a58f6683aff0fbe6949bfe8b49275a8b3',1,'ERF']]],
-  ['post_5fupdate_630',['post_update',['../classMRISplitIntegrator.html#a3eed41c579d2ccda063451f9a3ee4112',1,'MRISplitIntegrator::post_update()'],['../classERF.html#ae41b0a6d3d44d8f07fbcef60143e6bad',1,'ERF::post_update()']]],
+  ['post_5fupdate_630',['post_update',['../classMRISplitIntegrator.html#a02e299d44fcd24c67717267dd15a7895',1,'MRISplitIntegrator::post_update()'],['../classERF.html#ae41b0a6d3d44d8f07fbcef60143e6bad',1,'ERF::post_update()']]],
   ['post_5fupdate_5ffun_631',['post_update_fun',['../TI__slow__rhs__fun_8H.html#afd90eac481ef47af3b095c56653098e8',1,'TI_slow_rhs_fun.H']]],
   ['pp_5fprefix_632',['pp_prefix',['../structSolverChoice.html#a4b0edf29a032ff18b10a42825fa9e4b6',1,'SolverChoice::pp_prefix()'],['../classERF.html#a59df30e7a5537c8543bb00772bd98b58',1,'ERF::pp_prefix()']]],
   ['pr_5ft_633',['Pr_t',['../structSolverChoice.html#ac6ce37592bdc2abee5231a47802c316b',1,'SolverChoice']]],

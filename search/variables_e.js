@@ -20,7 +20,7 @@ var searchData=
   ['plot_5fvar_5fnames_5f1_1538',['plot_var_names_1',['../classERF.html#a6865cf87abbb5aab0db00ff3b1ce94ac',1,'ERF']]],
   ['plot_5fvar_5fnames_5f2_1539',['plot_var_names_2',['../classERF.html#a79705c02d6f25fbdcec14ca2432e5da1',1,'ERF']]],
   ['plotfile_5ftype_1540',['plotfile_type',['../classERF.html#ae7b9991150042eb38e2abc89399c0c7c',1,'ERF']]],
-  ['post_5fupdate_1541',['post_update',['../classMRISplitIntegrator.html#a3eed41c579d2ccda063451f9a3ee4112',1,'MRISplitIntegrator']]],
+  ['post_5fupdate_1541',['post_update',['../classMRISplitIntegrator.html#a02e299d44fcd24c67717267dd15a7895',1,'MRISplitIntegrator']]],
   ['post_5fupdate_5ffun_1542',['post_update_fun',['../TI__slow__rhs__fun_8H.html#afd90eac481ef47af3b095c56653098e8',1,'TI_slow_rhs_fun.H']]],
   ['pp_5fprefix_1543',['pp_prefix',['../structSolverChoice.html#a4b0edf29a032ff18b10a42825fa9e4b6',1,'SolverChoice::pp_prefix()'],['../classERF.html#a59df30e7a5537c8543bb00772bd98b58',1,'ERF::pp_prefix()']]],
   ['pr_5ft_1544',['Pr_t',['../structSolverChoice.html#ac6ce37592bdc2abee5231a47802c316b',1,'SolverChoice']]],
