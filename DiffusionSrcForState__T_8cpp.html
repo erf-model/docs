@@ -297,7 +297,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> Box xbx = surroundingNodes(bx,0);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> Box ybx = surroundingNodes(bx,1);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> Box zbx = surroundingNodes(bx,2);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    Box zbx2 = zbx;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    Box zbx2 = zbx; Box zbx3 = zbx;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp      = n_end - n_start + 1;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> qty_offset = <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>;</div>
@@ -392,7 +392,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            zflux(i,j,k,qty_index) = rhoAlpha * GradCz / met_h_zeta;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        });</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// Alpha &amp; Turb model</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_cons &amp;&amp; l_turb) {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_turb) {</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        amrex::ParallelFor(xbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        {</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
@@ -437,259 +437,260 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            amrex::Real Alpha = d_alpha_eff[prim_index];</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            Alpha += 0.5 * ( K_turb(i, j, k  , d_eddy_diff_idz[prim_index])</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                           + K_turb(i, j, k-1, d_eddy_diff_idz[prim_index]) );</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = dz_inv * ( cell_prim(i, j, k, prim_index) - cell_prim(i, j, k-1, prim_index) );</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            zflux(i,j,k,qty_index) = Alpha * GradCz / met_h_zeta;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        });</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// RhoAlpha</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(l_consA) {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        amrex::ParallelFor(xbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            amrex::Real rhoFace  = 0.5 * ( cell_data(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i-1, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            amrex::Real rhoAlpha = rhoFace * d_alpha_eff[prim_index];</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_xi,met_h_zeta;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            met_h_xi   = <a class="code" href="TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a>  (i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = 0.25 * dz_inv * ( cell_prim(i, j, k+1, prim_index) + cell_prim(i-1, j, k+1, prim_index)</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                                          - cell_prim(i, j, k-1, prim_index) - cell_prim(i-1, j, k-1, prim_index) );</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCx =        dx_inv * ( cell_prim(i, j, k  , prim_index) - cell_prim(i-1, j, k  , prim_index)) ;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            xflux(i,j,k,qty_index) = rhoAlpha * ( GradCx - (met_h_xi/met_h_zeta)*GradCz );</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        });</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        amrex::ParallelFor(ybx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            amrex::Real rhoFace  = 0.5 * ( cell_data(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i, j-1, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            amrex::Real rhoAlpha = rhoFace * d_alpha_eff[prim_index];</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_eta,met_h_zeta;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            met_h_eta  = <a class="code" href="TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a> (i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = 0.25 * dz_inv * ( cell_prim(i, j, k+1, prim_index) + cell_prim(i, j-1, k+1, prim_index)</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                          - cell_prim(i, j, k-1, prim_index) - cell_prim(i, j-1, k-1, prim_index) );</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCy =        dy_inv * ( cell_prim(i, j, k  , prim_index) - cell_prim(i, j-1, k  , prim_index) );</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            yflux(i,j,k,qty_index) = rhoAlpha * ( GradCy - (met_h_eta/met_h_zeta)*GradCz );</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        });</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        amrex::ParallelFor(zbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            amrex::Real rhoFace  = 0.5 * ( cell_data(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i, j, k-1, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            amrex::Real rhoAlpha = rhoFace * d_alpha_eff[prim_index];</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = dz_inv * ( cell_prim(i, j, k, prim_index) - cell_prim(i, j, k-1, prim_index) );</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            zflux(i,j,k,qty_index) = rhoAlpha * GradCz / met_h_zeta;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        });</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="comment">// Alpha</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        amrex::ParallelFor(xbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            amrex::Real Alpha = d_alpha_eff[prim_index];</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_xi,met_h_zeta;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            met_h_xi   = <a class="code" href="TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a>  (i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = 0.25 * dz_inv * ( cell_prim(i, j, k+1, prim_index) + cell_prim(i-1, j, k+1, prim_index)</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                                          - cell_prim(i, j, k-1, prim_index) - cell_prim(i-1, j, k-1, prim_index) );</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCx =        dx_inv * ( cell_prim(i, j, k  , prim_index) - cell_prim(i-1, j, k  , prim_index)) ;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            xflux(i,j,k,qty_index) = Alpha * ( GradCx - (met_h_xi/met_h_zeta)*GradCz );</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        });</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        amrex::ParallelFor(ybx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            amrex::Real Alpha = d_alpha_eff[prim_index];</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_eta,met_h_zeta;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            met_h_eta  = <a class="code" href="TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a> (i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = 0.25 * dz_inv * ( cell_prim(i, j, k+1, prim_index) + cell_prim(i, j-1, k+1, prim_index)</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                                          - cell_prim(i, j, k-1, prim_index) - cell_prim(i, j-1, k-1, prim_index) );</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCy =        dy_inv * ( cell_prim(i, j, k  , prim_index) - cell_prim(i, j-1, k  , prim_index) );</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            yflux(i,j,k,qty_index) = Alpha * ( GradCy - (met_h_eta/met_h_zeta)*GradCz );</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        });</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        amrex::ParallelFor(zbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        {</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            amrex::Real Alpha = d_alpha_eff[prim_index];</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = dz_inv * ( cell_prim(i, j, k, prim_index) - cell_prim(i, j, k-1, prim_index) );</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            zflux(i,j,k,qty_index) = Alpha * GradCz / met_h_zeta;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        });</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// Linear combinations for z-flux with terrain</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="comment">//-----------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="comment">// Extrapolate top and bottom cells</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    {</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;      Box planexy = zbx; planexy.setBig(2, planexy.smallEnd(2) );</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      <span class="keywordtype">int</span> k_lo = zbx.smallEnd(2); <span class="keywordtype">int</span> k_hi = zbx.bigEnd(2);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;      zbx2.growLo(2,-1); zbx2.growHi(2,-1);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;      amrex::ParallelFor(planexy, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;      {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;          <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_xi,met_h_eta;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;          { <span class="comment">// Bottom face</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            met_h_xi  = <a class="code" href="TerrainMetrics_8H.html#aba0de207695f9674a9e0678a19f22677">Compute_h_xi_AtKface</a> (i,j,k_lo,dxInv,z_nd);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            met_h_eta = <a class="code" href="TerrainMetrics_8H.html#af2b7bda0da3e8024e9b02b6d69c366fe">Compute_h_eta_AtKface</a>(i,j,k_lo,dxInv,z_nd);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxlo  = 0.5 * ( xflux(i  , j  , k_lo  , qty_index) + xflux(i+1, j  , k_lo  , qty_index) );</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxhi  = 0.5 * ( xflux(i  , j  , k_lo+1, qty_index) + xflux(i+1, j  , k_lo+1, qty_index) );</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxbar = 1.5*xfluxlo - 0.5*xfluxhi;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxlo  = 0.5 * ( yflux(i  , j  , k_lo  , qty_index) + yflux(i  , j+1, k_lo  , qty_index) );</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxhi  = 0.5 * ( yflux(i  , j  , k_lo+1, qty_index) + yflux(i  , j+1, k_lo+1, qty_index) );</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxbar = 1.5*yfluxlo - 0.5*yfluxhi;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            zflux(i,j,k_lo,qty_index) -= met_h_xi*xfluxbar + met_h_eta*yfluxbar;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;          }</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;          { <span class="comment">// Top face</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            met_h_xi  = <a class="code" href="TerrainMetrics_8H.html#aba0de207695f9674a9e0678a19f22677">Compute_h_xi_AtKface</a> (i,j,k_hi,dxInv,z_nd);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            met_h_eta = <a class="code" href="TerrainMetrics_8H.html#af2b7bda0da3e8024e9b02b6d69c366fe">Compute_h_eta_AtKface</a>(i,j,k_hi,dxInv,z_nd);</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxlo  = 0.5 * ( xflux(i  , j  , k_hi-2, qty_index) + xflux(i+1, j  , k_hi-2, qty_index) );</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxhi  = 0.5 * ( xflux(i  , j  , k_hi-1, qty_index) + xflux(i+1, j  , k_hi-1, qty_index) );</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxbar = 1.5*xfluxhi - 0.5*xfluxlo;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxlo  = 0.5 * ( yflux(i  , j  , k_hi-2, qty_index) + yflux(i  , j+1, k_hi-2, qty_index) );</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxhi  = 0.5 * ( yflux(i  , j  , k_hi-1, qty_index) + yflux(i  , j+1, k_hi-1, qty_index) );</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxbar = 1.5*yfluxhi - 0.5*yfluxlo;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            zflux(i,j,k_hi,qty_index) -= met_h_xi*xfluxbar + met_h_eta*yfluxbar;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;          }</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;      });</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    }</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="comment">// Average interior cells</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    amrex::ParallelFor(zbx2, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    {</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;      <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_xi,met_h_eta;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;      met_h_xi  = <a class="code" href="TerrainMetrics_8H.html#aba0de207695f9674a9e0678a19f22677">Compute_h_xi_AtKface</a> (i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;      met_h_eta = <a class="code" href="TerrainMetrics_8H.html#af2b7bda0da3e8024e9b02b6d69c366fe">Compute_h_eta_AtKface</a>(i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;      <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxbar = 0.25 * ( xflux(i  , j  , k  , qty_index) + xflux(i+1, j  , k  , qty_index)</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                             + xflux(i  , j  , k-1, qty_index) + xflux(i+1, j  , k-1, qty_index) );</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;      <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxbar = 0.25 * ( yflux(i  , j  , k  , qty_index) + yflux(i  , j+1, k  , qty_index)</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                             + yflux(i  , j  , k-1, qty_index) + yflux(i  , j+1, k-1, qty_index) );</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;      zflux(i,j,k,qty_index) -= met_h_xi*xfluxbar + met_h_eta*yfluxbar;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    });</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="comment">// Multiply h_zeta by x/y-fluxes</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    amrex::ParallelFor(xbx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    {</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;      <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta      = <a class="code" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;      xflux(i,j,k,qty_index) *= met_h_zeta;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    });</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    amrex::ParallelFor(ybx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    {</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;      <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta      = <a class="code" href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;      yflux(i,j,k,qty_index) *= met_h_zeta;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    });</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            Alpha += 0.5 * ( K_turb(i, j, k  , d_eddy_diff_idz[prim_index])</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                           + K_turb(i, j, k-1, d_eddy_diff_idz[prim_index]) );</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = dz_inv * ( cell_prim(i, j, k, prim_index) - cell_prim(i, j, k-1, prim_index) );</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            zflux(i,j,k,qty_index) = Alpha * GradCz / met_h_zeta;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        });</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="comment">// RhoAlpha</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(l_consA) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        amrex::ParallelFor(xbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            amrex::Real rhoFace  = 0.5 * ( cell_data(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i-1, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            amrex::Real rhoAlpha = rhoFace * d_alpha_eff[prim_index];</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_xi,met_h_zeta;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            met_h_xi   = <a class="code" href="TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a>  (i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = 0.25 * dz_inv * ( cell_prim(i, j, k+1, prim_index) + cell_prim(i-1, j, k+1, prim_index)</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                                          - cell_prim(i, j, k-1, prim_index) - cell_prim(i-1, j, k-1, prim_index) );</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCx =        dx_inv * ( cell_prim(i, j, k  , prim_index) - cell_prim(i-1, j, k  , prim_index)) ;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            xflux(i,j,k,qty_index) = rhoAlpha * ( GradCx - (met_h_xi/met_h_zeta)*GradCz );</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        });</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        amrex::ParallelFor(ybx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            amrex::Real rhoFace  = 0.5 * ( cell_data(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i, j-1, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            amrex::Real rhoAlpha = rhoFace * d_alpha_eff[prim_index];</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_eta,met_h_zeta;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            met_h_eta  = <a class="code" href="TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a> (i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = 0.25 * dz_inv * ( cell_prim(i, j, k+1, prim_index) + cell_prim(i, j-1, k+1, prim_index)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                                          - cell_prim(i, j, k-1, prim_index) - cell_prim(i, j-1, k-1, prim_index) );</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCy =        dy_inv * ( cell_prim(i, j, k  , prim_index) - cell_prim(i, j-1, k  , prim_index) );</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            yflux(i,j,k,qty_index) = rhoAlpha * ( GradCy - (met_h_eta/met_h_zeta)*GradCz );</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        });</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        amrex::ParallelFor(zbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            amrex::Real rhoFace  = 0.5 * ( cell_data(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i, j, k-1, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            amrex::Real rhoAlpha = rhoFace * d_alpha_eff[prim_index];</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = dz_inv * ( cell_prim(i, j, k, prim_index) - cell_prim(i, j, k-1, prim_index) );</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            zflux(i,j,k,qty_index) = rhoAlpha * GradCz / met_h_zeta;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        });</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="comment">// Alpha</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        amrex::ParallelFor(xbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            amrex::Real Alpha = d_alpha_eff[prim_index];</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_xi,met_h_zeta;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            met_h_xi   = <a class="code" href="TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a>  (i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = 0.25 * dz_inv * ( cell_prim(i, j, k+1, prim_index) + cell_prim(i-1, j, k+1, prim_index)</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                                          - cell_prim(i, j, k-1, prim_index) - cell_prim(i-1, j, k-1, prim_index) );</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCx =        dx_inv * ( cell_prim(i, j, k  , prim_index) - cell_prim(i-1, j, k  , prim_index)) ;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            xflux(i,j,k,qty_index) = Alpha * ( GradCx - (met_h_xi/met_h_zeta)*GradCz );</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        });</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        amrex::ParallelFor(ybx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            amrex::Real Alpha = d_alpha_eff[prim_index];</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_eta,met_h_zeta;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            met_h_eta  = <a class="code" href="TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a> (i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = 0.25 * dz_inv * ( cell_prim(i, j, k+1, prim_index) + cell_prim(i, j-1, k+1, prim_index)</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                                          - cell_prim(i, j, k-1, prim_index) - cell_prim(i, j-1, k-1, prim_index) );</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCy =        dy_inv * ( cell_prim(i, j, k  , prim_index) - cell_prim(i, j-1, k  , prim_index) );</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            yflux(i,j,k,qty_index) = Alpha * ( GradCy - (met_h_eta/met_h_zeta)*GradCz );</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        });</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        amrex::ParallelFor(zbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            amrex::Real Alpha = d_alpha_eff[prim_index];</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> GradCz = dz_inv * ( cell_prim(i, j, k, prim_index) - cell_prim(i, j, k-1, prim_index) );</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            zflux(i,j,k,qty_index) = Alpha * GradCz / met_h_zeta;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        });</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    }</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="comment">// Linear combinations for z-flux with terrain</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="comment">//-----------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="comment">// Extrapolate top and bottom cells</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      Box planexy = zbx; planexy.setBig(2, planexy.smallEnd(2) );</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;      <span class="keywordtype">int</span> k_lo = zbx.smallEnd(2); <span class="keywordtype">int</span> k_hi = zbx.bigEnd(2);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;      zbx3.growLo(2,-1); zbx3.growHi(2,-1);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;      amrex::ParallelFor(planexy, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;      {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;          <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_xi,met_h_eta;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;          { <span class="comment">// Bottom face</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            met_h_xi  = <a class="code" href="TerrainMetrics_8H.html#aba0de207695f9674a9e0678a19f22677">Compute_h_xi_AtKface</a> (i,j,k_lo,dxInv,z_nd);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            met_h_eta = <a class="code" href="TerrainMetrics_8H.html#af2b7bda0da3e8024e9b02b6d69c366fe">Compute_h_eta_AtKface</a>(i,j,k_lo,dxInv,z_nd);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxlo  = 0.5 * ( xflux(i  , j  , k_lo  , qty_index) + xflux(i+1, j  , k_lo  , qty_index) );</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxhi  = 0.5 * ( xflux(i  , j  , k_lo+1, qty_index) + xflux(i+1, j  , k_lo+1, qty_index) );</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxbar = 1.5*xfluxlo - 0.5*xfluxhi;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxlo  = 0.5 * ( yflux(i  , j  , k_lo  , qty_index) + yflux(i  , j+1, k_lo  , qty_index) );</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxhi  = 0.5 * ( yflux(i  , j  , k_lo+1, qty_index) + yflux(i  , j+1, k_lo+1, qty_index) );</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxbar = 1.5*yfluxlo - 0.5*yfluxhi;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            zflux(i,j,k_lo,qty_index) -= met_h_xi*xfluxbar + met_h_eta*yfluxbar;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;          }</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;          { <span class="comment">// Top face</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            met_h_xi  = <a class="code" href="TerrainMetrics_8H.html#aba0de207695f9674a9e0678a19f22677">Compute_h_xi_AtKface</a> (i,j,k_hi,dxInv,z_nd);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            met_h_eta = <a class="code" href="TerrainMetrics_8H.html#af2b7bda0da3e8024e9b02b6d69c366fe">Compute_h_eta_AtKface</a>(i,j,k_hi,dxInv,z_nd);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxlo  = 0.5 * ( xflux(i  , j  , k_hi-2, qty_index) + xflux(i+1, j  , k_hi-2, qty_index) );</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxhi  = 0.5 * ( xflux(i  , j  , k_hi-1, qty_index) + xflux(i+1, j  , k_hi-1, qty_index) );</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxbar = 1.5*xfluxhi - 0.5*xfluxlo;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxlo  = 0.5 * ( yflux(i  , j  , k_hi-2, qty_index) + yflux(i  , j+1, k_hi-2, qty_index) );</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxhi  = 0.5 * ( yflux(i  , j  , k_hi-1, qty_index) + yflux(i  , j+1, k_hi-1, qty_index) );</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxbar = 1.5*yfluxhi - 0.5*yfluxlo;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            zflux(i,j,k_hi,qty_index) -= met_h_xi*xfluxbar + met_h_eta*yfluxbar;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;          }</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;      });</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="comment">// Average interior cells</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    amrex::ParallelFor(zbx3, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;      <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_xi,met_h_eta;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;      met_h_xi  = <a class="code" href="TerrainMetrics_8H.html#aba0de207695f9674a9e0678a19f22677">Compute_h_xi_AtKface</a> (i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;      met_h_eta = <a class="code" href="TerrainMetrics_8H.html#af2b7bda0da3e8024e9b02b6d69c366fe">Compute_h_eta_AtKface</a>(i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;      <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xfluxbar = 0.25 * ( xflux(i  , j  , k  , qty_index) + xflux(i+1, j  , k  , qty_index)</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                             + xflux(i  , j  , k-1, qty_index) + xflux(i+1, j  , k-1, qty_index) );</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;      <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yfluxbar = 0.25 * ( yflux(i  , j  , k  , qty_index) + yflux(i  , j+1, k  , qty_index)</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                             + yflux(i  , j  , k-1, qty_index) + yflux(i  , j+1, k-1, qty_index) );</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;      zflux(i,j,k,qty_index) -= met_h_xi*xfluxbar + met_h_eta*yfluxbar;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    });</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="comment">// Multiply h_zeta by x/y-fluxes</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    amrex::ParallelFor(xbx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    {</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;      <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta      = <a class="code" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;      xflux(i,j,k,qty_index) *= met_h_zeta;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    });</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    amrex::ParallelFor(ybx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = n_start + n;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;      <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta      = <a class="code" href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;      yflux(i,j,k,qty_index) *= met_h_zeta;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    });</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="comment">// Use fluxes to compute RHS</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="comment">//-----------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> qty_index = n_start; qty_index &lt;= n_end; qty_index++)</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    {</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        amrex::ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        {</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> stateContrib = (xflux(i+1,j  ,k  ,qty_index) - xflux(i, j, k, qty_index)) * dx_inv   <span class="comment">// Diffusive flux in x-dir</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                               +(yflux(i  ,j+1,k  ,qty_index) - yflux(i, j, k, qty_index)) * dy_inv   <span class="comment">// Diffusive flux in y-dir</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                               +(zflux(i  ,j  ,k+1,qty_index) - zflux(i, j, k, qty_index)) * dz_inv;  <span class="comment">// Diffusive flux in z-dir</span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            <span class="comment">// Add source terms. TODO: Put this under an if condition when we implement source term</span></div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            stateContrib += source_fab(i,j,k,qty_index);</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            stateContrib /= detJ(i,j,k);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            cell_rhs(i,j,k,qty_index) += stateContrib;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        });</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    }</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="comment">// Using Deardorff</span></div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordflow">if</span> (l_use_deardorff &amp;&amp; n_end &gt;= <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) {</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordtype">int</span> qty_index = <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>;</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        amrex::ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            <span class="comment">// Add Buoyancy Source</span></div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>     = cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dtheta_dz = 0.5*(cell_prim(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>)-cell_prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>))*dz_inv;</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> E         = cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a>);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a>(i,j,k,dxInv,z_nd);</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            dtheta_dz /= met_h_zeta;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> length;</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            <span class="keywordflow">if</span> (dtheta_dz &lt;= 0.) {</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                length = l_Delta;</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                length = 0.76*std::sqrt(E)*(grav_gpu[2]/<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>)*dtheta_dz;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;            }</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> KH   = 0.1 * (1.+2.*length/l_Delta) * std::sqrt(E);</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            cell_rhs(i,j,k,qty_index) += cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * grav_gpu[2] * KH * dtheta_dz;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            <span class="comment">// Add TKE production</span></div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            cell_rhs(i,j,k,qty_index) += <a class="code" href="EddyViscosity_8H.html#acf5d684b63eb9152114243106f94e5ad">ComputeTKEProduction</a>(i,j,k,u,v,w,K_turb,dxInv,domain,bc_ptr,l_use_terrain);</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            <span class="comment">// Add dissipation</span></div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            <span class="keywordflow">if</span> (std::abs(E) &gt; 0.) {</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                cell_rhs(i,j,k,qty_index) += cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * l_C_e *</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                    std::pow(E,1.5) / length;</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            }</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        });</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    }</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="comment">// Using Deardorff</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordflow">if</span> (l_use_QKE &amp;&amp; n_end &gt;= <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) {</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordtype">int</span> qty_index = <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>;</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        amrex::ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        {</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            cell_rhs(i, j, k, qty_index) += <a class="code" href="ComputeQKESourceTerm_8H.html#abe12cf5964cb8ea35aee4403286dfef6">ComputeQKESourceTerms</a>(i,j,k,u,v,cell_data,cell_prim,</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                                                                  K_turb,dxInv,domain,solverChoice,theta_mean);</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        });</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    }</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;}</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="comment">// Use fluxes to compute RHS</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="comment">//-----------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> qty_index = n_start; qty_index &lt;= n_end; qty_index++)</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    {</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        amrex::ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        {</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> stateContrib = (xflux(i+1,j  ,k  ,qty_index) - xflux(i, j, k, qty_index)) * dx_inv   <span class="comment">// Diffusive flux in x-dir</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                               +(yflux(i  ,j+1,k  ,qty_index) - yflux(i, j, k, qty_index)) * dy_inv   <span class="comment">// Diffusive flux in y-dir</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                               +(zflux(i  ,j  ,k+1,qty_index) - zflux(i, j, k, qty_index)) * dz_inv;  <span class="comment">// Diffusive flux in z-dir</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="comment">// Add source terms. TODO: Put this under an if condition when we implement source term</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            stateContrib += source_fab(i,j,k,qty_index);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            stateContrib /= detJ(i,j,k);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            cell_rhs(i,j,k,qty_index) += stateContrib;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        });</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    }</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="comment">// Using Deardorff</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keywordflow">if</span> (l_use_deardorff &amp;&amp; n_end &gt;= <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) {</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <span class="keywordtype">int</span> qty_index = <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        amrex::ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        {</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            <span class="comment">// Add Buoyancy Source</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>     = cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>);</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dtheta_dz = 0.5*(cell_prim(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>)-cell_prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>))*dz_inv;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> E         = cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a>);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a>(i,j,k,dxInv,z_nd);</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            dtheta_dz /= met_h_zeta;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> length;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            <span class="keywordflow">if</span> (dtheta_dz &lt;= 0.) {</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                length = l_Delta;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                length = 0.76*std::sqrt(E)*(grav_gpu[2]/<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>)*dtheta_dz;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            }</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> KH   = 0.1 * (1.+2.*length/l_Delta) * std::sqrt(E);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            cell_rhs(i,j,k,qty_index) += cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * grav_gpu[2] * KH * dtheta_dz;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            <span class="comment">// Add TKE production</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            cell_rhs(i,j,k,qty_index) += <a class="code" href="EddyViscosity_8H.html#acf5d684b63eb9152114243106f94e5ad">ComputeTKEProduction</a>(i,j,k,u,v,w,K_turb,dxInv,domain,bc_ptr,l_use_terrain);</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            <span class="comment">// Add dissipation</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="keywordflow">if</span> (std::abs(E) &gt; 0.) {</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                cell_rhs(i,j,k,qty_index) += cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * l_C_e *</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                    std::pow(E,1.5) / length;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            }</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        });</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    }</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="comment">// Using Deardorff</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keywordflow">if</span> (l_use_QKE &amp;&amp; n_end &gt;= <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) {</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        <span class="keywordtype">int</span> qty_index = <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        amrex::ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        {</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            cell_rhs(i, j, k, qty_index) += <a class="code" href="ComputeQKESourceTerm_8H.html#abe12cf5964cb8ea35aee4403286dfef6">ComputeQKESourceTerms</a>(i,j,k,u,v,cell_data,cell_prim,</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                                                                  K_turb,dxInv,domain,solverChoice,theta_mean);</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        });</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    }</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__pre_8cpp.html#ae940a7aecafbd75ce7c83440a3baa45c">erf_slow_rhs_pre()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a23767ef0b94cfe65a936ad09a95162a4">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -729,7 +730,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="DiffusionSrcForState__T_8cpp_a2200e25d28a5fc04fcfb8057cfa058d0_icgraph.png" border="0" usemap="#DiffusionSrcForState__T_8cpp_a2200e25d28a5fc04fcfb8057cfa058d0_icgraph" alt=""/></div>
 <map name="DiffusionSrcForState__T_8cpp_a2200e25d28a5fc04fcfb8057cfa058d0_icgraph" id="DiffusionSrcForState__T_8cpp_a2200e25d28a5fc04fcfb8057cfa058d0_icgraph">
 <area shape="rect" title=" " alt="" coords="185,5,355,32"/>
-<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#ae940a7aecafbd75ce7c83440a3baa45c" title=" " alt="" coords="5,5,137,32"/>
+<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a23767ef0b94cfe65a936ad09a95162a4" title=" " alt="" coords="5,5,137,32"/>
 </map>
 </div>
 
@@ -742,7 +743,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
 <div class="ttc" id="astructSolverChoice_html_a404f875b4796e931ef346bc11b6c7dcb"><div class="ttname"><a href="structSolverChoice.html#a404f875b4796e931ef346bc11b6c7dcb">SolverChoice::alpha_C</a></div><div class="ttdeci">amrex::Real alpha_C</div><div class="ttdef"><b>Definition:</b> DataStruct.H:342</div></div>
 <div class="ttc" id="astructSolverChoice_html_a38dc1d6637afc39c42b09560735f8191"><div class="ttname"><a href="structSolverChoice.html#a38dc1d6637afc39c42b09560735f8191">SolverChoice::advect_QKE</a></div><div class="ttdeci">bool advect_QKE</div><div class="ttdef"><b>Definition:</b> DataStruct.H:385</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5a85d322ae06bc4f66f791d4eda0a13ae6"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a85d322ae06bc4f66f791d4eda0a13ae6">EddyDiff::Scalar_h</a></div><div class="ttdeci">@ Scalar_h</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:137</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5a85d322ae06bc4f66f791d4eda0a13ae6"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a85d322ae06bc4f66f791d4eda0a13ae6">EddyDiff::Scalar_h</a></div><div class="ttdeci">@ Scalar_h</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:131</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_af2b7bda0da3e8024e9b02b6d69c366fe"><div class="ttname"><a href="TerrainMetrics_8H.html#af2b7bda0da3e8024e9b02b6d69c366fe">Compute_h_eta_AtKface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtKface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:182</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_ae609a5c1f84347b66e9a8b712271c4ce"><div class="ttname"><a href="TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:138</div></div>
 <div class="ttc" id="astructSolverChoice_html_a8d16d654d2a02cec62427b38498c2462"><div class="ttname"><a href="structSolverChoice.html#a8d16d654d2a02cec62427b38498c2462">SolverChoice::molec_diff_type</a></div><div class="ttdeci">MolecDiffType molec_diff_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:339</div></div>
@@ -750,23 +751,23 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="astructSolverChoice_html_a063a88594452100497651e8aaf1f68d7"><div class="ttname"><a href="structSolverChoice.html#a063a88594452100497651e8aaf1f68d7">SolverChoice::use_terrain</a></div><div class="ttdeci">bool use_terrain</div><div class="ttdef"><b>Definition:</b> DataStruct.H:328</div></div>
 <div class="ttc" id="astructSolverChoice_html_a53966e639b0307b7420fd6abe8412fa0"><div class="ttname"><a href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">SolverChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:351</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">AdvectedQuantity::theta</a></div><div class="ttdeci">@ theta</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5ab74402005c035d247402e5f247827dcc"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5ab74402005c035d247402e5f247827dcc">EddyDiff::QKE_v</a></div><div class="ttdeci">@ QKE_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:136</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5a937c191d351b2c26cd7ea07878978b94"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a937c191d351b2c26cd7ea07878978b94">EddyDiff::KE_v</a></div><div class="ttdeci">@ KE_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:134</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5ab74402005c035d247402e5f247827dcc"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5ab74402005c035d247402e5f247827dcc">EddyDiff::QKE_v</a></div><div class="ttdeci">@ QKE_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:138</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5a937c191d351b2c26cd7ea07878978b94"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a937c191d351b2c26cd7ea07878978b94">EddyDiff::KE_v</a></div><div class="ttdeci">@ KE_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:137</div></div>
 <div class="ttc" id="aEddyViscosity_8H_html_acf5d684b63eb9152114243106f94e5ad"><div class="ttname"><a href="EddyViscosity_8H.html#acf5d684b63eb9152114243106f94e5ad">ComputeTKEProduction</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeTKEProduction(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;K_turb, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr, const int &amp;use_terrain)</div><div class="ttdef"><b>Definition:</b> EddyViscosity.H:113</div></div>
 <div class="ttc" id="astructSolverChoice_html_a47152bbb3815b6f4c9c465b8c75ebeb5"><div class="ttname"><a href="structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5">SolverChoice::use_QKE</a></div><div class="ttdeci">bool use_QKE</div><div class="ttdef"><b>Definition:</b> DataStruct.H:383</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_ada12bcb6beb3fa0d00dbdacb37f3c60f"><div class="ttname"><a href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:110</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:23</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5ad0cfc6c50b43867895cbc2c02eb2b99a"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5ad0cfc6c50b43867895cbc2c02eb2b99a">EddyDiff::Theta_h</a></div><div class="ttdeci">@ Theta_h</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:131</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5ad0cfc6c50b43867895cbc2c02eb2b99a"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5ad0cfc6c50b43867895cbc2c02eb2b99a">EddyDiff::Theta_h</a></div><div class="ttdeci">@ Theta_h</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:130</div></div>
 <div class="ttc" id="aDiffusionSrcForState__T_8cpp_html_a2200e25d28a5fc04fcfb8057cfa058d0"><div class="ttname"><a href="DiffusionSrcForState__T_8cpp.html#a2200e25d28a5fc04fcfb8057cfa058d0">DiffusionSrcForState_T</a></div><div class="ttdeci">void DiffusionSrcForState_T(const amrex::Box &amp;bx, const amrex::Box &amp;domain, int n_start, int n_end, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;source_fab, const amrex::Array4&lt; amrex::Real &gt; &amp;cell_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;xflux, const amrex::Array4&lt; amrex::Real &gt; &amp;yflux, const amrex::Array4&lt; amrex::Real &gt; &amp;zflux, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;K_turb, const SolverChoice &amp;solverChoice, const amrex::Real &amp;theta_mean, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; grav_gpu, const amrex::BCRec *bc_ptr)</div><div class="ttdef"><b>Definition:</b> DiffusionSrcForState_T.cpp:9</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601"><div class="ttname"><a href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a></div><div class="ttdeci">@ MYNN25</div></div>
 <div class="ttc" id="astructSolverChoice_html_a2b9c77c4a08b52f5519b452f6ed3a4cc"><div class="ttname"><a href="structSolverChoice.html#a2b9c77c4a08b52f5519b452f6ed3a4cc">SolverChoice::alpha_T</a></div><div class="ttdeci">amrex::Real alpha_T</div><div class="ttdef"><b>Definition:</b> DataStruct.H:341</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5afa0c87454b22a819e328491f78bf6767"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5afa0c87454b22a819e328491f78bf6767">EddyDiff::KE_h</a></div><div class="ttdeci">@ KE_h</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:133</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5afa0c87454b22a819e328491f78bf6767"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5afa0c87454b22a819e328491f78bf6767">EddyDiff::KE_h</a></div><div class="ttdeci">@ KE_h</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:132</div></div>
 <div class="ttc" id="astructSolverChoice_html_a3571709ee9c72dca3523638986976821"><div class="ttname"><a href="structSolverChoice.html#a3571709ee9c72dca3523638986976821">SolverChoice::rhoAlpha_C</a></div><div class="ttdeci">amrex::Real rhoAlpha_C</div><div class="ttdef"><b>Definition:</b> DataStruct.H:347</div></div>
 <div class="ttc" id="astructSolverChoice_html_ac28e6ad4be78bfb7b25c9cf88d43724a"><div class="ttname"><a href="structSolverChoice.html#ac28e6ad4be78bfb7b25c9cf88d43724a">SolverChoice::Ce</a></div><div class="ttdeci">amrex::Real Ce</div><div class="ttdef"><b>Definition:</b> DataStruct.H:364</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a></div><div class="ttdeci">@ Deardorff</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a8d96671d41364f1e24391375a2bc0f1e"><div class="ttname"><a href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:67</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5a0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:132</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5a0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:135</div></div>
 <div class="ttc" id="astructSolverChoice_html_a0a031373331c9aca22a47b0995729f46"><div class="ttname"><a href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">SolverChoice::pbl_type</a></div><div class="ttdeci">PBLType pbl_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:371</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a48f57e72ac183fdf1a984f58f3d24ee0"><div class="ttname"><a href="TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtKface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:153</div></div>
@@ -775,11 +776,11 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aIndexDefines_8H_html_a9ab6bf01b348d4b7cef99f3655c9dbb2"><div class="ttname"><a href="IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a></div><div class="ttdeci">#define PrimKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:24</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288"><div class="ttname"><a href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a></div><div class="ttdeci">@ ConstantAlpha</div></div>
 <div class="ttc" id="astructSolverChoice_html_a3436b31b3e0e439c700d07c30d22e7a3"><div class="ttname"><a href="structSolverChoice.html#a3436b31b3e0e439c700d07c30d22e7a3">SolverChoice::rhoAlpha_T</a></div><div class="ttdeci">amrex::Real rhoAlpha_T</div><div class="ttdef"><b>Definition:</b> DataStruct.H:346</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5afa82972314696da2709ea8ac9b63d963"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5afa82972314696da2709ea8ac9b63d963">EddyDiff::QKE_h</a></div><div class="ttdeci">@ QKE_h</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:135</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5afa82972314696da2709ea8ac9b63d963"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5afa82972314696da2709ea8ac9b63d963">EddyDiff::QKE_h</a></div><div class="ttdeci">@ QKE_h</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:133</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a></div><div class="ttdeci">@ Smagorinsky</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a2116df83b61a39fb50b9a2d7474c00d7"><div class="ttname"><a href="TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_xi_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:81</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:11</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5a2b82a72be137b3159e7d4945735fcbf5"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a2b82a72be137b3159e7d4945735fcbf5">EddyDiff::Scalar_v</a></div><div class="ttdeci">@ Scalar_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:138</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5a2b82a72be137b3159e7d4945735fcbf5"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a2b82a72be137b3159e7d4945735fcbf5">EddyDiff::Scalar_v</a></div><div class="ttdeci">@ Scalar_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:136</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
