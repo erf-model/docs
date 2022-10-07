@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['ncdim_894',['NCDim',['../structncutils_1_1NCDim.html',1,'ncutils']]],
-  ['ncdtype_895',['NCDType',['../structncutils_1_1NCDType.html',1,'ncutils']]],
-  ['ncfile_896',['NCFile',['../classncutils_1_1NCFile.html',1,'ncutils']]],
-  ['ncgroup_897',['NCGroup',['../classncutils_1_1NCGroup.html',1,'ncutils']]],
-  ['ncvar_898',['NCVar',['../structncutils_1_1NCVar.html',1,'ncutils']]],
-  ['ndarray_899',['NDArray',['../structNDArray.html',1,'']]],
-  ['nullfill_900',['NullFill',['../structNullFill.html',1,'']]]
+  ['ncdim_892',['NCDim',['../structncutils_1_1NCDim.html',1,'ncutils']]],
+  ['ncdtype_893',['NCDType',['../structncutils_1_1NCDType.html',1,'ncutils']]],
+  ['ncfile_894',['NCFile',['../classncutils_1_1NCFile.html',1,'ncutils']]],
+  ['ncgroup_895',['NCGroup',['../classncutils_1_1NCGroup.html',1,'ncutils']]],
+  ['ncvar_896',['NCVar',['../structncutils_1_1NCVar.html',1,'ncutils']]],
+  ['ndarray_897',['NDArray',['../structNDArray.html',1,'']]]
 ];

@@ -23,7 +23,6 @@ var hierarchy =
     ] ],
     [ "ncutils::NCVar", "structncutils_1_1NCVar.html", null ],
     [ "NDArray< DataType >", "structNDArray.html", null ],
-    [ "NullFill", "structNullFill.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
     [ "SolverChoice", "structSolverChoice.html", null ],

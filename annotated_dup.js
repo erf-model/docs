@@ -13,7 +13,6 @@ var annotated_dup =
     [ "MRISplitIntegrator", "classMRISplitIntegrator.html", "classMRISplitIntegrator" ],
     [ "MultiBlockContainer", "classMultiBlockContainer.html", "classMultiBlockContainer" ],
     [ "NDArray", "structNDArray.html", "structNDArray" ],
-    [ "NullFill", "structNullFill.html", "structNullFill" ],
     [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", "classReadBndryPlanes" ],
     [ "SolverChoice", "structSolverChoice.html", "structSolverChoice" ],
