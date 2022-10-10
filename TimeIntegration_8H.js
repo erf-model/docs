@@ -5,5 +5,5 @@ var TimeIntegration_8H =
     [ "erf_fast_rhs_T", "TimeIntegration_8H.html#a12e025a33b9abe4f8a02ac10ddce2b89", null ],
     [ "erf_slow_rhs_post", "TimeIntegration_8H.html#aeaf8616fca242ae05b49d06c8d617133", null ],
     [ "erf_slow_rhs_pre", "TimeIntegration_8H.html#aef610dacd9e2c685320c6d1e976b669b", null ],
-    [ "make_fast_coeffs", "TimeIntegration_8H.html#a5399122ad9e2b408d31c707f4afbf317", null ]
+    [ "make_fast_coeffs", "TimeIntegration_8H.html#a69a77788e9505dee16b029495d5b73db", null ]
 ];

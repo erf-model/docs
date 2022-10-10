@@ -12,9 +12,11 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "BoundaryConditions_yvel.cpp", "BoundaryConditions__yvel_8cpp.html", null ],
     [ "BoundaryConditions_zvel.cpp", "BoundaryConditions__zvel_8cpp.html", null ],
     [ "DirectionSelector.H", "DirectionSelector_8H.html", "DirectionSelector_8H" ],
-    [ "ERF_FillPatch.cpp", "ERF__FillPatch_8cpp.html", null ],
+    [ "ERF_FillPatch.cpp", "ERF__FillPatch_8cpp.html", "ERF__FillPatch_8cpp" ],
     [ "ERF_PhysBCFunct.cpp", "ERF__PhysBCFunct_8cpp.html", null ],
-    [ "ERF_PhysBCFunct.H", "ERF__PhysBCFunct_8H.html", "ERF__PhysBCFunct_8H" ],
+    [ "ERF_PhysBCFunct.H", "ERF__PhysBCFunct_8H.html", [
+      [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", "classERFPhysBCFunct" ]
+    ] ],
     [ "PlaneAverage.H", "PlaneAverage_8H.html", [
       [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ]
     ] ],

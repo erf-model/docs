@@ -172,8 +172,8 @@ Functions</h2></td></tr>
 <tr class="separator:a12e025a33b9abe4f8a02ac10ddce2b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad18eaab060b2904d3ffc586507a03bee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#ad18eaab060b2904d3ffc586507a03bee">erf_fast_rhs_MT</a> (int step, int level, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_slow_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, amrex::InterpFaceRegister *ifr, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, amrex::MultiFab &amp;Omega, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_t_rk, const amrex::MultiFab *z_t_pert, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_src, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_src, const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> fast_dt, const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> invfac, bool ingested_bcs)</td></tr>
 <tr class="separator:ad18eaab060b2904d3ffc586507a03bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5399122ad9e2b408d31c707f4afbf317"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#a5399122ad9e2b408d31c707f4afbf317">make_fast_coeffs</a> (int level, amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::Geometry geom, amrex::InterpFaceRegister *ifr, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z0, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ, const amrex::MultiFab *r0, const amrex::MultiFab *pi0, const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> fast_dt, bool ingested_bcs)</td></tr>
-<tr class="separator:a5399122ad9e2b408d31c707f4afbf317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69a77788e9505dee16b029495d5b73db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#a69a77788e9505dee16b029495d5b73db">make_fast_coeffs</a> (int level, amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::Geometry geom, amrex::InterpFaceRegister *ifr, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ, const amrex::MultiFab *r0, const amrex::MultiFab *pi0, const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> fast_dt, bool ingested_bcs)</td></tr>
+<tr class="separator:a69a77788e9505dee16b029495d5b73db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ad18eaab060b2904d3ffc586507a03bee"></a>
@@ -898,8 +898,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5399122ad9e2b408d31c707f4afbf317"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5399122ad9e2b408d31c707f4afbf317">&#9670;&nbsp;</a></span>make_fast_coeffs()</h2>
+<a id="a69a77788e9505dee16b029495d5b73db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69a77788e9505dee16b029495d5b73db">&#9670;&nbsp;</a></span>make_fast_coeffs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -951,12 +951,6 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
           <td class="paramname"><em>solverChoice</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td>
-          <td class="paramname"><em>z0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

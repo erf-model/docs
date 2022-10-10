@@ -136,11 +136,12 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= [&amp;](Vector&lt;MultiFab&gt;&amp; S_data,</div>
-<div class="line">                               <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time_for_fp,</div>
-<div class="line">                               <span class="keywordtype">int</span> ng_cons, <span class="keywordtype">int</span> ng_vel)</div>
+<div class="line">                               <span class="keyword">const</span> <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> time_for_fp, <span class="keywordtype">int</span> ng_cons, <span class="keywordtype">int</span> ng_vel)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="keywordtype">bool</span> fast_only = <span class="keyword">false</span>;</div>
-<div class="line">        <a class="code" href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(S_data, time_for_fp, ng_cons, ng_vel, fast_only);</div>
+<div class="line">        <span class="keywordtype">bool</span> vel_and_mom_synced = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code" href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(S_data, time_for_fp,</div>
+<div class="line">                  ng_cons, ng_vel, fast_only, vel_and_mom_synced);</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa7df86926bbc5da3453f7b45861f67d3">ERF::erf_advance()</a>.</p>
