@@ -2239,58 +2239,58 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;{</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;FillCoarsePatch()&quot;</span>,<a class="code" href="classERF.html#ae6ad57f4d7fbcd4336235cc10e938467">FillCoarsePatch</a>);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    AMREX_ASSERT(lev &gt; 0);</div>
+<div class="fragment"><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;{</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;FillCoarsePatch()&quot;</span>,<a class="code" href="classERF.html#ae6ad57f4d7fbcd4336235cc10e938467">FillCoarsePatch</a>);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    AMREX_ASSERT(lev &gt; 0);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">int</span> icomp = 0;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">int</span> bccomp;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    amrex::Interpolater* mapper;</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">int</span> icomp = 0;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">int</span> bccomp;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    amrex::Interpolater* mapper;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; mfs.size(); ++var_idx) {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>)</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            bccomp = 0;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            bccomp = 0;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            mapper = &amp;cell_cons_interp;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        }</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a> || var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a35b6db75aef9a4eca57e85396dc5dc12">Vars::xmom</a>)</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            bccomp = <a class="code" href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            mapper = &amp;face_linear_interp;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a> || var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9aa92727db248ec616aa835c2faa22f44c">Vars::ymom</a>)</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            bccomp = <a class="code" href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a>+1;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            mapper = &amp;face_linear_interp;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a> || var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9ada7d061afb1d0d7089d9dfe4874c965d">Vars::zmom</a>)</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            bccomp = <a class="code" href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a>+2;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            mapper = &amp;face_linear_interp;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        }</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        amrex::InterpFromCoarseLevel(*mfs[var_idx], time, <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev-1][var_idx],</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                                     icomp, icomp, mfs[var_idx]-&gt;nComp(),</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                                     geom[lev-1], geom[lev],</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                     <a class="code" href="ERF__FillPatch_8cpp.html#a85a7293fad1a59ed566bcea306373abc">null_bc</a>, 0, <a class="code" href="ERF__FillPatch_8cpp.html#a85a7293fad1a59ed566bcea306373abc">null_bc</a>, 0, refRatio(lev-1),</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                     mapper, <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, bccomp);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="comment">// Physical bc&#39;s at domain boundary</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    IntVect ngvect_cons = mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;nGrowVect();</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    IntVect ngvect_vels = mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>]-&gt;nGrowVect();</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordtype">bool</span> cons_only = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    (*<a class="code" href="classERF.html#af4e1870ed66f14dbb147869cca82516e">physbcs</a>[lev])(mfs,0,mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;nComp(),ngvect_cons,ngvect_vels,time,cons_only);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="comment">// Since lev &gt; 0 here we don&#39;t worry about m_r2d or wrfbdy data</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;}</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; mfs.size(); ++var_idx) {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>)</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            bccomp = 0;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            bccomp = 0;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            mapper = &amp;cell_cons_interp;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a> || var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a35b6db75aef9a4eca57e85396dc5dc12">Vars::xmom</a>)</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            bccomp = <a class="code" href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a>;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            mapper = &amp;face_linear_interp;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a> || var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9aa92727db248ec616aa835c2faa22f44c">Vars::ymom</a>)</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            bccomp = <a class="code" href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a>+1;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            mapper = &amp;face_linear_interp;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        }</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a> || var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9ada7d061afb1d0d7089d9dfe4874c965d">Vars::zmom</a>)</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            bccomp = <a class="code" href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a>+2;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            mapper = &amp;face_linear_interp;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        amrex::InterpFromCoarseLevel(*mfs[var_idx], time, <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev-1][var_idx],</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                                     icomp, icomp, mfs[var_idx]-&gt;nComp(),</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                                     geom[lev-1], geom[lev],</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                                     <a class="code" href="ERF__FillPatch_8cpp.html#a85a7293fad1a59ed566bcea306373abc">null_bc</a>, 0, <a class="code" href="ERF__FillPatch_8cpp.html#a85a7293fad1a59ed566bcea306373abc">null_bc</a>, 0, refRatio(lev-1),</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                                     mapper, <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, bccomp);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// Physical bc&#39;s at domain boundary</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    IntVect ngvect_cons = mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;nGrowVect();</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    IntVect ngvect_vels = mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>]-&gt;nGrowVect();</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordtype">bool</span> cons_only = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    (*<a class="code" href="classERF.html#af4e1870ed66f14dbb147869cca82516e">physbcs</a>[lev])(mfs,0,mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;nComp(),ngvect_cons,ngvect_vels,time,cons_only);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">// Since lev &gt; 0 here we don&#39;t worry about m_r2d or wrfbdy data</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2369,122 +2369,120 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;{</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;FillIntermediatePatch()&quot;</span>,<a class="code" href="classERF.html#a29ab9fe906bf82be022d377e54d31f94">FillIntermediatePatch</a>);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">int</span> bccomp;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    amrex::Interpolater* mapper;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">// We should always pass cons, xvel, yvel, and zvel (in that order) in the mfs vector</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    AMREX_ALWAYS_ASSERT(mfs.size() == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>; ++var_idx)</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">if</span> (cons_only &amp;&amp; var_idx != <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>) <span class="keywordflow">continue</span>;</div>
+<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;{</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;FillIntermediatePatch()&quot;</span>,<a class="code" href="classERF.html#a29ab9fe906bf82be022d377e54d31f94">FillIntermediatePatch</a>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">int</span> bccomp;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    amrex::Interpolater* mapper;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// We should always pass cons, xvel, yvel, and zvel (in that order) in the mfs vector</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    AMREX_ALWAYS_ASSERT(mfs.size() == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>; ++var_idx)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">if</span> (cons_only &amp;&amp; var_idx != <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        MultiFab&amp; mf = *mfs[var_idx];</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        MultiFab&amp; mf = *mfs[var_idx];</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        IntVect ngvect;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordtype">int</span> icomp, ncomp;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>)</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            bccomp = icomp_cons;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            mapper = &amp;cell_cons_interp;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            ngvect = IntVect(ng_cons,ng_cons,ng_cons);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            icomp  = icomp_cons;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            ncomp  = ncomp_cons;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>)</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            bccomp = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            mapper = &amp;face_linear_interp;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            ngvect = IntVect(ng_vel,ng_vel,ng_vel);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            icomp  = 0;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            ncomp  = 1;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>)</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            bccomp = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            mapper = &amp;face_linear_interp;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            ngvect = IntVect(ng_vel,ng_vel,ng_vel);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            icomp  = 0;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            ncomp  = 1;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        }</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>)</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            bccomp = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            mapper = &amp;face_linear_interp;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            ngvect = IntVect(ng_vel,ng_vel,0);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            icomp  = 0;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            ncomp  = 1;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        }</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">if</span> (lev == 0)</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            mf.FillBoundary(icomp,ncomp,ngvect,geom[lev].periodicity());</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            Vector&lt;MultiFab*&gt; fmf = {&amp;mf};</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            Vector&lt;MultiFab*&gt; cmf = {&amp;<a class="code" href="classERF.html#af31e928baa970a1507dfb0233b352542">vars_old</a>[lev-1][var_idx], &amp;<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev-1][var_idx]};</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            Vector&lt;Real&gt; ctime    = {<a class="code" href="classERF.html#a7085d7d5fc94a0f84efc06957267d58e">t_old</a>[lev-1], <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[lev-1]};</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            amrex::FillPatchTwoLevels(mf, time, cmf, ctime, fmf, {time},</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                      icomp, icomp, ncomp, geom[lev-1], geom[lev],</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                      <a class="code" href="ERF__FillPatch_8cpp.html#a85a7293fad1a59ed566bcea306373abc">null_bc</a>, 0, <a class="code" href="ERF__FillPatch_8cpp.html#a85a7293fad1a59ed566bcea306373abc">null_bc</a>, 0, refRatio(lev-1),</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                      mapper, <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, bccomp);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        }</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        IntVect ngvect;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordtype">int</span> icomp, ncomp;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            bccomp = icomp_cons;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            mapper = &amp;cell_cons_interp;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            ngvect = IntVect(ng_cons,ng_cons,ng_cons);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            icomp  = icomp_cons;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            ncomp  = ncomp_cons;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            bccomp = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            mapper = &amp;face_linear_interp;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            ngvect = IntVect(ng_vel,ng_vel,ng_vel);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            icomp  = 0;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            ncomp  = 1;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            bccomp = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            mapper = &amp;face_linear_interp;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            ngvect = IntVect(ng_vel,ng_vel,ng_vel);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            icomp  = 0;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            ncomp  = 1;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            bccomp = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            mapper = &amp;face_linear_interp;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            ngvect = IntVect(ng_vel,ng_vel,0);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            icomp  = 0;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            ncomp  = 1;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">if</span> (lev == 0)</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            mf.FillBoundary(icomp,ncomp,ngvect,geom[lev].periodicity());</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            Vector&lt;MultiFab*&gt; fmf = {&amp;mf};</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            Vector&lt;MultiFab*&gt; cmf = {&amp;<a class="code" href="classERF.html#af31e928baa970a1507dfb0233b352542">vars_old</a>[lev-1][var_idx], &amp;<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev-1][var_idx]};</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            Vector&lt;Real&gt; ctime    = {<a class="code" href="classERF.html#a7085d7d5fc94a0f84efc06957267d58e">t_old</a>[lev-1], <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[lev-1]};</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            amrex::FillPatchTwoLevels(mf, time, cmf, ctime, fmf, {time},</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                                      icomp, icomp, ncomp, geom[lev-1], geom[lev],</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                                      <a class="code" href="ERF__FillPatch_8cpp.html#a85a7293fad1a59ed566bcea306373abc">null_bc</a>, 0, <a class="code" href="ERF__FillPatch_8cpp.html#a85a7293fad1a59ed566bcea306373abc">null_bc</a>, 0, refRatio(lev-1),</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                      mapper, <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, bccomp);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">// Physical bc&#39;s at domain boundary</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="comment">// Physical bc&#39;s at domain boundary</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    IntVect ngvect_cons = IntVect(ng_cons,ng_cons,ng_cons);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    IntVect ngvect_vels = IntVect(ng_vel ,ng_vel ,ng_vel);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    (*<a class="code" href="classERF.html#af4e1870ed66f14dbb147869cca82516e">physbcs</a>[lev])(mfs,icomp_cons,ncomp_cons,ngvect_cons,ngvect_vels,time,cons_only);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#addf62bfc534515447b94e928ac0b7135">m_r2d</a>) <a class="code" href="classERF.html#a87d3f7f60806e320c44e9af7508401a7">fill_from_bndryregs</a>(mfs,time);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a> == <span class="stringliteral">&quot;real&quot;</span>) fill_from_wrfbdy(mfs,time);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="comment">// It is important that we apply the MOST bcs after we have imposed all the others</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="comment">//    so that we have enough information in the ghost cells to calculate the viscosity</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">if</span> (!(cons_only &amp;&amp; ncomp_cons == 1) &amp;&amp; <a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a> &amp;&amp; allow_most_bcs)</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        MultiFab eddyDiffs(mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;boxArray(),</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                           mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;DistributionMap(),</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                           <a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a>,3);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordtype">bool</span> vert_only = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#ab6df21759a0fbc49cc70bf928780e275">ComputeTurbulentViscosity</a>(*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>], *mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                  *mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>], *mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                  eddyDiffs, geom[lev], <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>, <a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>, <a class="code" href="classERF.html#a8a99e22b1111c803e31b4afd5fcdea60">domain_bcs_type_d</a>, vert_only);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        eddyDiffs.FillBoundary(geom[lev].periodicity());</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>; ++var_idx)</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            MultiFab&amp; mf = *mfs[var_idx];</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> icomp = 0;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(mf); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <span class="keyword">const</span> Box&amp; bx       = mf[mfi].box();</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                      <span class="keyword">auto</span> dest_arr = mf[mfi].array();</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> velx_arr = (*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>])[mfi].array();</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> vely_arr = (*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>])[mfi].array();</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> cons_arr = (*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>])[mfi].array();</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>  eta_arr = eddyDiffs[mfi].array();</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <span class="keywordtype">int</span> zlo = 0;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                <a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>-&gt;impose_most_bcs(lev,bx,dest_arr,cons_arr,velx_arr,vely_arr,eta_arr,var_idx,icomp,zlo);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            } <span class="comment">// mf</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        } <span class="comment">// var_idx</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    } <span class="comment">// most</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    IntVect ngvect_cons = IntVect(ng_cons,ng_cons,ng_cons);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    IntVect ngvect_vels = IntVect(ng_vel ,ng_vel ,ng_vel);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    (*<a class="code" href="classERF.html#af4e1870ed66f14dbb147869cca82516e">physbcs</a>[lev])(mfs,icomp_cons,ncomp_cons,ngvect_cons,ngvect_vels,time,cons_only);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#addf62bfc534515447b94e928ac0b7135">m_r2d</a>) <a class="code" href="classERF.html#a87d3f7f60806e320c44e9af7508401a7">fill_from_bndryregs</a>(mfs,time);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a> == <span class="stringliteral">&quot;real&quot;</span>) fill_from_wrfbdy(mfs,time);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">// It is important that we apply the MOST bcs after we have imposed all the others</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="comment">//    so that we have enough information in the ghost cells to calculate the viscosity</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span> (!(cons_only &amp;&amp; ncomp_cons == 1) &amp;&amp; <a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a> &amp;&amp; allow_most_bcs)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        MultiFab eddyDiffs(mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;boxArray(),</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                           mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;DistributionMap(),</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                           <a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a>,3);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordtype">bool</span> vert_only = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#ab6df21759a0fbc49cc70bf928780e275">ComputeTurbulentViscosity</a>(*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>], *mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                                  *mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>], *mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                                  eddyDiffs, geom[lev], <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>, <a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>, <a class="code" href="classERF.html#a8a99e22b1111c803e31b4afd5fcdea60">domain_bcs_type_d</a>, vert_only);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        eddyDiffs.FillBoundary(geom[lev].periodicity());</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> icomp = 0;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(*mfs[0]); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> cons_arr = (*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>])[mfi].array();</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> velx_arr = (*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>])[mfi].array();</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> vely_arr = (*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>])[mfi].array();</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>  eta_arr = eddyDiffs[mfi].array();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>; ++var_idx)</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                <span class="keyword">const</span> Box&amp; bx       = (*mfs[var_idx])[mfi].box();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                      <span class="keyword">auto</span> dest_arr = (*mfs[var_idx])[mfi].array();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                <span class="keywordtype">int</span> zlo = 0;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                <a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>-&gt;impose_most_bcs(lev,bx,dest_arr,cons_arr,velx_arr,vely_arr,eta_arr,var_idx,icomp,zlo);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            } <span class="comment">// var_idx</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        } <span class="comment">// mf</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    } <span class="comment">// most</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2636,31 +2634,29 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        MultiFab eddyDiffs(mfs[0]-&gt;boxArray(), mfs[0]-&gt;DistributionMap(),</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                           <a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a>,3);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">bool</span> vert_only = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#ab6df21759a0fbc49cc70bf928780e275">ComputeTurbulentViscosity</a>(*mfs[0],*mfs[1],*mfs[2],*mfs[3],</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#ab6df21759a0fbc49cc70bf928780e275">ComputeTurbulentViscosity</a>(*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>],*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                  eddyDiffs, geom[lev], <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>, <a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>, <a class="code" href="classERF.html#a8a99e22b1111c803e31b4afd5fcdea60">domain_bcs_type_d</a>, vert_only);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        eddyDiffs.FillBoundary(geom[lev].periodicity());</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>; ++var_idx)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            MultiFab&amp; mf = *mfs[var_idx];</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> icomp = 0;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(mf); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keyword">const</span> Box&amp; bx       = (*mfs[var_idx])[mfi].box();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                      <span class="keyword">auto</span> dest_arr = (*mfs[var_idx])[mfi].array();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> velx_arr = (*mfs[0])[mfi].array();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> vely_arr = (*mfs[1])[mfi].array();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> cons_arr = (*mfs[2])[mfi].array();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>  eta_arr = eddyDiffs[mfi].array();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordtype">int</span> zlo = 0;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>-&gt;impose_most_bcs(lev,bx,dest_arr,cons_arr,velx_arr,vely_arr,eta_arr,var_idx,icomp,zlo);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            } <span class="comment">// mf</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        } <span class="comment">// var_idx</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    } <span class="comment">// most</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> icomp = 0;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(*mfs[0]); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> cons_arr = (*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>])[mfi].array();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> velx_arr = (*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>])[mfi].array();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> vely_arr = (*mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>])[mfi].array();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>  eta_arr = eddyDiffs[mfi].array();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>; ++var_idx)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keyword">const</span> Box&amp; bx       = (*mfs[var_idx])[mfi].box();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                      <span class="keyword">auto</span> dest_arr = (*mfs[var_idx])[mfi].array();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keywordtype">int</span> zlo = 0;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>-&gt;impose_most_bcs(lev,bx,dest_arr,cons_arr,velx_arr,vely_arr,eta_arr,var_idx,icomp,zlo);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            } <span class="comment">// var_idx</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        } <span class="comment">// mf</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    } <span class="comment">// most</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -9672,7 +9668,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a></div><div class="ttdeci">@ zvel_bc</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:49</div></div>
 <div class="ttc" id="aclassERF_html_a65741b6379d273c19a25cf48bb947614"><div class="ttname"><a href="classERF.html#a65741b6379d273c19a25cf48bb947614">ERF::t_new</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; t_new</div><div class="ttdef"><b>Definition:</b> ERF.H:452</div></div>
 <div class="ttc" id="aclassERF_html_a02722d16f3c26efe590702200f1296d7"><div class="ttname"><a href="classERF.html#a02722d16f3c26efe590702200f1296d7">ERF::last_check_file_step</a></div><div class="ttdeci">int last_check_file_step</div><div class="ttdef"><b>Definition:</b> ERF.H:509</div></div>
-<div class="ttc" id="aclassERF_html_a29ab9fe906bf82be022d377e54d31f94"><div class="ttname"><a href="classERF.html#a29ab9fe906bf82be022d377e54d31f94">ERF::FillIntermediatePatch</a></div><div class="ttdeci">void FillIntermediatePatch(int lev, amrex::Real time, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;mfs, int ng_cons, int ng_vel, bool cons_only, int scomp_cons, int ncomp_cons, bool allow_most_bcs=true)</div><div class="ttdef"><b>Definition:</b> ERF_FillPatch.cpp:133</div></div>
+<div class="ttc" id="aclassERF_html_a29ab9fe906bf82be022d377e54d31f94"><div class="ttname"><a href="classERF.html#a29ab9fe906bf82be022d377e54d31f94">ERF::FillIntermediatePatch</a></div><div class="ttdeci">void FillIntermediatePatch(int lev, amrex::Real time, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;mfs, int ng_cons, int ng_vel, bool cons_only, int scomp_cons, int ncomp_cons, bool allow_most_bcs=true)</div><div class="ttdef"><b>Definition:</b> ERF_FillPatch.cpp:131</div></div>
 <div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:179</div></div>
 <div class="ttc" id="aclassERF_html_a405556a52bef334ab68294c1a540e107"><div class="ttname"><a href="classERF.html#a405556a52bef334ab68294c1a540e107">ERF::stop_time</a></div><div class="ttdeci">amrex::Real stop_time</div><div class="ttdef"><b>Definition:</b> ERF.H:517</div></div>
 <div class="ttc" id="aclassERF_html_a48bba6b1c1b39940b09aefbe56311e2f"><div class="ttname"><a href="classERF.html#a48bba6b1c1b39940b09aefbe56311e2f">ERF::column_file_name</a></div><div class="ttdeci">static std::string column_file_name</div><div class="ttdef"><b>Definition:</b> ERF.H:602</div></div>
@@ -9766,7 +9762,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassMRISplitIntegrator_html_ad78b5d1908a131c3597232a041ca267b"><div class="ttname"><a href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b">MRISplitIntegrator::advance</a></div><div class="ttdeci">amrex::Real advance(T &amp;S_old, T &amp;S_new, amrex::Real time, const amrex::Real time_step)</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:136</div></div>
 <div class="ttc" id="aclassERF_html_a1fcb440c67da60c86372aec1fe871cb7"><div class="ttname"><a href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7">ERF::setPlotVariables</a></div><div class="ttdeci">void setPlotVariables(const std::string &amp;pp_plot_var_names, amrex::Vector&lt; std::string &gt; &amp;plot_var_names)</div><div class="ttdef"><b>Definition:</b> Plotfile.cpp:10</div></div>
 <div class="ttc" id="aclassERF_html_a419ba9adca32073e70aae4a8fe8cfcee"><div class="ttname"><a href="classERF.html#a419ba9adca32073e70aae4a8fe8cfcee">ERF::build_fine_mask</a></div><div class="ttdeci">amrex::MultiFab &amp; build_fine_mask(int lev)</div><div class="ttdef"><b>Definition:</b> ERF_SumIQ.cpp:100</div></div>
-<div class="ttc" id="aclassERF_html_ae6ad57f4d7fbcd4336235cc10e938467"><div class="ttname"><a href="classERF.html#ae6ad57f4d7fbcd4336235cc10e938467">ERF::FillCoarsePatch</a></div><div class="ttdeci">void FillCoarsePatch(int lev, amrex::Real time, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;mfs)</div><div class="ttdef"><b>Definition:</b> ERF_FillPatch.cpp:259</div></div>
+<div class="ttc" id="aclassERF_html_ae6ad57f4d7fbcd4336235cc10e938467"><div class="ttname"><a href="classERF.html#ae6ad57f4d7fbcd4336235cc10e938467">ERF::FillCoarsePatch</a></div><div class="ttdeci">void FillCoarsePatch(int lev, amrex::Real time, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;mfs)</div><div class="ttdef"><b>Definition:</b> ERF_FillPatch.cpp:255</div></div>
 <div class="ttc" id="aclassERF_html_a8ce9ab15fef40044926f8ec168827438"><div class="ttname"><a href="classERF.html#a8ce9ab15fef40044926f8ec168827438">ERF::init_bx_from_input_sounding</a></div><div class="ttdeci">void init_bx_from_input_sounding(const amrex::Box &amp;bx, amrex::Array4&lt; amrex::Real &gt; const &amp;state, amrex::Array4&lt; amrex::Real &gt; const &amp;x_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;y_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;z_vel, amrex::GeometryData const &amp;geomdata, InputSoundingData const &amp;inputSoundingData)</div><div class="ttdef"><b>Definition:</b> ERF_init.cpp:356</div></div>
 <div class="ttc" id="aclassERF_html_a7c448670f7a5cadd6fe56f7e615c9eb6"><div class="ttname"><a href="classERF.html#a7c448670f7a5cadd6fe56f7e615c9eb6">ERF::output_bndry_planes</a></div><div class="ttdeci">static int output_bndry_planes</div><div class="ttdef"><b>Definition:</b> ERF.H:605</div></div>
 <div class="ttc" id="aclassERF_html_a0634154e8e58379c495c3e7fe7c5e4d6"><div class="ttname"><a href="classERF.html#a0634154e8e58379c495c3e7fe7c5e4d6">ERF::max_step</a></div><div class="ttdeci">int max_step</div><div class="ttdef"><b>Definition:</b> ERF.H:516</div></div>
