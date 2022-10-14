@@ -120,12 +120,12 @@ Include dependency graph for MomentumToVelocity.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a79080d9506305b3b98f783cc6c2cda47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MomentumToVelocity_8cpp.html#a79080d9506305b3b98f783cc6c2cda47">MomentumToVelocity</a> (MultiFab &amp;xvel, const IntVect &amp;xvel_ngrow, MultiFab &amp;yvel, const IntVect &amp;yvel_ngrow, MultiFab &amp;zvel, const IntVect &amp;zvel_ngrow, const MultiFab &amp;cons_in, const MultiFab &amp;xmom_in, const MultiFab &amp;ymom_in, const MultiFab &amp;zmom_in)</td></tr>
-<tr class="separator:a79080d9506305b3b98f783cc6c2cda47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46cdfa0fca9448d7ec9cb8d0bf05cf8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MomentumToVelocity_8cpp.html#a46cdfa0fca9448d7ec9cb8d0bf05cf8a">MomentumToVelocity</a> (BoxArray &amp;grids_to_evolve, MultiFab &amp;xvel, MultiFab &amp;yvel, MultiFab &amp;zvel, const MultiFab &amp;cons_in, const MultiFab &amp;xmom_in, const MultiFab &amp;ymom_in, const MultiFab &amp;zmom_in)</td></tr>
+<tr class="separator:a46cdfa0fca9448d7ec9cb8d0bf05cf8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a79080d9506305b3b98f783cc6c2cda47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79080d9506305b3b98f783cc6c2cda47">&#9670;&nbsp;</a></span>MomentumToVelocity()</h2>
+<a id="a46cdfa0fca9448d7ec9cb8d0bf05cf8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46cdfa0fca9448d7ec9cb8d0bf05cf8a">&#9670;&nbsp;</a></span>MomentumToVelocity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,14 +133,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void MomentumToVelocity </td>
           <td>(</td>
-          <td class="paramtype">MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>xvel</em>, </td>
+          <td class="paramtype">BoxArray &amp;&#160;</td>
+          <td class="paramname"><em>grids_to_evolve</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const IntVect &amp;&#160;</td>
-          <td class="paramname"><em>xvel_ngrow</em>, </td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>xvel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -151,20 +151,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const IntVect &amp;&#160;</td>
-          <td class="paramname"><em>yvel_ngrow</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">MultiFab &amp;&#160;</td>
           <td class="paramname"><em>zvel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const IntVect &amp;&#160;</td>
-          <td class="paramname"><em>zvel_ngrow</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -198,18 +186,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Convert updated momentum to updated velocity </p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;MomentumToVelocity()&quot;</span>,<a class="code" href="MomentumToVelocity_8cpp.html#a79080d9506305b3b98f783cc6c2cda47">MomentumToVelocity</a>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// Loop over boxes = valid boxes grown by ngrow</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> Box&amp; tbx = amrex::grow(mfi.nodaltilebox(0),xvel_ngrow);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">const</span> Box&amp; tby = amrex::grow(mfi.nodaltilebox(1),yvel_ngrow);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">const</span> Box&amp; tbz = amrex::grow(mfi.nodaltilebox(2),zvel_ngrow);</div>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;MomentumToVelocity()&quot;</span>,<a class="code" href="MomentumToVelocity_8cpp.html#a46cdfa0fca9448d7ec9cb8d0bf05cf8a">MomentumToVelocity</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// Loop over boxes = valid boxes grown by ngrow</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">const</span> Box&amp; valid_bx = grids_to_evolve[mfi.index()];</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// Construct intersection of current tilebox and valid region for updating</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        Box bx = mfi.tilebox() &amp; valid_bx;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> Box&amp; tbx = surroundingNodes(bx,0);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">const</span> Box&amp; tby = surroundingNodes(bx,1);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">const</span> Box&amp; tbz = surroundingNodes(bx,2);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// Conserved variables on cell centers -- we use this for density</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">cons</a> = cons_in.array(mfi);</div>
@@ -245,7 +238,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:86</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:88</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:87</div></div>
-<div class="ttc" id="aMomentumToVelocity_8cpp_html_a79080d9506305b3b98f783cc6c2cda47"><div class="ttname"><a href="MomentumToVelocity_8cpp.html#a79080d9506305b3b98f783cc6c2cda47">MomentumToVelocity</a></div><div class="ttdeci">void MomentumToVelocity(MultiFab &amp;xvel, const IntVect &amp;xvel_ngrow, MultiFab &amp;yvel, const IntVect &amp;yvel_ngrow, MultiFab &amp;zvel, const IntVect &amp;zvel_ngrow, const MultiFab &amp;cons_in, const MultiFab &amp;xmom_in, const MultiFab &amp;ymom_in, const MultiFab &amp;zmom_in)</div><div class="ttdef"><b>Definition:</b> MomentumToVelocity.cpp:15</div></div>
+<div class="ttc" id="aMomentumToVelocity_8cpp_html_a46cdfa0fca9448d7ec9cb8d0bf05cf8a"><div class="ttname"><a href="MomentumToVelocity_8cpp.html#a46cdfa0fca9448d7ec9cb8d0bf05cf8a">MomentumToVelocity</a></div><div class="ttdeci">void MomentumToVelocity(BoxArray &amp;grids_to_evolve, MultiFab &amp;xvel, MultiFab &amp;yvel, MultiFab &amp;zvel, const MultiFab &amp;cons_in, const MultiFab &amp;xmom_in, const MultiFab &amp;ymom_in, const MultiFab &amp;zmom_in)</div><div class="ttdef"><b>Definition:</b> MomentumToVelocity.cpp:14</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:85</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
