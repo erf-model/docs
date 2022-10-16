@@ -43,9 +43,9 @@ var structSolverChoice =
     [ "sinphi", "structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf", null ],
     [ "spatial_order", "structSolverChoice.html#a8e053ce39997ed619ac81aa4d5a1fd44", null ],
     [ "terrain_type", "structSolverChoice.html#a6cf7cd64adcf678e8065b1c4261cefd8", null ],
+    [ "test_mapfactor", "structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107", null ],
     [ "use_coriolis", "structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606", null ],
     [ "use_gravity", "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5", null ],
-    [ "use_mapfactor", "structSolverChoice.html#afee3980aa8c52d6c0ebd21579ada1c9c", null ],
     [ "use_QKE", "structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5", null ],
     [ "use_rayleigh_damping", "structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01", null ],
     [ "use_terrain", "structSolverChoice.html#a063a88594452100497651e8aaf1f68d7", null ]

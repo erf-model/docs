@@ -127,8 +127,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a4b0edf29a032ff18b10a42825fa9e4b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a063a88594452100497651e8aaf1f68d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolverChoice.html#a063a88594452100497651e8aaf1f68d7">use_terrain</a> = false</td></tr>
 <tr class="separator:a063a88594452100497651e8aaf1f68d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afee3980aa8c52d6c0ebd21579ada1c9c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolverChoice.html#afee3980aa8c52d6c0ebd21579ada1c9c">use_mapfactor</a> = false</td></tr>
-<tr class="separator:afee3980aa8c52d6c0ebd21579ada1c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c7942f6ef7cf05115f35702097cf107"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107">test_mapfactor</a> = false</td></tr>
+<tr class="separator:a9c7942f6ef7cf05115f35702097cf107"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cf7cd64adcf678e8065b1c4261cefd8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolverChoice.html#a6cf7cd64adcf678e8065b1c4261cefd8">terrain_type</a> = 0</td></tr>
 <tr class="separator:a6cf7cd64adcf678e8065b1c4261cefd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ab48411073a3c1f75435292d7b407e5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5">use_gravity</a> = false</td></tr>
@@ -397,7 +397,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        pp.query(<span class="stringliteral">&quot;use_terrain&quot;</span>, <a class="code" href="structSolverChoice.html#a063a88594452100497651e8aaf1f68d7">use_terrain</a>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">// Do we use map scale factors?</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        pp.query(<span class="stringliteral">&quot;use_mapfactor&quot;</span>, <a class="code" href="structSolverChoice.html#afee3980aa8c52d6c0ebd21579ada1c9c">use_mapfactor</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        pp.query(<span class="stringliteral">&quot;test_mapfactor&quot;</span>, <a class="code" href="structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107">test_mapfactor</a>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">// Is the terrain static or moving?</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        pp.query(<span class="stringliteral">&quot;terrain_type&quot;</span>, <a class="code" href="structSolverChoice.html#a6cf7cd64adcf678e8065b1c4261cefd8">terrain_type</a>);</div>
@@ -1212,6 +1212,22 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a9c7942f6ef7cf05115f35702097cf107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c7942f6ef7cf05115f35702097cf107">&#9670;&nbsp;</a></span>test_mapfactor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SolverChoice::test_mapfactor = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a4829661b558b213e32970a02e147077f">init_params()</a>.</p>
+
+</div>
+</div>
 <a id="a9e86533aa6df5bf6408d91f0dfd23606"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e86533aa6df5bf6408d91f0dfd23606">&#9670;&nbsp;</a></span>use_coriolis</h2>
 
@@ -1241,22 +1257,6 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="structSolverChoice.html#abb95d84167308078ce369b4196ef979c">display()</a>, and <a class="el" href="structSolverChoice.html#a4829661b558b213e32970a02e147077f">init_params()</a>.</p>
-
-</div>
-</div>
-<a id="afee3980aa8c52d6c0ebd21579ada1c9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afee3980aa8c52d6c0ebd21579ada1c9c">&#9670;&nbsp;</a></span>use_mapfactor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool SolverChoice::use_mapfactor = false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a4829661b558b213e32970a02e147077f">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1321,6 +1321,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__Constants_8H_html_a063fd3095e4994e6136a62d78b7c5901"><div class="ttname"><a href="ERF__Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901">CONST_GRAV</a></div><div class="ttdeci">#define CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:15</div></div>
 <div class="ttc" id="astructSolverChoice_html_a6cf7cd64adcf678e8065b1c4261cefd8"><div class="ttname"><a href="structSolverChoice.html#a6cf7cd64adcf678e8065b1c4261cefd8">SolverChoice::terrain_type</a></div><div class="ttdeci">int terrain_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:333</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a84e6bfbbb8e490790c506939b364f735a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6adf97f83acf6453d4a6a4b1070f3754">MolecDiffType::None</a></div><div class="ttdeci">@ None</div></div>
+<div class="ttc" id="astructSolverChoice_html_a9c7942f6ef7cf05115f35702097cf107"><div class="ttname"><a href="structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107">SolverChoice::test_mapfactor</a></div><div class="ttdeci">bool test_mapfactor</div><div class="ttdef"><b>Definition:</b> DataStruct.H:332</div></div>
 <div class="ttc" id="astructSolverChoice_html_a8d16d654d2a02cec62427b38498c2462"><div class="ttname"><a href="structSolverChoice.html#a8d16d654d2a02cec62427b38498c2462">SolverChoice::molec_diff_type</a></div><div class="ttdeci">MolecDiffType molec_diff_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:343</div></div>
 <div class="ttc" id="astructSolverChoice_html_a60f32142004abc14d6d58692a3554c82"><div class="ttname"><a href="structSolverChoice.html#a60f32142004abc14d6d58692a3554c82">SolverChoice::CI</a></div><div class="ttdeci">amrex::Real CI</div><div class="ttdef"><b>Definition:</b> DataStruct.H:359</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a22b7c2abfb7dcf0f672899fb2b6f1670"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a22b7c2abfb7dcf0f672899fb2b6f1670">IC_BC_Type::Ideal</a></div><div class="ttdeci">@ Ideal</div></div>
@@ -1367,7 +1368,6 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aDataStruct_8H_html_a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288"><div class="ttname"><a href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a></div><div class="ttdeci">@ ConstantAlpha</div></div>
 <div class="ttc" id="astructSolverChoice_html_a3436b31b3e0e439c700d07c30d22e7a3"><div class="ttname"><a href="structSolverChoice.html#a3436b31b3e0e439c700d07c30d22e7a3">SolverChoice::rhoAlpha_T</a></div><div class="ttdeci">amrex::Real rhoAlpha_T</div><div class="ttdef"><b>Definition:</b> DataStruct.H:350</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a></div><div class="ttdeci">@ Smagorinsky</div></div>
-<div class="ttc" id="astructSolverChoice_html_afee3980aa8c52d6c0ebd21579ada1c9c"><div class="ttname"><a href="structSolverChoice.html#afee3980aa8c52d6c0ebd21579ada1c9c">SolverChoice::use_mapfactor</a></div><div class="ttdeci">bool use_mapfactor</div><div class="ttdef"><b>Definition:</b> DataStruct.H:332</div></div>
 <div class="ttc" id="astructSolverChoice_html_ac6ce37592bdc2abee5231a47802c316b"><div class="ttname"><a href="structSolverChoice.html#ac6ce37592bdc2abee5231a47802c316b">SolverChoice::Pr_t</a></div><div class="ttdeci">amrex::Real Pr_t</div><div class="ttdef"><b>Definition:</b> DataStruct.H:361</div></div>
 <div class="ttc" id="astructSolverChoice_html_a9e86533aa6df5bf6408d91f0dfd23606"><div class="ttname"><a href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">SolverChoice::use_coriolis</a></div><div class="ttdeci">bool use_coriolis</div><div class="ttdef"><b>Definition:</b> DataStruct.H:337</div></div>
 <div class="ttc" id="astructSolverChoice_html_a1163778ed56af6977001ef4ec55a3da3"><div class="ttname"><a href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">SolverChoice::coriolis_factor</a></div><div class="ttdeci">amrex::Real coriolis_factor</div><div class="ttdef"><b>Definition:</b> DataStruct.H:392</div></div>
