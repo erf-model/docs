@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"classMRISplitIntegrator.html#ab0f2e5848bf5e8f4959b6f990cb73053":[2,0,10,25],
 "classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86":[2,0,10,5],
 "classMRISplitIntegrator.html#abe16bffbdae733268ab637f4f71c1301":[2,0,10,0],
 "classMRISplitIntegrator.html#ac627f7a16fd409d33916eeccb9ab3c3f":[2,0,10,28],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "functions_x.html":[2,3,0,21],
 "functions_z.html":[2,3,0,22],
 "functions_~.html":[2,3,0,23],
-"globals.html":[3,1,0,0]
+"globals.html":[3,1,0,0],
+"globals.html":[3,1,0]
 };

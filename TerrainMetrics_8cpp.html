@@ -83,7 +83,6 @@ $(document).ready(function(){initNavTree('TerrainMetrics_8cpp.html',''); initRes
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">TerrainMetrics.cpp File Reference</div>  </div>
@@ -91,30 +90,27 @@ $(document).ready(function(){initNavTree('TerrainMetrics_8cpp.html',''); initRes
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="TerrainMetrics_8H_source.html">TerrainMetrics.H</a>&gt;</code><br />
 <code>#include &lt;AMReX_ParmParse.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__Constants_8H_source.html">ERF_Constants.H</a>&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TerrainMetrics.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="TerrainMetrics_8cpp__incl.png" border="0" usemap="#_2home_2runner_2work_2ERF_2ERF_2Source_2Utils_2TerrainMetrics_8cpp" alt=""/></div>
 <map name="_2home_2runner_2work_2ERF_2ERF_2Source_2Utils_2TerrainMetrics_8cpp" id="_2home_2runner_2work_2ERF_2ERF_2Source_2Utils_2TerrainMetrics_8cpp">
-<area shape="rect" title=" " alt="" coords="316,5,572,47"/>
-<area shape="rect" href="TerrainMetrics_8H.html" title=" " alt="" coords="212,95,340,121"/>
-<area shape="rect" title=" " alt="" coords="365,95,523,121"/>
-<area shape="rect" title=" " alt="" coords="547,95,615,121"/>
+<area shape="rect" title=" " alt="" coords="431,5,687,47"/>
+<area shape="rect" href="TerrainMetrics_8H.html" title=" " alt="" coords="241,95,369,121"/>
+<area shape="rect" title=" " alt="" coords="394,95,553,121"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="577,95,711,121"/>
+<area shape="rect" title=" " alt="" coords="735,95,803,121"/>
 <area shape="rect" title=" " alt="" coords="5,169,88,196"/>
 <area shape="rect" title=" " alt="" coords="113,169,266,196"/>
 <area shape="rect" title=" " alt="" coords="290,169,435,196"/>
 <area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="459,169,581,196"/>
-<area shape="rect" title=" " alt="" coords="384,244,507,271"/>
-<area shape="rect" title=" " alt="" coords="531,244,659,271"/>
+<area shape="rect" title=" " alt="" coords="583,244,705,271"/>
+<area shape="rect" title=" " alt="" coords="431,244,559,271"/>
 </map>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a598a3330b3c21701223ee0ca14316eca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8cpp.html#a598a3330b3c21701223ee0ca14316eca">PI</a>&#160;&#160;&#160;3.141592653589793238462643383279502884197</td></tr>
-<tr class="separator:a598a3330b3c21701223ee0ca14316eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a164b37e7ca02d7284ddd6c32cd95f2db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8cpp.html#a164b37e7ca02d7284ddd6c32cd95f2db">init_terrain_grid</a> (const Geometry &amp;geom, MultiFab &amp;z_phys_nd)</td></tr>
@@ -122,21 +118,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a55f4a92935f0efe394664231cd73b9fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8cpp.html#a55f4a92935f0efe394664231cd73b9fe">make_metrics</a> (const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::MultiFab &amp;z_phys_cc, amrex::MultiFab &amp;detJ_cc)</td></tr>
 <tr class="separator:a55f4a92935f0efe394664231cd73b9fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a598a3330b3c21701223ee0ca14316eca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a598a3330b3c21701223ee0ca14316eca">&#9670;&nbsp;</a></span>PI</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PI&#160;&#160;&#160;3.141592653589793238462643383279502884197</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a164b37e7ca02d7284ddd6c32cd95f2db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a164b37e7ca02d7284ddd6c32cd95f2db">&#9670;&nbsp;</a></span>init_terrain_grid()</h2>
@@ -325,10 +306,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> z_H     = 2.44/(1-gamma_m);</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> A;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> foo = cos((<a class="code" href="TerrainMetrics_8cpp.html#a598a3330b3c21701223ee0ca14316eca">PI</a>/2)*(zz/z_H));</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> foo = cos((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>/2)*(zz/z_H));</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">if</span>(zz &lt; z_H) { A = foo*foo*foo*foo*foo*foo; } <span class="comment">// A controls rate of return to atm</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="keywordflow">else</span>         { A = 0; }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> foo_minus = cos((<a class="code" href="TerrainMetrics_8cpp.html#a598a3330b3c21701223ee0ca14316eca">PI</a>/2)*(zz_minus/z_H));</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> foo_minus = cos((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>/2)*(zz_minus/z_H));</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> A_minus;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">if</span>(zz_minus &lt; z_H) { A_minus = foo_minus*foo_minus*foo_minus*foo_minus*foo_minus*foo_minus; } <span class="comment">// A controls rate of return to atm</span></div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">else</span>               { A_minus = 0; }</div>
@@ -597,9 +578,9 @@ Here is the caller graph for this function:</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
-<div class="ttc" id="aTerrainMetrics_8cpp_html_a598a3330b3c21701223ee0ca14316eca"><div class="ttname"><a href="TerrainMetrics_8cpp.html#a598a3330b3c21701223ee0ca14316eca">PI</a></div><div class="ttdeci">#define PI</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.cpp:4</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
