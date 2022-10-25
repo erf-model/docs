@@ -8,6 +8,7 @@ var annotated_dup =
     [ "DirectionSelector< 1 >", "structDirectionSelector_3_011_01_4.html", "structDirectionSelector_3_011_01_4" ],
     [ "DirectionSelector< 2 >", "structDirectionSelector_3_012_01_4.html", "structDirectionSelector_3_012_01_4" ],
     [ "ERF", "classERF.html", "classERF" ],
+    [ "ERFFillPatcher", "classERFFillPatcher.html", "classERFFillPatcher" ],
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", "classERFPhysBCFunct" ],
     [ "InputSoundingData", "structInputSoundingData.html", "structInputSoundingData" ],
     [ "MRISplitIntegrator", "classMRISplitIntegrator.html", "classMRISplitIntegrator" ],

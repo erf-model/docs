@@ -13,6 +13,10 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "BoundaryConditions_zvel.cpp", "BoundaryConditions__zvel_8cpp.html", null ],
     [ "DirectionSelector.H", "DirectionSelector_8H.html", "DirectionSelector_8H" ],
     [ "ERF_FillPatch.cpp", "ERF__FillPatch_8cpp.html", "ERF__FillPatch_8cpp" ],
+    [ "ERF_FillPatcher.cpp", "ERF__FillPatcher_8cpp.html", null ],
+    [ "ERF_FillPatcher.H", "ERF__FillPatcher_8H.html", [
+      [ "ERFFillPatcher", "classERFFillPatcher.html", "classERFFillPatcher" ]
+    ] ],
     [ "ERF_PhysBCFunct.cpp", "ERF__PhysBCFunct_8cpp.html", null ],
     [ "ERF_PhysBCFunct.H", "ERF__PhysBCFunct_8H.html", [
       [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", "classERFPhysBCFunct" ]

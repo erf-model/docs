@@ -10,6 +10,7 @@ var hierarchy =
     [ "DirectionSelector< 0 >", "structDirectionSelector_3_010_01_4.html", null ],
     [ "DirectionSelector< 1 >", "structDirectionSelector_3_011_01_4.html", null ],
     [ "DirectionSelector< 2 >", "structDirectionSelector_3_012_01_4.html", null ],
+    [ "ERFFillPatcher", "classERFFillPatcher.html", null ],
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", null ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
     [ "IntegratorBase", null, [
