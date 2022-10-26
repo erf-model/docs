@@ -20,7 +20,7 @@ var classERF =
     [ "fill_from_bndryregs", "classERF.html#a87d3f7f60806e320c44e9af7508401a7", null ],
     [ "fill_rhs", "classERF.html#a18cd93c567c9ca162e07433ed7345608", null ],
     [ "FillCoarsePatch", "classERF.html#ae6ad57f4d7fbcd4336235cc10e938467", null ],
-    [ "FillIntermediatePatch", "classERF.html#a29ab9fe906bf82be022d377e54d31f94", null ],
+    [ "FillIntermediatePatch", "classERF.html#ab1ed5982bf0e7d6143735dcda444323d", null ],
     [ "FillPatch", "classERF.html#a6493833bcaa2b78dec344b40a130aa53", null ],
     [ "get_flux_reg", "classERF.html#afd3cbffc97b8a89e58042e029c5c6b7c", null ],
     [ "getCPUTime", "classERF.html#a5cafd68de724845533efea8d284aacb4", null ],
