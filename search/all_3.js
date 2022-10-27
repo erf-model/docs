@@ -64,6 +64,6 @@ var searchData=
   ['dtos_237',['dtos',['../classMultiBlockContainer.html#a537ef22d2809607f9d353b912eedffcf',1,'MultiBlockContainer']]],
   ['dtype_238',['DType',['../structNDArray.html#a96033b69f69ea0ae537a24288715752d',1,'NDArray']]],
   ['dummy_239',['dummy',['../structInputSoundingData.html#a12d70bacf9062cb4fce0111a4b475de5',1,'InputSoundingData']]],
-  ['dx_240',['dx',['../classPlaneAverage.html#abf7bfae5c1b6fed56ff09fd06368b12c',1,'PlaneAverage']]],
+  ['dx_240',['dx',['../classMOSTAverage.html#af1d8dc79e4f72e2e7335d1469a69aeb8',1,'MOSTAverage::dx()'],['../classPlaneAverage.html#abf7bfae5c1b6fed56ff09fd06368b12c',1,'PlaneAverage::dx()']]],
   ['dynamicviscosity_241',['dynamicViscosity',['../structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446',1,'SolverChoice']]]
 ];

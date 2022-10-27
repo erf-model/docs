@@ -42,5 +42,5 @@ var searchData=
   ['apply_5fbcs_39',['apply_bcs',['../TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f',1,'TI_utils.H']]],
   ['averagedown_40',['AverageDown',['../classERF.html#a8202de1f8f372e3e6fdc483447c6a55f',1,'ERF']]],
   ['averagedownto_41',['AverageDownTo',['../classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41',1,'ERF']]],
-  ['axis_42',['axis',['../classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a',1,'PlaneAverage']]]
+  ['axis_42',['axis',['../classMOSTAverage.html#a84a2fadb7130f5232bce091b5e944309',1,'MOSTAverage::axis()'],['../classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a',1,'PlaneAverage::axis()']]]
 ];

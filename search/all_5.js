@@ -4,7 +4,7 @@ var searchData=
   ['fast_306',['fast',['../namespaceRHSVar.html#adb9b87b6805100d0e912cd1a26b4dbc4a3be7d05d61be85bbfadeef639af8013f',1,'RHSVar']]],
   ['fast_5frhs_307',['fast_rhs',['../classMRISplitIntegrator.html#af64c2ed08f9f7c74f64084968ee0634d',1,'MRISplitIntegrator']]],
   ['fast_5frhs_5ffun_308',['fast_rhs_fun',['../TI__fast__rhs__fun_8H.html#ac6afbd55bf5b7264098d44d9b8928f57',1,'TI_fast_rhs_fun.H']]],
-  ['field_309',['field',['../classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5',1,'PlaneAverage']]],
+  ['field_309',['field',['../classMOSTAverage.html#a37baac4411145bcb3ed3783803aad68e',1,'MOSTAverage::field() const'],['../classMOSTAverage.html#a3f7bf05a45dcab58f3a0a22e54f0d090',1,'MOSTAverage::field(int i) const'],['../classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5',1,'PlaneAverage::field()']]],
   ['fill_5ffrom_5fbndryregs_310',['fill_from_bndryregs',['../classERF.html#a87d3f7f60806e320c44e9af7508401a7',1,'ERF']]],
   ['fill_5frhs_311',['fill_rhs',['../classERF.html#a18cd93c567c9ca162e07433ed7345608',1,'ERF']]],
   ['fillcoarsefineboundary_312',['fillCoarseFineBoundary',['../classERFFillPatcher.html#a137ba05d77f4defc485c1ecacdf7d606',1,'ERFFillPatcher']]],

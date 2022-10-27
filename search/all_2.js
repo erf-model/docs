@@ -27,7 +27,7 @@ var searchData=
   ['column_5floc_5fx_90',['column_loc_x',['../classERF.html#ab10bfe15c2d15fdd22201b64722a4022',1,'ERF']]],
   ['column_5floc_5fy_91',['column_loc_y',['../classERF.html#a30a1b51c733c3a20dc6948f9a3620bbb',1,'ERF']]],
   ['column_5fper_92',['column_per',['../classERF.html#a9fedd41de89817a23b1c3b3c6ef7443f',1,'ERF']]],
-  ['compute_5faverages_93',['compute_averages',['../classPlaneAverage.html#a0b4bb610551a2f07eb05b8e8b7d91820',1,'PlaneAverage::compute_averages(const IndexSelector &amp;idxOp, const amrex::MultiFab &amp;mfab)'],['../classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e',1,'PlaneAverage::compute_averages(const IndexSelector &amp;idxOp, const amrex::MultiFab &amp;mfab)']]],
+  ['compute_5faverages_93',['compute_averages',['../classMOSTAverage.html#a2d3a77d510aea3f11cdaba64395abe35',1,'MOSTAverage::compute_averages()'],['../classPlaneAverage.html#a0b4bb610551a2f07eb05b8e8b7d91820',1,'PlaneAverage::compute_averages(const IndexSelector &amp;idxOp, const amrex::MultiFab &amp;mfab)'],['../classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e',1,'PlaneAverage::compute_averages(const IndexSelector &amp;idxOp, const amrex::MultiFab &amp;mfab)']]],
   ['compute_5fh_5feta_5fatcellcenter_94',['Compute_h_eta_AtCellCenter',['../TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2',1,'TerrainMetrics.H']]],
   ['compute_5fh_5feta_5fatedgecenteri_95',['Compute_h_eta_AtEdgeCenterI',['../TerrainMetrics_8H.html#aed973861215c4eb0697f7a83b37016a9',1,'TerrainMetrics.H']]],
   ['compute_5fh_5feta_5fatedgecenterj_96',['Compute_h_eta_AtEdgeCenterJ',['../TerrainMetrics_8H.html#a0251c09947155307e047f79fccdbd463',1,'TerrainMetrics.H']]],

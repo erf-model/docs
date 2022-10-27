@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"classABLMost.html#a46fbd9260d2adfa7c18edad6452f9babae816b5ebd99b4a9778451fc8e90bb05d":[2,0,1,0,0],
+"classABLMost.html#a4a8f61b0315a2ffbf2df59a3fdfa215f":[2,0,1,2],
+"classABLMost.html#ac3001fb9ef1ca38bcf32e7e0c901ab77":[2,0,1,3],
 "classABLMost.html#ad21eacf338bb550a0819aa618fa56d84":[2,0,1,5],
 "classABLMostData.html":[2,0,2],
 "classABLMostData.html#a0e68bde6a436fe0659ea7e003a179cc7":[2,0,2,7],
@@ -239,15 +242,12 @@ var NAVTREEINDEX2 =
 "classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3":[2,0,9,14],
 "classERFPhysBCFunct.html#ae94d450d26c33e469b1e09d543d21f52":[2,0,9,12],
 "classERFPhysBCFunct.html#af16fde6da4412aa09d866fd094d63a5a":[2,0,9,9],
-"classMRISplitIntegrator.html":[2,0,11],
-"classMRISplitIntegrator.html#a02e299d44fcd24c67717267dd15a7895":[2,0,11,23],
-"classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7":[2,0,11,19],
-"classMRISplitIntegrator.html#a10d223efbc486b8eba3cf4d94c4e2394":[2,0,11,18],
-"classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80":[2,0,11,31],
-"classMRISplitIntegrator.html#a14fd551d7a7ff5bf6c58500740a64547":[2,0,11,8],
-"classMRISplitIntegrator.html#a187f7c5361e290319bcc8e3cb97af289":[2,0,11,2],
-"classMRISplitIntegrator.html#a373d8b2e158be85f57df2315bb397d88":[2,0,11,30],
-"classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612":[2,0,11,32],
-"classMRISplitIntegrator.html#a4d4396268d45548c85ae36ce3bbe2c23":[2,0,11,15],
-"classMRISplitIntegrator.html#a5681cc4c1128b1fa5bf779d958623824":[2,0,11,21]
+"classMOSTAverage.html":[2,0,11],
+"classMOSTAverage.html#a008260d97064fa34229ab7f69855b0a6":[2,0,11,31],
+"classMOSTAverage.html#a056be42f49df811cf15b9da51bfe4ef9":[2,0,11,18],
+"classMOSTAverage.html#a09b4308ed302ef6aeeb1649153c2401d":[2,0,11,24],
+"classMOSTAverage.html#a284fd2c7587fddc3c3bcf4cde75f9052":[2,0,11,28],
+"classMOSTAverage.html#a2d3a77d510aea3f11cdaba64395abe35":[2,0,11,4],
+"classMOSTAverage.html#a32a041c06dc886f0909fa8c4a7faa5db":[2,0,11,1],
+"classMOSTAverage.html#a36df10aca1227fae1ad61f6a147d8bcd":[2,0,11,8]
 };

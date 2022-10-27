@@ -21,6 +21,10 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "ERF_PhysBCFunct.H", "ERF__PhysBCFunct_8H.html", [
       [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", "classERFPhysBCFunct" ]
     ] ],
+    [ "MOSTAverage.cpp", "MOSTAverage_8cpp.html", null ],
+    [ "MOSTAverage.H", "MOSTAverage_8H.html", [
+      [ "MOSTAverage", "classMOSTAverage.html", "classMOSTAverage" ]
+    ] ],
     [ "PlaneAverage.H", "PlaneAverage_8H.html", [
       [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ]
     ] ],

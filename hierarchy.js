@@ -16,6 +16,7 @@ var hierarchy =
     [ "IntegratorBase", null, [
       [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ]
     ] ],
+    [ "MOSTAverage", "classMOSTAverage.html", null ],
     [ "MultiBlockContainer", "classMultiBlockContainer.html", null ],
     [ "ncutils::NCDim", "structncutils_1_1NCDim.html", null ],
     [ "ncutils::NCDType", "structncutils_1_1NCDType.html", null ],

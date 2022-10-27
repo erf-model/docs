@@ -11,6 +11,7 @@ var annotated_dup =
     [ "ERFFillPatcher", "classERFFillPatcher.html", "classERFFillPatcher" ],
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", "classERFPhysBCFunct" ],
     [ "InputSoundingData", "structInputSoundingData.html", "structInputSoundingData" ],
+    [ "MOSTAverage", "classMOSTAverage.html", "classMOSTAverage" ],
     [ "MRISplitIntegrator", "classMRISplitIntegrator.html", "classMRISplitIntegrator" ],
     [ "MultiBlockContainer", "classMultiBlockContainer.html", "classMultiBlockContainer" ],
     [ "NDArray", "structNDArray.html", "structNDArray" ],
