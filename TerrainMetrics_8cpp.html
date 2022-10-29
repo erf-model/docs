@@ -115,8 +115,10 @@ Include dependency graph for TerrainMetrics.cpp:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a164b37e7ca02d7284ddd6c32cd95f2db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8cpp.html#a164b37e7ca02d7284ddd6c32cd95f2db">init_terrain_grid</a> (const Geometry &amp;geom, MultiFab &amp;z_phys_nd)</td></tr>
 <tr class="separator:a164b37e7ca02d7284ddd6c32cd95f2db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55f4a92935f0efe394664231cd73b9fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8cpp.html#a55f4a92935f0efe394664231cd73b9fe">make_metrics</a> (const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::MultiFab &amp;z_phys_cc, amrex::MultiFab &amp;detJ_cc)</td></tr>
-<tr class="separator:a55f4a92935f0efe394664231cd73b9fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accb87d367dfa749571761aa789fd3fea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8cpp.html#accb87d367dfa749571761aa789fd3fea">make_J</a> (const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::MultiFab &amp;detJ_cc)</td></tr>
+<tr class="separator:accb87d367dfa749571761aa789fd3fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab405f3b5732dda49ad076fab09bfbfc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8cpp.html#ab405f3b5732dda49ad076fab09bfbfc8">make_zcc</a> (const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::MultiFab &amp;z_phys_cc)</td></tr>
+<tr class="separator:ab405f3b5732dda49ad076fab09bfbfc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a164b37e7ca02d7284ddd6c32cd95f2db"></a>
@@ -491,14 +493,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a55f4a92935f0efe394664231cd73b9fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55f4a92935f0efe394664231cd73b9fe">&#9670;&nbsp;</a></span>make_metrics()</h2>
+<a id="accb87d367dfa749571761aa789fd3fea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accb87d367dfa749571761aa789fd3fea">&#9670;&nbsp;</a></span>make_J()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void make_metrics </td>
+          <td class="memname">void make_J </td>
           <td>(</td>
           <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
           <td class="paramname"><em>geom</em>, </td>
@@ -513,12 +515,6 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>z_phys_cc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
           <td class="paramname"><em>detJ_cc</em>&#160;</td>
         </tr>
         <tr>
@@ -528,47 +524,118 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;{</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keyword">auto</span> dx = geom.CellSize();</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    amrex::Real dzInv = 1.0/dx[2];</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="comment">// Domain valid box (z_nd is nodal)</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keyword">const</span> amrex::Box&amp; domain = geom.Domain();</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordtype">int</span> domlo_z = domain.smallEnd(2);</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="comment">// Number of ghost cells</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordtype">int</span> ngrow = z_phys_cc.nGrow();</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordflow">for</span> ( amrex::MFIter mfi(z_phys_cc, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    {</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        amrex::Box gbx = mfi.growntilebox(ngrow);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        gbx.setSmall(2,domlo_z);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        amrex::Array4&lt;amrex::Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        amrex::Array4&lt;amrex::Real      &gt; z_cc = z_phys_cc.array(mfi);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        amrex::Array4&lt;amrex::Real      &gt; detJ = detJ_cc.array(mfi);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        amrex::ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;               z_cc(i, j, k) = .125 * (</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                       z_nd(i,j,k  ) + z_nd(i+1,j,k  ) + z_nd(i,j+1,k  ) + z_nd(i+1,j+1,k  )</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                      +z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1) );</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;               detJ(i, j, k) = .25 * dzInv * (</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                       z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1)</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                      -z_nd(i,j,k  ) - z_nd(i+1,j,k  ) - z_nd(i,j+1,k  ) - z_nd(i+1,j+1,k  ) );</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;       });</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    }</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    detJ_cc.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;{</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keyword">auto</span> dx = geom.CellSize();</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    amrex::Real dzInv = 1.0/dx[2];</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="comment">// Domain valid box (z_nd is nodal)</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keyword">const</span> amrex::Box&amp; domain = geom.Domain();</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordtype">int</span> domlo_z = domain.smallEnd(2);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="comment">// Number of ghost cells</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordtype">int</span> ngrow = detJ_cc.nGrow();</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">for</span> ( amrex::MFIter mfi(detJ_cc, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    {</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        amrex::Box gbx = mfi.growntilebox(ngrow);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        gbx.setSmall(2,domlo_z);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        amrex::Array4&lt;amrex::Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        amrex::Array4&lt;amrex::Real      &gt; detJ = detJ_cc.array(mfi);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        amrex::ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;               detJ(i, j, k) = .25 * dzInv * (</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                       z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1)</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                      -z_nd(i,j,k  ) - z_nd(i+1,j,k  ) - z_nd(i,j+1,k  ) - z_nd(i+1,j+1,k  ) );</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;       });</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    detJ_cc.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="TerrainMetrics_8cpp_a55f4a92935f0efe394664231cd73b9fe_icgraph.png" border="0" usemap="#TerrainMetrics_8cpp_a55f4a92935f0efe394664231cd73b9fe_icgraph" alt=""/></div>
-<map name="TerrainMetrics_8cpp_a55f4a92935f0efe394664231cd73b9fe_icgraph" id="TerrainMetrics_8cpp_a55f4a92935f0efe394664231cd73b9fe_icgraph">
-<area shape="rect" title=" " alt="" coords="465,42,580,69"/>
+<div class="center"><img src="TerrainMetrics_8cpp_accb87d367dfa749571761aa789fd3fea_icgraph.png" border="0" usemap="#TerrainMetrics_8cpp_accb87d367dfa749571761aa789fd3fea_icgraph" alt=""/></div>
+<map name="TerrainMetrics_8cpp_accb87d367dfa749571761aa789fd3fea_icgraph" id="TerrainMetrics_8cpp_accb87d367dfa749571761aa789fd3fea_icgraph">
+<area shape="rect" title=" " alt="" coords="465,42,535,69"/>
 <area shape="rect" href="classERF.html#ad5d585e110291969767013a515719224" title=" " alt="" coords="311,42,417,69"/>
+<area shape="rect" href="classMultiBlockContainer.html#a34f2b57ec5aafb88be61d6ffd3dea55c" title=" " alt="" coords="108,5,263,47"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,42,60,69"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab405f3b5732dda49ad076fab09bfbfc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab405f3b5732dda49ad076fab09bfbfc8">&#9670;&nbsp;</a></span>make_zcc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void make_zcc </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>z_phys_nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>z_phys_cc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;{</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keyword">auto</span> dx = geom.CellSize();</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    amrex::Real dzInv = 1.0/dx[2];</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="comment">// Domain valid box (z_nd is nodal)</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keyword">const</span> amrex::Box&amp; domain = geom.Domain();</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordtype">int</span> domlo_z = domain.smallEnd(2);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="comment">// Number of ghost cells</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keywordtype">int</span> ngrow = z_phys_cc.nGrow();</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordflow">for</span> ( amrex::MFIter mfi(z_phys_cc, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        amrex::Box gbx = mfi.growntilebox(ngrow);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        gbx.setSmall(2,domlo_z);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        amrex::Array4&lt;amrex::Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        amrex::Array4&lt;amrex::Real      &gt; z_cc = z_phys_cc.array(mfi);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        amrex::ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;           z_cc(i, j, k) = .125 * ( z_nd(i,j,k  ) + z_nd(i+1,j,k  ) + z_nd(i,j+1,k  ) + z_nd(i+1,j+1,k  )</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                                   +z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1) );</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;       });</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    }</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    z_phys_cc.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData()</a>, and <a class="el" href="classERF.html#a58f6683aff0fbe6949bfe8b49275a8b3">ERF::post_timestep()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="TerrainMetrics_8cpp_ab405f3b5732dda49ad076fab09bfbfc8_icgraph.png" border="0" usemap="#TerrainMetrics_8cpp_ab405f3b5732dda49ad076fab09bfbfc8_icgraph" alt=""/></div>
+<map name="TerrainMetrics_8cpp_ab405f3b5732dda49ad076fab09bfbfc8_icgraph" id="TerrainMetrics_8cpp_ab405f3b5732dda49ad076fab09bfbfc8_icgraph">
+<area shape="rect" title=" " alt="" coords="505,67,592,94"/>
+<area shape="rect" href="classERF.html#ad5d585e110291969767013a515719224" title=" " alt="" coords="331,42,437,69"/>
+<area shape="rect" href="classERF.html#a58f6683aff0fbe6949bfe8b49275a8b3" title=" " alt="" coords="311,93,457,119"/>
 <area shape="rect" href="classMultiBlockContainer.html#a34f2b57ec5aafb88be61d6ffd3dea55c" title=" " alt="" coords="108,5,263,47"/>
 <area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,42,60,69"/>
 </map>
