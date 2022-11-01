@@ -14,10 +14,15 @@ var classABLMostData =
     [ "ref_temp", "classABLMostData.html#a557d93bd31f60c63ac5b5b3d31c20312", null ],
     [ "surf_temp", "classABLMostData.html#a766d02b24965cfd0dd6a0c593df31969", null ],
     [ "surf_temp_flux", "classABLMostData.html#a81414345b94239ca479eeda6b405a5af", null ],
+    [ "t_mean", "classABLMostData.html#a67dbb41d127c6cbacbbe709780b44fd9", null ],
     [ "theta_mean", "classABLMostData.html#af59c59c3f8a5d68c55126bf1222acccb", null ],
+    [ "u_mag_mean", "classABLMostData.html#a71f02c2d1f200f25432e7585077f3149", null ],
+    [ "u_mean", "classABLMostData.html#a1921781d82898ca4bb29edc2b9a30c21", null ],
     [ "utau", "classABLMostData.html#abda6015587af275eb459a829b557325f", null ],
+    [ "v_mean", "classABLMostData.html#ae4d4313714c1a2165b4bd819207664bd", null ],
     [ "vel_mean", "classABLMostData.html#a8493b27dccc240b58e5976f3da3b1bcd", null ],
     [ "vmag_mean", "classABLMostData.html#ad860b05e00cb5eeb3b6e9e109d3c92d9", null ],
+    [ "w_mean", "classABLMostData.html#a9e922a1c4a8e7cc44ff44a3a3f3231cb", null ],
     [ "z0_const", "classABLMostData.html#af22d8f863f3a518a02933e095c237f34", null ],
     [ "zref", "classABLMostData.html#a6257d30d4cc62c601551a184a72be0d1", null ]
 ];
