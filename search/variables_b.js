@@ -38,7 +38,7 @@ var searchData=
   ['m_5fmax_5fstep_1545',['m_max_step',['../classMultiBlockContainer.html#a1f1ba45d36c26640b1d2817ae275a505',1,'MultiBlockContainer']]],
   ['m_5fmost_1546',['m_most',['../classERF.html#a051364b2373d8d86151c0b4a958035bd',1,'ERF']]],
   ['m_5fncell_5fline_1547',['m_ncell_line',['../classMOSTAverage.html#a284fd2c7587fddc3c3bcf4cde75f9052',1,'MOSTAverage::m_ncell_line()'],['../classPlaneAverage.html#a049c64513c0ed306d7e68ef95df87033',1,'PlaneAverage::m_ncell_line()'],['../classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862',1,'VelPlaneAverage::m_ncell_line()']]],
-  ['m_5fncell_5fplane_1548',['m_ncell_plane',['../classMOSTAverage.html#a9ff2a37afdff63065bbd8a6cae54575a',1,'MOSTAverage::m_ncell_plane()'],['../classPlaneAverage.html#a98ad1b7801e75ac43ddd3d06b0c5d7da',1,'PlaneAverage::m_ncell_plane()'],['../classVelPlaneAverage.html#a0e172ce8d86cd386074fdbd186a9f2dc',1,'VelPlaneAverage::m_ncell_plane()']]],
+  ['m_5fncell_5fplane_1548',['m_ncell_plane',['../classMOSTAverage.html#a464a2fdf24dfa7cd35d8d7cb5472a08b',1,'MOSTAverage::m_ncell_plane()'],['../classPlaneAverage.html#a98ad1b7801e75ac43ddd3d06b0c5d7da',1,'PlaneAverage::m_ncell_plane()'],['../classVelPlaneAverage.html#a0e172ce8d86cd386074fdbd186a9f2dc',1,'VelPlaneAverage::m_ncell_plane()']]],
   ['m_5fncomp_1549',['m_ncomp',['../classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4',1,'ERFFillPatcher::m_ncomp()'],['../classPlaneAverage.html#af07d85c4bd48f4bedc0b180001c728dc',1,'PlaneAverage::m_ncomp()']]],
   ['m_5fncomps_1550',['m_ncomps',['../classMOSTAverage.html#af3d2e2aa5f129ca1abc2b844566c17f7',1,'MOSTAverage']]],
   ['m_5fnghost_1551',['m_nghost',['../classERFFillPatcher.html#afdb02cfc6d41b23967ff0a6f0e22b849',1,'ERFFillPatcher']]],

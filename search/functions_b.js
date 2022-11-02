@@ -2,7 +2,7 @@ var searchData=
 [
   ['name_1306',['name',['../structncutils_1_1NCDim.html#aaf6334138e9892f5403400e31f062fd6',1,'ncutils::NCDim::name()'],['../structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724',1,'ncutils::NCVar::name()'],['../classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0',1,'ncutils::NCGroup::name()']]],
   ['ncell_5fline_1307',['ncell_line',['../classMOSTAverage.html#a46a82def41ceec879aaf8da20707d2ff',1,'MOSTAverage::ncell_line()'],['../classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1',1,'PlaneAverage::ncell_line()']]],
-  ['ncell_5fplane_1308',['ncell_plane',['../classMOSTAverage.html#af554fdaddecdc1727d23ba7e6c861bb8',1,'MOSTAverage::ncell_plane()'],['../classPlaneAverage.html#aaf4e5c9b73f65af3eb0ccdc6a82e76f2',1,'PlaneAverage::ncell_plane()']]],
+  ['ncell_5fplane_1308',['ncell_plane',['../classMOSTAverage.html#a66ebf8c54b0af7b892251e0396ec317b',1,'MOSTAverage::ncell_plane()'],['../classPlaneAverage.html#aaf4e5c9b73f65af3eb0ccdc6a82e76f2',1,'PlaneAverage::ncell_plane()']]],
   ['ncfile_1309',['NCFile',['../classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423',1,'ncutils::NCFile']]],
   ['ncgroup_1310',['NCGroup',['../classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65',1,'ncutils::NCGroup::NCGroup(const int id)'],['../classncutils_1_1NCGroup.html#a6c43a3f92aaf1df239595cebdc8c9a16',1,'ncutils::NCGroup::NCGroup(const int id, const NCGroup *)']]],
   ['ncomp_1311',['ncomp',['../classMOSTAverage.html#af542822ba049de6d303b125a405dae3a',1,'MOSTAverage::ncomp() const'],['../classMOSTAverage.html#a67572c4577e5e011292d3b928f9b6b28',1,'MOSTAverage::ncomp(int i) const'],['../classPlaneAverage.html#a3860fd72df3e8dbb6b8decfdc360864f',1,'PlaneAverage::ncomp()']]],

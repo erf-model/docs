@@ -10,7 +10,7 @@ var searchData=
   ['ncdim_565',['NCDim',['../structncutils_1_1NCDim.html',1,'ncutils']]],
   ['ncdtype_566',['NCDType',['../structncutils_1_1NCDType.html',1,'ncutils']]],
   ['ncell_5fline_567',['ncell_line',['../classMOSTAverage.html#a46a82def41ceec879aaf8da20707d2ff',1,'MOSTAverage::ncell_line()'],['../classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1',1,'PlaneAverage::ncell_line()']]],
-  ['ncell_5fplane_568',['ncell_plane',['../classMOSTAverage.html#af554fdaddecdc1727d23ba7e6c861bb8',1,'MOSTAverage::ncell_plane()'],['../classPlaneAverage.html#aaf4e5c9b73f65af3eb0ccdc6a82e76f2',1,'PlaneAverage::ncell_plane()']]],
+  ['ncell_5fplane_568',['ncell_plane',['../classMOSTAverage.html#a66ebf8c54b0af7b892251e0396ec317b',1,'MOSTAverage::ncell_plane()'],['../classPlaneAverage.html#aaf4e5c9b73f65af3eb0ccdc6a82e76f2',1,'PlaneAverage::ncell_plane()']]],
   ['ncfile_569',['NCFile',['../classncutils_1_1NCFile.html',1,'ncutils::NCFile'],['../classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423',1,'ncutils::NCFile::NCFile()']]],
   ['ncgroup_570',['NCGroup',['../classncutils_1_1NCGroup.html',1,'ncutils::NCGroup'],['../classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65',1,'ncutils::NCGroup::NCGroup(const int id)'],['../classncutils_1_1NCGroup.html#a6c43a3f92aaf1df239595cebdc8c9a16',1,'ncutils::NCGroup::NCGroup(const int id, const NCGroup *)']]],
   ['ncid_571',['ncid',['../structncutils_1_1NCDim.html#a3272d1768518ba020b9bcd0d3699d544',1,'ncutils::NCDim::ncid()'],['../structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218',1,'ncutils::NCVar::ncid()'],['../classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd',1,'ncutils::NCGroup::ncid()']]],
