@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['w_5fmean_1698',['w_mean',['../classABLMostData.html#a9e922a1c4a8e7cc44ff44a3a3f3231cb',1,'ABLMostData']]]
+  ['w_5fmean_1698',['w_mean',['../classABLMost.html#add7e44c10eebe2fb805e2e9a664c640c',1,'ABLMost']]]
 ];

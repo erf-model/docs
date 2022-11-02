@@ -2,8 +2,8 @@ var searchData=
 [
   ['u_5finp_5fsound_1676',['U_inp_sound',['../structInputSoundingData.html#a92f73e73fbc10bb7cbc1ba38155879f6',1,'InputSoundingData']]],
   ['u_5finp_5fsound_5fd_1677',['U_inp_sound_d',['../structInputSoundingData.html#aab7841d6e2803dd86596604d85411d8d',1,'InputSoundingData']]],
-  ['u_5fmag_5fmean_1678',['u_mag_mean',['../classABLMostData.html#a71f02c2d1f200f25432e7585077f3149',1,'ABLMostData']]],
-  ['u_5fmean_1679',['u_mean',['../classABLMostData.html#a1921781d82898ca4bb29edc2b9a30c21',1,'ABLMostData']]],
+  ['u_5fmag_5fmean_1678',['u_mag_mean',['../classABLMost.html#a3e2cc29f75b527d28cc7a32b2e3481fb',1,'ABLMost']]],
+  ['u_5fmean_1679',['u_mean',['../classABLMost.html#a38f793fd8e2b77aa4d4c0fb286d276d6',1,'ABLMost']]],
   ['use_5fcoriolis_1680',['use_coriolis',['../structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606',1,'SolverChoice']]],
   ['use_5fgravity_1681',['use_gravity',['../structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5',1,'SolverChoice']]],
   ['use_5flowm_5fdt_1682',['use_lowM_dt',['../classERF.html#aad09820d3e29638db7c3d499304c8aed',1,'ERF']]],

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['w_863',['w',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68',1,'DataStruct.H']]],
-  ['w_5fmean_864',['w_mean',['../classABLMostData.html#a9e922a1c4a8e7cc44ff44a3a3f3231cb',1,'ABLMostData']]],
+  ['w_5fmean_864',['w_mean',['../classABLMost.html#add7e44c10eebe2fb805e2e9a664c640c',1,'ABLMost']]],
   ['wfromomega_865',['WFromOmega',['../TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7',1,'TerrainMetrics.H']]],
   ['wrfbdytypes_866',['WRFBdyTypes',['../namespaceWRFBdyTypes.html',1,'']]],
   ['wrfbdyvars_867',['WRFBdyVars',['../namespaceWRFBdyVars.html',1,'']]],

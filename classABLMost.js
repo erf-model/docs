@@ -12,5 +12,10 @@ var classABLMost =
     [ "update_fluxes", "classABLMost.html#ad21eacf338bb550a0819aa618fa56d84", null ],
     [ "alg_type", "classABLMost.html#a16425f77882d39c6468e7d277b4197d3", null ],
     [ "m_geom", "classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5", null ],
+    [ "t_mean", "classABLMost.html#ac1d5fde3df724566b2960c5aea2fe169", null ],
+    [ "u_mag_mean", "classABLMost.html#a3e2cc29f75b527d28cc7a32b2e3481fb", null ],
+    [ "u_mean", "classABLMost.html#a38f793fd8e2b77aa4d4c0fb286d276d6", null ],
+    [ "v_mean", "classABLMost.html#af5ee976460d386a7da6ca99916f0ba3c", null ],
+    [ "w_mean", "classABLMost.html#add7e44c10eebe2fb805e2e9a664c640c", null ],
     [ "z_0", "classABLMost.html#a1301dd4cb6875c7bdf5d69126b972f91", null ]
 ];

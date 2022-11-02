@@ -106,9 +106,8 @@ Collaboration diagram for ABLMostData:</div>
 <div class="dyncontent">
 <div class="center"><img src="classABLMostData__coll__graph.png" border="0" usemap="#ABLMostData_coll__map" alt="Collaboration graph"/></div>
 <map name="ABLMostData_coll__map" id="ABLMostData_coll__map">
-<area shape="rect" title=" " alt="" coords="132,241,243,268"/>
-<area shape="rect" title=" " alt="" coords="5,5,215,32"/>
-<area shape="rect" title=" " alt="" coords="239,5,290,32"/>
+<area shape="rect" title=" " alt="" coords="5,241,116,268"/>
+<area shape="rect" title=" " alt="" coords="35,5,86,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -152,16 +151,6 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:af59c59c3f8a5d68c55126bf1222acccb"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMostData.html#af59c59c3f8a5d68c55126bf1222acccb">theta_mean</a></td></tr>
 <tr class="memdesc:af59c59c3f8a5d68c55126bf1222acccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mean potential temperature.  <a href="classABLMostData.html#af59c59c3f8a5d68c55126bf1222acccb">More...</a><br /></td></tr>
 <tr class="separator:af59c59c3f8a5d68c55126bf1222acccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1921781d82898ca4bb29edc2b9a30c21"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::MultiFab * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMostData.html#a1921781d82898ca4bb29edc2b9a30c21">u_mean</a></td></tr>
-<tr class="separator:a1921781d82898ca4bb29edc2b9a30c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4d4313714c1a2165b4bd819207664bd"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::MultiFab * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMostData.html#ae4d4313714c1a2165b4bd819207664bd">v_mean</a></td></tr>
-<tr class="separator:ae4d4313714c1a2165b4bd819207664bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e922a1c4a8e7cc44ff44a3a3f3231cb"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::MultiFab * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMostData.html#a9e922a1c4a8e7cc44ff44a3a3f3231cb">w_mean</a></td></tr>
-<tr class="separator:a9e922a1c4a8e7cc44ff44a3a3f3231cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67dbb41d127c6cbacbbe709780b44fd9"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::MultiFab * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMostData.html#a67dbb41d127c6cbacbbe709780b44fd9">t_mean</a></td></tr>
-<tr class="separator:a67dbb41d127c6cbacbbe709780b44fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71f02c2d1f200f25432e7585077f3149"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::MultiFab * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMostData.html#a71f02c2d1f200f25432e7585077f3149">u_mag_mean</a></td></tr>
-<tr class="separator:a71f02c2d1f200f25432e7585077f3149"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81414345b94239ca479eeda6b405a5af"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMostData.html#a81414345b94239ca479eeda6b405a5af">surf_temp_flux</a> {0.0}</td></tr>
 <tr class="memdesc:a81414345b94239ca479eeda6b405a5af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heat flux.  <a href="classABLMostData.html#a81414345b94239ca479eeda6b405a5af">More...</a><br /></td></tr>
 <tr class="separator:a81414345b94239ca479eeda6b405a5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,14 +197,14 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> (zeta &gt; 0) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">return</span> -<a class="code" href="classABLMostData.html#af5bf502dcf92d9e55072601ff6050423">beta_h</a> * zeta;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = std::sqrt(1 - <a class="code" href="classABLMostData.html#a9eaae12d609ae5aa391024bb82d01eb5">gamma_h</a> * zeta);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">return</span> 2.0 * std::log(0.5 * (1 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>));</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> (zeta &gt; 0) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">return</span> -<a class="code" href="classABLMostData.html#af5bf502dcf92d9e55072601ff6050423">beta_h</a> * zeta;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = std::sqrt(1 - <a class="code" href="classABLMostData.html#a9eaae12d609ae5aa391024bb82d01eb5">gamma_h</a> * zeta);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">return</span> 2.0 * std::log(0.5 * (1 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classABLMostData.html#a3843b530a1f26d4840384c0dec7ce135">phi_h()</a>.</p>
 <div class="dynheader">
@@ -254,15 +243,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (zeta &gt; 0) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">return</span> -<a class="code" href="classABLMostData.html#ad81da3d06a7585ee0723fb1ad2bd8eb3">beta_m</a> * zeta;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = std::sqrt(std::sqrt(1 - <a class="code" href="classABLMostData.html#a0e68bde6a436fe0659ea7e003a179cc7">gamma_m</a> * zeta));</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">return</span> 2.0 * std::log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>)) + log(0.5 * (1 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>)) -</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                   2.0 * std::atan(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>) + 1.57;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (zeta &gt; 0) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">return</span> -<a class="code" href="classABLMostData.html#ad81da3d06a7585ee0723fb1ad2bd8eb3">beta_m</a> * zeta;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = std::sqrt(std::sqrt(1 - <a class="code" href="classABLMostData.html#a0e68bde6a436fe0659ea7e003a179cc7">gamma_m</a> * zeta));</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">return</span> 2.0 * std::log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>)) + log(0.5 * (1 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>)) -</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                   2.0 * std::atan(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>) + 1.57;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -299,9 +288,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> std::log(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> / z0_in) - <a class="code" href="classABLMostData.html#af726bf729f11fd215c33474d245d52c9">calc_psi_h</a>(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> / <a class="code" href="classABLMostData.html#a8e778e0c2a904a61ccf2a99071b7d17f">obukhov_len</a>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> std::log(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> / z0_in) - <a class="code" href="classABLMostData.html#af726bf729f11fd215c33474d245d52c9">calc_psi_h</a>(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> / <a class="code" href="classABLMostData.html#a8e778e0c2a904a61ccf2a99071b7d17f">obukhov_len</a>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -337,9 +326,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> std::log(<a class="code" href="classABLMostData.html#a6257d30d4cc62c601551a184a72be0d1">zref</a> / z0_in) - <a class="code" href="classABLMostData.html#af726bf729f11fd215c33474d245d52c9">calc_psi_h</a>(<a class="code" href="classABLMostData.html#a6257d30d4cc62c601551a184a72be0d1">zref</a> / <a class="code" href="classABLMostData.html#a8e778e0c2a904a61ccf2a99071b7d17f">obukhov_len</a>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> std::log(<a class="code" href="classABLMostData.html#a6257d30d4cc62c601551a184a72be0d1">zref</a> / z0_in) - <a class="code" href="classABLMostData.html#af726bf729f11fd215c33474d245d52c9">calc_psi_h</a>(<a class="code" href="classABLMostData.html#a6257d30d4cc62c601551a184a72be0d1">zref</a> / <a class="code" href="classABLMostData.html#a8e778e0c2a904a61ccf2a99071b7d17f">obukhov_len</a>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classABLMost.html#a71d0f4f8e72f24d2f3feb73c11e0469a">ABLMost::impose_most_bcs()</a>.</p>
 <div class="dynheader">
@@ -536,22 +525,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a67dbb41d127c6cbacbbe709780b44fd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67dbb41d127c6cbacbbe709780b44fd9">&#9670;&nbsp;</a></span>t_mean</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">amrex::Vector&lt;amrex::MultiFab*&gt; ABLMostData::t_mean</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a0d3300f82100ca0eb83976828b6d9c27">ABLMost::ABLMost()</a>, and <a class="el" href="classABLMost.html#a0213d557d60d24b8956506d7bf9070fb">ABLMost::~ABLMost()</a>.</p>
-
-</div>
-</div>
 <a id="af59c59c3f8a5d68c55126bf1222acccb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af59c59c3f8a5d68c55126bf1222acccb">&#9670;&nbsp;</a></span>theta_mean</h2>
 
@@ -570,38 +543,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a71f02c2d1f200f25432e7585077f3149"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71f02c2d1f200f25432e7585077f3149">&#9670;&nbsp;</a></span>u_mag_mean</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">amrex::Vector&lt;amrex::MultiFab*&gt; ABLMostData::u_mag_mean</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a0d3300f82100ca0eb83976828b6d9c27">ABLMost::ABLMost()</a>, and <a class="el" href="classABLMost.html#a0213d557d60d24b8956506d7bf9070fb">ABLMost::~ABLMost()</a>.</p>
-
-</div>
-</div>
-<a id="a1921781d82898ca4bb29edc2b9a30c21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1921781d82898ca4bb29edc2b9a30c21">&#9670;&nbsp;</a></span>u_mean</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">amrex::Vector&lt;amrex::MultiFab*&gt; ABLMostData::u_mean</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a0d3300f82100ca0eb83976828b6d9c27">ABLMost::ABLMost()</a>, and <a class="el" href="classABLMost.html#a0213d557d60d24b8956506d7bf9070fb">ABLMost::~ABLMost()</a>.</p>
-
-</div>
-</div>
 <a id="abda6015587af275eb459a829b557325f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abda6015587af275eb459a829b557325f">&#9670;&nbsp;</a></span>utau</h2>
 
@@ -617,22 +558,6 @@ Here is the caller graph for this function:</div>
 <p>Friction velocity (m/s) </p>
 
 <p class="reference">Referenced by <a class="el" href="classABLMost.html#a32c3438bcf6b072f5ce96e57c55f9af8">ABLMost::print()</a>.</p>
-
-</div>
-</div>
-<a id="ae4d4313714c1a2165b4bd819207664bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4d4313714c1a2165b4bd819207664bd">&#9670;&nbsp;</a></span>v_mean</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">amrex::Vector&lt;amrex::MultiFab*&gt; ABLMostData::v_mean</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a0d3300f82100ca0eb83976828b6d9c27">ABLMost::ABLMost()</a>, and <a class="el" href="classABLMost.html#a0213d557d60d24b8956506d7bf9070fb">ABLMost::~ABLMost()</a>.</p>
 
 </div>
 </div>
@@ -669,22 +594,6 @@ Here is the caller graph for this function:</div>
 <p>Mean wind speed (at zref) </p>
 
 <p class="reference">Referenced by <a class="el" href="classABLMost.html#a32c3438bcf6b072f5ce96e57c55f9af8">ABLMost::print()</a>.</p>
-
-</div>
-</div>
-<a id="a9e922a1c4a8e7cc44ff44a3a3f3231cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e922a1c4a8e7cc44ff44a3a3f3231cb">&#9670;&nbsp;</a></span>w_mean</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">amrex::Vector&lt;amrex::MultiFab*&gt; ABLMostData::w_mean</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a0d3300f82100ca0eb83976828b6d9c27">ABLMost::ABLMost()</a>, and <a class="el" href="classABLMost.html#a0213d557d60d24b8956506d7bf9070fb">ABLMost::~ABLMost()</a>.</p>
 
 </div>
 </div>
@@ -729,15 +638,15 @@ Here is the caller graph for this function:</div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassABLMostData_html_af5bf502dcf92d9e55072601ff6050423"><div class="ttname"><a href="classABLMostData.html#af5bf502dcf92d9e55072601ff6050423">ABLMostData::beta_h</a></div><div class="ttdeci">amrex::Real beta_h</div><div class="ttdef"><b>Definition:</b> ABLMost.H:53</div></div>
+<div class="ttc" id="aclassABLMostData_html_af5bf502dcf92d9e55072601ff6050423"><div class="ttname"><a href="classABLMostData.html#af5bf502dcf92d9e55072601ff6050423">ABLMostData::beta_h</a></div><div class="ttdeci">amrex::Real beta_h</div><div class="ttdef"><b>Definition:</b> ABLMost.H:46</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
-<div class="ttc" id="aclassABLMostData_html_a0e68bde6a436fe0659ea7e003a179cc7"><div class="ttname"><a href="classABLMostData.html#a0e68bde6a436fe0659ea7e003a179cc7">ABLMostData::gamma_m</a></div><div class="ttdeci">amrex::Real gamma_m</div><div class="ttdef"><b>Definition:</b> ABLMost.H:54</div></div>
-<div class="ttc" id="aclassABLMostData_html_a9eaae12d609ae5aa391024bb82d01eb5"><div class="ttname"><a href="classABLMostData.html#a9eaae12d609ae5aa391024bb82d01eb5">ABLMostData::gamma_h</a></div><div class="ttdeci">amrex::Real gamma_h</div><div class="ttdef"><b>Definition:</b> ABLMost.H:55</div></div>
+<div class="ttc" id="aclassABLMostData_html_a0e68bde6a436fe0659ea7e003a179cc7"><div class="ttname"><a href="classABLMostData.html#a0e68bde6a436fe0659ea7e003a179cc7">ABLMostData::gamma_m</a></div><div class="ttdeci">amrex::Real gamma_m</div><div class="ttdef"><b>Definition:</b> ABLMost.H:47</div></div>
+<div class="ttc" id="aclassABLMostData_html_a9eaae12d609ae5aa391024bb82d01eb5"><div class="ttname"><a href="classABLMostData.html#a9eaae12d609ae5aa391024bb82d01eb5">ABLMostData::gamma_h</a></div><div class="ttdeci">amrex::Real gamma_h</div><div class="ttdef"><b>Definition:</b> ABLMost.H:48</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aclassABLMostData_html_a8e778e0c2a904a61ccf2a99071b7d17f"><div class="ttname"><a href="classABLMostData.html#a8e778e0c2a904a61ccf2a99071b7d17f">ABLMostData::obukhov_len</a></div><div class="ttdeci">amrex::Real obukhov_len</div><div class="ttdoc">Non-dimensional Obukhov length.</div><div class="ttdef"><b>Definition:</b> ABLMost.H:33</div></div>
-<div class="ttc" id="aclassABLMostData_html_af726bf729f11fd215c33474d245d52c9"><div class="ttname"><a href="classABLMostData.html#af726bf729f11fd215c33474d245d52c9">ABLMostData::calc_psi_h</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_h(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ABLMost.H:94</div></div>
+<div class="ttc" id="aclassABLMostData_html_af726bf729f11fd215c33474d245d52c9"><div class="ttname"><a href="classABLMostData.html#af726bf729f11fd215c33474d245d52c9">ABLMostData::calc_psi_h</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_h(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ABLMost.H:87</div></div>
 <div class="ttc" id="aclassABLMostData_html_a6257d30d4cc62c601551a184a72be0d1"><div class="ttname"><a href="classABLMostData.html#a6257d30d4cc62c601551a184a72be0d1">ABLMostData::zref</a></div><div class="ttdeci">amrex::Real zref</div><div class="ttdoc">Reference height (m)</div><div class="ttdef"><b>Definition:</b> ABLMost.H:28</div></div>
-<div class="ttc" id="aclassABLMostData_html_ad81da3d06a7585ee0723fb1ad2bd8eb3"><div class="ttname"><a href="classABLMostData.html#ad81da3d06a7585ee0723fb1ad2bd8eb3">ABLMostData::beta_m</a></div><div class="ttdeci">amrex::Real beta_m</div><div class="ttdef"><b>Definition:</b> ABLMost.H:52</div></div>
+<div class="ttc" id="aclassABLMostData_html_ad81da3d06a7585ee0723fb1ad2bd8eb3"><div class="ttname"><a href="classABLMostData.html#ad81da3d06a7585ee0723fb1ad2bd8eb3">ABLMostData::beta_m</a></div><div class="ttdeci">amrex::Real beta_m</div><div class="ttdef"><b>Definition:</b> ABLMost.H:45</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
