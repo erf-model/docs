@@ -326,7 +326,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;          <span class="comment">// Finally, compute the eddy viscosity/diffusivities</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;          <span class="keyword">const</span> amrex::Real rho = cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;          K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)   = rho * l_comb * qvel(i,j,k) * SM;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;          K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)   = rho * l_comb * qvel(i,j,k) * SM * 0.5;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;          K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>) = rho * l_comb * qvel(i,j,k) * SH;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;          K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5ab74402005c035d247402e5f247827dcc">EddyDiff::QKE_v</a>)   = rho * l_comb * qvel(i,j,k) * 3.0 * SQ;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>

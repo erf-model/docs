@@ -789,10 +789,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">// THIS BECOMES REDUNDANT WITH THE NEW 2D MFs</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> Thave(&amp;Theta_new, <a class="code" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a>[lev], 2);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> vxave(&amp;U_new, <a class="code" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a>[lev], 2);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> vyave(&amp;V_new, <a class="code" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a>[lev], 2);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> vzave(&amp;W_new, <a class="code" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a>[lev], 2);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> Thave(&amp;Theta_old, <a class="code" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a>[lev], 2);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> vxave(&amp;U_old, <a class="code" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a>[lev], 2);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> vyave(&amp;V_old, <a class="code" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a>[lev], 2);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> vzave(&amp;W_old, <a class="code" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a>[lev], 2);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    Thave.compute_averages(<a class="code" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), Thave.field());</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    vxave.compute_averages(<a class="code" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), vxave.field());</div>
@@ -805,13 +805,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classABLMostData.html#af59c59c3f8a5d68c55126bf1222acccb">theta_mean</a>  = Thave.line_average_interpolated(<a class="code" href="classABLMostData.html#a6257d30d4cc62c601551a184a72be0d1">zref</a>, 0);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classVelPlaneAverage.html">VelPlaneAverage</a> vmagave(<a class="code" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a>[lev]);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    vmagave.compute_hvelmag_averages(U_new,V_new);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    vmagave.compute_hvelmag_averages(U_old,V_old);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classABLMostData.html#ad860b05e00cb5eeb3b6e9e109d3c92d9">vmag_mean</a>   = vmagave.line_hvelmag_average_interpolated(<a class="code" href="classABLMostData.html#a6257d30d4cc62c601551a184a72be0d1">zref</a>);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// END REDUNDANT CODE</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// New MOSTAverage class</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classMOSTAverage.html">MOSTAverage</a> ma({&amp;U_new     , &amp;V_new     , &amp;W_new     , &amp;Theta_new },</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classMOSTAverage.html">MOSTAverage</a> ma({&amp;U_old     , &amp;V_old     , &amp;W_old     , &amp;Theta_old },</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                   {<a class="code" href="classABLMost.html#a38f793fd8e2b77aa4d4c0fb286d276d6">u_mean</a>[lev], <a class="code" href="classABLMost.html#af5ee976460d386a7da6ca99916f0ba3c">v_mean</a>[lev], <a class="code" href="classABLMost.html#add7e44c10eebe2fb805e2e9a664c640c">w_mean</a>[lev], <a class="code" href="classABLMost.html#ac1d5fde3df724566b2960c5aea2fe169">t_mean</a>[lev], <a class="code" href="classABLMost.html#a3e2cc29f75b527d28cc7a32b2e3481fb">u_mag_mean</a>[lev]},</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                   <span class="keyword">nullptr</span>, <a class="code" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a>[lev], 2);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
