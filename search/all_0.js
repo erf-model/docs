@@ -11,7 +11,7 @@ var searchData=
   ['abort_5ffunc_8',['abort_func',['../NCInterface_8cpp.html#aa67f9bcab4a9da3e92f2e2f3b4ec5979',1,'NCInterface.cpp']]],
   ['add_5fpar_9',['add_par',['../main_8cpp.html#a183e783116d02836167ccbed3b28c1d3',1,'main.cpp']]],
   ['add_5fvar_10',['add_var',['../structTimeInterpolatedData.html#a3b9292eb3012672361abacc2ab7d9b2c',1,'TimeInterpolatedData']]],
-  ['advance_11',['Advance',['../classERF.html#a47413fe5588f7dd71a1d5087a9e804f9',1,'ERF::Advance()'],['../classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b',1,'MRISplitIntegrator::advance()']]],
+  ['advance_11',['advance',['../classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b',1,'MRISplitIntegrator::advance()'],['../classERF.html#a47413fe5588f7dd71a1d5087a9e804f9',1,'ERF::Advance()']]],
   ['advanceblocks_12',['AdvanceBlocks',['../classMultiBlockContainer.html#afe74361709855a6b78669dea775edc45',1,'MultiBlockContainer']]],
   ['advect_5fqke_13',['advect_QKE',['../structSolverChoice.html#a38dc1d6637afc39c42b09560735f8191',1,'SolverChoice']]],
   ['advectedquantity_14',['AdvectedQuantity',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4',1,'DataStruct.H']]],
@@ -42,5 +42,5 @@ var searchData=
   ['apply_5fbcs_39',['apply_bcs',['../TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f',1,'TI_utils.H']]],
   ['averagedown_40',['AverageDown',['../classERF.html#a8202de1f8f372e3e6fdc483447c6a55f',1,'ERF']]],
   ['averagedownto_41',['AverageDownTo',['../classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41',1,'ERF']]],
-  ['axis_42',['axis',['../classMOSTAverage.html#a84a2fadb7130f5232bce091b5e944309',1,'MOSTAverage::axis()'],['../classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a',1,'PlaneAverage::axis()']]]
+  ['axis_42',['axis',['../classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a',1,'PlaneAverage']]]
 ];

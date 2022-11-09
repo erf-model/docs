@@ -11,5 +11,6 @@ var ERF__Constants_8H =
     [ "R_d", "ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a", null ],
     [ "R_v", "ERF__Constants_8H.html#a11498f79dee60ed596c08594fcde6868", null ],
     [ "rdOcp", "ERF__Constants_8H.html#a5c44ab573319dd50de440c2b2800d146", null ],
-    [ "PI", "ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428", null ]
+    [ "PI", "ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428", null ],
+    [ "PIoTwo", "ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e", null ]
 ];

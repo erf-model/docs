@@ -11,7 +11,6 @@ var classABLMostData =
     [ "gravity", "classABLMostData.html#af6c3901ae4c9ab1fefc9e71db20e3348", null ],
     [ "kappa", "classABLMostData.html#aa405357f6fd9c365c566afbf8c2c2bde", null ],
     [ "obukhov_len", "classABLMostData.html#a8e778e0c2a904a61ccf2a99071b7d17f", null ],
-    [ "ref_temp", "classABLMostData.html#a557d93bd31f60c63ac5b5b3d31c20312", null ],
     [ "surf_temp", "classABLMostData.html#a766d02b24965cfd0dd6a0c593df31969", null ],
     [ "surf_temp_flux", "classABLMostData.html#a81414345b94239ca479eeda6b405a5af", null ],
     [ "theta_mean", "classABLMostData.html#af59c59c3f8a5d68c55126bf1222acccb", null ],
