@@ -2,8 +2,6 @@ var classABLMostData =
 [
     [ "calc_psi_h", "classABLMostData.html#af726bf729f11fd215c33474d245d52c9", null ],
     [ "calc_psi_m", "classABLMostData.html#a89e8d6e25c58b4dffef324c645c3c5c0", null ],
-    [ "phi_h", "classABLMostData.html#afe30331da38d3790adc663242b0bcc5a", null ],
-    [ "phi_h", "classABLMostData.html#a3843b530a1f26d4840384c0dec7ce135", null ],
     [ "beta_h", "classABLMostData.html#af5bf502dcf92d9e55072601ff6050423", null ],
     [ "beta_m", "classABLMostData.html#ad81da3d06a7585ee0723fb1ad2bd8eb3", null ],
     [ "gamma_h", "classABLMostData.html#a9eaae12d609ae5aa391024bb82d01eb5", null ],
