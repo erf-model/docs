@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['base_5fstate_1432',['base_state',['../classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c',1,'ERF']]],
+  ['base_5fstate_1431',['base_state',['../classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c',1,'ERF']]],
+  ['base_5fstate_5fnew_1432',['base_state_new',['../classERF.html#a37b2a4257df8ff53d4450de47f16ace1',1,'ERF']]],
   ['bcnames_1433',['BCNames',['../ERF_8cpp.html#a85eb8269776aad2fdab8e269a2a03bb1',1,'ERF.cpp']]],
   ['beta_5fh_1434',['beta_h',['../classABLMostData.html#af5bf502dcf92d9e55072601ff6050423',1,'ABLMostData']]],
   ['beta_5fm_1435',['beta_m',['../classABLMostData.html#ad81da3d06a7585ee0723fb1ad2bd8eb3',1,'ABLMostData']]],

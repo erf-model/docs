@@ -124,12 +124,12 @@ Include dependency graph for ERF_make_fast_coeffs.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a05fd0bbddd117aff62eb6b5aac428125"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__make__fast__coeffs_8cpp.html#a05fd0bbddd117aff62eb6b5aac428125">make_fast_coeffs</a> (int level, BoxArray &amp;grids_to_evolve, MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc, const MultiFab *r0, const MultiFab *pi0, <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> dtau, bool ingested_bcs)</td></tr>
-<tr class="separator:a05fd0bbddd117aff62eb6b5aac428125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5678b1a510ab8fa9fc855a90d1fac3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__make__fast__coeffs_8cpp.html#ad5678b1a510ab8fa9fc855a90d1fac3e">make_fast_coeffs</a> (int level, BoxArray &amp;grids_to_evolve, MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc, const MultiFab *r0, const MultiFab *pi0, <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> dtau)</td></tr>
+<tr class="separator:ad5678b1a510ab8fa9fc855a90d1fac3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a05fd0bbddd117aff62eb6b5aac428125"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05fd0bbddd117aff62eb6b5aac428125">&#9670;&nbsp;</a></span>make_fast_coeffs()</h2>
+<a id="ad5678b1a510ab8fa9fc855a90d1fac3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5678b1a510ab8fa9fc855a90d1fac3e">&#9670;&nbsp;</a></span>make_fast_coeffs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,13 +204,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td>
-          <td class="paramname"><em>dtau</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ingested_bcs</em>&#160;</td>
+          <td class="paramname"><em>dtau</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -220,7 +214,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;make_fast_coeffs()&quot;</span>,<a class="code" href="ERF__make__fast__coeffs_8cpp.html#a05fd0bbddd117aff62eb6b5aac428125">make_fast_coeffs</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;make_fast_coeffs()&quot;</span>,<a class="code" href="ERF__make__fast__coeffs_8cpp.html#ad5678b1a510ab8fa9fc855a90d1fac3e">make_fast_coeffs</a>);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// beta_s = -1.0 : fully explicit</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// beta_s =  1.0 : fully implicit</span></div>
@@ -471,12 +465,12 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__Constants_8H_html_a08d0e6a452268bed60e81a08398c088a"><div class="ttname"><a href="ERF__Constants_8H.html#a08d0e6a452268bed60e81a08398c088a">R_d</a></div><div class="ttdeci">#define R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a7f928aa35dcd2f4e48fdf6d6a3166f1a"><div class="ttname"><a href="ERF__Constants_8H.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a">c_p</a></div><div class="ttdeci">#define c_p</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:23</div></div>
+<div class="ttc" id="aERF__make__fast__coeffs_8cpp_html_ad5678b1a510ab8fa9fc855a90d1fac3e"><div class="ttname"><a href="ERF__make__fast__coeffs_8cpp.html#ad5678b1a510ab8fa9fc855a90d1fac3e">make_fast_coeffs</a></div><div class="ttdeci">void make_fast_coeffs(int level, BoxArray &amp;grids_to_evolve, MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const amrex::Geometry geom, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc, const MultiFab *r0, const MultiFab *pi0, amrex::Real dtau)</div><div class="ttdef"><b>Definition:</b> ERF_make_fast_coeffs.cpp:10</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ae8ca591ba2325c0ad8b464de45f4c6b3"><div class="ttname"><a href="ERF__Constants_8H.html#ae8ca591ba2325c0ad8b464de45f4c6b3">Gamma</a></div><div class="ttdeci">#define Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:14</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
 <div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> DataStruct.H:340</div></div>
 <div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:177</div></div>
-<div class="ttc" id="aERF__make__fast__coeffs_8cpp_html_a05fd0bbddd117aff62eb6b5aac428125"><div class="ttname"><a href="ERF__make__fast__coeffs_8cpp.html#a05fd0bbddd117aff62eb6b5aac428125">make_fast_coeffs</a></div><div class="ttdeci">void make_fast_coeffs(int level, BoxArray &amp;grids_to_evolve, MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const amrex::Geometry geom, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc, const MultiFab *r0, const MultiFab *pi0, amrex::Real dtau, bool ingested_bcs)</div><div class="ttdef"><b>Definition:</b> ERF_make_fast_coeffs.cpp:10</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

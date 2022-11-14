@@ -20,11 +20,10 @@ var searchData=
   ['getexnergivenrth_1252',['getExnergivenRTh',['../EOS_8H.html#ab7699bc24a134b44f2b6de545901a182',1,'EOS.H']]],
   ['getindx_1253',['getIndx',['../structDirectionSelector.html#a3950b636303028f398441fdc43d66dba',1,'DirectionSelector::getIndx()'],['../structDirectionSelector_3_010_01_4.html#aca1761dba346d6d54758ef421a19a356',1,'DirectionSelector&lt; 0 &gt;::getIndx()'],['../structDirectionSelector_3_011_01_4.html#a0de196a10202d19214fe0d88d3b4dab3',1,'DirectionSelector&lt; 1 &gt;::getIndx()'],['../structDirectionSelector_3_012_01_4.html#a907464acec0b7ce2ab690a7d1b630703',1,'DirectionSelector&lt; 2 &gt;::getIndx()']]],
   ['getpgivenrth_1254',['getPgivenRTh',['../EOS_8H.html#a292ce90ab26c75f4a444808a807b532b',1,'EOS.H']]],
-  ['getpprimegivenrth_1255',['getPprimegivenRTh',['../EOS_8H.html#a62f564807713abf368002e68c9b40e1e',1,'EOS.H']]],
-  ['getrhogiventhetapress_1256',['getRhoGivenThetaPress',['../EOS_8H.html#ad25a565a583f9d8df46ef188b33bbb9c',1,'EOS.H']]],
-  ['getrhothetagivenp_1257',['getRhoThetagivenP',['../EOS_8H.html#aa7b634796f77c8e2c23e3e6a84596c50',1,'EOS.H']]],
-  ['gettgivenrandrth_1258',['getTgivenRandRTh',['../EOS_8H.html#a652d566aef658cc423ced929a816f869',1,'EOS.H']]],
-  ['getthgivenrandt_1259',['getThgivenRandT',['../EOS_8H.html#ab51ca751b821a3a5a43685b2175ee61f',1,'EOS.H']]],
-  ['gotonextline_1260',['GotoNextLine',['../classERF.html#aaee255b031e63bd9b5807f6612739dbd',1,'ERF']]],
-  ['group_1261',['group',['../classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333',1,'ncutils::NCGroup']]]
+  ['getrhogiventhetapress_1255',['getRhoGivenThetaPress',['../EOS_8H.html#ad25a565a583f9d8df46ef188b33bbb9c',1,'EOS.H']]],
+  ['getrhothetagivenp_1256',['getRhoThetagivenP',['../EOS_8H.html#aa7b634796f77c8e2c23e3e6a84596c50',1,'EOS.H']]],
+  ['gettgivenrandrth_1257',['getTgivenRandRTh',['../EOS_8H.html#a652d566aef658cc423ced929a816f869',1,'EOS.H']]],
+  ['getthgivenrandt_1258',['getThgivenRandT',['../EOS_8H.html#ab51ca751b821a3a5a43685b2175ee61f',1,'EOS.H']]],
+  ['gotonextline_1259',['GotoNextLine',['../classERF.html#aaee255b031e63bd9b5807f6612739dbd',1,'ERF']]],
+  ['group_1260',['group',['../classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333',1,'ncutils::NCGroup']]]
 ];

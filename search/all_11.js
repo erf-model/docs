@@ -4,7 +4,7 @@ var searchData=
   ['s_5fsum_752',['S_sum',['../classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1',1,'MRISplitIntegrator']]],
   ['sc_5ft_753',['Sc_t',['../structSolverChoice.html#a10043b88372894f67ed0f3e68bf27cb6',1,'SolverChoice']]],
   ['sc_5ft_5finv_754',['Sc_t_inv',['../structSolverChoice.html#a5d8e6a103e2e5d61dc0990fa2141a675',1,'SolverChoice']]],
-  ['scalar_755',['scalar',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4aa27a6549ade38cc036f7b8c58a840510',1,'scalar():&#160;DataStruct.H'],['../namespacePrim.html#ae6378f5d4272bb8368424f704f141fc0afedd432e3ecc9fd06a3a9a68d749c1af',1,'Prim::Scalar()']]],
+  ['scalar_755',['Scalar',['../namespacePrim.html#ae6378f5d4272bb8368424f704f141fc0afedd432e3ecc9fd06a3a9a68d749c1af',1,'Prim::Scalar()'],['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4aa27a6549ade38cc036f7b8c58a840510',1,'scalar():&#160;DataStruct.H']]],
   ['scalar_5fh_756',['Scalar_h',['../namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a85d322ae06bc4f66f791d4eda0a13ae6',1,'EddyDiff']]],
   ['scalar_5fv_757',['Scalar_v',['../namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a2b82a72be137b3159e7d4945735fcbf5',1,'EddyDiff']]],
   ['set_5ffast_5frhs_758',['set_fast_rhs',['../classMRISplitIntegrator.html#ad93cd0e1af2b6a7783aa561016c17b0e',1,'MRISplitIntegrator']]],
