@@ -8,13 +8,8 @@ var classABLMostData =
     [ "gamma_m", "classABLMostData.html#a0e68bde6a436fe0659ea7e003a179cc7", null ],
     [ "gravity", "classABLMostData.html#af6c3901ae4c9ab1fefc9e71db20e3348", null ],
     [ "kappa", "classABLMostData.html#aa405357f6fd9c365c566afbf8c2c2bde", null ],
-    [ "obukhov_len", "classABLMostData.html#a8e778e0c2a904a61ccf2a99071b7d17f", null ],
     [ "surf_temp", "classABLMostData.html#a766d02b24965cfd0dd6a0c593df31969", null ],
     [ "surf_temp_flux", "classABLMostData.html#a81414345b94239ca479eeda6b405a5af", null ],
-    [ "theta_mean", "classABLMostData.html#af59c59c3f8a5d68c55126bf1222acccb", null ],
-    [ "utau", "classABLMostData.html#abda6015587af275eb459a829b557325f", null ],
-    [ "vel_mean", "classABLMostData.html#a8493b27dccc240b58e5976f3da3b1bcd", null ],
-    [ "vmag_mean", "classABLMostData.html#ad860b05e00cb5eeb3b6e9e109d3c92d9", null ],
     [ "z0_const", "classABLMostData.html#af22d8f863f3a518a02933e095c237f34", null ],
     [ "zref", "classABLMostData.html#a6257d30d4cc62c601551a184a72be0d1", null ]
 ];
