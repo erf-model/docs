@@ -1,6 +1,6 @@
 var classMOSTAverage =
 [
-    [ "MOSTAverage", "classMOSTAverage.html#a49e6bf4ffd4f3d3a2d4d7933ebd7358d", null ],
+    [ "MOSTAverage", "classMOSTAverage.html#a4d01af62a3892f1f1e9191aef4b47739", null ],
     [ "MOSTAverage", "classMOSTAverage.html#a32a041c06dc886f0909fa8c4a7faa5db", null ],
     [ "~MOSTAverage", "classMOSTAverage.html#ac755f71a35f1231c8add20993364832a", null ],
     [ "compute_averages", "classMOSTAverage.html#a7a28005871bb8abb49f44c3976133a4f", null ],
@@ -9,12 +9,13 @@ var classMOSTAverage =
     [ "get_average", "classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81", null ],
     [ "set_plane_normalization", "classMOSTAverage.html#a5a0413a85da2e6a13f21cc875c8295d0", null ],
     [ "set_uniform_k_indices", "classMOSTAverage.html#a8ea163e06a6e64169b01c50b3ae967fb", null ],
+    [ "update_field_ptrs", "classMOSTAverage.html#ad9b6ae9832bb372c8e25054029394168", null ],
     [ "write_averages", "classMOSTAverage.html#ac37b71ce655ea973ad6fc4c564b040c1", null ],
     [ "write_k_indices", "classMOSTAverage.html#a612fdb06ff433e33c717198c7e3e4b0b", null ],
     [ "m_averages", "classMOSTAverage.html#ac04a90b03c99ad27ae0ea887923a2354", null ],
     [ "m_fact_new", "classMOSTAverage.html#a960bae1d528aef6d0e7034dbea65a2c3", null ],
     [ "m_fact_old", "classMOSTAverage.html#ae1d62c88d62bbef8458d0084200f65f2", null ],
-    [ "m_fields", "classMOSTAverage.html#ab6d4cc7f964eec49a6be8a5e691140ee", null ],
+    [ "m_fields", "classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69", null ],
     [ "m_geom", "classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1", null ],
     [ "m_k_ind", "classMOSTAverage.html#ad706b5c26f8fc9296c9614282d4cf149", null ],
     [ "m_k_indx", "classMOSTAverage.html#a6dd359089ee57476f0897de53034b652", null ],
