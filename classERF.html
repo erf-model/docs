@@ -1504,139 +1504,145 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            Array4&lt;Real&gt; tau32  = l_use_terrain ? Tau32-&gt;array(mfi) : Array4&lt;Real&gt;{};</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd = l_use_terrain ? <a class="code" href="classERF.html#a93e63e5af35efa564fd4195e8703f84c">z_phys_nd</a>[level]-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain) {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <a class="code" href="ComputeStrain__T_8cpp.html#a67a03614e265cf6af26c90078686f2b1">ComputeStrain_T</a>(bxcc, tbxxy, tbxxz, tbxyz,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>,</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                tau11, tau22, tau33,</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                tau12, tau13,</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                tau21, tau23,</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                                tau31, tau32,</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                z_nd, bc_ptr_h, dxInv);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <a class="code" href="ComputeStrain__N_8cpp.html#afed7a098228c0626781c5328f536cef4">ComputeStrain_N</a>(bxcc, tbxxy, tbxxz, tbxyz,</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                                <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>,</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                tau11, tau22, tau33,</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                                tau12, tau13, tau23,</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                                bc_ptr_h, dxInv);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    } <span class="comment">// l_use_diff</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    } <span class="comment">// profile</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    MultiFab Omega (zmom_old.boxArray(),dm,1,1);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TI__utils_8H.html">TI_utils.H</a>&quot;</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    amrex::Vector&lt;amrex::MultiFab&gt; state_old;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    amrex::Vector&lt;amrex::MultiFab&gt; state_new;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">// Here we define state_old and state_new which are to be advanced</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;erf_advance_part_1&quot;</span>);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// Initial solution</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    state_old.push_back(MultiFab(cons_old, amrex::make_alias, 0, nvars)); <span class="comment">// cons</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    state_old.push_back(MultiFab(xmom_old, amrex::make_alias, 0,     1)); <span class="comment">// xmom</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    state_old.push_back(MultiFab(ymom_old, amrex::make_alias, 0,     1)); <span class="comment">// ymom</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    state_old.push_back(MultiFab(zmom_old, amrex::make_alias, 0,     1)); <span class="comment">// zmom</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">// Final solution</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    state_new.push_back(MultiFab(cons_new, amrex::make_alias, 0, nvars)); <span class="comment">// cons</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    state_new.push_back(MultiFab(xmom_new, amrex::make_alias, 0,     1)); <span class="comment">// xmom</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    state_new.push_back(MultiFab(ymom_new, amrex::make_alias, 0,     1)); <span class="comment">// ymom</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    state_new.push_back(MultiFab(zmom_new, amrex::make_alias, 0,     1)); <span class="comment">// zmom</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    } <span class="comment">// profile</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">// *************************************************************************</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">// Calculate cell-centered eddy viscosity &amp; diffusivities</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">// Notes -- we fill all the data in ghost cells before calling this so</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">//    that we can fill the eddy viscosity in the ghost regions and</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="comment">//    not have to call a boundary filler on this data itself</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">// LES - updates both horizontal and vertical eddy viscosity components</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="comment">// PBL - only updates vertical eddy viscosity components so horizontal</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">//       components come from the LES model or are left as zero.</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">// *************************************************************************</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span> (l_use_kturb)</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#a7353d769c775f8aaa3fd107b82a54789">ComputeTurbulentViscosity</a>(xvel_old, yvel_old,</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                                  *Tau11, *Tau22, *Tau33,</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                  *Tau12, *Tau13, *Tau23,</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                                  state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>],</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                                  *eddyDiffs, fine_geom, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>, <a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">// ***********************************************************************************************</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">// Convert old velocity available on faces to old momentum on faces to be used in time integration</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="comment">// ***********************************************************************************************</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;pre_set_up_mri&quot;</span>);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="Utils_8H.html#afc02a222736ea1f0219b287fb472a765">VelocityToMomentum</a>(xvel_old, xvel_old.nGrowVect(),</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                       yvel_old, yvel_old.nGrowVect(),</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                       zvel_old, zvel_old.nGrowVect(),</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                       state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>],</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                       state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a>],</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                       state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a>],</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                       state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12abde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a>]);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    MultiFab::Copy(xvel_new,xvel_old,0,0,1,xvel_old.nGrowVect());</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    MultiFab::Copy(yvel_new,yvel_old,0,0,1,yvel_old.nGrowVect());</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    MultiFab::Copy(zvel_new,zvel_old,0,0,1,zvel_old.nGrowVect());</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">bool</span> fast_only          = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">bool</span> vel_and_mom_synced = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <a class="code" href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(state_old, old_time,</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;              state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].nGrow(), state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a>].nGrow(), fast_only,</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;              vel_and_mom_synced);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <a class="code" href="TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a>(state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>], state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].nGrow());</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    } <span class="comment">// profile</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TI__no__substep__fun_8H.html">TI_no_substep_fun.H</a>&quot;</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TI__slow__rhs__fun_8H.html">TI_slow_rhs_fun.H</a>&quot;</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TI__fast__rhs__fun_8H.html">TI_fast_rhs_fun.H</a>&quot;</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="comment">// ***************************************************************************************</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">// Setup the integrator and integrate for a single timestep</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="classMRISplitIntegrator.html">MRISplitIntegrator&lt;Vector&lt;MultiFab&gt;</a> &gt;&amp; mri_integrator = *<a class="code" href="classERF.html#a09d0fb2bd609c898a665d9530a744585">mri_integrator_mem</a>[level];</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;set_up_mri_integrator&quot;</span>);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">// Define rhs and &#39;post update&#39; utility function that is called after calculating</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="comment">// any state data (e.g. at RK stages or at the end of a timestep)</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#acd357bd44c0160c69ce73d19ca528376">set_slow_rhs_pre</a>(<a class="code" href="TI__slow__rhs__fun_8H.html#a963142d364408ee1775dbef20383b244">slow_rhs_fun_pre</a>);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#a4d4396268d45548c85ae36ce3bbe2c23">set_slow_rhs_post</a>(<a class="code" href="TI__slow__rhs__fun_8H.html#af460c930508105e92f60fd868d23ebcf">slow_rhs_fun_post</a>);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#a7c3d1c29712cdc8888af315d37960561">set_pre_update</a> (<a class="code" href="TI__slow__rhs__fun_8H.html#aadc7f4c039b08417963410e7f76bb2dd">pre_update_fun</a>);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#a95b3c0742918b516a3d12a60eb280b48">set_post_update</a>(<a class="code" href="TI__slow__rhs__fun_8H.html#afd90eac481ef47af3b095c56653098e8">post_update_fun</a>);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#ad93cd0e1af2b6a7783aa561016c17b0e">set_fast_rhs</a>(<a class="code" href="TI__fast__rhs__fun_8H.html#ac6afbd55bf5b7264098d44d9b8928f57">fast_rhs_fun</a>);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#ad31fb2cda1fc2dce80820ed7c4a3c052">set_slow_fast_timestep_ratio</a>(<a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> &gt; 0 ? <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> : <a class="code" href="classERF.html#a3cf7cb2e51eb7b69cb4079ffc6722459">dt_mri_ratio</a>[level]);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#a825efb33e69853b14d8e7085ea86edf6">set_no_substep</a>(<a class="code" href="TI__no__substep__fun_8H.html#a4cad8180e91d2eabd5638651fc24bcc7">no_substep_fun</a>);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    } <span class="comment">// profile</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b">advance</a>(state_old, state_new, old_time, dt_advance);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">if</span> (l_use_kturb) <span class="keyword">delete</span> eddyDiffs;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">if</span> (l_use_diff) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      <span class="keyword">delete</span> Tau11;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      <span class="keyword">delete</span> Tau22;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      <span class="keyword">delete</span> Tau33;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      <span class="keyword">delete</span> Tau12;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      <span class="keyword">delete</span> Tau13;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      <span class="keyword">delete</span> Tau23;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      <span class="keywordflow">if</span> (l_use_terrain) {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keyword">delete</span> Tau21;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keyword">delete</span> Tau31;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keyword">delete</span> Tau32;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      }</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a>) Print() &lt;&lt; <span class="stringliteral">&quot;Done with advance at level &quot;</span> &lt;&lt; level &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; mf_m = <a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[level]-&gt;array(mfi);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; mf_u = <a class="code" href="classERF.html#a1e8afee1508b720dab56f5d044deb301">mapfac_u</a>[level]-&gt;array(mfi);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; mf_v = <a class="code" href="classERF.html#ae49b5055f9a7117fa15918a5daa775b7">mapfac_v</a>[level]-&gt;array(mfi);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <a class="code" href="ComputeStrain__T_8cpp.html#a049574defca93dc76e34280e31ddd7f5">ComputeStrain_T</a>(bxcc, tbxxy, tbxxz, tbxyz,</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                                <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>,</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                tau11, tau22, tau33,</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                tau12, tau13,</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                                tau21, tau23,</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                                tau31, tau32,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                z_nd, bc_ptr_h, dxInv,</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                                mf_m, mf_u, mf_v);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                <a class="code" href="ComputeStrain__N_8cpp.html#ad2f628a16d6243d4a00094e51e3392dd">ComputeStrain_N</a>(bxcc, tbxxy, tbxxz, tbxyz,</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a7b774effe4a349c6dd82ad4f4f21d34c">u</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a9e3669d19b675bd57058fd4664205d2a">v</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68">w</a>,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                tau11, tau22, tau33,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                tau12, tau13, tau23,</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                                bc_ptr_h, dxInv,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                mf_m, mf_u, mf_v);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    } <span class="comment">// l_use_diff</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    } <span class="comment">// profile</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    MultiFab Omega (zmom_old.boxArray(),dm,1,1);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TI__utils_8H.html">TI_utils.H</a>&quot;</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    amrex::Vector&lt;amrex::MultiFab&gt; state_old;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    amrex::Vector&lt;amrex::MultiFab&gt; state_new;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">// Here we define state_old and state_new which are to be advanced</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;erf_advance_part_1&quot;</span>);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">// Initial solution</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    state_old.push_back(MultiFab(cons_old, amrex::make_alias, 0, nvars)); <span class="comment">// cons</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    state_old.push_back(MultiFab(xmom_old, amrex::make_alias, 0,     1)); <span class="comment">// xmom</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    state_old.push_back(MultiFab(ymom_old, amrex::make_alias, 0,     1)); <span class="comment">// ymom</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    state_old.push_back(MultiFab(zmom_old, amrex::make_alias, 0,     1)); <span class="comment">// zmom</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">// Final solution</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    state_new.push_back(MultiFab(cons_new, amrex::make_alias, 0, nvars)); <span class="comment">// cons</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    state_new.push_back(MultiFab(xmom_new, amrex::make_alias, 0,     1)); <span class="comment">// xmom</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    state_new.push_back(MultiFab(ymom_new, amrex::make_alias, 0,     1)); <span class="comment">// ymom</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    state_new.push_back(MultiFab(zmom_new, amrex::make_alias, 0,     1)); <span class="comment">// zmom</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    } <span class="comment">// profile</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">// *************************************************************************</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">// Calculate cell-centered eddy viscosity &amp; diffusivities</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">// Notes -- we fill all the data in ghost cells before calling this so</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">//    that we can fill the eddy viscosity in the ghost regions and</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="comment">//    not have to call a boundary filler on this data itself</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="comment">// LES - updates both horizontal and vertical eddy viscosity components</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">// PBL - only updates vertical eddy viscosity components so horizontal</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment">//       components come from the LES model or are left as zero.</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// *************************************************************************</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">if</span> (l_use_kturb)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#a7353d769c775f8aaa3fd107b82a54789">ComputeTurbulentViscosity</a>(xvel_old, yvel_old,</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                                  *Tau11, *Tau22, *Tau33,</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                                  *Tau12, *Tau13, *Tau23,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                                  state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>],</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                                  *eddyDiffs, fine_geom, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>, <a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">// ***********************************************************************************************</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// Convert old velocity available on faces to old momentum on faces to be used in time integration</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="comment">// ***********************************************************************************************</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;pre_set_up_mri&quot;</span>);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <a class="code" href="Utils_8H.html#afc02a222736ea1f0219b287fb472a765">VelocityToMomentum</a>(xvel_old, xvel_old.nGrowVect(),</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                       yvel_old, yvel_old.nGrowVect(),</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                       zvel_old, zvel_old.nGrowVect(),</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                       state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>],</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                       state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a>],</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                       state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a>],</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                       state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12abde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a>]);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    MultiFab::Copy(xvel_new,xvel_old,0,0,1,xvel_old.nGrowVect());</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    MultiFab::Copy(yvel_new,yvel_old,0,0,1,yvel_old.nGrowVect());</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    MultiFab::Copy(zvel_new,zvel_old,0,0,1,zvel_old.nGrowVect());</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">bool</span> fast_only          = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">bool</span> vel_and_mom_synced = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <a class="code" href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(state_old, old_time,</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;              state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].nGrow(), state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a>].nGrow(), fast_only,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;              vel_and_mom_synced);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <a class="code" href="TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a>(state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>], state_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].nGrow());</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    } <span class="comment">// profile</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TI__no__substep__fun_8H.html">TI_no_substep_fun.H</a>&quot;</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TI__slow__rhs__fun_8H.html">TI_slow_rhs_fun.H</a>&quot;</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TI__fast__rhs__fun_8H.html">TI_fast_rhs_fun.H</a>&quot;</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">// ***************************************************************************************</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">// Setup the integrator and integrate for a single timestep</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <a class="code" href="classMRISplitIntegrator.html">MRISplitIntegrator&lt;Vector&lt;MultiFab&gt;</a> &gt;&amp; mri_integrator = *<a class="code" href="classERF.html#a09d0fb2bd609c898a665d9530a744585">mri_integrator_mem</a>[level];</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;set_up_mri_integrator&quot;</span>);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="comment">// Define rhs and &#39;post update&#39; utility function that is called after calculating</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment">// any state data (e.g. at RK stages or at the end of a timestep)</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#acd357bd44c0160c69ce73d19ca528376">set_slow_rhs_pre</a>(<a class="code" href="TI__slow__rhs__fun_8H.html#a963142d364408ee1775dbef20383b244">slow_rhs_fun_pre</a>);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#a4d4396268d45548c85ae36ce3bbe2c23">set_slow_rhs_post</a>(<a class="code" href="TI__slow__rhs__fun_8H.html#af460c930508105e92f60fd868d23ebcf">slow_rhs_fun_post</a>);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#a7c3d1c29712cdc8888af315d37960561">set_pre_update</a> (<a class="code" href="TI__slow__rhs__fun_8H.html#aadc7f4c039b08417963410e7f76bb2dd">pre_update_fun</a>);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#a95b3c0742918b516a3d12a60eb280b48">set_post_update</a>(<a class="code" href="TI__slow__rhs__fun_8H.html#afd90eac481ef47af3b095c56653098e8">post_update_fun</a>);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#ad93cd0e1af2b6a7783aa561016c17b0e">set_fast_rhs</a>(<a class="code" href="TI__fast__rhs__fun_8H.html#ac6afbd55bf5b7264098d44d9b8928f57">fast_rhs_fun</a>);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#ad31fb2cda1fc2dce80820ed7c4a3c052">set_slow_fast_timestep_ratio</a>(<a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> &gt; 0 ? <a class="code" href="classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd">fixed_mri_dt_ratio</a> : <a class="code" href="classERF.html#a3cf7cb2e51eb7b69cb4079ffc6722459">dt_mri_ratio</a>[level]);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#a825efb33e69853b14d8e7085ea86edf6">set_no_substep</a>(<a class="code" href="TI__no__substep__fun_8H.html#a4cad8180e91d2eabd5638651fc24bcc7">no_substep_fun</a>);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    } <span class="comment">// profile</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b">advance</a>(state_old, state_new, old_time, dt_advance);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">if</span> (l_use_kturb) <span class="keyword">delete</span> eddyDiffs;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">if</span> (l_use_diff) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      <span class="keyword">delete</span> Tau11;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      <span class="keyword">delete</span> Tau22;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      <span class="keyword">delete</span> Tau33;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;      <span class="keyword">delete</span> Tau12;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      <span class="keyword">delete</span> Tau13;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      <span class="keyword">delete</span> Tau23;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      <span class="keywordflow">if</span> (l_use_terrain) {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keyword">delete</span> Tau21;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keyword">delete</span> Tau31;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keyword">delete</span> Tau32;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a>) Print() &lt;&lt; <span class="stringliteral">&quot;Done with advance at level &quot;</span> &lt;&lt; level &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1644,8 +1650,8 @@ Here is the call graph for this function:</div>
 <map name="classERF_a0ed1796e6d5cbd80c9428079a0866d86_cgraph" id="classERF_a0ed1796e6d5cbd80c9428079a0866d86_cgraph">
 <area shape="rect" title=" " alt="" coords="5,557,140,583"/>
 <area shape="rect" href="classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b" title=" " alt="" coords="229,107,369,148"/>
-<area shape="rect" href="ComputeStrain__N_8cpp.html#afed7a098228c0626781c5328f536cef4" title=" " alt="" coords="231,274,367,301"/>
-<area shape="rect" href="ComputeStrain__T_8cpp.html#a67a03614e265cf6af26c90078686f2b1" title=" " alt="" coords="231,325,366,351"/>
+<area shape="rect" href="ComputeStrain__N_8cpp.html#ad2f628a16d6243d4a00094e51e3392dd" title=" " alt="" coords="231,274,367,301"/>
+<area shape="rect" href="ComputeStrain__T_8cpp.html#a049574defca93dc76e34280e31ddd7f5" title=" " alt="" coords="231,325,366,351"/>
 <area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#a7353d769c775f8aaa3fd107b82a54789" title=" " alt="" coords="199,399,399,426"/>
 <area shape="rect" href="classMRISplitIntegrator.html#ad93cd0e1af2b6a7783aa561016c17b0e" title=" " alt="" coords="229,451,369,492"/>
 <area shape="rect" href="classMRISplitIntegrator.html#a825efb33e69853b14d8e7085ea86edf6" title=" " alt="" coords="229,516,369,557"/>
@@ -10018,6 +10024,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a18fa84b06132715757d97ec38678aa2c"><div class="ttname"><a href="classERF.html#a18fa84b06132715757d97ec38678aa2c">ERF::plot_file_2</a></div><div class="ttdeci">std::string plot_file_2</div><div class="ttdef"><b>Definition:</b> ERF.H:546</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aclassERF_html_a6865cf87abbb5aab0db00ff3b1ce94ac"><div class="ttname"><a href="classERF.html#a6865cf87abbb5aab0db00ff3b1ce94ac">ERF::plot_var_names_1</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; plot_var_names_1</div><div class="ttdef"><b>Definition:</b> ERF.H:556</div></div>
+<div class="ttc" id="aComputeStrain__T_8cpp_html_a049574defca93dc76e34280e31ddd7f5"><div class="ttname"><a href="ComputeStrain__T_8cpp.html#a049574defca93dc76e34280e31ddd7f5">ComputeStrain_T</a></div><div class="ttdeci">void ComputeStrain_T(Box &amp;bxcc, Box &amp;tbxxy, Box &amp;tbxxz, Box &amp;tbxyz, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, Array4&lt; Real &gt; &amp;tau11, Array4&lt; Real &gt; &amp;tau22, Array4&lt; Real &gt; &amp;tau33, Array4&lt; Real &gt; &amp;tau12, Array4&lt; Real &gt; &amp;tau13, Array4&lt; Real &gt; &amp;tau21, Array4&lt; Real &gt; &amp;tau23, Array4&lt; Real &gt; &amp;tau31, Array4&lt; Real &gt; &amp;tau32, const Array4&lt; const Real &gt; &amp;z_nd, const BCRec *bc_ptr, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv, const Array4&lt; const Real &gt; &amp;mf_m, const Array4&lt; const Real &gt; &amp;mf_u, const Array4&lt; const Real &gt; &amp;mf_v)</div><div class="ttdef"><b>Definition:</b> ComputeStrain_T.cpp:7</div></div>
 <div class="ttc" id="aclassERF_html_ac4dc443840da3593fe66b8693803f006"><div class="ttname"><a href="classERF.html#ac4dc443840da3593fe66b8693803f006">ERF::h_rayleigh_ubar</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; h_rayleigh_ubar</div><div class="ttdef"><b>Definition:</b> ERF.H:627</div></div>
 <div class="ttc" id="aclassERF_html_aeb64e3b4def989ce68d873aefeed5e0e"><div class="ttname"><a href="classERF.html#aeb64e3b4def989ce68d873aefeed5e0e">ERF::rV_old</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab &gt; rV_old</div><div class="ttdef"><b>Definition:</b> ERF.H:469</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a></div><div class="ttdeci">@ ext_dir</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:157</div></div>
@@ -10057,7 +10064,6 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a71629ae2fda396472198691b75d83b2e"><div class="ttname"><a href="classERF.html#a71629ae2fda396472198691b75d83b2e">ERF::Theta_prim</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; Theta_prim</div><div class="ttdef"><b>Definition:</b> ERF.H:464</div></div>
 <div class="ttc" id="aclassERF_html_a02722d16f3c26efe590702200f1296d7"><div class="ttname"><a href="classERF.html#a02722d16f3c26efe590702200f1296d7">ERF::last_check_file_step</a></div><div class="ttdeci">int last_check_file_step</div><div class="ttdef"><b>Definition:</b> ERF.H:516</div></div>
 <div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:179</div></div>
-<div class="ttc" id="aComputeStrain__T_8cpp_html_a67a03614e265cf6af26c90078686f2b1"><div class="ttname"><a href="ComputeStrain__T_8cpp.html#a67a03614e265cf6af26c90078686f2b1">ComputeStrain_T</a></div><div class="ttdeci">void ComputeStrain_T(Box &amp;bxcc, Box &amp;tbxxy, Box &amp;tbxxz, Box &amp;tbxyz, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, Array4&lt; Real &gt; &amp;tau11, Array4&lt; Real &gt; &amp;tau22, Array4&lt; Real &gt; &amp;tau33, Array4&lt; Real &gt; &amp;tau12, Array4&lt; Real &gt; &amp;tau13, Array4&lt; Real &gt; &amp;tau21, Array4&lt; Real &gt; &amp;tau23, Array4&lt; Real &gt; &amp;tau31, Array4&lt; Real &gt; &amp;tau32, const Array4&lt; const Real &gt; &amp;z_nd, const BCRec *bc_ptr, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ComputeStrain_T.cpp:7</div></div>
 <div class="ttc" id="aclassERF_html_a405556a52bef334ab68294c1a540e107"><div class="ttname"><a href="classERF.html#a405556a52bef334ab68294c1a540e107">ERF::stop_time</a></div><div class="ttdeci">amrex::Real stop_time</div><div class="ttdef"><b>Definition:</b> ERF.H:524</div></div>
 <div class="ttc" id="aclassERF_html_a48bba6b1c1b39940b09aefbe56311e2f"><div class="ttname"><a href="classERF.html#a48bba6b1c1b39940b09aefbe56311e2f">ERF::column_file_name</a></div><div class="ttdeci">static std::string column_file_name</div><div class="ttdef"><b>Definition:</b> ERF.H:611</div></div>
 <div class="ttc" id="aclassERF_html_aaf10bbf8c9a5dbc257a88c4c1b650fee"><div class="ttname"><a href="classERF.html#aaf10bbf8c9a5dbc257a88c4c1b650fee">ERF::MakeNewLevelFromScratch</a></div><div class="ttdeci">virtual void MakeNewLevelFromScratch(int lev, amrex::Real time, const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dm) override</div><div class="ttdef"><b>Definition:</b> ERF.cpp:681</div></div>
@@ -10072,7 +10078,6 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aTerrainMetrics_8H_html_ada12bcb6beb3fa0d00dbdacb37f3c60f"><div class="ttname"><a href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:110</div></div>
 <div class="ttc" id="aclassERF_html_a050dbd236c9bf246554a53008e09f683"><div class="ttname"><a href="classERF.html#a050dbd236c9bf246554a53008e09f683">ERF::boxes_at_level</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Box &gt; &gt; boxes_at_level</div><div class="ttdef"><b>Definition:</b> ERF.H:440</div></div>
 <div class="ttc" id="aclassERF_html_a54e37988486ef96e55e84bd8e91bb688"><div class="ttname"><a href="classERF.html#a54e37988486ef96e55e84bd8e91bb688">ERF::rV_new</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab &gt; rV_new</div><div class="ttdef"><b>Definition:</b> ERF.H:470</div></div>
-<div class="ttc" id="aComputeStrain__N_8cpp_html_afed7a098228c0626781c5328f536cef4"><div class="ttname"><a href="ComputeStrain__N_8cpp.html#afed7a098228c0626781c5328f536cef4">ComputeStrain_N</a></div><div class="ttdeci">void ComputeStrain_N(Box &amp;bxcc, Box &amp;tbxxy, Box &amp;tbxxz, Box &amp;tbxyz, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, Array4&lt; Real &gt; &amp;tau11, Array4&lt; Real &gt; &amp;tau22, Array4&lt; Real &gt; &amp;tau33, Array4&lt; Real &gt; &amp;tau12, Array4&lt; Real &gt; &amp;tau13, Array4&lt; Real &gt; &amp;tau23, const BCRec *bc_ptr, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ComputeStrain_N.cpp:6</div></div>
 <div class="ttc" id="aTI__no__substep__fun_8H_html_a4cad8180e91d2eabd5638651fc24bcc7"><div class="ttname"><a href="TI__no__substep__fun_8H.html#a4cad8180e91d2eabd5638651fc24bcc7">no_substep_fun</a></div><div class="ttdeci">auto no_substep_fun</div><div class="ttdef"><b>Definition:</b> TI_no_substep_fun.H:1</div></div>
 <div class="ttc" id="aclassERF_html_adcd9f23975ffa605247b41d391c2a2f0"><div class="ttname"><a href="classERF.html#adcd9f23975ffa605247b41d391c2a2f0">ERF::num_boxes_at_level</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; num_boxes_at_level</div><div class="ttdef"><b>Definition:</b> ERF.H:438</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a45268689de46663ab6458f48c6878fc5aa3900ab375460932d825b615bb532446"><div class="ttname"><a href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a></div><div class="ttdeci">@ NumDiffs</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:140</div></div>
@@ -10093,6 +10098,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespacederived_html_aa1fcac44ae779cdfa2fd5266bc206e2d"><div class="ttname"><a href="namespacederived.html#aa1fcac44ae779cdfa2fd5266bc206e2d">derived::erf_derKE</a></div><div class="ttdeci">void erf_derKE(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:138</div></div>
 <div class="ttc" id="aclassERF_html_a9683c7b07c287e57856ee5a9c99917a1"><div class="ttname"><a href="classERF.html#a9683c7b07c287e57856ee5a9c99917a1">ERF::h_havg_temperature</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; h_havg_temperature</div><div class="ttdef"><b>Definition:</b> ERF.H:636</div></div>
 <div class="ttc" id="aclassERF_html_a3937527f96c81674fa38dc34ed24f3f5"><div class="ttname"><a href="classERF.html#a3937527f96c81674fa38dc34ed24f3f5">ERF::regrid_int</a></div><div class="ttdeci">int regrid_int</div><div class="ttdef"><b>Definition:</b> ERF.H:542</div></div>
+<div class="ttc" id="aComputeStrain__N_8cpp_html_ad2f628a16d6243d4a00094e51e3392dd"><div class="ttname"><a href="ComputeStrain__N_8cpp.html#ad2f628a16d6243d4a00094e51e3392dd">ComputeStrain_N</a></div><div class="ttdeci">void ComputeStrain_N(Box &amp;bxcc, Box &amp;tbxxy, Box &amp;tbxxz, Box &amp;tbxyz, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, Array4&lt; Real &gt; &amp;tau11, Array4&lt; Real &gt; &amp;tau22, Array4&lt; Real &gt; &amp;tau33, Array4&lt; Real &gt; &amp;tau12, Array4&lt; Real &gt; &amp;tau13, Array4&lt; Real &gt; &amp;tau23, const BCRec *bc_ptr, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv, const Array4&lt; const Real &gt; &amp;mf_m, const Array4&lt; const Real &gt; &amp;mf_u, const Array4&lt; const Real &gt; &amp;mf_v)</div><div class="ttdef"><b>Definition:</b> ComputeStrain_N.cpp:6</div></div>
 <div class="ttc" id="aclassERF_html_ae6df94c25ac21bf6a2e856a9901e3a15"><div class="ttname"><a href="classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15">ERF::phys_bc_type</a></div><div class="ttdeci">amrex::GpuArray&lt; ERF_BC, AMREX_SPACEDIM *2 &gt; phys_bc_type</div><div class="ttdef"><b>Definition:</b> ERF.H:511</div></div>
 <div class="ttc" id="aclassERF_html_aefa640a036c25b7b770e88a5f838eb2a"><div class="ttname"><a href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">ERF::istep</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; istep</div><div class="ttdef"><b>Definition:</b> ERF.H:442</div></div>
 <div class="ttc" id="astructSolverChoice_html_a4829661b558b213e32970a02e147077f"><div class="ttname"><a href="structSolverChoice.html#a4829661b558b213e32970a02e147077f">SolverChoice::init_params</a></div><div class="ttdeci">void init_params()</div><div class="ttdef"><b>Definition:</b> DataStruct.H:63</div></div>

@@ -1,7 +1,7 @@
 var Diffusion_8H =
 [
-    [ "ComputeStrain_N", "Diffusion_8H.html#a47607bd3efdcf3c282ff9ed6c03e330c", null ],
-    [ "ComputeStrain_T", "Diffusion_8H.html#afd6d8f821aa137382dde02956169959f", null ],
+    [ "ComputeStrain_N", "Diffusion_8H.html#a63f9217bd3b1f7433b53a92ffc762f81", null ],
+    [ "ComputeStrain_T", "Diffusion_8H.html#ae27ce79298c02db3875d0acf37dbe46d", null ],
     [ "ComputeStressConsVisc_N", "Diffusion_8H.html#aae0570acc46a0d3412bb31d1b15627df", null ],
     [ "ComputeStressConsVisc_T", "Diffusion_8H.html#a0cc5c26238aefae9432f718d6389df27", null ],
     [ "ComputeStressVarVisc_N", "Diffusion_8H.html#a160ee654cb085637c51cb102a59c078d", null ],
