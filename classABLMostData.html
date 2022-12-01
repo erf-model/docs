@@ -106,7 +106,7 @@ Collaboration diagram for ABLMostData:</div>
 <div class="dyncontent">
 <div class="center"><img src="classABLMostData__coll__graph.png" border="0" usemap="#ABLMostData_coll__map" alt="Collaboration graph"/></div>
 <map name="ABLMostData_coll__map" id="ABLMostData_coll__map">
-<area shape="rect" title=" " alt="" coords="5,241,116,268"/>
+<area shape="rect" title=" " alt="" coords="5,212,116,239"/>
 <area shape="rect" title=" " alt="" coords="35,5,86,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -120,9 +120,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a6257d30d4cc62c601551a184a72be0d1"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMostData.html#a6257d30d4cc62c601551a184a72be0d1">zref</a> {0.2}</td></tr>
-<tr class="memdesc:a6257d30d4cc62c601551a184a72be0d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference height (m)  <a href="classABLMostData.html#a6257d30d4cc62c601551a184a72be0d1">More...</a><br /></td></tr>
-<tr class="separator:a6257d30d4cc62c601551a184a72be0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af22d8f863f3a518a02933e095c237f34"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMostData.html#af22d8f863f3a518a02933e095c237f34">z0_const</a> {0.1}</td></tr>
 <tr class="memdesc:af22d8f863f3a518a02933e095c237f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Roughness height &ndash; default constant value(m)  <a href="classABLMostData.html#af22d8f863f3a518a02933e095c237f34">More...</a><br /></td></tr>
 <tr class="separator:af22d8f863f3a518a02933e095c237f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,14 +174,14 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (zeta &gt; 0) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">return</span> -<a class="code" href="classABLMostData.html#af5bf502dcf92d9e55072601ff6050423">beta_h</a> * zeta;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = std::sqrt(1.0 - <a class="code" href="classABLMostData.html#a9eaae12d609ae5aa391024bb82d01eb5">gamma_h</a> * zeta);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">return</span> 2.0 * std::log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> (zeta &gt; 0) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> -<a class="code" href="classABLMostData.html#af5bf502dcf92d9e55072601ff6050423">beta_h</a> * zeta;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = std::sqrt(1.0 - <a class="code" href="classABLMostData.html#a9eaae12d609ae5aa391024bb82d01eb5">gamma_h</a> * zeta);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">return</span> 2.0 * std::log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classABLMost.html#a29162a794cb557fa51b781ddcb684f84">ABLMost::update_fluxes()</a>.</p>
 <div class="dynheader">
@@ -222,15 +219,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> (zeta &gt; 0) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">return</span> -<a class="code" href="classABLMostData.html#ad81da3d06a7585ee0723fb1ad2bd8eb3">beta_m</a> * zeta;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = std::sqrt(std::sqrt(1.0 - <a class="code" href="classABLMostData.html#a0e68bde6a436fe0659ea7e003a179cc7">gamma_m</a> * zeta));</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">return</span> 2.0 * std::log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>)) + log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>)) -</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                   2.0 * std::atan(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>) + <a class="code" href="ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e">PIoTwo</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span> (zeta &gt; 0) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span> -<a class="code" href="classABLMostData.html#ad81da3d06a7585ee0723fb1ad2bd8eb3">beta_m</a> * zeta;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = std::sqrt(std::sqrt(1.0 - <a class="code" href="classABLMostData.html#a0e68bde6a436fe0659ea7e003a179cc7">gamma_m</a> * zeta));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span> 2.0 * std::log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>)) + log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>)) -</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                   2.0 * std::atan(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>) + <a class="code" href="ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e">PIoTwo</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classABLMost.html#a29162a794cb557fa51b781ddcb684f84">ABLMost::update_fluxes()</a>.</p>
 <div class="dynheader">
@@ -404,34 +401,16 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a6257d30d4cc62c601551a184a72be0d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6257d30d4cc62c601551a184a72be0d1">&#9670;&nbsp;</a></span>zref</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">amrex::Real ABLMostData::zref {0.2}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reference height (m) </p>
-
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#ad1b4cdd0bca8fb10339f6a8a8d311e4a">ABLMost::ABLMost()</a>, and <a class="el" href="classABLMost.html#a32c3438bcf6b072f5ce96e57c55f9af8">ABLMost::print()</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/runner/work/ERF/ERF/Source/BoundaryConditions/<a class="el" href="ABLMost_8H_source.html">ABLMost.H</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassABLMostData_html_af5bf502dcf92d9e55072601ff6050423"><div class="ttname"><a href="classABLMostData.html#af5bf502dcf92d9e55072601ff6050423">ABLMostData::beta_h</a></div><div class="ttdeci">amrex::Real beta_h</div><div class="ttdoc">https://doi.org/10.1007/BF00240838</div><div class="ttdef"><b>Definition:</b> ABLMost.H:37</div></div>
-<div class="ttc" id="aclassABLMostData_html_a0e68bde6a436fe0659ea7e003a179cc7"><div class="ttname"><a href="classABLMostData.html#a0e68bde6a436fe0659ea7e003a179cc7">ABLMostData::gamma_m</a></div><div class="ttdeci">amrex::Real gamma_m</div><div class="ttdef"><b>Definition:</b> ABLMost.H:38</div></div>
-<div class="ttc" id="aclassABLMostData_html_a9eaae12d609ae5aa391024bb82d01eb5"><div class="ttname"><a href="classABLMostData.html#a9eaae12d609ae5aa391024bb82d01eb5">ABLMostData::gamma_h</a></div><div class="ttdeci">amrex::Real gamma_h</div><div class="ttdef"><b>Definition:</b> ABLMost.H:39</div></div>
+<div class="ttc" id="aclassABLMostData_html_af5bf502dcf92d9e55072601ff6050423"><div class="ttname"><a href="classABLMostData.html#af5bf502dcf92d9e55072601ff6050423">ABLMostData::beta_h</a></div><div class="ttdeci">amrex::Real beta_h</div><div class="ttdoc">https://doi.org/10.1007/BF00240838</div><div class="ttdef"><b>Definition:</b> ABLMost.H:36</div></div>
+<div class="ttc" id="aclassABLMostData_html_a0e68bde6a436fe0659ea7e003a179cc7"><div class="ttname"><a href="classABLMostData.html#a0e68bde6a436fe0659ea7e003a179cc7">ABLMostData::gamma_m</a></div><div class="ttdeci">amrex::Real gamma_m</div><div class="ttdef"><b>Definition:</b> ABLMost.H:37</div></div>
+<div class="ttc" id="aclassABLMostData_html_a9eaae12d609ae5aa391024bb82d01eb5"><div class="ttname"><a href="classABLMostData.html#a9eaae12d609ae5aa391024bb82d01eb5">ABLMostData::gamma_h</a></div><div class="ttdeci">amrex::Real gamma_h</div><div class="ttdef"><b>Definition:</b> ABLMost.H:38</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
-<div class="ttc" id="aclassABLMostData_html_ad81da3d06a7585ee0723fb1ad2bd8eb3"><div class="ttname"><a href="classABLMostData.html#ad81da3d06a7585ee0723fb1ad2bd8eb3">ABLMostData::beta_m</a></div><div class="ttdeci">amrex::Real beta_m</div><div class="ttdoc">Constants from Dyer, BLM, 1974.</div><div class="ttdef"><b>Definition:</b> ABLMost.H:36</div></div>
+<div class="ttc" id="aclassABLMostData_html_ad81da3d06a7585ee0723fb1ad2bd8eb3"><div class="ttname"><a href="classABLMostData.html#ad81da3d06a7585ee0723fb1ad2bd8eb3">ABLMostData::beta_m</a></div><div class="ttdeci">amrex::Real beta_m</div><div class="ttdoc">Constants from Dyer, BLM, 1974.</div><div class="ttdef"><b>Definition:</b> ABLMost.H:35</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ad51e17db99d11b190b2b57a23a518f7e"><div class="ttname"><a href="ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e">PIoTwo</a></div><div class="ttdeci">constexpr amrex::Real PIoTwo</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:7</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

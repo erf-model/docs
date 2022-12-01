@@ -10,6 +10,5 @@ var classABLMostData =
     [ "kappa", "classABLMostData.html#aa405357f6fd9c365c566afbf8c2c2bde", null ],
     [ "surf_temp", "classABLMostData.html#a766d02b24965cfd0dd6a0c593df31969", null ],
     [ "surf_temp_flux", "classABLMostData.html#a81414345b94239ca479eeda6b405a5af", null ],
-    [ "z0_const", "classABLMostData.html#af22d8f863f3a518a02933e095c237f34", null ],
-    [ "zref", "classABLMostData.html#a6257d30d4cc62c601551a184a72be0d1", null ]
+    [ "z0_const", "classABLMostData.html#af22d8f863f3a518a02933e095c237f34", null ]
 ];

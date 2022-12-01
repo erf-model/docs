@@ -51,7 +51,7 @@ var searchData=
   ['compute_5fh_5fzeta_5fatkface_115',['Compute_h_zeta_AtKface',['../TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0',1,'TerrainMetrics.H']]],
   ['compute_5fhvelmag_5faverages_116',['compute_hvelmag_averages',['../classVelPlaneAverage.html#a17f4d08237aaeb3e864bbbdfbf46a7fb',1,'VelPlaneAverage']]],
   ['compute_5fplane_5faverages_117',['compute_plane_averages',['../classMOSTAverage.html#ab85828af24cd22d737931c51862389e4',1,'MOSTAverage']]],
-  ['compute_5fpoint_5faverages_118',['compute_point_averages',['../classMOSTAverage.html#aa0cb0c6abfb23703bf410a7085b9fef4',1,'MOSTAverage']]],
+  ['compute_5fregion_5faverages_118',['compute_region_averages',['../classMOSTAverage.html#aaea0b00766b3cdeefd2b54bade8a86bd',1,'MOSTAverage']]],
   ['computediffusionfluxforstate_119',['ComputeDiffusionFluxForState',['../DiffusionFluxForState_8H.html#a243c0b97fd89b0b6fcea3efe42024933',1,'DiffusionFluxForState.H']]],
   ['computedt_120',['ComputeDt',['../classERF.html#a62a5ed3c3806eaa918257e0ad1382df5',1,'ERF']]],
   ['computeghostcells_121',['ComputeGhostCells',['../classERF.html#a0f5b892bf373e46ae54597683e0f9685',1,'ERF']]],
