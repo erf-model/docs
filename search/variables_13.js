@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['v_5finp_5fsound_1737',['V_inp_sound',['../structInputSoundingData.html#a97a1970935e36fc0ba9a69fa0032883d',1,'InputSoundingData']]],
-  ['v_5finp_5fsound_5fd_1738',['V_inp_sound_d',['../structInputSoundingData.html#a22697746622cd5f3239120eaaa71abdc',1,'InputSoundingData']]],
-  ['varid_1739',['varid',['../structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532',1,'ncutils::NCVar']]],
-  ['vars_5fnew_1740',['vars_new',['../classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b',1,'ERF']]],
-  ['vars_5fold_1741',['vars_old',['../classERF.html#af31e928baa970a1507dfb0233b352542',1,'ERF']]],
-  ['velocity_5fnames_1742',['velocity_names',['../classERF.html#a2f2ea7f5eeeb3634944550e5a1de8f7a',1,'ERF']]],
-  ['verbose_1743',['verbose',['../classERF.html#a43d0b17f6e155691a1e9474526df3af5',1,'ERF']]]
+  ['u_5finp_5fsound_1829',['U_inp_sound',['../structInputSoundingData.html#a92f73e73fbc10bb7cbc1ba38155879f6',1,'InputSoundingData']]],
+  ['u_5finp_5fsound_5fd_1830',['U_inp_sound_d',['../structInputSoundingData.html#aab7841d6e2803dd86596604d85411d8d',1,'InputSoundingData']]],
+  ['u_5fstar_1831',['u_star',['../classABLMost.html#afa1831ea4c8ed00b6e2a9f3831de48a6',1,'ABLMost']]],
+  ['use_5fcoriolis_1832',['use_coriolis',['../structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606',1,'SolverChoice']]],
+  ['use_5fgravity_1833',['use_gravity',['../structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5',1,'SolverChoice']]],
+  ['use_5flowm_5fdt_1834',['use_lowM_dt',['../classERF.html#aad09820d3e29638db7c3d499304c8aed',1,'ERF']]],
+  ['use_5fnative_5fmri_1835',['use_native_mri',['../classERF.html#a4a279f0f572da168852d954df55abe2e',1,'ERF']]],
+  ['use_5fqke_1836',['use_QKE',['../structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5',1,'SolverChoice']]],
+  ['use_5frayleigh_5fdamping_1837',['use_rayleigh_damping',['../structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01',1,'SolverChoice']]],
+  ['use_5fterrain_1838',['use_terrain',['../structSolverChoice.html#a063a88594452100497651e8aaf1f68d7',1,'SolverChoice']]]
 ];

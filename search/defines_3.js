@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['igamma_1888',['iGamma',['../ERF__Constants_8H.html#a8bc4dd2c3461b6bc67733de2c5dd8de6',1,'ERF_Constants.H']]],
-  ['ip_5f0_1889',['ip_0',['../ERF__Constants_8H.html#a8b690ebe9cca98f047d552bd81b92f02',1,'ERF_Constants.H']]],
-  ['ir_5fd_1890',['iR_d',['../ERF__Constants_8H.html#a03b06ea8ffc24e0573594e3bf7ba6606',1,'ERF_Constants.H']]]
+  ['rho_5fcomp_1993',['Rho_comp',['../IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49',1,'IndexDefines.H']]],
+  ['rhoke_5fcomp_1994',['RhoKE_comp',['../IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64',1,'IndexDefines.H']]],
+  ['rhoqke_5fcomp_1995',['RhoQKE_comp',['../IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93',1,'IndexDefines.H']]],
+  ['rhoscalar_5fcomp_1996',['RhoScalar_comp',['../IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f',1,'IndexDefines.H']]],
+  ['rhotheta_5fcomp_1997',['RhoTheta_comp',['../IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877',1,'IndexDefines.H']]]
 ];

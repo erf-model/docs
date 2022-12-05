@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['c_5fp_1885',['c_p',['../ERF__Constants_8H.html#a7f928aa35dcd2f4e48fdf6d6a3166f1a',1,'ERF_Constants.H']]],
-  ['const_5fgrav_1886',['CONST_GRAV',['../ERF__Constants_8H.html#a063fd3095e4994e6136a62d78b7c5901',1,'ERF_Constants.H']]]
+  ['num_5fprim_1987',['NUM_PRIM',['../IndexDefines_8H.html#a76cb673ca03cd7f8ae6cc8544d6dd0fa',1,'IndexDefines.H']]],
+  ['nvar_1988',['NVAR',['../IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639',1,'IndexDefines.H']]]
 ];

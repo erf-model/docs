@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['z0_5fconst_1744',['z0_const',['../classABLMostData.html#af22d8f863f3a518a02933e095c237f34',1,'ABLMostData']]],
-  ['z_5f0_1745',['z_0',['../classABLMost.html#a1301dd4cb6875c7bdf5d69126b972f91',1,'ABLMost']]],
-  ['z_5finp_5fsound_1746',['z_inp_sound',['../structInputSoundingData.html#a0a3d15e3959ce900c213a09230e6646c',1,'InputSoundingData']]],
-  ['z_5finp_5fsound_5fd_1747',['z_inp_sound_d',['../structInputSoundingData.html#aba43c1b1c5b71ca118d6967f1e4a32bb',1,'InputSoundingData']]],
-  ['z_5fphys_5fcc_1748',['z_phys_cc',['../classERF.html#a31be0f1ae705c52c8ccc520369013284',1,'ERF']]],
-  ['z_5fphys_5fnd_1749',['z_phys_nd',['../classERF.html#a93e63e5af35efa564fd4195e8703f84c',1,'ERF']]],
-  ['z_5fphys_5fnd_5fnew_1750',['z_phys_nd_new',['../classERF.html#a4ef635c22e72c715f5703a6b95a7abe5',1,'ERF']]],
-  ['z_5fphys_5fnd_5fsrc_1751',['z_phys_nd_src',['../classERF.html#a30dcf40e8f104fb6b6132805d2eff47c',1,'ERF']]],
-  ['z_5ft_5frk_1752',['z_t_rk',['../classERF.html#a72a59614c6d5ab840b924c84d5682270',1,'ERF']]]
+  ['v_5finp_5fsound_1839',['V_inp_sound',['../structInputSoundingData.html#a97a1970935e36fc0ba9a69fa0032883d',1,'InputSoundingData']]],
+  ['v_5finp_5fsound_5fd_1840',['V_inp_sound_d',['../structInputSoundingData.html#a22697746622cd5f3239120eaaa71abdc',1,'InputSoundingData']]],
+  ['varid_1841',['varid',['../structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532',1,'ncutils::NCVar']]],
+  ['vars_5fnew_1842',['vars_new',['../classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b',1,'ERF']]],
+  ['vars_5fold_1843',['vars_old',['../classERF.html#af31e928baa970a1507dfb0233b352542',1,'ERF']]],
+  ['velocity_5fnames_1844',['velocity_names',['../classERF.html#a2f2ea7f5eeeb3634944550e5a1de8f7a',1,'ERF']]],
+  ['verbose_1845',['verbose',['../classERF.html#a43d0b17f6e155691a1e9474526df3af5',1,'ERF']]]
 ];

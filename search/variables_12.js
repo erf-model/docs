@@ -1,13 +1,23 @@
 var searchData=
 [
-  ['u_5finp_5fsound_1727',['U_inp_sound',['../structInputSoundingData.html#a92f73e73fbc10bb7cbc1ba38155879f6',1,'InputSoundingData']]],
-  ['u_5finp_5fsound_5fd_1728',['U_inp_sound_d',['../structInputSoundingData.html#aab7841d6e2803dd86596604d85411d8d',1,'InputSoundingData']]],
-  ['u_5fstar_1729',['u_star',['../classABLMost.html#afa1831ea4c8ed00b6e2a9f3831de48a6',1,'ABLMost']]],
-  ['use_5fcoriolis_1730',['use_coriolis',['../structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606',1,'SolverChoice']]],
-  ['use_5fgravity_1731',['use_gravity',['../structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5',1,'SolverChoice']]],
-  ['use_5flowm_5fdt_1732',['use_lowM_dt',['../classERF.html#aad09820d3e29638db7c3d499304c8aed',1,'ERF']]],
-  ['use_5fnative_5fmri_1733',['use_native_mri',['../classERF.html#a4a279f0f572da168852d954df55abe2e',1,'ERF']]],
-  ['use_5fqke_1734',['use_QKE',['../structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5',1,'SolverChoice']]],
-  ['use_5frayleigh_5fdamping_1735',['use_rayleigh_damping',['../structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01',1,'SolverChoice']]],
-  ['use_5fterrain_1736',['use_terrain',['../structSolverChoice.html#a063a88594452100497651e8aaf1f68d7',1,'SolverChoice']]]
+  ['t_5fnew_1809',['t_new',['../classERF.html#a65741b6379d273c19a25cf48bb947614',1,'ERF']]],
+  ['t_5fold_1810',['t_old',['../classERF.html#a7085d7d5fc94a0f84efc06957267d58e',1,'ERF']]],
+  ['t_5fstar_1811',['t_star',['../classABLMost.html#a5fe1b03be4b1108cdbea15f354e44134',1,'ABLMost']]],
+  ['t_5fstore_1812',['T_store',['../classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80',1,'MRISplitIntegrator']]],
+  ['t_5fsurf_1813',['t_surf',['../classABLMost.html#a2a6f4140cb15687728c7d96e0352f810',1,'ABLMost']]],
+  ['target_5fbox_1814',['target_box',['../classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379',1,'WriteBndryPlanes']]],
+  ['tbgmax_1815',['tbgmax',['../ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8',1,'ERF_Constants.H']]],
+  ['tbgmin_1816',['tbgmin',['../ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8',1,'ERF_Constants.H']]],
+  ['terrain_5ftype_1817',['terrain_type',['../structSolverChoice.html#a6cf7cd64adcf678e8065b1c4261cefd8',1,'SolverChoice']]],
+  ['test_5fmapfactor_1818',['test_mapfactor',['../structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107',1,'SolverChoice']]],
+  ['tgrmax_1819',['tgrmax',['../ERF__Constants_8H.html#ab24d300166813654b7d8adb31bc71938',1,'ERF_Constants.H']]],
+  ['tgrmin_1820',['tgrmin',['../ERF__Constants_8H.html#afb7d1700c60728d56ef525934fe6a098',1,'ERF_Constants.H']]],
+  ['therco_1821',['therco',['../ERF__Constants_8H.html#a583248545708b1481d513f2c9621f0ba',1,'ERF_Constants.H']]],
+  ['theta_5finp_5fsound_1822',['theta_inp_sound',['../structInputSoundingData.html#acf38db2cecabcd07fe794b41974ba866',1,'InputSoundingData']]],
+  ['theta_5finp_5fsound_5fd_1823',['theta_inp_sound_d',['../structInputSoundingData.html#ae990e8cfad78f0fa5a603db3154d0124',1,'InputSoundingData']]],
+  ['theta_5fprim_1824',['Theta_prim',['../classERF.html#a71629ae2fda396472198691b75d83b2e',1,'ERF']]],
+  ['theta_5fref_5finp_5fsound_1825',['theta_ref_inp_sound',['../structInputSoundingData.html#a15782809644a4daa0e8de9c3cc4c346a',1,'InputSoundingData']]],
+  ['timestep_1826',['timestep',['../classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612',1,'MRISplitIntegrator']]],
+  ['tprmax_1827',['tprmax',['../ERF__Constants_8H.html#a06a70c05086650ead098e2994ad1bd43',1,'ERF_Constants.H']]],
+  ['tprmin_1828',['tprmin',['../ERF__Constants_8H.html#a9180d622aa39d89312941eba03fa1347',1,'ERF_Constants.H']]]
 ];
