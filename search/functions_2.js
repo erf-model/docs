@@ -6,7 +6,7 @@ var searchData=
   ['clearlevel_1188',['ClearLevel',['../classERF.html#ac44e400a7ce68e18fa44e9416cb1344e',1,'ERF']]],
   ['close_1189',['close',['../classncutils_1_1NCFile.html#af2c4a20c38edb3fae69087a80875b8b9',1,'ncutils::NCFile']]],
   ['closest_5findex_1190',['closest_index',['../ERF__ReadBndryPlanes_8cpp.html#adc5227730afe35653b2dfa88898eb00a',1,'ERF_ReadBndryPlanes.cpp']]],
-  ['compute_5faverages_1191',['compute_averages',['../classMOSTAverage.html#a7a28005871bb8abb49f44c3976133a4f',1,'MOSTAverage::compute_averages()'],['../classPlaneAverage.html#a0b4bb610551a2f07eb05b8e8b7d91820',1,'PlaneAverage::compute_averages(const IndexSelector &amp;idxOp, const amrex::MultiFab &amp;mfab)'],['../classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e',1,'PlaneAverage::compute_averages(const IndexSelector &amp;idxOp, const amrex::MultiFab &amp;mfab)']]],
+  ['compute_5faverages_1191',['compute_averages',['../classMOSTAverage.html#a7a28005871bb8abb49f44c3976133a4f',1,'MOSTAverage::compute_averages()'],['../classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e',1,'PlaneAverage::compute_averages()']]],
   ['compute_5fh_5feta_5fatcellcenter_1192',['Compute_h_eta_AtCellCenter',['../TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2',1,'TerrainMetrics.H']]],
   ['compute_5fh_5feta_5fatedgecenteri_1193',['Compute_h_eta_AtEdgeCenterI',['../TerrainMetrics_8H.html#aed973861215c4eb0697f7a83b37016a9',1,'TerrainMetrics.H']]],
   ['compute_5fh_5feta_5fatedgecenterj_1194',['Compute_h_eta_AtEdgeCenterJ',['../TerrainMetrics_8H.html#a0251c09947155307e047f79fccdbd463',1,'TerrainMetrics.H']]],

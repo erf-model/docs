@@ -4,7 +4,6 @@ var classPlaneAverage =
     [ "PlaneAverage", "classPlaneAverage.html#aab8235d99bd3e841f0a2a5fb563c0bfa", null ],
     [ "~PlaneAverage", "classPlaneAverage.html#a961decb14c2137f36e17ceeaf560b452", null ],
     [ "axis", "classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a", null ],
-    [ "compute_averages", "classPlaneAverage.html#a0b4bb610551a2f07eb05b8e8b7d91820", null ],
     [ "compute_averages", "classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e", null ],
     [ "dx", "classPlaneAverage.html#abf7bfae5c1b6fed56ff09fd06368b12c", null ],
     [ "field", "classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5", null ],
