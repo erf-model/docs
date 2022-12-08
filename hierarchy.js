@@ -3,7 +3,7 @@ var hierarchy =
     [ "ABLMostData", "classABLMostData.html", [
       [ "ABLMost", "classABLMost.html", null ]
     ] ],
-    [ "AmrCore", null, [
+    [ "amrex::AmrCore", null, [
       [ "ERF", "classERF.html", null ]
     ] ],
     [ "DirectionSelector< Index >", "structDirectionSelector.html", null ],
@@ -13,7 +13,7 @@ var hierarchy =
     [ "ERFFillPatcher", "classERFFillPatcher.html", null ],
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", null ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
-    [ "IntegratorBase", null, [
+    [ "amrex::IntegratorBase", null, [
       [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ]
     ] ],
     [ "MOSTAverage", "classMOSTAverage.html", null ],
