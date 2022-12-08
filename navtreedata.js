@@ -72,8 +72,8 @@ var NAVTREEINDEX =
 "ERF__Math_8H.html",
 "TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3",
 "classERF.html#ae49b5055f9a7117fa15918a5daa775b7",
-"classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423",
-"structSolverChoice.html#a4829661b558b213e32970a02e147077f"
+"classncutils_1_1NCFile.html",
+"structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
