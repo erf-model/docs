@@ -531,7 +531,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">delete</span> <a class="code" href="classMOSTAverage.html#a0f89207611feb0e6856a0c61e76fae7e">m_j_indx</a>[lev];</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">delete</span> <a class="code" href="classMOSTAverage.html#a6dd359089ee57476f0897de53034b652">m_k_indx</a>[lev];</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1054,7 +1054,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#ac04a90b03c99ad27ae0ea887923a2354">m_averages</a>[lev][comp]; };</div>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#ac04a90b03c99ad27ae0ea887923a2354">m_averages</a>[lev][comp]; }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classABLMost.html#aad0dffa8eb90ca53b4a6528a8b81f3dc">ABLMost::get_mac_avg()</a>.</p>
 <div class="dynheader">
@@ -1091,7 +1091,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#af2f1477f6bc5e4b2f2ddee27d17dab9f">m_zref</a>; };</div>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#af2f1477f6bc5e4b2f2ddee27d17dab9f">m_zref</a>; }</div>
 <div class="ttc" id="aclassMOSTAverage_html_af2f1477f6bc5e4b2f2ddee27d17dab9f"><div class="ttname"><a href="classMOSTAverage.html#af2f1477f6bc5e4b2f2ddee27d17dab9f">MOSTAverage::m_zref</a></div><div class="ttdeci">amrex::Real m_zref</div><div class="ttdef"><b>Definition:</b> MOSTAverage.H:154</div></div>
 </div><!-- fragment -->
 </div>
@@ -1514,7 +1514,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {<a class="code" href="classMOSTAverage.html#ab227f9a8e9224820c00fa8b223712b3e">m_ncell_region</a> = (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1) * (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1) * (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1);};</div>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {<a class="code" href="classMOSTAverage.html#ab227f9a8e9224820c00fa8b223712b3e">m_ncell_region</a> = (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1) * (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1) * (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1);}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#a4d01af62a3892f1f1e9191aef4b47739">MOSTAverage()</a>.</p>
 <div class="dynheader">
@@ -1678,7 +1678,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">// Search to get z/k</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        amrex::Real zval;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        amrex::Real zval= 0.0;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">int</span> kmax = ubound(z_arr).z;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">int</span> i_new = (int) (xp * dxi[0] - 0.5);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">int</span> j_new = (int) (yp * dxi[1] - 0.5);</div>

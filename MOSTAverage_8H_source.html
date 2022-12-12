@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('MOSTAverage_8H_source.html',''); initR
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">delete</span> <a class="code" href="classMOSTAverage.html#a0f89207611feb0e6856a0c61e76fae7e">m_j_indx</a>[lev];</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">delete</span> <a class="code" href="classMOSTAverage.html#a6dd359089ee57476f0897de53034b652">m_k_indx</a>[lev];</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Reset the pointers to field MFs</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMOSTAverage.html#ad9b6ae9832bb372c8e25054029394168">update_field_ptrs</a>(<span class="keywordtype">int</span> lev,</div>
@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('MOSTAverage_8H_source.html',''); initR
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Compute ncells per plane</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classMOSTAverage.html#a1eafe515fb0a3fc673d604b854a3cc13">   43</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMOSTAverage.html#a1eafe515fb0a3fc673d604b854a3cc13">set_region_normalization</a>()</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {<a class="code" href="classMOSTAverage.html#ab227f9a8e9224820c00fa8b223712b3e">m_ncell_region</a> = (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1) * (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1) * (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1);};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {<a class="code" href="classMOSTAverage.html#ab227f9a8e9224820c00fa8b223712b3e">m_ncell_region</a> = (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1) * (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1) * (2 * <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a> + 1);}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Populate a 2D iMF k_indx (w/o terrain)</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMOSTAverage.html#a8928b9f9d6d45fdd9fd88053fcae34e2">set_k_indices_N</a>();</div>
@@ -168,10 +168,10 @@ $(document).ready(function(){initNavTree('MOSTAverage_8H_source.html',''); initR
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMOSTAverage.html#ac37b71ce655ea973ad6fc4c564b040c1">write_averages</a>(<span class="keywordtype">int</span> lev);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Get pointer to the 2D mf of averages</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">   83</a></span>&#160;    <span class="keyword">const</span> amrex::MultiFab* <a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(<span class="keywordtype">int</span> lev, <span class="keywordtype">int</span> comp)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#ac04a90b03c99ad27ae0ea887923a2354">m_averages</a>[lev][comp]; };</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">   83</a></span>&#160;    <span class="keyword">const</span> amrex::MultiFab* <a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(<span class="keywordtype">int</span> lev, <span class="keywordtype">int</span> comp)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#ac04a90b03c99ad27ae0ea887923a2354">m_averages</a>[lev][comp]; }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Get z_ref (may be computed from specified k_indx)</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classMOSTAverage.html#a631ab3761032970d2c750990cfae180f">   86</a></span>&#160;    amrex::Real <a class="code" href="classMOSTAverage.html#a631ab3761032970d2c750990cfae180f">get_zref</a>() { <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#af2f1477f6bc5e4b2f2ddee27d17dab9f">m_zref</a>; };</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classMOSTAverage.html#a631ab3761032970d2c750990cfae180f">   86</a></span>&#160;    amrex::Real <a class="code" href="classMOSTAverage.html#a631ab3761032970d2c750990cfae180f">get_zref</a>() { <span class="keywordflow">return</span> <a class="code" href="classMOSTAverage.html#af2f1477f6bc5e4b2f2ddee27d17dab9f">m_zref</a>; }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// Interpolate fields to a specified position (w/ terrain)</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    AMREX_GPU_HOST_DEVICE AMREX_INLINE</div>
@@ -186,7 +186,7 @@ $(document).ready(function(){initNavTree('MOSTAverage_8H_source.html',''); initR
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">int</span> interp_comp)</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">// Search to get z/k</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        amrex::Real zval;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        amrex::Real zval= 0.0;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">int</span> kmax = ubound(z_arr).z;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">int</span> i_new = (int) (xp * dxi[0] - 0.5);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">int</span> j_new = (int) (yp * dxi[1] - 0.5);</div>
