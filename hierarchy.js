@@ -16,6 +16,7 @@ var hierarchy =
     [ "amrex::IntegratorBase", null, [
       [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ]
     ] ],
+    [ "Microphysics", "classMicrophysics.html", null ],
     [ "MOSTAverage", "classMOSTAverage.html", null ],
     [ "MultiBlockContainer", "classMultiBlockContainer.html", null ],
     [ "ncutils::NCDim", "structncutils_1_1NCDim.html", null ],

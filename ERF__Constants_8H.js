@@ -25,6 +25,7 @@ var ERF__Constants_8H =
     [ "fac_sub", "ERF__Constants_8H.html#abde625fc7d5d246fab592b40afdde0fc", null ],
     [ "Gamma", "ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231", null ],
     [ "iGamma", "ERF__Constants_8H.html#ab24194b3b11ee04368e1087acda6bde7", null ],
+    [ "inv_cp", "ERF__Constants_8H.html#a6e8785cb0f81925808d21fbc367b49b0", null ],
     [ "ip_0", "ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000", null ],
     [ "iR_d", "ERF__Constants_8H.html#a2c83556bc439f3f48ca5eb1cb5c81842", null ],
     [ "KAPPA", "ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093", null ],

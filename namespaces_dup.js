@@ -28,6 +28,7 @@ var namespaces_dup =
     ] ],
     [ "InterpType", "namespaceInterpType.html", null ],
     [ "IntVar", "namespaceIntVar.html", null ],
+    [ "MicVar", "namespaceMicVar.html", null ],
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
     [ "Prim", "namespacePrim.html", null ],
     [ "RHSVar", "namespaceRHSVar.html", null ],
