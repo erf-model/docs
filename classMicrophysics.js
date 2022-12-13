@@ -47,7 +47,7 @@ var classMicrophysics =
     [ "gams3", "classMicrophysics.html#aed1254bcbffb909f292c8e3057015575", null ],
     [ "m_geom", "classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e", null ],
     [ "mic_fab_vars", "classMicrophysics.html#a48cd7435c92bdd8cb4af25d44efb3207", null ],
-    [ "nghost", "classMicrophysics.html#ae0c6a64088a62bc6543ed0ab3278bbb0", null ],
+    [ "nz", "classMicrophysics.html#a6dc2ac9689fc5f2749b0950c91d79367", null ],
     [ "pres1d", "classMicrophysics.html#aea50599e20153e7a51a5caab6202f3c0", null ],
     [ "qifall", "classMicrophysics.html#ab246f2a9f48d82f66379b39aa5ac6610", null ],
     [ "qn1d", "classMicrophysics.html#a926edbada566078ab7a62669bf3d2705", null ],
@@ -61,5 +61,7 @@ var classMicrophysics =
     [ "vgrau", "classMicrophysics.html#ab543833e5450a30eede9633d29b2def3", null ],
     [ "vrain", "classMicrophysics.html#abe270793a1a7a673016f8a6a49d5e73b", null ],
     [ "vsnow", "classMicrophysics.html#a0ad95366980d17a2a2115dd77eaf89e3", null ],
+    [ "zhi", "classMicrophysics.html#ae325c171a6bb3c43d0e8b874d4f78e8d", null ],
+    [ "zlo", "classMicrophysics.html#a2b08b42d8c9c9a2bed03645635ab7e5c", null ],
     [ "zmid", "classMicrophysics.html#a93f91090c4251f2035e18037625eba2a", null ]
 ];
