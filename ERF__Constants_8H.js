@@ -1,6 +1,9 @@
 var ERF__Constants_8H =
 [
+    [ "a_bg", "ERF__Constants_8H.html#a0910a9292394778082e25954da60fe05", null ],
+    [ "a_gr", "ERF__Constants_8H.html#a16f25ab24f4aca4bb0ff8f3203b0b924", null ],
     [ "a_grau", "ERF__Constants_8H.html#a2fe4f2c6313692ac5073cb9ca72552e2", null ],
+    [ "a_pr", "ERF__Constants_8H.html#afddfdf9f48fef3929914f786ce79022a", null ],
     [ "a_rain", "ERF__Constants_8H.html#adf319f31edb7d4f2b4b712096189734b", null ],
     [ "a_snow", "ERF__Constants_8H.html#aeb6d6f09d27c3f646bc4d91b7b88e570", null ],
     [ "alphaelq", "ERF__Constants_8H.html#a3c70f890015491421d536954a374324d", null ],
@@ -12,8 +15,11 @@ var ERF__Constants_8H =
     [ "boltz", "ERF__Constants_8H.html#a6700ceab4c13f15657c8137f8dd8c039", null ],
     [ "c_p", "ERF__Constants_8H.html#a9b830c5a6fc48c926cc1994edd333bed", null ],
     [ "c_v", "ERF__Constants_8H.html#a2c7ec1664a15fb75c520c67a9dfecd45", null ],
+    [ "cgrau", "ERF__Constants_8H.html#a22bb5d96152ac76ffe39d98d67b2b07a", null ],
     [ "CONST_GRAV", "ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43", null ],
     [ "cp_v", "ERF__Constants_8H.html#a5eb75b80a0a6128c5876b4cb2b0cb8a9", null ],
+    [ "crain", "ERF__Constants_8H.html#aedc41c83fba50dcbd5e1385007d3edec", null ],
+    [ "csnow", "ERF__Constants_8H.html#a00a835048e6d7b67e76cd044f483a0e2", null ],
     [ "diffelq", "ERF__Constants_8H.html#a4e1c44dade7fcd7648d3e87ba5bba4c1", null ],
     [ "egccoef", "ERF__Constants_8H.html#a65f78c57eaba4f35dc9183cd2f3e66e3", null ],
     [ "egicoef", "ERF__Constants_8H.html#a6b49f5e9d61881c5a59656453a6c025f", null ],
