@@ -31,7 +31,7 @@ var NAVTREEINDEX1 =
 "ERF__init_8cpp.html":[3,0,0,14],
 "ERF__init__bcs_8cpp.html":[3,0,0,16],
 "ERF__make__fast__coeffs_8cpp.html":[3,0,0,5,4],
-"ERF__make__fast__coeffs_8cpp.html#ad5678b1a510ab8fa9fc855a90d1fac3e":[3,0,0,5,4,0],
+"ERF__make__fast__coeffs_8cpp.html#a383bfe63fc9258f3ad1b943b58b9341f":[3,0,0,5,4,0],
 "ERF__slow__rhs__post_8cpp.html":[3,0,0,5,6],
 "ERF__slow__rhs__post_8cpp.html#a9e2437c288815df3c784c87e1b49e21c":[3,0,0,5,6,0],
 "ERF__slow__rhs__pre_8cpp.html":[3,0,0,5,7],
