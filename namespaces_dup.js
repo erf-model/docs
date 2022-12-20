@@ -28,6 +28,9 @@ var namespaces_dup =
     ] ],
     [ "InterpType", "namespaceInterpType.html", null ],
     [ "IntVar", "namespaceIntVar.html", null ],
+    [ "math_bcs", "namespacemath__bcs.html", [
+      [ "BCNames", "namespacemath__bcs.html#ad658180bdee3824ae0cac8ea1e2be881", null ]
+    ] ],
     [ "MicVar", "namespaceMicVar.html", null ],
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
     [ "Prim", "namespacePrim.html", null ],

@@ -1,7 +1,7 @@
 var classMicrophysics =
 [
     [ "FabPtr", "classMicrophysics.html#a51bd16767ddde86ef63e56cb9a700c07", null ],
-    [ "Microphysics", "classMicrophysics.html#a35680b487f72c58f2a6d789a2db7b44a", null ],
+    [ "Microphysics", "classMicrophysics.html#a0ff473fa0b291bdf049f106f1ffbfec3", null ],
     [ "~Microphysics", "classMicrophysics.html#ab9d9d3f804f3d0d9aacf12c15b1b1417", null ],
     [ "Cloud", "classMicrophysics.html#a80070b9a33a6ebbd2fd458cd099bfa48", null ],
     [ "Diagnose", "classMicrophysics.html#a720779b06299fec55c4d4c4d73962a34", null ],
@@ -28,7 +28,11 @@ var classMicrophysics =
     [ "evapr2", "classMicrophysics.html#ae5d5fae39fdf79ba7a2dcab4f3db2e84", null ],
     [ "evaps1", "classMicrophysics.html#a94bb85ea6686a5beb9435383afab79f7", null ],
     [ "evaps2", "classMicrophysics.html#ac41fc8c96ef251a05d2dbccfa58c38dd", null ],
+    [ "fac_cond", "classMicrophysics.html#a324f7bc57fd1be3674c9f24e23266d4d", null ],
+    [ "fac_fus", "classMicrophysics.html#a44e13805d5fdd434a682232451d53f05", null ],
+    [ "fac_sub", "classMicrophysics.html#a0207516133235b87104af3d519811e8f", null ],
     [ "gamaz", "classMicrophysics.html#a3b1df5efd48baab9e60d9bed9a03bdeb", null ],
+    [ "gOcp", "classMicrophysics.html#add05d805f8ef4c63f909279b7e841ceb", null ],
     [ "m_geom", "classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e", null ],
     [ "mic_fab_vars", "classMicrophysics.html#a48cd7435c92bdd8cb4af25d44efb3207", null ],
     [ "nlev", "classMicrophysics.html#aabb462adda62aa86412bef752c56b8cd", null ],
