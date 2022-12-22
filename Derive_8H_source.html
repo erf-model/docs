@@ -187,8 +187,33 @@ $(document).ready(function(){initNavTree('Derive_8H_source.html',''); initResiza
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  amrex::Real time,</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MOISTURE</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordtype">void</span> erf_derQt(</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  amrex::FArrayBox&amp; derfab,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">int</span> dcomp,</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  amrex::Real time,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span> erf_derQp(</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; bx,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  amrex::FArrayBox&amp; derfab,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordtype">int</span> dcomp,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keyword">const</span> amrex::FArrayBox&amp; datfab,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">const</span> amrex::Geometry&amp; geomdata,</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  amrex::Real time,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span>* bcrec,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> level);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="anamespacederived_html"><div class="ttname"><a href="namespacederived.html">derived</a></div><div class="ttdef"><b>Definition:</b> Derive.cpp:5</div></div>
 <div class="ttc" id="anamespacederived_html_a2d9c0cabf04515367f2b721320dcddab"><div class="ttname"><a href="namespacederived.html#a2d9c0cabf04515367f2b721320dcddab">derived::erf_derscalar</a></div><div class="ttdeci">void erf_derscalar(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:123</div></div>
 <div class="ttc" id="anamespacederived_html_a9935603239fe8510b11179da8e76c39c"><div class="ttname"><a href="namespacederived.html#a9935603239fe8510b11179da8e76c39c">derived::erf_derrhodivide</a></div><div class="ttdeci">void erf_derrhodivide(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, const amrex::FArrayBox &amp;datfab, const int scalar_index)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:7</div></div>
