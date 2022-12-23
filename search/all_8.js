@@ -24,7 +24,7 @@ var searchData=
   ['init1darrays_458',['init1DArrays',['../classERF.html#a7261c4eb7722af0dfe6cdfb8e2e9e4db',1,'ERF']]],
   ['init_5fbcs_459',['init_bcs',['../classERF.html#a618e8fdff3239cc79d4145d02b1ecaa2',1,'ERF']]],
   ['init_5fbx_5fscalars_5ffrom_5finput_5fsounding_460',['init_bx_scalars_from_input_sounding',['../classERF.html#a8e16855ead5b35280af59f052416066b',1,'ERF']]],
-  ['init_5fbx_5fscalars_5ffrom_5finput_5fsounding_5fhse_461',['init_bx_scalars_from_input_sounding_hse',['../classERF.html#a50108737ff4d0416bd29196a5e022e5b',1,'ERF']]],
+  ['init_5fbx_5fscalars_5ffrom_5finput_5fsounding_5fhse_461',['init_bx_scalars_from_input_sounding_hse',['../classERF.html#ab28e3aff2c1733b8d74fcb91b9b841f9',1,'ERF']]],
   ['init_5fbx_5fvelocities_5ffrom_5finput_5fsounding_462',['init_bx_velocities_from_input_sounding',['../classERF.html#a397164e5f80c2286593273197cb6ceea',1,'ERF']]],
   ['init_5fcustom_463',['init_custom',['../classERF.html#a604939a8058f7efa36a427adb889739c',1,'ERF']]],
   ['init_5fcustom_5fprob_464',['init_custom_prob',['../prob__common_8H.html#a29a26c3922961c3a9e93742fa089a1eb',1,'prob_common.H']]],
