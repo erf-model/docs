@@ -8,8 +8,8 @@ var searchData=
   ['d_5frayleigh_5fubar_212',['d_rayleigh_ubar',['../classERF.html#af33ee878e24ced10b3da319795723db0',1,'ERF']]],
   ['d_5frayleigh_5fvbar_213',['d_rayleigh_vbar',['../classERF.html#a879501e88824fa6a00ffe1509059b21e',1,'ERF']]],
   ['data_214',['data',['../structNDArray.html#a9d3679c95b5bf1813a7edaedf221837e',1,'NDArray']]],
-  ['datalog_215',['datalog',['../classERF.html#a1cade630b005dbcc0f644987ef3db287',1,'ERF']]],
-  ['datalog_216',['DataLog',['../classERF.html#aa2c3ee1910008b828b9da79ccdfe3871',1,'ERF']]],
+  ['datalog_215',['DataLog',['../classERF.html#aa2c3ee1910008b828b9da79ccdfe3871',1,'ERF']]],
+  ['datalog_216',['datalog',['../classERF.html#a1cade630b005dbcc0f644987ef3db287',1,'ERF']]],
   ['datalogname_217',['datalogname',['../classERF.html#a9248a4eb025c2647e003f838cba52a21',1,'ERF']]],
   ['datalogname_218',['DataLogName',['../classERF.html#afbf411b8cb24554d9aad7c76b0210e92',1,'ERF']]],
   ['datastruct_2eh_219',['DataStruct.H',['../DataStruct_8H.html',1,'']]],
@@ -66,11 +66,10 @@ var searchData=
   ['domain_5fbcs_5ftype_270',['domain_bcs_type',['../classERF.html#a574521986a6e403159f83c8b8123ba90',1,'ERF']]],
   ['domain_5fbcs_5ftype_5fd_271',['domain_bcs_type_d',['../classERF.html#a8a99e22b1111c803e31b4afd5fcdea60',1,'ERF']]],
   ['doprecip_272',['doprecip',['../classMicrophysics.html#aee12ac39e9cc822e43b186905a3baab5',1,'Microphysics']]],
-  ['dosmoke_273',['dosmoke',['../classMicrophysics.html#aa2374aecdf0afce413d5421034b1db91',1,'Microphysics']]],
-  ['dt_274',['dt',['../classMicrophysics.html#a1e4a1238e3d3f71cd9f634fc71be4207',1,'Microphysics::dt()'],['../classERF.html#ad34bae243fdb6c3029f5abe4fb4bca2d',1,'ERF::dt()']]],
-  ['dt_5fmri_5fratio_275',['dt_mri_ratio',['../classERF.html#a3cf7cb2e51eb7b69cb4079ffc6722459',1,'ERF']]],
-  ['dtos_276',['dtos',['../classMultiBlockContainer.html#a537ef22d2809607f9d353b912eedffcf',1,'MultiBlockContainer']]],
-  ['dtype_277',['DType',['../structNDArray.html#a96033b69f69ea0ae537a24288715752d',1,'NDArray']]],
-  ['dx_278',['dx',['../classPlaneAverage.html#abf7bfae5c1b6fed56ff09fd06368b12c',1,'PlaneAverage']]],
-  ['dynamicviscosity_279',['dynamicViscosity',['../structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446',1,'SolverChoice']]]
+  ['dt_273',['dt',['../classERF.html#ad34bae243fdb6c3029f5abe4fb4bca2d',1,'ERF::dt()'],['../classMicrophysics.html#a1e4a1238e3d3f71cd9f634fc71be4207',1,'Microphysics::dt()']]],
+  ['dt_5fmri_5fratio_274',['dt_mri_ratio',['../classERF.html#a3cf7cb2e51eb7b69cb4079ffc6722459',1,'ERF']]],
+  ['dtos_275',['dtos',['../classMultiBlockContainer.html#a537ef22d2809607f9d353b912eedffcf',1,'MultiBlockContainer']]],
+  ['dtype_276',['DType',['../structNDArray.html#a96033b69f69ea0ae537a24288715752d',1,'NDArray']]],
+  ['dx_277',['dx',['../classPlaneAverage.html#abf7bfae5c1b6fed56ff09fd06368b12c',1,'PlaneAverage']]],
+  ['dynamicviscosity_278',['dynamicViscosity',['../structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446',1,'SolverChoice']]]
 ];

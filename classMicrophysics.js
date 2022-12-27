@@ -20,7 +20,6 @@ var classMicrophysics =
     [ "coefice", "classMicrophysics.html#a0f76dd7e76c5fa79b8d2352ccc45990e", null ],
     [ "docloud", "classMicrophysics.html#abe288606849f6a3ca2a98fbd0bd5c89c", null ],
     [ "doprecip", "classMicrophysics.html#aee12ac39e9cc822e43b186905a3baab5", null ],
-    [ "dosmoke", "classMicrophysics.html#aa2374aecdf0afce413d5421034b1db91", null ],
     [ "dt", "classMicrophysics.html#a1e4a1238e3d3f71cd9f634fc71be4207", null ],
     [ "evapg1", "classMicrophysics.html#a5213fa57f8975373b6e9980cf429b90b", null ],
     [ "evapg2", "classMicrophysics.html#ada4ebee343b682167411db65c5bed5fe", null ],

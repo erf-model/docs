@@ -1,6 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"classncutils_1_1NCGroup.html#a00ea1ccd06adafc43396239ec842b23f":[2,0,0,3,21],
 "classncutils_1_1NCGroup.html#a0f24e998915e60b177d036595f0f2734":[2,0,0,3,15],
 "classncutils_1_1NCGroup.html#a1bfb961e66e7c635ae92cee3f8cdeeac":[2,0,0,3,19],
 "classncutils_1_1NCGroup.html#a2f10bc405d66f794c4e8a8fd71dc718d":[2,0,0,3,14],
@@ -118,8 +117,8 @@ var NAVTREEINDEX4 =
 "functions_x.html":[2,3,0,22],
 "functions_z.html":[2,3,0,23],
 "functions_~.html":[2,3,0,24],
-"globals.html":[3,1,0,0],
 "globals.html":[3,1,0],
+"globals.html":[3,1,0,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -148,8 +147,8 @@ var NAVTREEINDEX4 =
 "globals_y.html":[3,1,0,21],
 "globals_z.html":[3,1,0,22],
 "hierarchy.html":[2,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX4 =
 "structNDArray.html#a4d7550e3c00d13d8397f1cfbdfd2ab48":[2,0,15,6],
 "structNDArray.html#a54f69e355d97f10089f82fb1087fb0af":[2,0,15,3],
 "structNDArray.html#a63dda01f8d55fd1fc75437b125eb27b3":[2,0,15,9],
-"structNDArray.html#a6a0a485b6da8ce09dda81fc51607da73":[2,0,15,10]
+"structNDArray.html#a6a0a485b6da8ce09dda81fc51607da73":[2,0,15,10],
+"structNDArray.html#a7bd19397e539424afc06e9fe12760434":[2,0,15,1]
 };
