@@ -110,8 +110,10 @@ Collaboration diagram for Microphysics:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0ff473fa0b291bdf049f106f1ffbfec3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a0ff473fa0b291bdf049f106f1ffbfec3">Microphysics</a> (<a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;sc)</td></tr>
-<tr class="separator:a0ff473fa0b291bdf049f106f1ffbfec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79bf043906abc7e4d738318ec8e7aa2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e">Microphysics</a> ()</td></tr>
+<tr class="separator:a79bf043906abc7e4d738318ec8e7aa2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06807df2efe3d139b15066e818b635c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a06807df2efe3d139b15066e818b635c1">define</a> (<a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;sc)</td></tr>
+<tr class="separator:a06807df2efe3d139b15066e818b635c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9d9d3f804f3d0d9aacf12c15b1b1417"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#ab9d9d3f804f3d0d9aacf12c15b1b1417">~Microphysics</a> ()=default</td></tr>
 <tr class="separator:ab9d9d3f804f3d0d9aacf12c15b1b1417"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80070b9a33a6ebbd2fd458cd099bfa48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a80070b9a33a6ebbd2fd458cd099bfa48">Cloud</a> ()</td></tr>
@@ -237,8 +239,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0ff473fa0b291bdf049f106f1ffbfec3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ff473fa0b291bdf049f106f1ffbfec3">&#9670;&nbsp;</a></span>Microphysics()</h2>
+<a id="a79bf043906abc7e4d738318ec8e7aa2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79bf043906abc7e4d738318ec8e7aa2e">&#9670;&nbsp;</a></span>Microphysics()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,8 +251,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">Microphysics::Microphysics </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
-          <td class="paramname"><em>sc</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -260,25 +261,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  :</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classMicrophysics.html#abe288606849f6a3ca2a98fbd0bd5c89c">docloud</a>(sc.do_cloud),</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classMicrophysics.html#aee12ac39e9cc822e43b186905a3baab5">doprecip</a>(sc.do_precip),</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classMicrophysics.html#ae190758a435d5b86f4e5c2f66c6e052d">m_fac_cond</a>(<a class="code" href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>),</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classMicrophysics.html#af9e555a96369fcb538e0dd319aeaf191">m_fac_fus</a>(<a class="code" href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>),</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classMicrophysics.html#a5aa7c8d2acd2d8f22c64c48839310b27">m_fac_sub</a>(<a class="code" href="ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>),</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classMicrophysics.html#a83f270950e1cea66eb3d224f116065f1">m_gOcp</a>(<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  {}</div>
-<div class="ttc" id="aERF__Constants_8H_html_a0f65ea12b4405c50f1d777f7ca82dcfd"><div class="ttname"><a href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a></div><div class="ttdeci">constexpr amrex::Real lfus</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:61</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a3ab435b88eae71bef826cb01254ff33d"><div class="ttname"><a href="ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a></div><div class="ttdeci">constexpr amrex::Real lsub</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:62</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a7b45c0074d559f423ac2d48e1b171518"><div class="ttname"><a href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a></div><div class="ttdeci">constexpr amrex::Real lcond</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:60</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:15</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a5aa7c8d2acd2d8f22c64c48839310b27"><div class="ttname"><a href="classMicrophysics.html#a5aa7c8d2acd2d8f22c64c48839310b27">Microphysics::m_fac_sub</a></div><div class="ttdeci">amrex::Real m_fac_sub</div><div class="ttdef"><b>Definition:</b> Microphysics.H:98</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a83f270950e1cea66eb3d224f116065f1"><div class="ttname"><a href="classMicrophysics.html#a83f270950e1cea66eb3d224f116065f1">Microphysics::m_gOcp</a></div><div class="ttdeci">amrex::Real m_gOcp</div><div class="ttdef"><b>Definition:</b> Microphysics.H:99</div></div>
-<div class="ttc" id="aclassMicrophysics_html_abe288606849f6a3ca2a98fbd0bd5c89c"><div class="ttname"><a href="classMicrophysics.html#abe288606849f6a3ca2a98fbd0bd5c89c">Microphysics::docloud</a></div><div class="ttdeci">bool docloud</div><div class="ttdef"><b>Definition:</b> Microphysics.H:93</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ae190758a435d5b86f4e5c2f66c6e052d"><div class="ttname"><a href="classMicrophysics.html#ae190758a435d5b86f4e5c2f66c6e052d">Microphysics::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> Microphysics.H:96</div></div>
-<div class="ttc" id="aclassMicrophysics_html_aee12ac39e9cc822e43b186905a3baab5"><div class="ttname"><a href="classMicrophysics.html#aee12ac39e9cc822e43b186905a3baab5">Microphysics::doprecip</a></div><div class="ttdeci">bool doprecip</div><div class="ttdef"><b>Definition:</b> Microphysics.H:93</div></div>
-<div class="ttc" id="aclassMicrophysics_html_af9e555a96369fcb538e0dd319aeaf191"><div class="ttname"><a href="classMicrophysics.html#af9e555a96369fcb538e0dd319aeaf191">Microphysics::m_fac_fus</a></div><div class="ttdeci">amrex::Real m_fac_fus</div><div class="ttdef"><b>Definition:</b> Microphysics.H:97</div></div>
-<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> DataStruct.H:348</div></div>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -455,15 +438,18 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aMicrophysics__Utils_8H_html_a7baba5d74922033bf93526933a0d77ec"><div class="ttname"><a href="Microphysics__Utils_8H.html#a7baba5d74922033bf93526933a0d77ec">erf_dtqsati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_dtqsati(amrex::Real t, amrex::Real p, amrex::Real &amp;dtqsati)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:128</div></div>
 <div class="ttc" id="aMicrophysics__Utils_8H_html_a8e4b0c6ed8b95c2040dc0c9e8fcb8615"><div class="ttname"><a href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;qsatw)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:121</div></div>
 <div class="ttc" id="aMicrophysics__Utils_8H_html_ac39ef2a869ef543f708d5ed7da4754d3"><div class="ttname"><a href="Microphysics__Utils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsati(amrex::Real t, amrex::Real p, amrex::Real &amp;qsati)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:114</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a48cd7435c92bdd8cb4af25d44efb3207"><div class="ttname"><a href="classMicrophysics.html#a48cd7435c92bdd8cb4af25d44efb3207">Microphysics::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> Microphysics.H:124</div></div>
-<div class="ttc" id="aclassMicrophysics_html_aea50599e20153e7a51a5caab6202f3c0"><div class="ttname"><a href="classMicrophysics.html#aea50599e20153e7a51a5caab6202f3c0">Microphysics::pres1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; pres1d</div><div class="ttdef"><b>Definition:</b> Microphysics.H:117</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a48cd7435c92bdd8cb4af25d44efb3207"><div class="ttname"><a href="classMicrophysics.html#a48cd7435c92bdd8cb4af25d44efb3207">Microphysics::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> Microphysics.H:127</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a5aa7c8d2acd2d8f22c64c48839310b27"><div class="ttname"><a href="classMicrophysics.html#a5aa7c8d2acd2d8f22c64c48839310b27">Microphysics::m_fac_sub</a></div><div class="ttdeci">amrex::Real m_fac_sub</div><div class="ttdef"><b>Definition:</b> Microphysics.H:101</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ae190758a435d5b86f4e5c2f66c6e052d"><div class="ttname"><a href="classMicrophysics.html#ae190758a435d5b86f4e5c2f66c6e052d">Microphysics::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> Microphysics.H:99</div></div>
+<div class="ttc" id="aclassMicrophysics_html_aea50599e20153e7a51a5caab6202f3c0"><div class="ttname"><a href="classMicrophysics.html#aea50599e20153e7a51a5caab6202f3c0">Microphysics::pres1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; pres1d</div><div class="ttdef"><b>Definition:</b> Microphysics.H:120</div></div>
+<div class="ttc" id="aclassMicrophysics_html_af9e555a96369fcb538e0dd319aeaf191"><div class="ttname"><a href="classMicrophysics.html#af9e555a96369fcb538e0dd319aeaf191">Microphysics::m_fac_fus</a></div><div class="ttdeci">amrex::Real m_fac_fus</div><div class="ttdef"><b>Definition:</b> Microphysics.H:100</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">MicVar::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:197</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a584161f7272862cb35496c7560617286"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a584161f7272862cb35496c7560617286">MicVar::qt</a></div><div class="ttdeci">@ qt</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:193</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a62db2b95f840b974246d431152593fb8"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a62db2b95f840b974246d431152593fb8">MicVar::qn</a></div><div class="ttdeci">@ qn</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:202</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8aaf3c3122dd3954fe2b19abfc5c27b3dc"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8aaf3c3122dd3954fe2b19abfc5c27b3dc">MicVar::tabs</a></div><div class="ttdeci">@ tabs</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:196</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8af86a273a88ba038dd1ea798c51ebf8c4"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8af86a273a88ba038dd1ea798c51ebf8c4">MicVar::qp</a></div><div class="ttdeci">@ qp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:194</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9">ERF::Advance()</a>, and <a class="el" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01">Proc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01">Proc()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -485,12 +471,53 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMicrophysics_a80070b9a33a6ebbd2fd458cd099bfa48_icgraph.png" border="0" usemap="#aclassMicrophysics_a80070b9a33a6ebbd2fd458cd099bfa48_icgraph" alt=""/></div>
 <map name="aclassMicrophysics_a80070b9a33a6ebbd2fd458cd099bfa48_icgraph" id="aclassMicrophysics_a80070b9a33a6ebbd2fd458cd099bfa48_icgraph">
-<area shape="rect" title=" " alt="" coords="196,31,348,57"/>
-<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="21,5,132,32"/>
-<area shape="rect" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01" title=" " alt="" coords="5,56,148,83"/>
+<area shape="rect" title=" " alt="" coords="196,5,348,32"/>
+<area shape="rect" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01" title=" " alt="" coords="5,5,148,32"/>
 </map>
 </div>
 
+</div>
+</div>
+<a id="a06807df2efe3d139b15066e818b635c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06807df2efe3d139b15066e818b635c1">&#9670;&nbsp;</a></span>define()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Microphysics::define </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
+          <td class="paramname"><em>sc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <a class="code" href="classMicrophysics.html#abe288606849f6a3ca2a98fbd0bd5c89c">docloud</a> = sc.do_cloud;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <a class="code" href="classMicrophysics.html#aee12ac39e9cc822e43b186905a3baab5">doprecip</a> = sc.do_precip;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <a class="code" href="classMicrophysics.html#ae190758a435d5b86f4e5c2f66c6e052d">m_fac_cond</a> = <a class="code" href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <a class="code" href="classMicrophysics.html#af9e555a96369fcb538e0dd319aeaf191">m_fac_fus</a> = <a class="code" href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <a class="code" href="classMicrophysics.html#a5aa7c8d2acd2d8f22c64c48839310b27">m_fac_sub</a> = <a class="code" href="ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <a class="code" href="classMicrophysics.html#a83f270950e1cea66eb3d224f116065f1">m_gOcp</a> = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a0f65ea12b4405c50f1d777f7ca82dcfd"><div class="ttname"><a href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a></div><div class="ttdeci">constexpr amrex::Real lfus</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:61</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a3ab435b88eae71bef826cb01254ff33d"><div class="ttname"><a href="ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a></div><div class="ttdeci">constexpr amrex::Real lsub</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:62</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a7b45c0074d559f423ac2d48e1b171518"><div class="ttname"><a href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a></div><div class="ttdeci">constexpr amrex::Real lcond</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:60</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:15</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a83f270950e1cea66eb3d224f116065f1"><div class="ttname"><a href="classMicrophysics.html#a83f270950e1cea66eb3d224f116065f1">Microphysics::m_gOcp</a></div><div class="ttdeci">amrex::Real m_gOcp</div><div class="ttdef"><b>Definition:</b> Microphysics.H:102</div></div>
+<div class="ttc" id="aclassMicrophysics_html_abe288606849f6a3ca2a98fbd0bd5c89c"><div class="ttname"><a href="classMicrophysics.html#abe288606849f6a3ca2a98fbd0bd5c89c">Microphysics::docloud</a></div><div class="ttdeci">bool docloud</div><div class="ttdef"><b>Definition:</b> Microphysics.H:96</div></div>
+<div class="ttc" id="aclassMicrophysics_html_aee12ac39e9cc822e43b186905a3baab5"><div class="ttname"><a href="classMicrophysics.html#aee12ac39e9cc822e43b186905a3baab5">Microphysics::doprecip</a></div><div class="ttdeci">bool doprecip</div><div class="ttdef"><b>Definition:</b> Microphysics.H:96</div></div>
+<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> DataStruct.H:356</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a720779b06299fec55c4d4c4d73962a34"></a>
@@ -551,15 +578,14 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a53fbafc25cd7707b502b1aeb46b6d656"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a53fbafc25cd7707b502b1aeb46b6d656">MicVar::qpi</a></div><div class="ttdeci">@ qpi</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:206</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a9b5910b49731b9337307885dee73e090"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a9b5910b49731b9337307885dee73e090">MicVar::qcl</a></div><div class="ttdeci">@ qcl</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:204</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9">ERF::Advance()</a>, and <a class="el" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01">Proc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01">Proc()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMicrophysics_a720779b06299fec55c4d4c4d73962a34_icgraph.png" border="0" usemap="#aclassMicrophysics_a720779b06299fec55c4d4c4d73962a34_icgraph" alt=""/></div>
 <map name="aclassMicrophysics_a720779b06299fec55c4d4c4d73962a34_icgraph" id="aclassMicrophysics_a720779b06299fec55c4d4c4d73962a34_icgraph">
-<area shape="rect" title=" " alt="" coords="196,31,372,57"/>
-<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="21,5,132,32"/>
-<area shape="rect" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01" title=" " alt="" coords="5,56,148,83"/>
+<area shape="rect" title=" " alt="" coords="196,5,372,32"/>
+<area shape="rect" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01" title=" " alt="" coords="5,5,148,32"/>
 </map>
 </div>
 
@@ -740,25 +766,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  }</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
 <div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">AdvectedQuantity::theta</a></div><div class="ttdeci">@ theta</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a0306bde935c337d7b5ff8a83dca95e3e"><div class="ttname"><a href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">Microphysics::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> Microphysics.H:85</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a1e4a1238e3d3f71cd9f634fc71be4207"><div class="ttname"><a href="classMicrophysics.html#a1e4a1238e3d3f71cd9f634fc71be4207">Microphysics::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> Microphysics.H:87</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a35099fd1b3e0244ce4f965817483a1b8"><div class="ttname"><a href="classMicrophysics.html#a35099fd1b3e0244ce4f965817483a1b8">Microphysics::tlatqi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; tlatqi</div><div class="ttdef"><b>Definition:</b> Microphysics.H:131</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a4df076215ffdf560adb4f51175de54de"><div class="ttname"><a href="classMicrophysics.html#a4df076215ffdf560adb4f51175de54de">Microphysics::rho1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; rho1d</div><div class="ttdef"><b>Definition:</b> Microphysics.H:116</div></div>
-<div class="ttc" id="aclassMicrophysics_html_aabb462adda62aa86412bef752c56b8cd"><div class="ttname"><a href="classMicrophysics.html#aabb462adda62aa86412bef752c56b8cd">Microphysics::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> Microphysics.H:90</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ab246f2a9f48d82f66379b39aa5ac6610"><div class="ttname"><a href="classMicrophysics.html#ab246f2a9f48d82f66379b39aa5ac6610">Microphysics::qifall</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; qifall</div><div class="ttdef"><b>Definition:</b> Microphysics.H:130</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a0306bde935c337d7b5ff8a83dca95e3e"><div class="ttname"><a href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">Microphysics::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> Microphysics.H:88</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a1e4a1238e3d3f71cd9f634fc71be4207"><div class="ttname"><a href="classMicrophysics.html#a1e4a1238e3d3f71cd9f634fc71be4207">Microphysics::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> Microphysics.H:90</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a35099fd1b3e0244ce4f965817483a1b8"><div class="ttname"><a href="classMicrophysics.html#a35099fd1b3e0244ce4f965817483a1b8">Microphysics::tlatqi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; tlatqi</div><div class="ttdef"><b>Definition:</b> Microphysics.H:134</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a4df076215ffdf560adb4f51175de54de"><div class="ttname"><a href="classMicrophysics.html#a4df076215ffdf560adb4f51175de54de">Microphysics::rho1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; rho1d</div><div class="ttdef"><b>Definition:</b> Microphysics.H:119</div></div>
+<div class="ttc" id="aclassMicrophysics_html_aabb462adda62aa86412bef752c56b8cd"><div class="ttname"><a href="classMicrophysics.html#aabb462adda62aa86412bef752c56b8cd">Microphysics::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> Microphysics.H:93</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ab246f2a9f48d82f66379b39aa5ac6610"><div class="ttname"><a href="classMicrophysics.html#ab246f2a9f48d82f66379b39aa5ac6610">Microphysics::qifall</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; qifall</div><div class="ttdef"><b>Definition:</b> Microphysics.H:133</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a96295e93c39d249775ba2498eb3d4fc1"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a96295e93c39d249775ba2498eb3d4fc1">MicVar::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:195</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9">ERF::Advance()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classMicrophysics_a1a610a19be3a183229eea21306ef1b07_icgraph.png" border="0" usemap="#aclassMicrophysics_a1a610a19be3a183229eea21306ef1b07_icgraph" alt=""/></div>
-<map name="aclassMicrophysics_a1a610a19be3a183229eea21306ef1b07_icgraph" id="aclassMicrophysics_a1a610a19be3a183229eea21306ef1b07_icgraph">
-<area shape="rect" title=" " alt="" coords="164,5,320,32"/>
-<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="5,5,116,32"/>
-</map>
-</div>
-
 </div>
 </div>
 <a id="acc265aae633d8b3aaf96a8b8a1946738"></a>
@@ -1062,32 +1077,30 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aMicrophysics__Utils_8H_html_a16a390366e7e68ca35fdac4cad824428"><div class="ttname"><a href="Microphysics__Utils_8H.html#a16a390366e7e68ca35fdac4cad824428">erf_esatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_esatw(amrex::Real t)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:43</div></div>
 <div class="ttc" id="aMicrophysics__Utils_8H_html_a4ea516e89f4e87b4ffc305504e8f0bf1"><div class="ttname"><a href="Microphysics__Utils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1">erf_esati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_esati(amrex::Real t)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:20</div></div>
 <div class="ttc" id="aMicrophysics__Utils_8H_html_abd125e107924437493cbcbac9a97c017"><div class="ttname"><a href="Microphysics__Utils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_gammafff(amrex::Real x)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:14</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a0f76dd7e76c5fa79b8d2352ccc45990e"><div class="ttname"><a href="classMicrophysics.html#a0f76dd7e76c5fa79b8d2352ccc45990e">Microphysics::coefice</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; coefice</div><div class="ttdef"><b>Definition:</b> Microphysics.H:105</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a10739fe34aa748d8a9c151de7adf2647"><div class="ttname"><a href="classMicrophysics.html#a10739fe34aa748d8a9c151de7adf2647">Microphysics::accrrc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrrc</div><div class="ttdef"><b>Definition:</b> Microphysics.H:102</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a2b08b42d8c9c9a2bed03645635ab7e5c"><div class="ttname"><a href="classMicrophysics.html#a2b08b42d8c9c9a2bed03645635ab7e5c">Microphysics::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> Microphysics.H:90</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a3b1df5efd48baab9e60d9bed9a03bdeb"><div class="ttname"><a href="classMicrophysics.html#a3b1df5efd48baab9e60d9bed9a03bdeb">Microphysics::gamaz</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; gamaz</div><div class="ttdef"><b>Definition:</b> Microphysics.H:126</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a5213fa57f8975373b6e9980cf429b90b"><div class="ttname"><a href="classMicrophysics.html#a5213fa57f8975373b6e9980cf429b90b">Microphysics::evapg1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg1</div><div class="ttdef"><b>Definition:</b> Microphysics.H:110</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a666bcd94ce73eb58b78b1a80ffd0064f"><div class="ttname"><a href="classMicrophysics.html#a666bcd94ce73eb58b78b1a80ffd0064f">Microphysics::accrsc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsc</div><div class="ttdef"><b>Definition:</b> Microphysics.H:104</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a0f76dd7e76c5fa79b8d2352ccc45990e"><div class="ttname"><a href="classMicrophysics.html#a0f76dd7e76c5fa79b8d2352ccc45990e">Microphysics::coefice</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; coefice</div><div class="ttdef"><b>Definition:</b> Microphysics.H:108</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a10739fe34aa748d8a9c151de7adf2647"><div class="ttname"><a href="classMicrophysics.html#a10739fe34aa748d8a9c151de7adf2647">Microphysics::accrrc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrrc</div><div class="ttdef"><b>Definition:</b> Microphysics.H:105</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a2b08b42d8c9c9a2bed03645635ab7e5c"><div class="ttname"><a href="classMicrophysics.html#a2b08b42d8c9c9a2bed03645635ab7e5c">Microphysics::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> Microphysics.H:93</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a3b1df5efd48baab9e60d9bed9a03bdeb"><div class="ttname"><a href="classMicrophysics.html#a3b1df5efd48baab9e60d9bed9a03bdeb">Microphysics::gamaz</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; gamaz</div><div class="ttdef"><b>Definition:</b> Microphysics.H:129</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a5213fa57f8975373b6e9980cf429b90b"><div class="ttname"><a href="classMicrophysics.html#a5213fa57f8975373b6e9980cf429b90b">Microphysics::evapg1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg1</div><div class="ttdef"><b>Definition:</b> Microphysics.H:113</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a666bcd94ce73eb58b78b1a80ffd0064f"><div class="ttname"><a href="classMicrophysics.html#a666bcd94ce73eb58b78b1a80ffd0064f">Microphysics::accrsc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsc</div><div class="ttdef"><b>Definition:</b> Microphysics.H:107</div></div>
 <div class="ttc" id="aclassMicrophysics_html_a720779b06299fec55c4d4c4d73962a34"><div class="ttname"><a href="classMicrophysics.html#a720779b06299fec55c4d4c4d73962a34">Microphysics::Diagnose</a></div><div class="ttdeci">void Diagnose()</div><div class="ttdef"><b>Definition:</b> Diagnose.cpp:3</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a75f0a1d034cf9a2eb1c0783e18e3da6b"><div class="ttname"><a href="classMicrophysics.html#a75f0a1d034cf9a2eb1c0783e18e3da6b">Microphysics::accrgc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgc</div><div class="ttdef"><b>Definition:</b> Microphysics.H:109</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a81b74ccaaaf352c8a0d82493d4e2ce88"><div class="ttname"><a href="classMicrophysics.html#a81b74ccaaaf352c8a0d82493d4e2ce88">Microphysics::evapr1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr1</div><div class="ttdef"><b>Definition:</b> Microphysics.H:112</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a81d978f3dd600ff8b8a0ea7febb1084e"><div class="ttname"><a href="classMicrophysics.html#a81d978f3dd600ff8b8a0ea7febb1084e">Microphysics::tabs1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; tabs1d</div><div class="ttdef"><b>Definition:</b> Microphysics.H:118</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a93f91090c4251f2035e18037625eba2a"><div class="ttname"><a href="classMicrophysics.html#a93f91090c4251f2035e18037625eba2a">Microphysics::zmid</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; zmid</div><div class="ttdef"><b>Definition:</b> Microphysics.H:127</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a94bb85ea6686a5beb9435383afab79f7"><div class="ttname"><a href="classMicrophysics.html#a94bb85ea6686a5beb9435383afab79f7">Microphysics::evaps1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps1</div><div class="ttdef"><b>Definition:</b> Microphysics.H:106</div></div>
-<div class="ttc" id="aclassMicrophysics_html_aa3082466699b5c929a6f9f0f2b0309ee"><div class="ttname"><a href="classMicrophysics.html#aa3082466699b5c929a6f9f0f2b0309ee">Microphysics::accrgi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgi</div><div class="ttdef"><b>Definition:</b> Microphysics.H:108</div></div>
-<div class="ttc" id="aclassMicrophysics_html_aaec21415989ece6c9607fd0bf7248e51"><div class="ttname"><a href="classMicrophysics.html#aaec21415989ece6c9607fd0bf7248e51">Microphysics::accrsi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsi</div><div class="ttdef"><b>Definition:</b> Microphysics.H:103</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ac41fc8c96ef251a05d2dbccfa58c38dd"><div class="ttname"><a href="classMicrophysics.html#ac41fc8c96ef251a05d2dbccfa58c38dd">Microphysics::evaps2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps2</div><div class="ttdef"><b>Definition:</b> Microphysics.H:107</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ada4ebee343b682167411db65c5bed5fe"><div class="ttname"><a href="classMicrophysics.html#ada4ebee343b682167411db65c5bed5fe">Microphysics::evapg2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg2</div><div class="ttdef"><b>Definition:</b> Microphysics.H:111</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ae325c171a6bb3c43d0e8b874d4f78e8d"><div class="ttname"><a href="classMicrophysics.html#ae325c171a6bb3c43d0e8b874d4f78e8d">Microphysics::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> Microphysics.H:90</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ae374bafd536eb545c93af4ff18af5298"><div class="ttname"><a href="classMicrophysics.html#ae374bafd536eb545c93af4ff18af5298">Microphysics::qpevp</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; qpevp</div><div class="ttdef"><b>Definition:</b> Microphysics.H:134</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ae5d5fae39fdf79ba7a2dcab4f3db2e84"><div class="ttname"><a href="classMicrophysics.html#ae5d5fae39fdf79ba7a2dcab4f3db2e84">Microphysics::evapr2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr2</div><div class="ttdef"><b>Definition:</b> Microphysics.H:113</div></div>
-<div class="ttc" id="aclassMicrophysics_html_affade9e3df2d30e7e488c794c12233ff"><div class="ttname"><a href="classMicrophysics.html#affade9e3df2d30e7e488c794c12233ff">Microphysics::qpsrc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; qpsrc</div><div class="ttdef"><b>Definition:</b> Microphysics.H:133</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a75f0a1d034cf9a2eb1c0783e18e3da6b"><div class="ttname"><a href="classMicrophysics.html#a75f0a1d034cf9a2eb1c0783e18e3da6b">Microphysics::accrgc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgc</div><div class="ttdef"><b>Definition:</b> Microphysics.H:112</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a81b74ccaaaf352c8a0d82493d4e2ce88"><div class="ttname"><a href="classMicrophysics.html#a81b74ccaaaf352c8a0d82493d4e2ce88">Microphysics::evapr1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr1</div><div class="ttdef"><b>Definition:</b> Microphysics.H:115</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a81d978f3dd600ff8b8a0ea7febb1084e"><div class="ttname"><a href="classMicrophysics.html#a81d978f3dd600ff8b8a0ea7febb1084e">Microphysics::tabs1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; tabs1d</div><div class="ttdef"><b>Definition:</b> Microphysics.H:121</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a93f91090c4251f2035e18037625eba2a"><div class="ttname"><a href="classMicrophysics.html#a93f91090c4251f2035e18037625eba2a">Microphysics::zmid</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; zmid</div><div class="ttdef"><b>Definition:</b> Microphysics.H:130</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a94bb85ea6686a5beb9435383afab79f7"><div class="ttname"><a href="classMicrophysics.html#a94bb85ea6686a5beb9435383afab79f7">Microphysics::evaps1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps1</div><div class="ttdef"><b>Definition:</b> Microphysics.H:109</div></div>
+<div class="ttc" id="aclassMicrophysics_html_aa3082466699b5c929a6f9f0f2b0309ee"><div class="ttname"><a href="classMicrophysics.html#aa3082466699b5c929a6f9f0f2b0309ee">Microphysics::accrgi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgi</div><div class="ttdef"><b>Definition:</b> Microphysics.H:111</div></div>
+<div class="ttc" id="aclassMicrophysics_html_aaec21415989ece6c9607fd0bf7248e51"><div class="ttname"><a href="classMicrophysics.html#aaec21415989ece6c9607fd0bf7248e51">Microphysics::accrsi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsi</div><div class="ttdef"><b>Definition:</b> Microphysics.H:106</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ac41fc8c96ef251a05d2dbccfa58c38dd"><div class="ttname"><a href="classMicrophysics.html#ac41fc8c96ef251a05d2dbccfa58c38dd">Microphysics::evaps2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps2</div><div class="ttdef"><b>Definition:</b> Microphysics.H:110</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ada4ebee343b682167411db65c5bed5fe"><div class="ttname"><a href="classMicrophysics.html#ada4ebee343b682167411db65c5bed5fe">Microphysics::evapg2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg2</div><div class="ttdef"><b>Definition:</b> Microphysics.H:114</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ae325c171a6bb3c43d0e8b874d4f78e8d"><div class="ttname"><a href="classMicrophysics.html#ae325c171a6bb3c43d0e8b874d4f78e8d">Microphysics::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> Microphysics.H:93</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ae374bafd536eb545c93af4ff18af5298"><div class="ttname"><a href="classMicrophysics.html#ae374bafd536eb545c93af4ff18af5298">Microphysics::qpevp</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; qpevp</div><div class="ttdef"><b>Definition:</b> Microphysics.H:137</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ae5d5fae39fdf79ba7a2dcab4f3db2e84"><div class="ttname"><a href="classMicrophysics.html#ae5d5fae39fdf79ba7a2dcab4f3db2e84">Microphysics::evapr2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr2</div><div class="ttdef"><b>Definition:</b> Microphysics.H:116</div></div>
+<div class="ttc" id="aclassMicrophysics_html_affade9e3df2d30e7e488c794c12233ff"><div class="ttname"><a href="classMicrophysics.html#affade9e3df2d30e7e488c794c12233ff">Microphysics::qpsrc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; qpsrc</div><div class="ttdef"><b>Definition:</b> Microphysics.H:136</div></div>
 <div class="ttc" id="aclassPlaneAverage_html"><div class="ttname"><a href="classPlaneAverage.html">PlaneAverage</a></div><div class="ttdef"><b>Definition:</b> PlaneAverage.H:9</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a0a8da919c111613d4806217dce5cd1e3"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a0a8da919c111613d4806217dce5cd1e3">MicVar::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:209</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a147204d9af51dec01fb0d95c5cde8d37"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a147204d9af51dec01fb0d95c5cde8d37">MicVar::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:198</div></div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9">ERF::Advance()</a>, and <a class="el" href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData()</a>.</p>
-<div class="dynheader">
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMicrophysics_acc265aae633d8b3aaf96a8b8a1946738_cgraph.png" border="0" usemap="#aclassMicrophysics_acc265aae633d8b3aaf96a8b8a1946738_cgraph" alt=""/></div>
@@ -1102,18 +1115,6 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="EOS_8H.html#a652d566aef658cc423ced929a816f869" title=" " alt="" coords="208,325,352,351"/>
 <area shape="rect" href="classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949" title=" " alt="" coords="209,376,351,417"/>
 <area shape="rect" href="classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1" title=" " alt="" coords="189,442,371,469"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classMicrophysics_acc265aae633d8b3aaf96a8b8a1946738_icgraph.png" border="0" usemap="#aclassMicrophysics_acc265aae633d8b3aaf96a8b8a1946738_icgraph" alt=""/></div>
-<map name="aclassMicrophysics_acc265aae633d8b3aaf96a8b8a1946738_icgraph" id="aclassMicrophysics_acc265aae633d8b3aaf96a8b8a1946738_icgraph">
-<area shape="rect" title=" " alt="" coords="469,31,605,57"/>
-<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="311,5,421,32"/>
-<area shape="rect" href="classERF.html#ad5d585e110291969767013a515719224" title=" " alt="" coords="313,56,419,83"/>
-<area shape="rect" href="classMultiBlockContainer.html#a34f2b57ec5aafb88be61d6ffd3dea55c" title=" " alt="" coords="108,19,263,61"/>
-<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,56,60,83"/>
 </map>
 </div>
 
@@ -1150,15 +1151,14 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassMicrophysics_html_ab4ab2a17016feb12618a4c6e6c72febc"><div class="ttname"><a href="classMicrophysics.html#ab4ab2a17016feb12618a4c6e6c72febc">Microphysics::PrecipFall</a></div><div class="ttdeci">void PrecipFall(int hydro_type)</div><div class="ttdef"><b>Definition:</b> PrecipFall.cpp:12</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae">MicVar::omega</a></div><div class="ttdeci">@ omega</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:208</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9">ERF::Advance()</a>, and <a class="el" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01">Proc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01">Proc()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMicrophysics_a211ded1d3f2a8ef659eb1f73b6a620f5_icgraph.png" border="0" usemap="#aclassMicrophysics_a211ded1d3f2a8ef659eb1f73b6a620f5_icgraph" alt=""/></div>
 <map name="aclassMicrophysics_a211ded1d3f2a8ef659eb1f73b6a620f5_icgraph" id="aclassMicrophysics_a211ded1d3f2a8ef659eb1f73b6a620f5_icgraph">
-<area shape="rect" title=" " alt="" coords="196,31,409,57"/>
-<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="21,5,132,32"/>
-<area shape="rect" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01" title=" " alt="" coords="5,56,148,83"/>
+<area shape="rect" title=" " alt="" coords="196,5,409,32"/>
+<area shape="rect" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01" title=" " alt="" coords="5,5,148,32"/>
 </map>
 </div>
 
@@ -1332,7 +1332,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__Constants_8H_html_a956656dbad95153bb8d3f0e42fa3d356"><div class="ttname"><a href="ERF__Constants_8H.html#a956656dbad95153bb8d3f0e42fa3d356">qp_threshold</a></div><div class="ttdeci">constexpr amrex::Real qp_threshold</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:54</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_afb7d1700c60728d56ef525934fe6a098"><div class="ttname"><a href="ERF__Constants_8H.html#afb7d1700c60728d56ef525934fe6a098">tgrmin</a></div><div class="ttdeci">constexpr amrex::Real tgrmin</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:29</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9">ERF::Advance()</a>, and <a class="el" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01">Proc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01">Proc()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1350,9 +1350,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMicrophysics_aef79df4cf3571dab54e43305473e5f45_icgraph.png" border="0" usemap="#aclassMicrophysics_aef79df4cf3571dab54e43305473e5f45_icgraph" alt=""/></div>
 <map name="aclassMicrophysics_aef79df4cf3571dab54e43305473e5f45_icgraph" id="aclassMicrophysics_aef79df4cf3571dab54e43305473e5f45_icgraph">
-<area shape="rect" title=" " alt="" coords="196,31,351,57"/>
-<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="21,5,132,32"/>
-<area shape="rect" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01" title=" " alt="" coords="5,56,148,83"/>
+<area shape="rect" title=" " alt="" coords="196,5,351,32"/>
+<area shape="rect" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01" title=" " alt="" coords="5,5,148,32"/>
 </map>
 </div>
 
@@ -1791,20 +1790,6 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  qi_in.FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9">ERF::Advance()</a>, and <a class="el" href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classMicrophysics_aa073be166f12b72e53480531914cbd8b_icgraph.png" border="0" usemap="#aclassMicrophysics_aa073be166f12b72e53480531914cbd8b_icgraph" alt=""/></div>
-<map name="aclassMicrophysics_aa073be166f12b72e53480531914cbd8b_icgraph" id="aclassMicrophysics_aa073be166f12b72e53480531914cbd8b_icgraph">
-<area shape="rect" title=" " alt="" coords="469,31,632,57"/>
-<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="311,5,421,32"/>
-<area shape="rect" href="classERF.html#ad5d585e110291969767013a515719224" title=" " alt="" coords="313,56,419,83"/>
-<area shape="rect" href="classMultiBlockContainer.html#a34f2b57ec5aafb88be61d6ffd3dea55c" title=" " alt="" coords="108,19,263,61"/>
-<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,56,60,83"/>
-</map>
-</div>
-
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -1960,7 +1945,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01">Proc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#a06807df2efe3d139b15066e818b635c1">define()</a>, and <a class="el" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01">Proc()</a>.</p>
 
 </div>
 </div>
@@ -1984,7 +1969,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01">Proc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#a06807df2efe3d139b15066e818b635c1">define()</a>, and <a class="el" href="classMicrophysics.html#aeb5bc9da117876bc02cd3c93c9049d01">Proc()</a>.</p>
 
 </div>
 </div>
@@ -2184,6 +2169,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#a06807df2efe3d139b15066e818b635c1">define()</a>.</p>
+
 </div>
 </div>
 <a id="af9e555a96369fcb538e0dd319aeaf191"></a>
@@ -2206,6 +2193,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#a06807df2efe3d139b15066e818b635c1">define()</a>.</p>
+
 </div>
 </div>
 <a id="a5aa7c8d2acd2d8f22c64c48839310b27"></a>
@@ -2227,6 +2216,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#a06807df2efe3d139b15066e818b635c1">define()</a>.</p>
 
 </div>
 </div>
@@ -2273,6 +2264,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#a06807df2efe3d139b15066e818b635c1">define()</a>.</p>
 
 </div>
 </div>

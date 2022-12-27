@@ -1,9 +1,10 @@
 var classMicrophysics =
 [
     [ "FabPtr", "classMicrophysics.html#a51bd16767ddde86ef63e56cb9a700c07", null ],
-    [ "Microphysics", "classMicrophysics.html#a0ff473fa0b291bdf049f106f1ffbfec3", null ],
+    [ "Microphysics", "classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e", null ],
     [ "~Microphysics", "classMicrophysics.html#ab9d9d3f804f3d0d9aacf12c15b1b1417", null ],
     [ "Cloud", "classMicrophysics.html#a80070b9a33a6ebbd2fd458cd099bfa48", null ],
+    [ "define", "classMicrophysics.html#a06807df2efe3d139b15066e818b635c1", null ],
     [ "Diagnose", "classMicrophysics.html#a720779b06299fec55c4d4c4d73962a34", null ],
     [ "IceFall", "classMicrophysics.html#a1a610a19be3a183229eea21306ef1b07", null ],
     [ "Init", "classMicrophysics.html#acc265aae633d8b3aaf96a8b8a1946738", null ],
