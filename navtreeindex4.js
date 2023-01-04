@@ -1,5 +1,8 @@
 var NAVTREEINDEX4 =
 {
+"classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423":[2,0,0,4,1],
+"classncutils_1_1NCFile.html#af2c4a20c38edb3fae69087a80875b8b9":[2,0,0,4,2],
+"classncutils_1_1NCGroup.html":[2,0,0,3],
 "classncutils_1_1NCGroup.html#a00ea1ccd06adafc43396239ec842b23f":[2,0,0,3,21],
 "classncutils_1_1NCGroup.html#a0f24e998915e60b177d036595f0f2734":[2,0,0,3,15],
 "classncutils_1_1NCGroup.html#a1bfb961e66e7c635ae92cee3f8cdeeac":[2,0,0,3,19],
@@ -52,8 +55,8 @@ var NAVTREEINDEX4 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1],
 "functions_func.html":[2,3,1,0],
+"functions_func.html":[2,3,1],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
@@ -91,8 +94,8 @@ var NAVTREEINDEX4 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,19],
 "functions_v.html":[2,3,0,20],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -118,8 +121,8 @@ var NAVTREEINDEX4 =
 "functions_x.html":[2,3,0,22],
 "functions_z.html":[2,3,0,23],
 "functions_~.html":[2,3,0,24],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX4 =
 "structNDArray.html#a0d3be2b45f3fb008d12ec17dfd6abf09":[2,0,15,12],
 "structNDArray.html#a1b3ece1ab109568fcb919d1af8f14eee":[2,0,15,8],
 "structNDArray.html#a1f33dbd861944bc1494f4790f4f8543d":[2,0,15,2],
-"structNDArray.html#a4d7550e3c00d13d8397f1cfbdfd2ab48":[2,0,15,6],
-"structNDArray.html#a54f69e355d97f10089f82fb1087fb0af":[2,0,15,3],
-"structNDArray.html#a63dda01f8d55fd1fc75437b125eb27b3":[2,0,15,9],
-"structNDArray.html#a6a0a485b6da8ce09dda81fc51607da73":[2,0,15,10]
+"structNDArray.html#a4d7550e3c00d13d8397f1cfbdfd2ab48":[2,0,15,6]
 };

@@ -12,7 +12,7 @@ var classERF =
     [ "DataLog", "classERF.html#aa2c3ee1910008b828b9da79ccdfe3871", null ],
     [ "DataLogName", "classERF.html#afbf411b8cb24554d9aad7c76b0210e92", null ],
     [ "define_grids_to_evolve", "classERF.html#ab0ce8f3fe8b5af139dce72b61e10f47a", null ],
-    [ "erf_advance", "classERF.html#a0ed1796e6d5cbd80c9428079a0866d86", null ],
+    [ "erf_advance", "classERF.html#a6e0a6097ce45907d541d6e156100b145", null ],
     [ "erf_enforce_hse", "classERF.html#a1f4902e264ff9b48001461c3555c0590", null ],
     [ "ErrorEst", "classERF.html#a18e6dbbf968b4492e78aa427791620f4", null ],
     [ "estTimeStep", "classERF.html#a6b1d727e63de2e49aa4f8e00b0dda1d5", null ],
