@@ -1,5 +1,8 @@
 var NAVTREEINDEX4 =
 {
+"classncutils_1_1NCFile.html#a4ebf9e1dc5ce07255330478f050e9f1f":[2,0,0,4,6],
+"classncutils_1_1NCFile.html#a6607bd5f3f75b451e2436ff713931f19":[2,0,0,4,4],
+"classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379":[2,0,0,4,7],
 "classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423":[2,0,0,4,1],
 "classncutils_1_1NCFile.html#af2c4a20c38edb3fae69087a80875b8b9":[2,0,0,4,2],
 "classncutils_1_1NCGroup.html":[2,0,0,3],
@@ -46,8 +49,8 @@ var NAVTREEINDEX4 =
 "dir_988434024952cd186327a8c7555a3c66.html":[3,0,0,4],
 "dir_fc0c15590968603ac439df7b0a572228.html":[3,0,0,2],
 "files.html":[3,0],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -55,8 +58,8 @@ var NAVTREEINDEX4 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1,0],
 "functions_func.html":[2,3,1],
+"functions_func.html":[2,3,1,0],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
@@ -151,8 +154,8 @@ var NAVTREEINDEX4 =
 "globals_y.html":[3,1,0,21],
 "globals_z.html":[3,1,0,22],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -166,6 +169,7 @@ var NAVTREEINDEX4 =
 "namespaceCons.html":[1,0,1],
 "namespaceERFBCType.html":[1,0,4],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,4,0],
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,4,0,8],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[1,0,4,0,7],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705":[1,0,4,0,1],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42d0838b4e8d40ee76fbaf2d55c3402e":[1,0,4,0,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "structInputSoundingData.html#ae990e8cfad78f0fa5a603db3154d0124":[2,0,10,16],
 "structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240":[2,0,10,4],
 "structNDArray.html":[2,0,15],
-"structNDArray.html#a0a1c90304eddb4d078132a1c1f45bef9":[2,0,15,13],
-"structNDArray.html#a0d3be2b45f3fb008d12ec17dfd6abf09":[2,0,15,12],
-"structNDArray.html#a1b3ece1ab109568fcb919d1af8f14eee":[2,0,15,8],
-"structNDArray.html#a1f33dbd861944bc1494f4790f4f8543d":[2,0,15,2],
-"structNDArray.html#a4d7550e3c00d13d8397f1cfbdfd2ab48":[2,0,15,6]
+"structNDArray.html#a0a1c90304eddb4d078132a1c1f45bef9":[2,0,15,13]
 };

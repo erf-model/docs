@@ -127,6 +127,7 @@ var classERF =
     [ "last_plot_file_step_1", "classERF.html#a7d54d3f2317d06a8dfcde4f65cfc3e92", null ],
     [ "last_plot_file_step_2", "classERF.html#a09017292c9943ac2ed20ce7ed5c3c767", null ],
     [ "m_bc_extdir_vals", "classERF.html#a7d5ea71a2772d2ce602b90d80e32ad37", null ],
+    [ "m_bc_neumann_vals", "classERF.html#a613a169b5faf45f36ae8e6efa9d7ef79", null ],
     [ "m_most", "classERF.html#a051364b2373d8d86151c0b4a958035bd", null ],
     [ "m_r2d", "classERF.html#addf62bfc534515447b94e928ac0b7135", null ],
     [ "m_w2d", "classERF.html#aa53035f34ba133b86172e180abda4209", null ],

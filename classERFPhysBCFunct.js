@@ -1,6 +1,6 @@
 var classERFPhysBCFunct =
 [
-    [ "ERFPhysBCFunct", "classERFPhysBCFunct.html#a84b0752a85c607f18b93cd09e16480bd", null ],
+    [ "ERFPhysBCFunct", "classERFPhysBCFunct.html#a81ec9d769c2b3a68df0bc5dc8a1781cf", null ],
     [ "~ERFPhysBCFunct", "classERFPhysBCFunct.html#abb1797f0742dd01ee978be02d594fc43", null ],
     [ "impose_cons_bcs", "classERFPhysBCFunct.html#a2015a440ed51586c34cab3203b306808", null ],
     [ "impose_xvel_bcs", "classERFPhysBCFunct.html#a5169ffe3bd30697860662b7fea0cf9dd", null ],
@@ -8,6 +8,7 @@ var classERFPhysBCFunct =
     [ "impose_zvel_bcs", "classERFPhysBCFunct.html#a579435887975409c42be27d7290593ac", null ],
     [ "operator()", "classERFPhysBCFunct.html#a15403d06f20d386aab880f5435aa5711", null ],
     [ "m_bc_extdir_vals", "classERFPhysBCFunct.html#a16cdf4a3ab611f388823cef5e52b60f4", null ],
+    [ "m_bc_neumann_vals", "classERFPhysBCFunct.html#aaf27efc3915d8c5aa41e5c931c76429f", null ],
     [ "m_detJ_cc", "classERFPhysBCFunct.html#a3ced8eff532a6cbf0fed66c939d10e3e", null ],
     [ "m_domain_bcs_type", "classERFPhysBCFunct.html#af16fde6da4412aa09d866fd094d63a5a", null ],
     [ "m_domain_bcs_type_d", "classERFPhysBCFunct.html#a2f63808a7040c853c877cc521741a119", null ],
