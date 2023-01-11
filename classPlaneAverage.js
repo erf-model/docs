@@ -1,6 +1,6 @@
 var classPlaneAverage =
 [
-    [ "PlaneAverage", "classPlaneAverage.html#a34db2f938bd249c23d2f4c2cdca7ee4e", null ],
+    [ "PlaneAverage", "classPlaneAverage.html#aa3cd8f6c329308d4cc15ebb6863d800e", null ],
     [ "PlaneAverage", "classPlaneAverage.html#aab8235d99bd3e841f0a2a5fb563c0bfa", null ],
     [ "~PlaneAverage", "classPlaneAverage.html#a961decb14c2137f36e17ceeaf560b452", null ],
     [ "axis", "classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a", null ],

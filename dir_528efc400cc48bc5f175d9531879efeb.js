@@ -11,7 +11,6 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "BoundaryConditions_xvel.cpp", "BoundaryConditions__xvel_8cpp.html", null ],
     [ "BoundaryConditions_yvel.cpp", "BoundaryConditions__yvel_8cpp.html", null ],
     [ "BoundaryConditions_zvel.cpp", "BoundaryConditions__zvel_8cpp.html", null ],
-    [ "DirectionSelector.H", "DirectionSelector_8H.html", "DirectionSelector_8H" ],
     [ "ERF_FillPatch.cpp", "ERF__FillPatch_8cpp.html", "ERF__FillPatch_8cpp" ],
     [ "ERF_FillPatcher.cpp", "ERF__FillPatcher_8cpp.html", null ],
     [ "ERF_FillPatcher.H", "ERF__FillPatcher_8H.html", [
@@ -25,13 +24,7 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "MOSTAverage.H", "MOSTAverage_8H.html", [
       [ "MOSTAverage", "classMOSTAverage.html", "classMOSTAverage" ]
     ] ],
-    [ "PlaneAverage.H", "PlaneAverage_8H.html", [
-      [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ]
-    ] ],
     [ "TimeInterpolatedData.H", "TimeInterpolatedData_8H.html", [
       [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ]
-    ] ],
-    [ "VelPlaneAverage.H", "VelPlaneAverage_8H.html", [
-      [ "VelPlaneAverage", "classVelPlaneAverage.html", "classVelPlaneAverage" ]
     ] ]
 ];
