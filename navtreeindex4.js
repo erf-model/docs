@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"classncutils_1_1NCFile.html#a4c1663f24f84dbc74152d7f040910a22":[2,0,0,4,0],
 "classncutils_1_1NCFile.html#a4ebf9e1dc5ce07255330478f050e9f1f":[2,0,0,4,6],
 "classncutils_1_1NCFile.html#a6607bd5f3f75b451e2436ff713931f19":[2,0,0,4,4],
 "classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379":[2,0,0,4,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3":[2,0,10,0],
 "structInputSoundingData.html#ae990e8cfad78f0fa5a603db3154d0124":[2,0,10,16],
 "structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240":[2,0,10,4],
-"structNDArray.html":[2,0,15],
-"structNDArray.html#a0a1c90304eddb4d078132a1c1f45bef9":[2,0,15,13]
+"structNDArray.html":[2,0,15]
 };

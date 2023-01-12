@@ -1,7 +1,7 @@
 var searchData=
 [
   ['w_1044',['w',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4af1290186a5d0b1ceab27f4e77c0c5d68',1,'DataStruct.H']]],
-  ['wfromomega_1045',['WFromOmega',['../TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7',1,'TerrainMetrics.H']]],
+  ['wfromomega_1045',['WFromOmega',['../TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7',1,'WFromOmega(int i, int j, int k, amrex::Real omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv):&#160;TerrainMetrics.H'],['../TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087',1,'WFromOmega(int i, int j, int k, amrex::Real omega, amrex::Real u, amrex::Real v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv):&#160;TerrainMetrics.H']]],
   ['wrfbdytypes_1046',['WRFBdyTypes',['../namespaceWRFBdyTypes.html',1,'']]],
   ['wrfbdyvars_1047',['WRFBdyVars',['../namespaceWRFBdyVars.html',1,'']]],
   ['write_5faverages_1048',['write_averages',['../classMOSTAverage.html#ac37b71ce655ea973ad6fc4c564b040c1',1,'MOSTAverage']]],
