@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xlo_1633',['xlo',['../classPlaneAverage.html#a9ed43e3c2cfd2ef0f3fb23d2097a1b6d',1,'PlaneAverage']]]
+  ['xlo_1635',['xlo',['../classPlaneAverage.html#a9ed43e3c2cfd2ef0f3fb23d2097a1b6d',1,'PlaneAverage']]]
 ];
