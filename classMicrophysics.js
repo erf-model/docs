@@ -29,6 +29,7 @@ var classMicrophysics =
     [ "evaps1", "classMicrophysics.html#a94bb85ea6686a5beb9435383afab79f7", null ],
     [ "evaps2", "classMicrophysics.html#ac41fc8c96ef251a05d2dbccfa58c38dd", null ],
     [ "gamaz", "classMicrophysics.html#a3b1df5efd48baab9e60d9bed9a03bdeb", null ],
+    [ "m_axis", "classMicrophysics.html#ac4e48491800c854e5bc010aa96c841ee", null ],
     [ "m_fac_cond", "classMicrophysics.html#ae190758a435d5b86f4e5c2f66c6e052d", null ],
     [ "m_fac_fus", "classMicrophysics.html#af9e555a96369fcb538e0dd319aeaf191", null ],
     [ "m_fac_sub", "classMicrophysics.html#a5aa7c8d2acd2d8f22c64c48839310b27", null ],

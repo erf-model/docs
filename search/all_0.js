@@ -10,7 +10,7 @@ var searchData=
   ['abl_5fgeo_5fforcing_7',['abl_geo_forcing',['../structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69',1,'SolverChoice']]],
   ['abl_5fpressure_5fgrad_8',['abl_pressure_grad',['../structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb',1,'SolverChoice']]],
   ['abldrivertype_9',['ABLDriverType',['../DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceb',1,'DataStruct.H']]],
-  ['ablmost_10',['ABLMost',['../classABLMost.html#ad1b4cdd0bca8fb10339f6a8a8d311e4a',1,'ABLMost::ABLMost()'],['../classABLMost.html',1,'ABLMost']]],
+  ['ablmost_10',['ABLMost',['../classABLMost.html',1,'ABLMost'],['../classABLMost.html#ad1b4cdd0bca8fb10339f6a8a8d311e4a',1,'ABLMost::ABLMost()']]],
   ['ablmost_2ecpp_11',['ABLMost.cpp',['../ABLMost_8cpp.html',1,'']]],
   ['ablmost_2eh_12',['ABLMost.H',['../ABLMost_8H.html',1,'']]],
   ['ablmostdata_13',['ABLMostData',['../classABLMostData.html',1,'']]],
@@ -22,8 +22,8 @@ var searchData=
   ['accrsi_19',['accrsi',['../classMicrophysics.html#aaec21415989ece6c9607fd0bf7248e51',1,'Microphysics']]],
   ['add_5fpar_20',['add_par',['../main_8cpp.html#a183e783116d02836167ccbed3b28c1d3',1,'main.cpp']]],
   ['add_5fvar_21',['add_var',['../structTimeInterpolatedData.html#a3b9292eb3012672361abacc2ab7d9b2c',1,'TimeInterpolatedData']]],
-  ['advance_22',['advance',['../classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b',1,'MRISplitIntegrator']]],
-  ['advance_23',['Advance',['../classERF.html#a47413fe5588f7dd71a1d5087a9e804f9',1,'ERF']]],
+  ['advance_22',['Advance',['../classERF.html#a47413fe5588f7dd71a1d5087a9e804f9',1,'ERF']]],
+  ['advance_23',['advance',['../classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b',1,'MRISplitIntegrator']]],
   ['advanceblocks_24',['AdvanceBlocks',['../classMultiBlockContainer.html#afe74361709855a6b78669dea775edc45',1,'MultiBlockContainer']]],
   ['advect_5fqke_25',['advect_QKE',['../structSolverChoice.html#a38dc1d6637afc39c42b09560735f8191',1,'SolverChoice']]],
   ['advectedquantity_26',['AdvectedQuantity',['../DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4',1,'DataStruct.H']]],
@@ -53,8 +53,9 @@ var searchData=
   ['alphaelq_50',['alphaelq',['../ERF__Constants_8H.html#a3c70f890015491421d536954a374324d',1,'ERF_Constants.H']]],
   ['amrex_5fprobinit_51',['amrex_probinit',['../prob__common_8H.html#afef32e2116829d24b864c64caebf5ea6',1,'prob_common.H']]],
   ['apply_5fbcs_52',['apply_bcs',['../TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f',1,'TI_utils.H']]],
-  ['averagedown_53',['AverageDown',['../classERF.html#a8202de1f8f372e3e6fdc483447c6a55f',1,'ERF']]],
-  ['averagedownto_54',['AverageDownTo',['../classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41',1,'ERF']]],
-  ['avogad_55',['avogad',['../ERF__Constants_8H.html#a2c506ca3e64b80b3facc2d6ecd4c467a',1,'ERF_Constants.H']]],
-  ['axis_56',['axis',['../classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a',1,'PlaneAverage']]]
+  ['ave_5fplane_53',['ave_plane',['../structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c',1,'SolverChoice']]],
+  ['averagedown_54',['AverageDown',['../classERF.html#a8202de1f8f372e3e6fdc483447c6a55f',1,'ERF']]],
+  ['averagedownto_55',['AverageDownTo',['../classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41',1,'ERF']]],
+  ['avogad_56',['avogad',['../ERF__Constants_8H.html#a2c506ca3e64b80b3facc2d6ecd4c467a',1,'ERF_Constants.H']]],
+  ['axis_57',['axis',['../classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a',1,'PlaneAverage']]]
 ];

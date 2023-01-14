@@ -9,6 +9,7 @@ var structSolverChoice =
     [ "advect_QKE", "structSolverChoice.html#a38dc1d6637afc39c42b09560735f8191", null ],
     [ "alpha_C", "structSolverChoice.html#a404f875b4796e931ef346bc11b6c7dcb", null ],
     [ "alpha_T", "structSolverChoice.html#a2b9c77c4a08b52f5519b452f6ed3a4cc", null ],
+    [ "ave_plane", "structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c", null ],
     [ "buoyancy_type", "structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0", null ],
     [ "c_p", "structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a", null ],
     [ "Ce", "structSolverChoice.html#ac28e6ad4be78bfb7b25c9cf88d43724a", null ],

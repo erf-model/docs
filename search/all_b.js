@@ -1,7 +1,7 @@
 var searchData=
 [
   ['m_5faverages_538',['m_averages',['../classMOSTAverage.html#ac04a90b03c99ad27ae0ea887923a2354',1,'MOSTAverage']]],
-  ['m_5faxis_539',['m_axis',['../classPlaneAverage.html#ab1c325b8a1241cb446bad96fa558e770',1,'PlaneAverage']]],
+  ['m_5faxis_539',['m_axis',['../classPlaneAverage.html#ab1c325b8a1241cb446bad96fa558e770',1,'PlaneAverage::m_axis()'],['../classMicrophysics.html#ac4e48491800c854e5bc010aa96c841ee',1,'Microphysics::m_axis()']]],
   ['m_5fbc_5fextdir_5fvals_540',['m_bc_extdir_vals',['../classERF.html#a7d5ea71a2772d2ce602b90d80e32ad37',1,'ERF::m_bc_extdir_vals()'],['../classERFPhysBCFunct.html#a16cdf4a3ab611f388823cef5e52b60f4',1,'ERFPhysBCFunct::m_bc_extdir_vals()']]],
   ['m_5fbc_5fneumann_5fvals_541',['m_bc_neumann_vals',['../classERF.html#a613a169b5faf45f36ae8e6efa9d7ef79',1,'ERF::m_bc_neumann_vals()'],['../classERFPhysBCFunct.html#aaf27efc3915d8c5aa41e5c931c76429f',1,'ERFPhysBCFunct::m_bc_neumann_vals()']]],
   ['m_5fcba_542',['m_cba',['../classERFFillPatcher.html#a35fb56b2946f596728b9ac793eb47c5e',1,'ERFFillPatcher']]],
