@@ -15,6 +15,8 @@ var ERF__Constants_8H =
     [ "boltz", "ERF__Constants_8H.html#a6700ceab4c13f15657c8137f8dd8c039", null ],
     [ "cgrau", "ERF__Constants_8H.html#a22bb5d96152ac76ffe39d98d67b2b07a", null ],
     [ "CONST_GRAV", "ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43", null ],
+    [ "Cp_d", "ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46", null ],
+    [ "Cp_v", "ERF__Constants_8H.html#aea1cea8d633adb36e2ea5018925b68ee", null ],
     [ "crain", "ERF__Constants_8H.html#aedc41c83fba50dcbd5e1385007d3edec", null ],
     [ "csnow", "ERF__Constants_8H.html#a00a835048e6d7b67e76cd044f483a0e2", null ],
     [ "diffelq", "ERF__Constants_8H.html#a4e1c44dade7fcd7648d3e87ba5bba4c1", null ],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"classncutils_1_1NCFile.html":[2,0,0,4],
+"classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885":[2,0,0,4,5],
 "classncutils_1_1NCFile.html#a47bdccee2cc22a735ca715d9c88e4f6b":[2,0,0,4,3],
 "classncutils_1_1NCFile.html#a4c1663f24f84dbc74152d7f040910a22":[2,0,0,4,0],
 "classncutils_1_1NCFile.html#a4ebf9e1dc5ce07255330478f050e9f1f":[2,0,0,4,6],
@@ -126,8 +128,8 @@ var NAVTREEINDEX4 =
 "functions_x.html":[2,3,0,22],
 "functions_z.html":[2,3,0,23],
 "functions_~.html":[2,3,0,24],
-"globals.html":[3,1,0,0],
 "globals.html":[3,1,0],
+"globals.html":[3,1,0,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "structInputSoundingData.html#acc5ac869d8e7dda08bdcba3c663c9705":[2,0,10,10],
 "structInputSoundingData.html#acf38db2cecabcd07fe794b41974ba866":[2,0,10,15],
 "structInputSoundingData.html#ad307d778ecc6eb1adddd4774e4fca072":[2,0,10,1],
-"structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3":[2,0,10,0],
-"structInputSoundingData.html#ae990e8cfad78f0fa5a603db3154d0124":[2,0,10,16],
-"structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240":[2,0,10,4]
+"structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3":[2,0,10,0]
 };

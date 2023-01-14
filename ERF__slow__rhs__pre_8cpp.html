@@ -553,7 +553,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="comment">//if (cell_data(i,j,k,RhoTheta_comp) &lt; 0.) printf(&quot;BAD THETA AT %d %d %d %e %e \n&quot;,</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="comment">//    i,j,k,cell_data(i,j,k,RhoTheta_comp),cell_data(i,j,k+1,RhoTheta_comp));</span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            AMREX_ASSERT(cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) &gt; 0.);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            pp_arr(i,j,k) = <a class="code" href="EOS_8H.html#ac10be81559b5559e18428f0e05979620">getPgivenRTh</a>(cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)) - p0_arr(i,j,k);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            pp_arr(i,j,k) = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)) - p0_arr(i,j,k);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        });</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        } <span class="comment">// end profile</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
@@ -912,279 +912,297 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;            gpx = gp_xi - (met_h_xi/ met_h_zeta) * gp_zeta_on_iface;</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            gpx *= mf_u(i,j,0);</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; </div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MOISTURE</span></div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i-1,j,k,PrimQt_comp)</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                            +cell_prim(i,j,k,PrimQp_comp) + cell_prim(i-1,j,k,PrimQp_comp) );</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;            rho_u_rhs(i, j, k) -= gpx / (1.0 + q);</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;            rho_u_rhs(i, j, k) -= gpx;</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;            <span class="comment">// Add external drivers</span></div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            rho_u_rhs(i, j, k) += ext_forcing[0];</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160; </div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;            <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            {</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_v_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j+1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i-1,j+1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i-1,j,k));</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_w_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k+1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j-1,k+1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j-1,k));</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                rho_u_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> *</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                        (rho_v_loc * solverChoice.<a class="code" href="structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf">sinphi</a> - rho_w_loc * solverChoice.<a class="code" href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">cosphi</a>);</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            }</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;            <span class="comment">// Add Rayleigh damping</span></div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            {</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> uu = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                rho_u_rhs(i, j, k) -= dptr_rayleigh_tau[k] * (uu - dptr_rayleigh_ubar[k]) * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            }</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160; </div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            <span class="keywordflow">if</span> (l_moving_terrain) {</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                rho_u_rhs(i, j, k) *= 0.5 * (detJ(i,j,k) + detJ(i-1,j,k));</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            }</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        });</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160; </div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;        <span class="comment">// NON-TERRAIN VERSION</span></div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;        <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;          amrex::ParallelFor(tbx,</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;          [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;          { <span class="comment">// x-momentum equation</span></div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160; </div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gpx = dxInv[0] * (pp_arr(i,j,k) - pp_arr(i-1,j,k));</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;              gpx *= mf_u(i,j,0);</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_FASTEDDY)</span></div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i-1,j,k,PrimQt_comp) );</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;            rho_u_rhs(i, j, k) -= gpx / (1.0 + q);</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            rho_u_rhs(i, j, k) -= gpx;</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;            <span class="comment">// Add external drivers</span></div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;            rho_u_rhs(i, j, k) += ext_forcing[0];</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160; </div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            {</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_v_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j+1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i-1,j+1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i-1,j,k));</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_w_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k+1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j-1,k+1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j-1,k));</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                rho_u_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> *</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                        (rho_v_loc * solverChoice.<a class="code" href="structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf">sinphi</a> - rho_w_loc * solverChoice.<a class="code" href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">cosphi</a>);</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            }</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160; </div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            <span class="comment">// Add Rayleigh damping</span></div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            {</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> uu = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                rho_u_rhs(i, j, k) -= dptr_rayleigh_tau[k] * (uu - dptr_rayleigh_ubar[k]) * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            }</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160; </div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;            <span class="keywordflow">if</span> (l_moving_terrain) {</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                rho_u_rhs(i, j, k) *= 0.5 * (detJ(i,j,k) + detJ(i-1,j,k));</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            }</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        });</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        <span class="comment">// ******************************************************************</span></div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;        <span class="comment">// NON-TERRAIN VERSION</span></div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        <span class="comment">// ******************************************************************</span></div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;          amrex::ParallelFor(tbx,</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;          [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;          { <span class="comment">// x-momentum equation</span></div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160; </div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MOISTURE</span></div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i-1,j,k,PrimQt_comp)</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                              +cell_prim(i,j,k,PrimQp_comp) + cell_prim(i-1,j,k,PrimQp_comp) );</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;              rho_u_rhs(i, j, k) -= gpx / (1.0 + q);</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;              rho_u_rhs(i, j, k) -= gpx;</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;              <span class="comment">// Add external drivers</span></div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;              rho_u_rhs(i, j, k) += ext_forcing[0];</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;              <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;              <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;              {</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_v_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j+1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i-1,j+1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i-1,j,k));</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_w_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k+1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j-1,k+1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j-1,k));</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                  rho_u_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> *</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                          (rho_v_loc * solverChoice.<a class="code" href="structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf">sinphi</a> - rho_w_loc * solverChoice.<a class="code" href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">cosphi</a>);</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;              }</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; </div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;              <span class="comment">// Add Rayleigh damping</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;              <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;              {</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> uu = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                  rho_u_rhs(i, j, k) -= dptr_rayleigh_tau[k] * (uu - dptr_rayleigh_ubar[k]) * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;              }</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;          });</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;        } <span class="comment">// no terrain</span></div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160; </div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        {</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_pre_ymom&quot;</span>);</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        <span class="comment">// TERRAIN VERSION</span></div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        <span class="keywordflow">if</span> (l_use_terrain) {</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;          amrex::ParallelFor(tby,</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;          [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;          { <span class="comment">// y-momentum equation</span></div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; </div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_eta  = <a class="code" href="TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a> (i, j, k, dxInv, z_nd);</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i, j, k, dxInv, z_nd);</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160; </div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;              <span class="comment">//Note : mx/my == 1, so no map factor needed here</span></div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gp_eta = dxInv[1] * (pp_arr(i,j,k) - pp_arr(i,j-1,k));</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gp_zeta_on_jface;</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;              <span class="keywordflow">if</span>(k==0) {</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                  gp_zeta_on_jface = 0.5 * dxInv[2] * (</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                                                      pp_arr(i,j,k+1) + pp_arr(i,j-1,k+1)</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                                                    - pp_arr(i,j,k  ) - pp_arr(i,j-1,k  ) );</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k==domhi_z) {</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                  gp_zeta_on_jface = 0.5 * dxInv[2] * (</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                                                      pp_arr(i,j,k  ) + pp_arr(i,j-1,k  )</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                                                    - pp_arr(i,j,k-1) - pp_arr(i,j-1,k-1) );</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;              } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                  gp_zeta_on_jface = 0.25 * dxInv[2] * (</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                                                       pp_arr(i,j,k+1) + pp_arr(i,j-1,k+1)</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                                                     - pp_arr(i,j,k-1) - pp_arr(i,j-1,k-1) );</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;              }</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160; </div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gpy = gp_eta - (met_h_eta / met_h_zeta) * gp_zeta_on_jface;</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;              gpy *= mf_v(i,j,0);</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160; </div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MOISTURE</span></div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i,j-1,k,PrimQt_comp)</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                              +cell_prim(i,j,k,PrimQp_comp) + cell_prim(i,j-1,k,PrimQp_comp) );</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;              rho_v_rhs(i, j, k) -= gpy / (1.0_rt + q);</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;              rho_v_rhs(i, j, k) -= gpy;</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;              <span class="comment">// Add external drivers</span></div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;              rho_v_rhs(i, j, k) += ext_forcing[1];</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160; </div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;              <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y) if (solverChoice.use_coriolis)</span></div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;              {</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_u_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j-1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j-1,k));</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                  rho_v_rhs(i, j, k) += -solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf">sinphi</a>;</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;              }</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160; </div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;              <span class="comment">// Add Rayleigh damping</span></div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;              <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;              {</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vv = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j,k) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                  rho_v_rhs(i, j, k) -= dptr_rayleigh_tau[k] * (vv - dptr_rayleigh_vbar[k]) * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;              }</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; </div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;              <span class="keywordflow">if</span> (l_moving_terrain) {</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                  rho_v_rhs(i, j, k) *= 0.5 * (detJ(i,j,k) + detJ(i,j-1,k));</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;              }</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;          });</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160; </div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;        <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        <span class="comment">// NON-TERRAIN VERSION</span></div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;          amrex::ParallelFor(tby,</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;          [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;          { <span class="comment">// y-momentum equation</span></div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160; </div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gpy = dxInv[1] * (pp_arr(i,j,k) - pp_arr(i,j-1,k));</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;              gpy *= mf_v(i,j,0);</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MOISTURE</span></div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i,j-1,k,PrimQt_comp)</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                              +cell_prim(i,j,k,PrimQp_comp) + cell_prim(i,j-1,k,PrimQp_comp) );</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;              rho_v_rhs(i, j, k) -= gpy / (1.0_rt + q);</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;              rho_v_rhs(i, j, k) -= gpy;</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160; </div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;              <span class="comment">// Add external drivers</span></div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;              rho_v_rhs(i, j, k) += ext_forcing[1];</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;              <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;              <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;              {</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_u_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j-1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j-1,k));</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                  rho_v_rhs(i, j, k) += -solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf">sinphi</a>;</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;              }</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160; </div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;              <span class="comment">// Add Rayleigh damping</span></div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;              <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;              {</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vv = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j,k) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                  rho_v_rhs(i, j, k) -= dptr_rayleigh_tau[k] * (vv - dptr_rayleigh_vbar[k]) * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;              }</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;          });</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        } <span class="comment">// no terrain</span></div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160; </div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        {</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_pre_zmom_2d&quot;</span>);</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        amrex::Box b2d = tbz;</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        b2d.setSmall(2,0);</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        b2d.setBig(2,0);</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        <span class="comment">// Enforce no forcing term at top and bottom boundaries</span></div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        amrex::ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) {</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            rho_w_rhs(i,j,        0) = 0.;</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            rho_w_rhs(i,j,domhi_z+1) = 0.;</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        });</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gpx = dxInv[0] * (pp_arr(i,j,k) - pp_arr(i-1,j,k));</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;              gpx *= mf_u(i,j,0);</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160; </div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i-1,j,k,PrimQt_comp)</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                              +cell_prim(i,j,k,PrimQp_comp) + cell_prim(i-1,j,k,PrimQp_comp) );</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;              rho_u_rhs(i, j, k) -= gpx / (1.0 + q);</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_FASTEDDY)</span></div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i-1,j,k,PrimQt_comp) );</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;              rho_u_rhs(i, j, k) -= gpx / (1.0 + q);</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;              rho_u_rhs(i, j, k) -= gpx;</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;              <span class="comment">// Add external drivers</span></div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;              rho_u_rhs(i, j, k) += ext_forcing[0];</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160; </div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;              <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;              <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;              {</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_v_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j+1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i-1,j+1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i-1,j,k));</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_w_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k+1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j-1,k+1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j-1,k));</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                  rho_u_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> *</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                          (rho_v_loc * solverChoice.<a class="code" href="structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf">sinphi</a> - rho_w_loc * solverChoice.<a class="code" href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">cosphi</a>);</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;              }</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; </div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;              <span class="comment">// Add Rayleigh damping</span></div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;              <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;              {</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> uu = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                  rho_u_rhs(i, j, k) -= dptr_rayleigh_tau[k] * (uu - dptr_rayleigh_ubar[k]) * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;              }</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;          });</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        } <span class="comment">// no terrain</span></div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160; </div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        {</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_pre_ymom&quot;</span>);</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        <span class="comment">// ******************************************************************</span></div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        <span class="comment">// TERRAIN VERSION</span></div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        <span class="comment">// ******************************************************************</span></div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        <span class="keywordflow">if</span> (l_use_terrain) {</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;          amrex::ParallelFor(tby,</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;          [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;          { <span class="comment">// y-momentum equation</span></div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_eta  = <a class="code" href="TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a> (i, j, k, dxInv, z_nd);</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i, j, k, dxInv, z_nd);</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160; </div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;              <span class="comment">//Note : mx/my == 1, so no map factor needed here</span></div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gp_eta = dxInv[1] * (pp_arr(i,j,k) - pp_arr(i,j-1,k));</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gp_zeta_on_jface;</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;              <span class="keywordflow">if</span>(k==0) {</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                  gp_zeta_on_jface = 0.5 * dxInv[2] * (</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                                                      pp_arr(i,j,k+1) + pp_arr(i,j-1,k+1)</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                                                    - pp_arr(i,j,k  ) - pp_arr(i,j-1,k  ) );</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k==domhi_z) {</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                  gp_zeta_on_jface = 0.5 * dxInv[2] * (</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                                                      pp_arr(i,j,k  ) + pp_arr(i,j-1,k  )</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;                                                    - pp_arr(i,j,k-1) - pp_arr(i,j-1,k-1) );</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;              } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                  gp_zeta_on_jface = 0.25 * dxInv[2] * (</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                                                       pp_arr(i,j,k+1) + pp_arr(i,j-1,k+1)</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                                                     - pp_arr(i,j,k-1) - pp_arr(i,j-1,k-1) );</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;              }</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160; </div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gpy = gp_eta - (met_h_eta / met_h_zeta) * gp_zeta_on_jface;</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;              gpy *= mf_v(i,j,0);</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160; </div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i,j-1,k,PrimQt_comp)</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                              +cell_prim(i,j,k,PrimQp_comp) + cell_prim(i,j-1,k,PrimQp_comp) );</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;              rho_v_rhs(i, j, k) -= gpy / (1.0_rt + q);</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_FASTEDDY)</span></div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i,j-1,k,PrimQt_comp) );</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;              rho_v_rhs(i, j, k) -= gpy / (1.0_rt + q);</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;              rho_v_rhs(i, j, k) -= gpy;</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;              <span class="comment">// Add external drivers</span></div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;              rho_v_rhs(i, j, k) += ext_forcing[1];</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160; </div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;              <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y) if (solverChoice.use_coriolis)</span></div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;              {</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_u_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j-1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j-1,k));</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                  rho_v_rhs(i, j, k) += -solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf">sinphi</a>;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;              }</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160; </div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;              <span class="comment">// Add Rayleigh damping</span></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;              <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;              {</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vv = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j,k) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                  rho_v_rhs(i, j, k) -= dptr_rayleigh_tau[k] * (vv - dptr_rayleigh_vbar[k]) * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;              }</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160; </div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;              <span class="keywordflow">if</span> (l_moving_terrain) {</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                  rho_v_rhs(i, j, k) *= 0.5 * (detJ(i,j,k) + detJ(i,j-1,k));</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;              }</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;          });</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160; </div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        <span class="comment">// ******************************************************************</span></div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;        <span class="comment">// NON-TERRAIN VERSION</span></div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;        <span class="comment">// ******************************************************************</span></div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;          amrex::ParallelFor(tby,</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;          [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;          { <span class="comment">// y-momentum equation</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160; </div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gpy = dxInv[1] * (pp_arr(i,j,k) - pp_arr(i,j-1,k));</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;              gpy *= mf_v(i,j,0);</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160; </div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i,j-1,k,PrimQt_comp)</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                              +cell_prim(i,j,k,PrimQp_comp) + cell_prim(i,j-1,k,PrimQp_comp) );</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;              rho_v_rhs(i, j, k) -= gpy / (1.0_rt + q);</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_FASTEDDY)</span></div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;              <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i,j-1,k,PrimQt_comp) );</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;              rho_v_rhs(i, j, k) -= gpy / (1.0_rt + q);</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;              rho_v_rhs(i, j, k) -= gpy;</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160; </div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;              <span class="comment">// Add external drivers</span></div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;              rho_v_rhs(i, j, k) += ext_forcing[1];</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160; </div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;              <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;              <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;              {</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_u_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j-1,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j-1,k));</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                  rho_v_rhs(i, j, k) += -solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf">sinphi</a>;</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;              }</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;              <span class="comment">// Add Rayleigh damping</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;              <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;              {</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                  <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vv = <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a8e833bbd3cf3c869edc727d60cb65424">rho_v</a>(i,j,k) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                  rho_v_rhs(i, j, k) -= dptr_rayleigh_tau[k] * (vv - dptr_rayleigh_vbar[k]) * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;              }</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;          });</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        } <span class="comment">// no terrain</span></div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        } <span class="comment">// end profile</span></div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160; </div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        {</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_pre_zmom&quot;</span>);</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        <span class="comment">// TERRAIN VERSION</span></div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        <span class="keywordflow">if</span> (l_use_terrain) {</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;          amrex::ParallelFor(tbz,</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;          [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) { <span class="comment">// z-momentum equation</span></div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160; </div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i, j, k, dxInv, z_nd);</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gpz = dxInv[2] * ( pp_arr(i,j,k)-pp_arr(i,j,k-1) )  / met_h_zeta;</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_pre_zmom_2d&quot;</span>);</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        amrex::Box b2d = tbz;</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        b2d.setSmall(2,0);</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        b2d.setBig(2,0);</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        <span class="comment">// Enforce no forcing term at top and bottom boundaries</span></div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        amrex::ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) {</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            rho_w_rhs(i,j,        0) = 0.;</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            rho_w_rhs(i,j,domhi_z+1) = 0.;</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        });</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        } <span class="comment">// end profile</span></div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160; </div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MOISTURE</span></div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i,j,k-1,PrimQt_comp)</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                                +cell_prim(i,j,k,PrimQp_comp) + cell_prim(i,j,k-1,PrimQp_comp) );</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                rho_w_rhs(i, j, k) -= gpz / (1.0_rt + q);</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                rho_w_rhs(i, j, k) -= gpz;</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160; </div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                rho_w_rhs(i, j, k) += buoyancy_fab(i,j,k);</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160; </div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                <span class="comment">// Add external drivers</span></div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                rho_w_rhs(i, j, k) += ext_forcing[2];</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160; </div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                {</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_u_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k-1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k-1));</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                    rho_w_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">cosphi</a>;</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                }</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160; </div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                <span class="comment">// Add Rayleigh damping</span></div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                {</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                    rho_w_rhs(i, j, k) -= dptr_rayleigh_tau[k] * <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k);</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                }</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160; </div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                <span class="keywordflow">if</span> (l_use_terrain &amp;&amp; l_moving_terrain) {</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                     rho_w_rhs(i, j, k) *= 0.5 * (detJ(i,j,k) + detJ(i,j,k-1));</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                }</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;          });</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160; </div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        <span class="comment">// NON-TERRAIN VERSION</span></div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;          amrex::ParallelFor(tbz,</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;          [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;          { <span class="comment">// z-momentum equation</span></div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160; </div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gpz = dxInv[2] * ( pp_arr(i,j,k)-pp_arr(i,j,k-1) );</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        {</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_pre_zmom&quot;</span>);</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        <span class="comment">// ******************************************************************</span></div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        <span class="comment">// TERRAIN VERSION</span></div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        <span class="comment">// ******************************************************************</span></div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        <span class="keywordflow">if</span> (l_use_terrain) {</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;          amrex::ParallelFor(tbz,</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;          [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) { <span class="comment">// z-momentum equation</span></div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160; </div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i, j, k, dxInv, z_nd);</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gpz = dxInv[2] * ( pp_arr(i,j,k)-pp_arr(i,j,k-1) )  / met_h_zeta;</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160; </div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i,j,k-1,PrimQt_comp)</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                                +cell_prim(i,j,k,PrimQp_comp) + cell_prim(i,j,k-1,PrimQp_comp) );</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                rho_w_rhs(i, j, k) -= gpz / (1.0_rt + q);</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_FASTEDDY)</span></div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i,j,k-1,PrimQt_comp) );</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                rho_w_rhs(i, j, k) -= gpz / (1.0_rt + q);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                rho_w_rhs(i, j, k) -= gpz;</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160; </div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                rho_w_rhs(i, j, k) += buoyancy_fab(i,j,k);</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160; </div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                <span class="comment">// Add external drivers</span></div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                rho_w_rhs(i, j, k) += ext_forcing[2];</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160; </div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                {</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_u_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k-1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k-1));</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                    rho_w_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">cosphi</a>;</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                }</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                <span class="comment">// Add Rayleigh damping</span></div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                {</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                    rho_w_rhs(i, j, k) -= dptr_rayleigh_tau[k] * <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k);</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                }</div>
 <div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160; </div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MOISTURE</span></div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i,j,k-1,PrimQt_comp)</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                                +cell_prim(i,j,k,PrimQp_comp) + cell_prim(i,j,k-1,PrimQp_comp) );</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                rho_w_rhs(i, j, k) -= gpz / (1.0_rt + q);</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                rho_w_rhs(i, j, k) -= gpz;</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160; </div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                rho_w_rhs(i, j, k) += buoyancy_fab(i,j,k);</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160; </div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                <span class="comment">// Add external drivers</span></div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                rho_w_rhs(i, j, k) += ext_forcing[2];</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                <span class="keywordflow">if</span> (l_use_terrain &amp;&amp; l_moving_terrain) {</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                     rho_w_rhs(i, j, k) *= 0.5 * (detJ(i,j,k) + detJ(i,j,k-1));</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                }</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;          });</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160; </div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        <span class="comment">// ******************************************************************</span></div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        <span class="comment">// NON-TERRAIN VERSION</span></div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;        <span class="comment">// ******************************************************************</span></div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;          amrex::ParallelFor(tbz,</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;          [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;          { <span class="comment">// z-momentum equation</span></div>
 <div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160; </div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                {</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_u_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k-1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k-1));</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                    rho_w_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">cosphi</a>;</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                }</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160; </div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                <span class="comment">// Add Rayleigh damping</span></div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                {</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                    rho_w_rhs(i, j, k) -= dptr_rayleigh_tau[k] * <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k);</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                }</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        });</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        } <span class="comment">// no terrain</span></div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160; </div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    <span class="keywordflow">if</span> (l_use_diff) {</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;        <span class="keyword">delete</span> expr;</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        <span class="keyword">delete</span> dflux_x;</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        <span class="keyword">delete</span> dflux_y;</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        <span class="keyword">delete</span> dflux_z;</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    }</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;}</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gpz = dxInv[2] * ( pp_arr(i,j,k)-pp_arr(i,j,k-1) );</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160; </div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i,j,k-1,PrimQt_comp)</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                                +cell_prim(i,j,k,PrimQp_comp) + cell_prim(i,j,k-1,PrimQp_comp) );</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                rho_w_rhs(i, j, k) -= gpz / (1.0_rt + q);</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_FASTEDDY)</span></div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( cell_prim(i,j,k,PrimQt_comp) + cell_prim(i,j,k-1,PrimQt_comp) );</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                rho_w_rhs(i, j, k) -= gpz / (1.0_rt + q);</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                rho_w_rhs(i, j, k) -= gpz;</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160; </div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                rho_w_rhs(i, j, k) += buoyancy_fab(i,j,k);</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160; </div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                <span class="comment">// Add external drivers</span></div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                rho_w_rhs(i, j, k) += ext_forcing[2];</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160; </div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                {</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rho_u_loc = 0.25 * (<a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i+1,j,k-1) + <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a1ae26c2d396a1f7100feac6ad99172d3">rho_u</a>(i,j,k-1));</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                    rho_w_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">cosphi</a>;</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                }</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160; </div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                <span class="comment">// Add Rayleigh damping</span></div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01">use_rayleigh_damping</a>)</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                {</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                    rho_w_rhs(i, j, k) -= dptr_rayleigh_tau[k] * <a class="code" href="DataStruct_8H.html#a0f913d9c7675b91d39c19beb8ada7432a4be15d5cfb3c45122ca4724ae2df295f">rho_w</a>(i,j,k);</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                }</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        });</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;        } <span class="comment">// no terrain</span></div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;        } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160; </div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    <span class="keywordflow">if</span> (l_use_diff) {</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;        <span class="keyword">delete</span> expr;</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;        <span class="keyword">delete</span> dflux_x;</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;        <span class="keyword">delete</span> dflux_y;</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;        <span class="keyword">delete</span> dflux_z;</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    }</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;}</div>
 <div class="ttc" id="aAdvection_8H_html_a8e9517c02b5256f5e600dc2c8c0df0eb"><div class="ttname"><a href="Advection_8H.html#a8e9517c02b5256f5e600dc2c8c0df0eb">AdvectionSrcForMom</a></div><div class="ttdeci">void AdvectionSrcForMom(const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;Omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const int spatial_order, const int use_terrain, const int domhi_z)</div></div>
 <div class="ttc" id="aAdvection_8H_html_aba1e1137c86dcecbdd9d3357af30d09b"><div class="ttname"><a href="Advection_8H.html#aba1e1137c86dcecbdd9d3357af30d09b">AdvectionSrcForRhoAndTheta</a></div><div class="ttdeci">void AdvectionSrcForRhoAndTheta(const amrex::Box &amp;bx, const amrex::Box &amp;valid_bx, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;omega, amrex::Real fac, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSize, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const int &amp;spatial_order, const int &amp;use_terrain)</div></div>
 <div class="ttc" id="aComputeStrain__N_8cpp_html_ad2f628a16d6243d4a00094e51e3392dd"><div class="ttname"><a href="ComputeStrain__N_8cpp.html#ad2f628a16d6243d4a00094e51e3392dd">ComputeStrain_N</a></div><div class="ttdeci">void ComputeStrain_N(Box &amp;bxcc, Box &amp;tbxxy, Box &amp;tbxxz, Box &amp;tbxyz, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, Array4&lt; Real &gt; &amp;tau11, Array4&lt; Real &gt; &amp;tau22, Array4&lt; Real &gt; &amp;tau33, Array4&lt; Real &gt; &amp;tau12, Array4&lt; Real &gt; &amp;tau13, Array4&lt; Real &gt; &amp;tau23, const BCRec *bc_ptr, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv, const Array4&lt; const Real &gt; &amp;mf_m, const Array4&lt; const Real &gt; &amp;mf_u, const Array4&lt; const Real &gt; &amp;mf_v)</div><div class="ttdef"><b>Definition:</b> ComputeStrain_N.cpp:6</div></div>
@@ -1212,10 +1230,10 @@ Functions</h2></td></tr>
 <div class="ttc" id="aDiffusion_8H_html_a1624f394cb59e6ed88b5013c20941206"><div class="ttname"><a href="Diffusion_8H.html#a1624f394cb59e6ed88b5013c20941206">DiffusionSrcForMom_N</a></div><div class="ttdeci">void DiffusionSrcForMom_N(const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau11, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau22, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau33, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau12, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau13, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau23, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const SolverChoice &amp;solverChoice, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v)</div></div>
 <div class="ttc" id="aDiffusion_8H_html_a1d55cff74fba9664f17baf2afb86d8e8"><div class="ttname"><a href="Diffusion_8H.html#a1d55cff74fba9664f17baf2afb86d8e8">DiffusionSrcForState_T</a></div><div class="ttdeci">void DiffusionSrcForState_T(const amrex::Box &amp;bx, const amrex::Box &amp;domain, int n_start, int n_end, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;source_fab, const amrex::Array4&lt; amrex::Real &gt; &amp;cell_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;xflux, const amrex::Array4&lt; amrex::Real &gt; &amp;yflux, const amrex::Array4&lt; amrex::Real &gt; &amp;zflux, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;mu_turb, const SolverChoice &amp;solverChoice, const amrex::Array4&lt; const amrex::Real &gt; &amp;tm_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; grav_gpu, const amrex::BCRec *bc_ptr)</div></div>
 <div class="ttc" id="aDiffusion_8H_html_afd66a5d2d58145b92a6a2a99c2a384f9"><div class="ttname"><a href="Diffusion_8H.html#afd66a5d2d58145b92a6a2a99c2a384f9">DiffusionSrcForMom_T</a></div><div class="ttdeci">void DiffusionSrcForMom_T(const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau11, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau22, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau33, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau12, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau13, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau21, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau23, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau31, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau32, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const SolverChoice &amp;solverChoice, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v)</div></div>
-<div class="ttc" id="aEOS_8H_html_ac10be81559b5559e18428f0e05979620"><div class="ttname"><a href="EOS_8H.html#ac10be81559b5559e18428f0e05979620">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0)</div><div class="ttdef"><b>Definition:</b> EOS.H:23</div></div>
+<div class="ttc" id="aEOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> EOS.H:23</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:22</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:25</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a002996309aac722698ccbc1e66f2e28c"><div class="ttname"><a href="TerrainMetrics_8H.html#a002996309aac722698ccbc1e66f2e28c">OmegaFromW</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real OmegaFromW(int i, int j, int k, amrex::Real w, const amrex::Array4&lt; const amrex::Real &gt; u, const amrex::Array4&lt; const amrex::Real &gt; v, const amrex::Array4&lt; const amrex::Real &gt; z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:334</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a1582797e6ac6cf0c1e0b94a619bc13b8"><div class="ttname"><a href="TerrainMetrics_8H.html#a1582797e6ac6cf0c1e0b94a619bc13b8">Compute_h_xi_AtEdgeCenterJ</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_xi_AtEdgeCenterJ(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:260</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a2116df83b61a39fb50b9a2d7474c00d7"><div class="ttname"><a href="TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_xi_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:81</div></div>
@@ -1226,14 +1244,14 @@ Functions</h2></td></tr>
 <div class="ttc" id="aTerrainMetrics_8H_html_ada12bcb6beb3fa0d00dbdacb37f3c60f"><div class="ttname"><a href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:110</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_ae609a5c1f84347b66e9a8b712271c4ce"><div class="ttname"><a href="TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:138</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_aed973861215c4eb0697f7a83b37016a9"><div class="ttname"><a href="TerrainMetrics_8H.html#aed973861215c4eb0697f7a83b37016a9">Compute_h_eta_AtEdgeCenterI</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtEdgeCenterI(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:317</div></div>
-<div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:183</div></div>
-<div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:185</div></div>
-<div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12abde409cfd9edf4a3581fe26dfa9613cd"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12abde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:186</div></div>
-<div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:184</div></div>
-<div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a96295e93c39d249775ba2498eb3d4fc1"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a96295e93c39d249775ba2498eb3d4fc1">MicVar::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:196</div></div>
-<div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:83</div></div>
-<div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:85</div></div>
-<div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:84</div></div>
+<div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:198</div></div>
+<div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:200</div></div>
+<div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12abde409cfd9edf4a3581fe26dfa9613cd"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12abde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:201</div></div>
+<div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:199</div></div>
+<div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a96295e93c39d249775ba2498eb3d4fc1"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a96295e93c39d249775ba2498eb3d4fc1">MicVar::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:211</div></div>
+<div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:90</div></div>
+<div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:92</div></div>
+<div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:91</div></div>
 <div class="ttc" id="astructSolverChoice_html_a063a88594452100497651e8aaf1f68d7"><div class="ttname"><a href="structSolverChoice.html#a063a88594452100497651e8aaf1f68d7">SolverChoice::use_terrain</a></div><div class="ttdeci">bool use_terrain</div><div class="ttdef"><b>Definition:</b> DataStruct.H:345</div></div>
 <div class="ttc" id="astructSolverChoice_html_a0a031373331c9aca22a47b0995729f46"><div class="ttname"><a href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">SolverChoice::pbl_type</a></div><div class="ttdeci">PBLType pbl_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:397</div></div>
 <div class="ttc" id="astructSolverChoice_html_a1163778ed56af6977001ef4ec55a3da3"><div class="ttname"><a href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">SolverChoice::coriolis_factor</a></div><div class="ttdeci">amrex::Real coriolis_factor</div><div class="ttdef"><b>Definition:</b> DataStruct.H:414</div></div>
@@ -1276,7 +1294,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="Diffusion_8H.html#afd66a5d2d58145b92a6a2a99c2a384f9" title=" " alt="" coords="209,917,377,944"/>
 <area shape="rect" href="Diffusion_8H.html#a1039cd643a76fdc70b57a63cbae6097f" title=" " alt="" coords="207,968,378,995"/>
 <area shape="rect" href="Diffusion_8H.html#a1d55cff74fba9664f17baf2afb86d8e8" title=" " alt="" coords="208,1019,377,1045"/>
-<area shape="rect" href="EOS_8H.html#ac10be81559b5559e18428f0e05979620" title=" " alt="" coords="237,1069,348,1096"/>
+<area shape="rect" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="237,1069,348,1096"/>
 <area shape="rect" href="TerrainMetrics_8H.html#a002996309aac722698ccbc1e66f2e28c" title=" " alt="" coords="235,1120,350,1147"/>
 <area shape="rect" href="TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="459,385,673,412"/>
 <area shape="rect" href="TerrainMetrics_8H.html#ac1434a53d9966d992133433473bc629a" title=" " alt="" coords="451,31,681,57"/>
