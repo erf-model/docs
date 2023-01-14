@@ -459,11 +459,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            gpy *= mf_v(i,j,0);</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( prim(i,j,k,PrimQp_comp) + prim(i,j-1,k,PrimQt_comp)</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i,j-1,k,PrimQt_comp)</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                            +prim(i,j,k,PrimQp_comp) + prim(i,j-1,k,PrimQp_comp) );</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            gpy /= (1.0 + q);</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_FASTEDDY)</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( prim(i,j,k,PrimQp_comp) + prim(i,j-1,k,PrimQt_comp) );</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i,j-1,k,PrimQt_comp) );</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            gpy /= (1.0 + q);</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> pi_c =  0.5 * (pi_stage_ca(i,j-1,k,0) + pi_stage_ca(i,j,k,0));</div>
