@@ -30,6 +30,7 @@ var ERF__Constants_8H =
     [ "ip_0", "ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000", null ],
     [ "iR_d", "ERF__Constants_8H.html#a2c83556bc439f3f48ca5eb1cb5c81842", null ],
     [ "KAPPA", "ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093", null ],
+    [ "L_v", "ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5", null ],
     [ "lcond", "ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518", null ],
     [ "lfus", "ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd", null ],
     [ "lsub", "ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d", null ],

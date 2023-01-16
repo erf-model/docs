@@ -178,9 +178,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;{</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <a class="code" href="namespacederived.html#a9935603239fe8510b11179da8e76c39c">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;{</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <a class="code" href="namespacederived.html#a9935603239fe8510b11179da8e76c39c">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
 <div class="ttc" id="aIndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
 <div class="ttc" id="anamespacederived_html_a9935603239fe8510b11179da8e76c39c"><div class="ttname"><a href="namespacederived.html#a9935603239fe8510b11179da8e76c39c">derived::erf_derrhodivide</a></div><div class="ttdeci">void erf_derrhodivide(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, const amrex::FArrayBox &amp;datfab, const int scalar_index)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:7</div></div>
 </div><!-- fragment -->
@@ -364,11 +364,22 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">const</span> amrex::Real rhotheta = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    AMREX_ALWAYS_ASSERT(rhotheta &gt; 0.);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    pfab(i,j,k) = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(rhotheta);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  });</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// HACK HACK HACK -- FOR NOW THIS IS ONLY THE PARTIAL PRESSURE OF THE DRY AIR</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    amrex::Real <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a24d3a4784c4c0b3c8ab827a784198261">qv</a> = 0.;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    pfab(i,j,k) = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(rhotheta,<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a24d3a4784c4c0b3c8ab827a784198261">qv</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_WARM_NO_PRECIP)</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    amrex::Real <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a24d3a4784c4c0b3c8ab827a784198261">qv</a> = dat(i,j,k,RhoQv_comp) / dat(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    pfab(i,j,k) = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(rhotheta,<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a24d3a4784c4c0b3c8ab827a784198261">qv</a>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    pfab(i,j,k) = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(rhotheta);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  });</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 <div class="ttc" id="aEOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> EOS.H:23</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
+<div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a24d3a4784c4c0b3c8ab827a784198261"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a24d3a4784c4c0b3c8ab827a784198261">MicVar::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:224</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
@@ -459,9 +470,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <a class="code" href="namespacederived.html#a9935603239fe8510b11179da8e76c39c">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;{</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <a class="code" href="namespacederived.html#a9935603239fe8510b11179da8e76c39c">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
 <div class="ttc" id="aIndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:11</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
@@ -534,8 +545,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    primitive(i,j,k) = conserved / <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  });</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
-<div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">MicVar::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:213</div></div>
+<div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">MicVar::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:220</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespacederived.html#aa1fcac44ae779cdfa2fd5266bc206e2d">erf_derKE()</a>, <a class="el" href="namespacederived.html#aa850437283651e137b82322c0437d487">erf_derQKE()</a>, <a class="el" href="namespacederived.html#a2d9c0cabf04515367f2b721320dcddab">erf_derscalar()</a>, and <a class="el" href="namespacederived.html#ab8895d9d9775ea0b8f643483a5a4127e">erf_dertheta()</a>.</p>
 <div class="dynheader">
@@ -621,9 +631,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <a class="code" href="namespacederived.html#a9935603239fe8510b11179da8e76c39c">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <a class="code" href="namespacederived.html#a9935603239fe8510b11179da8e76c39c">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
 <div class="ttc" id="aIndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
@@ -715,18 +725,21 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">auto</span> cfab      = derfab.array();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">const</span> amrex::Real rhotheta = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>      = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    AMREX_ALWAYS_ASSERT(rhotheta &gt; 0.);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    cfab(i,j,k) = std::sqrt(<a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(rhotheta) / <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  });</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="ttc" id="aERF__Constants_8H_html_afbb622bf3b404a3e7c77f3103b4d1231"><div class="ttname"><a href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a></div><div class="ttdeci">constexpr amrex::Real Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:16</div></div>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">auto</span> cfab      = derfab.array();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">// NOTE: we compute the soundspeed of dry air -- we do not account for any moisture effects here</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  amrex::Real <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a24d3a4784c4c0b3c8ab827a784198261">qv</a> = 0.;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">const</span> amrex::Real rhotheta = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>      = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    AMREX_ALWAYS_ASSERT(rhotheta &gt; 0.);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    cfab(i,j,k) = std::sqrt(<a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(rhotheta,<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a24d3a4784c4c0b3c8ab827a784198261">qv</a>) / <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  });</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="ttc" id="aERF__Constants_8H_html_afbb622bf3b404a3e7c77f3103b4d1231"><div class="ttname"><a href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a></div><div class="ttdeci">constexpr amrex::Real Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:18</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
@@ -817,17 +830,17 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;{</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">auto</span> tfab      = derfab.array();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a> = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">const</span> amrex::Real rhotheta = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    AMREX_ALWAYS_ASSERT(rhotheta &gt; 0.);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    tfab(i,j,k) = <a class="code" href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a>(<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>,rhotheta);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  });</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keyword">auto</span> tfab      = derfab.array();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a> = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">const</span> amrex::Real rhotheta = dat(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    AMREX_ALWAYS_ASSERT(rhotheta &gt; 0.);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    tfab(i,j,k) = <a class="code" href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a>(<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>,rhotheta);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  });</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="ttc" id="aEOS_8H_html_a652d566aef658cc423ced929a816f869"><div class="ttname"><a href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:9</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classWriteBndryPlanes.html#abd077cea0b42e78c3d6ccb429b4d779e">WriteBndryPlanes::write_planes()</a>, and <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
@@ -920,9 +933,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="namespacederived.html#a9935603239fe8510b11179da8e76c39c">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <a class="code" href="namespacederived.html#a9935603239fe8510b11179da8e76c39c">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
