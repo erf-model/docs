@@ -251,8 +251,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            amrex::ParallelFor(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                buoyancy_fab(i, j, k) = grav_gpu[2] * 0.5 * ( cell_data(i,j,k) + cell_data(i,j,k-1)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                               - r0_arr(i,j,k) -    r0_arr(i,j,k-1) );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                buoyancy_fab(i, j, k) = grav_gpu[2] * 0.5 * ( (cell_data(i,j,k  ) - r0_arr(i,j,k  ))</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                             +(cell_data(i,j,k-1) - r0_arr(i,j,k-1)) );</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            });</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
@@ -345,10 +345,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            amrex::ParallelFor(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rhop_hi = cell_data(i,j,k  ) * (1.0 + qv_data(i,j,k  ) + qc_data(i,j,k  )</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                                         + qi_data(i,j,k  )) - r0_arr(i,j,k  );</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rhop_lo = cell_data(i,j,k-1) * (1.0 + qv_data(i,j,k-1) + qc_data(i,j,k-1)</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                                         + qi_data(i,j,k-1)) - r0_arr(i,j,k-1);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rhop_hi = cell_data(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * (1.0 + qv_data(i,j,k  ) + qc_data(i,j,k  )</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                                                  + qi_data(i,j,k  )) - r0_arr(i,j,k  );</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> rhop_lo = cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * (1.0 + qv_data(i,j,k-1) + qc_data(i,j,k-1)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                                                  + qi_data(i,j,k-1)) - r0_arr(i,j,k-1);</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                buoyancy_fab(i, j, k) = grav_gpu[2] * 0.5 * ( rhop_hi + rhop_lo );</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            });</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        } <span class="comment">// mfi</span></div>
