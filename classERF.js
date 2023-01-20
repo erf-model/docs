@@ -177,7 +177,6 @@ var classERF =
     [ "t_new", "classERF.html#a65741b6379d273c19a25cf48bb947614", null ],
     [ "t_old", "classERF.html#a7085d7d5fc94a0f84efc06957267d58e", null ],
     [ "Theta_prim", "classERF.html#a71629ae2fda396472198691b75d83b2e", null ],
-    [ "use_lowM_dt", "classERF.html#aad09820d3e29638db7c3d499304c8aed", null ],
     [ "use_native_mri", "classERF.html#a4a279f0f572da168852d954df55abe2e", null ],
     [ "vars_new", "classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b", null ],
     [ "vars_old", "classERF.html#af31e928baa970a1507dfb0233b352542", null ],
