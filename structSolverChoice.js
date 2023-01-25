@@ -21,6 +21,7 @@ var structSolverChoice =
     [ "diffuse_QKE_3D", "structSolverChoice.html#ad8f19f1ba25a4de9578af14ec787c0cc", null ],
     [ "dynamicViscosity", "structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446", null ],
     [ "gravity", "structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b", null ],
+    [ "horiz_spatial_order", "structSolverChoice.html#a2451280477d028785ae428b09f4e64d0", null ],
     [ "icBcType", "structSolverChoice.html#a890734318e58de211bb8e9c4d2c89c9b", null ],
     [ "les_type", "structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0", null ],
     [ "molec_diff_type", "structSolverChoice.html#a8d16d654d2a02cec62427b38498c2462", null ],
@@ -45,12 +46,12 @@ var structSolverChoice =
     [ "Sc_t_inv", "structSolverChoice.html#a5d8e6a103e2e5d61dc0990fa2141a675", null ],
     [ "sigma_k", "structSolverChoice.html#affbc103f3361b47fbcf605a08b99d8ec", null ],
     [ "sinphi", "structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf", null ],
-    [ "spatial_order", "structSolverChoice.html#a8e053ce39997ed619ac81aa4d5a1fd44", null ],
     [ "terrain_type", "structSolverChoice.html#a6cf7cd64adcf678e8065b1c4261cefd8", null ],
     [ "test_mapfactor", "structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107", null ],
     [ "use_coriolis", "structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606", null ],
     [ "use_gravity", "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5", null ],
     [ "use_QKE", "structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5", null ],
     [ "use_rayleigh_damping", "structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01", null ],
-    [ "use_terrain", "structSolverChoice.html#a063a88594452100497651e8aaf1f68d7", null ]
+    [ "use_terrain", "structSolverChoice.html#a063a88594452100497651e8aaf1f68d7", null ],
+    [ "vert_spatial_order", "structSolverChoice.html#a71fca0daa3d4a84c48789d76c22bcb8a", null ]
 ];

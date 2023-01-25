@@ -18,5 +18,6 @@ var searchData=
   ['has_5fgroup_440',['has_group',['../classncutils_1_1NCGroup.html#a00ea1ccd06adafc43396239ec842b23f',1,'ncutils::NCGroup']]],
   ['has_5fvar_441',['has_var',['../classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192',1,'ncutils::NCGroup']]],
   ['heat_5fflux_442',['HEAT_FLUX',['../classABLMost.html#a46fbd9260d2adfa7c18edad6452f9babae816b5ebd99b4a9778451fc8e90bb05d',1,'ABLMost']]],
-  ['host_5fto_5fdevice_443',['host_to_device',['../structInputSoundingData.html#ab036816413b1f708981ed6c2b3b113d5',1,'InputSoundingData']]]
+  ['horiz_5fspatial_5forder_443',['horiz_spatial_order',['../structSolverChoice.html#a2451280477d028785ae428b09f4e64d0',1,'SolverChoice']]],
+  ['host_5fto_5fdevice_444',['host_to_device',['../structInputSoundingData.html#ab036816413b1f708981ed6c2b3b113d5',1,'InputSoundingData']]]
 ];

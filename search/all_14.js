@@ -15,5 +15,6 @@ var searchData=
   ['velplaneaverage_1045',['VelPlaneAverage',['../classVelPlaneAverage.html',1,'VelPlaneAverage'],['../classVelPlaneAverage.html#a899d4bc2f1ef6656fd155661b4b50e7e',1,'VelPlaneAverage::VelPlaneAverage()']]],
   ['velplaneaverage_2eh_1046',['VelPlaneAverage.H',['../VelPlaneAverage_8H.html',1,'']]],
   ['verbose_1047',['verbose',['../classERF.html#a43d0b17f6e155691a1e9474526df3af5',1,'ERF']]],
-  ['volwgtsummf_1048',['volWgtSumMF',['../classERF.html#a2cdc63885e5fec54f89cdcaffcbdc188',1,'ERF']]]
+  ['vert_5fspatial_5forder_1048',['vert_spatial_order',['../structSolverChoice.html#a71fca0daa3d4a84c48789d76c22bcb8a',1,'SolverChoice']]],
+  ['volwgtsummf_1049',['volWgtSumMF',['../classERF.html#a2cdc63885e5fec54f89cdcaffcbdc188',1,'ERF']]]
 ];
