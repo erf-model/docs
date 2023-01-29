@@ -54,7 +54,7 @@ var classERF =
     [ "RemakeLevel", "classERF.html#aae7a3a76e08e54c618cf79b30ed2d73d", null ],
     [ "restart", "classERF.html#a530d2ce59e6fd46e9fb00e4d11eaf737", null ],
     [ "setPlotVariables", "classERF.html#a1fcb440c67da60c86372aec1fe871cb7", null ],
-    [ "setRayleighRefFromSounding", "classERF.html#a89b1e435330710631604b24729fe944b", null ],
+    [ "setRayleighRefFromSounding", "classERF.html#a0877d5a0263641c13b92d2d16f47b689", null ],
     [ "setRecordDataInfo", "classERF.html#a2486b49bb0d7917f812318822e42a03c", null ],
     [ "sum_integrated_quantities", "classERF.html#a922892a05ee0c5bccd210a3e5a8599e1", null ],
     [ "timeStep", "classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f", null ],

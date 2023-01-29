@@ -30,7 +30,7 @@ var searchData=
   ['setboxlists_900',['SetBoxLists',['../classMultiBlockContainer.html#a6965a65ae5ef2533298b274797b5d8c7',1,'MultiBlockContainer']]],
   ['setnosubstepping_901',['setNoSubstepping',['../classMRISplitIntegrator.html#a6ca4eef257ddfcb793de89d2309ac9a1',1,'MRISplitIntegrator']]],
   ['setplotvariables_902',['setPlotVariables',['../classERF.html#a1fcb440c67da60c86372aec1fe871cb7',1,'ERF']]],
-  ['setrayleighreffromsounding_903',['setRayleighRefFromSounding',['../classERF.html#a89b1e435330710631604b24729fe944b',1,'ERF']]],
+  ['setrayleighreffromsounding_903',['setRayleighRefFromSounding',['../classERF.html#a0877d5a0263641c13b92d2d16f47b689',1,'ERF']]],
   ['setrecorddatainfo_904',['setRecordDataInfo',['../classERF.html#a2486b49bb0d7917f812318822e42a03c',1,'ERF']]],
   ['shape_905',['shape',['../structNDArray.html#a99d704051dda7b5635b12cbe785d7bb5',1,'NDArray::shape()'],['../structncutils_1_1NCVar.html#adb6e5fe1bfe8ab79e9ecf33ca5800797',1,'ncutils::NCVar::shape()']]],
   ['sigma_5fk_906',['sigma_k',['../structSolverChoice.html#affbc103f3361b47fbcf605a08b99d8ec',1,'SolverChoice']]],
