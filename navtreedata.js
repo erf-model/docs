@@ -74,9 +74,9 @@ var NAVTREEINDEX =
 "ABLMost_8H.html",
 "ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817",
 "classERF.html#a0877d5a0263641c13b92d2d16f47b689",
-"classMOSTAverage.html#ab93d5fe63b595c0631aec387156e94ab",
-"classncutils_1_1NCGroup.html#acf2801c26458fb99bd82733b1302285a",
-"structSolverChoice.html#a3b31e3a91b502cabfc9fd8778492ad46"
+"classMOSTAverage.html#ab85828af24cd22d737931c51862389e4",
+"classncutils_1_1NCGroup.html#ac5c99d691660e36a00afffae6f0d6f71",
+"structSolverChoice.html#a3953d8a94a2320f7bc57260a5a6cddca"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
