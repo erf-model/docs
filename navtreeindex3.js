@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"classMOSTAverage.html#a94ece9d178d0e85296cce07bab556bc7":[2,0,12,36],
+"classMOSTAverage.html#a960bae1d528aef6d0e7034dbea65a2c3":[2,0,12,22],
 "classMOSTAverage.html#a96178b02bec37f171ef608cec9a246bf":[2,0,12,14],
 "classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81":[2,0,12,6],
 "classMOSTAverage.html#aaea0b00766b3cdeefd2b54bade8a86bd":[2,0,12,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "classncutils_1_1NCGroup.html#a82a48643f27b33b27cdd87c60e63f5f5":[2,0,0,3,3],
 "classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd":[2,0,0,3,33],
 "classncutils_1_1NCGroup.html#a8e01fe072fa48f4fa9c8be33a3a401b0":[2,0,0,3,2],
-"classncutils_1_1NCGroup.html#a91efbd2b8ef280b7eb3b426bbbf16cca":[2,0,0,3,29],
-"classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65":[2,0,0,3,0],
-"classncutils_1_1NCGroup.html#aa049e7d6f5f7f88ad840fa2ced3c61b4":[2,0,0,3,9]
+"classncutils_1_1NCGroup.html#a91efbd2b8ef280b7eb3b426bbbf16cca":[2,0,0,3,29]
 };

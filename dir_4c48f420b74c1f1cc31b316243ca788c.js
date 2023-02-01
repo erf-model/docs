@@ -8,6 +8,7 @@ var dir_4c48f420b74c1f1cc31b316243ca788c =
     [ "ERF_WriteBndryPlanes.H", "ERF__WriteBndryPlanes_8H.html", [
       [ "WriteBndryPlanes", "classWriteBndryPlanes.html", "classWriteBndryPlanes" ]
     ] ],
+    [ "ERF_WriteScalarProfiles.cpp", "ERF__WriteScalarProfiles_8cpp.html", null ],
     [ "NCBuildFABs.cpp", "NCBuildFABs_8cpp.html", "NCBuildFABs_8cpp" ],
     [ "NCCheckpoint.cpp", "NCCheckpoint_8cpp.html", null ],
     [ "NCColumnFile.cpp", "NCColumnFile_8cpp.html", null ],
