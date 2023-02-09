@@ -1,9 +1,9 @@
 var structInputSoundingData =
 [
     [ "InputSoundingData", "structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3", null ],
-    [ "calc_rho_p", "structInputSoundingData.html#ad307d778ecc6eb1adddd4774e4fca072", null ],
+    [ "calc_rho_p", "structInputSoundingData.html#af913103d9ecab49f09b2b107832d265f", null ],
     [ "host_to_device", "structInputSoundingData.html#ab036816413b1f708981ed6c2b3b113d5", null ],
-    [ "read_from_file", "structInputSoundingData.html#a75392cfcea78baac3d26c808f680c865", null ],
+    [ "read_from_file", "structInputSoundingData.html#a7a06635c54167688c17300611f6dde50", null ],
     [ "size", "structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240", null ],
     [ "p_inp_sound_d", "structInputSoundingData.html#a0db7861e0fee3f8f0760c6685df3176f", null ],
     [ "pd_integ", "structInputSoundingData.html#ab21ec011bf2ba1053884b8a48687ab86", null ],

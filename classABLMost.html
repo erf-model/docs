@@ -634,169 +634,162 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <span class="keyword">auto</span> dest_arr = (*mfs[var_idx])[mfi].array();</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordtype">int</span> zlo = 0;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keywordtype">bool</span> var_is_derived = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a> || var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>) {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                var_is_derived = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                amrex::Box b2d = bx; <span class="comment">// Copy constructor</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                b2d.setBig(2,zlo-1);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <span class="keywordtype">int</span> n = <a class="code" href="namespaceCons.html#a219e8c6ed34261992bcf3198eb4a21c5a7ba34ebd02f164da2892ceb823948315">Cons::RhoTheta</a>;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>) {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                amrex::Box b2d = bx; <span class="comment">// Copy constructor</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                b2d.setBig(2,zlo-1);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="keywordtype">int</span> n = <a class="code" href="namespaceCons.html#a219e8c6ed34261992bcf3198eb4a21c5a7ba34ebd02f164da2892ceb823948315">Cons::RhoTheta</a>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> velx, vely, <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>, eta;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    <span class="keywordtype">int</span> ix, jx, iy, jy, ie, je, ic, jc;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> velx, vely, <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>, <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>, eta;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    <span class="keywordtype">int</span> ix, jx, iy, jy, ie, je, ic, jc;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                    ix = i &lt; lbound(velx_arr).x    ? lbound(velx_arr).x   : i;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    jx = j &lt; lbound(velx_arr).y    ? lbound(velx_arr).y   : j;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    ix = ix &gt; ubound(velx_arr).x-1 ? ubound(velx_arr).x-1 : ix;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    jx = jx &gt; ubound(velx_arr).y   ? ubound(velx_arr).y   : jx;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    ix = i &lt; lbound(velx_arr).x    ? lbound(velx_arr).x   : i;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    jx = j &lt; lbound(velx_arr).y    ? lbound(velx_arr).y   : j;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    ix = ix &gt; ubound(velx_arr).x-1 ? ubound(velx_arr).x-1 : ix;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    jx = jx &gt; ubound(velx_arr).y   ? ubound(velx_arr).y   : jx;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    iy = i  &lt; lbound(vely_arr).x   ? lbound(vely_arr).x   : i;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    jy = j  &lt; lbound(vely_arr).y   ? lbound(vely_arr).y   : j;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    iy = iy &gt; ubound(vely_arr).x   ? ubound(vely_arr).x   : iy;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    jy = jy &gt; ubound(vely_arr).y-1 ? ubound(vely_arr).y-1 : jy;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    iy = i  &lt; lbound(vely_arr).x   ? lbound(vely_arr).x   : i;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    jy = j  &lt; lbound(vely_arr).y   ? lbound(vely_arr).y   : j;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                    iy = iy &gt; ubound(vely_arr).x   ? ubound(vely_arr).x   : iy;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                    jy = jy &gt; ubound(vely_arr).y-1 ? ubound(vely_arr).y-1 : jy;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    ie = i  &lt; lbound(eta_arr).x ? lbound(eta_arr).x : i;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    je = j  &lt; lbound(eta_arr).y ? lbound(eta_arr).y : j;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                    ie = ie &gt; ubound(eta_arr).x ? ubound(eta_arr).x : ie;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                    je = je &gt; ubound(eta_arr).y ? ubound(eta_arr).y : je;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    ie = i  &lt; lbound(eta_arr).x ? lbound(eta_arr).x : i;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                    je = j  &lt; lbound(eta_arr).y ? lbound(eta_arr).y : j;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    ie = ie &gt; ubound(eta_arr).x ? ubound(eta_arr).x : ie;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    je = je &gt; ubound(eta_arr).y ? ubound(eta_arr).y : je;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    ic = i  &lt; lbound(cons_arr).x ? lbound(cons_arr).x : i;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                    jc = j  &lt; lbound(cons_arr).y ? lbound(cons_arr).y : j;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    ic = ic &gt; ubound(cons_arr).x ? ubound(cons_arr).x : ic;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    jc = jc &gt; ubound(cons_arr).y ? ubound(cons_arr).y : jc;</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    ic = i  &lt; lbound(cons_arr).x ? lbound(cons_arr).x : i;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    jc = j  &lt; lbound(cons_arr).y ? lbound(cons_arr).y : j;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    ic = ic &gt; ubound(cons_arr).x ? ubound(cons_arr).x : ic;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    jc = jc &gt; ubound(cons_arr).y ? ubound(cons_arr).y : jc;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    velx  = 0.5*(velx_arr(ix,jx,zlo)+velx_arr(ix+1,jx  ,zlo));</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                    vely  = 0.5*(vely_arr(iy,jy,zlo)+vely_arr(iy  ,jy+1,zlo));</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>   = cons_arr(ic,jc,zlo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> = cons_arr(ic,jc,zlo,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    eta   = eta_arr(ie,je,zlo,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_thM  =  tm_arr(ic,jc,zlo);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_vmM  = umm_arr(ic,jc,zlo);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_utau = u_star_arr(ic,jc,zlo);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_ttau = t_star_arr(ic,jc,zlo);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_sfcT = t_surf_arr(ic,jc,zlo);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vmag    = sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> num1    = (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>-d_thM)*d_vmM;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> num2    = (d_thM-d_sfcT)*vmag;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> moflux  = d_ttau*d_utau*(num1+num2)/((d_thM-d_sfcT)*d_vmM);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> deltaz  = d_dz * (zlo - k);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    velx  = 0.5*(velx_arr(ix,jx,zlo)+velx_arr(ix+1,jx  ,zlo));</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    vely  = 0.5*(vely_arr(iy,jy,zlo)+vely_arr(iy  ,jy+1,zlo));</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>   = cons_arr(ic,jc,zlo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> = cons_arr(ic,jc,zlo,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    eta   = eta_arr(ie,je,zlo,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>); <span class="comment">// == rho * alpha [kg/m^3 * m^2/s]</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_thM  =  tm_arr(ic,jc,zlo);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_vmM  = umm_arr(ic,jc,zlo);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_utau = u_star_arr(ic,jc,zlo);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_ttau = t_star_arr(ic,jc,zlo);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_sfcT = t_surf_arr(ic,jc,zlo);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vmag    = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> num1    = (<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a>-d_thM)*d_vmM;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> num2    = (d_thM-d_sfcT)*vmag;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> moflux  = d_ttau*d_utau*(num1+num2)/((d_thM-d_sfcT)*d_vmM);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> deltaz  = d_dz * (zlo - k);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                    dest_arr(i,j,k,icomp+n) = <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>*(<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> - moflux*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>/eta*deltaz);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                });</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a> || var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a35b6db75aef9a4eca57e85396dc5dc12">Vars::xmom</a>) { <span class="comment">//for velx</span></div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                    <span class="keywordflow">if</span> (!var_is_derived) {</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                        dest_arr(i,j,k,icomp+n) = <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>*(<a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> - moflux*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>/eta*deltaz);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                        dest_arr(i,j,k,icomp+n) = <a class="code" href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">theta</a> - moflux/eta*deltaz;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                    }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                });</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a> || var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a35b6db75aef9a4eca57e85396dc5dc12">Vars::xmom</a>) { <span class="comment">//for velx</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                amrex::Box xb2d = surroundingNodes(bx,0); <span class="comment">// Copy constructor</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                xb2d.setBig(2,zlo-1);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                ParallelFor(xb2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> velx, vely, <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>, eta;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    <span class="keywordtype">int</span> jy, ie, je, ic, jc;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    <span class="keywordtype">int</span> iylo = i &lt;= lbound(vely_arr).x ? lbound(vely_arr).x : i-1;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                    <span class="keywordtype">int</span> iyhi = i &gt;  ubound(vely_arr).x ? ubound(vely_arr).x : i;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    jy = j  &lt; lbound(vely_arr).y   ? lbound(vely_arr).y   : j;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    jy = jy &gt; ubound(vely_arr).y-1 ? ubound(vely_arr).y-1 : jy;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    ie = i  &lt; lbound(eta_arr).x+1 ? lbound(eta_arr).x+1 : i;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    je = j  &lt; lbound(eta_arr).y   ? lbound(eta_arr).y   : j;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    ie = ie &gt; ubound(eta_arr).x   ? ubound(eta_arr).x   : ie;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    je = je &gt; ubound(eta_arr).y   ? ubound(eta_arr).y   : je;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    ic = i  &lt; lbound(cons_arr).x+1 ? lbound(cons_arr).x+1 : i;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                    jc = j  &lt; lbound(cons_arr).y   ? lbound(cons_arr).y   : j;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                    ic = ic &gt; ubound(cons_arr).x   ? ubound(cons_arr).x   : ic;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                    jc = jc &gt; ubound(cons_arr).y   ? ubound(cons_arr).y   : jc;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                    velx  = velx_arr(i,j,zlo);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    vely  = 0.25*( vely_arr(iyhi,jy,zlo)+vely_arr(iyhi,jy+1,zlo)</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                                  +vely_arr(iylo,jy,zlo)+vely_arr(iylo,jy+1,zlo));</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                    <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>   = 0.5 *( cons_arr(ic-1,jc,zlo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)+</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                   cons_arr(ic  ,jc,zlo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                    eta   = 0.5 *( eta_arr(ie-1,je,zlo,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)+</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                                   eta_arr(ie  ,je,zlo,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>));</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                amrex::Box xb2d = surroundingNodes(bx,0); <span class="comment">// Copy constructor</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                xb2d.setBig(2,zlo-1);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                ParallelFor(xb2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> velx, vely, <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>, eta;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                    <span class="keywordtype">int</span> jy, ie, je, ic, jc;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    <span class="keywordtype">int</span> iylo = i &lt;= lbound(vely_arr).x ? lbound(vely_arr).x : i-1;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    <span class="keywordtype">int</span> iyhi = i &gt;  ubound(vely_arr).x ? ubound(vely_arr).x : i;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    jy = j  &lt; lbound(vely_arr).y   ? lbound(vely_arr).y   : j;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    jy = jy &gt; ubound(vely_arr).y-1 ? ubound(vely_arr).y-1 : jy;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    ie = i  &lt; lbound(eta_arr).x+1 ? lbound(eta_arr).x+1 : i;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    je = j  &lt; lbound(eta_arr).y   ? lbound(eta_arr).y   : j;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    ie = ie &gt; ubound(eta_arr).x   ? ubound(eta_arr).x   : ie;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    je = je &gt; ubound(eta_arr).y   ? ubound(eta_arr).y   : je;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    ic = i  &lt; lbound(cons_arr).x+1 ? lbound(cons_arr).x+1 : i;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    jc = j  &lt; lbound(cons_arr).y   ? lbound(cons_arr).y   : j;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    ic = ic &gt; ubound(cons_arr).x   ? ubound(cons_arr).x   : ic;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    jc = jc &gt; ubound(cons_arr).y   ? ubound(cons_arr).y   : jc;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    velx  = velx_arr(i,j,zlo);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    vely  = 0.25*( vely_arr(iyhi,jy,zlo)+vely_arr(iyhi,jy+1,zlo)</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                                  +vely_arr(iylo,jy,zlo)+vely_arr(iylo,jy+1,zlo));</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                    <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>   = 0.5 *( cons_arr(ic-1,jc,zlo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)+</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                                   cons_arr(ic  ,jc,zlo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                    eta   = 0.5 *( eta_arr(ie-1,je,zlo,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)+</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                                   eta_arr(ie  ,je,zlo,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>));</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_vxM  = um_arr(i,j,zlo);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_vmM  = 0.5 * ( umm_arr(ic-1,jc,zlo) + umm_arr(ic,jc,zlo) );</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_utau = 0.5 * ( u_star_arr(ic-1,jc,zlo) + u_star_arr(ic,jc,zlo) );</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vmag    = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> stressx = ( (velx-d_vxM)*d_vmM + vmag*d_vxM )/</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                                   (d_vmM*d_vmM) * d_utau*d_utau;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> deltaz  = d_dz * (zlo - k);</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_vxM  = um_arr(i,j,zlo);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_vmM  = 0.5 * ( umm_arr(ic-1,jc,zlo) + umm_arr(ic,jc,zlo) );</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_utau = 0.5 * ( u_star_arr(ic-1,jc,zlo) + u_star_arr(ic,jc,zlo) );</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vmag    = sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> stressx = ( (velx-d_vxM)*d_vmM + vmag*d_vxM )/</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                                   (d_vmM*d_vmM) * d_utau*d_utau;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> deltaz  = d_dz * (zlo - k);</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                    <span class="keywordflow">if</span> (!var_is_derived) {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                        dest_arr(i,j,k,icomp) = dest_arr(i,j,zlo,icomp) - stressx*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>/eta*deltaz;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                        dest_arr(i,j,k,icomp) = dest_arr(i,j,zlo,icomp) - stressx*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>/eta*deltaz;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                    }</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                });</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a> || var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9aa92727db248ec616aa835c2faa22f44c">Vars::ymom</a>) { <span class="comment">//for vely</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a35b6db75aef9a4eca57e85396dc5dc12">Vars::xmom</a>) {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                        dest_arr(i,j,k,icomp) = dest_arr(i,j,zlo,icomp) - stressx*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>/eta*deltaz;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                        AMREX_ALWAYS_ASSERT(var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                        dest_arr(i,j,k,icomp) = dest_arr(i,j,zlo,icomp) - stressx*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>/eta*deltaz;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                    }</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                });</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a> || var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9aa92727db248ec616aa835c2faa22f44c">Vars::ymom</a>) { <span class="comment">//for vely</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                amrex::Box yb2d = surroundingNodes(bx,1); <span class="comment">// Copy constructor</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                yb2d.setBig(2,zlo-1);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                ParallelFor(yb2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> velx, vely, <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>, eta;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    <span class="keywordtype">int</span> ix, ie, je, ic, jc;</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                amrex::Box yb2d = surroundingNodes(bx,1); <span class="comment">// Copy constructor</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                yb2d.setBig(2,zlo-1);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    ix = i  &lt; lbound(velx_arr).x ? lbound(velx_arr).x : i;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                    ix = ix &gt; ubound(velx_arr).x ? ubound(velx_arr).x : ix;</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                ParallelFor(yb2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> velx, vely, <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>, eta;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                    <span class="keywordtype">int</span> ix, ie, je, ic, jc;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                    ix = i  &lt; lbound(velx_arr).x ? lbound(velx_arr).x : i;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                    ix = ix &gt; ubound(velx_arr).x ? ubound(velx_arr).x : ix;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    <span class="keywordtype">int</span> jxlo = j &lt;= lbound(velx_arr).y ? lbound(velx_arr).y : j-1;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    <span class="keywordtype">int</span> jxhi = j &gt;  ubound(velx_arr).y ? ubound(velx_arr).y : j;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                    ie = i  &lt; lbound(eta_arr).x   ? lbound(eta_arr).x   : i;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    je = j  &lt; lbound(eta_arr).y+1 ? lbound(eta_arr).y+1 : j;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                    ie = ie &gt; ubound(eta_arr).x   ? ubound(eta_arr).x   : ie;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                    je = je &gt; ubound(eta_arr).y   ? ubound(eta_arr).y   : je;</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                    <span class="keywordtype">int</span> jxlo = j &lt;= lbound(velx_arr).y ? lbound(velx_arr).y : j-1;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                    <span class="keywordtype">int</span> jxhi = j &gt;  ubound(velx_arr).y ? ubound(velx_arr).y : j;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                    ie = i  &lt; lbound(eta_arr).x   ? lbound(eta_arr).x   : i;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    je = j  &lt; lbound(eta_arr).y+1 ? lbound(eta_arr).y+1 : j;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                    ie = ie &gt; ubound(eta_arr).x   ? ubound(eta_arr).x   : ie;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                    je = je &gt; ubound(eta_arr).y   ? ubound(eta_arr).y   : je;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                    ic = i  &lt; lbound(cons_arr).x   ? lbound(cons_arr).x   : i;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                    jc = j  &lt; lbound(cons_arr).y+1 ? lbound(cons_arr).y+1 : j;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                    ic = ic &gt; ubound(cons_arr).x   ? ubound(cons_arr).x   : ic;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                    jc = jc &gt; ubound(cons_arr).y   ? ubound(cons_arr).y   : jc;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                    ic = i  &lt; lbound(cons_arr).x   ? lbound(cons_arr).x   : i;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                    jc = j  &lt; lbound(cons_arr).y+1 ? lbound(cons_arr).y+1 : j;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                    ic = ic &gt; ubound(cons_arr).x   ? ubound(cons_arr).x   : ic;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                    jc = jc &gt; ubound(cons_arr).y   ? ubound(cons_arr).y   : jc;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                    velx  = 0.25*( velx_arr(ix,jxhi,zlo)+velx_arr(ix+1,jxhi,zlo)</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                                  +velx_arr(ix,jxlo,zlo)+velx_arr(ix+1,jxlo,zlo));</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                    vely  = vely_arr(i,j,zlo);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                    <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>   = 0.5*(cons_arr(ic,jc-1,zlo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)+</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                                 cons_arr(ic,jc  ,zlo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                    eta   = 0.5*(eta_arr(ie,je-1,zlo,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)+</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                                 eta_arr(ie,je  ,zlo,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>));</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                    velx  = 0.25*( velx_arr(ix,jxhi,zlo)+velx_arr(ix+1,jxhi,zlo)</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                                  +velx_arr(ix,jxlo,zlo)+velx_arr(ix+1,jxlo,zlo));</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                    vely  = vely_arr(i,j,zlo);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>   = 0.5*(cons_arr(ic,jc-1,zlo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)+</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                 cons_arr(ic,jc  ,zlo,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    eta   = 0.5*(eta_arr(ie,je-1,zlo,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)+</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                 eta_arr(ie,je  ,zlo,<a class="code" href="namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>));</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_vyM  = vm_arr(i,j,zlo);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_vmM  = 0.5 * ( umm_arr(ic,jc-1,zlo) + umm_arr(ic,jc,zlo) );</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_utau = 0.5 * ( u_star_arr(ic,jc-1,zlo) + u_star_arr(ic,jc,zlo) );</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vmag    = sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> stressy = ( (vely-d_vyM)*d_vmM + vmag*d_vyM ) /</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                    (d_vmM*d_vmM)*d_utau*d_utau;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> deltaz  = d_dz * (zlo - k);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                    <span class="keywordflow">if</span> (!var_is_derived) {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                        dest_arr(i,j,k,icomp) = dest_arr(i,j,zlo,icomp) - stressy*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>/eta*deltaz;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                        dest_arr(i,j,k,icomp) = dest_arr(i,j,zlo,icomp) - stressy*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>/eta*deltaz;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                    }</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                });</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            }</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        } <span class="comment">// var_idx</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    } <span class="comment">// mf</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_vyM  = vm_arr(i,j,zlo);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_vmM  = 0.5 * ( umm_arr(ic,jc-1,zlo) + umm_arr(ic,jc,zlo) );</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> d_utau = 0.5 * ( u_star_arr(ic,jc-1,zlo) + u_star_arr(ic,jc,zlo) );</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> vmag    = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> stressy = ( (vely-d_vyM)*d_vmM + vmag*d_vyM ) /</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                    (d_vmM*d_vmM)*d_utau*d_utau;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> deltaz  = d_dz * (zlo - k);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9aa92727db248ec616aa835c2faa22f44c">Vars::ymom</a>) {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                        dest_arr(i,j,k,icomp) = dest_arr(i,j,zlo,icomp) - stressy*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>/eta*deltaz;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                        AMREX_ALWAYS_ASSERT(var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                        dest_arr(i,j,k,icomp) = dest_arr(i,j,zlo,icomp) - stressy*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a2534fc55b1bd99268d18c38ddd112e53">rho</a>/eta*deltaz;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                    }</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                });</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            }</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        } <span class="comment">// var_idx</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    } <span class="comment">// mf</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;}</div>
 <div class="ttc" id="aDataStruct_8H_html_a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91"><div class="ttname"><a href="DataStruct_8H.html#a07130f00a795700d6b2b83f773b807b4a61a74be60d291cc4678ab46cc1cdaf91">AdvectedQuantity::theta</a></div><div class="ttdeci">@ theta</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
