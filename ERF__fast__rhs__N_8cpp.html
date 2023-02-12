@@ -137,7 +137,7 @@ Include dependency graph for ERF_fast_rhs_N.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aadacad33479f795b919b2ecb6e5ebc8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__fast__rhs__N_8cpp.html#aadacad33479f795b919b2ecb6e5ebc8d">erf_fast_rhs_N</a> (int step, int, BoxArray &amp;grids_to_evolve, Vector&lt; MultiFab &gt; &amp;S_slow_rhs, const Vector&lt; MultiFab &gt; &amp;S_prev, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_data, Vector&lt; MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> dtau, const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a> facinv, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v)</td></tr>
+<tr class="memitem:aadacad33479f795b919b2ecb6e5ebc8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__fast__rhs__N_8cpp.html#aadacad33479f795b919b2ecb6e5ebc8d">erf_fast_rhs_N</a> (int step, int, BoxArray &amp;grids_to_evolve, Vector&lt; MultiFab &gt; &amp;S_slow_rhs, const Vector&lt; MultiFab &gt; &amp;S_prev, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_data, Vector&lt; MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Real dtau, const amrex::Real facinv, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v)</td></tr>
 <tr class="separator:aadacad33479f795b919b2ecb6e5ebc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -228,13 +228,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td>
+          <td class="paramtype">const amrex::Real&#160;</td>
           <td class="paramname"><em>dtau</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">amrex::Real</a>&#160;</td>
+          <td class="paramtype">const amrex::Real&#160;</td>
           <td class="paramname"><em>facinv</em>, </td>
         </tr>
         <tr>
@@ -270,19 +270,19 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Per p2902 of Klemp-Skamarock-Dudhia-2007</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// beta_s = -1.0 : fully explicit</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// beta_s =  1.0 : fully implicit</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> beta_s = 0.1;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> beta_1 = 0.5 * (1.0 - beta_s);  <span class="comment">// multiplies explicit terms</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> beta_2 = 0.5 * (1.0 + beta_s);  <span class="comment">// multiplies implicit terms</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    Real beta_s = 0.1;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    Real beta_1 = 0.5 * (1.0 - beta_s);  <span class="comment">// multiplies explicit terms</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    Real beta_2 = 0.5 * (1.0 + beta_s);  <span class="comment">// multiplies implicit terms</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// How much do we project forward the (rho theta) that is used in the horizontal momentum equations</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> beta_d = 0.1;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Real beta_d = 0.1;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">const</span> Box domain(geom.Domain());</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dxInv = geom.InvCellSizeArray();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dxi = dxInv[0];</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dyi = dxInv[1];</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> dzi = dxInv[2];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    Real dxi = dxInv[0];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    Real dyi = dxInv[1];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    Real dzi = dxInv[2];</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ba = S_stage_data[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].boxArray();</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dm = S_stage_data[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].DistributionMap();</div>
@@ -431,23 +431,23 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        {</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="comment">// Add (negative) gradient of (rho theta) multiplied by lagged &quot;pi&quot;</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gpx = (theta_extrap(i,j,k) - theta_extrap(i-1,j,k))*dxi;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            Real gpx = (theta_extrap(i,j,k) - theta_extrap(i-1,j,k))*dxi;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            gpx *= mf_u(i,j,0);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i-1,j,k,PrimQt_comp)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            Real q = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i-1,j,k,PrimQt_comp)</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                            +prim(i,j,k,PrimQp_comp) + prim(i-1,j,k,PrimQp_comp) );</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            gpx /= (1.0 + q);</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_WARM_NO_PRECIP)</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( prim(i,j,k,PrimQv_comp) + prim(i-1,j,k,PrimQv_comp)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            Real q = 0.5 * ( prim(i,j,k,PrimQv_comp) + prim(i-1,j,k,PrimQv_comp)</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                            +prim(i,j,k,PrimQc_comp) + prim(i-1,j,k,PrimQc_comp) );</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            gpx /= (1.0 + q);</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> pi_c =  0.5 * (pi_stage_ca(i-1,j,k,0) + pi_stage_ca(i,j,k,0));</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            Real pi_c =  0.5 * (pi_stage_ca(i-1,j,k,0) + pi_stage_ca(i,j,k,0));</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> fast_rhs_rho_u = -<a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * pi_c * gpx;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            Real fast_rhs_rho_u = -<a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * pi_c * gpx;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> new_drho_u = prev_xmom(i,j,k) - stage_xmom(i,j,k)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            Real new_drho_u = prev_xmom(i,j,k) - stage_xmom(i,j,k)</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                + dtau * fast_rhs_rho_u + dtau * slow_rhs_rho_u(i,j,k);</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            avg_xmom(i,j,k) += facinv*new_drho_u;</div>
@@ -457,23 +457,23 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        {</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="comment">// Add (negative) gradient of (rho theta) multiplied by lagged &quot;pi&quot;</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> gpy = (theta_extrap(i,j,k) - theta_extrap(i,j-1,k))*dyi;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            Real gpy = (theta_extrap(i,j,k) - theta_extrap(i,j-1,k))*dyi;</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            gpy *= mf_v(i,j,0);</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i,j-1,k,PrimQt_comp)</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            Real q = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i,j-1,k,PrimQt_comp)</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                            +prim(i,j,k,PrimQp_comp) + prim(i,j-1,k,PrimQp_comp) );</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            gpy /= (1.0 + q);</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_WARM_NO_PRECIP)</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( prim(i,j,k,PrimQv_comp) + prim(i,j-1,k,PrimQv_comp)</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            Real q = 0.5 * ( prim(i,j,k,PrimQv_comp) + prim(i,j-1,k,PrimQv_comp)</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                            +prim(i,j,k,PrimQc_comp) + prim(i,j-1,k,PrimQc_comp) );</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            gpy /= (1.0 + q);</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> pi_c =  0.5 * (pi_stage_ca(i,j-1,k,0) + pi_stage_ca(i,j,k,0));</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            Real pi_c =  0.5 * (pi_stage_ca(i,j-1,k,0) + pi_stage_ca(i,j,k,0));</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> fast_rhs_rho_v = -<a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * pi_c * gpy;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            Real fast_rhs_rho_v = -<a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * pi_c * gpy;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> new_drho_v = prev_ymom(i,j,k) - stage_ymom(i,j,k)</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            Real new_drho_v = prev_ymom(i,j,k) - stage_ymom(i,j,k)</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                 + dtau * fast_rhs_rho_v + dtau * slow_rhs_rho_v(i,j,k);</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            avg_ymom(i,j,k) += facinv*new_drho_v;</div>
@@ -487,12 +487,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;making_rho_rhs&quot;</span>);</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xflux_lo = (cur_xmom(i  ,j,k) - stage_xmom(i  ,j,k)) / mf_u(i  ,j,0);;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> xflux_hi = (cur_xmom(i+1,j,k) - stage_xmom(i+1,j,k)) / mf_u(i+1,j,0);;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yflux_lo = (cur_ymom(i,j  ,k) - stage_ymom(i,j  ,k)) / mf_v(i,j  ,0);;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> yflux_hi = (cur_ymom(i,j+1,k) - stage_ymom(i,j+1,k)) / mf_v(i,j+1,0);;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            Real xflux_lo = (cur_xmom(i  ,j,k) - stage_xmom(i  ,j,k)) / mf_u(i  ,j,0);;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            Real xflux_hi = (cur_xmom(i+1,j,k) - stage_xmom(i+1,j,k)) / mf_u(i+1,j,0);;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            Real yflux_lo = (cur_ymom(i,j  ,k) - stage_ymom(i,j  ,k)) / mf_v(i,j  ,0);;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            Real yflux_hi = (cur_ymom(i,j+1,k) - stage_ymom(i,j+1,k)) / mf_v(i,j+1,0);;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> mfsq = mf_m(i,j,0) * mf_m(i,j,0);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            Real mfsq = mf_m(i,j,0) * mf_m(i,j,0);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            temp_rhs_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>     ) =  ( xflux_hi - xflux_lo ) * dxi * mfsq</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                                               + ( yflux_hi - yflux_lo ) * dyi * mfsq;</div>
@@ -513,7 +513,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="comment">// Note that the notes use &quot;g&quot; to mean the magnitude of gravity, so it is positive</span></div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="comment">// We set grav_gpu[2] to be the vector component which is negative</span></div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="comment">// We define halfg to match the notes (which is why we take the absolute value)</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> halfg = std::abs(0.5 * grav_gpu[2]);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        Real halfg = std::abs(0.5 * grav_gpu[2]);</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="comment">// *********************************************************************</span></div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="comment">// fast_loop_on_shrunk</span></div>
@@ -523,35 +523,35 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="comment">//Note we don&#39;t act on the bottom or top boundaries of the domain</span></div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        ParallelFor(bx_shrunk_in_k, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;             <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> coeff_P = coeffP_a(i,j,k);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;             <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> coeff_Q = coeffQ_a(i,j,k);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;             Real coeff_P = coeffP_a(i,j,k);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;             Real coeff_Q = coeffQ_a(i,j,k);</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i,j,k-1,PrimQt_comp)</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            Real q = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i,j,k-1,PrimQt_comp)</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                            +prim(i,j,k,PrimQp_comp) + prim(i,j,k-1,PrimQp_comp) );</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            coeff_P /= (1.0 + q);</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            coeff_Q /= (1.0 + q);</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_WARM_NO_PRECIP)</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> q = 0.5 * ( prim(i,j,k,PrimQv_comp) + prim(i,j,k-1,PrimQv_comp)</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            Real q = 0.5 * ( prim(i,j,k,PrimQv_comp) + prim(i,j,k-1,PrimQv_comp)</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                            +prim(i,j,k,PrimQc_comp) + prim(i,j,k-1,PrimQc_comp) );</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            coeff_P /= (1.0 + q);</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            coeff_Q /= (1.0 + q);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> theta_t_lo  = 0.5 * ( prim(i,j,k-2,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) + prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) );</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> theta_t_mid = 0.5 * ( prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) + prim(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) );</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> theta_t_hi  = 0.5 * ( prim(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) + prim(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) );</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            Real theta_t_lo  = 0.5 * ( prim(i,j,k-2,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) + prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) );</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            Real theta_t_mid = 0.5 * ( prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) + prim(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) );</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            Real theta_t_hi  = 0.5 * ( prim(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) + prim(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) );</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> Omega_kp1 = prev_zmom(i,j,k+1) - stage_zmom(i,j,k+1);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> Omega_k   = prev_zmom(i,j,k  ) - stage_zmom(i,j,k  );</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> Omega_km1 = prev_zmom(i,j,k-1) - stage_zmom(i,j,k-1);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            Real Omega_kp1 = prev_zmom(i,j,k+1) - stage_zmom(i,j,k+1);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            Real Omega_k   = prev_zmom(i,j,k  ) - stage_zmom(i,j,k  );</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            Real Omega_km1 = prev_zmom(i,j,k-1) - stage_zmom(i,j,k-1);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            <span class="comment">// line 2 last two terms (order dtau)</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> R0_tmp = coeff_P * old_drho_theta(i,j,k) + coeff_Q * old_drho_theta(i,j,k-1)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            Real R0_tmp = coeff_P * old_drho_theta(i,j,k) + coeff_Q * old_drho_theta(i,j,k-1)</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                         - halfg * ( old_drho(i,j,k) + old_drho(i,j,k-1) );</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="comment">// lines 3-5 residuals (order dtau^2) 1.0 &lt;-&gt; beta_2</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> R1_tmp =  halfg * (-slow_rhs_cons(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            Real R1_tmp =  halfg * (-slow_rhs_cons(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                                    -slow_rhs_cons(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                                    +temp_rhs_arr(i,j,k,0) + temp_rhs_arr(i,j,k-1) )</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                + ( coeff_P * (slow_rhs_cons(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - temp_rhs_arr(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)) +</div>
@@ -650,8 +650,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;fast_rho_final_update&quot;</span>);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        {</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> zflux_lo = beta_2 * soln_a(i,j,k  ) + beta_1 * old_drho_w(i,j,k  );</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            <a class="code" href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">Real</a> zflux_hi = beta_2 * soln_a(i,j,k+1) + beta_1 * old_drho_w(i,j,k+1);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            Real zflux_lo = beta_2 * soln_a(i,j,k  ) + beta_1 * old_drho_w(i,j,k  );</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            Real zflux_hi = beta_2 * soln_a(i,j,k+1) + beta_1 * old_drho_w(i,j,k+1);</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            avg_zmom(i,j,k  ) += facinv*zflux_lo;</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
@@ -667,7 +667,6 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    }</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;}</div>
-<div class="ttc" id="aDataStruct_8H_html_aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1"><div class="ttname"><a href="DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36a7f80fcc452c2f1ed2bb51b39d0864df1">IC_BC_Type::Real</a></div><div class="ttdeci">@ Real</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_afbb622bf3b404a3e7c77f3103b4d1231"><div class="ttname"><a href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a></div><div class="ttdeci">constexpr amrex::Real Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:18</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
@@ -677,8 +676,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:207</div></div>
 <div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12abde409cfd9edf4a3581fe26dfa9613cd"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12abde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:208</div></div>
 <div class="ttc" id="anamespaceIntVar_html_ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481"><div class="ttname"><a href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:206</div></div>
-<div class="ttc" id="astructSolverChoice_html_a063a88594452100497651e8aaf1f68d7"><div class="ttname"><a href="structSolverChoice.html#a063a88594452100497651e8aaf1f68d7">SolverChoice::use_terrain</a></div><div class="ttdeci">bool use_terrain</div><div class="ttdef"><b>Definition:</b> DataStruct.H:366</div></div>
-<div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> DataStruct.H:386</div></div>
+<div class="ttc" id="astructSolverChoice_html_a063a88594452100497651e8aaf1f68d7"><div class="ttname"><a href="structSolverChoice.html#a063a88594452100497651e8aaf1f68d7">SolverChoice::use_terrain</a></div><div class="ttdeci">bool use_terrain</div><div class="ttdef"><b>Definition:</b> DataStruct.H:323</div></div>
+<div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> DataStruct.H:343</div></div>
 </div><!-- fragment -->
 </div>
 </div>

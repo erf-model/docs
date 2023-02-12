@@ -22,7 +22,6 @@ var structSolverChoice =
     [ "dynamicViscosity", "structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446", null ],
     [ "gravity", "structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b", null ],
     [ "horiz_spatial_order", "structSolverChoice.html#a2451280477d028785ae428b09f4e64d0", null ],
-    [ "icBcType", "structSolverChoice.html#a890734318e58de211bb8e9c4d2c89c9b", null ],
     [ "les_type", "structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0", null ],
     [ "molec_diff_type", "structSolverChoice.html#a8d16d654d2a02cec62427b38498c2462", null ],
     [ "pbl_A1", "structSolverChoice.html#ab6674c058e3acfc19d33ea7709367050", null ],

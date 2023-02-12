@@ -1,5 +1,6 @@
 var NCBuildFABs_8cpp =
 [
-    [ "PlaneVector", "NCBuildFABs_8cpp.html#a60014a8d74bed0d5ae984e600c68dc85", null ],
-    [ "BuildFABsFromWRFInputFile", "NCBuildFABs_8cpp.html#a6a99dca2d6573ce443c17ca6c25151c6", null ]
+    [ "RARRAY", "NCBuildFABs_8cpp.html#a807cec4135f2992240e39a684d3338d3", null ],
+    [ "BuildFABsFromNetCDFFile", "NCBuildFABs_8cpp.html#a6382c31001e1b4c32052595ff52fb51a", null ],
+    [ "fill_fab_from_arrays", "NCBuildFABs_8cpp.html#a70686c00af3a90e09eed8a934f784a3f", null ]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ic_5fbc_5ftype_2080',['IC_BC_Type',['../DataStruct_8H.html#aa307030d99f8c225e1a1adb20224ed36',1,'DataStruct.H']]]
+  ['mathematicalbndrytypes_2071',['mathematicalBndryTypes',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c',1,'ERFBCType']]],
+  ['molecdifftype_2072',['MolecDiffType',['../DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735',1,'DataStruct.H']]]
 ];
