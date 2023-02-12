@@ -1,5 +1,8 @@
 var NAVTREEINDEX5 =
 {
+"structSolverChoice.html#a3b31e3a91b502cabfc9fd8778492ad46":[2,0,18,0],
+"structSolverChoice.html#a3dd9fcb274b4d556d88346eeb683d00a":[2,0,18,42],
+"structSolverChoice.html#a404f875b4796e931ef346bc11b6c7dcb":[2,0,18,7],
 "structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f":[2,0,18,16],
 "structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a":[2,0,18,11],
 "structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5":[2,0,18,53],

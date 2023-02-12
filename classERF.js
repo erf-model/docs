@@ -112,6 +112,7 @@ var classERF =
     [ "fixed_fast_dt", "classERF.html#aa30dffc28e24ac50c880539ca2e36ffd", null ],
     [ "fixed_mri_dt_ratio", "classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd", null ],
     [ "flux_registers", "classERF.html#a2ef8ab09aed437467e2e87a37bcd999d", null ],
+    [ "force_stage1_single_substep", "classERF.html#a017c6aed9b7123a000453dfc95243e73", null ],
     [ "grids_to_evolve", "classERF.html#ad6aefa718f94dec8ea10cf1bfe8434f5", null ],
     [ "h_havg_density", "classERF.html#a4dd7c603e65d230105a4f1e0afb4cf8a", null ],
     [ "h_havg_pressure", "classERF.html#a413293737b0021c97b50c62756561446", null ],
