@@ -48,10 +48,11 @@ var searchData=
   ['num_5fvars_694',['num_vars',['../structTimeInterpolatedData.html#a69fdc01eabf8ded65ff6cac13e59c0c0',1,'TimeInterpolatedData']]],
   ['numdatalogs_695',['NumDataLogs',['../classERF.html#ac1238c1616826c66df1dfd9076e6a3da',1,'ERF']]],
   ['numdiffs_696',['NumDiffs',['../namespaceEddyDiff.html#a45268689de46663ab6458f48c6878fc5aa3900ab375460932d825b615bb532446',1,'EddyDiff']]],
-  ['numtypes_697',['NumTypes',['../namespaceBCVars.html#a00367571247ba920989360b94c156f4aa0b88b0a3a03a3e787a7b27717ec64de7',1,'BCVars::NumTypes()'],['../namespaceWRFBdyVars.html#aa68ca75ab2607d45e4ba7611c9a6e559a6d1cade25038e11a813d4b72b651b04c',1,'WRFBdyVars::NumTypes()'],['../namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494',1,'Vars::NumTypes()']]],
-  ['numvars_698',['NumVars',['../namespaceCons.html#a219e8c6ed34261992bcf3198eb4a21c5a5934ebcc17d4dfd56ed8cf6221c9a5ed',1,'Cons::NumVars()'],['../namespacePrim.html#ae6378f5d4272bb8368424f704f141fc0a00d5af81f147f949563064a95c66f5d3',1,'Prim::NumVars()'],['../namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a33fd6ba50d67e974cfa8b4c6b0d6b54f',1,'IntVar::NumVars()'],['../namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a0a8da919c111613d4806217dce5cd1e3',1,'MicVar::NumVars()']]],
-  ['nvar_699',['NVAR',['../IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639',1,'IndexDefines.H']]],
-  ['nzerog_700',['nzerog',['../ERF__Constants_8H.html#a1d5b108314147320a74eaccbfa0d09b0',1,'ERF_Constants.H']]],
-  ['nzeror_701',['nzeror',['../ERF__Constants_8H.html#aaa2fd2941341ea7699a9acfb434b2ee1',1,'ERF_Constants.H']]],
-  ['nzeros_702',['nzeros',['../ERF__Constants_8H.html#ae56996ced8497f129d813e2f9c94786e',1,'ERF_Constants.H']]]
+  ['numsamplelogs_697',['NumSampleLogs',['../classERF.html#addb34cec7a6532b868efde704ebc9b3b',1,'ERF']]],
+  ['numtypes_698',['NumTypes',['../namespaceBCVars.html#a00367571247ba920989360b94c156f4aa0b88b0a3a03a3e787a7b27717ec64de7',1,'BCVars::NumTypes()'],['../namespaceWRFBdyVars.html#aa68ca75ab2607d45e4ba7611c9a6e559a6d1cade25038e11a813d4b72b651b04c',1,'WRFBdyVars::NumTypes()'],['../namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494',1,'Vars::NumTypes()']]],
+  ['numvars_699',['NumVars',['../namespaceCons.html#a219e8c6ed34261992bcf3198eb4a21c5a5934ebcc17d4dfd56ed8cf6221c9a5ed',1,'Cons::NumVars()'],['../namespacePrim.html#ae6378f5d4272bb8368424f704f141fc0a00d5af81f147f949563064a95c66f5d3',1,'Prim::NumVars()'],['../namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a33fd6ba50d67e974cfa8b4c6b0d6b54f',1,'IntVar::NumVars()'],['../namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a0a8da919c111613d4806217dce5cd1e3',1,'MicVar::NumVars()']]],
+  ['nvar_700',['NVAR',['../IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639',1,'IndexDefines.H']]],
+  ['nzerog_701',['nzerog',['../ERF__Constants_8H.html#a1d5b108314147320a74eaccbfa0d09b0',1,'ERF_Constants.H']]],
+  ['nzeror_702',['nzeror',['../ERF__Constants_8H.html#aaa2fd2941341ea7699a9acfb434b2ee1',1,'ERF_Constants.H']]],
+  ['nzeros_703',['nzeros',['../ERF__Constants_8H.html#ae56996ced8497f129d813e2f9c94786e',1,'ERF_Constants.H']]]
 ];
