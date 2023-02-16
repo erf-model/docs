@@ -8,7 +8,7 @@ var classERF =
     [ "build_fine_mask", "classERF.html#a419ba9adca32073e70aae4a8fe8cfcee", null ],
     [ "ClearLevel", "classERF.html#ac44e400a7ce68e18fa44e9416cb1344e", null ],
     [ "ComputeDt", "classERF.html#a62a5ed3c3806eaa918257e0ad1382df5", null ],
-    [ "ComputeGhostCells", "classERF.html#ab9020588c546caf1a277fb9cdc5425da", null ],
+    [ "ComputeGhostCells", "classERF.html#a95ba207aae193ef6ebc26996ac92b037", null ],
     [ "DataLog", "classERF.html#aa2c3ee1910008b828b9da79ccdfe3871", null ],
     [ "DataLogName", "classERF.html#afbf411b8cb24554d9aad7c76b0210e92", null ],
     [ "define_grids_to_evolve", "classERF.html#ab0ce8f3fe8b5af139dce72b61e10f47a", null ],
