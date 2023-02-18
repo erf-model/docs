@@ -32,8 +32,6 @@ var namespaces_dup =
     [ "MicVar", "namespaceMicVar.html", null ],
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
     [ "Prim", "namespacePrim.html", null ],
-    [ "RHSVar", "namespaceRHSVar.html", null ],
-    [ "TerrainMet", "namespaceTerrainMet.html", null ],
     [ "Vars", "namespaceVars.html", null ],
     [ "WRFBdyTypes", "namespaceWRFBdyTypes.html", null ],
     [ "WRFBdyVars", "namespaceWRFBdyVars.html", null ]

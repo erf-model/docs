@@ -75,7 +75,7 @@ var NAVTREEINDEX =
 "classERF.html#a09017292c9943ac2ed20ce7ed5c3c767",
 "classMOSTAverage.html#a612fdb06ff433e33c717198c7e3e4b0b",
 "classncutils_1_1NCGroup.html#a3a4ebd106195be96fb41bb3bfde83143",
-"structNDArray.html#aa1c5762c2de2f4286d4f341b618df1e5"
+"structNDArray.html#afb8008f414c4404e3a6b425c12401d9d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
