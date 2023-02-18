@@ -486,7 +486,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="comment">// NOTE: No diffusion for continuity, so n starts at 1.</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="comment">//       KE calls moved inside DiffSrcForState.</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordtype">int</span> n_start = amrex::max(start_comp,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordtype">int</span> n_start = amrex::max(start_comp,<a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>);</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordtype">int</span> n_end   = start_comp + num_comp - 1;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain) {</div>
@@ -518,55 +518,99 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                Real temp_val = detJ(i,j,k) * old_cons(i,j,k,n) + dt * detJ(i,j,k) * cell_rhs(i,j,k,n);</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                cur_cons(i,j,k,n) = temp_val / detJ_new(i,j,k);</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            });</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; src_arr = source.const_array(mfi);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            ParallelFor(valid_bx, num_comp,</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn) noexcept {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> n = start_comp + nn;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                cell_rhs(i,j,k,n) += src_arr(i,j,k,n);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                cur_cons(i,j,k,n) = old_cons(i,j,k,n) + dt * cell_rhs(i,j,k,n);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            });</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;rhs_post_9&quot;</span>);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="comment">// This updates all the conserved variables (not just the &quot;slow&quot; ones)</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordtype">int</span>   num_comp_all = S_data[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].nComp();</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        ParallelFor(valid_bx, num_comp_all,</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            new_cons(i,j,k,n)  = cur_cons(i,j,k,n);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        });</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="comment">// const Box gtbx = mfi.nodaltilebox(0).grow(S_old[IntVar::xmom].nGrowVect());</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="comment">// const Box gtby = mfi.nodaltilebox(1).grow(S_old[IntVar::ymom].nGrowVect());</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="comment">// const Box gtbz = mfi.nodaltilebox(2).grow(S_old[IntVar::zmom].nGrowVect());</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        Box gtbx = surroundingNodes(valid_bx,0);  gtbx.grow(S_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a>].nGrowVect());</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        Box gtby = surroundingNodes(valid_bx,1);  gtby.grow(S_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a>].nGrowVect());</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        Box gtbz = surroundingNodes(valid_bx,2);  gtbz.grow(S_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12abde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a>].nGrowVect());</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;rhs_post_10()&quot;</span>);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        ParallelFor(gtbx, gtby, gtbz,</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            new_xmom(i,j,k) = cur_xmom(i,j,k);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        },</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            new_ymom(i,j,k) = cur_ymom(i,j,k);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        },</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            new_zmom(i,j,k) = cur_zmom(i,j,k);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        });</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">if</span> (l_use_diff) {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keyword">delete</span> dflux_x;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keyword">delete</span> dflux_y;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keyword">delete</span> dflux_z;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    }</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;}</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="keywordflow">if</span> (l_use_deardorff) {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;              start_comp = <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;              num_comp = 1;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;              ParallelFor(valid_bx, num_comp,</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;              [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn) noexcept {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> n = start_comp + nn;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <span class="comment">// NOTE: we don&#39;t include additional source terms when terrain is moving</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                Real temp_val = detJ(i,j,k) * old_cons(i,j,k,n) + dt * detJ(i,j,k) * cell_rhs(i,j,k,n);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                cur_cons(i,j,k,n) = temp_val / detJ_new(i,j,k);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;              });</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordflow">if</span> (l_use_QKE) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;              start_comp = <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;              num_comp = 1;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;              ParallelFor(valid_bx, num_comp,</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;              [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn) noexcept {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> n = start_comp + nn;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                <span class="comment">// NOTE: we don&#39;t include additional source terms when terrain is moving</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                Real temp_val = detJ(i,j,k) * old_cons(i,j,k,n) + dt * detJ(i,j,k) * cell_rhs(i,j,k,n);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                cur_cons(i,j,k,n) = temp_val / detJ_new(i,j,k);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;              });</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; src_arr = source.const_array(mfi);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            ParallelFor(valid_bx, num_comp,</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn) noexcept {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> n = start_comp + nn;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                cell_rhs(i,j,k,n) += src_arr(i,j,k,n);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                cur_cons(i,j,k,n) = old_cons(i,j,k,n) + dt * cell_rhs(i,j,k,n);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            });</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="keywordflow">if</span> (l_use_deardorff) {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;              start_comp = <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;              num_comp = 1;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;              ParallelFor(valid_bx, num_comp,</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;              [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn) noexcept {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> n = start_comp + nn;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                cell_rhs(i,j,k,n) += src_arr(i,j,k,n);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                cur_cons(i,j,k,n) = old_cons(i,j,k,n) + dt * cell_rhs(i,j,k,n);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;              });</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="keywordflow">if</span> (l_use_QKE) {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;              start_comp = <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;              num_comp = 1;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;              ParallelFor(valid_bx, num_comp,</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;              [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn) noexcept {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> n = start_comp + nn;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                cell_rhs(i,j,k,n) += src_arr(i,j,k,n);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                cur_cons(i,j,k,n) = old_cons(i,j,k,n) + dt * cell_rhs(i,j,k,n);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;              });</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        }</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        {</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;rhs_post_9&quot;</span>);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="comment">// This updates all the conserved variables (not just the &quot;slow&quot; ones)</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordtype">int</span>   num_comp_all = S_data[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].nComp();</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        ParallelFor(valid_bx, num_comp_all,</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            new_cons(i,j,k,n)  = cur_cons(i,j,k,n);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        });</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="comment">// const Box gtbx = mfi.nodaltilebox(0).grow(S_old[IntVar::xmom].nGrowVect());</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="comment">// const Box gtby = mfi.nodaltilebox(1).grow(S_old[IntVar::ymom].nGrowVect());</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="comment">// const Box gtbz = mfi.nodaltilebox(2).grow(S_old[IntVar::zmom].nGrowVect());</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        Box gtbx = surroundingNodes(valid_bx,0);  gtbx.grow(S_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12ad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a>].nGrowVect());</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        Box gtby = surroundingNodes(valid_bx,1);  gtby.grow(S_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12aa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a>].nGrowVect());</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        Box gtbz = surroundingNodes(valid_bx,2);  gtbz.grow(S_old[<a class="code" href="namespaceIntVar.html#ab59d4f3d936a4b80d95dc5324b47fc12abde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a>].nGrowVect());</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;rhs_post_10()&quot;</span>);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        ParallelFor(gtbx, gtby, gtbz,</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            new_xmom(i,j,k) = cur_xmom(i,j,k);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        },</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            new_ymom(i,j,k) = cur_ymom(i,j,k);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        },</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            new_zmom(i,j,k) = cur_zmom(i,j,k);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        });</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">if</span> (l_use_diff) {</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keyword">delete</span> dflux_x;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keyword">delete</span> dflux_y;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keyword">delete</span> dflux_z;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    }</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}</div>
 <div class="ttc" id="aAdvection_8H_html_a113d4c34fad69d0d09a437f261accc2b"><div class="ttname"><a href="Advection_8H.html#a113d4c34fad69d0d09a437f261accc2b">AdvectionSrcForScalars</a></div><div class="ttdeci">void AdvectionSrcForScalars(const amrex::Box &amp;bx, const int &amp;start_comp, const int &amp;num_comp, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_w, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSize, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const bool all_use_WENO, const bool moist_use_WENO, const int spatial_order_WENO, const int horiz_spatial_order, const int vert_spatial_order, const int use_terrain)</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754">PBLType::None</a></div><div class="ttdeci">@ None</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601"><div class="ttname"><a href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a></div><div class="ttdeci">@ MYNN25</div></div>
@@ -577,7 +621,6 @@ Functions</h2></td></tr>
 <div class="ttc" id="aDiffusion_8H_html_a462b3ef79df47cffbfcc168bad086504"><div class="ttname"><a href="Diffusion_8H.html#a462b3ef79df47cffbfcc168bad086504">DiffusionSrcForState_N</a></div><div class="ttdeci">void DiffusionSrcForState_N(const amrex::Box &amp;bx, const amrex::Box &amp;domain, int n_start, int n_end, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;cell_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;xflux, const amrex::Array4&lt; amrex::Real &gt; &amp;yflux, const amrex::Array4&lt; amrex::Real &gt; &amp;zflux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;SmnSmn_a, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;mu_turb, const SolverChoice &amp;solverChoice, const amrex::Array4&lt; const amrex::Real &gt; &amp;tm_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; grav_gpu, const amrex::BCRec *bc_ptr)</div></div>
 <div class="ttc" id="aDiffusion_8H_html_affbc50b73e196883c9d5e71c92de0c34"><div class="ttname"><a href="Diffusion_8H.html#affbc50b73e196883c9d5e71c92de0c34">DiffusionSrcForState_T</a></div><div class="ttdeci">void DiffusionSrcForState_T(const amrex::Box &amp;bx, const amrex::Box &amp;domain, int n_start, int n_end, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;cell_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;xflux, const amrex::Array4&lt; amrex::Real &gt; &amp;yflux, const amrex::Array4&lt; amrex::Real &gt; &amp;zflux, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;SmnSmn_a, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;mu_turb, const SolverChoice &amp;solverChoice, const amrex::Array4&lt; const amrex::Real &gt; &amp;tm_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; grav_gpu, const amrex::BCRec *bc_ptr)</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:11</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
 <div class="ttc" id="anamespaceCons_html_a219e8c6ed34261992bcf3198eb4a21c5a5934ebcc17d4dfd56ed8cf6221c9a5ed"><div class="ttname"><a href="namespaceCons.html#a219e8c6ed34261992bcf3198eb4a21c5a5934ebcc17d4dfd56ed8cf6221c9a5ed">Cons::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:117</div></div>

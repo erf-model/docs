@@ -796,7 +796,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;            <span class="keywordflow">if</span> (dtheta_dz &lt;= 0.) {</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                length = l_Delta;</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                length = 0.76*std::sqrt(E)*(grav_gpu[2]/<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a96295e93c39d249775ba2498eb3d4fc1">theta</a>)*dtheta_dz;</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                length = 0.76*std::sqrt(E) / std::sqrt((std::abs(grav_gpu[2])/<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a96295e93c39d249775ba2498eb3d4fc1">theta</a>)*dtheta_dz);</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;            }</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;            Real KH   = 0.1 * (1.+2.*length/l_Delta) * std::sqrt(E);</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            cell_rhs(i,j,k,qty_index) += cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * grav_gpu[2] * KH * dtheta_dz;</div>
