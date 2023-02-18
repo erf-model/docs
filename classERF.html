@@ -1709,7 +1709,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    h_avg_tau22 = sumToLine(mf_out,3,1,domain,zdir);</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    h_avg_tau23 = sumToLine(mf_out,4,1,domain,zdir);</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    h_avg_tau33 = sumToLine(mf_out,5,1,domain,zdir);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;}</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">// Divide by the total number of cells we are averaging over</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    Real area_z = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(domain.length(0)*domain.length(1));</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; h_avg_tau11.size(); ++k) {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        h_avg_tau11[k] /= area_z; h_avg_tau12[k] /= area_z; h_avg_tau13[k] /= area_z;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        h_avg_tau22[k] /= area_z; h_avg_tau23[k] /= area_z; h_avg_tau33[k] /= area_z;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
 <div class="ttc" id="aclassERF_html_a03a4ad7368c1c98b492cd9d9fec9cbc5"><div class="ttname"><a href="classERF.html#a03a4ad7368c1c98b492cd9d9fec9cbc5">ERF::Tau23_lev</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; Tau23_lev</div><div class="ttdef"><b>Definition:</b> ERF.H:480</div></div>
 <div class="ttc" id="aclassERF_html_a5392e6104804d799b3fd943dfe390766"><div class="ttname"><a href="classERF.html#a5392e6104804d799b3fd943dfe390766">ERF::Tau13_lev</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; Tau13_lev</div><div class="ttdef"><b>Definition:</b> ERF.H:479</div></div>
 <div class="ttc" id="aclassERF_html_a60a185c47f07bf4fb537a15d5a226d8a"><div class="ttname"><a href="classERF.html#a60a185c47f07bf4fb537a15d5a226d8a">ERF::Tau33_lev</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; Tau33_lev</div><div class="ttdef"><b>Definition:</b> ERF.H:477</div></div>
