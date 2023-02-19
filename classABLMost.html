@@ -888,7 +888,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classABLMostData.html">ABLMostData</a> d_most = <a class="code" href="classABLMost.html#a4a8f61b0315a2ffbf2df59a3fdfa215f">get_most_data</a>();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// Tolerances</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    constexpr amrex::Real eps = 1.0e-16;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    constexpr amrex::Real eps = std::numeric_limits&lt;Real&gt;::epsilon();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    constexpr amrex::Real tol = 1.0e-5;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// Ghost cells for CC var</span></div>
