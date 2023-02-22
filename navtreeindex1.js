@@ -159,9 +159,8 @@ var NAVTREEINDEX1 =
 "TerrainMetrics_8H.html#a3e3ceccddeb3cca9d9e4573af2311a5e":[3,0,0,8,9,15],
 "TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2":[3,0,0,8,9,0],
 "TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0":[3,0,0,8,9,20],
-"TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087":[3,0,0,8,9,23],
 "TerrainMetrics_8H.html#a73878488be6786efc0865079c3a281fb":[3,0,0,8,9,21],
-"TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7":[3,0,0,8,9,24],
+"TerrainMetrics_8H.html#a822e7ee5054adbf7dfe759a71323efd4":[3,0,0,8,9,23],
 "TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e":[3,0,0,8,9,18],
 "TerrainMetrics_8H.html#a9ec5ec17f16954e56733db6dd98fe07d":[3,0,0,8,9,12],
 "TerrainMetrics_8H.html#aba0de207695f9674a9e0678a19f22677":[3,0,0,8,9,13],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "classERF.html#a051364b2373d8d86151c0b4a958035bd":[2,0,7,148],
 "classERF.html#a0553967f1131860bb8ecb47c0f192eaa":[2,0,7,190],
 "classERF.html#a0634154e8e58379c495c3e7fe7c5e4d6":[2,0,7,154],
-"classERF.html#a06e1851cb5c1a96d6604f0c13992787d":[2,0,7,12]
+"classERF.html#a06e1851cb5c1a96d6604f0c13992787d":[2,0,7,12],
+"classERF.html#a0877d5a0263641c13b92d2d16f47b689":[2,0,7,67]
 };

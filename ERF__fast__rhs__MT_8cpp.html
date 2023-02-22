@@ -749,70 +749,69 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;             Real rho_on_face = 0.5 * (cur_cons(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cur_cons(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;             <span class="keywordflow">if</span> (k == 0) {</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                 cur_zmom(i,j,k) = <a class="code" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a>(i,j,k,rho_on_face*(z_t_arr(i,j,k)+zp_t_arr(i,j,k)),</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                                              cur_xmom,cur_ymom,z_nd_new,dxInv);</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                 <span class="comment">// We need to set this here because it is used to define zflux_lo below</span></div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                 soln_a(i,j,k) = 0.;</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160; </div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;             } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160; </div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                 Real wpp = <a class="code" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a>(i,j,k,soln_a(i,j,k),cur_xmom,cur_ymom,z_nd_new,dxInv)</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                           -<a class="code" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a>(i,j,k,           0.,stg_xmom,stg_ymom,z_nd_stg,dxInv);</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                 Real dJ_old_kface = 0.5 * (detJ_old(i,j,k) + detJ_old(i,j,k-1));</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                 Real dJ_new_kface = 0.5 * (detJ_new(i,j,k) + detJ_new(i,j,k-1));</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160; </div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                 cur_zmom(i,j,k) = dJ_old_kface * (stg_zmom(i,j,k) + wpp);</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                 cur_zmom(i,j,k) /= dJ_new_kface;</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160; </div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                 soln_a(i,j,k) = <a class="code" href="TerrainMetrics_8H.html#a002996309aac722698ccbc1e66f2e28c">OmegaFromW</a>(i,j,k,cur_zmom(i,j,k),cur_xmom,cur_ymom,z_nd_new,dxInv)</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                               - <a class="code" href="TerrainMetrics_8H.html#a002996309aac722698ccbc1e66f2e28c">OmegaFromW</a>(i,j,k,stg_zmom(i,j,k),stg_xmom,stg_ymom,z_nd_stg,dxInv);</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                 soln_a(i,j,k) -= rho_on_face * zp_t_arr(i,j,k);</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;             }</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        });</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160; </div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        <span class="comment">// **************************************************************************</span></div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        <span class="comment">// Define updates in the RHS of rho and (rho theta)</span></div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        <span class="comment">// **************************************************************************</span></div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        <span class="comment">// We note that valid_bx is the actual grid, while bx may be a tile within that grid</span></div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        <span class="comment">// const auto&amp; vbx_hi = amrex::ubound(valid_bx);</span></div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        {</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;fast_rho_final_update&quot;</span>);</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;        {</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;              Real zflux_lo = beta_2 * soln_a(i,j,k  ) + beta_1 * omega_arr(i,j,k);</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;              Real zflux_hi = beta_2 * soln_a(i,j,k+1) + beta_1 * omega_arr(i,j,k+1);</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160; </div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;              <span class="comment">// Note that in the solve we effectively impose new_drho_w(i,j,vbx_hi.z+1)=0</span></div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;              <span class="comment">// so we don&#39;t update avg_zmom at k=vbx_hi.z+1</span></div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;              avg_zmom(i,j,k) += facinv*zflux_lo;</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160; </div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;              <span class="comment">// Note that the factor of (1/J) in the fast source term is canceled</span></div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;              <span class="comment">// when we multiply old and new by detJ_old and detJ_new , respectively</span></div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;              <span class="comment">// We have already scaled the slow source term to have the extra factor of dJ</span></div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;              Real fast_rhs_rho = -(temp_rhs_arr(i,j,k,0) + ( zflux_hi - zflux_lo ) * dzi);</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;              Real temp_rho = detJ_old(i,j,k) * cur_cons(i,j,k,0) +</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                              dtau * ( slow_rhs_cons(i,j,k,0) + fast_rhs_rho );</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;              cur_cons(i,j,k,0) = temp_rho / detJ_new(i,j,k);</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160; </div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;              <span class="comment">// Note that the factor of (1/J) in the fast source term is canceled</span></div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;              <span class="comment">// when we multiply old and new by detJ_old and detJ_new , respectively</span></div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;              <span class="comment">// We have already scaled the slow source term to have the extra factor of dJ</span></div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;              Real fast_rhs_rhotheta = -( temp_rhs_arr(i,j,k,1) + 0.5 *</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                                        ( zflux_hi * (prim(i,j,k) + prim(i,j,k+1))</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                                        - zflux_lo * (prim(i,j,k) + prim(i,j,k-1)) ) * dzi );</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;              Real temp_rth = detJ_old(i,j,k) * cur_cons(i,j,k,1) +</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                              dtau * ( slow_rhs_cons(i,j,k,1) + fast_rhs_rhotheta );</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;              cur_cons(i,j,k,1) = temp_rth / detJ_new(i,j,k);</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160; </div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        });</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    }</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;}</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                 cur_zmom(i,j,k) = <a class="code" href="TerrainMetrics_8H.html#a822e7ee5054adbf7dfe759a71323efd4">WFromOmega</a>(i,j,k,rho_on_face*(z_t_arr(i,j,k)+zp_t_arr(i,j,k)),z_nd_new,dxInv);</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160; </div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                 <span class="comment">// We need to set this here because it is used to define zflux_lo below</span></div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                 soln_a(i,j,k) = 0.;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160; </div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;             } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160; </div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                 Real wpp = <a class="code" href="TerrainMetrics_8H.html#a822e7ee5054adbf7dfe759a71323efd4">WFromOmega</a>(i,j,k,soln_a(i,j,k),z_nd_new,dxInv)</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                           -<a class="code" href="TerrainMetrics_8H.html#a822e7ee5054adbf7dfe759a71323efd4">WFromOmega</a>(i,j,k,           0.,z_nd_stg,dxInv);</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                 Real dJ_old_kface = 0.5 * (detJ_old(i,j,k) + detJ_old(i,j,k-1));</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                 Real dJ_new_kface = 0.5 * (detJ_new(i,j,k) + detJ_new(i,j,k-1));</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160; </div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                 cur_zmom(i,j,k) = dJ_old_kface * (stg_zmom(i,j,k) + wpp);</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                 cur_zmom(i,j,k) /= dJ_new_kface;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160; </div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                 soln_a(i,j,k) = <a class="code" href="TerrainMetrics_8H.html#a002996309aac722698ccbc1e66f2e28c">OmegaFromW</a>(i,j,k,cur_zmom(i,j,k),cur_xmom,cur_ymom,z_nd_new,dxInv)</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                               - <a class="code" href="TerrainMetrics_8H.html#a002996309aac722698ccbc1e66f2e28c">OmegaFromW</a>(i,j,k,stg_zmom(i,j,k),stg_xmom,stg_ymom,z_nd_stg,dxInv);</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                 soln_a(i,j,k) -= rho_on_face * zp_t_arr(i,j,k);</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;             }</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        });</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160; </div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        <span class="comment">// **************************************************************************</span></div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        <span class="comment">// Define updates in the RHS of rho and (rho theta)</span></div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        <span class="comment">// **************************************************************************</span></div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160; </div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        <span class="comment">// We note that valid_bx is the actual grid, while bx may be a tile within that grid</span></div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        <span class="comment">// const auto&amp; vbx_hi = amrex::ubound(valid_bx);</span></div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160; </div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        {</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;fast_rho_final_update&quot;</span>);</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;        {</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;              Real zflux_lo = beta_2 * soln_a(i,j,k  ) + beta_1 * omega_arr(i,j,k);</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;              Real zflux_hi = beta_2 * soln_a(i,j,k+1) + beta_1 * omega_arr(i,j,k+1);</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160; </div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;              <span class="comment">// Note that in the solve we effectively impose new_drho_w(i,j,vbx_hi.z+1)=0</span></div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;              <span class="comment">// so we don&#39;t update avg_zmom at k=vbx_hi.z+1</span></div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;              avg_zmom(i,j,k) += facinv*zflux_lo;</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;              <span class="comment">// Note that the factor of (1/J) in the fast source term is canceled</span></div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;              <span class="comment">// when we multiply old and new by detJ_old and detJ_new , respectively</span></div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;              <span class="comment">// We have already scaled the slow source term to have the extra factor of dJ</span></div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;              Real fast_rhs_rho = -(temp_rhs_arr(i,j,k,0) + ( zflux_hi - zflux_lo ) * dzi);</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;              Real temp_rho = detJ_old(i,j,k) * cur_cons(i,j,k,0) +</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                              dtau * ( slow_rhs_cons(i,j,k,0) + fast_rhs_rho );</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;              cur_cons(i,j,k,0) = temp_rho / detJ_new(i,j,k);</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160; </div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;              <span class="comment">// Note that the factor of (1/J) in the fast source term is canceled</span></div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;              <span class="comment">// when we multiply old and new by detJ_old and detJ_new , respectively</span></div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;              <span class="comment">// We have already scaled the slow source term to have the extra factor of dJ</span></div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;              Real fast_rhs_rhotheta = -( temp_rhs_arr(i,j,k,1) + 0.5 *</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                                        ( zflux_hi * (prim(i,j,k) + prim(i,j,k+1))</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                                        - zflux_lo * (prim(i,j,k) + prim(i,j,k-1)) ) * dzi );</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;              Real temp_rth = detJ_old(i,j,k) * cur_cons(i,j,k,1) +</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                              dtau * ( slow_rhs_cons(i,j,k,1) + fast_rhs_rhotheta );</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;              cur_cons(i,j,k,1) = temp_rth / detJ_new(i,j,k);</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160; </div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        });</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    }</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_afbb622bf3b404a3e7c77f3103b4d1231"><div class="ttname"><a href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a></div><div class="ttdeci">constexpr amrex::Real Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:18</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
@@ -820,7 +819,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:26</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a002996309aac722698ccbc1e66f2e28c"><div class="ttname"><a href="TerrainMetrics_8H.html#a002996309aac722698ccbc1e66f2e28c">OmegaFromW</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real OmegaFromW(int i, int j, int k, amrex::Real w, const amrex::Array4&lt; const amrex::Real &gt; u, const amrex::Array4&lt; const amrex::Real &gt; v, const amrex::Array4&lt; const amrex::Real &gt; z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:334</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a2116df83b61a39fb50b9a2d7474c00d7"><div class="ttname"><a href="TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_xi_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:81</div></div>
-<div class="ttc" id="aTerrainMetrics_8H_html_a53ec395d493c2308315f7512c5438087"><div class="ttname"><a href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real WFromOmega(int i, int j, int k, amrex::Real omega, amrex::Real u, amrex::Real v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:376</div></div>
+<div class="ttc" id="aTerrainMetrics_8H_html_a822e7ee5054adbf7dfe759a71323efd4"><div class="ttname"><a href="TerrainMetrics_8H.html#a822e7ee5054adbf7dfe759a71323efd4">WFromOmega</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real WFromOmega(int i, int j, int k, amrex::Real omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:376</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a8d96671d41364f1e24391375a2bc0f1e"><div class="ttname"><a href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:67</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_ada12bcb6beb3fa0d00dbdacb37f3c60f"><div class="ttname"><a href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:110</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_ae609a5c1f84347b66e9a8b712271c4ce"><div class="ttname"><a href="TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:138</div></div>
@@ -841,7 +840,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e" title=" " alt="" coords="180,107,364,133"/>
 <area shape="rect" href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f" title=" " alt="" coords="180,157,364,184"/>
 <area shape="rect" href="TerrainMetrics_8H.html#a002996309aac722698ccbc1e66f2e28c" title=" " alt="" coords="215,208,329,235"/>
-<area shape="rect" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087" title=" " alt="" coords="215,259,329,285"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a822e7ee5054adbf7dfe759a71323efd4" title=" " alt="" coords="215,259,329,285"/>
 </map>
 </div>
 

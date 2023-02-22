@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['wfromomega_1055',['WFromOmega',['../TerrainMetrics_8H.html#a81366cf4ca04adcfbf0988099b906cd7',1,'WFromOmega(int i, int j, int k, amrex::Real omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv):&#160;TerrainMetrics.H'],['../TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087',1,'WFromOmega(int i, int j, int k, amrex::Real omega, amrex::Real u, amrex::Real v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv):&#160;TerrainMetrics.H']]],
+  ['wfromomega_1055',['WFromOmega',['../TerrainMetrics_8H.html#a822e7ee5054adbf7dfe759a71323efd4',1,'TerrainMetrics.H']]],
   ['wrfbdytypes_1056',['WRFBdyTypes',['../namespaceWRFBdyTypes.html',1,'']]],
   ['wrfbdyvars_1057',['WRFBdyVars',['../namespaceWRFBdyVars.html',1,'']]],
   ['write_5f1d_5fprofiles_1058',['write_1D_profiles',['../classERF.html#a55eae94c5363e227b571739738bb26b7',1,'ERF']]],
