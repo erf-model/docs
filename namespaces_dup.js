@@ -33,6 +33,5 @@ var namespaces_dup =
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
     [ "Prim", "namespacePrim.html", null ],
     [ "Vars", "namespaceVars.html", null ],
-    [ "WRFBdyTypes", "namespaceWRFBdyTypes.html", null ],
     [ "WRFBdyVars", "namespaceWRFBdyVars.html", null ]
 ];

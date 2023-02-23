@@ -243,7 +243,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            tbz.growLo(2,-1);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            tbz.growHi(2,-1);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#a5301c56260a5fa166df024f1418db994a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt; &amp; buoyancy_fab = buoyancy.array(mfi);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">// Base state density</span></div>
@@ -258,7 +258,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0">buoyancy_type</a> == 2 || solverChoice.<a class="code" href="structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0">buoyancy_type</a> == 3) {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="classPlaneAverage.html">PlaneAverage</a> state_ave(&amp;(S_data[<a class="code" href="namespaceIntVar.html#a5301c56260a5fa166df024f1418db994a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>]), geom, solverChoice.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="classPlaneAverage.html">PlaneAverage</a> state_ave(&amp;(S_data[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>]), geom, solverChoice.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classPlaneAverage.html">PlaneAverage</a> prim_ave(&amp;S_prim, geom, solverChoice.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">int</span> ncell = state_ave.ncell_line();</div>
@@ -293,7 +293,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            tbz.growLo(2,-1);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            tbz.growHi(2,-1);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#a5301c56260a5fa166df024f1418db994a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt; &amp; buoyancy_fab = buoyancy.array(mfi);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            amrex::ParallelFor(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
@@ -333,7 +333,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            tbz.growLo(2,-1);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            tbz.growHi(2,-1);</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#a5301c56260a5fa166df024f1418db994a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt; &amp; buoyancy_fab = buoyancy.array(mfi);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="comment">// Base state density</span></div>
@@ -355,7 +355,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> state_ave(&amp;(S_data[<a class="code" href="namespaceIntVar.html#a5301c56260a5fa166df024f1418db994a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>]), geom, solverChoice.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> state_ave(&amp;(S_data[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>]), geom, solverChoice.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a>  prim_ave(&amp;S_prim                , geom, solverChoice.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">// Compute horizontal averages of all components of each field</span></div>
@@ -407,7 +407,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt; &amp; buoyancy_fab = buoyancy.array(mfi);</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#a5301c56260a5fa166df024f1418db994a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_prim  = S_prim.array(mfi);</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qv_data    = qvapor.array(mfi);</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qc_data    = qcloud.array(mfi);</div>
@@ -458,7 +458,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt; &amp; buoyancy_fab = buoyancy.array(mfi);</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#a5301c56260a5fa166df024f1418db994a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_prim  = S_prim.array(mfi);</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qv_data    = qvapor.array(mfi);</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qc_data    = qcloud.array(mfi);</div>
@@ -503,7 +503,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            tbz.growLo(2,-1);</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            tbz.growHi(2,-1);</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#a5301c56260a5fa166df024f1418db994a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt; &amp; buoyancy_fab = buoyancy.array(mfi);</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            <span class="comment">// Base state density</span></div>
@@ -526,7 +526,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:26</div></div>
 <div class="ttc" id="aclassPlaneAverage_html"><div class="ttname"><a href="classPlaneAverage.html">PlaneAverage</a></div><div class="ttdef"><b>Definition:</b> PlaneAverage.H:9</div></div>
-<div class="ttc" id="anamespaceIntVar_html_a5301c56260a5fa166df024f1418db994a22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#a5301c56260a5fa166df024f1418db994a22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:186</div></div>
+<div class="ttc" id="anamespaceIntVar_html_ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:177</div></div>
 <div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> DataStruct.H:353</div></div>
 <div class="ttc" id="astructSolverChoice_html_ad6ee95a1f016f6f236f26144dbf234d0"><div class="ttname"><a href="structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0">SolverChoice::buoyancy_type</a></div><div class="ttdeci">int buoyancy_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:339</div></div>
 <div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> DataStruct.H:432</div></div>

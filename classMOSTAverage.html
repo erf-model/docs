@@ -305,8 +305,8 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <a class="code" href="classMOSTAverage.html#ac04a90b03c99ad27ae0ea887923a2354">m_averages</a>[lev].resize(<a class="code" href="classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6">m_navg</a>);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <a class="code" href="classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4">m_z_phys_nd</a>[lev] = z_phys_nd[lev].get();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      { <span class="comment">// Nodal in x</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">auto</span>&amp; mf  = vars_old[lev][<a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        amrex::MultiFab* mfp = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">auto</span>&amp; mf  = vars_old[lev][<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        amrex::MultiFab* mfp = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// Create a 2D ba, dm, &amp; ghost cells</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        amrex::BoxArray ba  = mf.boxArray();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        amrex::BoxList bl2d = ba.boxList();</div>
@@ -321,8 +321,8 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classMOSTAverage.html#ac04a90b03c99ad27ae0ea887923a2354">m_averages</a>[lev][0]-&gt;setVal(1.E34);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      { <span class="comment">// Nodal in y</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">auto</span>&amp; mf  = vars_old[lev][<a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        amrex::MultiFab* mfp = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">auto</span>&amp; mf  = vars_old[lev][<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        amrex::MultiFab* mfp = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">// Create a 2D ba, dm, &amp; ghost cells</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        amrex::BoxArray ba  = mf.boxArray();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        amrex::BoxList bl2d = ba.boxList();</div>
@@ -449,8 +449,8 @@ Protected Attributes</h2></td></tr>
 <div class="ttc" id="aclassMOSTAverage_html_ae1d62c88d62bbef8458d0084200f65f2"><div class="ttname"><a href="classMOSTAverage.html#ae1d62c88d62bbef8458d0084200f65f2">MOSTAverage::m_fact_old</a></div><div class="ttdeci">amrex::Real m_fact_old</div><div class="ttdef"><b>Definition:</b> MOSTAverage.H:185</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_aeac5da9c3972fdde64f60720f88efe2e"><div class="ttname"><a href="classMOSTAverage.html#aeac5da9c3972fdde64f60720f88efe2e">MOSTAverage::m_interp</a></div><div class="ttdeci">bool m_interp</div><div class="ttdef"><b>Definition:</b> MOSTAverage.H:177</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_aed9b6c726189d8858abba0a2a66feca1"><div class="ttname"><a href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">MOSTAverage::m_geom</a></div><div class="ttdeci">const amrex::Vector&lt; amrex::Geometry &gt; m_geom</div><div class="ttdef"><b>Definition:</b> MOSTAverage.H:144</div></div>
-<div class="ttc" id="anamespaceVars_html_a4d83f9f2eeb1164765959831280edce3a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:86</div></div>
-<div class="ttc" id="anamespaceVars_html_a4d83f9f2eeb1164765959831280edce3a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:87</div></div>
+<div class="ttc" id="anamespaceVars_html_a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:77</div></div>
+<div class="ttc" id="anamespaceVars_html_a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:78</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1764,8 +1764,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][0] = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][1] = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][0] = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][1] = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][2] = Theta_prim[lev].get();</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
 </div><!-- fragment -->
