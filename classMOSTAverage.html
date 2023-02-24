@@ -966,12 +966,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    <span class="keywordflow">if</span> (not_per_x || not_per_y) {</div>
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        amrex::Box domain = geom.Domain();</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iavg(0); iavg &lt; <a class="code" href="classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6">m_navg</a>; ++iavg) {</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;            amrex::IndexType ixt = averages[iavg]-&gt;boxArray().ixType();</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;            amrex::Box ldomain   = domain; ldomain.convert(ixt);</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            amrex::IntVect ng    = averages[iavg]-&gt;nGrowVect(); ng[2]=0;</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;            amrex::IndexType ixt = averages[iavg]-&gt;boxArray().ixType();</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            amrex::Box ldomain   = domain; ldomain.convert(ixt);</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;            amrex::IntVect ng    = averages[iavg]-&gt;nGrowVect(); ng[2]=0;</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;            <span class="keywordflow">for</span> (amrex::MFIter mfi(*averages[iavg], amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                amrex::Box gpbx = mfi.growntilebox(ng); gpbx.setSmall(2,0); gpbx.setBig(2,0);</div>
 <div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160; </div>
