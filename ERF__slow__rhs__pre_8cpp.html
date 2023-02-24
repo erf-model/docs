@@ -641,15 +641,15 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                    });</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                    Box gbxo_lo = gbxo; gbxo.setBig(2,0);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    amrex::ParallelFor(gbxo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    amrex::ParallelFor(gbxo_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                        omega_arr(i,j,k) = 0.;</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                    });</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                    Box gbxo_hi = gbxo; gbxo.setSmall(2,gbxo.bigEnd(2));</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                    amrex::ParallelFor(gbxo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                    amrex::ParallelFor(gbxo_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                        omega_arr(i,j,k) = rho_w(i,j,k);</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    });</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    Box gbxo_mid = gbxo; gbxo.setSmall(2,1); gbxo.setBig(2,gbxo.bigEnd(2)-1);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    amrex::ParallelFor(gbxo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    amrex::ParallelFor(gbxo_mid, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                        omega_arr(i,j,k) = <a class="code" href="TerrainMetrics_8H.html#a002996309aac722698ccbc1e66f2e28c">OmegaFromW</a>(i,j,k,rho_w(i,j,k),rho_u,rho_v,z_nd,dxInv);</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                    });</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                }</div>
