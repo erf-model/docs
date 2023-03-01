@@ -498,9 +498,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="comment">// Construct intersection of current tilebox and valid region for updating</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        Box bx = mfi.tilebox() &amp; valid_bx;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        Box tbx = surroundingNodes(bx,0);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        Box tby = surroundingNodes(bx,1);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        Box tbz = surroundingNodes(bx,2);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        Box tbx = mfi.nodaltilebox(0);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        Box tby = mfi.nodaltilebox(1);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        Box tbz = mfi.nodaltilebox(2);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="comment">// We don&#39;t compute a source term for z-momentum on the bottom or top boundary</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        tbz.growLo(2,-1);</div>
