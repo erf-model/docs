@@ -632,19 +632,19 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160; </div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="comment">// Averages over all the fields</span></div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <span class="comment">//----------------------------------------------------------</span></div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> imf(0); imf &lt; <a class="code" href="classMOSTAverage.html#a94ece9d178d0e85296cce07bab556bc7">m_nvar</a>; ++imf) {</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        <span class="keyword">const</span> amrex::Real denom = 1.0 / (amrex::Real)ncell_plane[imf];</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        amrex::Real d_val_old   = plane_average[imf]*d_fact_old;</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(*fields[imf], amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;            amrex::Box pbx = mfi.tilebox(); pbx.setSmall(2,0); pbx.setBig(2,0);</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;            <span class="comment">// Avoid double counting nodal data</span></div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;            amrex::Box domain = geom.Domain();</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;            amrex::IntVect dom_hi(domain.hiVect());</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    amrex::Box domain = geom.Domain();</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    amrex::IntVect dom_hi(domain.hiVect());</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> imf(0); imf &lt; <a class="code" href="classMOSTAverage.html#a94ece9d178d0e85296cce07bab556bc7">m_nvar</a>; ++imf) {</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        <span class="keyword">const</span> amrex::Real denom = 1.0 / (amrex::Real)ncell_plane[imf];</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        amrex::Real d_val_old   = plane_average[imf]*d_fact_old;</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160; </div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(*fields[imf], amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;            amrex::Box pbx = mfi.tilebox(); pbx.setSmall(2,0); pbx.setBig(2,0);</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160; </div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;            <span class="comment">// Avoid double counting nodal data</span></div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;            amrex::IndexType ixt = averages[imf]-&gt;boxArray().ixType();</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim(0); idim &lt; AMREX_SPACEDIM-1; ++idim) {</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                <span class="keywordflow">if</span> ( ixt.nodeCentered(idim) &amp;&amp; (pbx.bigEnd(idim) &lt; dom_hi[idim]) )</div>

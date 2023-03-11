@@ -242,46 +242,46 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;{</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;ComputeTurbulentViscosity()&quot;</span>,<a class="code" href="ComputeTurbulentViscosity_8cpp.html#a093a392e2a5e445adfbebf9ea717e73a">ComputeTurbulentViscosity</a>);</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="comment">// In LES mode, the turbulent viscosity is isotropic, so the LES model sets both horizontal and vertical viscosities</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">// In PBL mode, the primary purpose of the PBL model is to control vertical transport, so the PBL model sets the vertical viscosity.</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="comment">// Optionally, the PBL model can be run in conjunction with an LES model that sets the horizontal viscosity</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="comment">// (this isn’t truly LES, but the model form is the same as Smagorinsky).</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="comment">// ComputeTurbulentViscosityLES populates the LES viscosity for both horizontal and vertical components.</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="comment">// ComputeTurbulentViscosityPBL computes the PBL viscosity just for the vertical component.</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// We must initialize all the components to 0 because we may not set all of them below</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="comment">//    (which ones depends on which LES / PBL scheme we are using)</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    eddyViscosity.setVal(0.0);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">if</span> (most) {</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordtype">bool</span> l_use_turb = ( solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a> ||</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                            solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>   ||</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                            solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> == <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a> );</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(l_use_turb,</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;          <span class="stringliteral">&quot;An LES or PBL model must be utilized with MOST boundaries to compute the turbulent viscosity&quot;</span>);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        AMREX_ALWAYS_ASSERT(!vert_only);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> != <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a6adf97f83acf6453d4a6a4b1070f3754">LESType::None</a>) {</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#ace3e2a55cc4050bfd58dedaea386840f">ComputeTurbulentViscosityLES</a>(Tau11, Tau22, Tau33,</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                                     Tau12, Tau13, Tau23,</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                     cons_in, eddyViscosity,</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                                     geom, mapfac_u, mapfac_v,</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                                     solverChoice);</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;{</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;ComputeTurbulentViscosity()&quot;</span>,<a class="code" href="ComputeTurbulentViscosity_8cpp.html#a093a392e2a5e445adfbebf9ea717e73a">ComputeTurbulentViscosity</a>);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">// In LES mode, the turbulent viscosity is isotropic, so the LES model sets both horizontal and vertical viscosities</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// In PBL mode, the primary purpose of the PBL model is to control vertical transport, so the PBL model sets the vertical viscosity.</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="comment">// Optionally, the PBL model can be run in conjunction with an LES model that sets the horizontal viscosity</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="comment">// (this isn’t truly LES, but the model form is the same as Smagorinsky).</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="comment">// ComputeTurbulentViscosityLES populates the LES viscosity for both horizontal and vertical components.</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">// ComputeTurbulentViscosityPBL computes the PBL viscosity just for the vertical component.</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="comment">// We must initialize all the components to 0 because we may not set all of them below</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="comment">//    (which ones depends on which LES / PBL scheme we are using)</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    eddyViscosity.setVal(0.0);</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> != <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754">PBLType::None</a>) {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#a6b7b829386b28f2bcdc63d51b754896c">ComputeTurbulentViscosityPBL</a>(<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                                     geom, solverChoice, most, vert_only);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
-<div class="ttc" id="aComputeTurbulentViscosity_8cpp_html_a093a392e2a5e445adfbebf9ea717e73a"><div class="ttname"><a href="ComputeTurbulentViscosity_8cpp.html#a093a392e2a5e445adfbebf9ea717e73a">ComputeTurbulentViscosity</a></div><div class="ttdeci">void ComputeTurbulentViscosity(const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;Tau11, const amrex::MultiFab &amp;Tau22, const amrex::MultiFab &amp;Tau33, const amrex::MultiFab &amp;Tau12, const amrex::MultiFab &amp;Tau13, const amrex::MultiFab &amp;Tau23, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;mapfac_u, const amrex::MultiFab &amp;mapfac_v, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; ABLMost &gt; &amp;most, bool vert_only)</div><div class="ttdef"><b>Definition:</b> ComputeTurbulentViscosity.cpp:274</div></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">if</span> (most) {</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordtype">bool</span> l_use_turb = ( solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a> ||</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                            solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>   ||</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                            solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> == <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a> );</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(l_use_turb,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;          <span class="stringliteral">&quot;An LES or PBL model must be utilized with MOST boundaries to compute the turbulent viscosity&quot;</span>);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        AMREX_ALWAYS_ASSERT(!vert_only);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> != <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a6adf97f83acf6453d4a6a4b1070f3754">LESType::None</a>) {</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#ace3e2a55cc4050bfd58dedaea386840f">ComputeTurbulentViscosityLES</a>(Tau11, Tau22, Tau33,</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                                     Tau12, Tau13, Tau23,</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                                     cons_in, eddyViscosity,</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                     geom, mapfac_u, mapfac_v,</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                     solverChoice);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    }</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> != <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754">PBLType::None</a>) {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#a6b7b829386b28f2bcdc63d51b754896c">ComputeTurbulentViscosityPBL</a>(<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                                     geom, solverChoice, most, vert_only);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    }</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
+<div class="ttc" id="aComputeTurbulentViscosity_8cpp_html_a093a392e2a5e445adfbebf9ea717e73a"><div class="ttname"><a href="ComputeTurbulentViscosity_8cpp.html#a093a392e2a5e445adfbebf9ea717e73a">ComputeTurbulentViscosity</a></div><div class="ttdeci">void ComputeTurbulentViscosity(const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;Tau11, const amrex::MultiFab &amp;Tau22, const amrex::MultiFab &amp;Tau33, const amrex::MultiFab &amp;Tau12, const amrex::MultiFab &amp;Tau13, const amrex::MultiFab &amp;Tau23, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;mapfac_u, const amrex::MultiFab &amp;mapfac_v, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; ABLMost &gt; &amp;most, bool vert_only)</div><div class="ttdef"><b>Definition:</b> ComputeTurbulentViscosity.cpp:292</div></div>
 <div class="ttc" id="aComputeTurbulentViscosity_8cpp_html_a6b7b829386b28f2bcdc63d51b754896c"><div class="ttname"><a href="ComputeTurbulentViscosity_8cpp.html#a6b7b829386b28f2bcdc63d51b754896c">ComputeTurbulentViscosityPBL</a></div><div class="ttdeci">void ComputeTurbulentViscosityPBL(const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, const amrex::Geometry &amp;geom, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; ABLMost &gt; &amp;most, bool)</div><div class="ttdef"><b>Definition:</b> PBLModels.cpp:6</div></div>
 <div class="ttc" id="aComputeTurbulentViscosity_8cpp_html_ace3e2a55cc4050bfd58dedaea386840f"><div class="ttname"><a href="ComputeTurbulentViscosity_8cpp.html#ace3e2a55cc4050bfd58dedaea386840f">ComputeTurbulentViscosityLES</a></div><div class="ttdeci">void ComputeTurbulentViscosityLES(const amrex::MultiFab &amp;Tau11, const amrex::MultiFab &amp;Tau22, const amrex::MultiFab &amp;Tau33, const amrex::MultiFab &amp;Tau12, const amrex::MultiFab &amp;Tau13, const amrex::MultiFab &amp;Tau23, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;mapfac_u, const amrex::MultiFab &amp;mapfac_v, const SolverChoice &amp;solverChoice)</div><div class="ttdef"><b>Definition:</b> ComputeTurbulentViscosity.cpp:20</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754">PBLType::None</a></div><div class="ttdeci">@ None</div></div>
@@ -291,8 +291,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a></div><div class="ttdeci">@ Deardorff</div></div>
 <div class="ttc" id="anamespaceVars_html_a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:77</div></div>
 <div class="ttc" id="anamespaceVars_html_a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:78</div></div>
-<div class="ttc" id="astructSolverChoice_html_a0a031373331c9aca22a47b0995729f46"><div class="ttname"><a href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">SolverChoice::pbl_type</a></div><div class="ttdeci">PBLType pbl_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:398</div></div>
-<div class="ttc" id="astructSolverChoice_html_a53966e639b0307b7420fd6abe8412fa0"><div class="ttname"><a href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">SolverChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:378</div></div>
+<div class="ttc" id="astructSolverChoice_html_a0a031373331c9aca22a47b0995729f46"><div class="ttname"><a href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">SolverChoice::pbl_type</a></div><div class="ttdeci">PBLType pbl_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:402</div></div>
+<div class="ttc" id="astructSolverChoice_html_a53966e639b0307b7420fd6abe8412fa0"><div class="ttname"><a href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">SolverChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:380</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a6e0a6097ce45907d541d6e156100b145">ERF::erf_advance()</a>.</p>
 <div class="dynheader">
@@ -451,223 +451,244 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">//***********************************************************************************</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      amrex::Real l_C_k = solverChoice.<a class="code" href="structSolverChoice.html#a57a93f28b746dae8cbfa9b0df0960f27">Ck</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">for</span> ( amrex::MFIter mfi(eddyViscosity,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;          Box bxcc  = mfi.tilebox();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mu_turb = eddyViscosity.array(mfi);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const &gt; &amp;cell_data = cons_in.array(mfi);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        Array4&lt;Real const&gt; mf_u = mapfac_u.array(mfi);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        Array4&lt;Real const&gt; mf_v = mapfac_v.array(mfi);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;          Real cellVolMsf = 1.0 / (dxInv[0] * mf_u(i,j,0) * dxInv[1] * mf_v(i,j,0) * dxInv[2]);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;          Real DeltaMsf   = std::pow(cellVolMsf,1.0/3.0);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;          <span class="comment">// K = rho * C_k * Delta * KE^(1/2) = C_k * Delta * (rho * RhoKE)^1/2</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;          mu_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = l_C_k * DeltaMsf *</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            std::sqrt(cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;          mu_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) = mu_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        });</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Extrapolate Kturb in extrap x/y, fill remaining elements</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">//***********************************************************************************</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">int</span> ngc(1);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    Real inv_Pr_t    = solverChoice.<a class="code" href="structSolverChoice.html#aedad420dddffb0b78651c5d8b399a67b">Pr_t_inv</a>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    Real inv_Sc_t    = solverChoice.<a class="code" href="structSolverChoice.html#a5d8e6a103e2e5d61dc0990fa2141a675">Sc_t_inv</a>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    Real inv_sigma_k = 1.0 / solverChoice.<a class="code" href="structSolverChoice.html#affbc103f3361b47fbcf605a08b99d8ec">sigma_k</a>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    Vector&lt;Real&gt; Factors = {inv_Pr_t, inv_Sc_t, inv_sigma_k, inv_sigma_k, inv_Sc_t, inv_Sc_t}; <span class="comment">// alpha = mu/Pr</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_WARM_NO_PRECIP)</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    Vector&lt;Real&gt; Factors = {inv_Pr_t, inv_Sc_t, inv_sigma_k, inv_sigma_k, inv_Sc_t, inv_Sc_t}; <span class="comment">// alpha = mu/Pr</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    Vector&lt;Real&gt; Factors = {inv_Pr_t, inv_Sc_t, inv_sigma_k, inv_sigma_k}; <span class="comment">// alpha = mu/Pr</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    Gpu::AsyncVector&lt;Real&gt; d_Factors; d_Factors.resize(Factors.size());</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    Gpu::copy(Gpu::hostToDevice, Factors.begin(), Factors.end(), d_Factors.begin());</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    Real* fac_ptr = d_Factors.data();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">bool</span> use_KE  = (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">bool</span> use_QKE = (solverChoice.<a class="code" href="structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5">use_QKE</a> &amp;&amp; solverChoice.<a class="code" href="structSolverChoice.html#ad8f19f1ba25a4de9578af14ec787c0cc">diffuse_QKE_3D</a>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">for</span> ( amrex::MFIter mfi(eddyViscosity,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        Box bxcc   = mfi.tilebox();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        Box planex = bxcc; planex.setSmall(0, 1); planex.setBig(0, ngc);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        Box planey = bxcc; planey.setSmall(1, 1); planey.setBig(1, ngc);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordtype">int</span> i_lo   = bxcc.smallEnd(0); <span class="keywordtype">int</span> i_hi = bxcc.bigEnd(0);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordtype">int</span> j_lo   = bxcc.smallEnd(1); <span class="keywordtype">int</span> j_hi = bxcc.bigEnd(1);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        bxcc.growLo(0,ngc); bxcc.growHi(0,ngc);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        bxcc.growLo(1,ngc); bxcc.growHi(1,ngc);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mu_turb = eddyViscosity.array(mfi);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keyword">const</span> amrex::Real l_C_k        = solverChoice.<a class="code" href="structSolverChoice.html#a57a93f28b746dae8cbfa9b0df0960f27">Ck</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keyword">const</span> amrex::Real l_abs_g      = solverChoice.<a class="code" href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">gravity</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="keyword">const</span> amrex::Real l_inv_theta0 = 1.0 / solverChoice.<a class="code" href="structSolverChoice.html#a789dc1f74c540ba2d7ddedd37947c3db">theta_ref</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordflow">for</span> ( amrex::MFIter mfi(eddyViscosity,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;          Box bxcc  = mfi.tilebox();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mu_turb = eddyViscosity.array(mfi);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const &gt; &amp;cell_data = cons_in.array(mfi);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        Array4&lt;Real const&gt; mf_u = mapfac_u.array(mfi);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        Array4&lt;Real const&gt; mf_v = mapfac_v.array(mfi);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;          Real cellVolMsf = 1.0 / (dxInv[0] * mf_u(i,j,0) * dxInv[1] * mf_v(i,j,0) * dxInv[2]);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;          Real DeltaMsf   = std::pow(cellVolMsf,1.0/3.0);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;          <span class="comment">// calculate stratification-dependent mixing length (Deardorff 1980)</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;          Real eps       = std::numeric_limits&lt;Real&gt;::epsilon();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;          Real dtheta_dz = 0.5*(  cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                - cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>))*dxInv[2];</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;          Real E         = cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;          Real strat     = l_abs_g * dtheta_dz * l_inv_theta0; <span class="comment">// stratification</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;          Real length;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;          <span class="keywordflow">if</span> (strat &lt;= eps) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;              length = DeltaMsf;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;          } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            length = 0.76 * std::sqrt(E / strat);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;          }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;          <span class="comment">// K = rho * C_k * l * KE^(1/2) = C_k * l * (rho * RhoKE)^1/2</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;          mu_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = l_C_k * length *</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            std::sqrt(cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;          mu_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) = mu_turb(i, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        });</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// Extrapolate Kturb in extrap x/y, fill remaining elements</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">//***********************************************************************************</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">int</span> ngc(1);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    Real inv_Pr_t    = solverChoice.<a class="code" href="structSolverChoice.html#aedad420dddffb0b78651c5d8b399a67b">Pr_t_inv</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    Real inv_Sc_t    = solverChoice.<a class="code" href="structSolverChoice.html#a5d8e6a103e2e5d61dc0990fa2141a675">Sc_t_inv</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    Real inv_sigma_k = 1.0 / solverChoice.<a class="code" href="structSolverChoice.html#affbc103f3361b47fbcf605a08b99d8ec">sigma_k</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// EddyDiff mapping :   Theta_h   Scalar_h  KE_h         QKE_h        Qt_h      Qp_h</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    Vector&lt;Real&gt; Factors = {inv_Pr_t, inv_Sc_t, inv_sigma_k, inv_sigma_k, inv_Sc_t, inv_Sc_t}; <span class="comment">// alpha = mu/Pr</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_WARM_NO_PRECIP)</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// EddyDiff mapping :   Theta_h   Scalar_h  KE_h         QKE_h        Qv_h      Qc_h</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    Vector&lt;Real&gt; Factors = {inv_Pr_t, inv_Sc_t, inv_sigma_k, inv_sigma_k, inv_Sc_t, inv_Sc_t}; <span class="comment">// alpha = mu/Pr</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// EddyDiff mapping :   Theta_h   Scalar_h  KE_h         QKE_h</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    Vector&lt;Real&gt; Factors = {inv_Pr_t, inv_Sc_t, inv_sigma_k, inv_sigma_k}; <span class="comment">// alpha = mu/Pr</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    Gpu::AsyncVector&lt;Real&gt; d_Factors; d_Factors.resize(Factors.size());</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    Gpu::copy(Gpu::hostToDevice, Factors.begin(), Factors.end(), d_Factors.begin());</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    Real* fac_ptr = d_Factors.data();</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="comment">// Extrapolate outside the domain in lateral directions</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">if</span> (i_lo == domain.smallEnd(0)) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            amrex::ParallelFor(planex, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                mu_turb(i_lo-i, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = mu_turb(i_lo, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                mu_turb(i_lo-i, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) = mu_turb(i_lo, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            });</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        }</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">if</span> (i_hi == domain.bigEnd(0)) {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            amrex::ParallelFor(planex, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                mu_turb(i_hi+i, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = mu_turb(i_hi, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                mu_turb(i_hi+i, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) = mu_turb(i_hi, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            });</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span> (j_lo == domain.smallEnd(1)) {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            amrex::ParallelFor(planey, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                mu_turb(i, j_lo-j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = mu_turb(i, j_lo, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                mu_turb(i, j_lo-j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) = mu_turb(i, j_lo, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            });</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">if</span> (j_hi == domain.bigEnd(1)) {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            amrex::ParallelFor(planey, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                mu_turb(i, j_hi+j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = mu_turb(i, j_hi, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                mu_turb(i, j_hi+j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) = mu_turb(i, j_hi, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            });</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="comment">// refactor the code to eliminate the need for ifdef&#39;s</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> n = 1; n &lt; (<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a>-1)/2; ++n) {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a> = (<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a>-1)/2;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">switch</span> (n)</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;              <span class="keywordflow">case</span> <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977afa82972314696da2709ea8ac9b63d963">EddyDiff::QKE_h</a>:</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                 <span class="comment">// Populate element other than mom_h/v on the whole grid</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                 <span class="keywordflow">if</span>(use_QKE) {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                   ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                   {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                     <span class="keywordtype">int</span> indx   = n;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                     <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                     mu_turb(i,j,k,indx)   = mu_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) * fac_ptr[indx-1];</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                     mu_turb(i,j,k,indx_v) = mu_turb(i,j,k,indx);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                  });</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                 }</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                 <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;             <span class="keywordflow">case</span> <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977afa0c87454b22a819e328491f78bf6767">EddyDiff::KE_h</a>:</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                <span class="keywordflow">if</span> (use_KE) {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                   ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                   {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                     <span class="keywordtype">int</span> indx   = n;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                     <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                     mu_turb(i,j,k,indx)   = mu_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) * fac_ptr[indx-1];</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                     mu_turb(i,j,k,indx_v) = mu_turb(i,j,k,indx);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                   });</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                }</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                  <span class="keywordtype">int</span> indx   = n;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                  <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                  mu_turb(i,j,k,indx)   = mu_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) * fac_ptr[indx-1];</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                  mu_turb(i,j,k,indx_v) = mu_turb(i,j,k,indx);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                });</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;          }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;       }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">// Fill interior ghost cells and any ghost cells outside a periodic domain</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment">//***********************************************************************************</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    eddyViscosity.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment">// Extrapolate top &amp; bottom</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="comment">//***********************************************************************************</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">for</span> ( amrex::MFIter mfi(eddyViscosity,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    {</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        Box bxcc   = mfi.tilebox();</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        Box planez = bxcc; planez.setSmall(2, 1); planez.setBig(2, ngc);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordtype">int</span> k_lo   = bxcc.smallEnd(2); <span class="keywordtype">int</span> k_hi = bxcc.bigEnd(2);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        planez.growLo(0,ngc); planez.growHi(0,ngc);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        planez.growLo(1,ngc); planez.growHi(1,ngc);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">bool</span> use_KE  = (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">bool</span> use_QKE = (solverChoice.<a class="code" href="structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5">use_QKE</a> &amp;&amp; solverChoice.<a class="code" href="structSolverChoice.html#ad8f19f1ba25a4de9578af14ec787c0cc">diffuse_QKE_3D</a>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">for</span> ( amrex::MFIter mfi(eddyViscosity,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        Box bxcc   = mfi.tilebox();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        Box planex = bxcc; planex.setSmall(0, 1); planex.setBig(0, ngc);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        Box planey = bxcc; planey.setSmall(1, 1); planey.setBig(1, ngc);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordtype">int</span> i_lo   = bxcc.smallEnd(0); <span class="keywordtype">int</span> i_hi = bxcc.bigEnd(0);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordtype">int</span> j_lo   = bxcc.smallEnd(1); <span class="keywordtype">int</span> j_hi = bxcc.bigEnd(1);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        bxcc.growLo(0,ngc); bxcc.growHi(0,ngc);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        bxcc.growLo(1,ngc); bxcc.growHi(1,ngc);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mu_turb = eddyViscosity.array(mfi);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">// Extrapolate outside the domain in lateral directions</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span> (i_lo == domain.smallEnd(0)) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            amrex::ParallelFor(planex, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                mu_turb(i_lo-i, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = mu_turb(i_lo, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                mu_turb(i_lo-i, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) = mu_turb(i_lo, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            });</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">if</span> (i_hi == domain.bigEnd(0)) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            amrex::ParallelFor(planex, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                mu_turb(i_hi+i, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = mu_turb(i_hi, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                mu_turb(i_hi+i, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) = mu_turb(i_hi, j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            });</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">if</span> (j_lo == domain.smallEnd(1)) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            amrex::ParallelFor(planey, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                mu_turb(i, j_lo-j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = mu_turb(i, j_lo, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                mu_turb(i, j_lo-j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) = mu_turb(i, j_lo, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            });</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">if</span> (j_hi == domain.bigEnd(1)) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            amrex::ParallelFor(planey, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                mu_turb(i, j_hi+j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = mu_turb(i, j_hi, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                mu_turb(i, j_hi+j, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) = mu_turb(i, j_hi, k, <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            });</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="comment">// refactor the code to eliminate the need for ifdef&#39;s</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> n = 1; n &lt; (<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a>-1)/2; ++n) {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a> = (<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a>-1)/2;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">switch</span> (n)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;              <span class="keywordflow">case</span> <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977afa82972314696da2709ea8ac9b63d963">EddyDiff::QKE_h</a>:</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                 <span class="comment">// Populate element other than mom_h/v on the whole grid</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                 <span class="keywordflow">if</span>(use_QKE) {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                   ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                   {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                     <span class="keywordtype">int</span> indx   = n;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                     <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                     mu_turb(i,j,k,indx)   = mu_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) * fac_ptr[indx-1];</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                     mu_turb(i,j,k,indx_v) = mu_turb(i,j,k,indx);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                  });</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                 }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                 <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;             <span class="keywordflow">case</span> <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977afa0c87454b22a819e328491f78bf6767">EddyDiff::KE_h</a>:</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <span class="keywordflow">if</span> (use_KE) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                   ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                   {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                     <span class="keywordtype">int</span> indx   = n;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                     <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                     mu_turb(i,j,k,indx)   = mu_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) * fac_ptr[indx-1];</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                     mu_turb(i,j,k,indx_v) = mu_turb(i,j,k,indx);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                   });</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                  <span class="keywordtype">int</span> indx   = n;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                  <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                  mu_turb(i,j,k,indx)   = mu_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) * fac_ptr[indx-1];</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                  mu_turb(i,j,k,indx_v) = mu_turb(i,j,k,indx);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                });</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;          }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;       }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mu_turb = eddyViscosity.array(mfi);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="comment">// refactor the code to eliminate the need for ifdef&#39;s</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> n = 0; n &lt; (<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a>-1)/2; ++n) {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a> = (<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a>-1)/2;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="keywordflow">switch</span> (n)</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;              <span class="keywordflow">case</span> <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977afa82972314696da2709ea8ac9b63d963">EddyDiff::QKE_h</a>:</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                 <span class="comment">// Extrap all components at top &amp; bottom</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                 <span class="keywordflow">if</span>(use_QKE) {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                    ParallelFor(planez, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                    {</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                      <span class="keywordtype">int</span> indx = n;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                      <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                      mu_turb(i, j, k_lo-k, indx  ) = mu_turb(i, j, k_lo, indx  );</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                      mu_turb(i, j, k_hi+k, indx  ) = mu_turb(i, j, k_hi, indx  );</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                      mu_turb(i, j, k_lo-k, indx_v) = mu_turb(i, j, k_lo, indx_v);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                      mu_turb(i, j, k_hi+k, indx_v) = mu_turb(i, j, k_hi, indx_v);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                    });</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                 }</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                 <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;              <span class="keywordflow">case</span> <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977afa0c87454b22a819e328491f78bf6767">EddyDiff::KE_h</a>:</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                 <span class="keywordflow">if</span> (use_KE) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    ParallelFor(planez, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                      <span class="keywordtype">int</span> indx   = n;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                      <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                      mu_turb(i, j, k_lo-k, indx  ) = mu_turb(i, j, k_lo, indx  );</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                      mu_turb(i, j, k_hi+k, indx  ) = mu_turb(i, j, k_hi, indx  );</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                      mu_turb(i, j, k_lo-k, indx_v) = mu_turb(i, j, k_lo, indx_v);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                      mu_turb(i, j, k_hi+k, indx_v) = mu_turb(i, j, k_hi, indx_v);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    });</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                 }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                 <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;              <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                 ParallelFor(planez, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                 {</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                   <span class="keywordtype">int</span> indx   = n ;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                   <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                   mu_turb(i, j, k_lo-k, indx  ) = mu_turb(i, j, k_lo, indx  );</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                   mu_turb(i, j, k_hi+k, indx  ) = mu_turb(i, j, k_hi, indx  );</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                   mu_turb(i, j, k_lo-k, indx_v) = mu_turb(i, j, k_lo, indx_v);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                   mu_turb(i, j, k_hi+k, indx_v) = mu_turb(i, j, k_hi, indx_v);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                 });</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                 <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;           }</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;       }</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;   }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;}</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">// Fill interior ghost cells and any ghost cells outside a periodic domain</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment">//***********************************************************************************</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    eddyViscosity.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">// Extrapolate top &amp; bottom</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">//***********************************************************************************</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">for</span> ( amrex::MFIter mfi(eddyViscosity,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        Box bxcc   = mfi.tilebox();</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        Box planez = bxcc; planez.setSmall(2, 1); planez.setBig(2, ngc);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordtype">int</span> k_lo   = bxcc.smallEnd(2); <span class="keywordtype">int</span> k_hi = bxcc.bigEnd(2);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        planez.growLo(0,ngc); planez.growHi(0,ngc);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        planez.growLo(1,ngc); planez.growHi(1,ngc);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mu_turb = eddyViscosity.array(mfi);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="comment">// refactor the code to eliminate the need for ifdef&#39;s</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> n = 0; n &lt; (<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a>-1)/2; ++n) {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a> = (<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a>-1)/2;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">switch</span> (n)</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;              <span class="keywordflow">case</span> <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977afa82972314696da2709ea8ac9b63d963">EddyDiff::QKE_h</a>:</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                 <span class="comment">// Extrap all components at top &amp; bottom</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                 <span class="keywordflow">if</span>(use_QKE) {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    ParallelFor(planez, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                    {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                      <span class="keywordtype">int</span> indx = n;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                      <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                      mu_turb(i, j, k_lo-k, indx  ) = mu_turb(i, j, k_lo, indx  );</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                      mu_turb(i, j, k_hi+k, indx  ) = mu_turb(i, j, k_hi, indx  );</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                      mu_turb(i, j, k_lo-k, indx_v) = mu_turb(i, j, k_lo, indx_v);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                      mu_turb(i, j, k_hi+k, indx_v) = mu_turb(i, j, k_hi, indx_v);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    });</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                 }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                 <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;              <span class="keywordflow">case</span> <a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977afa0c87454b22a819e328491f78bf6767">EddyDiff::KE_h</a>:</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                 <span class="keywordflow">if</span> (use_KE) {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                    ParallelFor(planez, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                    {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                      <span class="keywordtype">int</span> indx   = n;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                      <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                      mu_turb(i, j, k_lo-k, indx  ) = mu_turb(i, j, k_lo, indx  );</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                      mu_turb(i, j, k_hi+k, indx  ) = mu_turb(i, j, k_hi, indx  );</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                      mu_turb(i, j, k_lo-k, indx_v) = mu_turb(i, j, k_lo, indx_v);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                      mu_turb(i, j, k_hi+k, indx_v) = mu_turb(i, j, k_hi, indx_v);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                    });</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                 }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                 <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;              <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                 ParallelFor(planez, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                 {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                   <span class="keywordtype">int</span> indx   = n ;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                   <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                   mu_turb(i, j, k_lo-k, indx  ) = mu_turb(i, j, k_lo, indx  );</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                   mu_turb(i, j, k_hi+k, indx  ) = mu_turb(i, j, k_hi, indx  );</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                   mu_turb(i, j, k_lo-k, indx_v) = mu_turb(i, j, k_lo, indx_v);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                   mu_turb(i, j, k_hi+k, indx_v) = mu_turb(i, j, k_hi, indx_v);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                 });</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                 <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;           }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;       }</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;   }</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
 <div class="ttc" id="aERF__ReadBndryPlanes_8cpp_html_a63d3125f6fd361f61d697799f46da817"><div class="ttname"><a href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a></div><div class="ttdeci">AMREX_FORCE_INLINE IntVect offset(const int face_dir, const int normal)</div><div class="ttdoc">Return offset vector.</div><div class="ttdef"><b>Definition:</b> ERF_ReadBndryPlanes.cpp:23</div></div>
 <div class="ttc" id="aEddyViscosity_8H_html_ad1e6d314bfc2e508c86ee0e07cfbd8f8"><div class="ttname"><a href="EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8">ComputeSmnSmn</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeSmnSmn(int &amp;i, int &amp;j, int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau11, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau22, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau33, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau12, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau13, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau23)</div><div class="ttdef"><b>Definition:</b> EddyViscosity.H:24</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:8</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:10</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a></div><div class="ttdeci">@ Mom_h</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:126</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:138</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977aa3900ab375460932d825b615bb532446"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a></div><div class="ttdeci">@ NumDiffs</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:151</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977afa0c87454b22a819e328491f78bf6767"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977afa0c87454b22a819e328491f78bf6767">EddyDiff::KE_h</a></div><div class="ttdeci">@ KE_h</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:129</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977afa82972314696da2709ea8ac9b63d963"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977afa82972314696da2709ea8ac9b63d963">EddyDiff::QKE_h</a></div><div class="ttdeci">@ QKE_h</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:130</div></div>
-<div class="ttc" id="astructSolverChoice_html_a47152bbb3815b6f4c9c465b8c75ebeb5"><div class="ttname"><a href="structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5">SolverChoice::use_QKE</a></div><div class="ttdeci">bool use_QKE</div><div class="ttdef"><b>Definition:</b> DataStruct.H:410</div></div>
-<div class="ttc" id="astructSolverChoice_html_a57a93f28b746dae8cbfa9b0df0960f27"><div class="ttname"><a href="structSolverChoice.html#a57a93f28b746dae8cbfa9b0df0960f27">SolverChoice::Ck</a></div><div class="ttdeci">amrex::Real Ck</div><div class="ttdef"><b>Definition:</b> DataStruct.H:393</div></div>
-<div class="ttc" id="astructSolverChoice_html_a5d8e6a103e2e5d61dc0990fa2141a675"><div class="ttname"><a href="structSolverChoice.html#a5d8e6a103e2e5d61dc0990fa2141a675">SolverChoice::Sc_t_inv</a></div><div class="ttdeci">amrex::Real Sc_t_inv</div><div class="ttdef"><b>Definition:</b> DataStruct.H:388</div></div>
-<div class="ttc" id="astructSolverChoice_html_aaf85773d50dc693905867d3acc127dd0"><div class="ttname"><a href="structSolverChoice.html#aaf85773d50dc693905867d3acc127dd0">SolverChoice::Cs</a></div><div class="ttdeci">amrex::Real Cs</div><div class="ttdef"><b>Definition:</b> DataStruct.H:380</div></div>
-<div class="ttc" id="astructSolverChoice_html_ad8f19f1ba25a4de9578af14ec787c0cc"><div class="ttname"><a href="structSolverChoice.html#ad8f19f1ba25a4de9578af14ec787c0cc">SolverChoice::diffuse_QKE_3D</a></div><div class="ttdeci">bool diffuse_QKE_3D</div><div class="ttdef"><b>Definition:</b> DataStruct.H:411</div></div>
-<div class="ttc" id="astructSolverChoice_html_aedad420dddffb0b78651c5d8b399a67b"><div class="ttname"><a href="structSolverChoice.html#aedad420dddffb0b78651c5d8b399a67b">SolverChoice::Pr_t_inv</a></div><div class="ttdeci">amrex::Real Pr_t_inv</div><div class="ttdef"><b>Definition:</b> DataStruct.H:385</div></div>
-<div class="ttc" id="astructSolverChoice_html_affbc103f3361b47fbcf605a08b99d8ec"><div class="ttname"><a href="structSolverChoice.html#affbc103f3361b47fbcf605a08b99d8ec">SolverChoice::sigma_k</a></div><div class="ttdeci">amrex::Real sigma_k</div><div class="ttdef"><b>Definition:</b> DataStruct.H:395</div></div>
+<div class="ttc" id="astructSolverChoice_html_a47152bbb3815b6f4c9c465b8c75ebeb5"><div class="ttname"><a href="structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5">SolverChoice::use_QKE</a></div><div class="ttdeci">bool use_QKE</div><div class="ttdef"><b>Definition:</b> DataStruct.H:414</div></div>
+<div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> DataStruct.H:355</div></div>
+<div class="ttc" id="astructSolverChoice_html_a57a93f28b746dae8cbfa9b0df0960f27"><div class="ttname"><a href="structSolverChoice.html#a57a93f28b746dae8cbfa9b0df0960f27">SolverChoice::Ck</a></div><div class="ttdeci">amrex::Real Ck</div><div class="ttdef"><b>Definition:</b> DataStruct.H:395</div></div>
+<div class="ttc" id="astructSolverChoice_html_a5d8e6a103e2e5d61dc0990fa2141a675"><div class="ttname"><a href="structSolverChoice.html#a5d8e6a103e2e5d61dc0990fa2141a675">SolverChoice::Sc_t_inv</a></div><div class="ttdeci">amrex::Real Sc_t_inv</div><div class="ttdef"><b>Definition:</b> DataStruct.H:390</div></div>
+<div class="ttc" id="astructSolverChoice_html_a789dc1f74c540ba2d7ddedd37947c3db"><div class="ttname"><a href="structSolverChoice.html#a789dc1f74c540ba2d7ddedd37947c3db">SolverChoice::theta_ref</a></div><div class="ttdeci">amrex::Real theta_ref</div><div class="ttdef"><b>Definition:</b> DataStruct.H:399</div></div>
+<div class="ttc" id="astructSolverChoice_html_aaf85773d50dc693905867d3acc127dd0"><div class="ttname"><a href="structSolverChoice.html#aaf85773d50dc693905867d3acc127dd0">SolverChoice::Cs</a></div><div class="ttdeci">amrex::Real Cs</div><div class="ttdef"><b>Definition:</b> DataStruct.H:382</div></div>
+<div class="ttc" id="astructSolverChoice_html_ad8f19f1ba25a4de9578af14ec787c0cc"><div class="ttname"><a href="structSolverChoice.html#ad8f19f1ba25a4de9578af14ec787c0cc">SolverChoice::diffuse_QKE_3D</a></div><div class="ttdeci">bool diffuse_QKE_3D</div><div class="ttdef"><b>Definition:</b> DataStruct.H:415</div></div>
+<div class="ttc" id="astructSolverChoice_html_aedad420dddffb0b78651c5d8b399a67b"><div class="ttname"><a href="structSolverChoice.html#aedad420dddffb0b78651c5d8b399a67b">SolverChoice::Pr_t_inv</a></div><div class="ttdeci">amrex::Real Pr_t_inv</div><div class="ttdef"><b>Definition:</b> DataStruct.H:387</div></div>
+<div class="ttc" id="astructSolverChoice_html_affbc103f3361b47fbcf605a08b99d8ec"><div class="ttname"><a href="structSolverChoice.html#affbc103f3361b47fbcf605a08b99d8ec">SolverChoice::sigma_k</a></div><div class="ttdeci">amrex::Real sigma_k</div><div class="ttdef"><b>Definition:</b> DataStruct.H:397</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ComputeTurbulentViscosity_8cpp.html#a093a392e2a5e445adfbebf9ea717e73a">ComputeTurbulentViscosity()</a>.</p>
 <div class="dynheader">
@@ -927,19 +948,18 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0f51e1ef58cb9a3add46666cc98e6093"><div class="ttname"><a href="ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093">KAPPA</a></div><div class="ttdeci">constexpr amrex::Real KAPPA</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:19</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:20</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:9</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:11</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977a0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:139</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977a6a553b28d62930bdda7b473e28464b73"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a6a553b28d62930bdda7b473e28464b73">EddyDiff::PBL_lengthscale</a></div><div class="ttdeci">@ PBL_lengthscale</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:150</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977ab74402005c035d247402e5f247827dcc"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977ab74402005c035d247402e5f247827dcc">EddyDiff::QKE_v</a></div><div class="ttdeci">@ QKE_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:142</div></div>
 <div class="ttc" id="anamespaceMicVar_html_acd493faf19b45ab11b9a01e722762798a2534fc55b1bd99268d18c38ddd112e53"><div class="ttname"><a href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a2534fc55b1bd99268d18c38ddd112e53">MicVar::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> Microphysics.H:33</div></div>
-<div class="ttc" id="astructSolverChoice_html_a18fd520661a3453ce62e52e96b4047cb"><div class="ttname"><a href="structSolverChoice.html#a18fd520661a3453ce62e52e96b4047cb">SolverChoice::pbl_C2</a></div><div class="ttdeci">amrex::Real pbl_C2</div><div class="ttdef"><b>Definition:</b> DataStruct.H:405</div></div>
-<div class="ttc" id="astructSolverChoice_html_a3953d8a94a2320f7bc57260a5a6cddca"><div class="ttname"><a href="structSolverChoice.html#a3953d8a94a2320f7bc57260a5a6cddca">SolverChoice::pbl_A2</a></div><div class="ttdeci">amrex::Real pbl_A2</div><div class="ttdef"><b>Definition:</b> DataStruct.H:401</div></div>
-<div class="ttc" id="astructSolverChoice_html_a590d8e09995c80faf7aa033f6925616b"><div class="ttname"><a href="structSolverChoice.html#a590d8e09995c80faf7aa033f6925616b">SolverChoice::pbl_C5</a></div><div class="ttdeci">amrex::Real pbl_C5</div><div class="ttdef"><b>Definition:</b> DataStruct.H:408</div></div>
-<div class="ttc" id="astructSolverChoice_html_a9877b8426152bbfc8c65589924662c8f"><div class="ttname"><a href="structSolverChoice.html#a9877b8426152bbfc8c65589924662c8f">SolverChoice::pbl_B2</a></div><div class="ttdeci">amrex::Real pbl_B2</div><div class="ttdef"><b>Definition:</b> DataStruct.H:403</div></div>
-<div class="ttc" id="astructSolverChoice_html_aa5c348a8cfd2d8b134541a0a00fdad2c"><div class="ttname"><a href="structSolverChoice.html#aa5c348a8cfd2d8b134541a0a00fdad2c">SolverChoice::pbl_C3</a></div><div class="ttdeci">amrex::Real pbl_C3</div><div class="ttdef"><b>Definition:</b> DataStruct.H:406</div></div>
-<div class="ttc" id="astructSolverChoice_html_ab6674c058e3acfc19d33ea7709367050"><div class="ttname"><a href="structSolverChoice.html#ab6674c058e3acfc19d33ea7709367050">SolverChoice::pbl_A1</a></div><div class="ttdeci">amrex::Real pbl_A1</div><div class="ttdef"><b>Definition:</b> DataStruct.H:400</div></div>
-<div class="ttc" id="astructSolverChoice_html_ad2131ca7eb643083fbcf8f453cf00d05"><div class="ttname"><a href="structSolverChoice.html#ad2131ca7eb643083fbcf8f453cf00d05">SolverChoice::pbl_C1</a></div><div class="ttdeci">amrex::Real pbl_C1</div><div class="ttdef"><b>Definition:</b> DataStruct.H:404</div></div>
+<div class="ttc" id="astructSolverChoice_html_a18fd520661a3453ce62e52e96b4047cb"><div class="ttname"><a href="structSolverChoice.html#a18fd520661a3453ce62e52e96b4047cb">SolverChoice::pbl_C2</a></div><div class="ttdeci">amrex::Real pbl_C2</div><div class="ttdef"><b>Definition:</b> DataStruct.H:409</div></div>
+<div class="ttc" id="astructSolverChoice_html_a3953d8a94a2320f7bc57260a5a6cddca"><div class="ttname"><a href="structSolverChoice.html#a3953d8a94a2320f7bc57260a5a6cddca">SolverChoice::pbl_A2</a></div><div class="ttdeci">amrex::Real pbl_A2</div><div class="ttdef"><b>Definition:</b> DataStruct.H:405</div></div>
+<div class="ttc" id="astructSolverChoice_html_a590d8e09995c80faf7aa033f6925616b"><div class="ttname"><a href="structSolverChoice.html#a590d8e09995c80faf7aa033f6925616b">SolverChoice::pbl_C5</a></div><div class="ttdeci">amrex::Real pbl_C5</div><div class="ttdef"><b>Definition:</b> DataStruct.H:412</div></div>
+<div class="ttc" id="astructSolverChoice_html_a9877b8426152bbfc8c65589924662c8f"><div class="ttname"><a href="structSolverChoice.html#a9877b8426152bbfc8c65589924662c8f">SolverChoice::pbl_B2</a></div><div class="ttdeci">amrex::Real pbl_B2</div><div class="ttdef"><b>Definition:</b> DataStruct.H:407</div></div>
+<div class="ttc" id="astructSolverChoice_html_aa5c348a8cfd2d8b134541a0a00fdad2c"><div class="ttname"><a href="structSolverChoice.html#aa5c348a8cfd2d8b134541a0a00fdad2c">SolverChoice::pbl_C3</a></div><div class="ttdeci">amrex::Real pbl_C3</div><div class="ttdef"><b>Definition:</b> DataStruct.H:410</div></div>
+<div class="ttc" id="astructSolverChoice_html_ab6674c058e3acfc19d33ea7709367050"><div class="ttname"><a href="structSolverChoice.html#ab6674c058e3acfc19d33ea7709367050">SolverChoice::pbl_A1</a></div><div class="ttdeci">amrex::Real pbl_A1</div><div class="ttdef"><b>Definition:</b> DataStruct.H:404</div></div>
+<div class="ttc" id="astructSolverChoice_html_ad2131ca7eb643083fbcf8f453cf00d05"><div class="ttname"><a href="structSolverChoice.html#ad2131ca7eb643083fbcf8f453cf00d05">SolverChoice::pbl_C1</a></div><div class="ttdeci">amrex::Real pbl_C1</div><div class="ttdef"><b>Definition:</b> DataStruct.H:408</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ComputeTurbulentViscosity_8cpp.html#a093a392e2a5e445adfbebf9ea717e73a">ComputeTurbulentViscosity()</a>.</p>
 <div class="dynheader">

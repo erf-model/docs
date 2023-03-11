@@ -54,6 +54,7 @@ var structSolverChoice =
     [ "spatial_order_WENO", "structSolverChoice.html#af7b331ccc4803cb042de1f625f090f72", null ],
     [ "terrain_type", "structSolverChoice.html#a6cf7cd64adcf678e8065b1c4261cefd8", null ],
     [ "test_mapfactor", "structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107", null ],
+    [ "theta_ref", "structSolverChoice.html#a789dc1f74c540ba2d7ddedd37947c3db", null ],
     [ "use_coriolis", "structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606", null ],
     [ "use_gravity", "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5", null ],
     [ "use_QKE", "structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5", null ],
