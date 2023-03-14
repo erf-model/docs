@@ -140,8 +140,8 @@ Functions</h2></td></tr>
 <tr class="separator:afef32e2116829d24b864c64caebf5ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b1996207bd0127c378e38a0749acecb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prob__common_8H.html#a8b1996207bd0127c378e38a0749acecb">erf_init_dens_hse</a> (amrex::MultiFab &amp;dens_hse, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc, amrex::Geometry const &amp;geom)</td></tr>
 <tr class="separator:a8b1996207bd0127c378e38a0749acecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29a26c3922961c3a9e93742fa089a1eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prob__common_8H.html#a29a26c3922961c3a9e93742fa089a1eb">init_custom_prob</a> (const amrex::Box &amp;bx, amrex::Array4&lt; amrex::Real &gt; const &amp;state, amrex::Array4&lt; amrex::Real &gt; const &amp;x_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;y_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;z_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;r_hse, amrex::Array4&lt; amrex::Real &gt; const &amp;p_hse, amrex::Array4&lt; amrex::Real const &gt; const &amp;z_nd, amrex::Array4&lt; amrex::Real const &gt; const &amp;z_cc, amrex::GeometryData const &amp;geomdata, amrex::Array4&lt; amrex::Real const &gt; const &amp;mf_m, amrex::Array4&lt; amrex::Real const &gt; const &amp;mf_u, amrex::Array4&lt; amrex::Real const &gt; const &amp;mf_v, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;sc)</td></tr>
-<tr class="separator:a29a26c3922961c3a9e93742fa089a1eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad73abe2b3666740ce565ae3de83c7e26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prob__common_8H.html#ad73abe2b3666740ce565ae3de83c7e26">init_custom_prob</a> (const amrex::Box &amp;bx, const amrex::Box &amp;xbx, const amrex::Box &amp;ybx, const amrex::Box &amp;zbx, amrex::Array4&lt; amrex::Real &gt; const &amp;state, amrex::Array4&lt; amrex::Real &gt; const &amp;x_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;y_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;z_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;r_hse, amrex::Array4&lt; amrex::Real &gt; const &amp;p_hse, amrex::Array4&lt; amrex::Real const &gt; const &amp;z_nd, amrex::Array4&lt; amrex::Real const &gt; const &amp;z_cc, amrex::GeometryData const &amp;geomdata, amrex::Array4&lt; amrex::Real const &gt; const &amp;mf_m, amrex::Array4&lt; amrex::Real const &gt; const &amp;mf_u, amrex::Array4&lt; amrex::Real const &gt; const &amp;mf_v, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;sc)</td></tr>
+<tr class="separator:ad73abe2b3666740ce565ae3de83c7e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a178c89254b2549f69f757cd1d4263763"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prob__common_8H.html#a178c89254b2549f69f757cd1d4263763">init_custom_terrain</a> (const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, const amrex::Real &amp;time)</td></tr>
 <tr class="separator:a178c89254b2549f69f757cd1d4263763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e694b2ddb200d3d5125cf4158edf5c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prob__common_8H.html#a4e694b2ddb200d3d5125cf4158edf5c5">erf_init_rayleigh</a> (amrex::Vector&lt; amrex::Real &gt; &amp;tau, amrex::Vector&lt; amrex::Real &gt; &amp;ubar, amrex::Vector&lt; amrex::Real &gt; &amp;vbar, amrex::Vector&lt; amrex::Real &gt; &amp;wbar, amrex::Vector&lt; amrex::Real &gt; &amp;thetabar, amrex::Geometry const &amp;geom)</td></tr>
@@ -301,8 +301,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a29a26c3922961c3a9e93742fa089a1eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29a26c3922961c3a9e93742fa089a1eb">&#9670;&nbsp;</a></span>init_custom_prob()</h2>
+<a id="ad73abe2b3666740ce565ae3de83c7e26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad73abe2b3666740ce565ae3de83c7e26">&#9670;&nbsp;</a></span>init_custom_prob()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,6 +312,24 @@ Here is the caller graph for this function:</div>
           <td>(</td>
           <td class="paramtype">const amrex::Box &amp;&#160;</td>
           <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>xbx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>ybx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>zbx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -403,8 +421,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="prob__common_8H_a29a26c3922961c3a9e93742fa089a1eb_icgraph.png" border="0" usemap="#aprob__common_8H_a29a26c3922961c3a9e93742fa089a1eb_icgraph" alt=""/></div>
-<map name="aprob__common_8H_a29a26c3922961c3a9e93742fa089a1eb_icgraph" id="aprob__common_8H_a29a26c3922961c3a9e93742fa089a1eb_icgraph">
+<div class="center"><img src="prob__common_8H_ad73abe2b3666740ce565ae3de83c7e26_icgraph.png" border="0" usemap="#aprob__common_8H_ad73abe2b3666740ce565ae3de83c7e26_icgraph" alt=""/></div>
+<map name="aprob__common_8H_ad73abe2b3666740ce565ae3de83c7e26_icgraph" id="aprob__common_8H_ad73abe2b3666740ce565ae3de83c7e26_icgraph">
 <area shape="rect" title=" " alt="" coords="184,5,319,32"/>
 <area shape="rect" href="classERF.html#a604939a8058f7efa36a427adb889739c" title=" " alt="" coords="5,5,136,32"/>
 </map>
