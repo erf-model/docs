@@ -1,5 +1,10 @@
 var NAVTREEINDEX2 =
 {
+"classERF.html#a051364b2373d8d86151c0b4a958035bd":[2,0,7,148],
+"classERF.html#a0553967f1131860bb8ecb47c0f192eaa":[2,0,7,191],
+"classERF.html#a0634154e8e58379c495c3e7fe7c5e4d6":[2,0,7,154],
+"classERF.html#a0877d5a0263641c13b92d2d16f47b689":[2,0,7,67],
+"classERF.html#a09017292c9943ac2ed20ce7ed5c3c767":[2,0,7,145],
 "classERF.html#a09d0fb2bd609c898a665d9530a744585":[2,0,7,155],
 "classERF.html#a0b0b4140e117163895e5e2c89a68d12a":[2,0,7,80],
 "classERF.html#a0be12798b46f52fa4b5a995f147c3f96":[2,0,7,19],
@@ -50,6 +55,7 @@ var NAVTREEINDEX2 =
 "classERF.html#a41324a4b5610fde725fe721550b23c85":[2,0,7,47],
 "classERF.html#a413293737b0021c97b50c62756561446":[2,0,7,129],
 "classERF.html#a419ba9adca32073e70aae4a8fe8cfcee":[2,0,7,5],
+"classERF.html#a4393232a7f15b93984c42ac83e1be841":[2,0,7,8],
 "classERF.html#a43d0b17f6e155691a1e9474526df3af5":[2,0,7,222],
 "classERF.html#a4441c087b0b9c08729a7bd413ad12ded":[2,0,7,201],
 "classERF.html#a4615db015b395b3a44f1fbf6d6e4fe43":[2,0,7,98],
@@ -132,7 +138,6 @@ var NAVTREEINDEX2 =
 "classERF.html#a92c020bfaa43e40fb5ffc449427a0318":[2,0,7,34],
 "classERF.html#a93e63e5af35efa564fd4195e8703f84c":[2,0,7,225],
 "classERF.html#a93ed2dd2c2441da6853d6f48b6467324":[2,0,7,40],
-"classERF.html#a95ba207aae193ef6ebc26996ac92b037":[2,0,7,8],
 "classERF.html#a9683c7b07c287e57856ee5a9c99917a1":[2,0,7,130],
 "classERF.html#a968a657e2a7bd02a9c43f736657d5e0a":[2,0,7,50],
 "classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08":[2,0,7,193],
@@ -244,10 +249,5 @@ var NAVTREEINDEX2 =
 "classERFPhysBCFunct.html#a81ec9d769c2b3a68df0bc5dc8a1781cf":[2,0,9,0],
 "classERFPhysBCFunct.html#aa2b044f2b5cc4d70fb579f46b60bfff0":[2,0,9,9],
 "classERFPhysBCFunct.html#aaf27efc3915d8c5aa41e5c931c76429f":[2,0,9,12],
-"classERFPhysBCFunct.html#abb1797f0742dd01ee978be02d594fc43":[2,0,9,1],
-"classERFPhysBCFunct.html#ac27af17bd7428bfe7666b13e68fc30aa":[2,0,9,3],
-"classERFPhysBCFunct.html#ac8f30d84a55b8bebb0fc4754ecba6bf2":[2,0,9,7],
-"classERFPhysBCFunct.html#ad5a6f06771b8fa848753a2741219366b":[2,0,9,16],
-"classERFPhysBCFunct.html#ad86ca34c3570006b1e17fd49c2448022":[2,0,9,10],
-"classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3":[2,0,9,19]
+"classERFPhysBCFunct.html#abb1797f0742dd01ee978be02d594fc43":[2,0,9,1]
 };
