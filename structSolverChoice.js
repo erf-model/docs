@@ -14,6 +14,7 @@ var structSolverChoice =
     [ "buoyancy_type", "structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0", null ],
     [ "c_p", "structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a", null ],
     [ "Ce", "structSolverChoice.html#ac28e6ad4be78bfb7b25c9cf88d43724a", null ],
+    [ "Ce_wall", "structSolverChoice.html#ab057e10b3fecbec5a5973422115dfa63", null ],
     [ "CI", "structSolverChoice.html#a60f32142004abc14d6d58692a3554c82", null ],
     [ "Ck", "structSolverChoice.html#a57a93f28b746dae8cbfa9b0df0960f27", null ],
     [ "coriolis_factor", "structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3", null ],

@@ -171,8 +171,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acb39daa73646298be92c9f78dadcb671"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EddyViscosity_8H.html#acb39daa73646298be92c9f78dadcb671">ComputeTurbulentViscosity</a> (const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;Tau11, const amrex::MultiFab &amp;Tau22, const amrex::MultiFab &amp;Tau33, const amrex::MultiFab &amp;Tau12, const amrex::MultiFab &amp;Tau13, const amrex::MultiFab &amp;Tau23, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;mapfac_u, const amrex::MultiFab &amp;mapfac_v, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, bool vert_only=false)</td></tr>
-<tr class="separator:acb39daa73646298be92c9f78dadcb671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144437537c48a8e75b2c36fa088986c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EddyViscosity_8H.html#a144437537c48a8e75b2c36fa088986c5">ComputeTurbulentViscosity</a> (const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;Tau11, const amrex::MultiFab &amp;Tau22, const amrex::MultiFab &amp;Tau33, const amrex::MultiFab &amp;Tau12, const amrex::MultiFab &amp;Tau13, const amrex::MultiFab &amp;Tau23, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, amrex::MultiFab &amp;Hfx1, amrex::MultiFab &amp;Hfx2, amrex::MultiFab &amp;Hfx3, amrex::MultiFab &amp;Diss, const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;mapfac_u, const amrex::MultiFab &amp;mapfac_v, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, bool vert_only=false)</td></tr>
+<tr class="separator:a144437537c48a8e75b2c36fa088986c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1e6d314bfc2e508c86ee0e07cfbd8f8"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8">ComputeSmnSmn</a> (int &amp;i, int &amp;j, int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau11, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau22, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau33, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau12, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau13, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau23)</td></tr>
 <tr class="separator:ad1e6d314bfc2e508c86ee0e07cfbd8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -244,40 +244,40 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    amrex::Real s11bar = tau11(i,j,k);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    amrex::Real s22bar = tau22(i,j,k);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    amrex::Real s33bar = tau33(i,j,k);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    amrex::Real s12bar = 0.25 * ( tau12(i  , j  , k  ) + tau12(i  , j+1, k  )</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                + tau12(i+1, j  , k  ) + tau12(i+1, j+1, k  ) );</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    amrex::Real s13bar = 0.25 * ( tau13(i  , j  , k  ) + tau13(i  , j  , k+1)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                + tau13(i+1, j  , k  ) + tau13(i+1, j  , k+1) );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    amrex::Real s23bar = 0.25 * ( tau23(i  , j  , k  ) + tau23(i  , j  , k+1)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                + tau23(i  , j+1, k  ) + tau23(i  , j+1, k+1) );</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    amrex::Real SmnSmn = s11bar*s11bar + s22bar*s22bar + s33bar*s33bar</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                       + 2.0*s12bar*s12bar + 2.0*s13bar*s13bar + 2.0*s23bar*s23bar;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> SmnSmn;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    amrex::Real s11bar = tau11(i,j,k);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    amrex::Real s22bar = tau22(i,j,k);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    amrex::Real s33bar = tau33(i,j,k);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    amrex::Real s12bar = 0.25 * ( tau12(i  , j  , k  ) + tau12(i  , j+1, k  )</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                + tau12(i+1, j  , k  ) + tau12(i+1, j+1, k  ) );</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    amrex::Real s13bar = 0.25 * ( tau13(i  , j  , k  ) + tau13(i  , j  , k+1)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                + tau13(i+1, j  , k  ) + tau13(i+1, j  , k+1) );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    amrex::Real s23bar = 0.25 * ( tau23(i  , j  , k  ) + tau23(i  , j  , k+1)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                + tau23(i  , j+1, k  ) + tau23(i  , j+1, k+1) );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    amrex::Real SmnSmn = s11bar*s11bar + s22bar*s22bar + s33bar*s33bar</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                       + 2.0*s12bar*s12bar + 2.0*s13bar*s13bar + 2.0*s23bar*s23bar;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> SmnSmn;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ComputeTurbulentViscosity_8cpp.html#ace3e2a55cc4050bfd58dedaea386840f">ComputeTurbulentViscosityLES()</a>, and <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a911929de98475c3f6b6a9d65d264f85b">erf_slow_rhs_pre()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ComputeTurbulentViscosity_8cpp.html#a5f38bf67ee940aef98521a39567d118f">ComputeTurbulentViscosityLES()</a>, and <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a911929de98475c3f6b6a9d65d264f85b">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="EddyViscosity_8H_ad1e6d314bfc2e508c86ee0e07cfbd8f8_icgraph.png" border="0" usemap="#aEddyViscosity_8H_ad1e6d314bfc2e508c86ee0e07cfbd8f8_icgraph" alt=""/></div>
 <map name="aEddyViscosity_8H_ad1e6d314bfc2e508c86ee0e07cfbd8f8_icgraph" id="aEddyViscosity_8H_ad1e6d314bfc2e508c86ee0e07cfbd8f8_icgraph">
 <area shape="rect" title=" " alt="" coords="707,31,845,57"/>
-<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#ace3e2a55cc4050bfd58dedaea386840f" title=" " alt="" coords="436,5,659,32"/>
+<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#a5f38bf67ee940aef98521a39567d118f" title=" " alt="" coords="436,5,659,32"/>
 <area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a911929de98475c3f6b6a9d65d264f85b" title=" " alt="" coords="481,56,613,83"/>
-<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#a093a392e2a5e445adfbebf9ea717e73a" title=" " alt="" coords="188,5,388,32"/>
+<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#a6f88eeb22db221477763a0bc21307258" title=" " alt="" coords="188,5,388,32"/>
 <area shape="rect" href="classERF.html#a6e0a6097ce45907d541d6e156100b145" title=" " alt="" coords="5,5,140,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="acb39daa73646298be92c9f78dadcb671"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb39daa73646298be92c9f78dadcb671">&#9670;&nbsp;</a></span>ComputeTurbulentViscosity()</h2>
+<a id="a144437537c48a8e75b2c36fa088986c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a144437537c48a8e75b2c36fa088986c5">&#9670;&nbsp;</a></span>ComputeTurbulentViscosity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,6 +345,30 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>Hfx1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>Hfx2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>Hfx3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>Diss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
           <td class="paramname"><em>geom</em>, </td>
         </tr>
@@ -385,48 +409,49 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;{</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;ComputeTurbulentViscosity()&quot;</span>,<a class="code" href="ComputeTurbulentViscosity_8cpp.html#a093a392e2a5e445adfbebf9ea717e73a">ComputeTurbulentViscosity</a>);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">// In LES mode, the turbulent viscosity is isotropic, so the LES model sets both horizontal and vertical viscosities</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// In PBL mode, the primary purpose of the PBL model is to control vertical transport, so the PBL model sets the vertical viscosity.</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="comment">// Optionally, the PBL model can be run in conjunction with an LES model that sets the horizontal viscosity</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="comment">// (this isn’t truly LES, but the model form is the same as Smagorinsky).</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="comment">// ComputeTurbulentViscosityLES populates the LES viscosity for both horizontal and vertical components.</span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">// ComputeTurbulentViscosityPBL computes the PBL viscosity just for the vertical component.</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="comment">// We must initialize all the components to 0 because we may not set all of them below</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="comment">//    (which ones depends on which LES / PBL scheme we are using)</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    eddyViscosity.setVal(0.0);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">if</span> (most) {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordtype">bool</span> l_use_turb = ( solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a> ||</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                            solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>   ||</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                            solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> == <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a> );</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(l_use_turb,</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;          <span class="stringliteral">&quot;An LES or PBL model must be utilized with MOST boundaries to compute the turbulent viscosity&quot;</span>);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        AMREX_ALWAYS_ASSERT(!vert_only);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> != <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a6adf97f83acf6453d4a6a4b1070f3754">LESType::None</a>) {</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#ace3e2a55cc4050bfd58dedaea386840f">ComputeTurbulentViscosityLES</a>(Tau11, Tau22, Tau33,</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                                     Tau12, Tau13, Tau23,</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                                     cons_in, eddyViscosity,</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                     geom, mapfac_u, mapfac_v,</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                     solverChoice);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    }</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> != <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754">PBLType::None</a>) {</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#a6b7b829386b28f2bcdc63d51b754896c">ComputeTurbulentViscosityPBL</a>(<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                                     geom, solverChoice, most, vert_only);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    }</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
-<div class="ttc" id="aComputeTurbulentViscosity_8cpp_html_a093a392e2a5e445adfbebf9ea717e73a"><div class="ttname"><a href="ComputeTurbulentViscosity_8cpp.html#a093a392e2a5e445adfbebf9ea717e73a">ComputeTurbulentViscosity</a></div><div class="ttdeci">void ComputeTurbulentViscosity(const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;Tau11, const amrex::MultiFab &amp;Tau22, const amrex::MultiFab &amp;Tau33, const amrex::MultiFab &amp;Tau12, const amrex::MultiFab &amp;Tau13, const amrex::MultiFab &amp;Tau23, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;mapfac_u, const amrex::MultiFab &amp;mapfac_v, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; ABLMost &gt; &amp;most, bool vert_only)</div><div class="ttdef"><b>Definition:</b> ComputeTurbulentViscosity.cpp:292</div></div>
+<div class="fragment"><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;{</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;ComputeTurbulentViscosity()&quot;</span>,<a class="code" href="ComputeTurbulentViscosity_8cpp.html#a6f88eeb22db221477763a0bc21307258">ComputeTurbulentViscosity</a>);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="comment">// In LES mode, the turbulent viscosity is isotropic, so the LES model sets both horizontal and vertical viscosities</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="comment">// In PBL mode, the primary purpose of the PBL model is to control vertical transport, so the PBL model sets the vertical viscosity.</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="comment">// Optionally, the PBL model can be run in conjunction with an LES model that sets the horizontal viscosity</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="comment">// (this isn’t truly LES, but the model form is the same as Smagorinsky).</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">// ComputeTurbulentViscosityLES populates the LES viscosity for both horizontal and vertical components.</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="comment">// ComputeTurbulentViscosityPBL computes the PBL viscosity just for the vertical component.</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="comment">// We must initialize all the components to 0 because we may not set all of them below</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="comment">//    (which ones depends on which LES / PBL scheme we are using)</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    eddyViscosity.setVal(0.0);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">if</span> (most) {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordtype">bool</span> l_use_turb = ( solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a> ||</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                            solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> == <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>   ||</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                            solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> == <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a> );</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(l_use_turb,</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;          <span class="stringliteral">&quot;An LES or PBL model must be utilized with MOST boundaries to compute the turbulent viscosity&quot;</span>);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        AMREX_ALWAYS_ASSERT(!vert_only);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    }</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">les_type</a> != <a class="code" href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a6adf97f83acf6453d4a6a4b1070f3754">LESType::None</a>) {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#a5f38bf67ee940aef98521a39567d118f">ComputeTurbulentViscosityLES</a>(Tau11, Tau22, Tau33,</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                                     Tau12, Tau13, Tau23,</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                                     cons_in, eddyViscosity,</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                                     Hfx1, Hfx2, Hfx3, Diss,</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                                     geom, mapfac_u, mapfac_v,</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                                     solverChoice);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">pbl_type</a> != <a class="code" href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754">PBLType::None</a>) {</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <a class="code" href="ComputeTurbulentViscosity_8cpp.html#a6b7b829386b28f2bcdc63d51b754896c">ComputeTurbulentViscosityPBL</a>(<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                                     geom, solverChoice, most, vert_only);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;}</div>
+<div class="ttc" id="aComputeTurbulentViscosity_8cpp_html_a5f38bf67ee940aef98521a39567d118f"><div class="ttname"><a href="ComputeTurbulentViscosity_8cpp.html#a5f38bf67ee940aef98521a39567d118f">ComputeTurbulentViscosityLES</a></div><div class="ttdeci">void ComputeTurbulentViscosityLES(const amrex::MultiFab &amp;Tau11, const amrex::MultiFab &amp;Tau22, const amrex::MultiFab &amp;Tau33, const amrex::MultiFab &amp;Tau12, const amrex::MultiFab &amp;Tau13, const amrex::MultiFab &amp;Tau23, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, amrex::MultiFab &amp;Hfx1, amrex::MultiFab &amp;Hfx2, amrex::MultiFab &amp;Hfx3, amrex::MultiFab &amp;Diss, const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;mapfac_u, const amrex::MultiFab &amp;mapfac_v, const SolverChoice &amp;solverChoice)</div><div class="ttdef"><b>Definition:</b> ComputeTurbulentViscosity.cpp:20</div></div>
 <div class="ttc" id="aComputeTurbulentViscosity_8cpp_html_a6b7b829386b28f2bcdc63d51b754896c"><div class="ttname"><a href="ComputeTurbulentViscosity_8cpp.html#a6b7b829386b28f2bcdc63d51b754896c">ComputeTurbulentViscosityPBL</a></div><div class="ttdeci">void ComputeTurbulentViscosityPBL(const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, const amrex::Geometry &amp;geom, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; ABLMost &gt; &amp;most, bool)</div><div class="ttdef"><b>Definition:</b> PBLModels.cpp:6</div></div>
-<div class="ttc" id="aComputeTurbulentViscosity_8cpp_html_ace3e2a55cc4050bfd58dedaea386840f"><div class="ttname"><a href="ComputeTurbulentViscosity_8cpp.html#ace3e2a55cc4050bfd58dedaea386840f">ComputeTurbulentViscosityLES</a></div><div class="ttdeci">void ComputeTurbulentViscosityLES(const amrex::MultiFab &amp;Tau11, const amrex::MultiFab &amp;Tau22, const amrex::MultiFab &amp;Tau33, const amrex::MultiFab &amp;Tau12, const amrex::MultiFab &amp;Tau13, const amrex::MultiFab &amp;Tau23, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;mapfac_u, const amrex::MultiFab &amp;mapfac_v, const SolverChoice &amp;solverChoice)</div><div class="ttdef"><b>Definition:</b> ComputeTurbulentViscosity.cpp:20</div></div>
+<div class="ttc" id="aComputeTurbulentViscosity_8cpp_html_a6f88eeb22db221477763a0bc21307258"><div class="ttname"><a href="ComputeTurbulentViscosity_8cpp.html#a6f88eeb22db221477763a0bc21307258">ComputeTurbulentViscosity</a></div><div class="ttdeci">void ComputeTurbulentViscosity(const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;Tau11, const amrex::MultiFab &amp;Tau22, const amrex::MultiFab &amp;Tau33, const amrex::MultiFab &amp;Tau12, const amrex::MultiFab &amp;Tau13, const amrex::MultiFab &amp;Tau23, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, amrex::MultiFab &amp;Hfx1, amrex::MultiFab &amp;Hfx2, amrex::MultiFab &amp;Hfx3, amrex::MultiFab &amp;Diss, const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;mapfac_u, const amrex::MultiFab &amp;mapfac_v, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; ABLMost &gt; &amp;most, bool vert_only)</div><div class="ttdef"><b>Definition:</b> ComputeTurbulentViscosity.cpp:320</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754">PBLType::None</a></div><div class="ttdeci">@ None</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601"><div class="ttname"><a href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a></div><div class="ttdeci">@ MYNN25</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a></div><div class="ttdeci">@ Smagorinsky</div></div>
@@ -434,17 +459,17 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a></div><div class="ttdeci">@ Deardorff</div></div>
 <div class="ttc" id="anamespaceVars_html_a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:77</div></div>
 <div class="ttc" id="anamespaceVars_html_a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:78</div></div>
-<div class="ttc" id="astructSolverChoice_html_a0a031373331c9aca22a47b0995729f46"><div class="ttname"><a href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">SolverChoice::pbl_type</a></div><div class="ttdeci">PBLType pbl_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:411</div></div>
-<div class="ttc" id="astructSolverChoice_html_a53966e639b0307b7420fd6abe8412fa0"><div class="ttname"><a href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">SolverChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:389</div></div>
+<div class="ttc" id="astructSolverChoice_html_a0a031373331c9aca22a47b0995729f46"><div class="ttname"><a href="structSolverChoice.html#a0a031373331c9aca22a47b0995729f46">SolverChoice::pbl_type</a></div><div class="ttdeci">PBLType pbl_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:414</div></div>
+<div class="ttc" id="astructSolverChoice_html_a53966e639b0307b7420fd6abe8412fa0"><div class="ttname"><a href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">SolverChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:391</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a6e0a6097ce45907d541d6e156100b145">ERF::erf_advance()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="EddyViscosity_8H_acb39daa73646298be92c9f78dadcb671_cgraph.png" border="0" usemap="#aEddyViscosity_8H_acb39daa73646298be92c9f78dadcb671_cgraph" alt=""/></div>
-<map name="aEddyViscosity_8H_acb39daa73646298be92c9f78dadcb671_cgraph" id="aEddyViscosity_8H_acb39daa73646298be92c9f78dadcb671_cgraph">
+<div class="center"><img src="EddyViscosity_8H_a144437537c48a8e75b2c36fa088986c5_cgraph.png" border="0" usemap="#aEddyViscosity_8H_a144437537c48a8e75b2c36fa088986c5_cgraph" alt=""/></div>
+<map name="aEddyViscosity_8H_a144437537c48a8e75b2c36fa088986c5_cgraph" id="aEddyViscosity_8H_a144437537c48a8e75b2c36fa088986c5_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,205,83"/>
-<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#ace3e2a55cc4050bfd58dedaea386840f" title=" " alt="" coords="254,31,477,57"/>
+<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#a5f38bf67ee940aef98521a39567d118f" title=" " alt="" coords="254,31,477,57"/>
 <area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#a6b7b829386b28f2bcdc63d51b754896c" title=" " alt="" coords="253,81,477,108"/>
 <area shape="rect" href="EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8" title=" " alt="" coords="525,5,664,32"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title="Return offset vector." alt="" coords="565,56,624,83"/>
@@ -453,8 +478,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="EddyViscosity_8H_acb39daa73646298be92c9f78dadcb671_icgraph.png" border="0" usemap="#aEddyViscosity_8H_acb39daa73646298be92c9f78dadcb671_icgraph" alt=""/></div>
-<map name="aEddyViscosity_8H_acb39daa73646298be92c9f78dadcb671_icgraph" id="aEddyViscosity_8H_acb39daa73646298be92c9f78dadcb671_icgraph">
+<div class="center"><img src="EddyViscosity_8H_a144437537c48a8e75b2c36fa088986c5_icgraph.png" border="0" usemap="#aEddyViscosity_8H_a144437537c48a8e75b2c36fa088986c5_icgraph" alt=""/></div>
+<map name="aEddyViscosity_8H_a144437537c48a8e75b2c36fa088986c5_icgraph" id="aEddyViscosity_8H_a144437537c48a8e75b2c36fa088986c5_icgraph">
 <area shape="rect" title=" " alt="" coords="188,5,388,32"/>
 <area shape="rect" href="classERF.html#a6e0a6097ce45907d541d6e156100b145" title=" " alt="" coords="5,5,140,32"/>
 </map>
