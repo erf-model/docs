@@ -155,10 +155,10 @@ Functions</h2></td></tr>
 <tr class="separator:a1624f394cb59e6ed88b5013c20941206"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd66a5d2d58145b92a6a2a99c2a384f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Diffusion_8H.html#afd66a5d2d58145b92a6a2a99c2a384f9">DiffusionSrcForMom_T</a> (const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau11, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau22, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau33, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau12, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau13, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau21, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau23, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau31, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau32, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v)</td></tr>
 <tr class="separator:afd66a5d2d58145b92a6a2a99c2a384f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a170c6ab7028e4eec09924a60573d3fc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Diffusion_8H.html#a170c6ab7028e4eec09924a60573d3fc2">DiffusionSrcForState_N</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, int n_start, int n_end, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;cell_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;xflux, const amrex::Array4&lt; amrex::Real &gt; &amp;yflux, const amrex::Array4&lt; amrex::Real &gt; &amp;zflux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;SmnSmn_a, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, amrex::Array4&lt; amrex::Real &gt; &amp;hfx_x, amrex::Array4&lt; amrex::Real &gt; &amp;hfx_y, amrex::Array4&lt; amrex::Real &gt; &amp;hfx_z, amrex::Array4&lt; amrex::Real &gt; &amp;diss, const amrex::Array4&lt; const amrex::Real &gt; &amp;mu_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Array4&lt; const amrex::Real &gt; &amp;tm_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; grav_gpu, const amrex::BCRec *bc_ptr)</td></tr>
-<tr class="separator:a170c6ab7028e4eec09924a60573d3fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a146d94d9437fc61754d1a8fb05c39121"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Diffusion_8H.html#a146d94d9437fc61754d1a8fb05c39121">DiffusionSrcForState_T</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, int n_start, int n_end, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;cell_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;xflux, const amrex::Array4&lt; amrex::Real &gt; &amp;yflux, const amrex::Array4&lt; amrex::Real &gt; &amp;zflux, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;SmnSmn_a, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, amrex::Array4&lt; amrex::Real &gt; &amp;hfx_x, amrex::Array4&lt; amrex::Real &gt; &amp;hfx_y, amrex::Array4&lt; amrex::Real &gt; &amp;hfx_z, amrex::Array4&lt; amrex::Real &gt; &amp;diss, const amrex::Array4&lt; const amrex::Real &gt; &amp;mu_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Array4&lt; const amrex::Real &gt; &amp;tm_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; grav_gpu, const amrex::BCRec *bc_ptr)</td></tr>
-<tr class="separator:a146d94d9437fc61754d1a8fb05c39121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacf1370f20f30a080bda368f04527e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Diffusion_8H.html#aaacf1370f20f30a080bda368f04527e4">DiffusionSrcForState_N</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, int start_comp, int num_comp, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;cell_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;xflux, const amrex::Array4&lt; amrex::Real &gt; &amp;yflux, const amrex::Array4&lt; amrex::Real &gt; &amp;zflux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;SmnSmn_a, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, amrex::Array4&lt; amrex::Real &gt; &amp;hfx_x, amrex::Array4&lt; amrex::Real &gt; &amp;hfx_y, amrex::Array4&lt; amrex::Real &gt; &amp;hfx_z, amrex::Array4&lt; amrex::Real &gt; &amp;diss, const amrex::Array4&lt; const amrex::Real &gt; &amp;mu_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Array4&lt; const amrex::Real &gt; &amp;tm_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; grav_gpu, const amrex::BCRec *bc_ptr)</td></tr>
+<tr class="separator:aaacf1370f20f30a080bda368f04527e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff30b31776f604f6329b843da05b28f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Diffusion_8H.html#aff30b31776f604f6329b843da05b28f8">DiffusionSrcForState_T</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, int start_comp, int num_comp, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;cell_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;xflux, const amrex::Array4&lt; amrex::Real &gt; &amp;yflux, const amrex::Array4&lt; amrex::Real &gt; &amp;zflux, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;SmnSmn_a, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, amrex::Array4&lt; amrex::Real &gt; &amp;hfx_x, amrex::Array4&lt; amrex::Real &gt; &amp;hfx_y, amrex::Array4&lt; amrex::Real &gt; &amp;hfx_z, amrex::Array4&lt; amrex::Real &gt; &amp;diss, const amrex::Array4&lt; const amrex::Real &gt; &amp;mu_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Array4&lt; const amrex::Real &gt; &amp;tm_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; grav_gpu, const amrex::BCRec *bc_ptr)</td></tr>
+<tr class="separator:aff30b31776f604f6329b843da05b28f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdd3c2f1bd73a93dafa2dc3a10e9e013"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Diffusion_8H.html#acdd3c2f1bd73a93dafa2dc3a10e9e013">ComputeStressConsVisc_N</a> (amrex::Box bxcc, amrex::Box tbxxy, amrex::Box tbxxz, amrex::Box tbxyz, amrex::Real mu_eff, amrex::Array4&lt; amrex::Real &gt; &amp;tau11, amrex::Array4&lt; amrex::Real &gt; &amp;tau22, amrex::Array4&lt; amrex::Real &gt; &amp;tau33, amrex::Array4&lt; amrex::Real &gt; &amp;tau12, amrex::Array4&lt; amrex::Real &gt; &amp;tau13, amrex::Array4&lt; amrex::Real &gt; &amp;tau23, const amrex::Array4&lt; const amrex::Real &gt; &amp;er_arr)</td></tr>
 <tr class="separator:acdd3c2f1bd73a93dafa2dc3a10e9e013"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1aab2efda26dd4ac36a30e69cc117a93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Diffusion_8H.html#a1aab2efda26dd4ac36a30e69cc117a93">ComputeStressConsVisc_T</a> (amrex::Box bxcc, amrex::Box tbxxy, amrex::Box tbxxz, amrex::Box tbxyz, amrex::Real mu_eff, amrex::Array4&lt; amrex::Real &gt; &amp;tau11, amrex::Array4&lt; amrex::Real &gt; &amp;tau22, amrex::Array4&lt; amrex::Real &gt; &amp;tau33, amrex::Array4&lt; amrex::Real &gt; &amp;tau12, amrex::Array4&lt; amrex::Real &gt; &amp;tau13, amrex::Array4&lt; amrex::Real &gt; &amp;tau21, amrex::Array4&lt; amrex::Real &gt; &amp;tau23, amrex::Array4&lt; amrex::Real &gt; &amp;tau31, amrex::Array4&lt; amrex::Real &gt; &amp;tau32, const amrex::Array4&lt; const amrex::Real &gt; &amp;er_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</td></tr>
@@ -1163,8 +1163,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a170c6ab7028e4eec09924a60573d3fc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a170c6ab7028e4eec09924a60573d3fc2">&#9670;&nbsp;</a></span>DiffusionSrcForState_N()</h2>
+<a id="aaacf1370f20f30a080bda368f04527e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaacf1370f20f30a080bda368f04527e4">&#9670;&nbsp;</a></span>DiffusionSrcForState_N()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1185,13 +1185,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n_start</em>, </td>
+          <td class="paramname"><em>start_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n_end</em>, </td>
+          <td class="paramname"><em>num_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1343,8 +1343,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Diffusion_8H_a170c6ab7028e4eec09924a60573d3fc2_icgraph.png" border="0" usemap="#aDiffusion_8H_a170c6ab7028e4eec09924a60573d3fc2_icgraph" alt=""/></div>
-<map name="aDiffusion_8H_a170c6ab7028e4eec09924a60573d3fc2_icgraph" id="aDiffusion_8H_a170c6ab7028e4eec09924a60573d3fc2_icgraph">
+<div class="center"><img src="Diffusion_8H_aaacf1370f20f30a080bda368f04527e4_icgraph.png" border="0" usemap="#aDiffusion_8H_aaacf1370f20f30a080bda368f04527e4_icgraph" alt=""/></div>
+<map name="aDiffusion_8H_aaacf1370f20f30a080bda368f04527e4_icgraph" id="aDiffusion_8H_aaacf1370f20f30a080bda368f04527e4_icgraph">
 <area shape="rect" title=" " alt="" coords="192,31,363,57"/>
 <area shape="rect" href="ERF__slow__rhs__post_8cpp.html#aa74d62023453ffdad170110818a2a2b9" title=" " alt="" coords="5,5,144,32"/>
 <area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a911929de98475c3f6b6a9d65d264f85b" title=" " alt="" coords="9,56,141,83"/>
@@ -1353,8 +1353,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a146d94d9437fc61754d1a8fb05c39121"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a146d94d9437fc61754d1a8fb05c39121">&#9670;&nbsp;</a></span>DiffusionSrcForState_T()</h2>
+<a id="aff30b31776f604f6329b843da05b28f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff30b31776f604f6329b843da05b28f8">&#9670;&nbsp;</a></span>DiffusionSrcForState_T()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1375,13 +1375,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n_start</em>, </td>
+          <td class="paramname"><em>start_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n_end</em>, </td>
+          <td class="paramname"><em>num_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1545,8 +1545,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Diffusion_8H_a146d94d9437fc61754d1a8fb05c39121_icgraph.png" border="0" usemap="#aDiffusion_8H_a146d94d9437fc61754d1a8fb05c39121_icgraph" alt=""/></div>
-<map name="aDiffusion_8H_a146d94d9437fc61754d1a8fb05c39121_icgraph" id="aDiffusion_8H_a146d94d9437fc61754d1a8fb05c39121_icgraph">
+<div class="center"><img src="Diffusion_8H_aff30b31776f604f6329b843da05b28f8_icgraph.png" border="0" usemap="#aDiffusion_8H_aff30b31776f604f6329b843da05b28f8_icgraph" alt=""/></div>
+<map name="aDiffusion_8H_aff30b31776f604f6329b843da05b28f8_icgraph" id="aDiffusion_8H_aff30b31776f604f6329b843da05b28f8_icgraph">
 <area shape="rect" title=" " alt="" coords="192,31,361,57"/>
 <area shape="rect" href="ERF__slow__rhs__post_8cpp.html#aa74d62023453ffdad170110818a2a2b9" title=" " alt="" coords="5,5,144,32"/>
 <area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a911929de98475c3f6b6a9d65d264f85b" title=" " alt="" coords="9,56,141,83"/>

@@ -8,6 +8,6 @@ var Diffusion_8H =
     [ "ComputeStressVarVisc_T", "Diffusion_8H.html#ae04a6609d16aaf4f8ca3d3842287b698", null ],
     [ "DiffusionSrcForMom_N", "Diffusion_8H.html#a1624f394cb59e6ed88b5013c20941206", null ],
     [ "DiffusionSrcForMom_T", "Diffusion_8H.html#afd66a5d2d58145b92a6a2a99c2a384f9", null ],
-    [ "DiffusionSrcForState_N", "Diffusion_8H.html#a170c6ab7028e4eec09924a60573d3fc2", null ],
-    [ "DiffusionSrcForState_T", "Diffusion_8H.html#a146d94d9437fc61754d1a8fb05c39121", null ]
+    [ "DiffusionSrcForState_N", "Diffusion_8H.html#aaacf1370f20f30a080bda368f04527e4", null ],
+    [ "DiffusionSrcForState_T", "Diffusion_8H.html#aff30b31776f604f6329b843da05b28f8", null ]
 ];

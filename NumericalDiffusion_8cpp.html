@@ -113,12 +113,12 @@ Include dependency graph for NumericalDiffusion.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae44a185ac4f07ffefb722d1601eb960a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NumericalDiffusion_8cpp.html#ae44a185ac4f07ffefb722d1601eb960a">NumericalDiffusion</a> (const Box &amp;bx, const int n_start, const int n_end, const Real dt, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const Array4&lt; const Real &gt; &amp;data, const Array4&lt; Real &gt; &amp;rhs, const Array4&lt; const Real &gt; &amp;mf_x, const Array4&lt; const Real &gt; &amp;mf_y, const bool avg_mf_x_y, const bool avg_mf_y_x)</td></tr>
-<tr class="separator:ae44a185ac4f07ffefb722d1601eb960a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae33c522c6b17fab41fe83a41b4e1cf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NumericalDiffusion_8cpp.html#aae33c522c6b17fab41fe83a41b4e1cf3">NumericalDiffusion</a> (const Box &amp;bx, const int start_comp, const int num_comp, const Real dt, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const Array4&lt; const Real &gt; &amp;data, const Array4&lt; Real &gt; &amp;rhs, const Array4&lt; const Real &gt; &amp;mf_x, const Array4&lt; const Real &gt; &amp;mf_y, const bool avg_mf_x_y, const bool avg_mf_y_x)</td></tr>
+<tr class="separator:aae33c522c6b17fab41fe83a41b4e1cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae44a185ac4f07ffefb722d1601eb960a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae44a185ac4f07ffefb722d1601eb960a">&#9670;&nbsp;</a></span>NumericalDiffusion()</h2>
+<a id="aae33c522c6b17fab41fe83a41b4e1cf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae33c522c6b17fab41fe83a41b4e1cf3">&#9670;&nbsp;</a></span>NumericalDiffusion()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,13 +133,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>n_start</em>, </td>
+          <td class="paramname"><em>start_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>n_end</em>, </td>
+          <td class="paramname"><em>num_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -197,7 +197,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;NumericalDiffusion()&quot;</span>,<a class="code" href="NumericalDiffusion_8cpp.html#ae44a185ac4f07ffefb722d1601eb960a">NumericalDiffusion</a>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;NumericalDiffusion()&quot;</span>,<a class="code" href="NumericalDiffusion_8cpp.html#aae33c522c6b17fab41fe83a41b4e1cf3">NumericalDiffusion</a>);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// Average map factors to correct locations</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Box planebx(bx); planebx.setSmall(2,0); planebx.setBig(2,0);</div>
@@ -221,45 +221,42 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    });</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Set indices for components</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = n_end - n_start + 1;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Capture diffusion coeff</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Real coeff6 = solverChoice.<a class="code" href="structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2">NumDiffCoeff</a> / (2.0 * dt);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Capture diffusion coeff</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    Real coeff6 = solverChoice.<a class="code" href="structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2">NumDiffCoeff</a> / (2.0 * dt);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Compute 5th order derivative and augment RHS</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    amrex::ParallelFor(bx,ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> m) noexcept</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">int</span> n = n_start + m;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        Real xflux_lo = 10. * (data(i  ,j,k,n) - data(i-1,j,k,n))</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                       - 5. * (data(i+1,j,k,n) - data(i-2,j,k,n))</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                            + (data(i+2,j,k,n) - data(i-3,j,k,n));</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> ( (xflux_lo * (data(i,j,k,n) - data(i-1,j,k,n)) ) &gt; 0.) xflux_lo = 0.;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        Real xflux_hi = 10. * (data(i+1,j,k,n) - data(i  ,j,k,n))</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                       - 5. * (data(i+2,j,k,n) - data(i-1,j,k,n))</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                            + (data(i+3,j,k,n) - data(i-2,j,k,n));</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> ( (xflux_hi * (data(i+1,j,k,n) - data(i,j,k,n)) ) &gt; 0.) xflux_hi = 0.;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        Real yflux_lo = 10. * (data(i,j  ,k,n) - data(i,j-1,k,n))</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                       - 5. * (data(i,j+1,k,n) - data(i,j-2,k,n))</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                            + (data(i,j+2,k,n) - data(i,j-3,k,n));</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> ( (yflux_lo * (data(i,j,k,n) - data(i,j-1,k,n)) ) &gt; 0.) yflux_lo = 0.;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        Real yflux_hi = 10. * (data(i,j+1,k,n) - data(i,j  ,k,n))</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                       - 5. * (data(i,j+2,k,n) - data(i,j-1,k,n))</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                            + (data(i,j+3,k,n) - data(i,j-2,k,n));</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> ( (yflux_hi * (data(i,j+1,k,n) - data(i,j,k,n)) ) &gt; 0.) yflux_hi = 0.;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        rhs(i,j,k,n) += coeff6 * ( (xflux_hi - xflux_lo) * mfx_arr(i,j,0)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                 + (yflux_hi - yflux_lo) * mfy_arr(i,j,0) );</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    });</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="ttc" id="aNumericalDiffusion_8cpp_html_ae44a185ac4f07ffefb722d1601eb960a"><div class="ttname"><a href="NumericalDiffusion_8cpp.html#ae44a185ac4f07ffefb722d1601eb960a">NumericalDiffusion</a></div><div class="ttdeci">void NumericalDiffusion(const Box &amp;bx, const int n_start, const int n_end, const Real dt, const SolverChoice &amp;solverChoice, const Array4&lt; const Real &gt; &amp;data, const Array4&lt; Real &gt; &amp;rhs, const Array4&lt; const Real &gt; &amp;mf_x, const Array4&lt; const Real &gt; &amp;mf_y, const bool avg_mf_x_y, const bool avg_mf_y_x)</div><div class="ttdef"><b>Definition:</b> NumericalDiffusion.cpp:6</div></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Compute 5th order derivative and augment RHS</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    amrex::ParallelFor(bx, num_comp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> m) noexcept</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">int</span> n = start_comp + m;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        Real xflux_lo = 10. * (data(i  ,j,k,n) - data(i-1,j,k,n))</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                       - 5. * (data(i+1,j,k,n) - data(i-2,j,k,n))</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                            + (data(i+2,j,k,n) - data(i-3,j,k,n));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> ( (xflux_lo * (data(i,j,k,n) - data(i-1,j,k,n)) ) &gt; 0.) xflux_lo = 0.;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        Real xflux_hi = 10. * (data(i+1,j,k,n) - data(i  ,j,k,n))</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                       - 5. * (data(i+2,j,k,n) - data(i-1,j,k,n))</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                            + (data(i+3,j,k,n) - data(i-2,j,k,n));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> ( (xflux_hi * (data(i+1,j,k,n) - data(i,j,k,n)) ) &gt; 0.) xflux_hi = 0.;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        Real yflux_lo = 10. * (data(i,j  ,k,n) - data(i,j-1,k,n))</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                       - 5. * (data(i,j+1,k,n) - data(i,j-2,k,n))</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                            + (data(i,j+2,k,n) - data(i,j-3,k,n));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> ( (yflux_lo * (data(i,j,k,n) - data(i,j-1,k,n)) ) &gt; 0.) yflux_lo = 0.;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        Real yflux_hi = 10. * (data(i,j+1,k,n) - data(i,j  ,k,n))</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                       - 5. * (data(i,j+2,k,n) - data(i,j-1,k,n))</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                            + (data(i,j+3,k,n) - data(i,j-2,k,n));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> ( (yflux_hi * (data(i,j+1,k,n) - data(i,j,k,n)) ) &gt; 0.) yflux_hi = 0.;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        rhs(i,j,k,n) += coeff6 * ( (xflux_hi - xflux_lo) * mfx_arr(i,j,0)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                 + (yflux_hi - yflux_lo) * mfy_arr(i,j,0) );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    });</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="ttc" id="aNumericalDiffusion_8cpp_html_aae33c522c6b17fab41fe83a41b4e1cf3"><div class="ttname"><a href="NumericalDiffusion_8cpp.html#aae33c522c6b17fab41fe83a41b4e1cf3">NumericalDiffusion</a></div><div class="ttdeci">void NumericalDiffusion(const Box &amp;bx, const int start_comp, const int num_comp, const Real dt, const SolverChoice &amp;solverChoice, const Array4&lt; const Real &gt; &amp;data, const Array4&lt; Real &gt; &amp;rhs, const Array4&lt; const Real &gt; &amp;mf_x, const Array4&lt; const Real &gt; &amp;mf_y, const bool avg_mf_x_y, const bool avg_mf_y_x)</div><div class="ttdef"><b>Definition:</b> NumericalDiffusion.cpp:6</div></div>
 <div class="ttc" id="astructSolverChoice_html_a6dba64151e2e2f958e7c0e55db477bf2"><div class="ttname"><a href="structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2">SolverChoice::NumDiffCoeff</a></div><div class="ttdeci">amrex::Real NumDiffCoeff</div><div class="ttdef"><b>Definition:</b> DataStruct.H:446</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__post_8cpp.html#aa74d62023453ffdad170110818a2a2b9">erf_slow_rhs_post()</a>, and <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a911929de98475c3f6b6a9d65d264f85b">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="NumericalDiffusion_8cpp_ae44a185ac4f07ffefb722d1601eb960a_icgraph.png" border="0" usemap="#aNumericalDiffusion_8cpp_ae44a185ac4f07ffefb722d1601eb960a_icgraph" alt=""/></div>
-<map name="aNumericalDiffusion_8cpp_ae44a185ac4f07ffefb722d1601eb960a_icgraph" id="aNumericalDiffusion_8cpp_ae44a185ac4f07ffefb722d1601eb960a_icgraph">
+<div class="center"><img src="NumericalDiffusion_8cpp_aae33c522c6b17fab41fe83a41b4e1cf3_icgraph.png" border="0" usemap="#aNumericalDiffusion_8cpp_aae33c522c6b17fab41fe83a41b4e1cf3_icgraph" alt=""/></div>
+<map name="aNumericalDiffusion_8cpp_aae33c522c6b17fab41fe83a41b4e1cf3_icgraph" id="aNumericalDiffusion_8cpp_aae33c522c6b17fab41fe83a41b4e1cf3_icgraph">
 <area shape="rect" title=" " alt="" coords="192,31,339,57"/>
 <area shape="rect" href="ERF__slow__rhs__post_8cpp.html#aa74d62023453ffdad170110818a2a2b9" title=" " alt="" coords="5,5,144,32"/>
 <area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a911929de98475c3f6b6a9d65d264f85b" title=" " alt="" coords="9,56,141,83"/>
