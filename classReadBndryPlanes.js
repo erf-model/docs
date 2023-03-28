@@ -1,6 +1,6 @@
 var classReadBndryPlanes =
 [
-    [ "ReadBndryPlanes", "classReadBndryPlanes.html#ac1fc8d42a199191c6be4d359fbc41585", null ],
+    [ "ReadBndryPlanes", "classReadBndryPlanes.html#a16269dfa161d2fdbe02eeb5ac0cb0e24", null ],
     [ "define_level_data", "classReadBndryPlanes.html#a16ed881bb428b7abb89e4284b356c8d6", null ],
     [ "ingested_density", "classReadBndryPlanes.html#ab54133701e8e086315fa7299257199a2", null ],
     [ "ingested_KE", "classReadBndryPlanes.html#a85a5f25c283db679f67e10167cc6ee5c", null ],
@@ -9,7 +9,7 @@ var classReadBndryPlanes =
     [ "ingested_theta", "classReadBndryPlanes.html#ac306993497b4e668110e13c4eb7644ff", null ],
     [ "ingested_velocity", "classReadBndryPlanes.html#a906352fe8d793c4360889429d8a5980d", null ],
     [ "interp_in_time", "classReadBndryPlanes.html#a18cdefa6feaf7253b3d9029992b6b57c", null ],
-    [ "read_file", "classReadBndryPlanes.html#ad9487e7ac3de04b2adb5b7326ad72680", null ],
+    [ "read_file", "classReadBndryPlanes.html#a9fbea63778864c5231dbcdd3100e27ac", null ],
     [ "read_input_files", "classReadBndryPlanes.html#a4529a2b7d7ae43891ea4ef44b7c6e579", null ],
     [ "read_time_file", "classReadBndryPlanes.html#ac6633331e3b4ae3d7c93534930b7f856", null ],
     [ "tinterp", "classReadBndryPlanes.html#a6f54411420eb4d57e4dc201b256f3d5e", null ],

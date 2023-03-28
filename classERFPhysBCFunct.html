@@ -129,10 +129,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a60766c20f6cbfd820910716171be508e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2b044f2b5cc4d70fb579f46b60bfff0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#aa2b044f2b5cc4d70fb579f46b60bfff0">impose_vertical_zvel_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, amrex::Real time, int bccomp_u, int bccomp_v, int bccomp_w, int terrain_type)</td></tr>
 <tr class="separator:aa2b044f2b5cc4d70fb579f46b60bfff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedffbf85cb5912b6dc4eb1ed764ee340"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#aedffbf85cb5912b6dc4eb1ed764ee340">impose_lateral_cons_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;mf, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int icomp, int ncomp, amrex::Real time, int bccomp)</td></tr>
-<tr class="separator:aedffbf85cb5912b6dc4eb1ed764ee340"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43a7f2c5279ebeef8d3a40c54ac59d12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#a43a7f2c5279ebeef8d3a40c54ac59d12">impose_vertical_cons_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;mf, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int icomp, int ncomp, amrex::Real time, int bccomp)</td></tr>
-<tr class="separator:a43a7f2c5279ebeef8d3a40c54ac59d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba9067e54d00ac53a68a21f8458d4d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#afba9067e54d00ac53a68a21f8458d4d7">impose_lateral_cons_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int icomp, int ncomp, amrex::Real time, int bccomp)</td></tr>
+<tr class="separator:afba9067e54d00ac53a68a21f8458d4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a994c3e142b1c5ca72da0bfd2353c688d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#a994c3e142b1c5ca72da0bfd2353c688d">impose_vertical_cons_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int icomp, int ncomp, amrex::Real time, int bccomp)</td></tr>
+<tr class="separator:a994c3e142b1c5ca72da0bfd2353c688d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -279,8 +279,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aedffbf85cb5912b6dc4eb1ed764ee340"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedffbf85cb5912b6dc4eb1ed764ee340">&#9670;&nbsp;</a></span>impose_lateral_cons_bcs()</h2>
+<a id="afba9067e54d00ac53a68a21f8458d4d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba9067e54d00ac53a68a21f8458d4d7">&#9670;&nbsp;</a></span>impose_lateral_cons_bcs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,7 +289,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">void ERFPhysBCFunct::impose_lateral_cons_bcs </td>
           <td>(</td>
           <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>mf</em>, </td>
+          <td class="paramname"><em>dest_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -335,7 +335,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;impose_lateral_cons_bcs()&quot;</span>,<a class="code" href="classERFPhysBCFunct.html#aedffbf85cb5912b6dc4eb1ed764ee340">impose_lateral_cons_bcs</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;impose_lateral_cons_bcs()&quot;</span>,<a class="code" href="classERFPhysBCFunct.html#afba9067e54d00ac53a68a21f8458d4d7">impose_lateral_cons_bcs</a>);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_lo = amrex::lbound(domain);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_hi = amrex::ubound(domain);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
@@ -473,7 +473,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    Gpu::streamSynchronize();</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
 <div class="ttc" id="aIndexDefines_8H_html_ad5195ac8f863f5a9a7eaa0db094f7639"><div class="ttname"><a href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a></div><div class="ttdeci">#define NVAR</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:22</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct_html_aedffbf85cb5912b6dc4eb1ed764ee340"><div class="ttname"><a href="classERFPhysBCFunct.html#aedffbf85cb5912b6dc4eb1ed764ee340">ERFPhysBCFunct::impose_lateral_cons_bcs</a></div><div class="ttdeci">void impose_lateral_cons_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;mf, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int icomp, int ncomp, amrex::Real time, int bccomp)</div><div class="ttdef"><b>Definition:</b> BoundaryConditions_cons.cpp:17</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct_html_afba9067e54d00ac53a68a21f8458d4d7"><div class="ttname"><a href="classERFPhysBCFunct.html#afba9067e54d00ac53a68a21f8458d4d7">ERFPhysBCFunct::impose_lateral_cons_bcs</a></div><div class="ttdeci">void impose_lateral_cons_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int icomp, int ncomp, amrex::Real time, int bccomp)</div><div class="ttdef"><b>Definition:</b> BoundaryConditions_cons.cpp:17</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705">ERFBCType::reflect_odd</a></div><div class="ttdeci">@ reflect_odd</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:164</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a></div><div class="ttdeci">@ foextrap</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:167</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a></div><div class="ttdeci">@ ext_dir</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:168</div></div>
@@ -1000,8 +1000,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a43a7f2c5279ebeef8d3a40c54ac59d12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43a7f2c5279ebeef8d3a40c54ac59d12">&#9670;&nbsp;</a></span>impose_vertical_cons_bcs()</h2>
+<a id="a994c3e142b1c5ca72da0bfd2353c688d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a994c3e142b1c5ca72da0bfd2353c688d">&#9670;&nbsp;</a></span>impose_vertical_cons_bcs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1010,7 +1010,7 @@ Here is the call graph for this function:</div>
           <td class="memname">void ERFPhysBCFunct::impose_vertical_cons_bcs </td>
           <td>(</td>
           <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>mf</em>, </td>
+          <td class="paramname"><em>dest_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1068,7 +1068,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;impose_lateral_cons_bcs()&quot;</span>,<a class="code" href="classERFPhysBCFunct.html#aedffbf85cb5912b6dc4eb1ed764ee340">impose_lateral_cons_bcs</a>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;impose_lateral_cons_bcs()&quot;</span>,<a class="code" href="classERFPhysBCFunct.html#afba9067e54d00ac53a68a21f8458d4d7">impose_lateral_cons_bcs</a>);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_lo = amrex::lbound(domain);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_hi = amrex::ubound(domain);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
@@ -1240,8 +1240,8 @@ Here is the call graph for this function:</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classERFPhysBCFunct_a43a7f2c5279ebeef8d3a40c54ac59d12_cgraph.png" border="0" usemap="#aclassERFPhysBCFunct_a43a7f2c5279ebeef8d3a40c54ac59d12_cgraph" alt=""/></div>
-<map name="aclassERFPhysBCFunct_a43a7f2c5279ebeef8d3a40c54ac59d12_cgraph" id="aclassERFPhysBCFunct_a43a7f2c5279ebeef8d3a40c54ac59d12_cgraph">
+<div class="center"><img src="classERFPhysBCFunct_a994c3e142b1c5ca72da0bfd2353c688d_cgraph.png" border="0" usemap="#aclassERFPhysBCFunct_a994c3e142b1c5ca72da0bfd2353c688d_cgraph" alt=""/></div>
+<map name="aclassERFPhysBCFunct_a994c3e142b1c5ca72da0bfd2353c688d_cgraph" id="aclassERFPhysBCFunct_a994c3e142b1c5ca72da0bfd2353c688d_cgraph">
 <area shape="rect" title=" " alt="" coords="5,49,192,90"/>
 <area shape="rect" href="TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="243,5,457,32"/>
 <area shape="rect" href="TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="248,56,452,83"/>
@@ -2004,7 +2004,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"></span>                <span class="keywordflow">if</span> (!gdomain.contains(cbx))</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    <span class="keywordtype">int</span> bccomp = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    <a class="code" href="classERFPhysBCFunct.html#aedffbf85cb5912b6dc4eb1ed764ee340">impose_lateral_cons_bcs</a>(cons_arr,cbx,domain,icomp_cons,ncomp_cons,time,bccomp);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    <a class="code" href="classERFPhysBCFunct.html#afba9067e54d00ac53a68a21f8458d4d7">impose_lateral_cons_bcs</a>(cons_arr,cbx,domain,icomp_cons,ncomp_cons,time,bccomp);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keywordflow">if</span> (!cons_only)</div>
@@ -2027,7 +2027,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="comment">//       for every box -- and we need to call these even if init_type == real</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            {</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordtype">int</span> bccomp = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <a class="code" href="classERFPhysBCFunct.html#a43a7f2c5279ebeef8d3a40c54ac59d12">impose_vertical_cons_bcs</a>(cons_arr,cbx,domain,z_nd_arr,dxInv,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <a class="code" href="classERFPhysBCFunct.html#a994c3e142b1c5ca72da0bfd2353c688d">impose_vertical_cons_bcs</a>(cons_arr,cbx,domain,z_nd_arr,dxInv,</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                     icomp_cons,ncomp_cons,time,bccomp);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            }</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
@@ -2044,7 +2044,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        } <span class="comment">// MFIter</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    } <span class="comment">// OpenMP</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;} <span class="comment">// operator()</span></div>
-<div class="ttc" id="aclassERFPhysBCFunct_html_a43a7f2c5279ebeef8d3a40c54ac59d12"><div class="ttname"><a href="classERFPhysBCFunct.html#a43a7f2c5279ebeef8d3a40c54ac59d12">ERFPhysBCFunct::impose_vertical_cons_bcs</a></div><div class="ttdeci">void impose_vertical_cons_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;mf, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int icomp, int ncomp, amrex::Real time, int bccomp)</div><div class="ttdef"><b>Definition:</b> BoundaryConditions_cons.cpp:157</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct_html_a994c3e142b1c5ca72da0bfd2353c688d"><div class="ttname"><a href="classERFPhysBCFunct.html#a994c3e142b1c5ca72da0bfd2353c688d">ERFPhysBCFunct::impose_vertical_cons_bcs</a></div><div class="ttdeci">void impose_vertical_cons_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int icomp, int ncomp, amrex::Real time, int bccomp)</div><div class="ttdef"><b>Definition:</b> BoundaryConditions_cons.cpp:157</div></div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a></div><div class="ttdeci">@ zvel_bc</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:56</div></div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a></div><div class="ttdeci">@ yvel_bc</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:55</div></div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a></div><div class="ttdeci">@ cons_bc</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:41</div></div>

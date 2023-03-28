@@ -7,7 +7,7 @@ var searchData=
   ['write_5faverages_1076',['write_averages',['../classMOSTAverage.html#ac37b71ce655ea973ad6fc4c564b040c1',1,'MOSTAverage']]],
   ['write_5fk_5findices_1077',['write_k_indices',['../classMOSTAverage.html#a612fdb06ff433e33c717198c7e3e4b0b',1,'MOSTAverage']]],
   ['write_5fnorm_5findices_1078',['write_norm_indices',['../classMOSTAverage.html#ab886a0b96314880c4769318c81b23fbb',1,'MOSTAverage']]],
-  ['write_5fplanes_1079',['write_planes',['../classWriteBndryPlanes.html#abd077cea0b42e78c3d6ccb429b4d779e',1,'WriteBndryPlanes']]],
+  ['write_5fplanes_1079',['write_planes',['../classWriteBndryPlanes.html#a1010dd3e951cad55702ae47607f8dd1e',1,'WriteBndryPlanes']]],
   ['write_5fxz_5fpositions_1080',['write_xz_positions',['../classMOSTAverage.html#a221a026c642af21a051b05b2b4ea763a',1,'MOSTAverage']]],
   ['writebndryplanes_1081',['WriteBndryPlanes',['../classWriteBndryPlanes.html#a460f7f20cb59e7f2f8546ebf423585d5',1,'WriteBndryPlanes::WriteBndryPlanes()'],['../classWriteBndryPlanes.html',1,'WriteBndryPlanes']]],
   ['writebuildinfo_1082',['writeBuildInfo',['../classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa',1,'ERF']]],

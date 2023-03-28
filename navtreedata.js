@@ -74,8 +74,8 @@ var NAVTREEINDEX =
 "ERF__init__from__metgrid_8cpp.html#a7cf189d6e49b19c557bf640bac90be0b",
 "classERF.html#a050dbd236c9bf246554a53008e09f683",
 "classERFPhysBCFunct.html#ac27af17bd7428bfe7666b13e68fc30aa",
-"classWriteBndryPlanes.html#a41799219d138892871e1a6e8c3755da1",
-"structInputSoundingData.html#ab036816413b1f708981ed6c2b3b113d5"
+"classVelPlaneAverage.html#af70327b935ddca4e60f0ad91e9ad4855",
+"structInputSoundingData.html#a7710e6498adaf4b94a54e600ef6a0ca7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

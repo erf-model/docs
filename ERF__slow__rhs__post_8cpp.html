@@ -158,12 +158,12 @@ Include dependency graph for ERF_slow_rhs_post.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa74d62023453ffdad170110818a2a2b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__slow__rhs__post_8cpp.html#aa74d62023453ffdad170110818a2a2b9">erf_slow_rhs_post</a> (int, Real dt, BoxArray &amp;grids_to_evolve, Vector&lt; MultiFab &gt; &amp;S_rhs, Vector&lt; MultiFab &gt; &amp;S_old, Vector&lt; MultiFab &gt; &amp;S_new, Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, Vector&lt; MultiFab &gt; &amp;S_scratch, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, const MultiFab &amp;source, const MultiFab *SmnSmn, const MultiFab *eddyDiffs, MultiFab *Hfx1, MultiFab *Hfx2, MultiFab *Hfx3, MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const Gpu::DeviceVector&lt; amrex::BCRec &gt; domain_bcs_type_d, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;dJ, std::unique_ptr&lt; MultiFab &gt; &amp;dJ_new, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v)</td></tr>
-<tr class="separator:aa74d62023453ffdad170110818a2a2b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38252c045ead1a97e8977a7a41ba9cad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__slow__rhs__post_8cpp.html#a38252c045ead1a97e8977a7a41ba9cad">erf_slow_rhs_post</a> (int, Real dt, BoxArray &amp;grids_to_evolve, Vector&lt; MultiFab &gt; &amp;S_rhs, Vector&lt; MultiFab &gt; &amp;S_old, Vector&lt; MultiFab &gt; &amp;S_new, Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, Vector&lt; MultiFab &gt; &amp;S_scratch, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, const MultiFab &amp;source, const MultiFab *SmnSmn, const MultiFab *eddyDiffs, MultiFab *Hfx1, MultiFab *Hfx2, MultiFab *Hfx3, MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;dJ, std::unique_ptr&lt; MultiFab &gt; &amp;dJ_new, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v)</td></tr>
+<tr class="separator:a38252c045ead1a97e8977a7a41ba9cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aa74d62023453ffdad170110818a2a2b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa74d62023453ffdad170110818a2a2b9">&#9670;&nbsp;</a></span>erf_slow_rhs_post()</h2>
+<a id="a38252c045ead1a97e8977a7a41ba9cad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38252c045ead1a97e8977a7a41ba9cad">&#9670;&nbsp;</a></span>erf_slow_rhs_post()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -303,7 +303,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Gpu::DeviceVector&lt; amrex::BCRec &gt;&#160;</td>
+          <td class="paramtype">const Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;&#160;</td>
           <td class="paramname"><em>domain_bcs_type_d</em>, </td>
         </tr>
         <tr>
@@ -488,7 +488,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">if</span> (l_use_deardorff) {</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            start_comp = <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>;</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;              num_comp = 1;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <a class="code" href="Advection_8H.html#a113d4c34fad69d0d09a437f261accc2b">AdvectionSrcForScalars</a>(bx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <a class="code" href="Advection_8H.html#a8bd529abcfac8d37a6c61d9355990b88">AdvectionSrcForScalars</a>(bx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                                   cur_prim, cell_rhs, detJ,</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                                   dxInv, mf_m, l_all_WENO, l_moist_WENO, l_spatial_order_WENO,</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                                   l_horiz_spatial_order, l_vert_spatial_order, l_use_terrain);</div>
@@ -496,14 +496,14 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">if</span> (l_use_QKE) {</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            start_comp = <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;              num_comp = 1;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <a class="code" href="Advection_8H.html#a113d4c34fad69d0d09a437f261accc2b">AdvectionSrcForScalars</a>(bx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <a class="code" href="Advection_8H.html#a8bd529abcfac8d37a6c61d9355990b88">AdvectionSrcForScalars</a>(bx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                                   cur_prim, cell_rhs, detJ,</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                                   dxInv, mf_m, l_all_WENO, l_moist_WENO, l_spatial_order_WENO,</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                                   l_horiz_spatial_order, l_vert_spatial_order, l_use_terrain);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        }</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        start_comp = <a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;          num_comp = S_data[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].nComp() - start_comp;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <a class="code" href="Advection_8H.html#a113d4c34fad69d0d09a437f261accc2b">AdvectionSrcForScalars</a>(bx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <a class="code" href="Advection_8H.html#a8bd529abcfac8d37a6c61d9355990b88">AdvectionSrcForScalars</a>(bx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                               cur_prim, cell_rhs, detJ,</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                               dxInv, mf_m, l_all_WENO, l_moist_WENO, l_spatial_order_WENO,</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                               l_horiz_spatial_order, l_vert_spatial_order, l_use_terrain);</div>
@@ -700,7 +700,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keyword">delete</span> dflux_z;</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;}</div>
-<div class="ttc" id="aAdvection_8H_html_a113d4c34fad69d0d09a437f261accc2b"><div class="ttname"><a href="Advection_8H.html#a113d4c34fad69d0d09a437f261accc2b">AdvectionSrcForScalars</a></div><div class="ttdeci">void AdvectionSrcForScalars(const amrex::Box &amp;bx, const int &amp;start_comp, const int &amp;num_comp, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_w, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSize, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const bool all_use_WENO, const bool moist_use_WENO, const int spatial_order_WENO, const int horiz_spatial_order, const int vert_spatial_order, const int use_terrain)</div></div>
+<div class="ttc" id="aAdvection_8H_html_a8bd529abcfac8d37a6c61d9355990b88"><div class="ttname"><a href="Advection_8H.html#a8bd529abcfac8d37a6c61d9355990b88">AdvectionSrcForScalars</a></div><div class="ttdeci">void AdvectionSrcForScalars(const amrex::Box &amp;bx, const int &amp;icomp, const int &amp;ncomp, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSize, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const bool all_use_WENO, const bool moist_use_WENO, const int spatial_order_WENO, const int horiz_spatial_order, const int vert_spatial_order, const int use_terrain)</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754">PBLType::None</a></div><div class="ttdeci">@ None</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601"><div class="ttname"><a href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a></div><div class="ttdeci">@ MYNN25</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a84e6bfbbb8e490790c506939b364f735a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6adf97f83acf6453d4a6a4b1070f3754">MolecDiffType::None</a></div><div class="ttdeci">@ None</div></div>
@@ -738,10 +738,10 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__slow__rhs__post_8cpp_aa74d62023453ffdad170110818a2a2b9_cgraph.png" border="0" usemap="#aERF__slow__rhs__post_8cpp_aa74d62023453ffdad170110818a2a2b9_cgraph" alt=""/></div>
-<map name="aERF__slow__rhs__post_8cpp_aa74d62023453ffdad170110818a2a2b9_cgraph" id="aERF__slow__rhs__post_8cpp_aa74d62023453ffdad170110818a2a2b9_cgraph">
+<div class="center"><img src="ERF__slow__rhs__post_8cpp_a38252c045ead1a97e8977a7a41ba9cad_cgraph.png" border="0" usemap="#aERF__slow__rhs__post_8cpp_a38252c045ead1a97e8977a7a41ba9cad_cgraph" alt=""/></div>
+<map name="aERF__slow__rhs__post_8cpp_a38252c045ead1a97e8977a7a41ba9cad_cgraph" id="aERF__slow__rhs__post_8cpp_a38252c045ead1a97e8977a7a41ba9cad_cgraph">
 <area shape="rect" title=" " alt="" coords="5,81,144,108"/>
-<area shape="rect" href="Advection_8H.html#a113d4c34fad69d0d09a437f261accc2b" title=" " alt="" coords="192,5,367,32"/>
+<area shape="rect" href="Advection_8H.html#a8bd529abcfac8d37a6c61d9355990b88" title=" " alt="" coords="192,5,367,32"/>
 <area shape="rect" href="Diffusion_8H.html#aaacf1370f20f30a080bda368f04527e4" title=" " alt="" coords="194,56,365,83"/>
 <area shape="rect" href="Diffusion_8H.html#aff30b31776f604f6329b843da05b28f8" title=" " alt="" coords="195,107,364,133"/>
 <area shape="rect" href="NumericalDiffusion_8cpp.html#aae33c522c6b17fab41fe83a41b4e1cf3" title=" " alt="" coords="206,157,353,184"/>

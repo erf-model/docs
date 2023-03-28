@@ -2,11 +2,11 @@ var classERFPhysBCFunct =
 [
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html#a81ec9d769c2b3a68df0bc5dc8a1781cf", null ],
     [ "~ERFPhysBCFunct", "classERFPhysBCFunct.html#abb1797f0742dd01ee978be02d594fc43", null ],
-    [ "impose_lateral_cons_bcs", "classERFPhysBCFunct.html#aedffbf85cb5912b6dc4eb1ed764ee340", null ],
+    [ "impose_lateral_cons_bcs", "classERFPhysBCFunct.html#afba9067e54d00ac53a68a21f8458d4d7", null ],
     [ "impose_lateral_xvel_bcs", "classERFPhysBCFunct.html#ac27af17bd7428bfe7666b13e68fc30aa", null ],
     [ "impose_lateral_yvel_bcs", "classERFPhysBCFunct.html#a4f7b3f4d58353e32dc0b2684569a36ec", null ],
     [ "impose_lateral_zvel_bcs", "classERFPhysBCFunct.html#a60766c20f6cbfd820910716171be508e", null ],
-    [ "impose_vertical_cons_bcs", "classERFPhysBCFunct.html#a43a7f2c5279ebeef8d3a40c54ac59d12", null ],
+    [ "impose_vertical_cons_bcs", "classERFPhysBCFunct.html#a994c3e142b1c5ca72da0bfd2353c688d", null ],
     [ "impose_vertical_xvel_bcs", "classERFPhysBCFunct.html#ac8f30d84a55b8bebb0fc4754ecba6bf2", null ],
     [ "impose_vertical_yvel_bcs", "classERFPhysBCFunct.html#a434757de61aa0c42d2bb956cbfb8ecbb", null ],
     [ "impose_vertical_zvel_bcs", "classERFPhysBCFunct.html#aa2b044f2b5cc4d70fb579f46b60bfff0", null ],

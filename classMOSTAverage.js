@@ -1,13 +1,15 @@
 var classMOSTAverage =
 [
-    [ "MOSTAverage", "classMOSTAverage.html#a4d01af62a3892f1f1e9191aef4b47739", null ],
-    [ "MOSTAverage", "classMOSTAverage.html#a32a041c06dc886f0909fa8c4a7faa5db", null ],
+    [ "MOSTAverage", "classMOSTAverage.html#a08155c3b5c2f4ff6766088426fcd16cd", null ],
     [ "~MOSTAverage", "classMOSTAverage.html#ac755f71a35f1231c8add20993364832a", null ],
+    [ "MOSTAverage", "classMOSTAverage.html#add74667e947201bbb2ddf2785f02ee0c", null ],
     [ "compute_averages", "classMOSTAverage.html#a7a28005871bb8abb49f44c3976133a4f", null ],
     [ "compute_plane_averages", "classMOSTAverage.html#ab85828af24cd22d737931c51862389e4", null ],
     [ "compute_region_averages", "classMOSTAverage.html#aaea0b00766b3cdeefd2b54bade8a86bd", null ],
     [ "get_average", "classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81", null ],
-    [ "get_zref", "classMOSTAverage.html#a631ab3761032970d2c750990cfae180f", null ],
+    [ "get_zref", "classMOSTAverage.html#a5b590fcba4d5d99178a0f8de14a1f174", null ],
+    [ "operator=", "classMOSTAverage.html#a56f533937767a348d7c1dff755989531", null ],
+    [ "operator=", "classMOSTAverage.html#ac28358a831cb22e15ba5434c9a8ee642", null ],
     [ "set_k_indices_N", "classMOSTAverage.html#a8928b9f9d6d45fdd9fd88053fcae34e2", null ],
     [ "set_k_indices_T", "classMOSTAverage.html#a1892a3f9c2175cd2323d8d3a3bc83b6c", null ],
     [ "set_norm_indices_T", "classMOSTAverage.html#a2908278cc9088e345af422a187eba337", null ],
