@@ -2,6 +2,7 @@ var classMOSTAverage =
 [
     [ "MOSTAverage", "classMOSTAverage.html#a08155c3b5c2f4ff6766088426fcd16cd", null ],
     [ "~MOSTAverage", "classMOSTAverage.html#ac755f71a35f1231c8add20993364832a", null ],
+    [ "MOSTAverage", "classMOSTAverage.html#acfc77dc21a0821d4b446f7be289c64d6", null ],
     [ "MOSTAverage", "classMOSTAverage.html#add74667e947201bbb2ddf2785f02ee0c", null ],
     [ "compute_averages", "classMOSTAverage.html#a7a28005871bb8abb49f44c3976133a4f", null ],
     [ "compute_plane_averages", "classMOSTAverage.html#ab85828af24cd22d737931c51862389e4", null ],

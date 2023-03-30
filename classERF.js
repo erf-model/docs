@@ -2,6 +2,8 @@ var classERF =
 [
     [ "ERF", "classERF.html#a30129012dd367825e5e4fd1406694f58", null ],
     [ "~ERF", "classERF.html#a30901583bd41e7bf4dddb3c1ea329dfe", null ],
+    [ "ERF", "classERF.html#ad19ef76c5550af312f26f0fcbc4d67d9", null ],
+    [ "ERF", "classERF.html#af4f5db4e6643e9ebc8ffeebcbca3978a", null ],
     [ "Advance", "classERF.html#a47413fe5588f7dd71a1d5087a9e804f9", null ],
     [ "AverageDown", "classERF.html#a8202de1f8f372e3e6fdc483447c6a55f", null ],
     [ "AverageDownTo", "classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41", null ],
@@ -49,6 +51,8 @@ var classERF =
     [ "NumSampleLines", "classERF.html#a70d78ca624acf09d8faab9a2d51264d9", null ],
     [ "NumSamplePointLogs", "classERF.html#a41324a4b5610fde725fe721550b23c85", null ],
     [ "NumSamplePoints", "classERF.html#a5bc7dd2c7e1ebf65b7dc1d9bf0dfb36f", null ],
+    [ "operator=", "classERF.html#a72fcc41d6f5225e9ca3b8c9111ff37e7", null ],
+    [ "operator=", "classERF.html#a979dc6007870caeea25c9314587d20be", null ],
     [ "PlotFileName", "classERF.html#a54f6c5d799e51521ad10bb57d29d0c44", null ],
     [ "PlotFileVarNames", "classERF.html#a2dcd22cb915d923c687f60267f44542b", null ],
     [ "post_timestep", "classERF.html#a58f6683aff0fbe6949bfe8b49275a8b3", null ],
