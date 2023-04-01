@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"ERF__init__from__metgrid_8cpp.html#a2adede03791dfa370fa18f398ce5202e":[3,0,0,3,4,5],
 "ERF__init__from__metgrid_8cpp.html#a7cf189d6e49b19c557bf640bac90be0b":[3,0,0,3,4,3],
 "ERF__init__from__metgrid_8cpp.html#a9634353d932e89e1e0b43960ae22bc85":[3,0,0,3,4,0],
 "ERF__init__from__metgrid_8cpp.html#ab4943c95bfc9ea23cb2d93123f60a03e":[3,0,0,3,4,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "classERF.html#a01f3db32272f53dc68025f0a98195e57":[2,0,7,187],
 "classERF.html#a02722d16f3c26efe590702200f1296d7":[2,0,7,147],
 "classERF.html#a038586e25a2615085be06fac72becbc3":[2,0,7,139],
-"classERF.html#a039a764a1d942c484e8aea49e87bc046":[2,0,7,40],
-"classERF.html#a03a4ad7368c1c98b492cd9d9fec9cbc5":[2,0,7,217]
+"classERF.html#a039a764a1d942c484e8aea49e87bc046":[2,0,7,40]
 };

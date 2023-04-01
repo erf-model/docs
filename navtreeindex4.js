@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"classVelPlaneAverage.html#a6a6d4af0b0c15dd403dd81ba7d88561a":[2,0,20,8],
 "classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862":[2,0,20,9],
 "classVelPlaneAverage.html#a899d4bc2f1ef6656fd155661b4b50e7e":[2,0,20,0],
 "classVelPlaneAverage.html#ac4bde7d62667e291305709b74152ba1b":[2,0,20,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "structInputSoundingData.html":[2,0,10],
 "structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa":[2,0,10,8],
 "structInputSoundingData.html#a0a3d15e3959ce900c213a09230e6646c":[2,0,10,22],
-"structInputSoundingData.html#a0db7861e0fee3f8f0760c6685df3176f":[2,0,10,5],
-"structInputSoundingData.html#a15782809644a4daa0e8de9c3cc4c346a":[2,0,10,17]
+"structInputSoundingData.html#a0db7861e0fee3f8f0760c6685df3176f":[2,0,10,5]
 };
