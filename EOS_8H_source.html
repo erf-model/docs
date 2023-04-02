@@ -160,42 +160,12 @@ $(document).ready(function(){initNavTree('EOS_8H_source.html',''); initResizable
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> std::pow(p*std::pow(<a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>-1), <a class="code" href="ERF__Constants_8H.html#ab24194b3b11ee04368e1087acda6bde7">iGamma</a>) * <a class="code" href="ERF__Constants_8H.html#a2c83556bc439f3f48ca5eb1cb5c81842">iR_d</a>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// this function returns explicit tile size that prevents tiling in z</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="EOS_8H.html#a8da113f1d5603f7297fe1d03e5013f00">   77</a></span>&#160;amrex::IntVect <a class="code" href="EOS_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (amrex::TilingIfNotGPU()) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> amrex::IntVect{amrex::FabArrayBase::mfiter_tile_size[0],</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                              amrex::FabArrayBase::mfiter_tile_size[1],</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                              1024000};</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> amrex::IntVect::TheZeroVector();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">// should we do this based on number of dims?</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">#if AMREX_SPACEDIM == 1</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">    return IntVect{FabArrayBase::mfiter_tile_size[0],</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">                   FabArrayBase::mfiter_tile_size[1],</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">                   1024000};</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">#elif AMREX_SPACEDIM == 2</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">    return IntVect{FabArrayBase::mfiter_tile_size[0],</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">                   1024000};</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">#else</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">return IntVect{FabArrayBase::mfiter_tile_size[0],</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">                   FabArrayBase::mfiter_tile_size[1],</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">                   1024000};</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">#endif</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="ttc" id="aEOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> EOS.H:24</div></div>
 <div class="ttc" id="aEOS_8H_html_a349c18f85f1660e31016d827814c6549"><div class="ttname"><a href="EOS_8H.html#a349c18f85f1660e31016d827814c6549">getRhogivenThetaPress</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getRhogivenThetaPress(const amrex::Real theta, const amrex::Real p, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> EOS.H:42</div></div>
 <div class="ttc" id="aEOS_8H_html_a5814a0d91145557a636e261ef49fe6f0"><div class="ttname"><a href="EOS_8H.html#a5814a0d91145557a636e261ef49fe6f0">getExnergivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenRTh(const amrex::Real rhotheta, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> EOS.H:61</div></div>
 <div class="ttc" id="aEOS_8H_html_a652d566aef658cc423ced929a816f869"><div class="ttname"><a href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:10</div></div>
-<div class="ttc" id="aEOS_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="EOS_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> EOS.H:77</div></div>
 <div class="ttc" id="aEOS_8H_html_a912ac5b146f25c3a6d0a2104f4fbe644"><div class="ttname"><a href="EOS_8H.html#a912ac5b146f25c3a6d0a2104f4fbe644">getdPdRgivenConstantTheta</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getdPdRgivenConstantTheta(const amrex::Real rho, const amrex::Real theta)</div><div class="ttdef"><b>Definition:</b> EOS.H:48</div></div>
 <div class="ttc" id="aEOS_8H_html_a9d15b1e5843447301cf9e34924992e67"><div class="ttname"><a href="EOS_8H.html#a9d15b1e5843447301cf9e34924992e67">getThgivenRandT</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getThgivenRandT(const amrex::Real rho, const amrex::Real T, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> EOS.H:17</div></div>
 <div class="ttc" id="aEOS_8H_html_aa7b634796f77c8e2c23e3e6a84596c50"><div class="ttname"><a href="EOS_8H.html#aa7b634796f77c8e2c23e3e6a84596c50">getRhoThetagivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getRhoThetagivenP(const amrex::Real p)</div><div class="ttdef"><b>Definition:</b> EOS.H:68</div></div>

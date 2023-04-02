@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"classERF.html#a038586e25a2615085be06fac72becbc3":[2,0,7,139],
+"classERF.html#a039a764a1d942c484e8aea49e87bc046":[2,0,7,40],
 "classERF.html#a03a4ad7368c1c98b492cd9d9fec9cbc5":[2,0,7,217],
 "classERF.html#a050dbd236c9bf246554a53008e09f683":[2,0,7,90],
 "classERF.html#a051364b2373d8d86151c0b4a958035bd":[2,0,7,152],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "classERFPhysBCFunct.html#a16cdf4a3ab611f388823cef5e52b60f4":[2,0,9,11],
 "classERFPhysBCFunct.html#a2f63808a7040c853c877cc521741a119":[2,0,9,15],
 "classERFPhysBCFunct.html#a3ced8eff532a6cbf0fed66c939d10e3e":[2,0,9,13],
-"classERFPhysBCFunct.html#a434757de61aa0c42d2bb956cbfb8ecbb":[2,0,9,8],
-"classERFPhysBCFunct.html#a4f7b3f4d58353e32dc0b2684569a36ec":[2,0,9,4],
-"classERFPhysBCFunct.html#a60766c20f6cbfd820910716171be508e":[2,0,9,5]
+"classERFPhysBCFunct.html#a434757de61aa0c42d2bb956cbfb8ecbb":[2,0,9,8]
 };

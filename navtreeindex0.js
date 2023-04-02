@@ -132,7 +132,6 @@ var NAVTREEINDEX0 =
 "EOS_8H.html#a349c18f85f1660e31016d827814c6549":[3,0,0,12,4],
 "EOS_8H.html#a5814a0d91145557a636e261ef49fe6f0":[3,0,0,12,2],
 "EOS_8H.html#a652d566aef658cc423ced929a816f869":[3,0,0,12,6],
-"EOS_8H.html#a8da113f1d5603f7297fe1d03e5013f00":[3,0,0,12,8],
 "EOS_8H.html#a912ac5b146f25c3a6d0a2104f4fbe644":[3,0,0,12,0],
 "EOS_8H.html#a9d15b1e5843447301cf9e34924992e67":[3,0,0,12,7],
 "EOS_8H.html#aa7b634796f77c8e2c23e3e6a84596c50":[3,0,0,12,5],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "ERF__init__from__input__sounding_8cpp.html#af68859165e01e79fe1a3bae26bae44fa":[3,0,0,3,3,0],
 "ERF__init__from__metgrid_8cpp.html":[3,0,0,3,4],
 "ERF__init__from__metgrid_8cpp.html#a041948a5033afaaf7d6b3b2456786b57":[3,0,0,3,4,2],
-"ERF__init__from__metgrid_8cpp.html#a13ecbdbb9b787bbe69e06b7a6fc31649":[3,0,0,3,4,4]
+"ERF__init__from__metgrid_8cpp.html#a13ecbdbb9b787bbe69e06b7a6fc31649":[3,0,0,3,4,4],
+"ERF__init__from__metgrid_8cpp.html#a2adede03791dfa370fa18f398ce5202e":[3,0,0,3,4,5]
 };

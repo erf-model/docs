@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"classVelPlaneAverage.html#a40d22fac5018b7fe2bc9ecb1dfa9b643":[2,0,20,3],
+"classVelPlaneAverage.html#a67f35043ad864b6935891396e17dfa89":[2,0,20,7],
 "classVelPlaneAverage.html#a6a6d4af0b0c15dd403dd81ba7d88561a":[2,0,20,8],
 "classVelPlaneAverage.html#a7a7ecb3b3c65a0ce57faa07abee40862":[2,0,20,9],
 "classVelPlaneAverage.html#a899d4bc2f1ef6656fd155661b4b50e7e":[2,0,20,0],
@@ -153,8 +155,8 @@ var NAVTREEINDEX4 =
 "functions_x.html":[2,3,0,22],
 "functions_z.html":[2,3,0,23],
 "functions_~.html":[2,3,0,24],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "structDirectionSelector_3_012_01_4.html":[2,0,6],
 "structDirectionSelector_3_012_01_4.html#a5708ddb92c7d49cc9ba821f978251160":[2,0,6,0],
 "structInputSoundingData.html":[2,0,10],
-"structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa":[2,0,10,8],
-"structInputSoundingData.html#a0a3d15e3959ce900c213a09230e6646c":[2,0,10,22],
-"structInputSoundingData.html#a0db7861e0fee3f8f0760c6685df3176f":[2,0,10,5]
+"structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa":[2,0,10,8]
 };
