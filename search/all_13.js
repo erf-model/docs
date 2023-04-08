@@ -12,10 +12,11 @@ var searchData=
   ['update_5fmac_5fptrs_1049',['update_mac_ptrs',['../classABLMost.html#a522d043999bedde504a36d307ecff7b7',1,'ABLMost']]],
   ['use_5fcoriolis_1050',['use_coriolis',['../structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606',1,'SolverChoice']]],
   ['use_5fgravity_1051',['use_gravity',['../structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5',1,'SolverChoice']]],
-  ['use_5fnative_5fmri_1052',['use_native_mri',['../classERF.html#a4a279f0f572da168852d954df55abe2e',1,'ERF']]],
-  ['use_5fnumdiff_1053',['use_NumDiff',['../structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28',1,'SolverChoice']]],
-  ['use_5fqke_1054',['use_QKE',['../structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5',1,'SolverChoice']]],
-  ['use_5frayleigh_5fdamping_1055',['use_rayleigh_damping',['../structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01',1,'SolverChoice']]],
-  ['use_5fterrain_1056',['use_terrain',['../structSolverChoice.html#a063a88594452100497651e8aaf1f68d7',1,'SolverChoice']]],
-  ['utils_2eh_1057',['Utils.H',['../Utils_8H.html',1,'']]]
+  ['use_5flagged_5fdelta_5frt_1052',['use_lagged_delta_rt',['../structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0',1,'SolverChoice']]],
+  ['use_5fnative_5fmri_1053',['use_native_mri',['../classERF.html#a4a279f0f572da168852d954df55abe2e',1,'ERF']]],
+  ['use_5fnumdiff_1054',['use_NumDiff',['../structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28',1,'SolverChoice']]],
+  ['use_5fqke_1055',['use_QKE',['../structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5',1,'SolverChoice']]],
+  ['use_5frayleigh_5fdamping_1056',['use_rayleigh_damping',['../structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01',1,'SolverChoice']]],
+  ['use_5fterrain_1057',['use_terrain',['../structSolverChoice.html#a063a88594452100497651e8aaf1f68d7',1,'SolverChoice']]],
+  ['utils_2eh_1058',['Utils.H',['../Utils_8H.html',1,'']]]
 ];

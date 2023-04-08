@@ -59,6 +59,7 @@ var structSolverChoice =
     [ "theta_ref", "structSolverChoice.html#a789dc1f74c540ba2d7ddedd37947c3db", null ],
     [ "use_coriolis", "structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606", null ],
     [ "use_gravity", "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5", null ],
+    [ "use_lagged_delta_rt", "structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0", null ],
     [ "use_NumDiff", "structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28", null ],
     [ "use_QKE", "structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5", null ],
     [ "use_rayleigh_damping", "structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01", null ],
