@@ -10,7 +10,7 @@ var classMOSTAverage =
     [ "get_average", "classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81", null ],
     [ "get_zref", "classMOSTAverage.html#a5b590fcba4d5d99178a0f8de14a1f174", null ],
     [ "operator=", "classMOSTAverage.html#a56f533937767a348d7c1dff755989531", null ],
-    [ "operator=", "classMOSTAverage.html#ac28358a831cb22e15ba5434c9a8ee642", null ],
+    [ "operator=", "classMOSTAverage.html#a584b986a317b2c4d799163574c43b3b3", null ],
     [ "set_k_indices_N", "classMOSTAverage.html#a8928b9f9d6d45fdd9fd88053fcae34e2", null ],
     [ "set_k_indices_T", "classMOSTAverage.html#a1892a3f9c2175cd2323d8d3a3bc83b6c", null ],
     [ "set_norm_indices_T", "classMOSTAverage.html#a2908278cc9088e345af422a187eba337", null ],
