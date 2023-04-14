@@ -15,7 +15,5 @@ var structTimeInterpolatedData =
     [ "set_time", "structTimeInterpolatedData.html#a0d6dcefbf7407a24669d2a37c7f558d4", null ],
     [ "m_data", "structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc", null ],
     [ "m_owns_data", "structTimeInterpolatedData.html#a6eeb9167e2d8051c16fdbb1e7fee54ed", null ],
-    [ "m_time", "structTimeInterpolatedData.html#a9b0102facc1d00011f48f95132955e27", null ],
-    [ "non_owning", "structTimeInterpolatedData.html#a39ab53c6a67f3b87c895483a89e2fc0f", null ],
-    [ "owning", "structTimeInterpolatedData.html#af9c5a331c09d13db10c98ad3033114d8", null ]
+    [ "m_time", "structTimeInterpolatedData.html#a9b0102facc1d00011f48f95132955e27", null ]
 ];
