@@ -136,8 +136,8 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a70686c00af3a90e09eed8a934f784a3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NCBuildFABs_8cpp.html#a70686c00af3a90e09eed8a934f784a3f">fill_fab_from_arrays</a> (int iv, Vector&lt; <a class="el" href="NCBuildFABs_8cpp.html#a807cec4135f2992240e39a684d3338d3">RARRAY</a> &gt; &amp;nc_arrays, std::string var_name, <a class="el" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06">NC_Data_Dims_Type</a> &amp;NC_dim_type, FArrayBox &amp;temp)</td></tr>
-<tr class="separator:a70686c00af3a90e09eed8a934f784a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec69a5155a4eecc9a2539952b466aea2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NCBuildFABs_8cpp.html#aec69a5155a4eecc9a2539952b466aea2">fill_fab_from_arrays</a> (int iv, Vector&lt; <a class="el" href="NCBuildFABs_8cpp.html#a807cec4135f2992240e39a684d3338d3">RARRAY</a> &gt; &amp;nc_arrays, const std::string &amp;var_name, <a class="el" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06">NC_Data_Dims_Type</a> &amp;NC_dim_type, FArrayBox &amp;temp)</td></tr>
+<tr class="separator:aec69a5155a4eecc9a2539952b466aea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6382c31001e1b4c32052595ff52fb51a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NCBuildFABs_8cpp.html#a6382c31001e1b4c32052595ff52fb51a">BuildFABsFromNetCDFFile</a> (const std::string &amp;fname, Vector&lt; std::string &gt; nc_var_names, Vector&lt; enum <a class="el" href="NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06">NC_Data_Dims_Type</a> &gt; NC_dim_types, Vector&lt; amrex::FArrayBox * &gt; fab_vars)</td></tr>
 <tr class="separator:a6382c31001e1b4c32052595ff52fb51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -218,7 +218,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        amrex::FArrayBox tmp;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="NCBuildFABs_8cpp.html#a70686c00af3a90e09eed8a934f784a3f">fill_fab_from_arrays</a>(iv, nc_arrays, nc_var_names[iv], NC_dim_types[iv], tmp);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="NCBuildFABs_8cpp.html#aec69a5155a4eecc9a2539952b466aea2">fill_fab_from_arrays</a>(iv, nc_arrays, nc_var_names[iv], NC_dim_types[iv], tmp);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        Box box = tmp.box();</div>
@@ -246,7 +246,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
-<div class="ttc" id="aNCBuildFABs_8cpp_html_a70686c00af3a90e09eed8a934f784a3f"><div class="ttname"><a href="NCBuildFABs_8cpp.html#a70686c00af3a90e09eed8a934f784a3f">fill_fab_from_arrays</a></div><div class="ttdeci">void fill_fab_from_arrays(int iv, Vector&lt; RARRAY &gt; &amp;nc_arrays, std::string var_name, NC_Data_Dims_Type &amp;NC_dim_type, FArrayBox &amp;temp)</div><div class="ttdef"><b>Definition:</b> NCBuildFABs.cpp:90</div></div>
+<div class="ttc" id="aNCBuildFABs_8cpp_html_aec69a5155a4eecc9a2539952b466aea2"><div class="ttname"><a href="NCBuildFABs_8cpp.html#aec69a5155a4eecc9a2539952b466aea2">fill_fab_from_arrays</a></div><div class="ttdeci">void fill_fab_from_arrays(int iv, Vector&lt; RARRAY &gt; &amp;nc_arrays, const std::string &amp;var_name, NC_Data_Dims_Type &amp;NC_dim_type, FArrayBox &amp;temp)</div><div class="ttdef"><b>Definition:</b> NCBuildFABs.cpp:90</div></div>
 <div class="ttc" id="aNCWpsFile_8H_html_aa682cd5b28ee9ffaf36c6944bd124af0"><div class="ttname"><a href="NCWpsFile_8H.html#aa682cd5b28ee9ffaf36c6944bd124af0">ReadNetCDFFile</a></div><div class="ttdeci">void ReadNetCDFFile(const std::string &amp;fname, amrex::Vector&lt; std::string &gt; names, amrex::Vector&lt; NDArray&lt; DType &gt; &gt; &amp;arrays)</div><div class="ttdef"><b>Definition:</b> NCWpsFile.H:132</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -254,7 +254,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="NCBuildFABs_8cpp_a6382c31001e1b4c32052595ff52fb51a_cgraph.png" border="0" usemap="#aNCBuildFABs_8cpp_a6382c31001e1b4c32052595ff52fb51a_cgraph" alt=""/></div>
 <map name="aNCBuildFABs_8cpp_a6382c31001e1b4c32052595ff52fb51a_cgraph" id="aNCBuildFABs_8cpp_a6382c31001e1b4c32052595ff52fb51a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,197,57"/>
-<area shape="rect" href="NCBuildFABs_8cpp.html#a70686c00af3a90e09eed8a934f784a3f" title=" " alt="" coords="245,5,397,32"/>
+<area shape="rect" href="NCBuildFABs_8cpp.html#aec69a5155a4eecc9a2539952b466aea2" title=" " alt="" coords="245,5,397,32"/>
 <area shape="rect" href="NCWpsFile_8H.html#aa682cd5b28ee9ffaf36c6944bd124af0" title=" " alt="" coords="257,56,385,83"/>
 <area shape="rect" href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885" title=" " alt="" coords="445,56,600,83"/>
 <area shape="rect" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0" title="Name of this group." alt="" coords="648,31,824,57"/>
@@ -264,8 +264,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a70686c00af3a90e09eed8a934f784a3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70686c00af3a90e09eed8a934f784a3f">&#9670;&nbsp;</a></span>fill_fab_from_arrays()</h2>
+<a id="aec69a5155a4eecc9a2539952b466aea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec69a5155a4eecc9a2539952b466aea2">&#9670;&nbsp;</a></span>fill_fab_from_arrays()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -285,7 +285,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>var_name</em>, </td>
         </tr>
         <tr>
@@ -380,8 +380,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="NCBuildFABs_8cpp_a70686c00af3a90e09eed8a934f784a3f_icgraph.png" border="0" usemap="#aNCBuildFABs_8cpp_a70686c00af3a90e09eed8a934f784a3f_icgraph" alt=""/></div>
-<map name="aNCBuildFABs_8cpp_a70686c00af3a90e09eed8a934f784a3f_icgraph" id="aNCBuildFABs_8cpp_a70686c00af3a90e09eed8a934f784a3f_icgraph">
+<div class="center"><img src="NCBuildFABs_8cpp_aec69a5155a4eecc9a2539952b466aea2_icgraph.png" border="0" usemap="#aNCBuildFABs_8cpp_aec69a5155a4eecc9a2539952b466aea2_icgraph" alt=""/></div>
+<map name="aNCBuildFABs_8cpp_aec69a5155a4eecc9a2539952b466aea2_icgraph" id="aNCBuildFABs_8cpp_aec69a5155a4eecc9a2539952b466aea2_icgraph">
 <area shape="rect" title=" " alt="" coords="245,5,397,32"/>
 <area shape="rect" href="NCBuildFABs_8cpp.html#a6382c31001e1b4c32052595ff52fb51a" title=" " alt="" coords="5,5,197,32"/>
 </map>

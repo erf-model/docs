@@ -2,10 +2,10 @@ var searchData=
 [
   ['datalog_1372',['DataLog',['../classERF.html#aa2c3ee1910008b828b9da79ccdfe3871',1,'ERF']]],
   ['datalogname_1373',['DataLogName',['../classERF.html#a16e1f6b8bbb05ae738daf2abe626c159',1,'ERF']]],
-  ['def_5farray_1374',['def_array',['../classncutils_1_1NCGroup.html#acdfa4a8e44ca0f1901ea120a3946d1db',1,'ncutils::NCGroup']]],
-  ['def_5fdim_1375',['def_dim',['../classncutils_1_1NCGroup.html#ae0ecaad10c77614a283bd6e66d2dca41',1,'ncutils::NCGroup']]],
+  ['def_5farray_1374',['def_array',['../classncutils_1_1NCGroup.html#ad7cd6c7e21d9d71df49549b95595f823',1,'ncutils::NCGroup']]],
+  ['def_5fdim_1375',['def_dim',['../classncutils_1_1NCGroup.html#aac5299fc43c79434c4da72b5ca754e08',1,'ncutils::NCGroup']]],
   ['def_5fgroup_1376',['def_group',['../classncutils_1_1NCGroup.html#ac5c99d691660e36a00afffae6f0d6f71',1,'ncutils::NCGroup']]],
-  ['def_5fscalar_1377',['def_scalar',['../classncutils_1_1NCGroup.html#a43450deb9f15f2b0b805612d76145bbc',1,'ncutils::NCGroup']]],
+  ['def_5fscalar_1377',['def_scalar',['../classncutils_1_1NCGroup.html#ac9453daf888eed4f479ae69f37490d6e',1,'ncutils::NCGroup']]],
   ['def_5fvar_1378',['def_var',['../classncutils_1_1NCGroup.html#aa049e7d6f5f7f88ad840fa2ced3c61b4',1,'ncutils::NCGroup']]],
   ['define_1379',['define',['../classMicrophysics.html#a06807df2efe3d139b15066e818b635c1',1,'Microphysics']]],
   ['define_5fgrids_5fto_5fevolve_1380',['define_grids_to_evolve',['../classERF.html#ab0ce8f3fe8b5af139dce72b61e10f47a',1,'ERF']]],

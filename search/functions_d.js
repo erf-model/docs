@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['par_5faccess_1576',['par_access',['../structncutils_1_1NCVar.html#a86dd2db6591b22c7440228c7152cab45',1,'ncutils::NCVar']]],
+  ['par_5faccess_1576',['par_access',['../structncutils_1_1NCVar.html#a62b3d88feb5305a1c7efbb0ddf8002fc',1,'ncutils::NCVar']]],
   ['parallelbox_1577',['ParallelBox',['../DirectionSelector_8H.html#aa828f1c2424107e1a454fee49cd04ad5',1,'DirectionSelector.H']]],
   ['perpendicularbox_1578',['PerpendicularBox',['../DirectionSelector_8H.html#aef11f5662c1574638970c58b8421afa9',1,'DirectionSelector.H']]],
   ['planeaverage_1579',['PlaneAverage',['../classPlaneAverage.html#ab1056e661cdb1265047e7a31abef0ebf',1,'PlaneAverage::PlaneAverage(const amrex::MultiFab *field_in, amrex::Geometry geom_in, int axis_in)'],['../classPlaneAverage.html#aab8235d99bd3e841f0a2a5fb563c0bfa',1,'PlaneAverage::PlaneAverage()=default']]],
