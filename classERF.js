@@ -227,6 +227,7 @@ var classERF =
     [ "vars_old", "classERF.html#af31e928baa970a1507dfb0233b352542", null ],
     [ "velocity_names", "classERF.html#a2f2ea7f5eeeb3634944550e5a1de8f7a", null ],
     [ "verbose", "classERF.html#a43d0b17f6e155691a1e9474526df3af5", null ],
+    [ "wrfbdy_set_width", "classERF.html#a893a66229d1ec223a98c3468f282f648", null ],
     [ "wrfbdy_width", "classERF.html#ae92117f12ef80f173a02a8583cd6c9cf", null ],
     [ "z_phys_cc", "classERF.html#a31be0f1ae705c52c8ccc520369013284", null ],
     [ "z_phys_nd", "classERF.html#a93e63e5af35efa564fd4195e8703f84c", null ],

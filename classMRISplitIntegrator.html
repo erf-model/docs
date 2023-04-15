@@ -594,33 +594,32 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <span class="comment">// *******************************************************************************</span></div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ks = 0; ks &lt; nsubsteps; ++ks)</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                {</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                    <span class="keywordtype">int</span> ng = 0;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                    <a class="code" href="classMRISplitIntegrator.html#af64c2ed08f9f7c74f64084968ee0634d">fast_rhs</a>(ks, ng, *<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, S_old, S_new, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, *<a class="code" href="classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa">S_scratch</a>, dtau, inv_fac,</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                             time + ks*dtau, time + (ks+1) * dtau);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                } <span class="comment">// ks</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                <a class="code" href="classMRISplitIntegrator.html#a5681cc4c1128b1fa5bf779d958623824">no_substep</a>(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, S_old, *<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, time + nsubsteps*dtau, nsubsteps*dtau);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            }</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            <span class="comment">// ****************************************************</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="comment">// Evaluate F_slow(S_stage) only for the slow variables</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            <span class="comment">// Note that we are using the current stage versions (in S_new) of the slow variables</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <span class="comment">//      (because we didn&#39;t update the slow variables in the substepping)</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            <span class="comment">//       but we are using the &quot;new&quot; versions (in S_sum) of the velocities</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            <span class="comment">//      (because we did    update the fast variables in the substepping)</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <span class="comment">// ****************************************************</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <a class="code" href="classMRISplitIntegrator.html#a93a010c2de2704bf79478440878c945d">slow_rhs_post</a>(*<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, S_old, S_new, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, *<a class="code" href="classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa">S_scratch</a>, time, old_time_stage, time_stage);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <span class="comment">// Call the post-update hook for S_new after all the fast steps completed</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            <span class="comment">// This will update S_prim that is used in the slow RHS</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            <a class="code" href="classMRISplitIntegrator.html#a02e299d44fcd24c67717267dd15a7895">post_update</a>(S_new, time + nsubsteps*dtau, S_new[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].nGrow(), S_new[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76dad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a>].nGrow());</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        } <span class="comment">// nrk</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="comment">// Return timestep</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612">timestep</a>;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    }</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                    <a class="code" href="classMRISplitIntegrator.html#af64c2ed08f9f7c74f64084968ee0634d">fast_rhs</a>(ks, nsubsteps, *<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, S_old, S_new, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, *<a class="code" href="classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa">S_scratch</a>, dtau, inv_fac,</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                             time + ks*dtau, time + (ks+1) * dtau);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                } <span class="comment">// ks</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                <a class="code" href="classMRISplitIntegrator.html#a5681cc4c1128b1fa5bf779d958623824">no_substep</a>(*<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, S_old, *<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, time + nsubsteps*dtau, nsubsteps*dtau);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            <span class="comment">// ****************************************************</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            <span class="comment">// Evaluate F_slow(S_stage) only for the slow variables</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="comment">// Note that we are using the current stage versions (in S_new) of the slow variables</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            <span class="comment">//      (because we didn&#39;t update the slow variables in the substepping)</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <span class="comment">//       but we are using the &quot;new&quot; versions (in S_sum) of the velocities</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            <span class="comment">//      (because we did    update the fast variables in the substepping)</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            <span class="comment">// ****************************************************</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <a class="code" href="classMRISplitIntegrator.html#a93a010c2de2704bf79478440878c945d">slow_rhs_post</a>(*<a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>, S_old, S_new, *<a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>, *<a class="code" href="classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa">S_scratch</a>, time, old_time_stage, time_stage);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="comment">// Call the post-update hook for S_new after all the fast steps completed</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <span class="comment">// This will update S_prim that is used in the slow RHS</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            <a class="code" href="classMRISplitIntegrator.html#a02e299d44fcd24c67717267dd15a7895">post_update</a>(S_new, time + nsubsteps*dtau, S_new[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].nGrow(), S_new[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76dad22d96cf9b7b4dd875cea33d3ec0b481">IntVar::xmom</a>].nGrow());</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        } <span class="comment">// nrk</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="comment">// Return timestep</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612">timestep</a>;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    }</div>
 <div class="ttc" id="aclassMRISplitIntegrator_html_a02e299d44fcd24c67717267dd15a7895"><div class="ttname"><a href="classMRISplitIntegrator.html#a02e299d44fcd24c67717267dd15a7895">MRISplitIntegrator::post_update</a></div><div class="ttdeci">std::function&lt; void(T &amp;, amrex::Real, int, int)&gt; post_update</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:48</div></div>
 <div class="ttc" id="aclassMRISplitIntegrator_html_a088e107111ca012e026908b0c0b3cef7"><div class="ttname"><a href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">MRISplitIntegrator::F_slow</a></div><div class="ttdeci">T * F_slow</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:55</div></div>
 <div class="ttc" id="aclassMRISplitIntegrator_html_a373d8b2e158be85f57df2315bb397d88"><div class="ttname"><a href="classMRISplitIntegrator.html#a373d8b2e158be85f57df2315bb397d88">MRISplitIntegrator::slow_rhs_pre</a></div><div class="ttdeci">std::function&lt; void(T &amp;, T &amp;, T &amp;, const amrex::Real, const amrex::Real, const amrex::Real, const int)&gt; slow_rhs_pre</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:18</div></div>
@@ -854,11 +853,11 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    {</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; F : <a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>) {</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            Map(*F);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        }</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    {</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; F : <a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>) {</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            Map(*F);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        }</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1352,7 +1351,7 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>

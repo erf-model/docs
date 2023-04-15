@@ -1,5 +1,14 @@
 var NAVTREEINDEX5 =
 {
+"structDirectionSelector.html#a3950b636303028f398441fdc43d66dba":[2,0,3,0],
+"structDirectionSelector_3_010_01_4.html":[2,0,4],
+"structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e":[2,0,4,0],
+"structDirectionSelector_3_011_01_4.html":[2,0,5],
+"structDirectionSelector_3_011_01_4.html#ae5631c2b7917d2bc7cb479a266a61834":[2,0,5,0],
+"structDirectionSelector_3_012_01_4.html":[2,0,6],
+"structDirectionSelector_3_012_01_4.html#a5708ddb92c7d49cc9ba821f978251160":[2,0,6,0],
+"structInputSoundingData.html":[2,0,10],
+"structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa":[2,0,10,8],
 "structInputSoundingData.html#a0a3d15e3959ce900c213a09230e6646c":[2,0,10,22],
 "structInputSoundingData.html#a0db7861e0fee3f8f0760c6685df3176f":[2,0,10,5],
 "structInputSoundingData.html#a15782809644a4daa0e8de9c3cc4c346a":[2,0,10,17],
