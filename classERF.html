@@ -1390,11 +1390,10 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                                                      {</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;      <span class="keywordtype">int</span> nGhostCells;</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;      <span class="keywordtype">int</span> spatial_order = std::max(horiz_spatial_order, vert_spatial_order);</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
+<div class="fragment"><div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    {</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;      <span class="keywordtype">int</span> spatial_order = std::max(horiz_spatial_order, vert_spatial_order);</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160; </div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;      <span class="keywordtype">int</span> nGhostCells = 0;</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;      <span class="keywordflow">if</span> (use_numerical_diff) {</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;          nGhostCells = 3;</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(use_WENO) {</div>

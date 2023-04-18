@@ -813,11 +813,11 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <span class="keywordtype">int</span></div>
 <div class="line"><a name="l00726"></a><span class="lineno"><a class="line" href="classERF.html#a9fe8cc6b90e4b5e1991b38aa0ca1db16">  726</a></span>&#160;    <a class="code" href="classERF.html#a9fe8cc6b90e4b5e1991b38aa0ca1db16">ComputeGhostCells</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; horiz_spatial_order, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; vert_spatial_order,</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; spatial_order_WENO,  <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; use_WENO,</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; use_numerical_diff) {</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;      <span class="keywordtype">int</span> nGhostCells;</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;      <span class="keywordtype">int</span> spatial_order = std::max(horiz_spatial_order, vert_spatial_order);</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; use_numerical_diff)</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    {</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;      <span class="keywordtype">int</span> spatial_order = std::max(horiz_spatial_order, vert_spatial_order);</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160; </div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;      <span class="keywordtype">int</span> nGhostCells = 0;</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;      <span class="keywordflow">if</span> (use_numerical_diff) {</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;          nGhostCells = 3;</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(use_WENO) {</div>
