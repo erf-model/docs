@@ -30,6 +30,5 @@ var hierarchy =
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
     [ "SolverChoice", "structSolverChoice.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
-    [ "VelPlaneAverage", "classVelPlaneAverage.html", null ],
     [ "WriteBndryPlanes", "classWriteBndryPlanes.html", null ]
 ];

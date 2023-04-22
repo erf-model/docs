@@ -96,18 +96,17 @@ Include dependency graph for prob_common.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="prob__common_8H__incl.png" border="0" usemap="#a_2home_2runner_2work_2ERF_2ERF_2Source_2prob__common_8H" alt=""/></div>
 <map name="a_2home_2runner_2work_2ERF_2ERF_2Source_2prob__common_8H" id="a_2home_2runner_2work_2ERF_2ERF_2Source_2prob__common_8H">
-<area shape="rect" title=" " alt="" coords="166,5,377,47"/>
+<area shape="rect" title=" " alt="" coords="165,5,375,47"/>
 <area shape="rect" title=" " alt="" coords="5,169,159,196"/>
-<area shape="rect" title=" " alt="" coords="193,95,349,121"/>
-<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="397,95,503,121"/>
+<area shape="rect" title=" " alt="" coords="192,95,348,121"/>
+<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="384,95,489,121"/>
 <area shape="rect" title=" " alt="" coords="183,169,242,196"/>
 <area shape="rect" title=" " alt="" coords="266,169,346,196"/>
 <area shape="rect" title=" " alt="" coords="371,169,529,196"/>
 <area shape="rect" title=" " alt="" coords="554,169,674,196"/>
 <area shape="rect" title=" " alt="" coords="699,169,815,196"/>
 <area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="839,169,973,196"/>
-<area shape="rect" href="ERF__Math_8H.html" title=" " alt="" coords="997,169,1098,196"/>
-<area shape="rect" title=" " alt="" coords="915,244,1038,271"/>
+<area shape="rect" title=" " alt="" coords="845,244,967,271"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -173,6 +172,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function to init the physical bounds of the domain </p>
 
 <p class="reference">Referenced by <a class="el" href="classERF.html#a30129012dd367825e5e4fd1406694f58">ERF::ERF()</a>.</p>
 <div class="dynheader">
@@ -224,6 +224,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function to initialize the hydrostatic reference density</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">rho_hse</td><td>box over which the x-momentum is updated </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z_phys_nd</td><td>height coordinate at nodes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z_phys_cc</td><td>height coordinate at cell centers </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>container for geometric information </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">Referenced by <a class="el" href="classERF.html#a92c020bfaa43e40fb5ffc449427a0318">ERF::initHSE()</a>.</p>
 <div class="dynheader">
@@ -287,6 +297,18 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function to define the quantities needed to impose Rayleigh damping</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tau</td><td>strength of Rayleigh damping </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ubar</td><td>reference value for x-velocity used to define Rayleigh damping </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vbar</td><td>reference value for y-velocity used to define Rayleigh damping </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">wbar</td><td>reference value for z-velocity used to define Rayleigh damping </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">thetabar</td><td>reference value for potential temperature used to define Rayleigh damping </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>container for geometric information </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">Referenced by <a class="el" href="classERF.html#a039a764a1d942c484e8aea49e87bc046">ERF::initRayleigh()</a>.</p>
 <div class="dynheader">
@@ -416,6 +438,31 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function to perform custom initialization of a test problem</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bx</td><td>cell-centered box on which to initialize scalars </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xbx</td><td>box on which to initialize x-component of velocity </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ybx</td><td>box on which to initialize y-component of velocity </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zbx</td><td>box on which to initialize z-component of velocity </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">state</td><td>cell-centered variables to be filled in this routine </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">x_velocity</td><td>x-component of velocity to be filled in this routine </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y_velocity</td><td>y-component of velocity to be filled in this routine </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">z_velocity</td><td>z-component of velocity to be filled in this routine </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">r_hse</td><td>hydrostatic reference density </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">p_hse</td><td>hydrostatic reference pressure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z_nd</td><td>height coordinate at nodes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z_cc</td><td>height coordinate at cell centers </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">qv</td><td>water vapor </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">qc</td><td>cloud water </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">qi</td><td>cloud ice </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf_m</td><td>map factor on cell centers </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf_u</td><td>map factor on x-faces </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf_v</td><td>map factor on y-faces </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sc</td><td><a class="el" href="structSolverChoice.html">SolverChoice</a> structure that carries parameters </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">Referenced by <a class="el" href="classERF.html#a604939a8058f7efa36a427adb889739c">ERF::init_custom()</a>.</p>
 <div class="dynheader">
@@ -461,6 +508,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function to perform custom initialization of terrain</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>container for geometric information </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">z_phys_nd</td><td>height coordinate at nodes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>current time </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData()</a>.</p>
 <div class="dynheader">

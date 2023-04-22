@@ -138,7 +138,6 @@ var NAVTREEINDEX0 =
 "EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b":[3,0,0,12,1],
 "EOS_8H_source.html":[3,0,0,12],
 "ERF_8H.html":[3,0,0,14],
-"ERF_8H.html#a1f8554e7b211b0acfc202e8a600e7d67":[3,0,0,14,1],
 "ERF_8H_source.html":[3,0,0,14],
 "ERF_8cpp.html":[3,0,0,13],
 "ERF_8cpp.html#a85eb8269776aad2fdab8e269a2a03bb1":[3,0,0,13,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "ERF__init__from__metgrid_8cpp.html":[3,0,0,3,4],
 "ERF__init__from__metgrid_8cpp.html#a041948a5033afaaf7d6b3b2456786b57":[3,0,0,3,4,2],
 "ERF__init__from__metgrid_8cpp.html#a13ecbdbb9b787bbe69e06b7a6fc31649":[3,0,0,3,4,4],
-"ERF__init__from__metgrid_8cpp.html#a2adede03791dfa370fa18f398ce5202e":[3,0,0,3,4,5]
+"ERF__init__from__metgrid_8cpp.html#a2adede03791dfa370fa18f398ce5202e":[3,0,0,3,4,5],
+"ERF__init__from__metgrid_8cpp.html#a41879aa89fd20a9387da4d31a7c34c5b":[3,0,0,3,4,0]
 };
