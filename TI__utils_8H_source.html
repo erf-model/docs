@@ -86,9 +86,9 @@ $(document).ready(function(){initNavTree('TI__utils_8H_source.html',''); initRes
 <div class="title">TI_utils.H</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="TI__utils_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="comment">// Temporary array that we use to store primitive advected quantities for the RHS</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="comment">// **************************************************************************************</span></div>
+<a href="TI__utils_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *  Define the primitive variables by dividing the conserved variables by density</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">    4</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a> = [&amp;](<span class="keyword">const</span> MultiFab&amp; cons_state, <span class="keywordtype">int</span> ng)</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    {</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;cons_to_prim()&quot;</span>);</div>
@@ -114,13 +114,13 @@ $(document).ready(function(){initNavTree('TI__utils_8H_source.html',''); initRes
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;          });</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    };</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// ***************************************************************************************</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// This routine is called before the first step of the time integration, *and* in the case</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">//  of a multi-stage method like RK3, this is called from &quot;pre_update_fun&quot; which is called</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">//  before every subsequent stage.  Since we advance the variables in conservative form,</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">//  we must convert momentum to velocity before imposing the bcs.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// ***************************************************************************************</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *  This routine is called before the first step of the time integration, *and* in the case</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *  of a multi-stage method like RK3, this is called from &quot;pre_update_fun&quot; which is called</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *  before every subsequent stage.  Since we advance the variables in conservative form,</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> *  we must convert momentum to velocity before imposing the bcs.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">   36</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a> = [&amp;](Vector&lt;MultiFab&gt;&amp; S_data,</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                         <span class="keyword">const</span> Real time_for_fp, <span class="keywordtype">int</span> ng_cons, <span class="keywordtype">int</span> ng_vel,</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                         <span class="keywordtype">bool</span> fast_only, <span class="keywordtype">bool</span> vel_and_mom_synced)</div>

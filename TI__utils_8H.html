@@ -119,6 +119,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>This routine is called before the first step of the time integration, <em>and</em> in the case of a multi-stage method like RK3, this is called from "pre_update_fun" which is called before every subsequent stage. Since we advance the variables in conservative form, we must convert momentum to velocity before imposing the bcs. </p>
 
 <p class="reference">Referenced by <a class="el" href="classERF.html#a9a433af6374ce91656cdcce017211d3c">ERF::erf_advance()</a>.</p>
 
@@ -166,7 +167,8 @@ Variables</h2></td></tr>
 <div class="ttc" id="aIndexDefines_8H_html_a76cb673ca03cd7f8ae6cc8544d6dd0fa"><div class="ttname"><a href="IndexDefines_8H.html#a76cb673ca03cd7f8ae6cc8544d6dd0fa">NUM_PRIM</a></div><div class="ttdeci">#define NUM_PRIM</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:41</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:30</div></div>
 <div class="ttc" id="anamespaceMicVar_html_acd493faf19b45ab11b9a01e722762798a2534fc55b1bd99268d18c38ddd112e53"><div class="ttname"><a href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a2534fc55b1bd99268d18c38ddd112e53">MicVar::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> Microphysics.H:33</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><p>Define the primitive variables by dividing the conserved variables by density </p>
+
 <p class="reference">Referenced by <a class="el" href="classERF.html#a9a433af6374ce91656cdcce017211d3c">ERF::erf_advance()</a>.</p>
 
 </div>
