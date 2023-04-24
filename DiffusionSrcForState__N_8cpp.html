@@ -289,30 +289,30 @@ Functions</h2></td></tr>
 <p>Function for computing the scalar RHS for diffusion operator without terrain.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bx</td><td>cell center box to loop over </td></tr>
-    <tr><td class="paramname">domain</td><td>box of the whole domain </td></tr>
-    <tr><td class="paramname">start_comp</td><td>starting component index </td></tr>
-    <tr><td class="paramname">num_comp</td><td>number of components </td></tr>
-    <tr><td class="paramname">u</td><td>velocity in x-dir </td></tr>
-    <tr><td class="paramname">v</td><td>velocity in y-dir </td></tr>
-    <tr><td class="paramname">cell_data</td><td>conserved cell center vars </td></tr>
-    <tr><td class="paramname">cell_prim</td><td>primitive cell center vars </td></tr>
-    <tr><td class="paramname">cell_rhs</td><td>RHS for cell center vars </td></tr>
-    <tr><td class="paramname">xflux</td><td>flux in x-dir </td></tr>
-    <tr><td class="paramname">yflux</td><td>flux in y-dir </td></tr>
-    <tr><td class="paramname">zflux</td><td>flux in z-dir </td></tr>
-    <tr><td class="paramname">cellSizeInv</td><td>inverse cell size array </td></tr>
-    <tr><td class="paramname">SmnSmn_a</td><td>strain rate magnitude </td></tr>
-    <tr><td class="paramname">mf_m</td><td>map factor at cell center </td></tr>
-    <tr><td class="paramname">mf_u</td><td>map factor at x-face </td></tr>
-    <tr><td class="paramname">mf_v</td><td>map factor at y-face </td></tr>
-    <tr><td class="paramname">hfx_z</td><td>heat flux in z-dir </td></tr>
-    <tr><td class="paramname">diss</td><td>dissipation of TKE </td></tr>
-    <tr><td class="paramname">mu_turb</td><td>turbulent viscosity </td></tr>
-    <tr><td class="paramname">solverChoice</td><td>container of solver params </td></tr>
-    <tr><td class="paramname">tm_arr</td><td>theta mean array </td></tr>
-    <tr><td class="paramname">grav_gpu</td><td>gravity vector </td></tr>
-    <tr><td class="paramname">bc_ptr</td><td>container with boundary conditions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bx</td><td>cell center box to loop over </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>box of the whole domain </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">start_comp</td><td>starting component index </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_comp</td><td>number of components </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u</td><td>velocity in x-dir </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>velocity in y-dir </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cell_data</td><td>conserved cell center vars </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cell_prim</td><td>primitive cell center vars </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cell_rhs</td><td>RHS for cell center vars </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xflux</td><td>flux in x-dir </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yflux</td><td>flux in y-dir </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zflux</td><td>flux in z-dir </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cellSizeInv</td><td>inverse cell size array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">SmnSmn_a</td><td>strain rate magnitude </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf_m</td><td>map factor at cell center </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf_u</td><td>map factor at x-face </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf_v</td><td>map factor at y-face </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hfx_z</td><td>heat flux in z-dir </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">diss</td><td>dissipation of TKE </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mu_turb</td><td>turbulent viscosity </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">solverChoice</td><td>container of solver params </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tm_arr</td><td>theta mean array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">grav_gpu</td><td>gravity vector </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bc_ptr</td><td>container with boundary conditions </td></tr>
   </table>
   </dd>
 </dl>
