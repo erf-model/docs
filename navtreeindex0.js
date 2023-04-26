@@ -211,13 +211,10 @@ var NAVTREEINDEX0 =
 "ERF__FillPatcher_8cpp.html":[3,0,1,1,9],
 "ERF__MRI_8H.html":[3,0,1,7,7],
 "ERF__MRI_8H_source.html":[3,0,1,7,7],
-"ERF__Math_8H.html":[3,0,1,8,1],
-"ERF__Math_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb":[3,0,1,8,1,0],
-"ERF__Math_8H_source.html":[3,0,1,8,1],
 "ERF__PhysBCFunct_8H.html":[3,0,1,1,12],
 "ERF__PhysBCFunct_8H_source.html":[3,0,1,1,12],
 "ERF__PhysBCFunct_8cpp.html":[3,0,1,1,11],
-"ERF__PoissonSolve_8cpp.html":[3,0,1,8,2],
+"ERF__PoissonSolve_8cpp.html":[3,0,1,8,1],
 "ERF__ReadBndryPlanes_8H.html":[3,0,1,4,2],
 "ERF__ReadBndryPlanes_8H.html#a60014a8d74bed0d5ae984e600c68dc85":[3,0,1,4,2,1],
 "ERF__ReadBndryPlanes_8H_source.html":[3,0,1,4,2],
@@ -249,5 +246,8 @@ var NAVTREEINDEX0 =
 "ERF__init__from__metgrid_8cpp.html#a041948a5033afaaf7d6b3b2456786b57":[3,0,1,3,4,2],
 "ERF__init__from__metgrid_8cpp.html#a13ecbdbb9b787bbe69e06b7a6fc31649":[3,0,1,3,4,4],
 "ERF__init__from__metgrid_8cpp.html#a2adede03791dfa370fa18f398ce5202e":[3,0,1,3,4,5],
-"ERF__init__from__metgrid_8cpp.html#a41879aa89fd20a9387da4d31a7c34c5b":[3,0,1,3,4,0]
+"ERF__init__from__metgrid_8cpp.html#a41879aa89fd20a9387da4d31a7c34c5b":[3,0,1,3,4,0],
+"ERF__init__from__metgrid_8cpp.html#a7cf189d6e49b19c557bf640bac90be0b":[3,0,1,3,4,3],
+"ERF__init__from__metgrid_8cpp.html#ab4943c95bfc9ea23cb2d93123f60a03e":[3,0,1,3,4,1],
+"ERF__init__from__wrfinput_8cpp.html":[3,0,1,3,5]
 };

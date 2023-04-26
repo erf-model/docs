@@ -44,7 +44,7 @@ var searchData=
   ['initrayleigh_1508',['initRayleigh',['../classERF.html#a039a764a1d942c484e8aea49e87bc046',1,'ERF']]],
   ['inputsoundingdata_1509',['InputSoundingData',['../structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3',1,'InputSoundingData']]],
   ['interp_5fin_5ftime_1510',['interp_in_time',['../classReadBndryPlanes.html#a18cdefa6feaf7253b3d9029992b6b57c',1,'ReadBndryPlanes']]],
-  ['interpolate_5f1d_1511',['interpolate_1d',['../ERF__Math_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb',1,'ERF_Math.H']]],
+  ['interpolate_5f1d_1511',['interpolate_1d',['../Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb',1,'Interpolation_1D.H']]],
   ['interpolate_5fcolumn_1512',['interpolate_column',['../ERF__init__from__metgrid_8cpp.html#a13ecbdbb9b787bbe69e06b7a6fc31649',1,'ERF_init_from_metgrid.cpp']]],
   ['interpolatedensitypertfromcelltoface_1513',['InterpolateDensityPertFromCellToFace',['../Interpolation_8H.html#a48e52e5eace6b284e5416b325b9f6d68',1,'Interpolation.H']]],
   ['interpolatedval_1514',['interpolatedVal',['../Interpolation_8H.html#a71fca84dbe981db2b26af15f7201ce57',1,'Interpolation.H']]],

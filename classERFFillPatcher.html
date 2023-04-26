@@ -214,44 +214,44 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    : <a class="code" href="classERFFillPatcher.html#a297b1d2468ed152850c7bb6c156101b3">m_fba</a>(fba),</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;      <a class="code" href="classERFFillPatcher.html#a35fb56b2946f596728b9ac793eb47c5e">m_cba</a>(std::move(cba)),</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;      <a class="code" href="classERFFillPatcher.html#afef007cab3f3a1e4a7deea141f397e51">m_fdm</a>(std::move(fdm)),</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;      <a class="code" href="classERFFillPatcher.html#a52af76dca01fd13bdb29834d4b9ca5e2">m_cdm</a>(std::move(cdm)),</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;      <a class="code" href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">m_fgeom</a>(fgeom),</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>(cgeom),</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      <a class="code" href="classERFFillPatcher.html#afdb02cfc6d41b23967ff0a6f0e22b849">m_nghost</a>(nghost),</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>(ncomp),</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <a class="code" href="classERFFillPatcher.html#a2fc352aecabd75ec92f5d17730683a1c">m_interp</a>(interp)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    AMREX_ALWAYS_ASSERT(nghost &lt; 0);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    Box <span class="keyword">const</span> fine_valid_box = amrex::grow(fba.minimalBox(), IntVect(nghost,nghost,0));</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba">m_ratio</a>[idim] = <a class="code" href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">m_fgeom</a>.Domain().length(idim) / <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>.Domain().length(idim);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    BoxList bl;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nfboxes = fba.size();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ibox = 0; ibox &lt; nfboxes; ++ibox) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        Box vbx = fba[ibox];</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        BoxList <span class="keyword">const</span>&amp; bndry = amrex::boxDiff(vbx, fine_valid_box);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> (bndry.isNotEmpty()) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            bl.join(bndry);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    : <a class="code" href="classERFFillPatcher.html#a297b1d2468ed152850c7bb6c156101b3">m_fba</a>(fba),</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <a class="code" href="classERFFillPatcher.html#a35fb56b2946f596728b9ac793eb47c5e">m_cba</a>(std::move(cba)),</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <a class="code" href="classERFFillPatcher.html#afef007cab3f3a1e4a7deea141f397e51">m_fdm</a>(std::move(fdm)),</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <a class="code" href="classERFFillPatcher.html#a52af76dca01fd13bdb29834d4b9ca5e2">m_cdm</a>(std::move(cdm)),</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <a class="code" href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">m_fgeom</a>(fgeom),</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>(cgeom),</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <a class="code" href="classERFFillPatcher.html#afdb02cfc6d41b23967ff0a6f0e22b849">m_nghost</a>(nghost),</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>(ncomp),</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <a class="code" href="classERFFillPatcher.html#a2fc352aecabd75ec92f5d17730683a1c">m_interp</a>(interp)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    AMREX_ALWAYS_ASSERT(nghost &lt; 0);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Box <span class="keyword">const</span> fine_valid_box = amrex::grow(fba.minimalBox(), IntVect(nghost,nghost,0));</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    BoxList cbl;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    cbl.reserve(bl.size());</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; b : bl) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        cbl.push_back(interp-&gt;CoarseBox(b, <a class="code" href="classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba">m_ratio</a>));</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    BoxArray cf_fba(std::move(bl));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    DistributionMapping cf_dm(cf_fba);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87">m_cf_fine_data</a>.define(cf_fba, cf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>.emplace_back(BoxArray(std::move(cbl)), cf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba">m_ratio</a>[idim] = <a class="code" href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">m_fgeom</a>.Domain().length(idim) / <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>.Domain().length(idim);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    BoxList bl;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nfboxes = fba.size();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ibox = 0; ibox &lt; nfboxes; ++ibox) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        Box vbx = fba[ibox];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        BoxList <span class="keyword">const</span>&amp; bndry = amrex::boxDiff(vbx, fine_valid_box);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (bndry.isNotEmpty()) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            bl.join(bndry);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    BoxList cbl;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    cbl.reserve(bl.size());</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; b : bl) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        cbl.push_back(interp-&gt;CoarseBox(b, <a class="code" href="classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba">m_ratio</a>));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    BoxArray cf_fba(std::move(bl));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    DistributionMapping cf_dm(cf_fba);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87">m_cf_fine_data</a>.define(cf_fba, cf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>.emplace_back(BoxArray(std::move(cbl)), cf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 <div class="ttc" id="aclassERFFillPatcher_html_a12694a711f281b957f7015a98e5c9b77"><div class="ttname"><a href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">ERFFillPatcher::m_fgeom</a></div><div class="ttdeci">amrex::Geometry m_fgeom</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:29</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a297b1d2468ed152850c7bb6c156101b3"><div class="ttname"><a href="classERFFillPatcher.html#a297b1d2468ed152850c7bb6c156101b3">ERFFillPatcher::m_fba</a></div><div class="ttdeci">amrex::BoxArray m_fba</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:25</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a2fc352aecabd75ec92f5d17730683a1c"><div class="ttname"><a href="classERFFillPatcher.html#a2fc352aecabd75ec92f5d17730683a1c">ERFFillPatcher::m_interp</a></div><div class="ttdeci">amrex::InterpBase * m_interp</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:33</div></div>
@@ -307,12 +307,12 @@ template&lt;typename BC &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    cbc(<a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0], 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, amrex::IntVect(0), time, 0);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    amrex::FillPatchInterp(<a class="code" href="classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87">m_cf_fine_data</a>, 0, <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0], 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, amrex::IntVect(0),</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                           <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>, <a class="code" href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">m_fgeom</a>, <a class="code" href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">m_fgeom</a>.Domain(), <a class="code" href="classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba">m_ratio</a>, <a class="code" href="classERFFillPatcher.html#a2fc352aecabd75ec92f5d17730683a1c">m_interp</a>, bcs, 0);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    mf.ParallelCopy(<a class="code" href="classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87">m_cf_fine_data</a>, 0, 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, amrex::IntVect{0}, mf.nGrowVect());</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    cbc(<a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0], 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, amrex::IntVect(0), time, 0);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    amrex::FillPatchInterp(<a class="code" href="classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87">m_cf_fine_data</a>, 0, <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0], 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, amrex::IntVect(0),</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                           <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>, <a class="code" href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">m_fgeom</a>, <a class="code" href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">m_fgeom</a>.Domain(), <a class="code" href="classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba">m_ratio</a>, <a class="code" href="classERFFillPatcher.html#a2fc352aecabd75ec92f5d17730683a1c">m_interp</a>, bcs, 0);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    mf.ParallelCopy(<a class="code" href="classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87">m_cf_fine_data</a>, 0, 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, amrex::IntVect{0}, mf.nGrowVect());</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -341,10 +341,10 @@ template&lt;typename BC &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    AMREX_ALWAYS_ASSERT(crse_data.size() == 1);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0].ParallelCopy(*crse_data[0], <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>.periodicity());</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    AMREX_ALWAYS_ASSERT(crse_data.size() == 1);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0].ParallelCopy(*crse_data[0], <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>.periodicity());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

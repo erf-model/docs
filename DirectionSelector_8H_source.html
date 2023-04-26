@@ -93,96 +93,111 @@ $(document).ready(function(){initNavTree('DirectionSelector_8H_source.html','');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;AMReX_Box.H&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;AMReX_Gpu.H&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/** select index based on direction input */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> Index&gt;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structDirectionSelector.html">   10</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structDirectionSelector.html">DirectionSelector</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structDirectionSelector.html#a3950b636303028f398441fdc43d66dba">   12</a></span>&#160;   [[nodiscard]] <span class="keywordtype">int</span> <a class="code" href="structDirectionSelector.html#a3950b636303028f398441fdc43d66dba">getIndx</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;};</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structDirectionSelector_3_010_01_4.html">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structDirectionSelector.html">DirectionSelector</a>&lt;0&gt;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e">   18</a></span>&#160;    [[nodiscard]] AMREX_GPU_HOST_DEVICE <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e">getIndx</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>) { <span class="keywordflow">return</span> i; }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structDirectionSelector_3_011_01_4.html">   22</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structDirectionSelector.html">DirectionSelector</a>&lt;1&gt;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structDirectionSelector_3_011_01_4.html#ae5631c2b7917d2bc7cb479a266a61834">   24</a></span>&#160;    [[nodiscard]] AMREX_GPU_HOST_DEVICE <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structDirectionSelector_3_011_01_4.html#ae5631c2b7917d2bc7cb479a266a61834">getIndx</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) { <span class="keywordflow">return</span> j; }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structDirectionSelector_3_012_01_4.html">   28</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structDirectionSelector.html">DirectionSelector</a>&lt;2&gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structDirectionSelector_3_012_01_4.html#a5708ddb92c7d49cc9ba821f978251160">   30</a></span>&#160;    [[nodiscard]] AMREX_GPU_HOST_DEVICE <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structDirectionSelector_3_012_01_4.html#a5708ddb92c7d49cc9ba821f978251160">getIndx</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">int</span> k) { <span class="keywordflow">return</span> k; }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="DirectionSelector_8H.html#a68edfbe7326d0d1476e796beb668072f">   33</a></span>&#160;<span class="keyword">using</span> <a class="code" href="structDirectionSelector_3_010_01_4.html">XDir</a> = <a class="code" href="structDirectionSelector_3_010_01_4.html">DirectionSelector&lt;0&gt;</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="DirectionSelector_8H.html#a92990a19f43dc3cbbbd630362d1ece71">   34</a></span>&#160;<span class="keyword">using</span> <a class="code" href="structDirectionSelector_3_011_01_4.html">YDir</a> = <a class="code" href="structDirectionSelector_3_011_01_4.html">DirectionSelector&lt;1&gt;</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">   35</a></span>&#160;<span class="keyword">using</span> <a class="code" href="structDirectionSelector_3_012_01_4.html">ZDir</a> = <a class="code" href="structDirectionSelector_3_012_01_4.html">DirectionSelector&lt;2&gt;</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// Given a box, return a 2D box perpendicular to the selected axis.</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// For example, if we&#39;re using ZDir, return a box covering the x-y plane.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// The IntVect is used to set the constant index in the parallel direction.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IndexSelector&gt;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;AMREX_GPU_HOST_DEVICE amrex::Box</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="DirectionSelector_8H.html#aef11f5662c1574638970c58b8421afa9">   42</a></span>&#160;<a class="code" href="DirectionSelector_8H.html#aef11f5662c1574638970c58b8421afa9">PerpendicularBox</a>(<span class="keyword">const</span> amrex::Box&amp; bx, <span class="keyword">const</span> amrex::IntVect&amp; iv)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    amrex::IntVect plane_lo, plane_hi;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, XDir&gt;::value) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        plane_lo = {iv[0], bx.smallEnd(1), bx.smallEnd(2)};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        plane_hi = {iv[0], bx.bigEnd(1), bx.bigEnd(2)};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, YDir&gt;::value) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        plane_lo = {bx.smallEnd(0), iv[1], bx.smallEnd(2)};</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        plane_hi = {bx.bigEnd(0), iv[1], bx.bigEnd(2)};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        plane_lo = {bx.smallEnd(0), bx.smallEnd(1), iv[2]};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        plane_hi = {bx.bigEnd(0), bx.bigEnd(1), iv[2]};</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    amrex::Box pbx(plane_lo, plane_hi);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> pbx;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// Given a box, return a 1D box parallel to the selected axis.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// For example, if we&#39;re using ZDir, return a box covering the z axis.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// The IntVect is used to set the constant indices in the perpendicular</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// direction.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IndexSelector&gt;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;AMREX_GPU_HOST_DEVICE amrex::Box</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="DirectionSelector_8H.html#aa828f1c2424107e1a454fee49cd04ad5">   68</a></span>&#160;<a class="code" href="DirectionSelector_8H.html#aa828f1c2424107e1a454fee49cd04ad5">ParallelBox</a>(<span class="keyword">const</span> amrex::Box&amp; bx, <span class="keyword">const</span> amrex::IntVect&amp; iv)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    amrex::IntVect line_lo, line_hi;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, XDir&gt;::value) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        line_lo = {bx.smallEnd(0), iv[1], iv[2]};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        line_hi = {bx.bigEnd(0), iv[1], iv[2]};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, YDir&gt;::value) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        line_lo = {iv[0], bx.smallEnd(1), iv[2]};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        line_hi = {iv[0], bx.bigEnd(1), iv[2]};</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        line_lo = {iv[0], iv[1], bx.smallEnd(2)};</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        line_hi = {iv[0], iv[1], bx.bigEnd(2)};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    amrex::Box lbx(line_lo, line_hi);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> lbx;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* DirectionSelector_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aDirectionSelector_8H_html_aa828f1c2424107e1a454fee49cd04ad5"><div class="ttname"><a href="DirectionSelector_8H.html#aa828f1c2424107e1a454fee49cd04ad5">ParallelBox</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE amrex::Box ParallelBox(const amrex::Box &amp;bx, const amrex::IntVect &amp;iv)</div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:68</div></div>
-<div class="ttc" id="aDirectionSelector_8H_html_aef11f5662c1574638970c58b8421afa9"><div class="ttname"><a href="DirectionSelector_8H.html#aef11f5662c1574638970c58b8421afa9">PerpendicularBox</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE amrex::Box PerpendicularBox(const amrex::Box &amp;bx, const amrex::IntVect &amp;iv)</div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:42</div></div>
-<div class="ttc" id="astructDirectionSelector_3_010_01_4_html"><div class="ttname"><a href="structDirectionSelector_3_010_01_4.html">DirectionSelector&lt; 0 &gt;</a></div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:17</div></div>
-<div class="ttc" id="astructDirectionSelector_3_010_01_4_html_a74c1bd1dca28b374962977ab8e32595e"><div class="ttname"><a href="structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e">DirectionSelector&lt; 0 &gt;::getIndx</a></div><div class="ttdeci">static AMREX_GPU_HOST_DEVICE int getIndx(int i, int, int)</div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:18</div></div>
-<div class="ttc" id="astructDirectionSelector_3_011_01_4_html"><div class="ttname"><a href="structDirectionSelector_3_011_01_4.html">DirectionSelector&lt; 1 &gt;</a></div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:23</div></div>
-<div class="ttc" id="astructDirectionSelector_3_011_01_4_html_ae5631c2b7917d2bc7cb479a266a61834"><div class="ttname"><a href="structDirectionSelector_3_011_01_4.html#ae5631c2b7917d2bc7cb479a266a61834">DirectionSelector&lt; 1 &gt;::getIndx</a></div><div class="ttdeci">static AMREX_GPU_HOST_DEVICE int getIndx(int, int j, int)</div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:24</div></div>
-<div class="ttc" id="astructDirectionSelector_3_012_01_4_html"><div class="ttname"><a href="structDirectionSelector_3_012_01_4.html">DirectionSelector&lt; 2 &gt;</a></div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:29</div></div>
-<div class="ttc" id="astructDirectionSelector_3_012_01_4_html_a5708ddb92c7d49cc9ba821f978251160"><div class="ttname"><a href="structDirectionSelector_3_012_01_4.html#a5708ddb92c7d49cc9ba821f978251160">DirectionSelector&lt; 2 &gt;::getIndx</a></div><div class="ttdeci">static AMREX_GPU_HOST_DEVICE int getIndx(int, int, int k)</div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:30</div></div>
-<div class="ttc" id="astructDirectionSelector_html"><div class="ttname"><a href="structDirectionSelector.html">DirectionSelector</a></div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:11</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Utility routines for selecting index based on direction input</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> Index&gt;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structDirectionSelector.html">   13</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structDirectionSelector.html">DirectionSelector</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structDirectionSelector.html#a3950b636303028f398441fdc43d66dba">   15</a></span>&#160;   [[nodiscard]] <span class="keywordtype">int</span> <a class="code" href="structDirectionSelector.html#a3950b636303028f398441fdc43d66dba">getIndx</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structDirectionSelector_3_010_01_4.html">   19</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structDirectionSelector.html">DirectionSelector</a>&lt;0&gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e">   21</a></span>&#160;    [[nodiscard]] AMREX_GPU_HOST_DEVICE <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e">getIndx</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>) { <span class="keywordflow">return</span> i; }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structDirectionSelector_3_011_01_4.html">   25</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structDirectionSelector.html">DirectionSelector</a>&lt;1&gt;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structDirectionSelector_3_011_01_4.html#ae5631c2b7917d2bc7cb479a266a61834">   27</a></span>&#160;    [[nodiscard]] AMREX_GPU_HOST_DEVICE <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structDirectionSelector_3_011_01_4.html#ae5631c2b7917d2bc7cb479a266a61834">getIndx</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) { <span class="keywordflow">return</span> j; }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structDirectionSelector_3_012_01_4.html">   31</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structDirectionSelector.html">DirectionSelector</a>&lt;2&gt;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structDirectionSelector_3_012_01_4.html#a5708ddb92c7d49cc9ba821f978251160">   33</a></span>&#160;    [[nodiscard]] AMREX_GPU_HOST_DEVICE <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="structDirectionSelector_3_012_01_4.html#a5708ddb92c7d49cc9ba821f978251160">getIndx</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">int</span> k) { <span class="keywordflow">return</span> k; }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="DirectionSelector_8H.html#a68edfbe7326d0d1476e796beb668072f">   36</a></span>&#160;<span class="keyword">using</span> <a class="code" href="structDirectionSelector_3_010_01_4.html">XDir</a> = <a class="code" href="structDirectionSelector_3_010_01_4.html">DirectionSelector&lt;0&gt;</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="DirectionSelector_8H.html#a92990a19f43dc3cbbbd630362d1ece71">   37</a></span>&#160;<span class="keyword">using</span> <a class="code" href="structDirectionSelector_3_011_01_4.html">YDir</a> = <a class="code" href="structDirectionSelector_3_011_01_4.html">DirectionSelector&lt;1&gt;</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">   38</a></span>&#160;<span class="keyword">using</span> <a class="code" href="structDirectionSelector_3_012_01_4.html">ZDir</a> = <a class="code" href="structDirectionSelector_3_012_01_4.html">DirectionSelector&lt;2&gt;</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * Given a box, return a 2D box perpendicular to the selected axis.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * For example, if we&#39;re using ZDir, return a box covering the x-y plane.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> * The IntVect is used to set the constant index in the parallel direction.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * @param[in] bx Initial box for computing of perpendicular box</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * @param[in] iv IntVect defining the perpendicular direction</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IndexSelector&gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;AMREX_GPU_HOST_DEVICE amrex::Box</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="DirectionSelector_8H.html#aef11f5662c1574638970c58b8421afa9">   51</a></span>&#160;<a class="code" href="DirectionSelector_8H.html#aef11f5662c1574638970c58b8421afa9">PerpendicularBox</a>(<span class="keyword">const</span> amrex::Box&amp; bx, <span class="keyword">const</span> amrex::IntVect&amp; iv)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    amrex::IntVect plane_lo, plane_hi;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, XDir&gt;::value) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        plane_lo = {iv[0], bx.smallEnd(1), bx.smallEnd(2)};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        plane_hi = {iv[0], bx.bigEnd(1), bx.bigEnd(2)};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, YDir&gt;::value) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        plane_lo = {bx.smallEnd(0), iv[1], bx.smallEnd(2)};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        plane_hi = {bx.bigEnd(0), iv[1], bx.bigEnd(2)};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        plane_lo = {bx.smallEnd(0), bx.smallEnd(1), iv[2]};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        plane_hi = {bx.bigEnd(0), bx.bigEnd(1), iv[2]};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    amrex::Box pbx(plane_lo, plane_hi);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> pbx;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> * Given a box, return a 1D box parallel to the selected axis.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> * For example, if we&#39;re using ZDir, return a box covering the z axis.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> * The IntVect is used to set the constant indices in the perpendicular</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"> * direction.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"> * @param[in] bx Initial box for computing of perpendicular box</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> * @param[in] iv IntVect defining the perpendicular direction</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IndexSelector&gt;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;AMREX_GPU_HOST_DEVICE amrex::Box</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="DirectionSelector_8H.html#aa828f1c2424107e1a454fee49cd04ad5">   83</a></span>&#160;<a class="code" href="DirectionSelector_8H.html#aa828f1c2424107e1a454fee49cd04ad5">ParallelBox</a>(<span class="keyword">const</span> amrex::Box&amp; bx, <span class="keyword">const</span> amrex::IntVect&amp; iv)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    amrex::IntVect line_lo, line_hi;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, XDir&gt;::value) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        line_lo = {bx.smallEnd(0), iv[1], iv[2]};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        line_hi = {bx.bigEnd(0), iv[1], iv[2]};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, YDir&gt;::value) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        line_lo = {iv[0], bx.smallEnd(1), iv[2]};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        line_hi = {iv[0], bx.bigEnd(1), iv[2]};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        line_lo = {iv[0], iv[1], bx.smallEnd(2)};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        line_hi = {iv[0], iv[1], bx.bigEnd(2)};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    amrex::Box lbx(line_lo, line_hi);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> lbx;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* DirectionSelector_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aDirectionSelector_8H_html_aa828f1c2424107e1a454fee49cd04ad5"><div class="ttname"><a href="DirectionSelector_8H.html#aa828f1c2424107e1a454fee49cd04ad5">ParallelBox</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE amrex::Box ParallelBox(const amrex::Box &amp;bx, const amrex::IntVect &amp;iv)</div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:83</div></div>
+<div class="ttc" id="aDirectionSelector_8H_html_aef11f5662c1574638970c58b8421afa9"><div class="ttname"><a href="DirectionSelector_8H.html#aef11f5662c1574638970c58b8421afa9">PerpendicularBox</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE amrex::Box PerpendicularBox(const amrex::Box &amp;bx, const amrex::IntVect &amp;iv)</div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:51</div></div>
+<div class="ttc" id="astructDirectionSelector_3_010_01_4_html"><div class="ttname"><a href="structDirectionSelector_3_010_01_4.html">DirectionSelector&lt; 0 &gt;</a></div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:20</div></div>
+<div class="ttc" id="astructDirectionSelector_3_010_01_4_html_a74c1bd1dca28b374962977ab8e32595e"><div class="ttname"><a href="structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e">DirectionSelector&lt; 0 &gt;::getIndx</a></div><div class="ttdeci">static AMREX_GPU_HOST_DEVICE int getIndx(int i, int, int)</div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:21</div></div>
+<div class="ttc" id="astructDirectionSelector_3_011_01_4_html"><div class="ttname"><a href="structDirectionSelector_3_011_01_4.html">DirectionSelector&lt; 1 &gt;</a></div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:26</div></div>
+<div class="ttc" id="astructDirectionSelector_3_011_01_4_html_ae5631c2b7917d2bc7cb479a266a61834"><div class="ttname"><a href="structDirectionSelector_3_011_01_4.html#ae5631c2b7917d2bc7cb479a266a61834">DirectionSelector&lt; 1 &gt;::getIndx</a></div><div class="ttdeci">static AMREX_GPU_HOST_DEVICE int getIndx(int, int j, int)</div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:27</div></div>
+<div class="ttc" id="astructDirectionSelector_3_012_01_4_html"><div class="ttname"><a href="structDirectionSelector_3_012_01_4.html">DirectionSelector&lt; 2 &gt;</a></div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:32</div></div>
+<div class="ttc" id="astructDirectionSelector_3_012_01_4_html_a5708ddb92c7d49cc9ba821f978251160"><div class="ttname"><a href="structDirectionSelector_3_012_01_4.html#a5708ddb92c7d49cc9ba821f978251160">DirectionSelector&lt; 2 &gt;::getIndx</a></div><div class="ttdeci">static AMREX_GPU_HOST_DEVICE int getIndx(int, int, int k)</div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:33</div></div>
+<div class="ttc" id="astructDirectionSelector_html"><div class="ttname"><a href="structDirectionSelector.html">DirectionSelector</a></div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:14</div></div>
 <div class="ttc" id="astructDirectionSelector_html_a3950b636303028f398441fdc43d66dba"><div class="ttname"><a href="structDirectionSelector.html#a3950b636303028f398441fdc43d66dba">DirectionSelector::getIndx</a></div><div class="ttdeci">int getIndx(int i, int j, int k) const</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
