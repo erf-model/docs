@@ -205,16 +205,16 @@ Functions</h2></td></tr>
 <p>Get the boxes for looping over interior/exterior ghost cells for use by fillpatch, erf_slow_rhs_pre, and erf_slow_rhs_post.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">bx</td><td></td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td></td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td></td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">set_width</td><td></td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">bx_xlo</td><td></td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">bx_xhi</td><td></td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">bx_ylo</td><td></td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">bx_yhi</td><td></td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ng_vect</td><td></td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">get_int_ng</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bx</td><td>box to intersect with 4 halo regions </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>box of the whole domain </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>number of cells in (relaxation+specified) zone </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">set_width</td><td>number of cells in (specified) zone </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">bx_xlo</td><td>halo box at x_lo boundary </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">bx_xhi</td><td>halo box at x_hi boundary </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">bx_ylo</td><td>halo box at y_lo boundary </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">bx_yhi</td><td>halo box at y_hi boundary </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ng_vect</td><td>number of ghost cells in each direction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">get_int_ng</td><td>flag to get ghost cells inside the domain </td></tr>
   </table>
   </dd>
 </dl>
@@ -380,7 +380,7 @@ Here is the caller graph for this function:</div>
     <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>current time </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">delta_t</td><td>timestep </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>number of cells in (relaxation+specified) zone </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">set_width</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">set_width</td><td>number of cells in (specified) zone </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>container for geometric information </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">S_rhs</td><td>RHS to be computed here </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">S_data</td><td>current value of the solution </td></tr>
@@ -906,7 +906,7 @@ Here is the call graph for this function:</div>
     <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>container for geometric information </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">S_rhs</td><td>RHS to be added here </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">S_old</td><td>previous value of the solution </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">[old]</td><td>S_data new value of the solution defined here </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">S_data</td><td>new value of the solution defined here </td></tr>
   </table>
   </dd>
 </dl>
