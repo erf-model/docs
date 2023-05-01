@@ -712,7 +712,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                tbxyz.grow(IntVect(-1,-1,0));</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                Real mu_eff = 0.;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                <span class="keywordflow">if</span> (cons_visc) {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                <span class="keywordflow">if</span> (cons_visc &amp;&amp; !l_use_turb) {</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                    mu_eff += 2.0 * solverChoice.<a class="code" href="structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446">dynamicViscosity</a>;</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                    <a class="code" href="ComputeStress__T_8cpp.html#a97d0869525c400951ee09ab38f6aa891">ComputeStressConsVisc_T</a>(bxcc, tbxxy, tbxxz, tbxyz, mu_eff,</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                                            s11, s22, s33,</div>
@@ -810,7 +810,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                tbxyz.grow(IntVect(-1,-1,0));</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                Real mu_eff = 0.;</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                <span class="keywordflow">if</span> (cons_visc) {</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                <span class="keywordflow">if</span> (cons_visc &amp;&amp; !l_use_turb) {</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                    mu_eff += 2.0 * solverChoice.<a class="code" href="structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446">dynamicViscosity</a>;</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                    <a class="code" href="ComputeStress__N_8cpp.html#a3bcf45b2afb821e8869f44ee9e39348f">ComputeStressConsVisc_N</a>(bxcc, tbxxy, tbxxz, tbxyz, mu_eff,</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                                            s11, s22, s33,</div>
