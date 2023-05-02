@@ -176,20 +176,20 @@ Functions</h2></td></tr>
 <tr class="separator:aef5afa6589f87633b22b95cdc757bc52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a610d7282be93c087f67da0509f739294"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#a610d7282be93c087f67da0509f739294">erf_slow_rhs_post</a> (int level, amrex::Real dt, amrex::BoxArray &amp;grids_to_evolve, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_new, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, const amrex::MultiFab &amp;source, const amrex::MultiFab *SmnSmn, const amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v)</td></tr>
 <tr class="separator:a610d7282be93c087f67da0509f739294"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae67270a2b68dbe374bcb173ea3ec18bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#ae67270a2b68dbe374bcb173ea3ec18bb">erf_fast_rhs_N</a> (int step, int level, amrex::BoxArray &amp;grids_to_evolve, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_slow_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_prev, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Real dtau, const amrex::Real facinv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v)</td></tr>
-<tr class="separator:ae67270a2b68dbe374bcb173ea3ec18bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a839e119d4bff46cc79bfcf08d65db4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#a5a839e119d4bff46cc79bfcf08d65db4">erf_fast_rhs_T</a> (int step, int level, amrex::BoxArray &amp;grids_to_evolve, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_slow_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_prev, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, amrex::MultiFab &amp;Omega, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc, const amrex::Real dtau, const amrex::Real facinv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v)</td></tr>
-<tr class="separator:a5a839e119d4bff46cc79bfcf08d65db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7732f54ebec0dccb5654e9c955215ae6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#a7732f54ebec0dccb5654e9c955215ae6">erf_fast_rhs_MT</a> (int step, int level, amrex::BoxArray &amp;grids_to_evolve, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_slow_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_prev, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stg_data, const amrex::MultiFab &amp;S_stg_prim, const amrex::MultiFab &amp;pi_stg, const amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, amrex::MultiFab &amp;Omega, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_t_rk, const amrex::MultiFab *z_t_pert, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd_stg, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc_stg, const amrex::Real dtau, const amrex::Real facinv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v)</td></tr>
-<tr class="separator:a7732f54ebec0dccb5654e9c955215ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4a985c28d635f2cd09dc7d688e60197"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#af4a985c28d635f2cd09dc7d688e60197">make_fast_coeffs</a> (int level, amrex::BoxArray &amp;grids_to_evolve, amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc, const amrex::MultiFab *r0, const amrex::MultiFab *pi0, const amrex::Real dtau)</td></tr>
-<tr class="separator:af4a985c28d635f2cd09dc7d688e60197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1db488db53203b22138db923db9fb74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#aa1db488db53203b22138db923db9fb74">erf_fast_rhs_N</a> (int step, int level, amrex::BoxArray &amp;grids_to_evolve, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_slow_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_prev, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Real dtau, const amrex::Real beta_s, const amrex::Real facinv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v)</td></tr>
+<tr class="separator:aa1db488db53203b22138db923db9fb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3c8a2e49a6985d6e60251bbfd442e0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#aa3c8a2e49a6985d6e60251bbfd442e0e">erf_fast_rhs_T</a> (int step, int level, amrex::BoxArray &amp;grids_to_evolve, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_slow_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_prev, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, amrex::MultiFab &amp;Omega, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc, const amrex::Real dtau, const amrex::Real beta_s, const amrex::Real facinv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v)</td></tr>
+<tr class="separator:aa3c8a2e49a6985d6e60251bbfd442e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7bef87cdac1244ed6cea9ea8e638412"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#ac7bef87cdac1244ed6cea9ea8e638412">erf_fast_rhs_MT</a> (int step, int level, amrex::BoxArray &amp;grids_to_evolve, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_slow_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_prev, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stg_data, const amrex::MultiFab &amp;S_stg_prim, const amrex::MultiFab &amp;pi_stg, const amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, amrex::MultiFab &amp;Omega, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_t_rk, const amrex::MultiFab *z_t_pert, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd_stg, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc_stg, const amrex::Real dtau, const amrex::Real beta_s, const amrex::Real facinv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v)</td></tr>
+<tr class="separator:ac7bef87cdac1244ed6cea9ea8e638412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa366cd17f48b750e131dbe8caa00471c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#aa366cd17f48b750e131dbe8caa00471c">make_fast_coeffs</a> (int level, amrex::BoxArray &amp;grids_to_evolve, amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc, const amrex::MultiFab *r0, const amrex::MultiFab *pi0, const amrex::Real dtau, const amrex::Real beta_s)</td></tr>
+<tr class="separator:aa366cd17f48b750e131dbe8caa00471c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5f401038e96f7badd9974fbfa63a054"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TimeIntegration_8H.html#af5f401038e96f7badd9974fbfa63a054">make_buoyancy</a> (amrex::BoxArray &amp;grids_to_evolve, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::MultiFab &amp;buoyancy, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::MultiFab *r0)</td></tr>
 <tr class="separator:af5f401038e96f7badd9974fbfa63a054"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a7732f54ebec0dccb5654e9c955215ae6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7732f54ebec0dccb5654e9c955215ae6">&#9670;&nbsp;</a></span>erf_fast_rhs_MT()</h2>
+<a id="ac7bef87cdac1244ed6cea9ea8e638412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7bef87cdac1244ed6cea9ea8e638412">&#9670;&nbsp;</a></span>erf_fast_rhs_MT()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -336,6 +336,12 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>beta_s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
           <td class="paramname"><em>facinv</em>, </td>
         </tr>
         <tr>
@@ -367,8 +373,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae67270a2b68dbe374bcb173ea3ec18bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae67270a2b68dbe374bcb173ea3ec18bb">&#9670;&nbsp;</a></span>erf_fast_rhs_N()</h2>
+<a id="aa1db488db53203b22138db923db9fb74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1db488db53203b22138db923db9fb74">&#9670;&nbsp;</a></span>erf_fast_rhs_N()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -461,6 +467,12 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>beta_s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
           <td class="paramname"><em>facinv</em>, </td>
         </tr>
         <tr>
@@ -492,8 +504,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5a839e119d4bff46cc79bfcf08d65db4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a839e119d4bff46cc79bfcf08d65db4">&#9670;&nbsp;</a></span>erf_fast_rhs_T()</h2>
+<a id="aa3c8a2e49a6985d6e60251bbfd442e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3c8a2e49a6985d6e60251bbfd442e0e">&#9670;&nbsp;</a></span>erf_fast_rhs_T()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -599,6 +611,12 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">const amrex::Real&#160;</td>
           <td class="paramname"><em>dtau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>beta_s</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1154,8 +1172,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af4a985c28d635f2cd09dc7d688e60197"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4a985c28d635f2cd09dc7d688e60197">&#9670;&nbsp;</a></span>make_fast_coeffs()</h2>
+<a id="aa366cd17f48b750e131dbe8caa00471c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa366cd17f48b750e131dbe8caa00471c">&#9670;&nbsp;</a></span>make_fast_coeffs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1230,7 +1248,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Real&#160;</td>
-          <td class="paramname"><em>dtau</em>&#160;</td>
+          <td class="paramname"><em>dtau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>beta_s</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
