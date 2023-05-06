@@ -212,10 +212,12 @@ Functions</h2></td></tr>
 <tr class="separator:ad56aa9e0cc7428ea33d4ac90d91c1f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed973861215c4eb0697f7a83b37016a9"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#aed973861215c4eb0697f7a83b37016a9">Compute_h_eta_AtEdgeCenterI</a> (const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</td></tr>
 <tr class="separator:aed973861215c4eb0697f7a83b37016a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a002996309aac722698ccbc1e66f2e28c"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#a002996309aac722698ccbc1e66f2e28c">OmegaFromW</a> (int i, int j, int k, amrex::Real w, const amrex::Array4&lt; const amrex::Real &gt; u, const amrex::Array4&lt; const amrex::Real &gt; v, const amrex::Array4&lt; const amrex::Real &gt; z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</td></tr>
-<tr class="separator:a002996309aac722698ccbc1e66f2e28c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a822e7ee5054adbf7dfe759a71323efd4"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#a822e7ee5054adbf7dfe759a71323efd4">WFromOmega</a> (int i, int j, int k, amrex::Real omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</td></tr>
-<tr class="separator:a822e7ee5054adbf7dfe759a71323efd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a4bf1524412edfd6efcbb867256db18"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18">OmegaFromW</a> (int i, int j, int k, amrex::Real w, const amrex::Array4&lt; const amrex::Real &gt; u_arr, const amrex::Array4&lt; const amrex::Real &gt; v_arr, const amrex::Array4&lt; const amrex::Real &gt; z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</td></tr>
+<tr class="separator:a6a4bf1524412edfd6efcbb867256db18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53ec395d493c2308315f7512c5438087"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a> (int i, int j, int k, amrex::Real omega, amrex::Real u, amrex::Real v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</td></tr>
+<tr class="separator:a53ec395d493c2308315f7512c5438087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcf8f856b0f93b149c115ca1ff240039"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#afcf8f856b0f93b149c115ca1ff240039">WFromOmega</a> (int i, int j, int k, amrex::Real omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</td></tr>
+<tr class="separator:afcf8f856b0f93b149c115ca1ff240039"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a43b431cbd97421014ff80245883e06d2"></a>
@@ -1665,8 +1667,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a002996309aac722698ccbc1e66f2e28c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a002996309aac722698ccbc1e66f2e28c">&#9670;&nbsp;</a></span>OmegaFromW()</h2>
+<a id="a6a4bf1524412edfd6efcbb867256db18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a4bf1524412edfd6efcbb867256db18">&#9670;&nbsp;</a></span>OmegaFromW()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1699,13 +1701,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt;&#160;</td>
-          <td class="paramname"><em>u</em>, </td>
+          <td class="paramname"><em>u_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt;&#160;</td>
-          <td class="paramname"><em>v</em>, </td>
+          <td class="paramname"><em>v_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1726,6 +1728,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Define omega given u,v and w </p>
 <div class="fragment"><div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;{</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  <span class="comment">// This is dh/dxi at z-face (i,j,k-1/2)</span></div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  amrex::Real met_zlo_xi   = 0.5 * dxInv[0] *</div>
@@ -1737,36 +1740,24 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i  ,j+1,k  )    <span class="comment">// hi j, lo k</span></div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;     -z_nd(i+1,j  ,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo j, lo k</span></div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  <span class="comment">// No-slip BC</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  <span class="comment">/*</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="comment">  amrex::Real omega;</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment">  if (k == 0) {</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">      omega = 0.;</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="comment">  } else {</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="comment">      amrex::Real vec_zlo_xi   = 0.25 * ( u(i,j,k-1) + u(i+1,j,k-1) + u(i,j,k) + u(i+1,j,k) );</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="comment">      amrex::Real vec_zlo_eta  = 0.25 * ( v(i,j,k-1) + v(i,j+1,k-1) + v(i,j,k) + v(i,j+1,k) );</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment">      omega =  -met_zlo_xi * vec_zlo_xi - met_zlo_eta * vec_zlo_eta + w;</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="comment">  }</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">  */</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="comment">// Slip BC or moving terrain</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <span class="comment">// Use extrapolation instead of interpolation if at the bottom boundary</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  amrex::Real vec_zlo_xi   = (k == 0) ? 1.5 * (0.5*(u(i,j,k)+u(i+1,j,k))) - 0.5*(0.5*(u(i,j,k+1)+u(i+1,j,k+1))) :</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    0.25 * ( u(i,j,k-1) + u(i+1,j,k-1) + u(i,j,k) + u(i+1,j,k) );</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  amrex::Real vec_zlo_eta  = (k == 0) ? 1.5 * (0.5*(v(i,j,k)+v(i,j+1,k))) - 0.5*(0.5*(v(i,j,k+1)+v(i,j+1,k+1))) :</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    0.25 * ( v(i,j,k-1) + v(i,j+1,k-1) + v(i,j,k) + v(i,j+1,k) );</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  amrex::Real <a class="code" href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a40820295afd4707e596461de893e54ae">omega</a> =  -met_zlo_xi * vec_zlo_xi - met_zlo_eta * vec_zlo_eta + w;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a40820295afd4707e596461de893e54ae">omega</a>;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  <span class="comment">// Slip BC or moving terrain</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  <span class="comment">// Use extrapolation instead of interpolation if at the bottom boundary</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  amrex::Real u = (k == 0) ? 1.5 * (0.5*(u_arr(i,j,k)+u_arr(i+1,j,k))) - 0.5*(0.5*(u_arr(i,j,k+1)+u_arr(i+1,j,k+1))) :</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    0.25 * ( u_arr(i,j,k-1) + u_arr(i+1,j,k-1) + u_arr(i,j,k) + u_arr(i+1,j,k) );</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  amrex::Real v = (k == 0) ? 1.5 * (0.5*(v_arr(i,j,k)+v_arr(i,j+1,k))) - 0.5*(0.5*(v_arr(i,j,k+1)+v_arr(i,j+1,k+1))) :</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    0.25 * ( v_arr(i,j,k-1) + v_arr(i,j+1,k-1) + v_arr(i,j,k) + v_arr(i,j+1,k) );</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  amrex::Real <a class="code" href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a40820295afd4707e596461de893e54ae">omega</a> =  w - met_zlo_xi * u - met_zlo_eta * v;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a40820295afd4707e596461de893e54ae">omega</a>;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;}</div>
 <div class="ttc" id="anamespaceMicVar_html_acd493faf19b45ab11b9a01e722762798a40820295afd4707e596461de893e54ae"><div class="ttname"><a href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a40820295afd4707e596461de893e54ae">MicVar::omega</a></div><div class="ttdeci">@ omega</div><div class="ttdef"><b>Definition:</b> Microphysics.H:44</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__fast__rhs__MT_8cpp.html#a24d664870b8112e66a68c13a0a580369">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#a7a135ea529be0a0f2490d254f36f234d">erf_fast_rhs_T()</a>, and <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a25c3b16fe22122b207fd5e3bd948a9c4">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="TerrainMetrics_8H_a002996309aac722698ccbc1e66f2e28c_icgraph.png" border="0" usemap="#aTerrainMetrics_8H_a002996309aac722698ccbc1e66f2e28c_icgraph" alt=""/></div>
-<map name="aTerrainMetrics_8H_a002996309aac722698ccbc1e66f2e28c_icgraph" id="aTerrainMetrics_8H_a002996309aac722698ccbc1e66f2e28c_icgraph">
+<div class="center"><img src="TerrainMetrics_8H_a6a4bf1524412edfd6efcbb867256db18_icgraph.png" border="0" usemap="#aTerrainMetrics_8H_a6a4bf1524412edfd6efcbb867256db18_icgraph" alt=""/></div>
+<map name="aTerrainMetrics_8H_a6a4bf1524412edfd6efcbb867256db18_icgraph" id="aTerrainMetrics_8H_a6a4bf1524412edfd6efcbb867256db18_icgraph">
 <area shape="rect" title=" " alt="" coords="185,56,300,83"/>
 <area shape="rect" href="ERF__fast__rhs__MT_8cpp.html#a24d664870b8112e66a68c13a0a580369" title=" " alt="" coords="8,5,135,32"/>
 <area shape="rect" href="ERF__fast__rhs__T_8cpp.html#a7a135ea529be0a0f2490d254f36f234d" title=" " alt="" coords="14,56,129,83"/>
@@ -1776,8 +1767,102 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a822e7ee5054adbf7dfe759a71323efd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a822e7ee5054adbf7dfe759a71323efd4">&#9670;&nbsp;</a></span>WFromOmega()</h2>
+<a id="a53ec395d493c2308315f7512c5438087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ec395d493c2308315f7512c5438087">&#9670;&nbsp;</a></span>WFromOmega() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real WFromOmega </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>omega</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>z_nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dxInv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define w given scalar u,v and omega </p>
+<div class="fragment"><div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;{</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  <span class="comment">// This is dh/dxi at z-face (i,j,k-1/2)</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  amrex::Real met_zlo_xi   = 0.5 * dxInv[0] *</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i+1,j  ,k  )    <span class="comment">// hi i, lo k</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;     -z_nd(i  ,j+1,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo i, lo k</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  <span class="comment">// This is dh/deta at z-face (i,j,k-1/2)</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  amrex::Real met_zlo_eta  = 0.5 * dxInv[1] *</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i  ,j+1,k  )    <span class="comment">// hi j, lo k</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;     -z_nd(i+1,j  ,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo j, lo k</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  amrex::Real w = <a class="code" href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a40820295afd4707e596461de893e54ae">omega</a> + met_zlo_xi * u + met_zlo_eta * v;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  <span class="keywordflow">return</span> w;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__fast__rhs__MT_8cpp.html#a24d664870b8112e66a68c13a0a580369">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#a7a135ea529be0a0f2490d254f36f234d">erf_fast_rhs_T()</a>, <a class="el" href="classERFPhysBCFunct.html#ac9c5fecc603d0201828c815cb908ffd5">ERFPhysBCFunct::impose_lateral_zvel_bcs()</a>, <a class="el" href="classERFPhysBCFunct.html#a93aac641e515d2eedfd5012756ea4528">ERFPhysBCFunct::impose_vertical_zvel_bcs()</a>, and <a class="el" href="TerrainMetrics_8H.html#afcf8f856b0f93b149c115ca1ff240039">WFromOmega()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="TerrainMetrics_8H_a53ec395d493c2308315f7512c5438087_icgraph.png" border="0" usemap="#aTerrainMetrics_8H_a53ec395d493c2308315f7512c5438087_icgraph" alt=""/></div>
+<map name="aTerrainMetrics_8H_a53ec395d493c2308315f7512c5438087_icgraph" id="aTerrainMetrics_8H_a53ec395d493c2308315f7512c5438087_icgraph">
+<area shape="rect" title=" " alt="" coords="240,115,355,141"/>
+<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html#a24d664870b8112e66a68c13a0a580369" title=" " alt="" coords="35,5,162,32"/>
+<area shape="rect" href="ERF__fast__rhs__T_8cpp.html#a7a135ea529be0a0f2490d254f36f234d" title=" " alt="" coords="41,56,156,83"/>
+<area shape="rect" href="classERFPhysBCFunct.html#ac9c5fecc603d0201828c815cb908ffd5" title=" " alt="" coords="5,107,192,149"/>
+<area shape="rect" href="classERFPhysBCFunct.html#a93aac641e515d2eedfd5012756ea4528" title=" " alt="" coords="5,173,192,214"/>
+<area shape="rect" href="TerrainMetrics_8H.html#afcf8f856b0f93b149c115ca1ff240039" title=" " alt="" coords="41,239,156,265"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afcf8f856b0f93b149c115ca1ff240039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcf8f856b0f93b149c115ca1ff240039">&#9670;&nbsp;</a></span>WFromOmega() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1810,6 +1895,18 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>u_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>v_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>z_nd</em>, </td>
         </tr>
         <tr>
@@ -1825,34 +1922,25 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;{</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  <span class="comment">// This is dh/dxi at z-face (i,j,k-1/2)</span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  amrex::Real met_xi   = 0.5 * dxInv[0] *</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i+1,j  ,k  )    <span class="comment">// hi i, lo k</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;     -z_nd(i  ,j+1,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo i, lo k</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  <span class="comment">// This is dh/deta at z-face (i,j,k-1/2)</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  amrex::Real met_eta  = 0.5 * dxInv[1] *</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i  ,j+1,k  )    <span class="comment">// hi j, lo k</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;     -z_nd(i+1,j  ,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo j, lo k</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  <span class="comment">// This dots the Omega vector (normal to the face) with the z-direction</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  amrex::Real w = <a class="code" href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a40820295afd4707e596461de893e54ae">omega</a> / std::sqrt(1.0 + met_xi*met_xi + met_eta*met_eta);</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  <span class="keywordflow">return</span> w;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__fast__rhs__MT_8cpp.html#a24d664870b8112e66a68c13a0a580369">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#a7a135ea529be0a0f2490d254f36f234d">erf_fast_rhs_T()</a>, <a class="el" href="classERFPhysBCFunct.html#a60766c20f6cbfd820910716171be508e">ERFPhysBCFunct::impose_lateral_zvel_bcs()</a>, and <a class="el" href="classERFPhysBCFunct.html#aa2b044f2b5cc4d70fb579f46b60bfff0">ERFPhysBCFunct::impose_vertical_zvel_bcs()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
+<p>Define w given u and v arrays and scalar omega </p>
+<div class="fragment"><div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;{</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  <span class="comment">// Use extrapolation instead of interpolation if at the bottom boundary</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  amrex::Real u = (k == 0) ? 1.5 * (0.5*(u_arr(i,j,k)+u_arr(i+1,j,k))) - 0.5*(0.5*(u_arr(i,j,k+1)+u_arr(i+1,j,k+1))) :</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    0.25 * ( u_arr(i,j,k-1) + u_arr(i+1,j,k-1) + u_arr(i,j,k) + u_arr(i+1,j,k) );</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  amrex::Real v = (k == 0) ? 1.5 * (0.5*(v_arr(i,j,k)+v_arr(i,j+1,k))) - 0.5*(0.5*(v_arr(i,j,k+1)+v_arr(i,j+1,k+1))) :</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    0.25 * ( v_arr(i,j,k-1) + v_arr(i,j+1,k-1) + v_arr(i,j,k) + v_arr(i,j+1,k) );</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  amrex::Real w = <a class="code" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a>(i,j,k,<a class="code" href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a40820295afd4707e596461de893e54ae">omega</a>,u,v,z_nd,dxInv);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;  <span class="keywordflow">return</span> w;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;}</div>
+<div class="ttc" id="aTerrainMetrics_8H_html_a53ec395d493c2308315f7512c5438087"><div class="ttname"><a href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real WFromOmega(int i, int j, int k, amrex::Real omega, amrex::Real u, amrex::Real v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:371</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="TerrainMetrics_8H_a822e7ee5054adbf7dfe759a71323efd4_icgraph.png" border="0" usemap="#aTerrainMetrics_8H_a822e7ee5054adbf7dfe759a71323efd4_icgraph" alt=""/></div>
-<map name="aTerrainMetrics_8H_a822e7ee5054adbf7dfe759a71323efd4_icgraph" id="aTerrainMetrics_8H_a822e7ee5054adbf7dfe759a71323efd4_icgraph">
-<area shape="rect" title=" " alt="" coords="240,85,355,112"/>
-<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html#a24d664870b8112e66a68c13a0a580369" title=" " alt="" coords="35,5,162,32"/>
-<area shape="rect" href="ERF__fast__rhs__T_8cpp.html#a7a135ea529be0a0f2490d254f36f234d" title=" " alt="" coords="41,56,156,83"/>
-<area shape="rect" href="classERFPhysBCFunct.html#a60766c20f6cbfd820910716171be508e" title=" " alt="" coords="5,107,192,149"/>
-<area shape="rect" href="classERFPhysBCFunct.html#aa2b044f2b5cc4d70fb579f46b60bfff0" title=" " alt="" coords="5,173,192,214"/>
+<div class="center"><img src="TerrainMetrics_8H_afcf8f856b0f93b149c115ca1ff240039_cgraph.png" border="0" usemap="#aTerrainMetrics_8H_afcf8f856b0f93b149c115ca1ff240039_cgraph" alt=""/></div>
+<map name="aTerrainMetrics_8H_afcf8f856b0f93b149c115ca1ff240039_cgraph" id="aTerrainMetrics_8H_afcf8f856b0f93b149c115ca1ff240039_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087" title=" " alt="" coords="168,5,283,32"/>
 </map>
 </div>
 

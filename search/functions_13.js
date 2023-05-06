@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['wfromomega_1651',['WFromOmega',['../TerrainMetrics_8H.html#a822e7ee5054adbf7dfe759a71323efd4',1,'TerrainMetrics.H']]],
+  ['wfromomega_1651',['WFromOmega',['../TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087',1,'WFromOmega(int i, int j, int k, amrex::Real omega, amrex::Real u, amrex::Real v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv):&#160;TerrainMetrics.H'],['../TerrainMetrics_8H.html#afcf8f856b0f93b149c115ca1ff240039',1,'WFromOmega(int i, int j, int k, amrex::Real omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv):&#160;TerrainMetrics.H']]],
   ['write_5f1d_5fprofiles_1652',['write_1D_profiles',['../classERF.html#a55eae94c5363e227b571739738bb26b7',1,'ERF']]],
   ['write_5faverages_1653',['write_averages',['../classMOSTAverage.html#ac37b71ce655ea973ad6fc4c564b040c1',1,'MOSTAverage']]],
   ['write_5fk_5findices_1654',['write_k_indices',['../classMOSTAverage.html#a612fdb06ff433e33c717198c7e3e4b0b',1,'MOSTAverage']]],
