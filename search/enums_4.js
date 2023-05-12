@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mathematicalbndrytypes_2153',['mathematicalBndryTypes',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c',1,'ERFBCType']]],
-  ['molecdifftype_2154',['MolecDiffType',['../DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735',1,'DataStruct.H']]]
+  ['mathematicalbndrytypes_2210',['mathematicalBndryTypes',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c',1,'ERFBCType']]],
+  ['molecdifftype_2211',['MolecDiffType',['../DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735',1,'DataStruct.H']]]
 ];

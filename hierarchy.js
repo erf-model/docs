@@ -30,5 +30,14 @@ var hierarchy =
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
     [ "SolverChoice", "structSolverChoice.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
+    [ "UPWIND3", "structUPWIND3.html", null ],
+    [ "UPWIND4", "structUPWIND4.html", null ],
+    [ "UPWIND5", "structUPWIND5.html", null ],
+    [ "UPWIND6", "structUPWIND6.html", null ],
+    [ "UPWINDALL", "structUPWINDALL.html", null ],
+    [ "WENO3", "structWENO3.html", null ],
+    [ "WENO5", "structWENO5.html", null ],
+    [ "WENO_Z3", "structWENO__Z3.html", null ],
+    [ "WENO_Z5", "structWENO__Z5.html", null ],
     [ "WriteBndryPlanes", "classWriteBndryPlanes.html", null ]
 ];
