@@ -98,9 +98,9 @@ Collaboration diagram for WENO_Z3:</div>
 <div class="dyncontent">
 <div class="center"><img src="structWENO__Z3__coll__graph.png" border="0" usemap="#aWENO__Z3_coll__map" alt="Collaboration graph"/></div>
 <map name="aWENO__Z3_coll__map" id="aWENO__Z3_coll__map">
-<area shape="rect" title=" " alt="" coords="119,124,205,151"/>
-<area shape="rect" title=" " alt="" coords="5,5,167,47"/>
-<area shape="rect" title=" " alt="" coords="193,13,243,39"/>
+<area shape="rect" title=" " alt="" coords="46,124,133,151"/>
+<area shape="rect" title=" " alt="" coords="5,13,56,39"/>
+<area shape="rect" title=" " alt="" coords="81,5,242,47"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -121,8 +121,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a944298bf92e1b7e1ef01320b3cbd13c0"><td class="memItemLeft" align="right" valign="top">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a></td></tr>
-<tr class="separator:a944298bf92e1b7e1ef01320b3cbd13c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8269a48070f989c0183112ccd8e57489"><td class="memItemLeft" align="right" valign="top">amrex::Array4&lt; const amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a></td></tr>
+<tr class="separator:a8269a48070f989c0183112ccd8e57489"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04370c4cf4d845f967ec610ff66f5d2b"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWENO__Z3.html#a04370c4cf4d845f967ec610ff66f5d2b">eps</a> =1.0e-6</td></tr>
 <tr class="separator:a04370c4cf4d845f967ec610ff66f5d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec489e3be4dbc31eb46b729b8510fdfc"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWENO__Z3.html#aec489e3be4dbc31eb46b729b8510fdfc">tol</a> =1.0e-12</td></tr>
@@ -161,8 +161,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        : <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(phi) {}</div>
-<div class="ttc" id="astructWENO__Z3_html_a944298bf92e1b7e1ef01320b3cbd13c0"><div class="ttname"><a href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">WENO_Z3::m_phi</a></div><div class="ttdeci">const amrex::Array4&lt; const amrex::Real &gt; &amp; m_phi</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:164</div></div>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        : <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(phi) {}</div>
+<div class="ttc" id="astructWENO__Z3_html_a8269a48070f989c0183112ccd8e57489"><div class="ttname"><a href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">WENO_Z3::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:164</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -317,11 +317,11 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        amrex::Real sp2 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i+2, j  , k  , qty_index);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        amrex::Real sp1 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i+1, j  , k  , qty_index);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        amrex::Real s   = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j  , k  , qty_index);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        amrex::Real sm1 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i-1, j  , k  , qty_index);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        amrex::Real sm2 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i-2, j  , k  , qty_index);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        amrex::Real sp2 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i+2, j  , k  , qty_index);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        amrex::Real sp1 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i+1, j  , k  , qty_index);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        amrex::Real s   = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j  , k  , qty_index);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        amrex::Real sm1 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i-1, j  , k  , qty_index);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        amrex::Real sm2 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i-2, j  , k  , qty_index);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> (upw_hi &gt; <a class="code" href="structWENO__Z3.html#aec489e3be4dbc31eb46b729b8510fdfc">tol</a>){</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            val_hi = <a class="code" href="structWENO__Z3.html#aa6c2eefc18b5f0365c0357ee4f066080">Evaluate</a>(sm1,s  ,sp1);</div>
@@ -424,11 +424,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        amrex::Real sp2 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j+2, k  , qty_index);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        amrex::Real sp1 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j+1, k  , qty_index);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        amrex::Real s   = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j  , k  , qty_index);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        amrex::Real sm1 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j-1, k  , qty_index);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        amrex::Real sm2 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j-2, k  , qty_index);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        amrex::Real sp2 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j+2, k  , qty_index);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        amrex::Real sp1 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j+1, k  , qty_index);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        amrex::Real s   = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j  , k  , qty_index);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        amrex::Real sm1 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j-1, k  , qty_index);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        amrex::Real sm2 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j-2, k  , qty_index);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (upw_hi &gt; <a class="code" href="structWENO__Z3.html#aec489e3be4dbc31eb46b729b8510fdfc">tol</a>){</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            val_hi = <a class="code" href="structWENO__Z3.html#aa6c2eefc18b5f0365c0357ee4f066080">Evaluate</a>(sm1,s  ,sp1);</div>
@@ -517,10 +517,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        amrex::Real sp2 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j  , k+2, qty_index);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        amrex::Real sp1 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j  , k+1, qty_index);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        amrex::Real s   = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j  , k  , qty_index);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        amrex::Real sm1 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j  , k-1, qty_index);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        amrex::Real sp2 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j  , k+2, qty_index);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        amrex::Real sp1 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j  , k+1, qty_index);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        amrex::Real s   = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j  , k  , qty_index);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        amrex::Real sm1 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j  , k-1, qty_index);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span> (upw_hi &gt; <a class="code" href="structWENO__Z3.html#aec489e3be4dbc31eb46b729b8510fdfc">tol</a>){</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            val_hi = <a class="code" href="structWENO__Z3.html#aa6c2eefc18b5f0365c0357ee4f066080">Evaluate</a>(sm1,s  ,sp1);</div>
@@ -601,10 +601,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        amrex::Real sp1 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j  , k+1, qty_index);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        amrex::Real s   = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j  , k  , qty_index);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        amrex::Real sm1 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j  , k-1, qty_index);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        amrex::Real sm2 = <a class="code" href="structWENO__Z3.html#a944298bf92e1b7e1ef01320b3cbd13c0">m_phi</a>(i  , j  , k-2, qty_index);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        amrex::Real sp1 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j  , k+1, qty_index);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        amrex::Real s   = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j  , k  , qty_index);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        amrex::Real sm1 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j  , k-1, qty_index);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        amrex::Real sm2 = <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(i  , j  , k-2, qty_index);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (upw_lo &gt; <a class="code" href="structWENO__Z3.html#aec489e3be4dbc31eb46b729b8510fdfc">tol</a>) {</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            val_lo = <a class="code" href="structWENO__Z3.html#aa6c2eefc18b5f0365c0357ee4f066080">Evaluate</a>(sm2,sm1,s  );</div>
@@ -699,8 +699,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a944298bf92e1b7e1ef01320b3cbd13c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a944298bf92e1b7e1ef01320b3cbd13c0">&#9670;&nbsp;</a></span>m_phi</h2>
+<a id="a8269a48070f989c0183112ccd8e57489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8269a48070f989c0183112ccd8e57489">&#9670;&nbsp;</a></span>m_phi</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -709,7 +709,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const amrex::Array4&lt;const amrex::Real&gt;&amp; WENO_Z3::m_phi</td>
+          <td class="memname">amrex::Array4&lt;const amrex::Real&gt; WENO_Z3::m_phi</td>
         </tr>
       </table>
   </td>

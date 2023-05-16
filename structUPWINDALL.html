@@ -98,9 +98,9 @@ Collaboration diagram for UPWINDALL:</div>
 <div class="dyncontent">
 <div class="center"><img src="structUPWINDALL__coll__graph.png" border="0" usemap="#aUPWINDALL_coll__map" alt="Collaboration graph"/></div>
 <map name="aUPWINDALL_coll__map" id="aUPWINDALL_coll__map">
-<area shape="rect" title=" " alt="" coords="101,168,201,195"/>
-<area shape="rect" title=" " alt="" coords="5,5,167,47"/>
-<area shape="rect" title=" " alt="" coords="191,13,242,39"/>
+<area shape="rect" title=" " alt="" coords="46,168,146,195"/>
+<area shape="rect" title=" " alt="" coords="5,13,56,39"/>
+<area shape="rect" title=" " alt="" coords="81,5,242,47"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -117,8 +117,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a4a575e0f7309131d122f5e644816dc7e"><td class="memItemLeft" align="right" valign="top">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a></td></tr>
-<tr class="separator:a4a575e0f7309131d122f5e644816dc7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36acc81d9046b2b80cf3755aa46bc10c"><td class="memItemLeft" align="right" valign="top">amrex::Array4&lt; const amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a></td></tr>
+<tr class="separator:a36acc81d9046b2b80cf3755aa46bc10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -159,8 +159,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        : <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(phi) {}</div>
-<div class="ttc" id="astructUPWINDALL_html_a4a575e0f7309131d122f5e644816dc7e"><div class="ttname"><a href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">UPWINDALL::m_phi</a></div><div class="ttdeci">const amrex::Array4&lt; const amrex::Real &gt; &amp; m_phi</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:667</div></div>
+<div class="fragment"><div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        : <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(phi) {}</div>
+<div class="ttc" id="astructUPWINDALL_html_a36acc81d9046b2b80cf3755aa46bc10c"><div class="ttname"><a href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">UPWINDALL::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:667</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -349,16 +349,16 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    {</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        <span class="keywordflow">if</span> (spatial_order == 2) {</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;            val_hi = 0.5 * ( <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i,j,k,qty_index) + <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i,j,k+1,qty_index) );</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;            val_hi = 0.5 * ( <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i,j,k,qty_index) + <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i,j,k+1,qty_index) );</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;            <span class="comment">// Data to interpolate on</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;            amrex::Real sp3 = (spatial_order &gt; 4) ? <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i  , j  , k+3, qty_index): 0.;</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;            amrex::Real sp2 = <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i  , j  , k+2, qty_index);</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;            amrex::Real sp1 = <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i  , j  , k+1, qty_index);</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;            amrex::Real s   = <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i  , j  , k  , qty_index);</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;            amrex::Real sm1 = <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i  , j  , k-1, qty_index);</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;            amrex::Real sm2 = (spatial_order &gt; 4) ? <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i  , j  , k-2, qty_index) : 0.;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;            amrex::Real sp3 = (spatial_order &gt; 4) ? <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k+3, qty_index): 0.;</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;            amrex::Real sp2 = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k+2, qty_index);</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;            amrex::Real sp1 = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k+1, qty_index);</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;            amrex::Real s   = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k  , qty_index);</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;            amrex::Real sm1 = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k-1, qty_index);</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;            amrex::Real sm2 = (spatial_order &gt; 4) ? <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k-2, qty_index) : 0.;</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160; </div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;            <span class="comment">// Upwinding flags</span></div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;            <span class="keywordflow">if</span> (upw_hi != 0.) upw_hi = (upw_hi &gt; 0) ? 1. : -1.;</div>
@@ -445,16 +445,16 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    {</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;        <span class="keywordflow">if</span> (spatial_order == 2) {</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            val_lo = 0.5 * ( <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i,j,k,qty_index) + <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i,j,k-1,qty_index) );</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            val_lo = 0.5 * ( <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i,j,k,qty_index) + <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i,j,k-1,qty_index) );</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;            <span class="comment">// Data to interpolate on</span></div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            amrex::Real sp2 = (spatial_order &gt; 4) ? <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i  , j  , k+2, qty_index): 0.;</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            amrex::Real sp1 = <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i  , j  , k+1, qty_index);</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            amrex::Real s   = <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i  , j  , k  , qty_index);</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;            amrex::Real sm1 = <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i  , j  , k-1, qty_index);</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;            amrex::Real sm2 = <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i  , j  , k-2, qty_index);</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            amrex::Real sm3 = (spatial_order &gt; 4) ? <a class="code" href="structUPWINDALL.html#a4a575e0f7309131d122f5e644816dc7e">m_phi</a>(i  , j  , k-3, qty_index) : 0.;</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            amrex::Real sp2 = (spatial_order &gt; 4) ? <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k+2, qty_index): 0.;</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            amrex::Real sp1 = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k+1, qty_index);</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            amrex::Real s   = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k  , qty_index);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;            amrex::Real sm1 = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k-1, qty_index);</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;            amrex::Real sm2 = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k-2, qty_index);</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            amrex::Real sm3 = (spatial_order &gt; 4) ? <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k-3, qty_index) : 0.;</div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; </div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;            <span class="comment">// Upwinding flags</span></div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;            <span class="keywordflow">if</span> (upw_lo != 0.) upw_lo = (upw_lo &gt; 0) ? 1. : -1.;</div>
@@ -596,8 +596,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a4a575e0f7309131d122f5e644816dc7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a575e0f7309131d122f5e644816dc7e">&#9670;&nbsp;</a></span>m_phi</h2>
+<a id="a36acc81d9046b2b80cf3755aa46bc10c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36acc81d9046b2b80cf3755aa46bc10c">&#9670;&nbsp;</a></span>m_phi</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -606,7 +606,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const amrex::Array4&lt;const amrex::Real&gt;&amp; UPWINDALL::m_phi</td>
+          <td class="memname">amrex::Array4&lt;const amrex::Real&gt; UPWINDALL::m_phi</td>
         </tr>
       </table>
   </td>

@@ -8,5 +8,5 @@ var structUPWIND3 =
     [ "InterpolateInZ_lo", "structUPWIND3.html#afab8d4e37f7175626cbc208bbd74380f", null ],
     [ "g1", "structUPWIND3.html#a552999e68e80fcc77c602ba6818df36c", null ],
     [ "g2", "structUPWIND3.html#a2a9ea3ce4eb7b5ba778a5a0a7a9a1922", null ],
-    [ "m_phi", "structUPWIND3.html#ac4ef8d896aa8f3d561dfa18097252e43", null ]
+    [ "m_phi", "structUPWIND3.html#a4f184417f94f60775a46357fbafe1cca", null ]
 ];

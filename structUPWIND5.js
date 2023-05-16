@@ -9,5 +9,5 @@ var structUPWIND5 =
     [ "g1", "structUPWIND5.html#a6020e2c4e4c44b76a2456ac7d2636007", null ],
     [ "g2", "structUPWIND5.html#a37388f6bd9c8c8352387d531db414ef8", null ],
     [ "g3", "structUPWIND5.html#aa8f3c0ecf7c76a2952679bd5c366b867", null ],
-    [ "m_phi", "structUPWIND5.html#a48659a237a53bb5c6174dae4514435c9", null ]
+    [ "m_phi", "structUPWIND5.html#a26ff7f987df2f61ab60c121c02dd4295", null ]
 ];
