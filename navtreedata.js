@@ -76,7 +76,7 @@ var NAVTREEINDEX =
 "classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87",
 "classReadBndryPlanes.html#acb820b3ebc4c07d210831e6081c47aa9",
 "structInputSoundingData.html#a0a3d15e3959ce900c213a09230e6646c",
-"structncutils_1_1NCVar.html#a62b3d88feb5305a1c7efbb0ddf8002fc"
+"structncutils_1_1NCVar.html#a533478371e0bd09a6f4944bf5fe00684"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
