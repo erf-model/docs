@@ -655,74 +655,75 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    }</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="comment">// Inline with 2nd order for efficiency</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">if</span> (std::max(horiz_spatial_order,vert_spatial_order) == 2 &amp;&amp; !all_use_WENO) {</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        amrex::ParallelFor(bx, ncomp_end, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            Real invdetJ = (use_terrain) ?  1. / detJ(i,j,k) : 1.;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <span class="comment">// NOTE: we don&#39;t need to weight avg_xmom, avg_ymom, avg_zmom with terrain metrics</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="comment">//       because that was done when they were constructed in AdvectionSrcForRhoAndTheta</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            Real mfsq = mf_m(i,j,0) * mf_m(i,j,0);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            advectionSrc(i,j,k,cons_index) = - 0.5 * invdetJ * (</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;              ( avg_xmom(i+1,j,k) * (cell_prim(i,j,k,prim_index) + cell_prim(i+1,j,k,prim_index)) -</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                avg_xmom(i  ,j,k) * (cell_prim(i,j,k,prim_index) + cell_prim(i-1,j,k,prim_index)) ) * dxInv * mfsq +</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;              ( avg_ymom(i,j+1,k) * (cell_prim(i,j,k,prim_index) + cell_prim(i,j+1,k,prim_index)) -</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                avg_ymom(i,j  ,k) * (cell_prim(i,j,k,prim_index) + cell_prim(i,j-1,k,prim_index)) ) * dyInv * mfsq +</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;              ( avg_zmom(i,j,k+1) * (cell_prim(i,j,k,prim_index) + cell_prim(i,j,k+1,prim_index)) -</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                avg_zmom(i,j,k  ) * (cell_prim(i,j,k,prim_index) + cell_prim(i,j,k-1,prim_index)) ) * dzInv);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        });</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="comment">// Template higher order methods</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">if</span> (std::max(horiz_spatial_order,vert_spatial_order) == 3 &amp;&amp; !all_use_WENO) {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;UPWIND3&gt;(bx, ncomp_end, icomp,</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                                                     use_terrain, advectionSrc, cell_prim,</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                                                     avg_xmom, avg_ymom, avg_zmom, detJ,</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                                                     cellSizeInv, mf_m);</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::max(horiz_spatial_order,vert_spatial_order) == 4 &amp;&amp; !all_use_WENO) {</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;UPWIND4&gt;(bx, ncomp_end, icomp,</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                                                     use_terrain, advectionSrc, cell_prim,</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                                     avg_xmom, avg_ymom, avg_zmom, detJ,</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                     cellSizeInv, mf_m);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::max(horiz_spatial_order,vert_spatial_order) == 5 &amp;&amp; !all_use_WENO) {</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;UPWIND5&gt;(bx, ncomp_end, icomp,</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                                                     use_terrain, advectionSrc, cell_prim,</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                                                     avg_xmom, avg_ymom, avg_zmom, detJ,</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                                     cellSizeInv, mf_m);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::max(horiz_spatial_order,vert_spatial_order) == 6 &amp;&amp; !all_use_WENO) {</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;UPWIND6&gt;(bx, ncomp_end, icomp,</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                                                     use_terrain, advectionSrc, cell_prim,</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                                     avg_xmom, avg_ymom, avg_zmom, detJ,</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                                     cellSizeInv, mf_m);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (all_use_WENO &amp;&amp; spatial_order_WENO==3) {</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;WENO3&gt;(bx, ncomp_end, icomp,</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                                                   use_terrain, advectionSrc, cell_prim,</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                                                   avg_xmom, avg_ymom, avg_zmom, detJ,</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                                                   cellSizeInv, mf_m);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (all_use_WENO &amp;&amp; spatial_order_WENO==5) {</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;WENO5&gt;(bx, ncomp_end, icomp,</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                                                   use_terrain, advectionSrc, cell_prim,</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                                                   avg_xmom, avg_ymom, avg_zmom, detJ,</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                                                   cellSizeInv, mf_m);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (all_use_WENO_Z &amp;&amp; spatial_order_WENO==3) {</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;WENO_Z3&gt;(bx, ncomp_end, icomp,</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                                                     use_terrain, advectionSrc, cell_prim,</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                                                     avg_xmom, avg_ymom, avg_zmom, detJ,</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                                     cellSizeInv, mf_m);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (all_use_WENO_Z &amp;&amp; spatial_order_WENO==5) {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;WENO_Z5&gt;(bx, ncomp_end, icomp,</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                                                     use_terrain, advectionSrc, cell_prim,</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                                                     avg_xmom, avg_ymom, avg_zmom, detJ,</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                                                     cellSizeInv, mf_m);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            AMREX_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown advection scheme!&quot;</span>);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        }</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordtype">bool</span> not_WENO = !(all_use_WENO || all_use_WENO_Z);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">if</span> (std::max(horiz_spatial_order,vert_spatial_order) == 2 &amp;&amp; not_WENO) {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        amrex::ParallelFor(bx, ncomp_end, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            Real invdetJ = (use_terrain) ?  1. / detJ(i,j,k) : 1.;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="comment">// NOTE: we don&#39;t need to weight avg_xmom, avg_ymom, avg_zmom with terrain metrics</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            <span class="comment">//       because that was done when they were constructed in AdvectionSrcForRhoAndTheta</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            Real mfsq = mf_m(i,j,0) * mf_m(i,j,0);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            advectionSrc(i,j,k,cons_index) = - 0.5 * invdetJ * (</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;              ( avg_xmom(i+1,j,k) * (cell_prim(i,j,k,prim_index) + cell_prim(i+1,j,k,prim_index)) -</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                avg_xmom(i  ,j,k) * (cell_prim(i,j,k,prim_index) + cell_prim(i-1,j,k,prim_index)) ) * dxInv * mfsq +</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;              ( avg_ymom(i,j+1,k) * (cell_prim(i,j,k,prim_index) + cell_prim(i,j+1,k,prim_index)) -</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                avg_ymom(i,j  ,k) * (cell_prim(i,j,k,prim_index) + cell_prim(i,j-1,k,prim_index)) ) * dyInv * mfsq +</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;              ( avg_zmom(i,j,k+1) * (cell_prim(i,j,k,prim_index) + cell_prim(i,j,k+1,prim_index)) -</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                avg_zmom(i,j,k  ) * (cell_prim(i,j,k,prim_index) + cell_prim(i,j,k-1,prim_index)) ) * dzInv);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        });</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="comment">// Template higher order methods</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">if</span> (std::max(horiz_spatial_order,vert_spatial_order) == 3 &amp;&amp; not_WENO) {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;UPWIND3&gt;(bx, ncomp_end, icomp,</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                                                     use_terrain, advectionSrc, cell_prim,</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                                                     avg_xmom, avg_ymom, avg_zmom, detJ,</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                                                     cellSizeInv, mf_m);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::max(horiz_spatial_order,vert_spatial_order) == 4 &amp;&amp; not_WENO) {</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;UPWIND4&gt;(bx, ncomp_end, icomp,</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                                     use_terrain, advectionSrc, cell_prim,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                     avg_xmom, avg_ymom, avg_zmom, detJ,</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                                     cellSizeInv, mf_m);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::max(horiz_spatial_order,vert_spatial_order) == 5 &amp;&amp; not_WENO) {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;UPWIND5&gt;(bx, ncomp_end, icomp,</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                                                     use_terrain, advectionSrc, cell_prim,</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                                     avg_xmom, avg_ymom, avg_zmom, detJ,</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                                                     cellSizeInv, mf_m);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::max(horiz_spatial_order,vert_spatial_order) == 6 &amp;&amp; not_WENO) {</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;UPWIND6&gt;(bx, ncomp_end, icomp,</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                                     use_terrain, advectionSrc, cell_prim,</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                                     avg_xmom, avg_ymom, avg_zmom, detJ,</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                                                     cellSizeInv, mf_m);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (all_use_WENO &amp;&amp; spatial_order_WENO==3) {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;WENO3&gt;(bx, ncomp_end, icomp,</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                                                   use_terrain, advectionSrc, cell_prim,</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                                                   avg_xmom, avg_ymom, avg_zmom, detJ,</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                                                   cellSizeInv, mf_m);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (all_use_WENO &amp;&amp; spatial_order_WENO==5) {</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;WENO5&gt;(bx, ncomp_end, icomp,</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                                                   use_terrain, advectionSrc, cell_prim,</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                                                   avg_xmom, avg_ymom, avg_zmom, detJ,</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                                                   cellSizeInv, mf_m);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (all_use_WENO_Z &amp;&amp; spatial_order_WENO==3) {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;WENO_Z3&gt;(bx, ncomp_end, icomp,</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                                                     use_terrain, advectionSrc, cell_prim,</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                                     avg_xmom, avg_ymom, avg_zmom, detJ,</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                                                     cellSizeInv, mf_m);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (all_use_WENO_Z &amp;&amp; spatial_order_WENO==5) {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            AdvectionSrcForScalarsWrapper_N&lt;WENO_Z5&gt;(bx, ncomp_end, icomp,</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                                                     use_terrain, advectionSrc, cell_prim,</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                                                     avg_xmom, avg_ymom, avg_zmom, detJ,</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                                                     cellSizeInv, mf_m);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            AMREX_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown advection scheme!&quot;</span>);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    }</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
 <div class="ttc" id="aAdvectionSrcForState_8cpp_html_a1f6d91b5d6d73da57245ba17465e4340"><div class="ttname"><a href="AdvectionSrcForState_8cpp.html#a1f6d91b5d6d73da57245ba17465e4340">AdvectionSrcForScalars</a></div><div class="ttdeci">void AdvectionSrcForScalars(const Box &amp;bx, const int &amp;icomp, const int &amp;ncomp, const Array4&lt; const Real &gt; &amp;avg_xmom, const Array4&lt; const Real &gt; &amp;avg_ymom, const Array4&lt; const Real &gt; &amp;avg_zmom, const Array4&lt; const Real &gt; &amp;cell_prim, const Array4&lt; Real &gt; &amp;advectionSrc, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; const Real &gt; &amp;mf_m, const bool all_use_WENO, const bool moist_use_WENO, const bool all_use_WENO_Z, const bool moist_use_WENO_Z, const int spatial_order_WENO, const int horiz_spatial_order, const int vert_spatial_order, const int use_terrain)</div><div class="ttdef"><b>Definition:</b> AdvectionSrcForState.cpp:234</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:16</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ad5195ac8f863f5a9a7eaa0db094f7639"><div class="ttname"><a href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a></div><div class="ttdeci">#define NVAR</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:26</div></div>
