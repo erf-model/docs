@@ -26,6 +26,7 @@ var annotated_dup =
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", "classReadBndryPlanes" ],
     [ "SolverChoice", "structSolverChoice.html", "structSolverChoice" ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ],
+    [ "UPWIND2", "structUPWIND2.html", "structUPWIND2" ],
     [ "UPWIND3", "structUPWIND3.html", "structUPWIND3" ],
     [ "UPWIND4", "structUPWIND4.html", "structUPWIND4" ],
     [ "UPWIND5", "structUPWIND5.html", "structUPWIND5" ],

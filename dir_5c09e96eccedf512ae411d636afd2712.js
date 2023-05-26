@@ -6,6 +6,7 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "Interpolation.H", "Interpolation_8H.html", "Interpolation_8H" ],
     [ "Interpolation_1D.H", "Interpolation__1D_8H.html", "Interpolation__1D_8H" ],
     [ "Interpolation_UPW.H", "Interpolation__UPW_8H.html", [
+      [ "UPWIND2", "structUPWIND2.html", "structUPWIND2" ],
       [ "UPWIND3", "structUPWIND3.html", "structUPWIND3" ],
       [ "UPWIND4", "structUPWIND4.html", "structUPWIND4" ],
       [ "UPWIND5", "structUPWIND5.html", "structUPWIND5" ],
