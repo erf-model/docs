@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['eddydiff_1198',['EddyDiff',['../namespaceEddyDiff.html',1,'']]],
-  ['erfbctype_1199',['ERFBCType',['../namespaceERFBCType.html',1,'']]]
+  ['eddydiff_1205',['EddyDiff',['../namespaceEddyDiff.html',1,'']]],
+  ['erfbctype_1206',['ERFBCType',['../namespaceERFBCType.html',1,'']]]
 ];

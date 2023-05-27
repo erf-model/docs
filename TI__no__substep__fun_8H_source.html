@@ -208,8 +208,8 @@ $(document).ready(function(){initNavTree('TI__no__substep__fun_8H_source.html','
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                                  + slow_dt * fslow[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76dabde409cfd9edf4a3581fe26dfa9613cd">IntVar::zmom</a>](i,j,k);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    });</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        } <span class="comment">// omp</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment">// Even if we update all the conserved variables we don&#39;t need</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="comment">// to fillpatch the slow ones every acoustic substep</span></div>
@@ -218,7 +218,13 @@ $(document).ready(function(){initNavTree('TI__no__substep__fun_8H_source.html','
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordtype">bool</span> fast_only          = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">bool</span> vel_and_mom_synced = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(S_sum, time_for_fp, ng_cons, ng_vel, fast_only, vel_and_mom_synced);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    };</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#ifdef ERF_USE_POISSON_SOLVE</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">if</span> (incompressible) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            project_velocities(S_sum);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    };</div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
 <div class="ttc" id="aTI__no__substep__fun_8H_html_a4cad8180e91d2eabd5638651fc24bcc7"><div class="ttname"><a href="TI__no__substep__fun_8H.html#a4cad8180e91d2eabd5638651fc24bcc7">no_substep_fun</a></div><div class="ttdeci">auto no_substep_fun</div><div class="ttdef"><b>Definition:</b> TI_no_substep_fun.H:4</div></div>
 <div class="ttc" id="aTI__utils_8H_html_a5e7934b18ef63bc8c4c16db42277c52f"><div class="ttname"><a href="TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a></div><div class="ttdeci">auto apply_bcs</div><div class="ttdef"><b>Definition:</b> TI_utils.H:36</div></div>
