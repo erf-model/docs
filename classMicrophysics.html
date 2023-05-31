@@ -1857,7 +1857,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  amrex::MultiFab::Copy(qsnow_in , *<a class="code" href="classMicrophysics.html#a48cd7435c92bdd8cb4af25d44efb3207">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a53fbafc25cd7707b502b1aeb46b6d656">MicVar::qpi</a>], 0, 0, 1, <a class="code" href="classMicrophysics.html#a48cd7435c92bdd8cb4af25d44efb3207">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a53fbafc25cd7707b502b1aeb46b6d656">MicVar::qpi</a>]-&gt;nGrowVect());</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  amrex::MultiFab::Copy(qgraup_in, *<a class="code" href="classMicrophysics.html#a48cd7435c92bdd8cb4af25d44efb3207">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a53fbafc25cd7707b502b1aeb46b6d656">MicVar::qpi</a>], 0, 0, 1, <a class="code" href="classMicrophysics.html#a48cd7435c92bdd8cb4af25d44efb3207">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a1bb53b1131a676fadffc9e0a53c0309a">MicVar::qci</a>]-&gt;nGrowVect());</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// get the temperature, dentisy, theta, qt and qp from input</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// get the temperature, density, theta, qt and qp from input</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">for</span> ( amrex::MFIter mfi(cons_in,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;     <span class="keyword">auto</span> states_array = cons_in.array(mfi);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;     <span class="keyword">auto</span> rho_array    = <a class="code" href="classMicrophysics.html#a48cd7435c92bdd8cb4af25d44efb3207">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a2534fc55b1bd99268d18c38ddd112e53">MicVar::rho</a>]-&gt;array(mfi);</div>
@@ -1880,15 +1880,16 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;     });</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// fill the boundary</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// Fill interior ghost cells and periodic boundaries</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  cons_in.FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  qv_in.FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  qc_in.FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  qi_in.FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  qrain_in. FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  qsnow_in. FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  qgraup_in.FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  qv_in.FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  qc_in.FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  qi_in.FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  qrain_in. FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  qsnow_in. FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  qgraup_in.FillBoundary(<a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.periodicity());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
