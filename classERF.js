@@ -208,6 +208,7 @@ var classERF =
     [ "SmnSmn_lev", "classERF.html#a9faaa96a7c270d2b2b062d9f30f19711", null ],
     [ "solverChoice", "classERF.html#a32dd48049e8acbe95decdd4b01b782c4", null ],
     [ "sst", "classERF.html#a4441c087b0b9c08729a7bd413ad12ded", null ],
+    [ "start_time", "classERF.html#aa0c07f31b23d977646b8161e5473fab5", null ],
     [ "startCPUTime", "classERF.html#a3890ee3bf2586cf0ef2822b671c5d8c4", null ],
     [ "stop_time", "classERF.html#a405556a52bef334ab68294c1a540e107", null ],
     [ "sum_interval", "classERF.html#a5232e98479611a24fe97994640c61faa", null ],
