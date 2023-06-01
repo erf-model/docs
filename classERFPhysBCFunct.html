@@ -2010,29 +2010,29 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                              zbx.grow(1,nghost_vels[1]);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt; cons_arr = mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;array(mfi);;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt; velx_arr = mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>]-&gt;array(mfi);;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt; vely_arr = mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>]-&gt;array(mfi);;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt; velz_arr = mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>]-&gt;array(mfi);;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                  Array4&lt;const Real&gt; z_nd_arr;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">m_z_phys_nd</a>)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                z_nd_arr = <a class="code" href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">m_z_phys_nd</a>-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">if</span> (init_type != <span class="stringliteral">&quot;real&quot;</span>)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">                //! If there are cells not in the valid + periodic grown box</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">                //! we need to fill them here</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"></span>                <span class="keywordflow">if</span> (!gdomain.contains(cbx))</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    <span class="keywordtype">int</span> bccomp = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    <a class="code" href="classERFPhysBCFunct.html#afba9067e54d00ac53a68a21f8458d4d7">impose_lateral_cons_bcs</a>(cons_arr,cbx,domain,icomp_cons,ncomp_cons,time,bccomp);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">if</span> (!cons_only)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                  Array4&lt;const Real&gt; z_nd_arr;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">m_z_phys_nd</a>)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                z_nd_arr = <a class="code" href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">m_z_phys_nd</a>-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">if</span> (init_type != <span class="stringliteral">&quot;real&quot;</span>)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">                //! If there are cells not in the valid + periodic grown box</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">                //! we need to fill them here</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"></span>                <span class="keywordflow">if</span> (!gdomain.contains(cbx))</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    <span class="keywordtype">int</span> bccomp = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    <a class="code" href="classERFPhysBCFunct.html#afba9067e54d00ac53a68a21f8458d4d7">impose_lateral_cons_bcs</a>(cons_arr,cbx,domain,icomp_cons,ncomp_cons,time,bccomp);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordflow">if</span> (!cons_only)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    <span class="keyword">const</span> Array4&lt;      Real&gt; velx_arr = mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>]-&gt;array(mfi);;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    <span class="keyword">const</span> Array4&lt;      Real&gt; vely_arr = mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>]-&gt;array(mfi);;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    <span class="keyword">const</span> Array4&lt;      Real&gt; velz_arr = mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>]-&gt;array(mfi);;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    <span class="keywordflow">if</span> (!gdomainx.contains(xbx))</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                        <a class="code" href="classERFPhysBCFunct.html#ac27af17bd7428bfe7666b13e68fc30aa">impose_lateral_xvel_bcs</a>(velx_arr,xbx,domain,time,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>);</div>
@@ -2056,18 +2056,21 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">if</span> (!cons_only) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <a class="code" href="classERFPhysBCFunct.html#ac8f30d84a55b8bebb0fc4754ecba6bf2">impose_vertical_xvel_bcs</a>(velx_arr,xbx,domain,z_nd_arr,dxInv,</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                         time,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <a class="code" href="classERFPhysBCFunct.html#a434757de61aa0c42d2bb956cbfb8ecbb">impose_vertical_yvel_bcs</a>(vely_arr,ybx,domain,z_nd_arr,dxInv,</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                         time,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <a class="code" href="classERFPhysBCFunct.html#a93aac641e515d2eedfd5012756ea4528">impose_vertical_zvel_bcs</a>(velz_arr,velx_arr,vely_arr,zbx,domain,z_nd_arr,dxInv,time,</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                         <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>, <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>, <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                         <a class="code" href="classERFPhysBCFunct.html#a114c5d6eb3e526f40bc3e30e7b381513">m_terrain_type</a>);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            } <span class="comment">// !cons_only</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        } <span class="comment">// MFIter</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    } <span class="comment">// OpenMP</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;} <span class="comment">// operator()</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="keyword">const</span> Array4&lt;      Real&gt; velx_arr = mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>]-&gt;array(mfi);;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <span class="keyword">const</span> Array4&lt;      Real&gt; vely_arr = mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>]-&gt;array(mfi);;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keyword">const</span> Array4&lt;      Real&gt; velz_arr = mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>]-&gt;array(mfi);;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <a class="code" href="classERFPhysBCFunct.html#ac8f30d84a55b8bebb0fc4754ecba6bf2">impose_vertical_xvel_bcs</a>(velx_arr,xbx,domain,z_nd_arr,dxInv,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                         time,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <a class="code" href="classERFPhysBCFunct.html#a434757de61aa0c42d2bb956cbfb8ecbb">impose_vertical_yvel_bcs</a>(vely_arr,ybx,domain,z_nd_arr,dxInv,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                         time,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <a class="code" href="classERFPhysBCFunct.html#a93aac641e515d2eedfd5012756ea4528">impose_vertical_zvel_bcs</a>(velz_arr,velx_arr,vely_arr,zbx,domain,z_nd_arr,dxInv,time,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                         <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>, <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>, <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>,</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                         <a class="code" href="classERFPhysBCFunct.html#a114c5d6eb3e526f40bc3e30e7b381513">m_terrain_type</a>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            } <span class="comment">// !cons_only</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        } <span class="comment">// MFIter</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    } <span class="comment">// OpenMP</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;} <span class="comment">// operator()</span></div>
 <div class="ttc" id="aclassERFPhysBCFunct_html_a994c3e142b1c5ca72da0bfd2353c688d"><div class="ttname"><a href="classERFPhysBCFunct.html#a994c3e142b1c5ca72da0bfd2353c688d">ERFPhysBCFunct::impose_vertical_cons_bcs</a></div><div class="ttdeci">void impose_vertical_cons_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int icomp, int ncomp, amrex::Real time, int bccomp)</div><div class="ttdef"><b>Definition:</b> BoundaryConditions_cons.cpp:175</div></div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a></div><div class="ttdeci">@ zvel_bc</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:60</div></div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a></div><div class="ttdeci">@ yvel_bc</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:59</div></div>
