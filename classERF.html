@@ -6700,74 +6700,101 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="comment">// Read bdy_data files</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor() &amp;&amp; (<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a> == <span class="stringliteral">&quot;real&quot;</span>)) {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a> == <span class="stringliteral">&quot;real&quot;</span>) {</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordtype">int</span> ioproc = ParallelDescriptor::IOProcessorNumber();  <span class="comment">// I/O rank</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="comment">// Vector dimensions</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordtype">int</span> num_time;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordtype">int</span> num_var;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        Vector&lt;Box&gt; bx_v;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="comment">// Open header file and read from it</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        std::ifstream bdy_h_file(amrex::MultiFabFileFullPrefix(0, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;bdy_H&quot;</span>));</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        bdy_h_file &gt;&gt; num_time;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        bdy_h_file &gt;&gt; num_var;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        bdy_h_file &gt;&gt; start_bdy_time;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        bdy_h_file &gt;&gt; bdy_time_interval;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        bdy_h_file &gt;&gt; <a class="code" href="classERF.html#ae92117f12ef80f173a02a8583cd6c9cf">wrfbdy_width</a>;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        bx_v.resize(4*num_var);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            bdy_h_file &gt;&gt; bx_v[4*ivar  ];</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            bdy_h_file &gt;&gt; bx_v[4*ivar+1];</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            bdy_h_file &gt;&gt; bx_v[4*ivar+2];</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            bdy_h_file &gt;&gt; bx_v[4*ivar+3];</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        }</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="comment">// Size the FABs</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        bdy_data_xlo.resize(num_time);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        bdy_data_xhi.resize(num_time);</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        bdy_data_ylo.resize(num_time);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        bdy_data_yhi.resize(num_time);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            bdy_data_xlo[itime].resize(num_var);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            bdy_data_xhi[itime].resize(num_var);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            bdy_data_ylo[itime].resize(num_var);</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            bdy_data_yhi[itime].resize(num_var);</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                bdy_data_xlo[itime][ivar].resize(bx_v[4*ivar  ],1);</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                bdy_data_xhi[itime][ivar].resize(bx_v[4*ivar+1]);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                bdy_data_ylo[itime][ivar].resize(bx_v[4*ivar+2]);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                bdy_data_yhi[itime][ivar].resize(bx_v[4*ivar+3]);</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            }</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        }</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="comment">// Open data file and read from it</span></div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        std::ifstream bdy_d_file(amrex::MultiFabFileFullPrefix(0, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;bdy_D&quot;</span>));</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                bdy_data_xlo[itime][ivar].readFrom(bdy_d_file);</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                bdy_data_xhi[itime][ivar].readFrom(bdy_d_file);</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                bdy_data_ylo[itime][ivar].readFrom(bdy_d_file);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                bdy_data_yhi[itime][ivar].readFrom(bdy_d_file);</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            }</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        }</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="comment">// Broadcast the data</span></div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        amrex::ParallelDescriptor::Barrier();</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        ParallelDescriptor::Bcast(&amp;start_bdy_time,1,ioproc);</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        ParallelDescriptor::Bcast(&amp;bdy_time_interval,1,ioproc);</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        ParallelDescriptor::Bcast(&amp;<a class="code" href="classERF.html#ae92117f12ef80f173a02a8583cd6c9cf">wrfbdy_width</a>,1,ioproc);</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                ParallelDescriptor::Bcast(bdy_data_xlo[itime][ivar].dataPtr(),bdy_data_xlo[itime][ivar].box().numPts(),ioproc);</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                ParallelDescriptor::Bcast(bdy_data_xhi[itime][ivar].dataPtr(),bdy_data_xhi[itime][ivar].box().numPts(),ioproc);</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                ParallelDescriptor::Bcast(bdy_data_ylo[itime][ivar].dataPtr(),bdy_data_ylo[itime][ivar].box().numPts(),ioproc);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                ParallelDescriptor::Bcast(bdy_data_yhi[itime][ivar].dataPtr(),bdy_data_yhi[itime][ivar].box().numPts(),ioproc);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            }</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        }</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    }</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;}</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordtype">int</span> num_time;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordtype">int</span> num_var;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        Vector&lt;Box&gt; bx_v;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <span class="comment">// Open header file and read from it</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            std::ifstream bdy_h_file(amrex::MultiFabFileFullPrefix(0, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;bdy_H&quot;</span>));</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            bdy_h_file &gt;&gt; num_time;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            bdy_h_file &gt;&gt; num_var;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            bdy_h_file &gt;&gt; start_bdy_time;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            bdy_h_file &gt;&gt; bdy_time_interval;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            bdy_h_file &gt;&gt; <a class="code" href="classERF.html#ae92117f12ef80f173a02a8583cd6c9cf">wrfbdy_width</a>;</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            bx_v.resize(4*num_var);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                bdy_h_file &gt;&gt; bx_v[4*ivar  ];</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                bdy_h_file &gt;&gt; bx_v[4*ivar+1];</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                bdy_h_file &gt;&gt; bx_v[4*ivar+2];</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                bdy_h_file &gt;&gt; bx_v[4*ivar+3];</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            }</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            <span class="comment">// IO size the FABs</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            bdy_data_xlo.resize(num_time);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            bdy_data_xhi.resize(num_time);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            bdy_data_ylo.resize(num_time);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            bdy_data_yhi.resize(num_time);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                bdy_data_xlo[itime].resize(num_var);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                bdy_data_xhi[itime].resize(num_var);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                bdy_data_ylo[itime].resize(num_var);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                bdy_data_yhi[itime].resize(num_var);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                    bdy_data_xlo[itime][ivar].resize(bx_v[4*ivar  ]);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                    bdy_data_xhi[itime][ivar].resize(bx_v[4*ivar+1]);</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                    bdy_data_ylo[itime][ivar].resize(bx_v[4*ivar+2]);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                    bdy_data_yhi[itime][ivar].resize(bx_v[4*ivar+3]);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                }</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="comment">// Open data file and read from it</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            std::ifstream bdy_d_file(amrex::MultiFabFileFullPrefix(0, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;bdy_D&quot;</span>));</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                    bdy_data_xlo[itime][ivar].readFrom(bdy_d_file);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                    bdy_data_xhi[itime][ivar].readFrom(bdy_d_file);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                    bdy_data_ylo[itime][ivar].readFrom(bdy_d_file);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    bdy_data_yhi[itime][ivar].readFrom(bdy_d_file);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                }</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            }</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        } <span class="comment">// IO</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="comment">// Broadcast the data</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        ParallelDescriptor::Barrier();</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        ParallelDescriptor::Bcast(&amp;start_bdy_time,1,ioproc);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        ParallelDescriptor::Bcast(&amp;bdy_time_interval,1,ioproc);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        ParallelDescriptor::Bcast(&amp;<a class="code" href="classERF.html#ae92117f12ef80f173a02a8583cd6c9cf">wrfbdy_width</a>,1,ioproc);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        ParallelDescriptor::Bcast(&amp;num_time,1,ioproc);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        ParallelDescriptor::Bcast(&amp;num_var,1,ioproc);</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="comment">// Everyone size their boxes</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        bx_v.resize(4*num_var);</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        ParallelDescriptor::Bcast(bx_v.dataPtr(),bx_v.size(),ioproc);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="comment">// Everyone but IO size their FABs</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keywordflow">if</span> (!ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;          bdy_data_xlo.resize(num_time);</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;          bdy_data_xhi.resize(num_time);</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;          bdy_data_ylo.resize(num_time);</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;          bdy_data_yhi.resize(num_time);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            bdy_data_xlo[itime].resize(num_var);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            bdy_data_xhi[itime].resize(num_var);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            bdy_data_ylo[itime].resize(num_var);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            bdy_data_yhi[itime].resize(num_var);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;              bdy_data_xlo[itime][ivar].resize(bx_v[4*ivar  ]);</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;              bdy_data_xhi[itime][ivar].resize(bx_v[4*ivar+1]);</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;              bdy_data_ylo[itime][ivar].resize(bx_v[4*ivar+2]);</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;              bdy_data_yhi[itime][ivar].resize(bx_v[4*ivar+3]);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            }</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;          }</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        }</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                ParallelDescriptor::Bcast(bdy_data_xlo[itime][ivar].dataPtr(),bdy_data_xlo[itime][ivar].box().numPts(),ioproc);</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                ParallelDescriptor::Bcast(bdy_data_xhi[itime][ivar].dataPtr(),bdy_data_xhi[itime][ivar].box().numPts(),ioproc);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                ParallelDescriptor::Bcast(bdy_data_ylo[itime][ivar].dataPtr(),bdy_data_ylo[itime][ivar].box().numPts(),ioproc);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                ParallelDescriptor::Bcast(bdy_data_yhi[itime][ivar].dataPtr(),bdy_data_yhi[itime][ivar].box().numPts(),ioproc);</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            }</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        }</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    } <span class="comment">// init real</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;}</div>
 <div class="ttc" id="aclassERF_html_aaee255b031e63bd9b5807f6612739dbd"><div class="ttname"><a href="classERF.html#aaee255b031e63bd9b5807f6612739dbd">ERF::GotoNextLine</a></div><div class="ttdeci">static void GotoNextLine(std::istream &amp;is)</div><div class="ttdef"><b>Definition:</b> Checkpoint.cpp:13</div></div>
 <div class="ttc" id="aclassERF_html_aaf10bbf8c9a5dbc257a88c4c1b650fee"><div class="ttname"><a href="classERF.html#aaf10bbf8c9a5dbc257a88c4c1b650fee">ERF::MakeNewLevelFromScratch</a></div><div class="ttdeci">void MakeNewLevelFromScratch(int lev, amrex::Real time, const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dm) override</div><div class="ttdef"><b>Definition:</b> ERF.cpp:872</div></div>
 </div><!-- fragment -->

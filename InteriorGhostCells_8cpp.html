@@ -405,9 +405,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    Real F1 = 1./(10.*delta_t);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    Real F2 = 1./(50.*delta_t);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// Compute interpolation factors</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// Time interpolation</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    Real dT = bdy_time_interval;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    Real time_since_start = time - start_bdy_time;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    Real time_since_start = (time - start_bdy_time) / 1.e10;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">int</span> n_time = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>( time_since_start / dT);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    amrex::Real alpha = (time_since_start - n_time * dT) / dT;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    AMREX_ALWAYS_ASSERT( alpha &gt;= 0. &amp;&amp; alpha &lt;= 1.0);</div>
