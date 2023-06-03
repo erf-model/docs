@@ -349,8 +349,8 @@ Static Private Member Functions</h2></td></tr>
 <tr class="separator:a2dcd22cb915d923c687f60267f44542b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaee255b031e63bd9b5807f6612739dbd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#aaee255b031e63bd9b5807f6612739dbd">GotoNextLine</a> (std::istream &amp;is)</td></tr>
 <tr class="separator:aaee255b031e63bd9b5807f6612739dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fe8cc6b90e4b5e1991b38aa0ca1db16"><td class="memItemLeft" align="right" valign="top">static AMREX_FORCE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a9fe8cc6b90e4b5e1991b38aa0ca1db16">ComputeGhostCells</a> (const int &amp;horiz_spatial_order, const int &amp;vert_spatial_order, const int &amp;spatial_order_WENO, const bool &amp;use_WENO, const bool &amp;use_numerical_diff)</td></tr>
-<tr class="separator:a9fe8cc6b90e4b5e1991b38aa0ca1db16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a335c05fd72ae08b5a466ae68f4a7408a"><td class="memItemLeft" align="right" valign="top">static AMREX_FORCE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a335c05fd72ae08b5a466ae68f4a7408a">ComputeGhostCells</a> (const int &amp;horiz_spatial_order, const int &amp;vert_spatial_order, const bool &amp;use_numerical_diff)</td></tr>
+<tr class="separator:a335c05fd72ae08b5a466ae68f4a7408a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0597da6edf955cd138e52fd00380ff2"><td class="memItemLeft" align="right" valign="top">static amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#ae0597da6edf955cd138e52fd00380ff2">getCPUTime</a> ()</td></tr>
 <tr class="separator:ae0597da6edf955cd138e52fd00380ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -1929,8 +1929,8 @@ Here is the call graph for this function:</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a9fe8cc6b90e4b5e1991b38aa0ca1db16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fe8cc6b90e4b5e1991b38aa0ca1db16">&#9670;&nbsp;</a></span>ComputeGhostCells()</h2>
+<a id="a335c05fd72ae08b5a466ae68f4a7408a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a335c05fd72ae08b5a466ae68f4a7408a">&#9670;&nbsp;</a></span>ComputeGhostCells()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1949,18 +1949,6 @@ Here is the call graph for this function:</div>
           <td></td>
           <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>vert_spatial_order</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>spatial_order_WENO</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>use_WENO</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1986,33 +1974,21 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;      <span class="keywordtype">int</span> nGhostCells = 0;</div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;      <span class="keywordflow">if</span> (use_numerical_diff) {</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;          nGhostCells = 3;</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(use_WENO) {</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;          <span class="keywordflow">switch</span> (spatial_order_WENO) {</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;          <span class="keywordflow">case</span> 3:</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;              nGhostCells = 2;</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;          <span class="keywordflow">switch</span> (spatial_order) {</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;          <span class="keywordflow">case</span> 2: <span class="keywordflow">case</span> 3: <span class="keywordflow">case</span> 4:</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;              nGhostCells = 2; <span class="comment">// We need this many to compute the eddy viscosity in the ghost cells</span></div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;              <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;          <span class="keywordflow">case</span> 5:</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;          <span class="keywordflow">case</span> 5: <span class="keywordflow">case</span> 6:</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;              nGhostCells = 3;</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;              <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;          <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;              amrex::Error(<span class="stringliteral">&quot;Must specify WENO spatial order to be 3 or 5&quot;</span>);</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;              <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;          }</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;          <span class="keywordflow">switch</span> (spatial_order) {</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;          <span class="keywordflow">case</span> 2: <span class="keywordflow">case</span> 3: <span class="keywordflow">case</span> 4:</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;              nGhostCells = 2; <span class="comment">// We need this many to compute the eddy viscosity in the ghost cells</span></div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;              <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;          <span class="keywordflow">case</span> 5: <span class="keywordflow">case</span> 6:</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;              nGhostCells = 3;</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;              <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;          <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;              amrex::Error(<span class="stringliteral">&quot;Must specify spatial order to be 2,3,4,5 or 6&quot;</span>);</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;          }</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;      }</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160; </div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;      <span class="keywordflow">return</span> nGhostCells;</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    }</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;              amrex::Error(<span class="stringliteral">&quot;Must specify spatial order to be 2,3,4,5 or 6&quot;</span>);</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;          }</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;      }</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160; </div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;      <span class="keywordflow">return</span> nGhostCells;</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2039,10 +2015,10 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    {</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;        <span class="keywordflow">return</span> *<a class="code" href="classERF.html#a1cade630b005dbcc0f644987ef3db287">datalog</a>[i];</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    }</div>
-<div class="ttc" id="aclassERF_html_a1cade630b005dbcc0f644987ef3db287"><div class="ttname"><a href="classERF.html#a1cade630b005dbcc0f644987ef3db287">ERF::datalog</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt; datalog</div><div class="ttdef"><b>Definition:</b> ERF.H:913</div></div>
+<div class="fragment"><div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    {</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        <span class="keywordflow">return</span> *<a class="code" href="classERF.html#a1cade630b005dbcc0f644987ef3db287">datalog</a>[i];</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    }</div>
+<div class="ttc" id="aclassERF_html_a1cade630b005dbcc0f644987ef3db287"><div class="ttname"><a href="classERF.html#a1cade630b005dbcc0f644987ef3db287">ERF::datalog</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt; datalog</div><div class="ttdef"><b>Definition:</b> ERF.H:901</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2071,8 +2047,8 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>The filename of the ith datalog file. </p>
-<div class="fragment"><div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classERF.html#a9248a4eb025c2647e003f838cba52a21">datalogname</a>[i]; }</div>
-<div class="ttc" id="aclassERF_html_a9248a4eb025c2647e003f838cba52a21"><div class="ttname"><a href="classERF.html#a9248a4eb025c2647e003f838cba52a21">ERF::datalogname</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; datalogname</div><div class="ttdef"><b>Definition:</b> ERF.H:914</div></div>
+<div class="fragment"><div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classERF.html#a9248a4eb025c2647e003f838cba52a21">datalogname</a>[i]; }</div>
+<div class="ttc" id="aclassERF_html_a9248a4eb025c2647e003f838cba52a21"><div class="ttname"><a href="classERF.html#a9248a4eb025c2647e003f838cba52a21">ERF::datalogname</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; datalogname</div><div class="ttdef"><b>Definition:</b> ERF.H:902</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3465,7 +3441,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    IntVect ngvect_vels = mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>]-&gt;nGrowVect();</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordtype">bool</span> cons_only = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    (*<a class="code" href="classERF.html#af4e1870ed66f14dbb147869cca82516e">physbcs</a>[lev])(mfs,0,mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;nComp(),ngvect_cons,ngvect_vels,time,<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a>,cons_only);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    (*<a class="code" href="classERF.html#af4e1870ed66f14dbb147869cca82516e">physbcs</a>[lev])(mfs,0,mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;nComp(),ngvect_cons,ngvect_vels,time,<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a>,cons_only,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>);</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="comment">// Since lev &gt; 0 here we don&#39;t worry about m_r2d or wrfbdy data</span></div>
@@ -3641,7 +3617,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#addf62bfc534515447b94e928ac0b7135">m_r2d</a>) <a class="code" href="classERF.html#a2135641de33dea5057799569c74cac42">fill_from_bndryregs</a>(mfs,time);</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// We call this even if init_type == real because this routine will fill the vertical bcs</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    (*<a class="code" href="classERF.html#af4e1870ed66f14dbb147869cca82516e">physbcs</a>[lev])(mfs,icomp_cons,ncomp_cons,ngvect_cons,ngvect_vels,time,<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a>,cons_only);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    (*<a class="code" href="classERF.html#af4e1870ed66f14dbb147869cca82516e">physbcs</a>[lev])(mfs,icomp_cons,ncomp_cons,ngvect_cons,ngvect_vels,time,<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a>,cons_only,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>);</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="comment">//</span></div>
@@ -3767,7 +3743,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#addf62bfc534515447b94e928ac0b7135">m_r2d</a>) <a class="code" href="classERF.html#a2135641de33dea5057799569c74cac42">fill_from_bndryregs</a>(mfs,time);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// We call this even if init_type == real because this routine will fill the vertical bcs</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    (*<a class="code" href="classERF.html#af4e1870ed66f14dbb147869cca82516e">physbcs</a>[lev])(mfs,icomp_cons,ncomp_cons,ngvect_cons,ngvect_vels,time,<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a>,cons_only);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    (*<a class="code" href="classERF.html#af4e1870ed66f14dbb147869cca82516e">physbcs</a>[lev])(mfs,icomp_cons,ncomp_cons,ngvect_cons,ngvect_vels,time,<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a>,cons_only,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -3795,9 +3771,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    {</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;      <span class="keywordflow">return</span> *<a class="code" href="classERF.html#a2ef8ab09aed437467e2e87a37bcd999d">flux_registers</a>[lev];</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    {</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;      <span class="keywordflow">return</span> *<a class="code" href="classERF.html#a2ef8ab09aed437467e2e87a37bcd999d">flux_registers</a>[lev];</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3823,20 +3799,20 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;    {</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;      <span class="keywordtype">int</span> numCores = amrex::ParallelDescriptor::NProcs();</div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;      numCores = numCores * omp_get_max_threads();</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160; </div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;      amrex::Real <a class="code" href="namespaceWRFBdyVars.html#aa68ca75ab2607d45e4ba7611c9a6e559a1e7df4966430ffdaa4bb7bbd0f8a6d02">T</a> =</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;        numCores * (amrex::ParallelDescriptor::second() - <a class="code" href="classERF.html#a3890ee3bf2586cf0ef2822b671c5d8c4">startCPUTime</a>) +</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;        <a class="code" href="classERF.html#a7948479fe1497dc592dd748c9567fdaa">previousCPUTimeUsed</a>;</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160; </div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespaceWRFBdyVars.html#aa68ca75ab2607d45e4ba7611c9a6e559a1e7df4966430ffdaa4bb7bbd0f8a6d02">T</a>;</div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;    }</div>
-<div class="ttc" id="aclassERF_html_a3890ee3bf2586cf0ef2822b671c5d8c4"><div class="ttname"><a href="classERF.html#a3890ee3bf2586cf0ef2822b671c5d8c4">ERF::startCPUTime</a></div><div class="ttdeci">static amrex::Real startCPUTime</div><div class="ttdef"><b>Definition:</b> ERF.H:848</div></div>
-<div class="ttc" id="aclassERF_html_a7948479fe1497dc592dd748c9567fdaa"><div class="ttname"><a href="classERF.html#a7948479fe1497dc592dd748c9567fdaa">ERF::previousCPUTimeUsed</a></div><div class="ttdeci">static amrex::Real previousCPUTimeUsed</div><div class="ttdef"><b>Definition:</b> ERF.H:849</div></div>
+<div class="fragment"><div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;    {</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;      <span class="keywordtype">int</span> numCores = amrex::ParallelDescriptor::NProcs();</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;      numCores = numCores * omp_get_max_threads();</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160; </div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;      amrex::Real <a class="code" href="namespaceWRFBdyVars.html#aa68ca75ab2607d45e4ba7611c9a6e559a1e7df4966430ffdaa4bb7bbd0f8a6d02">T</a> =</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;        numCores * (amrex::ParallelDescriptor::second() - <a class="code" href="classERF.html#a3890ee3bf2586cf0ef2822b671c5d8c4">startCPUTime</a>) +</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;        <a class="code" href="classERF.html#a7948479fe1497dc592dd748c9567fdaa">previousCPUTimeUsed</a>;</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160; </div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespaceWRFBdyVars.html#aa68ca75ab2607d45e4ba7611c9a6e559a1e7df4966430ffdaa4bb7bbd0f8a6d02">T</a>;</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;    }</div>
+<div class="ttc" id="aclassERF_html_a3890ee3bf2586cf0ef2822b671c5d8c4"><div class="ttname"><a href="classERF.html#a3890ee3bf2586cf0ef2822b671c5d8c4">ERF::startCPUTime</a></div><div class="ttdeci">static amrex::Real startCPUTime</div><div class="ttdef"><b>Definition:</b> ERF.H:836</div></div>
+<div class="ttc" id="aclassERF_html_a7948479fe1497dc592dd748c9567fdaa"><div class="ttname"><a href="classERF.html#a7948479fe1497dc592dd748c9567fdaa">ERF::previousCPUTimeUsed</a></div><div class="ttdeci">static amrex::Real previousCPUTimeUsed</div><div class="ttdef"><b>Definition:</b> ERF.H:837</div></div>
 <div class="ttc" id="anamespaceWRFBdyVars_html_aa68ca75ab2607d45e4ba7611c9a6e559a1e7df4966430ffdaa4bb7bbd0f8a6d02"><div class="ttname"><a href="namespaceWRFBdyVars.html#aa68ca75ab2607d45e4ba7611c9a6e559a1e7df4966430ffdaa4bb7bbd0f8a6d02">WRFBdyVars::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:70</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa2d8099655a8779836e63e3e98ea4372">writeJobInfo()</a>.</p>
@@ -5142,13 +5118,13 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aTerrainMetrics_8cpp_html_ab405f3b5732dda49ad076fab09bfbfc8"><div class="ttname"><a href="TerrainMetrics_8cpp.html#ab405f3b5732dda49ad076fab09bfbfc8">make_zcc</a></div><div class="ttdeci">void make_zcc(const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::MultiFab &amp;z_phys_cc)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.cpp:431</div></div>
 <div class="ttc" id="aTerrainMetrics_8cpp_html_accb87d367dfa749571761aa789fd3fea"><div class="ttname"><a href="TerrainMetrics_8cpp.html#accb87d367dfa749571761aa789fd3fea">make_J</a></div><div class="ttdeci">void make_J(const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::MultiFab &amp;detJ_cc)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.cpp:395</div></div>
 <div class="ttc" id="aclassERF_html_a039a764a1d942c484e8aea49e87bc046"><div class="ttname"><a href="classERF.html#a039a764a1d942c484e8aea49e87bc046">ERF::initRayleigh</a></div><div class="ttdeci">void initRayleigh()</div><div class="ttdoc">Initialize Rayleigh damping profiles.</div><div class="ttdef"><b>Definition:</b> ERF_init1d.cpp:17</div></div>
-<div class="ttc" id="aclassERF_html_a0553967f1131860bb8ecb47c0f192eaa"><div class="ttname"><a href="classERF.html#a0553967f1131860bb8ecb47c0f192eaa">ERF::samplelinelogname</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; samplelinelogname</div><div class="ttdef"><b>Definition:</b> ERF.H:921</div></div>
+<div class="ttc" id="aclassERF_html_a0553967f1131860bb8ecb47c0f192eaa"><div class="ttname"><a href="classERF.html#a0553967f1131860bb8ecb47c0f192eaa">ERF::samplelinelogname</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; samplelinelogname</div><div class="ttdef"><b>Definition:</b> ERF.H:909</div></div>
 <div class="ttc" id="aclassERF_html_a0877d5a0263641c13b92d2d16f47b689"><div class="ttname"><a href="classERF.html#a0877d5a0263641c13b92d2d16f47b689">ERF::setRayleighRefFromSounding</a></div><div class="ttdeci">void setRayleighRefFromSounding(bool restarting)</div><div class="ttdoc">Set Rayleigh mean profiles from input sounding.</div><div class="ttdef"><b>Definition:</b> ERF_init1d.cpp:71</div></div>
-<div class="ttc" id="aclassERF_html_a0fa1582bb13357895d2aba91b695624a"><div class="ttname"><a href="classERF.html#a0fa1582bb13357895d2aba91b695624a">ERF::sampleline</a></div><div class="ttdeci">amrex::Vector&lt; amrex::IntVect &gt; sampleline</div><div class="ttdef"><b>Definition:</b> ERF.H:922</div></div>
-<div class="ttc" id="aclassERF_html_a2486b49bb0d7917f812318822e42a03c"><div class="ttname"><a href="classERF.html#a2486b49bb0d7917f812318822e42a03c">ERF::setRecordDataInfo</a></div><div class="ttdeci">void setRecordDataInfo(int i, const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> ERF.H:866</div></div>
+<div class="ttc" id="aclassERF_html_a0fa1582bb13357895d2aba91b695624a"><div class="ttname"><a href="classERF.html#a0fa1582bb13357895d2aba91b695624a">ERF::sampleline</a></div><div class="ttdeci">amrex::Vector&lt; amrex::IntVect &gt; sampleline</div><div class="ttdef"><b>Definition:</b> ERF.H:910</div></div>
+<div class="ttc" id="aclassERF_html_a2486b49bb0d7917f812318822e42a03c"><div class="ttname"><a href="classERF.html#a2486b49bb0d7917f812318822e42a03c">ERF::setRecordDataInfo</a></div><div class="ttdeci">void setRecordDataInfo(int i, const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> ERF.H:854</div></div>
 <div class="ttc" id="aclassERF_html_a30f8b851ed29d38695d44cff257f14e6"><div class="ttname"><a href="classERF.html#a30f8b851ed29d38695d44cff257f14e6">ERF::detJ_cc</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; detJ_cc</div><div class="ttdef"><b>Definition:</b> ERF.H:520</div></div>
 <div class="ttc" id="aclassERF_html_a37b2a4257df8ff53d4450de47f16ace1"><div class="ttname"><a href="classERF.html#a37b2a4257df8ff53d4450de47f16ace1">ERF::base_state_new</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab &gt; base_state_new</div><div class="ttdef"><b>Definition:</b> ERF.H:537</div></div>
-<div class="ttc" id="aclassERF_html_a4990f1796b65ec8ee602f177a66afc3e"><div class="ttname"><a href="classERF.html#a4990f1796b65ec8ee602f177a66afc3e">ERF::samplelinelog</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt; samplelinelog</div><div class="ttdef"><b>Definition:</b> ERF.H:920</div></div>
+<div class="ttc" id="aclassERF_html_a4990f1796b65ec8ee602f177a66afc3e"><div class="ttname"><a href="classERF.html#a4990f1796b65ec8ee602f177a66afc3e">ERF::samplelinelog</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt; samplelinelog</div><div class="ttdef"><b>Definition:</b> ERF.H:908</div></div>
 <div class="ttc" id="aclassERF_html_a5232e98479611a24fe97994640c61faa"><div class="ttname"><a href="classERF.html#a5232e98479611a24fe97994640c61faa">ERF::sum_interval</a></div><div class="ttdeci">static int sum_interval</div><div class="ttdef"><b>Definition:</b> ERF.H:646</div></div>
 <div class="ttc" id="aclassERF_html_a530d2ce59e6fd46e9fb00e4d11eaf737"><div class="ttname"><a href="classERF.html#a530d2ce59e6fd46e9fb00e4d11eaf737">ERF::restart</a></div><div class="ttdeci">void restart()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:709</div></div>
 <div class="ttc" id="aclassERF_html_a55eae94c5363e227b571739738bb26b7"><div class="ttname"><a href="classERF.html#a55eae94c5363e227b571739738bb26b7">ERF::write_1D_profiles</a></div><div class="ttdeci">void write_1D_profiles(amrex::Real time)</div><div class="ttdef"><b>Definition:</b> ERF_Write1DProfiles.cpp:15</div></div>
@@ -5159,10 +5135,10 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a80981e20939a6a38ba17478da2253ff1"><div class="ttname"><a href="classERF.html#a80981e20939a6a38ba17478da2253ff1">ERF::init_only</a></div><div class="ttdeci">void init_only(int lev, amrex::Real time)</div><div class="ttdef"><b>Definition:</b> ERF.cpp:1125</div></div>
 <div class="ttc" id="aclassERF_html_a8202de1f8f372e3e6fdc483447c6a55f"><div class="ttname"><a href="classERF.html#a8202de1f8f372e3e6fdc483447c6a55f">ERF::AverageDown</a></div><div class="ttdeci">void AverageDown()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:1493</div></div>
 <div class="ttc" id="aclassERF_html_a8e758060d3dede9694fbfcabddc17169"><div class="ttname"><a href="classERF.html#a8e758060d3dede9694fbfcabddc17169">ERF::restart_chkfile</a></div><div class="ttdeci">std::string restart_chkfile</div><div class="ttdef"><b>Definition:</b> ERF.H:575</div></div>
-<div class="ttc" id="aclassERF_html_a8fbfa8bb47c0a3b53e244081aa1e8ad3"><div class="ttname"><a href="classERF.html#a8fbfa8bb47c0a3b53e244081aa1e8ad3">ERF::sampleptlogname</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; sampleptlogname</div><div class="ttdef"><b>Definition:</b> ERF.H:917</div></div>
+<div class="ttc" id="aclassERF_html_a8fbfa8bb47c0a3b53e244081aa1e8ad3"><div class="ttname"><a href="classERF.html#a8fbfa8bb47c0a3b53e244081aa1e8ad3">ERF::sampleptlogname</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; sampleptlogname</div><div class="ttdef"><b>Definition:</b> ERF.H:905</div></div>
 <div class="ttc" id="aclassERF_html_a922892a05ee0c5bccd210a3e5a8599e1"><div class="ttname"><a href="classERF.html#a922892a05ee0c5bccd210a3e5a8599e1">ERF::sum_integrated_quantities</a></div><div class="ttdeci">void sum_integrated_quantities(amrex::Real time)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:14</div></div>
 <div class="ttc" id="aclassERF_html_a92c020bfaa43e40fb5ffc449427a0318"><div class="ttname"><a href="classERF.html#a92c020bfaa43e40fb5ffc449427a0318">ERF::initHSE</a></div><div class="ttdeci">void initHSE()</div><div class="ttdoc">Initialize HSE.</div><div class="ttdef"><b>Definition:</b> ERF_init1d.cpp:126</div></div>
-<div class="ttc" id="aclassERF_html_a9737ddb0de6b9e8a5b17c109d5ad3e08"><div class="ttname"><a href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">ERF::sampleptlog</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt; sampleptlog</div><div class="ttdef"><b>Definition:</b> ERF.H:916</div></div>
+<div class="ttc" id="aclassERF_html_a9737ddb0de6b9e8a5b17c109d5ad3e08"><div class="ttname"><a href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">ERF::sampleptlog</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt; sampleptlog</div><div class="ttdef"><b>Definition:</b> ERF.H:904</div></div>
 <div class="ttc" id="aclassERF_html_aa0c07f31b23d977646b8161e5473fab5"><div class="ttname"><a href="classERF.html#aa0c07f31b23d977646b8161e5473fab5">ERF::start_time</a></div><div class="ttdeci">amrex::Real start_time</div><div class="ttdef"><b>Definition:</b> ERF.H:571</div></div>
 <div class="ttc" id="aclassERF_html_aa53035f34ba133b86172e180abda4209"><div class="ttname"><a href="classERF.html#aa53035f34ba133b86172e180abda4209">ERF::m_w2d</a></div><div class="ttdeci">std::unique_ptr&lt; WriteBndryPlanes &gt; m_w2d</div><div class="ttdef"><b>Definition:</b> ERF.H:719</div></div>
 <div class="ttc" id="aclassERF_html_ab0ce8f3fe8b5af139dce72b61e10f47a"><div class="ttname"><a href="classERF.html#ab0ce8f3fe8b5af139dce72b61e10f47a">ERF::define_grids_to_evolve</a></div><div class="ttdeci">void define_grids_to_evolve(int lev)</div><div class="ttdef"><b>Definition:</b> ERF.cpp:1517</div></div>
@@ -5170,10 +5146,10 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_ad4c61fad53912d1e8d0f774d365bcf0f"><div class="ttname"><a href="classERF.html#ad4c61fad53912d1e8d0f774d365bcf0f">ERF::is_it_time_for_action</a></div><div class="ttdeci">static bool is_it_time_for_action(int nstep, amrex::Real time, amrex::Real dt, int action_interval, amrex::Real action_per)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:342</div></div>
 <div class="ttc" id="aclassERF_html_ad5d585e110291969767013a515719224"><div class="ttname"><a href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData</a></div><div class="ttdeci">void InitData()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:351</div></div>
 <div class="ttc" id="aclassERF_html_adc00038dfe4c332e5d15f621184c69e8"><div class="ttname"><a href="classERF.html#adc00038dfe4c332e5d15f621184c69e8">ERF::plot_file_on_restart</a></div><div class="ttdeci">int plot_file_on_restart</div><div class="ttdef"><b>Definition:</b> ERF.H:564</div></div>
-<div class="ttc" id="aclassERF_html_ae1a8856961aaee53016122facba03dbe"><div class="ttname"><a href="classERF.html#ae1a8856961aaee53016122facba03dbe">ERF::setRecordSampleLineInfo</a></div><div class="ttdeci">void setRecordSampleLineInfo(int i, int lev, amrex::IntVect &amp;cell, const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> ERF.H:896</div></div>
-<div class="ttc" id="aclassERF_html_ae8a57b7fbf5a67c99d04b7d4f43ad100"><div class="ttname"><a href="classERF.html#ae8a57b7fbf5a67c99d04b7d4f43ad100">ERF::samplepoint</a></div><div class="ttdeci">amrex::Vector&lt; amrex::IntVect &gt; samplepoint</div><div class="ttdef"><b>Definition:</b> ERF.H:918</div></div>
+<div class="ttc" id="aclassERF_html_ae1a8856961aaee53016122facba03dbe"><div class="ttname"><a href="classERF.html#ae1a8856961aaee53016122facba03dbe">ERF::setRecordSampleLineInfo</a></div><div class="ttdeci">void setRecordSampleLineInfo(int i, int lev, amrex::IntVect &amp;cell, const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> ERF.H:884</div></div>
+<div class="ttc" id="aclassERF_html_ae8a57b7fbf5a67c99d04b7d4f43ad100"><div class="ttname"><a href="classERF.html#ae8a57b7fbf5a67c99d04b7d4f43ad100">ERF::samplepoint</a></div><div class="ttdeci">amrex::Vector&lt; amrex::IntVect &gt; samplepoint</div><div class="ttdef"><b>Definition:</b> ERF.H:906</div></div>
 <div class="ttc" id="aclassERF_html_af25f70d7d9e4edeedcc40c117cc15505"><div class="ttname"><a href="classERF.html#af25f70d7d9e4edeedcc40c117cc15505">ERF::do_reflux</a></div><div class="ttdeci">static int do_reflux</div><div class="ttdef"><b>Definition:</b> ERF.H:642</div></div>
-<div class="ttc" id="aclassERF_html_af8d930dce1b926ecc3bdc6787dd47818"><div class="ttname"><a href="classERF.html#af8d930dce1b926ecc3bdc6787dd47818">ERF::setRecordSamplePointInfo</a></div><div class="ttdeci">void setRecordSamplePointInfo(int i, int lev, amrex::IntVect &amp;cell, const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> ERF.H:879</div></div>
+<div class="ttc" id="aclassERF_html_af8d930dce1b926ecc3bdc6787dd47818"><div class="ttname"><a href="classERF.html#af8d930dce1b926ecc3bdc6787dd47818">ERF::setRecordSamplePointInfo</a></div><div class="ttdeci">void setRecordSamplePointInfo(int i, int lev, amrex::IntVect &amp;cell, const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> ERF.H:867</div></div>
 <div class="ttc" id="aprob__common_8H_html_a178c89254b2549f69f757cd1d4263763"><div class="ttname"><a href="prob__common_8H.html#a178c89254b2549f69f757cd1d4263763">init_custom_terrain</a></div><div class="ttdeci">void init_custom_terrain(const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, const amrex::Real &amp;time)</div></div>
 <div class="ttc" id="astructSolverChoice_html_a6cf7cd64adcf678e8065b1c4261cefd8"><div class="ttname"><a href="structSolverChoice.html#a6cf7cd64adcf678e8065b1c4261cefd8">SolverChoice::terrain_type</a></div><div class="ttdeci">int terrain_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:369</div></div>
 </div><!-- fragment -->
@@ -5884,11 +5860,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160; </div>
 <div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;    <span class="comment">// The number of ghost cells for density must be 1 greater than that for velocity</span></div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    <span class="comment">//     so that we can go back in forth betwen velocity and momentum on all faces</span></div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    <span class="keywordtype">int</span> ngrow_state = <a class="code" href="classERF.html#a9fe8cc6b90e4b5e1991b38aa0ca1db16">ComputeGhostCells</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a2451280477d028785ae428b09f4e64d0">horiz_spatial_order</a>, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a71fca0daa3d4a84c48789d76c22bcb8a">vert_spatial_order</a>,</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;                                        <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#af7b331ccc4803cb042de1f625f090f72">spatial_order_WENO</a>, (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ad08eb67477cc0f237ef1f0bd0f348ea5">all_use_WENO</a> || <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a543a0361280987ddb6deb9b8c011bbc4">moist_use_WENO</a>),</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    <span class="keywordtype">int</span> ngrow_state = <a class="code" href="classERF.html#a335c05fd72ae08b5a466ae68f4a7408a">ComputeGhostCells</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a2451280477d028785ae428b09f4e64d0">horiz_spatial_order</a>,</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;                                        <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a71fca0daa3d4a84c48789d76c22bcb8a">vert_spatial_order</a>,</div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;                                        <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28">use_NumDiff</a>)+1;</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    <span class="keywordtype">int</span> ngrow_vels  = <a class="code" href="classERF.html#a9fe8cc6b90e4b5e1991b38aa0ca1db16">ComputeGhostCells</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a2451280477d028785ae428b09f4e64d0">horiz_spatial_order</a>, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a71fca0daa3d4a84c48789d76c22bcb8a">vert_spatial_order</a>,</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;                                        <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#af7b331ccc4803cb042de1f625f090f72">spatial_order_WENO</a>, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ad08eb67477cc0f237ef1f0bd0f348ea5">all_use_WENO</a>,</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    <span class="keywordtype">int</span> ngrow_vels  = <a class="code" href="classERF.html#a335c05fd72ae08b5a466ae68f4a7408a">ComputeGhostCells</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a2451280477d028785ae428b09f4e64d0">horiz_spatial_order</a>,</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;                                        <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a71fca0daa3d4a84c48789d76c22bcb8a">vert_spatial_order</a>,</div>
 <div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;                                        <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28">use_NumDiff</a>);</div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160; </div>
 <div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;    <span class="keyword">auto</span>&amp; lev_new = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev];</div>
@@ -6060,8 +6036,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;        ba_nd.surroundingNodes();</div>
 <div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160; </div>
 <div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;        <span class="comment">// We need this to be one greater than the ghost cells to handle levels &gt; 0</span></div>
-<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;        <span class="keywordtype">int</span> ngrow = <a class="code" href="classERF.html#a9fe8cc6b90e4b5e1991b38aa0ca1db16">ComputeGhostCells</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a2451280477d028785ae428b09f4e64d0">horiz_spatial_order</a>, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a71fca0daa3d4a84c48789d76c22bcb8a">vert_spatial_order</a>,</div>
-<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;                                      <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#af7b331ccc4803cb042de1f625f090f72">spatial_order_WENO</a>, (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ad08eb67477cc0f237ef1f0bd0f348ea5">all_use_WENO</a> || <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a543a0361280987ddb6deb9b8c011bbc4">moist_use_WENO</a>),</div>
+<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;        <span class="keywordtype">int</span> ngrow = <a class="code" href="classERF.html#a335c05fd72ae08b5a466ae68f4a7408a">ComputeGhostCells</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a2451280477d028785ae428b09f4e64d0">horiz_spatial_order</a>,</div>
+<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;                                      <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a71fca0daa3d4a84c48789d76c22bcb8a">vert_spatial_order</a>,</div>
 <div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;                                      <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28">use_NumDiff</a>)+2;</div>
 <div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;        <a class="code" href="classERF.html#a93e63e5af35efa564fd4195e8703f84c">z_phys_nd</a>[lev] = std::make_unique&lt;MultiFab&gt;(ba_nd,dm,1,IntVect(ngrow,ngrow,1));</div>
 <div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a6cf7cd64adcf678e8065b1c4261cefd8">terrain_type</a> &gt; 0) {</div>
@@ -6098,18 +6074,15 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;    <a class="code" href="classERF.html#a5600f8ce250d4811012719fdf5e85f00">initialize_integrator</a>(lev, lev_new[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],lev_new[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>]);</div>
 <div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;}</div>
 <div class="ttc" id="aclassERF_html_a30dcf40e8f104fb6b6132805d2eff47c"><div class="ttname"><a href="classERF.html#a30dcf40e8f104fb6b6132805d2eff47c">ERF::z_phys_nd_src</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; z_phys_nd_src</div><div class="ttdef"><b>Definition:</b> ERF.H:522</div></div>
+<div class="ttc" id="aclassERF_html_a335c05fd72ae08b5a466ae68f4a7408a"><div class="ttname"><a href="classERF.html#a335c05fd72ae08b5a466ae68f4a7408a">ERF::ComputeGhostCells</a></div><div class="ttdeci">static AMREX_FORCE_INLINE int ComputeGhostCells(const int &amp;horiz_spatial_order, const int &amp;vert_spatial_order, const bool &amp;use_numerical_diff)</div><div class="ttdef"><b>Definition:</b> ERF.H:736</div></div>
 <div class="ttc" id="aclassERF_html_a4ef635c22e72c715f5703a6b95a7abe5"><div class="ttname"><a href="classERF.html#a4ef635c22e72c715f5703a6b95a7abe5">ERF::z_phys_nd_new</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; z_phys_nd_new</div><div class="ttdef"><b>Definition:</b> ERF.H:525</div></div>
 <div class="ttc" id="aclassERF_html_a72a59614c6d5ab840b924c84d5682270"><div class="ttname"><a href="classERF.html#a72a59614c6d5ab840b924c84d5682270">ERF::z_t_rk</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; z_t_rk</div><div class="ttdef"><b>Definition:</b> ERF.H:528</div></div>
 <div class="ttc" id="aclassERF_html_a9a411e0ea9d9bdbfab957c8081229091"><div class="ttname"><a href="classERF.html#a9a411e0ea9d9bdbfab957c8081229091">ERF::detJ_cc_src</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; detJ_cc_src</div><div class="ttdef"><b>Definition:</b> ERF.H:523</div></div>
-<div class="ttc" id="aclassERF_html_a9fe8cc6b90e4b5e1991b38aa0ca1db16"><div class="ttname"><a href="classERF.html#a9fe8cc6b90e4b5e1991b38aa0ca1db16">ERF::ComputeGhostCells</a></div><div class="ttdeci">static AMREX_FORCE_INLINE int ComputeGhostCells(const int &amp;horiz_spatial_order, const int &amp;vert_spatial_order, const int &amp;spatial_order_WENO, const bool &amp;use_WENO, const bool &amp;use_numerical_diff)</div><div class="ttdef"><b>Definition:</b> ERF.H:736</div></div>
 <div class="ttc" id="aclassERF_html_ae39bf64c5306b1dd939d82d9df728daa"><div class="ttname"><a href="classERF.html#ae39bf64c5306b1dd939d82d9df728daa">ERF::detJ_cc_new</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; detJ_cc_new</div><div class="ttdef"><b>Definition:</b> ERF.H:526</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977aa3900ab375460932d825b615bb532446"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a></div><div class="ttdeci">@ NumDiffs</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:155</div></div>
 <div class="ttc" id="astructSolverChoice_html_a2451280477d028785ae428b09f4e64d0"><div class="ttname"><a href="structSolverChoice.html#a2451280477d028785ae428b09f4e64d0">SolverChoice::horiz_spatial_order</a></div><div class="ttdeci">int horiz_spatial_order</div><div class="ttdef"><b>Definition:</b> DataStruct.H:460</div></div>
-<div class="ttc" id="astructSolverChoice_html_a543a0361280987ddb6deb9b8c011bbc4"><div class="ttname"><a href="structSolverChoice.html#a543a0361280987ddb6deb9b8c011bbc4">SolverChoice::moist_use_WENO</a></div><div class="ttdeci">bool moist_use_WENO</div><div class="ttdef"><b>Definition:</b> DataStruct.H:465</div></div>
 <div class="ttc" id="astructSolverChoice_html_a71fca0daa3d4a84c48789d76c22bcb8a"><div class="ttname"><a href="structSolverChoice.html#a71fca0daa3d4a84c48789d76c22bcb8a">SolverChoice::vert_spatial_order</a></div><div class="ttdeci">int vert_spatial_order</div><div class="ttdef"><b>Definition:</b> DataStruct.H:461</div></div>
 <div class="ttc" id="astructSolverChoice_html_a9c7942f6ef7cf05115f35702097cf107"><div class="ttname"><a href="structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107">SolverChoice::test_mapfactor</a></div><div class="ttdeci">bool test_mapfactor</div><div class="ttdef"><b>Definition:</b> DataStruct.H:368</div></div>
-<div class="ttc" id="astructSolverChoice_html_ad08eb67477cc0f237ef1f0bd0f348ea5"><div class="ttname"><a href="structSolverChoice.html#ad08eb67477cc0f237ef1f0bd0f348ea5">SolverChoice::all_use_WENO</a></div><div class="ttdeci">bool all_use_WENO</div><div class="ttdef"><b>Definition:</b> DataStruct.H:464</div></div>
-<div class="ttc" id="astructSolverChoice_html_af7b331ccc4803cb042de1f625f090f72"><div class="ttname"><a href="structSolverChoice.html#af7b331ccc4803cb042de1f625f090f72">SolverChoice::spatial_order_WENO</a></div><div class="ttdeci">int spatial_order_WENO</div><div class="ttdef"><b>Definition:</b> DataStruct.H:468</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -6135,9 +6108,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    {</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#a1cade630b005dbcc0f644987ef3db287">datalog</a>.size();</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    {</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#a1cade630b005dbcc0f644987ef3db287">datalog</a>.size();</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -6163,9 +6136,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    {</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#a4990f1796b65ec8ee602f177a66afc3e">samplelinelog</a>.size();</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    {</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#a4990f1796b65ec8ee602f177a66afc3e">samplelinelog</a>.size();</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -6191,9 +6164,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;    {</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#a0fa1582bb13357895d2aba91b695624a">sampleline</a>.size();</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    {</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#a0fa1582bb13357895d2aba91b695624a">sampleline</a>.size();</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -6219,9 +6192,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    {</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">sampleptlog</a>.size();</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    {</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">sampleptlog</a>.size();</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -6247,9 +6220,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    {</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#ae8a57b7fbf5a67c99d04b7d4f43ad100">samplepoint</a>.size();</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    {</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#ae8a57b7fbf5a67c99d04b7d4f43ad100">samplepoint</a>.size();</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -6473,7 +6446,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_ab10bfe15c2d15fdd22201b64722a4022"><div class="ttname"><a href="classERF.html#ab10bfe15c2d15fdd22201b64722a4022">ERF::column_loc_x</a></div><div class="ttdeci">static amrex::Real column_loc_x</div><div class="ttdef"><b>Definition:</b> ERF.H:674</div></div>
 <div class="ttc" id="aclassERF_html_ad17ff2753e754ff3eb1330612b820b5f"><div class="ttname"><a href="classERF.html#ad17ff2753e754ff3eb1330612b820b5f">ERF::output_1d_column</a></div><div class="ttdeci">static int output_1d_column</div><div class="ttdef"><b>Definition:</b> ERF.H:671</div></div>
 <div class="ttc" id="aclassERF_html_afa0bef6d3146788302b81c0d4f4802d1"><div class="ttname"><a href="classERF.html#afa0bef6d3146788302b81c0d4f4802d1">ERF::column_interval</a></div><div class="ttdeci">static int column_interval</div><div class="ttdef"><b>Definition:</b> ERF.H:672</div></div>
-<div class="ttc" id="aclassERF_html_afd3cbffc97b8a89e58042e029c5c6b7c"><div class="ttname"><a href="classERF.html#afd3cbffc97b8a89e58042e029c5c6b7c">ERF::get_flux_reg</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::FluxRegister &amp; get_flux_reg(int lev)</div><div class="ttdef"><b>Definition:</b> ERF.H:775</div></div>
+<div class="ttc" id="aclassERF_html_afd3cbffc97b8a89e58042e029c5c6b7c"><div class="ttname"><a href="classERF.html#afd3cbffc97b8a89e58042e029c5c6b7c">ERF::get_flux_reg</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::FluxRegister &amp; get_flux_reg(int lev)</div><div class="ttdef"><b>Definition:</b> ERF.H:763</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -7221,11 +7194,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    Vector&lt;MultiFab&gt; temp_lev_new(<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>);</div>
 <div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    Vector&lt;MultiFab&gt; temp_lev_old(<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>);</div>
 <div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160; </div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    <span class="keywordtype">int</span> ngrow_state = <a class="code" href="classERF.html#a9fe8cc6b90e4b5e1991b38aa0ca1db16">ComputeGhostCells</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a2451280477d028785ae428b09f4e64d0">horiz_spatial_order</a>, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a71fca0daa3d4a84c48789d76c22bcb8a">vert_spatial_order</a>,</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                                        <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#af7b331ccc4803cb042de1f625f090f72">spatial_order_WENO</a>, (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ad08eb67477cc0f237ef1f0bd0f348ea5">all_use_WENO</a> || <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a543a0361280987ddb6deb9b8c011bbc4">moist_use_WENO</a>),</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    <span class="keywordtype">int</span> ngrow_state = <a class="code" href="classERF.html#a335c05fd72ae08b5a466ae68f4a7408a">ComputeGhostCells</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a2451280477d028785ae428b09f4e64d0">horiz_spatial_order</a>,</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                                        <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a71fca0daa3d4a84c48789d76c22bcb8a">vert_spatial_order</a>,</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                                        <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28">use_NumDiff</a>)+1;</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    <span class="keywordtype">int</span> ngrow_vels  = <a class="code" href="classERF.html#a9fe8cc6b90e4b5e1991b38aa0ca1db16">ComputeGhostCells</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a2451280477d028785ae428b09f4e64d0">horiz_spatial_order</a>, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a71fca0daa3d4a84c48789d76c22bcb8a">vert_spatial_order</a>,</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                                        <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#af7b331ccc4803cb042de1f625f090f72">spatial_order_WENO</a>, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ad08eb67477cc0f237ef1f0bd0f348ea5">all_use_WENO</a>,</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    <span class="keywordtype">int</span> ngrow_vels  = <a class="code" href="classERF.html#a335c05fd72ae08b5a466ae68f4a7408a">ComputeGhostCells</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a2451280477d028785ae428b09f4e64d0">horiz_spatial_order</a>,</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                                        <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a71fca0daa3d4a84c48789d76c22bcb8a">vert_spatial_order</a>,</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                                        <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28">use_NumDiff</a>);</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160; </div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    temp_lev_new[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].define(ba, dm, <a class="code" href="namespaceCons.html#ab92931555eff5e3d0d9eb62ae0225cc1a5934ebcc17d4dfd56ed8cf6221c9a5ed">Cons::NumVars</a>, ngrow_state);</div>
@@ -7439,7 +7412,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        } <span class="comment">// if good</span></div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;}</div>
-<div class="ttc" id="aclassERF_html_aa559426d0435e669b04148c58b20caef"><div class="ttname"><a href="classERF.html#aa559426d0435e669b04148c58b20caef">ERF::SampleLineLog</a></div><div class="ttdeci">AMREX_FORCE_INLINE std::ostream &amp; SampleLineLog(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:810</div></div>
+<div class="ttc" id="aclassERF_html_aa559426d0435e669b04148c58b20caef"><div class="ttname"><a href="classERF.html#aa559426d0435e669b04148c58b20caef">ERF::SampleLineLog</a></div><div class="ttdeci">AMREX_FORCE_INLINE std::ostream &amp; SampleLineLog(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:798</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -7516,7 +7489,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        } <span class="comment">// if good</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    } <span class="comment">// only write from processor that holds the cell</span></div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
-<div class="ttc" id="aclassERF_html_af5f6c32cc5463e52901f21117d3156c7"><div class="ttname"><a href="classERF.html#af5f6c32cc5463e52901f21117d3156c7">ERF::SamplePointLog</a></div><div class="ttdeci">AMREX_FORCE_INLINE std::ostream &amp; SamplePointLog(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:796</div></div>
+<div class="ttc" id="aclassERF_html_af5f6c32cc5463e52901f21117d3156c7"><div class="ttname"><a href="classERF.html#af5f6c32cc5463e52901f21117d3156c7">ERF::SamplePointLog</a></div><div class="ttdeci">AMREX_FORCE_INLINE std::ostream &amp; SamplePointLog(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:784</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -7543,9 +7516,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    {</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#a0fa1582bb13357895d2aba91b695624a">sampleline</a>[i];</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    {</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#a0fa1582bb13357895d2aba91b695624a">sampleline</a>[i];</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -7572,9 +7545,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    {</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        <span class="keywordflow">return</span> *<a class="code" href="classERF.html#a4990f1796b65ec8ee602f177a66afc3e">samplelinelog</a>[i];</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    {</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;        <span class="keywordflow">return</span> *<a class="code" href="classERF.html#a4990f1796b65ec8ee602f177a66afc3e">samplelinelog</a>[i];</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -7603,7 +7576,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>The filename of the ith samplelinelog file. </p>
-<div class="fragment"><div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classERF.html#a0553967f1131860bb8ecb47c0f192eaa">samplelinelogname</a>[i]; }</div>
+<div class="fragment"><div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classERF.html#a0553967f1131860bb8ecb47c0f192eaa">samplelinelogname</a>[i]; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -7630,9 +7603,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;    {</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#ae8a57b7fbf5a67c99d04b7d4f43ad100">samplepoint</a>[i];</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    {</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classERF.html#ae8a57b7fbf5a67c99d04b7d4f43ad100">samplepoint</a>[i];</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -7659,9 +7632,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    {</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;        <span class="keywordflow">return</span> *<a class="code" href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">sampleptlog</a>[i];</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    {</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;        <span class="keywordflow">return</span> *<a class="code" href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">sampleptlog</a>[i];</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -7690,7 +7663,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>The filename of the ith sampleptlog file. </p>
-<div class="fragment"><div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classERF.html#a8fbfa8bb47c0a3b53e244081aa1e8ad3">sampleptlogname</a>[i]; }</div>
+<div class="fragment"><div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classERF.html#a8fbfa8bb47c0a3b53e244081aa1e8ad3">sampleptlogname</a>[i]; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -7940,17 +7913,17 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    {</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;        <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor())</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        {</div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;            <a class="code" href="classERF.html#a1cade630b005dbcc0f644987ef3db287">datalog</a>[i] = std::make_unique&lt;std::fstream&gt;();</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;            <a class="code" href="classERF.html#a1cade630b005dbcc0f644987ef3db287">datalog</a>[i]-&gt;open(filename.c_str(),std::ios::out|std::ios::app);</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classERF.html#a1cade630b005dbcc0f644987ef3db287">datalog</a>[i]-&gt;good()) {</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;                amrex::FileOpenFailed(filename);</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;            }</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;        }</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;        amrex::ParallelDescriptor::Barrier(<span class="stringliteral">&quot;ERF::setRecordDataInfo&quot;</span>);</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;    {</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor())</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;        {</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;            <a class="code" href="classERF.html#a1cade630b005dbcc0f644987ef3db287">datalog</a>[i] = std::make_unique&lt;std::fstream&gt;();</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;            <a class="code" href="classERF.html#a1cade630b005dbcc0f644987ef3db287">datalog</a>[i]-&gt;open(filename.c_str(),std::ios::out|std::ios::app);</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classERF.html#a1cade630b005dbcc0f644987ef3db287">datalog</a>[i]-&gt;good()) {</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;                amrex::FileOpenFailed(filename);</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;            }</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;        }</div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;        amrex::ParallelDescriptor::Barrier(<span class="stringliteral">&quot;ERF::setRecordDataInfo&quot;</span>);</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -7999,21 +7972,21 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;    {</div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;        amrex::MultiFab dummy(grids[lev],dmap[lev],1,0);</div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(dummy); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;        {</div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;            <span class="keyword">const</span> amrex::Box&amp; bx = mfi.validbox();</div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;            <span class="keywordflow">if</span> (bx.contains(cell)) {</div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;                <a class="code" href="classERF.html#a4990f1796b65ec8ee602f177a66afc3e">samplelinelog</a>[i] = std::make_unique&lt;std::fstream&gt;();</div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;                <a class="code" href="classERF.html#a4990f1796b65ec8ee602f177a66afc3e">samplelinelog</a>[i]-&gt;open(filename.c_str(),std::ios::out|std::ios::app);</div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classERF.html#a4990f1796b65ec8ee602f177a66afc3e">samplelinelog</a>[i]-&gt;good()) {</div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;                    amrex::FileOpenFailed(filename);</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;                }</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;            }</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;        }</div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;        amrex::ParallelDescriptor::Barrier(<span class="stringliteral">&quot;ERF::setRecordSampleLineInfo&quot;</span>);</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;    {</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;        amrex::MultiFab dummy(grids[lev],dmap[lev],1,0);</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(dummy); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;        {</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;            <span class="keyword">const</span> amrex::Box&amp; bx = mfi.validbox();</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;            <span class="keywordflow">if</span> (bx.contains(cell)) {</div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;                <a class="code" href="classERF.html#a4990f1796b65ec8ee602f177a66afc3e">samplelinelog</a>[i] = std::make_unique&lt;std::fstream&gt;();</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;                <a class="code" href="classERF.html#a4990f1796b65ec8ee602f177a66afc3e">samplelinelog</a>[i]-&gt;open(filename.c_str(),std::ios::out|std::ios::app);</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classERF.html#a4990f1796b65ec8ee602f177a66afc3e">samplelinelog</a>[i]-&gt;good()) {</div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;                    amrex::FileOpenFailed(filename);</div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;                }</div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;            }</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;        }</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;        amrex::ParallelDescriptor::Barrier(<span class="stringliteral">&quot;ERF::setRecordSampleLineInfo&quot;</span>);</div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -8062,21 +8035,21 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    {</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;        amrex::MultiFab dummy(grids[lev],dmap[lev],1,0);</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(dummy); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        {</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;            <span class="keyword">const</span> amrex::Box&amp; bx = mfi.validbox();</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;            <span class="keywordflow">if</span> (bx.contains(cell)) {</div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;                <a class="code" href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">sampleptlog</a>[i] = std::make_unique&lt;std::fstream&gt;();</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;                <a class="code" href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">sampleptlog</a>[i]-&gt;open(filename.c_str(),std::ios::out|std::ios::app);</div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">sampleptlog</a>[i]-&gt;good()) {</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;                    amrex::FileOpenFailed(filename);</div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;                }</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;            }</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;        }</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;        amrex::ParallelDescriptor::Barrier(<span class="stringliteral">&quot;ERF::setRecordSamplePointInfo&quot;</span>);</div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    {</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        amrex::MultiFab dummy(grids[lev],dmap[lev],1,0);</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(dummy); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;        {</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;            <span class="keyword">const</span> amrex::Box&amp; bx = mfi.validbox();</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;            <span class="keywordflow">if</span> (bx.contains(cell)) {</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;                <a class="code" href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">sampleptlog</a>[i] = std::make_unique&lt;std::fstream&gt;();</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;                <a class="code" href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">sampleptlog</a>[i]-&gt;open(filename.c_str(),std::ios::out|std::ios::app);</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">sampleptlog</a>[i]-&gt;good()) {</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;                    amrex::FileOpenFailed(filename);</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;                }</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;            }</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;        }</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;        amrex::ParallelDescriptor::Barrier(<span class="stringliteral">&quot;ERF::setRecordSamplePointInfo&quot;</span>);</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -8206,16 +8179,16 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
-<div class="ttc" id="aclassERF_html_a14f922bdc3a0f23c087afa32c67ac119"><div class="ttname"><a href="classERF.html#a14f922bdc3a0f23c087afa32c67ac119">ERF::NumSampleLineLogs</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumSampleLineLogs() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:817</div></div>
+<div class="ttc" id="aclassERF_html_a14f922bdc3a0f23c087afa32c67ac119"><div class="ttname"><a href="classERF.html#a14f922bdc3a0f23c087afa32c67ac119">ERF::NumSampleLineLogs</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumSampleLineLogs() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:805</div></div>
 <div class="ttc" id="aclassERF_html_a2cdc63885e5fec54f89cdcaffcbdc188"><div class="ttname"><a href="classERF.html#a2cdc63885e5fec54f89cdcaffcbdc188">ERF::volWgtSumMF</a></div><div class="ttdeci">amrex::Real volWgtSumMF(int lev, const amrex::MultiFab &amp;mf, int comp, bool local, bool finemask)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:258</div></div>
-<div class="ttc" id="aclassERF_html_a41324a4b5610fde725fe721550b23c85"><div class="ttname"><a href="classERF.html#a41324a4b5610fde725fe721550b23c85">ERF::NumSamplePointLogs</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumSamplePointLogs() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:803</div></div>
-<div class="ttc" id="aclassERF_html_a54357e2f81f3d7d3a9189a3e21283e6b"><div class="ttname"><a href="classERF.html#a54357e2f81f3d7d3a9189a3e21283e6b">ERF::SampleLine</a></div><div class="ttdeci">amrex::IntVect &amp; SampleLine(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:836</div></div>
-<div class="ttc" id="aclassERF_html_a5bc7dd2c7e1ebf65b7dc1d9bf0dfb36f"><div class="ttname"><a href="classERF.html#a5bc7dd2c7e1ebf65b7dc1d9bf0dfb36f">ERF::NumSamplePoints</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumSamplePoints() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:830</div></div>
-<div class="ttc" id="aclassERF_html_a70d78ca624acf09d8faab9a2d51264d9"><div class="ttname"><a href="classERF.html#a70d78ca624acf09d8faab9a2d51264d9">ERF::NumSampleLines</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumSampleLines() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:843</div></div>
-<div class="ttc" id="aclassERF_html_a9095d1b641b4d7f32ca5acb679786891"><div class="ttname"><a href="classERF.html#a9095d1b641b4d7f32ca5acb679786891">ERF::SamplePoint</a></div><div class="ttdeci">amrex::IntVect &amp; SamplePoint(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:823</div></div>
+<div class="ttc" id="aclassERF_html_a41324a4b5610fde725fe721550b23c85"><div class="ttname"><a href="classERF.html#a41324a4b5610fde725fe721550b23c85">ERF::NumSamplePointLogs</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumSamplePointLogs() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:791</div></div>
+<div class="ttc" id="aclassERF_html_a54357e2f81f3d7d3a9189a3e21283e6b"><div class="ttname"><a href="classERF.html#a54357e2f81f3d7d3a9189a3e21283e6b">ERF::SampleLine</a></div><div class="ttdeci">amrex::IntVect &amp; SampleLine(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:824</div></div>
+<div class="ttc" id="aclassERF_html_a5bc7dd2c7e1ebf65b7dc1d9bf0dfb36f"><div class="ttname"><a href="classERF.html#a5bc7dd2c7e1ebf65b7dc1d9bf0dfb36f">ERF::NumSamplePoints</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumSamplePoints() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:818</div></div>
+<div class="ttc" id="aclassERF_html_a70d78ca624acf09d8faab9a2d51264d9"><div class="ttname"><a href="classERF.html#a70d78ca624acf09d8faab9a2d51264d9">ERF::NumSampleLines</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumSampleLines() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:831</div></div>
+<div class="ttc" id="aclassERF_html_a9095d1b641b4d7f32ca5acb679786891"><div class="ttname"><a href="classERF.html#a9095d1b641b4d7f32ca5acb679786891">ERF::SamplePoint</a></div><div class="ttdeci">amrex::IntVect &amp; SamplePoint(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:811</div></div>
 <div class="ttc" id="aclassERF_html_aa28182226262c67cfd686d35bfeabcad"><div class="ttname"><a href="classERF.html#aa28182226262c67cfd686d35bfeabcad">ERF::sample_points</a></div><div class="ttdeci">void sample_points(int lev, amrex::Real time, amrex::IntVect cell, amrex::MultiFab &amp;mf)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:129</div></div>
-<div class="ttc" id="aclassERF_html_aa2c3ee1910008b828b9da79ccdfe3871"><div class="ttname"><a href="classERF.html#aa2c3ee1910008b828b9da79ccdfe3871">ERF::DataLog</a></div><div class="ttdeci">AMREX_FORCE_INLINE std::ostream &amp; DataLog(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:782</div></div>
-<div class="ttc" id="aclassERF_html_ac1238c1616826c66df1dfd9076e6a3da"><div class="ttname"><a href="classERF.html#ac1238c1616826c66df1dfd9076e6a3da">ERF::NumDataLogs</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumDataLogs() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:789</div></div>
+<div class="ttc" id="aclassERF_html_aa2c3ee1910008b828b9da79ccdfe3871"><div class="ttname"><a href="classERF.html#aa2c3ee1910008b828b9da79ccdfe3871">ERF::DataLog</a></div><div class="ttdeci">AMREX_FORCE_INLINE std::ostream &amp; DataLog(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:770</div></div>
+<div class="ttc" id="aclassERF_html_ac1238c1616826c66df1dfd9076e6a3da"><div class="ttname"><a href="classERF.html#ac1238c1616826c66df1dfd9076e6a3da">ERF::NumDataLogs</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumDataLogs() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:777</div></div>
 <div class="ttc" id="aclassERF_html_afb798c72ea4fde6f4da8d01a24c8c165"><div class="ttname"><a href="classERF.html#afb798c72ea4fde6f4da8d01a24c8c165">ERF::sample_lines</a></div><div class="ttdeci">void sample_lines(int lev, amrex::Real time, amrex::IntVect cell, amrex::MultiFab &amp;mf)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:167</div></div>
 </div><!-- fragment -->
 </div>
@@ -9161,7 +9134,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  amrex::ParmParse::dumpTable(jobInfoFile, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  jobInfoFile.close();</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
-<div class="ttc" id="aclassERF_html_ae0597da6edf955cd138e52fd00380ff2"><div class="ttname"><a href="classERF.html#ae0597da6edf955cd138e52fd00380ff2">ERF::getCPUTime</a></div><div class="ttdeci">static amrex::Real getCPUTime()</div><div class="ttdef"><b>Definition:</b> ERF.H:852</div></div>
+<div class="ttc" id="aclassERF_html_ae0597da6edf955cd138e52fd00380ff2"><div class="ttname"><a href="classERF.html#ae0597da6edf955cd138e52fd00380ff2">ERF::getCPUTime</a></div><div class="ttdeci">static amrex::Real getCPUTime()</div><div class="ttdef"><b>Definition:</b> ERF.H:840</div></div>
 <div class="ttc" id="awriteJobInfo_8cpp_html_aabaa127a3a319c1b86090d6c88568965"><div class="ttname"><a href="writeJobInfo_8cpp.html#aabaa127a3a319c1b86090d6c88568965">inputs_name</a></div><div class="ttdeci">std::string inputs_name</div><div class="ttdef"><b>Definition:</b> main.cpp:13</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
