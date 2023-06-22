@@ -9376,7 +9376,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a063a88594452100497651e8aaf1f68d7">use_terrain</a>) {</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev) {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            BoxArray nodal_grids(grids[lev]); nodal_grids.surroundingNodes();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            mf_nd[lev].define(nodal_grids, dmap[lev], ncomp_mf, 0);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            mf_nd[lev].define(nodal_grids, dmap[lev], 3, 0);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            mf_nd[lev].setVal(0.);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
