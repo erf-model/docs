@@ -97,15 +97,17 @@ Collaboration diagram for ERFFillPatcher:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERFFillPatcher__coll__graph.png" border="0" usemap="#aERFFillPatcher_coll__map" alt="Collaboration graph"/></div>
 <map name="aERFFillPatcher_coll__map" id="aERFFillPatcher_coll__map">
-<area shape="rect" title=" " alt="" coords="359,201,473,228"/>
-<area shape="rect" title=" " alt="" coords="61,20,148,47"/>
-<area shape="rect" title=" " alt="" coords="27,77,182,104"/>
-<area shape="rect" title=" " alt="" coords="71,128,138,155"/>
-<area shape="rect" title=" " alt="" coords="66,179,143,205"/>
-<area shape="rect" title=" " alt="" coords="5,229,204,256"/>
-<area shape="rect" title=" " alt="" coords="85,281,124,308"/>
-<area shape="rect" title=" " alt="" coords="53,332,156,359"/>
-<area shape="rect" title=" " alt="" coords="63,391,146,417"/>
+<area shape="rect" title=" " alt="" coords="359,264,473,291"/>
+<area shape="rect" title=" " alt="" coords="61,28,148,55"/>
+<area shape="rect" title=" " alt="" coords="27,85,182,112"/>
+<area shape="rect" title=" " alt="" coords="71,136,138,163"/>
+<area shape="rect" title=" " alt="" coords="66,187,143,213"/>
+<area shape="rect" title=" " alt="" coords="5,237,204,264"/>
+<area shape="rect" title=" " alt="" coords="85,288,124,315"/>
+<area shape="rect" title=" " alt="" coords="19,339,191,365"/>
+<area shape="rect" title=" " alt="" coords="53,389,156,416"/>
+<area shape="rect" title=" " alt="" coords="79,440,130,467"/>
+<area shape="rect" title=" " alt="" coords="63,497,146,524"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -115,9 +117,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afff282aab6af28e8f1ab71156812e1b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ccb8bfb83c344544283b7345be023d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFFillPatcher.html#a4ccb8bfb83c344544283b7345be023d1">registerCoarseData</a> (amrex::Vector&lt; amrex::MultiFab const * &gt; const &amp;crse_data, amrex::Vector&lt; amrex::Real &gt; const &amp;crse_time)</td></tr>
 <tr class="separator:a4ccb8bfb83c344544283b7345be023d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a137ba05d77f4defc485c1ecacdf7d606"><td class="memTemplParams" colspan="2">template&lt;typename BC &gt; </td></tr>
-<tr class="memitem:a137ba05d77f4defc485c1ecacdf7d606"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classERFFillPatcher.html#a137ba05d77f4defc485c1ecacdf7d606">fillCoarseFineBoundary</a> (amrex::MultiFab &amp;mf, amrex::Real time, BC &amp;cbc, amrex::Vector&lt; amrex::BCRec &gt; const &amp;bcs)</td></tr>
-<tr class="separator:a137ba05d77f4defc485c1ecacdf7d606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f73d7721620004032f76b48eee946b"><td class="memTemplParams" colspan="2">template&lt;typename BC &gt; </td></tr>
+<tr class="memitem:a48f73d7721620004032f76b48eee946b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classERFFillPatcher.html#a48f73d7721620004032f76b48eee946b">fill</a> (amrex::MultiFab &amp;mf, amrex::Real time, BC &amp;cbc, amrex::Vector&lt; amrex::BCRec &gt; const &amp;bcs)</td></tr>
+<tr class="separator:a48f73d7721620004032f76b48eee946b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -145,6 +147,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a3e23ee1ae2816da86cd9389ddad1c4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a857514e550f6b55ad21017ad8200ce87"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87">m_cf_fine_data</a></td></tr>
 <tr class="separator:a857514e550f6b55ad21017ad8200ce87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a562ca1201d642f3a7dd5700a056776d9"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a></td></tr>
+<tr class="separator:a562ca1201d642f3a7dd5700a056776d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae89877908970649653ae09c42d3c7b05"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFFillPatcher.html#ae89877908970649653ae09c42d3c7b05">m_dt_crse</a></td></tr>
+<tr class="separator:ae89877908970649653ae09c42d3c7b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afff282aab6af28e8f1ab71156812e1b8"></a>
@@ -249,9 +255,14 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    BoxArray cf_fba(std::move(bl));</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    DistributionMapping cf_dm(cf_fba);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87">m_cf_fine_data</a>.define(cf_fba, cf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>.emplace_back(BoxArray(std::move(cbl)), cf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// This will be used as a temporary to hold the time-interpolated state</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87">m_cf_fine_data</a>.define(cf_fba, cf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// These will hold the coarse data on the m_cf grids</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>.emplace_back(BoxArray(std::move(cbl)), cf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>.emplace_back(BoxArray(std::move(cbl)), cf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 <div class="ttc" id="aclassERFFillPatcher_html_a12694a711f281b957f7015a98e5c9b77"><div class="ttname"><a href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">ERFFillPatcher::m_fgeom</a></div><div class="ttdeci">amrex::Geometry m_fgeom</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:29</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a297b1d2468ed152850c7bb6c156101b3"><div class="ttname"><a href="classERFFillPatcher.html#a297b1d2468ed152850c7bb6c156101b3">ERFFillPatcher::m_fba</a></div><div class="ttdeci">amrex::BoxArray m_fba</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:25</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a2fc352aecabd75ec92f5d17730683a1c"><div class="ttname"><a href="classERFFillPatcher.html#a2fc352aecabd75ec92f5d17730683a1c">ERFFillPatcher::m_interp</a></div><div class="ttdeci">amrex::InterpBase * m_interp</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:33</div></div>
@@ -268,8 +279,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a137ba05d77f4defc485c1ecacdf7d606"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a137ba05d77f4defc485c1ecacdf7d606">&#9670;&nbsp;</a></span>fillCoarseFineBoundary()</h2>
+<a id="a48f73d7721620004032f76b48eee946b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48f73d7721620004032f76b48eee946b">&#9670;&nbsp;</a></span>fill()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,7 +288,7 @@ Private Attributes</h2></td></tr>
 template&lt;typename BC &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void ERFFillPatcher::fillCoarseFineBoundary </td>
+          <td class="memname">void ERFFillPatcher::fill </td>
           <td>(</td>
           <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
           <td class="paramname"><em>mf</em>, </td>
@@ -307,12 +318,30 @@ template&lt;typename BC &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    cbc(<a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0], 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, amrex::IntVect(0), time, 0);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    amrex::FillPatchInterp(<a class="code" href="classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87">m_cf_fine_data</a>, 0, <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0], 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, amrex::IntVect(0),</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                           <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>, <a class="code" href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">m_fgeom</a>, <a class="code" href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">m_fgeom</a>.Domain(), <a class="code" href="classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba">m_ratio</a>, <a class="code" href="classERFFillPatcher.html#a2fc352aecabd75ec92f5d17730683a1c">m_interp</a>, bcs, 0);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    mf.ParallelCopy(<a class="code" href="classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87">m_cf_fine_data</a>, 0, 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, amrex::IntVect{0}, mf.nGrowVect());</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    cbc(<a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0], 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, amrex::IntVect(0), time, 0);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    amrex::MultiFab crse_data_time_interp(<a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0].boxArray(), <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0].DistributionMap(),</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                          <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, amrex::IntVect{0});</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    amrex::Real fac_new = (time - <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[0]) / <a class="code" href="classERFFillPatcher.html#ae89877908970649653ae09c42d3c7b05">m_dt_crse</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    amrex::Real fac_old = 1.0 - fac_new;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Time interpolate the coarse data</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    amrex::MultiFab::LinComb(crse_data_time_interp,fac_old, <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0], 0,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                   fac_new, <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[1], 0,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                             0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Spatially interpolate the time-interpolated coarse data</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    amrex::FillPatchInterp(<a class="code" href="classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87">m_cf_fine_data</a>, 0, crse_data_time_interp, 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, amrex::IntVect(0),</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                           <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>, <a class="code" href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">m_fgeom</a>, <a class="code" href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">m_fgeom</a>.Domain(), <a class="code" href="classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba">m_ratio</a>, <a class="code" href="classERFFillPatcher.html#a2fc352aecabd75ec92f5d17730683a1c">m_interp</a>, bcs, 0);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// Copy the spatially and temporally interpolated data back into the mf</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    mf.ParallelCopy(<a class="code" href="classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87">m_cf_fine_data</a>, 0, 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, amrex::IntVect{0}, mf.nGrowVect());</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="ttc" id="aclassERFFillPatcher_html_a562ca1201d642f3a7dd5700a056776d9"><div class="ttname"><a href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">ERFFillPatcher::m_crse_times</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_crse_times</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:37</div></div>
+<div class="ttc" id="aclassERFFillPatcher_html_ae89877908970649653ae09c42d3c7b05"><div class="ttname"><a href="classERFFillPatcher.html#ae89877908970649653ae09c42d3c7b05">ERFFillPatcher::m_dt_crse</a></div><div class="ttdeci">amrex::Real m_dt_crse</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:38</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -341,10 +370,19 @@ template&lt;typename BC &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    AMREX_ALWAYS_ASSERT(crse_data.size() == 1);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0].ParallelCopy(*crse_data[0], <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>.periodicity());</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    AMREX_ALWAYS_ASSERT(crse_data.size() == 2); <span class="comment">// old and new</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    AMREX_ALWAYS_ASSERT(crse_time[0] != crse_time[1]);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[0].ParallelCopy(*crse_data[0], <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>.periodicity()); <span class="comment">// old data</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5">m_cf_crse_data</a>[1].ParallelCopy(*crse_data[1], <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>.periodicity()); <span class="comment">// new data</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>.resize(2);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[0] = crse_time[0]; <span class="comment">// time of &quot;old&quot; coarse data</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[1] = crse_time[1]; <span class="comment">// time of &quot;new&quot; coarse data</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="classERFFillPatcher.html#ae89877908970649653ae09c42d3c7b05">m_dt_crse</a> = crse_time[1] - crse_time[0];</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -413,7 +451,7 @@ template&lt;typename BC &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#afff282aab6af28e8f1ab71156812e1b8">ERFFillPatcher()</a>, <a class="el" href="classERFFillPatcher.html#a137ba05d77f4defc485c1ecacdf7d606">fillCoarseFineBoundary()</a>, and <a class="el" href="classERFFillPatcher.html#a4ccb8bfb83c344544283b7345be023d1">registerCoarseData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#afff282aab6af28e8f1ab71156812e1b8">ERFFillPatcher()</a>, <a class="el" href="classERFFillPatcher.html#a48f73d7721620004032f76b48eee946b">fill()</a>, and <a class="el" href="classERFFillPatcher.html#a4ccb8bfb83c344544283b7345be023d1">registerCoarseData()</a>.</p>
 
 </div>
 </div>
@@ -437,7 +475,7 @@ template&lt;typename BC &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#afff282aab6af28e8f1ab71156812e1b8">ERFFillPatcher()</a>, and <a class="el" href="classERFFillPatcher.html#a137ba05d77f4defc485c1ecacdf7d606">fillCoarseFineBoundary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#afff282aab6af28e8f1ab71156812e1b8">ERFFillPatcher()</a>, and <a class="el" href="classERFFillPatcher.html#a48f73d7721620004032f76b48eee946b">fill()</a>.</p>
 
 </div>
 </div>
@@ -461,7 +499,55 @@ template&lt;typename BC &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#afff282aab6af28e8f1ab71156812e1b8">ERFFillPatcher()</a>, <a class="el" href="classERFFillPatcher.html#a137ba05d77f4defc485c1ecacdf7d606">fillCoarseFineBoundary()</a>, and <a class="el" href="classERFFillPatcher.html#a4ccb8bfb83c344544283b7345be023d1">registerCoarseData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#afff282aab6af28e8f1ab71156812e1b8">ERFFillPatcher()</a>, <a class="el" href="classERFFillPatcher.html#a48f73d7721620004032f76b48eee946b">fill()</a>, and <a class="el" href="classERFFillPatcher.html#a4ccb8bfb83c344544283b7345be023d1">registerCoarseData()</a>.</p>
+
+</div>
+</div>
+<a id="a562ca1201d642f3a7dd5700a056776d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a562ca1201d642f3a7dd5700a056776d9">&#9670;&nbsp;</a></span>m_crse_times</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; ERFFillPatcher::m_crse_times</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#a48f73d7721620004032f76b48eee946b">fill()</a>, and <a class="el" href="classERFFillPatcher.html#a4ccb8bfb83c344544283b7345be023d1">registerCoarseData()</a>.</p>
+
+</div>
+</div>
+<a id="ae89877908970649653ae09c42d3c7b05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae89877908970649653ae09c42d3c7b05">&#9670;&nbsp;</a></span>m_dt_crse</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Real ERFFillPatcher::m_dt_crse</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#a48f73d7721620004032f76b48eee946b">fill()</a>, and <a class="el" href="classERFFillPatcher.html#a4ccb8bfb83c344544283b7345be023d1">registerCoarseData()</a>.</p>
 
 </div>
 </div>
@@ -529,7 +615,7 @@ template&lt;typename BC &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#afff282aab6af28e8f1ab71156812e1b8">ERFFillPatcher()</a>, and <a class="el" href="classERFFillPatcher.html#a137ba05d77f4defc485c1ecacdf7d606">fillCoarseFineBoundary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#afff282aab6af28e8f1ab71156812e1b8">ERFFillPatcher()</a>, and <a class="el" href="classERFFillPatcher.html#a48f73d7721620004032f76b48eee946b">fill()</a>.</p>
 
 </div>
 </div>
@@ -553,7 +639,7 @@ template&lt;typename BC &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#a137ba05d77f4defc485c1ecacdf7d606">fillCoarseFineBoundary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#a48f73d7721620004032f76b48eee946b">fill()</a>.</p>
 
 </div>
 </div>
@@ -577,7 +663,7 @@ template&lt;typename BC &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#afff282aab6af28e8f1ab71156812e1b8">ERFFillPatcher()</a>, and <a class="el" href="classERFFillPatcher.html#a137ba05d77f4defc485c1ecacdf7d606">fillCoarseFineBoundary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#afff282aab6af28e8f1ab71156812e1b8">ERFFillPatcher()</a>, and <a class="el" href="classERFFillPatcher.html#a48f73d7721620004032f76b48eee946b">fill()</a>.</p>
 
 </div>
 </div>
@@ -623,7 +709,7 @@ template&lt;typename BC &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#afff282aab6af28e8f1ab71156812e1b8">ERFFillPatcher()</a>, and <a class="el" href="classERFFillPatcher.html#a137ba05d77f4defc485c1ecacdf7d606">fillCoarseFineBoundary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#afff282aab6af28e8f1ab71156812e1b8">ERFFillPatcher()</a>, and <a class="el" href="classERFFillPatcher.html#a48f73d7721620004032f76b48eee946b">fill()</a>.</p>
 
 </div>
 </div>
