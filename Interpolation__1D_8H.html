@@ -226,30 +226,26 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">else</span> <span class="comment">//extrapolate</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">// y = y0 + ((x - x0) / (x1 - x0)) * (y1 - y0)</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">int</span> i = 0;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (alpha_interp &gt; alpha_max)</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            i = alpha_size-2;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (alpha_interp &lt; alpha_min)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (alpha_interp &gt;= alpha_min)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            i = 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;interpolate_1d: we shouldn&#39;t be here!&quot;</span>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;interpolate_1d: we shouldn&#39;t be here!&quot;</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        amrex::Real y0 = beta[i];</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        amrex::Real y1 = beta[i + 1];</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = alpha_interp;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        amrex::Real x0 = alpha[i];</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        amrex::Real x1 = alpha[i + 1];</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        beta_interp = y0 + ((<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - x0) / (x1 - x0)) * (y1 - y0);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> beta_interp;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        amrex::Real y0 = beta[i];</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        amrex::Real y1 = beta[i + 1];</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = alpha_interp;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        amrex::Real x0 = alpha[i];</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        amrex::Real x1 = alpha[i + 1];</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        beta_interp = y0 + ((<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - x0) / (x1 - x0)) * (y1 - y0);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> beta_interp;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__init__from__input__sounding_8cpp.html#af68859165e01e79fe1a3bae26bae44fa">init_bx_scalars_from_input_sounding()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a4c3c4107b1479ab2358c82e46647ecfd">init_bx_scalars_from_input_sounding_hse()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a8ddafb7579a49bb6beb14417609e06c6">init_bx_velocities_from_input_sounding()</a>, <a class="el" href="structInputSoundingData.html#a7a06635c54167688c17300611f6dde50">InputSoundingData::read_from_file()</a>, and <a class="el" href="classERF.html#a0877d5a0263641c13b92d2d16f47b689">ERF::setRayleighRefFromSounding()</a>.</p>
