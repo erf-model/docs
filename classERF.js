@@ -53,7 +53,7 @@ var classERF =
     [ "NumSamplePointLogs", "classERF.html#a41324a4b5610fde725fe721550b23c85", null ],
     [ "NumSamplePoints", "classERF.html#a5bc7dd2c7e1ebf65b7dc1d9bf0dfb36f", null ],
     [ "operator=", "classERF.html#a72fcc41d6f5225e9ca3b8c9111ff37e7", null ],
-    [ "operator=", "classERF.html#a979dc6007870caeea25c9314587d20be", null ],
+    [ "operator=", "classERF.html#abbc40e6fe700b80e3666dd3723624f05", null ],
     [ "PlotFileName", "classERF.html#a54f6c5d799e51521ad10bb57d29d0c44", null ],
     [ "PlotFileVarNames", "classERF.html#a2dcd22cb915d923c687f60267f44542b", null ],
     [ "post_timestep", "classERF.html#a58f6683aff0fbe6949bfe8b49275a8b3", null ],
