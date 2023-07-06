@@ -3,7 +3,7 @@ var searchData=
   ['par_5faccess_1634',['par_access',['../structncutils_1_1NCVar.html#a62b3d88feb5305a1c7efbb0ddf8002fc',1,'ncutils::NCVar']]],
   ['parallelbox_1635',['ParallelBox',['../DirectionSelector_8H.html#aa828f1c2424107e1a454fee49cd04ad5',1,'DirectionSelector.H']]],
   ['perpendicularbox_1636',['PerpendicularBox',['../DirectionSelector_8H.html#aef11f5662c1574638970c58b8421afa9',1,'DirectionSelector.H']]],
-  ['planeaverage_1637',['PlaneAverage',['../classPlaneAverage.html#ab1056e661cdb1265047e7a31abef0ebf',1,'PlaneAverage::PlaneAverage(const amrex::MultiFab *field_in, amrex::Geometry geom_in, int axis_in)'],['../classPlaneAverage.html#aab8235d99bd3e841f0a2a5fb563c0bfa',1,'PlaneAverage::PlaneAverage()=default']]],
+  ['planeaverage_1637',['PlaneAverage',['../classPlaneAverage.html#ab1056e661cdb1265047e7a31abef0ebf',1,'PlaneAverage::PlaneAverage(const amrex::MultiFab *field_in, amrex::Geometry geom_in, int axis_in)'],['../classPlaneAverage.html#ae021681bed8e81747b36dd6bcbd1a257',1,'PlaneAverage::PlaneAverage()=delete']]],
   ['plotfilename_1638',['PlotFileName',['../classERF.html#a54f6c5d799e51521ad10bb57d29d0c44',1,'ERF']]],
   ['plotfilevarnames_1639',['PlotFileVarNames',['../classERF.html#a2dcd22cb915d923c687f60267f44542b',1,'ERF']]],
   ['pn_1640',['pn',['../Microphysics__Utils_8H.html#a50486020eb1ed680a1ea0b0e82b81f2d',1,'Microphysics_Utils.H']]],

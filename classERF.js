@@ -2,7 +2,7 @@ var classERF =
 [
     [ "ERF", "classERF.html#a30129012dd367825e5e4fd1406694f58", null ],
     [ "~ERF", "classERF.html#a30901583bd41e7bf4dddb3c1ea329dfe", null ],
-    [ "ERF", "classERF.html#ad19ef76c5550af312f26f0fcbc4d67d9", null ],
+    [ "ERF", "classERF.html#a13fc8f3a00573ee7735c3228316164a9", null ],
     [ "ERF", "classERF.html#af4f5db4e6643e9ebc8ffeebcbca3978a", null ],
     [ "Advance", "classERF.html#a47413fe5588f7dd71a1d5087a9e804f9", null ],
     [ "advance_dycore", "classERF.html#a99385cc85317f3edf47c062489de871b", null ],

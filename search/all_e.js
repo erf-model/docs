@@ -26,7 +26,7 @@ var searchData=
   ['physbcs_783',['physbcs',['../classERF.html#af4e1870ed66f14dbb147869cca82516e',1,'ERF']]],
   ['pi_784',['PI',['../ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428',1,'ERF_Constants.H']]],
   ['piotwo_785',['PIoTwo',['../ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e',1,'ERF_Constants.H']]],
-  ['planeaverage_786',['PlaneAverage',['../classPlaneAverage.html',1,'PlaneAverage'],['../classPlaneAverage.html#aab8235d99bd3e841f0a2a5fb563c0bfa',1,'PlaneAverage::PlaneAverage()=default'],['../classPlaneAverage.html#ab1056e661cdb1265047e7a31abef0ebf',1,'PlaneAverage::PlaneAverage(const amrex::MultiFab *field_in, amrex::Geometry geom_in, int axis_in)']]],
+  ['planeaverage_786',['PlaneAverage',['../classPlaneAverage.html',1,'PlaneAverage'],['../classPlaneAverage.html#ae021681bed8e81747b36dd6bcbd1a257',1,'PlaneAverage::PlaneAverage()=delete'],['../classPlaneAverage.html#ab1056e661cdb1265047e7a31abef0ebf',1,'PlaneAverage::PlaneAverage(const amrex::MultiFab *field_in, amrex::Geometry geom_in, int axis_in)']]],
   ['planeaverage_2eh_787',['PlaneAverage.H',['../PlaneAverage_8H.html',1,'']]],
   ['planevector_788',['PlaneVector',['../ERF__ReadBndryPlanes_8H.html#a60014a8d74bed0d5ae984e600c68dc85',1,'PlaneVector():&#160;ERF_ReadBndryPlanes.H'],['../NCWpsFile_8H.html#a60014a8d74bed0d5ae984e600c68dc85',1,'PlaneVector():&#160;NCWpsFile.H']]],
   ['plot_5ffile_5f1_789',['plot_file_1',['../classERF.html#aa54aaa938a18d34caa4d86e977647899',1,'ERF']]],

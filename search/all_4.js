@@ -10,7 +10,7 @@ var searchData=
   ['eos_2eh_275',['EOS.H',['../EOS_8H.html',1,'']]],
   ['eps_276',['eps',['../structWENO3.html#a5ea04e699e55b168c29b38e9e453660f',1,'WENO3::eps()'],['../structWENO5.html#a0eb3eb8be72f02731cd24f03d5c2b9ca',1,'WENO5::eps()'],['../structWENO__Z5.html#ab4cfe75de30306d2462c33b4797fa570',1,'WENO_Z5::eps()'],['../structWENO__Z3.html#a04370c4cf4d845f967ec610ff66f5d2b',1,'WENO_Z3::eps()']]],
   ['erccoef_277',['erccoef',['../ERF__Constants_8H.html#af90fa8b6a26f98067ce125597f35d983',1,'ERF_Constants.H']]],
-  ['erf_278',['ERF',['../classERF.html#a30129012dd367825e5e4fd1406694f58',1,'ERF::ERF()'],['../classERF.html#ad19ef76c5550af312f26f0fcbc4d67d9',1,'ERF::ERF(ERF &amp;&amp;) noexcept=default'],['../classERF.html#af4f5db4e6643e9ebc8ffeebcbca3978a',1,'ERF::ERF(const ERF &amp;other)=delete'],['../classERF.html',1,'ERF']]],
+  ['erf_278',['ERF',['../classERF.html#a30129012dd367825e5e4fd1406694f58',1,'ERF::ERF()'],['../classERF.html#a13fc8f3a00573ee7735c3228316164a9',1,'ERF::ERF(ERF &amp;&amp;) noexcept=delete'],['../classERF.html#af4f5db4e6643e9ebc8ffeebcbca3978a',1,'ERF::ERF(const ERF &amp;other)=delete'],['../classERF.html',1,'ERF']]],
   ['erf_2ecpp_279',['ERF.cpp',['../ERF_8cpp.html',1,'']]],
   ['erf_2eh_280',['ERF.H',['../ERF_8H.html',1,'']]],
   ['erf1_281',['erf1',['../classMultiBlockContainer.html#a1ee9fa78e0ade97253f818516df5d83d',1,'MultiBlockContainer']]],

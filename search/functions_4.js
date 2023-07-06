@@ -1,7 +1,7 @@
 var searchData=
 [
   ['enter_5fdef_5fmode_1453',['enter_def_mode',['../classncutils_1_1NCGroup.html#aef6b6e2be36e6179a001d9873e94df82',1,'ncutils::NCGroup']]],
-  ['erf_1454',['ERF',['../classERF.html#a30129012dd367825e5e4fd1406694f58',1,'ERF::ERF()'],['../classERF.html#ad19ef76c5550af312f26f0fcbc4d67d9',1,'ERF::ERF(ERF &amp;&amp;) noexcept=default'],['../classERF.html#af4f5db4e6643e9ebc8ffeebcbca3978a',1,'ERF::ERF(const ERF &amp;other)=delete']]],
+  ['erf_1454',['ERF',['../classERF.html#a30129012dd367825e5e4fd1406694f58',1,'ERF::ERF()'],['../classERF.html#a13fc8f3a00573ee7735c3228316164a9',1,'ERF::ERF(ERF &amp;&amp;) noexcept=delete'],['../classERF.html#af4f5db4e6643e9ebc8ffeebcbca3978a',1,'ERF::ERF(const ERF &amp;other)=delete']]],
   ['erf_5fderke_1455',['erf_derKE',['../namespacederived.html#aa1fcac44ae779cdfa2fd5266bc206e2d',1,'derived']]],
   ['erf_5fdernull_1456',['erf_dernull',['../namespacederived.html#af8efb799157f5dbb8fe00416458db9e1',1,'derived']]],
   ['erf_5fderpres_1457',['erf_derpres',['../namespacederived.html#ab144cda2ef3e2bd18cbd0837ce723521',1,'derived']]],
