@@ -1,12 +1,13 @@
 var classERFFillPatcher =
 [
-    [ "ERFFillPatcher", "classERFFillPatcher.html#afff282aab6af28e8f1ab71156812e1b8", null ],
-    [ "fill", "classERFFillPatcher.html#a48f73d7721620004032f76b48eee946b", null ],
+    [ "ERFFillPatcher", "classERFFillPatcher.html#a273047b3265a0d9f9ab7c8d9c065cadd", null ],
+    [ "fill", "classERFFillPatcher.html#a38ca5bcf84a7fdc49ed7379d3246d61f", null ],
     [ "registerCoarseData", "classERFFillPatcher.html#a4ccb8bfb83c344544283b7345be023d1", null ],
     [ "m_cba", "classERFFillPatcher.html#a35fb56b2946f596728b9ac793eb47c5e", null ],
     [ "m_cdm", "classERFFillPatcher.html#a52af76dca01fd13bdb29834d4b9ca5e2", null ],
     [ "m_cf_crse_data", "classERFFillPatcher.html#a3e23ee1ae2816da86cd9389ddad1c4c5", null ],
     [ "m_cf_fine_data", "classERFFillPatcher.html#a857514e550f6b55ad21017ad8200ce87", null ],
+    [ "m_cf_fine_subset_data", "classERFFillPatcher.html#ac48b8b57e9db71d05c493c4df2594fc5", null ],
     [ "m_cgeom", "classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c", null ],
     [ "m_crse_times", "classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9", null ],
     [ "m_dt_crse", "classERFFillPatcher.html#ae89877908970649653ae09c42d3c7b05", null ],
@@ -16,5 +17,6 @@ var classERFFillPatcher =
     [ "m_interp", "classERFFillPatcher.html#a2fc352aecabd75ec92f5d17730683a1c", null ],
     [ "m_ncomp", "classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4", null ],
     [ "m_nghost", "classERFFillPatcher.html#afdb02cfc6d41b23967ff0a6f0e22b849", null ],
+    [ "m_nghost_subset", "classERFFillPatcher.html#a83a91e2dc7bd7c39a27327024814061c", null ],
     [ "m_ratio", "classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba", null ]
 ];

@@ -214,7 +214,8 @@ var menudata={children:[
 {text:"q",url:"globals_vars.html#index_q"},
 {text:"r",url:"globals_vars.html#index_r"},
 {text:"s",url:"globals_vars.html#index_s"},
-{text:"t",url:"globals_vars.html#index_t"}]},
+{text:"t",url:"globals_vars.html#index_t"},
+{text:"v",url:"globals_vars.html#index_v"}]},
 {text:"Typedefs",url:"globals_type.html"},
 {text:"Enumerations",url:"globals_enum.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}
