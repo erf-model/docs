@@ -6,7 +6,6 @@ var classERF =
     [ "ERF", "classERF.html#af4f5db4e6643e9ebc8ffeebcbca3978a", null ],
     [ "Advance", "classERF.html#a47413fe5588f7dd71a1d5087a9e804f9", null ],
     [ "advance_dycore", "classERF.html#a99385cc85317f3edf47c062489de871b", null ],
-    [ "advance_microphysics", "classERF.html#a87c9bb3f5c35218b85024312261b098c", null ],
     [ "AverageDown", "classERF.html#a8202de1f8f372e3e6fdc483447c6a55f", null ],
     [ "AverageDownTo", "classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41", null ],
     [ "build_fine_mask", "classERF.html#a419ba9adca32073e70aae4a8fe8cfcee", null ],
