@@ -8442,9 +8442,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f">timeStep</a>(lev+1, time+(i-1)*<a class="code" href="classERF.html#ad34bae243fdb6c3029f5abe4fb4bca2d">dt</a>[lev+1], i);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41">AverageDownTo</a>(lev); <span class="comment">// average lev+1 down to lev</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a4615db015b395b3a44f1fbf6d6e4fe43">coupling_type</a> == <span class="stringliteral">&quot;TwoWay&quot;</span>) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41">AverageDownTo</a>(lev); <span class="comment">// average lev+1 down to lev</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="ttc" id="aclassERF_html_a47413fe5588f7dd71a1d5087a9e804f9"><div class="ttname"><a href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9">ERF::Advance</a></div><div class="ttdeci">void Advance(int lev, amrex::Real time, amrex::Real dt_lev, int iteration, int ncycle)</div><div class="ttdef"><b>Definition:</b> ERF_Advance.cpp:17</div></div>
 </div><!-- fragment -->
 </div>
