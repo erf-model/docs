@@ -20,7 +20,7 @@ var searchData=
   ['fixed_5fmri_5fdt_5fratio_380',['fixed_mri_dt_ratio',['../classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd',1,'ERF']]],
   ['flux_5fregisters_381',['flux_registers',['../classERF.html#a2ef8ab09aed437467e2e87a37bcd999d',1,'ERF']]],
   ['foextrap_382',['foextrap',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846',1,'ERFBCType']]],
-  ['force_5fstage1_5fsingle_5fsubstep_383',['force_stage1_single_substep',['../classMRISplitIntegrator.html#a5b2e5780482fdbeab2ce9c053557cbf8',1,'MRISplitIntegrator::force_stage1_single_substep()'],['../classERF.html#a017c6aed9b7123a000453dfc95243e73',1,'ERF::force_stage1_single_substep()']]],
+  ['force_5fstage1_5fsingle_5fsubstep_383',['force_stage1_single_substep',['../classMRISplitIntegrator.html#a5b2e5780482fdbeab2ce9c053557cbf8',1,'MRISplitIntegrator::force_stage1_single_substep()'],['../structSolverChoice.html#a3f8ae511632557066f6662eec79591e1',1,'SolverChoice::force_stage1_single_substep()']]],
   ['fpr_5fc_384',['FPr_c',['../classERF.html#a34160ca20fb400ee285664117cb80512',1,'ERF']]],
   ['fpr_5fu_385',['FPr_u',['../classERF.html#a0ef3455d5b4fc9a178e023b233d389a4',1,'ERF']]],
   ['fpr_5fv_386',['FPr_v',['../classERF.html#a1dc7086aec533a042e6033706845b0c3',1,'ERF']]],

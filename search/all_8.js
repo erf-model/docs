@@ -12,7 +12,7 @@ var searchData=
   ['impose_5fvertical_5fxvel_5fbcs_457',['impose_vertical_xvel_bcs',['../classERFPhysBCFunct.html#ae6518a9d219cc00cab86bc5085a1e0e5',1,'ERFPhysBCFunct']]],
   ['impose_5fvertical_5fyvel_5fbcs_458',['impose_vertical_yvel_bcs',['../classERFPhysBCFunct.html#a77c31e351dd3e5380ada114c4148edca',1,'ERFPhysBCFunct']]],
   ['impose_5fvertical_5fzvel_5fbcs_459',['impose_vertical_zvel_bcs',['../classERFPhysBCFunct.html#aae30a8f9e50f34c093bd50a9bed35e59',1,'ERFPhysBCFunct']]],
-  ['incompressible_460',['incompressible',['../classERF.html#aa8ea9cff0b7dd3af8d320455902b51d0',1,'ERF::incompressible()'],['../classMRISplitIntegrator.html#a0d098cde79e83464b8b019fca2d9c158',1,'MRISplitIntegrator::incompressible()']]],
+  ['incompressible_460',['incompressible',['../structSolverChoice.html#af39df4d1618645dcc1fb8678f738e3f0',1,'SolverChoice::incompressible()'],['../classMRISplitIntegrator.html#a0d098cde79e83464b8b019fca2d9c158',1,'MRISplitIntegrator::incompressible()']]],
   ['indexdefines_2eh_461',['IndexDefines.H',['../IndexDefines_8H.html',1,'']]],
   ['inflow_462',['inflow',['../IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9ad37e67db17cfd059f2852e2673b9e8ef',1,'IndexDefines.H']]],
   ['ingested_5fdensity_463',['ingested_density',['../classReadBndryPlanes.html#ab54133701e8e086315fa7299257199a2',1,'ReadBndryPlanes']]],

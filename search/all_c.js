@@ -32,7 +32,7 @@ var searchData=
   ['no_5fslip_5fwall_722',['no_slip_wall',['../IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3',1,'IndexDefines.H']]],
   ['no_5fsubstep_723',['no_substep',['../classMRISplitIntegrator.html#a5681cc4c1128b1fa5bf779d958623824',1,'MRISplitIntegrator']]],
   ['no_5fsubstep_5ffun_724',['no_substep_fun',['../TI__no__substep__fun_8H.html#a4cad8180e91d2eabd5638651fc24bcc7',1,'TI_no_substep_fun.H']]],
-  ['no_5fsubstepping_725',['no_substepping',['../classMRISplitIntegrator.html#afa0623b638cd29d3f307d34ef5a98d0f',1,'MRISplitIntegrator::no_substepping()'],['../classERF.html#a776c819f06e6f9d5f893aa6846fccb8a',1,'ERF::no_substepping()']]],
+  ['no_5fsubstepping_725',['no_substepping',['../classMRISplitIntegrator.html#afa0623b638cd29d3f307d34ef5a98d0f',1,'MRISplitIntegrator::no_substepping()'],['../structSolverChoice.html#a35e0c82996e345337368bc720bbd6070',1,'SolverChoice::no_substepping()']]],
   ['nodebilinear_726',['NodeBilinear',['../namespaceInterpType.html#ac65aa6d3ffa2549732d15f959cff81abaa8e5f7bd547098a67d20537514465dd9',1,'InterpType']]],
   ['none_727',['None',['../DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6adf97f83acf6453d4a6a4b1070f3754',1,'None():&#160;DataStruct.H'],['../DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5a6adf97f83acf6453d4a6a4b1070f3754',1,'None():&#160;DataStruct.H'],['../DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a6adf97f83acf6453d4a6a4b1070f3754',1,'None():&#160;DataStruct.H'],['../DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6adf97f83acf6453d4a6a4b1070f3754',1,'None():&#160;DataStruct.H']]],
   ['nsubsteps_728',['nsubsteps',['../classERF.html#aa3db2dd1b65310c66c4038650c22aaee',1,'ERF']]],
