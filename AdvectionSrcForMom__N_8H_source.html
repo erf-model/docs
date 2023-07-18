@@ -101,8 +101,8 @@ $(document).ready(function(){initNavTree('AdvectionSrcForMom__N_8H_source.html',
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * @param[in] cellSizeInv inverse of the mesh spacing</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @param[in] mf_u map factor on x-faces</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * @param[in] mf_v map factor on y-faces</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * @param[in] horiz_spatial_order spatial order to be used for lateral derivatives if not using WENO (2-6)</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * @param[in] vert_spatial_order spatial order to be used for vertical derivatives if not using WENO (2-6)</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * @param[in] horiz_spatial_order spatial order to be used for lateral derivatives</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * @param[in] vert_spatial_order spatial order to be used for vertical derivatives</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InterpType_H, <span class="keyword">typename</span> InterpType_V&gt;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;AMREX_GPU_DEVICE</div>
@@ -176,8 +176,8 @@ $(document).ready(function(){initNavTree('AdvectionSrcForMom__N_8H_source.html',
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> * @param[in] cellSizeInv inverse of the mesh spacing</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> * @param[in] mf_u map factor on x-faces</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"> * @param[in] mf_v map factor on y-faces</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"> * @param[in] horiz_spatial_order spatial order to be used for lateral derivatives if not using WENO (2-6)</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> * @param[in] vert_spatial_order spatial order to be used for vertical derivatives if not using WENO (2-6)</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"> * @param[in] horiz_spatial_order spatial order to be used for lateral derivatives</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> * @param[in] vert_spatial_order spatial order to be used for vertical derivatives</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InterpType_H, <span class="keyword">typename</span> InterpType_V&gt;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;AMREX_GPU_DEVICE</div>
@@ -250,8 +250,8 @@ $(document).ready(function(){initNavTree('AdvectionSrcForMom__N_8H_source.html',
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment"> * @param[in] mf_m map factor on cell centers</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"> * @param[in] mf_u map factor on x-faces</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment"> * @param[in] mf_v map factor on y-faces</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment"> * @param[in] horiz_spatial_order spatial order to be used for lateral derivatives if not using WENO (2-6)</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment"> * @param[in] vert_spatial_order spatial order to be used for vertical derivatives if not using WENO (2-6)</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment"> * @param[in] horiz_spatial_order spatial order to be used for lateral derivatives</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment"> * @param[in] vert_spatial_order spatial order to be used for vertical derivatives</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment"> * @param[in] domhi_z maximum k value in the domain</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InterpType_H, <span class="keyword">typename</span> InterpType_V, <span class="keyword">typename</span> WallInterpType&gt;</div>

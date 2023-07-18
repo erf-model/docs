@@ -598,7 +598,7 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function for computing the advective tendency for the x-component of momentum with metric terms and for spatial order &gt; 2 when not using WENO</p>
+<p>Function for computing the advective tendency for the x-component of momentum with metric terms and for spatial order &gt; 2</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">i,j,k</td><td>indices of x-face at which to create tendency </td></tr>
@@ -611,8 +611,8 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
     <tr><td class="paramdir">[in]</td><td class="paramname">cellSizeInv</td><td>inverse of the mesh spacing </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_u</td><td>map factor on x-faces </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_v</td><td>map factor on y-faces </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">horiz_spatial_order</td><td>spatial order to be used for lateral derivatives if not using WENO (2-6) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">vert_spatial_order</td><td>spatial order to be used for vertical derivatives if not using WENO (2-6) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">horiz_spatial_order</td><td>spatial order to be used for lateral derivatives </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vert_spatial_order</td><td>spatial order to be used for vertical derivatives </td></tr>
   </table>
   </dd>
 </dl>
@@ -796,7 +796,7 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function for computing the advective tendency for the y-component of momentum with metric terms and for spatial order &gt; 2 when not using WENO</p>
+<p>Function for computing the advective tendency for the y-component of momentum with metric terms and for spatial order &gt; 2</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">i,j,k</td><td>indices of y-face at which to create tendency </td></tr>
@@ -809,8 +809,8 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
     <tr><td class="paramdir">[in]</td><td class="paramname">cellSizeInv</td><td>inverse of the mesh spacing </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_u</td><td>map factor on x-faces </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_v</td><td>map factor on y-faces </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">horiz_spatial_order</td><td>spatial order to be used for lateral derivatives if not using WENO (2-6) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">vert_spatial_order</td><td>spatial order to be used for vertical derivatives if not using WENO (2-6) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">horiz_spatial_order</td><td>spatial order to be used for lateral derivatives </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vert_spatial_order</td><td>spatial order to be used for vertical derivatives </td></tr>
   </table>
   </dd>
 </dl>
@@ -1021,7 +1021,7 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function for computing the advective tendency for the z-component of momentum with metric terms and for spatial order &gt; 2 when not using WENO</p>
+<p>Function for computing the advective tendency for the z-component of momentum with metric terms and for spatial order &gt; 2</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">i,j,k</td><td>indices of z-face at which to create tendency </td></tr>
@@ -1035,8 +1035,8 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_m</td><td>map factor on cell centers </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_u</td><td>map factor on x-faces </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_v</td><td>map factor on y-faces </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">horiz_spatial_order</td><td>spatial order to be used for lateral derivatives if not using WENO (2-6) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">vert_spatial_order</td><td>spatial order to be used for vertical derivatives if not using WENO (2-6) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">horiz_spatial_order</td><td>spatial order to be used for lateral derivatives </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vert_spatial_order</td><td>spatial order to be used for vertical derivatives </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">domhi_z</td><td>maximum k value in the domain </td></tr>
   </table>
   </dd>
