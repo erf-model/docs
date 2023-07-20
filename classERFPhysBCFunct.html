@@ -97,15 +97,13 @@ Collaboration diagram for ERFPhysBCFunct:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERFPhysBCFunct__coll__graph.png" border="0" usemap="#aERFPhysBCFunct_coll__map" alt="Collaboration graph"/></div>
 <map name="aERFPhysBCFunct_coll__map" id="aERFPhysBCFunct_coll__map">
-<area shape="rect" title=" " alt="" coords="847,188,977,215"/>
-<area shape="rect" title=" " alt="" coords="509,5,596,32"/>
-<area shape="rect" title=" " alt="" coords="460,57,645,127"/>
-<area shape="rect" title=" " alt="" coords="470,151,635,193"/>
-<area shape="rect" title=" " alt="" coords="533,217,572,244"/>
-<area shape="rect" title=" " alt="" coords="465,269,641,310"/>
-<area shape="rect" title=" " alt="" coords="115,276,272,303"/>
-<area shape="rect" title=" " alt="" coords="5,276,44,303"/>
-<area shape="rect" title=" " alt="" coords="460,335,645,361"/>
+<area shape="rect" title=" " alt="" coords="392,188,523,215"/>
+<area shape="rect" title=" " alt="" coords="55,5,141,32"/>
+<area shape="rect" title=" " alt="" coords="5,57,191,127"/>
+<area shape="rect" title=" " alt="" coords="15,151,181,193"/>
+<area shape="rect" title=" " alt="" coords="79,217,117,244"/>
+<area shape="rect" title=" " alt="" coords="54,277,142,304"/>
+<area shape="rect" title=" " alt="" coords="5,328,191,355"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -150,10 +148,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a16cdf4a3ab611f388823cef5e52b60f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf27efc3915d8c5aa41e5c931c76429f"><td class="memItemLeft" align="right" valign="top">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+<a class="el" href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#aaf27efc3915d8c5aa41e5c931c76429f">m_bc_neumann_vals</a></td></tr>
 <tr class="separator:aaf27efc3915d8c5aa41e5c931c76429f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1bfa1a9afc6aea21bf9d4b29ef4f8d3"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">m_z_phys_nd</a></td></tr>
-<tr class="separator:ae1bfa1a9afc6aea21bf9d4b29ef4f8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ced8eff532a6cbf0fed66c939d10e3e"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#a3ced8eff532a6cbf0fed66c939d10e3e">m_detJ_cc</a></td></tr>
-<tr class="separator:a3ced8eff532a6cbf0fed66c939d10e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab18ff4c268d2a78587be5b49c8f97778"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#ab18ff4c268d2a78587be5b49c8f97778">m_z_phys_nd</a></td></tr>
+<tr class="separator:ab18ff4c268d2a78587be5b49c8f97778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7d83abac0c3485696c3e9568bd4cf40"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#aa7d83abac0c3485696c3e9568bd4cf40">m_detJ_cc</a></td></tr>
+<tr class="separator:aa7d83abac0c3485696c3e9568bd4cf40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a81ec9d769c2b3a68df0bc5dc8a1781cf"></a>
@@ -237,16 +235,16 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;          <a class="code" href="classERFPhysBCFunct.html#a114c5d6eb3e526f40bc3e30e7b381513">m_terrain_type</a>(terrain_type),</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;          <a class="code" href="classERFPhysBCFunct.html#a16cdf4a3ab611f388823cef5e52b60f4">m_bc_extdir_vals</a>(bc_extdir_vals),</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;          <a class="code" href="classERFPhysBCFunct.html#aaf27efc3915d8c5aa41e5c931c76429f">m_bc_neumann_vals</a>(bc_neumann_vals),</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;          <a class="code" href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">m_z_phys_nd</a>(z_phys_nd),</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          <a class="code" href="classERFPhysBCFunct.html#a3ced8eff532a6cbf0fed66c939d10e3e">m_detJ_cc</a>(detJ_cc)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;          {}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;          <a class="code" href="classERFPhysBCFunct.html#ab18ff4c268d2a78587be5b49c8f97778">m_z_phys_nd</a>(z_phys_nd.get()),</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          <a class="code" href="classERFPhysBCFunct.html#aa7d83abac0c3485696c3e9568bd4cf40">m_detJ_cc</a>(detJ_cc.get())</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {}</div>
 <div class="ttc" id="aclassERFPhysBCFunct_html_a114c5d6eb3e526f40bc3e30e7b381513"><div class="ttname"><a href="classERFPhysBCFunct.html#a114c5d6eb3e526f40bc3e30e7b381513">ERFPhysBCFunct::m_terrain_type</a></div><div class="ttdeci">int m_terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:110</div></div>
 <div class="ttc" id="aclassERFPhysBCFunct_html_a16cdf4a3ab611f388823cef5e52b60f4"><div class="ttname"><a href="classERFPhysBCFunct.html#a16cdf4a3ab611f388823cef5e52b60f4">ERFPhysBCFunct::m_bc_extdir_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NVAR &gt; m_bc_extdir_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:111</div></div>
 <div class="ttc" id="aclassERFPhysBCFunct_html_a2f63808a7040c853c877cc521741a119"><div class="ttname"><a href="classERFPhysBCFunct.html#a2f63808a7040c853c877cc521741a119">ERFPhysBCFunct::m_domain_bcs_type_d</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; m_domain_bcs_type_d</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:109</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct_html_a3ced8eff532a6cbf0fed66c939d10e3e"><div class="ttname"><a href="classERFPhysBCFunct.html#a3ced8eff532a6cbf0fed66c939d10e3e">ERFPhysBCFunct::m_detJ_cc</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; &amp; m_detJ_cc</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:114</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct_html_aa7d83abac0c3485696c3e9568bd4cf40"><div class="ttname"><a href="classERFPhysBCFunct.html#aa7d83abac0c3485696c3e9568bd4cf40">ERFPhysBCFunct::m_detJ_cc</a></div><div class="ttdeci">amrex::MultiFab * m_detJ_cc</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:114</div></div>
 <div class="ttc" id="aclassERFPhysBCFunct_html_aaf27efc3915d8c5aa41e5c931c76429f"><div class="ttname"><a href="classERFPhysBCFunct.html#aaf27efc3915d8c5aa41e5c931c76429f">ERFPhysBCFunct::m_bc_neumann_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NVAR &gt; m_bc_neumann_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:112</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct_html_ab18ff4c268d2a78587be5b49c8f97778"><div class="ttname"><a href="classERFPhysBCFunct.html#ab18ff4c268d2a78587be5b49c8f97778">ERFPhysBCFunct::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:113</div></div>
 <div class="ttc" id="aclassERFPhysBCFunct_html_ad5a6f06771b8fa848753a2741219366b"><div class="ttname"><a href="classERFPhysBCFunct.html#ad5a6f06771b8fa848753a2741219366b">ERFPhysBCFunct::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:107</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct_html_ae1bfa1a9afc6aea21bf9d4b29ef4f8d3"><div class="ttname"><a href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">ERFPhysBCFunct::m_z_phys_nd</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; &amp; m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:113</div></div>
 <div class="ttc" id="aclassERFPhysBCFunct_html_ae94d450d26c33e469b1e09d543d21f52"><div class="ttname"><a href="classERFPhysBCFunct.html#ae94d450d26c33e469b1e09d543d21f52">ERFPhysBCFunct::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:106</div></div>
 <div class="ttc" id="aclassERFPhysBCFunct_html_af16fde6da4412aa09d866fd094d63a5a"><div class="ttname"><a href="classERFPhysBCFunct.html#af16fde6da4412aa09d866fd094d63a5a">ERFPhysBCFunct::m_domain_bcs_type</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BCRec &gt; m_domain_bcs_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:108</div></div>
 </div><!-- fragment -->
@@ -886,7 +884,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    GpuArray&lt;GpuArray&lt;Real, AMREX_SPACEDIM*2&gt;,AMREX_SPACEDIM+<a class="code" href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a>&gt; l_bc_extdir_vals_d;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">bool</span> l_use_terrain = (<a class="code" href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">m_z_phys_nd</a> != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">bool</span> l_use_terrain = (<a class="code" href="classERFPhysBCFunct.html#ab18ff4c268d2a78587be5b49c8f97778">m_z_phys_nd</a> != <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ncomp; i++)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ori = 0; ori &lt; 2*AMREX_SPACEDIM; ori++)</div>
@@ -1147,7 +1145,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        );</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">m_z_phys_nd</a>) {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct.html#ab18ff4c268d2a78587be5b49c8f97778">m_z_phys_nd</a>) {</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  bx_lo = amrex::lbound(bx);</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  bx_hi = amrex::ubound(bx);</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
@@ -1342,7 +1340,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        );</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    } <span class="comment">// z</span></div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">m_z_phys_nd</a>) {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct.html#ab18ff4c268d2a78587be5b49c8f97778">m_z_phys_nd</a>) {</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  bx_lo = amrex::lbound(bx);</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  bx_hi = amrex::ubound(bx);</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="comment">// Neumann conditions (d&lt;var&gt;/dn = 0) must be aware of the surface normal with terrain.</span></div>
@@ -1542,7 +1540,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        );</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">m_z_phys_nd</a>) {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct.html#ab18ff4c268d2a78587be5b49c8f97778">m_z_phys_nd</a>) {</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  bx_lo = amrex::lbound(bx);</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  bx_hi = amrex::ubound(bx);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="comment">// Neumann conditions (d&lt;var&gt;/dn = 0) must be aware of the surface normal with terrain.</span></div>
@@ -1742,7 +1740,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keyword">const</span> amrex::BCRec* bc_ptr_v = bcrs_v_d.data();</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keyword">const</span> amrex::BCRec* bc_ptr_w = bcrs_w_d.data();</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordtype">bool</span> l_use_terrain = (<a class="code" href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">m_z_phys_nd</a> != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordtype">bool</span> l_use_terrain = (<a class="code" href="classERFPhysBCFunct.html#ab18ff4c268d2a78587be5b49c8f97778">m_z_phys_nd</a> != <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordtype">bool</span> l_moving_terrain = (terrain_type == 1);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    GpuArray&lt;GpuArray&lt;Real, AMREX_SPACEDIM*2&gt;,AMREX_SPACEDIM+<a class="code" href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a>&gt; l_bc_extdir_vals_d;</div>
@@ -1964,9 +1962,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt; cons_arr = mfs[<a class="code" href="namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;array(mfi);;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                  Array4&lt;const Real&gt; z_nd_arr;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">m_z_phys_nd</a>)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct.html#ab18ff4c268d2a78587be5b49c8f97778">m_z_phys_nd</a>)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                z_nd_arr = <a class="code" href="classERFPhysBCFunct.html#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">m_z_phys_nd</a>-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                z_nd_arr = <a class="code" href="classERFPhysBCFunct.html#ab18ff4c268d2a78587be5b49c8f97778">m_z_phys_nd</a>-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> (init_type != <span class="stringliteral">&quot;real&quot;</span>)</div>
@@ -2077,8 +2075,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a3ced8eff532a6cbf0fed66c939d10e3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ced8eff532a6cbf0fed66c939d10e3e">&#9670;&nbsp;</a></span>m_detJ_cc</h2>
+<a id="aa7d83abac0c3485696c3e9568bd4cf40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7d83abac0c3485696c3e9568bd4cf40">&#9670;&nbsp;</a></span>m_detJ_cc</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2087,7 +2085,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;amrex::MultiFab&gt;&amp; ERFPhysBCFunct::m_detJ_cc</td>
+          <td class="memname">amrex::MultiFab* ERFPhysBCFunct::m_detJ_cc</td>
         </tr>
       </table>
   </td>
@@ -2209,8 +2207,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ae1bfa1a9afc6aea21bf9d4b29ef4f8d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1bfa1a9afc6aea21bf9d4b29ef4f8d3">&#9670;&nbsp;</a></span>m_z_phys_nd</h2>
+<a id="ab18ff4c268d2a78587be5b49c8f97778"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab18ff4c268d2a78587be5b49c8f97778">&#9670;&nbsp;</a></span>m_z_phys_nd</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2219,7 +2217,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;amrex::MultiFab&gt;&amp; ERFPhysBCFunct::m_z_phys_nd</td>
+          <td class="memname">amrex::MultiFab* ERFPhysBCFunct::m_z_phys_nd</td>
         </tr>
       </table>
   </td>
