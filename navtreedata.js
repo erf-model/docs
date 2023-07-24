@@ -62,6 +62,7 @@ var NAVTREE =
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
+        [ "Enumerator", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -71,12 +72,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ABLMost_8H.html",
-"ERF__init__from__input__sounding_8cpp.html#a4c3c4107b1479ab2358c82e46647ecfd",
-"classABLMost.html#a71d0f4f8e72f24d2f3feb73c11e0469a",
-"classERF.html#af4e1870ed66f14dbb147869cca82516e",
-"classReadBndryPlanes.html#a16269dfa161d2fdbe02eeb5ac0cb0e24",
-"namespacederived.html#aa1fcac44ae779cdfa2fd5266bc206e2d",
-"structWENO__Z3.html#a2a1f148713443e3ed9f46d8ed6ccbb9f"
+"ERF__init__custom_8cpp.html",
+"classABLMost.html#a1301dd4cb6875c7bdf5d69126b972f91",
+"classERF.html#ae6ad57f4d7fbcd4336235cc10e938467",
+"classPlaneAverage.html#aa58d4a708d46cd0d12120e9bf90d5de2",
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462",
+"structUPWINDALL.html#a771832bce0ef052b6cfd438a385e2f1b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

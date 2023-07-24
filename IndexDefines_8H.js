@@ -11,6 +11,18 @@ var IndexDefines_8H =
     [ "RhoQKE_comp", "IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93", null ],
     [ "RhoScalar_comp", "IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f", null ],
     [ "RhoTheta_comp", "IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877", null ],
+    [ "AdvType", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70", [
+      [ "Centered_2nd", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a50868a47b0f928ff938726290c7f86f0", null ],
+      [ "Upwind_3rd", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ac7fe7ee5bfd5ea8c3d1da3612ec07d26", null ],
+      [ "Centered_4th", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ad9c9e225889709967bad5bd8c5694afb", null ],
+      [ "Upwind_5th", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a7f1fd32cf2e27353b77771d3d5ccec70", null ],
+      [ "Centered_6th", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a4ae585c894c9ca0c5a2f6059ccc25642", null ],
+      [ "Weno_3", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a7b2a966dc1393623ced30f715e3a1c5b", null ],
+      [ "Weno_3Z", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a3f52c29fc095fec904b780e9cdb21dff", null ],
+      [ "Weno_5", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a1a671baee1a0a409360fa857e42b84af", null ],
+      [ "Weno_5Z", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a97d28956ba07aedc3c043286e6493342", null ],
+      [ "Weno_3MZQ", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a35281555e9873efb8a7ec30d009665d1", null ]
+    ] ],
     [ "ERF_BC", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9", [
       [ "symmetry", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a40e712f30d56083318ab20a2402921d2", null ],
       [ "inflow", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9ad37e67db17cfd059f2852e2673b9e8ef", null ],

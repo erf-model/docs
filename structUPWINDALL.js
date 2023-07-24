@@ -1,9 +1,9 @@
 var structUPWINDALL =
 [
     [ "UPWINDALL", "structUPWINDALL.html#a0201b903572d5e51aa42bbc43cd94242", null ],
-    [ "Evaluate", "structUPWINDALL.html#a4ba2c0b55445913e8d90cb5cd2902fff", null ],
-    [ "InterpolateInZ_hi", "structUPWINDALL.html#ac628080069bedef32623a69dfd9ebd8f", null ],
-    [ "InterpolateInZ_lo", "structUPWINDALL.html#a785f4d3d9ff53acad5963fa4b55d25a4", null ],
+    [ "Evaluate", "structUPWINDALL.html#af16f0308b71311e46933a4006177db0c", null ],
+    [ "InterpolateInZ_hi", "structUPWINDALL.html#a53575929cec2958cc98bd73e1a40357f", null ],
+    [ "InterpolateInZ_lo", "structUPWINDALL.html#aa297eed9b756161433e56b12ba94ea0a", null ],
     [ "g1_3_4", "structUPWINDALL.html#a5ec3aa15176050449c9d3024c0956e18", null ],
     [ "g1_5_6", "structUPWINDALL.html#a5d775740326820a724fb9b7b3cd24ebe", null ],
     [ "g2_3_4", "structUPWINDALL.html#a771832bce0ef052b6cfd438a385e2f1b", null ],

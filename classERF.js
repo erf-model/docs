@@ -11,7 +11,7 @@ var classERF =
     [ "build_fine_mask", "classERF.html#a419ba9adca32073e70aae4a8fe8cfcee", null ],
     [ "ClearLevel", "classERF.html#ac44e400a7ce68e18fa44e9416cb1344e", null ],
     [ "ComputeDt", "classERF.html#a62a5ed3c3806eaa918257e0ad1382df5", null ],
-    [ "ComputeGhostCells", "classERF.html#a335c05fd72ae08b5a466ae68f4a7408a", null ],
+    [ "ComputeGhostCells", "classERF.html#a229d5c53f6d65f1cf7af2bdbb407fa3f", null ],
     [ "Construct_ERFFillPatchers", "classERF.html#adc284f421c5fd9dd15c0e5cbe4ff5fc8", null ],
     [ "DataLog", "classERF.html#aa2c3ee1910008b828b9da79ccdfe3871", null ],
     [ "DataLogName", "classERF.html#a16e1f6b8bbb05ae738daf2abe626c159", null ],

@@ -6,11 +6,11 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "Interpolation.H", "Interpolation_8H.html", "Interpolation_8H" ],
     [ "Interpolation_1D.H", "Interpolation__1D_8H.html", "Interpolation__1D_8H" ],
     [ "Interpolation_UPW.H", "Interpolation__UPW_8H.html", [
-      [ "UPWIND2", "structUPWIND2.html", "structUPWIND2" ],
+      [ "CENTERED2", "structCENTERED2.html", "structCENTERED2" ],
       [ "UPWIND3", "structUPWIND3.html", "structUPWIND3" ],
-      [ "UPWIND4", "structUPWIND4.html", "structUPWIND4" ],
+      [ "CENTERED4", "structCENTERED4.html", "structCENTERED4" ],
       [ "UPWIND5", "structUPWIND5.html", "structUPWIND5" ],
-      [ "UPWIND6", "structUPWIND6.html", "structUPWIND6" ],
+      [ "CENTERED6", "structCENTERED6.html", "structCENTERED6" ],
       [ "UPWINDALL", "structUPWINDALL.html", "structUPWINDALL" ]
     ] ],
     [ "Interpolation_WENO.H", "Interpolation__WENO_8H.html", [
@@ -19,6 +19,7 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     ] ],
     [ "Interpolation_WENO_Z.H", "Interpolation__WENO__Z_8H.html", [
       [ "WENO_Z3", "structWENO__Z3.html", "structWENO__Z3" ],
+      [ "WENO_MZQ3", "structWENO__MZQ3.html", "structWENO__MZQ3" ],
       [ "WENO_Z5", "structWENO__Z5.html", "structWENO__Z5" ]
     ] ],
     [ "Microphysics_Utils.H", "Microphysics__Utils_8H.html", "Microphysics__Utils_8H" ],

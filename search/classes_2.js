@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['erf_1192',['ERF',['../classERF.html',1,'']]],
-  ['erffillpatcher_1193',['ERFFillPatcher',['../classERFFillPatcher.html',1,'']]],
-  ['erfphysbcfunct_1194',['ERFPhysBCFunct',['../classERFPhysBCFunct.html',1,'']]]
+  ['directionselector_1222',['DirectionSelector',['../structDirectionSelector.html',1,'']]],
+  ['directionselector_3c_200_20_3e_1223',['DirectionSelector&lt; 0 &gt;',['../structDirectionSelector_3_010_01_4.html',1,'']]],
+  ['directionselector_3c_201_20_3e_1224',['DirectionSelector&lt; 1 &gt;',['../structDirectionSelector_3_011_01_4.html',1,'']]],
+  ['directionselector_3c_202_20_3e_1225',['DirectionSelector&lt; 2 &gt;',['../structDirectionSelector_3_012_01_4.html',1,'']]]
 ];

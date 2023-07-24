@@ -6,6 +6,9 @@ var hierarchy =
     [ "amrex::AmrCore", null, [
       [ "ERF", "classERF.html", null ]
     ] ],
+    [ "CENTERED2", "structCENTERED2.html", null ],
+    [ "CENTERED4", "structCENTERED4.html", null ],
+    [ "CENTERED6", "structCENTERED6.html", null ],
     [ "DirectionSelector< Index >", "structDirectionSelector.html", null ],
     [ "DirectionSelector< 0 >", "structDirectionSelector_3_010_01_4.html", null ],
     [ "DirectionSelector< 1 >", "structDirectionSelector_3_011_01_4.html", null ],
@@ -30,14 +33,12 @@ var hierarchy =
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
     [ "SolverChoice", "structSolverChoice.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
-    [ "UPWIND2", "structUPWIND2.html", null ],
     [ "UPWIND3", "structUPWIND3.html", null ],
-    [ "UPWIND4", "structUPWIND4.html", null ],
     [ "UPWIND5", "structUPWIND5.html", null ],
-    [ "UPWIND6", "structUPWIND6.html", null ],
     [ "UPWINDALL", "structUPWINDALL.html", null ],
     [ "WENO3", "structWENO3.html", null ],
     [ "WENO5", "structWENO5.html", null ],
+    [ "WENO_MZQ3", "structWENO__MZQ3.html", null ],
     [ "WENO_Z3", "structWENO__Z3.html", null ],
     [ "WENO_Z5", "structWENO__Z5.html", null ],
     [ "WriteBndryPlanes", "classWriteBndryPlanes.html", null ]

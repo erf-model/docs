@@ -108,12 +108,12 @@ Collaboration diagram for UPWINDALL:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0201b903572d5e51aa42bbc43cd94242"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUPWINDALL.html#a0201b903572d5e51aa42bbc43cd94242">UPWINDALL</a> (const amrex::Array4&lt; const amrex::Real &gt; &amp;phi)</td></tr>
 <tr class="separator:a0201b903572d5e51aa42bbc43cd94242"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a785f4d3d9ff53acad5963fa4b55d25a4"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUPWINDALL.html#a785f4d3d9ff53acad5963fa4b55d25a4">InterpolateInZ_lo</a> (const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;qty_index, amrex::Real &amp;val_lo, amrex::Real upw_lo, const int &amp;spatial_order) const</td></tr>
-<tr class="separator:a785f4d3d9ff53acad5963fa4b55d25a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac628080069bedef32623a69dfd9ebd8f"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUPWINDALL.html#ac628080069bedef32623a69dfd9ebd8f">InterpolateInZ_hi</a> (const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;qty_index, amrex::Real &amp;val_hi, amrex::Real upw_hi, const int &amp;spatial_order) const</td></tr>
-<tr class="separator:ac628080069bedef32623a69dfd9ebd8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ba2c0b55445913e8d90cb5cd2902fff"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUPWINDALL.html#a4ba2c0b55445913e8d90cb5cd2902fff">Evaluate</a> (const amrex::Real &amp;sp2, const amrex::Real &amp;sp1, const amrex::Real &amp;s, const amrex::Real &amp;sm1, const amrex::Real &amp;sm2, const amrex::Real &amp;sm3, const amrex::Real &amp;upw, const int &amp;spatial_order) const</td></tr>
-<tr class="separator:a4ba2c0b55445913e8d90cb5cd2902fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa297eed9b756161433e56b12ba94ea0a"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUPWINDALL.html#aa297eed9b756161433e56b12ba94ea0a">InterpolateInZ_lo</a> (const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;qty_index, amrex::Real &amp;val_lo, amrex::Real upw_lo, const int adv_type) const</td></tr>
+<tr class="separator:aa297eed9b756161433e56b12ba94ea0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53575929cec2958cc98bd73e1a40357f"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUPWINDALL.html#a53575929cec2958cc98bd73e1a40357f">InterpolateInZ_hi</a> (const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;qty_index, amrex::Real &amp;val_hi, amrex::Real upw_hi, const int adv_type) const</td></tr>
+<tr class="separator:a53575929cec2958cc98bd73e1a40357f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af16f0308b71311e46933a4006177db0c"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUPWINDALL.html#af16f0308b71311e46933a4006177db0c">Evaluate</a> (const amrex::Real &amp;sp2, const amrex::Real &amp;sp1, const amrex::Real &amp;s, const amrex::Real &amp;sm1, const amrex::Real &amp;sm2, const amrex::Real &amp;sm3, const amrex::Real &amp;upw, const int adv_type) const</td></tr>
+<tr class="separator:af16f0308b71311e46933a4006177db0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -160,13 +160,13 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        : <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(phi) {}</div>
-<div class="ttc" id="astructUPWINDALL_html_a36acc81d9046b2b80cf3755aa46bc10c"><div class="ttname"><a href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">UPWINDALL::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:777</div></div>
+<div class="ttc" id="astructUPWINDALL_html_a36acc81d9046b2b80cf3755aa46bc10c"><div class="ttname"><a href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">UPWINDALL::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:771</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4ba2c0b55445913e8d90cb5cd2902fff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ba2c0b55445913e8d90cb5cd2902fff">&#9670;&nbsp;</a></span>Evaluate()</h2>
+<a id="af16f0308b71311e46933a4006177db0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af16f0308b71311e46933a4006177db0c">&#9670;&nbsp;</a></span>Evaluate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,8 +219,8 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>spatial_order</em>&#160;</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>adv_type</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -244,48 +244,47 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        amrex::Real d3 = (sp2 - sm3);</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160; </div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;        <span class="comment">// Interpolated value</span></div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        amrex::Real iv;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        <span class="keywordflow">switch</span> (spatial_order) {</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;        <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;            iv = 0.5 * a1;</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        <span class="keywordflow">case</span> 3:</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;            iv = <a class="code" href="structUPWINDALL.html#a5ec3aa15176050449c9d3024c0956e18">g1_3_4</a>*a1 - <a class="code" href="structUPWINDALL.html#a771832bce0ef052b6cfd438a385e2f1b">g2_3_4</a>*a2 + upw * <a class="code" href="structUPWINDALL.html#a771832bce0ef052b6cfd438a385e2f1b">g2_3_4</a> * (d2 - 3.0*d1);</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        <span class="keywordflow">case</span> 4:</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;            iv = <a class="code" href="structUPWINDALL.html#a5ec3aa15176050449c9d3024c0956e18">g1_3_4</a>*a1 - <a class="code" href="structUPWINDALL.html#a771832bce0ef052b6cfd438a385e2f1b">g2_3_4</a>*a2;</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;        <span class="keywordflow">case</span> 5:</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;            iv = <a class="code" href="structUPWINDALL.html#a5d775740326820a724fb9b7b3cd24ebe">g1_5_6</a>*a1 - <a class="code" href="structUPWINDALL.html#ad549123976e1f955e7880cdee4871e36">g2_5_6</a>*a2 + <a class="code" href="structUPWINDALL.html#a97d82cab1041d98ca70c6abc80286f6b">g3_5_6</a>*a3 - upw * <a class="code" href="structUPWINDALL.html#a97d82cab1041d98ca70c6abc80286f6b">g3_5_6</a> * (d3 - 5.0*d2 + 10.0*d1);</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;        <span class="keywordflow">case</span> 6:</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;            iv = <a class="code" href="structUPWINDALL.html#a5d775740326820a724fb9b7b3cd24ebe">g1_5_6</a>*a1 - <a class="code" href="structUPWINDALL.html#ad549123976e1f955e7880cdee4871e36">g2_5_6</a>*a2 + <a class="code" href="structUPWINDALL.html#a97d82cab1041d98ca70c6abc80286f6b">g3_5_6</a>*a3;</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        }</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        <span class="keywordflow">return</span> ( iv );</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    }</div>
-<div class="ttc" id="astructUPWINDALL_html_a5d775740326820a724fb9b7b3cd24ebe"><div class="ttname"><a href="structUPWINDALL.html#a5d775740326820a724fb9b7b3cd24ebe">UPWINDALL::g1_5_6</a></div><div class="ttdeci">static constexpr amrex::Real g1_5_6</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:780</div></div>
-<div class="ttc" id="astructUPWINDALL_html_a5ec3aa15176050449c9d3024c0956e18"><div class="ttname"><a href="structUPWINDALL.html#a5ec3aa15176050449c9d3024c0956e18">UPWINDALL::g1_3_4</a></div><div class="ttdeci">static constexpr amrex::Real g1_3_4</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:778</div></div>
-<div class="ttc" id="astructUPWINDALL_html_a771832bce0ef052b6cfd438a385e2f1b"><div class="ttname"><a href="structUPWINDALL.html#a771832bce0ef052b6cfd438a385e2f1b">UPWINDALL::g2_3_4</a></div><div class="ttdeci">static constexpr amrex::Real g2_3_4</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:779</div></div>
-<div class="ttc" id="astructUPWINDALL_html_a97d82cab1041d98ca70c6abc80286f6b"><div class="ttname"><a href="structUPWINDALL.html#a97d82cab1041d98ca70c6abc80286f6b">UPWINDALL::g3_5_6</a></div><div class="ttdeci">static constexpr amrex::Real g3_5_6</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:782</div></div>
-<div class="ttc" id="astructUPWINDALL_html_ad549123976e1f955e7880cdee4871e36"><div class="ttname"><a href="structUPWINDALL.html#ad549123976e1f955e7880cdee4871e36">UPWINDALL::g2_5_6</a></div><div class="ttdeci">static constexpr amrex::Real g2_5_6</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:781</div></div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        amrex::Real iv(0.0);</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        <span class="keywordflow">if</span> (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a50868a47b0f928ff938726290c7f86f0">AdvType::Centered_2nd</a>) {</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;            iv = 0.5 * a1;</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ac7fe7ee5bfd5ea8c3d1da3612ec07d26">AdvType::Upwind_3rd</a>) {</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;            iv = <a class="code" href="structUPWINDALL.html#a5ec3aa15176050449c9d3024c0956e18">g1_3_4</a>*a1 - <a class="code" href="structUPWINDALL.html#a771832bce0ef052b6cfd438a385e2f1b">g2_3_4</a>*a2 + upw * <a class="code" href="structUPWINDALL.html#a771832bce0ef052b6cfd438a385e2f1b">g2_3_4</a> * (d2 - 3.0*d1);</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ad9c9e225889709967bad5bd8c5694afb">AdvType::Centered_4th</a>) {</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;            iv = <a class="code" href="structUPWINDALL.html#a5ec3aa15176050449c9d3024c0956e18">g1_3_4</a>*a1 - <a class="code" href="structUPWINDALL.html#a771832bce0ef052b6cfd438a385e2f1b">g2_3_4</a>*a2;</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a7f1fd32cf2e27353b77771d3d5ccec70">AdvType::Upwind_5th</a>) {</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;            iv = <a class="code" href="structUPWINDALL.html#a5d775740326820a724fb9b7b3cd24ebe">g1_5_6</a>*a1 - <a class="code" href="structUPWINDALL.html#ad549123976e1f955e7880cdee4871e36">g2_5_6</a>*a2 + <a class="code" href="structUPWINDALL.html#a97d82cab1041d98ca70c6abc80286f6b">g3_5_6</a>*a3 - upw * <a class="code" href="structUPWINDALL.html#a97d82cab1041d98ca70c6abc80286f6b">g3_5_6</a> * (d3 - 5.0*d2 + 10.0*d1);</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a4ae585c894c9ca0c5a2f6059ccc25642">AdvType::Centered_6th</a>) {</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;            iv = <a class="code" href="structUPWINDALL.html#a5d775740326820a724fb9b7b3cd24ebe">g1_5_6</a>*a1 - <a class="code" href="structUPWINDALL.html#ad549123976e1f955e7880cdee4871e36">g2_5_6</a>*a2 + <a class="code" href="structUPWINDALL.html#a97d82cab1041d98ca70c6abc80286f6b">g3_5_6</a>*a3;</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;        }</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;        <span class="keywordflow">return</span> ( iv );</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    }</div>
+<div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a4ae585c894c9ca0c5a2f6059ccc25642"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a4ae585c894c9ca0c5a2f6059ccc25642">Centered_6th</a></div><div class="ttdeci">@ Centered_6th</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:195</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a50868a47b0f928ff938726290c7f86f0"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a50868a47b0f928ff938726290c7f86f0">Centered_2nd</a></div><div class="ttdeci">@ Centered_2nd</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:191</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a7f1fd32cf2e27353b77771d3d5ccec70"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a7f1fd32cf2e27353b77771d3d5ccec70">Upwind_5th</a></div><div class="ttdeci">@ Upwind_5th</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:194</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70ac7fe7ee5bfd5ea8c3d1da3612ec07d26"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ac7fe7ee5bfd5ea8c3d1da3612ec07d26">Upwind_3rd</a></div><div class="ttdeci">@ Upwind_3rd</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:192</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70ad9c9e225889709967bad5bd8c5694afb"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ad9c9e225889709967bad5bd8c5694afb">Centered_4th</a></div><div class="ttdeci">@ Centered_4th</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:193</div></div>
+<div class="ttc" id="astructUPWINDALL_html_a5d775740326820a724fb9b7b3cd24ebe"><div class="ttname"><a href="structUPWINDALL.html#a5d775740326820a724fb9b7b3cd24ebe">UPWINDALL::g1_5_6</a></div><div class="ttdeci">static constexpr amrex::Real g1_5_6</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:774</div></div>
+<div class="ttc" id="astructUPWINDALL_html_a5ec3aa15176050449c9d3024c0956e18"><div class="ttname"><a href="structUPWINDALL.html#a5ec3aa15176050449c9d3024c0956e18">UPWINDALL::g1_3_4</a></div><div class="ttdeci">static constexpr amrex::Real g1_3_4</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:772</div></div>
+<div class="ttc" id="astructUPWINDALL_html_a771832bce0ef052b6cfd438a385e2f1b"><div class="ttname"><a href="structUPWINDALL.html#a771832bce0ef052b6cfd438a385e2f1b">UPWINDALL::g2_3_4</a></div><div class="ttdeci">static constexpr amrex::Real g2_3_4</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:773</div></div>
+<div class="ttc" id="astructUPWINDALL_html_a97d82cab1041d98ca70c6abc80286f6b"><div class="ttname"><a href="structUPWINDALL.html#a97d82cab1041d98ca70c6abc80286f6b">UPWINDALL::g3_5_6</a></div><div class="ttdeci">static constexpr amrex::Real g3_5_6</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:776</div></div>
+<div class="ttc" id="astructUPWINDALL_html_ad549123976e1f955e7880cdee4871e36"><div class="ttname"><a href="structUPWINDALL.html#ad549123976e1f955e7880cdee4871e36">UPWINDALL::g2_5_6</a></div><div class="ttdeci">static constexpr amrex::Real g2_5_6</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:775</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#ac628080069bedef32623a69dfd9ebd8f">InterpolateInZ_hi()</a>, and <a class="el" href="structUPWINDALL.html#a785f4d3d9ff53acad5963fa4b55d25a4">InterpolateInZ_lo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#a53575929cec2958cc98bd73e1a40357f">InterpolateInZ_hi()</a>, and <a class="el" href="structUPWINDALL.html#aa297eed9b756161433e56b12ba94ea0a">InterpolateInZ_lo()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structUPWINDALL_a4ba2c0b55445913e8d90cb5cd2902fff_icgraph.png" border="0" usemap="#astructUPWINDALL_a4ba2c0b55445913e8d90cb5cd2902fff_icgraph" alt=""/></div>
-<map name="astructUPWINDALL_a4ba2c0b55445913e8d90cb5cd2902fff_icgraph" id="astructUPWINDALL_a4ba2c0b55445913e8d90cb5cd2902fff_icgraph">
+<div class="center"><img src="structUPWINDALL_af16f0308b71311e46933a4006177db0c_icgraph.png" border="0" usemap="#astructUPWINDALL_af16f0308b71311e46933a4006177db0c_icgraph" alt=""/></div>
+<map name="astructUPWINDALL_af16f0308b71311e46933a4006177db0c_icgraph" id="astructUPWINDALL_af16f0308b71311e46933a4006177db0c_icgraph">
 <area shape="rect" title=" " alt="" coords="272,31,437,57"/>
-<area shape="rect" href="structUPWINDALL.html#ac628080069bedef32623a69dfd9ebd8f" title=" " alt="" coords="5,5,224,32"/>
-<area shape="rect" href="structUPWINDALL.html#a785f4d3d9ff53acad5963fa4b55d25a4" title=" " alt="" coords="5,56,224,83"/>
+<area shape="rect" href="structUPWINDALL.html#a53575929cec2958cc98bd73e1a40357f" title=" " alt="" coords="5,5,224,32"/>
+<area shape="rect" href="structUPWINDALL.html#aa297eed9b756161433e56b12ba94ea0a" title=" " alt="" coords="5,56,224,83"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ac628080069bedef32623a69dfd9ebd8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac628080069bedef32623a69dfd9ebd8f">&#9670;&nbsp;</a></span>InterpolateInZ_hi()</h2>
+<a id="a53575929cec2958cc98bd73e1a40357f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53575929cec2958cc98bd73e1a40357f">&#9670;&nbsp;</a></span>InterpolateInZ_hi()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -332,8 +331,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>spatial_order</em>&#160;</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>adv_type</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -348,40 +347,40 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    {</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        <span class="keywordflow">if</span> (spatial_order == 2) {</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        <span class="keywordflow">if</span> (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a50868a47b0f928ff938726290c7f86f0">AdvType::Centered_2nd</a>) {</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;            val_hi = 0.5 * ( <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i,j,k,qty_index) + <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i,j,k+1,qty_index) );</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;            <span class="comment">// Data to interpolate on</span></div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;            amrex::Real sp3 = (spatial_order &gt; 4) ? <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k+3, qty_index): 0.;</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;            amrex::Real sp3 = (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a7f1fd32cf2e27353b77771d3d5ccec70">AdvType::Upwind_5th</a> || adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a4ae585c894c9ca0c5a2f6059ccc25642">AdvType::Centered_6th</a> ) ? <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k+3, qty_index): 0.;</div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;            amrex::Real sp2 = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k+2, qty_index);</div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;            amrex::Real sp1 = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k+1, qty_index);</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;            amrex::Real s   = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k  , qty_index);</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            amrex::Real sm1 = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k-1, qty_index);</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            amrex::Real sm2 = (spatial_order &gt; 4) ? <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k-2, qty_index) : 0.;</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            amrex::Real sm2 = (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a7f1fd32cf2e27353b77771d3d5ccec70">AdvType::Upwind_5th</a> || adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a4ae585c894c9ca0c5a2f6059ccc25642">AdvType::Centered_6th</a> ) ? <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k-2, qty_index) : 0.;</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160; </div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            <span class="comment">// Upwinding flags</span></div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;            <span class="keywordflow">if</span> (upw_hi != 0.) upw_hi = (upw_hi &gt; 0) ? 1. : -1.;</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            <span class="comment">// Interpolate hi</span></div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            val_hi = <a class="code" href="structUPWINDALL.html#a4ba2c0b55445913e8d90cb5cd2902fff">Evaluate</a>(sp3,sp2,sp1,s,sm1,sm2,upw_hi,spatial_order);</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            val_hi = <a class="code" href="structUPWINDALL.html#af16f0308b71311e46933a4006177db0c">Evaluate</a>(sp3,sp2,sp1,s,sm1,sm2,upw_hi,adv_type);</div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        }</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    }</div>
-<div class="ttc" id="astructUPWINDALL_html_a4ba2c0b55445913e8d90cb5cd2902fff"><div class="ttname"><a href="structUPWINDALL.html#a4ba2c0b55445913e8d90cb5cd2902fff">UPWINDALL::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;sp2, const amrex::Real &amp;sp1, const amrex::Real &amp;s, const amrex::Real &amp;sm1, const amrex::Real &amp;sm2, const amrex::Real &amp;sm3, const amrex::Real &amp;upw, const int &amp;spatial_order) const</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:737</div></div>
+<div class="ttc" id="astructUPWINDALL_html_af16f0308b71311e46933a4006177db0c"><div class="ttname"><a href="structUPWINDALL.html#af16f0308b71311e46933a4006177db0c">UPWINDALL::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;sp2, const amrex::Real &amp;sp1, const amrex::Real &amp;s, const amrex::Real &amp;sm1, const amrex::Real &amp;sm2, const amrex::Real &amp;sm3, const amrex::Real &amp;upw, const int adv_type) const</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:737</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structUPWINDALL_ac628080069bedef32623a69dfd9ebd8f_cgraph.png" border="0" usemap="#astructUPWINDALL_ac628080069bedef32623a69dfd9ebd8f_cgraph" alt=""/></div>
-<map name="astructUPWINDALL_ac628080069bedef32623a69dfd9ebd8f_cgraph" id="astructUPWINDALL_ac628080069bedef32623a69dfd9ebd8f_cgraph">
+<div class="center"><img src="structUPWINDALL_a53575929cec2958cc98bd73e1a40357f_cgraph.png" border="0" usemap="#astructUPWINDALL_a53575929cec2958cc98bd73e1a40357f_cgraph" alt=""/></div>
+<map name="astructUPWINDALL_a53575929cec2958cc98bd73e1a40357f_cgraph" id="astructUPWINDALL_a53575929cec2958cc98bd73e1a40357f_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,224,32"/>
-<area shape="rect" href="structUPWINDALL.html#a4ba2c0b55445913e8d90cb5cd2902fff" title=" " alt="" coords="272,5,437,32"/>
+<area shape="rect" href="structUPWINDALL.html#af16f0308b71311e46933a4006177db0c" title=" " alt="" coords="272,5,437,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a785f4d3d9ff53acad5963fa4b55d25a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a785f4d3d9ff53acad5963fa4b55d25a4">&#9670;&nbsp;</a></span>InterpolateInZ_lo()</h2>
+<a id="aa297eed9b756161433e56b12ba94ea0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa297eed9b756161433e56b12ba94ea0a">&#9670;&nbsp;</a></span>InterpolateInZ_lo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -428,8 +427,8 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>spatial_order</em>&#160;</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>adv_type</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -444,32 +443,32 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    {</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        <span class="keywordflow">if</span> (spatial_order == 2) {</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        <span class="keywordflow">if</span> (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a50868a47b0f928ff938726290c7f86f0">AdvType::Centered_2nd</a>) {</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;            val_lo = 0.5 * ( <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i,j,k,qty_index) + <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i,j,k-1,qty_index) );</div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;            <span class="comment">// Data to interpolate on</span></div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            amrex::Real sp2 = (spatial_order &gt; 4) ? <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k+2, qty_index): 0.;</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            amrex::Real sp2 = (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a7f1fd32cf2e27353b77771d3d5ccec70">AdvType::Upwind_5th</a> || adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a4ae585c894c9ca0c5a2f6059ccc25642">AdvType::Centered_6th</a> ) ? <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k+2, qty_index): 0.;</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;            amrex::Real sp1 = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k+1, qty_index);</div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;            amrex::Real s   = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k  , qty_index);</div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;            amrex::Real sm1 = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k-1, qty_index);</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;            amrex::Real sm2 = <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k-2, qty_index);</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;            amrex::Real sm3 = (spatial_order &gt; 4) ? <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k-3, qty_index) : 0.;</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;            amrex::Real sm3 = (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a7f1fd32cf2e27353b77771d3d5ccec70">AdvType::Upwind_5th</a> || adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a4ae585c894c9ca0c5a2f6059ccc25642">AdvType::Centered_6th</a> ) ? <a class="code" href="structUPWINDALL.html#a36acc81d9046b2b80cf3755aa46bc10c">m_phi</a>(i  , j  , k-3, qty_index) : 0.;</div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160; </div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;            <span class="comment">// Upwinding flags</span></div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;            <span class="keywordflow">if</span> (upw_lo != 0.) upw_lo = (upw_lo &gt; 0) ? 1. : -1.;</div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160; </div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;            <span class="comment">// Interpolate lo</span></div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;            val_lo = <a class="code" href="structUPWINDALL.html#a4ba2c0b55445913e8d90cb5cd2902fff">Evaluate</a>(sp2,sp1,s,sm1,sm2,sm3,upw_lo,spatial_order);</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;            val_lo = <a class="code" href="structUPWINDALL.html#af16f0308b71311e46933a4006177db0c">Evaluate</a>(sp2,sp1,s,sm1,sm2,sm3,upw_lo,adv_type);</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        }</div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structUPWINDALL_a785f4d3d9ff53acad5963fa4b55d25a4_cgraph.png" border="0" usemap="#astructUPWINDALL_a785f4d3d9ff53acad5963fa4b55d25a4_cgraph" alt=""/></div>
-<map name="astructUPWINDALL_a785f4d3d9ff53acad5963fa4b55d25a4_cgraph" id="astructUPWINDALL_a785f4d3d9ff53acad5963fa4b55d25a4_cgraph">
+<div class="center"><img src="structUPWINDALL_aa297eed9b756161433e56b12ba94ea0a_cgraph.png" border="0" usemap="#astructUPWINDALL_aa297eed9b756161433e56b12ba94ea0a_cgraph" alt=""/></div>
+<map name="astructUPWINDALL_aa297eed9b756161433e56b12ba94ea0a_cgraph" id="astructUPWINDALL_aa297eed9b756161433e56b12ba94ea0a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,224,32"/>
-<area shape="rect" href="structUPWINDALL.html#a4ba2c0b55445913e8d90cb5cd2902fff" title=" " alt="" coords="272,5,437,32"/>
+<area shape="rect" href="structUPWINDALL.html#af16f0308b71311e46933a4006177db0c" title=" " alt="" coords="272,5,437,32"/>
 </map>
 </div>
 
@@ -496,7 +495,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#a4ba2c0b55445913e8d90cb5cd2902fff">Evaluate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#af16f0308b71311e46933a4006177db0c">Evaluate()</a>.</p>
 
 </div>
 </div>
@@ -520,7 +519,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#a4ba2c0b55445913e8d90cb5cd2902fff">Evaluate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#af16f0308b71311e46933a4006177db0c">Evaluate()</a>.</p>
 
 </div>
 </div>
@@ -544,7 +543,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#a4ba2c0b55445913e8d90cb5cd2902fff">Evaluate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#af16f0308b71311e46933a4006177db0c">Evaluate()</a>.</p>
 
 </div>
 </div>
@@ -568,7 +567,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#a4ba2c0b55445913e8d90cb5cd2902fff">Evaluate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#af16f0308b71311e46933a4006177db0c">Evaluate()</a>.</p>
 
 </div>
 </div>
@@ -592,7 +591,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#a4ba2c0b55445913e8d90cb5cd2902fff">Evaluate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#af16f0308b71311e46933a4006177db0c">Evaluate()</a>.</p>
 
 </div>
 </div>
@@ -616,7 +615,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#ac628080069bedef32623a69dfd9ebd8f">InterpolateInZ_hi()</a>, and <a class="el" href="structUPWINDALL.html#a785f4d3d9ff53acad5963fa4b55d25a4">InterpolateInZ_lo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structUPWINDALL.html#a53575929cec2958cc98bd73e1a40357f">InterpolateInZ_hi()</a>, and <a class="el" href="structUPWINDALL.html#aa297eed9b756161433e56b12ba94ea0a">InterpolateInZ_lo()</a>.</p>
 
 </div>
 </div>
