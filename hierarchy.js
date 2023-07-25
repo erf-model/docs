@@ -31,6 +31,7 @@ var hierarchy =
     [ "NDArray< DataType >", "structNDArray.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
+    [ "Rrtmgp", "classRrtmgp.html", null ],
     [ "SolverChoice", "structSolverChoice.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
     [ "UPWIND3", "structUPWIND3.html", null ],
