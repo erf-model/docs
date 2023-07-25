@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"classPlaneAverage.html#a9ed43e3c2cfd2ef0f3fb23d2097a1b6d":[2,0,19,18],
 "classPlaneAverage.html#aa58d4a708d46cd0d12120e9bf90d5de2":[2,0,19,16],
 "classPlaneAverage.html#aaf4e5c9b73f65af3eb0ccdc6a82e76f2":[2,0,19,14],
 "classPlaneAverage.html#ab1056e661cdb1265047e7a31abef0ebf":[2,0,19,0],
@@ -171,8 +172,8 @@ var NAVTREEINDEX4 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,19],
 "functions_v.html":[2,3,0,20],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -202,8 +203,8 @@ var NAVTREEINDEX4 =
 "functions_y.html":[2,3,0,23],
 "functions_z.html":[2,3,0,24],
 "functions_~.html":[2,3,0,25],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "namespaceBCVars.html":[1,0,0],
 "namespaceCons.html":[1,0,1],
 "namespaceERFBCType.html":[1,0,4],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,4,0],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,4,0,8]
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,4,0]
 };

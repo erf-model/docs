@@ -130,6 +130,7 @@ var classERF =
     [ "domain_bcs_type_d", "classERF.html#a8a99e22b1111c803e31b4afd5fcdea60", null ],
     [ "dt", "classERF.html#ad34bae243fdb6c3029f5abe4fb4bca2d", null ],
     [ "dt_mri_ratio", "classERF.html#a3cf7cb2e51eb7b69cb4079ffc6722459", null ],
+    [ "dz_min", "classERF.html#a0656573ffb79f0fda8d02d5ea0482ed2", null ],
     [ "eddyDiffs_lev", "classERF.html#a327d704704abd516be19339cb2d226f9", null ],
     [ "fine_mask", "classERF.html#a83c244120a15f0d9b9bca54e93976428", null ],
     [ "fixed_dt", "classERF.html#a6e9d302b096a12999c8ff4a6bfa9a072", null ],

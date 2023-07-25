@@ -9,10 +9,10 @@ var searchData=
   ['d_5frayleigh_5fvbar_217',['d_rayleigh_vbar',['../classERF.html#a879501e88824fa6a00ffe1509059b21e',1,'ERF']]],
   ['d_5frayleigh_5fwbar_218',['d_rayleigh_wbar',['../classERF.html#a37ded5aa630616e2881c5a4da35ccc17',1,'ERF']]],
   ['data_219',['data',['../structNDArray.html#a9d3679c95b5bf1813a7edaedf221837e',1,'NDArray']]],
-  ['datalog_220',['datalog',['../classERF.html#a1cade630b005dbcc0f644987ef3db287',1,'ERF']]],
-  ['datalog_221',['DataLog',['../classERF.html#aa2c3ee1910008b828b9da79ccdfe3871',1,'ERF']]],
-  ['datalogname_222',['datalogname',['../classERF.html#a9248a4eb025c2647e003f838cba52a21',1,'ERF']]],
-  ['datalogname_223',['DataLogName',['../classERF.html#a16e1f6b8bbb05ae738daf2abe626c159',1,'ERF']]],
+  ['datalog_220',['DataLog',['../classERF.html#aa2c3ee1910008b828b9da79ccdfe3871',1,'ERF']]],
+  ['datalog_221',['datalog',['../classERF.html#a1cade630b005dbcc0f644987ef3db287',1,'ERF']]],
+  ['datalogname_222',['DataLogName',['../classERF.html#a16e1f6b8bbb05ae738daf2abe626c159',1,'ERF']]],
+  ['datalogname_223',['datalogname',['../classERF.html#a9248a4eb025c2647e003f838cba52a21',1,'ERF']]],
   ['datastruct_2eh_224',['DataStruct.H',['../DataStruct_8H.html',1,'']]],
   ['deardorff_225',['Deardorff',['../DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf',1,'DataStruct.H']]],
   ['def_5farray_226',['def_array',['../classncutils_1_1NCGroup.html#ad7cd6c7e21d9d71df49549b95595f823',1,'ncutils::NCGroup']]],
@@ -20,8 +20,8 @@ var searchData=
   ['def_5fgroup_228',['def_group',['../classncutils_1_1NCGroup.html#ac5c99d691660e36a00afffae6f0d6f71',1,'ncutils::NCGroup']]],
   ['def_5fscalar_229',['def_scalar',['../classncutils_1_1NCGroup.html#ac9453daf888eed4f479ae69f37490d6e',1,'ncutils::NCGroup']]],
   ['def_5fvar_230',['def_var',['../classncutils_1_1NCGroup.html#aa049e7d6f5f7f88ad840fa2ced3c61b4',1,'ncutils::NCGroup']]],
-  ['define_231',['Define',['../classERFFillPatcher.html#a4f6d0a66b0d899610277b1b19d6cf3a4',1,'ERFFillPatcher']]],
-  ['define_232',['define',['../classMicrophysics.html#a06807df2efe3d139b15066e818b635c1',1,'Microphysics']]],
+  ['define_231',['define',['../classMicrophysics.html#a06807df2efe3d139b15066e818b635c1',1,'Microphysics']]],
+  ['define_232',['Define',['../classERFFillPatcher.html#a4f6d0a66b0d899610277b1b19d6cf3a4',1,'ERFFillPatcher']]],
   ['define_5ferffillpatchers_233',['Define_ERFFillPatchers',['../classERF.html#ac0951404aa6802aad7a3be6b7375dfa2',1,'ERF']]],
   ['define_5fgrids_5fto_5fevolve_234',['define_grids_to_evolve',['../classERF.html#a1a974c8c63418da2966c2fc1694185f9',1,'ERF']]],
   ['define_5flevel_5fdata_235',['define_level_data',['../classReadBndryPlanes.html#a16ed881bb428b7abb89e4284b356c8d6',1,'ReadBndryPlanes']]],
@@ -71,5 +71,6 @@ var searchData=
   ['dx_279',['dx',['../classPlaneAverage.html#abf7bfae5c1b6fed56ff09fd06368b12c',1,'PlaneAverage']]],
   ['dycore_5fhoriz_5fadv_5ftype_280',['dycore_horiz_adv_type',['../structSolverChoice.html#a54f1a21527a792306959c41499510d96',1,'SolverChoice']]],
   ['dycore_5fvert_5fadv_5ftype_281',['dycore_vert_adv_type',['../structSolverChoice.html#af7d4dfdb5fdb224f80a49131405a2f0f',1,'SolverChoice']]],
-  ['dynamicviscosity_282',['dynamicViscosity',['../structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446',1,'SolverChoice']]]
+  ['dynamicviscosity_282',['dynamicViscosity',['../structSolverChoice.html#a244a1303b78fa79d217bd86d124f0446',1,'SolverChoice']]],
+  ['dz_5fmin_283',['dz_min',['../classERF.html#a0656573ffb79f0fda8d02d5ea0482ed2',1,'ERF']]]
 ];
