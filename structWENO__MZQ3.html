@@ -98,7 +98,7 @@ Collaboration diagram for WENO_MZQ3:</div>
 <div class="dyncontent">
 <div class="center"><img src="structWENO__MZQ3__coll__graph.png" border="0" usemap="#aWENO__MZQ3_coll__map" alt="Collaboration graph"/></div>
 <map name="aWENO__MZQ3_coll__map" id="aWENO__MZQ3_coll__map">
-<area shape="rect" title=" " alt="" coords="35,124,144,151"/>
+<area shape="rect" title=" " alt="" coords="35,139,144,165"/>
 <area shape="rect" title=" " alt="" coords="5,13,56,39"/>
 <area shape="rect" title=" " alt="" coords="81,5,242,47"/>
 </map>
@@ -132,8 +132,10 @@ Private Attributes</h2></td></tr>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:ad6c988889194e31f809b878a8b75390e"><td class="memItemLeft" align="right" valign="top">static constexpr amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWENO__MZQ3.html#ad6c988889194e31f809b878a8b75390e">g1</a> =(1.0/3.0)</td></tr>
 <tr class="separator:ad6c988889194e31f809b878a8b75390e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a074870251e62994daec13919faff1576"><td class="memItemLeft" align="right" valign="top">static constexpr amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWENO__MZQ3.html#a074870251e62994daec13919faff1576">g2</a> =(2.0/3.0)</td></tr>
+<tr class="memitem:a074870251e62994daec13919faff1576"><td class="memItemLeft" align="right" valign="top">static constexpr amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWENO__MZQ3.html#a074870251e62994daec13919faff1576">g2</a> =(1.0/3.0)</td></tr>
 <tr class="separator:a074870251e62994daec13919faff1576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97cfb78afa5c496fb3194141f284556c"><td class="memItemLeft" align="right" valign="top">static constexpr amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWENO__MZQ3.html#a97cfb78afa5c496fb3194141f284556c">g3</a> =(1.0/3.0)</td></tr>
+<tr class="separator:a97cfb78afa5c496fb3194141f284556c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interpolation operators used for <a class="el" href="structWENO__MZQ3.html">WENO_MZQ3</a> scheme </p>
@@ -162,7 +164,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        : <a class="code" href="structWENO__MZQ3.html#a106585bb6e78f7027658c9c56f3ae892">m_phi</a>(phi) {}</div>
-<div class="ttc" id="astructWENO__MZQ3_html_a106585bb6e78f7027658c9c56f3ae892"><div class="ttname"><a href="structWENO__MZQ3.html#a106585bb6e78f7027658c9c56f3ae892">WENO_MZQ3::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:329</div></div>
+<div class="ttc" id="astructWENO__MZQ3_html_a106585bb6e78f7027658c9c56f3ae892"><div class="ttname"><a href="structWENO__MZQ3.html#a106585bb6e78f7027658c9c56f3ae892">WENO_MZQ3::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:333</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -210,25 +212,30 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="comment">// Smoothing factors</span></div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        amrex::Real b1 = (s - sm1) * (s - sm1);</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        amrex::Real b2 = (sp1 - s) * (sp1 - s);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="comment">// Weight factors</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        amrex::Real t5 = std::abs(b2 - b1);</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        amrex::Real w1 = <a class="code" href="structWENO__MZQ3.html#ad6c988889194e31f809b878a8b75390e">g1</a> * ( 1.0 + (t5*t5) / ((<a class="code" href="structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099">eps</a> + b1) * (<a class="code" href="structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099">eps</a> + b1)) );</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        amrex::Real w2 = <a class="code" href="structWENO__MZQ3.html#a074870251e62994daec13919faff1576">g2</a> * ( 1.0 + (t5*t5) / ((<a class="code" href="structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099">eps</a> + b2) * (<a class="code" href="structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099">eps</a> + b2)) );</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="comment">// Weight factor norm</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        amrex::Real wsum = w1 + w2;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="comment">// Taylor expansions</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        amrex::Real v1 = -sm1 + 3.0 * s;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        amrex::Real v2 =  s   + sp1;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="comment">// Interpolated value</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">return</span> ( (w1 * v1 + w2 * v2) / (2.0 * wsum) );</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
-<div class="ttc" id="astructWENO__MZQ3_html_a074870251e62994daec13919faff1576"><div class="ttname"><a href="structWENO__MZQ3.html#a074870251e62994daec13919faff1576">WENO_MZQ3::g2</a></div><div class="ttdeci">static constexpr amrex::Real g2</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:333</div></div>
-<div class="ttc" id="astructWENO__MZQ3_html_ad02f88cd05b6e31261fb3380887a2099"><div class="ttname"><a href="structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099">WENO_MZQ3::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:330</div></div>
-<div class="ttc" id="astructWENO__MZQ3_html_ad6c988889194e31f809b878a8b75390e"><div class="ttname"><a href="structWENO__MZQ3.html#ad6c988889194e31f809b878a8b75390e">WENO_MZQ3::g1</a></div><div class="ttdeci">static constexpr amrex::Real g1</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:332</div></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        amrex::Real b3 = ( (13.0 / 12.0) * ((sm1 - 2.0*s + sp1)*(sm1 - 2.0*s + sp1)) ) + ( ((sp1 - sm1)*(sp1 - sm1)) / 4.0 );</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="comment">// Weight factors</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        amrex::Real t5 = ( std::abs(b3 - b1) + std::abs(b3 - b2) ) / 32.0;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        amrex::Real a1 = <a class="code" href="structWENO__MZQ3.html#ad6c988889194e31f809b878a8b75390e">g1</a> * ( 1.0 + (t5*t5) / ((<a class="code" href="structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099">eps</a> + b1) * (<a class="code" href="structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099">eps</a> + b1)) );</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        amrex::Real a2 = <a class="code" href="structWENO__MZQ3.html#a074870251e62994daec13919faff1576">g2</a> * ( 1.0 + (t5*t5) / ((<a class="code" href="structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099">eps</a> + b2) * (<a class="code" href="structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099">eps</a> + b2)) );</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        amrex::Real a3 = <a class="code" href="structWENO__MZQ3.html#a97cfb78afa5c496fb3194141f284556c">g3</a> * ( 1.0 + (t5*t5) / ((<a class="code" href="structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099">eps</a> + b3) * (<a class="code" href="structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099">eps</a> + b3)) );</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        amrex::Real asum = a1 + a2 + a3;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        amrex::Real w1 = a1 / asum;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        amrex::Real w2 = a2 / asum;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        amrex::Real w3 = a3 / asum;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="comment">// Taylor expansions</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        amrex::Real v1 = (-sm1 + 3.0 * s) / 2.0;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        amrex::Real v2 = (  s  +  sp1) / 2.0;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        amrex::Real v3 = (-sm1 + 5.0 * s + 2.0 * sp1) / 6.0;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="comment">// Interpolated value</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span> ( (w3 / <a class="code" href="structWENO__MZQ3.html#a97cfb78afa5c496fb3194141f284556c">g3</a>) * (v3 - <a class="code" href="structWENO__MZQ3.html#ad6c988889194e31f809b878a8b75390e">g1</a> * v1 - <a class="code" href="structWENO__MZQ3.html#a074870251e62994daec13919faff1576">g2</a> * v2) + w1 * v1 + w2 * v2 );</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
+<div class="ttc" id="astructWENO__MZQ3_html_a074870251e62994daec13919faff1576"><div class="ttname"><a href="structWENO__MZQ3.html#a074870251e62994daec13919faff1576">WENO_MZQ3::g2</a></div><div class="ttdeci">static constexpr amrex::Real g2</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:337</div></div>
+<div class="ttc" id="astructWENO__MZQ3_html_a97cfb78afa5c496fb3194141f284556c"><div class="ttname"><a href="structWENO__MZQ3.html#a97cfb78afa5c496fb3194141f284556c">WENO_MZQ3::g3</a></div><div class="ttdeci">static constexpr amrex::Real g3</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:338</div></div>
+<div class="ttc" id="astructWENO__MZQ3_html_ad02f88cd05b6e31261fb3380887a2099"><div class="ttname"><a href="structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099">WENO_MZQ3::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:334</div></div>
+<div class="ttc" id="astructWENO__MZQ3_html_ad6c988889194e31f809b878a8b75390e"><div class="ttname"><a href="structWENO__MZQ3.html#ad6c988889194e31f809b878a8b75390e">WENO_MZQ3::g1</a></div><div class="ttdeci">static constexpr amrex::Real g1</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:336</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structWENO__MZQ3.html#a459ea072cc0f23e82870ca461fc7d6dd">InterpolateInX()</a>, <a class="el" href="structWENO__MZQ3.html#aff2339676c4f89f304d749102996d946">InterpolateInY()</a>, <a class="el" href="structWENO__MZQ3.html#a752d7c6f96d82de7e7a36ef9876f5dce">InterpolateInZ_hi()</a>, and <a class="el" href="structWENO__MZQ3.html#af66731ec7edee3b6e4a6b79e72b7e50f">InterpolateInZ_lo()</a>.</p>
 <div class="dynheader">
@@ -340,7 +347,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        }</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
 <div class="ttc" id="astructWENO__MZQ3_html_a8dcc9655166c1217b7056f244d4cfde2"><div class="ttname"><a href="structWENO__MZQ3.html#a8dcc9655166c1217b7056f244d4cfde2">WENO_MZQ3::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;sm1, const amrex::Real &amp;s, const amrex::Real &amp;sp1) const</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:304</div></div>
-<div class="ttc" id="astructWENO__MZQ3_html_af1d30022fe1ebe59529f45843dff3ae5"><div class="ttname"><a href="structWENO__MZQ3.html#af1d30022fe1ebe59529f45843dff3ae5">WENO_MZQ3::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:331</div></div>
+<div class="ttc" id="astructWENO__MZQ3_html_af1d30022fe1ebe59529f45843dff3ae5"><div class="ttname"><a href="structWENO__MZQ3.html#af1d30022fe1ebe59529f45843dff3ae5">WENO_MZQ3::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:335</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -685,7 +692,31 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr amrex::Real WENO_MZQ3::g2 =(2.0/3.0)</td>
+          <td class="memname">constexpr amrex::Real WENO_MZQ3::g2 =(1.0/3.0)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="structWENO__MZQ3.html#a8dcc9655166c1217b7056f244d4cfde2">Evaluate()</a>.</p>
+
+</div>
+</div>
+<a id="a97cfb78afa5c496fb3194141f284556c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97cfb78afa5c496fb3194141f284556c">&#9670;&nbsp;</a></span>g3</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr amrex::Real WENO_MZQ3::g3 =(1.0/3.0)</td>
         </tr>
       </table>
   </td>
