@@ -71,6 +71,6 @@ var searchData=
   ['ave_5fplane_68',['ave_plane',['../structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c',1,'SolverChoice']]],
   ['averagedown_69',['AverageDown',['../classERF.html#a8202de1f8f372e3e6fdc483447c6a55f',1,'ERF']]],
   ['averagedownto_70',['AverageDownTo',['../classERF.html#a40ebca562ac79fcc9250e17e0f4a5b41',1,'ERF']]],
-  ['avogad_71',['avogad',['../ERF__Constants_8H.html#a2c506ca3e64b80b3facc2d6ecd4c467a',1,'ERF_Constants.H']]],
+  ['avogadro_71',['avogadro',['../ERF__Constants_8H.html#a3b2a75494e18c62ae8e6f6ebb231c3fa',1,'ERF_Constants.H']]],
   ['axis_72',['axis',['../classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a',1,'PlaneAverage']]]
 ];

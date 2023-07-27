@@ -7,7 +7,7 @@ var ERF__Constants_8H =
     [ "a_rain", "ERF__Constants_8H.html#adf319f31edb7d4f2b4b712096189734b", null ],
     [ "a_snow", "ERF__Constants_8H.html#aeb6d6f09d27c3f646bc4d91b7b88e570", null ],
     [ "alphaelq", "ERF__Constants_8H.html#a3c70f890015491421d536954a374324d", null ],
-    [ "avogad", "ERF__Constants_8H.html#a2c506ca3e64b80b3facc2d6ecd4c467a", null ],
+    [ "avogadro", "ERF__Constants_8H.html#a3b2a75494e18c62ae8e6f6ebb231c3fa", null ],
     [ "b_grau", "ERF__Constants_8H.html#a5b9ceb4b022305781565b213273b24df", null ],
     [ "b_rain", "ERF__Constants_8H.html#a73a3e2e084667177abe0e4d2cd3da51c", null ],
     [ "b_snow", "ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc", null ],

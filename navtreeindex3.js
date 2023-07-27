@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classERF.html#addf62bfc534515447b94e928ac0b7135":[2,0,10,163],
 "classERF.html#ae0597da6edf955cd138e52fd00380ff2":[2,0,10,30],
 "classERF.html#ae1a8856961aaee53016122facba03dbe":[2,0,10,77],
 "classERF.html#ae39bf64c5306b1dd939d82d9df728daa":[2,0,10,123],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classPlaneAverage.html#a57dc07bb4c25aa8f20bd5b1921c5f2f7":[2,0,19,12],
 "classPlaneAverage.html#a59ff542d6ac432369db4c904ff1aedd6":[2,0,19,10],
 "classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e":[2,0,19,4],
-"classPlaneAverage.html#a6933fa8d1b71a55f5276250050c54216":[2,0,19,17],
-"classPlaneAverage.html#a6a25218bd5754ec121caab7e4acfc537":[2,0,19,23]
+"classPlaneAverage.html#a6933fa8d1b71a55f5276250050c54216":[2,0,19,17]
 };

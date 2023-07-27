@@ -1,5 +1,6 @@
 var dir_6ac3198e61556f99812dcb8dcfabb874 =
 [
+    [ "Finalize_rrtmgp.cpp", "Finalize__rrtmgp_8cpp.html", null ],
     [ "Init_rrtmgp.cpp", "Init__rrtmgp_8cpp.html", null ],
     [ "Rrtmgp.H", "Rrtmgp_8H.html", [
       [ "Rrtmgp", "classRrtmgp.html", "classRrtmgp" ]

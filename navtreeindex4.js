@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"classPlaneAverage.html#a6a25218bd5754ec121caab7e4acfc537":[2,0,19,23],
 "classPlaneAverage.html#a6c29e3eafbbb7028e801c513b29a1c09":[2,0,19,21],
 "classPlaneAverage.html#a86402b90cf369ad0613ff325328e05b4":[2,0,19,8],
 "classPlaneAverage.html#a961decb14c2137f36e17ceeaf560b452":[2,0,19,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "globals_g.html":[3,1,0,6],
 "globals_i.html":[3,1,0,7],
 "globals_k.html":[3,1,0,8],
-"globals_l.html":[3,1,0,9],
-"globals_m.html":[3,1,0,10]
+"globals_l.html":[3,1,0,9]
 };
