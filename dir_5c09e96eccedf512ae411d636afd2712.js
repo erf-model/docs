@@ -27,9 +27,15 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "PlaneAverage.H", "PlaneAverage_8H.html", [
       [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ]
     ] ],
+    [ "Sat_methods.H", "Sat__methods_8H.html", [
+      [ "SatMethods", "classSatMethods.html", "classSatMethods" ]
+    ] ],
     [ "TerrainMetrics.cpp", "TerrainMetrics_8cpp.html", "TerrainMetrics_8cpp" ],
     [ "TerrainMetrics.H", "TerrainMetrics_8H.html", "TerrainMetrics_8H" ],
     [ "TileNoZ.H", "TileNoZ_8H.html", "TileNoZ_8H" ],
     [ "Utils.H", "Utils_8H.html", "Utils_8H" ],
-    [ "VelocityToMomentum.cpp", "VelocityToMomentum_8cpp.html", "VelocityToMomentum_8cpp" ]
+    [ "VelocityToMomentum.cpp", "VelocityToMomentum_8cpp.html", "VelocityToMomentum_8cpp" ],
+    [ "Water_vapor_saturation.H", "Water__vapor__saturation_8H.html", [
+      [ "WaterVaporSat", "classWaterVaporSat.html", "classWaterVaporSat" ]
+    ] ]
 ];

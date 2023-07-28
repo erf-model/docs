@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['z0_5fest_1850',['z0_est',['../Microphysics__Utils_8H.html#a5e22e7c025af17b4983d25a5b81bfd4b',1,'Microphysics_Utils.H']]],
-  ['zero_5frhs_5fin_5fset_5fregion_1851',['zero_RHS_in_set_region',['../Utils_8H.html#a0ec8c09284957400e1514df10236da80',1,'Utils.H']]]
+  ['xlo_1981',['xlo',['../classPlaneAverage.html#a9ed43e3c2cfd2ef0f3fb23d2097a1b6d',1,'PlaneAverage']]]
 ];
