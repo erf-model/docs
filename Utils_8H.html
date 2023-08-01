@@ -170,8 +170,8 @@ Functions</h2></td></tr>
 <tr class="separator:aa73aeea678d28e685774cfc95ead14b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac234eaa776f822503a82025a8f10827"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Utils_8H.html#aac234eaa776f822503a82025a8f10827">fine_compute_interior_ghost_RHS</a> (const amrex::Real &amp;time, const amrex::Real &amp;delta_t, const int &amp;width, const int &amp;set_width, const amrex::Geometry &amp;geom, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_c, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_u, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_v, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_w, amrex::Vector&lt; amrex::Box &gt; &amp;boxes_at_level, amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs_f, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data_f)</td></tr>
 <tr class="separator:aac234eaa776f822503a82025a8f10827"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a5f106cbe8b68a73023bbf05139ea9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Utils_8H.html#a1a5f106cbe8b68a73023bbf05139ea9c">update_interior_ghost</a> (const amrex::Real &amp;delta_t, const int &amp;width, const amrex::Geometry &amp;geom, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data)</td></tr>
-<tr class="separator:a1a5f106cbe8b68a73023bbf05139ea9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea47777175dfe6122ef2ff7f0d5a6961"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Utils_8H.html#aea47777175dfe6122ef2ff7f0d5a6961">update_interior_ghost</a> (const amrex::Real &amp;delta_t, const int &amp;width, amrex::Vector&lt; amrex::Box &gt; &amp;boxes_at_level, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data)</td></tr>
+<tr class="separator:aea47777175dfe6122ef2ff7f0d5a6961"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aaa3f051b9681a4e20d0d88b3715d8897"></a>
@@ -816,8 +816,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a1a5f106cbe8b68a73023bbf05139ea9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a5f106cbe8b68a73023bbf05139ea9c">&#9670;&nbsp;</a></span>update_interior_ghost()</h2>
+<a id="aea47777175dfe6122ef2ff7f0d5a6961"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea47777175dfe6122ef2ff7f0d5a6961">&#9670;&nbsp;</a></span>update_interior_ghost()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -837,8 +837,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
-          <td class="paramname"><em>geom</em>, </td>
+          <td class="paramtype">amrex::Vector&lt; amrex::Box &gt; &amp;&#160;</td>
+          <td class="paramname"><em>boxes_at_level</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

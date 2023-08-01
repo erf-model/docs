@@ -130,8 +130,8 @@ Functions</h2></td></tr>
 <tr class="separator:a836c0d85b07502711e0b4adb6a0b28af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6edea3c2ef574e97c61168097b8277a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InteriorGhostCells_8cpp.html#a6edea3c2ef574e97c61168097b8277a5">fine_compute_interior_ghost_RHS</a> (const Real &amp;time, const Real &amp;delta_t, const int &amp;width, const int &amp;set_width, const Geometry &amp;geom, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_c, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_u, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_v, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_w, Vector&lt; Box &gt; &amp;boxes_at_level, Vector&lt; BCRec &gt; &amp;domain_bcs_type, Vector&lt; MultiFab &gt; &amp;S_rhs_f, Vector&lt; MultiFab &gt; &amp;S_data_f)</td></tr>
 <tr class="separator:a6edea3c2ef574e97c61168097b8277a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc154ca2b855667b3ef4427756aaba90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InteriorGhostCells_8cpp.html#afc154ca2b855667b3ef4427756aaba90">update_interior_ghost</a> (const Real &amp;delta_t, const int &amp;width, const Geometry &amp;geom, Vector&lt; MultiFab &gt; &amp;S_rhs, const Vector&lt; MultiFab &gt; &amp;S_old, Vector&lt; MultiFab &gt; &amp;S_data)</td></tr>
-<tr class="separator:afc154ca2b855667b3ef4427756aaba90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa744209cd421604951649b54d6bcdab9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="InteriorGhostCells_8cpp.html#aa744209cd421604951649b54d6bcdab9">update_interior_ghost</a> (const Real &amp;delta_t, const int &amp;width, Vector&lt; Box &gt; &amp;boxes_at_level, Vector&lt; MultiFab &gt; &amp;S_rhs, const Vector&lt; MultiFab &gt; &amp;S_old, Vector&lt; MultiFab &gt; &amp;S_data)</td></tr>
+<tr class="separator:aa744209cd421604951649b54d6bcdab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -284,7 +284,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    bx_yhi = (bx &amp; gdom_yhi);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__post_8cpp.html#a987bb93dc1e0b2af79a4aacb16e6d2c3">erf_slow_rhs_post()</a>, <a class="el" href="InteriorGhostCells_8cpp.html#a6edea3c2ef574e97c61168097b8277a5">fine_compute_interior_ghost_RHS()</a>, <a class="el" href="InteriorGhostCells_8cpp.html#afc154ca2b855667b3ef4427756aaba90">update_interior_ghost()</a>, and <a class="el" href="InteriorGhostCells_8cpp.html#a836c0d85b07502711e0b4adb6a0b28af">wrfbdy_compute_interior_ghost_RHS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__post_8cpp.html#a987bb93dc1e0b2af79a4aacb16e6d2c3">erf_slow_rhs_post()</a>, <a class="el" href="InteriorGhostCells_8cpp.html#a6edea3c2ef574e97c61168097b8277a5">fine_compute_interior_ghost_RHS()</a>, <a class="el" href="InteriorGhostCells_8cpp.html#aa744209cd421604951649b54d6bcdab9">update_interior_ghost()</a>, and <a class="el" href="InteriorGhostCells_8cpp.html#a836c0d85b07502711e0b4adb6a0b28af">wrfbdy_compute_interior_ghost_RHS()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -293,7 +293,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="239,86,415,127"/>
 <area shape="rect" href="ERF__slow__rhs__post_8cpp.html#a987bb93dc1e0b2af79a4aacb16e6d2c3" title=" " alt="" coords="29,5,167,32"/>
 <area shape="rect" href="InteriorGhostCells_8cpp.html#a6edea3c2ef574e97c61168097b8277a5" title=" " alt="" coords="16,57,180,98"/>
-<area shape="rect" href="InteriorGhostCells_8cpp.html#afc154ca2b855667b3ef4427756aaba90" title=" " alt="" coords="16,123,180,149"/>
+<area shape="rect" href="InteriorGhostCells_8cpp.html#aa744209cd421604951649b54d6bcdab9" title=" " alt="" coords="16,123,180,149"/>
 <area shape="rect" href="InteriorGhostCells_8cpp.html#a836c0d85b07502711e0b4adb6a0b28af" title=" " alt="" coords="5,174,191,215"/>
 </map>
 </div>
@@ -683,8 +683,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="afc154ca2b855667b3ef4427756aaba90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc154ca2b855667b3ef4427756aaba90">&#9670;&nbsp;</a></span>update_interior_ghost()</h2>
+<a id="aa744209cd421604951649b54d6bcdab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa744209cd421604951649b54d6bcdab9">&#9670;&nbsp;</a></span>update_interior_ghost()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -704,8 +704,8 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Geometry &amp;&#160;</td>
-          <td class="paramname"><em>geom</em>, </td>
+          <td class="paramtype">Vector&lt; Box &gt; &amp;&#160;</td>
+          <td class="paramname"><em>boxes_at_level</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -747,55 +747,59 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;{</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    BL_PROFILE_REGION(<span class="stringliteral">&quot;update_interior_ghost()&quot;</span>);</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160; </div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    Box domain = geom.Domain();</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    Vector&lt;int&gt; ncomp_map = {2, 1, 1, 1};</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>); ivar &lt; <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da33fd6ba50d67e974cfa8b4c6b0d6b54f">IntVar::NumVars</a>; ivar++)</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;    {</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        <span class="keywordtype">int</span> ncomp = ncomp_map[ivar];</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;        domain.convert(S_data[ivar].boxArray().ixType());</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160; </div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(S_data[ivar],amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;        {</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;            Box tbx = mfi.tilebox();</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            Box tbx_xlo, tbx_xhi, tbx_ylo, tbx_yhi;</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;            <a class="code" href="InteriorGhostCells_8cpp.html#a58aa7f6d6812d4dea186477114d1a47c">compute_interior_ghost_bxs_xy</a>(tbx, domain, width, 0,</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                                          tbx_xlo, tbx_xhi,</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                                          tbx_ylo, tbx_yhi);</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160; </div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;            Array4&lt;Real&gt; rhs_arr       = S_rhs[ivar].array(mfi);</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;            Array4&lt;const Real&gt; old_arr = S_old[ivar].array(mfi);</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            Array4&lt;Real&gt; new_arr       = S_data[ivar].array(mfi);</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160; </div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            amrex::ParallelFor(tbx_xlo, ncomp,</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;            {</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                new_arr(i,j,k,n) = old_arr(i,j,k,n) + delta_t * rhs_arr(i,j,k,n);</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;            },</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;            tbx_xhi, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            {</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;                new_arr(i,j,k,n) = old_arr(i,j,k,n) + delta_t * rhs_arr(i,j,k,n);</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;            });</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160; </div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;            amrex::ParallelFor(tbx_ylo, ncomp,</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;            {</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                new_arr(i,j,k,n) = old_arr(i,j,k,n) + delta_t * rhs_arr(i,j,k,n);</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;            },</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;            tbx_yhi, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;            {</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;                new_arr(i,j,k,n) = old_arr(i,j,k,n) + delta_t * rhs_arr(i,j,k,n);</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;            });</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;        } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    } <span class="comment">// ivar</span></div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;}</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    Vector&lt;int&gt; ncomp_map = {2, 1, 1, 1};</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>); ivar &lt; <a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da33fd6ba50d67e974cfa8b4c6b0d6b54f">IntVar::NumVars</a>; ivar++)</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    {</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        <span class="keywordtype">int</span> ncomp = ncomp_map[ivar];</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        IndexType m_ixt = S_data[ivar].boxArray().ixType();</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(S_data[ivar],amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;        {</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;            Box tbx = mfi.tilebox();</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;            Array4&lt;Real&gt; rhs_arr       = S_rhs[ivar].array(mfi);</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            Array4&lt;const Real&gt; old_arr = S_old[ivar].array(mfi);</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;            Array4&lt;Real&gt; new_arr       = S_data[ivar].array(mfi);</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160; </div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> g_ind(0); g_ind&lt;boxes_at_level.size(); ++g_ind)</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;            {</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                Box domain = boxes_at_level[g_ind];</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                domain.convert(m_ixt);</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                Box tbx_xlo, tbx_xhi, tbx_ylo, tbx_yhi;</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                <a class="code" href="InteriorGhostCells_8cpp.html#a58aa7f6d6812d4dea186477114d1a47c">compute_interior_ghost_bxs_xy</a>(tbx, domain, width, 0,</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                                              tbx_xlo, tbx_xhi,</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                                              tbx_ylo, tbx_yhi);</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160; </div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                amrex::ParallelFor(tbx_xlo, ncomp,</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                {</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                    new_arr(i,j,k,n) = old_arr(i,j,k,n) + delta_t * rhs_arr(i,j,k,n);</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;                },</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                tbx_xhi, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                {</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                    new_arr(i,j,k,n) = old_arr(i,j,k,n) + delta_t * rhs_arr(i,j,k,n);</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                });</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160; </div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                amrex::ParallelFor(tbx_ylo, ncomp,</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;                {</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                    new_arr(i,j,k,n) = old_arr(i,j,k,n) + delta_t * rhs_arr(i,j,k,n);</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;                },</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                tbx_yhi, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;                {</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;                    new_arr(i,j,k,n) = old_arr(i,j,k,n) + delta_t * rhs_arr(i,j,k,n);</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;                });</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;            } <span class="comment">// boxes_at_level</span></div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;        } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    } <span class="comment">// ivar</span></div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="InteriorGhostCells_8cpp_afc154ca2b855667b3ef4427756aaba90_cgraph.png" border="0" usemap="#aInteriorGhostCells_8cpp_afc154ca2b855667b3ef4427756aaba90_cgraph" alt=""/></div>
-<map name="aInteriorGhostCells_8cpp_afc154ca2b855667b3ef4427756aaba90_cgraph" id="aInteriorGhostCells_8cpp_afc154ca2b855667b3ef4427756aaba90_cgraph">
+<div class="center"><img src="InteriorGhostCells_8cpp_aa744209cd421604951649b54d6bcdab9_cgraph.png" border="0" usemap="#aInteriorGhostCells_8cpp_aa744209cd421604951649b54d6bcdab9_cgraph" alt=""/></div>
+<map name="aInteriorGhostCells_8cpp_aa744209cd421604951649b54d6bcdab9_cgraph" id="aInteriorGhostCells_8cpp_aa744209cd421604951649b54d6bcdab9_cgraph">
 <area shape="rect" title=" " alt="" coords="5,13,169,39"/>
 <area shape="rect" href="InteriorGhostCells_8cpp.html#a58aa7f6d6812d4dea186477114d1a47c" title=" " alt="" coords="217,5,393,47"/>
 </map>
