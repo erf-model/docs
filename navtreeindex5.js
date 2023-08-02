@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"functions_d.html":[2,3,0,3],
 "functions_e.html":[2,3,0,4],
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
@@ -44,8 +45,8 @@ var NAVTREEINDEX5 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,19],
 "functions_v.html":[2,3,0,20],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -80,10 +81,9 @@ var NAVTREEINDEX5 =
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
-"globals_defs.html":[3,1,6],
+"globals_defs.html":[3,1,5],
 "globals_e.html":[3,1,0,4],
 "globals_enum.html":[3,1,4],
-"globals_eval.html":[3,1,5],
 "globals_f.html":[3,1,0,5],
 "globals_func.html":[3,1,1],
 "globals_g.html":[3,1,0,6],
@@ -247,7 +247,7 @@ var NAVTREEINDEX5 =
 "structSolverChoice.html#a06a0dd1c8f7c1ed73a4f8d24b6b31cdf":[2,0,26,47],
 "structSolverChoice.html#a0a031373331c9aca22a47b0995729f46":[2,0,26,43],
 "structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0":[2,0,26,69],
+"structSolverChoice.html#a0f1643bf80d0bb7b8292df6304195daf":[2,0,26,0],
 "structSolverChoice.html#a10043b88372894f67ed0f3e68bf27cb6":[2,0,26,55],
-"structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3":[2,0,26,18],
-"structSolverChoice.html#a12f07d2d59fc5cc784b6d0ae60c406d5":[2,0,26,81]
+"structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3":[2,0,26,18]
 };

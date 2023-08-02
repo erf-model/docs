@@ -12,16 +12,17 @@ var IndexDefines_8H =
     [ "RhoScalar_comp", "IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f", null ],
     [ "RhoTheta_comp", "IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877", null ],
     [ "AdvType", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70", [
-      [ "Centered_2nd", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a50868a47b0f928ff938726290c7f86f0", null ],
-      [ "Upwind_3rd", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ac7fe7ee5bfd5ea8c3d1da3612ec07d26", null ],
-      [ "Centered_4th", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ad9c9e225889709967bad5bd8c5694afb", null ],
-      [ "Upwind_5th", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a7f1fd32cf2e27353b77771d3d5ccec70", null ],
-      [ "Centered_6th", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a4ae585c894c9ca0c5a2f6059ccc25642", null ],
-      [ "Weno_3", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a7b2a966dc1393623ced30f715e3a1c5b", null ],
-      [ "Weno_3Z", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a3f52c29fc095fec904b780e9cdb21dff", null ],
-      [ "Weno_5", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a1a671baee1a0a409360fa857e42b84af", null ],
-      [ "Weno_5Z", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a97d28956ba07aedc3c043286e6493342", null ],
-      [ "Weno_3MZQ", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a35281555e9873efb8a7ec30d009665d1", null ]
+      [ "Centered_2nd", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049", null ],
+      [ "Upwind_3rd", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f", null ],
+      [ "Centered_4th", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161", null ],
+      [ "Upwind_5th", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a", null ],
+      [ "Centered_6th", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9", null ],
+      [ "Weno_3", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada35597e5f00fa867fe6e39d651a2195", null ],
+      [ "Weno_3Z", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a9c29b64a7627155706a1cd93682b4351", null ],
+      [ "Weno_5", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af2429e8de544f3ebd7c9668e3dbebaa8", null ],
+      [ "Weno_5Z", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70aeb75f5943c7837da80e2048f2b344efc", null ],
+      [ "Weno_3MZQ", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af8b942d20ed08b25df71ea1c87244210", null ],
+      [ "Unknown", "IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a88183b946cc5f0e8c96b2e66e1c74a7e", null ]
     ] ],
     [ "ERF_BC", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9", [
       [ "symmetry", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a40e712f30d56083318ab20a2402921d2", null ],
