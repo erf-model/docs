@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['yhi_5fsponge_5fstart_2515',['yhi_sponge_start',['../structSolverChoice.html#a3a25757ceeb926f5e9a2a82f2c8715ee',1,'SolverChoice']]],
-  ['ylo_5fsponge_5fend_2516',['ylo_sponge_end',['../structSolverChoice.html#a85bb8f2b23e54692d331fe16efa0cd26',1,'SolverChoice']]]
+  ['xhi_5fsponge_5fstart_2968',['xhi_sponge_start',['../structSolverChoice.html#a580ccc909b9b4f5bdf362cf2e6e9edca',1,'SolverChoice']]],
+  ['xlo_5fsponge_5fend_2969',['xlo_sponge_end',['../structSolverChoice.html#a12f07d2d59fc5cc784b6d0ae60c406d5',1,'SolverChoice']]]
 ];

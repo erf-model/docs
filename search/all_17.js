@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['y_1288',['y',['../DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d',1,'DataStruct.H']]],
-  ['ydir_1289',['YDir',['../DirectionSelector_8H.html#a92990a19f43dc3cbbbd630362d1ece71',1,'DirectionSelector.H']]],
-  ['yhi_5fsponge_5fstart_1290',['yhi_sponge_start',['../structSolverChoice.html#a3a25757ceeb926f5e9a2a82f2c8715ee',1,'SolverChoice']]],
-  ['ylo_5fsponge_5fend_1291',['ylo_sponge_end',['../structSolverChoice.html#a85bb8f2b23e54692d331fe16efa0cd26',1,'SolverChoice']]],
-  ['ymom_1292',['ymom',['../namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1caa92727db248ec616aa835c2faa22f44c',1,'Vars::ymom()'],['../namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76daa06e9caed4d0b72c322646815c1a96ce',1,'IntVar::ymom()']]],
-  ['yvel_1293',['yvel',['../namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca81793b83204cfa56d4683bc676fbbfb6',1,'Vars']]],
-  ['yvel_5fbc_1294',['yvel_bc',['../namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e',1,'BCVars']]]
+  ['x_1507',['x',['../DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6',1,'DataStruct.H']]],
+  ['xdir_1508',['XDir',['../DirectionSelector_8H.html#a68edfbe7326d0d1476e796beb668072f',1,'DirectionSelector.H']]],
+  ['xhi_5fsponge_5fstart_1509',['xhi_sponge_start',['../structSolverChoice.html#a580ccc909b9b4f5bdf362cf2e6e9edca',1,'SolverChoice']]],
+  ['xlo_1510',['xlo',['../classPlaneAverage.html#a9ed43e3c2cfd2ef0f3fb23d2097a1b6d',1,'PlaneAverage']]],
+  ['xlo_5fsponge_5fend_1511',['xlo_sponge_end',['../structSolverChoice.html#a12f07d2d59fc5cc784b6d0ae60c406d5',1,'SolverChoice']]],
+  ['xmom_1512',['xmom',['../namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca35b6db75aef9a4eca57e85396dc5dc12',1,'Vars::xmom()'],['../namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76dad22d96cf9b7b4dd875cea33d3ec0b481',1,'IntVar::xmom()']]],
+  ['xvel_1513',['xvel',['../namespaceVars.html#a2aa680f90abb6ff6d5c1875f8beb4b1ca2a10a6e726515894b07621908abd4c0c',1,'Vars']]],
+  ['xvel_5fbc_1514',['xvel_bc',['../namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4',1,'BCVars']]]
 ];

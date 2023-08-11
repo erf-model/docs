@@ -1,10 +1,20 @@
 var searchData=
 [
-  ['v_5finp_5fsound_2500',['V_inp_sound',['../structInputSoundingData.html#a97a1970935e36fc0ba9a69fa0032883d',1,'InputSoundingData']]],
-  ['v_5finp_5fsound_5fd_2501',['V_inp_sound_d',['../structInputSoundingData.html#a22697746622cd5f3239120eaaa71abdc',1,'InputSoundingData']]],
-  ['varid_2502',['varid',['../structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532',1,'ncutils::NCVar']]],
-  ['vars_5fnew_2503',['vars_new',['../classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b',1,'ERF']]],
-  ['vars_5fold_2504',['vars_old',['../classERF.html#af31e928baa970a1507dfb0233b352542',1,'ERF']]],
-  ['verbose_2505',['verbose',['../classERF.html#a43d0b17f6e155691a1e9474526df3af5',1,'ERF']]],
-  ['void_5fbc_2506',['void_bc',['../InteriorGhostCells_8cpp.html#ab53ca744a656082f128b68f819aacbf5',1,'InteriorGhostCells.cpp']]]
+  ['u_5finp_5fsound_2936',['U_inp_sound',['../structInputSoundingData.html#a92f73e73fbc10bb7cbc1ba38155879f6',1,'InputSoundingData']]],
+  ['u_5finp_5fsound_5fd_2937',['U_inp_sound_d',['../structInputSoundingData.html#aab7841d6e2803dd86596604d85411d8d',1,'InputSoundingData']]],
+  ['u_5fstar_2938',['u_star',['../classABLMost.html#afa1831ea4c8ed00b6e2a9f3831de48a6',1,'ABLMost']]],
+  ['uniquefilenames_2939',['uniquefilenames',['../classPhysProp.html#a4bc8ab2d58a26e16bea177aa9ea70b57',1,'PhysProp']]],
+  ['use_5fcoriolis_2940',['use_coriolis',['../structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606',1,'SolverChoice']]],
+  ['use_5fgravity_2941',['use_gravity',['../structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5',1,'SolverChoice']]],
+  ['use_5flagged_5fdelta_5frt_2942',['use_lagged_delta_rt',['../structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0',1,'SolverChoice']]],
+  ['use_5fnumdiff_2943',['use_NumDiff',['../structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28',1,'SolverChoice']]],
+  ['use_5fqke_2944',['use_QKE',['../structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5',1,'SolverChoice']]],
+  ['use_5frayleigh_5fdamping_2945',['use_rayleigh_damping',['../structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01',1,'SolverChoice']]],
+  ['use_5fterrain_2946',['use_terrain',['../structSolverChoice.html#a063a88594452100497651e8aaf1f68d7',1,'SolverChoice']]],
+  ['use_5fxhi_5fsponge_5fdamping_2947',['use_xhi_sponge_damping',['../structSolverChoice.html#a490b3beab67cb759e4282cee4bf351bd',1,'SolverChoice']]],
+  ['use_5fxlo_5fsponge_5fdamping_2948',['use_xlo_sponge_damping',['../structSolverChoice.html#a6c7213825b149a919384eca49bed1410',1,'SolverChoice']]],
+  ['use_5fyhi_5fsponge_5fdamping_2949',['use_yhi_sponge_damping',['../structSolverChoice.html#ab03c9a8c45b1a6d957b085ae1ad0654f',1,'SolverChoice']]],
+  ['use_5fylo_5fsponge_5fdamping_2950',['use_ylo_sponge_damping',['../structSolverChoice.html#a1b2517d305a9aa50b68c814ee9e2faf9',1,'SolverChoice']]],
+  ['use_5fzhi_5fsponge_5fdamping_2951',['use_zhi_sponge_damping',['../structSolverChoice.html#ab528a001c4b88313c0e6faf4676d9fcb',1,'SolverChoice']]],
+  ['use_5fzlo_5fsponge_5fdamping_2952',['use_zlo_sponge_damping',['../structSolverChoice.html#abfeed65bd256e10211af7960114bb923',1,'SolverChoice']]]
 ];

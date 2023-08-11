@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['satmethods_1357',['SatMethods',['../classSatMethods.html',1,'']]],
-  ['slingo_1358',['Slingo',['../classSlingo.html',1,'']]],
-  ['solverchoice_1359',['SolverChoice',['../structSolverChoice.html',1,'']]]
+  ['physprop_1593',['PhysProp',['../classPhysProp.html',1,'']]],
+  ['physprop_5ft_1594',['physprop_t',['../structPhysProp_1_1physprop__t.html',1,'PhysProp']]],
+  ['planeaverage_1595',['PlaneAverage',['../classPlaneAverage.html',1,'']]]
 ];
