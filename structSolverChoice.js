@@ -68,6 +68,7 @@ var structSolverChoice =
     [ "test_mapfactor", "structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107", null ],
     [ "theta_ref", "structSolverChoice.html#a789dc1f74c540ba2d7ddedd37947c3db", null ],
     [ "use_coriolis", "structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606", null ],
+    [ "use_efficient_advection", "structSolverChoice.html#a8c8cce4aa6dc9328a103342d93dfcff6", null ],
     [ "use_gravity", "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5", null ],
     [ "use_lagged_delta_rt", "structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0", null ],
     [ "use_NumDiff", "structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28", null ],

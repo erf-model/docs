@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"globals_n.html":[3,1,0,11],
 "globals_o.html":[3,1,0,12],
 "globals_p.html":[3,1,0,13],
 "globals_q.html":[3,1,0,14],
@@ -15,8 +16,8 @@ var NAVTREEINDEX6 =
 "globals_y.html":[3,1,0,22],
 "globals_z.html":[3,1,0,23],
 "hierarchy.html":[2,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "structPhysProp_1_1physprop__t.html#aedb70926e32d7aaa6655f0a417acb18d":[2,0,23,0,32],
 "structPhysProp_1_1physprop__t.html#af41dfd624f5e565f0435e9bef6182ba5":[2,0,23,0,20],
 "structPhysProp_1_1physprop__t.html#af60d655c402eb7e47763c631b9432552":[2,0,23,0,11],
-"structPhysProp_1_1physprop__t.html#aff3fc87f8134cab71058c4372ddb853f":[2,0,23,0,37],
-"structSolverChoice.html":[2,0,30]
+"structPhysProp_1_1physprop__t.html#aff3fc87f8134cab71058c4372ddb853f":[2,0,23,0,37]
 };
