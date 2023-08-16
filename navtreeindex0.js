@@ -150,7 +150,6 @@ var NAVTREEINDEX0 =
 "EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b":[3,0,1,13,1],
 "EOS_8H_source.html":[3,0,1,13],
 "ERF_8H.html":[3,0,1,15],
-"ERF_8H.html#a389021b554071d2f8114012ab7d00cd8":[3,0,1,15,1],
 "ERF_8H_source.html":[3,0,1,15],
 "ERF_8cpp.html":[3,0,1,14],
 "ERF_8cpp.html#a85eb8269776aad2fdab8e269a2a03bb1":[3,0,1,14,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "ERF__advance__microphysics_8cpp.html":[3,0,1,8,2],
 "ERF__fast__rhs__MT_8cpp.html":[3,0,1,8,5],
 "ERF__fast__rhs__MT_8cpp.html#a24d664870b8112e66a68c13a0a580369":[3,0,1,8,5,0],
-"ERF__fast__rhs__N_8cpp.html":[3,0,1,8,6]
+"ERF__fast__rhs__N_8cpp.html":[3,0,1,8,6],
+"ERF__fast__rhs__N_8cpp.html#a389e2ff2d926aca8bfcd6388aa6c7d21":[3,0,1,8,6,0]
 };
