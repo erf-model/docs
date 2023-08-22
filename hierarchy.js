@@ -26,6 +26,7 @@ var hierarchy =
       [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ]
     ] ],
     [ "LinInterp::InterpType", "structLinInterp_1_1InterpType.html", null ],
+    [ "IntIdx", "structIntIdx.html", null ],
     [ "LinInterp", "classLinInterp.html", null ],
     [ "MamConstituents", "classMamConstituents.html", null ],
     [ "Microphysics", "classMicrophysics.html", null ],
@@ -41,11 +42,15 @@ var hierarchy =
     ] ],
     [ "ncutils::NCVar", "structncutils_1_1NCVar.html", null ],
     [ "NDArray< DataType >", "structNDArray.html", null ],
+    [ "amrex::ParticleContainer", null, [
+      [ "TerrainFittedPC", "classTerrainFittedPC.html", null ]
+    ] ],
     [ "PhysProp", "classPhysProp.html", null ],
     [ "PhysProp::physprop_t", "structPhysProp_1_1physprop__t.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
     [ "RadConstants", "classRadConstants.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
+    [ "RealIdx", "structRealIdx.html", null ],
     [ "Rrtmgp", "classRrtmgp.html", null ],
     [ "SatMethods", "classSatMethods.html", null ],
     [ "Slingo", "classSlingo.html", null ],
