@@ -201,7 +201,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">int</span> imin = domlo_x; <span class="keywordflow">if</span> (geom.isPeriodic(0)) imin -= z_phys_nd.nGrowVect()[0];</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">int</span> jmin = domlo_y; <span class="keywordflow">if</span> (geom.isPeriodic(1)) jmin -= z_phys_nd.nGrowVect()[1];</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">int</span> imax = domhi_x; <span class="keywordflow">if</span> (geom.isPeriodic(0)) imax += z_phys_nd.nGrowVect()[0];</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="Modal__aero__wateruptake_8H.html#a5bcbe60e78d471493fb9491199aa6d45">imax</a> = domhi_x; <span class="keywordflow">if</span> (geom.isPeriodic(0)) <a class="code" href="Modal__aero__wateruptake_8H.html#a5bcbe60e78d471493fb9491199aa6d45">imax</a> += z_phys_nd.nGrowVect()[0];</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">int</span> jmax = domhi_y; <span class="keywordflow">if</span> (geom.isPeriodic(1)) jmax += z_phys_nd.nGrowVect()[1];</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">switch</span>(terrain_smoothing) {</div>
@@ -224,7 +224,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;              <span class="comment">// Vertical grid stretching</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;              Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> =  z_lev[k];</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;              <span class="keywordtype">int</span> ii = amrex::max(amrex::min(i,imax),imin);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;              <span class="keywordtype">int</span> ii = amrex::max(amrex::min(i,<a class="code" href="Modal__aero__wateruptake_8H.html#a5bcbe60e78d471493fb9491199aa6d45">imax</a>),imin);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;              <span class="keywordtype">int</span> jj = amrex::max(amrex::min(j,jmax),jmin);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;              <span class="comment">// Fill levels using BTF model from p2163 of Klemp2011</span></div>
@@ -278,7 +278,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                  <span class="keyword">const</span> <span class="keyword">auto</span> &amp; h     = ma_h_s[box_no];</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                  <span class="keyword">const</span> <span class="keyword">auto</span> &amp; z_arr = ma_z_phys[box_no];</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                  <span class="keywordtype">int</span> ii = amrex::max(amrex::min(i,imax),imin);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                  <span class="keywordtype">int</span> ii = amrex::max(amrex::min(i,<a class="code" href="Modal__aero__wateruptake_8H.html#a5bcbe60e78d471493fb9491199aa6d45">imax</a>),imin);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                  <span class="keywordtype">int</span> jj = amrex::max(amrex::min(j,jmax),jmin);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                  <span class="comment">// Fill the lateral boundaries</span></div>
@@ -417,7 +417,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                <span class="comment">// Vertical grid stretching</span></div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> =  z_lev[k];</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <span class="keywordtype">int</span> ii = amrex::max(amrex::min(i,imax),imin);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <span class="keywordtype">int</span> ii = amrex::max(amrex::min(i,<a class="code" href="Modal__aero__wateruptake_8H.html#a5bcbe60e78d471493fb9491199aa6d45">imax</a>),imin);</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                <span class="keywordtype">int</span> jj = amrex::max(amrex::min(j,jmax),jmin);</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <span class="comment">// Fill levels using model from Sullivan et. al. 2014</span></div>
@@ -453,7 +453,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="comment">// Vertical grid stretching</span></div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> =  z_lev[k];</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                <span class="keywordtype">int</span> ii = amrex::max(amrex::min(i,imax),imin);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                <span class="keywordtype">int</span> ii = amrex::max(amrex::min(i,<a class="code" href="Modal__aero__wateruptake_8H.html#a5bcbe60e78d471493fb9491199aa6d45">imax</a>),imin);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                <span class="keywordtype">int</span> jj = amrex::max(amrex::min(j,jmax),jmin);</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                <span class="comment">// Fill values outside the lateral boundaries and below the bottom surface (necessary if init_type = &quot;real&quot;)</span></div>
@@ -521,8 +521,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="comment">  */</span></div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;}</div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aMicrophysics__Utils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:187</div></div>
+<div class="ttc" id="aModal__aero__wateruptake_8H_html_a5bcbe60e78d471493fb9491199aa6d45"><div class="ttname"><a href="Modal__aero__wateruptake_8H.html#a5bcbe60e78d471493fb9491199aa6d45">imax</a></div><div class="ttdeci">constexpr int imax</div><div class="ttdef"><b>Definition:</b> Modal_aero_wateruptake.H:327</div></div>
 <div class="ttc" id="anamespaceMicVar_html_acd493faf19b45ab11b9a01e722762798a40820295afd4707e596461de893e54ae"><div class="ttname"><a href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a40820295afd4707e596461de893e54ae">MicVar::omega</a></div><div class="ttdeci">@ omega</div><div class="ttdef"><b>Definition:</b> Microphysics.H:44</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a900a0119c110486650f2759287e22cba">ERF::update_terrain_arrays()</a>.</p>

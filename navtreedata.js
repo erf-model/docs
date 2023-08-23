@@ -58,7 +58,7 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
-        [ "Functions", "globals_func.html", null ],
+        [ "Functions", "globals_func.html", "globals_func" ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
@@ -71,14 +71,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ABLMost_8H.html",
-"ERF__fast__rhs__T_8cpp.html",
-"TerrainMetrics_8H.html#af2b7bda0da3e8024e9b02b6d69c366fe",
-"classERF.html#a9248a4eb025c2647e003f838cba52a21",
-"classMamConstituents.html#a1692c29032818c08c3b1ac985a35d521",
-"classReadBndryPlanes.html#a8027f415fce9acdc5ad53745016f67bf",
-"globals_defs.html",
-"structPhysProp_1_1physprop__t.html#ad1a2b4cadbb2d65df2caff3232e1ab63",
-"structncutils_1_1NCVar.html#ab994c2ebc61623888b2e3fc6bf399bff"
+"ERF__TimeStep_8cpp.html",
+"NCWpsFile_8H.html#aa682cd5b28ee9ffaf36c6944bd124af0",
+"classERF.html#a16e49fd65c68e2afc2140bd9e97bcbe9",
+"classERFPhysBCFunct.html#a81ec9d769c2b3a68df0bc5dc8a1781cf",
+"classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e",
+"classRadConstants.html#a960db6e337b49d1d4a714615a5fa4b7e",
+"dir_1e1d39ffe5d5a47aabb8252daab17529.html",
+"structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa",
+"structUPWIND3.html#a2a9ea3ce4eb7b5ba778a5a0a7a9a1922"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

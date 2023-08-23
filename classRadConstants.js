@@ -29,7 +29,6 @@ var classRadConstants =
     [ "nswbands", "classRadConstants.html#abf9d73367a1b46631bd2fae4516732c2", null ],
     [ "rrtmg_lw_cloudsim_band", "classRadConstants.html#aef2395d6f1bbed699fd4033b9c3104b8", null ],
     [ "rrtmg_sw_cloudsim_band", "classRadConstants.html#acd093dbcb244a162598bc23658a3f5d0", null ],
-    [ "rrtmg_to_rrtmgp_swbands", "classRadConstants.html#ab8f30cb8ab9ee902410ef3a3512a08e2", null ],
     [ "solar_ref_band_irradiance", "classRadConstants.html#a08249d3010b2b85d35732b90d970cdf9", null ],
     [ "wavenum_high", "classRadConstants.html#a06d010a733e82bb2e8a6651c6e92cf51", null ],
     [ "wavenum_low", "classRadConstants.html#ab658087eff73ea76e37a41701497b79d", null ],

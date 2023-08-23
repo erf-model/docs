@@ -104,9 +104,9 @@ Collaboration diagram for EbertCurry:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aec25c0953323667734ee99dfecfda2cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEbertCurry.html#aec25c0953323667734ee99dfecfda2cb">ec_ice_optics_sw</a> (int ncol, int nlev, int nswbands, real2d &amp;cldn, real2d &amp;cicewp, real2d &amp;rei, real3d &amp;ice_tau, real3d &amp;ice_tau_w, real3d &amp;ice_tau_w_g, real3d &amp;ice_tau_w_f)</td></tr>
+<tr class="memitem:aec25c0953323667734ee99dfecfda2cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEbertCurry.html#aec25c0953323667734ee99dfecfda2cb">ec_ice_optics_sw</a> (int ncol, int nlev, int nswbands, real2d &amp;<a class="el" href="Modal__aero__wateruptake_8H.html#aa57b04e686127acffb20d2467a813542">cldn</a>, real2d &amp;cicewp, real2d &amp;rei, real3d &amp;ice_tau, real3d &amp;ice_tau_w, real3d &amp;ice_tau_w_g, real3d &amp;ice_tau_w_f)</td></tr>
 <tr class="separator:aec25c0953323667734ee99dfecfda2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5c5468cfc75751654edb76240a21e45"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEbertCurry.html#ab5c5468cfc75751654edb76240a21e45">ec_ice_optics_lw</a> (int ncol, int nlev, int nlwbands, real2d &amp;cldn, real2d &amp;iclwpth, real2d &amp;iciwpth, real2d &amp;rei, real3d &amp;abs_od)</td></tr>
+<tr class="memitem:ab5c5468cfc75751654edb76240a21e45"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEbertCurry.html#ab5c5468cfc75751654edb76240a21e45">ec_ice_optics_lw</a> (int ncol, int nlev, int nlwbands, real2d &amp;<a class="el" href="Modal__aero__wateruptake_8H.html#aa57b04e686127acffb20d2467a813542">cldn</a>, real2d &amp;iclwpth, real2d &amp;iciwpth, real2d &amp;rei, real3d &amp;abs_od)</td></tr>
 <tr class="separator:ab5c5468cfc75751654edb76240a21e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -228,6 +228,17 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  }</div>
 <div class="ttc" id="aclassEbertCurry_html_ab8edf44ffa6bd8f71ad9748b92928072"><div class="ttname"><a href="classEbertCurry.html#ab8edf44ffa6bd8f71ad9748b92928072">EbertCurry::scalefactor</a></div><div class="ttdeci">static constexpr real scalefactor</div><div class="ttdef"><b>Definition:</b> Ebert_curry.H:7</div></div>
 </div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classOptics.html#ac6da675f9c16a525d04142638de548d3">Optics::get_cloud_optics_lw()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classEbertCurry_ab5c5468cfc75751654edb76240a21e45_icgraph.png" border="0" usemap="#aclassEbertCurry_ab5c5468cfc75751654edb76240a21e45_icgraph" alt=""/></div>
+<map name="aclassEbertCurry_ab5c5468cfc75751654edb76240a21e45_icgraph" id="aclassEbertCurry_ab5c5468cfc75751654edb76240a21e45_icgraph">
+<area shape="rect" title=" " alt="" coords="256,5,395,47"/>
+<area shape="rect" href="classOptics.html#ac6da675f9c16a525d04142638de548d3" title=" " alt="" coords="5,13,208,39"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="aec25c0953323667734ee99dfecfda2cb"></a>
@@ -380,7 +391,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;             <span class="comment">// note that optical properties for ice valid only</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;             <span class="comment">// in range of 13 &gt; rei &gt; 130 micron (Ebert and Curry 92)</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;             <span class="keywordflow">if</span> (cldn(i,k) &gt;= cldmin &amp;&amp; cldn(i,k) &gt;= cldeps) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;             <span class="keywordflow">if</span> (<a class="code" href="Modal__aero__wateruptake_8H.html#aa57b04e686127acffb20d2467a813542">cldn</a>(i,k) &gt;= cldmin &amp;&amp; <a class="code" href="Modal__aero__wateruptake_8H.html#aa57b04e686127acffb20d2467a813542">cldn</a>(i,k) &gt;= cldeps) {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                tmp1i = abarii + bbarii/std::max(rei_min,std::min(<a class="code" href="classEbertCurry.html#ab8edf44ffa6bd8f71ad9748b92928072">scalefactor</a>*rei(i,k),rei_max));</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                ice_tau(ns,i,k) = 1000. * cicewp(i,k) * tmp1i;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;             } <span class="keywordflow">else</span> {</div>
@@ -401,15 +412,28 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }    <span class="comment">// End do k=1,nlev</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;     } <span class="comment">// nswbands</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
-<div class="ttc" id="aclassRadConstants_html_a2de1ff8cbc3cafe6a42e8f884002e4f1aca44c575fbae0e89d6f7764169e03c46"><div class="ttname"><a href="classRadConstants.html#a2de1ff8cbc3cafe6a42e8f884002e4f1aca44c575fbae0e89d6f7764169e03c46">RadConstants::micrometer</a></div><div class="ttdeci">@ micrometer</div><div class="ttdef"><b>Definition:</b> Rad_constants.H:95</div></div>
-<div class="ttc" id="aclassRadConstants_html_a7d32f7699c2933c60da5163952bfc4cb"><div class="ttname"><a href="classRadConstants.html#a7d32f7699c2933c60da5163952bfc4cb">RadConstants::get_sw_spectral_boundaries</a></div><div class="ttdeci">static void get_sw_spectral_boundaries(real1d &amp;low_boundaries, real1d &amp;high_boundaries, Units units)</div><div class="ttdef"><b>Definition:</b> Rad_constants.H:185</div></div>
-</div><!-- fragment --><div class="dynheader">
+<div class="ttc" id="aModal__aero__wateruptake_8H_html_aa57b04e686127acffb20d2467a813542"><div class="ttname"><a href="Modal__aero__wateruptake_8H.html#aa57b04e686127acffb20d2467a813542">cldn</a></div><div class="ttdeci">real2d cldn(:,:)</div></div>
+<div class="ttc" id="aclassRadConstants_html_a2de1ff8cbc3cafe6a42e8f884002e4f1aca44c575fbae0e89d6f7764169e03c46"><div class="ttname"><a href="classRadConstants.html#a2de1ff8cbc3cafe6a42e8f884002e4f1aca44c575fbae0e89d6f7764169e03c46">RadConstants::micrometer</a></div><div class="ttdeci">@ micrometer</div><div class="ttdef"><b>Definition:</b> Rad_constants.H:88</div></div>
+<div class="ttc" id="aclassRadConstants_html_a7d32f7699c2933c60da5163952bfc4cb"><div class="ttname"><a href="classRadConstants.html#a7d32f7699c2933c60da5163952bfc4cb">RadConstants::get_sw_spectral_boundaries</a></div><div class="ttdeci">static void get_sw_spectral_boundaries(real1d &amp;low_boundaries, real1d &amp;high_boundaries, Units units)</div><div class="ttdef"><b>Definition:</b> Rad_constants.H:178</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classOptics.html#afb2e12c4627e30bba2c1a72e5d88aaac">Optics::get_cloud_optics_sw()</a>.</p>
+<div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classEbertCurry_aec25c0953323667734ee99dfecfda2cb_cgraph.png" border="0" usemap="#aclassEbertCurry_aec25c0953323667734ee99dfecfda2cb_cgraph" alt=""/></div>
 <map name="aclassEbertCurry_aec25c0953323667734ee99dfecfda2cb_cgraph" id="aclassEbertCurry_aec25c0953323667734ee99dfecfda2cb_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,144,47"/>
-<area shape="rect" href="classRadConstants.html#a7d32f7699c2933c60da5163952bfc4cb" title=" " alt="" coords="192,5,359,47"/>
+<area shape="rect" title=" " alt="" coords="5,27,144,69"/>
+<area shape="rect" href="Modal__aero__wateruptake_8H.html#aa57b04e686127acffb20d2467a813542" title=" " alt="" coords="251,5,300,32"/>
+<area shape="rect" href="classRadConstants.html#a7d32f7699c2933c60da5163952bfc4cb" title=" " alt="" coords="192,57,359,98"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classEbertCurry_aec25c0953323667734ee99dfecfda2cb_icgraph.png" border="0" usemap="#aclassEbertCurry_aec25c0953323667734ee99dfecfda2cb_icgraph" alt=""/></div>
+<map name="aclassEbertCurry_aec25c0953323667734ee99dfecfda2cb_icgraph" id="aclassEbertCurry_aec25c0953323667734ee99dfecfda2cb_icgraph">
+<area shape="rect" title=" " alt="" coords="259,5,397,47"/>
+<area shape="rect" href="classOptics.html#afb2e12c4627e30bba2c1a72e5d88aaac" title=" " alt="" coords="5,13,211,39"/>
 </map>
 </div>
 

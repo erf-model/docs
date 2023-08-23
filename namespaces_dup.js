@@ -27,6 +27,11 @@ var namespaces_dup =
         [ "neumann", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60", null ]
       ] ]
     ] ],
+    [ "internal", "namespaceinternal.html", [
+      [ "expand_day_fluxes", "namespaceinternal.html#af3d45e8f34eed05a14c697fc773d8d79", null ],
+      [ "initial_fluxes", "namespaceinternal.html#aaf4add7dd62294e7017ae4e65f656337", null ],
+      [ "reordered", "namespaceinternal.html#ab101ef9dbaef3989731e101b074177fd", null ]
+    ] ],
     [ "InterpType", "namespaceInterpType.html", null ],
     [ "IntVar", "namespaceIntVar.html", null ],
     [ "MicVar", "namespaceMicVar.html", null ],

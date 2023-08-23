@@ -5,6 +5,7 @@ var hierarchy =
     ] ],
     [ "MamConstituents::aerlist_t", "structMamConstituents_1_1aerlist__t.html", null ],
     [ "MamConstituents::aerosol_t", "structMamConstituents_1_1aerosol__t.html", null ],
+    [ "AerRadProps", "classAerRadProps.html", null ],
     [ "amrex::AmrCore", null, [
       [ "ERF", "classERF.html", null ]
     ] ],
@@ -28,8 +29,10 @@ var hierarchy =
     [ "LinInterp::InterpType", "structLinInterp_1_1InterpType.html", null ],
     [ "IntIdx", "structIntIdx.html", null ],
     [ "LinInterp", "classLinInterp.html", null ],
+    [ "Mam4_aer", "classMam4__aer.html", null ],
     [ "MamConstituents", "classMamConstituents.html", null ],
     [ "Microphysics", "classMicrophysics.html", null ],
+    [ "ModalAeroWateruptake", "classModalAeroWateruptake.html", null ],
     [ "MamConstituents::mode_component_t", "structMamConstituents_1_1mode__component__t.html", null ],
     [ "MamConstituents::modelist_t", "structMamConstituents_1_1modelist__t.html", null ],
     [ "MamConstituents::modes_t", "structMamConstituents_1_1modes__t.html", null ],
@@ -42,6 +45,7 @@ var hierarchy =
     ] ],
     [ "ncutils::NCVar", "structncutils_1_1NCVar.html", null ],
     [ "NDArray< DataType >", "structNDArray.html", null ],
+    [ "Optics", "classOptics.html", null ],
     [ "amrex::ParticleContainer", null, [
       [ "TerrainFittedPC", "classTerrainFittedPC.html", null ]
     ] ],
@@ -49,6 +53,7 @@ var hierarchy =
     [ "PhysProp::physprop_t", "structPhysProp_1_1physprop__t.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
     [ "RadConstants", "classRadConstants.html", null ],
+    [ "Radiation", "classRadiation.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
     [ "RealIdx", "structRealIdx.html", null ],
     [ "Rrtmgp", "classRrtmgp.html", null ],

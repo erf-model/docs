@@ -134,9 +134,9 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a7c91a5b46f8d85666e0ca0d1de8d23aa"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudRadProps.html#a7c91a5b46f8d85666e0ca0d1de8d23aa">name</a> {&quot;CloudRadProps&quot;}</td></tr>
 <tr class="separator:a7c91a5b46f8d85666e0ca0d1de8d23aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a076ffd7ff44497eac9d3cace27964b0a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudRadProps.html#a076ffd7ff44497eac9d3cace27964b0a">liquid_file</a> {&quot;/ccs/home/yuanx/erf.radiation/Source/Radiation/data/F_nwvl200_mu20_lam50_res64_t298_c080428.nc&quot;}</td></tr>
+<tr class="memitem:a076ffd7ff44497eac9d3cace27964b0a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudRadProps.html#a076ffd7ff44497eac9d3cace27964b0a">liquid_file</a> {&quot;/ccs/home/yuanx/erf.radiation/Source/<a class="el" href="classRadiation.html">Radiation</a>/data/F_nwvl200_mu20_lam50_res64_t298_c080428.nc&quot;}</td></tr>
 <tr class="separator:a076ffd7ff44497eac9d3cace27964b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bdca9fbb3d26b9b013ea06b9385017e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudRadProps.html#a4bdca9fbb3d26b9b013ea06b9385017e">ice_file</a> {&quot;/ccs/home/yuanx/erf.radiation/Source/Radiation/data/iceoptics_c080917.nc&quot;}</td></tr>
+<tr class="memitem:a4bdca9fbb3d26b9b013ea06b9385017e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudRadProps.html#a4bdca9fbb3d26b9b013ea06b9385017e">ice_file</a> {&quot;/ccs/home/yuanx/erf.radiation/Source/<a class="el" href="classRadiation.html">Radiation</a>/data/iceoptics_c080917.nc&quot;}</td></tr>
 <tr class="separator:a4bdca9fbb3d26b9b013ea06b9385017e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae459ca2d1bde4fa8f5a4fc2ff21a0ffd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCloudRadProps.html#ae459ca2d1bde4fa8f5a4fc2ff21a0ffd">nlw_band</a></td></tr>
 <tr class="separator:ae459ca2d1bde4fa8f5a4fc2ff21a0ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,7 +285,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;       }</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    }</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    abs_od_1d(0) = abs_od(lwband);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <a class="code" href="classLinInterp.html#a1d201d8678dc3962d322281f45e4109d">LinInterp::interp2d1d</a>(abs_lw_liq_2d, <a class="code" href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">nmu</a>, <a class="code" href="classCloudRadProps.html#a3ef54947677ddd898a7b6ded241db03c">nlambda</a>, abs_od_1d, 1, mu_wgts, lambda_wgts);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <a class="code" href="classLinInterp.html#add14066c31958045ebbe1e78eeeca421">LinInterp::interp2d1d</a>(abs_lw_liq_2d, <a class="code" href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">nmu</a>, <a class="code" href="classCloudRadProps.html#a3ef54947677ddd898a7b6ded241db03c">nlambda</a>, abs_od_1d, 1, mu_wgts, lambda_wgts);</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    abs_od(lwband) = clwptn*abs_od_1d(0);</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  }</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
@@ -298,8 +298,8 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassCloudRadProps_html_ab5a9764068553f94a590310ff990a97d"><div class="ttname"><a href="classCloudRadProps.html#ab5a9764068553f94a590310ff990a97d">CloudRadProps::get_mu_lambda_weights</a></div><div class="ttdeci">void get_mu_lambda_weights(const real &amp;lamc, const real &amp;pgam, LinInterp::InterpType &amp;mu_wgts, LinInterp::InterpType &amp;lambda_wgts)</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.cpp:313</div></div>
 <div class="ttc" id="aclassCloudRadProps_html_ab7f6932c5559602939b8a32fa42ca1ca"><div class="ttname"><a href="classCloudRadProps.html#ab7f6932c5559602939b8a32fa42ca1ca">CloudRadProps::nlwbands</a></div><div class="ttdeci">int nlwbands</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.H:79</div></div>
 <div class="ttc" id="aclassCloudRadProps_html_ae7091519e3c4dfa0929e088c6234be73"><div class="ttname"><a href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">CloudRadProps::nmu</a></div><div class="ttdeci">int nmu</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.H:78</div></div>
-<div class="ttc" id="aclassLinInterp_html_a1d201d8678dc3962d322281f45e4109d"><div class="ttname"><a href="classLinInterp.html#a1d201d8678dc3962d322281f45e4109d">LinInterp::interp2d1d</a></div><div class="ttdeci">static YAKL_INLINE void interp2d1d(const real2d &amp;arrin, const int &amp;n1, const int &amp;n2, real1d &amp;arrout, const int &amp;m1, InterpType &amp;wgt1, InterpType &amp;wgt2)</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:278</div></div>
-<div class="ttc" id="astructLinInterp_1_1InterpType_html"><div class="ttname"><a href="structLinInterp_1_1InterpType.html">LinInterp::InterpType</a></div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:19</div></div>
+<div class="ttc" id="aclassLinInterp_html_add14066c31958045ebbe1e78eeeca421"><div class="ttname"><a href="classLinInterp.html#add14066c31958045ebbe1e78eeeca421">LinInterp::interp2d1d</a></div><div class="ttdeci">static YAKL_INLINE void interp2d1d(const real2d &amp;arrin, const int &amp;n1, const int &amp;n2, real1d arrout, const int &amp;m1, const InterpType &amp;wgt1, const InterpType &amp;wgt2)</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:277</div></div>
+<div class="ttc" id="astructLinInterp_1_1InterpType_html"><div class="ttname"><a href="structLinInterp_1_1InterpType.html">LinInterp::InterpType</a></div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:18</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classCloudRadProps.html#a31a396f1997438a7cbb347767dca311a">gammadist_liq_optics_lw()</a>.</p>
 <div class="dynheader">
@@ -309,9 +309,10 @@ Here is the call graph for this function:</div>
 <map name="aclassCloudRadProps_a5772a63dc315f019d951785ebdb9c13d_cgraph" id="aclassCloudRadProps_a5772a63dc315f019d951785ebdb9c13d_cgraph">
 <area shape="rect" title=" " alt="" coords="5,53,163,94"/>
 <area shape="rect" href="classCloudRadProps.html#ab5a9764068553f94a590310ff990a97d" title=" " alt="" coords="211,23,375,65"/>
-<area shape="rect" href="classLinInterp.html#a1d201d8678dc3962d322281f45e4109d" title=" " alt="" coords="214,89,371,116"/>
-<area shape="rect" href="classLinInterp.html#ae97d75210f26620c08e16255ba199eb3" title=" " alt="" coords="439,5,547,32"/>
-<area shape="rect" href="classLinInterp.html#a98d09fe32d0ebe5ed06b1a35d4aec975" title=" " alt="" coords="423,56,564,83"/>
+<area shape="rect" href="classLinInterp.html#add14066c31958045ebbe1e78eeeca421" title=" " alt="" coords="214,89,371,116"/>
+<area shape="rect" href="classLinInterp.html#ac61afc25180136dc826ac8fe776aac11" title=" " alt="" coords="439,5,547,32"/>
+<area shape="rect" href="classLinInterp.html#a178337295dc1c3aae59dcb333b74295c" title=" " alt="" coords="423,56,564,83"/>
+<area shape="rect" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa" title=" " alt="" coords="612,5,651,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -319,8 +320,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCloudRadProps_a5772a63dc315f019d951785ebdb9c13d_icgraph.png" border="0" usemap="#aclassCloudRadProps_a5772a63dc315f019d951785ebdb9c13d_icgraph" alt=""/></div>
 <map name="aclassCloudRadProps_a5772a63dc315f019d951785ebdb9c13d_icgraph" id="aclassCloudRadProps_a5772a63dc315f019d951785ebdb9c13d_icgraph">
-<area shape="rect" title=" " alt="" coords="256,5,413,47"/>
-<area shape="rect" href="classCloudRadProps.html#a31a396f1997438a7cbb347767dca311a" title=" " alt="" coords="5,5,208,47"/>
+<area shape="rect" title=" " alt="" coords="507,5,664,47"/>
+<area shape="rect" href="classCloudRadProps.html#a31a396f1997438a7cbb347767dca311a" title=" " alt="" coords="256,5,459,47"/>
+<area shape="rect" href="classOptics.html#ac6da675f9c16a525d04142638de548d3" title=" " alt="" coords="5,13,208,39"/>
 </map>
 </div>
 
@@ -411,9 +413,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;           asm_sw_liq_2d(imu,lb) = <a class="code" href="classCloudRadProps.html#aa32eef207df809527562060ba064baf4">asm_sw_liq</a>(imu,lb,swband);</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        }</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;     }</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;     <a class="code" href="classLinInterp.html#a1d201d8678dc3962d322281f45e4109d">LinInterp::interp2d1d</a>(ext_sw_liq_2d, <a class="code" href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">nmu</a>, <a class="code" href="classCloudRadProps.html#a3ef54947677ddd898a7b6ded241db03c">nlambda</a>, extb, 1, mu_wgts, lambda_wgts);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;     <a class="code" href="classLinInterp.html#a1d201d8678dc3962d322281f45e4109d">LinInterp::interp2d1d</a>(ssa_sw_liq_2d, <a class="code" href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">nmu</a>, <a class="code" href="classCloudRadProps.html#a3ef54947677ddd898a7b6ded241db03c">nlambda</a>, ssab, 1, mu_wgts, lambda_wgts);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;     <a class="code" href="classLinInterp.html#a1d201d8678dc3962d322281f45e4109d">LinInterp::interp2d1d</a>(asm_sw_liq_2d, <a class="code" href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">nmu</a>, <a class="code" href="classCloudRadProps.html#a3ef54947677ddd898a7b6ded241db03c">nlambda</a>, asmb, 1, mu_wgts, lambda_wgts);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;     <a class="code" href="classLinInterp.html#add14066c31958045ebbe1e78eeeca421">LinInterp::interp2d1d</a>(ext_sw_liq_2d, <a class="code" href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">nmu</a>, <a class="code" href="classCloudRadProps.html#a3ef54947677ddd898a7b6ded241db03c">nlambda</a>, extb, 1, mu_wgts, lambda_wgts);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;     <a class="code" href="classLinInterp.html#add14066c31958045ebbe1e78eeeca421">LinInterp::interp2d1d</a>(ssa_sw_liq_2d, <a class="code" href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">nmu</a>, <a class="code" href="classCloudRadProps.html#a3ef54947677ddd898a7b6ded241db03c">nlambda</a>, ssab, 1, mu_wgts, lambda_wgts);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;     <a class="code" href="classLinInterp.html#add14066c31958045ebbe1e78eeeca421">LinInterp::interp2d1d</a>(asm_sw_liq_2d, <a class="code" href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">nmu</a>, <a class="code" href="classCloudRadProps.html#a3ef54947677ddd898a7b6ded241db03c">nlambda</a>, asmb, 1, mu_wgts, lambda_wgts);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  }</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="comment">// compute radiative properties</span></div>
@@ -437,9 +439,10 @@ Here is the call graph for this function:</div>
 <map name="aclassCloudRadProps_a2890fa11a8f395809fe215447e339c20_cgraph" id="aclassCloudRadProps_a2890fa11a8f395809fe215447e339c20_cgraph">
 <area shape="rect" title=" " alt="" coords="5,53,163,94"/>
 <area shape="rect" href="classCloudRadProps.html#ab5a9764068553f94a590310ff990a97d" title=" " alt="" coords="211,23,375,65"/>
-<area shape="rect" href="classLinInterp.html#a1d201d8678dc3962d322281f45e4109d" title=" " alt="" coords="214,89,371,116"/>
-<area shape="rect" href="classLinInterp.html#ae97d75210f26620c08e16255ba199eb3" title=" " alt="" coords="439,5,547,32"/>
-<area shape="rect" href="classLinInterp.html#a98d09fe32d0ebe5ed06b1a35d4aec975" title=" " alt="" coords="423,56,564,83"/>
+<area shape="rect" href="classLinInterp.html#add14066c31958045ebbe1e78eeeca421" title=" " alt="" coords="214,89,371,116"/>
+<area shape="rect" href="classLinInterp.html#ac61afc25180136dc826ac8fe776aac11" title=" " alt="" coords="439,5,547,32"/>
+<area shape="rect" href="classLinInterp.html#a178337295dc1c3aae59dcb333b74295c" title=" " alt="" coords="423,56,564,83"/>
+<area shape="rect" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa" title=" " alt="" coords="612,5,651,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -447,8 +450,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCloudRadProps_a2890fa11a8f395809fe215447e339c20_icgraph.png" border="0" usemap="#aclassCloudRadProps_a2890fa11a8f395809fe215447e339c20_icgraph" alt=""/></div>
 <map name="aclassCloudRadProps_a2890fa11a8f395809fe215447e339c20_icgraph" id="aclassCloudRadProps_a2890fa11a8f395809fe215447e339c20_icgraph">
-<area shape="rect" title=" " alt="" coords="256,5,413,47"/>
-<area shape="rect" href="classCloudRadProps.html#adcaf1c142347cdcd3b761af9c7ee5c56" title=" " alt="" coords="5,5,208,47"/>
+<area shape="rect" title=" " alt="" coords="509,5,667,47"/>
+<area shape="rect" href="classCloudRadProps.html#adcaf1c142347cdcd3b761af9c7ee5c56" title=" " alt="" coords="259,5,461,47"/>
+<area shape="rect" href="classOptics.html#afb2e12c4627e30bba2c1a72e5d88aaac" title=" " alt="" coords="5,13,211,39"/>
 </map>
 </div>
 
@@ -516,7 +520,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  });</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
 <div class="ttc" id="aclassCloudRadProps_html_a5772a63dc315f019d951785ebdb9c13d"><div class="ttname"><a href="classCloudRadProps.html#a5772a63dc315f019d951785ebdb9c13d">CloudRadProps::gam_liquid_lw</a></div><div class="ttdeci">void gam_liquid_lw(const real &amp;clwptn, const real &amp;lamc, const real &amp;pgam, real1d abs_od)</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.cpp:229</div></div>
-</div><!-- fragment --><div class="dynheader">
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classOptics.html#ac6da675f9c16a525d04142638de548d3">Optics::get_cloud_optics_lw()</a>.</p>
+<div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCloudRadProps_a31a396f1997438a7cbb347767dca311a_cgraph.png" border="0" usemap="#aclassCloudRadProps_a31a396f1997438a7cbb347767dca311a_cgraph" alt=""/></div>
@@ -524,9 +530,19 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,53,208,94"/>
 <area shape="rect" href="classCloudRadProps.html#a5772a63dc315f019d951785ebdb9c13d" title=" " alt="" coords="256,53,413,94"/>
 <area shape="rect" href="classCloudRadProps.html#ab5a9764068553f94a590310ff990a97d" title=" " alt="" coords="461,23,625,65"/>
-<area shape="rect" href="classLinInterp.html#a1d201d8678dc3962d322281f45e4109d" title=" " alt="" coords="465,89,622,116"/>
-<area shape="rect" href="classLinInterp.html#ae97d75210f26620c08e16255ba199eb3" title=" " alt="" coords="690,5,798,32"/>
-<area shape="rect" href="classLinInterp.html#a98d09fe32d0ebe5ed06b1a35d4aec975" title=" " alt="" coords="673,56,815,83"/>
+<area shape="rect" href="classLinInterp.html#add14066c31958045ebbe1e78eeeca421" title=" " alt="" coords="465,89,622,116"/>
+<area shape="rect" href="classLinInterp.html#ac61afc25180136dc826ac8fe776aac11" title=" " alt="" coords="690,5,798,32"/>
+<area shape="rect" href="classLinInterp.html#a178337295dc1c3aae59dcb333b74295c" title=" " alt="" coords="673,56,815,83"/>
+<area shape="rect" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa" title=" " alt="" coords="863,5,901,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCloudRadProps_a31a396f1997438a7cbb347767dca311a_icgraph.png" border="0" usemap="#aclassCloudRadProps_a31a396f1997438a7cbb347767dca311a_icgraph" alt=""/></div>
+<map name="aclassCloudRadProps_a31a396f1997438a7cbb347767dca311a_icgraph" id="aclassCloudRadProps_a31a396f1997438a7cbb347767dca311a_icgraph">
+<area shape="rect" title=" " alt="" coords="256,5,459,47"/>
+<area shape="rect" href="classOptics.html#ac6da675f9c16a525d04142638de548d3" title=" " alt="" coords="5,13,208,39"/>
 </map>
 </div>
 
@@ -626,7 +642,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  });</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
 <div class="ttc" id="aclassCloudRadProps_html_a2890fa11a8f395809fe215447e339c20"><div class="ttname"><a href="classCloudRadProps.html#a2890fa11a8f395809fe215447e339c20">CloudRadProps::gam_liquid_sw</a></div><div class="ttdeci">void gam_liquid_sw(const real &amp;clwptn, const real &amp;lamc, const real &amp;pgam, real1d tau, real1d tau_w, real1d tau_w_g, real1d tau_w_f)</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.cpp:262</div></div>
-</div><!-- fragment --><div class="dynheader">
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classOptics.html#afb2e12c4627e30bba2c1a72e5d88aaac">Optics::get_cloud_optics_sw()</a>.</p>
+<div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCloudRadProps_adcaf1c142347cdcd3b761af9c7ee5c56_cgraph.png" border="0" usemap="#aclassCloudRadProps_adcaf1c142347cdcd3b761af9c7ee5c56_cgraph" alt=""/></div>
@@ -634,9 +652,19 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,53,208,94"/>
 <area shape="rect" href="classCloudRadProps.html#a2890fa11a8f395809fe215447e339c20" title=" " alt="" coords="256,53,413,94"/>
 <area shape="rect" href="classCloudRadProps.html#ab5a9764068553f94a590310ff990a97d" title=" " alt="" coords="461,23,625,65"/>
-<area shape="rect" href="classLinInterp.html#a1d201d8678dc3962d322281f45e4109d" title=" " alt="" coords="465,89,622,116"/>
-<area shape="rect" href="classLinInterp.html#ae97d75210f26620c08e16255ba199eb3" title=" " alt="" coords="690,5,798,32"/>
-<area shape="rect" href="classLinInterp.html#a98d09fe32d0ebe5ed06b1a35d4aec975" title=" " alt="" coords="673,56,815,83"/>
+<area shape="rect" href="classLinInterp.html#add14066c31958045ebbe1e78eeeca421" title=" " alt="" coords="465,89,622,116"/>
+<area shape="rect" href="classLinInterp.html#ac61afc25180136dc826ac8fe776aac11" title=" " alt="" coords="690,5,798,32"/>
+<area shape="rect" href="classLinInterp.html#a178337295dc1c3aae59dcb333b74295c" title=" " alt="" coords="673,56,815,83"/>
+<area shape="rect" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa" title=" " alt="" coords="863,5,901,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCloudRadProps_adcaf1c142347cdcd3b761af9c7ee5c56_icgraph.png" border="0" usemap="#aclassCloudRadProps_adcaf1c142347cdcd3b761af9c7ee5c56_icgraph" alt=""/></div>
+<map name="aclassCloudRadProps_adcaf1c142347cdcd3b761af9c7ee5c56_icgraph" id="aclassCloudRadProps_adcaf1c142347cdcd3b761af9c7ee5c56_icgraph">
+<area shape="rect" title=" " alt="" coords="259,5,461,47"/>
+<area shape="rect" href="classOptics.html#afb2e12c4627e30bba2c1a72e5d88aaac" title=" " alt="" coords="5,13,211,39"/>
 </map>
 </div>
 
@@ -692,21 +720,21 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  <span class="comment">// Make interpolation weights for mu.</span></div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  <span class="comment">// (Put pgam in a temporary array for this purpose.)</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <a class="code" href="classLinInterp.html#ae97d75210f26620c08e16255ba199eb3">LinInterp::init</a>(g_mu0, <a class="code" href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">nmu</a>, pgam1d, 1, <a class="code" href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26">LinInterp::extrap_method_bndry</a>, mu_wgts);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <a class="code" href="classLinInterp.html#ac61afc25180136dc826ac8fe776aac11">LinInterp::init</a>(g_mu0, <a class="code" href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">nmu</a>, pgam1d, 1, <a class="code" href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26">LinInterp::extrap_method_bndry</a>, mu_wgts);</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  <span class="comment">// Use mu weights to interpolate to a row in the lambda table.</span></div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <span class="keywordflow">for</span>(<span class="keyword">auto</span> i=0; i&lt;<a class="code" href="classCloudRadProps.html#a3ef54947677ddd898a7b6ded241db03c">nlambda</a>; ++i) {</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;     <span class="keywordflow">for</span> (<span class="keyword">auto</span> im=0; im&lt;<a class="code" href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">nmu</a>; ++im) g_lambda1d(im) = <a class="code" href="classCloudRadProps.html#a58599e69fa4af17830d28c4836e386db">g_lambda</a>(im, i);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;     <a class="code" href="classLinInterp.html#a98d09fe32d0ebe5ed06b1a35d4aec975">LinInterp::interp1d</a>(g_lambda1d, <a class="code" href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">nmu</a>, g_lambda_interp, 1, mu_wgts);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;     <a class="code" href="classLinInterp.html#a178337295dc1c3aae59dcb333b74295c">LinInterp::interp1d</a>(g_lambda1d, <a class="code" href="classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73">nmu</a>, g_lambda_interp, 1, mu_wgts);</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  }</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  <span class="comment">// Make interpolation weights for lambda.</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <a class="code" href="classLinInterp.html#ae97d75210f26620c08e16255ba199eb3">LinInterp::init</a>(g_lambda_interp, <a class="code" href="classCloudRadProps.html#a3ef54947677ddd898a7b6ded241db03c">nlambda</a>, lamc1d, 1, <a class="code" href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26">LinInterp::extrap_method_bndry</a>, lambda_wgts);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <a class="code" href="classLinInterp.html#ac61afc25180136dc826ac8fe776aac11">LinInterp::init</a>(g_lambda_interp, <a class="code" href="classCloudRadProps.html#a3ef54947677ddd898a7b6ded241db03c">nlambda</a>, lamc1d, 1, <a class="code" href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26">LinInterp::extrap_method_bndry</a>, lambda_wgts);</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;}</div>
 <div class="ttc" id="aclassCloudRadProps_html_a58599e69fa4af17830d28c4836e386db"><div class="ttname"><a href="classCloudRadProps.html#a58599e69fa4af17830d28c4836e386db">CloudRadProps::g_lambda</a></div><div class="ttdeci">real2d g_lambda</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.H:82</div></div>
-<div class="ttc" id="aclassLinInterp_html_a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26"><div class="ttname"><a href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26">LinInterp::extrap_method_bndry</a></div><div class="ttdeci">@ extrap_method_bndry</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:15</div></div>
-<div class="ttc" id="aclassLinInterp_html_a98d09fe32d0ebe5ed06b1a35d4aec975"><div class="ttname"><a href="classLinInterp.html#a98d09fe32d0ebe5ed06b1a35d4aec975">LinInterp::interp1d</a></div><div class="ttdeci">static YAKL_INLINE void interp1d(const real1d &amp;arrin, const int &amp;n1, real1d &amp;arrout, const int &amp;m1, InterpType &amp;interp_wgts)</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:242</div></div>
-<div class="ttc" id="aclassLinInterp_html_ae97d75210f26620c08e16255ba199eb3"><div class="ttname"><a href="classLinInterp.html#ae97d75210f26620c08e16255ba199eb3">LinInterp::init</a></div><div class="ttdeci">static YAKL_INLINE void init(const real1d &amp;yin, const int &amp;nin, real1d &amp;yout, const int &amp;nout, const InterpMethod &amp;extrap_method, InterpType &amp;interp_wgts, real cyclicmin=0., real cyclicmax=0.)</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:39</div></div>
+<div class="ttc" id="aclassLinInterp_html_a178337295dc1c3aae59dcb333b74295c"><div class="ttname"><a href="classLinInterp.html#a178337295dc1c3aae59dcb333b74295c">LinInterp::interp1d</a></div><div class="ttdeci">static YAKL_INLINE void interp1d(const real1d &amp;arrin, const int &amp;n1, real1d arrout, const int &amp;m1, const InterpType &amp;interp_wgts)</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:241</div></div>
+<div class="ttc" id="aclassLinInterp_html_a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26"><div class="ttname"><a href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26">LinInterp::extrap_method_bndry</a></div><div class="ttdeci">@ extrap_method_bndry</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:14</div></div>
+<div class="ttc" id="aclassLinInterp_html_ac61afc25180136dc826ac8fe776aac11"><div class="ttname"><a href="classLinInterp.html#ac61afc25180136dc826ac8fe776aac11">LinInterp::init</a></div><div class="ttdeci">static YAKL_INLINE void init(const real1d &amp;yin, const int &amp;nin, real1d yout, const int &amp;nout, const InterpMethod &amp;extrap_method, InterpType interp_wgts, real cyclicmin=0., real cyclicmax=0.)</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:38</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classCloudRadProps.html#a5772a63dc315f019d951785ebdb9c13d">gam_liquid_lw()</a>, and <a class="el" href="classCloudRadProps.html#a2890fa11a8f395809fe215447e339c20">gam_liquid_sw()</a>.</p>
 <div class="dynheader">
@@ -715,8 +743,9 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classCloudRadProps_ab5a9764068553f94a590310ff990a97d_cgraph.png" border="0" usemap="#aclassCloudRadProps_ab5a9764068553f94a590310ff990a97d_cgraph" alt=""/></div>
 <map name="aclassCloudRadProps_ab5a9764068553f94a590310ff990a97d_cgraph" id="aclassCloudRadProps_ab5a9764068553f94a590310ff990a97d_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,169,65"/>
-<area shape="rect" href="classLinInterp.html#ae97d75210f26620c08e16255ba199eb3" title=" " alt="" coords="234,5,342,32"/>
-<area shape="rect" href="classLinInterp.html#a98d09fe32d0ebe5ed06b1a35d4aec975" title=" " alt="" coords="217,56,359,83"/>
+<area shape="rect" href="classLinInterp.html#ac61afc25180136dc826ac8fe776aac11" title=" " alt="" coords="234,5,342,32"/>
+<area shape="rect" href="classLinInterp.html#a178337295dc1c3aae59dcb333b74295c" title=" " alt="" coords="217,56,359,83"/>
+<area shape="rect" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa" title=" " alt="" coords="407,5,445,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -724,11 +753,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCloudRadProps_ab5a9764068553f94a590310ff990a97d_icgraph.png" border="0" usemap="#aclassCloudRadProps_ab5a9764068553f94a590310ff990a97d_icgraph" alt=""/></div>
 <map name="aclassCloudRadProps_ab5a9764068553f94a590310ff990a97d_icgraph" id="aclassCloudRadProps_ab5a9764068553f94a590310ff990a97d_icgraph">
-<area shape="rect" title=" " alt="" coords="461,39,625,80"/>
-<area shape="rect" href="classCloudRadProps.html#a5772a63dc315f019d951785ebdb9c13d" title=" " alt="" coords="256,5,413,47"/>
-<area shape="rect" href="classCloudRadProps.html#a2890fa11a8f395809fe215447e339c20" title=" " alt="" coords="256,71,413,112"/>
-<area shape="rect" href="classCloudRadProps.html#a31a396f1997438a7cbb347767dca311a" title=" " alt="" coords="5,5,208,47"/>
-<area shape="rect" href="classCloudRadProps.html#adcaf1c142347cdcd3b761af9c7ee5c56" title=" " alt="" coords="5,71,208,112"/>
+<area shape="rect" title=" " alt="" coords="715,39,879,80"/>
+<area shape="rect" href="classCloudRadProps.html#a5772a63dc315f019d951785ebdb9c13d" title=" " alt="" coords="509,5,667,47"/>
+<area shape="rect" href="classCloudRadProps.html#a2890fa11a8f395809fe215447e339c20" title=" " alt="" coords="509,71,667,112"/>
+<area shape="rect" href="classCloudRadProps.html#a31a396f1997438a7cbb347767dca311a" title=" " alt="" coords="259,5,461,47"/>
+<area shape="rect" href="classOptics.html#ac6da675f9c16a525d04142638de548d3" title=" " alt="" coords="7,13,209,39"/>
+<area shape="rect" href="classCloudRadProps.html#adcaf1c142347cdcd3b761af9c7ee5c56" title=" " alt="" coords="259,71,461,112"/>
+<area shape="rect" href="classOptics.html#afb2e12c4627e30bba2c1a72e5d88aaac" title=" " alt="" coords="5,78,211,105"/>
 </map>
 </div>
 
@@ -824,6 +855,17 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassCloudRadProps_html_ae567379b95d6a04ffa0680568d057905"><div class="ttname"><a href="classCloudRadProps.html#ae567379b95d6a04ffa0680568d057905">CloudRadProps::g_d_eff</a></div><div class="ttdeci">real1d g_d_eff</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.H:88</div></div>
 <div class="ttc" id="aclassCloudRadProps_html_ae5d0881c315505e02035349403ed4270"><div class="ttname"><a href="classCloudRadProps.html#ae5d0881c315505e02035349403ed4270">CloudRadProps::asm_sw_ice</a></div><div class="ttdeci">real2d asm_sw_ice</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.H:91</div></div>
 </div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classOptics.html#a9313953f72eb64c11ac337904a77c4d7">Optics::initialize()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCloudRadProps_ac733936ee2d3e88f07631b30fc5758ef_icgraph.png" border="0" usemap="#aclassCloudRadProps_ac733936ee2d3e88f07631b30fc5758ef_icgraph" alt=""/></div>
+<map name="aclassCloudRadProps_ac733936ee2d3e88f07631b30fc5758ef_icgraph" id="aclassCloudRadProps_ac733936ee2d3e88f07631b30fc5758ef_icgraph">
+<area shape="rect" title=" " alt="" coords="180,5,364,32"/>
+<area shape="rect" href="classOptics.html#a9313953f72eb64c11ac337904a77c4d7" title=" " alt="" coords="5,5,132,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a1ab01da075a2a82b9fb4c341ff85e373"></a>
@@ -889,11 +931,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">// for each cell interpolate to find weights in g_d_eff grid.</span></div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        dei_1d(0) = dei(i,k);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <a class="code" href="classLinInterp.html#ae97d75210f26620c08e16255ba199eb3">LinInterp::init</a>(<a class="code" href="classCloudRadProps.html#ae567379b95d6a04ffa0680568d057905">g_d_eff</a>, <a class="code" href="classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8">n_g_d</a>, dei_1d, 1, <a class="code" href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26">LinInterp::extrap_method_bndry</a>, dei_wgts);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <a class="code" href="classLinInterp.html#ac61afc25180136dc826ac8fe776aac11">LinInterp::init</a>(<a class="code" href="classCloudRadProps.html#ae567379b95d6a04ffa0680568d057905">g_d_eff</a>, <a class="code" href="classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8">n_g_d</a>, dei_1d, 1, <a class="code" href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26">LinInterp::extrap_method_bndry</a>, dei_wgts);</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="comment">// interpolate into grid and extract radiative properties</span></div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> lwband = 0; lwband &lt; <a class="code" href="classCloudRadProps.html#ab7f6932c5559602939b8a32fa42ca1ca">nlwbands</a>; ++lwband) {</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;          absor_1d(0) = absor(lwband);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;          <a class="code" href="classLinInterp.html#a98d09fe32d0ebe5ed06b1a35d4aec975">LinInterp::interp1d</a>(abs_lw_ice_1d, <a class="code" href="classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8">n_g_d</a>, absor_1d, 1, dei_wgts);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;          <a class="code" href="classLinInterp.html#a178337295dc1c3aae59dcb333b74295c">LinInterp::interp1d</a>(abs_lw_ice_1d, <a class="code" href="classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8">n_g_d</a>, absor_1d, 1, dei_wgts);</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;          absor(lwband) = absor_1d(0);</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        }</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> lwband = 0; lwband &lt; <a class="code" href="classCloudRadProps.html#ab7f6932c5559602939b8a32fa42ca1ca">nlwbands</a>; ++lwband) {</div>
@@ -903,14 +945,26 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;   }</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; }</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
-</div><!-- fragment --><div class="dynheader">
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classOptics.html#ac6da675f9c16a525d04142638de548d3">Optics::get_cloud_optics_lw()</a>.</p>
+<div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCloudRadProps_a1ab01da075a2a82b9fb4c341ff85e373_cgraph.png" border="0" usemap="#aclassCloudRadProps_a1ab01da075a2a82b9fb4c341ff85e373_cgraph" alt=""/></div>
 <map name="aclassCloudRadProps_a1ab01da075a2a82b9fb4c341ff85e373_cgraph" id="aclassCloudRadProps_a1ab01da075a2a82b9fb4c341ff85e373_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,187,65"/>
-<area shape="rect" href="classLinInterp.html#ae97d75210f26620c08e16255ba199eb3" title=" " alt="" coords="251,5,359,32"/>
-<area shape="rect" href="classLinInterp.html#a98d09fe32d0ebe5ed06b1a35d4aec975" title=" " alt="" coords="235,56,376,83"/>
+<area shape="rect" href="classLinInterp.html#ac61afc25180136dc826ac8fe776aac11" title=" " alt="" coords="251,5,359,32"/>
+<area shape="rect" href="classLinInterp.html#a178337295dc1c3aae59dcb333b74295c" title=" " alt="" coords="235,56,376,83"/>
+<area shape="rect" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa" title=" " alt="" coords="424,5,463,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCloudRadProps_a1ab01da075a2a82b9fb4c341ff85e373_icgraph.png" border="0" usemap="#aclassCloudRadProps_a1ab01da075a2a82b9fb4c341ff85e373_icgraph" alt=""/></div>
+<map name="aclassCloudRadProps_a1ab01da075a2a82b9fb4c341ff85e373_icgraph" id="aclassCloudRadProps_a1ab01da075a2a82b9fb4c341ff85e373_icgraph">
+<area shape="rect" title=" " alt="" coords="256,5,437,47"/>
+<area shape="rect" href="classOptics.html#ac6da675f9c16a525d04142638de548d3" title=" " alt="" coords="5,13,208,39"/>
 </map>
 </div>
 
@@ -1006,7 +1060,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;     <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;       <span class="comment">// for each cell interpolate to find weights in g_d_eff grid.</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;       dei_1d(0) = dei(i,k);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;       <a class="code" href="classLinInterp.html#ae97d75210f26620c08e16255ba199eb3">LinInterp::init</a>(<a class="code" href="classCloudRadProps.html#ae567379b95d6a04ffa0680568d057905">g_d_eff</a>, <a class="code" href="classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8">n_g_d</a>, dei_1d, 1, <a class="code" href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26">LinInterp::extrap_method_bndry</a>, dei_wgts);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;       <a class="code" href="classLinInterp.html#ac61afc25180136dc826ac8fe776aac11">LinInterp::init</a>(<a class="code" href="classCloudRadProps.html#ae567379b95d6a04ffa0680568d057905">g_d_eff</a>, <a class="code" href="classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8">n_g_d</a>, dei_1d, 1, <a class="code" href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26">LinInterp::extrap_method_bndry</a>, dei_wgts);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;       <span class="comment">// interpolate into grid and extract radiative properties</span></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;       <span class="keywordflow">for</span> (<span class="keyword">auto</span> is=0; is&lt;<a class="code" href="classCloudRadProps.html#aeee4ab1a6887ab34c966028c45079199">nswbands</a>; ++is) {</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;          <span class="keywordflow">for</span>(<span class="keyword">auto</span> ig=0; ig&lt;<a class="code" href="classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8">n_g_d</a>; ++ig) {</div>
@@ -1017,9 +1071,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;          ext_1d(0) = ext(is);</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;          ssa_1d(0) = ssa(is);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;          assm_1d(0) = assm(is);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;          <a class="code" href="classLinInterp.html#a98d09fe32d0ebe5ed06b1a35d4aec975">LinInterp::interp1d</a>(ext_sw_ice_1d, <a class="code" href="classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8">n_g_d</a>, ext_1d, 1, dei_wgts);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;          <a class="code" href="classLinInterp.html#a98d09fe32d0ebe5ed06b1a35d4aec975">LinInterp::interp1d</a>(ssa_sw_ice_1d, <a class="code" href="classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8">n_g_d</a>, ssa_1d, 1, dei_wgts);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;          <a class="code" href="classLinInterp.html#a98d09fe32d0ebe5ed06b1a35d4aec975">LinInterp::interp1d</a>(asm_sw_ice_1d, <a class="code" href="classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8">n_g_d</a>, assm_1d, 1, dei_wgts);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;          <a class="code" href="classLinInterp.html#a178337295dc1c3aae59dcb333b74295c">LinInterp::interp1d</a>(ext_sw_ice_1d, <a class="code" href="classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8">n_g_d</a>, ext_1d, 1, dei_wgts);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;          <a class="code" href="classLinInterp.html#a178337295dc1c3aae59dcb333b74295c">LinInterp::interp1d</a>(ssa_sw_ice_1d, <a class="code" href="classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8">n_g_d</a>, ssa_1d, 1, dei_wgts);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;          <a class="code" href="classLinInterp.html#a178337295dc1c3aae59dcb333b74295c">LinInterp::interp1d</a>(asm_sw_ice_1d, <a class="code" href="classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8">n_g_d</a>, assm_1d, 1, dei_wgts);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;       }</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;       <span class="keywordflow">for</span> (<span class="keyword">auto</span> is=0; is&lt;<a class="code" href="classCloudRadProps.html#aeee4ab1a6887ab34c966028c45079199">nswbands</a>; ++is) {</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;         tau    (is,i,k) = iciwpth(i,k) * ext(is);</div>
@@ -1030,14 +1084,26 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  });</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
-</div><!-- fragment --><div class="dynheader">
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classOptics.html#afb2e12c4627e30bba2c1a72e5d88aaac">Optics::get_cloud_optics_sw()</a>.</p>
+<div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCloudRadProps_a32483def8d0d82a6d1cb57834fe04b7d_cgraph.png" border="0" usemap="#aclassCloudRadProps_a32483def8d0d82a6d1cb57834fe04b7d_cgraph" alt=""/></div>
 <map name="aclassCloudRadProps_a32483def8d0d82a6d1cb57834fe04b7d_cgraph" id="aclassCloudRadProps_a32483def8d0d82a6d1cb57834fe04b7d_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,187,65"/>
-<area shape="rect" href="classLinInterp.html#ae97d75210f26620c08e16255ba199eb3" title=" " alt="" coords="251,5,359,32"/>
-<area shape="rect" href="classLinInterp.html#a98d09fe32d0ebe5ed06b1a35d4aec975" title=" " alt="" coords="235,56,376,83"/>
+<area shape="rect" href="classLinInterp.html#ac61afc25180136dc826ac8fe776aac11" title=" " alt="" coords="251,5,359,32"/>
+<area shape="rect" href="classLinInterp.html#a178337295dc1c3aae59dcb333b74295c" title=" " alt="" coords="235,56,376,83"/>
+<area shape="rect" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa" title=" " alt="" coords="424,5,463,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCloudRadProps_a32483def8d0d82a6d1cb57834fe04b7d_icgraph.png" border="0" usemap="#aclassCloudRadProps_a32483def8d0d82a6d1cb57834fe04b7d_icgraph" alt=""/></div>
+<map name="aclassCloudRadProps_a32483def8d0d82a6d1cb57834fe04b7d_icgraph" id="aclassCloudRadProps_a32483def8d0d82a6d1cb57834fe04b7d_icgraph">
+<area shape="rect" title=" " alt="" coords="259,5,440,47"/>
+<area shape="rect" href="classOptics.html#afb2e12c4627e30bba2c1a72e5d88aaac" title=" " alt="" coords="5,13,211,39"/>
 </map>
 </div>
 
@@ -1270,7 +1336,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string CloudRadProps::ice_file {&quot;/ccs/home/yuanx/erf.radiation/Source/Radiation/data/iceoptics_c080917.nc&quot;}</td>
+          <td class="memname">std::string CloudRadProps::ice_file {&quot;/ccs/home/yuanx/erf.radiation/Source/<a class="el" href="classRadiation.html">Radiation</a>/data/iceoptics_c080917.nc&quot;}</td>
         </tr>
       </table>
   </td>
@@ -1294,7 +1360,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string CloudRadProps::liquid_file {&quot;/ccs/home/yuanx/erf.radiation/Source/Radiation/data/F_nwvl200_mu20_lam50_res64_t298_c080428.nc&quot;}</td>
+          <td class="memname">std::string CloudRadProps::liquid_file {&quot;/ccs/home/yuanx/erf.radiation/Source/<a class="el" href="classRadiation.html">Radiation</a>/data/F_nwvl200_mu20_lam50_res64_t298_c080428.nc&quot;}</td>
         </tr>
       </table>
   </td>

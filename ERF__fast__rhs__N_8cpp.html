@@ -463,13 +463,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            gpx *= mf_u(i,j,0);</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            Real q = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i-1,j,k,PrimQt_comp)</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            Real <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a> = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i-1,j,k,PrimQt_comp)</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                            +prim(i,j,k,PrimQp_comp) + prim(i-1,j,k,PrimQp_comp) );</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            gpx /= (1.0 + q);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            gpx /= (1.0 + <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a>);</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_WARM_NO_PRECIP)</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            Real q = 0.5 * ( prim(i,j,k,PrimQv_comp) + prim(i-1,j,k,PrimQv_comp)</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            Real <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a> = 0.5 * ( prim(i,j,k,PrimQv_comp) + prim(i-1,j,k,PrimQv_comp)</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                            +prim(i,j,k,PrimQc_comp) + prim(i-1,j,k,PrimQc_comp) );</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            gpx /= (1.0 + q);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            gpx /= (1.0 + <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a>);</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            Real pi_c =  0.5 * (pi_stage_ca(i-1,j,k,0) + pi_stage_ca(i,j,k,0));</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
@@ -489,13 +489,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            gpy *= mf_v(i,j,0);</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            Real q = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i,j-1,k,PrimQt_comp)</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            Real <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a> = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i,j-1,k,PrimQt_comp)</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                            +prim(i,j,k,PrimQp_comp) + prim(i,j-1,k,PrimQp_comp) );</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            gpy /= (1.0 + q);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            gpy /= (1.0 + <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a>);</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_WARM_NO_PRECIP)</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            Real q = 0.5 * ( prim(i,j,k,PrimQv_comp) + prim(i,j-1,k,PrimQv_comp)</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            Real <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a> = 0.5 * ( prim(i,j,k,PrimQv_comp) + prim(i,j-1,k,PrimQv_comp)</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                            +prim(i,j,k,PrimQc_comp) + prim(i,j-1,k,PrimQc_comp) );</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            gpy /= (1.0 + q);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            gpy /= (1.0 + <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a>);</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            Real pi_c =  0.5 * (pi_stage_ca(i,j-1,k,0) + pi_stage_ca(i,j,k,0));</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
@@ -613,15 +613,15 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;             Real coeff_Q = coeffQ_a(i,j,k);</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="preprocessor">#if defined(ERF_USE_MOISTURE)</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            Real q = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i,j,k-1,PrimQt_comp)</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            Real <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a> = 0.5 * ( prim(i,j,k,PrimQt_comp) + prim(i,j,k-1,PrimQt_comp)</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                            +prim(i,j,k,PrimQp_comp) + prim(i,j,k-1,PrimQp_comp) );</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            coeff_P /= (1.0 + q);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            coeff_Q /= (1.0 + q);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            coeff_P /= (1.0 + <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a>);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            coeff_Q /= (1.0 + <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a>);</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="preprocessor">#elif defined(ERF_USE_WARM_NO_PRECIP)</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            Real q = 0.5 * ( prim(i,j,k,PrimQv_comp) + prim(i,j,k-1,PrimQv_comp)</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            Real <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a> = 0.5 * ( prim(i,j,k,PrimQv_comp) + prim(i,j,k-1,PrimQv_comp)</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                            +prim(i,j,k,PrimQc_comp) + prim(i,j,k-1,PrimQc_comp) );</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            coeff_P /= (1.0 + q);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            coeff_Q /= (1.0 + q);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            coeff_P /= (1.0 + <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a>);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            coeff_Q /= (1.0 + <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a>);</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            Real theta_t_lo  = 0.5 * ( prim(i,j,k-2,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) + prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) );</div>
@@ -785,11 +785,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; </div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;}</div>
-<div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:14</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_afbb622bf3b404a3e7c77f3103b4d1231"><div class="ttname"><a href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a></div><div class="ttdeci">constexpr amrex::Real Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:22</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_afbb622bf3b404a3e7c77f3103b4d1231"><div class="ttname"><a href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a></div><div class="ttdeci">constexpr amrex::Real Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:18</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:30</div></div>
+<div class="ttc" id="aModal__aero__wateruptake_8H_html_ae7815a546266ee09cee1f18ee2a27d97"><div class="ttname"><a href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a></div><div class="ttdeci">real1d q(&quot;q&quot;, imx)</div></div>
 <div class="ttc" id="aTileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> TileNoZ.H:11</div></div>
 <div class="ttc" id="anamespaceIntVar_html_ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:182</div></div>
 <div class="ttc" id="anamespaceIntVar_html_ae96c1cd796f723e15dfbf718f1a9c76daa06e9caed4d0b72c322646815c1a96ce"><div class="ttname"><a href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76daa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:184</div></div>
@@ -802,8 +803,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__fast__rhs__N_8cpp_a389e2ff2d926aca8bfcd6388aa6c7d21_cgraph.png" border="0" usemap="#aERF__fast__rhs__N_8cpp_a389e2ff2d926aca8bfcd6388aa6c7d21_cgraph" alt=""/></div>
 <map name="aERF__fast__rhs__N_8cpp_a389e2ff2d926aca8bfcd6388aa6c7d21_cgraph" id="aERF__fast__rhs__N_8cpp_a389e2ff2d926aca8bfcd6388aa6c7d21_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,121,32"/>
-<area shape="rect" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="169,5,243,32"/>
+<area shape="rect" title=" " alt="" coords="5,31,121,57"/>
+<area shape="rect" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97" title=" " alt="" coords="187,5,225,32"/>
+<area shape="rect" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="169,56,243,83"/>
 </map>
 </div>
 

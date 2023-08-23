@@ -1096,7 +1096,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                                    + 0.5*(cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)+cell_data(i-1,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)) * solverChoice.<a class="code" href="structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69">abl_geo_forcing</a>[0];</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;              <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;              if (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;              <a class="code" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa">if</a> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;              {</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                  Real rho_v_loc = 0.25 * (rho_v(i,j+1,k) + rho_v(i,j,k) + rho_v(i-1,j+1,k) + rho_v(i-1,j,k));</div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                  Real rho_w_loc = 0.25 * (rho_w(i,j,k+1) + rho_w(i,j,k) + rho_w(i,j-1,k+1) + rho_w(i,j-1,k));</div>
@@ -1132,7 +1132,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                                    + 0.5*(cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)+cell_data(i,j-1,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)) * solverChoice.<a class="code" href="structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69">abl_geo_forcing</a>[1];</div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160; </div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;              <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;              if (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;              <a class="code" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa">if</a> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;              {</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                  Real rho_u_loc = 0.25 * (rho_u(i+1,j,k) + rho_u(i,j,k) + rho_u(i+1,j-1,k) + rho_u(i,j-1,k));</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                  rho_v_rhs(i, j, k) += -solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf">sinphi</a>;</div>
@@ -1178,7 +1178,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                                    + 0.5*(cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)+cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)) * solverChoice.<a class="code" href="structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69">abl_geo_forcing</a>[2];</div>
 <div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160; </div>
 <div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;              <span class="comment">// Add Coriolis forcing (that assumes east is +x, north is +y)</span></div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;              if (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;              <a class="code" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa">if</a> (solverChoice.<a class="code" href="structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606">use_coriolis</a>)</div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;              {</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                  Real rho_u_loc = 0.25 * (rho_u(i+1,j,k) + rho_u(i,j,k) + rho_u(i+1,j,k-1) + rho_u(i,j,k-1));</div>
 <div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                  rho_w_rhs(i, j, k) += solverChoice.<a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> * rho_u_loc * solverChoice.<a class="code" href="structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f">cosphi</a>;</div>
@@ -1228,6 +1228,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:30</div></div>
+<div class="ttc" id="aModal__aero__wateruptake_8H_html_a19bf99811489ee1186302d8c72e52daa"><div class="ttname"><a href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa">if</a></div><div class="ttdeci">if(list_idx_in)</div><div class="ttdef"><b>Definition:</b> Modal_aero_wateruptake.H:422</div></div>
 <div class="ttc" id="aNumericalDiffusion_8cpp_html_aae33c522c6b17fab41fe83a41b4e1cf3"><div class="ttname"><a href="NumericalDiffusion_8cpp.html#aae33c522c6b17fab41fe83a41b4e1cf3">NumericalDiffusion</a></div><div class="ttdeci">void NumericalDiffusion(const Box &amp;bx, const int start_comp, const int num_comp, const Real dt, const SolverChoice &amp;solverChoice, const Array4&lt; const Real &gt; &amp;data, const Array4&lt; Real &gt; &amp;rhs, const Array4&lt; const Real &gt; &amp;mf_x, const Array4&lt; const Real &gt; &amp;mf_y, const bool avg_mf_x_y, const bool avg_mf_y_x)</div><div class="ttdef"><b>Definition:</b> NumericalDiffusion.cpp:20</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a6a4bf1524412edfd6efcbb867256db18"><div class="ttname"><a href="TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18">OmegaFromW</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real OmegaFromW(int i, int j, int k, amrex::Real w, const amrex::Array4&lt; const amrex::Real &gt; u_arr, const amrex::Array4&lt; const amrex::Real &gt; v_arr, const amrex::Array4&lt; const amrex::Real &gt; z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:338</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a8d96671d41364f1e24391375a2bc0f1e"><div class="ttname"><a href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:71</div></div>
@@ -1266,7 +1267,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__slow__rhs__inc_8cpp_af210ab1bbaeba2f216672adf6242cc23_cgraph.png" border="0" usemap="#aERF__slow__rhs__inc_8cpp_af210ab1bbaeba2f216672adf6242cc23_cgraph" alt=""/></div>
 <map name="aERF__slow__rhs__inc_8cpp_af210ab1bbaeba2f216672adf6242cc23_cgraph" id="aERF__slow__rhs__inc_8cpp_af210ab1bbaeba2f216672adf6242cc23_cgraph">
-<area shape="rect" title=" " alt="" coords="5,385,136,412"/>
+<area shape="rect" title=" " alt="" coords="5,411,136,437"/>
 <area shape="rect" href="Advection_8H.html#a064752e2ae1bb9ca6ecc54c14ab76b8e" title=" " alt="" coords="211,5,371,32"/>
 <area shape="rect" href="Advection_8H.html#ad842a02be438b333eb934e0b1c8cfc00" title=" " alt="" coords="184,56,399,83"/>
 <area shape="rect" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e" title=" " alt="" coords="199,107,383,133"/>
@@ -1275,14 +1276,15 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ComputeStrain__N_8cpp.html#a2014bd585f4d40660d263804bf9bb2fa" title=" " alt="" coords="223,259,359,285"/>
 <area shape="rect" href="ComputeStrain__T_8cpp.html#ac6a307fd66f18cab5974d8f9487ec352" title=" " alt="" coords="224,411,359,437"/>
 <area shape="rect" href="ComputeStress__N_8cpp.html#a3bcf45b2afb821e8869f44ee9e39348f" title=" " alt="" coords="193,461,390,488"/>
-<area shape="rect" href="ComputeStress__T_8cpp.html#a97d0869525c400951ee09ab38f6aa891" title=" " alt="" coords="194,309,389,336"/>
+<area shape="rect" href="ComputeStress__T_8cpp.html#a97d0869525c400951ee09ab38f6aa891" title=" " alt="" coords="194,360,389,387"/>
 <area shape="rect" href="ComputeStress__N_8cpp.html#a6fb60b4fc6486699b87a772e90c5f349" title=" " alt="" coords="198,512,385,539"/>
-<area shape="rect" href="ComputeStress__T_8cpp.html#a8f7cccaca82404d1b4a45dad3eec60e0" title=" " alt="" coords="199,360,383,387"/>
+<area shape="rect" href="ComputeStress__T_8cpp.html#a8f7cccaca82404d1b4a45dad3eec60e0" title=" " alt="" coords="199,309,383,336"/>
 <area shape="rect" href="Diffusion_8H.html#a04e62fe626d7455d41edfc8cb393ebdc" title=" " alt="" coords="206,563,377,589"/>
 <area shape="rect" href="Diffusion_8H.html#a320be8440516275740e37c594c6e9e26" title=" " alt="" coords="206,613,377,640"/>
-<area shape="rect" href="NumericalDiffusion_8cpp.html#aae33c522c6b17fab41fe83a41b4e1cf3" title=" " alt="" coords="218,664,365,691"/>
-<area shape="rect" href="TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18" title=" " alt="" coords="234,715,349,741"/>
-<area shape="rect" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="255,765,328,792"/>
+<area shape="rect" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa" title=" " alt="" coords="272,664,311,691"/>
+<area shape="rect" href="NumericalDiffusion_8cpp.html#aae33c522c6b17fab41fe83a41b4e1cf3" title=" " alt="" coords="218,715,365,741"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18" title=" " alt="" coords="234,765,349,792"/>
+<area shape="rect" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="255,816,328,843"/>
 <area shape="rect" href="TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="458,309,671,336"/>
 <area shape="rect" href="TerrainMetrics_8H.html#aed973861215c4eb0697f7a83b37016a9" title=" " alt="" coords="453,360,677,387"/>
 <area shape="rect" href="TerrainMetrics_8H.html#ac1434a53d9966d992133433473bc629a" title=" " alt="" coords="450,613,679,640"/>
