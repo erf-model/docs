@@ -103,12 +103,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abe12cf5964cb8ea35aee4403286dfef6"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ComputeQKESourceTerm_8H.html#abe12cf5964cb8ea35aee4403286dfef6">ComputeQKESourceTerms</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;K_turb, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Box &amp;domain, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Real theta_mean)</td></tr>
-<tr class="separator:abe12cf5964cb8ea35aee4403286dfef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac37311409d27f2d4c4196c862b987c53"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ComputeQKESourceTerm_8H.html#ac37311409d27f2d4c4196c862b987c53">ComputeQKESourceTerms</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;K_turb, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Box &amp;domain, amrex::Real solverChoice_pbl_B1, const amrex::Real theta_mean)</td></tr>
+<tr class="separator:ac37311409d27f2d4c4196c862b987c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="abe12cf5964cb8ea35aee4403286dfef6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe12cf5964cb8ea35aee4403286dfef6">&#9670;&nbsp;</a></span>ComputeQKESourceTerms()</h2>
+<a id="ac37311409d27f2d4c4196c862b987c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac37311409d27f2d4c4196c862b987c53">&#9670;&nbsp;</a></span>ComputeQKESourceTerms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,8 +176,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
-          <td class="paramname"><em>solverChoice</em>, </td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>solverChoice_pbl_B1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -202,7 +202,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">K_turb</td><td>turbulent viscosity </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cellSizeInv</td><td>inverse cell size array </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>box of the whole domain </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">solverChoice</td><td>container of solver params </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">solverChoice_pbl_B1</td><td>a parameter </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">theta_mean</td><td>average theta </td></tr>
   </table>
   </dd>
@@ -238,7 +238,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  amrex::Real qke = cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#ad6174e899597e766afde82f9c11def75">PrimQKE_comp</a>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">if</span> (std::abs(qke) &gt; 0.0) {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    source_term += 2.0 * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,1.5) /</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      (solverChoice.<a class="code" href="structSolverChoice.html#a83092085c4e0f7ea1c5c3dd9ee822d98">pbl_B1</a> * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a6a553b28d62930bdda7b473e28464b73">EddyDiff::PBL_lengthscale</a>));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      (solverChoice_pbl_B1 * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a6a553b28d62930bdda7b473e28464b73">EddyDiff::PBL_lengthscale</a>));</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">return</span> source_term;</div>
@@ -250,14 +250,13 @@ Functions</h2></td></tr>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977a0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:143</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:142</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977a6a553b28d62930bdda7b473e28464b73"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a6a553b28d62930bdda7b473e28464b73">EddyDiff::PBL_lengthscale</a></div><div class="ttdeci">@ PBL_lengthscale</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:154</div></div>
-<div class="ttc" id="astructSolverChoice_html_a83092085c4e0f7ea1c5c3dd9ee822d98"><div class="ttname"><a href="structSolverChoice.html#a83092085c4e0f7ea1c5c3dd9ee822d98">SolverChoice::pbl_B1</a></div><div class="ttdeci">amrex::Real pbl_B1</div><div class="ttdef"><b>Definition:</b> DataStruct.H:642</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="DiffusionSrcForState__N_8cpp.html#add87288fd63373baa93ad68cfe34523d">DiffusionSrcForState_N()</a>, and <a class="el" href="DiffusionSrcForState__T_8cpp.html#a816756c7670912573d160b9f1890baf8">DiffusionSrcForState_T()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ComputeQKESourceTerm_8H_abe12cf5964cb8ea35aee4403286dfef6_icgraph.png" border="0" usemap="#aComputeQKESourceTerm_8H_abe12cf5964cb8ea35aee4403286dfef6_icgraph" alt=""/></div>
-<map name="aComputeQKESourceTerm_8H_abe12cf5964cb8ea35aee4403286dfef6_icgraph" id="aComputeQKESourceTerm_8H_abe12cf5964cb8ea35aee4403286dfef6_icgraph">
+<div class="center"><img src="ComputeQKESourceTerm_8H_ac37311409d27f2d4c4196c862b987c53_icgraph.png" border="0" usemap="#aComputeQKESourceTerm_8H_ac37311409d27f2d4c4196c862b987c53_icgraph" alt=""/></div>
+<map name="aComputeQKESourceTerm_8H_ac37311409d27f2d4c4196c862b987c53_icgraph" id="aComputeQKESourceTerm_8H_ac37311409d27f2d4c4196c862b987c53_icgraph">
 <area shape="rect" title=" " alt="" coords="224,31,415,57"/>
 <area shape="rect" href="DiffusionSrcForState__N_8cpp.html#add87288fd63373baa93ad68cfe34523d" title=" " alt="" coords="5,5,176,32"/>
 <area shape="rect" href="DiffusionSrcForState__T_8cpp.html#a816756c7670912573d160b9f1890baf8" title=" " alt="" coords="6,56,175,83"/>

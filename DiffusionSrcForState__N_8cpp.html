@@ -662,15 +662,16 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="comment">// Using Deardorff</span></div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keywordflow">if</span> (l_use_QKE &amp;&amp; start_comp &lt;= RhoQKE_comp &amp;&amp; end_comp &gt;=<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) {</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="keywordtype">int</span> qty_index = <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>;</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        amrex::ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        {</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            cell_rhs(i, j, k, qty_index) += <a class="code" href="ComputeQKESourceTerm_8H.html#abe12cf5964cb8ea35aee4403286dfef6">ComputeQKESourceTerms</a>(i,j,k,u,v,cell_data,cell_prim,</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                                                                  mu_turb,cellSizeInv,domain,solverChoice,tm_arr(i,j,0));</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        });</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    }</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div>
-<div class="ttc" id="aComputeQKESourceTerm_8H_html_abe12cf5964cb8ea35aee4403286dfef6"><div class="ttname"><a href="ComputeQKESourceTerm_8H.html#abe12cf5964cb8ea35aee4403286dfef6">ComputeQKESourceTerms</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeQKESourceTerms(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;K_turb, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Box &amp;domain, const SolverChoice &amp;solverChoice, const amrex::Real theta_mean)</div><div class="ttdef"><b>Definition:</b> ComputeQKESourceTerm.H:20</div></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <span class="keyword">auto</span> solverChoice_pbl_B1 = solverChoice.<a class="code" href="structSolverChoice.html#a83092085c4e0f7ea1c5c3dd9ee822d98">pbl_B1</a>;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        amrex::ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        {</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            cell_rhs(i, j, k, qty_index) += <a class="code" href="ComputeQKESourceTerm_8H.html#ac37311409d27f2d4c4196c862b987c53">ComputeQKESourceTerms</a>(i,j,k,u,v,cell_data,cell_prim,</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                                                                  mu_turb,cellSizeInv,domain,solverChoice_pbl_B1,tm_arr(i,j,0));</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        });</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    }</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;}</div>
+<div class="ttc" id="aComputeQKESourceTerm_8H_html_ac37311409d27f2d4c4196c862b987c53"><div class="ttname"><a href="ComputeQKESourceTerm_8H.html#ac37311409d27f2d4c4196c862b987c53">ComputeQKESourceTerms</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeQKESourceTerms(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;K_turb, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Box &amp;domain, amrex::Real solverChoice_pbl_B1, const amrex::Real theta_mean)</div><div class="ttdef"><b>Definition:</b> ComputeQKESourceTerm.H:20</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601"><div class="ttname"><a href="DataStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5abdeb9a753db1d1f3fe0e944eab1d0601">PBLType::MYNN25</a></div><div class="ttdeci">@ MYNN25</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288"><div class="ttname"><a href="DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a></div><div class="ttdeci">@ ConstantAlpha</div></div>
 <div class="ttc" id="aDataStruct_8H_html_aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808"><div class="ttname"><a href="DataStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a409c5986f243d66ca7b1ef5882f4f808">LESType::Smagorinsky</a></div><div class="ttdeci">@ Smagorinsky</div></div>
@@ -703,6 +704,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructSolverChoice_html_a47152bbb3815b6f4c9c465b8c75ebeb5"><div class="ttname"><a href="structSolverChoice.html#a47152bbb3815b6f4c9c465b8c75ebeb5">SolverChoice::use_QKE</a></div><div class="ttdeci">bool use_QKE</div><div class="ttdef"><b>Definition:</b> DataStruct.H:650</div></div>
 <div class="ttc" id="astructSolverChoice_html_a53966e639b0307b7420fd6abe8412fa0"><div class="ttname"><a href="structSolverChoice.html#a53966e639b0307b7420fd6abe8412fa0">SolverChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:615</div></div>
 <div class="ttc" id="astructSolverChoice_html_a789dc1f74c540ba2d7ddedd37947c3db"><div class="ttname"><a href="structSolverChoice.html#a789dc1f74c540ba2d7ddedd37947c3db">SolverChoice::theta_ref</a></div><div class="ttdeci">amrex::Real theta_ref</div><div class="ttdef"><b>Definition:</b> DataStruct.H:635</div></div>
+<div class="ttc" id="astructSolverChoice_html_a83092085c4e0f7ea1c5c3dd9ee822d98"><div class="ttname"><a href="structSolverChoice.html#a83092085c4e0f7ea1c5c3dd9ee822d98">SolverChoice::pbl_B1</a></div><div class="ttdeci">amrex::Real pbl_B1</div><div class="ttdef"><b>Definition:</b> DataStruct.H:642</div></div>
 <div class="ttc" id="astructSolverChoice_html_a8d16d654d2a02cec62427b38498c2462"><div class="ttname"><a href="structSolverChoice.html#a8d16d654d2a02cec62427b38498c2462">SolverChoice::molec_diff_type</a></div><div class="ttdeci">MolecDiffType molec_diff_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:603</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -710,7 +712,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="DiffusionSrcForState__N_8cpp_add87288fd63373baa93ad68cfe34523d_cgraph.png" border="0" usemap="#aDiffusionSrcForState__N_8cpp_add87288fd63373baa93ad68cfe34523d_cgraph" alt=""/></div>
 <map name="aDiffusionSrcForState__N_8cpp_add87288fd63373baa93ad68cfe34523d_cgraph" id="aDiffusionSrcForState__N_8cpp_add87288fd63373baa93ad68cfe34523d_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,176,32"/>
-<area shape="rect" href="ComputeQKESourceTerm_8H.html#abe12cf5964cb8ea35aee4403286dfef6" title=" " alt="" coords="224,5,415,32"/>
+<area shape="rect" href="ComputeQKESourceTerm_8H.html#ac37311409d27f2d4c4196c862b987c53" title=" " alt="" coords="224,5,415,32"/>
 </map>
 </div>
 
