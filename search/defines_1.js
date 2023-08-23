@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['num_5fprim_3620',['NUM_PRIM',['../IndexDefines_8H.html#a76cb673ca03cd7f8ae6cc8544d6dd0fa',1,'IndexDefines.H']]],
-  ['nvar_3621',['NVAR',['../IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639',1,'IndexDefines.H']]]
+  ['erf_5fparameterizations_5fh_5f_3634',['ERF_PARAMETERIZATIONS_H_',['../Parameterizations_8H.html#aaaed1350d0f8e31d22b4a25c8c99245a',1,'Parameterizations.H']]]
 ];

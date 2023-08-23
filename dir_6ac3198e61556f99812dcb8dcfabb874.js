@@ -35,6 +35,7 @@ var dir_6ac3198e61556f99812dcb8dcfabb874 =
     [ "Optics.H", "Optics_8H.html", [
       [ "Optics", "classOptics.html", "classOptics" ]
     ] ],
+    [ "Parameterizations.H", "Parameterizations_8H.html", "Parameterizations_8H" ],
     [ "Phys_prop.H", "Phys__prop_8H.html", [
       [ "PhysProp", "classPhysProp.html", "classPhysProp" ],
       [ "physprop_t", "structPhysProp_1_1physprop__t.html", "structPhysProp_1_1physprop__t" ]
