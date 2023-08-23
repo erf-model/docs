@@ -435,50 +435,32 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// Grown fine box list (expand interior halo to touch crse face)</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    BoxList gbl;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    gbl.set(m_ixt);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> bl_iter = bl.begin(); bl_iter &lt; bl.end(); bl_iter++) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">int</span>* lo = (*bl_iter).loVect();</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">int</span>* hi = (*bl_iter).hiVect();</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      IntVect glo(0); IntVect ghi(0);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim(0); idim &lt; AMREX_SPACEDIM; ++idim) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordtype">int</span> rlo = lo[idim]%<a class="code" href="classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba">m_ratio</a>[idim];</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordtype">int</span> rhi = hi[idim]%<a class="code" href="classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba">m_ratio</a>[idim];</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        glo[idim] = lo[idim]; ghi[idim] = hi[idim];</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">if</span> (rlo &gt; 0) glo[idim] = lo[idim] - rlo;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">if</span> (rhi &gt; 0) ghi[idim] = hi[idim] - rhi + <a class="code" href="classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba">m_ratio</a>[idim];</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      Box gbx(glo,ghi,m_ixt);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      gbl.push_back(gbx);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="comment">// Coarse box list (coincides with grown fine box list)</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    BoxList cbl;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    cbl.set(m_ixt);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    cbl.reserve(gbl.size());</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; b : gbl) {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        cbl.push_back(interp-&gt;CoarseBox(b, <a class="code" href="classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba">m_ratio</a>));</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// Box arrays for fine and coarse</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    BoxArray gcf_fba(std::move(gbl));</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    BoxArray gcf_cba(std::move(cbl));</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    BoxArray cf_fba_s(std::move(bl_subset));</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    DistributionMapping gcf_dm(gcf_fba);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    DistributionMapping cf_dm_s(cf_fba_s);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">// Fine patch to hold the time-interpolated state</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="classERFFillPatcher.html#ac74f9d32a627627cc5e7b5b07b6167c2">m_cf_fine_data</a> = <span class="keyword">new</span> MultiFab (gcf_fba, gcf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">// Fine subset patch to hold the time-interpolated state</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="classERFFillPatcher.html#a113c6caf1f7ec49ed09509122e85cac1">m_cf_fine_subset_data</a> = <span class="keyword">new</span> MultiFab (cf_fba_s, gcf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// Two coarse patches to hold the data to be interpolated</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="classERFFillPatcher.html#a0d5b15ad64041dcafdeffd3459a54280">m_cf_crse_data</a>[0] = <span class="keyword">new</span> MultiFab (gcf_cba, gcf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="classERFFillPatcher.html#a0d5b15ad64041dcafdeffd3459a54280">m_cf_crse_data</a>[1] = <span class="keyword">new</span> MultiFab (gcf_cba, gcf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// Coarse box list (coincides with grown fine box list)</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    BoxList cbl;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    cbl.set(m_ixt);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    cbl.reserve(bl.size());</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; b : bl) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        cbl.push_back(interp-&gt;CoarseBox(b, <a class="code" href="classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba">m_ratio</a>));</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// Box arrays for fine and coarse</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    BoxArray cf_fba(std::move(bl));</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    BoxArray cf_cba(std::move(cbl));</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    BoxArray cf_fba_s(std::move(bl_subset));</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    DistributionMapping cf_dm(cf_fba);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    DistributionMapping cf_dm_s(cf_fba_s);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// Fine patch to hold the time-interpolated state</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="classERFFillPatcher.html#ac74f9d32a627627cc5e7b5b07b6167c2">m_cf_fine_data</a> = <span class="keyword">new</span> MultiFab (cf_fba, cf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// Fine subset patch to hold the time-interpolated state</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="classERFFillPatcher.html#a113c6caf1f7ec49ed09509122e85cac1">m_cf_fine_subset_data</a> = <span class="keyword">new</span> MultiFab (cf_fba_s, cf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// Two coarse patches to hold the data to be interpolated</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="classERFFillPatcher.html#a0d5b15ad64041dcafdeffd3459a54280">m_cf_crse_data</a>[0] = <span class="keyword">new</span> MultiFab (cf_cba, cf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="classERFFillPatcher.html#a0d5b15ad64041dcafdeffd3459a54280">m_cf_crse_data</a>[1] = <span class="keyword">new</span> MultiFab (cf_cba, cf_dm, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>, 0);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
 <div class="ttc" id="aclassERFFillPatcher_html_a2fc352aecabd75ec92f5d17730683a1c"><div class="ttname"><a href="classERFFillPatcher.html#a2fc352aecabd75ec92f5d17730683a1c">ERFFillPatcher::m_interp</a></div><div class="ttdeci">amrex::InterpBase * m_interp</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:48</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a61c68ee600be65606db582402599c1d4"><div class="ttname"><a href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">ERFFillPatcher::m_ncomp</a></div><div class="ttdeci">int m_ncomp</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:47</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a83a91e2dc7bd7c39a27327024814061c"><div class="ttname"><a href="classERFFillPatcher.html#a83a91e2dc7bd7c39a27327024814061c">ERFFillPatcher::m_nghost_subset</a></div><div class="ttdeci">int m_nghost_subset</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:46</div></div>
@@ -544,7 +526,7 @@ template&lt;typename BC &gt; </div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    constexpr amrex::Real eps = std::numeric_limits&lt;amrex::Real&gt;::epsilon();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    constexpr amrex::Real eps = std::numeric_limits&lt;float&gt;::epsilon();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    AMREX_ALWAYS_ASSERT((time &gt;= <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[0]-eps) &amp;&amp; (time &lt;= <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[1]+eps));</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// Time interpolation factors</span></div>
@@ -620,26 +602,26 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    AMREX_ALWAYS_ASSERT(crse_data.size() == 2); <span class="comment">// old and new</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    AMREX_ALWAYS_ASSERT(crse_time[1] &gt;= crse_time[0]);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">// NOTE: CoarseBox with CellConsLinear interpolation grows the</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="comment">//       box by 1 in all directions. This pushes the domain for</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">//       m_cf_crse_data into ghost cells in the z-dir. So we need</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">//       to include ghost cells for crse_data when doing the copy</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    IntVect src_ng = crse_data[0]-&gt;nGrowVect();</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    IntVect dst_ng = <a class="code" href="classERFFillPatcher.html#a0d5b15ad64041dcafdeffd3459a54280">m_cf_crse_data</a>[0]-&gt;nGrowVect();</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="classERFFillPatcher.html#a0d5b15ad64041dcafdeffd3459a54280">m_cf_crse_data</a>[0]-&gt;ParallelCopy(*crse_data[0], 0, 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>,</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                                   src_ng, dst_ng, <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>.periodicity()); <span class="comment">// old data</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <a class="code" href="classERFFillPatcher.html#a0d5b15ad64041dcafdeffd3459a54280">m_cf_crse_data</a>[1]-&gt;ParallelCopy(*crse_data[1], 0, 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>,</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                                   src_ng, dst_ng, <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>.periodicity()); <span class="comment">// new data</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[0] = crse_time[0]; <span class="comment">// time of &quot;old&quot; coarse data</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[1] = crse_time[1]; <span class="comment">// time of &quot;new&quot; coarse data</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="classERFFillPatcher.html#ae89877908970649653ae09c42d3c7b05">m_dt_crse</a> = crse_time[1] - crse_time[0];</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    AMREX_ALWAYS_ASSERT(crse_data.size() == 2); <span class="comment">// old and new</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    AMREX_ALWAYS_ASSERT(crse_time[1] &gt;= crse_time[0]);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// NOTE: CoarseBox with CellConsLinear interpolation grows the</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">//       box by 1 in all directions. This pushes the domain for</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">//       m_cf_crse_data into ghost cells in the z-dir. So we need</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">//       to include ghost cells for crse_data when doing the copy</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    IntVect src_ng = crse_data[0]-&gt;nGrowVect();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    IntVect dst_ng = <a class="code" href="classERFFillPatcher.html#a0d5b15ad64041dcafdeffd3459a54280">m_cf_crse_data</a>[0]-&gt;nGrowVect();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="classERFFillPatcher.html#a0d5b15ad64041dcafdeffd3459a54280">m_cf_crse_data</a>[0]-&gt;ParallelCopy(*crse_data[0], 0, 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                   src_ng, dst_ng, <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>.periodicity()); <span class="comment">// old data</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="classERFFillPatcher.html#a0d5b15ad64041dcafdeffd3459a54280">m_cf_crse_data</a>[1]-&gt;ParallelCopy(*crse_data[1], 0, 0, <a class="code" href="classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4">m_ncomp</a>,</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                                   src_ng, dst_ng, <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>.periodicity()); <span class="comment">// new data</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[0] = crse_time[0]; <span class="comment">// time of &quot;old&quot; coarse data</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[1] = crse_time[1]; <span class="comment">// time of &quot;new&quot; coarse data</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="classERFFillPatcher.html#ae89877908970649653ae09c42d3c7b05">m_dt_crse</a> = crse_time[1] - crse_time[0];</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
