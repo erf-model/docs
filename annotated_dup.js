@@ -44,6 +44,7 @@ var annotated_dup =
     [ "SatMethods", "classSatMethods.html", "classSatMethods" ],
     [ "Slingo", "classSlingo.html", "classSlingo" ],
     [ "SolverChoice", "structSolverChoice.html", "structSolverChoice" ],
+    [ "TerrainFittedAssignor", "structTerrainFittedAssignor.html", "structTerrainFittedAssignor" ],
     [ "TerrainFittedPC", "classTerrainFittedPC.html", "classTerrainFittedPC" ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ],
     [ "UPWIND3", "structUPWIND3.html", "structUPWIND3" ],

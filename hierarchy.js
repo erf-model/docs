@@ -60,6 +60,7 @@ var hierarchy =
     [ "SatMethods", "classSatMethods.html", null ],
     [ "Slingo", "classSlingo.html", null ],
     [ "SolverChoice", "structSolverChoice.html", null ],
+    [ "TerrainFittedAssignor", "structTerrainFittedAssignor.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
     [ "UPWIND3", "structUPWIND3.html", null ],
     [ "UPWIND5", "structUPWIND5.html", null ],
