@@ -1,8 +1,7 @@
 var hierarchy =
 [
-    [ "ABLMostData", "classABLMostData.html", [
-      [ "ABLMost", "classABLMost.html", null ]
-    ] ],
+    [ "ABLMost", "classABLMost.html", null ],
+    [ "adiabatic", "structadiabatic.html", null ],
     [ "MamConstituents::aerlist_t", "structMamConstituents_1_1aerlist__t.html", null ],
     [ "MamConstituents::aerosol_t", "structMamConstituents_1_1aerosol__t.html", null ],
     [ "AerRadProps", "classAerRadProps.html", null ],
@@ -17,6 +16,7 @@ var hierarchy =
     [ "DirectionSelector< 0 >", "structDirectionSelector_3_010_01_4.html", null ],
     [ "DirectionSelector< 1 >", "structDirectionSelector_3_011_01_4.html", null ],
     [ "DirectionSelector< 2 >", "structDirectionSelector_3_012_01_4.html", null ],
+    [ "donelan_flux", "structdonelan__flux.html", null ],
     [ "EbertCurry", "classEbertCurry.html", null ],
     [ "ERFFillPatcher", "classERFFillPatcher.html", null ],
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", null ],
@@ -36,6 +36,8 @@ var hierarchy =
     [ "MamConstituents::mode_component_t", "structMamConstituents_1_1mode__component__t.html", null ],
     [ "MamConstituents::modelist_t", "structMamConstituents_1_1modelist__t.html", null ],
     [ "MamConstituents::modes_t", "structMamConstituents_1_1modes__t.html", null ],
+    [ "moeng_flux", "structmoeng__flux.html", null ],
+    [ "most_data", "structmost__data.html", null ],
     [ "MOSTAverage", "classMOSTAverage.html", null ],
     [ "MultiBlockContainer", "classMultiBlockContainer.html", null ],
     [ "ncutils::NCDim", "structncutils_1_1NCDim.html", null ],
@@ -58,8 +60,11 @@ var hierarchy =
     [ "RealIdx", "structRealIdx.html", null ],
     [ "Rrtmgp", "classRrtmgp.html", null ],
     [ "SatMethods", "classSatMethods.html", null ],
+    [ "similarity_funs", "structsimilarity__funs.html", null ],
     [ "Slingo", "classSlingo.html", null ],
     [ "SolverChoice", "structSolverChoice.html", null ],
+    [ "surface_flux", "structsurface__flux.html", null ],
+    [ "surface_temp", "structsurface__temp.html", null ],
     [ "TerrainFittedAssignor", "structTerrainFittedAssignor.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
     [ "UPWIND3", "structUPWIND3.html", null ],

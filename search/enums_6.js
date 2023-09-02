@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nc_5fdata_5fdims_5ftype_3497',['NC_Data_Dims_Type',['../NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06',1,'NCWpsFile.H']]]
+  ['mathematicalbndrytypes_3537',['mathematicalBndryTypes',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c',1,'ERFBCType']]],
+  ['molecdifftype_3538',['MolecDiffType',['../DataStruct_8H.html#a84e6bfbbb8e490790c506939b364f735',1,'DataStruct.H']]]
 ];

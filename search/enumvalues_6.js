@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['heat_5fflux_3526',['HEAT_FLUX',['../classABLMost.html#a46fbd9260d2adfa7c18edad6452f9babae816b5ebd99b4a9778451fc8e90bb05d',1,'ABLMost']]]
+  ['geostrophicwind_3568',['GeostrophicWind',['../DataStruct_8H.html#a90da675b718151491fd0c934a0ad3ceba6c2c47a19d5c773bae606eb243104880',1,'DataStruct.H']]],
+  ['goffgratch_3569',['GoffGratch',['../classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455',1,'SatMethods']]]
 ];

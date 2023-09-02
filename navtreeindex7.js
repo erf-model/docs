@@ -1,6 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"classncutils_1_1NCGroup.html#ac9453daf888eed4f479ae69f37490d6e":[2,0,0,3,8],
 "classncutils_1_1NCGroup.html#acf2801c26458fb99bd82733b1302285a":[2,0,0,3,31],
 "classncutils_1_1NCGroup.html#acf73ea254afaf7d74596fa07523b322f":[2,0,0,3,28],
 "classncutils_1_1NCGroup.html#ad7cd6c7e21d9d71df49549b95595f823":[2,0,0,3,5],
@@ -74,8 +73,8 @@ var NAVTREEINDEX7 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -115,8 +114,8 @@ var NAVTREEINDEX7 =
 "globals_e.html":[3,1,0,4],
 "globals_enum.html":[3,1,4],
 "globals_f.html":[3,1,0,5],
-"globals_func.html":[3,1,1],
 "globals_func.html":[3,1,1,0],
+"globals_func.html":[3,1,1],
 "globals_func_b.html":[3,1,1,1],
 "globals_func_c.html":[3,1,1,2],
 "globals_func_d.html":[3,1,1,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX7 =
 "structCENTERED6.html#a7d84206aee5fe8c40cff9e065a31f394":[2,0,6,4],
 "structCENTERED6.html#aacd79f8ed62a166d5f4d44a20d09fc13":[2,0,6,1],
 "structCENTERED6.html#acedba4c2b029f363a47c32ad0c6f30e8":[2,0,6,0],
-"structCENTERED6.html#addc1b756f97d4883080045a187e4d433":[2,0,6,8]
+"structCENTERED6.html#addc1b756f97d4883080045a187e4d433":[2,0,6,8],
+"structDirectionSelector.html":[2,0,8]
 };
