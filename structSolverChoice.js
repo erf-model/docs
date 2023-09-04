@@ -2,7 +2,7 @@ var structSolverChoice =
 [
     [ "build_coriolis_forcings", "structSolverChoice.html#a3b31e3a91b502cabfc9fd8778492ad46", null ],
     [ "display", "structSolverChoice.html#abb95d84167308078ce369b4196ef979c", null ],
-    [ "init_params", "structSolverChoice.html#a4829661b558b213e32970a02e147077f", null ],
+    [ "init_params", "structSolverChoice.html#a8c15b7cf354e53ddb58bad9577d124d5", null ],
     [ "abl_driver_type", "structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f", null ],
     [ "abl_geo_forcing", "structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69", null ],
     [ "abl_pressure_grad", "structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb", null ],
@@ -28,7 +28,7 @@ var structSolverChoice =
     [ "spongeChoice", "structSolverChoice.html#ac066852f06a6409e1638f59868b7c57d", null ],
     [ "terrain_type", "structSolverChoice.html#a6cf7cd64adcf678e8065b1c4261cefd8", null ],
     [ "test_mapfactor", "structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107", null ],
-    [ "turbChoice", "structSolverChoice.html#a46230fd18342e954d32cab20468cca7f", null ],
+    [ "turbChoice", "structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4", null ],
     [ "use_coriolis", "structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606", null ],
     [ "use_gravity", "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5", null ],
     [ "use_lagged_delta_rt", "structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0", null ],

@@ -45,7 +45,7 @@ var searchData=
   ['tprmin_3476',['tprmin',['../ERF__Constants_8H.html#a9180d622aa39d89312941eba03fa1347',1,'ERF_Constants.H']]],
   ['trnum_3477',['trnum',['../classModalAeroWateruptake.html#a723ca3314c9e64f4dd20371836a1a7f3',1,'ModalAeroWateruptake::trnum()'],['../Modal__aero__wateruptake_8H.html#ada8d350bfedebba0c1e263e411bd9817',1,'trnum():&#160;Modal_aero_wateruptake.H']]],
   ['ttrice_3478',['ttrice',['../ERF__Constants_8H.html#a9b3da60e1e65429fe546d18c9c926105',1,'ERF_Constants.H']]],
-  ['turbchoice_3479',['turbChoice',['../structSolverChoice.html#a46230fd18342e954d32cab20468cca7f',1,'SolverChoice']]],
+  ['turbchoice_3479',['turbChoice',['../structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4',1,'SolverChoice']]],
   ['type_3480',['type',['../structMamConstituents_1_1mode__component__t.html#a96f5cdd50364b1e2760b1cb4e88cd153',1,'MamConstituents::mode_component_t']]],
   ['types_3481',['types',['../structMamConstituents_1_1modes__t.html#aea58b375f13ddc20860b2bd2a183899b',1,'MamConstituents::modes_t']]]
 ];

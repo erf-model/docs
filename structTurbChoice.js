@@ -1,7 +1,7 @@
 var structTurbChoice =
 [
-    [ "display", "structTurbChoice.html#a690d4f41cb4c24691d628b788580c857", null ],
-    [ "init_params", "structTurbChoice.html#a8516b6f4332f9dbb63a8a1ff942fd167", null ],
+    [ "display", "structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f", null ],
+    [ "init_params", "structTurbChoice.html#a45aa6b97fa410c18f1eca312e43b21be", null ],
     [ "advect_QKE", "structTurbChoice.html#a0da945128af7536d9fd82586a853de70", null ],
     [ "Ce", "structTurbChoice.html#ab6d0ae39e92dcbe7362abf53364c1a8e", null ],
     [ "Ce_wall", "structTurbChoice.html#ab2d1ecb36171ca19ea851e8e682a1478", null ],

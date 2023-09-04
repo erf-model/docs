@@ -55,7 +55,7 @@ var searchData=
   ['init_5fmode_5fcomps_775',['init_mode_comps',['../classMamConstituents.html#a070e5fd720cc92e1a0e4abf26f566907',1,'MamConstituents']]],
   ['init_5fmsfs_5ffrom_5fmetgrid_776',['init_msfs_from_metgrid',['../ERF__init__from__metgrid_8cpp.html#ab4943c95bfc9ea23cb2d93123f60a03e',1,'ERF_init_from_metgrid.cpp']]],
   ['init_5fonly_777',['init_only',['../classERF.html#a80981e20939a6a38ba17478da2253ff1',1,'ERF']]],
-  ['init_5fparams_778',['init_params',['../structTurbChoice.html#a8516b6f4332f9dbb63a8a1ff942fd167',1,'TurbChoice::init_params()'],['../structSpongeChoice.html#ac20a8660aca19e9655611c3d2eb9f672',1,'SpongeChoice::init_params()'],['../structDiffChoice.html#a9fa9faf0edbd1b9cbf1b5804dd38be38',1,'DiffChoice::init_params()'],['../structSolverChoice.html#a4829661b558b213e32970a02e147077f',1,'SolverChoice::init_params()'],['../structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1',1,'AdvChoice::init_params()']]],
+  ['init_5fparams_778',['init_params',['../structTurbChoice.html#a45aa6b97fa410c18f1eca312e43b21be',1,'TurbChoice::init_params()'],['../structSpongeChoice.html#ac20a8660aca19e9655611c3d2eb9f672',1,'SpongeChoice::init_params()'],['../structDiffChoice.html#a9fa9faf0edbd1b9cbf1b5804dd38be38',1,'DiffChoice::init_params()'],['../structSolverChoice.html#a8c15b7cf354e53ddb58bad9577d124d5',1,'SolverChoice::init_params()'],['../structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1',1,'AdvChoice::init_params()']]],
   ['init_5frrtmgp_2ecpp_779',['Init_rrtmgp.cpp',['../Init__rrtmgp_8cpp.html',1,'']]],
   ['init_5fshrink_780',['init_shrink',['../classERF.html#aa30548378350788543d15076cdcd404d',1,'ERF']]],
   ['init_5fsounding_5fideal_781',['init_sounding_ideal',['../classERF.html#a2eb81c590271b429f132103c9af25830',1,'ERF']]],

@@ -68,7 +68,7 @@ var searchData=
   ['directionselector_3c_201_20_3e_352',['DirectionSelector&lt; 1 &gt;',['../structDirectionSelector_3_011_01_4.html',1,'']]],
   ['directionselector_3c_202_20_3e_353',['DirectionSelector&lt; 2 &gt;',['../structDirectionSelector_3_012_01_4.html',1,'']]],
   ['dispersion_5faer_354',['dispersion_aer',['../structPhysProp_1_1physprop__t.html#adf99574ee8aea212bec426dd42a4a9e4',1,'PhysProp::physprop_t']]],
-  ['display_355',['display',['../structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c',1,'AdvChoice::display()'],['../structSolverChoice.html#abb95d84167308078ce369b4196ef979c',1,'SolverChoice::display()'],['../structDiffChoice.html#adc2925cf95fd6058bb83e1748fd1b765',1,'DiffChoice::display()'],['../structSpongeChoice.html#a66fd55eceebbe3e97e31325cc55369de',1,'SpongeChoice::display()'],['../structTurbChoice.html#a690d4f41cb4c24691d628b788580c857',1,'TurbChoice::display()']]],
+  ['display_355',['display',['../structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c',1,'AdvChoice::display()'],['../structSolverChoice.html#abb95d84167308078ce369b4196ef979c',1,'SolverChoice::display()'],['../structDiffChoice.html#adc2925cf95fd6058bb83e1748fd1b765',1,'DiffChoice::display()'],['../structSpongeChoice.html#a66fd55eceebbe3e97e31325cc55369de',1,'SpongeChoice::display()'],['../structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f',1,'TurbChoice::display()']]],
   ['do_5faerosol_5frad_356',['do_aerosol_rad',['../classRadiation.html#a6a43bd5c228b629042b73e06f8fbcf87',1,'Radiation']]],
   ['do_5flong_5fwave_5frad_357',['do_long_wave_rad',['../classRadiation.html#afb905ef9ee37afaa882346803dae94c9',1,'Radiation']]],
   ['do_5fshort_5fwave_5frad_358',['do_short_wave_rad',['../classRadiation.html#ad1177f9f1504cb562fb70b7f454387fc',1,'Radiation']]],
