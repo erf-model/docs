@@ -7,7 +7,6 @@ var dir_fc0c15590968603ac439df7b0a572228 =
     [ "ComputeStress_T.cpp", "ComputeStress__T_8cpp.html", "ComputeStress__T_8cpp" ],
     [ "ComputeTurbulentViscosity.cpp", "ComputeTurbulentViscosity_8cpp.html", "ComputeTurbulentViscosity_8cpp" ],
     [ "Diffusion.H", "Diffusion_8H.html", "Diffusion_8H" ],
-    [ "DiffusionFluxForState.H", "DiffusionFluxForState_8H.html", "DiffusionFluxForState_8H" ],
     [ "DiffusionSrcForMom_N.cpp", "DiffusionSrcForMom__N_8cpp.html", "DiffusionSrcForMom__N_8cpp" ],
     [ "DiffusionSrcForMom_T.cpp", "DiffusionSrcForMom__T_8cpp.html", "DiffusionSrcForMom__T_8cpp" ],
     [ "DiffusionSrcForState_N.cpp", "DiffusionSrcForState__N_8cpp.html", "DiffusionSrcForState__N_8cpp" ],

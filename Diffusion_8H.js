@@ -6,8 +6,8 @@ var Diffusion_8H =
     [ "ComputeStressConsVisc_T", "Diffusion_8H.html#a1aab2efda26dd4ac36a30e69cc117a93", null ],
     [ "ComputeStressVarVisc_N", "Diffusion_8H.html#a755f65db048fb7cecd30437228941a92", null ],
     [ "ComputeStressVarVisc_T", "Diffusion_8H.html#ae04a6609d16aaf4f8ca3d3842287b698", null ],
-    [ "DiffusionSrcForMom_N", "Diffusion_8H.html#a04e62fe626d7455d41edfc8cb393ebdc", null ],
-    [ "DiffusionSrcForMom_T", "Diffusion_8H.html#a0d627a1788c03e4298d2007f2e4e8f9e", null ],
-    [ "DiffusionSrcForState_N", "Diffusion_8H.html#a320be8440516275740e37c594c6e9e26", null ],
-    [ "DiffusionSrcForState_T", "Diffusion_8H.html#a7b43cc44eb87012e5ee6fbbf6c2f7fa4", null ]
+    [ "DiffusionSrcForMom_N", "Diffusion_8H.html#a1bb69a0008ff2a0610abe94356c0da75", null ],
+    [ "DiffusionSrcForMom_T", "Diffusion_8H.html#a3d241bae9085299a7a117c5f897ba7b2", null ],
+    [ "DiffusionSrcForState_N", "Diffusion_8H.html#ab63f0fec93356a04c6ed1bfa725dbe66", null ],
+    [ "DiffusionSrcForState_T", "Diffusion_8H.html#aad9157d271fa86930f233a9c2e095888", null ]
 ];

@@ -2,6 +2,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
 [
     [ "Advection", "dir_87c27e56fd01e6f1a6e2085b6fe8a1a5.html", "dir_87c27e56fd01e6f1a6e2085b6fe8a1a5" ],
     [ "BoundaryConditions", "dir_528efc400cc48bc5f175d9531879efeb.html", "dir_528efc400cc48bc5f175d9531879efeb" ],
+    [ "DataStructs", "dir_aba9de7b86b72c00c61e401832cdb2fc.html", "dir_aba9de7b86b72c00c61e401832cdb2fc" ],
     [ "Diffusion", "dir_fc0c15590968603ac439df7b0a572228.html", "dir_fc0c15590968603ac439df7b0a572228" ],
     [ "Initialization", "dir_71a4420ed1f8982e7234eb6a0b7e6d5d.html", "dir_71a4420ed1f8982e7234eb6a0b7e6d5d" ],
     [ "IO", "dir_4c48f420b74c1f1cc31b316243ca788c.html", "dir_4c48f420b74c1f1cc31b316243ca788c" ],
@@ -11,7 +12,6 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "Radiation", "dir_6ac3198e61556f99812dcb8dcfabb874.html", "dir_6ac3198e61556f99812dcb8dcfabb874" ],
     [ "TimeIntegration", "dir_759b90b1f3ea3c20e13693c83a3534b7.html", "dir_759b90b1f3ea3c20e13693c83a3534b7" ],
     [ "Utils", "dir_5c09e96eccedf512ae411d636afd2712.html", "dir_5c09e96eccedf512ae411d636afd2712" ],
-    [ "DataStruct.H", "DataStruct_8H.html", "DataStruct_8H" ],
     [ "Derive.cpp", "Derive_8cpp.html", "Derive_8cpp" ],
     [ "Derive.H", "Derive_8H.html", "Derive_8H" ],
     [ "EOS.H", "EOS_8H.html", "EOS_8H" ],
