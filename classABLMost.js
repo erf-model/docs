@@ -10,7 +10,6 @@ var classABLMost =
       [ "SURFACE_TEMPERATURE", "classABLMost.html#a46fbd9260d2adfa7c18edad6452f9baba317cef85d14b4909f1d76becb00dc0f1", null ]
     ] ],
     [ "ABLMost", "classABLMost.html#ad1b4cdd0bca8fb10339f6a8a8d311e4a", null ],
-    [ "~ABLMost", "classABLMost.html#a0213d557d60d24b8956506d7bf9070fb", null ],
     [ "compute_fluxes", "classABLMost.html#a635adcd2b8ed3c11bcf63f5386937639", null ],
     [ "compute_most_bcs", "classABLMost.html#aa2d3dc61e7bbc0991f3aa47419d715d2", null ],
     [ "compute_most_bcs", "classABLMost.html#a28ebed29dda882f9ff1f295ef6852966", null ],
@@ -24,13 +23,13 @@ var classABLMost =
     [ "flux_type", "classABLMost.html#ad837d92390012682056ffac0b5f9a8f9", null ],
     [ "m_geom", "classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5", null ],
     [ "m_ma", "classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe", null ],
-    [ "olen", "classABLMost.html#abff00edd3f68232d893546d1c2477349", null ],
+    [ "olen", "classABLMost.html#a0d6aa5a113a45ae1e56c0284241cfd01", null ],
     [ "surf_temp", "classABLMost.html#a73621a1b429f2e910a29adac72b7c581", null ],
     [ "surf_temp_flux", "classABLMost.html#a98390481d302c2a2c7346bf2328305a8", null ],
-    [ "t_star", "classABLMost.html#a5fe1b03be4b1108cdbea15f354e44134", null ],
-    [ "t_surf", "classABLMost.html#a2a6f4140cb15687728c7d96e0352f810", null ],
+    [ "t_star", "classABLMost.html#ac9d90016f196c3861d225132e8b6a921", null ],
+    [ "t_surf", "classABLMost.html#a1f488836fca7c3da2bed67c63a94951b", null ],
     [ "theta_type", "classABLMost.html#a7d1394fa01c8c29b20dfb790c0f3ec6b", null ],
-    [ "u_star", "classABLMost.html#afa1831ea4c8ed00b6e2a9f3831de48a6", null ],
+    [ "u_star", "classABLMost.html#acd5510d2f47502a57107f12c66f8a552", null ],
     [ "z0_const", "classABLMost.html#acfc9a08ed0d029602e2e8e99232d0149", null ],
     [ "z_0", "classABLMost.html#a1301dd4cb6875c7bdf5d69126b972f91", null ]
 ];
