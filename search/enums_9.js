@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['thetacalctype_3559',['ThetaCalcType',['../classABLMost.html#a46fbd9260d2adfa7c18edad6452f9bab',1,'ABLMost']]],
-  ['type_3560',['Type',['../classSatMethods.html#a62096d95f324cd2a3504554437067ef7',1,'SatMethods']]]
+  ['roughcalctype_3597',['RoughCalcType',['../classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13',1,'ABLMost']]]
 ];

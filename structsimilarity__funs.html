@@ -122,7 +122,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a6c53efd885ed922115193bc9a36cb0e6"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsimilarity__funs.html#a6c53efd885ed922115193bc9a36cb0e6">gamma_h</a> {16.0}</td></tr>
 <tr class="separator:a6c53efd885ed922115193bc9a36cb0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Structure of similarity functions for Moeng formulation </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7dcb32f637eab66d2314902d03289bc2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7dcb32f637eab66d2314902d03289bc2">&#9670;&nbsp;</a></span>calc_psi_h()</h2>
 
@@ -146,27 +148,31 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (zeta &gt; 0) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> -<a class="code" href="structsimilarity__funs.html#a5254469dd7ec9856ed6d1e0034306cc4">beta_h</a> * zeta;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = std::sqrt(1.0 - <a class="code" href="structsimilarity__funs.html#a6c53efd885ed922115193bc9a36cb0e6">gamma_h</a> * zeta);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span> 2.0 * std::log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (zeta &gt; 0) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">return</span> -<a class="code" href="structsimilarity__funs.html#a5254469dd7ec9856ed6d1e0034306cc4">beta_h</a> * zeta;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = std::sqrt(1.0 - <a class="code" href="structsimilarity__funs.html#a6c53efd885ed922115193bc9a36cb0e6">gamma_h</a> * zeta);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">return</span> 2.0 * std::log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
-<div class="ttc" id="astructsimilarity__funs_html_a5254469dd7ec9856ed6d1e0034306cc4"><div class="ttname"><a href="structsimilarity__funs.html#a5254469dd7ec9856ed6d1e0034306cc4">similarity_funs::beta_h</a></div><div class="ttdeci">amrex::Real beta_h</div><div class="ttdoc">https://doi.org/10.1007/BF00240838</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:50</div></div>
-<div class="ttc" id="astructsimilarity__funs_html_a6c53efd885ed922115193bc9a36cb0e6"><div class="ttname"><a href="structsimilarity__funs.html#a6c53efd885ed922115193bc9a36cb0e6">similarity_funs::gamma_h</a></div><div class="ttdeci">amrex::Real gamma_h</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:52</div></div>
+<div class="ttc" id="astructsimilarity__funs_html_a5254469dd7ec9856ed6d1e0034306cc4"><div class="ttname"><a href="structsimilarity__funs.html#a5254469dd7ec9856ed6d1e0034306cc4">similarity_funs::beta_h</a></div><div class="ttdeci">amrex::Real beta_h</div><div class="ttdoc">https://doi.org/10.1007/BF00240838</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:61</div></div>
+<div class="ttc" id="astructsimilarity__funs_html_a6c53efd885ed922115193bc9a36cb0e6"><div class="ttname"><a href="structsimilarity__funs.html#a6c53efd885ed922115193bc9a36cb0e6">similarity_funs::gamma_h</a></div><div class="ttdeci">amrex::Real gamma_h</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:63</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="structsurface__flux.html#a31aeca031758dd60c0407462de19b9a5">surface_flux::iterate_flux()</a>, and <a class="el" href="structsurface__temp.html#a5ee026deda92d3470e0f26e59a1da5a7">surface_temp::iterate_flux()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structsurface__flux__charnock.html#a349dc2ace9af64116e15be5e53aa9652">surface_flux_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__mod__charnock.html#a30911bffcff946f6ff25f922eddc509b">surface_flux_mod_charnock::iterate_flux()</a>, <a class="el" href="structsurface__temp__charnock.html#acc7bcc8a2c1a34795a798b8296e5a5de">surface_temp_charnock::iterate_flux()</a>, <a class="el" href="structsurface__temp__mod__charnock.html#a06d7ba4341f5e3697195a73387266d4b">surface_temp_mod_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux.html#a31aeca031758dd60c0407462de19b9a5">surface_flux::iterate_flux()</a>, and <a class="el" href="structsurface__temp.html#a5ee026deda92d3470e0f26e59a1da5a7">surface_temp::iterate_flux()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsimilarity__funs_a7dcb32f637eab66d2314902d03289bc2_icgraph.png" border="0" usemap="#astructsimilarity__funs_a7dcb32f637eab66d2314902d03289bc2_icgraph" alt=""/></div>
 <map name="astructsimilarity__funs_a7dcb32f637eab66d2314902d03289bc2_icgraph" id="astructsimilarity__funs_a7dcb32f637eab66d2314902d03289bc2_icgraph">
-<area shape="rect" title=" " alt="" coords="247,23,400,65"/>
-<area shape="rect" href="structsurface__flux.html#a31aeca031758dd60c0407462de19b9a5" title=" " alt="" coords="11,5,193,32"/>
-<area shape="rect" href="structsurface__temp.html#a5ee026deda92d3470e0f26e59a1da5a7" title=" " alt="" coords="5,56,199,83"/>
+<area shape="rect" title=" " alt="" coords="267,169,420,211"/>
+<area shape="rect" href="structsurface__flux__charnock.html#a349dc2ace9af64116e15be5e53aa9652" title=" " alt="" coords="29,5,195,47"/>
+<area shape="rect" href="structsurface__flux__mod__charnock.html#a30911bffcff946f6ff25f922eddc509b" title=" " alt="" coords="11,71,213,112"/>
+<area shape="rect" href="structsurface__temp__charnock.html#acc7bcc8a2c1a34795a798b8296e5a5de" title=" " alt="" coords="23,136,201,177"/>
+<area shape="rect" href="structsurface__temp__mod__charnock.html#a06d7ba4341f5e3697195a73387266d4b" title=" " alt="" coords="5,201,219,243"/>
+<area shape="rect" href="structsurface__flux.html#a31aeca031758dd60c0407462de19b9a5" title=" " alt="" coords="21,267,203,294"/>
+<area shape="rect" href="structsurface__temp.html#a5ee026deda92d3470e0f26e59a1da5a7" title=" " alt="" coords="15,318,209,345"/>
 </map>
 </div>
 
@@ -195,28 +201,32 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (zeta &gt; 0) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">return</span> -<a class="code" href="structsimilarity__funs.html#a3658f855e05c54c9cbc27c8dfb3b0355">beta_m</a> * zeta;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = std::sqrt(std::sqrt(1.0 - <a class="code" href="structsimilarity__funs.html#ae78007489e8da2bf08c6f999381b9512">gamma_m</a> * zeta));</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> 2.0 * std::log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>)) + log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>)) -</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                   2.0 * std::atan(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>) + <a class="code" href="ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e">PIoTwo</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span> (zeta &gt; 0) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span> -<a class="code" href="structsimilarity__funs.html#a3658f855e05c54c9cbc27c8dfb3b0355">beta_m</a> * zeta;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = std::sqrt(std::sqrt(1.0 - <a class="code" href="structsimilarity__funs.html#ae78007489e8da2bf08c6f999381b9512">gamma_m</a> * zeta));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> 2.0 * std::log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>)) + log(0.5 * (1.0 + <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>)) -</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                   2.0 * std::atan(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>) + <a class="code" href="ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e">PIoTwo</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_ad51e17db99d11b190b2b57a23a518f7e"><div class="ttname"><a href="ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e">PIoTwo</a></div><div class="ttdeci">constexpr amrex::Real PIoTwo</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:7</div></div>
-<div class="ttc" id="astructsimilarity__funs_html_a3658f855e05c54c9cbc27c8dfb3b0355"><div class="ttname"><a href="structsimilarity__funs.html#a3658f855e05c54c9cbc27c8dfb3b0355">similarity_funs::beta_m</a></div><div class="ttdeci">amrex::Real beta_m</div><div class="ttdoc">Constants from Dyer, BLM, 1974.</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:49</div></div>
-<div class="ttc" id="astructsimilarity__funs_html_ae78007489e8da2bf08c6f999381b9512"><div class="ttname"><a href="structsimilarity__funs.html#ae78007489e8da2bf08c6f999381b9512">similarity_funs::gamma_m</a></div><div class="ttdeci">amrex::Real gamma_m</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:51</div></div>
+<div class="ttc" id="astructsimilarity__funs_html_a3658f855e05c54c9cbc27c8dfb3b0355"><div class="ttname"><a href="structsimilarity__funs.html#a3658f855e05c54c9cbc27c8dfb3b0355">similarity_funs::beta_m</a></div><div class="ttdeci">amrex::Real beta_m</div><div class="ttdoc">Constants from Dyer, BLM, 1974.</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:60</div></div>
+<div class="ttc" id="astructsimilarity__funs_html_ae78007489e8da2bf08c6f999381b9512"><div class="ttname"><a href="structsimilarity__funs.html#ae78007489e8da2bf08c6f999381b9512">similarity_funs::gamma_m</a></div><div class="ttdeci">amrex::Real gamma_m</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:62</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="structsurface__flux.html#a31aeca031758dd60c0407462de19b9a5">surface_flux::iterate_flux()</a>, and <a class="el" href="structsurface__temp.html#a5ee026deda92d3470e0f26e59a1da5a7">surface_temp::iterate_flux()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structsurface__flux__charnock.html#a349dc2ace9af64116e15be5e53aa9652">surface_flux_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__mod__charnock.html#a30911bffcff946f6ff25f922eddc509b">surface_flux_mod_charnock::iterate_flux()</a>, <a class="el" href="structsurface__temp__charnock.html#acc7bcc8a2c1a34795a798b8296e5a5de">surface_temp_charnock::iterate_flux()</a>, <a class="el" href="structsurface__temp__mod__charnock.html#a06d7ba4341f5e3697195a73387266d4b">surface_temp_mod_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux.html#a31aeca031758dd60c0407462de19b9a5">surface_flux::iterate_flux()</a>, and <a class="el" href="structsurface__temp.html#a5ee026deda92d3470e0f26e59a1da5a7">surface_temp::iterate_flux()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsimilarity__funs_a21cb206b0dd78dc2ac7211de8dbcb8d2_icgraph.png" border="0" usemap="#astructsimilarity__funs_a21cb206b0dd78dc2ac7211de8dbcb8d2_icgraph" alt=""/></div>
 <map name="astructsimilarity__funs_a21cb206b0dd78dc2ac7211de8dbcb8d2_icgraph" id="astructsimilarity__funs_a21cb206b0dd78dc2ac7211de8dbcb8d2_icgraph">
-<area shape="rect" title=" " alt="" coords="247,23,400,65"/>
-<area shape="rect" href="structsurface__flux.html#a31aeca031758dd60c0407462de19b9a5" title=" " alt="" coords="11,5,193,32"/>
-<area shape="rect" href="structsurface__temp.html#a5ee026deda92d3470e0f26e59a1da5a7" title=" " alt="" coords="5,56,199,83"/>
+<area shape="rect" title=" " alt="" coords="267,169,420,211"/>
+<area shape="rect" href="structsurface__flux__charnock.html#a349dc2ace9af64116e15be5e53aa9652" title=" " alt="" coords="29,5,195,47"/>
+<area shape="rect" href="structsurface__flux__mod__charnock.html#a30911bffcff946f6ff25f922eddc509b" title=" " alt="" coords="11,71,213,112"/>
+<area shape="rect" href="structsurface__temp__charnock.html#acc7bcc8a2c1a34795a798b8296e5a5de" title=" " alt="" coords="23,136,201,177"/>
+<area shape="rect" href="structsurface__temp__mod__charnock.html#a06d7ba4341f5e3697195a73387266d4b" title=" " alt="" coords="5,201,219,243"/>
+<area shape="rect" href="structsurface__flux.html#a31aeca031758dd60c0407462de19b9a5" title=" " alt="" coords="21,267,203,294"/>
+<area shape="rect" href="structsurface__temp.html#a5ee026deda92d3470e0f26e59a1da5a7" title=" " alt="" coords="15,318,209,345"/>
 </map>
 </div>
 

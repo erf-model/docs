@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['units_3561',['Units',['../classRadConstants.html#a2de1ff8cbc3cafe6a42e8f884002e4f1',1,'RadConstants']]]
+  ['thetacalctype_3598',['ThetaCalcType',['../classABLMost.html#a46fbd9260d2adfa7c18edad6452f9bab',1,'ABLMost']]],
+  ['type_3599',['Type',['../classSatMethods.html#a62096d95f324cd2a3504554437067ef7',1,'SatMethods']]]
 ];
