@@ -58,6 +58,8 @@ var hierarchy =
     [ "PhysProp", "classPhysProp.html", null ],
     [ "PhysProp::physprop_t", "structPhysProp_1_1physprop__t.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
+    [ "ProblemBase", "classProblemBase.html", null ],
+    [ "ProbParmDefaults", "structProbParmDefaults.html", null ],
     [ "RadConstants", "classRadConstants.html", null ],
     [ "Radiation", "classRadiation.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],

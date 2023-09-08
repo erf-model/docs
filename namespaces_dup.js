@@ -27,6 +27,12 @@ var namespaces_dup =
         [ "neumann", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60", null ]
       ] ]
     ] ],
+    [ "HSEutils", "namespaceHSEutils.html", [
+      [ "init_isentropic_hse", "namespaceHSEutils.html#a531678cdabf38cca3d47317e33a82fa5", null ],
+      [ "init_isentropic_hse_terrain", "namespaceHSEutils.html#ad3c1cfede2e4d495c9fe91a23e33002d", null ],
+      [ "MAX_ITER", "namespaceHSEutils.html#a10de540cb8ad96aea8cd080f4d1e72fa", null ],
+      [ "TOL", "namespaceHSEutils.html#aace33d14958f235a111e6cead400a61e", null ]
+    ] ],
     [ "internal", "namespaceinternal.html", [
       [ "expand_day_fluxes", "namespaceinternal.html#af3d45e8f34eed05a14c697fc773d8d79", null ],
       [ "initial_fluxes", "namespaceinternal.html#aaf4add7dd62294e7017ae4e65f656337", null ],

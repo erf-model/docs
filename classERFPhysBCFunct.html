@@ -1323,7 +1323,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="keywordtype">int</span> kflip = dom_lo.z - 1 - k;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="keywordflow">if</span> (bc_ptr[n].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">                    #ifdef ERF_USE_TERRAIN_VELOCITY</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                        dest_arr(i,j,k) = <a class="code" href="prob__common_8H.html#a79856d42a76afa8bdd733a9e26a68b08">compute_terrain_velocity</a>(time);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                        dest_arr(i,j,k) = prob-&gt;compute_terrain_velocity(time);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">                    #else</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                        dest_arr(i,j,k) = l_bc_extdir_vals_d[n][2];</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">                    #endif</span></div>
@@ -1420,17 +1420,15 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a8d96671d41364f1e24391375a2bc0f1e"><div class="ttname"><a href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:71</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_ad06b0ae003cb3d59227ce85a5fa8a669"><div class="ttname"><a href="TerrainMetrics_8H.html#ad06b0ae003cb3d59227ce85a5fa8a669">Compute_h_eta_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:100</div></div>
 <div class="ttc" id="aclassERFPhysBCFunct_html_a6ca43d34a9908abbb1c09cdf0fa70917"><div class="ttname"><a href="classERFPhysBCFunct.html#a6ca43d34a9908abbb1c09cdf0fa70917">ERFPhysBCFunct::impose_vertical_xvel_bcs</a></div><div class="ttdeci">void impose_vertical_xvel_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int bccomp, const amrex::Real time)</div><div class="ttdef"><b>Definition:</b> BoundaryConditions_xvel.cpp:150</div></div>
-<div class="ttc" id="aprob__common_8H_html_a79856d42a76afa8bdd733a9e26a68b08"><div class="ttname"><a href="prob__common_8H.html#a79856d42a76afa8bdd733a9e26a68b08">compute_terrain_velocity</a></div><div class="ttdeci">amrex::Real compute_terrain_velocity(const amrex::Real time)</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERFPhysBCFunct_a6ca43d34a9908abbb1c09cdf0fa70917_cgraph.png" border="0" usemap="#aclassERFPhysBCFunct_a6ca43d34a9908abbb1c09cdf0fa70917_cgraph" alt=""/></div>
 <map name="aclassERFPhysBCFunct_a6ca43d34a9908abbb1c09cdf0fa70917_cgraph" id="aclassERFPhysBCFunct_a6ca43d34a9908abbb1c09cdf0fa70917_cgraph">
-<area shape="rect" title=" " alt="" coords="5,74,192,115"/>
-<area shape="rect" href="TerrainMetrics_8H.html#ad06b0ae003cb3d59227ce85a5fa8a669" title=" " alt="" coords="245,5,423,32"/>
-<area shape="rect" href="TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7" title=" " alt="" coords="250,56,418,83"/>
-<area shape="rect" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e" title=" " alt="" coords="242,107,426,133"/>
-<area shape="rect" href="prob__common_8H.html#a79856d42a76afa8bdd733a9e26a68b08" title=" " alt="" coords="240,157,428,184"/>
+<area shape="rect" title=" " alt="" coords="5,49,192,90"/>
+<area shape="rect" href="TerrainMetrics_8H.html#ad06b0ae003cb3d59227ce85a5fa8a669" title=" " alt="" coords="243,5,421,32"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7" title=" " alt="" coords="248,56,416,83"/>
+<area shape="rect" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e" title=" " alt="" coords="240,107,424,133"/>
 </map>
 </div>
 

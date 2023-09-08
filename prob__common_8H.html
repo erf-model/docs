@@ -83,36 +83,50 @@ $(document).ready(function(){initNavTree('prob__common_8H.html',''); initResizab
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">prob_common.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;AMReX_Geometry.H&gt;</code><br />
+<div class="textblock"><code>#include &lt;AMReX_ParmParse.H&gt;</code><br />
+<code>#include &lt;AMReX_Geometry.H&gt;</code><br />
 <code>#include &lt;AMReX_FArrayBox.H&gt;</code><br />
-<code>#include &lt;<a class="el" href="DataStruct_8H_source.html">DataStruct.H</a>&gt;</code><br />
+<code>#include &lt;AMReX_MultiFab.H&gt;</code><br />
+<code>#include &quot;<a class="el" href="DataStruct_8H_source.html">DataStruct.H</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="EOS_8H_source.html">EOS.H</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="HSE__utils_8H_source.html">HSE_utils.H</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TileNoZ_8H_source.html">TileNoZ.H</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for prob_common.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="prob__common_8H__incl.png" border="0" usemap="#aSource_2prob__common_8H" alt=""/></div>
 <map name="aSource_2prob__common_8H" id="aSource_2prob__common_8H">
-<area shape="rect" title=" " alt="" coords="936,5,1113,32"/>
-<area shape="rect" title=" " alt="" coords="964,229,1117,256"/>
-<area shape="rect" title=" " alt="" coords="1063,80,1219,107"/>
-<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="513,80,619,107"/>
-<area shape="rect" title=" " alt="" coords="394,229,453,256"/>
-<area shape="rect" title=" " alt="" coords="146,229,226,256"/>
-<area shape="rect" title=" " alt="" coords="477,229,636,256"/>
-<area shape="rect" title=" " alt="" coords="250,229,370,256"/>
-<area shape="rect" title=" " alt="" coords="5,229,121,256"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="661,229,794,256"/>
-<area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="819,229,940,256"/>
-<area shape="rect" href="AdvStruct_8H.html" title=" " alt="" coords="517,155,615,181"/>
-<area shape="rect" href="DiffStruct_8H.html" title=" " alt="" coords="344,155,441,181"/>
-<area shape="rect" href="SpongeStruct_8H.html" title=" " alt="" coords="146,155,269,181"/>
-<area shape="rect" href="TurbStruct_8H.html" title=" " alt="" coords="690,155,791,181"/>
-<area shape="rect" title=" " alt="" coords="667,304,790,331"/>
-<area shape="rect" title=" " alt="" coords="815,304,943,331"/>
+<area shape="rect" title=" " alt="" coords="855,5,1032,32"/>
+<area shape="rect" title=" " alt="" coords="5,229,164,256"/>
+<area shape="rect" title=" " alt="" coords="807,229,960,256"/>
+<area shape="rect" title=" " alt="" coords="636,80,792,107"/>
+<area shape="rect" title=" " alt="" coords="816,80,961,107"/>
+<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="507,80,612,107"/>
+<area shape="rect" href="EOS_8H.html" title=" " alt="" coords="1121,80,1184,107"/>
+<area shape="rect" href="HSE__utils_8H.html" title=" " alt="" coords="1208,80,1305,107"/>
+<area shape="rect" href="TileNoZ_8H.html" title=" " alt="" coords="1408,80,1495,107"/>
+<area shape="rect" title=" " alt="" coords="189,229,247,256"/>
+<area shape="rect" title=" " alt="" coords="271,229,351,256"/>
+<area shape="rect" title=" " alt="" coords="517,229,637,256"/>
+<area shape="rect" title=" " alt="" coords="376,229,492,256"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="985,229,1118,256"/>
+<area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="661,229,783,256"/>
+<area shape="rect" href="AdvStruct_8H.html" title=" " alt="" coords="535,155,634,181"/>
+<area shape="rect" href="DiffStruct_8H.html" title=" " alt="" coords="165,155,263,181"/>
+<area shape="rect" href="SpongeStruct_8H.html" title=" " alt="" coords="287,155,410,181"/>
+<area shape="rect" href="TurbStruct_8H.html" title=" " alt="" coords="759,155,861,181"/>
+<area shape="rect" title=" " alt="" coords="899,304,1022,331"/>
+<area shape="rect" title=" " alt="" coords="658,304,786,331"/>
+<area shape="rect" title=" " alt="" coords="1489,155,1571,181"/>
+<area shape="rect" title=" " alt="" coords="1329,155,1464,181"/>
+<area shape="rect" title=" " alt="" coords="1087,155,1218,181"/>
+<area shape="rect" title=" " alt="" coords="1243,155,1305,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -120,51 +134,82 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="prob__common_8H__dep__incl.png" border="0" usemap="#aSource_2prob__common_8Hdep" alt=""/></div>
 <map name="aSource_2prob__common_8Hdep" id="aSource_2prob__common_8Hdep">
-<area shape="rect" title=" " alt="" coords="1283,5,1461,32"/>
-<area shape="rect" href="BoundaryConditions__xvel_8cpp.html" title=" " alt="" coords="5,87,224,129"/>
-<area shape="rect" href="BoundaryConditions__zvel_8cpp.html" title=" " alt="" coords="248,87,467,129"/>
-<area shape="rect" href="ERF_8cpp.html" title=" " alt="" coords="491,95,611,121"/>
-<area shape="rect" href="ERF__make__new__level_8cpp.html" title=" " alt="" coords="635,87,807,129"/>
-<area shape="rect" href="ERF__init1d_8cpp.html" title=" " alt="" coords="831,87,982,129"/>
-<area shape="rect" href="ERF__init__custom_8cpp.html" title=" " alt="" coords="1006,87,1167,129"/>
-<area shape="rect" href="ERF__init__from__input__sounding_8cpp.html" title=" " alt="" coords="1192,80,1349,136"/>
-<area shape="rect" href="ERF__init__from__metgrid_8cpp.html" title=" " alt="" coords="1373,87,1576,129"/>
-<area shape="rect" href="ERF__init__from__wrfinput_8cpp.html" title=" " alt="" coords="1601,87,1805,129"/>
-<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html" title=" " alt="" coords="1829,87,2003,129"/>
-<area shape="rect" href="ERF__fast__rhs__N_8cpp.html" title=" " alt="" coords="2027,87,2202,129"/>
-<area shape="rect" href="ERF__fast__rhs__T_8cpp.html" title=" " alt="" coords="2226,87,2401,129"/>
-<area shape="rect" href="ERF__make__fast__coeffs_8cpp.html" title=" " alt="" coords="2425,87,2623,129"/>
-<area shape="rect" href="TI__slow__rhs__fun_8H.html" title=" " alt="" coords="2647,87,2822,129"/>
-<area shape="rect" href="ERF__advance__dycore_8cpp.html" title=" " alt="" coords="2639,184,2830,225"/>
+<area shape="rect" title=" " alt="" coords="1141,5,1319,32"/>
+<area shape="rect" href="BoundaryConditions__xvel_8cpp.html" title=" " alt="" coords="478,80,697,121"/>
+<area shape="rect" href="BoundaryConditions__zvel_8cpp.html" title=" " alt="" coords="721,80,939,121"/>
+<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="3762,87,3869,114"/>
+<area shape="rect" href="ERF__make__new__level_8cpp.html" title=" " alt="" coords="5,177,177,218"/>
+<area shape="rect" href="ERF__init1d_8cpp.html" title=" " alt="" coords="201,177,352,218"/>
+<area shape="rect" href="ERF__init__custom_8cpp.html" title=" " alt="" coords="376,177,537,218"/>
+<area shape="rect" href="ERF__init__from__input__sounding_8cpp.html" title=" " alt="" coords="562,169,719,225"/>
+<area shape="rect" href="ERF__init__from__metgrid_8cpp.html" title=" " alt="" coords="743,177,946,218"/>
+<area shape="rect" href="ERF__init__from__wrfinput_8cpp.html" title=" " alt="" coords="971,177,1175,218"/>
+<area shape="rect" href="ERF__init__uniform_8cpp.html" title=" " alt="" coords="1199,177,1363,218"/>
+<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html" title=" " alt="" coords="4092,80,4267,121"/>
+<area shape="rect" href="ERF__fast__rhs__N_8cpp.html" title=" " alt="" coords="4291,80,4465,121"/>
+<area shape="rect" href="ERF__fast__rhs__T_8cpp.html" title=" " alt="" coords="4489,80,4664,121"/>
+<area shape="rect" href="ERF__make__fast__coeffs_8cpp.html" title=" " alt="" coords="4688,80,4887,121"/>
+<area shape="rect" href="TI__slow__rhs__fun_8H.html" title=" " alt="" coords="3893,80,4068,121"/>
+<area shape="rect" href="BoundaryConditions__bndryreg_8cpp.html" title=" " alt="" coords="3304,177,3553,218"/>
+<area shape="rect" href="BoundaryConditions__wrfbdy_8cpp.html" title=" " alt="" coords="3577,177,3811,218"/>
+<area shape="rect" href="ERF__FillPatch_8cpp.html" title=" " alt="" coords="3836,177,4037,218"/>
+<area shape="rect" href="ERF_8cpp.html" title=" " alt="" coords="4062,184,4182,211"/>
+<area shape="rect" href="ERF__Tagging_8cpp.html" title=" " alt="" coords="4206,184,4385,211"/>
+<area shape="rect" href="ERF__init__bcs_8cpp.html" title=" " alt="" coords="4409,177,4560,218"/>
+<area shape="rect" href="ERF__init__from__hse_8cpp.html" title=" " alt="" coords="4584,177,4759,218"/>
+<area shape="rect" href="Checkpoint_8cpp.html" title=" " alt="" coords="4783,184,4971,211"/>
+<area shape="rect" href="ERF__Write1DProfiles_8cpp.html" title=" " alt="" coords="4995,184,5243,211"/>
+<area shape="rect" href="ERF__WriteScalarProfiles_8cpp.html" title=" " alt="" coords="5267,177,5462,218"/>
+<area shape="rect" href="NCCheckpoint_8cpp.html" title=" " alt="" coords="5487,184,5693,211"/>
+<area shape="rect" href="NCColumnFile_8cpp.html" title=" " alt="" coords="5717,184,5924,211"/>
+<area shape="rect" href="NCMultiFabFile_8cpp.html" title=" " alt="" coords="5948,184,6160,211"/>
+<area shape="rect" href="NCPlotFile_8cpp.html" title=" " alt="" coords="6184,184,6367,211"/>
+<area shape="rect" href="Plotfile_8cpp.html" title=" " alt="" coords="6391,184,6551,211"/>
+<area shape="rect" href="writeJobInfo_8cpp.html" title=" " alt="" coords="6576,184,6769,211"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="6794,184,6925,211"/>
+<area shape="rect" href="MultiBlockContainer_8cpp.html" title=" " alt="" coords="7020,273,7232,315"/>
+<area shape="rect" href="MultiBlockContainer_8H.html" title=" " alt="" coords="6949,177,7161,218"/>
+<area shape="rect" href="Aero__rad__props_8H.html" title=" " alt="" coords="7236,177,7403,218"/>
+<area shape="rect" href="Cloud__rad__props_8H.html" title=" " alt="" coords="7427,177,7601,218"/>
+<area shape="rect" href="Rrtmgp_8H.html" title=" " alt="" coords="7625,184,7824,211"/>
+<area shape="rect" href="ERF__Advance_8cpp.html" title=" " alt="" coords="7848,177,8023,218"/>
+<area shape="rect" href="ERF__advance__dycore_8cpp.html" title=" " alt="" coords="8304,177,8495,218"/>
+<area shape="rect" href="ERF__advance__microphysics_8cpp.html" title=" " alt="" coords="8047,177,8280,218"/>
+<area shape="rect" href="ERF__ApplySpongeZoneBCs_8cpp.html" title=" " alt="" coords="1387,177,1615,218"/>
+<area shape="rect" href="ERF__ComputeTimestep_8cpp.html" title=" " alt="" coords="1639,177,1845,218"/>
+<area shape="rect" href="ERF__make__buoyancy_8cpp.html" title=" " alt="" coords="1869,177,2058,218"/>
+<area shape="rect" href="ERF__make__condensation__source_8cpp.html" title=" " alt="" coords="2083,169,2271,225"/>
+<area shape="rect" href="ERF__slow__rhs__inc_8cpp.html" title=" " alt="" coords="2295,177,2469,218"/>
+<area shape="rect" href="ERF__slow__rhs__post_8cpp.html" title=" " alt="" coords="2493,177,2671,218"/>
+<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html" title=" " alt="" coords="2695,177,2869,218"/>
+<area shape="rect" href="ERF__TimeStep_8cpp.html" title=" " alt="" coords="2893,177,3068,218"/>
+<area shape="rect" href="ERF__PoissonSolve_8cpp.html" title=" " alt="" coords="3093,177,3279,218"/>
 </map>
 </div>
 </div>
 <p><a href="prob__common_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProbParmDefaults.html">ProbParmDefaults</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html">ProblemBase</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afef32e2116829d24b864c64caebf5ea6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prob__common_8H.html#afef32e2116829d24b864c64caebf5ea6">amrex_probinit</a> (const amrex_real *problo, const amrex_real *probhi)</td></tr>
-<tr class="separator:afef32e2116829d24b864c64caebf5ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76bf021e5c3175a474a039ca9e22411c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prob__common_8H.html#a76bf021e5c3175a474a039ca9e22411c">erf_init_dens_hse</a> (amrex::MultiFab &amp;rho_hse, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc, amrex::Geometry const &amp;geom)</td></tr>
-<tr class="separator:a76bf021e5c3175a474a039ca9e22411c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad73abe2b3666740ce565ae3de83c7e26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prob__common_8H.html#ad73abe2b3666740ce565ae3de83c7e26">init_custom_prob</a> (const amrex::Box &amp;bx, const amrex::Box &amp;xbx, const amrex::Box &amp;ybx, const amrex::Box &amp;zbx, amrex::Array4&lt; amrex::Real &gt; const &amp;state, amrex::Array4&lt; amrex::Real &gt; const &amp;x_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;y_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;z_vel, amrex::Array4&lt; amrex::Real &gt; const &amp;r_hse, amrex::Array4&lt; amrex::Real &gt; const &amp;p_hse, amrex::Array4&lt; amrex::Real const &gt; const &amp;z_nd, amrex::Array4&lt; amrex::Real const &gt; const &amp;z_cc, amrex::GeometryData const &amp;geomdata, amrex::Array4&lt; amrex::Real const &gt; const &amp;mf_m, amrex::Array4&lt; amrex::Real const &gt; const &amp;mf_u, amrex::Array4&lt; amrex::Real const &gt; const &amp;mf_v, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;sc)</td></tr>
-<tr class="separator:ad73abe2b3666740ce565ae3de83c7e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a178c89254b2549f69f757cd1d4263763"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prob__common_8H.html#a178c89254b2549f69f757cd1d4263763">init_custom_terrain</a> (const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, const amrex::Real &amp;time)</td></tr>
-<tr class="separator:a178c89254b2549f69f757cd1d4263763"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79856d42a76afa8bdd733a9e26a68b08"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prob__common_8H.html#a79856d42a76afa8bdd733a9e26a68b08">compute_terrain_velocity</a> (const amrex::Real time)</td></tr>
-<tr class="separator:a79856d42a76afa8bdd733a9e26a68b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e694b2ddb200d3d5125cf4158edf5c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prob__common_8H.html#a4e694b2ddb200d3d5125cf4158edf5c5">erf_init_rayleigh</a> (amrex::Vector&lt; amrex::Real &gt; &amp;tau, amrex::Vector&lt; amrex::Real &gt; &amp;ubar, amrex::Vector&lt; amrex::Real &gt; &amp;vbar, amrex::Vector&lt; amrex::Real &gt; &amp;wbar, amrex::Vector&lt; amrex::Real &gt; &amp;thetabar, amrex::Geometry const &amp;geom)</td></tr>
-<tr class="separator:a4e694b2ddb200d3d5125cf4158edf5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177c505462e3d544fae638344f900397"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classProblemBase.html">ProblemBase</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="prob__common_8H.html#a177c505462e3d544fae638344f900397">amrex_probinit</a> (const amrex_real *problo, const amrex_real *probhi)</td></tr>
+<tr class="separator:a177c505462e3d544fae638344f900397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="afef32e2116829d24b864c64caebf5ea6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afef32e2116829d24b864c64caebf5ea6">&#9670;&nbsp;</a></span>amrex_probinit()</h2>
+<a id="a177c505462e3d544fae638344f900397"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a177c505462e3d544fae638344f900397">&#9670;&nbsp;</a></span>amrex_probinit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void amrex_probinit </td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classProblemBase.html">ProblemBase</a>&gt; amrex_probinit </td>
           <td>(</td>
           <td class="paramtype">const amrex_real *&#160;</td>
           <td class="paramname"><em>problo</em>, </td>
@@ -182,389 +227,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function to init the physical bounds of the domain </p>
+<p>Function to init the physical bounds of the domain and instantiate a Problem derived from <a class="el" href="classProblemBase.html">ProblemBase</a> </p>
 
 <p class="reference">Referenced by <a class="el" href="classERF.html#a30129012dd367825e5e4fd1406694f58">ERF::ERF()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="prob__common_8H_afef32e2116829d24b864c64caebf5ea6_icgraph.png" border="0" usemap="#aprob__common_8H_afef32e2116829d24b864c64caebf5ea6_icgraph" alt=""/></div>
-<map name="aprob__common_8H_afef32e2116829d24b864c64caebf5ea6_icgraph" id="aprob__common_8H_afef32e2116829d24b864c64caebf5ea6_icgraph">
+<div class="center"><img src="prob__common_8H_a177c505462e3d544fae638344f900397_icgraph.png" border="0" usemap="#aprob__common_8H_a177c505462e3d544fae638344f900397_icgraph" alt=""/></div>
+<map name="aprob__common_8H_a177c505462e3d544fae638344f900397_icgraph" id="aprob__common_8H_a177c505462e3d544fae638344f900397_icgraph">
 <area shape="rect" title=" " alt="" coords="132,5,253,32"/>
 <area shape="rect" href="classERF.html#a30129012dd367825e5e4fd1406694f58" title=" " alt="" coords="5,5,84,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a79856d42a76afa8bdd733a9e26a68b08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79856d42a76afa8bdd733a9e26a68b08">&#9670;&nbsp;</a></span>compute_terrain_velocity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">amrex::Real compute_terrain_velocity </td>
-          <td>(</td>
-          <td class="paramtype">const amrex::Real&#160;</td>
-          <td class="paramname"><em>time</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classERFPhysBCFunct.html#a6ca43d34a9908abbb1c09cdf0fa70917">ERFPhysBCFunct::impose_vertical_xvel_bcs()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="prob__common_8H_a79856d42a76afa8bdd733a9e26a68b08_icgraph.png" border="0" usemap="#aprob__common_8H_a79856d42a76afa8bdd733a9e26a68b08_icgraph" alt=""/></div>
-<map name="aprob__common_8H_a79856d42a76afa8bdd733a9e26a68b08_icgraph" id="aprob__common_8H_a79856d42a76afa8bdd733a9e26a68b08_icgraph">
-<area shape="rect" title=" " alt="" coords="240,13,428,39"/>
-<area shape="rect" href="classERFPhysBCFunct.html#a6ca43d34a9908abbb1c09cdf0fa70917" title=" " alt="" coords="5,5,192,47"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a76bf021e5c3175a474a039ca9e22411c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76bf021e5c3175a474a039ca9e22411c">&#9670;&nbsp;</a></span>erf_init_dens_hse()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void erf_init_dens_hse </td>
-          <td>(</td>
-          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>rho_hse</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td>
-          <td class="paramname"><em>z_phys_nd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td>
-          <td class="paramname"><em>z_phys_cc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Geometry const &amp;&#160;</td>
-          <td class="paramname"><em>geom</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Function to initialize the hydrostatic reference density</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">rho_hse</td><td>hydrostatic reference density </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">z_phys_nd</td><td>height coordinate at nodes </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">z_phys_cc</td><td>height coordinate at cell centers </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>container for geometric information </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="reference">Referenced by <a class="el" href="classERF.html#a69c8fce3b0f5b28e98240599c2ee16bb">ERF::initHSE()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="prob__common_8H_a76bf021e5c3175a474a039ca9e22411c_icgraph.png" border="0" usemap="#aprob__common_8H_a76bf021e5c3175a474a039ca9e22411c_icgraph" alt=""/></div>
-<map name="aprob__common_8H_a76bf021e5c3175a474a039ca9e22411c_icgraph" id="aprob__common_8H_a76bf021e5c3175a474a039ca9e22411c_icgraph">
-<area shape="rect" title=" " alt="" coords="155,5,291,32"/>
-<area shape="rect" href="classERF.html#a69c8fce3b0f5b28e98240599c2ee16bb" title=" " alt="" coords="5,5,107,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a4e694b2ddb200d3d5125cf4158edf5c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e694b2ddb200d3d5125cf4158edf5c5">&#9670;&nbsp;</a></span>erf_init_rayleigh()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void erf_init_rayleigh </td>
-          <td>(</td>
-          <td class="paramtype">amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>tau</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>ubar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vbar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>wbar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>thetabar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Geometry const &amp;&#160;</td>
-          <td class="paramname"><em>geom</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Function to define the quantities needed to impose Rayleigh damping</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">tau</td><td>strength of Rayleigh damping </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ubar</td><td>reference value for x-velocity used to define Rayleigh damping </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">vbar</td><td>reference value for y-velocity used to define Rayleigh damping </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">wbar</td><td>reference value for z-velocity used to define Rayleigh damping </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">thetabar</td><td>reference value for potential temperature used to define Rayleigh damping </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>container for geometric information </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="reference">Referenced by <a class="el" href="classERF.html#a039a764a1d942c484e8aea49e87bc046">ERF::initRayleigh()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="prob__common_8H_a4e694b2ddb200d3d5125cf4158edf5c5_icgraph.png" border="0" usemap="#aprob__common_8H_a4e694b2ddb200d3d5125cf4158edf5c5_icgraph" alt=""/></div>
-<map name="aprob__common_8H_a4e694b2ddb200d3d5125cf4158edf5c5_icgraph" id="aprob__common_8H_a4e694b2ddb200d3d5125cf4158edf5c5_icgraph">
-<area shape="rect" title=" " alt="" coords="185,5,313,32"/>
-<area shape="rect" href="classERF.html#a039a764a1d942c484e8aea49e87bc046" title="Initialize Rayleigh damping profiles." alt="" coords="5,5,137,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ad73abe2b3666740ce565ae3de83c7e26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad73abe2b3666740ce565ae3de83c7e26">&#9670;&nbsp;</a></span>init_custom_prob()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void init_custom_prob </td>
-          <td>(</td>
-          <td class="paramtype">const amrex::Box &amp;&#160;</td>
-          <td class="paramname"><em>bx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Box &amp;&#160;</td>
-          <td class="paramname"><em>xbx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Box &amp;&#160;</td>
-          <td class="paramname"><em>ybx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Box &amp;&#160;</td>
-          <td class="paramname"><em>zbx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>state</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>x_vel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>y_vel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>z_vel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>r_hse</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>p_hse</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>z_nd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>z_cc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::GeometryData const &amp;&#160;</td>
-          <td class="paramname"><em>geomdata</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>mf_m</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>mf_u</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>mf_v</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
-          <td class="paramname"><em>sc</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Function to perform custom initialization of a test problem</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">bx</td><td>cell-centered box on which to initialize scalars </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">xbx</td><td>box on which to initialize x-component of velocity </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ybx</td><td>box on which to initialize y-component of velocity </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">zbx</td><td>box on which to initialize z-component of velocity </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">state</td><td>cell-centered variables to be filled in this routine </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">x_velocity</td><td>x-component of velocity to be filled in this routine </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y_velocity</td><td>y-component of velocity to be filled in this routine </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">z_velocity</td><td>z-component of velocity to be filled in this routine </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">r_hse</td><td>hydrostatic reference density </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">p_hse</td><td>hydrostatic reference pressure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">z_nd</td><td>height coordinate at nodes </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">z_cc</td><td>height coordinate at cell centers </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">qv</td><td>water vapor </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">qc</td><td>cloud water </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">qi</td><td>cloud ice </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mf_m</td><td>map factor on cell centers </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mf_u</td><td>map factor on x-faces </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mf_v</td><td>map factor on y-faces </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sc</td><td><a class="el" href="structSolverChoice.html">SolverChoice</a> structure that carries parameters </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="reference">Referenced by <a class="el" href="classERF.html#a604939a8058f7efa36a427adb889739c">ERF::init_custom()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="prob__common_8H_ad73abe2b3666740ce565ae3de83c7e26_icgraph.png" border="0" usemap="#aprob__common_8H_ad73abe2b3666740ce565ae3de83c7e26_icgraph" alt=""/></div>
-<map name="aprob__common_8H_ad73abe2b3666740ce565ae3de83c7e26_icgraph" id="aprob__common_8H_ad73abe2b3666740ce565ae3de83c7e26_icgraph">
-<area shape="rect" title=" " alt="" coords="184,5,319,32"/>
-<area shape="rect" href="classERF.html#a604939a8058f7efa36a427adb889739c" title=" " alt="" coords="5,5,136,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a178c89254b2549f69f757cd1d4263763"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a178c89254b2549f69f757cd1d4263763">&#9670;&nbsp;</a></span>init_custom_terrain()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void init_custom_terrain </td>
-          <td>(</td>
-          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
-          <td class="paramname"><em>geom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>z_phys_nd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Function to perform custom initialization of terrain</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>container for geometric information </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">z_phys_nd</td><td>height coordinate at nodes </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>current time </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="reference">Referenced by <a class="el" href="classERF.html#a900a0119c110486650f2759287e22cba">ERF::update_terrain_arrays()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="prob__common_8H_a178c89254b2549f69f757cd1d4263763_icgraph.png" border="0" usemap="#aprob__common_8H_a178c89254b2549f69f757cd1d4263763_icgraph" alt=""/></div>
-<map name="aprob__common_8H_a178c89254b2549f69f757cd1d4263763_icgraph" id="aprob__common_8H_a178c89254b2549f69f757cd1d4263763_icgraph">
-<area shape="rect" title=" " alt="" coords="203,13,351,39"/>
-<area shape="rect" href="classERF.html#a900a0119c110486650f2759287e22cba" title=" " alt="" coords="5,5,155,47"/>
 </map>
 </div>
 

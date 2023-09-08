@@ -37,6 +37,7 @@ var NAVTREE =
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ],
         [ "Enumerator", "namespacemembers_eval.html", null ]
       ] ]
@@ -72,15 +73,15 @@ var NAVTREEINDEX =
 [
 "ABLMost_8H.html",
 "ERF__WriteScalarProfiles_8cpp.html",
-"NumericalDiffusion_8H.html#aac5237931765783ba1e8aba39e37b4e1",
-"classERF.html#a0553967f1131860bb8ecb47c0f192eaa",
-"classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba",
-"classMicrophysics.html#a10739fe34aa748d8a9c151de7adf2647",
-"classRadConstants.html#a1ac73a96f506a7f16b7fd7500e1fa592",
-"classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd",
-"structCENTERED2.html#ac162099524c29536f1d08dcbb7c6c67a",
-"structTimeInterpolatedData.html#a68d1abba77684ee584ba484a185a44e2",
-"structsurface__flux__mod__charnock.html#adb4a96d510f1e437c9efc41ba5fd16f9"
+"NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aa76d4ef5f3f6a672bbfab2865563e530",
+"classERF.html#a01987b2556834788694f2f3741a2afe4",
+"classERFFillPatcher.html#a297b1d2468ed152850c7bb6c156101b3",
+"classMamConstituents.html#af03978750c5679f6f44de935e49b7ef7",
+"classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1",
+"classncutils_1_1NCFile.html#a4ebf9e1dc5ce07255330478f050e9f1f",
+"namespacederived.html#ab144cda2ef3e2bd18cbd0837ce723521",
+"structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606",
+"structncutils_1_1NCVar.html#a8a96107d02633e5a53aef296052716d1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -43,6 +43,8 @@ var annotated_dup =
     [ "Optics", "classOptics.html", "classOptics" ],
     [ "PhysProp", "classPhysProp.html", "classPhysProp" ],
     [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ],
+    [ "ProblemBase", "classProblemBase.html", "classProblemBase" ],
+    [ "ProbParmDefaults", "structProbParmDefaults.html", "structProbParmDefaults" ],
     [ "RadConstants", "classRadConstants.html", "classRadConstants" ],
     [ "Radiation", "classRadiation.html", "classRadiation" ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", "classReadBndryPlanes" ],

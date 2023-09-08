@@ -1,5 +1,16 @@
 var NAVTREEINDEX4 =
 {
+"classERFFillPatcher.html#a297b1d2468ed152850c7bb6c156101b3":[2,0,19,13],
+"classERFFillPatcher.html#a2fc352aecabd75ec92f5d17730683a1c":[2,0,19,16],
+"classERFFillPatcher.html#a35fb56b2946f596728b9ac793eb47c5e":[2,0,19,5],
+"classERFFillPatcher.html#a38ca5bcf84a7fdc49ed7379d3246d61f":[2,0,19,3],
+"classERFFillPatcher.html#a4ccb8bfb83c344544283b7345be023d1":[2,0,19,4],
+"classERFFillPatcher.html#a4f6d0a66b0d899610277b1b19d6cf3a4":[2,0,19,2],
+"classERFFillPatcher.html#a52af76dca01fd13bdb29834d4b9ca5e2":[2,0,19,6],
+"classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9":[2,0,19,11],
+"classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c":[2,0,19,10],
+"classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4":[2,0,19,17],
+"classERFFillPatcher.html#a83a91e2dc7bd7c39a27327024814061c":[2,0,19,19],
 "classERFFillPatcher.html#ab5ab5fa9bd525d2673c433633e0b3fba":[2,0,19,20],
 "classERFFillPatcher.html#ac74f9d32a627627cc5e7b5b07b6167c2":[2,0,19,8],
 "classERFFillPatcher.html#ae89877908970649653ae09c42d3c7b05":[2,0,19,12],
@@ -238,16 +249,5 @@ var NAVTREEINDEX4 =
 "classMamConstituents.html#addfd762f2795d6a14c73456c41f96468":[2,0,25,42],
 "classMamConstituents.html#ae36fb142a7fc82781957f19ddc9affba":[2,0,25,28],
 "classMamConstituents.html#ae37735f4baeb325ef2e5bf2ef70fa755":[2,0,25,55],
-"classMamConstituents.html#ae95ef5d867857c0b8d99090db48980f0":[2,0,25,39],
-"classMamConstituents.html#af03978750c5679f6f44de935e49b7ef7":[2,0,25,35],
-"classMamConstituents.html#af3443a17ef46a08705917692bd92bfae":[2,0,25,24],
-"classMamConstituents.html#af4a85a7b8e8e4a677c8d34970487f14e":[2,0,25,76],
-"classMamConstituents.html#af52fe5bb5bacf2bec56f06314e7b3b22":[2,0,25,27],
-"classMamConstituents.html#afaccee35f50abff68e530682b6acc345":[2,0,25,51],
-"classMamConstituents.html#afede6f99daf233c6194651a422023405":[2,0,25,53],
-"classMamConstituents.html#affd0a23777860d1d249ff5eb5eb2c48b":[2,0,25,17],
-"classMicrophysics.html":[2,0,26],
-"classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e":[2,0,26,33],
-"classMicrophysics.html#a06807df2efe3d139b15066e818b635c1":[2,0,26,4],
-"classMicrophysics.html#a0f76dd7e76c5fa79b8d2352ccc45990e":[2,0,26,18]
+"classMamConstituents.html#ae95ef5d867857c0b8d99090db48980f0":[2,0,25,39]
 };

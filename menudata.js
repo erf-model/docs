@@ -48,6 +48,7 @@ var menudata={children:[
 {text:"y",url:"namespacemembers.html#index_y"},
 {text:"z",url:"namespacemembers.html#index_z"}]},
 {text:"Functions",url:"namespacemembers_func.html"},
+{text:"Variables",url:"namespacemembers_vars.html"},
 {text:"Enumerations",url:"namespacemembers_enum.html"},
 {text:"Enumerator",url:"namespacemembers_eval.html",children:[
 {text:"b",url:"namespacemembers_eval.html#index_b"},
