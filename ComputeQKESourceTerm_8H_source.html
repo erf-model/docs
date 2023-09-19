@@ -136,16 +136,16 @@ $(document).ready(function(){initNavTree('ComputeQKESourceTerm_8H_source.html','
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    dvdz = 0.25*(vvel(i,j,k+1) - vvel(i,j,k-1) + vvel(i,j+1,k+1) - vvel(i,j+1,k-1))*dz_inv;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// Bouyancy</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  source_term += 2*<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta_mean*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>)*dthetadz;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// Production</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  source_term += K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * (dudz*dudz + dvdz*dvdz);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// Production</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  source_term += K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * (dudz*dudz + dvdz*dvdz);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// Bouyancy</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  source_term -= 2*(<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta_mean)*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>)*dthetadz;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// Dissipation</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  amrex::Real qke = cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#ad6174e899597e766afde82f9c11def75">PrimQKE_comp</a>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">if</span> (std::abs(qke) &gt; 0.0) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    source_term += 2.0 * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,1.5) /</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    source_term -= 2.0 * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,1.5) /</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      (pbl_B1_l * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a6a553b28d62930bdda7b473e28464b73">EddyDiff::PBL_lengthscale</a>));</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
