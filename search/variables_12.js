@@ -56,7 +56,7 @@ var searchData=
   ['stop_5ftime_3501',['stop_time',['../classERF.html#a405556a52bef334ab68294c1a540e107',1,'ERF']]],
   ['sum_5finterval_3502',['sum_interval',['../classERF.html#a5232e98479611a24fe97994640c61faa',1,'ERF']]],
   ['sum_5fper_3503',['sum_per',['../classERF.html#a6f9e05e91a9b4a16d615af290966a973',1,'ERF']]],
-  ['surf_5ftemp_3504',['surf_temp',['../structmost__data.html#a8d54f2ffd28a18d5e1584950a0d42ef5',1,'most_data::surf_temp()'],['../classABLMost.html#a73621a1b429f2e910a29adac72b7c581',1,'ABLMost::surf_temp()']]],
+  ['surf_5ftemp_3504',['surf_temp',['../classABLMost.html#a73621a1b429f2e910a29adac72b7c581',1,'ABLMost']]],
   ['surf_5ftemp_5fflux_3505',['surf_temp_flux',['../structmost__data.html#af1d069399319831cf4ae17fba1dda19f',1,'most_data::surf_temp_flux()'],['../classABLMost.html#a98390481d302c2a2c7346bf2328305a8',1,'ABLMost::surf_temp_flux()']]],
   ['sw_5fband_5fmidpoints_3506',['sw_band_midpoints',['../classRadiation.html#a8ed843e3e2bb03d388b0c3ab869b1dba',1,'Radiation']]],
   ['sw_5fhygro_5fasm_3507',['sw_hygro_asm',['../structPhysProp_1_1physprop__t.html#ae7278f6fb1910558af27c7ff79b18fa0',1,'PhysProp::physprop_t']]],
