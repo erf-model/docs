@@ -4,7 +4,7 @@ var classRadiation =
     [ "~Radiation", "classRadiation.html#acde23acb9e9f7061d40634fbc24f330d", null ],
     [ "calculate_heating_rate", "classRadiation.html#a7e49fa25a07cc18c500459a78ce04d3e", null ],
     [ "get_gas_vmr", "classRadiation.html#ae836f9524e59309cc52b621324d2d43b", null ],
-    [ "initialize", "classRadiation.html#ad1ef1593194ec0fffb32e90fef1f89c4", null ],
+    [ "initialize", "classRadiation.html#a2f35754769974e5aa10fd6b5e2583d6e", null ],
     [ "on_complete", "classRadiation.html#a00d9d9b6ca18b854c515cc19ca93116a", null ],
     [ "radiation_driver_lw", "classRadiation.html#abd74012af443c1c75cdf1dba8cc88cd3", null ],
     [ "radiation_driver_sw", "classRadiation.html#a46ba7476ba3c23316b71cd9fd1221410", null ],

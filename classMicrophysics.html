@@ -127,8 +127,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab4ab2a17016feb12618a4c6e6c72febc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a211ded1d3f2a8ef659eb1f73b6a620f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a211ded1d3f2a8ef659eb1f73b6a620f5">MicroPrecipFall</a> ()</td></tr>
 <tr class="separator:a211ded1d3f2a8ef659eb1f73b6a620f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe329b12d67c80d9409cb5467a42fc43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#abe329b12d67c80d9409cb5467a42fc43">Init</a> (const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;qmoist, const amrex::BoxArray &amp;grids_to_evolve, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt_advance)</td></tr>
-<tr class="separator:abe329b12d67c80d9409cb5467a42fc43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0017fb6d5cbc459cf0a75204be949c53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a0017fb6d5cbc459cf0a75204be949c53">Init</a> (const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;qmoist, const amrex::BoxArray &amp;grids, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt_advance)</td></tr>
+<tr class="separator:a0017fb6d5cbc459cf0a75204be949c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f2adbb8506ada118158570fee1ac67a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a5f2adbb8506ada118158570fee1ac67a">Update</a> (amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;qmoist)</td></tr>
 <tr class="separator:a5f2adbb8506ada118158570fee1ac67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a720779b06299fec55c4d4c4d73962a34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a720779b06299fec55c4d4c4d73962a34">Diagnose</a> ()</td></tr>
@@ -797,8 +797,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="abe329b12d67c80d9409cb5467a42fc43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe329b12d67c80d9409cb5467a42fc43">&#9670;&nbsp;</a></span>Init()</h2>
+<a id="a0017fb6d5cbc459cf0a75204be949c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0017fb6d5cbc459cf0a75204be949c53">&#9670;&nbsp;</a></span>Init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -819,7 +819,7 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::BoxArray &amp;&#160;</td>
-          <td class="paramname"><em>grids_to_evolve</em>, </td>
+          <td class="paramname"><em>grids</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -847,7 +847,7 @@ Here is the call graph for this function:</div>
     <tr><td class="paramdir">[in]</td><td class="paramname">qc_in</td><td>Cloud variables input </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">qv_in</td><td>Vapor variables input </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">qi_in</td><td>Ice variables input </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">grids_to_evolve</td><td>The boxes on which we will evolve the solution </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">grids</td><td>The boxes on which we will evolve the solution </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>Geometry associated with these MultiFabs and grids </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dt_advance</td><td>Timestep for the advance </td></tr>
   </table>
@@ -855,7 +855,7 @@ Here is the call graph for this function:</div>
 </dl>
 <div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a> = geom;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="classMicrophysics.html#aa3b3737cc0f32a38d5349dbe84005bf4">m_gtoe</a> = grids_to_evolve;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="classMicrophysics.html#aa3b3737cc0f32a38d5349dbe84005bf4">m_gtoe</a> = grids;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">auto</span> dz   = <a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.CellSize(2);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">auto</span> lowz = <a class="code" href="classMicrophysics.html#a0306bde935c337d7b5ff8a83dca95e3e">m_geom</a>.ProbLo(2);</div>
@@ -1139,8 +1139,8 @@ Here is the call graph for this function:</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMicrophysics_abe329b12d67c80d9409cb5467a42fc43_cgraph.png" border="0" usemap="#aclassMicrophysics_abe329b12d67c80d9409cb5467a42fc43_cgraph" alt=""/></div>
-<map name="aclassMicrophysics_abe329b12d67c80d9409cb5467a42fc43_cgraph" id="aclassMicrophysics_abe329b12d67c80d9409cb5467a42fc43_cgraph">
+<div class="center"><img src="classMicrophysics_a0017fb6d5cbc459cf0a75204be949c53_cgraph.png" border="0" usemap="#aclassMicrophysics_a0017fb6d5cbc459cf0a75204be949c53_cgraph" alt=""/></div>
+<map name="aclassMicrophysics_a0017fb6d5cbc459cf0a75204be949c53_cgraph" id="aclassMicrophysics_a0017fb6d5cbc459cf0a75204be949c53_cgraph">
 <area shape="rect" title=" " alt="" coords="5,249,141,275"/>
 <area shape="rect" href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e" title=" " alt="" coords="192,5,368,47"/>
 <area shape="rect" href="Microphysics__Utils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="241,71,319,98"/>

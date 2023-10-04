@@ -33,6 +33,7 @@ var searchData=
   ['build_5ffine_5fmask_139',['build_fine_mask',['../classERF.html#a419ba9adca32073e70aae4a8fe8cfcee',1,'ERF']]],
   ['buildfabsfromnetcdffile_140',['BuildFABsFromNetCDFFile',['../NCBuildFABs_8cpp.html#a0544faccbbb6c02d74869a3adf4cc858',1,'BuildFABsFromNetCDFFile(const Box &amp;domain, const std::string &amp;fname, Vector&lt; std::string &gt; nc_var_names, Vector&lt; enum NC_Data_Dims_Type &gt; NC_dim_types, Vector&lt; amrex::FArrayBox * &gt; fab_vars):&#160;NCBuildFABs.cpp'],['../NCWpsFile_8H.html#a31dbe14ef81f52ca8d10d239015f1ba1',1,'BuildFABsFromNetCDFFile(const amrex::Box &amp;domain, const std::string &amp;fname, amrex::Vector&lt; std::string &gt; nc_var_names, amrex::Vector&lt; enum NC_Data_Dims_Type &gt; NC_dim_types, amrex::Vector&lt; amrex::FArrayBox * &gt; fab_vars):&#160;NCWpsFile.H']]],
   ['buildfabsfromwrfbdyfile_141',['BuildFABsFromWRFBdyFile',['../NCWpsFile_8H.html#aae7cfa7d43851de007130e9a44b7f1c0',1,'NCWpsFile.H']]],
-  ['bulk_5fprops_5finit_142',['bulk_props_init',['../classPhysProp.html#a784962278d238d5beb54bb6f155c5406',1,'PhysProp']]],
-  ['buoyancy_5ftype_143',['buoyancy_type',['../structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0',1,'SolverChoice']]]
+  ['buildmask_142',['BuildMask',['../classERFFillPatcher.html#ace667632120f87025e805461dd796599',1,'ERFFillPatcher']]],
+  ['bulk_5fprops_5finit_143',['bulk_props_init',['../classPhysProp.html#a784962278d238d5beb54bb6f155c5406',1,'PhysProp']]],
+  ['buoyancy_5ftype_144',['buoyancy_type',['../structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0',1,'SolverChoice']]]
 ];

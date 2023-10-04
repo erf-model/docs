@@ -1,5 +1,10 @@
 var NAVTREEINDEX6 =
 {
+"classPlaneAverage.html#a9ed43e3c2cfd2ef0f3fb23d2097a1b6d":[2,0,36,18],
+"classPlaneAverage.html#aa58d4a708d46cd0d12120e9bf90d5de2":[2,0,36,16],
+"classPlaneAverage.html#aaf4e5c9b73f65af3eb0ccdc6a82e76f2":[2,0,36,14],
+"classPlaneAverage.html#ab1056e661cdb1265047e7a31abef0ebf":[2,0,36,0],
+"classPlaneAverage.html#ab1c325b8a1241cb446bad96fa558e770":[2,0,36,19],
 "classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1":[2,0,36,13],
 "classPlaneAverage.html#abf7bfae5c1b6fed56ff09fd06368b12c":[2,0,36,6],
 "classPlaneAverage.html#ade7352e3a72a2e09561e031acd32cc8a":[2,0,36,20],
@@ -66,6 +71,7 @@ var NAVTREEINDEX6 =
 "classRadiation.html#a20f4c5b60d245576263ba50c105dc610":[2,0,40,28],
 "classRadiation.html#a20fc801b4852279dafb58e95bc728338":[2,0,40,49],
 "classRadiation.html#a2df876dcb21da075dc834af545a2c0ed":[2,0,40,43],
+"classRadiation.html#a2f35754769974e5aa10fd6b5e2583d6e":[2,0,40,4],
 "classRadiation.html#a2f96bdaa65b73119271e1592fac6c569":[2,0,40,47],
 "classRadiation.html#a32121d70e2b9720750b3a72fdc2a6ef9":[2,0,40,48],
 "classRadiation.html#a3308c21539f43b459729b9b02652dd01":[2,0,40,50],
@@ -109,7 +115,6 @@ var NAVTREEINDEX6 =
 "classRadiation.html#acde23acb9e9f7061d40634fbc24f330d":[2,0,40,1],
 "classRadiation.html#ad1177f9f1504cb562fb70b7f454387fc":[2,0,40,18],
 "classRadiation.html#ad1aed51aea035b6dfefcbe571a2d7b34":[2,0,40,46],
-"classRadiation.html#ad1ef1593194ec0fffb32e90fef1f89c4":[2,0,40,4],
 "classRadiation.html#ad3337bd3cd39c217708833edf18dd5c1":[2,0,40,9],
 "classRadiation.html#adbdd39584f1836cc21a816a7ee7098bb":[2,0,40,53],
 "classRadiation.html#add5e5480ecd2c337c1e52e47d62ebaa0":[2,0,40,65],
@@ -244,10 +249,5 @@ var NAVTREEINDEX6 =
 "classWriteBndryPlanes.html#a7cab948881900ffa97145c47221dcb44":[2,0,68,8],
 "classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b":[2,0,68,11],
 "classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1":[2,0,68,10],
-"classWriteBndryPlanes.html#abbc94048dfd43b653b7754d785c11d2f":[2,0,68,4],
-"classes.html":[2,1],
-"classncutils_1_1NCFile.html":[2,0,0,4],
-"classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885":[2,0,0,4,5],
-"classncutils_1_1NCFile.html#a47bdccee2cc22a735ca715d9c88e4f6b":[2,0,0,4,3],
-"classncutils_1_1NCFile.html#a4c1663f24f84dbc74152d7f040910a22":[2,0,0,4,0]
+"classWriteBndryPlanes.html#abbc94048dfd43b653b7754d785c11d2f":[2,0,68,4]
 };

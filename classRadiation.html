@@ -149,8 +149,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa10836a21fdc3bdf8685ad3cda7ab78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acde23acb9e9f7061d40634fbc24f330d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadiation.html#acde23acb9e9f7061d40634fbc24f330d">~Radiation</a> ()=default</td></tr>
 <tr class="separator:acde23acb9e9f7061d40634fbc24f330d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1ef1593194ec0fffb32e90fef1f89c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadiation.html#ad1ef1593194ec0fffb32e90fef1f89c4">initialize</a> (const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;qc_in, const amrex::MultiFab &amp;qv_in, const amrex::MultiFab &amp;qi_in, const amrex::BoxArray &amp;grids_to_evolve, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt_advance, const bool &amp;do_sw_rad, const bool &amp;do_lw_rad, const bool &amp;do_aero_rad, const bool &amp;do_snow_opt, const bool &amp;is_cmip6_volcano)</td></tr>
-<tr class="separator:ad1ef1593194ec0fffb32e90fef1f89c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f35754769974e5aa10fd6b5e2583d6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadiation.html#a2f35754769974e5aa10fd6b5e2583d6e">initialize</a> (const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;qc_in, const amrex::MultiFab &amp;qv_in, const amrex::MultiFab &amp;qi_in, const amrex::BoxArray &amp;grids, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt_advance, const bool &amp;do_sw_rad, const bool &amp;do_lw_rad, const bool &amp;do_aero_rad, const bool &amp;do_snow_opt, const bool &amp;is_cmip6_volcano)</td></tr>
+<tr class="separator:a2f35754769974e5aa10fd6b5e2583d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a748f2155d330eecb6d0ce4fba32db8e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadiation.html#a748f2155d330eecb6d0ce4fba32db8e7">run</a> ()</td></tr>
 <tr class="separator:a748f2155d330eecb6d0ce4fba32db8e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00d9d9b6ca18b854c515cc19ca93116a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadiation.html#a00d9d9b6ca18b854c515cc19ca93116a">on_complete</a> ()</td></tr>
@@ -473,8 +473,8 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ad1ef1593194ec0fffb32e90fef1f89c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1ef1593194ec0fffb32e90fef1f89c4">&#9670;&nbsp;</a></span>initialize()</h2>
+<a id="a2f35754769974e5aa10fd6b5e2583d6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f35754769974e5aa10fd6b5e2583d6e">&#9670;&nbsp;</a></span>initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -507,7 +507,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::BoxArray &amp;&#160;</td>
-          <td class="paramname"><em>grids_to_evolve</em>, </td>
+          <td class="paramname"><em>grids</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -560,7 +560,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                         {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;   <a class="code" href="classRadiation.html#ae5477e7b80b52cebf89ec3b8bdce0f3c">m_geom</a> = geom;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;   <a class="code" href="classRadiation.html#abb74a2159132b66b5aced372fda1b079">m_gtoe</a> = grids_to_evolve;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;   <a class="code" href="classRadiation.html#abb74a2159132b66b5aced372fda1b079">m_gtoe</a> = grids;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   <span class="keyword">auto</span> dz   = <a class="code" href="classRadiation.html#ae5477e7b80b52cebf89ec3b8bdce0f3c">m_geom</a>.CellSize(2);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   <span class="keyword">auto</span> lowz = <a class="code" href="classRadiation.html#ae5477e7b80b52cebf89ec3b8bdce0f3c">m_geom</a>.ProbLo(2);</div>
@@ -659,8 +659,8 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classRadiation_ad1ef1593194ec0fffb32e90fef1f89c4_cgraph.png" border="0" usemap="#aclassRadiation_ad1ef1593194ec0fffb32e90fef1f89c4_cgraph" alt=""/></div>
-<map name="aclassRadiation_ad1ef1593194ec0fffb32e90fef1f89c4_cgraph" id="aclassRadiation_ad1ef1593194ec0fffb32e90fef1f89c4_cgraph">
+<div class="center"><img src="classRadiation_a2f35754769974e5aa10fd6b5e2583d6e_cgraph.png" border="0" usemap="#aclassRadiation_a2f35754769974e5aa10fd6b5e2583d6e_cgraph" alt=""/></div>
+<map name="aclassRadiation_a2f35754769974e5aa10fd6b5e2583d6e_cgraph" id="aclassRadiation_a2f35754769974e5aa10fd6b5e2583d6e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,153,32"/>
 <area shape="rect" href="Modal__aero__wateruptake_8H.html#ab5bb37b4960757506d89345cedf81be6" title=" " alt="" coords="201,5,256,32"/>
 </map>
