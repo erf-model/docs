@@ -306,7 +306,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;          }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;          <span class="comment">// Spatially varying MOST</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;          amrex::Real surface_heat_flux = u_star_arr(i,j,0) * t_star_arr(i,j,0);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;          amrex::Real surface_heat_flux = -u_star_arr(i,j,0) * t_star_arr(i,j,0);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;          amrex::Real theta0            = tm_arr(i,j,0); <span class="comment">// TODO: IS THIS ACTUALLY RHOTHETA</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;          amrex::Real l_obukhov;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;          <span class="keywordflow">if</span> (std::abs(surface_heat_flux) &gt; eps) {</div>
