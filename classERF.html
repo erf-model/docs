@@ -2523,7 +2523,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        h_avg_pu[k]  /= area_z;  h_avg_pv[k]   /= area_z;  h_avg_pw[k]  /= area_z;</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    }</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
-<div class="ttc" id="aEOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> EOS.H:43</div></div>
+<div class="ttc" id="aEOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> EOS.H:49</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:15</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:14</div></div>
@@ -2874,7 +2874,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    dens.FillBoundary(geom[lev].periodicity());</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <a class="code" href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a147204d9af51dec01fb0d95c5cde8d37">pres</a>.FillBoundary(geom[lev].periodicity());</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;}</div>
-<div class="ttc" id="aEOS_8H_html_ab415ab4061cbbea05723267a0bf82c6b"><div class="ttname"><a href="EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenP(const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> EOS.H:92</div></div>
+<div class="ttc" id="aEOS_8H_html_ab415ab4061cbbea05723267a0bf82c6b"><div class="ttname"><a href="EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenP(const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> EOS.H:102</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a994fea25f28c33c2e8f1e9c63d5b8b56"><div class="ttname"><a href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a></div><div class="ttdeci">constexpr amrex::Real p_0</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:17</div></div>
 <div class="ttc" id="anamespaceMicVar_html_acd493faf19b45ab11b9a01e722762798a147204d9af51dec01fb0d95c5cde8d37"><div class="ttname"><a href="namespaceMicVar.html#acd493faf19b45ab11b9a01e722762798a147204d9af51dec01fb0d95c5cde8d37">MicVar::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> Microphysics.H:34</div></div>
 <div class="ttc" id="astructSolverChoice_html_a2e1ef762ee1dc1bd3d4cbd08125c758a"><div class="ttname"><a href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">SolverChoice::rdOcp</a></div><div class="ttdeci">amrex::Real rdOcp</div><div class="ttdef"><b>Definition:</b> DataStruct.H:267</div></div>
@@ -4820,18 +4820,18 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        amrex::ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            cons_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)      = r_hse_arr(i,j,k);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            cons_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = <a class="code" href="EOS_8H.html#aa7b634796f77c8e2c23e3e6a84596c50">getRhoThetagivenP</a>(p_hse_arr(i,j,k));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            cons_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = <a class="code" href="EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(p_hse_arr(i,j,k));</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        });</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    } <span class="comment">//mfi</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="ttc" id="aEOS_8H_html_aa7b634796f77c8e2c23e3e6a84596c50"><div class="ttname"><a href="EOS_8H.html#aa7b634796f77c8e2c23e3e6a84596c50">getRhoThetagivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getRhoThetagivenP(const amrex::Real p)</div><div class="ttdef"><b>Definition:</b> EOS.H:117</div></div>
+<div class="ttc" id="aEOS_8H_html_a3cc0ee7727b26e21a97acfc2ad2e6d4d"><div class="ttname"><a href="EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getRhoThetagivenP(const amrex::Real p, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> EOS.H:129</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERF_a857a8f76768ec4451b995cbf4f4ac176_cgraph.png" border="0" usemap="#aclassERF_a857a8f76768ec4451b995cbf4f4ac176_cgraph" alt=""/></div>
 <map name="aclassERF_a857a8f76768ec4451b995cbf4f4ac176_cgraph" id="aclassERF_a857a8f76768ec4451b995cbf4f4ac176_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,148,57"/>
-<area shape="rect" href="EOS_8H.html#aa7b634796f77c8e2c23e3e6a84596c50" title=" " alt="" coords="196,5,345,32"/>
+<area shape="rect" href="EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="196,5,345,32"/>
 <area shape="rect" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="234,56,307,83"/>
 </map>
 </div>
@@ -4936,7 +4936,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="453,78,569,105"/>
 <area shape="rect" href="structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240" title=" " alt="" coords="421,27,601,54"/>
 <area shape="rect" href="EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b" title=" " alt="" coords="449,129,573,155"/>
-<area shape="rect" href="EOS_8H.html#a5814a0d91145557a636e261ef49fe6f0" title=" " alt="" coords="441,179,581,206"/>
+<area shape="rect" href="EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a" title=" " alt="" coords="441,179,581,206"/>
 <area shape="rect" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="456,230,567,257"/>
 </map>
 </div>
@@ -10771,7 +10771,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="namespacederived.html#ab3c82aef26b750dfedc3d29ca9fae7e3" title=" " alt="" coords="213,664,371,691"/>
 <area shape="rect" href="namespacederived.html#ab8895d9d9775ea0b8f643483a5a4127e" title=" " alt="" coords="213,461,371,488"/>
 <area shape="rect" href="namespacederived.html#a9935603239fe8510b11179da8e76c39c" title=" " alt="" coords="441,385,628,412"/>
-<area shape="rect" href="EOS_8H.html#a652d566aef658cc423ced929a816f869" title=" " alt="" coords="463,664,607,691"/>
+<area shape="rect" href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="463,664,607,691"/>
 </map>
 </div>
 

@@ -972,7 +972,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;       qt_array(i,j,k)    = states_array(i,j,k,RhoQt_comp)/states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;       qp_array(i,j,k)    = states_array(i,j,k,RhoQp_comp)/states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;       qn_array(i,j,k)    = qc_array(i,j,k) + qi_array(i,j,k);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;       temp_array(i,j,k)  = <a class="code" href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a>(states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;       temp_array(i,j,k)  = <a class="code" href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;       pres_array(i,j,k)  = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>))/100.;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;     });</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  }</div>
@@ -1003,7 +1003,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    Real pressure = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(rhotheta_dptr[k]);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    rho1d_t(k)  = rho_dptr[k];</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    pres1d_t(k) = pressure/100.;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    tabs1d_t(k) = <a class="code" href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a>(rho_dptr[k],rhotheta_dptr[k]);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    tabs1d_t(k) = <a class="code" href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(rho_dptr[k],rhotheta_dptr[k]);</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    zmid_t(k)   = lowz + (k+0.5)*dz;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    gamaz_t(k)  = gOcp*zmid_t(k);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  });</div>
@@ -1084,8 +1084,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  });</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;}</div>
 <div class="ttc" id="aDirectionSelector_8H_html_aca321ed7fddfe43ff7549b4632a3c0d1"><div class="ttname"><a href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a></div><div class="ttdeci">DirectionSelector&lt; 2 &gt; ZDir</div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:38</div></div>
-<div class="ttc" id="aEOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> EOS.H:43</div></div>
-<div class="ttc" id="aEOS_8H_html_a652d566aef658cc423ced929a816f869"><div class="ttname"><a href="EOS_8H.html#a652d566aef658cc423ced929a816f869">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta)</div><div class="ttdef"><b>Definition:</b> EOS.H:16</div></div>
+<div class="ttc" id="aEOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> EOS.H:49</div></div>
+<div class="ttc" id="aEOS_8H_html_a65cf1718b7a1fcc56cb16685642543da"><div class="ttname"><a href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> EOS.H:16</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a00c6555efa1735f66b36929196ff6b98"><div class="ttname"><a href="ERF__Constants_8H.html#a00c6555efa1735f66b36929196ff6b98">rhog</a></div><div class="ttdeci">constexpr amrex::Real rhog</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:29</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a0e5683feac33352111ce4445dbedbf45"><div class="ttname"><a href="ERF__Constants_8H.html#a0e5683feac33352111ce4445dbedbf45">muelq</a></div><div class="ttdeci">constexpr amrex::Real muelq</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:73</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a1d5b108314147320a74eaccbfa0d09b0"><div class="ttname"><a href="ERF__Constants_8H.html#a1d5b108314147320a74eaccbfa0d09b0">nzerog</a></div><div class="ttdeci">constexpr amrex::Real nzerog</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:58</div></div>
@@ -1148,7 +1148,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="Microphysics__Utils_8H.html#abd125e107924437493cbcbac9a97c017" title=" " alt="" coords="225,173,335,199"/>
 <area shape="rect" href="classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5" title=" " alt="" coords="207,223,353,250"/>
 <area shape="rect" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="225,274,335,301"/>
-<area shape="rect" href="EOS_8H.html#a652d566aef658cc423ced929a816f869" title=" " alt="" coords="208,325,352,351"/>
+<area shape="rect" href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="208,325,352,351"/>
 <area shape="rect" href="classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949" title=" " alt="" coords="209,376,351,417"/>
 <area shape="rect" href="classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1" title=" " alt="" coords="189,442,371,469"/>
 <area shape="rect" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="243,493,317,519"/>

@@ -819,8 +819,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                             Real R2 =  bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2],n_for_density);</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                             Real T1 =  bndry_read_arr(i, j, k, 0);</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                             Real T2 =  bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2],0);</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                             Real Th1 = <a class="code" href="EOS_8H.html#a9d15b1e5843447301cf9e34924992e67">getThgivenRandT</a>(R1,T1,rdOcp);</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                             Real Th2 = <a class="code" href="EOS_8H.html#a9d15b1e5843447301cf9e34924992e67">getThgivenRandT</a>(R2,T2,rdOcp);</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                             Real Th1 = <a class="code" href="EOS_8H.html#ad0e28e4df049e6e34fa4a973dd446506">getThgivenRandT</a>(R1,T1,rdOcp);</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                             Real Th2 = <a class="code" href="EOS_8H.html#ad0e28e4df049e6e34fa4a973dd446506">getThgivenRandT</a>(R2,T2,rdOcp);</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                             bndry_mf_arr(i, j, k, 0) = 0.5 * (R1*Th1 + R2*Th2);</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                        });</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;scalar&quot;</span> || var_name == <span class="stringliteral">&quot;qt&quot;</span> || var_name == <span class="stringliteral">&quot;qp&quot;</span> ||</div>
@@ -849,8 +849,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                             Real R2  = l_bc_extdir_vals_d[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa559799ff291d4e692283c4056bac8db1">BCVars::Rho_bc_comp</a>][ori];</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                             Real T1  = bndry_read_arr(i, j, k, 0);</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                             Real T2  = bndry_read_arr(i+v_offset[0],j+v_offset[1],k+v_offset[2], 0);</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                             Real Th1 = <a class="code" href="EOS_8H.html#a9d15b1e5843447301cf9e34924992e67">getThgivenRandT</a>(R1,T1,rdOcp);</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                             Real Th2 = <a class="code" href="EOS_8H.html#a9d15b1e5843447301cf9e34924992e67">getThgivenRandT</a>(R2,T2,rdOcp);</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                             Real Th1 = <a class="code" href="EOS_8H.html#ad0e28e4df049e6e34fa4a973dd446506">getThgivenRandT</a>(R1,T1,rdOcp);</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                             Real Th2 = <a class="code" href="EOS_8H.html#ad0e28e4df049e6e34fa4a973dd446506">getThgivenRandT</a>(R2,T2,rdOcp);</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                             bndry_mf_arr(i, j, k, 0) = 0.5 * (R1*Th1 + R2*Th2);</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;                        });</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;scalar&quot;</span> || var_name == <span class="stringliteral">&quot;qt&quot;</span> || var_name == <span class="stringliteral">&quot;qp&quot;</span> ||</div>
@@ -882,7 +882,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        } <span class="comment">// ori</span></div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    } <span class="comment">// var_name</span></div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;}</div>
-<div class="ttc" id="aEOS_8H_html_a9d15b1e5843447301cf9e34924992e67"><div class="ttname"><a href="EOS_8H.html#a9d15b1e5843447301cf9e34924992e67">getThgivenRandT</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getThgivenRandT(const amrex::Real rho, const amrex::Real T, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> EOS.H:30</div></div>
+<div class="ttc" id="aEOS_8H_html_ad0e28e4df049e6e34fa4a973dd446506"><div class="ttname"><a href="EOS_8H.html#ad0e28e4df049e6e34fa4a973dd446506">getThgivenRandT</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getThgivenRandT(const amrex::Real rho, const amrex::Real T, const amrex::Real rdOcp, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> EOS.H:34</div></div>
 <div class="ttc" id="aERF__ReadBndryPlanes_8cpp_html_a63d3125f6fd361f61d697799f46da817"><div class="ttname"><a href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a></div><div class="ttdeci">AMREX_FORCE_INLINE IntVect offset(const int face_dir, const int normal)</div><div class="ttdef"><b>Definition:</b> ERF_ReadBndryPlanes.cpp:27</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ad5195ac8f863f5a9a7eaa0db094f7639"><div class="ttname"><a href="IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639">NVAR</a></div><div class="ttdeci">#define NVAR</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:26</div></div>
 <div class="ttc" id="aclassReadBndryPlanes_html_a7bfda76cde9aa1b8290577c40a612795"><div class="ttname"><a href="classReadBndryPlanes.html#a7bfda76cde9aa1b8290577c40a612795">ReadBndryPlanes::m_in_timesteps</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_in_timesteps</div><div class="ttdef"><b>Definition:</b> ERF_ReadBndryPlanes.H:86</div></div>
@@ -904,7 +904,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classReadBndryPlanes_a9fbea63778864c5231dbcdd3100e27ac_cgraph.png" border="0" usemap="#aclassReadBndryPlanes_a9fbea63778864c5231dbcdd3100e27ac_cgraph" alt=""/></div>
 <map name="aclassReadBndryPlanes_a9fbea63778864c5231dbcdd3100e27ac_cgraph" id="aclassReadBndryPlanes_a9fbea63778864c5231dbcdd3100e27ac_cgraph">
 <area shape="rect" title=" " alt="" coords="5,64,205,91"/>
-<area shape="rect" href="EOS_8H.html#a9d15b1e5843447301cf9e34924992e67" title=" " alt="" coords="285,5,421,32"/>
+<area shape="rect" href="EOS_8H.html#ad0e28e4df049e6e34fa4a973dd446506" title=" " alt="" coords="285,5,421,32"/>
 <area shape="rect" href="classReadBndryPlanes.html#ab54133701e8e086315fa7299257199a2" title=" " alt="" coords="253,57,453,98"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="324,123,383,149"/>
 </map>
@@ -1034,7 +1034,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,31,179,73"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#adc5227730afe35653b2dfa88898eb00a" title=" " alt="" coords="271,13,382,40"/>
 <area shape="rect" href="classReadBndryPlanes.html#a9fbea63778864c5231dbcdd3100e27ac" title=" " alt="" coords="227,64,427,91"/>
-<area shape="rect" href="EOS_8H.html#a9d15b1e5843447301cf9e34924992e67" title=" " alt="" coords="507,5,643,32"/>
+<area shape="rect" href="EOS_8H.html#ad0e28e4df049e6e34fa4a973dd446506" title=" " alt="" coords="507,5,643,32"/>
 <area shape="rect" href="classReadBndryPlanes.html#ab54133701e8e086315fa7299257199a2" title=" " alt="" coords="475,57,675,98"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="545,123,604,149"/>
 </map>
