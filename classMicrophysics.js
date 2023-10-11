@@ -41,8 +41,6 @@ var classMicrophysics =
     [ "pres1d", "classMicrophysics.html#aea50599e20153e7a51a5caab6202f3c0", null ],
     [ "qifall", "classMicrophysics.html#ab246f2a9f48d82f66379b39aa5ac6610", null ],
     [ "qn1d", "classMicrophysics.html#a926edbada566078ab7a62669bf3d2705", null ],
-    [ "qpevp", "classMicrophysics.html#ae374bafd536eb545c93af4ff18af5298", null ],
-    [ "qpsrc", "classMicrophysics.html#affade9e3df2d30e7e488c794c12233ff", null ],
     [ "qt1d", "classMicrophysics.html#a9311e5aedd13f6122327febf29bbdb0e", null ],
     [ "qv1d", "classMicrophysics.html#a5b9822f192f272e32bf77256c688d6d5", null ],
     [ "rho1d", "classMicrophysics.html#a4df076215ffdf560adb4f51175de54de", null ],
