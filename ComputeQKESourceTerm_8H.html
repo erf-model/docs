@@ -103,12 +103,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8d452306d936dd40b74b4e9daa7d8d26"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ComputeQKESourceTerm_8H.html#a8d452306d936dd40b74b4e9daa7d8d26">ComputeQKESourceTerms</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;K_turb, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Box &amp;domain, amrex::Real pbl_B1_l, const amrex::Real theta_mean)</td></tr>
-<tr class="separator:a8d452306d936dd40b74b4e9daa7d8d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae421b43e8a7114525cdcd0765c21e0c3"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ComputeQKESourceTerm_8H.html#ae421b43e8a7114525cdcd0765c21e0c3">ComputeQKESourceTerms</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;K_turb, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Box &amp;domain, amrex::Real pbl_B1_l, const amrex::Real theta_mean, bool c_ext_dir_on_zlo, bool c_ext_dir_on_zhi, bool u_ext_dir_on_zlo, bool u_ext_dir_on_zhi, bool v_ext_dir_on_zlo, bool v_ext_dir_on_zhi)</td></tr>
+<tr class="separator:ae421b43e8a7114525cdcd0765c21e0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a8d452306d936dd40b74b4e9daa7d8d26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d452306d936dd40b74b4e9daa7d8d26">&#9670;&nbsp;</a></span>ComputeQKESourceTerms()</h2>
+<a id="ae421b43e8a7114525cdcd0765c21e0c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae421b43e8a7114525cdcd0765c21e0c3">&#9670;&nbsp;</a></span>ComputeQKESourceTerms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,7 +183,43 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Real&#160;</td>
-          <td class="paramname"><em>theta_mean</em>&#160;</td>
+          <td class="paramname"><em>theta_mean</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>c_ext_dir_on_zlo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>c_ext_dir_on_zhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>u_ext_dir_on_zlo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>u_ext_dir_on_zhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>v_ext_dir_on_zlo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>v_ext_dir_on_zhi</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -207,45 +243,64 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// Compute some relevant derivatives</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  amrex::Real dz_inv = cellSizeInv[2];</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">int</span> izmin = domain.smallEnd(2);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">int</span> izmax = domain.bigEnd(2);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  amrex::Real dthetadz, dudz, dvdz;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  amrex::Real source_term = 0.0;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">if</span> (k == izmax) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    dthetadz = (cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - cell_prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>))*dz_inv;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    dudz = 0.5*(uvel(i,j,k) - uvel(i,j,k-1) + uvel(i+1,j,k) - uvel(i+1,j,k-1))*dz_inv;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    dvdz = 0.5*(vvel(i,j,k) - vvel(i,j,k-1) + vvel(i,j+1,k) - vvel(i,j+1,k-1))*dz_inv;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == izmin){</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    dthetadz = (cell_prim(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>))*dz_inv;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    dudz = 0.5*(uvel(i,j,k+1) - uvel(i,j,k) + uvel(i+1,j,k+1) - uvel(i+1,j,k))*dz_inv;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    dvdz = 0.5*(vvel(i,j,k+1) - vvel(i,j,k) + vvel(i,j+1,k+1) - vvel(i,j+1,k))*dz_inv;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    dthetadz = 0.5*(cell_prim(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - cell_prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>))*dz_inv;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    dudz = 0.25*(uvel(i,j,k+1) - uvel(i,j,k-1) + uvel(i+1,j,k+1) - uvel(i+1,j,k-1))*dz_inv;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    dvdz = 0.25*(vvel(i,j,k+1) - vvel(i,j,k-1) + vvel(i,j+1,k+1) - vvel(i,j+1,k-1))*dz_inv;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// Production</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  source_term += K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * (dudz*dudz + dvdz*dvdz);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// Bouyancy</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  source_term -= 2*(<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta_mean)*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>)*dthetadz;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// Dissipation</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  amrex::Real qke = cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#ad6174e899597e766afde82f9c11def75">PrimQKE_comp</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">if</span> (std::abs(qke) &gt; 0.0) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    source_term -= 2.0 * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,1.5) /</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      (pbl_B1_l * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a6a553b28d62930bdda7b473e28464b73">EddyDiff::PBL_lengthscale</a>));</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">return</span> source_term;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">// Compute some relevant derivatives</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  amrex::Real dz_inv = cellSizeInv[2];</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">int</span> izmin = domain.smallEnd(2);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">int</span> izmax = domain.bigEnd(2);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  amrex::Real dthetadz, dudz, dvdz;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  amrex::Real source_term = 0.0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">if</span> ( k==izmax &amp;&amp; c_ext_dir_on_zhi ) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      dthetadz = (1.0/3.0)*(-cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                     - 3.0 * cell_data(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                     + 4.0 * cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) )*dz_inv;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; c_ext_dir_on_zlo ) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      dthetadz = (1.0/3.0)*( cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                     + 3.0 * cell_data(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                     - 4.0 * cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) )*dz_inv;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      dthetadz = 0.5*( cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                     - cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) )*dz_inv;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">if</span> ( k==izmax &amp;&amp; u_ext_dir_on_zhi ) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      dudz = (1.0/6.0)*( (-uvel(i  ,j,k-1) - 3.0 * uvel(i  ,j,k  ) + 4.0 * uvel(i  ,j,k+1))</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                       + (-uvel(i+1,j,k-1) - 3.0 * uvel(i+1,j,k  ) + 4.0 * uvel(i+1,j,k+1)) )*dz_inv;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; u_ext_dir_on_zlo ) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      dudz = (1.0/6.0)*( (uvel(i  ,j,k+1) + 3.0 * uvel(i  ,j,k  ) - 4.0 * uvel(i  ,j,k-1))</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                       + (uvel(i+1,j,k+1) + 3.0 * uvel(i+1,j,k  ) - 4.0 * uvel(i+1,j,k-1)) )*dz_inv;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      dudz = 0.25*( uvel(i,j,k+1) - uvel(i,j,k-1) + uvel(i+1,j,k+1) - uvel(i+1,j,k-1) )*dz_inv;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">if</span> ( k==izmax &amp;&amp; v_ext_dir_on_zhi ) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      dvdz = (1.0/6.0)*( (-vvel(i,j  ,k-1) - 3.0 * vvel(i,j  ,k  ) + 4.0 * vvel(i,j  ,k+1))</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                       + (-vvel(i,j+1,k-1) - 3.0 * vvel(i,j+1,k  ) + 4.0 * vvel(i,j+1,k+1)) )*dz_inv;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; v_ext_dir_on_zlo ) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      dvdz = (1.0/6.0)*( (vvel(i,j  ,k+1) + 3.0 * vvel(i,j  ,k  ) - 4.0 * vvel(i,j  ,k-1))</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                       + (vvel(i,j+1,k+1) + 3.0 * vvel(i,j+1,k  ) - 4.0 * vvel(i,j+1,k-1)) )*dz_inv;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      dvdz = 0.25*( vvel(i,j,k+1) - vvel(i,j,k-1) + vvel(i,j+1,k+1) - vvel(i,j+1,k-1) )*dz_inv;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// Production (We store mu_turb, which is 0.5*K_turb)</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  source_term += 4.0*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * (dudz*dudz + dvdz*dvdz);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="comment">// Bouyancy</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  source_term -= 2.0*(<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta_mean)*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>)*dthetadz;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="comment">// Dissipation</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  amrex::Real qke = cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#ad6174e899597e766afde82f9c11def75">PrimQKE_comp</a>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">if</span> (std::abs(qke) &gt; 0.0) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    source_term -= 2.0 * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,1.5) /</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      (pbl_B1_l * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a6a553b28d62930bdda7b473e28464b73">EddyDiff::PBL_lengthscale</a>));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordflow">return</span> source_term;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:20</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:30</div></div>
+<div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ad6174e899597e766afde82f9c11def75"><div class="ttname"><a href="IndexDefines_8H.html#ad6174e899597e766afde82f9c11def75">PrimQKE_comp</a></div><div class="ttdeci">#define PrimQKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:32</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977a0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:143</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#a8e591238ddc3313566df853a4372e977a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:142</div></div>
@@ -255,8 +310,8 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ComputeQKESourceTerm_8H_a8d452306d936dd40b74b4e9daa7d8d26_icgraph.png" border="0" usemap="#aComputeQKESourceTerm_8H_a8d452306d936dd40b74b4e9daa7d8d26_icgraph" alt=""/></div>
-<map name="aComputeQKESourceTerm_8H_a8d452306d936dd40b74b4e9daa7d8d26_icgraph" id="aComputeQKESourceTerm_8H_a8d452306d936dd40b74b4e9daa7d8d26_icgraph">
+<div class="center"><img src="ComputeQKESourceTerm_8H_ae421b43e8a7114525cdcd0765c21e0c3_icgraph.png" border="0" usemap="#aComputeQKESourceTerm_8H_ae421b43e8a7114525cdcd0765c21e0c3_icgraph" alt=""/></div>
+<map name="aComputeQKESourceTerm_8H_ae421b43e8a7114525cdcd0765c21e0c3_icgraph" id="aComputeQKESourceTerm_8H_ae421b43e8a7114525cdcd0765c21e0c3_icgraph">
 <area shape="rect" title=" " alt="" coords="224,31,415,57"/>
 <area shape="rect" href="DiffusionSrcForState__N_8cpp.html#a971fbfd1eef383d0ef9fa0be5991e6fd" title=" " alt="" coords="5,5,176,32"/>
 <area shape="rect" href="DiffusionSrcForState__T_8cpp.html#ae116cc24d6f6e286d9bdf49345060b5d" title=" " alt="" coords="6,56,175,83"/>
