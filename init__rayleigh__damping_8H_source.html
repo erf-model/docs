@@ -91,12 +91,12 @@ $(document).ready(function(){initNavTree('init__rayleigh__damping_8H_source.html
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * on Durran and Klemp 1983</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="init__rayleigh__damping_8H.html#ab2f51ed8cf39d10883b43dbf966a71e1">    6</a></span>&#160;<a class="code" href="init__rayleigh__damping_8H.html#ab2f51ed8cf39d10883b43dbf966a71e1">erf_init_rayleigh</a>(amrex::Vector&lt;amrex::Real&gt;&amp; tau,</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                  amrex::Vector&lt;amrex::Real&gt;&amp; ubar,</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                  amrex::Vector&lt;amrex::Real&gt;&amp; vbar,</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                  amrex::Vector&lt;amrex::Real&gt;&amp; wbar,</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                  amrex::Vector&lt;amrex::Real&gt;&amp; thetabar,</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                  amrex::Geometry      <span class="keyword">const</span>&amp; geom)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="init__rayleigh__damping_8H.html#ab2f51ed8cf39d10883b43dbf966a71e1">    6</a></span>&#160;<a class="code" href="init__rayleigh__damping_8H.html#ab2f51ed8cf39d10883b43dbf966a71e1">erf_init_rayleigh</a> (amrex::Vector&lt;amrex::Real&gt;&amp; tau,</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                   amrex::Vector&lt;amrex::Real&gt;&amp; ubar,</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                   amrex::Vector&lt;amrex::Real&gt;&amp; vbar,</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                   amrex::Vector&lt;amrex::Real&gt;&amp; wbar,</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                   amrex::Vector&lt;amrex::Real&gt;&amp; thetabar,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                   amrex::Geometry      <span class="keyword">const</span>&amp; geom)<span class="keyword"> override</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> ztop = geom.ProbHi()[2];</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Rayleigh damping (coef=&quot;</span>&lt;&lt;parms.dampcoef&lt;&lt;<span class="stringliteral">&quot;) between &quot;</span></div>

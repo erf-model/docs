@@ -87,10 +87,10 @@ $(document).ready(function(){initNavTree('init__constant__density__hse_8H_source
 </div><!--header-->
 <div class="contents">
 <a href="init__constant__density__hse_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="init__constant__density__hse_8H.html#aa310c5ff8cdad11f3adfeeff0f5ad046">    2</a></span>&#160;<a class="code" href="init__constant__density__hse_8H.html#aa310c5ff8cdad11f3adfeeff0f5ad046">erf_init_dens_hse</a>(amrex::MultiFab&amp; rho_hse,</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                  std::unique_ptr&lt;amrex::MultiFab&gt;&amp;,</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                  std::unique_ptr&lt;amrex::MultiFab&gt;&amp;,</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                  amrex::Geometry <span class="keyword">const</span>&amp;)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="init__constant__density__hse_8H.html#aa310c5ff8cdad11f3adfeeff0f5ad046">    2</a></span>&#160;<a class="code" href="init__constant__density__hse_8H.html#aa310c5ff8cdad11f3adfeeff0f5ad046">erf_init_dens_hse</a> (amrex::MultiFab&amp; rho_hse,</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                   std::unique_ptr&lt;amrex::MultiFab&gt;&amp;,</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                   std::unique_ptr&lt;amrex::MultiFab&gt;&amp;,</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                   amrex::Geometry <span class="keyword">const</span>&amp;)<span class="keyword"> override</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    amrex::Real rho_0 = parms.rho_0;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">for</span> ( amrex::MFIter mfi(rho_hse, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>

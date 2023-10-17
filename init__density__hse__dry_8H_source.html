@@ -96,81 +96,80 @@ $(document).ready(function(){initNavTree('init__density__hse__dry_8H_source.html
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * this point.</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="init__density__hse__dry_8H.html#a2e1d042f9d82e4b78d00e99ab25e9311">   11</a></span>&#160;<a class="code" href="init__density__hse__dry_8H.html#a2e1d042f9d82e4b78d00e99ab25e9311">erf_init_dens_hse</a>(</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    amrex::MultiFab&amp; rho_hse,</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_cc,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    amrex::Geometry <span class="keyword">const</span>&amp; geom)<span class="keyword"> override</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">const</span> amrex::Real prob_lo_z = geom.ProbLo()[2];</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">const</span> amrex::Real dz        = geom.CellSize()[2];</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> khi               = geom.Domain().bigEnd()[2];</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> amrex::Real T_sfc    = 300.;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> amrex::Real rho_sfc  = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> / (<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*T_sfc);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">const</span> amrex::Real Thetabar = T_sfc;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// use_terrain = 1</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (z_phys_nd) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (khi &gt; 255) amrex::Abort(<span class="stringliteral">&quot;1D Arrays are hard-wired to only 256 high&quot;</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">for</span> ( amrex::MFIter mfi(rho_hse, <a class="code" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi )</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            amrex::Array4&lt;amrex::Real      &gt; rho_arr  = rho_hse.array(mfi);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            amrex::Array4&lt;amrex::Real const&gt; z_cc_arr = z_phys_cc-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="comment">// Create a flat box with same horizontal extent but only one cell in vertical</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">const</span> amrex::Box&amp; tbz = mfi.nodaltilebox(2);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            amrex::Box b2d = tbz; <span class="comment">// Copy constructor</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            b2d.grow(0,1); b2d.grow(1,1); <span class="comment">// Grow by one in the lateral directions</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            b2d.setRange(2,0);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            amrex::ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;              amrex::Array1D&lt;amrex::Real,0,255&gt; <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a>;;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;              amrex::Array1D&lt;amrex::Real,0,255&gt; p;;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;              <a class="code" href="namespaceHSEutils.html#ad3c1cfede2e4d495c9fe91a23e33002d">HSEutils::init_isentropic_hse_terrain</a>(i,j,rho_sfc,Thetabar,&amp;(<a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a>(0)),&amp;(p(0)),z_cc_arr,khi);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt;= khi; k++) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                 rho_arr(i,j,k) = <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a>(k);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;              }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;              rho_arr(i,j,   -1) = rho_arr(i,j,0);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;              rho_arr(i,j,khi+1) = rho_arr(i,j,khi);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            });</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    } <span class="keywordflow">else</span> { <span class="comment">// use_terrain = 0</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// These are at cell centers (unstaggered)</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        amrex::Vector&lt;amrex::Real&gt; h_r(khi+2);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        amrex::Vector&lt;amrex::Real&gt; h_p(khi+2);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        amrex::Gpu::DeviceVector&lt;amrex::Real&gt; d_r(khi+2);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        amrex::Gpu::DeviceVector&lt;amrex::Real&gt; d_p(khi+2);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="namespaceHSEutils.html#a531678cdabf38cca3d47317e33a82fa5">HSEutils::init_isentropic_hse</a>(rho_sfc,Thetabar,h_r.data(),h_p.data(),dz,prob_lo_z,khi);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        amrex::Gpu::copyAsync(amrex::Gpu::hostToDevice, h_r.begin(), h_r.end(), d_r.begin());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        amrex::Gpu::copyAsync(amrex::Gpu::hostToDevice, h_p.begin(), h_p.end(), d_p.begin());</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        amrex::Real* <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a> = d_r.data();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;          <span class="keywordflow">for</span> ( amrex::MFIter mfi(rho_hse, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;          {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;              <span class="keyword">const</span> amrex::Box&amp; bx = mfi.growntilebox(1);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;              <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt; rho_hse_arr = rho_hse[mfi].array();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;              amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;              {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                  <span class="keywordtype">int</span> kk = std::max(k,0);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                  rho_hse_arr(i,j,k) = <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a>[kk];</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;              });</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;          } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    } <span class="comment">// no terrain</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="init__density__hse__dry_8H.html#a2e1d042f9d82e4b78d00e99ab25e9311">   11</a></span>&#160;<a class="code" href="init__density__hse__dry_8H.html#a2e1d042f9d82e4b78d00e99ab25e9311">erf_init_dens_hse</a> (amrex::MultiFab&amp; rho_hse,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                   std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                   std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_cc,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                   amrex::Geometry <span class="keyword">const</span>&amp; geom)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">const</span> amrex::Real prob_lo_z = geom.ProbLo()[2];</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">const</span> amrex::Real dz        = geom.CellSize()[2];</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> khi               = geom.Domain().bigEnd()[2];</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> amrex::Real T_sfc    = 300.;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> amrex::Real rho_sfc  = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> / (<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*T_sfc);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> amrex::Real Thetabar = T_sfc;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// use_terrain = 1</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> (z_phys_nd) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span> (khi &gt; 255) amrex::Abort(<span class="stringliteral">&quot;1D Arrays are hard-wired to only 256 high&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">for</span> ( amrex::MFIter mfi(rho_hse, <a class="code" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi )</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            amrex::Array4&lt;amrex::Real      &gt; rho_arr  = rho_hse.array(mfi);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            amrex::Array4&lt;amrex::Real const&gt; z_cc_arr = z_phys_cc-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="comment">// Create a flat box with same horizontal extent but only one cell in vertical</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keyword">const</span> amrex::Box&amp; tbz = mfi.nodaltilebox(2);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            amrex::Box b2d = tbz; <span class="comment">// Copy constructor</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            b2d.grow(0,1); b2d.grow(1,1); <span class="comment">// Grow by one in the lateral directions</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            b2d.setRange(2,0);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            amrex::ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;              amrex::Array1D&lt;amrex::Real,0,255&gt; <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a>;;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;              amrex::Array1D&lt;amrex::Real,0,255&gt; p;;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;              <a class="code" href="namespaceHSEutils.html#ad3c1cfede2e4d495c9fe91a23e33002d">HSEutils::init_isentropic_hse_terrain</a>(i,j,rho_sfc,Thetabar,&amp;(<a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a>(0)),&amp;(p(0)),z_cc_arr,khi);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt;= khi; k++) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                 rho_arr(i,j,k) = <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a>(k);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;              }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;              rho_arr(i,j,   -1) = rho_arr(i,j,0);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;              rho_arr(i,j,khi+1) = rho_arr(i,j,khi);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            });</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    } <span class="keywordflow">else</span> { <span class="comment">// use_terrain = 0</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// These are at cell centers (unstaggered)</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        amrex::Vector&lt;amrex::Real&gt; h_r(khi+2);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        amrex::Vector&lt;amrex::Real&gt; h_p(khi+2);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        amrex::Gpu::DeviceVector&lt;amrex::Real&gt; d_r(khi+2);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        amrex::Gpu::DeviceVector&lt;amrex::Real&gt; d_p(khi+2);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="namespaceHSEutils.html#a531678cdabf38cca3d47317e33a82fa5">HSEutils::init_isentropic_hse</a>(rho_sfc,Thetabar,h_r.data(),h_p.data(),dz,prob_lo_z,khi);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        amrex::Gpu::copyAsync(amrex::Gpu::hostToDevice, h_r.begin(), h_r.end(), d_r.begin());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        amrex::Gpu::copyAsync(amrex::Gpu::hostToDevice, h_p.begin(), h_p.end(), d_p.begin());</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        amrex::Real* <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a> = d_r.data();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;          <span class="keywordflow">for</span> ( amrex::MFIter mfi(rho_hse, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;          {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;              <span class="keyword">const</span> amrex::Box&amp; bx = mfi.growntilebox(1);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;              <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt; rho_hse_arr = rho_hse[mfi].array();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;              amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;              {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                  <span class="keywordtype">int</span> kk = std::max(k,0);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                  rho_hse_arr(i,j,k) = <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a>[kk];</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;              });</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;          } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    } <span class="comment">// no terrain</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a994fea25f28c33c2e8f1e9c63d5b8b56"><div class="ttname"><a href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a></div><div class="ttdeci">constexpr amrex::Real p_0</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:17</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aModal__aero__wateruptake_8H_html_a8d38e8b20180421390a144a9963d9e2b"><div class="ttname"><a href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a></div><div class="ttdeci">real1d r(&quot;r&quot;, imx)</div></div>
