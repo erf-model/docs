@@ -1,9 +1,8 @@
 var structmoeng__flux =
 [
-    [ "moeng_flux", "structmoeng__flux.html#a6739511e172c8fdf901829c1ceb8bc51", null ],
-    [ "compute_t_flux", "structmoeng__flux.html#a3fb16209871d2e7441c070267e9602ef", null ],
-    [ "compute_u_flux", "structmoeng__flux.html#aa4cb43a2a6e4b68ece409bc7c1c11829", null ],
-    [ "compute_v_flux", "structmoeng__flux.html#a2e58bd9ec626e2d3853efc71d1264342", null ],
-    [ "dz", "structmoeng__flux.html#a6713643ac51ecb3987ced9d6ea20d118", null ],
+    [ "moeng_flux", "structmoeng__flux.html#a2843a181e875e6599b04964c28117900", null ],
+    [ "compute_t_flux", "structmoeng__flux.html#a7abd8ea84318d961020b19ec148ac85a", null ],
+    [ "compute_u_flux", "structmoeng__flux.html#a33b60198e07712f81a7fc34b0b8abf9d", null ],
+    [ "compute_v_flux", "structmoeng__flux.html#ac2f5b47f8120a677960f63d24a0afd89", null ],
     [ "zlo", "structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67", null ]
 ];

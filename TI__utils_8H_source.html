@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('TI__utils_8H_source.html',''); initRes
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            FillIntermediatePatch(level, time_for_fp,</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                  {&amp;S_data[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>], &amp;xvel_new, &amp;yvel_new, &amp;zvel_new},</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                  ng_cons_to_use, 0, cons_only, scomp_cons, ncomp_cons, eddyDiffs);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                  ng_cons_to_use, 0, cons_only, scomp_cons, ncomp_cons);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="comment">// Here we don&#39;t use include any of the ghost region because we have only updated</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment">//      momentum on valid faces</span></div>
@@ -220,7 +220,7 @@ $(document).ready(function(){initNavTree('TI__utils_8H_source.html',''); initRes
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        FillIntermediatePatch(level, time_for_fp,</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                              {&amp;S_data[<a class="code" href="namespaceIntVar.html#ae96c1cd796f723e15dfbf718f1a9c76da22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>], &amp;xvel_new, &amp;yvel_new, &amp;zvel_new},</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                              ng_cons_to_use, ng_vel, cons_only, scomp_cons, ncomp_cons,</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                              eddyDiffs, allow_most_bcs);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                              allow_most_bcs);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="comment">// Now we can convert back to momentum on valid+ghost since we have</span></div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="comment">//     filled the ghost regions for both velocity and density</span></div>
