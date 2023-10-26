@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"namespaceWRFBdyVars.html":[1,0,13],
+"namespacederived.html":[1,0,2],
 "namespacederived.html#a2d9c0cabf04515367f2b721320dcddab":[1,0,2,5],
 "namespacederived.html#a9935603239fe8510b11179da8e76c39c":[1,0,2,4],
 "namespacederived.html#aa1fcac44ae779cdfa2fd5266bc206e2d":[1,0,2,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a":[2,0,47,9],
 "structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b":[2,0,47,15],
 "structSolverChoice.html#a4b0edf29a032ff18b10a42825fa9e4b6":[2,0,47,20],
-"structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69":[2,0,47,4],
-"structSolverChoice.html#a5aed4016dd7d17a2d2904c60af59ae9d":[2,0,47,22],
-"structSolverChoice.html#a63b6fffe930de9eb25f92c2bafb00c00":[2,0,47,16]
+"structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69":[2,0,47,4]
 };
