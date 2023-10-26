@@ -243,5 +243,6 @@ var classERF =
     [ "z_phys_nd", "classERF.html#a93e63e5af35efa564fd4195e8703f84c", null ],
     [ "z_phys_nd_new", "classERF.html#a4ef635c22e72c715f5703a6b95a7abe5", null ],
     [ "z_phys_nd_src", "classERF.html#a30dcf40e8f104fb6b6132805d2eff47c", null ],
-    [ "z_t_rk", "classERF.html#a72a59614c6d5ab840b924c84d5682270", null ]
+    [ "z_t_rk", "classERF.html#a72a59614c6d5ab840b924c84d5682270", null ],
+    [ "zlevels_stag", "classERF.html#a7a4d6e7887fa8f30c33a0b8899035ddb", null ]
 ];

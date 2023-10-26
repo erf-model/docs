@@ -13,8 +13,10 @@ var structSolverChoice =
     [ "coriolis_factor", "structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3", null ],
     [ "cosphi", "structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f", null ],
     [ "diffChoice", "structSolverChoice.html#a396122e87a3d15c4ec8666d7dd18c095", null ],
+    [ "dz0", "structSolverChoice.html#a0a4f1c55ea1e3a7d50f926ee0d20a21c", null ],
     [ "force_stage1_single_substep", "structSolverChoice.html#a3f8ae511632557066f6662eec79591e1", null ],
     [ "gravity", "structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b", null ],
+    [ "grid_stretching_ratio", "structSolverChoice.html#a63b6fffe930de9eb25f92c2bafb00c00", null ],
     [ "incompressible", "structSolverChoice.html#af39df4d1618645dcc1fb8678f738e3f0", null ],
     [ "no_substepping", "structSolverChoice.html#a35e0c82996e345337368bc720bbd6070", null ],
     [ "NumDiffCoeff", "structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2", null ],
@@ -34,5 +36,6 @@ var structSolverChoice =
     [ "use_lagged_delta_rt", "structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0", null ],
     [ "use_NumDiff", "structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28", null ],
     [ "use_rayleigh_damping", "structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01", null ],
-    [ "use_terrain", "structSolverChoice.html#a063a88594452100497651e8aaf1f68d7", null ]
+    [ "use_terrain", "structSolverChoice.html#a063a88594452100497651e8aaf1f68d7", null ],
+    [ "zsurf", "structSolverChoice.html#aa4659e9babdc5d7327266f967d9a80ff", null ]
 ];
