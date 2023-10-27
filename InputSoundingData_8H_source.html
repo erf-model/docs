@@ -107,10 +107,10 @@ $(document).ready(function(){initNavTree('InputSoundingData_8H_source.html','');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structInputSoundingData.html">   20</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structInputSoundingData.html">InputSoundingData</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3">   22</a></span>&#160;    <a class="code" href="structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3">InputSoundingData</a>() {}</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3">   22</a></span>&#160;    <a class="code" href="structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3">InputSoundingData</a> () {}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structInputSoundingData.html#a7a06635c54167688c17300611f6dde50">   24</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structInputSoundingData.html#a7a06635c54167688c17300611f6dde50">read_from_file</a>(<span class="keyword">const</span> std::string input_sounding_file,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                        amrex::Geometry <span class="keyword">const</span> &amp;geom)</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structInputSoundingData.html#a7a06635c54167688c17300611f6dde50">   24</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structInputSoundingData.html#a7a06635c54167688c17300611f6dde50">read_from_file</a> (<span class="keyword">const</span> std::string input_sounding_file,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                         amrex::Geometry <span class="keyword">const</span> &amp;geom)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">const</span> amrex::Real zbot = geom.ProbLo(AMREX_SPACEDIM-1);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        AMREX_ALWAYS_ASSERT(zbot == 0);</div>
@@ -209,7 +209,7 @@ $(document).ready(function(){initNavTree('InputSoundingData_8H_source.html','');
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="structInputSoundingData.html#ab036816413b1f708981ed6c2b3b113d5">host_to_device</a>();</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="structInputSoundingData.html#af913103d9ecab49f09b2b107832d265f">  124</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structInputSoundingData.html#af913103d9ecab49f09b2b107832d265f">calc_rho_p</a>()</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="structInputSoundingData.html#af913103d9ecab49f09b2b107832d265f">  124</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structInputSoundingData.html#af913103d9ecab49f09b2b107832d265f">calc_rho_p</a> ()</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    {</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment">/* Calculate density and pressure, roughly following the procedure in</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">         * WRF dyn_em/module_initialize_ideal.F. We integrate hydrostatically</span></div>
@@ -321,7 +321,7 @@ $(document).ready(function(){initNavTree('InputSoundingData_8H_source.html','');
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <a class="code" href="structInputSoundingData.html#ab036816413b1f708981ed6c2b3b113d5">host_to_device</a>();</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="structInputSoundingData.html#ab036816413b1f708981ed6c2b3b113d5">  236</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structInputSoundingData.html#ab036816413b1f708981ed6c2b3b113d5">host_to_device</a>()</div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="structInputSoundingData.html#ab036816413b1f708981ed6c2b3b113d5">  236</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structInputSoundingData.html#ab036816413b1f708981ed6c2b3b113d5">host_to_device</a> ()</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    {</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <a class="code" href="structInputSoundingData.html#aba43c1b1c5b71ca118d6967f1e4a32bb">z_inp_sound_d</a>.resize(<a class="code" href="structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240">size</a>());</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <a class="code" href="structInputSoundingData.html#ae990e8cfad78f0fa5a603db3154d0124">theta_inp_sound_d</a>.resize(<a class="code" href="structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240">size</a>());</div>
@@ -359,7 +359,7 @@ $(document).ready(function(){initNavTree('InputSoundingData_8H_source.html','');
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        }</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    }</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno"><a class="line" href="structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240">  274</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240">size</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno"><a class="line" href="structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240">  274</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240">size</a> ()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        AMREX_ALWAYS_ASSERT(<a class="code" href="structInputSoundingData.html#a0a3d15e3959ce900c213a09230e6646c">z_inp_sound</a>.size() == <a class="code" href="structInputSoundingData.html#acf38db2cecabcd07fe794b41974ba866">theta_inp_sound</a>.size());</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        AMREX_ALWAYS_ASSERT(<a class="code" href="structInputSoundingData.html#a0a3d15e3959ce900c213a09230e6646c">z_inp_sound</a>.size() == <a class="code" href="structInputSoundingData.html#a7710e6498adaf4b94a54e600ef6a0ca7">qv_inp_sound</a>.size());</div>
