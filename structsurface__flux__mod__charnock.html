@@ -98,8 +98,8 @@ Collaboration diagram for surface_flux_mod_charnock:</div>
 <div class="center"><img src="structsurface__flux__mod__charnock__coll__graph.png" border="0" usemap="#asurface__flux__mod__charnock_coll__map" alt="Collaboration graph"/></div>
 <map name="asurface__flux__mod__charnock_coll__map" id="asurface__flux__mod__charnock_coll__map">
 <area shape="rect" title=" " alt="" coords="5,345,208,372"/>
-<area shape="rect" href="structmost__data.html" title=" " alt="" coords="61,256,152,283"/>
 <area shape="rect" title=" " alt="" coords="81,5,132,32"/>
+<area shape="rect" href="structmost__data.html" title=" " alt="" coords="61,256,152,283"/>
 <area shape="rect" href="structsimilarity__funs.html" title=" " alt="" coords="177,256,295,283"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -117,8 +117,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a6fa441221eb1f30d65437ce890adfd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb4a96d510f1e437c9efc41ba5fd16f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsimilarity__funs.html">similarity_funs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__mod__charnock.html#adb4a96d510f1e437c9efc41ba5fd16f9">sfuns</a></td></tr>
 <tr class="separator:adb4a96d510f1e437c9efc41ba5fd16f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e0525f3e520aff681f7971fb320a447"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__mod__charnock.html#a2e0525f3e520aff681f7971fb320a447">tol</a> = 1.0e-5</td></tr>
-<tr class="separator:a2e0525f3e520aff681f7971fb320a447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac01a07a59f56ff6683dd9942b4d500ba"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__mod__charnock.html#ac01a07a59f56ff6683dd9942b4d500ba">tol</a> = 1.0e-5</td></tr>
+<tr class="separator:ac01a07a59f56ff6683dd9942b4d500ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Surface flux with modified charnock roughness </p>
@@ -285,7 +285,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            psi_h = <a class="code" href="structsurface__flux__mod__charnock.html#adb4a96d510f1e437c9efc41ba5fd16f9">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">calc_psi_h</a>(zeta);</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__flux__mod__charnock.html#a6fa441221eb1f30d65437ce890adfd46">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm_arr(i,j,k) / (std::log(<a class="code" href="structsurface__flux__mod__charnock.html#a6fa441221eb1f30d65437ce890adfd46">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_m);</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            ++iter;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structsurface__flux__mod__charnock.html#a2e0525f3e520aff681f7971fb320a447">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structsurface__flux__mod__charnock.html#ac01a07a59f56ff6683dd9942b4d500ba">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        t_surf_arr(i,j,k) = <a class="code" href="structsurface__flux__mod__charnock.html#a6fa441221eb1f30d65437ce890adfd46">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a> * (std::log(<a class="code" href="structsurface__flux__mod__charnock.html#a6fa441221eb1f30d65437ce890adfd46">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_h) /</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                            (u_star_arr(i,j,k) * <a class="code" href="structsurface__flux__mod__charnock.html#a6fa441221eb1f30d65437ce890adfd46">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a>) + tm_arr(i,j,k);</div>
@@ -297,7 +297,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="astructmost__data_html_a7e3410c5a9916b84524bda4f324eec3b"><div class="ttname"><a href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">most_data::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdoc">Acceleration due to gravity (m/s^2)</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:16</div></div>
 <div class="ttc" id="astructsimilarity__funs_html_a21cb206b0dd78dc2ac7211de8dbcb8d2"><div class="ttname"><a href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">similarity_funs::calc_psi_m</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_m(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:34</div></div>
 <div class="ttc" id="astructsimilarity__funs_html_a7dcb32f637eab66d2314902d03289bc2"><div class="ttname"><a href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">similarity_funs::calc_psi_h</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_h(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:48</div></div>
-<div class="ttc" id="astructsurface__flux__mod__charnock_html_a2e0525f3e520aff681f7971fb320a447"><div class="ttname"><a href="structsurface__flux__mod__charnock.html#a2e0525f3e520aff681f7971fb320a447">surface_flux_mod_charnock::tol</a></div><div class="ttdeci">amrex::Real tol</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:390</div></div>
+<div class="ttc" id="astructsurface__flux__mod__charnock_html_ac01a07a59f56ff6683dd9942b4d500ba"><div class="ttname"><a href="structsurface__flux__mod__charnock.html#ac01a07a59f56ff6683dd9942b4d500ba">surface_flux_mod_charnock::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:390</div></div>
 <div class="ttc" id="astructsurface__flux__mod__charnock_html_adb4a96d510f1e437c9efc41ba5fd16f9"><div class="ttname"><a href="structsurface__flux__mod__charnock.html#adb4a96d510f1e437c9efc41ba5fd16f9">surface_flux_mod_charnock::sfuns</a></div><div class="ttdeci">similarity_funs sfuns</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:389</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -361,8 +361,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a2e0525f3e520aff681f7971fb320a447"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e0525f3e520aff681f7971fb320a447">&#9670;&nbsp;</a></span>tol</h2>
+<a id="ac01a07a59f56ff6683dd9942b4d500ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac01a07a59f56ff6683dd9942b4d500ba">&#9670;&nbsp;</a></span>tol</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -371,7 +371,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Real surface_flux_mod_charnock::tol = 1.0e-5</td>
+          <td class="memname">const amrex::Real surface_flux_mod_charnock::tol = 1.0e-5</td>
         </tr>
       </table>
   </td>

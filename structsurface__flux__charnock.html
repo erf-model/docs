@@ -98,8 +98,8 @@ Collaboration diagram for surface_flux_charnock:</div>
 <div class="center"><img src="structsurface__flux__charnock__coll__graph.png" border="0" usemap="#asurface__flux__charnock_coll__map" alt="Collaboration graph"/></div>
 <map name="asurface__flux__charnock_coll__map" id="asurface__flux__charnock_coll__map">
 <area shape="rect" title=" " alt="" coords="12,345,179,372"/>
-<area shape="rect" href="structmost__data.html" title=" " alt="" coords="50,256,141,283"/>
 <area shape="rect" title=" " alt="" coords="70,5,121,32"/>
+<area shape="rect" href="structmost__data.html" title=" " alt="" coords="50,256,141,283"/>
 <area shape="rect" href="structsimilarity__funs.html" title=" " alt="" coords="165,256,284,283"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -117,8 +117,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a60030c5104987d6287efd5d9b996014c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4501ca4ecf49dccd6a1a914af03e1ed1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsimilarity__funs.html">similarity_funs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">sfuns</a></td></tr>
 <tr class="separator:a4501ca4ecf49dccd6a1a914af03e1ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2c9623d820f387f5d655bc8020ea3a2"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__charnock.html#ae2c9623d820f387f5d655bc8020ea3a2">tol</a> = 1.0e-5</td></tr>
-<tr class="separator:ae2c9623d820f387f5d655bc8020ea3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08529386a7d5012684c818249a7d76ba"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__charnock.html#a08529386a7d5012684c818249a7d76ba">tol</a> = 1.0e-5</td></tr>
+<tr class="separator:a08529386a7d5012684c818249a7d76ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Surface flux with charnock roughness </p>
@@ -281,7 +281,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            psi_h = <a class="code" href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">calc_psi_h</a>(zeta);</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm_arr(i,j,k) / (std::log(<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_m);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            ++iter;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structsurface__flux__charnock.html#ae2c9623d820f387f5d655bc8020ea3a2">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structsurface__flux__charnock.html#a08529386a7d5012684c818249a7d76ba">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        t_surf_arr(i,j,k) = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a> * (std::log(<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_h) /</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                            (u_star_arr(i,j,k) * <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a>) + tm_arr(i,j,k);</div>
@@ -293,8 +293,8 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="astructmost__data_html_a7e3410c5a9916b84524bda4f324eec3b"><div class="ttname"><a href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">most_data::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdoc">Acceleration due to gravity (m/s^2)</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:16</div></div>
 <div class="ttc" id="astructsimilarity__funs_html_a21cb206b0dd78dc2ac7211de8dbcb8d2"><div class="ttname"><a href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">similarity_funs::calc_psi_m</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_m(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:34</div></div>
 <div class="ttc" id="astructsimilarity__funs_html_a7dcb32f637eab66d2314902d03289bc2"><div class="ttname"><a href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">similarity_funs::calc_psi_h</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_h(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:48</div></div>
+<div class="ttc" id="astructsurface__flux__charnock_html_a08529386a7d5012684c818249a7d76ba"><div class="ttname"><a href="structsurface__flux__charnock.html#a08529386a7d5012684c818249a7d76ba">surface_flux_charnock::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:326</div></div>
 <div class="ttc" id="astructsurface__flux__charnock_html_a4501ca4ecf49dccd6a1a914af03e1ed1"><div class="ttname"><a href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">surface_flux_charnock::sfuns</a></div><div class="ttdeci">similarity_funs sfuns</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:325</div></div>
-<div class="ttc" id="astructsurface__flux__charnock_html_ae2c9623d820f387f5d655bc8020ea3a2"><div class="ttname"><a href="structsurface__flux__charnock.html#ae2c9623d820f387f5d655bc8020ea3a2">surface_flux_charnock::tol</a></div><div class="ttdeci">amrex::Real tol</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:326</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -357,8 +357,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ae2c9623d820f387f5d655bc8020ea3a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2c9623d820f387f5d655bc8020ea3a2">&#9670;&nbsp;</a></span>tol</h2>
+<a id="a08529386a7d5012684c818249a7d76ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08529386a7d5012684c818249a7d76ba">&#9670;&nbsp;</a></span>tol</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,7 +367,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Real surface_flux_charnock::tol = 1.0e-5</td>
+          <td class="memname">const amrex::Real surface_flux_charnock::tol = 1.0e-5</td>
         </tr>
       </table>
   </td>

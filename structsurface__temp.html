@@ -98,8 +98,8 @@ Collaboration diagram for surface_temp:</div>
 <div class="center"><img src="structsurface__temp__coll__graph.png" border="0" usemap="#asurface__temp_coll__map" alt="Collaboration graph"/></div>
 <map name="asurface__temp_coll__map" id="asurface__temp_coll__map">
 <area shape="rect" title=" " alt="" coords="40,345,151,372"/>
-<area shape="rect" href="structmost__data.html" title=" " alt="" coords="50,256,141,283"/>
 <area shape="rect" title=" " alt="" coords="70,5,121,32"/>
+<area shape="rect" href="structmost__data.html" title=" " alt="" coords="50,256,141,283"/>
 <area shape="rect" href="structsimilarity__funs.html" title=" " alt="" coords="165,256,284,283"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -117,8 +117,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:afec351f7cde260c6e96a27297cb4010f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66e248c3558685f25206441914e8dfbf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsimilarity__funs.html">similarity_funs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__temp.html#a66e248c3558685f25206441914e8dfbf">sfuns</a></td></tr>
 <tr class="separator:a66e248c3558685f25206441914e8dfbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ccaa35aa7babf39f21f51d4a1729d22"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__temp.html#a3ccaa35aa7babf39f21f51d4a1729d22">tol</a> = 1.0e-5</td></tr>
-<tr class="separator:a3ccaa35aa7babf39f21f51d4a1729d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c4031cfb8cbb020115ee7fae12ddb05"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__temp.html#a7c4031cfb8cbb020115ee7fae12ddb05">tol</a> = 1.0e-5</td></tr>
+<tr class="separator:a7c4031cfb8cbb020115ee7fae12ddb05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Surface temperature with constant roughness </p>
@@ -274,7 +274,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            psi_h = <a class="code" href="structsurface__temp.html#a66e248c3558685f25206441914e8dfbf">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">calc_psi_h</a>(zeta);</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__temp.html#afec351f7cde260c6e96a27297cb4010f">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm_arr(i,j,k) / (std::log(<a class="code" href="structsurface__temp.html#afec351f7cde260c6e96a27297cb4010f">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k)) - psi_m);</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            ++iter;</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structsurface__temp.html#a3ccaa35aa7babf39f21f51d4a1729d22">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structsurface__temp.html#a7c4031cfb8cbb020115ee7fae12ddb05">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        t_star_arr(i,j,k) = <a class="code" href="structsurface__temp.html#afec351f7cde260c6e96a27297cb4010f">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * (tm_arr(i,j,k) - t_surf_arr(i,j,k)) /</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                            (std::log(<a class="code" href="structsurface__temp.html#afec351f7cde260c6e96a27297cb4010f">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k)) - psi_h);</div>
@@ -284,8 +284,8 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="astructmost__data_html_a7e3410c5a9916b84524bda4f324eec3b"><div class="ttname"><a href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">most_data::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdoc">Acceleration due to gravity (m/s^2)</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:16</div></div>
 <div class="ttc" id="astructsimilarity__funs_html_a21cb206b0dd78dc2ac7211de8dbcb8d2"><div class="ttname"><a href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">similarity_funs::calc_psi_m</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_m(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:34</div></div>
 <div class="ttc" id="astructsimilarity__funs_html_a7dcb32f637eab66d2314902d03289bc2"><div class="ttname"><a href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">similarity_funs::calc_psi_h</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_h(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:48</div></div>
-<div class="ttc" id="astructsurface__temp_html_a3ccaa35aa7babf39f21f51d4a1729d22"><div class="ttname"><a href="structsurface__temp.html#a3ccaa35aa7babf39f21f51d4a1729d22">surface_temp::tol</a></div><div class="ttdeci">amrex::Real tol</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:450</div></div>
 <div class="ttc" id="astructsurface__temp_html_a66e248c3558685f25206441914e8dfbf"><div class="ttname"><a href="structsurface__temp.html#a66e248c3558685f25206441914e8dfbf">surface_temp::sfuns</a></div><div class="ttdeci">similarity_funs sfuns</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:449</div></div>
+<div class="ttc" id="astructsurface__temp_html_a7c4031cfb8cbb020115ee7fae12ddb05"><div class="ttname"><a href="structsurface__temp.html#a7c4031cfb8cbb020115ee7fae12ddb05">surface_temp::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:450</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -348,8 +348,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a3ccaa35aa7babf39f21f51d4a1729d22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ccaa35aa7babf39f21f51d4a1729d22">&#9670;&nbsp;</a></span>tol</h2>
+<a id="a7c4031cfb8cbb020115ee7fae12ddb05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c4031cfb8cbb020115ee7fae12ddb05">&#9670;&nbsp;</a></span>tol</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,7 +358,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Real surface_temp::tol = 1.0e-5</td>
+          <td class="memname">const amrex::Real surface_temp::tol = 1.0e-5</td>
         </tr>
       </table>
   </td>

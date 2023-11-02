@@ -98,8 +98,8 @@ Collaboration diagram for adiabatic_mod_charnock:</div>
 <div class="center"><img src="structadiabatic__mod__charnock__coll__graph.png" border="0" usemap="#aadiabatic__mod__charnock_coll__map" alt="Collaboration graph"/></div>
 <map name="aadiabatic__mod__charnock_coll__map" id="aadiabatic__mod__charnock_coll__map">
 <area shape="rect" title=" " alt="" coords="5,345,189,372"/>
-<area shape="rect" href="structmost__data.html" title=" " alt="" coords="52,256,143,283"/>
 <area shape="rect" title=" " alt="" coords="72,5,123,32"/>
+<area shape="rect" href="structmost__data.html" title=" " alt="" coords="52,256,143,283"/>
 <area shape="rect" href="structsimilarity__funs.html" title=" " alt="" coords="167,256,286,283"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -117,8 +117,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ad33aa4fea2aa05dbb4057dcef251e0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66df1185e73be51b2bb72b55e70b64cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsimilarity__funs.html">similarity_funs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structadiabatic__mod__charnock.html#a66df1185e73be51b2bb72b55e70b64cd">sfuns</a></td></tr>
 <tr class="separator:a66df1185e73be51b2bb72b55e70b64cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83fbb72906966f0293625bc36b7fa8e3"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structadiabatic__mod__charnock.html#a83fbb72906966f0293625bc36b7fa8e3">tol</a> = 1.0e-5</td></tr>
-<tr class="separator:a83fbb72906966f0293625bc36b7fa8e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a007e09d416f6879b7ba68c7e4ac29e"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structadiabatic__mod__charnock.html#a8a007e09d416f6879b7ba68c7e4ac29e">tol</a> = 1.0e-5</td></tr>
+<tr class="separator:a8a007e09d416f6879b7ba68c7e4ac29e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Adiabatic with modified charnock roughness </p>
@@ -276,13 +276,13 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            z0    = std::exp( (2.7*ustar - 1.8/<a class="code" href="structadiabatic__mod__charnock.html#ad33aa4fea2aa05dbb4057dcef251e0da">mdata</a>.<a class="code" href="structmost__data.html#a51b78fb4a4b8fb6aa512d4bd4fcd3cd7">Cnk_b</a>) / (ustar + 0.17/<a class="code" href="structadiabatic__mod__charnock.html#ad33aa4fea2aa05dbb4057dcef251e0da">mdata</a>.<a class="code" href="structmost__data.html#a51b78fb4a4b8fb6aa512d4bd4fcd3cd7">Cnk_b</a>) );</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structadiabatic__mod__charnock.html#ad33aa4fea2aa05dbb4057dcef251e0da">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm_arr(i,j,k) / std::log(<a class="code" href="structadiabatic__mod__charnock.html#ad33aa4fea2aa05dbb4057dcef251e0da">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            ++iter;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structadiabatic__mod__charnock.html#a83fbb72906966f0293625bc36b7fa8e3">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structadiabatic__mod__charnock.html#a8a007e09d416f6879b7ba68c7e4ac29e">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        t_star_arr(i,j,k) = 0.0;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;          olen_arr(i,j,k) = 1.0e16;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            z0_arr(i,j,k) = z0;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
-<div class="ttc" id="astructadiabatic__mod__charnock_html_a83fbb72906966f0293625bc36b7fa8e3"><div class="ttname"><a href="structadiabatic__mod__charnock.html#a83fbb72906966f0293625bc36b7fa8e3">adiabatic_mod_charnock::tol</a></div><div class="ttdeci">amrex::Real tol</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:205</div></div>
+<div class="ttc" id="astructadiabatic__mod__charnock_html_a8a007e09d416f6879b7ba68c7e4ac29e"><div class="ttname"><a href="structadiabatic__mod__charnock.html#a8a007e09d416f6879b7ba68c7e4ac29e">adiabatic_mod_charnock::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:205</div></div>
 <div class="ttc" id="astructmost__data_html_a73da7dc37cb1555348e956a4e2c932fe"><div class="ttname"><a href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">most_data::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:15</div></div>
 </div><!-- fragment -->
 </div>
@@ -334,8 +334,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a83fbb72906966f0293625bc36b7fa8e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83fbb72906966f0293625bc36b7fa8e3">&#9670;&nbsp;</a></span>tol</h2>
+<a id="a8a007e09d416f6879b7ba68c7e4ac29e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a007e09d416f6879b7ba68c7e4ac29e">&#9670;&nbsp;</a></span>tol</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -344,7 +344,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Real adiabatic_mod_charnock::tol = 1.0e-5</td>
+          <td class="memname">const amrex::Real adiabatic_mod_charnock::tol = 1.0e-5</td>
         </tr>
       </table>
   </td>
