@@ -127,73 +127,9 @@ $(document).ready(function(){initNavTree('Parameterizations_8H_source.html','');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classRadConstants.html#af93f09fe2ad546b17aff927963cf90d1">RadConstants::retab</a>[index]*(1.-fraction)+<a class="code" href="classRadConstants.html#af93f09fe2ad546b17aff927963cf90d1">RadConstants::retab</a>[index+1]*fraction;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// Computes surface albedos over ocean and the surface</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// Two spectral surface albedos for direct (dir) and diffuse (dif)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// incident radiation are calculated. The spectral intervals are:</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">//   s (shortwave)  = 0.2-0.7 micro-meters</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">//   l (longwave)   = 0.7-5.0 micro-meters</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">//</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// Uses knowledge of surface type to specify albedo, as follows:</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">//</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// Ocean           Uses solar zenith angle to compute albedo for direct</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">//                 radiation; diffuse radiation values constant; albedo</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">//                 independent of spectral interval and other physical</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">//                 factors such as ocean surface wind speed.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">//</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// For more details , see Briegleb, Bruce P., 1992: Delta-Eddington</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// Approximation for Solar Radiation in the NCAR Community Climate Model,</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// Journal of Geophysical Research, Vol 97, D7, pp7603-7612).</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="Parameterizations_8H.html#a907cf6fdc0f4b6dc736040ee9f2d86aa">   59</a></span>&#160; <span class="keywordtype">void</span> <a class="code" href="Parameterizations_8H.html#a907cf6fdc0f4b6dc736040ee9f2d86aa">albedo</a>(<span class="keywordtype">bool</span> ocean, real1d&amp; coszrs, real1d&amp; tsurface, real1d&amp; asdir,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;              real1d&amp; aldir, real1d&amp; asdif, real1d&amp; aldif)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">using</span> yakl::intrinsics::size;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> real adif = 0.06;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">int</span> ncol = size(tsurface, 1);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (ocean) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="comment">// Ice-free ocean albedos function of solar zenith angle only, and</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="comment">// independent of spectral interval:</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      yakl::c::parallel_for(ncol, YAKL_LAMBDA (<span class="keywordtype">int</span> icol) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (coszrs(icol) &lt;= 0) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;          aldir(icol) = 0;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;          asdir(icol) = 0;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;          aldif(icol) = 0;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;          asdif(icol) = 0;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tsurface(icol) &gt; 271.) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;          aldir(icol) = ( .026 / (std::pow(coszrs(icol), 1.7) + .065)) +</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;             (.15*(coszrs(icol) - 0.10) * (coszrs(icol) - 0.50) * (coszrs(icol) - 1.00) );</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;          asdir(icol) = aldir(icol);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;          aldif(icol) = adif;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;          asdif(icol) = adif;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;         <span class="comment">// albedo of sea-ice/snow surface</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;           aldir(icol) = 0.45;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;           asdir(icol) = 0.75;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;           aldif(icol) = 0.45;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;           asdif(icol) = 0.75;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;       }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      });</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    } <span class="keywordflow">else</span>  {<span class="comment">// land</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;       yakl::c::parallel_for(ncol, YAKL_LAMBDA (<span class="keywordtype">int</span> icol) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;         <span class="keywordflow">if</span> (coszrs(icol) &lt;= 0.) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;           aldir(icol) = 0.;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;           asdir(icol) = 0.;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;           aldif(icol) = 0.;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;           asdif(icol) = 0.;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;         } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;           <span class="comment">// Albedos for land type I (Briegleb)</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;           asdir(icol) = 1.4 * 0.06 / ( 1. + 0.8 * coszrs(icol));</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;           asdif(icol) = 1.2 * 0.06;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;           aldir(icol) = 1.4 * 0.24 / ( 1. + 0.8 * coszrs(icol));</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;           aldif(icol) = 1.2 * 0.24;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;     });</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;   }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__Constants_8H_html"><div class="ttname"><a href="ERF__Constants_8H.html">ERF_Constants.H</a></div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a764526b482e006cd52004d3f53467b57"><div class="ttname"><a href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a></div><div class="ttdeci">constexpr amrex::Real tmelt</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:86</div></div>
-<div class="ttc" id="aParameterizations_8H_html_a907cf6fdc0f4b6dc736040ee9f2d86aa"><div class="ttname"><a href="Parameterizations_8H.html#a907cf6fdc0f4b6dc736040ee9f2d86aa">albedo</a></div><div class="ttdeci">AMREX_FORCE_INLINE void albedo(bool ocean, real1d &amp;coszrs, real1d &amp;tsurface, real1d &amp;asdir, real1d &amp;aldir, real1d &amp;asdif, real1d &amp;aldif)</div><div class="ttdef"><b>Definition:</b> Parameterizations.H:59</div></div>
 <div class="ttc" id="aParameterizations_8H_html_adec9d0652512bd8a82a6dcea536c9138"><div class="ttname"><a href="Parameterizations_8H.html#adec9d0652512bd8a82a6dcea536c9138">ice_effective_radius</a></div><div class="ttdeci">AMREX_FORCE_INLINE real ice_effective_radius(real temperature)</div><div class="ttdef"><b>Definition:</b> Parameterizations.H:35</div></div>
 <div class="ttc" id="aParameterizations_8H_html_aee0c6fff1c3d2035ce9130c829630f27"><div class="ttname"><a href="Parameterizations_8H.html#aee0c6fff1c3d2035ce9130c829630f27">liquid_effective_radius</a></div><div class="ttdeci">AMREX_FORCE_INLINE real liquid_effective_radius(real temperature, real landfrac, real icefrac=0., real snowh=0.)</div><div class="ttdef"><b>Definition:</b> Parameterizations.H:13</div></div>
 <div class="ttc" id="aRad__constants_8H_html"><div class="ttname"><a href="Rad__constants_8H.html">Rad_constants.H</a></div></div>

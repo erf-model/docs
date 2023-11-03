@@ -43,6 +43,9 @@ var NAVTREEINDEX0 =
 "Aero__rad__props_8H.html":[3,0,1,10,1],
 "Aero__rad__props_8H_source.html":[3,0,1,10,1],
 "Aero__rad__props_8cpp.html":[3,0,1,10,0],
+"Albedo_8H.html":[3,0,1,10,2],
+"Albedo_8H.html#a677778ad4c4fb53a8c7076ace6d436ce":[3,0,1,10,2,0],
+"Albedo_8H_source.html":[3,0,1,10,2],
 "BoundaryConditions__bndryreg_8cpp.html":[3,0,1,1,2],
 "BoundaryConditions__cons_8cpp.html":[3,0,1,1,3],
 "BoundaryConditions__wrfbdy_8cpp.html":[3,0,1,1,4],
@@ -51,9 +54,9 @@ var NAVTREEINDEX0 =
 "BoundaryConditions__zvel_8cpp.html":[3,0,1,1,7],
 "Checkpoint_8cpp.html":[3,0,1,5,0],
 "Cloud_8cpp.html":[3,0,1,6,0],
-"Cloud__rad__props_8H.html":[3,0,1,10,3],
-"Cloud__rad__props_8H_source.html":[3,0,1,10,3],
-"Cloud__rad__props_8cpp.html":[3,0,1,10,2],
+"Cloud__rad__props_8H.html":[3,0,1,10,4],
+"Cloud__rad__props_8H_source.html":[3,0,1,10,4],
+"Cloud__rad__props_8cpp.html":[3,0,1,10,3],
 "ComputeQKESourceTerm_8H.html":[3,0,1,3,0],
 "ComputeQKESourceTerm_8H.html#ae421b43e8a7114525cdcd0765c21e0c3":[3,0,1,3,0,0],
 "ComputeQKESourceTerm_8H_source.html":[3,0,1,3,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__Tagging_8cpp.html":[3,0,1,20],
 "ERF__TimeStep_8cpp.html":[3,0,1,11,15],
 "ERF__Write1DProfiles_8cpp.html":[3,0,1,5,3],
-"ERF__WriteBndryPlanes_8H.html":[3,0,1,5,5],
-"ERF__WriteBndryPlanes_8H_source.html":[3,0,1,5,5],
-"ERF__WriteBndryPlanes_8cpp.html":[3,0,1,5,4],
-"ERF__WriteBndryPlanes_8cpp.html#a84c19e5c5555fe13da12dc8ba44e7da8":[3,0,1,5,4,0]
+"ERF__WriteBndryPlanes_8H.html":[3,0,1,5,5]
 };

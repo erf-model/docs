@@ -20,7 +20,7 @@ var searchData=
   ['gammadist_5fliq_5foptics_5flw_575',['gammadist_liq_optics_lw',['../classCloudRadProps.html#a31a396f1997438a7cbb347767dca311a',1,'CloudRadProps']]],
   ['gammadist_5fliq_5foptics_5fsw_576',['gammadist_liq_optics_sw',['../classCloudRadProps.html#adcaf1c142347cdcd3b761af9c7ee5c56',1,'CloudRadProps']]],
   ['gas_577',['gas',['../structMamConstituents_1_1gaslist__t.html#aead26e24deeb3139776252191edc547b',1,'MamConstituents::gaslist_t']]],
-  ['gas_5fnames_578',['gas_names',['../classOptics.html#aba268b2221309fdc437349b1427c5c6d',1,'Optics::gas_names()'],['../classRrtmgp.html#a5ed300bd2ef70d5c191d23f9ca14774e',1,'Rrtmgp::gas_names()']]],
+  ['gas_5fnames_578',['gas_names',['../classOptics.html#aba268b2221309fdc437349b1427c5c6d',1,'Optics::gas_names()'],['../classRrtmgp.html#af280c224007b91d1ee2bd34efbd1b6c3',1,'Rrtmgp::gas_names()']]],
   ['gas_5ft_579',['gas_t',['../structMamConstituents_1_1gas__t.html',1,'MamConstituents']]],
   ['gaslist_580',['gaslist',['../classMamConstituents.html#abd637475ed7adbc96892dc92b86d8f57',1,'MamConstituents::gaslist()'],['../classRadConstants.html#abaa201a157c245b8f20605e3d3c94938',1,'RadConstants::gaslist()']]],
   ['gaslist_5ft_581',['gaslist_t',['../structMamConstituents_1_1gaslist__t.html',1,'MamConstituents']]],

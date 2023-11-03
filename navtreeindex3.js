@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73":[2,0,10,26],
+"classCloudRadProps.html#aeee4ab1a6887ab34c966028c45079199":[2,0,10,28],
 "classERF.html":[2,0,18],
 "classERF.html#a00623566e14671db089854b9f9a5beff":[2,0,18,16],
 "classERF.html#a01987b2556834788694f2f3741a2afe4":[2,0,18,47],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "classERF.html#afd8cd5a477754776135befa668fdd0c9":[2,0,18,110],
 "classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f":[2,0,18,81],
 "classERFFillPatcher.html":[2,0,19],
-"classERFFillPatcher.html#a045ae741822ced1684eddf019cd7f219":[2,0,19,3],
-"classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77":[2,0,19,22],
-"classERFFillPatcher.html#a297b1d2468ed152850c7bb6c156101b3":[2,0,19,20]
+"classERFFillPatcher.html#a045ae741822ced1684eddf019cd7f219":[2,0,19,3]
 };

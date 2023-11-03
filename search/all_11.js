@@ -116,7 +116,7 @@ var searchData=
   ['rrtmg_5flw_5fcloudsim_5fband_1466',['rrtmg_lw_cloudsim_band',['../classRadConstants.html#aef2395d6f1bbed699fd4033b9c3104b8',1,'RadConstants']]],
   ['rrtmg_5fsw_5fcloudsim_5fband_1467',['rrtmg_sw_cloudsim_band',['../classRadConstants.html#acd093dbcb244a162598bc23658a3f5d0',1,'RadConstants']]],
   ['rrtmg_5fto_5frrtmgp_1468',['rrtmg_to_rrtmgp',['../classRadiation.html#a343cbb13362229a43f02df3a95eaa0ea',1,'Radiation']]],
-  ['rrtmgp_1469',['Rrtmgp',['../classRrtmgp.html',1,'Rrtmgp'],['../classRrtmgp.html#afb3690c8a0708be5b1d213f5a17fd668',1,'Rrtmgp::Rrtmgp()=default'],['../classRrtmgp.html#a31c879752d41a9a2140d15629e9b4fcd',1,'Rrtmgp::Rrtmgp(int ngases, char *gas_names[])']]],
+  ['rrtmgp_1469',['Rrtmgp',['../classRrtmgp.html',1,'Rrtmgp'],['../classRrtmgp.html#afb3690c8a0708be5b1d213f5a17fd668',1,'Rrtmgp::Rrtmgp()']]],
   ['rrtmgp_2eh_1470',['Rrtmgp.H',['../Rrtmgp_8H.html',1,'']]],
   ['rrtmgp_5fcoefficients_5ffile_5flw_1471',['rrtmgp_coefficients_file_lw',['../classRadiation.html#a0f24e2a14bfa218815d6d602374b6f0b',1,'Radiation']]],
   ['rrtmgp_5fcoefficients_5ffile_5fsw_1472',['rrtmgp_coefficients_file_sw',['../classRadiation.html#a8b27a952d1ceb83c174a5d30f6198230',1,'Radiation']]],
