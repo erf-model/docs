@@ -125,12 +125,12 @@ Include dependency graph for AdvectionSrcForMom.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a13199db40c555f8aa73f6ad806430142"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AdvectionSrcForMom_8cpp.html#a13199db40c555f8aa73f6ad806430142">AdvectionSrcForMom</a> (const Box &amp;bxx, const Box &amp;bxy, const Box &amp;bxz, const Array4&lt; Real &gt; &amp;rho_u_rhs, const Array4&lt; Real &gt; &amp;rho_v_rhs, const Array4&lt; Real &gt; &amp;rho_w_rhs, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;Omega, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; const Real &gt; &amp;mf_m, const Array4&lt; const Real &gt; &amp;mf_u, const Array4&lt; const Real &gt; &amp;mf_v, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const int use_terrain, const int domhi_z)</td></tr>
-<tr class="separator:a13199db40c555f8aa73f6ad806430142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af379674fb7439fb95bd65067099949dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AdvectionSrcForMom_8cpp.html#af379674fb7439fb95bd65067099949dd">AdvectionSrcForMom</a> (const Box &amp;bxx, const Box &amp;bxy, const Box &amp;bxz, const Array4&lt; Real &gt; &amp;rho_u_rhs, const Array4&lt; Real &gt; &amp;rho_v_rhs, const Array4&lt; Real &gt; &amp;rho_w_rhs, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;Omega, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; const Real &gt; &amp;mf_m, const Array4&lt; const Real &gt; &amp;mf_u, const Array4&lt; const Real &gt; &amp;mf_v, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const bool use_terrain, const int domhi_z)</td></tr>
+<tr class="separator:af379674fb7439fb95bd65067099949dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a13199db40c555f8aa73f6ad806430142"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13199db40c555f8aa73f6ad806430142">&#9670;&nbsp;</a></span>AdvectionSrcForMom()</h2>
+<a id="af379674fb7439fb95bd65067099949dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af379674fb7439fb95bd65067099949dd">&#9670;&nbsp;</a></span>AdvectionSrcForMom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,7 +258,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const bool&#160;</td>
           <td class="paramname"><em>use_terrain</em>, </td>
         </tr>
         <tr>
@@ -303,7 +303,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;AdvectionSrcForMom&quot;</span>, <a class="code" href="AdvectionSrcForMom_8cpp.html#a13199db40c555f8aa73f6ad806430142">AdvectionSrcForMom</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;AdvectionSrcForMom&quot;</span>, <a class="code" href="AdvectionSrcForMom_8cpp.html#af379674fb7439fb95bd65067099949dd">AdvectionSrcForMom</a>);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">auto</span> dxInv = cellSizeInv[0], dyInv = cellSizeInv[1], dzInv = cellSizeInv[2];</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
@@ -552,7 +552,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        }</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
-<div class="ttc" id="aAdvectionSrcForMom_8cpp_html_a13199db40c555f8aa73f6ad806430142"><div class="ttname"><a href="AdvectionSrcForMom_8cpp.html#a13199db40c555f8aa73f6ad806430142">AdvectionSrcForMom</a></div><div class="ttdeci">void AdvectionSrcForMom(const Box &amp;bxx, const Box &amp;bxy, const Box &amp;bxz, const Array4&lt; Real &gt; &amp;rho_u_rhs, const Array4&lt; Real &gt; &amp;rho_v_rhs, const Array4&lt; Real &gt; &amp;rho_w_rhs, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;Omega, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; const Real &gt; &amp;mf_m, const Array4&lt; const Real &gt; &amp;mf_u, const Array4&lt; const Real &gt; &amp;mf_v, const AdvType horiz_adv_type, const AdvType vert_adv_type, const int use_terrain, const int domhi_z)</div><div class="ttdef"><b>Definition:</b> AdvectionSrcForMom.cpp:36</div></div>
+<div class="ttc" id="aAdvectionSrcForMom_8cpp_html_af379674fb7439fb95bd65067099949dd"><div class="ttname"><a href="AdvectionSrcForMom_8cpp.html#af379674fb7439fb95bd65067099949dd">AdvectionSrcForMom</a></div><div class="ttdeci">void AdvectionSrcForMom(const Box &amp;bxx, const Box &amp;bxy, const Box &amp;bxz, const Array4&lt; Real &gt; &amp;rho_u_rhs, const Array4&lt; Real &gt; &amp;rho_v_rhs, const Array4&lt; Real &gt; &amp;rho_w_rhs, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;Omega, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; const Real &gt; &amp;mf_m, const Array4&lt; const Real &gt; &amp;mf_u, const Array4&lt; const Real &gt; &amp;mf_v, const AdvType horiz_adv_type, const AdvType vert_adv_type, const bool use_terrain, const int domhi_z)</div><div class="ttdef"><b>Definition:</b> AdvectionSrcForMom.cpp:36</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a></div><div class="ttdeci">@ Upwind_3rd</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a></div><div class="ttdeci">@ Centered_4th</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a></div><div class="ttdeci">@ Upwind_5th</div></div>
@@ -565,8 +565,8 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="AdvectionSrcForMom_8cpp_a13199db40c555f8aa73f6ad806430142_cgraph.png" border="0" usemap="#aAdvectionSrcForMom_8cpp_a13199db40c555f8aa73f6ad806430142_cgraph" alt=""/></div>
-<map name="aAdvectionSrcForMom_8cpp_a13199db40c555f8aa73f6ad806430142_cgraph" id="aAdvectionSrcForMom_8cpp_a13199db40c555f8aa73f6ad806430142_cgraph">
+<div class="center"><img src="AdvectionSrcForMom_8cpp_af379674fb7439fb95bd65067099949dd_cgraph.png" border="0" usemap="#aAdvectionSrcForMom_8cpp_af379674fb7439fb95bd65067099949dd_cgraph" alt=""/></div>
+<map name="aAdvectionSrcForMom_8cpp_af379674fb7439fb95bd65067099949dd_cgraph" id="aAdvectionSrcForMom_8cpp_af379674fb7439fb95bd65067099949dd_cgraph">
 <area shape="rect" title=" " alt="" coords="5,81,165,108"/>
 <area shape="rect" href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987" title=" " alt="" coords="221,5,441,32"/>
 <area shape="rect" href="TerrainMetrics_8H.html#a3e3ceccddeb3cca9d9e4573af2311a5e" title=" " alt="" coords="216,56,447,83"/>
