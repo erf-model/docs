@@ -7,5 +7,6 @@ var EOS_8H =
     [ "getRhogivenThetaPress", "EOS_8H.html#ae6954ba7deb6ec80482087dbbc51f4ed", null ],
     [ "getRhoThetagivenP", "EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d", null ],
     [ "getTgivenRandRTh", "EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da", null ],
+    [ "getThgivenPandT", "EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5", null ],
     [ "getThgivenRandT", "EOS_8H.html#ad0e28e4df049e6e34fa4a973dd446506", null ]
 ];

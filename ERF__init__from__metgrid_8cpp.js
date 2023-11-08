@@ -1,9 +1,0 @@
-var ERF__init__from__metgrid_8cpp =
-[
-    [ "init_base_state_from_metgrid", "ERF__init__from__metgrid_8cpp.html#a41879aa89fd20a9387da4d31a7c34c5b", null ],
-    [ "init_msfs_from_metgrid", "ERF__init__from__metgrid_8cpp.html#ab4943c95bfc9ea23cb2d93123f60a03e", null ],
-    [ "init_state_from_metgrid", "ERF__init__from__metgrid_8cpp.html#a041948a5033afaaf7d6b3b2456786b57", null ],
-    [ "init_terrain_from_metgrid", "ERF__init__from__metgrid_8cpp.html#a7cf189d6e49b19c557bf640bac90be0b", null ],
-    [ "interpolate_column", "ERF__init__from__metgrid_8cpp.html#a13ecbdbb9b787bbe69e06b7a6fc31649", null ],
-    [ "read_from_metgrid", "ERF__init__from__metgrid_8cpp.html#acb0a0b25cacca5c06adc720edb0b0456", null ]
-];

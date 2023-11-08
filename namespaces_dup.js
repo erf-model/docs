@@ -40,6 +40,7 @@ var namespaces_dup =
     ] ],
     [ "InterpType", "namespaceInterpType.html", null ],
     [ "IntVar", "namespaceIntVar.html", null ],
+    [ "MetGridBdyVars", "namespaceMetGridBdyVars.html", null ],
     [ "MicVar", "namespaceMicVar.html", null ],
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
     [ "Prim", "namespacePrim.html", null ],
