@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"classWaterVaporSat.html#a65b6cc3dc802016e84bc19030f6ad65a":[2,0,62,8],
 "classWaterVaporSat.html#a8e168a8ca074d530d7afe596739270b4":[2,0,62,13],
 "classWaterVaporSat.html#a96e18136b9a523d912f9d86829de8b38":[2,0,62,6],
 "classWaterVaporSat.html#a9d72a29e54869f42ec419639d6c3d70f":[2,0,62,1],
@@ -219,8 +220,8 @@ var NAVTREEINDEX7 =
 "globals_y.html":[3,1,0,22],
 "globals_z.html":[3,1,0,23],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "namespaceBCVars.html":[1,0,0],
 "namespaceCons.html":[1,0,1],
 "namespaceERFBCType.html":[1,0,4],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,4,0],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,4,0,8]
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,4,0]
 };

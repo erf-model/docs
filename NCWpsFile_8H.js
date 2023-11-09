@@ -15,5 +15,6 @@ var NCWpsFile_8H =
     [ "BuildFABsFromNetCDFFile", "NCWpsFile_8H.html#abcadbd0591038f7d3c9bb13c37df21f9", null ],
     [ "BuildFABsFromWRFBdyFile", "NCWpsFile_8H.html#aae7cfa7d43851de007130e9a44b7f1c0", null ],
     [ "fill_fab_from_arrays", "NCWpsFile_8H.html#a5fbca9044ab6c565786cf158ff9a6c0f", null ],
+    [ "getEpochTime", "NCWpsFile_8H.html#a370a1cca0113b3529a59c031ff71ffb8", null ],
     [ "ReadNetCDFFile", "NCWpsFile_8H.html#aa682cd5b28ee9ffaf36c6944bd124af0", null ]
 ];

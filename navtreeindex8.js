@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,4,0,8],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[1,0,4,0,7],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705":[1,0,4,0,1],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42d0838b4e8d40ee76fbaf2d55c3402e":[1,0,4,0,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6":[2,0,38,1],
 "structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f":[2,0,38,0],
 "structRealIdx.html":[2,0,42],
-"structSolverChoice.html":[2,0,47],
-"structSolverChoice.html#a063a88594452100497651e8aaf1f68d7":[2,0,47,37]
+"structSolverChoice.html":[2,0,47]
 };
