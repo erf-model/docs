@@ -3,6 +3,7 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_Advance.cpp", "ERF__Advance_8cpp.html", null ],
     [ "ERF_advance_dycore.cpp", "ERF__advance__dycore_8cpp.html", null ],
     [ "ERF_advance_microphysics.cpp", "ERF__advance__microphysics_8cpp.html", null ],
+    [ "ERF_advance_radiation.cpp", "ERF__advance__radiation_8cpp.html", null ],
     [ "ERF_ApplySpongeZoneBCs.cpp", "ERF__ApplySpongeZoneBCs_8cpp.html", "ERF__ApplySpongeZoneBCs_8cpp" ],
     [ "ERF_ComputeTimestep.cpp", "ERF__ComputeTimestep_8cpp.html", null ],
     [ "ERF_fast_rhs_MT.cpp", "ERF__fast__rhs__MT_8cpp.html", "ERF__fast__rhs__MT_8cpp" ],

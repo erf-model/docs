@@ -262,8 +262,8 @@ template&lt;typename DType &gt; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">k_dist_lw</a>.finalize();</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    yakl::finalize();</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
-<div class="ttc" id="aclassRrtmgp_html_a9b6fe178ed49089a3ba56db0909e7414"><div class="ttname"><a href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">Rrtmgp::k_dist_lw</a></div><div class="ttdeci">GasOpticsRRTMGP k_dist_lw</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:131</div></div>
-<div class="ttc" id="aclassRrtmgp_html_aa59a2a79cee48c24f60ec786e84edb26"><div class="ttname"><a href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">Rrtmgp::k_dist_sw</a></div><div class="ttdeci">GasOpticsRRTMGP k_dist_sw</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:130</div></div>
+<div class="ttc" id="aclassRrtmgp_html_a9b6fe178ed49089a3ba56db0909e7414"><div class="ttname"><a href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">Rrtmgp::k_dist_lw</a></div><div class="ttdeci">GasOpticsRRTMGP k_dist_lw</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:130</div></div>
+<div class="ttc" id="aclassRrtmgp_html_aa59a2a79cee48c24f60ec786e84edb26"><div class="ttname"><a href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">Rrtmgp::k_dist_sw</a></div><div class="ttdeci">GasOpticsRRTMGP k_dist_sw</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:129</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -290,10 +290,10 @@ template&lt;typename DType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                                  {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;       gpoint_bands = <a class="code" href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">k_dist_lw</a>.get_gpoint_bands();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;       yakl::fence();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                                  {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;       gpoint_bands = <a class="code" href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">k_dist_lw</a>.get_gpoint_bands();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;       yakl::fence();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -320,10 +320,10 @@ template&lt;typename DType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                                 {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;       gpoint_bands = <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.get_gpoint_bands();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;       yakl::fence();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                 {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;       gpoint_bands = <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.get_gpoint_bands();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;       yakl::fence();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -349,9 +349,9 @@ template&lt;typename DType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                 {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;       <span class="keywordflow">return</span> std::max(<a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.temp_ref_max, <a class="code" href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">k_dist_lw</a>.temp_ref_max);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                 {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;       <span class="keywordflow">return</span> std::max(<a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.temp_ref_max, <a class="code" href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">k_dist_lw</a>.temp_ref_max);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -377,9 +377,9 @@ template&lt;typename DType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                 {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keywordflow">return</span> std::min(<a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.temp_ref_min, <a class="code" href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">k_dist_lw</a>.temp_ref_min);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                 {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <span class="keywordflow">return</span> std::min(<a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.temp_ref_min, <a class="code" href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">k_dist_lw</a>.temp_ref_min);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -405,9 +405,9 @@ template&lt;typename DType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                       {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;       <span class="keywordflow">return</span> <a class="code" href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">k_dist_lw</a>.get_nband();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                       {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;       <span class="keywordflow">return</span> <a class="code" href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">k_dist_lw</a>.get_nband();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -433,9 +433,9 @@ template&lt;typename DType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                       {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;       <span class="keywordflow">return</span> <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.get_nband();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                       {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;       <span class="keywordflow">return</span> <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.get_nband();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -461,9 +461,9 @@ template&lt;typename DType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                      {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;       <span class="keywordflow">return</span> <a class="code" href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">k_dist_lw</a>.get_ngpt();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                      {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;       <span class="keywordflow">return</span> <a class="code" href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">k_dist_lw</a>.get_ngpt();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -489,9 +489,9 @@ template&lt;typename DType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                      {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;       <span class="keywordflow">return</span> <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.get_ngpt();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                      {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;       <span class="keywordflow">return</span> <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.get_ngpt();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -563,11 +563,11 @@ template&lt;typename DType &gt; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    load_and_init(<a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>, <a class="code" href="classRrtmgp.html#a5fa9f64db9791a7f152055f484113714">coefficients_file_sw</a>, available_gases);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    load_and_init(<a class="code" href="classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414">k_dist_lw</a>, <a class="code" href="classRrtmgp.html#a02493ce8d504b6a4d4a9a5cfec8d44f5">coefficients_file_lw</a>, available_gases);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="ttc" id="aclassRrtmgp_html_a02493ce8d504b6a4d4a9a5cfec8d44f5"><div class="ttname"><a href="classRrtmgp.html#a02493ce8d504b6a4d4a9a5cfec8d44f5">Rrtmgp::coefficients_file_lw</a></div><div class="ttdeci">char const  * coefficients_file_lw</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:127</div></div>
-<div class="ttc" id="aclassRrtmgp_html_a083da6e26f2c0e2b52a4145f8d285a92"><div class="ttname"><a href="classRrtmgp.html#a083da6e26f2c0e2b52a4145f8d285a92">Rrtmgp::active_gases</a></div><div class="ttdeci">string1d active_gases</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:123</div></div>
-<div class="ttc" id="aclassRrtmgp_html_a4b8b61c7a7fadac5b1cdd968144a5c01"><div class="ttname"><a href="classRrtmgp.html#a4b8b61c7a7fadac5b1cdd968144a5c01">Rrtmgp::ngas</a></div><div class="ttdeci">int ngas</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:120</div></div>
-<div class="ttc" id="aclassRrtmgp_html_a5fa9f64db9791a7f152055f484113714"><div class="ttname"><a href="classRrtmgp.html#a5fa9f64db9791a7f152055f484113714">Rrtmgp::coefficients_file_sw</a></div><div class="ttdeci">char const  * coefficients_file_sw</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:126</div></div>
-<div class="ttc" id="aclassRrtmgp_html_af280c224007b91d1ee2bd34efbd1b6c3"><div class="ttname"><a href="classRrtmgp.html#af280c224007b91d1ee2bd34efbd1b6c3">Rrtmgp::gas_names</a></div><div class="ttdeci">const char ** gas_names</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:121</div></div>
+<div class="ttc" id="aclassRrtmgp_html_a02493ce8d504b6a4d4a9a5cfec8d44f5"><div class="ttname"><a href="classRrtmgp.html#a02493ce8d504b6a4d4a9a5cfec8d44f5">Rrtmgp::coefficients_file_lw</a></div><div class="ttdeci">char const  * coefficients_file_lw</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:126</div></div>
+<div class="ttc" id="aclassRrtmgp_html_a083da6e26f2c0e2b52a4145f8d285a92"><div class="ttname"><a href="classRrtmgp.html#a083da6e26f2c0e2b52a4145f8d285a92">Rrtmgp::active_gases</a></div><div class="ttdeci">string1d active_gases</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:122</div></div>
+<div class="ttc" id="aclassRrtmgp_html_a4b8b61c7a7fadac5b1cdd968144a5c01"><div class="ttname"><a href="classRrtmgp.html#a4b8b61c7a7fadac5b1cdd968144a5c01">Rrtmgp::ngas</a></div><div class="ttdeci">int ngas</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:119</div></div>
+<div class="ttc" id="aclassRrtmgp_html_a5fa9f64db9791a7f152055f484113714"><div class="ttname"><a href="classRrtmgp.html#a5fa9f64db9791a7f152055f484113714">Rrtmgp::coefficients_file_sw</a></div><div class="ttdeci">char const  * coefficients_file_sw</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:125</div></div>
+<div class="ttc" id="aclassRrtmgp_html_af280c224007b91d1ee2bd34efbd1b6c3"><div class="ttname"><a href="classRrtmgp.html#af280c224007b91d1ee2bd34efbd1b6c3">Rrtmgp::gas_names</a></div><div class="ttdeci">const char ** gas_names</div><div class="ttdef"><b>Definition:</b> Rrtmgp.H:120</div></div>
 </div><!-- fragment -->
 </div>
 </div>

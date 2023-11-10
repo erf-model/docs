@@ -97,18 +97,9 @@ $(document).ready(function(){initNavTree('Albedo_8H_source.html',''); initResiza
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef ERF_ALBEDO_H_</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define ERF_ALBEDO_H_</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="Albedo_8H.html#a677778ad4c4fb53a8c7076ace6d436ce">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="Albedo_8H.html#a677778ad4c4fb53a8c7076ace6d436ce">set_albedo</a>(<span class="keyword">const</span> real1d&amp; coszrs, real2d&amp; albedo_dir, real2d&amp; albedo_dif)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="comment">// Albedos for land type I (Briegleb)</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">auto</span> nswbands = albedo_dir.extent(0);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">auto</span> ncol     = albedo_dif.extent(1);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  yakl::c::parallel_for(yakl::c::Bounds&lt;2&gt;(nswbands,ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> icol) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    albedo_dir(ibnd, icol) = 1.4 * 0.24 / ( 1. + 0.8 * coszrs(icol));</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    albedo_dif(ibnd, icol) = 1.2 * 0.24;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  });</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aAlbedo_8H_html_a677778ad4c4fb53a8c7076ace6d436ce"><div class="ttname"><a href="Albedo_8H.html#a677778ad4c4fb53a8c7076ace6d436ce">set_albedo</a></div><div class="ttdeci">void set_albedo(const real1d &amp;coszrs, real2d &amp;albedo_dir, real2d &amp;albedo_dif)</div><div class="ttdef"><b>Definition:</b> Albedo.H:12</div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Albedo_8H.html#a677778ad4c4fb53a8c7076ace6d436ce">set_albedo</a>(<span class="keyword">const</span> real1d&amp; coszrs, real2d&amp; albedo_dir, real2d&amp; albedo_dif);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aAlbedo_8H_html_a677778ad4c4fb53a8c7076ace6d436ce"><div class="ttname"><a href="Albedo_8H.html#a677778ad4c4fb53a8c7076ace6d436ce">set_albedo</a></div><div class="ttdeci">void set_albedo(const real1d &amp;coszrs, real2d &amp;albedo_dir, real2d &amp;albedo_dif)</div><div class="ttdef"><b>Definition:</b> Albedo.cpp:5</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
