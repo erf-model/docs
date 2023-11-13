@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('Advection_8H.html',''); initResizable(
 <div class="textblock"><code>#include &lt;AMReX.H&gt;</code><br />
 <code>#include &lt;AMReX_MultiFab.H&gt;</code><br />
 <code>#include &lt;AMReX_BCRec.H&gt;</code><br />
-<code>#include &lt;AMReX_InterpFaceRegister.H&gt;</code><br />
+<code>#include &lt;AMReX_YAFluxRegister.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="DataStruct_8H_source.html">DataStruct.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="IndexDefines_8H_source.html">IndexDefines.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="ABLMost_8H_source.html">ABLMost.H</a>&gt;</code><br />
@@ -104,7 +104,7 @@ Include dependency graph for Advection.H:</div>
 <area shape="rect" title=" " alt="" coords="288,304,371,331"/>
 <area shape="rect" title=" " alt="" coords="1550,304,1695,331"/>
 <area shape="rect" title=" " alt="" coords="1937,80,2069,107"/>
-<area shape="rect" title=" " alt="" coords="2093,80,2304,107"/>
+<area shape="rect" title=" " alt="" coords="2093,80,2280,107"/>
 <area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="441,80,546,107"/>
 <area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="1154,304,1275,331"/>
 <area shape="rect" href="ABLMost_8H.html" title=" " alt="" coords="1375,80,1468,107"/>
@@ -147,10 +147,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa65b80cc76a2439cf7c237e3ddd13fe3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Advection_8H.html#aa65b80cc76a2439cf7c237e3ddd13fe3">AdvectionSrcForRhoAndTheta</a> (const amrex::Box &amp;bx, const amrex::Box &amp;valid_bx, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;omega, amrex::Real fac, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSize, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const bool use_terrain)</td></tr>
-<tr class="separator:aa65b80cc76a2439cf7c237e3ddd13fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac95a70726e54378f057e32a4fccdaa8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Advection_8H.html#ac95a70726e54378f057e32a4fccdaa8a">AdvectionSrcForScalars</a> (int level, int finest_level, const amrex::MFIter &amp;mfi, const amrex::Box &amp;bx, const int icomp, const int ncomp, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::Real dt, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSize, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const bool use_terrain, const bool is_two_way_coupling)</td></tr>
-<tr class="separator:ac95a70726e54378f057e32a4fccdaa8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60f54190bf8a9d4e263f13bf71f60f2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Advection_8H.html#a60f54190bf8a9d4e263f13bf71f60f2e">AdvectionSrcForRho</a> (const amrex::Box &amp;bx, const amrex::Box &amp;valid_bx, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;omega, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSize, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const bool use_terrain, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr)</td></tr>
+<tr class="separator:a60f54190bf8a9d4e263f13bf71f60f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab74b896c6b7dc7df8db64544b910c742"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Advection_8H.html#ab74b896c6b7dc7df8db64544b910c742">AdvectionSrcForScalars</a> (const amrex::Box &amp;bx, const int icomp, const int ncomp, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSize, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const bool use_terrain, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr)</td></tr>
+<tr class="separator:ab74b896c6b7dc7df8db64544b910c742"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5eed65b24d76ea5565f3e1b31be0423a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Advection_8H.html#a5eed65b24d76ea5565f3e1b31be0423a">AdvectionSrcForMom</a> (const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;Omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const bool use_terrain, const int domhi_z)</td></tr>
 <tr class="separator:a5eed65b24d76ea5565f3e1b31be0423a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff14fe9e4f76b499843517b2c41c0fbb"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Advection_8H.html#aff14fe9e4f76b499843517b2c41c0fbb">EfficientAdvType</a> (int nrk, <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> adv_type)</td></tr>
@@ -304,7 +304,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Compute advection tendencies for all components of momentum </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__inc_8cpp.html#a9f99455c5a8615bf8bfc30d418d7c237">erf_slow_rhs_inc()</a>, and <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a0ae03c3e839fa9cc87e6d7ba7b736da0">erf_slow_rhs_pre()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__inc_8cpp.html#a9f99455c5a8615bf8bfc30d418d7c237">erf_slow_rhs_inc()</a>, and <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a94da1371ddff5a52fe33ff9c51827d0a">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -312,20 +312,20 @@ Here is the caller graph for this function:</div>
 <map name="aAdvection_8H_a5eed65b24d76ea5565f3e1b31be0423a_icgraph" id="aAdvection_8H_a5eed65b24d76ea5565f3e1b31be0423a_icgraph">
 <area shape="rect" title=" " alt="" coords="185,31,345,57"/>
 <area shape="rect" href="ERF__slow__rhs__inc_8cpp.html#a9f99455c5a8615bf8bfc30d418d7c237" title=" " alt="" coords="6,5,137,32"/>
-<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a0ae03c3e839fa9cc87e6d7ba7b736da0" title=" " alt="" coords="5,56,137,83"/>
+<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a94da1371ddff5a52fe33ff9c51827d0a" title=" " alt="" coords="5,56,137,83"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aa65b80cc76a2439cf7c237e3ddd13fe3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa65b80cc76a2439cf7c237e3ddd13fe3">&#9670;&nbsp;</a></span>AdvectionSrcForRhoAndTheta()</h2>
+<a id="a60f54190bf8a9d4e263f13bf71f60f2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60f54190bf8a9d4e263f13bf71f60f2e">&#9670;&nbsp;</a></span>AdvectionSrcForRho()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void AdvectionSrcForRhoAndTheta </td>
+          <td class="memname">void AdvectionSrcForRho </td>
           <td>(</td>
           <td class="paramtype">const amrex::Box &amp;&#160;</td>
           <td class="paramname"><em>bx</em>, </td>
@@ -363,12 +363,6 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Real&#160;</td>
-          <td class="paramname"><em>fac</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>avg_xmom</em>, </td>
         </tr>
@@ -383,12 +377,6 @@ Here is the caller graph for this function:</div>
           <td></td>
           <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>avg_zmom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cell_prim</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -429,20 +417,14 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a>&#160;</td>
-          <td class="paramname"><em>horiz_adv_type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a>&#160;</td>
-          <td class="paramname"><em>vert_adv_type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>use_terrain</em>&#160;</td>
+          <td class="paramname"><em>use_terrain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>flx_arr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -453,22 +435,22 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendency for density and potential temperature </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__inc_8cpp.html#a9f99455c5a8615bf8bfc30d418d7c237">erf_slow_rhs_inc()</a>, and <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a0ae03c3e839fa9cc87e6d7ba7b736da0">erf_slow_rhs_pre()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__inc_8cpp.html#a9f99455c5a8615bf8bfc30d418d7c237">erf_slow_rhs_inc()</a>, and <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a94da1371ddff5a52fe33ff9c51827d0a">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Advection_8H_aa65b80cc76a2439cf7c237e3ddd13fe3_icgraph.png" border="0" usemap="#aAdvection_8H_aa65b80cc76a2439cf7c237e3ddd13fe3_icgraph" alt=""/></div>
-<map name="aAdvection_8H_aa65b80cc76a2439cf7c237e3ddd13fe3_icgraph" id="aAdvection_8H_aa65b80cc76a2439cf7c237e3ddd13fe3_icgraph">
-<area shape="rect" title=" " alt="" coords="185,31,400,57"/>
+<div class="center"><img src="Advection_8H_a60f54190bf8a9d4e263f13bf71f60f2e_icgraph.png" border="0" usemap="#aAdvection_8H_a60f54190bf8a9d4e263f13bf71f60f2e_icgraph" alt=""/></div>
+<map name="aAdvection_8H_a60f54190bf8a9d4e263f13bf71f60f2e_icgraph" id="aAdvection_8H_a60f54190bf8a9d4e263f13bf71f60f2e_icgraph">
+<area shape="rect" title=" " alt="" coords="185,31,337,57"/>
 <area shape="rect" href="ERF__slow__rhs__inc_8cpp.html#a9f99455c5a8615bf8bfc30d418d7c237" title=" " alt="" coords="6,5,137,32"/>
-<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a0ae03c3e839fa9cc87e6d7ba7b736da0" title=" " alt="" coords="5,56,137,83"/>
+<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a94da1371ddff5a52fe33ff9c51827d0a" title=" " alt="" coords="5,56,137,83"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ac95a70726e54378f057e32a4fccdaa8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac95a70726e54378f057e32a4fccdaa8a">&#9670;&nbsp;</a></span>AdvectionSrcForScalars()</h2>
+<a id="ab74b896c6b7dc7df8db64544b910c742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab74b896c6b7dc7df8db64544b910c742">&#9670;&nbsp;</a></span>AdvectionSrcForScalars()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -476,24 +458,6 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void AdvectionSrcForScalars </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>level</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>finest_level</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::MFIter &amp;&#160;</td>
-          <td class="paramname"><em>mfi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const amrex::Box &amp;&#160;</td>
           <td class="paramname"><em>bx</em>, </td>
         </tr>
@@ -548,12 +512,6 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real&#160;</td>
-          <td class="paramname"><em>dt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>cellSize</em>, </td>
         </tr>
@@ -584,8 +542,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>is_two_way_coupling</em>&#160;</td>
+          <td class="paramtype">const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>flx_arr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -596,14 +554,16 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendency for all scalars other than density and potential temperature </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__post_8cpp.html#a8428c06d670a36e38616743490bc4d0d">erf_slow_rhs_post()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__inc_8cpp.html#a9f99455c5a8615bf8bfc30d418d7c237">erf_slow_rhs_inc()</a>, <a class="el" href="ERF__slow__rhs__post_8cpp.html#a59883c2dec3aeac2dcc289c3bfdff683">erf_slow_rhs_post()</a>, and <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a94da1371ddff5a52fe33ff9c51827d0a">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Advection_8H_ac95a70726e54378f057e32a4fccdaa8a_icgraph.png" border="0" usemap="#aAdvection_8H_ac95a70726e54378f057e32a4fccdaa8a_icgraph" alt=""/></div>
-<map name="aAdvection_8H_ac95a70726e54378f057e32a4fccdaa8a_icgraph" id="aAdvection_8H_ac95a70726e54378f057e32a4fccdaa8a_icgraph">
-<area shape="rect" title=" " alt="" coords="192,5,367,32"/>
-<area shape="rect" href="ERF__slow__rhs__post_8cpp.html#a8428c06d670a36e38616743490bc4d0d" title=" " alt="" coords="5,5,144,32"/>
+<div class="center"><img src="Advection_8H_ab74b896c6b7dc7df8db64544b910c742_icgraph.png" border="0" usemap="#aAdvection_8H_ab74b896c6b7dc7df8db64544b910c742_icgraph" alt=""/></div>
+<map name="aAdvection_8H_ab74b896c6b7dc7df8db64544b910c742_icgraph" id="aAdvection_8H_ab74b896c6b7dc7df8db64544b910c742_icgraph">
+<area shape="rect" title=" " alt="" coords="192,56,367,83"/>
+<area shape="rect" href="ERF__slow__rhs__inc_8cpp.html#a9f99455c5a8615bf8bfc30d418d7c237" title=" " alt="" coords="9,5,140,32"/>
+<area shape="rect" href="ERF__slow__rhs__post_8cpp.html#a59883c2dec3aeac2dcc289c3bfdff683" title=" " alt="" coords="5,56,144,83"/>
+<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a94da1371ddff5a52fe33ff9c51827d0a" title=" " alt="" coords="9,107,141,133"/>
 </map>
 </div>
 
@@ -634,42 +594,42 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;     <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> eff_adv_type;</div>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;     <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> eff_adv_type;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;     <span class="keywordflow">if</span> (nrk == 0) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;         eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;     <span class="keywordflow">if</span> (nrk == 0) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nrk == 1) {</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;         eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nrk == 1) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;         <span class="keywordflow">if</span> ( (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>) ||</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>)   ||</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>) ||</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada35597e5f00fa867fe6e39d651a2195">AdvType::Weno_3</a>)       ||</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a9c29b64a7627155706a1cd93682b4351">AdvType::Weno_3Z</a>)      ||</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af8b942d20ed08b25df71ea1c87244210">AdvType::Weno_3MZQ</a>)    )</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;         {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;             eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>) ||</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                     (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af2429e8de544f3ebd7c9668e3dbebaa8">AdvType::Weno_5</a>)     ||</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                     (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70aeb75f5943c7837da80e2048f2b344efc">AdvType::Weno_5Z</a>)    )</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;         {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;             eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;         } <span class="keywordflow">else</span> { <span class="comment">// (adv_type == AdvType::Centered_6th)</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;             eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;         }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;     } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;         eff_adv_type = adv_type;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;     }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;     <span class="keywordflow">return</span>(eff_adv_type);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;         <span class="keywordflow">if</span> ( (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>) ||</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>)   ||</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>) ||</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada35597e5f00fa867fe6e39d651a2195">AdvType::Weno_3</a>)       ||</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a9c29b64a7627155706a1cd93682b4351">AdvType::Weno_3Z</a>)      ||</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af8b942d20ed08b25df71ea1c87244210">AdvType::Weno_3MZQ</a>)    )</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;         {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;             eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>) ||</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                     (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af2429e8de544f3ebd7c9668e3dbebaa8">AdvType::Weno_5</a>)     ||</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                     (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70aeb75f5943c7837da80e2048f2b344efc">AdvType::Weno_5Z</a>)    )</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;         {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;             eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;         } <span class="keywordflow">else</span> { <span class="comment">// (adv_type == AdvType::Centered_6th)</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;             eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;         }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;     } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;         eff_adv_type = adv_type;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;     }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;     <span class="keywordflow">return</span>(eff_adv_type);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
 <div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a></div><div class="ttdeci">AdvType</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:201</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a></div><div class="ttdeci">@ Upwind_3rd</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a></div><div class="ttdeci">@ Centered_4th</div></div>
@@ -681,14 +641,14 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70af2429e8de544f3ebd7c9668e3dbebaa8"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af2429e8de544f3ebd7c9668e3dbebaa8">AdvType::Weno_5</a></div><div class="ttdeci">@ Weno_5</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70af8b942d20ed08b25df71ea1c87244210"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af8b942d20ed08b25df71ea1c87244210">AdvType::Weno_3MZQ</a></div><div class="ttdeci">@ Weno_3MZQ</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__post_8cpp.html#a8428c06d670a36e38616743490bc4d0d">erf_slow_rhs_post()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__post_8cpp.html#a59883c2dec3aeac2dcc289c3bfdff683">erf_slow_rhs_post()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Advection_8H_aff14fe9e4f76b499843517b2c41c0fbb_icgraph.png" border="0" usemap="#aAdvection_8H_aff14fe9e4f76b499843517b2c41c0fbb_icgraph" alt=""/></div>
 <map name="aAdvection_8H_aff14fe9e4f76b499843517b2c41c0fbb_icgraph" id="aAdvection_8H_aff14fe9e4f76b499843517b2c41c0fbb_icgraph">
 <area shape="rect" title=" " alt="" coords="192,5,323,32"/>
-<area shape="rect" href="ERF__slow__rhs__post_8cpp.html#a8428c06d670a36e38616743490bc4d0d" title=" " alt="" coords="5,5,144,32"/>
+<area shape="rect" href="ERF__slow__rhs__post_8cpp.html#a59883c2dec3aeac2dcc289c3bfdff683" title=" " alt="" coords="5,5,144,32"/>
 </map>
 </div>
 

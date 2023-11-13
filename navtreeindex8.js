@@ -1,12 +1,5 @@
 var NAVTREEINDEX8 =
 {
-"namespaceERFBCType.html":[1,0,4],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,4,0],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,4,0,8],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[1,0,4,0,7],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705":[1,0,4,0,1],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42d0838b4e8d40ee76fbaf2d55c3402e":[1,0,4,0,6],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846":[1,0,4,0,4],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af":[1,0,4,0,5],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca5e7251ff4badd9a198c0601a7929b1c4":[1,0,4,0,0],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca9f18284526a1054d4e7a4783852ead30":[1,0,4,0,2],
@@ -249,5 +242,12 @@ var NAVTREEINDEX8 =
 "structPhysProp_1_1physprop__t.html#aff3fc87f8134cab71058c4372ddb853f":[2,0,35,0,37],
 "structProbParmDefaults.html":[2,0,38],
 "structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6":[2,0,38,1],
-"structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f":[2,0,38,0]
+"structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f":[2,0,38,0],
+"structRealIdx.html":[2,0,42],
+"structSolverChoice.html":[2,0,47],
+"structSolverChoice.html#a063a88594452100497651e8aaf1f68d7":[2,0,47,37],
+"structSolverChoice.html#a06a0dd1c8f7c1ed73a4f8d24b6b31cdf":[2,0,47,22],
+"structSolverChoice.html#a0a4f1c55ea1e3a7d50f926ee0d20a21c":[2,0,47,14],
+"structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0":[2,0,47,34],
+"structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3":[2,0,47,10]
 };

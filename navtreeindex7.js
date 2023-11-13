@@ -1,12 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"classWaterVaporSat.html#a5463980977e84f7268ed9afde2bad62e":[2,0,62,9],
-"classWaterVaporSat.html#a55f00a8a0a629c85e6a477d11a4f14e5":[2,0,62,5],
-"classWaterVaporSat.html#a65b6cc3dc802016e84bc19030f6ad65a":[2,0,62,8],
-"classWaterVaporSat.html#a8e168a8ca074d530d7afe596739270b4":[2,0,62,13],
-"classWaterVaporSat.html#a96e18136b9a523d912f9d86829de8b38":[2,0,62,6],
-"classWaterVaporSat.html#a9d72a29e54869f42ec419639d6c3d70f":[2,0,62,1],
-"classWaterVaporSat.html#abd48ae5df93e45c8d4bab8e1e985838b":[2,0,62,11],
 "classWaterVaporSat.html#ac7a0c53f3985416b26f43135e25accca":[2,0,62,14],
 "classWaterVaporSat.html#ac945aefc06aef842e140df159ec62c05":[2,0,62,12],
 "classWaterVaporSat.html#ad2bce1bf12d7f01fd354c36e17bfe635":[2,0,62,3],
@@ -249,5 +242,12 @@ var NAVTREEINDEX7 =
 "main_8cpp.html#a183e783116d02836167ccbed3b28c1d3":[3,0,1,23,0],
 "main_8cpp.html#aabaa127a3a319c1b86090d6c88568965":[3,0,1,23,2],
 "namespaceBCVars.html":[1,0,0],
-"namespaceCons.html":[1,0,1]
+"namespaceCons.html":[1,0,1],
+"namespaceERFBCType.html":[1,0,4],
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,4,0],
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,4,0,8],
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[1,0,4,0,7],
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705":[1,0,4,0,1],
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42d0838b4e8d40ee76fbaf2d55c3402e":[1,0,4,0,6],
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846":[1,0,4,0,4]
 };
