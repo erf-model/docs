@@ -213,28 +213,28 @@ template&lt;typename InterpType_H &gt; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">switch</span>(vert_adv_type) {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>:</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED2&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                                                flx_arr, cell_prim,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                                avg_xmom, avg_ymom, avg_zmom);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                                              flx_arr, cell_prim,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>:</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND3&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                              flx_arr, cell_prim,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                            flx_arr, cell_prim,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>:</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED4&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                                flx_arr, cell_prim,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                                avg_xmom, avg_ymom, avg_zmom);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                              flx_arr, cell_prim,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>:</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND5&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                              flx_arr, cell_prim,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                            flx_arr, cell_prim,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a>:</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED6&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                                flx_arr, cell_prim,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                                                avg_xmom, avg_ymom, avg_zmom);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                              flx_arr, cell_prim,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        AMREX_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown vertical advection scheme!&quot;</span>);</div>

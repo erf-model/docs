@@ -14,7 +14,7 @@ var searchData=
   ['set_5faerosol_5foptics_5fsw_2744',['set_aerosol_optics_sw',['../classOptics.html#aa9e6b94ffd908a6a1028d59567b0cbe9',1,'Optics']]],
   ['set_5falbedo_2745',['set_albedo',['../Albedo_8cpp.html#a677778ad4c4fb53a8c7076ace6d436ce',1,'set_albedo(const real1d &amp;coszrs, real2d &amp;albedo_dir, real2d &amp;albedo_dif):&#160;Albedo.cpp'],['../Albedo_8H.html#a677778ad4c4fb53a8c7076ace6d436ce',1,'set_albedo(const real1d &amp;coszrs, real2d &amp;albedo_dir, real2d &amp;albedo_dif):&#160;Albedo.cpp']]],
   ['set_5fdaynight_5findices_2746',['set_daynight_indices',['../classRadiation.html#ad3337bd3cd39c217708833edf18dd5c1',1,'Radiation']]],
-  ['set_5ffast_5frhs_2747',['set_fast_rhs',['../classMRISplitIntegrator.html#ad93cd0e1af2b6a7783aa561016c17b0e',1,'MRISplitIntegrator']]],
+  ['set_5ffast_5frhs_2747',['set_fast_rhs',['../classMRISplitIntegrator.html#aafed3f1d61d477bd1f01bdeb71a9ab11',1,'MRISplitIntegrator']]],
   ['set_5fk_5findices_5fn_2748',['set_k_indices_N',['../classMOSTAverage.html#a8928b9f9d6d45fdd9fd88053fcae34e2',1,'MOSTAverage']]],
   ['set_5fk_5findices_5ft_2749',['set_k_indices_T',['../classMOSTAverage.html#a1892a3f9c2175cd2323d8d3a3bc83b6c',1,'MOSTAverage']]],
   ['set_5fno_5fsubstep_2750',['set_no_substep',['../classMRISplitIntegrator.html#a825efb33e69853b14d8e7085ea86edf6',1,'MRISplitIntegrator']]],
