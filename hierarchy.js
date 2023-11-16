@@ -51,6 +51,9 @@ var hierarchy =
     ] ],
     [ "ncutils::NCVar", "structncutils_1_1NCVar.html", null ],
     [ "NDArray< DataType >", "structNDArray.html", null ],
+    [ "NullMoist", "classNullMoist.html", [
+      [ "SAM", "classSAM.html", null ]
+    ] ],
     [ "Optics", "classOptics.html", null ],
     [ "amrex::ParticleContainer", null, [
       [ "TerrainFittedPC", "classTerrainFittedPC.html", null ]
