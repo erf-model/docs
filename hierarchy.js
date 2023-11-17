@@ -26,12 +26,14 @@ var hierarchy =
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", null ],
     [ "MamConstituents::gas_t", "structMamConstituents_1_1gas__t.html", null ],
     [ "MamConstituents::gaslist_t", "structMamConstituents_1_1gaslist__t.html", null ],
+    [ "HydroAssignor", "structHydroAssignor.html", null ],
+    [ "HydroIntIdx", "structHydroIntIdx.html", null ],
+    [ "HydroRealIdx", "structHydroRealIdx.html", null ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
     [ "amrex::IntegratorBase", null, [
       [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ]
     ] ],
     [ "LinInterp::InterpType", "structLinInterp_1_1InterpType.html", null ],
-    [ "IntIdx", "structIntIdx.html", null ],
     [ "LinInterp", "classLinInterp.html", null ],
     [ "Mam4_aer", "classMam4__aer.html", null ],
     [ "MamConstituents", "classMamConstituents.html", null ],
@@ -56,8 +58,10 @@ var hierarchy =
     ] ],
     [ "Optics", "classOptics.html", null ],
     [ "amrex::ParticleContainer", null, [
-      [ "TerrainFittedPC", "classTerrainFittedPC.html", null ]
+      [ "HydroPC", "classHydroPC.html", null ],
+      [ "TracerPC", "classTracerPC.html", null ]
     ] ],
+    [ "ParticleData", "structParticleData.html", null ],
     [ "PhysProp", "classPhysProp.html", null ],
     [ "PhysProp::physprop_t", "structPhysProp_1_1physprop__t.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
@@ -66,7 +70,6 @@ var hierarchy =
     [ "RadConstants", "classRadConstants.html", null ],
     [ "Radiation", "classRadiation.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
-    [ "RealIdx", "structRealIdx.html", null ],
     [ "Rrtmgp", "classRrtmgp.html", null ],
     [ "SatMethods", "classSatMethods.html", null ],
     [ "similarity_funs", "structsimilarity__funs.html", null ],
@@ -79,8 +82,10 @@ var hierarchy =
     [ "surface_temp", "structsurface__temp.html", null ],
     [ "surface_temp_charnock", "structsurface__temp__charnock.html", null ],
     [ "surface_temp_mod_charnock", "structsurface__temp__mod__charnock.html", null ],
-    [ "TerrainFittedAssignor", "structTerrainFittedAssignor.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
+    [ "TracerAssignor", "structTracerAssignor.html", null ],
+    [ "TracerIntIdx", "structTracerIntIdx.html", null ],
+    [ "TracerRealIdx", "structTracerRealIdx.html", null ],
     [ "TurbChoice", "structTurbChoice.html", null ],
     [ "UPWIND3", "structUPWIND3.html", null ],
     [ "UPWIND5", "structUPWIND5.html", null ],

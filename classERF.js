@@ -235,7 +235,6 @@ var classERF =
     [ "Tau32_lev", "classERF.html#aa650bf1f6885b179fd8d4c24b48668cb", null ],
     [ "Tau33_lev", "classERF.html#a60a185c47f07bf4fb537a15d5a226d8a", null ],
     [ "Theta_prim", "classERF.html#a71629ae2fda396472198691b75d83b2e", null ],
-    [ "use_tracer_particles", "classERF.html#a952fbf7d4578ce767b87b3b67a77c988", null ],
     [ "vars_new", "classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b", null ],
     [ "vars_old", "classERF.html#af31e928baa970a1507dfb0233b352542", null ],
     [ "verbose", "classERF.html#a43d0b17f6e155691a1e9474526df3af5", null ],
