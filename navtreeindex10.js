@@ -1,8 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29":[2,0,2,2],
-"structadiabatic__charnock.html":[2,0,3],
-"structadiabatic__charnock.html#a03e2e3c105b2939c433c758d067a74a9":[2,0,3,0],
 "structadiabatic__charnock.html#a49417d05287ecdf842e33f93d8e7e79d":[2,0,3,1],
 "structadiabatic__charnock.html#a5c11064c35d6eefd22558180155d6ede":[2,0,3,2],
 "structadiabatic__charnock.html#abb822b2278b8cd500c6fb0fb0a028709":[2,0,3,4],

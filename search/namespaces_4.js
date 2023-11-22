@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hseutils_2022',['HSEutils',['../namespaceHSEutils.html',1,'']]]
+  ['hseutils_2021',['HSEutils',['../namespaceHSEutils.html',1,'']]]
 ];

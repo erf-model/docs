@@ -1,6 +1,6 @@
 var classRadiation =
 [
-    [ "Radiation", "classRadiation.html#aa10836a21fdc3bdf8685ad3cda7ab78e", null ],
+    [ "Radiation", "classRadiation.html#aff1bb11c6262db1629ede245d861be18", null ],
     [ "~Radiation", "classRadiation.html#acde23acb9e9f7061d40634fbc24f330d", null ],
     [ "calculate_heating_rate", "classRadiation.html#a7e49fa25a07cc18c500459a78ce04d3e", null ],
     [ "get_gas_vmr", "classRadiation.html#a2bc455f5c10826def1e1962393b554c0", null ],

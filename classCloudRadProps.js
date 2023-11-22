@@ -24,10 +24,8 @@ var classCloudRadProps =
     [ "n_g_d", "classCloudRadProps.html#a40e14de999dd323f0cc8db50f46031e8", null ],
     [ "name", "classCloudRadProps.html#a7c91a5b46f8d85666e0ca0d1de8d23aa", null ],
     [ "nlambda", "classCloudRadProps.html#a3ef54947677ddd898a7b6ded241db03c", null ],
-    [ "nlw_band", "classCloudRadProps.html#ae459ca2d1bde4fa8f5a4fc2ff21a0ffd", null ],
     [ "nlwbands", "classCloudRadProps.html#ab7f6932c5559602939b8a32fa42ca1ca", null ],
     [ "nmu", "classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73", null ],
-    [ "nsw_band", "classCloudRadProps.html#a1b5da98c691355517e07afe634ed172b", null ],
     [ "nswbands", "classCloudRadProps.html#aeee4ab1a6887ab34c966028c45079199", null ],
     [ "ssa_sw_ice", "classCloudRadProps.html#a65b15fc94853bc17e04f24926155b7c5", null ],
     [ "ssa_sw_liq", "classCloudRadProps.html#a6a070723376d30c2d64c808898faebfb", null ]

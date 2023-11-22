@@ -1,8 +1,5 @@
 var NAVTREEINDEX8 =
 {
-"hierarchy.html":[2,2],
-"index.html":[],
-"index.html":[0],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -166,9 +163,9 @@ var NAVTREEINDEX8 =
 "structInputSoundingData.html#af913103d9ecab49f09b2b107832d265f":[2,0,25,1],
 "structLinInterp_1_1InterpType.html":[2,0,26,0],
 "structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b":[2,0,26,0,3],
-"structLinInterp_1_1InterpType.html#a52fb4dc89a8882f097008dd347587c73":[2,0,26,0,0],
+"structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76":[2,0,26,0,1],
 "structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da":[2,0,26,0,2],
-"structLinInterp_1_1InterpType.html#ac4e09d382e7cd48c4bf9105c653081f1":[2,0,26,0,1],
+"structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c":[2,0,26,0,0],
 "structMamConstituents_1_1aerlist__t.html":[2,0,28,0],
 "structMamConstituents_1_1aerlist__t.html#a21f61436cc2e4a150e675d9d0163fcdf":[2,0,28,0,0],
 "structMamConstituents_1_1aerlist__t.html#ab75334c58294e58e6f802fdc28fcb9c5":[2,0,28,0,1],
@@ -249,5 +246,8 @@ var NAVTREEINDEX8 =
 "structParticleData.html#aef22181bb9da832f4ae87d32fa4572e1":[2,0,39,12],
 "structParticleData.html#af0a74cde6ad8dfa3908229f947a1bdbc":[2,0,39,10],
 "structPhysProp_1_1physprop__t.html":[2,0,40,0],
-"structPhysProp_1_1physprop__t.html#a01444396cbb69da2b50af017fef7b8e3":[2,0,40,0,25]
+"structPhysProp_1_1physprop__t.html#a01444396cbb69da2b50af017fef7b8e3":[2,0,40,0,25],
+"structPhysProp_1_1physprop__t.html#a0a6b0b2e1d1906ac628da5c03c54dd2c":[2,0,40,0,6],
+"structPhysProp_1_1physprop__t.html#a136a646945382e1e7808b61ec9c648fe":[2,0,40,0,33],
+"structPhysProp_1_1physprop__t.html#a14ca153cc7e4dbcc7e097b4014385c8f":[2,0,40,0,3]
 };
