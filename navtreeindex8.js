@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"hierarchy.html":[2,2],
+"index.html":[],
 "index.html":[0],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "structParticleData.html#aef22181bb9da832f4ae87d32fa4572e1":[2,0,39,12],
 "structParticleData.html#af0a74cde6ad8dfa3908229f947a1bdbc":[2,0,39,10],
 "structPhysProp_1_1physprop__t.html":[2,0,40,0],
-"structPhysProp_1_1physprop__t.html#a01444396cbb69da2b50af017fef7b8e3":[2,0,40,0,25],
-"structPhysProp_1_1physprop__t.html#a0a6b0b2e1d1906ac628da5c03c54dd2c":[2,0,40,0,6],
-"structPhysProp_1_1physprop__t.html#a136a646945382e1e7808b61ec9c648fe":[2,0,40,0,33]
+"structPhysProp_1_1physprop__t.html#a01444396cbb69da2b50af017fef7b8e3":[2,0,40,0,25]
 };

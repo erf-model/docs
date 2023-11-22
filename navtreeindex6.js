@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"classPlaneAverage.html#a98ad1b7801e75ac43ddd3d06b0c5d7da":[2,0,41,27],
+"classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d":[2,0,41,24],
 "classPlaneAverage.html#a9ed43e3c2cfd2ef0f3fb23d2097a1b6d":[2,0,41,18],
 "classPlaneAverage.html#aa58d4a708d46cd0d12120e9bf90d5de2":[2,0,41,16],
 "classPlaneAverage.html#aaf4e5c9b73f65af3eb0ccdc6a82e76f2":[2,0,41,14],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa":[2,0,49,12],
 "classSatMethods.html#a264a283910d028a29c374900fc03017f":[2,0,49,3],
 "classSatMethods.html#a62096d95f324cd2a3504554437067ef7":[2,0,49,0],
-"classSatMethods.html#a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a":[2,0,49,0,3],
-"classSatMethods.html#a62096d95f324cd2a3504554437067ef7aacd427431253b9fe6b472b6db3685edb":[2,0,49,0,0],
-"classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d":[2,0,49,0,4]
+"classSatMethods.html#a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a":[2,0,49,0,3]
 };

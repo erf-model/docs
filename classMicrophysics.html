@@ -119,6 +119,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0017fb6d5cbc459cf0a75204be949c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdb6b48b2e91f255f48b0eb62fea2a74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#abdb6b48b2e91f255f48b0eb62fea2a74">Advance</a> ()</td></tr>
 <tr class="separator:abdb6b48b2e91f255f48b0eb62fea2a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a720779b06299fec55c4d4c4d73962a34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a720779b06299fec55c4d4c4d73962a34">Diagnose</a> ()</td></tr>
+<tr class="separator:a720779b06299fec55c4d4c4d73962a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f2adbb8506ada118158570fee1ac67a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a5f2adbb8506ada118158570fee1ac67a">Update</a> (amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;qmoist)</td></tr>
 <tr class="separator:a5f2adbb8506ada118158570fee1ac67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -205,7 +207,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classMicrophysics.html#ad56eac65e34cd8baff6c6e3f5800cc01">m_moist_model</a>-&gt;Advance();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="ttc" id="aclassMicrophysics_html_ad56eac65e34cd8baff6c6e3f5800cc01"><div class="ttname"><a href="classMicrophysics.html#ad56eac65e34cd8baff6c6e3f5800cc01">Microphysics::m_moist_model</a></div><div class="ttdeci">std::unique_ptr&lt; NullMoist &gt; m_moist_model</div><div class="ttdef"><b>Definition:</b> Microphysics.H:53</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ad56eac65e34cd8baff6c6e3f5800cc01"><div class="ttname"><a href="classMicrophysics.html#ad56eac65e34cd8baff6c6e3f5800cc01">Microphysics::m_moist_model</a></div><div class="ttdeci">std::unique_ptr&lt; NullMoist &gt; m_moist_model</div><div class="ttdef"><b>Definition:</b> Microphysics.H:59</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -235,6 +237,34 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classMicrophysics.html#ad56eac65e34cd8baff6c6e3f5800cc01">m_moist_model</a>-&gt;define(sc);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a720779b06299fec55c4d4c4d73962a34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a720779b06299fec55c4d4c4d73962a34">&#9670;&nbsp;</a></span>Diagnose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Microphysics::Diagnose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classMicrophysics.html#ad56eac65e34cd8baff6c6e3f5800cc01">m_moist_model</a>-&gt;Diagnose();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -358,9 +388,9 @@ template&lt;class NewMoistModel &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classMicrophysics.html#ad56eac65e34cd8baff6c6e3f5800cc01">m_moist_model</a>-&gt;Update(cons_in, qmoist);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classMicrophysics.html#ad56eac65e34cd8baff6c6e3f5800cc01">m_moist_model</a>-&gt;Update(cons_in, qmoist);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -385,7 +415,7 @@ template&lt;class NewMoistModel &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#abdb6b48b2e91f255f48b0eb62fea2a74">Advance()</a>, <a class="el" href="classMicrophysics.html#a06807df2efe3d139b15066e818b635c1">define()</a>, <a class="el" href="classMicrophysics.html#a0017fb6d5cbc459cf0a75204be949c53">Init()</a>, <a class="el" href="classMicrophysics.html#a5d637a7ba3efb3c71aebbba9609c32b5">SetModel()</a>, and <a class="el" href="classMicrophysics.html#a5f2adbb8506ada118158570fee1ac67a">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#abdb6b48b2e91f255f48b0eb62fea2a74">Advance()</a>, <a class="el" href="classMicrophysics.html#a06807df2efe3d139b15066e818b635c1">define()</a>, <a class="el" href="classMicrophysics.html#a720779b06299fec55c4d4c4d73962a34">Diagnose()</a>, <a class="el" href="classMicrophysics.html#a0017fb6d5cbc459cf0a75204be949c53">Init()</a>, <a class="el" href="classMicrophysics.html#a5d637a7ba3efb3c71aebbba9609c32b5">SetModel()</a>, and <a class="el" href="classMicrophysics.html#a5f2adbb8506ada118158570fee1ac67a">Update()</a>.</p>
 
 </div>
 </div>
