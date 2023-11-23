@@ -93,14 +93,14 @@ $(document).ready(function(){initNavTree('namespaceinternal.html',''); initResiz
 Functions</h2></td></tr>
 <tr class="memitem:aaf4add7dd62294e7017ae4e65f656337"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinternal.html#aaf4add7dd62294e7017ae4e65f656337">initial_fluxes</a> (int nz, int nlay, int nbands, FluxesByband &amp;fluxes)</td></tr>
 <tr class="separator:aaf4add7dd62294e7017ae4e65f656337"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3d45e8f34eed05a14c697fc773d8d79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinternal.html#af3d45e8f34eed05a14c697fc773d8d79">expand_day_fluxes</a> (FluxesByband &amp;daytime_fluxes, FluxesByband &amp;expanded_fluxes, int1d &amp;day_indices)</td></tr>
-<tr class="separator:af3d45e8f34eed05a14c697fc773d8d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab101ef9dbaef3989731e101b074177fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinternal.html#ab101ef9dbaef3989731e101b074177fd">reordered</a> (real1d &amp;array_in, int1d &amp;new_indexing, real1d &amp;array_out)</td></tr>
-<tr class="separator:ab101ef9dbaef3989731e101b074177fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab261c55a5f4aac5ed1706fc74f2a8200"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinternal.html#ab261c55a5f4aac5ed1706fc74f2a8200">expand_day_fluxes</a> (FluxesByband &amp;daytime_fluxes, FluxesByband &amp;expanded_fluxes, const int1d &amp;day_indices)</td></tr>
+<tr class="separator:ab261c55a5f4aac5ed1706fc74f2a8200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e09ba4f36b78ebbb569741fedab06ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinternal.html#a2e09ba4f36b78ebbb569741fedab06ed">reordered</a> (const real1d &amp;array_in, const int1d &amp;new_indexing, const real1d &amp;array_out)</td></tr>
+<tr class="separator:a2e09ba4f36b78ebbb569741fedab06ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af3d45e8f34eed05a14c697fc773d8d79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3d45e8f34eed05a14c697fc773d8d79">&#9670;&nbsp;</a></span>expand_day_fluxes()</h2>
+<a id="ab261c55a5f4aac5ed1706fc74f2a8200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab261c55a5f4aac5ed1706fc74f2a8200">&#9670;&nbsp;</a></span>expand_day_fluxes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -120,7 +120,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int1d &amp;&#160;</td>
+          <td class="paramtype">const int1d &amp;&#160;</td>
           <td class="paramname"><em>day_indices</em>&#160;</td>
         </tr>
         <tr>
@@ -130,7 +130,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                                                                                          {</div>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                                                                                                {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="keyword">auto</span> ncol  = size(daytime_fluxes.bnd_flux_up, 1);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keyword">auto</span> nlev  = size(daytime_fluxes.bnd_flux_up, 2);</div>
@@ -162,14 +162,14 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;     });</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classRadiation.html#a46ba7476ba3c23316b71cd9fd1221410">Radiation::radiation_driver_sw()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classRadiation.html#abf8ab94227c1a5f729ac24d92e52518b">Radiation::radiation_driver_sw()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespaceinternal_af3d45e8f34eed05a14c697fc773d8d79_icgraph.png" border="0" usemap="#anamespaceinternal_af3d45e8f34eed05a14c697fc773d8d79_icgraph" alt=""/></div>
-<map name="anamespaceinternal_af3d45e8f34eed05a14c697fc773d8d79_icgraph" id="anamespaceinternal_af3d45e8f34eed05a14c697fc773d8d79_icgraph">
+<div class="center"><img src="namespaceinternal_ab261c55a5f4aac5ed1706fc74f2a8200_icgraph.png" border="0" usemap="#anamespaceinternal_ab261c55a5f4aac5ed1706fc74f2a8200_icgraph" alt=""/></div>
+<map name="anamespaceinternal_ab261c55a5f4aac5ed1706fc74f2a8200_icgraph" id="anamespaceinternal_ab261c55a5f4aac5ed1706fc74f2a8200_icgraph">
 <area shape="rect" title=" " alt="" coords="204,5,363,47"/>
-<area shape="rect" href="classRadiation.html#a46ba7476ba3c23316b71cd9fd1221410" title=" " alt="" coords="5,5,156,47"/>
+<area shape="rect" href="classRadiation.html#abf8ab94227c1a5f729ac24d92e52518b" title=" " alt="" coords="5,5,156,47"/>
 </map>
 </div>
 
@@ -221,22 +221,22 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    fluxes.bnd_flux_net = real3d(<span class="stringliteral">&quot;flux_net&quot;</span>, nz, nlay+1, nbands);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classRadiation.html#a46ba7476ba3c23316b71cd9fd1221410">Radiation::radiation_driver_sw()</a>, and <a class="el" href="classRadiation.html#a748f2155d330eecb6d0ce4fba32db8e7">Radiation::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classRadiation.html#abf8ab94227c1a5f729ac24d92e52518b">Radiation::radiation_driver_sw()</a>, and <a class="el" href="classRadiation.html#a748f2155d330eecb6d0ce4fba32db8e7">Radiation::run()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceinternal_aaf4add7dd62294e7017ae4e65f656337_icgraph.png" border="0" usemap="#anamespaceinternal_aaf4add7dd62294e7017ae4e65f656337_icgraph" alt=""/></div>
 <map name="anamespaceinternal_aaf4add7dd62294e7017ae4e65f656337_icgraph" id="anamespaceinternal_aaf4add7dd62294e7017ae4e65f656337_icgraph">
 <area shape="rect" title=" " alt="" coords="204,42,367,69"/>
-<area shape="rect" href="classRadiation.html#a46ba7476ba3c23316b71cd9fd1221410" title=" " alt="" coords="5,5,156,47"/>
+<area shape="rect" href="classRadiation.html#abf8ab94227c1a5f729ac24d92e52518b" title=" " alt="" coords="5,5,156,47"/>
 <area shape="rect" href="classRadiation.html#a748f2155d330eecb6d0ce4fba32db8e7" title=" " alt="" coords="24,71,137,98"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ab101ef9dbaef3989731e101b074177fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab101ef9dbaef3989731e101b074177fd">&#9670;&nbsp;</a></span>reordered()</h2>
+<a id="a2e09ba4f36b78ebbb569741fedab06ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e09ba4f36b78ebbb569741fedab06ed">&#9670;&nbsp;</a></span>reordered()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -244,19 +244,19 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void internal::reordered </td>
           <td>(</td>
-          <td class="paramtype">real1d &amp;&#160;</td>
+          <td class="paramtype">const real1d &amp;&#160;</td>
           <td class="paramname"><em>array_in</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int1d &amp;&#160;</td>
+          <td class="paramtype">const int1d &amp;&#160;</td>
           <td class="paramname"><em>new_indexing</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real1d &amp;&#160;</td>
+          <td class="paramtype">const real1d &amp;&#160;</td>
           <td class="paramname"><em>array_out</em>&#160;</td>
         </tr>
         <tr>
@@ -266,7 +266,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                                           {</div>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                                                             {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="comment">// Reorder array based on input index mapping, which maps old indices to new</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      parallel_for(SimpleBounds&lt;1&gt;(size(array_in, 1)), YAKL_LAMBDA (<span class="keywordtype">int</span> i) {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;         array_out(i) = array_in(new_indexing(i));</div>
@@ -277,8 +277,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespaceinternal_ab101ef9dbaef3989731e101b074177fd_icgraph.png" border="0" usemap="#anamespaceinternal_ab101ef9dbaef3989731e101b074177fd_icgraph" alt=""/></div>
-<map name="anamespaceinternal_ab101ef9dbaef3989731e101b074177fd_icgraph" id="anamespaceinternal_ab101ef9dbaef3989731e101b074177fd_icgraph">
+<div class="center"><img src="namespaceinternal_a2e09ba4f36b78ebbb569741fedab06ed_icgraph.png" border="0" usemap="#anamespaceinternal_a2e09ba4f36b78ebbb569741fedab06ed_icgraph" alt=""/></div>
+<map name="anamespaceinternal_a2e09ba4f36b78ebbb569741fedab06ed_icgraph" id="anamespaceinternal_a2e09ba4f36b78ebbb569741fedab06ed_icgraph">
 <area shape="rect" title=" " alt="" coords="167,5,309,32"/>
 <area shape="rect" href="classRadiation.html#a748f2155d330eecb6d0ce4fba32db8e7" title=" " alt="" coords="5,5,119,32"/>
 </map>

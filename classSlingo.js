@@ -1,5 +1,5 @@
 var classSlingo =
 [
-    [ "slingo_liq_optics_lw", "classSlingo.html#acb0ae41d8d98e7687cf1a900c85c0542", null ],
-    [ "slingo_liq_optics_sw", "classSlingo.html#a09aae7d25812e3daa50cbd41329ea7b8", null ]
+    [ "slingo_liq_optics_lw", "classSlingo.html#aedbfc95f917b864354b84a9a78d74c94", null ],
+    [ "slingo_liq_optics_sw", "classSlingo.html#ab37f1c288e0dcc71337629a65fb65e17", null ]
 ];

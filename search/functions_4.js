@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['ec_5fice_5foptics_5flw_2356',['ec_ice_optics_lw',['../classEbertCurry.html#ab5c5468cfc75751654edb76240a21e45',1,'EbertCurry']]],
-  ['ec_5fice_5foptics_5fsw_2357',['ec_ice_optics_sw',['../classEbertCurry.html#aec25c0953323667734ee99dfecfda2cb',1,'EbertCurry']]],
+  ['ec_5fice_5foptics_5flw_2356',['ec_ice_optics_lw',['../classEbertCurry.html#ae258a04b9aaba9ca0052793a2d57f05e',1,'EbertCurry']]],
+  ['ec_5fice_5foptics_5fsw_2357',['ec_ice_optics_sw',['../classEbertCurry.html#aed435ba6c3e2c62f6ba2d8111c7c2f08',1,'EbertCurry']]],
   ['efficientadvtype_2358',['EfficientAdvType',['../Advection_8H.html#aff14fe9e4f76b499843517b2c41c0fbb',1,'Advection.H']]],
   ['enter_5fdef_5fmode_2359',['enter_def_mode',['../classncutils_1_1NCGroup.html#aef6b6e2be36e6179a001d9873e94df82',1,'ncutils::NCGroup']]],
   ['erf_2360',['ERF',['../classERF.html#a30129012dd367825e5e4fd1406694f58',1,'ERF::ERF()'],['../classERF.html#a13fc8f3a00573ee7735c3228316164a9',1,'ERF::ERF(ERF &amp;&amp;) noexcept=delete'],['../classERF.html#af4f5db4e6643e9ebc8ffeebcbca3978a',1,'ERF::ERF(const ERF &amp;other)=delete']]],
@@ -41,5 +41,5 @@ var searchData=
   ['evolve_2394',['Evolve',['../classERF.html#a0be12798b46f52fa4b5a995f147c3f96',1,'ERF']]],
   ['exit_5fdef_5fmode_2395',['exit_def_mode',['../classncutils_1_1NCGroup.html#a3a4ebd106195be96fb41bb3bfde83143',1,'ncutils::NCGroup']]],
   ['exp_5finterpol_2396',['exp_interpol',['../classPhysProp.html#a9bc40a34bf3b039dd0d8ad87678e23d1',1,'PhysProp']]],
-  ['expand_5fday_5ffluxes_2397',['expand_day_fluxes',['../namespaceinternal.html#af3d45e8f34eed05a14c697fc773d8d79',1,'internal']]]
+  ['expand_5fday_5ffluxes_2397',['expand_day_fluxes',['../namespaceinternal.html#ab261c55a5f4aac5ed1706fc74f2a8200',1,'internal']]]
 ];

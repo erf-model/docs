@@ -76,12 +76,12 @@ var NAVTREEINDEX =
 "NCPlotFile_8H.html#aabaa127a3a319c1b86090d6c88568965",
 "classCloudRadProps.html#a35a276009636e1ac17beeb5343656e29",
 "classERF.html#ae8a57b7fbf5a67c99d04b7d4f43ad100",
-"classMamConstituents.html#a5134b229f2450be11a5a98916169c29b",
-"classPlaneAverage.html#a9ed43e3c2cfd2ef0f3fb23d2097a1b6d",
-"classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db",
-"index.html#Acknowledgement",
-"structPhysProp_1_1physprop__t.html#a1b15e2d7f7b059cecb30c630a339b020",
-"structadiabatic__charnock.html#a49417d05287ecdf842e33f93d8e7e79d"
+"classMamConstituents.html#a4fd648d3960d01a223e78b1436280c13",
+"classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d",
+"classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d",
+"index.html",
+"structPhysProp_1_1physprop__t.html#a136a646945382e1e7808b61ec9c648fe",
+"structadiabatic__charnock.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

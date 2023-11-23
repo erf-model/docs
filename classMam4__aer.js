@@ -1,11 +1,12 @@
 var classMam4__aer =
 [
-    [ "binterp", "classMam4__aer.html#ad93b4dae5652c26666de864a15eb2e0e", null ],
+    [ "binterp", "classMam4__aer.html#a1488790796a5a153be55af7d9a64d36a", null ],
+    [ "initialize", "classMam4__aer.html#ad26a9b5e3fc355d5102328b86621b8df", null ],
     [ "modal_aer_opt_init", "classMam4__aer.html#a839c4a2178346322417b38fae9c50a9a", null ],
-    [ "modal_aero_calcsize_diag", "classMam4__aer.html#a8a98ad4a0e6be284fc4c1feffbd1a77b", null ],
-    [ "modal_aero_lw", "classMam4__aer.html#a6956ef6c10d3d8cd3c31ab95d02cf0eb", null ],
-    [ "modal_aero_sw", "classMam4__aer.html#a0d8babd73efc18ae1a1154436c46c916", null ],
-    [ "modal_size_parameters", "classMam4__aer.html#ae2c40da25e4fff802c6d642dce24a176", null ],
+    [ "modal_aero_calcsize_diag", "classMam4__aer.html#adedd31f2c7c2a293e6f3dfc4818b175d", null ],
+    [ "modal_aero_lw", "classMam4__aer.html#a9721da0af2c6b65da92a81c76f3bf43d", null ],
+    [ "modal_aero_sw", "classMam4__aer.html#ad7ec661c28332eed1cbb43fa82c8fb92", null ],
+    [ "modal_size_parameters", "classMam4__aer.html#af2034bd10c39ba3bf5139d8d8c5b07ad", null ],
     [ "read_water_refindex", "classMam4__aer.html#a4bd98954eadce524390046791a1730a1", null ],
     [ "clim_modal_aero", "classMam4__aer.html#a83c2a65a851a3329d62fca09dd0263d5", null ],
     [ "crefwlwi", "classMam4__aer.html#a32d3651a6f9299ecee85fee320dfda50", null ],

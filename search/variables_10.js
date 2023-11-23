@@ -11,7 +11,7 @@ var searchData=
   ['qrlc_3476',['qrlc',['../classRadiation.html#a3308c21539f43b459729b9b02652dd01',1,'Radiation']]],
   ['qrs_3477',['qrs',['../classRadiation.html#a9eaa967e3b5556ce43d07e48d3e0c66f',1,'Radiation']]],
   ['qrsc_3478',['qrsc',['../classRadiation.html#abb3bb540832d451a76367e441df528a0',1,'Radiation']]],
-  ['qt_3479',['qt',['../classAerRadProps.html#a837035712a214f1b8daf7a4d30727e6d',1,'AerRadProps']]],
+  ['qt_3479',['qt',['../classAerRadProps.html#a837035712a214f1b8daf7a4d30727e6d',1,'AerRadProps::qt()'],['../classRadiation.html#aa3961f0a2837a89f1d08dd5aba2ed056',1,'Radiation::qt()']]],
   ['qt1d_3480',['qt1d',['../classSAM.html#aaa3dd79bbd6ac41ae1170d003b1a423d',1,'SAM']]],
   ['qv1d_3481',['qv1d',['../classSAM.html#a65e2ba7cb72946a8af2e7541b072e3ba',1,'SAM']]],
   ['qv_5finp_5fsound_3482',['qv_inp_sound',['../structInputSoundingData.html#a7710e6498adaf4b94a54e600ef6a0ca7',1,'InputSoundingData']]],

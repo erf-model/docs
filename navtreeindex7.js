@@ -1,5 +1,7 @@
 var NAVTREEINDEX7 =
 {
+"classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d":[2,0,49,0,4],
+"classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455":[2,0,49,0,2],
 "classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db":[2,0,49,0,1],
 "classSatMethods.html#a8458bd6a233082c463c070ddc692080f":[2,0,49,7],
 "classSatMethods.html#a8668cfc2892409c9aaeb26762486ac50":[2,0,49,9],
@@ -11,8 +13,8 @@ var NAVTREEINDEX7 =
 "classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7":[2,0,49,13],
 "classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e":[2,0,49,11],
 "classSlingo.html":[2,0,51],
-"classSlingo.html#a09aae7d25812e3daa50cbd41329ea7b8":[2,0,51,1],
-"classSlingo.html#acb0ae41d8d98e7687cf1a900c85c0542":[2,0,51,0],
+"classSlingo.html#ab37f1c288e0dcc71337629a65fb65e17":[2,0,51,1],
+"classSlingo.html#aedbfc95f917b864354b84a9a78d74c94":[2,0,51,0],
 "classTracerPC.html":[2,0,63],
 "classTracerPC.html#a56dab71987bdc3bb944433b6b4f63336":[2,0,63,4],
 "classTracerPC.html#ab730a5b65644821e6aa65b68beb61a0d":[2,0,63,3],
@@ -121,8 +123,8 @@ var NAVTREEINDEX7 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1,0],
 "functions_func.html":[2,3,1],
+"functions_func.html":[2,3,1,0],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
@@ -164,8 +166,8 @@ var NAVTREEINDEX7 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -196,8 +198,8 @@ var NAVTREEINDEX7 =
 "functions_y.html":[2,3,0,24],
 "functions_z.html":[2,3,0,25],
 "functions_~.html":[2,3,0,26],
-"globals.html":[3,1,0,0],
 "globals.html":[3,1,0],
+"globals.html":[3,1,0,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX7 =
 "globals_x.html":[3,1,0,21],
 "globals_y.html":[3,1,0,22],
 "globals_z.html":[3,1,0,23],
-"hierarchy.html":[2,2],
-"index.html":[],
-"index.html":[0]
+"hierarchy.html":[2,2]
 };
