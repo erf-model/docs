@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['terraintype_3745',['TerrainType',['../DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127',1,'DataStruct.H']]],
-  ['thetacalctype_3746',['ThetaCalcType',['../classABLMost.html#a46fbd9260d2adfa7c18edad6452f9bab',1,'ABLMost']]],
-  ['type_3747',['Type',['../classSatMethods.html#a62096d95f324cd2a3504554437067ef7',1,'SatMethods']]]
+  ['terraintype_3744',['TerrainType',['../DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127',1,'DataStruct.H']]],
+  ['thetacalctype_3745',['ThetaCalcType',['../classABLMost.html#a46fbd9260d2adfa7c18edad6452f9bab',1,'ABLMost']]],
+  ['type_3746',['Type',['../classSatMethods.html#a62096d95f324cd2a3504554437067ef7',1,'SatMethods']]]
 ];

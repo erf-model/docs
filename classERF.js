@@ -37,6 +37,7 @@ var classERF =
     [ "init_from_hse", "classERF.html#a857a8f76768ec4451b995cbf4f4ac176", null ],
     [ "init_from_input_sounding", "classERF.html#a2908bcd920ab5e3fef171a37302853ec", null ],
     [ "init_only", "classERF.html#a80981e20939a6a38ba17478da2253ff1", null ],
+    [ "init_stuff", "classERF.html#a5160b1e054b3e2a09c26274ef3551c64", null ],
     [ "init_uniform", "classERF.html#ae618963cf90e247b72fbd71d5b13599d", null ],
     [ "InitData", "classERF.html#ad5d585e110291969767013a515719224", null ],
     [ "initHSE", "classERF.html#a92c020bfaa43e40fb5ffc449427a0318", null ],

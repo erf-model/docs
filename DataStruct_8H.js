@@ -13,8 +13,7 @@ var DataStruct_8H =
     ] ],
     [ "CouplingType", "DataStruct_8H.html#ad285be248c0803917aaf5cf8ce62139b", [
       [ "OneWay", "DataStruct_8H.html#ad285be248c0803917aaf5cf8ce62139ba8d892b915adb5e7c957f4425253ee1d6", null ],
-      [ "TwoWay", "DataStruct_8H.html#ad285be248c0803917aaf5cf8ce62139ba6c267346f8ebb889610a5a90838be815", null ],
-      [ "Mixed", "DataStruct_8H.html#ad285be248c0803917aaf5cf8ce62139ba699b4f79215d191584653efebf156e52", null ]
+      [ "TwoWay", "DataStruct_8H.html#ad285be248c0803917aaf5cf8ce62139ba6c267346f8ebb889610a5a90838be815", null ]
     ] ],
     [ "TerrainType", "DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127", [
       [ "Static", "DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127a84a8921b25f505d0d2077aeb5db4bc16", null ],
