@@ -10,7 +10,7 @@ var searchData=
   ['unknown_1760',['Unknown',['../IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a88183b946cc5f0e8c96b2e66e1c74a7e',1,'IndexDefines.H']]],
   ['update_1761',['Update',['../classSAM.html#a40530d6a284d7d99d8deaf76bf8652fc',1,'SAM::Update()'],['../classNullMoist.html#a448b67e4b0428b83f2ba1738375a7bc0',1,'NullMoist::Update()'],['../classMicrophysics.html#a5f2adbb8506ada118158570fee1ac67a',1,'Microphysics::Update()']]],
   ['update_2ecpp_1762',['Update.cpp',['../Update_8cpp.html',1,'']]],
-  ['update_5farrays_1763',['update_arrays',['../classERF.html#a77be46b1bf1106a49c5db7a4b8820aa1',1,'ERF']]],
+  ['update_5fdiffusive_5farrays_1763',['update_diffusive_arrays',['../classERF.html#a419510fced05e9afc05c466beeeb66f7',1,'ERF']]],
   ['update_5ffield_5fptrs_1764',['update_field_ptrs',['../classMOSTAverage.html#ad9b6ae9832bb372c8e25054029394168',1,'MOSTAverage']]],
   ['update_5ffluxes_1765',['update_fluxes',['../classABLMost.html#af82057d4fbaaf1d8347cf18c7efd7b53',1,'ABLMost']]],
   ['update_5fmac_5fptrs_1766',['update_mac_ptrs',['../classABLMost.html#a7eddd34dcd5764bc0f36918b9702628c',1,'ABLMost']]],

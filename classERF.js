@@ -83,7 +83,7 @@ var classERF =
     [ "setRecordSamplePointInfo", "classERF.html#af8d930dce1b926ecc3bdc6787dd47818", null ],
     [ "sum_integrated_quantities", "classERF.html#a922892a05ee0c5bccd210a3e5a8599e1", null ],
     [ "timeStep", "classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f", null ],
-    [ "update_arrays", "classERF.html#a77be46b1bf1106a49c5db7a4b8820aa1", null ],
+    [ "update_diffusive_arrays", "classERF.html#a419510fced05e9afc05c466beeeb66f7", null ],
     [ "update_terrain_arrays", "classERF.html#a900a0119c110486650f2759287e22cba", null ],
     [ "volWgtSumMF", "classERF.html#a92798729bcf472f381683f69e5bb104e", null ],
     [ "write_1D_profiles", "classERF.html#a55eae94c5363e227b571739738bb26b7", null ],
