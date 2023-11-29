@@ -2,6 +2,7 @@ var classProblemBase =
 [
     [ "~ProblemBase", "classProblemBase.html#ac7201619fcd9464f851b0cae82dfbcd1", null ],
     [ "erf_init_dens_hse", "classProblemBase.html#aef7d3d9788867d83e6ec8b2c9499de56", null ],
+    [ "erf_init_dens_hse_moist", "classProblemBase.html#af052b95f594f84f5ec2b1221b05dc6d1", null ],
     [ "erf_init_rayleigh", "classProblemBase.html#a3d66db9caddb9c718fbc05abc5314fec", null ],
     [ "init_base_parms", "classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f", null ],
     [ "init_custom_pert", "classProblemBase.html#a697431ccfbb77463f7535bf941106985", null ],

@@ -54,6 +54,7 @@ var hierarchy =
     [ "ncutils::NCVar", "structncutils_1_1NCVar.html", null ],
     [ "NDArray< DataType >", "structNDArray.html", null ],
     [ "NullMoist", "classNullMoist.html", [
+      [ "Kessler", "classKessler.html", null ],
       [ "SAM", "classSAM.html", null ]
     ] ],
     [ "Optics", "classOptics.html", null ],

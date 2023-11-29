@@ -1,21 +1,5 @@
 var searchData=
 [
-  ['_7eaerradprops_2904',['~AerRadProps',['../classAerRadProps.html#aeb46a505acde8e7bd4a4b4d15e8e1792',1,'AerRadProps']]],
-  ['_7ecloudradprops_2905',['~CloudRadProps',['../classCloudRadProps.html#a35a276009636e1ac17beeb5343656e29',1,'CloudRadProps']]],
-  ['_7eerf_2906',['~ERF',['../classERF.html#a30901583bd41e7bf4dddb3c1ea329dfe',1,'ERF']]],
-  ['_7eerfphysbcfunct_2907',['~ERFPhysBCFunct',['../classERFPhysBCFunct.html#abb1797f0742dd01ee978be02d594fc43',1,'ERFPhysBCFunct']]],
-  ['_7emicrophysics_2908',['~Microphysics',['../classMicrophysics.html#ab9d9d3f804f3d0d9aacf12c15b1b1417',1,'Microphysics']]],
-  ['_7emostaverage_2909',['~MOSTAverage',['../classMOSTAverage.html#ac755f71a35f1231c8add20993364832a',1,'MOSTAverage']]],
-  ['_7emrisplitintegrator_2910',['~MRISplitIntegrator',['../classMRISplitIntegrator.html#a6d5236284efc8e546e31ced80a76602a',1,'MRISplitIntegrator']]],
-  ['_7emultiblockcontainer_2911',['~MultiBlockContainer',['../classMultiBlockContainer.html#abbe61ab484b52aaf83b1bc8e986aee84',1,'MultiBlockContainer']]],
-  ['_7encfile_2912',['~NCFile',['../classncutils_1_1NCFile.html#a4c1663f24f84dbc74152d7f040910a22',1,'ncutils::NCFile']]],
-  ['_7endarray_2913',['~NDArray',['../structNDArray.html#afb8008f414c4404e3a6b425c12401d9d',1,'NDArray']]],
-  ['_7enullmoist_2914',['~NullMoist',['../classNullMoist.html#a75e2d77cb28efa62759818d066b53bb9',1,'NullMoist']]],
-  ['_7eoptics_2915',['~Optics',['../classOptics.html#ae33a3d262417ad9bb96adc3a32519e5f',1,'Optics']]],
-  ['_7eplaneaverage_2916',['~PlaneAverage',['../classPlaneAverage.html#a961decb14c2137f36e17ceeaf560b452',1,'PlaneAverage']]],
-  ['_7eproblembase_2917',['~ProblemBase',['../classProblemBase.html#ac7201619fcd9464f851b0cae82dfbcd1',1,'ProblemBase']]],
-  ['_7eradiation_2918',['~Radiation',['../classRadiation.html#acde23acb9e9f7061d40634fbc24f330d',1,'Radiation']]],
-  ['_7errtmgp_2919',['~Rrtmgp',['../classRrtmgp.html#aa5d1fac989fde988d4f192d3f64395ee',1,'Rrtmgp']]],
-  ['_7esam_2920',['~SAM',['../classSAM.html#a301ce0c7f6cff77d6388c2d706e73a42',1,'SAM']]],
-  ['_7etimeinterpolateddata_2921',['~TimeInterpolatedData',['../structTimeInterpolatedData.html#af14b2d5c5d55331a4dbc9cec9288af53',1,'TimeInterpolatedData']]]
+  ['z0_5fest_2925',['z0_est',['../Microphysics__Utils_8H.html#a5e22e7c025af17b4983d25a5b81bfd4b',1,'Microphysics_Utils.H']]],
+  ['zero_5foptics_5finit_2926',['zero_optics_init',['../classPhysProp.html#af0ccfb22c5689ec73789babb1b7c448d',1,'PhysProp']]]
 ];

@@ -32,6 +32,7 @@ var annotated_dup =
     [ "HydroPC", "classHydroPC.html", "classHydroPC" ],
     [ "HydroRealIdx", "structHydroRealIdx.html", null ],
     [ "InputSoundingData", "structInputSoundingData.html", "structInputSoundingData" ],
+    [ "Kessler", "classKessler.html", "classKessler" ],
     [ "LinInterp", "classLinInterp.html", "classLinInterp" ],
     [ "Mam4_aer", "classMam4__aer.html", "classMam4__aer" ],
     [ "MamConstituents", "classMamConstituents.html", "classMamConstituents" ],

@@ -6,7 +6,7 @@ var classSAM =
     [ "Advance", "classSAM.html#afa18401f4668ca67df8bb03358f39069", null ],
     [ "Cloud", "classSAM.html#a7a43f42ffe12f7ed7e32d0abdbea4133", null ],
     [ "define", "classSAM.html#a34df74782ba4c1503595eddcc18eff31", null ],
-    [ "Diagnose", "classSAM.html#a4d629f33f2f94f95ffaee81d98e13147", null ],
+    [ "Diagnose", "classSAM.html#ac44e447994022361e74cf7c00a756605", null ],
     [ "IceFall", "classSAM.html#a02c82a7d07676312819cfc9d2ed37cec", null ],
     [ "Init", "classSAM.html#ab076aa1f274d15cbf2578b4b2e7d9460", null ],
     [ "MicroPrecipFall", "classSAM.html#a521cf209250dcb46c95a0981ee5ddef1", null ],
