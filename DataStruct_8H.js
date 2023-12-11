@@ -18,6 +18,7 @@ var DataStruct_8H =
     [ "MoistureType", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0", [
       [ "Kessler", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0af918ea9a492942625a661a22ac6af91d", null ],
       [ "SAM", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a9f1b3be4a82b11d104e4ef7f7ccb1c19", null ],
+      [ "FastEddy", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a6a844175a4c1fad0520720d81b97f567", null ],
       [ "None", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754", null ]
     ] ],
     [ "TerrainType", "DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127", [

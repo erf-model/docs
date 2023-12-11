@@ -27,6 +27,7 @@ var annotated_dup =
     [ "ERF", "classERF.html", "classERF" ],
     [ "ERFFillPatcher", "classERFFillPatcher.html", "classERFFillPatcher" ],
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", "classERFPhysBCFunct" ],
+    [ "FastEddy", "classFastEddy.html", "classFastEddy" ],
     [ "HydroAssignor", "structHydroAssignor.html", "structHydroAssignor" ],
     [ "HydroIntIdx", "structHydroIntIdx.html", null ],
     [ "HydroPC", "classHydroPC.html", "classHydroPC" ],
