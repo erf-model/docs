@@ -5,7 +5,6 @@ var namespaces_dup =
     [ "derived", "namespacederived.html", [
       [ "erf_derKE", "namespacederived.html#aa1fcac44ae779cdfa2fd5266bc206e2d", null ],
       [ "erf_dernull", "namespacederived.html#af8efb799157f5dbb8fe00416458db9e1", null ],
-      [ "erf_derpres", "namespacederived.html#ab144cda2ef3e2bd18cbd0837ce723521", null ],
       [ "erf_derQKE", "namespacederived.html#aa850437283651e137b82322c0437d487", null ],
       [ "erf_derrhodivide", "namespacederived.html#a9935603239fe8510b11179da8e76c39c", null ],
       [ "erf_derscalar", "namespacederived.html#a2d9c0cabf04515367f2b721320dcddab", null ],
@@ -44,7 +43,6 @@ var namespaces_dup =
     [ "MicVar", "namespaceMicVar.html", null ],
     [ "MicVar_Kess", "namespaceMicVar__Kess.html", null ],
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
-    [ "Prim", "namespacePrim.html", null ],
     [ "Vars", "namespaceVars.html", null ],
     [ "WRFBdyVars", "namespaceWRFBdyVars.html", null ]
 ];
