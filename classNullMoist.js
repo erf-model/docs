@@ -6,5 +6,7 @@ var classNullMoist =
     [ "define", "classNullMoist.html#a800a60c3d79523a293b502d92a072d4d", null ],
     [ "Diagnose", "classNullMoist.html#a7d380b4f76e92ee946649c2a93ab8e20", null ],
     [ "Init", "classNullMoist.html#a65f69c32cb2fea62c91c8fcd633d0779", null ],
-    [ "Update", "classNullMoist.html#a448b67e4b0428b83f2ba1738375a7bc0", null ]
+    [ "Qmoist_Size", "classNullMoist.html#abdf706f193bbb09c62e41734570f3cd1", null ],
+    [ "Update", "classNullMoist.html#a448b67e4b0428b83f2ba1738375a7bc0", null ],
+    [ "m_qmoist_size", "classNullMoist.html#a645f66b91b08d84aa7451a9da0c11a72", null ]
 ];

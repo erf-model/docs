@@ -179,14 +179,14 @@ $(document).ready(function(){initNavTree('TI__slow__rhs__fun_8H_source.html','')
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="ERF__make__buoyancy_8cpp.html#a913df66556ad8d7c7538e09e3c7af660">make_buoyancy</a>(S_data, S_prim, buoyancy,</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;#<span class="keywordflow">if</span> defined(ERF_USE_MOISTURE)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                          qmoist[level], qv_d, qc_d, qi_d,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                          *(qmoist[level]), qv_d, qc_d, qi_d,</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;#endif</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                          fine_geom, solverChoice, r0_new);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="ERF__slow__rhs__pre_8cpp.html#a94da1371ddff5a52fe33ff9c51827d0a">erf_slow_rhs_pre</a>(level, finest_level, nrk, slow_dt, S_rhs, S_data, S_prim, S_scratch,</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                             xvel_new, yvel_new, zvel_new,</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;#<span class="keywordflow">if</span> defined(ERF_USE_MOISTURE)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                             qmoist[level],</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                             *(qmoist[level]),</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;#endif</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                             z_t_rk[level], Omega, source, buoyancy, Tau11, Tau22, Tau33, Tau12,</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                             Tau13, Tau21,  Tau23, Tau31, Tau32, SmnSmn, eddyDiffs,</div>
@@ -276,14 +276,14 @@ $(document).ready(function(){initNavTree('TI__slow__rhs__fun_8H_source.html','')
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="comment">// If not moving_terrain</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <a class="code" href="ERF__make__buoyancy_8cpp.html#a913df66556ad8d7c7538e09e3c7af660">make_buoyancy</a>(S_data, S_prim, buoyancy,</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;#<span class="keywordflow">if</span> defined(ERF_USE_MOISTURE)</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                          qmoist[level], qv_d, qc_d, qi_d,</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                          *(qmoist[level]), qv_d, qc_d, qi_d,</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;#endif</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                          fine_geom, solverChoice, r0);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <a class="code" href="ERF__slow__rhs__pre_8cpp.html#a94da1371ddff5a52fe33ff9c51827d0a">erf_slow_rhs_pre</a>(level, finest_level, nrk, slow_dt, S_rhs, S_data, S_prim, S_scratch,</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                             xvel_new, yvel_new, zvel_new,</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;#<span class="keywordflow">if</span> defined(ERF_USE_MOISTURE)</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                             qmoist[level],</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                             *(qmoist[level]),</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;#endif</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                             z_t_rk[level], Omega, source, buoyancy, Tau11, Tau22, Tau33, Tau12,</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                             Tau13, Tau21,  Tau23, Tau31, Tau32, SmnSmn, eddyDiffs,</div>
@@ -450,7 +450,7 @@ $(document).ready(function(){initNavTree('TI__slow__rhs__fun_8H_source.html','')
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="comment">// If not moving_terrain</span></div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <a class="code" href="ERF__make__buoyancy_8cpp.html#a913df66556ad8d7c7538e09e3c7af660">make_buoyancy</a>(S_data, S_prim, buoyancy,</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;#<span class="keywordflow">if</span> defined(ERF_USE_MOISTURE)</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                      qmoist[level], qv_d, qc_d, qi_d,</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                      *(qmoist[level]), qv_d, qc_d, qi_d,</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;#endif</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                      fine_geom, solverChoice, r0);</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
@@ -458,7 +458,7 @@ $(document).ready(function(){initNavTree('TI__slow__rhs__fun_8H_source.html','')
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                         S_rhs, S_old, S_data, S_prim, S_scratch,</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                         xvel_new, yvel_new, zvel_new,</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;#<span class="keywordflow">if</span> defined(ERF_USE_MOISTURE)</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                         qmoist[level],</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                         *(qmoist[level]),</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;#endif</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                         z_t_rk[level], Omega, source, buoyancy, Tau11, Tau22, Tau33, Tau12,</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                         Tau13, Tau21,  Tau23, Tau31, Tau32, SmnSmn, eddyDiffs,</div>
