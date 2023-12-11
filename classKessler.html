@@ -547,21 +547,25 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;         }</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;         Real dq_sed = 1.0/rho_array(i,j,k)*(fz_array(i,j,k+1) - fz_array(i,j,k))/dz*dtn;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;         qt_array(i,j,k) = qt_array(i,j,k) + dq_rain_to_vapor - dq_clwater_to_rain;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;         qp_array(i,j,k) = qp_array(i,j,k) + dq_sed + dq_clwater_to_rain - dq_rain_to_vapor;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;         qn_array(i,j,k) = qn_array(i,j,k) + dq_vapor_to_clwater - dq_clwater_to_vapor - dq_clwater_to_rain;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;         theta_array(i,j,k) = theta_array(i,j,k) + theta_array(i,j,k)/tabs_array(i,j,k)*d_fac_cond*(dq_vapor_to_clwater - dq_clwater_to_vapor - dq_rain_to_vapor);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;         qt_array(i,j,k) = std::max(0.0, qt_array(i,j,k));</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;         qp_array(i,j,k) = std::max(0.0, qp_array(i,j,k));</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;         qn_array(i,j,k) = std::max(0.0, qn_array(i,j,k));</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;         <span class="keywordflow">if</span>(std::fabs(fz_array(i,j,k+1)) &lt; 1e-14) fz_array(i,j,k+1) = 0.0;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;         <span class="keywordflow">if</span>(std::fabs(fz_array(i,j,k)) &lt; 1e-14) fz_array(i,j,k) = 0.0;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;         Real dq_sed = 1.0/rho_array(i,j,k)*(fz_array(i,j,k+1) - fz_array(i,j,k))/dz*dtn;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">if</span>(std::fabs(dq_sed) &lt; 1e-14)dq_sed = 0.0;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="comment">//dq_sed = 0.0;</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;         qt_array(i,j,k) = qt_array(i,j,k) + dq_rain_to_vapor - dq_clwater_to_rain;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;         qp_array(i,j,k) = qp_array(i,j,k) + dq_sed + dq_clwater_to_rain - dq_rain_to_vapor;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;         qn_array(i,j,k) = qn_array(i,j,k) + dq_vapor_to_clwater - dq_clwater_to_vapor - dq_clwater_to_rain;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;         theta_array(i,j,k) = theta_array(i,j,k) + theta_array(i,j,k)/tabs_array(i,j,k)*d_fac_cond*(dq_vapor_to_clwater - dq_clwater_to_vapor - dq_rain_to_vapor);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;     });</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;}</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;         qt_array(i,j,k) = std::max(0.0, qt_array(i,j,k));</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;         qp_array(i,j,k) = std::max(0.0, qp_array(i,j,k));</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;         qn_array(i,j,k) = std::max(0.0, qn_array(i,j,k));</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;     });</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
 <div class="ttc" id="aEOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> EOS.H:62</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a0ab59ff21ef0b178fde0843394f5674a"><div class="ttname"><a href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a></div><div class="ttdeci">constexpr amrex::Real R_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
