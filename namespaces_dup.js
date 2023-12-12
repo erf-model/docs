@@ -1,7 +1,6 @@
 var namespaces_dup =
 [
     [ "BCVars", "namespaceBCVars.html", null ],
-    [ "Cons", "namespaceCons.html", null ],
     [ "derived", "namespacederived.html", [
       [ "erf_derKE", "namespacederived.html#aa1fcac44ae779cdfa2fd5266bc206e2d", null ],
       [ "erf_dernull", "namespacederived.html#af8efb799157f5dbb8fe00416458db9e1", null ],

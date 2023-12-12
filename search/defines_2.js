@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['num_5fprim_3998',['NUM_PRIM',['../IndexDefines_8H.html#a76cb673ca03cd7f8ae6cc8544d6dd0fa',1,'IndexDefines.H']]],
-  ['nvar_3999',['NVAR',['../IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639',1,'IndexDefines.H']]]
+  ['nvar_5fmax_3982',['NVAR_max',['../IndexDefines_8H.html#a46e292b965f80d15acfbdc11ffe1e0f0',1,'IndexDefines.H']]]
 ];

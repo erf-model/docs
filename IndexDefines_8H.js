@@ -1,7 +1,6 @@
 var IndexDefines_8H =
 [
-    [ "NUM_PRIM", "IndexDefines_8H.html#a76cb673ca03cd7f8ae6cc8544d6dd0fa", null ],
-    [ "NVAR", "IndexDefines_8H.html#ad5195ac8f863f5a9a7eaa0db094f7639", null ],
+    [ "NVAR_max", "IndexDefines_8H.html#a46e292b965f80d15acfbdc11ffe1e0f0", null ],
     [ "PrimKE_comp", "IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2", null ],
     [ "PrimQ1_comp", "IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29", null ],
     [ "PrimQ2_comp", "IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3", null ],
