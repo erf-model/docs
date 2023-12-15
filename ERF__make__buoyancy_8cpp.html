@@ -162,12 +162,12 @@ Include dependency graph for ERF_make_buoyancy.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af1410a7f063326f0310938edccf9b874"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__make__buoyancy_8cpp.html#af1410a7f063326f0310938edccf9b874">make_buoyancy</a> (Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, MultiFab &amp;buoyancy, MultiFab *qmoist, Gpu::DeviceVector&lt; Real &gt; qv_d, Gpu::DeviceVector&lt; Real &gt; qc_d, Gpu::DeviceVector&lt; Real &gt; qi_d, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const MultiFab *r0)</td></tr>
-<tr class="separator:af1410a7f063326f0310938edccf9b874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5df7a814d16f18905955e5d9979d7134"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__make__buoyancy_8cpp.html#a5df7a814d16f18905955e5d9979d7134">make_buoyancy</a> (Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, MultiFab &amp;buoyancy, Vector&lt; MultiFab * &gt; qmoist, Gpu::DeviceVector&lt; Real &gt; qv_d, Gpu::DeviceVector&lt; Real &gt; qc_d, Gpu::DeviceVector&lt; Real &gt; qi_d, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const MultiFab *r0)</td></tr>
+<tr class="separator:a5df7a814d16f18905955e5d9979d7134"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af1410a7f063326f0310938edccf9b874"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1410a7f063326f0310938edccf9b874">&#9670;&nbsp;</a></span>make_buoyancy()</h2>
+<a id="a5df7a814d16f18905955e5d9979d7134"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5df7a814d16f18905955e5d9979d7134">&#9670;&nbsp;</a></span>make_buoyancy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +193,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">MultiFab *&#160;</td>
+          <td class="paramtype">Vector&lt; MultiFab * &gt;&#160;</td>
           <td class="paramname"><em>qmoist</em>, </td>
         </tr>
         <tr>
@@ -396,9 +396,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <span class="comment">// Base state density</span></div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; r0_arr = r0-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qv_data    = qmoist-&gt;array(mfi,0);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qc_data    = qmoist-&gt;array(mfi,1);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qi_data    = qmoist-&gt;array(mfi,2);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qv_data    = qmoist[0]-&gt;array(mfi);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qc_data    = qmoist[1]-&gt;array(mfi);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qi_data    = qmoist[2]-&gt;array(mfi);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                amrex::ParallelFor(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                {</div>
@@ -464,9 +464,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_prim  = S_prim.array(mfi);</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qv_data    = qmoist-&gt;const_array(mfi,0);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qc_data    = qmoist-&gt;const_array(mfi,1);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qi_data    = qmoist-&gt;const_array(mfi,2);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qv_data    = qmoist[0]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qc_data    = qmoist[1]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qi_data    = qmoist[2]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    amrex::ParallelFor(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    {</div>
@@ -530,9 +530,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_data  = S_data[<a class="code" href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a>].array(mfi);</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; cell_prim  = S_prim.array(mfi);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qv_data    = qmoist-&gt;const_array(mfi,0);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qc_data    = qmoist-&gt;const_array(mfi,1);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qi_data    = qmoist-&gt;const_array(mfi,2);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qv_data    = qmoist[0]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qc_data    = qmoist[1]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; qi_data    = qmoist[2]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                    amrex::ParallelFor(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                    {</div>
@@ -570,15 +570,15 @@ Functions</h2></td></tr>
 <div class="ttc" id="aIndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:17</div></div>
 <div class="ttc" id="aclassPlaneAverage_html"><div class="ttname"><a href="classPlaneAverage.html">PlaneAverage</a></div><div class="ttdef"><b>Definition:</b> PlaneAverage.H:13</div></div>
 <div class="ttc" id="anamespaceIntVar_html_aa6dd400c056a0c4cf030e06f39c4511fa22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:134</div></div>
-<div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> DataStruct.H:338</div></div>
-<div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:362</div></div>
-<div class="ttc" id="astructSolverChoice_html_ad6ee95a1f016f6f236f26144dbf234d0"><div class="ttname"><a href="structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0">SolverChoice::buoyancy_type</a></div><div class="ttdeci">int buoyancy_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:322</div></div>
-<div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> DataStruct.H:368</div></div>
+<div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> DataStruct.H:342</div></div>
+<div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:366</div></div>
+<div class="ttc" id="astructSolverChoice_html_ad6ee95a1f016f6f236f26144dbf234d0"><div class="ttname"><a href="structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0">SolverChoice::buoyancy_type</a></div><div class="ttdeci">int buoyancy_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:326</div></div>
+<div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> DataStruct.H:372</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__make__buoyancy_8cpp_af1410a7f063326f0310938edccf9b874_cgraph.png" border="0" usemap="#aERF__make__buoyancy_8cpp_af1410a7f063326f0310938edccf9b874_cgraph" alt=""/></div>
-<map name="aERF__make__buoyancy_8cpp_af1410a7f063326f0310938edccf9b874_cgraph" id="aERF__make__buoyancy_8cpp_af1410a7f063326f0310938edccf9b874_cgraph">
+<div class="center"><img src="ERF__make__buoyancy_8cpp_a5df7a814d16f18905955e5d9979d7134_cgraph.png" border="0" usemap="#aERF__make__buoyancy_8cpp_a5df7a814d16f18905955e5d9979d7134_cgraph" alt=""/></div>
+<map name="aERF__make__buoyancy_8cpp_a5df7a814d16f18905955e5d9979d7134_cgraph" id="aERF__make__buoyancy_8cpp_a5df7a814d16f18905955e5d9979d7134_cgraph">
 <area shape="rect" title=" " alt="" coords="5,122,133,149"/>
 <area shape="rect" href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e" title=" " alt="" coords="184,5,360,47"/>
 <area shape="rect" href="classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5" title=" " alt="" coords="199,71,345,98"/>
