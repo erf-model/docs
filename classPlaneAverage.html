@@ -422,30 +422,31 @@ template&lt;typename IndexSelector &gt; </div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        amrex::Box pbx = PerpendicularBox&lt;IndexSelector&gt;(bx, amrex::IntVect{0, 0, 0});</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        ParallelFor(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), pbx, [=]</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;           AMREX_GPU_DEVICE( <span class="keywordtype">int</span> p_i, <span class="keywordtype">int</span> p_j, <span class="keywordtype">int</span> p_k,</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                             amrex::Gpu::Handler <span class="keyword">const</span>&amp; handler) noexcept {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="comment">// Loop over the direction perpendicular to the plane.</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="comment">// This reduces the atomic pressure on the destination arrays.</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            amrex::Box lbx = ParallelBox&lt;IndexSelector&gt;(bx, amrex::IntVect{p_i, p_j, p_k});</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lbx.smallEnd(2); k &lt;= lbx.bigEnd(2); ++k) {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lbx.smallEnd(1); j &lt;= lbx.bigEnd(1); ++j) {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lbx.smallEnd(0); i &lt;= lbx.bigEnd(0); ++i) {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                        <span class="keywordtype">int</span> ind = idxOp.getIndx(i, j, k);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; <a class="code" href="classPlaneAverage.html#a3860fd72df3e8dbb6b8decfdc360864f">ncomp</a>; ++n) {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                            amrex::Gpu::deviceReduceSum(&amp;line_avg[<a class="code" href="classPlaneAverage.html#a3860fd72df3e8dbb6b8decfdc360864f">ncomp</a> * ind + n],</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                            fab_arr(i, j, k, n) * denom, handler);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                        }</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                     }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                 }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;             }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;       });</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    lavg.copyToHost(<a class="code" href="classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d">m_line_average</a>.data(), <a class="code" href="classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d">m_line_average</a>.size());</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    amrex::ParallelDescriptor::ReduceRealSum(<a class="code" href="classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d">m_line_average</a>.data(), <a class="code" href="classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d">m_line_average</a>.size());</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                    AMREX_GPU_DEVICE( <span class="keywordtype">int</span> p_i, <span class="keywordtype">int</span> p_j, <span class="keywordtype">int</span> p_k,</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                                      amrex::Gpu::Handler <span class="keyword">const</span>&amp; handler) noexcept</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="comment">// Loop over the direction perpendicular to the plane.</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="comment">// This reduces the atomic pressure on the destination arrays.</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            amrex::Box lbx = ParallelBox&lt;IndexSelector&gt;(bx, amrex::IntVect{p_i, p_j, p_k});</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lbx.smallEnd(2); k &lt;= lbx.bigEnd(2); ++k) {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lbx.smallEnd(1); j &lt;= lbx.bigEnd(1); ++j) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lbx.smallEnd(0); i &lt;= lbx.bigEnd(0); ++i) {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                        <span class="keywordtype">int</span> ind = idxOp.getIndx(i, j, k);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; <a class="code" href="classPlaneAverage.html#a3860fd72df3e8dbb6b8decfdc360864f">ncomp</a>; ++n) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                            amrex::Gpu::deviceReduceSum(&amp;line_avg[<a class="code" href="classPlaneAverage.html#a3860fd72df3e8dbb6b8decfdc360864f">ncomp</a> * ind + n],</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                                                        fab_arr(i, j, k, n) * denom, handler);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                        }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        });</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    lavg.copyToHost(<a class="code" href="classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d">m_line_average</a>.data(), <a class="code" href="classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d">m_line_average</a>.size());</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    amrex::ParallelDescriptor::ReduceRealSum(<a class="code" href="classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d">m_line_average</a>.data(), <a class="code" href="classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d">m_line_average</a>.size());</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
 <div class="ttc" id="aclassPlaneAverage_html_a3860fd72df3e8dbb6b8decfdc360864f"><div class="ttname"><a href="classPlaneAverage.html#a3860fd72df3e8dbb6b8decfdc360864f">PlaneAverage::ncomp</a></div><div class="ttdeci">int ncomp() const</div><div class="ttdef"><b>Definition:</b> PlaneAverage.H:37</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>

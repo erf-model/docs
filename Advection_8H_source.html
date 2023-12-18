@@ -150,42 +150,42 @@ $(document).ready(function(){initNavTree('Advection_8H_source.html',''); initRes
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;AMREX_GPU_HOST_DEVICE</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a></div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="Advection_8H.html#aff14fe9e4f76b499843517b2c41c0fbb">   65</a></span>&#160;<a class="code" href="Advection_8H.html#aff14fe9e4f76b499843517b2c41c0fbb">EfficientAdvType</a>(<span class="keywordtype">int</span> nrk, <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> adv_type)</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="Advection_8H.html#aff14fe9e4f76b499843517b2c41c0fbb">   65</a></span>&#160;<a class="code" href="Advection_8H.html#aff14fe9e4f76b499843517b2c41c0fbb">EfficientAdvType</a> (<span class="keywordtype">int</span> nrk, <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> adv_type)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;     <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> eff_adv_type;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> eff_adv_type;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;     <span class="keywordflow">if</span> (nrk == 0) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (nrk == 0) {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;         eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nrk == 1) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nrk == 1) {</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;         <span class="keywordflow">if</span> ( (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>) ||</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>)   ||</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>) ||</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada35597e5f00fa867fe6e39d651a2195">AdvType::Weno_3</a>)       ||</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a9c29b64a7627155706a1cd93682b4351">AdvType::Weno_3Z</a>)      ||</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;              (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af8b942d20ed08b25df71ea1c87244210">AdvType::Weno_3MZQ</a>)    )</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;         {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;             eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> ( (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>) ||</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;             (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>)   ||</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;             (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>) ||</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;             (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada35597e5f00fa867fe6e39d651a2195">AdvType::Weno_3</a>)       ||</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;             (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a9c29b64a7627155706a1cd93682b4351">AdvType::Weno_3Z</a>)      ||</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;             (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af8b942d20ed08b25df71ea1c87244210">AdvType::Weno_3MZQ</a>)    )</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>) ||</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                     (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af2429e8de544f3ebd7c9668e3dbebaa8">AdvType::Weno_5</a>)     ||</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                     (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70aeb75f5943c7837da80e2048f2b344efc">AdvType::Weno_5Z</a>)    )</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;         {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;             eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>) ||</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af2429e8de544f3ebd7c9668e3dbebaa8">AdvType::Weno_5</a>)     ||</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        (adv_type == <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70aeb75f5943c7837da80e2048f2b344efc">AdvType::Weno_5Z</a>)    )</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;         } <span class="keywordflow">else</span> { <span class="comment">// (adv_type == AdvType::Centered_6th)</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            } <span class="keywordflow">else</span> { <span class="comment">// (adv_type == AdvType::Centered_6th)</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;             eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;         }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            eff_adv_type = <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;     } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;         eff_adv_type = adv_type;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;     }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        eff_adv_type = adv_type;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;     <span class="keywordflow">return</span>(eff_adv_type);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span>(eff_adv_type);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aABLMost_8H_html"><div class="ttname"><a href="ABLMost_8H.html">ABLMost.H</a></div></div>
