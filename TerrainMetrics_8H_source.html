@@ -424,87 +424,107 @@ $(document).ready(function(){initNavTree('TerrainMetrics_8H_source.html',''); in
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;       -z_nd(i+1,j-1,k) - z_nd(i,j-1,k) );</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordflow">return</span> met_h_eta;</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="comment"> * Define omega given u,v and w</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;AMREX_GPU_DEVICE</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;amrex::Real</div>
-<div class="line"><a name="l00346"></a><span class="lineno"><a class="line" href="TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18">  346</a></span>&#160;<a class="code" href="TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18">OmegaFromW</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Real w,</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt; u_arr,</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt; v_arr,</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt; z_nd,</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real, AMREX_SPACEDIM&gt;&amp; dxInv)</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;{</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  <span class="comment">// This is dh/dxi at z-face (i,j,k-1/2)</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  amrex::Real met_zlo_xi   = 0.5 * dxInv[0] *</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i+1,j  ,k  )    <span class="comment">// hi i, lo k</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;     -z_nd(i  ,j+1,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo i, lo k</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="comment">// Relative height above terrain surface at cell center from z_nd (nodal absolute height)</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;amrex::Real</div>
+<div class="line"><a name="l00344"></a><span class="lineno"><a class="line" href="TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">  344</a></span>&#160;<a class="code" href="TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">Compute_Zrel_AtCellCenter</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;i, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;j, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;k,</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                           <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; z_nd)</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;{</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keyword">const</span> amrex::Real z_cc = 0.125*(  z_nd(i  ,j  ,k  ) + z_nd(i  ,j  ,k+1) +</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                      + z_nd(i+1,j  ,k  ) + z_nd(i  ,j  ,k+1)</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                                      + z_nd(i  ,j+1,k  ) + z_nd(i  ,j+1,k+1)</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                                      + z_nd(i+1,j+1,k  ) + z_nd(i  ,j+1,k+1));</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="comment">// Note: we assume the z_nd array spans from the bottom to top of the domain</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="comment">// i.e. no domain decomposition across processors in vertical direction</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keyword">const</span> amrex::Real z0_cc = 0.25*(  z_nd(i  ,j  ,0) + z_nd(i  ,j+1,0)</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                                      + z_nd(i+1,j  ,0) + z_nd(i+1,j+1,0));</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;  <span class="comment">// This is dh/deta at z-face (i,j,k-1/2)</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  amrex::Real met_zlo_eta  = 0.5 * dxInv[1] *</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i  ,j+1,k  )    <span class="comment">// hi j, lo k</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;     -z_nd(i+1,j  ,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo j, lo k</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  <span class="comment">// Slip BC or moving terrain</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  <span class="comment">// Use extrapolation instead of interpolation if at the bottom boundary</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  amrex::Real u = (k == 0) ? 1.5 * (0.5*(u_arr(i,j,k)+u_arr(i+1,j,k))) - 0.5*(0.5*(u_arr(i,j,k+1)+u_arr(i+1,j,k+1))) :</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    0.25 * ( u_arr(i,j,k-1) + u_arr(i+1,j,k-1) + u_arr(i,j,k) + u_arr(i+1,j,k) );</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  amrex::Real v = (k == 0) ? 1.5 * (0.5*(v_arr(i,j,k)+v_arr(i,j+1,k))) - 0.5*(0.5*(v_arr(i,j,k+1)+v_arr(i,j+1,k+1))) :</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    0.25 * ( v_arr(i,j,k-1) + v_arr(i,j+1,k-1) + v_arr(i,j,k) + v_arr(i,j+1,k) );</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  amrex::Real <a class="code" href="namespaceMicVar__Kess.html#a7a57b6f1ee56119044cd13926c48d453a73c2675cea8c70face8b873a7558e38b">omega</a> =  w - met_zlo_xi * u - met_zlo_eta * v;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar__Kess.html#a7a57b6f1ee56119044cd13926c48d453a73c2675cea8c70face8b873a7558e38b">omega</a>;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment"> * Define w given scalar u,v and omega</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;AMREX_GPU_DEVICE</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;amrex::Real</div>
-<div class="line"><a name="l00379"></a><span class="lineno"><a class="line" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">  379</a></span>&#160;<a class="code" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Real <a class="code" href="namespaceMicVar__Kess.html#a7a57b6f1ee56119044cd13926c48d453a73c2675cea8c70face8b873a7558e38b">omega</a>,</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            amrex::Real u, amrex::Real v,</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; z_nd,</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real, AMREX_SPACEDIM&gt;&amp; dxInv)</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;{</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  <span class="comment">// This is dh/dxi at z-face (i,j,k-1/2)</span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  amrex::Real met_zlo_xi   = 0.5 * dxInv[0] *</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i+1,j  ,k  )    <span class="comment">// hi i, lo k</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;     -z_nd(i  ,j+1,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo i, lo k</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">return</span> (z_cc - z0_cc);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="comment"> * Define omega given u,v and w</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;amrex::Real</div>
+<div class="line"><a name="l00366"></a><span class="lineno"><a class="line" href="TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18">  366</a></span>&#160;<a class="code" href="TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18">OmegaFromW</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Real w,</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt; u_arr,</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt; v_arr,</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt; z_nd,</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real, AMREX_SPACEDIM&gt;&amp; dxInv)</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;{</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  <span class="comment">// This is dh/dxi at z-face (i,j,k-1/2)</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  amrex::Real met_zlo_xi   = 0.5 * dxInv[0] *</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i+1,j  ,k  )    <span class="comment">// hi i, lo k</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;     -z_nd(i  ,j+1,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo i, lo k</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <span class="comment">// This is dh/deta at z-face (i,j,k-1/2)</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  amrex::Real met_zlo_eta  = 0.5 * dxInv[1] *</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i  ,j+1,k  )    <span class="comment">// hi j, lo k</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;     -z_nd(i+1,j  ,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo j, lo k</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  <span class="comment">// Slip BC or moving terrain</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;  <span class="comment">// Use extrapolation instead of interpolation if at the bottom boundary</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  amrex::Real u = (k == 0) ? 1.5 * (0.5*(u_arr(i,j,k)+u_arr(i+1,j,k))) - 0.5*(0.5*(u_arr(i,j,k+1)+u_arr(i+1,j,k+1))) :</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    0.25 * ( u_arr(i,j,k-1) + u_arr(i+1,j,k-1) + u_arr(i,j,k) + u_arr(i+1,j,k) );</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  amrex::Real v = (k == 0) ? 1.5 * (0.5*(v_arr(i,j,k)+v_arr(i,j+1,k))) - 0.5*(0.5*(v_arr(i,j,k+1)+v_arr(i,j+1,k+1))) :</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    0.25 * ( v_arr(i,j,k-1) + v_arr(i,j+1,k-1) + v_arr(i,j,k) + v_arr(i,j+1,k) );</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  <span class="comment">// This is dh/deta at z-face (i,j,k-1/2)</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  amrex::Real met_zlo_eta  = 0.5 * dxInv[1] *</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i  ,j+1,k  )    <span class="comment">// hi j, lo k</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;     -z_nd(i+1,j  ,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo j, lo k</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  amrex::Real w = <a class="code" href="namespaceMicVar__Kess.html#a7a57b6f1ee56119044cd13926c48d453a73c2675cea8c70face8b873a7558e38b">omega</a> + met_zlo_xi * u + met_zlo_eta * v;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  <span class="keywordflow">return</span> w;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;}</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="comment"> * Define w given u and v arrays and scalar omega</span></div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;AMREX_GPU_DEVICE</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;amrex::Real</div>
-<div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="TerrainMetrics_8H.html#afcf8f856b0f93b149c115ca1ff240039">  404</a></span>&#160;<a class="code" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Real <a class="code" href="namespaceMicVar__Kess.html#a7a57b6f1ee56119044cd13926c48d453a73c2675cea8c70face8b873a7558e38b">omega</a>,</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; u_arr,</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; v_arr,</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; z_nd,</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real, AMREX_SPACEDIM&gt;&amp; dxInv)</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;{</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  <span class="comment">// Use extrapolation instead of interpolation if at the bottom boundary</span></div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;  amrex::Real u = (k == 0) ? 1.5 * (0.5*(u_arr(i,j,k)+u_arr(i+1,j,k))) - 0.5*(0.5*(u_arr(i,j,k+1)+u_arr(i+1,j,k+1))) :</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    0.25 * ( u_arr(i,j,k-1) + u_arr(i+1,j,k-1) + u_arr(i,j,k) + u_arr(i+1,j,k) );</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  amrex::Real v = (k == 0) ? 1.5 * (0.5*(v_arr(i,j,k)+v_arr(i,j+1,k))) - 0.5*(0.5*(v_arr(i,j,k+1)+v_arr(i,j+1,k+1))) :</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    0.25 * ( v_arr(i,j,k-1) + v_arr(i,j+1,k-1) + v_arr(i,j,k) + v_arr(i,j+1,k) );</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  amrex::Real w = <a class="code" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a>(i,j,k,<a class="code" href="namespaceMicVar__Kess.html#a7a57b6f1ee56119044cd13926c48d453a73c2675cea8c70face8b873a7558e38b">omega</a>,u,v,z_nd,dxInv);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;  <span class="keywordflow">return</span> w;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;}</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  amrex::Real <a class="code" href="namespaceMicVar__Kess.html#a7a57b6f1ee56119044cd13926c48d453a73c2675cea8c70face8b873a7558e38b">omega</a> =  w - met_zlo_xi * u - met_zlo_eta * v;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar__Kess.html#a7a57b6f1ee56119044cd13926c48d453a73c2675cea8c70face8b873a7558e38b">omega</a>;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;}</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="comment"> * Define w given scalar u,v and omega</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;amrex::Real</div>
+<div class="line"><a name="l00399"></a><span class="lineno"><a class="line" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">  399</a></span>&#160;<a class="code" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Real <a class="code" href="namespaceMicVar__Kess.html#a7a57b6f1ee56119044cd13926c48d453a73c2675cea8c70face8b873a7558e38b">omega</a>,</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            amrex::Real u, amrex::Real v,</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; z_nd,</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real, AMREX_SPACEDIM&gt;&amp; dxInv)</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;{</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  <span class="comment">// This is dh/dxi at z-face (i,j,k-1/2)</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  amrex::Real met_zlo_xi   = 0.5 * dxInv[0] *</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i+1,j  ,k  )    <span class="comment">// hi i, lo k</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;     -z_nd(i  ,j+1,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo i, lo k</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;  <span class="comment">// This is dh/deta at z-face (i,j,k-1/2)</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  amrex::Real met_zlo_eta  = 0.5 * dxInv[1] *</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i  ,j+1,k  )    <span class="comment">// hi j, lo k</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;     -z_nd(i+1,j  ,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo j, lo k</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;  amrex::Real w = <a class="code" href="namespaceMicVar__Kess.html#a7a57b6f1ee56119044cd13926c48d453a73c2675cea8c70face8b873a7558e38b">omega</a> + met_zlo_xi * u + met_zlo_eta * v;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  <span class="keywordflow">return</span> w;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;}</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="comment"> * Define w given u and v arrays and scalar omega</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;amrex::Real</div>
+<div class="line"><a name="l00424"></a><span class="lineno"><a class="line" href="TerrainMetrics_8H.html#afcf8f856b0f93b149c115ca1ff240039">  424</a></span>&#160;<a class="code" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Real <a class="code" href="namespaceMicVar__Kess.html#a7a57b6f1ee56119044cd13926c48d453a73c2675cea8c70face8b873a7558e38b">omega</a>,</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; u_arr,</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; v_arr,</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; z_nd,</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real, AMREX_SPACEDIM&gt;&amp; dxInv)</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;{</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;  <span class="comment">// Use extrapolation instead of interpolation if at the bottom boundary</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;  amrex::Real u = (k == 0) ? 1.5 * (0.5*(u_arr(i,j,k)+u_arr(i+1,j,k))) - 0.5*(0.5*(u_arr(i,j,k+1)+u_arr(i+1,j,k+1))) :</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    0.25 * ( u_arr(i,j,k-1) + u_arr(i+1,j,k-1) + u_arr(i,j,k) + u_arr(i+1,j,k) );</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  amrex::Real v = (k == 0) ? 1.5 * (0.5*(v_arr(i,j,k)+v_arr(i,j+1,k))) - 0.5*(0.5*(v_arr(i,j,k+1)+v_arr(i,j+1,k+1))) :</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    0.25 * ( v_arr(i,j,k-1) + v_arr(i,j+1,k-1) + v_arr(i,j,k) + v_arr(i,j+1,k) );</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  amrex::Real w = <a class="code" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a>(i,j,k,<a class="code" href="namespaceMicVar__Kess.html#a7a57b6f1ee56119044cd13926c48d453a73c2675cea8c70face8b873a7558e38b">omega</a>,u,v,z_nd,dxInv);</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  <span class="keywordflow">return</span> w;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;}</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aIndexDefines_8H_html"><div class="ttname"><a href="IndexDefines_8H.html">IndexDefines.H</a></div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a0251c09947155307e047f79fccdbd463"><div class="ttname"><a href="TerrainMetrics_8H.html#a0251c09947155307e047f79fccdbd463">Compute_h_eta_AtEdgeCenterJ</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtEdgeCenterJ(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:287</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a07e83bf0f142a953679c9edfa42b398d"><div class="ttname"><a href="TerrainMetrics_8H.html#a07e83bf0f142a953679c9edfa42b398d">Compute_h_xi_AtEdgeCenterK</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_xi_AtEdgeCenterK(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:226</div></div>
@@ -515,10 +535,11 @@ $(document).ready(function(){initNavTree('TerrainMetrics_8H_source.html',''); in
 <div class="ttc" id="aTerrainMetrics_8H_html_a2b9e684355ee8d6dad22950c8c51716b"><div class="ttname"><a href="TerrainMetrics_8H.html#a2b9e684355ee8d6dad22950c8c51716b">Compute_h_zeta_AtEdgeCenterK</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtEdgeCenterK(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:213</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a32eeeb066c70da970aa6a60918515987"><div class="ttname"><a href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE amrex::Real Compute_h_zeta_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:31</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a3e3ceccddeb3cca9d9e4573af2311a5e"><div class="ttname"><a href="TerrainMetrics_8H.html#a3e3ceccddeb3cca9d9e4573af2311a5e">Compute_h_zeta_AtEdgeCenterI</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtEdgeCenterI(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:302</div></div>
+<div class="ttc" id="aTerrainMetrics_8H_html_a41f9b3a5604791daf44935b10a55a565"><div class="ttname"><a href="TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">Compute_Zrel_AtCellCenter</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_Zrel_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:344</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a43b431cbd97421014ff80245883e06d2"><div class="ttname"><a href="TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2">Compute_h_eta_AtCellCenter</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:61</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a48f57e72ac183fdf1a984f58f3d24ee0"><div class="ttname"><a href="TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtKface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:165</div></div>
-<div class="ttc" id="aTerrainMetrics_8H_html_a53ec395d493c2308315f7512c5438087"><div class="ttname"><a href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real WFromOmega(int i, int j, int k, amrex::Real omega, amrex::Real u, amrex::Real v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:379</div></div>
-<div class="ttc" id="aTerrainMetrics_8H_html_a6a4bf1524412edfd6efcbb867256db18"><div class="ttname"><a href="TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18">OmegaFromW</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real OmegaFromW(int i, int j, int k, amrex::Real w, const amrex::Array4&lt; const amrex::Real &gt; u_arr, const amrex::Array4&lt; const amrex::Real &gt; v_arr, const amrex::Array4&lt; const amrex::Real &gt; z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:346</div></div>
+<div class="ttc" id="aTerrainMetrics_8H_html_a53ec395d493c2308315f7512c5438087"><div class="ttname"><a href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real WFromOmega(int i, int j, int k, amrex::Real omega, amrex::Real u, amrex::Real v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:399</div></div>
+<div class="ttc" id="aTerrainMetrics_8H_html_a6a4bf1524412edfd6efcbb867256db18"><div class="ttname"><a href="TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18">OmegaFromW</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real OmegaFromW(int i, int j, int k, amrex::Real w, const amrex::Array4&lt; const amrex::Real &gt; u_arr, const amrex::Array4&lt; const amrex::Real &gt; v_arr, const amrex::Array4&lt; const amrex::Real &gt; z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:366</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a73d2a3a82a32b34ed710f4891a3056df"><div class="ttname"><a href="TerrainMetrics_8H.html#a73d2a3a82a32b34ed710f4891a3056df">init_zlevels</a></div><div class="ttdeci">void init_zlevels(amrex::Vector&lt; amrex::Real &gt; &amp;zlevels_stag, const amrex::Geometry &amp;geom, const amrex::Real grid_stretching_ratio, const amrex::Real zsurf, const amrex::Real dz0)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.cpp:9</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a8d96671d41364f1e24391375a2bc0f1e"><div class="ttname"><a href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:79</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a9ec5ec17f16954e56733db6dd98fe07d"><div class="ttname"><a href="TerrainMetrics_8H.html#a9ec5ec17f16954e56733db6dd98fe07d">Compute_h_xi_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_xi_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:136</div></div>

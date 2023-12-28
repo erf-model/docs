@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"functions_func_e.html":[2,3,1,4],
+"functions_func_f.html":[2,3,1,5],
 "functions_func_g.html":[2,3,1,6],
 "functions_func_h.html":[2,3,1,7],
 "functions_func_i.html":[2,3,1,8],
@@ -69,8 +71,8 @@ var NAVTREEINDEX8 =
 "functions_y.html":[2,3,0,24],
 "functions_z.html":[2,3,0,25],
 "functions_~.html":[2,3,0,26],
-"globals.html":[3,1,0,0],
 "globals.html":[3,1,0],
+"globals.html":[3,1,0,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -78,8 +80,8 @@ var NAVTREEINDEX8 =
 "globals_e.html":[3,1,0,4],
 "globals_enum.html":[3,1,4],
 "globals_f.html":[3,1,0,5],
-"globals_func.html":[3,1,1],
 "globals_func.html":[3,1,1,0],
+"globals_func.html":[3,1,1],
 "globals_func_b.html":[3,1,1,1],
 "globals_func_c.html":[3,1,1,2],
 "globals_func_d.html":[3,1,1,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "structDiffChoice.html#a9fa9faf0edbd1b9cbf1b5804dd38be38":[2,0,11,1],
 "structDiffChoice.html#abaff02e5f99628d6a91b546f3ad1fae6":[2,0,11,4],
 "structDiffChoice.html#adc2925cf95fd6058bb83e1748fd1b765":[2,0,11,0],
-"structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf":[2,0,11,5],
-"structDirectionSelector.html":[2,0,12],
-"structDirectionSelector.html#a3950b636303028f398441fdc43d66dba":[2,0,12,0]
+"structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf":[2,0,11,5]
 };
