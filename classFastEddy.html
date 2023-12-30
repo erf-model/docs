@@ -107,15 +107,15 @@ Collaboration diagram for FastEddy:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFastEddy__coll__graph.png" border="0" usemap="#aFastEddy_coll__map" alt="Collaboration graph"/></div>
 <map name="aFastEddy_coll__map" id="aFastEddy_coll__map">
-<area shape="rect" title=" " alt="" coords="499,256,579,283"/>
-<area shape="rect" href="classNullMoist.html" title=" " alt="" coords="235,117,319,144"/>
-<area shape="rect" title=" " alt="" coords="5,87,44,113"/>
-<area shape="rect" title=" " alt="" coords="233,168,320,195"/>
-<area shape="rect" title=" " alt="" coords="195,219,359,261"/>
-<area shape="rect" title=" " alt="" coords="251,285,302,312"/>
-<area shape="rect" title=" " alt="" coords="221,336,332,363"/>
-<area shape="rect" title=" " alt="" coords="251,435,302,461"/>
-<area shape="rect" title=" " alt="" coords="235,485,318,512"/>
+<area shape="rect" title=" " alt="" coords="499,271,579,297"/>
+<area shape="rect" href="classNullMoist.html" title=" " alt="" coords="235,132,319,159"/>
+<area shape="rect" title=" " alt="" coords="5,101,44,128"/>
+<area shape="rect" title=" " alt="" coords="233,183,320,209"/>
+<area shape="rect" title=" " alt="" coords="195,234,359,275"/>
+<area shape="rect" title=" " alt="" coords="251,300,302,327"/>
+<area shape="rect" title=" " alt="" coords="221,351,332,377"/>
+<area shape="rect" title=" " alt="" coords="251,449,302,476"/>
+<area shape="rect" title=" " alt="" coords="235,500,318,527"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -137,8 +137,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1e0ba9966a846d8e7ef10a1487619a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a242ec9790163189ebded12ad840701c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#a242ec9790163189ebded12ad840701c1">Copy_Micro_to_State</a> (amrex::MultiFab &amp;cons_in) override</td></tr>
 <tr class="separator:a242ec9790163189ebded12ad840701c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bbeb7d80f5367cea29f9d8d3497eff7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#a0bbeb7d80f5367cea29f9d8d3497eff7">Update</a> (amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;qmoist) override</td></tr>
-<tr class="separator:a0bbeb7d80f5367cea29f9d8d3497eff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae954582b00f9d875826f53378d895839"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#ae954582b00f9d875826f53378d895839">Update_Micro_Vars</a> (amrex::MultiFab &amp;cons_in) override</td></tr>
 <tr class="separator:ae954582b00f9d875826f53378d895839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab773e3413ad009fb81953573e17346af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#ab773e3413ad009fb81953573e17346af">Update_State_Vars</a> (amrex::MultiFab &amp;cons_in) override</td></tr>
@@ -149,6 +147,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4b34de751f34ec4b445abe8064d5dccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f6a62a48c8fc6f209e4fd90e73a8d57"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#a8f6a62a48c8fc6f209e4fd90e73a8d57">Qmoist_Size</a> () override</td></tr>
 <tr class="separator:a8f6a62a48c8fc6f209e4fd90e73a8d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abae92639b790dde4064e3753f97e9178"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#abae92639b790dde4064e3753f97e9178">Qstate_Size</a> ()</td></tr>
+<tr class="separator:abae92639b790dde4064e3753f97e9178"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classNullMoist"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classNullMoist')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classNullMoist.html">NullMoist</a></td></tr>
 <tr class="memitem:a987746c147545a1a7d0efd21e5e34a12 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a987746c147545a1a7d0efd21e5e34a12">NullMoist</a> ()</td></tr>
 <tr class="separator:a987746c147545a1a7d0efd21e5e34a12 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,8 +162,10 @@ Private Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aff06ed8389cca61bcb9abf4fac9aaa2c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#aff06ed8389cca61bcb9abf4fac9aaa2c">m_qmoist_size</a> = 2</td></tr>
+<tr class="memitem:aff06ed8389cca61bcb9abf4fac9aaa2c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#aff06ed8389cca61bcb9abf4fac9aaa2c">m_qmoist_size</a> = 3</td></tr>
 <tr class="separator:aff06ed8389cca61bcb9abf4fac9aaa2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acddec45bae697968f6f1508b8db79dbf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#acddec45bae697968f6f1508b8db79dbf">m_qstate_size</a> = 2</td></tr>
+<tr class="separator:acddec45bae697968f6f1508b8db79dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0371e8ac5a694731a6033946b66750ef"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#a0371e8ac5a694731a6033946b66750ef">MicVarMap</a></td></tr>
 <tr class="separator:a0371e8ac5a694731a6033946b66750ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff63172893288f636ccd53eab41fad00"><td class="memItemLeft" align="right" valign="top">amrex::Geometry&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#aff63172893288f636ccd53eab41fad00">m_geom</a></td></tr>
@@ -241,7 +243,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -296,27 +298,26 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#abbc464f6bac8b1bb59137421d008ebf2">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="classFastEddy.html#af95e2f068604bb7eb14f22fa0644c9ca">dt</a> = dt_advance;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        this-&gt;<a class="code" href="classFastEddy.html#a2aded048e1e6bef2c9f611af7829837a">AdvanceFE</a>();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        this-&gt;<a class="code" href="classFastEddy.html#aa910d64363fd2bf136846be368c8e4aa">Diagnose</a>();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classFastEddy.html#af95e2f068604bb7eb14f22fa0644c9ca">dt</a> = dt_advance;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        this-&gt;<a class="code" href="classFastEddy.html#a2aded048e1e6bef2c9f611af7829837a">AdvanceFE</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        this-&gt;<a class="code" href="classFastEddy.html#aa910d64363fd2bf136846be368c8e4aa">Diagnose</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
 <div class="ttc" id="aclassFastEddy_html_a2aded048e1e6bef2c9f611af7829837a"><div class="ttname"><a href="classFastEddy.html#a2aded048e1e6bef2c9f611af7829837a">FastEddy::AdvanceFE</a></div><div class="ttdeci">void AdvanceFE()</div><div class="ttdef"><b>Definition:</b> FastEddy.cpp:14</div></div>
 <div class="ttc" id="aclassFastEddy_html_aa910d64363fd2bf136846be368c8e4aa"><div class="ttname"><a href="classFastEddy.html#aa910d64363fd2bf136846be368c8e4aa">FastEddy::Diagnose</a></div><div class="ttdeci">void Diagnose() override</div><div class="ttdef"><b>Definition:</b> Diagnose_FE.cpp:7</div></div>
-<div class="ttc" id="aclassFastEddy_html_af95e2f068604bb7eb14f22fa0644c9ca"><div class="ttname"><a href="classFastEddy.html#af95e2f068604bb7eb14f22fa0644c9ca">FastEddy::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> FastEddy.H:132</div></div>
+<div class="ttc" id="aclassFastEddy_html_af95e2f068604bb7eb14f22fa0644c9ca"><div class="ttname"><a href="classFastEddy.html#af95e2f068604bb7eb14f22fa0644c9ca">FastEddy::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> FastEddy.H:135</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFastEddy_a4bc7e30c7607d2dfe28f4af7178ba3f8_cgraph.png" border="0" usemap="#aclassFastEddy_a4bc7e30c7607d2dfe28f4af7178ba3f8_cgraph" alt=""/></div>
 <map name="aclassFastEddy_a4bc7e30c7607d2dfe28f4af7178ba3f8_cgraph" id="aclassFastEddy_a4bc7e30c7607d2dfe28f4af7178ba3f8_cgraph">
-<area shape="rect" title=" " alt="" coords="5,81,148,108"/>
-<area shape="rect" href="classFastEddy.html#a2aded048e1e6bef2c9f611af7829837a" title=" " alt="" coords="196,56,355,83"/>
-<area shape="rect" href="classFastEddy.html#aa910d64363fd2bf136846be368c8e4aa" title=" " alt="" coords="201,107,349,133"/>
-<area shape="rect" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="415,31,501,57"/>
-<area shape="rect" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="403,81,513,108"/>
-<area shape="rect" href="Microphysics__Utils_8H.html#a16a390366e7e68ca35fdac4cad824428" title=" " alt="" coords="561,5,648,32"/>
-<area shape="rect" href="Modal__aero__wateruptake_8H.html#a9aa3077c8aba28c76a55a49b5ce9d5ec" title=" " alt="" coords="696,31,735,57"/>
+<area shape="rect" title=" " alt="" coords="5,56,148,83"/>
+<area shape="rect" href="classFastEddy.html#a2aded048e1e6bef2c9f611af7829837a" title=" " alt="" coords="196,31,355,57"/>
+<area shape="rect" href="classFastEddy.html#aa910d64363fd2bf136846be368c8e4aa" title=" " alt="" coords="201,81,349,108"/>
+<area shape="rect" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="403,31,489,57"/>
+<area shape="rect" href="Microphysics__Utils_8H.html#a16a390366e7e68ca35fdac4cad824428" title=" " alt="" coords="537,5,624,32"/>
+<area shape="rect" href="Modal__aero__wateruptake_8H.html#a9aa3077c8aba28c76a55a49b5ce9d5ec" title=" " alt="" coords="672,31,711,57"/>
 </map>
 </div>
 
@@ -346,7 +347,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">auto</span> qc_array    = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500aae593d3d6c86808b4e578c2c5aa23c33">MicVar_FE::qc</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">auto</span> tabs_array  = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a72fbd3861cd0ae9f103201d1cc7482eb">MicVar_FE::tabs</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">MicVar_FE::theta</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">auto</span> rho_array   = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a436a31a93a198683f07cc3afe46b8f33">MicVar_FE::rho</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">auto</span> pres_array  = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a5c0fa7f0120a3ead7a99d0f8545ab606">MicVar_FE::pres</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
@@ -361,7 +362,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="comment">//------- Autoconversion/accretion</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            Real dq_clwater_to_vapor, dq_vapor_to_clwater, qsat;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            Real pressure = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(rho_array(i,j,k)*theta_array(i,j,k),qv_array(i,j,k))/100.0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            Real pressure = pres_array(i,j,k);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs_array(i,j,k), pressure, qsat);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="comment">// If there is precipitating water (i.e. rain), and the cell is not saturated</span></div>
@@ -395,16 +396,15 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        });</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="ttc" id="aEOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> EOS.H:62</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a0ab59ff21ef0b178fde0843394f5674a"><div class="ttname"><a href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a></div><div class="ttdeci">constexpr amrex::Real R_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aee80ef06f62b6528b776d02de062cdd5"><div class="ttname"><a href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a></div><div class="ttdeci">constexpr amrex::Real L_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:15</div></div>
 <div class="ttc" id="aMicrophysics__Utils_8H_html_a8e4b0c6ed8b95c2040dc0c9e8fcb8615"><div class="ttname"><a href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;qsatw)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:121</div></div>
-<div class="ttc" id="aclassFastEddy_html_a42c75d6ff057d6bc59ac9a0bd2600dae"><div class="ttname"><a href="classFastEddy.html#a42c75d6ff057d6bc59ac9a0bd2600dae">FastEddy::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> FastEddy.H:144</div></div>
-<div class="ttc" id="aclassFastEddy_html_ad45aa1f3d6472e7f190d4fd4f6b5308a"><div class="ttname"><a href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">FastEddy::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar_FE::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> FastEddy.H:150</div></div>
-<div class="ttc" id="anamespaceMicVar__FE_html_a585768336b465284ea76634770e2c500a436a31a93a198683f07cc3afe46b8f33"><div class="ttname"><a href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a436a31a93a198683f07cc3afe46b8f33">MicVar_FE::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> FastEddy.H:27</div></div>
-<div class="ttc" id="anamespaceMicVar__FE_html_a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b"><div class="ttname"><a href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">MicVar_FE::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> FastEddy.H:25</div></div>
-<div class="ttc" id="anamespaceMicVar__FE_html_a585768336b465284ea76634770e2c500a72fbd3861cd0ae9f103201d1cc7482eb"><div class="ttname"><a href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a72fbd3861cd0ae9f103201d1cc7482eb">MicVar_FE::tabs</a></div><div class="ttdeci">@ tabs</div><div class="ttdef"><b>Definition:</b> FastEddy.H:26</div></div>
+<div class="ttc" id="aclassFastEddy_html_a42c75d6ff057d6bc59ac9a0bd2600dae"><div class="ttname"><a href="classFastEddy.html#a42c75d6ff057d6bc59ac9a0bd2600dae">FastEddy::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> FastEddy.H:147</div></div>
+<div class="ttc" id="aclassFastEddy_html_ad45aa1f3d6472e7f190d4fd4f6b5308a"><div class="ttname"><a href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">FastEddy::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar_FE::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> FastEddy.H:153</div></div>
+<div class="ttc" id="anamespaceMicVar__FE_html_a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b"><div class="ttname"><a href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">MicVar_FE::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> FastEddy.H:27</div></div>
+<div class="ttc" id="anamespaceMicVar__FE_html_a585768336b465284ea76634770e2c500a5c0fa7f0120a3ead7a99d0f8545ab606"><div class="ttname"><a href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a5c0fa7f0120a3ead7a99d0f8545ab606">MicVar_FE::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> FastEddy.H:29</div></div>
+<div class="ttc" id="anamespaceMicVar__FE_html_a585768336b465284ea76634770e2c500a72fbd3861cd0ae9f103201d1cc7482eb"><div class="ttname"><a href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a72fbd3861cd0ae9f103201d1cc7482eb">MicVar_FE::tabs</a></div><div class="ttdeci">@ tabs</div><div class="ttdef"><b>Definition:</b> FastEddy.H:28</div></div>
 <div class="ttc" id="anamespaceMicVar__FE_html_a585768336b465284ea76634770e2c500aae593d3d6c86808b4e578c2c5aa23c33"><div class="ttname"><a href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500aae593d3d6c86808b4e578c2c5aa23c33">MicVar_FE::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> FastEddy.H:24</div></div>
 <div class="ttc" id="anamespaceMicVar__FE_html_a585768336b465284ea76634770e2c500ae560111c760df2c025ccf516adf07fc3"><div class="ttname"><a href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ae560111c760df2c025ccf516adf07fc3">MicVar_FE::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> FastEddy.H:23</div></div>
 </div><!-- fragment -->
@@ -414,11 +414,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFastEddy_a2aded048e1e6bef2c9f611af7829837a_cgraph.png" border="0" usemap="#aclassFastEddy_a2aded048e1e6bef2c9f611af7829837a_cgraph" alt=""/></div>
 <map name="aclassFastEddy_a2aded048e1e6bef2c9f611af7829837a_cgraph" id="aclassFastEddy_a2aded048e1e6bef2c9f611af7829837a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,164,83"/>
-<area shape="rect" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="224,31,311,57"/>
-<area shape="rect" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="212,81,323,108"/>
-<area shape="rect" href="Microphysics__Utils_8H.html#a16a390366e7e68ca35fdac4cad824428" title=" " alt="" coords="371,5,457,32"/>
-<area shape="rect" href="Modal__aero__wateruptake_8H.html#a9aa3077c8aba28c76a55a49b5ce9d5ec" title=" " alt="" coords="505,31,544,57"/>
+<area shape="rect" title=" " alt="" coords="5,31,164,57"/>
+<area shape="rect" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="212,31,299,57"/>
+<area shape="rect" href="Microphysics__Utils_8H.html#a16a390366e7e68ca35fdac4cad824428" title=" " alt="" coords="347,5,433,32"/>
+<area shape="rect" href="Modal__aero__wateruptake_8H.html#a9aa3077c8aba28c76a55a49b5ce9d5ec" title=" " alt="" coords="481,31,520,57"/>
 </map>
 </div>
 <div class="dynheader">
@@ -466,35 +465,36 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a11a25944d4ddb955f74e355838b9d8b0">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Get the temperature, density, theta, qt and qp from input</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(<a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">auto</span> states_arr = <a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>.array(mfi);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">auto</span> rho_arr    = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a436a31a93a198683f07cc3afe46b8f33">MicVar_FE::rho</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">auto</span> theta_arr  = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">MicVar_FE::theta</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">auto</span> qv_arr     = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ae560111c760df2c025ccf516adf07fc3">MicVar_FE::qv</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">auto</span> qc_arr     = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500aae593d3d6c86808b4e578c2c5aa23c33">MicVar_FE::qc</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// get potential total density, temperature, qt, qp</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        amrex::ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            states_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = rho_arr(i,j,k)*theta_arr(i,j,k);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            states_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)    = rho_arr(i,j,k)*qv_arr(i,j,k);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            states_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)    = rho_arr(i,j,k)*qc_arr(i,j,k);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        });</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Fill interior ghost cells and periodic boundaries</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>.FillBoundary(<a class="code" href="classFastEddy.html#aff63172893288f636ccd53eab41fad00">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// Get the temperature, density, theta, qt and qp from input</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(<a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">auto</span> states_arr = <a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>.array(mfi);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">auto</span> rho_arr    = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a436a31a93a198683f07cc3afe46b8f33">MicVar_FE::rho</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">auto</span> theta_arr  = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">MicVar_FE::theta</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">auto</span> qv_arr     = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ae560111c760df2c025ccf516adf07fc3">MicVar_FE::qv</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">auto</span> qc_arr     = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500aae593d3d6c86808b4e578c2c5aa23c33">MicVar_FE::qc</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">// get potential total density, temperature, qt, qp</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        amrex::ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            states_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = rho_arr(i,j,k)*theta_arr(i,j,k);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            states_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)    = rho_arr(i,j,k)*qv_arr(i,j,k);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            states_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)    = rho_arr(i,j,k)*qc_arr(i,j,k);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        });</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Fill interior ghost cells and periodic boundaries</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>.FillBoundary(<a class="code" href="classFastEddy.html#aff63172893288f636ccd53eab41fad00">m_geom</a>.periodicity());</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a3bf0a4783e82ba30db2b7c0a332c2f16"><div class="ttname"><a href="IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a></div><div class="ttdeci">#define RhoQ2_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:18</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:17</div></div>
-<div class="ttc" id="aclassFastEddy_html_aff63172893288f636ccd53eab41fad00"><div class="ttname"><a href="classFastEddy.html#aff63172893288f636ccd53eab41fad00">FastEddy::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> FastEddy.H:126</div></div>
-<div class="ttc" id="anamespaceVars_html_a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:77</div></div>
+<div class="ttc" id="aclassFastEddy_html_aff63172893288f636ccd53eab41fad00"><div class="ttname"><a href="classFastEddy.html#aff63172893288f636ccd53eab41fad00">FastEddy::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> FastEddy.H:129</div></div>
+<div class="ttc" id="anamespaceMicVar__FE_html_a585768336b465284ea76634770e2c500a436a31a93a198683f07cc3afe46b8f33"><div class="ttname"><a href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a436a31a93a198683f07cc3afe46b8f33">MicVar_FE::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> FastEddy.H:26</div></div>
+<div class="ttc" id="anamespaceVars_html_a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:82</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classFastEddy.html#ab773e3413ad009fb81953573e17346af">Update_State_Vars()</a>.</p>
 <div class="dynheader">
@@ -541,32 +541,42 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#aacb06ee696c6870e899d1bc26aa9933e">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Get the temperature, density, theta, qt and qp from input</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">auto</span> states_array = cons_in.array(mfi);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">auto</span> qv_array     = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ae560111c760df2c025ccf516adf07fc3">MicVar_FE::qv</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">auto</span> qc_array     = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500aae593d3d6c86808b4e578c2c5aa23c33">MicVar_FE::qc</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">auto</span> rho_array    = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a436a31a93a198683f07cc3afe46b8f33">MicVar_FE::rho</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">auto</span> theta_array  = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">MicVar_FE::theta</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">auto</span> temp_array   = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a72fbd3861cd0ae9f103201d1cc7482eb">MicVar_FE::tabs</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">// Get pressure, theta, temperature, density, and qt, qp</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        amrex::ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            rho_array(i,j,k)   = states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            theta_array(i,j,k) = states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            qv_array(i,j,k)    = states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            qc_array(i,j,k)    = states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)/states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            temp_array(i,j,k)  = <a class="code" href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_array(i,j,k));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        });</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Get the temperature, density, theta, qt and qp from input</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">auto</span> states_array = cons_in.array(mfi);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">auto</span> qt_array    = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ae86803d64a7966eb16dd9d8835f86fb9">MicVar_FE::qt</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">auto</span> qv_array    = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ae560111c760df2c025ccf516adf07fc3">MicVar_FE::qv</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">auto</span> qc_array    = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500aae593d3d6c86808b4e578c2c5aa23c33">MicVar_FE::qc</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">auto</span> rho_array   = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a436a31a93a198683f07cc3afe46b8f33">MicVar_FE::rho</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">MicVar_FE::theta</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">auto</span> tabs_array  = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a72fbd3861cd0ae9f103201d1cc7482eb">MicVar_FE::tabs</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">auto</span> pres_array  = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a5c0fa7f0120a3ead7a99d0f8545ab606">MicVar_FE::pres</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// Get pressure, theta, temperature, density, and qt, qp</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        amrex::ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            rho_array(i,j,k)   = states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            theta_array(i,j,k) = states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            qv_array(i,j,k)    = states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            qc_array(i,j,k)    = states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)/states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            qt_array(i,j,k)    = qv_array(i,j,k) + qc_array(i,j,k);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            tabs_array(i,j,k)  = <a class="code" href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                  states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                                  qv_array(i,j,k));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            pres_array(i,j,k)  = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_array(i,j,k))/100.;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        });</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="ttc" id="aEOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> EOS.H:62</div></div>
 <div class="ttc" id="aEOS_8H_html_a65cf1718b7a1fcc56cb16685642543da"><div class="ttname"><a href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> EOS.H:29</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
+<div class="ttc" id="anamespaceMicVar__FE_html_a585768336b465284ea76634770e2c500ae86803d64a7966eb16dd9d8835f86fb9"><div class="ttname"><a href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ae86803d64a7966eb16dd9d8835f86fb9">MicVar_FE::qt</a></div><div class="ttdeci">@ qt</div><div class="ttdef"><b>Definition:</b> FastEddy.H:25</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classFastEddy.html#ae954582b00f9d875826f53378d895839">Update_Micro_Vars()</a>.</p>
 <div class="dynheader">
@@ -574,8 +584,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFastEddy_a1e0ba9966a846d8e7ef10a1487619a59_cgraph.png" border="0" usemap="#aclassFastEddy_a1e0ba9966a846d8e7ef10a1487619a59_cgraph" alt=""/></div>
 <map name="aclassFastEddy_a1e0ba9966a846d8e7ef10a1487619a59_cgraph" id="aclassFastEddy_a1e0ba9966a846d8e7ef10a1487619a59_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,167,47"/>
-<area shape="rect" href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="215,13,359,39"/>
+<area shape="rect" title=" " alt="" coords="5,23,167,65"/>
+<area shape="rect" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="231,5,342,32"/>
+<area shape="rect" href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="215,56,359,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -615,29 +626,29 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#aab112947c592c330b45a2d7e5529ec07">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classFastEddy.html#a6c448ae889150d06105b7e1756a5e3ae">docloud</a> = sc.<a class="code" href="structSolverChoice.html#af352bb75ceaeae4ac534d3378fbf393a">do_cloud</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classFastEddy.html#a189f00670d52d9feb7c8e1b60d18104c">doprecip</a> = sc.<a class="code" href="structSolverChoice.html#a766e5884354ed6483704f8257036ee75">do_precip</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classFastEddy.html#a42c75d6ff057d6bc59ac9a0bd2600dae">m_fac_cond</a> = <a class="code" href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classFastEddy.html#a4218617ab4d6399ed6d1046f6402d1e2">m_fac_fus</a> = <a class="code" href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classFastEddy.html#ac21f4270d5b5e01e9bf99cb6f14372b9">m_fac_sub</a> = <a class="code" href="ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classFastEddy.html#af93558de4f781831d772c3462dbc05a0">m_gOcp</a> = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classFastEddy.html#ae9a1e08109abb1c5ac99fd210510c4d7">m_axis</a> = sc.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classFastEddy.html#a6c448ae889150d06105b7e1756a5e3ae">docloud</a> = sc.<a class="code" href="structSolverChoice.html#af352bb75ceaeae4ac534d3378fbf393a">do_cloud</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classFastEddy.html#a189f00670d52d9feb7c8e1b60d18104c">doprecip</a> = sc.<a class="code" href="structSolverChoice.html#a766e5884354ed6483704f8257036ee75">do_precip</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classFastEddy.html#a42c75d6ff057d6bc59ac9a0bd2600dae">m_fac_cond</a> = <a class="code" href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classFastEddy.html#a4218617ab4d6399ed6d1046f6402d1e2">m_fac_fus</a> = <a class="code" href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classFastEddy.html#ac21f4270d5b5e01e9bf99cb6f14372b9">m_fac_sub</a> = <a class="code" href="ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classFastEddy.html#af93558de4f781831d772c3462dbc05a0">m_gOcp</a> = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classFastEddy.html#ae9a1e08109abb1c5ac99fd210510c4d7">m_axis</a> = sc.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0f65ea12b4405c50f1d777f7ca82dcfd"><div class="ttname"><a href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a></div><div class="ttdeci">constexpr amrex::Real lfus</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:66</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a3ab435b88eae71bef826cb01254ff33d"><div class="ttname"><a href="ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a></div><div class="ttdeci">constexpr amrex::Real lsub</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:67</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a7b45c0074d559f423ac2d48e1b171518"><div class="ttname"><a href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a></div><div class="ttdeci">constexpr amrex::Real lcond</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:65</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:20</div></div>
-<div class="ttc" id="aclassFastEddy_html_a189f00670d52d9feb7c8e1b60d18104c"><div class="ttname"><a href="classFastEddy.html#a189f00670d52d9feb7c8e1b60d18104c">FastEddy::doprecip</a></div><div class="ttdeci">bool doprecip</div><div class="ttdef"><b>Definition:</b> FastEddy.H:141</div></div>
-<div class="ttc" id="aclassFastEddy_html_a4218617ab4d6399ed6d1046f6402d1e2"><div class="ttname"><a href="classFastEddy.html#a4218617ab4d6399ed6d1046f6402d1e2">FastEddy::m_fac_fus</a></div><div class="ttdeci">amrex::Real m_fac_fus</div><div class="ttdef"><b>Definition:</b> FastEddy.H:145</div></div>
-<div class="ttc" id="aclassFastEddy_html_a6c448ae889150d06105b7e1756a5e3ae"><div class="ttname"><a href="classFastEddy.html#a6c448ae889150d06105b7e1756a5e3ae">FastEddy::docloud</a></div><div class="ttdeci">bool docloud</div><div class="ttdef"><b>Definition:</b> FastEddy.H:141</div></div>
-<div class="ttc" id="aclassFastEddy_html_ac21f4270d5b5e01e9bf99cb6f14372b9"><div class="ttname"><a href="classFastEddy.html#ac21f4270d5b5e01e9bf99cb6f14372b9">FastEddy::m_fac_sub</a></div><div class="ttdeci">amrex::Real m_fac_sub</div><div class="ttdef"><b>Definition:</b> FastEddy.H:146</div></div>
-<div class="ttc" id="aclassFastEddy_html_ae9a1e08109abb1c5ac99fd210510c4d7"><div class="ttname"><a href="classFastEddy.html#ae9a1e08109abb1c5ac99fd210510c4d7">FastEddy::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> FastEddy.H:138</div></div>
-<div class="ttc" id="aclassFastEddy_html_af93558de4f781831d772c3462dbc05a0"><div class="ttname"><a href="classFastEddy.html#af93558de4f781831d772c3462dbc05a0">FastEddy::m_gOcp</a></div><div class="ttdeci">amrex::Real m_gOcp</div><div class="ttdef"><b>Definition:</b> FastEddy.H:147</div></div>
-<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> DataStruct.H:343</div></div>
-<div class="ttc" id="astructSolverChoice_html_a766e5884354ed6483704f8257036ee75"><div class="ttname"><a href="structSolverChoice.html#a766e5884354ed6483704f8257036ee75">SolverChoice::do_precip</a></div><div class="ttdeci">bool do_precip</div><div class="ttdef"><b>Definition:</b> DataStruct.H:375</div></div>
-<div class="ttc" id="astructSolverChoice_html_af352bb75ceaeae4ac534d3378fbf393a"><div class="ttname"><a href="structSolverChoice.html#af352bb75ceaeae4ac534d3378fbf393a">SolverChoice::do_cloud</a></div><div class="ttdeci">bool do_cloud</div><div class="ttdef"><b>Definition:</b> DataStruct.H:374</div></div>
-<div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> DataStruct.H:372</div></div>
+<div class="ttc" id="aclassFastEddy_html_a189f00670d52d9feb7c8e1b60d18104c"><div class="ttname"><a href="classFastEddy.html#a189f00670d52d9feb7c8e1b60d18104c">FastEddy::doprecip</a></div><div class="ttdeci">bool doprecip</div><div class="ttdef"><b>Definition:</b> FastEddy.H:144</div></div>
+<div class="ttc" id="aclassFastEddy_html_a4218617ab4d6399ed6d1046f6402d1e2"><div class="ttname"><a href="classFastEddy.html#a4218617ab4d6399ed6d1046f6402d1e2">FastEddy::m_fac_fus</a></div><div class="ttdeci">amrex::Real m_fac_fus</div><div class="ttdef"><b>Definition:</b> FastEddy.H:148</div></div>
+<div class="ttc" id="aclassFastEddy_html_a6c448ae889150d06105b7e1756a5e3ae"><div class="ttname"><a href="classFastEddy.html#a6c448ae889150d06105b7e1756a5e3ae">FastEddy::docloud</a></div><div class="ttdeci">bool docloud</div><div class="ttdef"><b>Definition:</b> FastEddy.H:144</div></div>
+<div class="ttc" id="aclassFastEddy_html_ac21f4270d5b5e01e9bf99cb6f14372b9"><div class="ttname"><a href="classFastEddy.html#ac21f4270d5b5e01e9bf99cb6f14372b9">FastEddy::m_fac_sub</a></div><div class="ttdeci">amrex::Real m_fac_sub</div><div class="ttdef"><b>Definition:</b> FastEddy.H:149</div></div>
+<div class="ttc" id="aclassFastEddy_html_ae9a1e08109abb1c5ac99fd210510c4d7"><div class="ttname"><a href="classFastEddy.html#ae9a1e08109abb1c5ac99fd210510c4d7">FastEddy::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> FastEddy.H:141</div></div>
+<div class="ttc" id="aclassFastEddy_html_af93558de4f781831d772c3462dbc05a0"><div class="ttname"><a href="classFastEddy.html#af93558de4f781831d772c3462dbc05a0">FastEddy::m_gOcp</a></div><div class="ttdeci">amrex::Real m_gOcp</div><div class="ttdef"><b>Definition:</b> FastEddy.H:150</div></div>
+<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> DataStruct.H:345</div></div>
+<div class="ttc" id="astructSolverChoice_html_a766e5884354ed6483704f8257036ee75"><div class="ttname"><a href="structSolverChoice.html#a766e5884354ed6483704f8257036ee75">SolverChoice::do_precip</a></div><div class="ttdeci">bool do_precip</div><div class="ttdef"><b>Definition:</b> DataStruct.H:377</div></div>
+<div class="ttc" id="astructSolverChoice_html_af352bb75ceaeae4ac534d3378fbf393a"><div class="ttname"><a href="structSolverChoice.html#af352bb75ceaeae4ac534d3378fbf393a">SolverChoice::do_cloud</a></div><div class="ttdeci">bool do_cloud</div><div class="ttdef"><b>Definition:</b> DataStruct.H:376</div></div>
+<div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> DataStruct.H:374</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -743,42 +754,42 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a09b68ec4789030267ce6dccc0af195d9">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classFastEddy.html#af95e2f068604bb7eb14f22fa0644c9ca">dt</a> = dt_advance;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classFastEddy.html#aff63172893288f636ccd53eab41fad00">m_geom</a> = geom;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classFastEddy.html#a01eabfb6b9729cd8a725bdb7e3cb029e">m_gtoe</a> = grids;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classFastEddy.html#a0371e8ac5a694731a6033946b66750ef">MicVarMap</a>.resize(<a class="code" href="classFastEddy.html#aff06ed8389cca61bcb9abf4fac9aaa2c">m_qmoist_size</a>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classFastEddy.html#a0371e8ac5a694731a6033946b66750ef">MicVarMap</a> = {<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ae560111c760df2c025ccf516adf07fc3">MicVar_FE::qv</a>, <a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500aae593d3d6c86808b4e578c2c5aa23c33">MicVar_FE::qc</a>};</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// initialize microphysics variables</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ivar = 0; ivar &lt; <a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ab3959b60b209bfedaa52385f01484d0e">MicVar_FE::NumVars</a>; ++ivar) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[ivar] = std::make_shared&lt;MultiFab&gt;(cons_in.boxArray(), cons_in.DistributionMap(),</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                                        1, cons_in.nGrowVect());</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[ivar]-&gt;setVal(0.);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// Set class data members</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in, <a class="code" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; lo = amrex::lbound(box3d);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; hi = amrex::ubound(box3d);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classFastEddy.html#a14c9b5b85998ec14341dfadd113b4cfd">nlev</a> = box3d.length(2);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classFastEddy.html#a4f6bb7fdf9872a297bed4b84f4585fa0">zlo</a>  = lo.z;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classFastEddy.html#a7d0df6d5cba16454a4e34010c0997522">zhi</a>  = hi.z;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classFastEddy.html#af95e2f068604bb7eb14f22fa0644c9ca">dt</a> = dt_advance;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classFastEddy.html#aff63172893288f636ccd53eab41fad00">m_geom</a> = geom;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classFastEddy.html#a01eabfb6b9729cd8a725bdb7e3cb029e">m_gtoe</a> = grids;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classFastEddy.html#a0371e8ac5a694731a6033946b66750ef">MicVarMap</a>.resize(<a class="code" href="classFastEddy.html#aff06ed8389cca61bcb9abf4fac9aaa2c">m_qmoist_size</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classFastEddy.html#a0371e8ac5a694731a6033946b66750ef">MicVarMap</a> = {<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ae86803d64a7966eb16dd9d8835f86fb9">MicVar_FE::qt</a>, <a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ae560111c760df2c025ccf516adf07fc3">MicVar_FE::qv</a>, <a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500aae593d3d6c86808b4e578c2c5aa23c33">MicVar_FE::qc</a>};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// initialize microphysics variables</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ivar = 0; ivar &lt; <a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ab3959b60b209bfedaa52385f01484d0e">MicVar_FE::NumVars</a>; ++ivar) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[ivar] = std::make_shared&lt;MultiFab&gt;(cons_in.boxArray(), cons_in.DistributionMap(),</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                        1, cons_in.nGrowVect());</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[ivar]-&gt;setVal(0.);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Set class data members</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in, <a class="code" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; lo = amrex::lbound(box3d);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; hi = amrex::ubound(box3d);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classFastEddy.html#a14c9b5b85998ec14341dfadd113b4cfd">nlev</a> = box3d.length(2);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classFastEddy.html#a4f6bb7fdf9872a297bed4b84f4585fa0">zlo</a>  = lo.z;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classFastEddy.html#a7d0df6d5cba16454a4e34010c0997522">zhi</a>  = hi.z;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 <div class="ttc" id="aTileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> TileNoZ.H:11</div></div>
-<div class="ttc" id="aclassFastEddy_html_a01eabfb6b9729cd8a725bdb7e3cb029e"><div class="ttname"><a href="classFastEddy.html#a01eabfb6b9729cd8a725bdb7e3cb029e">FastEddy::m_gtoe</a></div><div class="ttdeci">amrex::BoxArray m_gtoe</div><div class="ttdef"><b>Definition:</b> FastEddy.H:129</div></div>
-<div class="ttc" id="aclassFastEddy_html_a0371e8ac5a694731a6033946b66750ef"><div class="ttname"><a href="classFastEddy.html#a0371e8ac5a694731a6033946b66750ef">FastEddy::MicVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; MicVarMap</div><div class="ttdef"><b>Definition:</b> FastEddy.H:123</div></div>
-<div class="ttc" id="aclassFastEddy_html_a14c9b5b85998ec14341dfadd113b4cfd"><div class="ttname"><a href="classFastEddy.html#a14c9b5b85998ec14341dfadd113b4cfd">FastEddy::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> FastEddy.H:135</div></div>
-<div class="ttc" id="aclassFastEddy_html_a4f6bb7fdf9872a297bed4b84f4585fa0"><div class="ttname"><a href="classFastEddy.html#a4f6bb7fdf9872a297bed4b84f4585fa0">FastEddy::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> FastEddy.H:135</div></div>
-<div class="ttc" id="aclassFastEddy_html_a7d0df6d5cba16454a4e34010c0997522"><div class="ttname"><a href="classFastEddy.html#a7d0df6d5cba16454a4e34010c0997522">FastEddy::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> FastEddy.H:135</div></div>
+<div class="ttc" id="aclassFastEddy_html_a01eabfb6b9729cd8a725bdb7e3cb029e"><div class="ttname"><a href="classFastEddy.html#a01eabfb6b9729cd8a725bdb7e3cb029e">FastEddy::m_gtoe</a></div><div class="ttdeci">amrex::BoxArray m_gtoe</div><div class="ttdef"><b>Definition:</b> FastEddy.H:132</div></div>
+<div class="ttc" id="aclassFastEddy_html_a0371e8ac5a694731a6033946b66750ef"><div class="ttname"><a href="classFastEddy.html#a0371e8ac5a694731a6033946b66750ef">FastEddy::MicVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; MicVarMap</div><div class="ttdef"><b>Definition:</b> FastEddy.H:126</div></div>
+<div class="ttc" id="aclassFastEddy_html_a14c9b5b85998ec14341dfadd113b4cfd"><div class="ttname"><a href="classFastEddy.html#a14c9b5b85998ec14341dfadd113b4cfd">FastEddy::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> FastEddy.H:138</div></div>
+<div class="ttc" id="aclassFastEddy_html_a4f6bb7fdf9872a297bed4b84f4585fa0"><div class="ttname"><a href="classFastEddy.html#a4f6bb7fdf9872a297bed4b84f4585fa0">FastEddy::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> FastEddy.H:138</div></div>
+<div class="ttc" id="aclassFastEddy_html_a7d0df6d5cba16454a4e34010c0997522"><div class="ttname"><a href="classFastEddy.html#a7d0df6d5cba16454a4e34010c0997522">FastEddy::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> FastEddy.H:138</div></div>
 <div class="ttc" id="aclassFastEddy_html_aff06ed8389cca61bcb9abf4fac9aaa2c"><div class="ttname"><a href="classFastEddy.html#aff06ed8389cca61bcb9abf4fac9aaa2c">FastEddy::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> FastEddy.H:120</div></div>
-<div class="ttc" id="anamespaceMicVar__FE_html_a585768336b465284ea76634770e2c500ab3959b60b209bfedaa52385f01484d0e"><div class="ttname"><a href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ab3959b60b209bfedaa52385f01484d0e">MicVar_FE::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> FastEddy.H:28</div></div>
+<div class="ttc" id="anamespaceMicVar__FE_html_a585768336b465284ea76634770e2c500ab3959b60b209bfedaa52385f01484d0e"><div class="ttname"><a href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ab3959b60b209bfedaa52385f01484d0e">MicVar_FE::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> FastEddy.H:30</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -816,10 +827,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a1b6a72d67d9b2642e99a5b768315476c">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        AMREX_ALWAYS_ASSERT(varIdx &lt; <a class="code" href="classFastEddy.html#aff06ed8389cca61bcb9abf4fac9aaa2c">m_qmoist_size</a>);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="classFastEddy.html#a0371e8ac5a694731a6033946b66750ef">MicVarMap</a>[varIdx]].get();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        AMREX_ALWAYS_ASSERT(varIdx &lt; <a class="code" href="classFastEddy.html#aff06ed8389cca61bcb9abf4fac9aaa2c">m_qmoist_size</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="classFastEddy.html#a0371e8ac5a694731a6033946b66750ef">MicVarMap</a>[varIdx]].get();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -847,12 +858,12 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#abdf706f193bbb09c62e41734570f3cd1">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classFastEddy.html#aff06ed8389cca61bcb9abf4fac9aaa2c">FastEddy::m_qmoist_size</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classFastEddy.html#aff06ed8389cca61bcb9abf4fac9aaa2c">FastEddy::m_qmoist_size</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a0bbeb7d80f5367cea29f9d8d3497eff7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bbeb7d80f5367cea29f9d8d3497eff7">&#9670;&nbsp;</a></span>Update()</h2>
+<a id="abae92639b790dde4064e3753f97e9178"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abae92639b790dde4064e3753f97e9178">&#9670;&nbsp;</a></span>Qstate_Size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -861,63 +872,22 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void FastEddy::Update </td>
+          <td class="memname">int FastEddy::Qstate_Size </td>
           <td>(</td>
-          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>cons</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>qmoist</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Updates conserved and microphysics variables in the provided MultiFabs from the internal MultiFabs that store <a class="el" href="classMicrophysics.html">Microphysics</a> module data.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">cons</td><td>Conserved variables </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">qmoist</td><td>qv, qc, qi, qr, qs, qg </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p>Reimplemented from <a class="el" href="classNullMoist.html#a448b67e4b0428b83f2ba1738375a7bc0">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">// Get the temperature, density, theta, qt and qp from input</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">for</span> ( amrex::MFIter mfi(<a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">auto</span> states_arr = <a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>.array(mfi);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">auto</span> rho_arr    = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a436a31a93a198683f07cc3afe46b8f33">MicVar_FE::rho</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">auto</span> theta_arr  = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">MicVar_FE::theta</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">auto</span> qv_arr     = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500ae560111c760df2c025ccf516adf07fc3">MicVar_FE::qv</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">auto</span> qc_arr     = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500aae593d3d6c86808b4e578c2c5aa23c33">MicVar_FE::qc</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">// get potential total density, temperature, qt, qp</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        amrex::ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            states_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = rho_arr(i,j,k)*theta_arr(i,j,k);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            states_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)    = rho_arr(i,j,k)*qv_arr(i,j,k);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            states_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)    = rho_arr(i,j,k)*qc_arr(i,j,k);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        });</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Fill interior ghost cells and periodic boundaries</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>.FillBoundary(<a class="code" href="classFastEddy.html#aff63172893288f636ccd53eab41fad00">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    qmoist.FillBoundary(<a class="code" href="classFastEddy.html#aff63172893288f636ccd53eab41fad00">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<p>Reimplemented from <a class="el" href="classNullMoist.html#afaa201a3a1dc21c18888d9c6a068f956">NullMoist</a>.</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classFastEddy.html#acddec45bae697968f6f1508b8db79dbf">FastEddy::m_qstate_size</a>; }</div>
+<div class="ttc" id="aclassFastEddy_html_acddec45bae697968f6f1508b8db79dbf"><div class="ttname"><a href="classFastEddy.html#acddec45bae697968f6f1508b8db79dbf">FastEddy::m_qstate_size</a></div><div class="ttdeci">int m_qstate_size</div><div class="ttdef"><b>Definition:</b> FastEddy.H:123</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -946,20 +916,21 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#aece7a50f16bf40e3e9d536cc030458f7">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        this-&gt;<a class="code" href="classFastEddy.html#a1e0ba9966a846d8e7ef10a1487619a59">Copy_State_to_Micro</a>(cons_in);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        this-&gt;<a class="code" href="classFastEddy.html#aa910d64363fd2bf136846be368c8e4aa">Diagnose</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="ttc" id="aclassFastEddy_html_a1e0ba9966a846d8e7ef10a1487619a59"><div class="ttname"><a href="classFastEddy.html#a1e0ba9966a846d8e7ef10a1487619a59">FastEddy::Copy_State_to_Micro</a></div><div class="ttdeci">void Copy_State_to_Micro(const amrex::MultiFab &amp;cons_in) override</div><div class="ttdef"><b>Definition:</b> Init_FE.cpp:60</div></div>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        this-&gt;<a class="code" href="classFastEddy.html#a1e0ba9966a846d8e7ef10a1487619a59">Copy_State_to_Micro</a>(cons_in);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        this-&gt;<a class="code" href="classFastEddy.html#aa910d64363fd2bf136846be368c8e4aa">Diagnose</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="ttc" id="aclassFastEddy_html_a1e0ba9966a846d8e7ef10a1487619a59"><div class="ttname"><a href="classFastEddy.html#a1e0ba9966a846d8e7ef10a1487619a59">FastEddy::Copy_State_to_Micro</a></div><div class="ttdeci">void Copy_State_to_Micro(const amrex::MultiFab &amp;cons_in) override</div><div class="ttdef"><b>Definition:</b> Init_FE.cpp:59</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFastEddy_ae954582b00f9d875826f53378d895839_cgraph.png" border="0" usemap="#aclassFastEddy_ae954582b00f9d875826f53378d895839_cgraph" alt=""/></div>
 <map name="aclassFastEddy_ae954582b00f9d875826f53378d895839_cgraph" id="aclassFastEddy_ae954582b00f9d875826f53378d895839_cgraph">
-<area shape="rect" title=" " alt="" coords="5,42,217,69"/>
-<area shape="rect" href="classFastEddy.html#a1e0ba9966a846d8e7ef10a1487619a59" title=" " alt="" coords="265,5,427,47"/>
-<area shape="rect" href="classFastEddy.html#aa910d64363fd2bf136846be368c8e4aa" title=" " alt="" coords="272,71,420,98"/>
-<area shape="rect" href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="475,13,619,39"/>
+<area shape="rect" title=" " alt="" coords="5,60,217,87"/>
+<area shape="rect" href="classFastEddy.html#a1e0ba9966a846d8e7ef10a1487619a59" title=" " alt="" coords="265,23,427,65"/>
+<area shape="rect" href="classFastEddy.html#aa910d64363fd2bf136846be368c8e4aa" title=" " alt="" coords="272,89,420,116"/>
+<area shape="rect" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="491,5,602,32"/>
+<area shape="rect" href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="475,56,619,83"/>
 </map>
 </div>
 
@@ -990,10 +961,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a24f0528f7d31b89f36a3c225c7e53010">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        this-&gt;<a class="code" href="classFastEddy.html#a242ec9790163189ebded12ad840701c1">Copy_Micro_to_State</a>(cons_in);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="ttc" id="aclassFastEddy_html_a242ec9790163189ebded12ad840701c1"><div class="ttname"><a href="classFastEddy.html#a242ec9790163189ebded12ad840701c1">FastEddy::Copy_Micro_to_State</a></div><div class="ttdeci">void Copy_Micro_to_State(amrex::MultiFab &amp;cons_in) override</div><div class="ttdef"><b>Definition:</b> Update_FE.cpp:47</div></div>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        this-&gt;<a class="code" href="classFastEddy.html#a242ec9790163189ebded12ad840701c1">Copy_Micro_to_State</a>(cons_in);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="ttc" id="aclassFastEddy_html_a242ec9790163189ebded12ad840701c1"><div class="ttname"><a href="classFastEddy.html#a242ec9790163189ebded12ad840701c1">FastEddy::Copy_Micro_to_State</a></div><div class="ttdeci">void Copy_Micro_to_State(amrex::MultiFab &amp;cons_in) override</div><div class="ttdef"><b>Definition:</b> Update_FE.cpp:13</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1195,7 +1166,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classFastEddy.html#a242ec9790163189ebded12ad840701c1">Copy_Micro_to_State()</a>, and <a class="el" href="classFastEddy.html#a0bbeb7d80f5367cea29f9d8d3497eff7">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classFastEddy.html#a242ec9790163189ebded12ad840701c1">Copy_Micro_to_State()</a>.</p>
 
 </div>
 </div>
@@ -1255,7 +1226,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int FastEddy::m_qmoist_size = 2</td>
+          <td class="memname">int FastEddy::m_qmoist_size = 3</td>
         </tr>
       </table>
   </td>
@@ -1266,6 +1237,30 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="classFastEddy.html#a4b34de751f34ec4b445abe8064d5dccb">Qmoist_Ptr()</a>, and <a class="el" href="classFastEddy.html#a8f6a62a48c8fc6f209e4fd90e73a8d57">Qmoist_Size()</a>.</p>
+
+</div>
+</div>
+<a id="acddec45bae697968f6f1508b8db79dbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acddec45bae697968f6f1508b8db79dbf">&#9670;&nbsp;</a></span>m_qstate_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FastEddy::m_qstate_size = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classFastEddy.html#abae92639b790dde4064e3753f97e9178">Qstate_Size()</a>.</p>
 
 </div>
 </div>
@@ -1289,7 +1284,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classFastEddy.html#a242ec9790163189ebded12ad840701c1">Copy_Micro_to_State()</a>, <a class="el" href="classFastEddy.html#a4b34de751f34ec4b445abe8064d5dccb">Qmoist_Ptr()</a>, and <a class="el" href="classFastEddy.html#a0bbeb7d80f5367cea29f9d8d3497eff7">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classFastEddy.html#a242ec9790163189ebded12ad840701c1">Copy_Micro_to_State()</a>, and <a class="el" href="classFastEddy.html#a4b34de751f34ec4b445abe8064d5dccb">Qmoist_Ptr()</a>.</p>
 
 </div>
 </div>
