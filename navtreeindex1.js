@@ -1,5 +1,10 @@
 var NAVTREEINDEX1 =
 {
+"ERF__PhysBCFunct_8cpp.html":[3,0,1,1,12],
+"ERF__PoissonSolve_8cpp.html":[3,0,1,12,1],
+"ERF__ReadBndryPlanes_8H.html":[3,0,1,5,2],
+"ERF__ReadBndryPlanes_8H.html#a60014a8d74bed0d5ae984e600c68dc85":[3,0,1,5,2,1],
+"ERF__ReadBndryPlanes_8H_source.html":[3,0,1,5,2],
 "ERF__ReadBndryPlanes_8cpp.html":[3,0,1,5,1],
 "ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817":[3,0,1,5,1,1],
 "ERF__ReadBndryPlanes_8cpp.html#adc5227730afe35653b2dfa88898eb00a":[3,0,1,5,1,0],
@@ -58,9 +63,6 @@ var NAVTREEINDEX1 =
 "HSE__utils_8H.html#aace33d14958f235a111e6cead400a61e":[3,0,1,21,3],
 "HSE__utils_8H.html#ad3c1cfede2e4d495c9fe91a23e33002d":[3,0,1,21,1],
 "HSE__utils_8H_source.html":[3,0,1,21],
-"HydroPC_8H.html":[3,0,1,8,1],
-"HydroPC_8H_source.html":[3,0,1,8,1],
-"HydroPC_8cpp.html":[3,0,1,8,0],
 "IceFall_8cpp.html":[3,0,1,6,3,2],
 "IndexDefines_8H.html":[3,0,1,22],
 "IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f":[3,0,1,22,15],
@@ -237,8 +239,8 @@ var NAVTREEINDEX1 =
 "Parameterizations_8H.html#adec9d0652512bd8a82a6dcea536c9138":[3,0,1,10,16,1],
 "Parameterizations_8H.html#aee0c6fff1c3d2035ce9130c829630f27":[3,0,1,10,16,2],
 "Parameterizations_8H_source.html":[3,0,1,10,16],
-"ParticleData_8H.html":[3,0,1,8,2],
-"ParticleData_8H_source.html":[3,0,1,8,2],
+"ParticleData_8H.html":[3,0,1,8,4],
+"ParticleData_8H_source.html":[3,0,1,8,4],
 "Phys__prop_8H.html":[3,0,1,10,17],
 "Phys__prop_8H_source.html":[3,0,1,10,17],
 "PlaneAverage_8H.html":[3,0,1,12,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "Plotfile_8cpp.html#a1f8554e7b211b0acfc202e8a600e7d67":[3,0,1,5,15,0],
 "PrecipFall_8cpp.html":[3,0,1,6,3,5],
 "Precip_8cpp.html":[3,0,1,6,3,4],
-"Rad__constants_8H.html":[3,0,1,10,18],
-"Rad__constants_8H_source.html":[3,0,1,10,18],
-"Radiation_8H.html":[3,0,1,10,20]
+"Rad__constants_8H.html":[3,0,1,10,18]
 };

@@ -26,9 +26,6 @@ var hierarchy =
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", null ],
     [ "MamConstituents::gas_t", "structMamConstituents_1_1gas__t.html", null ],
     [ "MamConstituents::gaslist_t", "structMamConstituents_1_1gaslist__t.html", null ],
-    [ "HydroAssignor", "structHydroAssignor.html", null ],
-    [ "HydroIntIdx", "structHydroIntIdx.html", null ],
-    [ "HydroRealIdx", "structHydroRealIdx.html", null ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
     [ "amrex::IntegratorBase", null, [
       [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ]
@@ -59,11 +56,6 @@ var hierarchy =
       [ "SAM", "classSAM.html", null ]
     ] ],
     [ "Optics", "classOptics.html", null ],
-    [ "amrex::ParticleContainer", null, [
-      [ "HydroPC", "classHydroPC.html", null ],
-      [ "TracerPC", "classTracerPC.html", null ]
-    ] ],
-    [ "ParticleData", "structParticleData.html", null ],
     [ "PhysProp", "classPhysProp.html", null ],
     [ "PhysProp::physprop_t", "structPhysProp_1_1physprop__t.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
@@ -85,9 +77,6 @@ var hierarchy =
     [ "surface_temp_charnock", "structsurface__temp__charnock.html", null ],
     [ "surface_temp_mod_charnock", "structsurface__temp__mod__charnock.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
-    [ "TracerAssignor", "structTracerAssignor.html", null ],
-    [ "TracerIntIdx", "structTracerIntIdx.html", null ],
-    [ "TracerRealIdx", "structTracerRealIdx.html", null ],
     [ "TurbChoice", "structTurbChoice.html", null ],
     [ "UPWIND3", "structUPWIND3.html", null ],
     [ "UPWIND5", "structUPWIND5.html", null ],

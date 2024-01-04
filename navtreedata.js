@@ -72,16 +72,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ABLMost_8H.html",
-"ERF__ReadBndryPlanes_8cpp.html",
-"Radiation_8H_source.html",
-"classERF.html#a13fc8f3a00573ee7735c3228316164a9",
-"classERFFillPatcher.html#aa1dd4ccdd7812057d8ee529015e3750d",
-"classMamConstituents.html",
-"classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f",
-"classSatMethods.html#a8668cfc2892409c9aaeb26762486ac50",
-"m2005__effradius_8H.html#aa8be1a517640718ec08df40a3613244a",
-"structPhysProp_1_1physprop__t.html#a8c8ef5042c0b53fa05d1d97a49de3833",
-"structdonelan__flux.html#a60249bfe7896cae773295e3e0e083799"
+"ERF__PhysBCFunct_8cpp.html",
+"Rad__constants_8H_source.html",
+"classERF.html#a14f922bdc3a0f23c087afa32c67ac119",
+"classERFFillPatcher.html#aa835a8e38bc35601c1b394a4183edf22",
+"classMamConstituents.html#a0d5796bba8b3031a99ef09309a2508e5",
+"classRadConstants.html#a06d010a733e82bb2e8a6651c6e92cf51",
+"classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e",
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846",
+"structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3",
+"structncutils_1_1NCVar.html#a16984e6a3ad571e12401321b749f44ea"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

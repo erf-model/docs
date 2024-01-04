@@ -155,6 +155,11 @@ var NAVTREEINDEX0 =
 "EOS_8H.html#ad0e28e4df049e6e34fa4a973dd446506":[3,0,1,15,8],
 "EOS_8H.html#ae6954ba7deb6ec80482087dbbc51f4ed":[3,0,1,15,4],
 "EOS_8H_source.html":[3,0,1,15],
+"ERFPCEvolve_8cpp.html":[3,0,1,8,1],
+"ERFPCInitializations_8cpp.html":[3,0,1,8,2],
+"ERFPC_8H.html":[3,0,1,8,0],
+"ERFPC_8H_source.html":[3,0,1,8,0],
+"ERFTracers_8cpp.html":[3,0,1,8,3],
 "ERF_8H.html":[3,0,1,17],
 "ERF_8H_source.html":[3,0,1,17],
 "ERF_8cpp.html":[3,0,1,16],
@@ -244,10 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__MRI_8H.html":[3,0,1,11,11],
 "ERF__MRI_8H_source.html":[3,0,1,11,11],
 "ERF__PhysBCFunct_8H.html":[3,0,1,1,13],
-"ERF__PhysBCFunct_8H_source.html":[3,0,1,1,13],
-"ERF__PhysBCFunct_8cpp.html":[3,0,1,1,12],
-"ERF__PoissonSolve_8cpp.html":[3,0,1,12,1],
-"ERF__ReadBndryPlanes_8H.html":[3,0,1,5,2],
-"ERF__ReadBndryPlanes_8H.html#a60014a8d74bed0d5ae984e600c68dc85":[3,0,1,5,2,1],
-"ERF__ReadBndryPlanes_8H_source.html":[3,0,1,5,2]
+"ERF__PhysBCFunct_8H_source.html":[3,0,1,1,13]
 };
