@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"classSatMethods.html#a8668cfc2892409c9aaeb26762486ac50":[2,0,51,9],
 "classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f":[2,0,51,4],
 "classSatMethods.html#a97d1392753f7f866850e99c89c815bcf":[2,0,51,10],
 "classSatMethods.html#a9a256423ef50446cfdf6d4dcc1c1f73b":[2,0,51,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "init__rayleigh__damping_8H.html":[3,0,1,9,4],
 "init__rayleigh__damping_8H.html#ab2f51ed8cf39d10883b43dbf966a71e1":[3,0,1,9,4,0],
 "init__rayleigh__damping_8H_source.html":[3,0,1,9,4],
-"m2005__effradius_8H.html":[3,0,1,10,10],
-"m2005__effradius_8H.html#aa8be1a517640718ec08df40a3613244a":[3,0,1,10,10,0]
+"m2005__effradius_8H.html":[3,0,1,10,10]
 };
