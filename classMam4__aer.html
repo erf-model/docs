@@ -318,7 +318,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="keywordflow">for</span> (i = 1; i &lt;= im; ++i) {</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;              <span class="keywordflow">if</span>(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(ic) &lt; xtab(i)) <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            ix(ic)   = std::max(i-1,1);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="keyword">auto</span> ip1 = std::min(ix(ic)+1,im);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <span class="keyword">auto</span> dx  = (xtab(ip1)-xtab(ix(ic)));</div>
@@ -350,7 +350,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;             <span class="keywordflow">if</span>(std::abs(dy) &gt; 1.e-20) {</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                u(ic) = (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>(ic)-ytab(jy(ic)))/dy;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                <span class="keywordflow">if</span>(u(ic) &lt; 0. || u(ic) &gt; 1.)</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                  amrex::Print() &lt;&lt; <span class="stringliteral">&quot;u= &quot;</span> &lt;&lt; u(ic) &lt;&lt; <span class="stringliteral">&quot;; y= &quot;</span> &lt;&lt; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>(ic) &lt;&lt; <span class="stringliteral">&quot;; ytab= &quot;</span> </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                  amrex::Print() &lt;&lt; <span class="stringliteral">&quot;u= &quot;</span> &lt;&lt; u(ic) &lt;&lt; <span class="stringliteral">&quot;; y= &quot;</span> &lt;&lt; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>(ic) &lt;&lt; <span class="stringliteral">&quot;; ytab= &quot;</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                                 &lt;&lt; ytab(jy(ic)) &lt;&lt; <span class="stringliteral">&quot;; dy= &quot;</span> &lt;&lt; dy &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;             } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;               u(ic)=0.;</div>
@@ -362,7 +362,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            u(i)  = 0.;</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;          });</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;     } </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;     }</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;     parallel_for (SimpleBounds&lt;2&gt;(<a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>, km), YAKL_LAMBDA (<span class="keywordtype">int</span> ic, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        tu(ic)   = t(ic)*u(ic);</div>

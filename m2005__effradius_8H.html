@@ -235,7 +235,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;   real(r8), intent(in)    :: qs          ! mean snow water content [kg/kg]</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   real(r8), intent(in)    :: ns          ! Mean snow crystal number concnetration [#/kg]</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;   real(r8), intent(in)    :: cld         ! Physical stratus fraction</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;   real(r8), intent(in)    :: <a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a5c0fa7f0120a3ead7a99d0f8545ab606">pres</a>        ! Air pressure [Pa] </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;   real(r8), intent(in)    :: <a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a5c0fa7f0120a3ead7a99d0f8545ab606">pres</a>        ! Air pressure [Pa]</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   real(r8), intent(in)    :: tk          ! air temperature [K]</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   ! output arguments</div>
@@ -248,12 +248,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;   real(r8), intent(out)   :: des         ! snow effective diameter for optics (radiation) [micro-meter]</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;#endif</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   <span class="comment">// Main computation </span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   <span class="comment">// Main computation</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   const real pi = 3.1415926535897932384626434;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   <span class="keyword">const</span> real qsmall = 1.0e-14; <span class="comment">// in the SAM source code (module_mp_graupel)</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   <span class="keyword">const</span> real rhow = 997.;      <span class="comment">// in module_mp_graupel, SAM</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   <span class="keyword">const</span> real rhoi = 500.;      <span class="comment">// in both CAM and SAM</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   <span class="keyword">const</span> real dcs = 125.e-6;   <span class="comment">// in module_mp_graupel, SAM </span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   <span class="keyword">const</span> real dcs = 125.e-6;   <span class="comment">// in module_mp_graupel, SAM</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;   <span class="keyword">const</span> real ci = rhoi*pi/6.;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   <span class="keyword">const</span> real di = 3.;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
@@ -273,7 +273,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;     <span class="keyword">auto</span> qiic = std::min(5.e-3, std::max(0., qi(i,j)/cldm));</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;     <span class="keyword">auto</span> nlic = std::max(nl(i,j), 0.)/cldm;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;     <span class="keyword">auto</span> niic = std::max(ni(i,j), 0.)/cldm;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;     </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;     real res;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;     <span class="keywordflow">if</span>(qs(i,j) &gt; 1.0e-7) {</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">auto</span> lammaxs=1./10.e-6;</div>
@@ -286,15 +286,15 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        res = 500.;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;     }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;     <span class="comment">// from Hugh Morrision: rhos/917 accouts for assumptions about </span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;     <span class="comment">// ice density in the Mitchell optics. </span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;     <span class="comment">// from Hugh Morrision: rhos/917 accouts for assumptions about</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;     <span class="comment">// ice density in the Mitchell optics.</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;     des(i,j) = res*<a class="code" href="ERF__Constants_8H.html#ac0e05183a58d4400f06346d18371218f">rhos</a>/917.*2.;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;     <span class="comment">// Effective radius of cloud ice droplet </span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;     <span class="comment">// Effective radius of cloud ice droplet</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;     <span class="keywordflow">if</span>( qiic &gt;= qsmall ) {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        niic   = std::min(niic, qiic*1.e20);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">auto</span> lammax = 1./1.e-6;         <span class="comment">// in module_mp_graupel, SAM </span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">auto</span> lammin = 1./(2.*dcs+100.e-6);    <span class="comment">// in module_mp_graupel, SAM </span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">auto</span> lammax = 1./1.e-6;         <span class="comment">// in module_mp_graupel, SAM</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">auto</span> lammin = 1./(2.*dcs+100.e-6);    <span class="comment">// in module_mp_graupel, SAM</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">auto</span> lami   = std::pow((std::tgamma(1.+di)*ci*niic/qiic), (1./di));</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        lami        = std::min(lammax, std::max(lami, lammin));</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        effi(i,j)   = 1.5/lami*1.e6;</div>
@@ -308,7 +308,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;     <span class="comment">// ac morrison indicates 917 (for the density of pure ice..)</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;     deffi(i,j)  = effi(i,j)*rhoi/917.*2.;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;     <span class="comment">// Effective radius of cloud liquid droplet </span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;     <span class="comment">// Effective radius of cloud liquid droplet</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;     <span class="keywordflow">if</span>( qlic &gt;= qsmall ) {</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="comment">// Matin et al., 1994 (JAS) formula for pgam (the same is used in both CAM and SAM).</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="comment">// See also Morrison and Grabowski (2007, JAS, Eq. (2))</span></div>
@@ -324,10 +324,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        pgam   = std::min(10., std::max(pgam,2.));</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">auto</span> laml = std::pow((pi/6.*rhow*nlic*std::tgamma(pgam+4.)/(qlic*std::tgamma(pgam+1.))), (1./3.));</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keyword">auto</span> lammin = (pgam+1.)/50.e-6;    <span class="comment">// in cldwat2m, CAM</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keyword">auto</span> lammax = (pgam+1.)/2.e-6;     <span class="comment">// if lammax is too large, this will lead to crash in </span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                           <span class="comment">// src/physics/rrtmg/cloud_rad_props.F90 because </span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keyword">auto</span> lammax = (pgam+1.)/2.e-6;     <span class="comment">// if lammax is too large, this will lead to crash in</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                           <span class="comment">// src/physics/rrtmg/cloud_rad_props.F90 because</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                           <span class="comment">// klambda-1 can be zero in gam_liquid_lw and gam_liquid_sw</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                           <span class="comment">//  and g_lambda(kmu,klambda-1) will not be defined. </span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                           <span class="comment">//  and g_lambda(kmu,klambda-1) will not be defined.</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        laml         = std::min(std::max(laml, lammin),lammax);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        effl(i,j)    = std::tgamma(pgam+4.)/std::tgamma(pgam+3.)/laml/2.*1.e6;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        lamcrad(i,j) = laml;</div>
