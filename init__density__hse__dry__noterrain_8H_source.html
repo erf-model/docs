@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('init__density__hse__dry__noterrain_8H_
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    amrex::Gpu::copyAsync(amrex::Gpu::hostToDevice, h_r.begin(), h_r.end(), d_r.begin());</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    amrex::Gpu::copyAsync(amrex::Gpu::hostToDevice, h_p.begin(), h_p.end(), d_p.begin());</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    amrex::Real* <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a> = d_r.data();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    amrex::Real* r = d_r.data();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
@@ -132,13 +132,12 @@ $(document).ready(function(){initNavTree('init__density__hse__dry__noterrain_8H_
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;          <span class="keywordtype">int</span> kk = std::max(k,0);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;          rho_hse_arr(i,j,k) = <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a>[kk];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;          rho_hse_arr(i,j,k) = r[kk];</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      });</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a994fea25f28c33c2e8f1e9c63d5b8b56"><div class="ttname"><a href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a></div><div class="ttdeci">constexpr amrex::Real p_0</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:17</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
-<div class="ttc" id="aModal__aero__wateruptake_8H_html_a8d38e8b20180421390a144a9963d9e2b"><div class="ttname"><a href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a></div><div class="ttdeci">real1d r(&quot;r&quot;, imx)</div></div>
 <div class="ttc" id="ainit__density__hse__dry__noterrain_8H_html_a2e1d042f9d82e4b78d00e99ab25e9311"><div class="ttname"><a href="init__density__hse__dry__noterrain_8H.html#a2e1d042f9d82e4b78d00e99ab25e9311">erf_init_dens_hse</a></div><div class="ttdeci">void erf_init_dens_hse(amrex::MultiFab &amp;rho_hse, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc, amrex::Geometry const &amp;geom) override</div><div class="ttdef"><b>Definition:</b> init_density_hse_dry_noterrain.H:10</div></div>
 <div class="ttc" id="anamespaceHSEutils_html_a531678cdabf38cca3d47317e33a82fa5"><div class="ttname"><a href="namespaceHSEutils.html#a531678cdabf38cca3d47317e33a82fa5">HSEutils::init_isentropic_hse</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void init_isentropic_hse(const amrex::Real &amp;r_sfc, const amrex::Real &amp;theta, amrex::Real *r, amrex::Real *p, const amrex::Real &amp;dz, const amrex::Real &amp;, const int &amp;khi)</div><div class="ttdef"><b>Definition:</b> HSE_utils.H:30</div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -19,6 +19,7 @@ var dir_6ac3198e61556f99812dcb8dcfabb874 =
       [ "LinInterp", "classLinInterp.html", "classLinInterp" ],
       [ "InterpType", "structLinInterp_1_1InterpType.html", "structLinInterp_1_1InterpType" ]
     ] ],
+    [ "m2005_effradius.H", "m2005__effradius_8H.html", "m2005__effradius_8H" ],
     [ "Mam4_aero.H", "Mam4__aero_8H.html", [
       [ "Mam4_aer", "classMam4__aer.html", "classMam4__aer" ]
     ] ],
@@ -32,7 +33,9 @@ var dir_6ac3198e61556f99812dcb8dcfabb874 =
       [ "aerlist_t", "structMamConstituents_1_1aerlist__t.html", "structMamConstituents_1_1aerlist__t" ],
       [ "modelist_t", "structMamConstituents_1_1modelist__t.html", "structMamConstituents_1_1modelist__t" ]
     ] ],
-    [ "Modal_aero_wateruptake.H", "Modal__aero__wateruptake_8H.html", "Modal__aero__wateruptake_8H" ],
+    [ "Modal_aero_wateruptake.H", "Modal__aero__wateruptake_8H.html", [
+      [ "ModalAeroWateruptake", "classModalAeroWateruptake.html", "classModalAeroWateruptake" ]
+    ] ],
     [ "Optics.cpp", "Optics_8cpp.html", null ],
     [ "Optics.H", "Optics_8H.html", [
       [ "Optics", "classOptics.html", "classOptics" ]

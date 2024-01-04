@@ -295,7 +295,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            iv[0] += domain.smallEnd()[0];</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            iv[1] += domain.smallEnd()[1];</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            ParticleReal zlo, zhi;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <a class="code" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa">if</a> (use_terrain) {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            if (use_terrain) {</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                zlo = zheight(iv[0], iv[1], iv[2]);</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                zhi = zheight(iv[0], iv[1], iv[2]+1);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -327,18 +327,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:20</div></div>
-<div class="ttc" id="aModal__aero__wateruptake_8H_html_a19bf99811489ee1186302d8c72e52daa"><div class="ttname"><a href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa">if</a></div><div class="ttdeci">if(list_idx_in)</div><div class="ttdef"><b>Definition:</b> Modal_aero_wateruptake.H:381</div></div>
 <div class="ttc" id="astructHydroRealIdx_html_a7d93e7255965f1c40c3ba423f9ed4732a240e9976ad83f8857e2b5fabacf6e3f2"><div class="ttname"><a href="structHydroRealIdx.html#a7d93e7255965f1c40c3ba423f9ed4732a240e9976ad83f8857e2b5fabacf6e3f2">HydroRealIdx::vz</a></div><div class="ttdeci">@ vz</div><div class="ttdef"><b>Definition:</b> HydroPC.H:10</div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classHydroPC_a28bbae09b7a7177b65555d2fd6702d2c_cgraph.png" border="0" usemap="#aclassHydroPC_a28bbae09b7a7177b65555d2fd6702d2c_cgraph" alt=""/></div>
-<map name="aclassHydroPC_a28bbae09b7a7177b65555d2fd6702d2c_cgraph" id="aclassHydroPC_a28bbae09b7a7177b65555d2fd6702d2c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,215,32"/>
-<area shape="rect" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa" title=" " alt="" coords="263,5,301,32"/>
-</map>
-</div>
-
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a39f6424512e74b0447c093bcdc8c0d2d"></a>
@@ -369,12 +359,12 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        Gpu::HostVector&lt;ParticleType&gt; host_particles;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">for</span> (IntVect iv = tile_box.smallEnd(); iv &lt;= tile_box.bigEnd(); tile_box.next(iv)) {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span> (iv[2] == 23) { <span class="comment">// This is a random choice to put them above the ground and let them fall</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                Real <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a>[3] = {0.5, 0.5, 0.5};  <span class="comment">// this means place at cell center</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                Real r[3] = {0.5, 0.5, 0.5};  <span class="comment">// this means place at cell center</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                Real v[3] = {0.0, 0.0, 0.0};  <span class="comment">// with 0 initial velocity</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = plo[0] + (iv[0] + <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a>[0])*dx[0];</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = plo[1] + (iv[1] + <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a>[1])*dx[1];</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = plo[2] + (iv[2] + <a class="code" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a>[2])*dx[2];</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = plo[0] + (iv[0] + r[0])*dx[0];</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = plo[1] + (iv[1] + r[1])*dx[1];</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = plo[2] + (iv[2] + r[2])*dx[2];</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                ParticleType p;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                p.id()  = ParticleType::NextID();</div>
@@ -408,20 +398,10 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
-<div class="ttc" id="aModal__aero__wateruptake_8H_html_a8d38e8b20180421390a144a9963d9e2b"><div class="ttname"><a href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b">r</a></div><div class="ttdeci">real1d r(&quot;r&quot;, imx)</div></div>
 <div class="ttc" id="astructHydroIntIdx_html_a3a6b188d067a5b2d05210e5ef908117bad58c30065d862011cff4befab4a33d15"><div class="ttname"><a href="structHydroIntIdx.html#a3a6b188d067a5b2d05210e5ef908117bad58c30065d862011cff4befab4a33d15">HydroIntIdx::k</a></div><div class="ttdeci">@ k</div><div class="ttdef"><b>Definition:</b> HydroPC.H:19</div></div>
 <div class="ttc" id="astructHydroRealIdx_html_a7d93e7255965f1c40c3ba423f9ed4732ac5adcca5afd40c66944673745132ef57"><div class="ttname"><a href="structHydroRealIdx.html#a7d93e7255965f1c40c3ba423f9ed4732ac5adcca5afd40c66944673745132ef57">HydroRealIdx::vy</a></div><div class="ttdeci">@ vy</div><div class="ttdef"><b>Definition:</b> HydroPC.H:10</div></div>
 <div class="ttc" id="astructHydroRealIdx_html_a7d93e7255965f1c40c3ba423f9ed4732ac7572c703f9ad676c4dcf222c8fd8e57"><div class="ttname"><a href="structHydroRealIdx.html#a7d93e7255965f1c40c3ba423f9ed4732ac7572c703f9ad676c4dcf222c8fd8e57">HydroRealIdx::vx</a></div><div class="ttdeci">@ vx</div><div class="ttdef"><b>Definition:</b> HydroPC.H:9</div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classHydroPC_a39f6424512e74b0447c093bcdc8c0d2d_cgraph.png" border="0" usemap="#aclassHydroPC_a39f6424512e74b0447c093bcdc8c0d2d_cgraph" alt=""/></div>
-<map name="aclassHydroPC_a39f6424512e74b0447c093bcdc8c0d2d_cgraph" id="aclassHydroPC_a39f6424512e74b0447c093bcdc8c0d2d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,168,32"/>
-<area shape="rect" href="Modal__aero__wateruptake_8H.html#a8d38e8b20180421390a144a9963d9e2b" title=" " alt="" coords="216,5,255,32"/>
-</map>
-</div>
-
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afed7a5ea2983be0570fd201fb8d12ba3"></a>

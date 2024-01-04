@@ -598,25 +598,25 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                       near_x_lo_wall = true;</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                       ii = i-vbx_lo.x;</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                       if (mask_arr(vbx_lo.x,j,k) == 2) mask_x_found = true;</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                   } <span class="keywordflow">else</span> <a class="code" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa">if</a> ((vbx_hi.x-i) &lt; width) {</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                   } <span class="keywordflow">else</span> if ((vbx_hi.x-i) &lt; width) {</div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                       near_x_hi_wall = true;</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                       ii = vbx_hi.x-i;</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                       if (mask_arr(vbx_hi.x,j,k) == 2) mask_x_found = true;</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                   }</div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                   <span class="comment">// Near y-wall</span></div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                   <a class="code" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa">if</a> ((j-vbx_lo.y) &lt; width) {</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                   if ((j-vbx_lo.y) &lt; width) {</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                       near_y_lo_wall = true;</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                       jj = j-vbx_lo.y;</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                       if (mask_arr(i,vbx_lo.y,k) == 2) mask_y_found = true;</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                   } <span class="keywordflow">else</span> <a class="code" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa">if</a> ((vbx_hi.y-j) &lt; width) {</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                   } <span class="keywordflow">else</span> if ((vbx_hi.y-j) &lt; width) {</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                       near_y_hi_wall = true;</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                       jj = vbx_hi.y-j;</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                       if (mask_arr(i,vbx_hi.y,k) == 2) mask_y_found = true;</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                   }</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160; </div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                   <span class="comment">// Found a nearby masked cell (valid n_ind)</span></div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                   <a class="code" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa">if</a> (mask_x_found &amp;&amp; mask_y_found) {</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                   if (mask_x_found &amp;&amp; mask_y_found) {</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                       n_ind = std::min(ii,jj) + 1.0;</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                   } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mask_x_found) {</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                       n_ind = ii + 1.0;</div>
@@ -629,7 +629,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                           <span class="keywordtype">int</span> j_lb = std::max(vbx_lo.y,j-width);</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                           <span class="keywordtype">int</span> j_ub = std::min(vbx_hi.y,j+width);</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                           <span class="keywordtype">int</span> li   = (near_x_lo_wall) ? vbx_lo.x : vbx_hi.x;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                           <a class="code" href="Modal__aero__wateruptake_8H.html#acaabc3019fcb551bb4a4a348cd28fdb3">for</a> (<span class="keywordtype">int</span> lj(j_lb); lj&lt;=j_ub; ++lj) {</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                           for (<span class="keywordtype">int</span> lj(j_lb); lj&lt;=j_ub; ++lj) {</div>
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                               <span class="keywordflow">if</span> (mask_arr(li,lj,k) == 2) {</div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                                   mask_y_found = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                                   dj_min = std::min(dj_min,(Real) std::abs(lj-j));</div>
@@ -646,7 +646,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                           <span class="keywordtype">int</span> i_lb = std::max(vbx_lo.x,i-width);</div>
 <div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                           <span class="keywordtype">int</span> i_ub = std::min(vbx_hi.x,i+width);</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                           <span class="keywordtype">int</span> lj   = (near_y_lo_wall) ? vbx_lo.y : vbx_hi.y;</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                           <a class="code" href="Modal__aero__wateruptake_8H.html#acaabc3019fcb551bb4a4a348cd28fdb3">for</a> (<span class="keywordtype">int</span> li(i_lb); li&lt;=i_ub; ++li) {</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                           for (<span class="keywordtype">int</span> li(i_lb); li&lt;=i_ub; ++li) {</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                               <span class="keywordflow">if</span> (mask_arr(li,lj,k) == 2) {</div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                                   mask_x_found = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                                   di_min = std::min(di_min,(Real) std::abs(li-i));</div>
@@ -682,8 +682,6 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    } <span class="comment">// ivar_idx</span></div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;}</div>
 <div class="ttc" id="aInteriorGhostCells_8cpp_html_ab53ca744a656082f128b68f819aacbf5"><div class="ttname"><a href="InteriorGhostCells_8cpp.html#ab53ca744a656082f128b68f819aacbf5">void_bc</a></div><div class="ttdeci">PhysBCFunctNoOp void_bc</div><div class="ttdef"><b>Definition:</b> InteriorGhostCells.cpp:5</div></div>
-<div class="ttc" id="aModal__aero__wateruptake_8H_html_a19bf99811489ee1186302d8c72e52daa"><div class="ttname"><a href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa">if</a></div><div class="ttdeci">if(list_idx_in)</div><div class="ttdef"><b>Definition:</b> Modal_aero_wateruptake.H:381</div></div>
-<div class="ttc" id="aModal__aero__wateruptake_8H_html_acaabc3019fcb551bb4a4a348cd28fdb3"><div class="ttname"><a href="Modal__aero__wateruptake_8H.html#acaabc3019fcb551bb4a4a348cd28fdb3">for</a></div><div class="ttdeci">for(auto m=0;m&lt; nmodes;++m)</div><div class="ttdef"><b>Definition:</b> Modal_aero_wateruptake.H:537</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a2c0b26e7da60e74734191617c50754e1"><div class="ttname"><a href="classERFFillPatcher.html#a2c0b26e7da60e74734191617c50754e1">ERFFillPatcher::GetMask</a></div><div class="ttdeci">amrex::iMultiFab * GetMask()</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:43</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a69bc23658f5c545f654c7ddd0cabb105"><div class="ttname"><a href="classERFFillPatcher.html#a69bc23658f5c545f654c7ddd0cabb105">ERFFillPatcher::FillRelax</a></div><div class="ttdeci">void FillRelax(amrex::MultiFab &amp;mf, amrex::Real time, BC &amp;cbc, amrex::Vector&lt; amrex::BCRec &gt; const &amp;bcs)</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:105</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_aa1dd4ccdd7812057d8ee529015e3750d"><div class="ttname"><a href="classERFFillPatcher.html#aa1dd4ccdd7812057d8ee529015e3750d">ERFFillPatcher::GetSetMaskVal</a></div><div class="ttdeci">int GetSetMaskVal()</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:39</div></div>
@@ -698,13 +696,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="InteriorGhostCells_8cpp_ae5ff4686584e657be0c2b4a10dd39553_cgraph.png" border="0" usemap="#aInteriorGhostCells_8cpp_ae5ff4686584e657be0c2b4a10dd39553_cgraph" alt=""/></div>
 <map name="aInteriorGhostCells_8cpp_ae5ff4686584e657be0c2b4a10dd39553_cgraph" id="aInteriorGhostCells_8cpp_ae5ff4686584e657be0c2b4a10dd39553_cgraph">
-<area shape="rect" title=" " alt="" coords="5,154,169,195"/>
+<area shape="rect" title=" " alt="" coords="5,103,169,145"/>
 <area shape="rect" href="classERFFillPatcher.html#a69bc23658f5c545f654c7ddd0cabb105" title=" " alt="" coords="239,31,417,57"/>
-<area shape="rect" href="Modal__aero__wateruptake_8H.html#acaabc3019fcb551bb4a4a348cd28fdb3" title=" " alt="" coords="308,81,348,108"/>
-<area shape="rect" href="classERFFillPatcher.html#a2c0b26e7da60e74734191617c50754e1" title=" " alt="" coords="238,132,418,159"/>
-<area shape="rect" href="classERFFillPatcher.html#ae36410e2a848977e145b29c755ac8b5d" title=" " alt="" coords="237,183,419,225"/>
-<area shape="rect" href="classERFFillPatcher.html#aa1dd4ccdd7812057d8ee529015e3750d" title=" " alt="" coords="217,249,439,276"/>
-<area shape="rect" href="Modal__aero__wateruptake_8H.html#a19bf99811489ee1186302d8c72e52daa" title=" " alt="" coords="309,300,347,327"/>
+<area shape="rect" href="classERFFillPatcher.html#a2c0b26e7da60e74734191617c50754e1" title=" " alt="" coords="238,81,418,108"/>
+<area shape="rect" href="classERFFillPatcher.html#ae36410e2a848977e145b29c755ac8b5d" title=" " alt="" coords="237,133,419,174"/>
+<area shape="rect" href="classERFFillPatcher.html#aa1dd4ccdd7812057d8ee529015e3750d" title=" " alt="" coords="217,199,439,225"/>
 <area shape="rect" href="classERFFillPatcher.html#a045ae741822ced1684eddf019cd7f219" title=" " alt="" coords="487,31,628,57"/>
 <area shape="rect" href="classERFFillPatcher.html#ab1e2657e50f7ab6f3255decee073fff8" title=" " alt="" coords="678,5,863,32"/>
 <area shape="rect" href="classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67" title=" " alt="" coords="676,56,865,83"/>

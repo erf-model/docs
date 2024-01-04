@@ -59,7 +59,7 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
-        [ "Functions", "globals_func.html", "globals_func" ],
+        [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
@@ -73,16 +73,15 @@ var NAVTREEINDEX =
 [
 "ABLMost_8H.html",
 "ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817",
-"Modal__aero__wateruptake_8H_source.html",
-"classAerRadProps.html#aa4241f4adcf62ef3c537a91bdfce66db",
-"classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd",
-"classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612",
-"classNullMoist.html#a75e2d77cb28efa62759818d066b53bb9",
-"classReadBndryPlanes.html#a4343c3c0761df0f96c58f8d268a43017",
-"functions_func.html",
-"structDiffChoice.html#a9e8b6878f4d18ee6fe61a220612d70df",
-"structTimeInterpolatedData.html#a8c70a753ce4ff647874b276dd0bec89f",
-"structsurface__temp__charnock.html#a21617e7d85b0127ca609a82c0f95556b"
+"Radiation_8cpp.html",
+"classERF.html#a14f922bdc3a0f23c087afa32c67ac119",
+"classERFFillPatcher.html#aa835a8e38bc35601c1b394a4183edf22",
+"classMamConstituents.html#a00c16dcafa756dac9f1e3191c39cf45a",
+"classProblemBase.html#ac7201619fcd9464f851b0cae82dfbcd1",
+"classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f",
+"m2005__effradius_8H_source.html",
+"structPhysProp_1_1physprop__t.html#a8df74558339352f0e8c0031fc3160a09",
+"structdonelan__flux.html#a804902863523b5f641c44aadc3602e97"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

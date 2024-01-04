@@ -498,9 +498,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            gpx *= mf_u(i,j,0);</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordflow">if</span> (l_use_moisture) {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                Real <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a> = 0.5 * ( prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) + prim(i-1,j,k,<a class="code" href="IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                Real q = 0.5 * ( prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) + prim(i-1,j,k,<a class="code" href="IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>)</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                +prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) + prim(i-1,j,k,<a class="code" href="IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) );</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                gpx /= (1.0 + <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a>);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                gpx /= (1.0 + q);</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            }</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            Real pi_c =  0.5 * (pi_stage_ca(i-1,j,k,0) + pi_stage_ca(i,j,k,0));</div>
@@ -521,9 +521,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            gpy *= mf_v(i,j,0);</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">if</span> (l_use_moisture) {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                Real <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a> = 0.5 * ( prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) + prim(i,j-1,k,<a class="code" href="IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>)</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                Real q = 0.5 * ( prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) + prim(i,j-1,k,<a class="code" href="IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>)</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                                +prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) + prim(i,j-1,k,<a class="code" href="IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) );</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                gpy /= (1.0 + <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a>);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                gpy /= (1.0 + q);</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            }</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            Real pi_c =  0.5 * (pi_stage_ca(i,j-1,k,0) + pi_stage_ca(i,j,k,0));</div>
@@ -652,10 +652,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;             Real coeff_Q = coeffQ_a(i,j,k);</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            <span class="keywordflow">if</span> (l_use_moisture) {</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                Real <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a> = 0.5 * ( prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) + prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>)</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                Real q = 0.5 * ( prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) + prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>)</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                +prim(i,j,k,<a class="code" href="IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) + prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) );</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                coeff_P /= (1.0 + <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a>);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                coeff_Q /= (1.0 + <a class="code" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a>);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                coeff_P /= (1.0 + q);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                coeff_Q /= (1.0 + q);</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            }</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            Real theta_t_lo  = 0.5 * ( prim(i,j,k-2,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) + prim(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) );</div>
@@ -845,7 +845,6 @@ Functions</h2></td></tr>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:30</div></div>
-<div class="ttc" id="aModal__aero__wateruptake_8H_html_ae7815a546266ee09cee1f18ee2a27d97"><div class="ttname"><a href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97">q</a></div><div class="ttdeci">real1d q(&quot;q&quot;, imx)</div></div>
 <div class="ttc" id="aTileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> TileNoZ.H:11</div></div>
 <div class="ttc" id="anamespaceIntVar_html_aa6dd400c056a0c4cf030e06f39c4511fa22501eeeb48d3d47f802dcb78c88f7ae"><div class="ttname"><a href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511fa22501eeeb48d3d47f802dcb78c88f7ae">IntVar::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:141</div></div>
 <div class="ttc" id="anamespaceIntVar_html_aa6dd400c056a0c4cf030e06f39c4511faa06e9caed4d0b72c322646815c1a96ce"><div class="ttname"><a href="namespaceIntVar.html#aa6dd400c056a0c4cf030e06f39c4511faa06e9caed4d0b72c322646815c1a96ce">IntVar::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:143</div></div>
@@ -856,9 +855,8 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__fast__rhs__N_8cpp_a76ad7290cacb767d262b543a340b0a43_cgraph.png" border="0" usemap="#aERF__fast__rhs__N_8cpp_a76ad7290cacb767d262b543a340b0a43_cgraph" alt=""/></div>
 <map name="aERF__fast__rhs__N_8cpp_a76ad7290cacb767d262b543a340b0a43_cgraph" id="aERF__fast__rhs__N_8cpp_a76ad7290cacb767d262b543a340b0a43_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,121,57"/>
-<area shape="rect" href="Modal__aero__wateruptake_8H.html#ae7815a546266ee09cee1f18ee2a27d97" title=" " alt="" coords="187,5,225,32"/>
-<area shape="rect" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="169,56,243,83"/>
+<area shape="rect" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="169,5,243,32"/>
 </map>
 </div>
 
