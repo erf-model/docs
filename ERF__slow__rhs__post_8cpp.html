@@ -579,14 +579,14 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">if</span> (l_use_deardorff) {</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            start_comp = <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>;</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;              num_comp = 1;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <a class="code" href="Advection_8H.html#ab74b896c6b7dc7df8db64544b910c742">AdvectionSrcForScalars</a>(tbx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <a class="code" href="Advection_8H.html#ae55e1a82a06078ef1bc4cc0386cf8800">AdvectionSrcForScalars</a>(tbx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                                   cur_prim, cell_rhs, detJ_arr, dxInv, mf_m,</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                                   horiz_adv_type, vert_adv_type, l_use_terrain, flx_arr);</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        }</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordflow">if</span> (l_use_QKE) {</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            start_comp = <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;              num_comp = 1;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <a class="code" href="Advection_8H.html#ab74b896c6b7dc7df8db64544b910c742">AdvectionSrcForScalars</a>(tbx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <a class="code" href="Advection_8H.html#ae55e1a82a06078ef1bc4cc0386cf8800">AdvectionSrcForScalars</a>(tbx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                                   cur_prim, cell_rhs, detJ_arr, dxInv, mf_m,</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                                   horiz_adv_type, vert_adv_type, l_use_terrain, flx_arr);</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        }</div>
@@ -594,7 +594,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="comment">// This is simply an advected scalar for convenience</span></div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        start_comp = <a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>;</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        num_comp = 1;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <a class="code" href="Advection_8H.html#ab74b896c6b7dc7df8db64544b910c742">AdvectionSrcForScalars</a>(tbx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <a class="code" href="Advection_8H.html#ae55e1a82a06078ef1bc4cc0386cf8800">AdvectionSrcForScalars</a>(tbx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                               cur_prim, cell_rhs, detJ_arr, dxInv, mf_m,</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                               horiz_adv_type, vert_adv_type, l_use_terrain, flx_arr);</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
@@ -610,7 +610,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                 moist_horiz_adv_type = <a class="code" href="Advection_8H.html#aff14fe9e4f76b499843517b2c41c0fbb">EfficientAdvType</a>(nrk,ac.<a class="code" href="structAdvChoice.html#a22f84c60e56d4b3bde6b7f9548c87af3">moistscal_horiz_adv_type</a>);</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                 moist_vert_adv_type  = <a class="code" href="Advection_8H.html#aff14fe9e4f76b499843517b2c41c0fbb">EfficientAdvType</a>(nrk,ac.<a class="code" href="structAdvChoice.html#a2f888dfcb79cdb766ee04f21aada83ec">moistscal_vert_adv_type</a>);</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            }</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <a class="code" href="Advection_8H.html#ab74b896c6b7dc7df8db64544b910c742">AdvectionSrcForScalars</a>(tbx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <a class="code" href="Advection_8H.html#ae55e1a82a06078ef1bc4cc0386cf8800">AdvectionSrcForScalars</a>(tbx, start_comp, num_comp, avg_xmom, avg_ymom, avg_zmom,</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                                   cur_prim, cell_rhs, detJ_arr, dxInv, mf_m,</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                                   moist_horiz_adv_type, moist_vert_adv_type, l_use_terrain, flx_arr);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        }</div>
@@ -853,7 +853,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;      } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    } <span class="comment">// OMP</span></div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;}</div>
-<div class="ttc" id="aAdvection_8H_html_ab74b896c6b7dc7df8db64544b910c742"><div class="ttname"><a href="Advection_8H.html#ab74b896c6b7dc7df8db64544b910c742">AdvectionSrcForScalars</a></div><div class="ttdeci">void AdvectionSrcForScalars(const amrex::Box &amp;bx, const int icomp, const int ncomp, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSize, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const AdvType horiz_adv_type, const AdvType vert_adv_type, const bool use_terrain, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr)</div></div>
+<div class="ttc" id="aAdvection_8H_html_ae55e1a82a06078ef1bc4cc0386cf8800"><div class="ttname"><a href="Advection_8H.html#ae55e1a82a06078ef1bc4cc0386cf8800">AdvectionSrcForScalars</a></div><div class="ttdeci">void AdvectionSrcForScalars(const amrex::Box &amp;bx, const int icomp, const int ncomp, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const AdvType horiz_adv_type, const AdvType vert_adv_type, const bool use_terrain, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr)</div></div>
 <div class="ttc" id="aAdvection_8H_html_aff14fe9e4f76b499843517b2c41c0fbb"><div class="ttname"><a href="Advection_8H.html#aff14fe9e4f76b499843517b2c41c0fbb">EfficientAdvType</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE AdvType EfficientAdvType(int nrk, AdvType adv_type)</div><div class="ttdef"><b>Definition:</b> Advection.H:65</div></div>
 <div class="ttc" id="aDataStruct_8H_html_ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754">MoistureType::None</a></div><div class="ttdeci">@ None</div></div>
 <div class="ttc" id="aDataStruct_8H_html_ad285be248c0803917aaf5cf8ce62139ba8d892b915adb5e7c957f4425253ee1d6"><div class="ttname"><a href="DataStruct_8H.html#ad285be248c0803917aaf5cf8ce62139ba8d892b915adb5e7c957f4425253ee1d6">CouplingType::OneWay</a></div><div class="ttdeci">@ OneWay</div></div>
@@ -912,7 +912,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__slow__rhs__post_8cpp_a59883c2dec3aeac2dcc289c3bfdff683_cgraph.png" border="0" usemap="#aERF__slow__rhs__post_8cpp_a59883c2dec3aeac2dcc289c3bfdff683_cgraph" alt=""/></div>
 <map name="aERF__slow__rhs__post_8cpp_a59883c2dec3aeac2dcc289c3bfdff683_cgraph" id="aERF__slow__rhs__post_8cpp_a59883c2dec3aeac2dcc289c3bfdff683_cgraph">
 <area shape="rect" title=" " alt="" coords="5,173,144,200"/>
-<area shape="rect" href="Advection_8H.html#ab74b896c6b7dc7df8db64544b910c742" title=" " alt="" coords="193,5,367,32"/>
+<area shape="rect" href="Advection_8H.html#ae55e1a82a06078ef1bc4cc0386cf8800" title=" " alt="" coords="193,5,367,32"/>
 <area shape="rect" href="InteriorGhostCells_8cpp.html#a58aa7f6d6812d4dea186477114d1a47c" title=" " alt="" coords="192,57,368,98"/>
 <area shape="rect" href="Diffusion_8H.html#ab63f0fec93356a04c6ed1bfa725dbe66" title=" " alt="" coords="195,123,365,149"/>
 <area shape="rect" href="Diffusion_8H.html#aad9157d271fa86930f233a9c2e095888" title=" " alt="" coords="195,173,365,200"/>
