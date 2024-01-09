@@ -638,7 +638,7 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// ****************************************************************************************</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    rho_u_avg_hi = 0.5 * (rho_u(i+1, j, k) * mf_u_inv(i+1,j  ,0) + rho_u(i, j, k) * mf_u_inv(i  ,j  ,0));</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    interp_u_h.InterpolateInX(i,j,k+1,0,interp_hi,rho_u_avg_hi);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    interp_u_h.InterpolateInX(i+1,j,k,0,interp_hi,rho_u_avg_hi);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    rho_u_avg_lo = 0.5 * (rho_u(i-1, j, k) * mf_u_inv(i-1,j  ,0) + rho_u(i, j, k) * mf_u_inv(i  ,j  ,0));</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    interp_u_h.InterpolateInX(i,j,k,0,interp_lo,rho_u_avg_lo);</div>

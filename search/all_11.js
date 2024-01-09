@@ -37,7 +37,7 @@ var searchData=
   ['rd_5fon_5frv_1412',['Rd_on_Rv',['../ERF__Constants_8H.html#a212cca9324fcc25708184de9d9c7a07e',1,'ERF_Constants.H']]],
   ['rdocp_1413',['rdOcp',['../structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a',1,'SolverChoice']]],
   ['read_5ffile_1414',['read_file',['../classReadBndryPlanes.html#a5c2780ff94cadd975717d0f4084e6c9e',1,'ReadBndryPlanes']]],
-  ['read_5ffrom_5ffile_1415',['read_from_file',['../structInputSoundingData.html#a7a06635c54167688c17300611f6dde50',1,'InputSoundingData']]],
+  ['read_5ffrom_5ffile_1415',['read_from_file',['../structInputSoundingData.html#a596a65687875bb0172f0621f446452ae',1,'InputSoundingData']]],
   ['read_5ffrom_5fmetgrid_1416',['read_from_metgrid',['../Metgrid__utils_8H.html#ab2147fe2887222104a14c91ac873d695',1,'Metgrid_utils.H']]],
   ['read_5finput_5ffiles_1417',['read_input_files',['../classReadBndryPlanes.html#a6545891550da1a217d5e566ddafdd566',1,'ReadBndryPlanes']]],
   ['read_5ftime_5ffile_1418',['read_time_file',['../classReadBndryPlanes.html#ac6633331e3b4ae3d7c93534930b7f856',1,'ReadBndryPlanes']]],
