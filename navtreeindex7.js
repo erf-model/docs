@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7":[2,0,46,13],
 "classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e":[2,0,46,11],
 "classSlingo.html":[2,0,48],
 "classSlingo.html#ab37f1c288e0dcc71337629a65fb65e17":[2,0,48,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,3,0],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,3,0,8],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[1,0,3,0,7],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705":[1,0,3,0,1],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42d0838b4e8d40ee76fbaf2d55c3402e":[1,0,3,0,6]
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705":[1,0,3,0,1]
 };

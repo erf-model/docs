@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classERF.html#a13fc8f3a00573ee7735c3228316164a9":[2,0,18,2],
 "classERF.html#a14f922bdc3a0f23c087afa32c67ac119":[2,0,18,54],
 "classERF.html#a16e1f6b8bbb05ae738daf2abe626c159":[2,0,18,15],
 "classERF.html#a16e49fd65c68e2afc2140bd9e97bcbe9":[2,0,18,91],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classERFFillPatcher.html#a83a91e2dc7bd7c39a27327024814061c":[2,0,19,26],
 "classERFFillPatcher.html#a874bf44ab38e936013bbf8454a41a680":[2,0,19,16],
 "classERFFillPatcher.html#a89f24e6cfe30a2180b1667aead7edf28":[2,0,19,14],
-"classERFFillPatcher.html#a9d188e7b7e85221b257799a5a9c5098e":[2,0,19,29],
-"classERFFillPatcher.html#aa1dd4ccdd7812057d8ee529015e3750d":[2,0,19,8]
+"classERFFillPatcher.html#a9d188e7b7e85221b257799a5a9c5098e":[2,0,19,29]
 };
