@@ -75,13 +75,13 @@ var NAVTREEINDEX =
 "ERF__PhysBCFunct_8cpp.html",
 "Rad__constants_8H.html",
 "classERF.html#a13fc8f3a00573ee7735c3228316164a9",
-"classERFFillPatcher.html#aa1dd4ccdd7812057d8ee529015e3750d",
-"classMamConstituents.html#a090acb2786740c9e238ccd13de4471bb",
-"classRadConstants.html",
-"classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7",
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42d0838b4e8d40ee76fbaf2d55c3402e",
-"structSolverChoice.html#a0a4f1c55ea1e3a7d50f926ee0d20a21c",
-"structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf"
+"classERFFillPatcher.html#a9d188e7b7e85221b257799a5a9c5098e",
+"classMamConstituents.html#a06375fcfa88eed7c0b24a217a75ab454",
+"classProblemBase.html#afea9b8ed327ad86ee7c66588dd014eb3",
+"classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3",
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705",
+"structSolverChoice.html#a06a0dd1c8f7c1ed73a4f8d24b6b31cdf",
+"structncutils_1_1NCVar.html#a0a1082e40bee181e99e04ca81311bb70"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

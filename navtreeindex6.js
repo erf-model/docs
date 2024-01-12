@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"classProblemBase.html#afea9b8ed327ad86ee7c66588dd014eb3":[2,0,39,6],
 "classRadConstants.html":[2,0,41],
 "classRadConstants.html#a06d010a733e82bb2e8a6651c6e92cf51":[2,0,41,26],
 "classRadConstants.html#a08249d3010b2b85d35732b90d970cdf9":[2,0,41,25],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f":[2,0,46,4],
 "classSatMethods.html#a97d1392753f7f866850e99c89c815bcf":[2,0,46,10],
 "classSatMethods.html#a9a256423ef50446cfdf6d4dcc1c1f73b":[2,0,46,8],
-"classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758":[2,0,46,2],
-"classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3":[2,0,46,5]
+"classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758":[2,0,46,2]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3":[2,0,46,5],
 "classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7":[2,0,46,13],
 "classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e":[2,0,46,11],
 "classSlingo.html":[2,0,48],
@@ -109,8 +110,8 @@ var NAVTREEINDEX7 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1,0],
 "functions_func.html":[2,3,1],
+"functions_func.html":[2,3,1,0],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
@@ -152,8 +153,8 @@ var NAVTREEINDEX7 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "namespaceERFBCType.html":[1,0,3],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,3,0],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,3,0,8],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[1,0,3,0,7],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705":[1,0,3,0,1]
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[1,0,3,0,7]
 };

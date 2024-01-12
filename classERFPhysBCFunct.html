@@ -1984,7 +1984,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                z_nd_arr = <a class="code" href="classERFPhysBCFunct.html#ab18ff4c268d2a78587be5b49c8f97778">m_z_phys_nd</a>-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> ((init_type != <span class="stringliteral">&quot;real&quot;</span>) and (init_type != <span class="stringliteral">&quot;metgrid&quot;</span>))</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> ((init_type != <span class="stringliteral">&quot;real&quot;</span>) &amp;&amp; (init_type != <span class="stringliteral">&quot;metgrid&quot;</span>))</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">                //! If there are cells not in the valid + periodic grown box</span></div>
@@ -2011,7 +2011,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    <a class="code" href="classERFPhysBCFunct.html#a5724f0889c6d7d5d615289a7d66e9ebd">impose_lateral_zvel_bcs</a>(velz_arr,velx_arr,vely_arr,zbx,domain,z_nd_arr,dxInv,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                } <span class="comment">// !cons_only</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            } <span class="comment">// init_type != &quot;real&quot; and init_type != &quot;metgrid&quot;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            } <span class="comment">// init_type != &quot;real&quot; &amp;&amp; init_type != &quot;metgrid&quot;</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="comment">// Every grid touches the bottom and top domain boundary so we call the vertical bcs</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="comment">//       for every box -- and we need to call these even if init_type == real</span></div>
