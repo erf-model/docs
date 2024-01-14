@@ -310,7 +310,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (diffChoice.<a class="code" href="structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf">molec_diff_type</a> == <a class="code" href="DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a>)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">auto</span> rho0_trans = diffChoice.<a class="code" href="structDiffChoice.html#a4df179b6e7d84efc89a22ac5900f98c8">rho0_trans</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        amrex::ParallelFor(bxx, bxy, bxz,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        ParallelFor(bxx, bxy, bxz,</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            Real mf   = mf_m(i,j,0);</div>
@@ -346,7 +346,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        });</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        amrex::ParallelFor(bxx, bxy, bxz,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        ParallelFor(bxx, bxy, bxz,</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            Real mf   = mf_m(i,j,0);</div>

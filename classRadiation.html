@@ -625,7 +625,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;     <span class="keyword">auto</span> nx = box3d.length(0);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;     <span class="keyword">auto</span> ny = box3d.length(1);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;     <span class="comment">// Get pressure, theta, temperature, density, and qt, qp</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;     amrex::ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;     ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;       <span class="keyword">auto</span> icol = j*nx+i+1;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;       <span class="keyword">auto</span> ilev = k+1;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;       <a class="code" href="classRadiation.html#aa3961f0a2837a89f1d08dd5aba2ed056">qt</a>(icol,ilev)   = states_array(i,j,k,RhoQt_comp)/states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>

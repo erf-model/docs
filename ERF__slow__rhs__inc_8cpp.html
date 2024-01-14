@@ -652,12 +652,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_making_er_T&quot;</span>);</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <span class="comment">// First create Omega using velocity (not momentum)</span></div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                Box gbxo = surroundingNodes(bxcc,2);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                amrex::ParallelFor(gbxo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                ParallelFor(gbxo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                {</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    omega_arr(i,j,k) = (k == 0) ? 0. : <a class="code" href="TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18">OmegaFromW</a>(i,j,k,w(i,j,k),u,v,z_nd,dxInv);</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                });</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                amrex::ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                {</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    Real met_u_h_zeta_hi = <a class="code" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i+1, j  , k, dxInv, z_nd);</div>
@@ -698,7 +698,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                <span class="comment">// and in the first RK stage (TKE tendencies constant for nrk&gt;0, following WRF)</span></div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                <span class="keywordflow">if</span> ((nrk==0) &amp;&amp; (solverChoice.les_type == <a class="code" href="TurbStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>)) {</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                    SmnSmn_a = SmnSmn-&gt;array(mfi);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                    {</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                        SmnSmn_a(i,j,k) = <a class="code" href="EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8">ComputeSmnSmn</a>(i,j,k,s11,s22,s33,s12,s13,s23);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                    });</div>
@@ -740,14 +740,14 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                <span class="keywordflow">if</span> (bxcc.bigEnd(1)   == valid_bx.bigEnd(1))   bxcc.growHi(1, 1);</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="comment">// Copy from temp FABs back to tau</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                amrex::ParallelFor(bxcc,</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                ParallelFor(bxcc,</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                    tau11(i,j,k) = s11(i,j,k);</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                    tau22(i,j,k) = s22(i,j,k);</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                    tau33(i,j,k) = s33(i,j,k);</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                });</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                amrex::ParallelFor(tbxxy, tbxxz, tbxyz,</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                ParallelFor(tbxxy, tbxxz, tbxyz,</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                    tau12(i,j,k) = s12(i,j,k);</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                    tau21(i,j,k) = s21(i,j,k);</div>
@@ -769,7 +769,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                <span class="comment">//-----------------------------------------</span></div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                {</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_making_er_N&quot;</span>);</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                amrex::ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                    Real mfsq = mf_m(i,j,0)*mf_m(i,j,0);</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                    er_arr(i,j,k) = (u(i+1, j  , k  )/mf_u(i+1,j,0) - u(i, j, k)/mf_u(i,j,0))*dxInv[0]*mfsq +</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                                    (v(i  , j+1, k  )/mf_v(i,j+1,0) - v(i, j, k)/mf_v(i,j,0))*dxInv[1]*mfsq +</div>
@@ -795,7 +795,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                <span class="comment">// and in the first RK stage (TKE tendencies constant for nrk&gt;0, following WRF)</span></div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                <span class="keywordflow">if</span> ((nrk==0) &amp;&amp; (solverChoice.les_type == <a class="code" href="TurbStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf">LESType::Deardorff</a>)) {</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                    SmnSmn_a = SmnSmn-&gt;array(mfi);</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                    amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                    ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                    {</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                        SmnSmn_a(i,j,k) = <a class="code" href="EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8">ComputeSmnSmn</a>(i,j,k,s11,s22,s33,s12,s13,s23);</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                    });</div>
@@ -833,13 +833,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                <span class="keywordflow">if</span> (bxcc.bigEnd(1)   == valid_bx.bigEnd(1))   bxcc.growHi(1, 1);</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                <span class="comment">// Copy from temp FABs back to tau</span></div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                amrex::ParallelFor(bxcc,</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                ParallelFor(bxcc,</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                    tau11(i,j,k) = s11(i,j,k);</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                    tau22(i,j,k) = s22(i,j,k);</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                    tau33(i,j,k) = s33(i,j,k);</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                });</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                amrex::ParallelFor(tbxxy, tbxxz, tbxyz,</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                ParallelFor(tbxxy, tbxxz, tbxyz,</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                    tau12(i,j,k) = s12(i,j,k);</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                },</div>
@@ -936,7 +936,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_making_omega&quot;</span>);</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            Box gbxo = surroundingNodes(bx,2); gbxo.grow(IntVect(1,1,0));</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;            <span class="comment">// Now create Omega with momentum (not velocity)</span></div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;            amrex::ParallelFor(gbxo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;            ParallelFor(gbxo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                omega_arr(i,j,k) = rho_w(i,j,k);</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            });</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        } <span class="comment">// end profile</span></div>
@@ -1025,7 +1025,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        <span class="comment">// Add source terms for (rho theta)</span></div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        {</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; src_arr = source.const_array(mfi);</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;            amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            {</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                cell_rhs(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += src_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            });</div>
@@ -1036,7 +1036,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;            <span class="keywordtype">int</span> n  = <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>;</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;            <span class="keywordtype">int</span> nr = <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>;</div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            <span class="keywordtype">int</span> np = <a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>;</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            {</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                Real <a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a> = cell_prim(i,j,k,np);</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                cell_rhs(i, j, k, n) -= dptr_rayleigh_tau[k] * (<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a> - dptr_rayleigh_thetabar[k]) * cell_data(i,j,k,nr);</div>
@@ -1046,7 +1046,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        <span class="comment">// If in second RK stage, take average of old-time and new-time source</span></div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;        <span class="keywordflow">if</span> (nrk == 1)</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        {</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;            {</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                cell_rhs(i,j,k,     <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) *= 0.5;</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                cell_rhs(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *= 0.5;</div>
@@ -1088,7 +1088,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        <span class="comment">// ******************************************************************</span></div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;        <span class="comment">// NON-TERRAIN VERSION</span></div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;        <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;          amrex::ParallelFor(tbx,</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;          ParallelFor(tbx,</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;          [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;          { <span class="comment">// x-momentum equation</span></div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160; </div>
@@ -1124,7 +1124,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        <span class="comment">// ******************************************************************</span></div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        <span class="comment">// NON-TERRAIN VERSION</span></div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;          amrex::ParallelFor(tby,</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;          ParallelFor(tby,</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;          [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;          { <span class="comment">// y-momentum equation</span></div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
@@ -1159,7 +1159,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        b2d.setSmall(2,0);</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        b2d.setBig(2,0);</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        <span class="comment">// Enforce no forcing term at top and bottom boundaries</span></div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        amrex::ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) {</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) {</div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;            rho_w_rhs(i,j,        0) = 0.;</div>
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;            rho_w_rhs(i,j,domhi_z+1) = 0.; <span class="comment">// TODO: generalize this</span></div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        });</div>
@@ -1170,7 +1170,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        <span class="comment">// ******************************************************************</span></div>
 <div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        <span class="comment">// NON-TERRAIN VERSION</span></div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        <span class="comment">// ******************************************************************</span></div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;          amrex::ParallelFor(tbz,</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;          ParallelFor(tbz,</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;          [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;          { <span class="comment">// z-momentum equation</span></div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>

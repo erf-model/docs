@@ -517,7 +517,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        {</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;fast_rhs_copies_0&quot;</span>);</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">if</span> (step == 0) {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            amrex::ParallelFor(gbx,</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            ParallelFor(gbx,</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                cur_cons(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)      = prev_cons(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                cur_cons(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = prev_cons(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
@@ -530,7 +530,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            });</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (use_lagged_delta_rt) {</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="comment">// This is the default for cases with no or static terrain</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            amrex::ParallelFor(gbx,</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            ParallelFor(gbx,</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                Real delta_rt = cur_cons(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - stg_cons(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                theta_extrap(i,j,k) = delta_rt + beta_d * (delta_rt - lagged_delta_rt(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
@@ -540,7 +540,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            });</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <span class="comment">// For the moving wave problem, this choice seems more robust</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            amrex::ParallelFor(gbx,</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            ParallelFor(gbx,</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                theta_extrap(i,j,k) = cur_cons(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - stg_cons(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            });</div>
@@ -570,7 +570,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="comment">// *********************************************************************</span></div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        {</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;fast_rhs_xymom_T&quot;</span>);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        amrex::ParallelFor(tbx, tby,</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        ParallelFor(tbx, tby,</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        {</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <span class="comment">// Add (negative) gradient of (rho theta) multiplied by lagged &quot;pi&quot;</span></div>
@@ -640,7 +640,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="comment">// *********************************************************************</span></div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        {</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;fast_T_making_rho_rhs&quot;</span>);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        {</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            Real h_zeta_stg_xlo = <a class="code" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i,  j  , k, dxInv, z_nd_stg);</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            Real h_zeta_stg_xhi = <a class="code" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i+1,j  , k, dxInv, z_nd_stg);</div>
@@ -669,15 +669,15 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        {</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;fast_MT_making_omega&quot;</span>);</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        Box gbxo_lo = gbxo; gbxo_lo.setBig(2,0);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        amrex::ParallelFor(gbxo_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        ParallelFor(gbxo_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            omega_arr(i,j,k) = 0.;</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        });</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        Box gbxo_hi = gbxo; gbxo_hi.setSmall(2,gbxo.bigEnd(2));</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        amrex::ParallelFor(gbxo_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        ParallelFor(gbxo_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            omega_arr(i,j,k) = prev_zmom(i,j,k) - stg_zmom(i,j,k) - zp_t_arr(i,j,k);</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        });</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        Box gbxo_mid = gbxo; gbxo_mid.setSmall(2,1); gbxo_mid.setBig(2,gbxo.bigEnd(2)-1);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        amrex::ParallelFor(gbxo_mid, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        ParallelFor(gbxo_mid, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            omega_arr(i,j,k) =</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;               (<a class="code" href="TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18">OmegaFromW</a>(i,j,k,prev_zmom(i,j,k),prev_xmom,prev_ymom,z_nd_old,dxInv)</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;               -<a class="code" href="TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18">OmegaFromW</a>(i,j,k, stg_zmom(i,j,k), stg_xmom, stg_ymom,z_nd_old,dxInv)) - zp_t_arr(i,j,k);</div>
@@ -685,7 +685,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        } <span class="comment">// end profile</span></div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="comment">// *********************************************************************</span></div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        amrex::ParallelFor(tbx, tby,</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        ParallelFor(tbx, tby,</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        {</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            Real h_zeta_new = <a class="code" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i, j, k, dxInv, z_nd_new);</div>
@@ -885,7 +885,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <span class="comment">// **************************************************************************</span></div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        {</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;fast_rho_final_update&quot;</span>);</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        {</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;              Real zflux_lo = beta_2 * soln_a(i,j,k  ) + beta_1 * omega_arr(i,j,k);</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;              Real zflux_hi = beta_2 * soln_a(i,j,k+1) + beta_1 * omega_arr(i,j,k+1);</div>

@@ -114,8 +114,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3ef15c363283a4efc7e505bb5ca6c240"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb1797f0742dd01ee978be02d594fc43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#abb1797f0742dd01ee978be02d594fc43">~ERFPhysBCFunct</a> ()</td></tr>
 <tr class="separator:abb1797f0742dd01ee978be02d594fc43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e2af0fbdf60714963871447f919e127"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#a7e2af0fbdf60714963871447f919e127">operator()</a> (const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;mfs, int icomp, int ncomp, amrex::IntVect const &amp;nghost_cons, amrex::IntVect const &amp;nghost_vels, std::string &amp;init_type, bool cons_only, int bccomp_cons, const amrex::Real time=0.0)</td></tr>
-<tr class="separator:a7e2af0fbdf60714963871447f919e127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a87efab34fe9167fb92096f47daf38f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#a8a87efab34fe9167fb92096f47daf38f">operator()</a> (const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;mfs, int icomp, int ncomp, amrex::IntVect const &amp;nghost_cons, amrex::IntVect const &amp;nghost_vels, bool use_real_bcs, bool cons_only, int bccomp_cons, const amrex::Real time=0.0)</td></tr>
+<tr class="separator:a8a87efab34fe9167fb92096f47daf38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a528e9fb891e8671fce276c5571ba13c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#a528e9fb891e8671fce276c5571ba13c1">impose_lateral_xvel_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int bccomp)</td></tr>
 <tr class="separator:a528e9fb891e8671fce276c5571ba13c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ca43d34a9908abbb1c09cdf0fa70917"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct.html#a6ca43d34a9908abbb1c09cdf0fa70917">impose_vertical_xvel_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int bccomp, const amrex::Real time)</td></tr>
@@ -1853,8 +1853,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a7e2af0fbdf60714963871447f919e127"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e2af0fbdf60714963871447f919e127">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="a8a87efab34fe9167fb92096f47daf38f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a87efab34fe9167fb92096f47daf38f">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1892,8 +1892,8 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>init_type</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_real_bcs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1925,7 +1925,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERFPhysBCFunct::()&quot;</span>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef ERF_USE_NETCDF</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    amrex::ignore_unused(init_type);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    amrex::ignore_unused(use_real_bcs);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct.html#ad5a6f06771b8fa848753a2741219366b">m_geom</a>.isAllPeriodic()) <span class="keywordflow">return</span>;</div>
@@ -1984,7 +1984,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                z_nd_arr = <a class="code" href="classERFPhysBCFunct.html#ab18ff4c268d2a78587be5b49c8f97778">m_z_phys_nd</a>-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> ((init_type != <span class="stringliteral">&quot;real&quot;</span>) &amp;&amp; (init_type != <span class="stringliteral">&quot;metgrid&quot;</span>))</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> (!use_real_bcs)</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">                //! If there are cells not in the valid + periodic grown box</span></div>
@@ -2011,10 +2011,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    <a class="code" href="classERFPhysBCFunct.html#a5724f0889c6d7d5d615289a7d66e9ebd">impose_lateral_zvel_bcs</a>(velz_arr,velx_arr,vely_arr,zbx,domain,z_nd_arr,dxInv,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                } <span class="comment">// !cons_only</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            } <span class="comment">// init_type != &quot;real&quot; &amp;&amp; init_type != &quot;metgrid&quot;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            } <span class="comment">// use_real_bcs</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="comment">// Every grid touches the bottom and top domain boundary so we call the vertical bcs</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="comment">//       for every box -- and we need to call these even if init_type == real</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="comment">//       for every box -- and we need to call these even if use_real_bcs</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <a class="code" href="classERFPhysBCFunct.html#af44e8c58a8d5c8b804ec68d7a1d289e5">impose_vertical_cons_bcs</a>(cons_arr,cbx,domain,z_nd_arr,dxInv,</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                                     icomp_cons,ncomp_cons,bccomp_cons);</div>

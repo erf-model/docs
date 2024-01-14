@@ -439,7 +439,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// RhoAlpha &amp; Turb model</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (l_consA &amp;&amp; l_turb) {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        amrex::ParallelFor(xbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        ParallelFor(xbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        {</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
@@ -459,7 +459,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            xflux(i,j,k,qty_index) = rhoAlpha * mf_u(i,j,0) * ( GradCx - (met_h_xi/met_h_zeta)*GradCz );</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        });</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        amrex::ParallelFor(ybx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        ParallelFor(ybx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        {</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
@@ -479,7 +479,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            yflux(i,j,k,qty_index) = rhoAlpha * mf_v(i,j,0) * ( GradCy - (met_h_eta/met_h_zeta)*GradCz );</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        });</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        amrex::ParallelFor(zbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        ParallelFor(zbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        {</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
@@ -511,7 +511,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        });</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="comment">// Alpha &amp; Turb model</span></div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_turb) {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        amrex::ParallelFor(xbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        ParallelFor(xbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        {</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
@@ -530,7 +530,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            xflux(i,j,k,qty_index) = Alpha * mf_u(i,j,0) * ( GradCx - (met_h_xi/met_h_zeta)*GradCz );</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        });</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        amrex::ParallelFor(ybx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        ParallelFor(ybx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        {</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
@@ -549,7 +549,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            yflux(i,j,k,qty_index) = Alpha * mf_v(i,j,0) * ( GradCy - (met_h_eta/met_h_zeta)*GradCz );</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        });</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        amrex::ParallelFor(zbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        ParallelFor(zbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        {</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
@@ -581,7 +581,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        });</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="comment">// RhoAlpha</span></div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(l_consA) {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        amrex::ParallelFor(xbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        ParallelFor(xbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        {</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
@@ -599,7 +599,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            xflux(i,j,k,qty_index) = rhoAlpha * mf_u(i,j,0) * ( GradCx - (met_h_xi/met_h_zeta)*GradCz );</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        });</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        amrex::ParallelFor(ybx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        ParallelFor(ybx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        {</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
@@ -617,7 +617,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            yflux(i,j,k,qty_index) = rhoAlpha * mf_v(i,j,0) * ( GradCy - (met_h_eta/met_h_zeta)*GradCz );</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        });</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        amrex::ParallelFor(zbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        ParallelFor(zbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        {</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
@@ -647,7 +647,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        });</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="comment">// Alpha</span></div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        amrex::ParallelFor(xbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        ParallelFor(xbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        {</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
@@ -664,7 +664,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            xflux(i,j,k,qty_index) = Alpha * mf_u(i,j,0) * ( GradCx - (met_h_xi/met_h_zeta)*GradCz );</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        });</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        amrex::ParallelFor(ybx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        ParallelFor(ybx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        {</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
@@ -681,7 +681,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            yflux(i,j,k,qty_index) = Alpha * mf_v(i,j,0) * ( GradCy - (met_h_eta/met_h_zeta)*GradCz );</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        });</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        amrex::ParallelFor(zbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        ParallelFor(zbx, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        {</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = qty_index - qty_offset;</div>
@@ -717,7 +717,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;      Box planexy = zbx; planexy.setBig(2, planexy.smallEnd(2) );</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;      <span class="keywordtype">int</span> k_lo = zbx.smallEnd(2); <span class="keywordtype">int</span> k_hi = zbx.bigEnd(2);</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;      zbx3.growLo(2,-1); zbx3.growHi(2,-1);</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;      amrex::ParallelFor(planexy, num_comp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> , <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;      ParallelFor(planexy, num_comp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> , <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;      {</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;          Real met_h_xi,met_h_eta;</div>
@@ -754,7 +754,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;      });</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    }</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <span class="comment">// Average interior cells</span></div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    amrex::ParallelFor(zbx3, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    ParallelFor(zbx3, num_comp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    {</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
@@ -770,13 +770,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;      zflux(i,j,k,qty_index) -= met_h_xi*xfluxbar + met_h_eta*yfluxbar;</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    });</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <span class="comment">// Multiply h_zeta by x/y-fluxes</span></div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    amrex::ParallelFor(xbx, num_comp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    ParallelFor(xbx, num_comp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    {</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;      Real met_h_zeta      = <a class="code" href="TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i,j,k,dxInv,z_nd);</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;      xflux(i,j,k,qty_index) *= met_h_zeta;</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    });</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    amrex::ParallelFor(ybx, num_comp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    ParallelFor(ybx, num_comp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    {</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">int</span>  qty_index = start_comp + n;</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;      Real met_h_zeta      = <a class="code" href="TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i,j,k,dxInv,z_nd);</div>
@@ -790,7 +790,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n(0); n &lt; num_comp; ++n)</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    {</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        <span class="keywordtype">int</span> qty_index = start_comp + n;</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        amrex::ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        {</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;            Real stateContrib = (xflux(i+1,j  ,k  ,qty_index) - xflux(i, j, k, qty_index)) * dx_inv * mf_m(i,j,0)  <span class="comment">// Diffusive flux in x-dir</span></div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                               +(yflux(i  ,j+1,k  ,qty_index) - yflux(i, j, k, qty_index)) * dy_inv * mf_m(i,j,0)  <span class="comment">// Diffusive flux in y-dir</span></div>
@@ -807,7 +807,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <span class="comment">// Using Deardorff</span></div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keywordflow">if</span> (l_use_deardorff &amp;&amp; start_comp &lt;= RhoKE_comp &amp;&amp; end_comp &gt;=<a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) {</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        <span class="keywordtype">int</span> qty_index = <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>;</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        amrex::ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        {</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            <span class="comment">// Add Buoyancy Source</span></div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            <span class="comment">// where the SGS buoyancy flux tau_{theta,i} = -KH * dtheta/dx_i,</span></div>
@@ -843,7 +843,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="keywordtype">bool</span> u_ext_dir_on_zhi = ( (bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].lo(5) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) );</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        <span class="keywordtype">bool</span> v_ext_dir_on_zlo = ( (bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) );</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        <span class="keywordtype">bool</span> v_ext_dir_on_zhi = ( (bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].lo(5) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) );</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        amrex::ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        ParallelFor(bx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        {</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            <span class="keyword">const</span> Real met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a>(i,j,k,dxInv,z_nd);</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            cell_rhs(i, j, k, qty_index) += <a class="code" href="PBLModels_8H.html#a0e48e1dba31b4575723d6c277956a4ea">ComputeQKESourceTerms</a>(i,j,k,u,v,cell_data,cell_prim,</div>

@@ -231,7 +231,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; vely = <a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a81793b83204cfa56d4683bc676fbbfb6">yvel</a>.array(mfi);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; velz = <a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a48ee63b17bc216e9661511c33c68bd8b">zvel</a>.array(mfi);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        amrex::ParallelFor(tbx, tby, tbz,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        ParallelFor(tbx, tby, tbz,</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            velx(i,j,k) = momx(i,j,k)/(0.5 * (dens_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + dens_arr(i-1,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)));</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        },</div>

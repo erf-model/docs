@@ -228,7 +228,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    Elixir mfy_eli = mf_y_bar.elixir();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mfx_arr  = mf_x_bar.array();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mfy_arr  = mf_y_bar.array();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    amrex::ParallelFor(planebx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    ParallelFor(planebx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> (avg_mf_x_y) {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            mfx_arr(i,j,k) = 0.5 * ( mf_x(i,j-1,k) + mf_x(i,j,k) );</div>
@@ -246,7 +246,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Real coeff6 = num_diff_coeff / (2.0 * dt);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Compute 5th order derivative and augment RHS</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    amrex::ParallelFor(bx, num_comp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> m) noexcept</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ParallelFor(bx, num_comp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> m) noexcept</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">int</span> n = start_comp + m;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        Real xflux_lo = 10. * (data(i  ,j,k,n) - data(i-1,j,k,n))</div>

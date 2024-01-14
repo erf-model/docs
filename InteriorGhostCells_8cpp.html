@@ -470,7 +470,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; rho_arr  = fmf_p_v[0].const_array(mfi);</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                <span class="keyword">const</span> Array4&lt;const int&gt;&amp;  mask_arr = mask-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                amrex::ParallelFor(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                ParallelFor(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                {</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                    <span class="keywordflow">if</span> (mask_arr(i,j,k) == relax_mask_val) {</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                        Real rho_interp = 0.5 * ( rho_arr(i-1,j,k) + rho_arr(i,j,k) );</div>
@@ -497,7 +497,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; rho_arr  = fmf_p_v[0].const_array(mfi);</div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                <span class="keyword">const</span> Array4&lt;const int&gt;&amp;  mask_arr = mask-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160; </div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                amrex::ParallelFor(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                ParallelFor(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                {</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                    <span class="keywordflow">if</span> (mask_arr(i,j,k) == relax_mask_val) {</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;                        Real rho_interp = 0.5 * ( rho_arr(i,j-1,k) + rho_arr(i,j,k) );</div>
@@ -524,7 +524,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; rho_arr  = fmf_p_v[0].const_array(mfi);</div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                <span class="keyword">const</span> Array4&lt;const int&gt;&amp;  mask_arr = mask-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160; </div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                amrex::ParallelFor(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                ParallelFor(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                {</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                    <span class="keywordflow">if</span> (mask_arr(i,j,k) == relax_mask_val) {</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                        Real rho_interp = 0.5 * ( rho_arr(i,j,k-1) + rho_arr(i,j,k) );</div>
@@ -548,7 +548,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; rhs_arr  = rhs.array(mfi);</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;            <span class="keyword">const</span> Array4&lt;const int&gt;&amp; mask_arr = mask-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;            amrex::ParallelFor(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;            ParallelFor(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;            {</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                <span class="keywordflow">if</span> (mask_arr(i,j,k) == set_mask_val) {</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                    rhs_arr(i,j,k) = 0.0;</div>
@@ -582,7 +582,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;            <span class="keywordtype">int</span> Relax_z = width - Spec_z;</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;            amrex::Real num   = amrex::Real(Spec_z + Relax_z);</div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;            amrex::Real denom = amrex::Real(Relax_z - 1);</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;            amrex::ParallelFor(vbx, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;            ParallelFor(vbx, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;            {</div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;               <span class="keywordflow">if</span> (mask_arr(i,j,k) == relax_mask_val) {</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160; </div>
@@ -967,7 +967,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; bdatyhi_np1 = bdy_data_yhi[n_time+1][ivar].const_array();</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="comment">// Populate with interpolation (protect from ghost cells)</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        amrex::ParallelFor(bx_xlo, bx_xhi,</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        ParallelFor(bx_xlo, bx_xhi,</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        {</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="keywordtype">int</span> ii = std::max(i , dom_lo.x);</div>
@@ -987,7 +987,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                           + alpha * bdatxhi_np1(ii,jj,k,0);</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        });</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        amrex::ParallelFor(bx_ylo, bx_yhi,</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        ParallelFor(bx_ylo, bx_yhi,</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        {</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keywordtype">int</span> ii = std::max(i , dom_lo.x);</div>
@@ -1035,7 +1035,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            arr_xlo = U_xlo.array(); arr_xhi = U_xhi.array();</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            arr_ylo = U_ylo.array(); arr_yhi = U_yhi.array();</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            amrex::ParallelFor(bx_xlo, bx_xhi,</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            ParallelFor(bx_xlo, bx_xhi,</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            {</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                Real rho_interp = 0.5 * ( rarr_xlo(i-1,j,k) + rarr_xlo(i,j,k) );</div>
@@ -1047,7 +1047,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                arr_xhi(i,j,k) *= rho_interp;</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            });</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            amrex::ParallelFor(bx_ylo, bx_yhi,</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            ParallelFor(bx_ylo, bx_yhi,</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            {</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                Real rho_interp = 0.5 * ( rarr_ylo(i-1,j,k) + rarr_ylo(i,j,k) );</div>
@@ -1062,7 +1062,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            arr_xlo = V_xlo.array(); arr_xhi = V_xhi.array();</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            arr_ylo = V_ylo.array(); arr_yhi = V_yhi.array();</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            amrex::ParallelFor(bx_xlo, bx_xhi,</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            ParallelFor(bx_xlo, bx_xhi,</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            {</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                Real rho_interp = 0.5 * ( rarr_xlo(i,j-1,k) + rarr_xlo(i,j,k) );</div>
@@ -1074,7 +1074,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                arr_xhi(i,j,k) *= rho_interp;</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            });</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            amrex::ParallelFor(bx_ylo, bx_yhi,</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            ParallelFor(bx_ylo, bx_yhi,</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            {</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                Real rho_interp = 0.5 * ( rarr_ylo(i,j-1,k) + rarr_ylo(i,j,k) );</div>

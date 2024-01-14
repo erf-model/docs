@@ -153,7 +153,8 @@ Variables</h2></td></tr>
 <div class="line">          <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; pi_stage_arr = pi_stage.array(mfi);</div>
 <div class="line">          <span class="keyword">const</span> Real rdOcp = solverChoice.rdOcp;</div>
 <div class="line"> </div>
-<div class="line">          amrex::ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line">          amrex::ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line">          {</div>
 <div class="line">            Real <a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a436a31a93a198683f07cc3afe46b8f33">rho</a>       = cons_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line">            Real rho_theta = cons_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
 <div class="line">            prim_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) = rho_theta / <a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a436a31a93a198683f07cc3afe46b8f33">rho</a>;</div>

@@ -662,7 +662,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    Real gOcp = <a class="code" href="classSAM.html#a3a76b3fc76d33c147dcaab81a738f41c">m_gOcp</a>;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    amrex::ParallelFor(<a class="code" href="classSAM.html#a7da420869410dc959c2442962524259f">nlev</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    ParallelFor(<a class="code" href="classSAM.html#a7da420869410dc959c2442962524259f">nlev</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    {</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        Real RhoTheta = rho_dptr[k]*theta_dptr[k];</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        Real pressure = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(RhoTheta, qv_dptr[k]);</div>
@@ -679,7 +679,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="comment">// Populate all the coefficients</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    amrex::ParallelFor(<a class="code" href="classSAM.html#a7da420869410dc959c2442962524259f">nlev</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    ParallelFor(<a class="code" href="classSAM.html#a7da420869410dc959c2442962524259f">nlev</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    {</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        Real pratio = sqrt(1.29 / rho1d_t(k));</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        Real rrr1=393.0/(tabs1d_t(k)+120.0)*std::pow((tabs1d_t(k)/273.0),1.5);</div>
@@ -858,7 +858,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">auto</span> qp_arr     = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a7a57b6f1ee56119044cd13926c48d453a2edc86e05fd080c928faeb1f6f39c701">MicVar_Kess::qp</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// get potential total density, temperature, qt, qp</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        amrex::ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            states_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = rho_arr(i,j,k)*theta_arr(i,j,k);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            states_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)    = rho_arr(i,j,k)*qv_arr(i,j,k);</div>
@@ -944,7 +944,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">auto</span> pres_array  = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a5bf64c0455c43f7da8023699ad1e5a1fa147204d9af51dec01fb0d95c5cde8d37">MicVar::pres</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">// Get pressure, theta, temperature, density, and qt, qp</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        amrex::ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            rho_array(i,j,k)   = states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            theta_array(i,j,k) = states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/states_array(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
@@ -1084,7 +1084,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        amrex::ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            qt_array(i,j,k)  = qv_array(i,j,k) + qn_array(i,j,k);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            amrex::Real omn  = std::max(0.0, std::min(1.0,(tabs_array(i,j,k)-<a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>)*<a class="code" href="ERF__Constants_8H.html#a0910a9292394778082e25954da60fe05">a_bg</a>));</div>
@@ -1190,7 +1190,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// for (int k=0; k&lt;nzm; k++) {</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">//  for (int icrm=0; icrm&lt;ncrms; icrm++) {</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    amrex::ParallelFor(nz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ParallelFor(nz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        qifall_t(k) = 0.0;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        tlatqi_t(k) = 0.0;</div>
@@ -1212,7 +1212,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        amrex::ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">if</span> (k &gt;= std::max(0,kmin-1) &amp;&amp; k &lt;= kmax ) {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="comment">// Set up indices for x-y planes above and below current plane.</span></div>
@@ -1256,7 +1256,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="comment">//  for (int i=0; i&lt;nx; i++) {</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment">//    for (int icrm=0; icrm&lt;ncrms; icrm++) {</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="comment">/* by Xingqiu Yuan, need setup boundary condition for fz_t here???</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">           amrex::ParallelFor(box2d, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept {</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">           ParallelFor(box2d, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept {</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">           fz_t(nz-1,j,i) = 0.0;</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">           });</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">        */</span></div>
@@ -1267,7 +1267,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="comment">//       for (int icrm=0; icrm&lt;ncrms; icrm++) {</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        Real fac_cond = <a class="code" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a>;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        Real fac_fus  = <a class="code" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a>;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        amrex::ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        {</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="keywordflow">if</span> ( k &gt;= std::max(0,kmin-1) &amp;&amp; k &lt;= kmax ) {</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                Real coef = dtn/dz;</div>
@@ -1295,7 +1295,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">//    for (int i=0; i&lt;nx; i++) {</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="comment">//      for (int icrm=0; icrm&lt;ncrms; icrm++) {</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="comment">//parallel_for( SimpleBounds&lt;3&gt;(ny,nx,ncrms) , YAKL_LAMBDA (int j, int i, int icrm) {</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        amrex::ParallelFor(box2d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        ParallelFor(box2d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        {</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            Real coef = dtn/dz;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            Real dqi = -coef*fz(i,j,0);</div>

@@ -357,7 +357,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; b : com_bl) {</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            Box com_bx = vbx &amp; b;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            amrex::ParallelFor(com_bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            ParallelFor(com_bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            {</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                mask_arr(i,j,k) = mask_val;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            });</div>

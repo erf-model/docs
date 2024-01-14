@@ -711,7 +711,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="comment">// Extrapolate outside the domain in lateral directions (planex owns corner cells)</span></div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">if</span> (i_lo == domain.smallEnd(0)) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            amrex::ParallelFor(planex, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            ParallelFor(planex, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            {</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, domain.smallEnd(1)), domain.bigEnd(1));</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                mu_turb(i_lo-i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = mu_turb(i_lo, lj, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
@@ -719,7 +719,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            });</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        }</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">if</span> (i_hi == domain.bigEnd(0)) {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            amrex::ParallelFor(planex, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            ParallelFor(planex, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            {</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, domain.smallEnd(1)), domain.bigEnd(1));</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                mu_turb(i_hi+i, j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = mu_turb(i_hi, lj, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
@@ -727,7 +727,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            });</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        }</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">if</span> (j_lo == domain.smallEnd(1)) {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            amrex::ParallelFor(planey, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            ParallelFor(planey, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            {</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                <span class="keywordtype">int</span> li = amrex::min(amrex::max(i, domain.smallEnd(0)), domain.bigEnd(0));</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                mu_turb(i, j_lo-j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = mu_turb(li, j_lo, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>
@@ -735,7 +735,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            });</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        }</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">if</span> (j_hi == domain.bigEnd(1)) {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            amrex::ParallelFor(planey, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            ParallelFor(planey, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            {</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <span class="keywordtype">int</span> li = amrex::min(amrex::max(i, domain.smallEnd(0)), domain.bigEnd(0));</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                mu_turb(i, j_hi+j, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>) = mu_turb(li, j_hi, k, <a class="code" href="namespaceEddyDiff.html#ada15f516d3d1be3a86e96b6acc4c3232a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a>);</div>

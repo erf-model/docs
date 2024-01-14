@@ -10,7 +10,7 @@ var classERFPhysBCFunct =
     [ "impose_vertical_xvel_bcs", "classERFPhysBCFunct.html#a6ca43d34a9908abbb1c09cdf0fa70917", null ],
     [ "impose_vertical_yvel_bcs", "classERFPhysBCFunct.html#a77c31e351dd3e5380ada114c4148edca", null ],
     [ "impose_vertical_zvel_bcs", "classERFPhysBCFunct.html#a5c3a04621a15053368cefcf242c71538", null ],
-    [ "operator()", "classERFPhysBCFunct.html#a7e2af0fbdf60714963871447f919e127", null ],
+    [ "operator()", "classERFPhysBCFunct.html#a8a87efab34fe9167fb92096f47daf38f", null ],
     [ "m_bc_extdir_vals", "classERFPhysBCFunct.html#ac14861a6fa7a46469b932e275b58d3d4", null ],
     [ "m_bc_neumann_vals", "classERFPhysBCFunct.html#ad02d0287fef40524dc3e5a2a0fe5b043", null ],
     [ "m_detJ_cc", "classERFPhysBCFunct.html#aa7d83abac0c3485696c3e9568bd4cf40", null ],

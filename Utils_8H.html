@@ -395,7 +395,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        gbx.setSmall(2,domlo_z);</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        amrex::Array4&lt;amrex::Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        amrex::Array4&lt;amrex::Real      &gt; detJ = detJ_cc.array(mfi);</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        amrex::ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;               detJ(i, j, k) = .25 * dzInv * (</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                       z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1)</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                      -z_nd(i,j,k  ) - z_nd(i+1,j,k  ) - z_nd(i,j+1,k  ) - z_nd(i+1,j+1,k  ) );</div>
@@ -466,7 +466,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        gbx.setSmall(2,domlo_z);</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;        amrex::Array4&lt;amrex::Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;        amrex::Array4&lt;amrex::Real      &gt; z_cc = z_phys_cc.array(mfi);</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;        amrex::ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;           z_cc(i, j, k) = .125 * ( z_nd(i,j,k  ) + z_nd(i+1,j,k  ) + z_nd(i,j+1,k  ) + z_nd(i+1,j+1,k  )</div>
 <div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                                   +z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1) );</div>
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;       });</div>
