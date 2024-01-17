@@ -12,7 +12,7 @@ var classFastEddy =
     [ "Init", "classFastEddy.html#a61e87238e19ccfaadd072a077761e94c", null ],
     [ "Qmoist_Ptr", "classFastEddy.html#a4b34de751f34ec4b445abe8064d5dccb", null ],
     [ "Qmoist_Size", "classFastEddy.html#a8f6a62a48c8fc6f209e4fd90e73a8d57", null ],
-    [ "Qstate_Size", "classFastEddy.html#abae92639b790dde4064e3753f97e9178", null ],
+    [ "Qstate_Size", "classFastEddy.html#a02dbf304f4ebbd4dfc852040ac95cf3e", null ],
     [ "Update_Micro_Vars", "classFastEddy.html#ae954582b00f9d875826f53378d895839", null ],
     [ "Update_State_Vars", "classFastEddy.html#ab773e3413ad009fb81953573e17346af", null ],
     [ "docloud", "classFastEddy.html#a6c448ae889150d06105b7e1756a5e3ae", null ],
