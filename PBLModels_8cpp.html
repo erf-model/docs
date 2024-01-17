@@ -362,7 +362,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                <span class="comment">// First Length Scale</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                AMREX_ASSERT(l_obukhov != 0);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <span class="keywordtype">int</span> lk = amrex::max(k,0);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="keyword">const</span> Real zval = gdata.ProbLo(2) + (lk + 0.5)*gdata.CellSize(2);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="keyword">const</span> Real zval = use_terrain ? <a class="code" href="TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">Compute_Zrel_AtCellCenter</a>(i,j,lk,z_nd_arr) : gdata.ProbLo(2) + (lk + 0.5)*gdata.CellSize(2);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keyword">const</span> Real zeta = zval/l_obukhov;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                Real l_S;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                <span class="keywordflow">if</span> (zeta &gt;= 1.0) {</div>
