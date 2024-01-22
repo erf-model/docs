@@ -307,84 +307,39 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">auto</span> dxinv = dxInv[0], dyinv = dxInv[1], dzinv = dxInv[2];</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (diffChoice.<a class="code" href="structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf">molec_diff_type</a> == <a class="code" href="DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a>)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">auto</span> rho0_trans = diffChoice.<a class="code" href="structDiffChoice.html#a4df179b6e7d84efc89a22ac5900f98c8">rho0_trans</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        ParallelFor(bxx, bxy, bxz,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            Real mf   = mf_m(i,j,0);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            Real diffContrib  = ( (tau11(i  , j  , k  ) - tau11(i-1, j  ,k  )) * dxinv * mf   <span class="comment">// Contribution to x-mom eqn from diffusive flux in x-dir</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                + (tau12(i  , j+1, k  ) - tau12(i  , j  ,k  )) * dyinv * mf   <span class="comment">// Contribution to x-mom eqn from diffusive flux in y-dir</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                + (tau13(i  , j  , k+1) - tau13(i  , j  ,k  )) * dzinv );     <span class="comment">// Contribution to x-mom eqn from diffusive flux in z-dir;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            diffContrib      /= 0.5*(detJ(i,j,k) + detJ(i-1,j,k));</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            diffContrib      *= 0.5 * (<a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>(i-1,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>))  / rho0_trans;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            rho_u_rhs(i,j,k) -= diffContrib;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        },</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            Real mf   = mf_m(i,j,0);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            Real diffContrib  = ( (tau21(i+1, j  , k  ) - tau21(i  , j  , k  )) * dxinv * mf   <span class="comment">// Contribution to y-mom eqn from diffusive flux in x-dir</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                + (tau22(i  , j  , k  ) - tau22(i  , j-1, k  )) * dyinv * mf   <span class="comment">// Contribution to y-mom eqn from diffusive flux in y-dir</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                + (tau23(i  , j  , k+1) - tau23(i  , j  , k  )) * dzinv );     <span class="comment">// Contribution to y-mom eqn from diffusive flux in z-dir;</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            diffContrib      /= 0.5*(detJ(i,j,k) + detJ(i,j-1,k));</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            diffContrib      *= 0.5 * (<a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>(i,j-1,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>))  / rho0_trans;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            rho_v_rhs(i,j,k) -= diffContrib;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        },</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            Real mf   = mf_m(i,j,0);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            Real diffContrib  = ( (tau31(i+1, j  , k  ) - tau31(i  , j  , k  )) * dxinv * mf   <span class="comment">// Contribution to z-mom eqn from diffusive flux in x-dir</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                + (tau32(i  , j+1, k  ) - tau32(i  , j  , k  )) * dyinv * mf   <span class="comment">// Contribution to z-mom eqn from diffusive flux in y-dir</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                + (tau33(i  , j  , k  ) - tau33(i  , j  , k-1)) * dzinv );     <span class="comment">// Contribution to z-mom eqn from diffusive flux in z-dir;</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            diffContrib      /= 0.5*(detJ(i,j,k) + detJ(i,j,k-1));</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            diffContrib      *= 0.5 * (<a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + <a class="code" href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">cons</a>(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>))  / rho0_trans;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            rho_w_rhs(i,j,k) -= diffContrib;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        });</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        ParallelFor(bxx, bxy, bxz,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            Real mf   = mf_m(i,j,0);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            Real diffContrib  = ( (tau11(i  , j  , k  ) - tau11(i-1, j  ,k  )) * dxinv * mf   <span class="comment">// Contribution to x-mom eqn from diffusive flux in x-dir</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                + (tau12(i  , j+1, k  ) - tau12(i  , j  ,k  )) * dyinv * mf   <span class="comment">// Contribution to x-mom eqn from diffusive flux in y-dir</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                + (tau13(i  , j  , k+1) - tau13(i  , j  ,k  )) * dzinv );     <span class="comment">// Contribution to x-mom eqn from diffusive flux in z-dir;</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            diffContrib      /= 0.5*(detJ(i,j,k) + detJ(i-1,j,k));</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            rho_u_rhs(i,j,k) -= diffContrib;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        },</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            Real mf   = mf_m(i,j,0);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            Real diffContrib  = ( (tau21(i+1, j  , k  ) - tau21(i  , j  , k  )) * dxinv * mf   <span class="comment">// Contribution to y-mom eqn from diffusive flux in x-dir</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                + (tau22(i  , j  , k  ) - tau22(i  , j-1, k  )) * dyinv * mf   <span class="comment">// Contribution to y-mom eqn from diffusive flux in y-dir</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                + (tau23(i  , j  , k+1) - tau23(i  , j  , k  )) * dzinv );     <span class="comment">// Contribution to y-mom eqn from diffusive flux in z-dir;</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            diffContrib      /= 0.5*(detJ(i,j,k) + detJ(i,j-1,k));</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            rho_v_rhs(i,j,k) -= diffContrib;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        },</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            Real mf   = mf_m(i,j,0);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            Real diffContrib  = ( (tau31(i+1, j  , k  ) - tau31(i  , j  , k  )) * dxinv * mf   <span class="comment">// Contribution to z-mom eqn from diffusive flux in x-dir</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                + (tau32(i  , j+1, k  ) - tau32(i  , j  , k  )) * dyinv * mf   <span class="comment">// Contribution to z-mom eqn from diffusive flux in y-dir</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                + (tau33(i  , j  , k  ) - tau33(i  , j  , k-1)) * dzinv );     <span class="comment">// Contribution to z-mom eqn from diffusive flux in z-dir;</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            diffContrib      /= 0.5*(detJ(i,j,k) + detJ(i,j,k-1));</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            rho_w_rhs(i,j,k) -= diffContrib;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        });</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
-<div class="ttc" id="aDiffStruct_8H_html_a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288"><div class="ttname"><a href="DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a></div><div class="ttdeci">@ ConstantAlpha</div></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    ParallelFor(bxx, bxy, bxz,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        Real mf   = mf_m(i,j,0);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        Real diffContrib  = ( (tau11(i  , j  , k  ) - tau11(i-1, j  ,k  )) * dxinv * mf   <span class="comment">// Contribution to x-mom eqn from diffusive flux in x-dir</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                            + (tau12(i  , j+1, k  ) - tau12(i  , j  ,k  )) * dyinv * mf   <span class="comment">// Contribution to x-mom eqn from diffusive flux in y-dir</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                            + (tau13(i  , j  , k+1) - tau13(i  , j  ,k  )) * dzinv );     <span class="comment">// Contribution to x-mom eqn from diffusive flux in z-dir;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        diffContrib      /= 0.5*(detJ(i,j,k) + detJ(i-1,j,k));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        rho_u_rhs(i,j,k) -= diffContrib;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    },</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        Real mf   = mf_m(i,j,0);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        Real diffContrib  = ( (tau21(i+1, j  , k  ) - tau21(i  , j  , k  )) * dxinv * mf   <span class="comment">// Contribution to y-mom eqn from diffusive flux in x-dir</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                            + (tau22(i  , j  , k  ) - tau22(i  , j-1, k  )) * dyinv * mf   <span class="comment">// Contribution to y-mom eqn from diffusive flux in y-dir</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                            + (tau23(i  , j  , k+1) - tau23(i  , j  , k  )) * dzinv );     <span class="comment">// Contribution to y-mom eqn from diffusive flux in z-dir;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        diffContrib      /= 0.5*(detJ(i,j,k) + detJ(i,j-1,k));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        rho_v_rhs(i,j,k) -= diffContrib;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    },</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        Real mf   = mf_m(i,j,0);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        Real diffContrib  = ( (tau31(i+1, j  , k  ) - tau31(i  , j  , k  )) * dxinv * mf   <span class="comment">// Contribution to z-mom eqn from diffusive flux in x-dir</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                            + (tau32(i  , j+1, k  ) - tau32(i  , j  , k  )) * dyinv * mf   <span class="comment">// Contribution to z-mom eqn from diffusive flux in y-dir</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                            + (tau33(i  , j  , k  ) - tau33(i  , j  , k-1)) * dzinv );     <span class="comment">// Contribution to z-mom eqn from diffusive flux in z-dir;</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        diffContrib      /= 0.5*(detJ(i,j,k) + detJ(i,j,k-1));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        rho_w_rhs(i,j,k) -= diffContrib;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    });</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="ttc" id="aDiffusionSrcForMom__T_8cpp_html_a5be1b6106c3b3bfa10d9514deba67270"><div class="ttname"><a href="DiffusionSrcForMom__T_8cpp.html#a5be1b6106c3b3bfa10d9514deba67270">DiffusionSrcForMom_T</a></div><div class="ttdeci">void DiffusionSrcForMom_T(const Box &amp;bxx, const Box &amp;bxy, const Box &amp;bxz, const Array4&lt; Real &gt; &amp;rho_u_rhs, const Array4&lt; Real &gt; &amp;rho_v_rhs, const Array4&lt; Real &gt; &amp;rho_w_rhs, const Array4&lt; const Real &gt; &amp;tau11, const Array4&lt; const Real &gt; &amp;tau22, const Array4&lt; const Real &gt; &amp;tau33, const Array4&lt; const Real &gt; &amp;tau12, const Array4&lt; const Real &gt; &amp;tau13, const Array4&lt; const Real &gt; &amp;tau21, const Array4&lt; const Real &gt; &amp;tau23, const Array4&lt; const Real &gt; &amp;tau31, const Array4&lt; const Real &gt; &amp;tau32, const Array4&lt; const Real &gt; &amp;cons, const Array4&lt; const Real &gt; &amp;detJ, const DiffChoice &amp;diffChoice, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv, const Array4&lt; const Real &gt; &amp;mf_m, const Array4&lt; const Real &gt; &amp;, const Array4&lt; const Real &gt; &amp;)</div><div class="ttdef"><b>Definition:</b> DiffusionSrcForMom_T.cpp:32</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
-<div class="ttc" id="anamespaceVars_html_a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#a4d83f9f2eeb1164765959831280edce3a47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:82</div></div>
-<div class="ttc" id="astructDiffChoice_html_a4df179b6e7d84efc89a22ac5900f98c8"><div class="ttname"><a href="structDiffChoice.html#a4df179b6e7d84efc89a22ac5900f98c8">DiffChoice::rho0_trans</a></div><div class="ttdeci">amrex::Real rho0_trans</div><div class="ttdef"><b>Definition:</b> DiffStruct.H:83</div></div>
-<div class="ttc" id="astructDiffChoice_html_aed5c75ec58e358a735d97869147b2baf"><div class="ttname"><a href="structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf">DiffChoice::molec_diff_type</a></div><div class="ttdeci">MolecDiffType molec_diff_type</div><div class="ttdef"><b>Definition:</b> DiffStruct.H:76</div></div>
 </div><!-- fragment -->
 </div>
 </div>
