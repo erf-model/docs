@@ -1,5 +1,10 @@
 var NAVTREEINDEX6 =
 {
+"classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f":[2,0,39,4],
+"classProblemBase.html#ac7201619fcd9464f851b0cae82dfbcd1":[2,0,39,0],
+"classProblemBase.html#ad1a7277d332001542789e488458096b9":[2,0,39,2],
+"classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda":[2,0,39,9],
+"classProblemBase.html#aef7d3d9788867d83e6ec8b2c9499de56":[2,0,39,1],
 "classProblemBase.html#afea9b8ed327ad86ee7c66588dd014eb3":[2,0,39,6],
 "classRadConstants.html":[2,0,41],
 "classRadConstants.html#a06d010a733e82bb2e8a6651c6e92cf51":[2,0,41,26],
@@ -244,10 +249,5 @@ var NAVTREEINDEX6 =
 "classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d":[2,0,46,0,4],
 "classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455":[2,0,46,0,2],
 "classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db":[2,0,46,0,1],
-"classSatMethods.html#a8458bd6a233082c463c070ddc692080f":[2,0,46,7],
-"classSatMethods.html#a8668cfc2892409c9aaeb26762486ac50":[2,0,46,9],
-"classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f":[2,0,46,4],
-"classSatMethods.html#a97d1392753f7f866850e99c89c815bcf":[2,0,46,10],
-"classSatMethods.html#a9a256423ef50446cfdf6d4dcc1c1f73b":[2,0,46,8],
-"classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758":[2,0,46,2]
+"classSatMethods.html#a8458bd6a233082c463c070ddc692080f":[2,0,46,7]
 };

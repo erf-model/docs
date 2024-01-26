@@ -1,5 +1,10 @@
 var NAVTREEINDEX4 =
 {
+"classERFFillPatcher.html#a69bc23658f5c545f654c7ddd0cabb105":[2,0,19,4],
+"classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67":[2,0,19,10],
+"classERFFillPatcher.html#a83a91e2dc7bd7c39a27327024814061c":[2,0,19,26],
+"classERFFillPatcher.html#a874bf44ab38e936013bbf8454a41a680":[2,0,19,16],
+"classERFFillPatcher.html#a89f24e6cfe30a2180b1667aead7edf28":[2,0,19,14],
 "classERFFillPatcher.html#a9d188e7b7e85221b257799a5a9c5098e":[2,0,19,29],
 "classERFFillPatcher.html#aa1dd4ccdd7812057d8ee529015e3750d":[2,0,19,8],
 "classERFFillPatcher.html#aa835a8e38bc35601c1b394a4183edf22":[2,0,19,2],
@@ -244,10 +249,5 @@ var NAVTREEINDEX4 =
 "classMam4__aer.html#ae1eea21725e40b02e21086cd73dc9d66":[2,0,25,9],
 "classMam4__aer.html#afcd94bccbfcc44e6a5d8262abc42a9ca":[2,0,25,17],
 "classMam4__aer.html#afe4495578dc4adefe7b2ab2780aee8ee":[2,0,25,16],
-"classMam4__aer.html#afe9a0c7a84cd95438887533485fcc382":[2,0,25,30],
-"classMamConstituents.html":[2,0,26],
-"classMamConstituents.html#a00c16dcafa756dac9f1e3191c39cf45a":[2,0,26,11],
-"classMamConstituents.html#a00fcbe86b80e26221e3895c920d7cbc2":[2,0,26,39],
-"classMamConstituents.html#a036428179a899d517fc19379ab73e22f":[2,0,26,40],
-"classMamConstituents.html#a05b4d113513de18b2e7bbdc4e9cb4dbf":[2,0,26,73]
+"classMam4__aer.html#afe9a0c7a84cd95438887533485fcc382":[2,0,25,30]
 };

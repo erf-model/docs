@@ -75,13 +75,13 @@ var NAVTREEINDEX =
 "ERF__PhysBCFunct_8cpp.html",
 "Rad__constants_8H.html",
 "classERF.html#a13fc8f3a00573ee7735c3228316164a9",
-"classERFFillPatcher.html#a9d188e7b7e85221b257799a5a9c5098e",
-"classMamConstituents.html#a06375fcfa88eed7c0b24a217a75ab454",
-"classProblemBase.html#afea9b8ed327ad86ee7c66588dd014eb3",
-"classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3",
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705",
-"structSolverChoice.html#a06a0dd1c8f7c1ed73a4f8d24b6b31cdf",
-"structncutils_1_1NCVar.html#a0a1082e40bee181e99e04ca81311bb70"
+"classERFFillPatcher.html#a69bc23658f5c545f654c7ddd0cabb105",
+"classMamConstituents.html",
+"classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f",
+"classSatMethods.html#a8668cfc2892409c9aaeb26762486ac50",
+"m2005__effradius_8H_source.html",
+"structPhysProp_1_1physprop__t.html#ad3d6e9851177a676ab13788002e83bc0",
+"structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
