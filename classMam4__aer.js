@@ -1,7 +1,7 @@
 var classMam4__aer =
 [
     [ "binterp", "classMam4__aer.html#ac1ba4ccab45c000472b4d40cb43c9ef9", null ],
-    [ "initialize", "classMam4__aer.html#ad26a9b5e3fc355d5102328b86621b8df", null ],
+    [ "initialize", "classMam4__aer.html#a54577b94ef6180a27a5f0b5ab7e1b022", null ],
     [ "modal_aero_calcsize_diag", "classMam4__aer.html#adedd31f2c7c2a293e6f3dfc4818b175d", null ],
     [ "modal_aero_lw", "classMam4__aer.html#a893de418ed6818eeece9ed80b72cb685", null ],
     [ "modal_aero_sw", "classMam4__aer.html#a2327a69b0d90bb5e4d77f8864a1196f8", null ],
