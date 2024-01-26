@@ -7358,7 +7358,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="comment">// Read bdy_data files</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a> == <span class="stringliteral">&quot;real&quot;</span>) {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordflow">if</span> ((<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a>==<span class="stringliteral">&quot;real&quot;</span>) || (<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a>=<span class="stringliteral">&quot;metgrid&quot;</span>)) {</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keywordtype">int</span> ioproc = ParallelDescriptor::IOProcessorNumber();  <span class="comment">// I/O rank</span></div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordtype">int</span> num_time;</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordtype">int</span> num_var;</div>
@@ -9883,7 +9883,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;   <span class="comment">// Write bdy_data files</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;   <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor() &amp;&amp; (<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a> == <span class="stringliteral">&quot;real&quot;</span>)) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;   <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor() &amp;&amp; ((<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a>==<span class="stringliteral">&quot;real&quot;</span>) || (<a class="code" href="classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7">init_type</a>=<span class="stringliteral">&quot;metgrid&quot;</span>))) {</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;     <span class="comment">// Vector dimensions</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;     <span class="keywordtype">int</span> num_time = bdy_data_xlo.size();</div>
