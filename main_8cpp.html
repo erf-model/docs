@@ -432,7 +432,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    BL_PROFILE_VAR_STOP(pmain);</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    amrex::Finalize();</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_MPI</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    MPI_Finalize();</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
 <div class="ttc" id="aclassERF_html"><div class="ttname"><a href="classERF.html">ERF</a></div><div class="ttdef"><b>Definition:</b> ERF.H:88</div></div>
 <div class="ttc" id="aclassERF_html_a0be12798b46f52fa4b5a995f147c3f96"><div class="ttname"><a href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96">ERF::Evolve</a></div><div class="ttdeci">void Evolve()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:249</div></div>
 <div class="ttc" id="aclassERF_html_a1a8eb6bc00080cdbd8df28f6a321ac72"><div class="ttname"><a href="classERF.html#a1a8eb6bc00080cdbd8df28f6a321ac72">ERF::print_banner</a></div><div class="ttdeci">static void print_banner(MPI_Comm, std::ostream &amp;)</div><div class="ttdef"><b>Definition:</b> console_io.cpp:59</div></div>
