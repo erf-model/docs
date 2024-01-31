@@ -1,5 +1,8 @@
 var NAVTREEINDEX7 =
 {
+"classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455":[2,0,46,0,2],
+"classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db":[2,0,46,0,1],
+"classSatMethods.html#a8458bd6a233082c463c070ddc692080f":[2,0,46,7],
 "classSatMethods.html#a8668cfc2892409c9aaeb26762486ac50":[2,0,46,9],
 "classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f":[2,0,46,4],
 "classSatMethods.html#a97d1392753f7f866850e99c89c815bcf":[2,0,46,10],
@@ -111,8 +114,8 @@ var NAVTREEINDEX7 =
 "dir_fbd11baa4baa1a8b78c4a3d08373cbc6.html":[3,0,1,8],
 "dir_fc0c15590968603ac439df7b0a572228.html":[3,0,1,3],
 "files.html":[3,0],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -120,8 +123,8 @@ var NAVTREEINDEX7 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1,0],
 "functions_func.html":[2,3,1],
+"functions_func.html":[2,3,1,0],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
@@ -226,8 +229,8 @@ var NAVTREEINDEX7 =
 "globals_y.html":[3,1,0,22],
 "globals_z.html":[3,1,0,23],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX7 =
 "init__density__hse__dry__terrain_8H.html#a2e1d042f9d82e4b78d00e99ab25e9311":[3,0,1,9,3,0],
 "init__density__hse__dry__terrain_8H_source.html":[3,0,1,9,3],
 "init__rayleigh__damping_8H.html":[3,0,1,9,4],
-"init__rayleigh__damping_8H.html#aa335c764bf5d7d8292bdde6c45d05473":[3,0,1,9,4,0],
-"init__rayleigh__damping_8H_source.html":[3,0,1,9,4],
-"m2005__effradius_8H.html":[3,0,1,10,10],
-"m2005__effradius_8H.html#aa8be1a517640718ec08df40a3613244a":[3,0,1,10,10,0]
+"init__rayleigh__damping_8H.html#aa335c764bf5d7d8292bdde6c45d05473":[3,0,1,9,4,0]
 };

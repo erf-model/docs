@@ -9,5 +9,6 @@ var classProblemBase =
     [ "init_custom_terrain", "classProblemBase.html#afea9b8ed327ad86ee7c66588dd014eb3", null ],
     [ "init_uniform", "classProblemBase.html#a6752f5d7122d68914e67896d21db6c43", null ],
     [ "name", "classProblemBase.html#a3a8fb70110fb25623cdfa7b508dee9cf", null ],
+    [ "update_rhotheta_sources", "classProblemBase.html#ad8f582edde4d124612f67d9d2a17f4a4", null ],
     [ "base_parms", "classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda", null ]
 ];

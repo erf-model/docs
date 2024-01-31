@@ -13,6 +13,8 @@ var structSolverChoice =
     [ "coriolis_factor", "structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3", null ],
     [ "cosphi", "structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f", null ],
     [ "coupling_type", "structSolverChoice.html#af976afa61859c07e6249963edc367c2d", null ],
+    [ "custom_forcing_prim_vars", "structSolverChoice.html#aae4f377d36d01b85a1f322c45009ac75", null ],
+    [ "custom_rhotheta_forcing", "structSolverChoice.html#a4e81a09c9f454c680568b7776a3ed90e", null ],
     [ "diffChoice", "structSolverChoice.html#a396122e87a3d15c4ec8666d7dd18c095", null ],
     [ "do_cloud", "structSolverChoice.html#af352bb75ceaeae4ac534d3378fbf393a", null ],
     [ "do_precip", "structSolverChoice.html#a766e5884354ed6483704f8257036ee75", null ],

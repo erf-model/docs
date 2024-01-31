@@ -1,5 +1,8 @@
 var NAVTREEINDEX8 =
 {
+"init__rayleigh__damping_8H_source.html":[3,0,1,9,4],
+"m2005__effradius_8H.html":[3,0,1,10,10],
+"m2005__effradius_8H.html#aa8be1a517640718ec08df40a3613244a":[3,0,1,10,10,0],
 "m2005__effradius_8H_source.html":[3,0,1,10,10],
 "main_8cpp.html":[3,0,1,23],
 "main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[3,0,1,23,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX8 =
 "structPhysProp_1_1physprop__t.html#aa86746c3ce43b7a278d78276bbe0d153":[2,0,37,0,10],
 "structPhysProp_1_1physprop__t.html#aacc68f3bfaf1bcb4d76c0e49aa3d81fb":[2,0,37,0,16],
 "structPhysProp_1_1physprop__t.html#aad14342b28b8939c5ae115605318ed02":[2,0,37,0,43],
-"structPhysProp_1_1physprop__t.html#abbcc9ba3c0f329c98e7ba078f2ebf1dc":[2,0,37,0,42],
-"structPhysProp_1_1physprop__t.html#acc1135d01fd7ca5a6f0ba980e23e5a55":[2,0,37,0,15],
-"structPhysProp_1_1physprop__t.html#accf672f5038e149841b092ffb9ee1ba1":[2,0,37,0,30],
-"structPhysProp_1_1physprop__t.html#ad1a2b4cadbb2d65df2caff3232e1ab63":[2,0,37,0,18]
+"structPhysProp_1_1physprop__t.html#abbcc9ba3c0f329c98e7ba078f2ebf1dc":[2,0,37,0,42]
 };
