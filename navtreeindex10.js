@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"structmost__data.html":[2,0,30],
 "structmost__data.html#a1acd5276639042ca0834c56656302ea6":[2,0,30,9],
 "structmost__data.html#a4488059550159398fd2cddaf4d37f31b":[2,0,30,3],
 "structmost__data.html#a51b78fb4a4b8fb6aa512d4bd4fcd3cd7":[2,0,30,1],

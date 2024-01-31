@@ -1,5 +1,12 @@
 var NAVTREEINDEX1 =
 {
+"ERF__FillPatcher_8H.html":[3,0,1,1,11],
+"ERF__FillPatcher_8H_source.html":[3,0,1,1,11],
+"ERF__FillPatcher_8cpp.html":[3,0,1,1,10],
+"ERF__MRI_8H.html":[3,0,1,11,11],
+"ERF__MRI_8H_source.html":[3,0,1,11,11],
+"ERF__PhysBCFunct_8H.html":[3,0,1,1,13],
+"ERF__PhysBCFunct_8H_source.html":[3,0,1,1,13],
 "ERF__PhysBCFunct_8cpp.html":[3,0,1,1,12],
 "ERF__PoissonSolve_8cpp.html":[3,0,1,12,1],
 "ERF__ReadBndryPlanes_8H.html":[3,0,1,5,3],
@@ -42,11 +49,11 @@ var NAVTREEINDEX1 =
 "ERF__make__fast__coeffs_8cpp.html#a199c52fccf8610503b854942e5817efe":[3,0,1,11,10,0],
 "ERF__make__new__level_8cpp.html":[3,0,1,19],
 "ERF__slow__rhs__inc_8cpp.html":[3,0,1,11,12],
-"ERF__slow__rhs__inc_8cpp.html#ac185adaada7ea617cbbf856da0b354a7":[3,0,1,11,12,0],
+"ERF__slow__rhs__inc_8cpp.html#acb6bd6e38218af3ce90b89b20785658c":[3,0,1,11,12,0],
 "ERF__slow__rhs__post_8cpp.html":[3,0,1,11,13],
 "ERF__slow__rhs__post_8cpp.html#a59883c2dec3aeac2dcc289c3bfdff683":[3,0,1,11,13,0],
 "ERF__slow__rhs__pre_8cpp.html":[3,0,1,11,14],
-"ERF__slow__rhs__pre_8cpp.html#ad8f29bb636a4587859a13f142753aa58":[3,0,1,11,14,0],
+"ERF__slow__rhs__pre_8cpp.html#ad45bad3781c80e16be26068785bc4111":[3,0,1,11,14,0],
 "Ebert__curry_8H.html":[3,0,1,10,6],
 "Ebert__curry_8H_source.html":[3,0,1,10,6],
 "EddyViscosity_8H.html":[3,0,1,3,10],
@@ -242,12 +249,5 @@ var NAVTREEINDEX1 =
 "Parameterizations_8H_source.html":[3,0,1,10,16],
 "ParticleData_8H.html":[3,0,1,8,4],
 "ParticleData_8H_source.html":[3,0,1,8,4],
-"Phys__prop_8H.html":[3,0,1,10,17],
-"Phys__prop_8H_source.html":[3,0,1,10,17],
-"PlaneAverage_8H.html":[3,0,1,12,10],
-"PlaneAverage_8H_source.html":[3,0,1,12,10],
-"Plotfile_8cpp.html":[3,0,1,5,16],
-"Plotfile_8cpp.html#a1f8554e7b211b0acfc202e8a600e7d67":[3,0,1,5,16,0],
-"PrecipFall_8cpp.html":[3,0,1,6,3,5],
-"Precip_8cpp.html":[3,0,1,6,3,4]
+"Phys__prop_8H.html":[3,0,1,10,17]
 };

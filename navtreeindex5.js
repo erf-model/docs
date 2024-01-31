@@ -1,6 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"classMam4__aer.html#afe4495578dc4adefe7b2ab2780aee8ee":[2,0,25,16],
 "classMam4__aer.html#afe9a0c7a84cd95438887533485fcc382":[2,0,25,30],
 "classMamConstituents.html":[2,0,26],
 "classMamConstituents.html#a00c16dcafa756dac9f1e3191c39cf45a":[2,0,26,11],
@@ -249,5 +248,6 @@ var NAVTREEINDEX5 =
 "classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949":[2,0,38,9],
 "classProblemBase.html":[2,0,39],
 "classProblemBase.html#a3a8fb70110fb25623cdfa7b508dee9cf":[2,0,39,8],
-"classProblemBase.html#a6752f5d7122d68914e67896d21db6c43":[2,0,39,7]
+"classProblemBase.html#a6752f5d7122d68914e67896d21db6c43":[2,0,39,7],
+"classProblemBase.html#a697431ccfbb77463f7535bf941106985":[2,0,39,5]
 };

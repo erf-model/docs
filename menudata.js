@@ -182,6 +182,7 @@ var menudata={children:[
 {text:"r",url:"globals_r.html#index_r"},
 {text:"s",url:"globals_s.html#index_s"},
 {text:"t",url:"globals_t.html#index_t"},
+{text:"u",url:"globals_u.html#index_u"},
 {text:"v",url:"globals_v.html#index_v"},
 {text:"w",url:"globals_w.html#index_w"},
 {text:"x",url:"globals_x.html#index_x"},
@@ -230,4 +231,5 @@ var menudata={children:[
 {text:"v",url:"globals_vars.html#index_v"}]},
 {text:"Typedefs",url:"globals_type.html"},
 {text:"Enumerations",url:"globals_enum.html"},
+{text:"Enumerator",url:"globals_eval.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

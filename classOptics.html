@@ -153,7 +153,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa4a9d3efc9d464090f9a803bdab51ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54463b4d74c22934fcbf36a7c95f0b3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptics.html#a54463b4d74c22934fcbf36a7c95f0b3f">set_aerosol_optics_sw</a> (int icall, int ncol, int nlev, int nswbands, real dt, const int1d &amp;night_indices, bool is_cmip6_volc, const real3d &amp;tau_out, const real3d &amp;ssa_out, const real3d &amp;asm_out, const real2d &amp;clear_rh)</td></tr>
 <tr class="separator:a54463b4d74c22934fcbf36a7c95f0b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecf608be7db530dc74beb0a03b2279f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptics.html#aecf608be7db530dc74beb0a03b2279f2">set_aerosol_optics_lw</a> (int icall, real dt, bool is_cmip6_volc, const real2d &amp;zi, const real3d &amp;tau, const real2d &amp;clear_rh)</td></tr>
+<tr class="memitem:aecf608be7db530dc74beb0a03b2279f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptics.html#aecf608be7db530dc74beb0a03b2279f2">set_aerosol_optics_lw</a> (int icall, real dt, bool is_cmip6_volc, const real2d &amp;zi, const real3d &amp;<a class="el" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, const real2d &amp;clear_rh)</td></tr>
 <tr class="separator:aecf608be7db530dc74beb0a03b2279f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a078568b5fcba367944981fe065623e0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptics.html#a078568b5fcba367944981fe065623e0c">mcica_subcol_mask</a> (int ngpt, int ncol, int nlev, const real2d &amp;cldfrac, const bool3d &amp;iscloudy)</td></tr>
 <tr class="separator:a078568b5fcba367944981fe065623e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1418,9 +1418,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                                                        {</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;   <span class="comment">// Get aerosol absorption optical depth from CAM routine</span></div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;   yakl::memset(tau, 0.);</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;   <a class="code" href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">aero_optics</a>.<a class="code" href="classAerRadProps.html#a6aabfa89e9a9d91bae79c7a0d91f17b3">aer_rad_props_lw</a>(is_cmip6_volc, icall, dt, zi, tau, clear_rh);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;   yakl::memset(<a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, 0.);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;   <a class="code" href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">aero_optics</a>.<a class="code" href="classAerRadProps.html#a6aabfa89e9a9d91bae79c7a0d91f17b3">aer_rad_props_lw</a>(is_cmip6_volc, icall, dt, zi, <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, clear_rh);</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;}</div>
+<div class="ttc" id="aDataStruct_8H_html_a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f"><div class="ttname"><a href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a></div><div class="ttdeci">@ tau</div><div class="ttdef"><b>Definition:</b> DataStruct.H:40</div></div>
 <div class="ttc" id="aclassAerRadProps_html_a6aabfa89e9a9d91bae79c7a0d91f17b3"><div class="ttname"><a href="classAerRadProps.html#a6aabfa89e9a9d91bae79c7a0d91f17b3">AerRadProps::aer_rad_props_lw</a></div><div class="ttdeci">void aer_rad_props_lw(const bool &amp;is_cmip6_volc, const int &amp;list_idx, const real &amp;dt, const real2d &amp;zi, const real3d &amp;odap_aer, const real2d &amp;clear_rh)</div><div class="ttdef"><b>Definition:</b> Aero_rad_props.cpp:279</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1569,13 +1570,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;      <span class="comment">// are set to zero in aer_rad_props_sw as far as I can tell.</span></div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;      <span class="comment">//</span></div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;      <span class="comment">// NOTE: dimension ordering is different than for cloud optics!</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;      real3d tau(<span class="stringliteral">&quot;tau&quot;</span>, ncol, nlev+1, nswbands);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;      real3d <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>(<span class="stringliteral">&quot;tau&quot;</span>, ncol, nlev+1, nswbands);</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;      real3d tau_w(<span class="stringliteral">&quot;tau_w&quot;</span>, ncol, nlev+1, nswbands);</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;      real3d tau_w_g(<span class="stringliteral">&quot;tau_w_g&quot;</span>, ncol, nlev+1, nswbands);</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;      real3d tau_w_f(<span class="stringliteral">&quot;tau_w_f&quot;</span>, ncol, nlev+1, nswbands);</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;      <span class="comment">// Get aerosol absorption optical depth from CAM routine</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;      yakl::memset(tau, 0.);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;      yakl::memset(<a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, 0.);</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;      yakl::memset(tau_w, 0.);</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;      yakl::memset(tau_w_g, 0.);</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;      yakl::memset(tau_w_f, 0.);</div>
@@ -1589,15 +1590,15 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;      <a class="code" href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">aero_optics</a>.<a class="code" href="classAerRadProps.html#a433097bd85637100b16f3e120e9d6fa1">aer_rad_props_sw</a>(icall, dt,</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;           ic_host(1), night_indices, is_cmip6_volc,</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;           tau, tau_w, tau_w_g, tau_w_f, clear_rh);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;           <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, tau_w, tau_w_g, tau_w_f, clear_rh);</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;      <span class="comment">// Extract quantities from products</span></div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;      parallel_for(SimpleBounds&lt;3&gt;(ncol, nlev, nswbands), YAKL_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev, <span class="keywordtype">int</span> iband) {</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="comment">// Copy cloud optical depth over directly</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        tau_out(icol,ilev,iband) = tau(icol,ilev,iband);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        tau_out(icol,ilev,iband) = <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>(icol,ilev,iband);</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="comment">// Extract single scattering albedo from the product-defined fields</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">if</span> (tau(icol,ilev,iband) &gt; 0) {</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;          ssa_out(icol,ilev,iband) = tau_w(icol,ilev,iband) / tau(icol,ilev,iband);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>(icol,ilev,iband) &gt; 0) {</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;          ssa_out(icol,ilev,iband) = tau_w(icol,ilev,iband) / <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>(icol,ilev,iband);</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;          ssa_out(icol,ilev,iband) = 1.;</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        }</div>

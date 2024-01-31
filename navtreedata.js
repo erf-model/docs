@@ -63,6 +63,7 @@ var NAVTREE =
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
+        [ "Enumerator", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -72,16 +73,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ABLMost_8H.html",
-"ERF__PhysBCFunct_8cpp.html",
-"Rad__constants_8H.html",
-"classERF.html#a13cc5b9b032b7948ecb325ca92e026f0",
-"classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c",
-"classMam4__aer.html#afe4495578dc4adefe7b2ab2780aee8ee",
-"classProblemBase.html#a697431ccfbb77463f7535bf941106985",
-"classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455",
-"init__rayleigh__damping_8H_source.html",
-"structPhysProp_1_1physprop__t.html#acc1135d01fd7ca5a6f0ba980e23e5a55",
-"structmost__data.html#a1acd5276639042ca0834c56656302ea6"
+"ERF__FillPatcher_8H.html",
+"Phys__prop_8H_source.html",
+"classERF.html#a0c1fdcfbc9cbd6cb13e41d1170b161f8",
+"classERFFillPatcher.html#a61c68ee600be65606db582402599c1d4",
+"classMam4__aer.html#afe9a0c7a84cd95438887533485fcc382",
+"classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f",
+"classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db",
+"init__rayleigh__damping_8H.html#a3e175bfe4dac6bfbd6e929f9c5d75fda",
+"structPhysProp_1_1physprop__t.html#abbcc9ba3c0f329c98e7ba078f2ebf1dc",
+"structmost__data.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
