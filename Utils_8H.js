@@ -6,7 +6,7 @@ var Utils_8H =
     [ "make_zcc", "Utils_8H.html#ab405f3b5732dda49ad076fab09bfbfc8", null ],
     [ "MomentumToVelocity", "Utils_8H.html#acac8a65938f97c32e8d002e5b84b5d91", null ],
     [ "VelocityToMomentum", "Utils_8H.html#a087ad6f9e01593fb0cd3624ff6caaf14", null ],
-    [ "wrfbdy_compute_interior_ghost_rhs", "Utils_8H.html#a6920d4cf7df2008238b7f2ef2f3b917d", null ],
-    [ "wrfbdy_compute_laplacian_relaxation", "Utils_8H.html#afdc3f8acd5552239c6775fc003278f4c", null ],
-    [ "wrfbdy_zero_rhs_in_set_region", "Utils_8H.html#ab4b8c903f1696dbd4ee7bcbc2c1dca17", null ]
+    [ "wrfbdy_compute_interior_ghost_rhs", "Utils_8H.html#a0c1c824690661685b8d36eca4a80613b", null ],
+    [ "wrfbdy_compute_laplacian_relaxation", "Utils_8H.html#af0d5ce71ebff8b1ef263dbaccfaf7758", null ],
+    [ "wrfbdy_set_rhs_in_spec_region", "Utils_8H.html#af1b2ed87ddd47a5a3ac91fe6dd2ade3d", null ]
 ];
