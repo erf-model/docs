@@ -835,7 +835,7 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                                                          dest_arr);</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                    <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,zlo) : 1;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    <span class="keywordflow">if</span> (is_land &amp;&amp; vbx.contains(i,j,k)) {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    <span class="keywordflow">if</span> (is_land &amp;&amp; lsm_flux_arr &amp;&amp; vbx.contains(i,j,k)) {</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                        lsm_flux_arr(i,j,zlo) = Tflux;</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    }</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                });</div>
