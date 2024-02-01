@@ -193,16 +193,16 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iter = 0; iter &lt; <a class="code" href="namespaceHSEutils.html#a10de540cb8ad96aea8cd080f4d1e72fa">MAX_ITER</a> &amp;&amp; !converged_hse; iter++)</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;          {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;              p_hse = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> - half_dz * r[k0] * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;              p_eos = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k0]*<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;              p_eos = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k0]*<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;              Real A = p_hse - p_eos;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;              Real dpdr = <a class="code" href="EOS_8H.html#a91cb501e961a0d0a6a3c62b5c36702cd">getdPdRgivenConstantTheta</a>(r[k0],<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;              Real dpdr = <a class="code" href="EOS_8H.html#a91cb501e961a0d0a6a3c62b5c36702cd">getdPdRgivenConstantTheta</a>(r[k0],<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;              Real drho = A / (dpdr + half_dz * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;              r[k0] = r[k0] + drho;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;              p[k0] = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k0]*<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;              p[k0] = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k0]*<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;              <span class="keywordflow">if</span> (std::abs(drho) &lt; <a class="code" href="namespaceHSEutils.html#aace33d14958f235a111e6cead400a61e">TOL</a>)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;              {</div>
@@ -224,24 +224,24 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;          r[k] = r[k-1];</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;          Real p_eos = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k]*<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;          Real p_eos = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k]*<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;          Real p_hse;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iter = 0; iter &lt; <a class="code" href="namespaceHSEutils.html#a10de540cb8ad96aea8cd080f4d1e72fa">MAX_ITER</a> &amp;&amp; !converged_hse; iter++)</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;          {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;              Real r_avg = 0.5 * (r[k-1]+r[k]);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;              p_hse = p[k-1] -  dz * r_avg * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;              p_eos = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k]*<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;              p_eos = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k]*<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;              Real A = p_hse - p_eos;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;              Real dpdr = <a class="code" href="EOS_8H.html#a91cb501e961a0d0a6a3c62b5c36702cd">getdPdRgivenConstantTheta</a>(r[k],<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;              Real dpdr = <a class="code" href="EOS_8H.html#a91cb501e961a0d0a6a3c62b5c36702cd">getdPdRgivenConstantTheta</a>(r[k],<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;              <span class="comment">// Gamma * p_0 * std::pow( (R_d * theta / p_0), Gamma) * std::pow(r[k], Gamma-1.0) ;</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;              Real drho = A / (dpdr + dz * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;              r[k] = r[k] + drho;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;              p[k] = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k]*<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;              p[k] = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k]*<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;              <span class="keywordflow">if</span> (std::abs(drho) &lt; <a class="code" href="namespaceHSEutils.html#aace33d14958f235a111e6cead400a61e">TOL</a> * r[k-1])</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;              {</div>
@@ -262,7 +262,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
 <div class="ttc" id="anamespaceHSEutils_html_a10de540cb8ad96aea8cd080f4d1e72fa"><div class="ttname"><a href="namespaceHSEutils.html#a10de540cb8ad96aea8cd080f4d1e72fa">HSEutils::MAX_ITER</a></div><div class="ttdeci">const int MAX_ITER</div><div class="ttdef"><b>Definition:</b> HSE_utils.H:13</div></div>
 <div class="ttc" id="anamespaceHSEutils_html_aace33d14958f235a111e6cead400a61e"><div class="ttname"><a href="namespaceHSEutils.html#aace33d14958f235a111e6cead400a61e">HSEutils::TOL</a></div><div class="ttdeci">const amrex::Real TOL</div><div class="ttdef"><b>Definition:</b> HSE_utils.H:14</div></div>
-<div class="ttc" id="anamespaceMicVar__FE_html_a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b"><div class="ttname"><a href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">MicVar_FE::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> FastEddy.H:27</div></div>
+<div class="ttc" id="anamespaceLsmVar__MM5_html_aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68"><div class="ttname"><a href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> MM5.H:20</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="init__density__hse__dry_8H.html#a2e1d042f9d82e4b78d00e99ab25e9311">erf_init_dens_hse()</a>.</p>
 <div class="dynheader">
@@ -380,16 +380,16 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iter = 0; iter &lt; <a class="code" href="namespaceHSEutils.html#a10de540cb8ad96aea8cd080f4d1e72fa">MAX_ITER</a> &amp;&amp; !converged_hse; iter++)</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;          {</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;              p_hse = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> - half_dz * r[k0] * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;              p_eos = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k0]*<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;              p_eos = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k0]*<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;              Real A = p_hse - p_eos;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;              Real dpdr = <a class="code" href="EOS_8H.html#a91cb501e961a0d0a6a3c62b5c36702cd">getdPdRgivenConstantTheta</a>(r[k0],<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;              Real dpdr = <a class="code" href="EOS_8H.html#a91cb501e961a0d0a6a3c62b5c36702cd">getdPdRgivenConstantTheta</a>(r[k0],<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;              Real drho = A / (dpdr + half_dz * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;              r[k0] = r[k0] + drho;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;              p[k0] = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k0]*<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;              p[k0] = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k0]*<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;              <span class="keywordflow">if</span> (std::abs(drho) &lt; <a class="code" href="namespaceHSEutils.html#aace33d14958f235a111e6cead400a61e">TOL</a>)</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;              {</div>
@@ -413,23 +413,23 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;          r[k] = r[k-1];</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;          Real p_eos = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k]*<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;          Real p_eos = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k]*<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;          Real p_hse;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iter = 0; iter &lt; <a class="code" href="namespaceHSEutils.html#a10de540cb8ad96aea8cd080f4d1e72fa">MAX_ITER</a> &amp;&amp; !converged_hse; iter++)</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;          {</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;              p_hse = p[k-1] -  dz_loc * 0.5 * (r[k-1]+r[k]) * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;              p_eos = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k]*<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;              p_eos = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k]*<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;              Real A = p_hse - p_eos;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;              Real dpdr = <a class="code" href="EOS_8H.html#a91cb501e961a0d0a6a3c62b5c36702cd">getdPdRgivenConstantTheta</a>(r[k],<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;              Real dpdr = <a class="code" href="EOS_8H.html#a91cb501e961a0d0a6a3c62b5c36702cd">getdPdRgivenConstantTheta</a>(r[k],<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;              Real drho = A / (dpdr + dz_loc * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>);</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;              r[k] = r[k] + drho;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;              p[k] = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k]*<a class="code" href="namespaceMicVar__FE.html#a585768336b465284ea76634770e2c500a4c27eb36633887220639b72249cdef2b">theta</a>);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;              p[k] = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(r[k]*<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">theta</a>);</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;              <span class="keywordflow">if</span> (std::abs(drho) &lt; <a class="code" href="namespaceHSEutils.html#aace33d14958f235a111e6cead400a61e">TOL</a> * r[k-1])</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;              {</div>

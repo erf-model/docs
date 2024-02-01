@@ -31,6 +31,7 @@ var hierarchy =
       [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ]
     ] ],
     [ "LinInterp::InterpType", "structLinInterp_1_1InterpType.html", null ],
+    [ "LandSurface", "classLandSurface.html", null ],
     [ "LinInterp", "classLinInterp.html", null ],
     [ "Mam4_aer", "classMam4__aer.html", null ],
     [ "MamConstituents", "classMamConstituents.html", null ],
@@ -54,6 +55,10 @@ var hierarchy =
       [ "FastEddy", "classFastEddy.html", null ],
       [ "Kessler", "classKessler.html", null ],
       [ "SAM", "classSAM.html", null ]
+    ] ],
+    [ "NullSurf", "classNullSurf.html", [
+      [ "MM5", "classMM5.html", null ],
+      [ "SLM", "classSLM.html", null ]
     ] ],
     [ "Optics", "classOptics.html", null ],
     [ "PhysProp", "classPhysProp.html", null ],

@@ -45,6 +45,8 @@ var namespaces_dup =
     ] ],
     [ "InterpType", "namespaceInterpType.html", null ],
     [ "IntVar", "namespaceIntVar.html", null ],
+    [ "LsmVar_MM5", "namespaceLsmVar__MM5.html", null ],
+    [ "LsmVar_SLM", "namespaceLsmVar__SLM.html", null ],
     [ "MetGridBdyVars", "namespaceMetGridBdyVars.html", null ],
     [ "MicVar", "namespaceMicVar.html", null ],
     [ "MicVar_FE", "namespaceMicVar__FE.html", null ],

@@ -23,6 +23,7 @@ var structSolverChoice =
     [ "gravity", "structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b", null ],
     [ "grid_stretching_ratio", "structSolverChoice.html#a63b6fffe930de9eb25f92c2bafb00c00", null ],
     [ "incompressible", "structSolverChoice.html#af39df4d1618645dcc1fb8678f738e3f0", null ],
+    [ "lsm_type", "structSolverChoice.html#a43c1741535574c7e6f4fe6bf90552f31", null ],
     [ "moisture_type", "structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b", null ],
     [ "no_substepping", "structSolverChoice.html#a35e0c82996e345337368bc720bbd6070", null ],
     [ "NumDiffCoeff", "structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2", null ],

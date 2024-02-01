@@ -15,6 +15,11 @@ var DataStruct_8H =
       [ "OneWay", "DataStruct_8H.html#ad285be248c0803917aaf5cf8ce62139ba8d892b915adb5e7c957f4425253ee1d6", null ],
       [ "TwoWay", "DataStruct_8H.html#ad285be248c0803917aaf5cf8ce62139ba6c267346f8ebb889610a5a90838be815", null ]
     ] ],
+    [ "LandSurfaceType", "DataStruct_8H.html#abeec366fd5381f3bb7ba39f6e5c1e7e4", [
+      [ "SLM", "DataStruct_8H.html#abeec366fd5381f3bb7ba39f6e5c1e7e4ad3a11aacb1a63c0b2e5165c43b8ccd68", null ],
+      [ "MM5", "DataStruct_8H.html#abeec366fd5381f3bb7ba39f6e5c1e7e4a4594809823de21e46cbf63b1bcd316b5", null ],
+      [ "None", "DataStruct_8H.html#abeec366fd5381f3bb7ba39f6e5c1e7e4a6adf97f83acf6453d4a6a4b1070f3754", null ]
+    ] ],
     [ "MoistureType", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0", [
       [ "Kessler", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0af918ea9a492942625a661a22ac6af91d", null ],
       [ "SAM", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a9f1b3be4a82b11d104e4ef7f7ccb1c19", null ],
