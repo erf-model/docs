@@ -285,7 +285,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    FArrayBox temp;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Box gbx = bxcc; <span class="comment">// Note: bxcc have been grown in x/y only.</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    gbx.grow(IntVect(0,0,1));</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    temp.resize(gbx,1);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    temp.resize(gbx,1, The_Async_Arena());</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    Array4&lt;Real&gt; rhoAlpha = temp.array();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (cell_data) {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        ParallelFor(gbx,</div>
@@ -722,7 +722,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    FArrayBox temp;</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    Box gbx = bxcc; <span class="comment">// Note: bxcc have been grown in x/y only.</span></div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    gbx.grow(IntVect(0,0,1));</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    temp.resize(gbx,1);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    temp.resize(gbx,1, The_Async_Arena());</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    Array4&lt;Real&gt; rhoAlpha = temp.array();</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">if</span> (cell_data) {</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        ParallelFor(gbx,</div>

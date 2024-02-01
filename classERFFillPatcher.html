@@ -943,33 +943,30 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;          }</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      }</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      FArrayBox ccfab(cslope_bx, ncomp*AMREX_SPACEDIM);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      FArrayBox ccfab(cslope_bx, ncomp*AMREX_SPACEDIM, The_Async_Arena());</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      Array4&lt;Real&gt; <span class="keyword">const</span>&amp; tmp = ccfab.array();</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; ctmp = ccfab.const_array();</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      AsyncArray&lt;BCRec&gt; async_bcr(bcr.data(), (run_on_gpu) ? ncomp : 0);</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      BCRec <span class="keyword">const</span>* bcrp = (run_on_gpu) ? async_bcr.data() : bcr.data();</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      Elixir cceli;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      <span class="keywordflow">if</span> (run_on_gpu) { cceli = ccfab.elixir(); }</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      BCRec <span class="keyword">const</span>* bcrp = bcr.data();</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;      AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FLAG(RunOn::Gpu, cslope_bx, ncomp, i, j, k, n,</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;      {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;          mf_cell_cons_lin_interp_mcslope(i,j,k,n, tmp, crse_arr, 0, ncomp,</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                                          cdomain, ratio, bcrp);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      });</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FLAG(RunOn::Gpu, fbx, ncomp, i, j, k, n,</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;      {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;          <span class="keywordflow">if</span> (mask_arr(i,j,k) == mask_val) mf_cell_cons_lin_interp(i,j,k,n, fine_arr, 0, ctmp,</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                                                                   crse_arr, 0, ncomp, ratio);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      });</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  } <span class="comment">// MFIter</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;}</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      BCRec <span class="keyword">const</span>* bcrp = bcr.data();</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FLAG(RunOn::Gpu, cslope_bx, ncomp, i, j, k, n,</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;          mf_cell_cons_lin_interp_mcslope(i,j,k,n, tmp, crse_arr, 0, ncomp,</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                                          cdomain, ratio, bcrp);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;      });</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FLAG(RunOn::Gpu, fbx, ncomp, i, j, k, n,</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;          <span class="keywordflow">if</span> (mask_arr(i,j,k) == mask_val) mf_cell_cons_lin_interp(i,j,k,n, fine_arr, 0, ctmp,</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                                                   crse_arr, 0, ncomp, ratio);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;      });</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  } <span class="comment">// MFIter</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#a045ae741822ced1684eddf019cd7f219">Fill()</a>.</p>
 <div class="dynheader">
