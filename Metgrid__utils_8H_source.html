@@ -277,8 +277,8 @@ $(document).ready(function(){initNavTree('Metgrid__utils_8H_source.html',''); in
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    amrex::Real z0, z1;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">int</span> klow   = -1;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">int</span> khi0   = -1;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    amrex::Real dzlow =  10000.0;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    amrex::Real dzhi0 = -10000.0;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    amrex::Real dzlow =  1.0e12;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    amrex::Real dzhi0 = -1.0e12;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt; kmax_orig; kk++) {</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        amrex::Real orig_z_stag = 0.0;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;M&#39;</span>) {</div>
@@ -306,125 +306,159 @@ $(document).ready(function(){initNavTree('Metgrid__utils_8H_source.html',''); in
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                orig_z_stag = 0.5*(orig_z(i,j,kk)+orig_z(i,j-1,kk));</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            }</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        }</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        amrex::Real dz = <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - orig_z_stag;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">if</span> ((dz &lt; 0.0) &amp;&amp; (dz &gt; dzhi0)) {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            dzhi0 = dz;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            khi0  = kk;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            z1    = orig_z_stag;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        }</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">if</span> ((dz &gt;= 0.0) &amp;&amp; (dz &lt; dzlow)) {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            dzlow = dz;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            klow  = kk;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            z0    = orig_z_stag;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    } <span class="comment">// kk</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">if</span> (klow == -1) {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="comment">// extrapolate</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordtype">int</span> khi1   = -1;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        amrex::Real dzhi1 = -10000.0;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt; kmax_orig; kk++) {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            amrex::Real orig_z_stag = 0.0;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;M&#39;</span>) {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                orig_z_stag = orig_z(i,j,kk);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            }</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;X&#39;</span>) {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                <span class="keywordflow">if</span> (i == 0) {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                    orig_z_stag = orig_z(i,j,kk);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i == imax_orig) {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    orig_z_stag = orig_z(imax_orig-1,j,kk);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    orig_z_stag = 0.5*(orig_z(i,j,kk)+orig_z(i-1,j,kk));</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                }</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            }</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;Y&#39;</span>) {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                <span class="keywordflow">if</span> (j == 0) {</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    orig_z_stag = orig_z(i,j,kk);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                }</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == jmax_orig) {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    orig_z_stag = orig_z(i,jmax_orig-1,kk);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                }</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                    orig_z_stag = 0.5*(orig_z(i,j,kk)+orig_z(i,j-1,kk));</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            amrex::Real dz = <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - orig_z_stag;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="keywordflow">if</span> ((dz &lt; 0.0) &amp;&amp; (dz &gt; dzhi1) &amp;&amp; (kk != khi0)) {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                dzhi1 = dz;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                khi1  = kk;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                z1    = orig_z_stag;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            }</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        amrex::Real y0 = orig_data(i,j,khi0,src_comp);</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        amrex::Real y1 = orig_data(i,j,khi1,src_comp);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordflow">return</span> ( y0-(y1-y0)/(z1-z0)*(z0-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>) );</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="comment">// interpolate</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        amrex::Real y0 = orig_data(i,j,klow,src_comp);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        amrex::Real y1 = orig_data(i,j,khi0,src_comp);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">return</span> ( y0+(y1-y0)/(z1-z0)*(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-z0) );</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    }</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;AMREX_GPU_DEVICE</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="Metgrid__utils_8H.html#a8458220de6985f12501aa040c218bff0">  287</a></span>&#160;<a class="code" href="Metgrid__utils_8H.html#a8458220de6985f12501aa040c218bff0">rh_to_mxrat</a> (<span class="keywordtype">int</span> i,</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;             <span class="keywordtype">int</span> j,</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;             <span class="keywordtype">int</span> k,</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const&gt;&amp; rhum,</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const&gt;&amp; temp,</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const&gt;&amp; <a class="code" href="namespaceMicVar__FE.html#a9ff40dc3bd24787af349499bdfb43f69a5c0fa7f0120a3ead7a99d0f8545ab606">pres</a>,</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; mxrat)</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;{</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    amrex::Real qv_max_p_safe = 10000.0; <span class="comment">// WRF default value</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    amrex::Real qv_max_flag   = 1.0e-5; <span class="comment">// WRF default value</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    amrex::Real qv_max_value  = 3.0e-6; <span class="comment">// WRF default value</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    amrex::Real qv_min_p_safe = 110000.0; <span class="comment">// WRF default value</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    amrex::Real qv_min_flag   = 1.0e-6; <span class="comment">// WRF default value</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    amrex::Real qv_min_value  = 1.0e-6; <span class="comment">// WRF default value</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    amrex::Real eps   = 0.622;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    amrex::Real svp1  = 0.6112;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    amrex::Real svp2  = 17.67;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    amrex::Real svp3  = 29.65;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    amrex::Real svpt0 = 273.15;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// WRF&#39;s method when model_config_rec%rh2qv_wrt_liquid=.true. (default behavior)</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">if</span> (temp(i,j,k) != 0.0) {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        amrex::Real es=0.01*rhum(i,j,k)*svp1*10.0*exp(svp2*(temp(i,j,k)-svpt0)/(temp(i,j,k)-svp3));</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">if</span> (es &gt;= <a class="code" href="namespaceMicVar__FE.html#a9ff40dc3bd24787af349499bdfb43f69a5c0fa7f0120a3ead7a99d0f8545ab606">pres</a>(i,j,k)/100.0) {</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <span class="comment">// vapor pressure exceeds total pressure</span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            mxrat(i,j,k) = std::pow(10.0, -6);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            mxrat(i,j,k) = amrex::max(eps*es/(<a class="code" href="namespaceMicVar__FE.html#a9ff40dc3bd24787af349499bdfb43f69a5c0fa7f0120a3ead7a99d0f8545ab606">pres</a>(i,j,k)/100.0-es), 1.0e-6);</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        }</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    }</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="comment">// I don&#39;t know why there&#39;s a fringe case handled in WRF where T is absolute zero...</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="comment">// Let&#39;s just deal with it here in case we also end up needing it.</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        mxrat(i,j,k) = 1.0e-6;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="comment">// See the below comment from WRF dyn_em/module_initialize_real.F rh_to_mxrat1.</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="comment">// For pressures above a defined level, reasonable Qv values should be</span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">// a certain value or smaller. If they are larger than this, the input data</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="comment">// probably had &quot;missing&quot; RH, and we filled in some values. This is an</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="comment">// attempt to catch those. Also, set the minimum value for the entire</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="comment">// domain that is above the selected pressure level.</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceMicVar__FE.html#a9ff40dc3bd24787af349499bdfb43f69a5c0fa7f0120a3ead7a99d0f8545ab606">pres</a>(i,j,k) &lt; qv_max_p_safe) {</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">if</span> (mxrat(i,j,k) &gt; qv_max_flag) {</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            mxrat(i,j,k) = qv_max_value;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        }</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceMicVar__FE.html#a9ff40dc3bd24787af349499bdfb43f69a5c0fa7f0120a3ead7a99d0f8545ab606">pres</a>(i,j,k) &lt; qv_min_p_safe) {</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">if</span> (mxrat(i,j,k) &lt; qv_min_flag) {</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            mxrat(i,j,k) = qv_min_value;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        }</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    }</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        amrex::Real dz = <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - orig_z_stag;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">if</span> ((dz &lt; 0.0) &amp;&amp; (dz &gt; dzhi0)) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            dzhi0 = dz;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            khi0  = kk;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            z1    = orig_z_stag;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">if</span> ((dz &gt;= 0.0) &amp;&amp; (dz &lt; dzlow)) {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            dzlow = dz;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            klow  = kk;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            z0    = orig_z_stag;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    } <span class="comment">// kk</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">// extrapolate below the bottom surface</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">if</span> (klow == -1) {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keywordtype">int</span> khi1   = -1;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        amrex::Real dzhi1 = -1.0e12;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt; kmax_orig; kk++) {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            amrex::Real orig_z_stag = 0.0;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;M&#39;</span>) {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                orig_z_stag = orig_z(i,j,kk);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;X&#39;</span>) {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                <span class="keywordflow">if</span> (i == 0) {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    orig_z_stag = orig_z(i,j,kk);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i == imax_orig) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    orig_z_stag = orig_z(imax_orig-1,j,kk);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    orig_z_stag = 0.5*(orig_z(i,j,kk)+orig_z(i-1,j,kk));</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;Y&#39;</span>) {</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                <span class="keywordflow">if</span> (j == 0) {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    orig_z_stag = orig_z(i,j,kk);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == jmax_orig) {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    orig_z_stag = orig_z(i,jmax_orig-1,kk);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    orig_z_stag = 0.5*(orig_z(i,j,kk)+orig_z(i,j-1,kk));</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            amrex::Real dz = <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - orig_z_stag;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordflow">if</span> ((dz &lt; 0.0) &amp;&amp; (dz &gt; dzhi1) &amp;&amp; (kk != khi0)) {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                dzhi1 = dz;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                khi1  = kk;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                z1    = orig_z_stag;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        amrex::Real y0 = orig_data(i,j,khi0,src_comp);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        amrex::Real y1 = orig_data(i,j,khi1,src_comp);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordflow">return</span> ( y0-(y1-y0)/(z1-z0)*(z0-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>) );</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="comment">// Extrapolate above the top surface</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (khi0 == -1) {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        khi0 = klow - 1;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordtype">int</span> khi1 = klow;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;M&#39;</span>) {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            z0 = orig_z(i,j,khi0);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;X&#39;</span>) {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="keywordflow">if</span> (i == 0) {</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                z0 = orig_z(i,j,khi0);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i == imax_orig) {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                z0 = orig_z(imax_orig-1,j,khi0);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                z0 = 0.5*(orig_z(i,j,khi0)+orig_z(i-1,j,khi0));</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;Y&#39;</span>) {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <span class="keywordflow">if</span> (j == 0) {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                z0 = orig_z(i,j,khi0);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == jmax_orig) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                z0 = orig_z(i,jmax_orig-1,khi0);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                z0 = 0.5*(orig_z(i,j,khi0)+orig_z(i,j-1,khi0));</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        }</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        amrex::Real y0 = orig_data(i,j,khi0,src_comp);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        amrex::Real y1 = orig_data(i,j,khi1,src_comp);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">return</span> ( y0+(y1-y0)/(z1-z0)*(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-z0) );</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="comment">// interpolate</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        amrex::Real y0 = orig_data(i,j,klow,src_comp);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        amrex::Real y1 = orig_data(i,j,khi0,src_comp);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keywordflow">return</span> ( y0+(y1-y0)/(z1-z0)*(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-z0) );</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    }</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno"><a class="line" href="Metgrid__utils_8H.html#a8458220de6985f12501aa040c218bff0">  321</a></span>&#160;<a class="code" href="Metgrid__utils_8H.html#a8458220de6985f12501aa040c218bff0">rh_to_mxrat</a> (<span class="keywordtype">int</span> i,</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;             <span class="keywordtype">int</span> j,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;             <span class="keywordtype">int</span> k,</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const&gt;&amp; rhum,</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const&gt;&amp; temp,</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const&gt;&amp; <a class="code" href="namespaceMicVar__FE.html#a9ff40dc3bd24787af349499bdfb43f69a5c0fa7f0120a3ead7a99d0f8545ab606">pres</a>,</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; mxrat)</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;{</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    amrex::Real qv_max_p_safe = 10000.0; <span class="comment">// WRF default value</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    amrex::Real qv_max_flag   = 1.0e-5; <span class="comment">// WRF default value</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    amrex::Real qv_max_value  = 3.0e-6; <span class="comment">// WRF default value</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    amrex::Real qv_min_p_safe = 110000.0; <span class="comment">// WRF default value</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    amrex::Real qv_min_flag   = 1.0e-6; <span class="comment">// WRF default value</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    amrex::Real qv_min_value  = 1.0e-6; <span class="comment">// WRF default value</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    amrex::Real eps   = 0.622;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    amrex::Real svp1  = 0.6112;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    amrex::Real svp2  = 17.67;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    amrex::Real svp3  = 29.65;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    amrex::Real svpt0 = 273.15;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="comment">// WRF&#39;s method when model_config_rec%rh2qv_wrt_liquid=.true. (default behavior)</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">if</span> (temp(i,j,k) != 0.0) {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        amrex::Real es=0.01*rhum(i,j,k)*svp1*10.0*exp(svp2*(temp(i,j,k)-svpt0)/(temp(i,j,k)-svp3));</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keywordflow">if</span> (es &gt;= <a class="code" href="namespaceMicVar__FE.html#a9ff40dc3bd24787af349499bdfb43f69a5c0fa7f0120a3ead7a99d0f8545ab606">pres</a>(i,j,k)/100.0) {</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <span class="comment">// vapor pressure exceeds total pressure</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            mxrat(i,j,k) = std::pow(10.0, -6);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        }</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            mxrat(i,j,k) = amrex::max(eps*es/(<a class="code" href="namespaceMicVar__FE.html#a9ff40dc3bd24787af349499bdfb43f69a5c0fa7f0120a3ead7a99d0f8545ab606">pres</a>(i,j,k)/100.0-es), 1.0e-6);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    }</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="comment">// I don&#39;t know why there&#39;s a fringe case handled in WRF where T is absolute zero...</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="comment">// Let&#39;s just deal with it here in case we also end up needing it.</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        mxrat(i,j,k) = 1.0e-6;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    }</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="comment">// See the below comment from WRF dyn_em/module_initialize_real.F rh_to_mxrat1.</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="comment">// For pressures above a defined level, reasonable Qv values should be</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="comment">// a certain value or smaller. If they are larger than this, the input data</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="comment">// probably had &quot;missing&quot; RH, and we filled in some values. This is an</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="comment">// attempt to catch those. Also, set the minimum value for the entire</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="comment">// domain that is above the selected pressure level.</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceMicVar__FE.html#a9ff40dc3bd24787af349499bdfb43f69a5c0fa7f0120a3ead7a99d0f8545ab606">pres</a>(i,j,k) &lt; qv_max_p_safe) {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">if</span> (mxrat(i,j,k) &gt; qv_max_flag) {</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            mxrat(i,j,k) = qv_max_value;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        }</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    }</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceMicVar__FE.html#a9ff40dc3bd24787af349499bdfb43f69a5c0fa7f0120a3ead7a99d0f8545ab606">pres</a>(i,j,k) &lt; qv_min_p_safe) {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keywordflow">if</span> (mxrat(i,j,k) &lt; qv_min_flag) {</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            mxrat(i,j,k) = qv_min_value;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        }</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    }</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;}</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="aEOS_8H_html"><div class="ttname"><a href="EOS_8H.html">EOS.H</a></div></div>
 <div class="ttc" id="aERF_8H_html"><div class="ttname"><a href="ERF_8H.html">ERF.H</a></div></div>
@@ -436,7 +470,7 @@ $(document).ready(function(){initNavTree('Metgrid__utils_8H_source.html',''); in
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aMetgrid__utils_8H_html_a17f199a7dc45096338305226187c8a56"><div class="ttname"><a href="Metgrid__utils_8H.html#a17f199a7dc45096338305226187c8a56">init_base_state_from_metgrid</a></div><div class="ttdeci">void init_base_state_from_metgrid(const bool use_moisture, const amrex::Real l_rdOcp, const amrex::Box &amp;valid_bx, const amrex::Vector&lt; int &gt; &amp;flag_psfc, amrex::FArrayBox &amp;state, amrex::FArrayBox &amp;r_hse_fab, amrex::FArrayBox &amp;p_hse_fab, amrex::FArrayBox &amp;pi_hse_fab, amrex::FArrayBox &amp;z_phys_nd_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_ght_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_psfc_fab, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;fabs_for_bcs, const amrex::Array4&lt; const int &gt; &amp;mask_c_arr)</div></div>
 <div class="ttc" id="aMetgrid__utils_8H_html_a491c8a5ef196d5e0811d90d74ef7428f"><div class="ttname"><a href="Metgrid__utils_8H.html#a491c8a5ef196d5e0811d90d74ef7428f">interpolate_column_metgrid</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE amrex::Real interpolate_column_metgrid(const int &amp;i, const int &amp;j, const int &amp;k, char stag, int src_comp, const amrex::Array4&lt; amrex::Real const &gt; &amp;orig_z, const amrex::Array4&lt; amrex::Real const &gt; &amp;orig_data, const amrex::Array4&lt; amrex::Real const &gt; &amp;new_z)</div><div class="ttdef"><b>Definition:</b> Metgrid_utils.H:163</div></div>
-<div class="ttc" id="aMetgrid__utils_8H_html_a8458220de6985f12501aa040c218bff0"><div class="ttname"><a href="Metgrid__utils_8H.html#a8458220de6985f12501aa040c218bff0">rh_to_mxrat</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE void rh_to_mxrat(int i, int j, int k, const amrex::Array4&lt; amrex::Real const &gt; &amp;rhum, const amrex::Array4&lt; amrex::Real const &gt; &amp;temp, const amrex::Array4&lt; amrex::Real const &gt; &amp;pres, const amrex::Array4&lt; amrex::Real &gt; &amp;mxrat)</div><div class="ttdef"><b>Definition:</b> Metgrid_utils.H:287</div></div>
+<div class="ttc" id="aMetgrid__utils_8H_html_a8458220de6985f12501aa040c218bff0"><div class="ttname"><a href="Metgrid__utils_8H.html#a8458220de6985f12501aa040c218bff0">rh_to_mxrat</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE void rh_to_mxrat(int i, int j, int k, const amrex::Array4&lt; amrex::Real const &gt; &amp;rhum, const amrex::Array4&lt; amrex::Real const &gt; &amp;temp, const amrex::Array4&lt; amrex::Real const &gt; &amp;pres, const amrex::Array4&lt; amrex::Real &gt; &amp;mxrat)</div><div class="ttdef"><b>Definition:</b> Metgrid_utils.H:321</div></div>
 <div class="ttc" id="aMetgrid__utils_8H_html_a85cf6fab999905de4234fa639771bbe1"><div class="ttname"><a href="Metgrid__utils_8H.html#a85cf6fab999905de4234fa639771bbe1">init_msfs_from_metgrid</a></div><div class="ttdeci">void init_msfs_from_metgrid(amrex::FArrayBox &amp;msfu_fab, amrex::FArrayBox &amp;msfv_fab, amrex::FArrayBox &amp;msfm_fab, const int &amp;flag_msfu, const int &amp;flag_msfv, const int &amp;flag_msfm, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_MSFU_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_MSFV_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_MSFM_fab)</div></div>
 <div class="ttc" id="aMetgrid__utils_8H_html_a92d40e10695502f2d12d5e71437b9003"><div class="ttname"><a href="Metgrid__utils_8H.html#a92d40e10695502f2d12d5e71437b9003">init_state_from_metgrid</a></div><div class="ttdeci">void init_state_from_metgrid(const bool use_moisture, const amrex::Real l_rdOcp, amrex::Box &amp;tbxc, amrex::Box &amp;tbxu, amrex::Box &amp;tbxv, amrex::FArrayBox &amp;state_fab, amrex::FArrayBox &amp;x_vel_fab, amrex::FArrayBox &amp;y_vel_fab, amrex::FArrayBox &amp;z_vel_fab, amrex::FArrayBox &amp;z_phys_nd_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_hgt_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_ght_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_xvel_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_yvel_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_zvel_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_temp_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_rhum_fab, amrex::Vector&lt; amrex::FArrayBox &gt; &amp;theta_fab, amrex::Vector&lt; amrex::FArrayBox &gt; &amp;mxrat_fab, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;fabs_for_bcs, const amrex::Array4&lt; const int &gt; &amp;mask_c_arr, const amrex::Array4&lt; const int &gt; &amp;mask_u_arr, const amrex::Array4&lt; const int &gt; &amp;mask_v_arr)</div></div>
 <div class="ttc" id="aMetgrid__utils_8H_html_ab2147fe2887222104a14c91ac873d695"><div class="ttname"><a href="Metgrid__utils_8H.html#ab2147fe2887222104a14c91ac873d695">read_from_metgrid</a></div><div class="ttdeci">void read_from_metgrid(int lev, const amrex::Box &amp;domain, const std::string &amp;fname, std::string &amp;NC_dateTime, amrex::Real &amp;NC_epochTime, int &amp;flag_psfc, int &amp;flag_msfu, int &amp;flag_msfv, int &amp;flag_msfm, int &amp;flag_hgt, int &amp;flag_sst, int &amp;flag_lmask, int &amp;NC_nx, int &amp;NC_ny, amrex::Real &amp;NC_dx, amrex::Real &amp;NC_dy, amrex::FArrayBox &amp;NC_xvel_fab, amrex::FArrayBox &amp;NC_yvel_fab, amrex::FArrayBox &amp;NC_temp_fab, amrex::FArrayBox &amp;NC_rhum_fab, amrex::FArrayBox &amp;NC_pres_fab, amrex::FArrayBox &amp;NC_ght_fab, amrex::FArrayBox &amp;NC_hgt_fab, amrex::FArrayBox &amp;NC_psfc_fab, amrex::FArrayBox &amp;NC_msfu_fab, amrex::FArrayBox &amp;NC_msfv_fab, amrex::FArrayBox &amp;NC_msfm_fab, amrex::FArrayBox &amp;NC_sst_fab, amrex::IArrayBox &amp;NC_lmask_iab)</div></div>
