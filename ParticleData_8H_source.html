@@ -138,12 +138,12 @@ $(document).ready(function(){initNavTree('ParticleData_8H_source.html',''); init
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">        /*! Write checkpoint files */</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> Checkpoint ( <span class="keyword">const</span> std::string&amp; a_fname )</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> Checkpoint ( <span class="keyword">const</span> std::string&amp; a_fname )<span class="keyword"> const</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">        </span>{</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            BL_PROFILE(<span class="stringliteral">&quot;ParticleData::Checkpoint()&quot;</span>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">for</span> (ParticlesNamesVector::size_type i = 0; i &lt; m_namelist.size(); i++) {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keyword">auto</span> name( m_namelist[i] );</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keyword">auto</span> particles( m_particle_species[name] );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keyword">auto</span> particles( m_particle_species.at(name) );</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                particles-&gt;Checkpoint( a_fname, name, <span class="keyword">true</span>, particles-&gt;varNames() );</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
