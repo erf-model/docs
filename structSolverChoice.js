@@ -45,5 +45,6 @@ var structSolverChoice =
     [ "use_NumDiff", "structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28", null ],
     [ "use_rayleigh_damping", "structSolverChoice.html#a27ced9266434a4680ef175e7b2ba8f01", null ],
     [ "use_terrain", "structSolverChoice.html#a063a88594452100497651e8aaf1f68d7", null ],
+    [ "windfarm_type", "structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645", null ],
     [ "zsurf", "structSolverChoice.html#aa4659e9babdc5d7327266f967d9a80ff", null ]
 ];

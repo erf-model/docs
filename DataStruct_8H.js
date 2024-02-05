@@ -37,5 +37,8 @@ var DataStruct_8H =
     [ "TerrainType", "DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127", [
       [ "Static", "DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127a84a8921b25f505d0d2077aeb5db4bc16", null ],
       [ "Moving", "DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127adefe967ad0373b2274fc298f19125ca7", null ]
+    ] ],
+    [ "WindFarmType", "DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847", [
+      [ "Fitch", "DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a2b00d051a8acd949c63ac94efa793efe", null ]
     ] ]
 ];
