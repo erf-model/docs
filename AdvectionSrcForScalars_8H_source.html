@@ -94,101 +94,110 @@ $(document).ready(function(){initNavTree('AdvectionSrcForScalars_8H_source.html'
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InterpType_H, <span class="keyword">typename</span> InterpType_V&gt;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="AdvectionSrcForScalars_8H.html#a8c7728e6adabd080b6ca833cac2831b3">    9</a></span>&#160;<a class="code" href="AdvectionSrcForScalars_8H.html#a8c7728e6adabd080b6ca833cac2831b3">AdvectionSrcForScalarsWrapper</a> (<span class="keyword">const</span> amrex::Box&amp; bx,</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="AdvectionSrcForScalars_8H.html#a528a419d0272e41cd3e30a963e40c5bd">    9</a></span>&#160;<a class="code" href="AdvectionSrcForScalars_8H.html#a528a419d0272e41cd3e30a963e40c5bd">AdvectionSrcForScalarsWrapper</a> (<span class="keyword">const</span> amrex::Box&amp; bx,</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                               <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; ncomp, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; icomp,</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                               <span class="keyword">const</span> amrex::GpuArray&lt;<span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;, AMREX_SPACEDIM&gt; flx_arr,</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                               <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_prim,</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                               <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_xmom,</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                               <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_ymom,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                               <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_zmom)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">// Instantiate structs for vert/horiz interp</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    InterpType_H interp_prim_h(cell_prim);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    InterpType_V interp_prim_v(cell_prim);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> amrex::Box xbx = amrex::surroundingNodes(bx,0);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> amrex::Box ybx = amrex::surroundingNodes(bx,1);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">const</span> amrex::Box zbx = amrex::surroundingNodes(bx,2);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    amrex::ParallelFor(xbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        amrex::Real interpx(0.);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                               <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_zmom,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                               <span class="keyword">const</span> amrex::Real horiz_upw_frac,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                               <span class="keyword">const</span> amrex::Real vert_upw_frac)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// Instantiate structs for vert/horiz interp</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    InterpType_H interp_prim_h(cell_prim);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    InterpType_V interp_prim_v(cell_prim);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">const</span> amrex::Box xbx = amrex::surroundingNodes(bx,0);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">const</span> amrex::Box ybx = amrex::surroundingNodes(bx,1);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">const</span> amrex::Box zbx = amrex::surroundingNodes(bx,2);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    amrex::ParallelFor(xbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        interp_prim_h.InterpolateInX(i,j,k,prim_index,interpx,avg_xmom(i  ,j  ,k  ));</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        (flx_arr[0])(i,j,k,cons_index) = avg_xmom(i,j,k) * interpx;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    });</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    amrex::ParallelFor(ybx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        amrex::Real interpy(0.);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        interp_prim_h.InterpolateInY(i,j,k,prim_index,interpy,avg_ymom(i  ,j  ,k  ));</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        (flx_arr[1])(i,j,k,cons_index) = avg_ymom(i,j,k) * interpy;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    });</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    amrex::ParallelFor(zbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        amrex::Real interpz(0.);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        amrex::Real interpx(0.);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        interp_prim_h.InterpolateInX(i,j,k,prim_index,interpx,avg_xmom(i  ,j  ,k  ),horiz_upw_frac);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        (flx_arr[0])(i,j,k,cons_index) = avg_xmom(i,j,k) * interpx;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    });</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    amrex::ParallelFor(ybx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        amrex::Real interpy(0.);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        interp_prim_h.InterpolateInY(i,j,k,prim_index,interpy,avg_ymom(i  ,j  ,k  ),horiz_upw_frac);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        (flx_arr[1])(i,j,k,cons_index) = avg_ymom(i,j,k) * interpy;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    });</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    amrex::ParallelFor(zbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        interp_prim_v.InterpolateInZ(i,j,k,prim_index,interpz,avg_zmom(i  ,j  ,k  ));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        amrex::Real interpz(0.);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        (flx_arr[2])(i,j,k,cons_index) = avg_zmom(i,j,k) * interpz;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    });</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> * Wrapper function for templating the vertical advective tendency w/ spatial order &gt; 2.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InterpType_H&gt;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="AdvectionSrcForScalars_8H.html#a5bda90346d82b1402b4a6f9df04a1d43">   63</a></span>&#160;<a class="code" href="AdvectionSrcForScalars_8H.html#a5bda90346d82b1402b4a6f9df04a1d43">AdvectionSrcForScalarsVert</a> (<span class="keyword">const</span> amrex::Box&amp; bx,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; ncomp, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; icomp,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                            <span class="keyword">const</span> amrex::GpuArray&lt;<span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;, AMREX_SPACEDIM&gt; flx_arr,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_prim,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_xmom,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_ymom,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_zmom,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                            <span class="keyword">const</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">switch</span>(vert_adv_type) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>:</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED2&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                                              flx_arr, cell_prim,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND3&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                            flx_arr, cell_prim,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        interp_prim_v.InterpolateInZ(i,j,k,prim_index,interpz,avg_zmom(i  ,j  ,k  ),vert_upw_frac);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        (flx_arr[2])(i,j,k,cons_index) = avg_zmom(i,j,k) * interpz;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    });</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> * Wrapper function for templating the vertical advective tendency w/ spatial order &gt; 2.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InterpType_H&gt;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="AdvectionSrcForScalars_8H.html#a7ae00f92678a2aeee794bf2b735c19eb">   65</a></span>&#160;<a class="code" href="AdvectionSrcForScalars_8H.html#a7ae00f92678a2aeee794bf2b735c19eb">AdvectionSrcForScalarsVert</a> (<span class="keyword">const</span> amrex::Box&amp; bx,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; ncomp, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; icomp,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                            <span class="keyword">const</span> amrex::GpuArray&lt;<span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;, AMREX_SPACEDIM&gt; flx_arr,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_prim,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_xmom,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_ymom,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_zmom,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                            <span class="keyword">const</span> amrex::Real horiz_upw_frac,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                            <span class="keyword">const</span> amrex::Real vert_upw_frac,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                            <span class="keyword">const</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">switch</span>(vert_adv_type) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED2&gt;(bx, ncomp, icomp,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                                              flx_arr, cell_prim,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                              horiz_upw_frac, vert_upw_frac);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED4&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                              flx_arr, cell_prim,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND5&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                            flx_arr, cell_prim,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a>:</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED6&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                              flx_arr, cell_prim,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        AMREX_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown vertical advection scheme!&quot;</span>);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
-<div class="ttc" id="aAdvectionSrcForScalars_8H_html_a5bda90346d82b1402b4a6f9df04a1d43"><div class="ttname"><a href="AdvectionSrcForScalars_8H.html#a5bda90346d82b1402b4a6f9df04a1d43">AdvectionSrcForScalarsVert</a></div><div class="ttdeci">void AdvectionSrcForScalarsVert(const amrex::Box &amp;bx, const int &amp;ncomp, const int &amp;icomp, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; flx_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const AdvType vert_adv_type)</div><div class="ttdef"><b>Definition:</b> AdvectionSrcForScalars.H:63</div></div>
-<div class="ttc" id="aAdvectionSrcForScalars_8H_html_a8c7728e6adabd080b6ca833cac2831b3"><div class="ttname"><a href="AdvectionSrcForScalars_8H.html#a8c7728e6adabd080b6ca833cac2831b3">AdvectionSrcForScalarsWrapper</a></div><div class="ttdeci">void AdvectionSrcForScalarsWrapper(const amrex::Box &amp;bx, const int &amp;ncomp, const int &amp;icomp, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; flx_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom)</div><div class="ttdef"><b>Definition:</b> AdvectionSrcForScalars.H:9</div></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND3&gt;(bx, ncomp, icomp,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                            flx_arr, cell_prim,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED4&gt;(bx, ncomp, icomp,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                              flx_arr, cell_prim,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                              horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND5&gt;(bx, ncomp, icomp,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                                            flx_arr, cell_prim,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a>:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED6&gt;(bx, ncomp, icomp,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                                              flx_arr, cell_prim,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                                              horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        AMREX_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown vertical advection scheme!&quot;</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="ttc" id="aAdvectionSrcForScalars_8H_html_a528a419d0272e41cd3e30a963e40c5bd"><div class="ttname"><a href="AdvectionSrcForScalars_8H.html#a528a419d0272e41cd3e30a963e40c5bd">AdvectionSrcForScalarsWrapper</a></div><div class="ttdeci">void AdvectionSrcForScalarsWrapper(const amrex::Box &amp;bx, const int &amp;ncomp, const int &amp;icomp, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; flx_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac)</div><div class="ttdef"><b>Definition:</b> AdvectionSrcForScalars.H:9</div></div>
+<div class="ttc" id="aAdvectionSrcForScalars_8H_html_a7ae00f92678a2aeee794bf2b735c19eb"><div class="ttname"><a href="AdvectionSrcForScalars_8H.html#a7ae00f92678a2aeee794bf2b735c19eb">AdvectionSrcForScalarsVert</a></div><div class="ttdeci">void AdvectionSrcForScalarsVert(const amrex::Box &amp;bx, const int &amp;ncomp, const int &amp;icomp, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; flx_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const AdvType vert_adv_type)</div><div class="ttdef"><b>Definition:</b> AdvectionSrcForScalars.H:65</div></div>
 <div class="ttc" id="aIndexDefines_8H_html"><div class="ttname"><a href="IndexDefines_8H.html">IndexDefines.H</a></div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a></div><div class="ttdeci">AdvType</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:150</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f"><div class="ttname"><a href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a></div><div class="ttdeci">@ Upwind_3rd</div></div>
