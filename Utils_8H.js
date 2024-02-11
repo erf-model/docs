@@ -5,8 +5,8 @@ var Utils_8H =
     [ "make_J", "Utils_8H.html#accb87d367dfa749571761aa789fd3fea", null ],
     [ "make_zcc", "Utils_8H.html#ab405f3b5732dda49ad076fab09bfbfc8", null ],
     [ "MomentumToVelocity", "Utils_8H.html#acac8a65938f97c32e8d002e5b84b5d91", null ],
+    [ "realbdy_compute_interior_ghost_rhs", "Utils_8H.html#a64ede26fe5618a31fe1e297ef29095cd", null ],
     [ "VelocityToMomentum", "Utils_8H.html#a087ad6f9e01593fb0cd3624ff6caaf14", null ],
-    [ "wrfbdy_compute_interior_ghost_rhs", "Utils_8H.html#a0c1c824690661685b8d36eca4a80613b", null ],
     [ "wrfbdy_compute_laplacian_relaxation", "Utils_8H.html#af0d5ce71ebff8b1ef263dbaccfaf7758", null ],
     [ "wrfbdy_set_rhs_in_spec_region", "Utils_8H.html#af1b2ed87ddd47a5a3ac91fe6dd2ade3d", null ]
 ];

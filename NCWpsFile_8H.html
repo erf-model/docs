@@ -493,12 +493,12 @@ template&lt;class FAB , typename DType &gt; </div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        var_name == <span class="stringliteral">&quot;MAPFAC_V&quot;</span> || var_name == <span class="stringliteral">&quot;MAPFAC_VY&quot;</span>) my_box.setType(amrex::IndexType(amrex::IntVect(0,1,0)));</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;W&quot;</span> || var_name == <span class="stringliteral">&quot;WW&quot;</span>) my_box.setType(amrex::IndexType(amrex::IntVect(0,0,1)));</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment">// Make sure temp lives on CPU since nc_arrays lives on CPU only</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    temp.resize(my_box,1,amrex::The_Pinned_Arena());</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    temp.resize(my_box,1);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    amrex::Arena* Arena_Used = amrex::The_Arena();</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="comment">// Make sure temp lives on CPU since nc_arrays lives on CPU only</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    Arena_Used = amrex::The_Pinned_Arena();</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    temp.resize(my_box,1, Arena_Used);</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    amrex::Array4&lt;DType&gt; fab_arr = temp.array();</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordtype">int</span> ioff = temp.box().smallEnd()[0];</div>

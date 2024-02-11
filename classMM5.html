@@ -191,9 +191,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a01c27cf60270435c8272064b2f59df23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c9ed79a1d9759ada5d38c3040d6b539"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMM5.html#a6c9ed79a1d9759ada5d38c3040d6b539">m_gOcp</a></td></tr>
 <tr class="separator:a6c9ed79a1d9759ada5d38c3040d6b539"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1efdd2eea7c6fdc9631dadf56a7da1a2"><td class="memItemLeft" align="right" valign="top">amrex::Array&lt; <a class="el" href="classMM5.html#a1c62f3c8eb0010c903b517e6ba49973d">FabPtr</a>, <a class="el" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aa9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a></td></tr>
+<tr class="memitem:a1efdd2eea7c6fdc9631dadf56a7da1a2"><td class="memItemLeft" align="right" valign="top">amrex::Array&lt; <a class="el" href="classMM5.html#a1c62f3c8eb0010c903b517e6ba49973d">FabPtr</a>, <a class="el" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3ba9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a></td></tr>
 <tr class="separator:a1efdd2eea7c6fdc9631dadf56a7da1a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65622ec442bb57f8a4bdcfd789882661"><td class="memItemLeft" align="right" valign="top">amrex::Array&lt; <a class="el" href="classMM5.html#a1c62f3c8eb0010c903b517e6ba49973d">FabPtr</a>, <a class="el" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aa9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMM5.html#a65622ec442bb57f8a4bdcfd789882661">lsm_fab_flux</a></td></tr>
+<tr class="memitem:a65622ec442bb57f8a4bdcfd789882661"><td class="memItemLeft" align="right" valign="top">amrex::Array&lt; <a class="el" href="classMM5.html#a1c62f3c8eb0010c903b517e6ba49973d">FabPtr</a>, <a class="el" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3ba9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMM5.html#a65622ec442bb57f8a4bdcfd789882661">lsm_fab_flux</a></td></tr>
 <tr class="separator:a65622ec442bb57f8a4bdcfd789882661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e2b3186622686e5aae850eb1dc93d28"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMM5.html#a9e2b3186622686e5aae850eb1dc93d28">m_nz_lsm</a> = 30</td></tr>
 <tr class="separator:a9e2b3186622686e5aae850eb1dc93d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -352,11 +352,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    Real dt = <a class="code" href="classMM5.html#a41e60b81361852b0e4577bd7e3f88062">m_dt</a>;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    Real dzInv = <a class="code" href="classMM5.html#a5bb965e19ba475c78c8c9c8528fbf871">m_lsm_geom</a>.InvCellSize(2);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(*(<a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>])); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(*(<a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>])); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keyword">auto</span> box3d = mfi.tilebox();</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keyword">auto</span> theta_flux  = <a class="code" href="classMM5.html#a65622ec442bb57f8a4bdcfd789882661">lsm_fab_flux</a>[<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keyword">auto</span> theta_flux  = <a class="code" href="classMM5.html#a65622ec442bb57f8a4bdcfd789882661">lsm_fab_flux</a>[<a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        {</div>
@@ -367,7 +367,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassMM5_html_a1efdd2eea7c6fdc9631dadf56a7da1a2"><div class="ttname"><a href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">MM5::lsm_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmVar_MM5::NumVars &gt; lsm_fab_vars</div><div class="ttdef"><b>Definition:</b> MM5.H:138</div></div>
 <div class="ttc" id="aclassMM5_html_a5bb965e19ba475c78c8c9c8528fbf871"><div class="ttname"><a href="classMM5.html#a5bb965e19ba475c78c8c9c8528fbf871">MM5::m_lsm_geom</a></div><div class="ttdeci">amrex::Geometry m_lsm_geom</div><div class="ttdef"><b>Definition:</b> MM5.H:123</div></div>
 <div class="ttc" id="aclassMM5_html_a65622ec442bb57f8a4bdcfd789882661"><div class="ttname"><a href="classMM5.html#a65622ec442bb57f8a4bdcfd789882661">MM5::lsm_fab_flux</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmVar_MM5::NumVars &gt; lsm_fab_flux</div><div class="ttdef"><b>Definition:</b> MM5.H:141</div></div>
-<div class="ttc" id="anamespaceLsmVar__MM5_html_aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68"><div class="ttname"><a href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> MM5.H:20</div></div>
+<div class="ttc" id="anamespaceLsmVar__MM5_html_a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68"><div class="ttname"><a href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> MM5.H:20</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMM5.html#a2acfbfb967111ce4aed50e55adbcc15c">Advance()</a>.</p>
 <div class="dynheader">
@@ -402,14 +402,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    Real Dsoil = <a class="code" href="classMM5.html#a273c04f6eac3e48325dfce1e34e58df4">m_d_soil</a>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    Real dzInv = <a class="code" href="classMM5.html#a5bb965e19ba475c78c8c9c8528fbf871">m_lsm_geom</a>.InvCellSize(2);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(*(<a class="code" href="classMM5.html#a65622ec442bb57f8a4bdcfd789882661">lsm_fab_flux</a>[<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>])); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(*(<a class="code" href="classMM5.html#a65622ec442bb57f8a4bdcfd789882661">lsm_fab_flux</a>[<a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>])); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">auto</span> box3d = mfi.tilebox();</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">// Do not overwrite the flux at the top (comes from MOST BC)</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> (box3d.bigEnd(2) == khi+1) box3d.setBig(2,khi);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">auto</span> theta_flux  = <a class="code" href="classMM5.html#a65622ec442bb57f8a4bdcfd789882661">lsm_fab_flux</a>[<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">auto</span> theta_flux  = <a class="code" href="classMM5.html#a65622ec442bb57f8a4bdcfd789882661">lsm_fab_flux</a>[<a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        {</div>
@@ -451,10 +451,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// Expose for GPU copy</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">int</span> khi = <a class="code" href="classMM5.html#a5e32c57a0a88abb64a9d2f9ff3c1a19a">khi_lsm</a>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(*(<a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>])); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(*(<a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>])); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">auto</span> box2d = mfi.tilebox(); box2d.makeSlab(2,khi);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        ParallelFor( box2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> )</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
@@ -558,7 +558,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classMM5.html#a5e32c57a0a88abb64a9d2f9ff3c1a19a">khi_lsm</a>    = domain.smallEnd(2) - 1;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classMM5.html#a44610d042a53d114892687d87c9e7f10">LsmVarMap</a>.resize(<a class="code" href="classMM5.html#a338909d8b32e73bee5188eb5f4e0e15d">m_lsm_size</a>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classMM5.html#a44610d042a53d114892687d87c9e7f10">LsmVarMap</a> = {<a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aaf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classMM5.html#a44610d042a53d114892687d87c9e7f10">LsmVarMap</a> = {<a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>};</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classMM5.html#abb2bfd47b01eb3f85f6466a886a00dc9">LsmVarName</a>.resize(<a class="code" href="classMM5.html#a338909d8b32e73bee5188eb5f4e0e15d">m_lsm_size</a>);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classMM5.html#abb2bfd47b01eb3f85f6466a886a00dc9">LsmVarName</a> = {<span class="stringliteral">&quot;theta&quot;</span>};</div>
@@ -589,7 +589,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classMM5.html#a5bb965e19ba475c78c8c9c8528fbf871">m_lsm_geom</a>.define( ba_lsm.minimalBox(), lsm_rb, <a class="code" href="classMM5.html#a7edc95309bb52864bba5341f19262063">m_geom</a>.Coord(), <a class="code" href="classMM5.html#a7edc95309bb52864bba5341f19262063">m_geom</a>.isPeriodic() );</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Create the data and fluxes</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ivar = 0; ivar &lt; <a class="code" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aa9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a>; ++ivar) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ivar = 0; ivar &lt; <a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3ba9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a>; ++ivar) {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">// State vars are CC</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        Real theta_0 = <a class="code" href="classMM5.html#ab8187a0b9206d9c1d6632d494a149d1a">m_theta_dir</a>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[ivar] = std::make_shared&lt;MultiFab&gt;(ba_lsm, dm, 1, ng);</div>
@@ -607,7 +607,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassMM5_html_a9e2b3186622686e5aae850eb1dc93d28"><div class="ttname"><a href="classMM5.html#a9e2b3186622686e5aae850eb1dc93d28">MM5::m_nz_lsm</a></div><div class="ttdeci">int m_nz_lsm</div><div class="ttdef"><b>Definition:</b> MM5.H:146</div></div>
 <div class="ttc" id="aclassMM5_html_ab8187a0b9206d9c1d6632d494a149d1a"><div class="ttname"><a href="classMM5.html#ab8187a0b9206d9c1d6632d494a149d1a">MM5::m_theta_dir</a></div><div class="ttdeci">amrex::Real m_theta_dir</div><div class="ttdef"><b>Definition:</b> MM5.H:158</div></div>
 <div class="ttc" id="aclassMM5_html_abb2bfd47b01eb3f85f6466a886a00dc9"><div class="ttname"><a href="classMM5.html#abb2bfd47b01eb3f85f6466a886a00dc9">MM5::LsmVarName</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; LsmVarName</div><div class="ttdef"><b>Definition:</b> MM5.H:117</div></div>
-<div class="ttc" id="anamespaceLsmVar__MM5_html_aa29e0dad27cf0be28a595eff1078186aa9295a4d95dbd36001a7b1beaa15e14b9"><div class="ttname"><a href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aa9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> MM5.H:21</div></div>
+<div class="ttc" id="anamespaceLsmVar__MM5_html_a0c17a1ae9d9db120b8947e6da767cd3ba9295a4d95dbd36001a7b1beaa15e14b9"><div class="ttname"><a href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3ba9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> MM5.H:21</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -799,7 +799,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Array&lt;<a class="el" href="classMM5.html#a1c62f3c8eb0010c903b517e6ba49973d">FabPtr</a>, <a class="el" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aa9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a>&gt; MM5::lsm_fab_flux</td>
+          <td class="memname">amrex::Array&lt;<a class="el" href="classMM5.html#a1c62f3c8eb0010c903b517e6ba49973d">FabPtr</a>, <a class="el" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3ba9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a>&gt; MM5::lsm_fab_flux</td>
         </tr>
       </table>
   </td>
@@ -823,7 +823,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Array&lt;<a class="el" href="classMM5.html#a1c62f3c8eb0010c903b517e6ba49973d">FabPtr</a>, <a class="el" href="namespaceLsmVar__MM5.html#aa29e0dad27cf0be28a595eff1078186aa9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a>&gt; MM5::lsm_fab_vars</td>
+          <td class="memname">amrex::Array&lt;<a class="el" href="classMM5.html#a1c62f3c8eb0010c903b517e6ba49973d">FabPtr</a>, <a class="el" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3ba9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a>&gt; MM5::lsm_fab_vars</td>
         </tr>
       </table>
   </td>

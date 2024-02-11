@@ -52,6 +52,7 @@ var namespaces_dup =
     [ "MicVar_FE", "namespaceMicVar__FE.html", null ],
     [ "MicVar_Kess", "namespaceMicVar__Kess.html", null ],
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
+    [ "RealBdyVars", "namespaceRealBdyVars.html", null ],
     [ "Vars", "namespaceVars.html", null ],
     [ "WRFBdyVars", "namespaceWRFBdyVars.html", null ]
 ];
