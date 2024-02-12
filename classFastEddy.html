@@ -344,57 +344,59 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(*<a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa72fbd3861cd0ae9f103201d1cc7482eb">tabs</a>,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">auto</span> qv_array    = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae560111c760df2c025ccf516adf07fc3">MicVar_FE::qv</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">auto</span> qc_array    = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9faae593d3d6c86808b4e578c2c5aa23c33">MicVar_FE::qc</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">auto</span> tabs_array  = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa72fbd3861cd0ae9f103201d1cc7482eb">MicVar_FE::tabs</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa4c27eb36633887220639b72249cdef2b">MicVar_FE::theta</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">auto</span> pres_array  = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa5c0fa7f0120a3ead7a99d0f8545ab606">MicVar_FE::pres</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">// Expose for GPU</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        Real d_fac_cond = <a class="code" href="classFastEddy.html#a42c75d6ff057d6bc59ac9a0bd2600dae">m_fac_cond</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="comment">//------- Autoconversion/accretion</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            Real dq_clwater_to_vapor, dq_vapor_to_clwater, qsat;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            Real pressure = pres_array(i,j,k);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs_array(i,j,k), pressure, qsat);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="comment">// If there is precipitating water (i.e. rain), and the cell is not saturated</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="comment">// then the rain water can evaporate leading to extraction of latent heat, hence</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="comment">// reducing temperature and creating negative buoyancy</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            dq_vapor_to_clwater = 0.0;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            dq_clwater_to_vapor = 0.0;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="comment">//Real fac = qsat*4093.0*L_v/(Cp_d*std::pow(tabs_array(i,j,k)-36.0,2));</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            Real fac = qsat*<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>*<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>/(<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>*<a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>*tabs_array(i,j,k)*tabs_array(i,j,k));</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="comment">// If water vapor content exceeds saturation value, then vapor condenses to waterm and latent heat is released, increasing temperature</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">if</span>(qv_array(i,j,k) &gt; qsat){</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                dq_vapor_to_clwater = std::min(qv_array(i,j,k), (qv_array(i,j,k)-qsat)/(1.0 + fac));</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="comment">// If water vapor is less than the satruated value, then the cloud water can evaporate, leading to evaporative cooling and</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">// reducing temperature</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span>(qv_array(i,j,k) &lt; qsat and qc_array(i,j,k) &gt; 0.0){</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                dq_clwater_to_vapor = std::min(qc_array(i,j,k), (qsat - qv_array(i,j,k))/(1.0 + fac));</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            qv_array(i,j,k) = qv_array(i,j,k) - dq_vapor_to_clwater + dq_clwater_to_vapor;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            qc_array(i,j,k) = qc_array(i,j,k) + dq_vapor_to_clwater - dq_clwater_to_vapor;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            theta_array(i,j,k) = theta_array(i,j,k) + theta_array(i,j,k)/tabs_array(i,j,k)*d_fac_cond*(dq_vapor_to_clwater - dq_clwater_to_vapor);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            qv_array(i,j,k) = std::max(0.0, qv_array(i,j,k));</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        });</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">auto</span> qt_array    = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae86803d64a7966eb16dd9d8835f86fb9">MicVar_FE::qt</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">auto</span> tabs_array  = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa72fbd3861cd0ae9f103201d1cc7482eb">MicVar_FE::tabs</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa4c27eb36633887220639b72249cdef2b">MicVar_FE::theta</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">auto</span> pres_array  = <a class="code" href="classFastEddy.html#ad45aa1f3d6472e7f190d4fd4f6b5308a">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa5c0fa7f0120a3ead7a99d0f8545ab606">MicVar_FE::pres</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// Expose for GPU</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        Real d_fac_cond = <a class="code" href="classFastEddy.html#a42c75d6ff057d6bc59ac9a0bd2600dae">m_fac_cond</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="comment">//------- Autoconversion/accretion</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            Real dq_clwater_to_vapor, dq_vapor_to_clwater, qsat;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            Real pressure = pres_array(i,j,k);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs_array(i,j,k), pressure, qsat);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="comment">// If there is precipitating water (i.e. rain), and the cell is not saturated</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="comment">// then the rain water can evaporate leading to extraction of latent heat, hence</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="comment">// reducing temperature and creating negative buoyancy</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            dq_vapor_to_clwater = 0.0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            dq_clwater_to_vapor = 0.0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="comment">//Real fac = qsat*4093.0*L_v/(Cp_d*std::pow(tabs_array(i,j,k)-36.0,2));</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            Real fac = qsat*<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>*<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>/(<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>*<a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>*tabs_array(i,j,k)*tabs_array(i,j,k));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="comment">// If water vapor content exceeds saturation value, then vapor condenses to waterm and latent heat is released, increasing temperature</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span>(qv_array(i,j,k) &gt; qsat){</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                dq_vapor_to_clwater = std::min(qv_array(i,j,k), (qv_array(i,j,k)-qsat)/(1.0 + fac));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">// If water vapor is less than the satruated value, then the cloud water can evaporate, leading to evaporative cooling and</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">// reducing temperature</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span>(qv_array(i,j,k) &lt; qsat and qc_array(i,j,k) &gt; 0.0){</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                dq_clwater_to_vapor = std::min(qc_array(i,j,k), (qsat - qv_array(i,j,k))/(1.0 + fac));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            qv_array(i,j,k) = qv_array(i,j,k) - dq_vapor_to_clwater + dq_clwater_to_vapor;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            qc_array(i,j,k) = qc_array(i,j,k) + dq_vapor_to_clwater - dq_clwater_to_vapor;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            theta_array(i,j,k) = theta_array(i,j,k) + theta_array(i,j,k)/tabs_array(i,j,k)*d_fac_cond*(dq_vapor_to_clwater - dq_clwater_to_vapor);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            qv_array(i,j,k) = std::max(0.0, qv_array(i,j,k));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            qt_array(i,j,k) = qv_array(i,j,k) + qc_array(i,j,k);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        });</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0ab59ff21ef0b178fde0843394f5674a"><div class="ttname"><a href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a></div><div class="ttdeci">constexpr amrex::Real R_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aee80ef06f62b6528b776d02de062cdd5"><div class="ttname"><a href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a></div><div class="ttdeci">constexpr amrex::Real L_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:16</div></div>
@@ -406,6 +408,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceMicVar__FE_html_a0ae341cd83b667d19fd9fd0f4564cb9fa72fbd3861cd0ae9f103201d1cc7482eb"><div class="ttname"><a href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa72fbd3861cd0ae9f103201d1cc7482eb">MicVar_FE::tabs</a></div><div class="ttdeci">@ tabs</div><div class="ttdef"><b>Definition:</b> FastEddy.H:28</div></div>
 <div class="ttc" id="anamespaceMicVar__FE_html_a0ae341cd83b667d19fd9fd0f4564cb9faae593d3d6c86808b4e578c2c5aa23c33"><div class="ttname"><a href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9faae593d3d6c86808b4e578c2c5aa23c33">MicVar_FE::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> FastEddy.H:24</div></div>
 <div class="ttc" id="anamespaceMicVar__FE_html_a0ae341cd83b667d19fd9fd0f4564cb9fae560111c760df2c025ccf516adf07fc3"><div class="ttname"><a href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae560111c760df2c025ccf516adf07fc3">MicVar_FE::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> FastEddy.H:23</div></div>
+<div class="ttc" id="anamespaceMicVar__FE_html_a0ae341cd83b667d19fd9fd0f4564cb9fae86803d64a7966eb16dd9d8835f86fb9"><div class="ttname"><a href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae86803d64a7966eb16dd9d8835f86fb9">MicVar_FE::qt</a></div><div class="ttdeci">@ qt</div><div class="ttdef"><b>Definition:</b> FastEddy.H:25</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classFastEddy.html#a4bc7e30c7607d2dfe28f4af7178ba3f8">Advance()</a>.</p>
 <div class="dynheader">
@@ -574,7 +577,6 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aEOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> EOS.H:62</div></div>
 <div class="ttc" id="aEOS_8H_html_a65cf1718b7a1fcc56cb16685642543da"><div class="ttname"><a href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> EOS.H:29</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
-<div class="ttc" id="anamespaceMicVar__FE_html_a0ae341cd83b667d19fd9fd0f4564cb9fae86803d64a7966eb16dd9d8835f86fb9"><div class="ttname"><a href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae86803d64a7966eb16dd9d8835f86fb9">MicVar_FE::qt</a></div><div class="ttdeci">@ qt</div><div class="ttdef"><b>Definition:</b> FastEddy.H:25</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classFastEddy.html#ae954582b00f9d875826f53378d895839">Update_Micro_Vars()</a>.</p>
 <div class="dynheader">
