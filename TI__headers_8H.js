@@ -1,7 +1,7 @@
 var TI__headers_8H =
 [
     [ "ApplySpongeZoneBCs", "TI__headers_8H.html#ab885f039a33a636000e83551301905bf", null ],
-    [ "erf_fast_rhs_MT", "TI__headers_8H.html#a680bbc202480b0900bdc924f1bfa81db", null ],
+    [ "erf_fast_rhs_MT", "TI__headers_8H.html#abdacd58e8e0a4cb99d45bf970cfadfea", null ],
     [ "erf_fast_rhs_N", "TI__headers_8H.html#a5f53a08aa97926523055fe74b41141ce", null ],
     [ "erf_fast_rhs_T", "TI__headers_8H.html#af993ea724f392520e7240055ecbe58bb", null ],
     [ "erf_slow_rhs_post", "TI__headers_8H.html#ae32d035cb85cb396e229826f88eebc39", null ],

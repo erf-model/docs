@@ -147,12 +147,12 @@ Include dependency graph for ERF_fast_rhs_MT.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ababc65ff4114ebe0a4ec4b1059bb7129"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__fast__rhs__MT_8cpp.html#ababc65ff4114ebe0a4ec4b1059bb7129">erf_fast_rhs_MT</a> (int step, int nrk, int level, int finest_level, Vector&lt; MultiFab &gt; &amp;S_slow_rhs, const Vector&lt; MultiFab &gt; &amp;S_prev, Vector&lt; MultiFab &gt; &amp;S_stg_data, const MultiFab &amp;S_stg_prim, const MultiFab &amp;pi_stg, const MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_data, Vector&lt; MultiFab &gt; &amp;S_scratch, const Geometry geom, const Real gravity, const bool use_lagged_delta_rt, MultiFab &amp;Omega, std::unique_ptr&lt; MultiFab &gt; &amp;z_t_rk, const MultiFab *z_t_pert, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd_old, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd_new, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd_stg, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc_old, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc_new, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc_stg, const Real dtau, const Real beta_s, const Real facinv, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v, YAFluxRegister *fr_as_crse, YAFluxRegister *fr_as_fine, bool l_use_moisture, bool l_reflux)</td></tr>
-<tr class="separator:ababc65ff4114ebe0a4ec4b1059bb7129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4d94ede74fb532475b186ed1cbbbfed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed">erf_fast_rhs_MT</a> (int step, int nrk, int level, int finest_level, Vector&lt; MultiFab &gt; &amp;S_slow_rhs, const Vector&lt; MultiFab &gt; &amp;S_prev, Vector&lt; MultiFab &gt; &amp;S_stg_data, const MultiFab &amp;S_stg_prim, const MultiFab &amp;pi_stage, const MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_data, Vector&lt; MultiFab &gt; &amp;S_scratch, const Geometry geom, const Real gravity, const bool use_lagged_delta_rt, MultiFab &amp;Omega, std::unique_ptr&lt; MultiFab &gt; &amp;z_t_rk, const MultiFab *z_t_pert, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd_old, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd_new, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd_stg, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc_old, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc_new, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc_stg, const Real dtau, const Real beta_s, const Real facinv, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v, YAFluxRegister *fr_as_crse, YAFluxRegister *fr_as_fine, bool l_use_moisture, bool l_reflux)</td></tr>
+<tr class="separator:ab4d94ede74fb532475b186ed1cbbbfed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ababc65ff4114ebe0a4ec4b1059bb7129"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ababc65ff4114ebe0a4ec4b1059bb7129">&#9670;&nbsp;</a></span>erf_fast_rhs_MT()</h2>
+<a id="ab4d94ede74fb532475b186ed1cbbbfed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d94ede74fb532475b186ed1cbbbfed">&#9670;&nbsp;</a></span>erf_fast_rhs_MT()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +209,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>pi_stg</em>, </td>
+          <td class="paramname"><em>pi_stage</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -499,7 +499,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; omega_arr = Omega.array(mfi);</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; pi_stg_ca = pi_stg.const_array(mfi);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; pi_stage_ca = pi_stage.const_array(mfi);</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; theta_extrap = extrap.array(mfi);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
@@ -587,7 +587,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    gpx /= (1.0 + q);</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                }</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                Real pi_c =  0.5 * (pi_stg_ca(i-1,j,k,0) + pi_stg_ca(i  ,j,k,0));</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                Real pi_c =  0.5 * (pi_stage_ca(i-1,j,k,0) + pi_stage_ca(i  ,j,k,0));</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                Real fast_rhs_rho_u = -<a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * pi_c * gpx;</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                <span class="comment">// We have already scaled the source terms to have the extra factor of dJ</span></div>
@@ -614,7 +614,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                    gpy /= (1.0 + q);</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                }</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                Real pi_c =  0.5 * (pi_stg_ca(i,j-1,k,0) + pi_stg_ca(i,j  ,k,0));</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                Real pi_c =  0.5 * (pi_stage_ca(i,j-1,k,0) + pi_stage_ca(i,j  ,k,0));</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                Real fast_rhs_rho_v = -<a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * pi_c * gpy;</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                <span class="comment">// We have already scaled the source terms to have the extra factor of dJ</span></div>
@@ -952,8 +952,8 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__fast__rhs__MT_8cpp_ababc65ff4114ebe0a4ec4b1059bb7129_cgraph.png" border="0" usemap="#aERF__fast__rhs__MT_8cpp_ababc65ff4114ebe0a4ec4b1059bb7129_cgraph" alt=""/></div>
-<map name="aERF__fast__rhs__MT_8cpp_ababc65ff4114ebe0a4ec4b1059bb7129_cgraph" id="aERF__fast__rhs__MT_8cpp_ababc65ff4114ebe0a4ec4b1059bb7129_cgraph">
+<div class="center"><img src="ERF__fast__rhs__MT_8cpp_ab4d94ede74fb532475b186ed1cbbbfed_cgraph.png" border="0" usemap="#aERF__fast__rhs__MT_8cpp_ab4d94ede74fb532475b186ed1cbbbfed_cgraph" alt=""/></div>
+<map name="aERF__fast__rhs__MT_8cpp_ab4d94ede74fb532475b186ed1cbbbfed_cgraph" id="aERF__fast__rhs__MT_8cpp_ab4d94ede74fb532475b186ed1cbbbfed_cgraph">
 <area shape="rect" title=" " alt="" coords="5,132,132,159"/>
 <area shape="rect" href="TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce" title=" " alt="" coords="183,5,361,32"/>
 <area shape="rect" href="TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7" title=" " alt="" coords="188,56,356,83"/>
