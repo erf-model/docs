@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fasteddy_2024',['FastEddy',['../classFastEddy.html',1,'']]]
+  ['fasteddy_2025',['FastEddy',['../classFastEddy.html',1,'']]]
 ];
