@@ -364,7 +364,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
 <div class="ttc" id="aclassSAM_html_a02c82a7d07676312819cfc9d2ed37cec"><div class="ttname"><a href="classSAM.html#a02c82a7d07676312819cfc9d2ed37cec">SAM::IceFall</a></div><div class="ttdeci">void IceFall()</div><div class="ttdef"><b>Definition:</b> IceFall.cpp:10</div></div>
 <div class="ttc" id="aclassSAM_html_a521cf209250dcb46c95a0981ee5ddef1"><div class="ttname"><a href="classSAM.html#a521cf209250dcb46c95a0981ee5ddef1">SAM::MicroPrecipFall</a></div><div class="ttdeci">void MicroPrecipFall()</div><div class="ttdef"><b>Definition:</b> PrecipFall.cpp:294</div></div>
-<div class="ttc" id="aclassSAM_html_a7a43f42ffe12f7ed7e32d0abdbea4133"><div class="ttname"><a href="classSAM.html#a7a43f42ffe12f7ed7e32d0abdbea4133">SAM::Cloud</a></div><div class="ttdeci">void Cloud()</div><div class="ttdef"><b>Definition:</b> Cloud_SAM.cpp:11</div></div>
+<div class="ttc" id="aclassSAM_html_a7a43f42ffe12f7ed7e32d0abdbea4133"><div class="ttname"><a href="classSAM.html#a7a43f42ffe12f7ed7e32d0abdbea4133">SAM::Cloud</a></div><div class="ttdeci">void Cloud()</div><div class="ttdef"><b>Definition:</b> Cloud_SAM.cpp:10</div></div>
 <div class="ttc" id="aclassSAM_html_ac44e447994022361e74cf7c00a756605"><div class="ttname"><a href="classSAM.html#ac44e447994022361e74cf7c00a756605">SAM::Diagnose</a></div><div class="ttdeci">void Diagnose() override</div><div class="ttdef"><b>Definition:</b> Diagnose_SAM.cpp:8</div></div>
 <div class="ttc" id="aclassSAM_html_ae2e767f439749aeec7168bc98006caf0"><div class="ttname"><a href="classSAM.html#ae2e767f439749aeec7168bc98006caf0">SAM::Precip</a></div><div class="ttdeci">void Precip()</div><div class="ttdef"><b>Definition:</b> Precip.cpp:8</div></div>
 <div class="ttc" id="aclassSAM_html_af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9"><div class="ttname"><a href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">SAM::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> SAM.H:171</div></div>
@@ -408,128 +408,128 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Compute Cloud-related <a class="el" href="classMicrophysics.html">Microphysics</a> quantities. </p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                 {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    constexpr Real an   = 1.0/(<a class="code" href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a>-<a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    constexpr Real bn   = <a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>*an;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    constexpr Real ap   = 1.0/(<a class="code" href="ERF__Constants_8H.html#a06a70c05086650ead098e2994ad1bd43">tprmax</a>-<a class="code" href="ERF__Constants_8H.html#a9180d622aa39d89312941eba03fa1347">tprmin</a>);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    constexpr Real bp   = <a class="code" href="ERF__Constants_8H.html#a9180d622aa39d89312941eba03fa1347">tprmin</a>*ap;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">auto</span> pres1d_t = <a class="code" href="classSAM.html#a77e43f5c8a68a43f8109aa18b71fa64e">pres1d</a>.table();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">auto</span> <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae86803d64a7966eb16dd9d8835f86fb9">qt</a>    = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a584161f7272862cb35496c7560617286">MicVar::qt</a>];</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">auto</span> <a class="code" href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa2edc86e05fd080c928faeb1f6f39c701">qp</a>    = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34af86a273a88ba038dd1ea798c51ebf8c4">MicVar::qp</a>];</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">auto</span> <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a62db2b95f840b974246d431152593fb8">qn</a>    = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a62db2b95f840b974246d431152593fb8">MicVar::qn</a>];</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">auto</span> <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa436a31a93a198683f07cc3afe46b8f33">rho</a>   = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a2534fc55b1bd99268d18c38ddd112e53">MicVar::rho</a>];</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">auto</span> <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa72fbd3861cd0ae9f103201d1cc7482eb">tabs</a>  = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">MicVar::tabs</a>];</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Real fac_cond = <a class="code" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Real fac_sub  = <a class="code" href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">m_fac_sub</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Real fac_fus  = <a class="code" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(*<a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa72fbd3861cd0ae9f103201d1cc7482eb">tabs</a>, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">auto</span> qt_array    = <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae86803d64a7966eb16dd9d8835f86fb9">qt</a>-&gt;array(mfi);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">auto</span> qp_array    = <a class="code" href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa2edc86e05fd080c928faeb1f6f39c701">qp</a>-&gt;array(mfi);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">auto</span> qn_array    = <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a62db2b95f840b974246d431152593fb8">qn</a>-&gt;array(mfi);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">auto</span> tabs_array  = <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa72fbd3861cd0ae9f103201d1cc7482eb">tabs</a>-&gt;array(mfi);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox() &amp; <a class="code" href="classSAM.html#a579b5a1e16d7b9d8d317e475a6a43705">m_gtoe</a>[mfi.index()];</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            qt_array(i,j,k) = std::max(0.0,qt_array(i,j,k));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="comment">// Initial guess for temperature assuming no cloud water/ice:</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            Real tabs1 = tabs_array(i,j,k);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            Real qsatt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            Real om;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Real qsatt1;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            Real qsatt2;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="comment">// Warm cloud:</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span>(tabs1 &gt; <a class="code" href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a>) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                tabs1 = tabs_array(i,j,k)+fac_cond*qp_array(i,j,k);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs1, pres1d_t(k), qsatt);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">// Ice cloud:</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tabs1 &lt;= <a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                tabs1 = tabs_array(i,j,k)+fac_sub*qp_array(i,j,k);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="Microphysics__Utils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a>(tabs1, pres1d_t(k), qsatt);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">// Mixed-phase cloud:</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                om = an*tabs1-bn;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs1, pres1d_t(k), qsatt1);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="Microphysics__Utils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a>(tabs1, pres1d_t(k), qsatt2);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                qsatt = om*qsatt1 + (1.-om)*qsatt2;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordtype">int</span> niter;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            Real dtabs, lstarn, dlstarn, omp, lstarp, dlstarp, fff, dfff, dqsat;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="comment">//  Test if condensation is possible:</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">if</span>(qt_array(i,j,k) &gt; qsatt) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                niter = 0;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                dtabs = 1;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <span class="keywordflow">if</span>(tabs1 &gt;= <a class="code" href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a>) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        om=1.0;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        lstarn  = fac_cond;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        dlstarn = 0.0;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs1, pres1d_t(k), qsatt);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a>(tabs1, pres1d_t(k), dqsat);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tabs1 &lt;= <a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        om      = 0.0;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        lstarn  = fac_sub;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        dlstarn = 0.0;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a>(tabs1, pres1d_t(k), qsatt);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#a7baba5d74922033bf93526933a0d77ec">erf_dtqsati</a>(tabs1, pres1d_t(k), dqsat);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        om=an*tabs1-bn;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        lstarn  = fac_cond+(1.0-om)*fac_fus;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        dlstarn = an*fac_fus;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs1, pres1d_t(k), qsatt1);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a>(tabs1, pres1d_t(k), qsatt2);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                        qsatt = om*qsatt1+(1.-om)*qsatt2;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a>(tabs1, pres1d_t(k), qsatt1);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#a7baba5d74922033bf93526933a0d77ec">erf_dtqsati</a>(tabs1, pres1d_t(k), qsatt2);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                        dqsat = om*qsatt1+(1.-om)*qsatt2;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    <span class="keywordflow">if</span>(tabs1 &gt;= <a class="code" href="ERF__Constants_8H.html#a06a70c05086650ead098e2994ad1bd43">tprmax</a>) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                        omp = 1.0;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        lstarp  = fac_cond;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                        dlstarp = 0.0;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tabs1 &lt;= <a class="code" href="ERF__Constants_8H.html#a9180d622aa39d89312941eba03fa1347">tprmin</a>) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        omp     = 0.0;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        lstarp  = fac_sub;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                        dlstarp = 0.0;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                        omp=ap*tabs1-bp;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                        lstarp  = fac_cond+(1.0-omp)*fac_fus;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                        dlstarp = ap*fac_fus;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    fff   = tabs_array(i,j,k)-tabs1+lstarn*(qt_array(i,j,k)-qsatt)+lstarp*qp_array(i,j,k);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    dfff  = dlstarn*(qt_array(i,j,k)-qsatt)+dlstarp*qp_array(i,j,k)-lstarn*dqsat-1.0;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    dtabs = -fff/dfff;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    niter = niter+1;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    tabs1 = tabs1+dtabs;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                } <span class="keywordflow">while</span>(std::abs(dtabs) &gt; 0.01 &amp;&amp; niter &lt; 10);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                qsatt = qsatt + dqsat*dtabs;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                qn_array(i,j,k) = std::max(0.0, qt_array(i,j,k)-qsatt);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                qn_array(i,j,k) = 0.0;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            tabs_array(i,j,k) = tabs1;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            qp_array(i,j,k)   = std::max(0.0, qp_array(i,j,k)); <span class="comment">// just in case</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        });</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                 {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    constexpr Real an   = 1.0/(<a class="code" href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a>-<a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    constexpr Real bn   = <a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>*an;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    constexpr Real ap   = 1.0/(<a class="code" href="ERF__Constants_8H.html#a06a70c05086650ead098e2994ad1bd43">tprmax</a>-<a class="code" href="ERF__Constants_8H.html#a9180d622aa39d89312941eba03fa1347">tprmin</a>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    constexpr Real bp   = <a class="code" href="ERF__Constants_8H.html#a9180d622aa39d89312941eba03fa1347">tprmin</a>*ap;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">auto</span> pres1d_t = <a class="code" href="classSAM.html#a77e43f5c8a68a43f8109aa18b71fa64e">pres1d</a>.table();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">auto</span> <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae86803d64a7966eb16dd9d8835f86fb9">qt</a>    = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a584161f7272862cb35496c7560617286">MicVar::qt</a>];</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">auto</span> <a class="code" href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa2edc86e05fd080c928faeb1f6f39c701">qp</a>    = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34af86a273a88ba038dd1ea798c51ebf8c4">MicVar::qp</a>];</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">auto</span> <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a62db2b95f840b974246d431152593fb8">qn</a>    = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a62db2b95f840b974246d431152593fb8">MicVar::qn</a>];</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">auto</span> <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa436a31a93a198683f07cc3afe46b8f33">rho</a>   = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a2534fc55b1bd99268d18c38ddd112e53">MicVar::rho</a>];</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">auto</span> <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa72fbd3861cd0ae9f103201d1cc7482eb">tabs</a>  = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">MicVar::tabs</a>];</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Real fac_cond = <a class="code" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Real fac_sub  = <a class="code" href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">m_fac_sub</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Real fac_fus  = <a class="code" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(*<a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa72fbd3861cd0ae9f103201d1cc7482eb">tabs</a>, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">auto</span> qt_array    = <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae86803d64a7966eb16dd9d8835f86fb9">qt</a>-&gt;array(mfi);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">auto</span> qp_array    = <a class="code" href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa2edc86e05fd080c928faeb1f6f39c701">qp</a>-&gt;array(mfi);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">auto</span> qn_array    = <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a62db2b95f840b974246d431152593fb8">qn</a>-&gt;array(mfi);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">auto</span> tabs_array  = <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa72fbd3861cd0ae9f103201d1cc7482eb">tabs</a>-&gt;array(mfi);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox() &amp; <a class="code" href="classSAM.html#a579b5a1e16d7b9d8d317e475a6a43705">m_gtoe</a>[mfi.index()];</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            qt_array(i,j,k) = std::max(0.0,qt_array(i,j,k));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="comment">// Initial guess for temperature assuming no cloud water/ice:</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            Real tabs1 = tabs_array(i,j,k);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            Real qsatt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            Real om;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            Real qsatt1;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Real qsatt2;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="comment">// Warm cloud:</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span>(tabs1 &gt; <a class="code" href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a>) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                tabs1 = tabs_array(i,j,k)+fac_cond*qp_array(i,j,k);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs1, pres1d_t(k), qsatt);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="comment">// Ice cloud:</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tabs1 &lt;= <a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                tabs1 = tabs_array(i,j,k)+fac_sub*qp_array(i,j,k);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="Microphysics__Utils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a>(tabs1, pres1d_t(k), qsatt);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">// Mixed-phase cloud:</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                om = an*tabs1-bn;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <a class="code" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs1, pres1d_t(k), qsatt1);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="Microphysics__Utils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a>(tabs1, pres1d_t(k), qsatt2);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                qsatt = om*qsatt1 + (1.-om)*qsatt2;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordtype">int</span> niter;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            Real dtabs, lstarn, dlstarn, omp, lstarp, dlstarp, fff, dfff, dqsat;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">//  Test if condensation is possible:</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span>(qt_array(i,j,k) &gt; qsatt) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                niter = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                dtabs = 1;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="keywordflow">if</span>(tabs1 &gt;= <a class="code" href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a>) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        om=1.0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        lstarn  = fac_cond;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        dlstarn = 0.0;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs1, pres1d_t(k), qsatt);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a>(tabs1, pres1d_t(k), dqsat);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tabs1 &lt;= <a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        om      = 0.0;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        lstarn  = fac_sub;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        dlstarn = 0.0;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a>(tabs1, pres1d_t(k), qsatt);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#a7baba5d74922033bf93526933a0d77ec">erf_dtqsati</a>(tabs1, pres1d_t(k), dqsat);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                        om=an*tabs1-bn;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        lstarn  = fac_cond+(1.0-om)*fac_fus;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        dlstarn = an*fac_fus;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs1, pres1d_t(k), qsatt1);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a>(tabs1, pres1d_t(k), qsatt2);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                        qsatt = om*qsatt1+(1.-om)*qsatt2;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a>(tabs1, pres1d_t(k), qsatt1);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        <a class="code" href="Microphysics__Utils_8H.html#a7baba5d74922033bf93526933a0d77ec">erf_dtqsati</a>(tabs1, pres1d_t(k), qsatt2);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                        dqsat = om*qsatt1+(1.-om)*qsatt2;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    <span class="keywordflow">if</span>(tabs1 &gt;= <a class="code" href="ERF__Constants_8H.html#a06a70c05086650ead098e2994ad1bd43">tprmax</a>) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                        omp = 1.0;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                        lstarp  = fac_cond;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        dlstarp = 0.0;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(tabs1 &lt;= <a class="code" href="ERF__Constants_8H.html#a9180d622aa39d89312941eba03fa1347">tprmin</a>) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                        omp     = 0.0;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        lstarp  = fac_sub;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        dlstarp = 0.0;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        omp=ap*tabs1-bp;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                        lstarp  = fac_cond+(1.0-omp)*fac_fus;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                        dlstarp = ap*fac_fus;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    fff   = tabs_array(i,j,k)-tabs1+lstarn*(qt_array(i,j,k)-qsatt)+lstarp*qp_array(i,j,k);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    dfff  = dlstarn*(qt_array(i,j,k)-qsatt)+dlstarp*qp_array(i,j,k)-lstarn*dqsat-1.0;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    dtabs = -fff/dfff;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    niter = niter+1;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    tabs1 = tabs1+dtabs;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                } <span class="keywordflow">while</span>(std::abs(dtabs) &gt; 0.01 &amp;&amp; niter &lt; 10);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                qsatt = qsatt + dqsat*dtabs;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                qn_array(i,j,k) = std::max(0.0, qt_array(i,j,k)-qsatt);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                qn_array(i,j,k) = 0.0;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            tabs_array(i,j,k) = tabs1;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            qp_array(i,j,k)   = std::max(0.0, qp_array(i,j,k)); <span class="comment">// just in case</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        });</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a06a70c05086650ead098e2994ad1bd43"><div class="ttname"><a href="ERF__Constants_8H.html#a06a70c05086650ead098e2994ad1bd43">tprmax</a></div><div class="ttdeci">constexpr amrex::Real tprmax</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:34</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a2b4ea8a29735038e49703c7f8c1f20c8"><div class="ttname"><a href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a></div><div class="ttdeci">constexpr amrex::Real tbgmax</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:32</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a9180d622aa39d89312941eba03fa1347"><div class="ttname"><a href="ERF__Constants_8H.html#a9180d622aa39d89312941eba03fa1347">tprmin</a></div><div class="ttdeci">constexpr amrex::Real tprmin</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:33</div></div>
