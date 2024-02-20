@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"classMOSTAverage.html#a94ece9d178d0e85296cce07bab556bc7":[2,0,33,39],
+"classMOSTAverage.html#a960bae1d528aef6d0e7034dbea65a2c3":[2,0,33,25],
+"classMOSTAverage.html#a96178b02bec37f171ef608cec9a246bf":[2,0,33,17],
+"classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81":[2,0,33,7],
 "classMOSTAverage.html#aaea0b00766b3cdeefd2b54bade8a86bd":[2,0,33,6],
 "classMOSTAverage.html#ab227f9a8e9224820c00fa8b223712b3e":[2,0,33,37],
 "classMOSTAverage.html#ab85828af24cd22d737931c51862389e4":[2,0,33,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX5 =
 "classNullSurf.html#aec12d8aa3e358ea40f7d4371651eb73a":[2,0,38,13],
 "classNullSurf.html#af634e202eb05675a9bf2ee9b7e927b12":[2,0,38,10],
 "classNullSurf.html#afc622f13e248dbe6bc5843241c4afb0f":[2,0,38,1],
-"classOptics.html":[2,0,39],
-"classOptics.html#a078568b5fcba367944981fe065623e0c":[2,0,39,8],
-"classOptics.html#a2153b2cf09af64100464587e8afb6d8f":[2,0,39,13],
-"classOptics.html#a2472dd458109b58bc71cc44f57ff02f9":[2,0,39,7],
-"classOptics.html#a357f26f1bf42c917131a48782732ce03":[2,0,39,16]
+"classOptics.html":[2,0,39]
 };
