@@ -1,8 +1,9 @@
 var NAVTREEINDEX2 =
 {
-"NCWpsFile_8H.html#aae7cfa7d43851de007130e9a44b7f1c0":[3,0,1,5,15,4],
-"NCWpsFile_8H.html#abcadbd0591038f7d3c9bb13c37df21f9":[3,0,1,5,15,3],
-"NCWpsFile_8H_source.html":[3,0,1,5,15],
+"NCWpsFile_8H.html#aa682cd5b28ee9ffaf36c6944bd124af0":[3,0,1,5,16,7],
+"NCWpsFile_8H.html#aae7cfa7d43851de007130e9a44b7f1c0":[3,0,1,5,16,4],
+"NCWpsFile_8H.html#abcadbd0591038f7d3c9bb13c37df21f9":[3,0,1,5,16,3],
+"NCWpsFile_8H_source.html":[3,0,1,5,16],
 "NullMoist_8H.html":[3,0,1,7,2,0],
 "NullMoist_8H_source.html":[3,0,1,7,2,0],
 "NullSurf_8H.html":[3,0,1,6,1,0],
@@ -35,8 +36,8 @@ var NAVTREEINDEX2 =
 "Phys__prop_8H_source.html":[3,0,1,11,17],
 "PlaneAverage_8H.html":[3,0,1,13,11],
 "PlaneAverage_8H_source.html":[3,0,1,13,11],
-"Plotfile_8cpp.html":[3,0,1,5,16],
-"Plotfile_8cpp.html#a1f8554e7b211b0acfc202e8a600e7d67":[3,0,1,5,16,0],
+"Plotfile_8cpp.html":[3,0,1,5,17],
+"Plotfile_8cpp.html#a1f8554e7b211b0acfc202e8a600e7d67":[3,0,1,5,17,0],
 "PrecipFall_8cpp.html":[3,0,1,7,3,5],
 "Precip_8cpp.html":[3,0,1,7,3,4],
 "Rad__constants_8H.html":[3,0,1,11,18],
@@ -47,9 +48,9 @@ var NAVTREEINDEX2 =
 "Radiation_8cpp.html#a154efe747ea48707745d01843ac5eb71":[3,0,1,11,19,0],
 "Radiation_8cpp.html#a2e09ba4f36b78ebbb569741fedab06ed":[3,0,1,11,19,2],
 "Radiation_8cpp.html#aaf4add7dd62294e7017ae4e65f656337":[3,0,1,11,19,1],
-"ReadFromMetgrid_8cpp.html":[3,0,1,5,17],
-"ReadFromWRFBdy_8cpp.html":[3,0,1,5,18],
-"ReadFromWRFInput_8cpp.html":[3,0,1,5,19],
+"ReadFromMetgrid_8cpp.html":[3,0,1,5,18],
+"ReadFromWRFBdy_8cpp.html":[3,0,1,5,19],
+"ReadFromWRFInput_8cpp.html":[3,0,1,5,20],
 "Rrtmgp_8H.html":[3,0,1,11,21],
 "Rrtmgp_8H_source.html":[3,0,1,11,21],
 "Run__longwave__rrtmgp_8cpp.html":[3,0,1,11,22],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "classCloudRadProps.html#a2890fa11a8f395809fe215447e339c20":[2,0,10,3],
 "classCloudRadProps.html#a31a396f1997438a7cbb347767dca311a":[2,0,10,4],
 "classCloudRadProps.html#a32483def8d0d82a6d1cb57834fe04b7d":[2,0,10,9],
-"classCloudRadProps.html#a35a276009636e1ac17beeb5343656e29":[2,0,10,1],
-"classCloudRadProps.html#a3aaf016afa4dfea8f3dd0ed574ec3570":[2,0,10,11]
+"classCloudRadProps.html#a35a276009636e1ac17beeb5343656e29":[2,0,10,1]
 };
