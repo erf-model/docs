@@ -1,5 +1,9 @@
 var NAVTREEINDEX8 =
 {
+"console__io_8cpp.html":[3,0,1,5,1],
+"console__io_8cpp.html#a8f794ff24efbc4b60058492d1a073c78":[3,0,1,5,1,0],
+"console__io_8cpp.html#a9d270ec83f99e836cca454cac4e0af5e":[3,0,1,5,1,1],
+"console__io_8cpp.html#aab3ca155f0d0a6d198817df9c35352f8":[3,0,1,5,1,2],
 "console__io_8cpp.html#afa2dbdd17ead719f97272c9a0a2b0f8a":[3,0,1,5,1,3],
 "dir_1ac8e04782783b6d3cb86638c0b58e57.html":[3,0,1,6,0],
 "dir_1e1d39ffe5d5a47aabb8252daab17529.html":[3,0,1,8],
@@ -111,8 +115,8 @@ var NAVTREEINDEX8 =
 "functions_y.html":[2,3,0,24],
 "functions_z.html":[2,3,0,25],
 "functions_~.html":[2,3,0,26],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX8 =
 "structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1":[2,0,5,3],
 "structAdvChoice.html#a667cbedb89514e330b6ca144298857da":[2,0,5,16],
 "structAdvChoice.html#a69b32bcee6cd30f3f88280d0ec49cd35":[2,0,5,13],
-"structAdvChoice.html#a74a383e01c24980b72b920054ee5c1ab":[2,0,5,4],
-"structAdvChoice.html#a81152997920406ea2aa97cbb5af2d9b6":[2,0,5,8],
-"structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43":[2,0,5,9],
-"structAdvChoice.html#abea240033571adc8f3993bd56bf28fa2":[2,0,5,0],
-"structAdvChoice.html#add9ddd5d61fc695bd2df0e3818767b78":[2,0,5,6]
+"structAdvChoice.html#a74a383e01c24980b72b920054ee5c1ab":[2,0,5,4]
 };
