@@ -250,19 +250,19 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        Real xflux_lo = 10. * (data(i  ,j,k,n) - data(i-1,j,k,n))</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                       - 5. * (data(i+1,j,k,n) - data(i-2,j,k,n))</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                            + (data(i+2,j,k,n) - data(i-3,j,k,n));</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> ( (xflux_lo * (data(i,j,k,n) - data(i-1,j,k,n)) ) &gt; 0.) xflux_lo = 0.;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> ( (xflux_lo * (data(i,j,k,n) - data(i-1,j,k,n)) ) &lt; 0.) xflux_lo = 0.;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        Real xflux_hi = 10. * (data(i+1,j,k,n) - data(i  ,j,k,n))</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                       - 5. * (data(i+2,j,k,n) - data(i-1,j,k,n))</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                            + (data(i+3,j,k,n) - data(i-2,j,k,n));</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> ( (xflux_hi * (data(i+1,j,k,n) - data(i,j,k,n)) ) &gt; 0.) xflux_hi = 0.;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> ( (xflux_hi * (data(i+1,j,k,n) - data(i,j,k,n)) ) &lt; 0.) xflux_hi = 0.;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        Real yflux_lo = 10. * (data(i,j  ,k,n) - data(i,j-1,k,n))</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                       - 5. * (data(i,j+1,k,n) - data(i,j-2,k,n))</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                            + (data(i,j+2,k,n) - data(i,j-3,k,n));</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> ( (yflux_lo * (data(i,j,k,n) - data(i,j-1,k,n)) ) &gt; 0.) yflux_lo = 0.;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> ( (yflux_lo * (data(i,j,k,n) - data(i,j-1,k,n)) ) &lt; 0.) yflux_lo = 0.;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        Real yflux_hi = 10. * (data(i,j+1,k,n) - data(i,j  ,k,n))</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                       - 5. * (data(i,j+2,k,n) - data(i,j-1,k,n))</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                            + (data(i,j+3,k,n) - data(i,j-2,k,n));</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> ( (yflux_hi * (data(i,j+1,k,n) - data(i,j,k,n)) ) &gt; 0.) yflux_hi = 0.;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> ( (yflux_hi * (data(i,j+1,k,n) - data(i,j,k,n)) ) &lt; 0.) yflux_hi = 0.;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        rhs(i,j,k,n) += coeff6 * ( (xflux_hi - xflux_lo) * mfx_arr(i,j,0)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                 + (yflux_hi - yflux_lo) * mfy_arr(i,j,0) );</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    });</div>
