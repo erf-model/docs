@@ -840,7 +840,7 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    }</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                });</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a> || var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a35b6db75aef9a4eca57e85396dc5dc12">Vars::xmom</a>) {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>) {</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                Box xb2d = surroundingNodes(bx,0);</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                xb2d.setBig(2,zlo-1);</div>
@@ -848,13 +848,13 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                ParallelFor(xb2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                {</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    Real dz = (zphys_arr) ? ( zphys_arr(i,j,zlo) - zphys_arr(i,j,zlo-1) ) : dz_no_terrain;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    flux_comp.compute_u_flux(i, j, k, icomp, var_idx, dz,</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    flux_comp.compute_u_flux(i, j, k, icomp, dz,</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                                             cons_arr, velx_arr, vely_arr, eta_arr,</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                                             umm_arr, um_arr, u_star_arr,</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                             dest_arr);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                });</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a> || var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9aa92727db248ec616aa835c2faa22f44c">Vars::ymom</a>) {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>) {</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                Box yb2d = surroundingNodes(bx,1);</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                yb2d.setBig(2,zlo-1);</div>
@@ -862,7 +862,7 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                ParallelFor(yb2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                {</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                    Real dz = (zphys_arr) ? ( zphys_arr(i,j,zlo) - zphys_arr(i,j,zlo-1) ) : dz_no_terrain;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                    flux_comp.compute_v_flux(i, j, k, icomp, var_idx, dz,</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                    flux_comp.compute_v_flux(i, j, k, icomp, dz,</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                                             cons_arr, velx_arr, vely_arr, eta_arr,</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                                             umm_arr, vm_arr, u_star_arr,</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                             dest_arr);</div>
@@ -873,10 +873,8 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;}</div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:100</div></div>
-<div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a35b6db75aef9a4eca57e85396dc5dc12"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a35b6db75aef9a4eca57e85396dc5dc12">Vars::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:104</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a></div><div class="ttdeci">@ NumTypes</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:103</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:101</div></div>
-<div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9aa92727db248ec616aa835c2faa22f44c"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9aa92727db248ec616aa835c2faa22f44c">Vars::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:105</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1112,7 +1110,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
 <div class="ttc" id="aclassABLMost_html_a684ddba5d81510dc583246c7c7289eed"><div class="ttname"><a href="classABLMost.html#a684ddba5d81510dc583246c7c7289eed">ABLMost::compute_most_bcs</a></div><div class="ttdeci">void compute_most_bcs(const int &amp;lev, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;mfs, amrex::MultiFab *eddyDiffs, amrex::MultiFab *z_phys, const amrex::Real &amp;dz_no_terrain, const FluxCalc &amp;flux_comp)</div></div>
-<div class="ttc" id="astructdonelan__flux_html"><div class="ttname"><a href="structdonelan__flux.html">donelan_flux</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:808</div></div>
+<div class="ttc" id="astructdonelan__flux_html"><div class="ttname"><a href="structdonelan__flux.html">donelan_flux</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:796</div></div>
 <div class="ttc" id="astructmoeng__flux_html"><div class="ttname"><a href="structmoeng__flux.html">moeng_flux</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:589</div></div>
 </div><!-- fragment -->
 </div>

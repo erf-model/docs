@@ -2,7 +2,7 @@ var classERFFillPatcher =
 [
     [ "ERFFillPatcher", "classERFFillPatcher.html#a4236a9ab8003847e327495ff170a9a7a", null ],
     [ "BuildMask", "classERFFillPatcher.html#ace667632120f87025e805461dd796599", null ],
-    [ "Define", "classERFFillPatcher.html#aa835a8e38bc35601c1b394a4183edf22", null ],
+    [ "Define", "classERFFillPatcher.html#a3dcdf3322c58c07eec765f6e3413ba68", null ],
     [ "Fill", "classERFFillPatcher.html#a045ae741822ced1684eddf019cd7f219", null ],
     [ "FillRelax", "classERFFillPatcher.html#a69bc23658f5c545f654c7ddd0cabb105", null ],
     [ "FillSet", "classERFFillPatcher.html#ae6ce0e1d59fc62d812c779d536a95c58", null ],

@@ -44,7 +44,7 @@ var namespaces_dup =
       [ "reordered", "namespaceinternal.html#a2e09ba4f36b78ebbb569741fedab06ed", null ]
     ] ],
     [ "InterpType", "namespaceInterpType.html", null ],
-    [ "IntVar", "namespaceIntVar.html", null ],
+    [ "IntVars", "namespaceIntVars.html", null ],
     [ "LsmVar_MM5", "namespaceLsmVar__MM5.html", null ],
     [ "LsmVar_SLM", "namespaceLsmVar__SLM.html", null ],
     [ "MetGridBdyVars", "namespaceMetGridBdyVars.html", null ],
