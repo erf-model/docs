@@ -180,9 +180,10 @@ var NAVTREEINDEX0 =
 "EOS_8H_source.html":[3,0,1,17],
 "ERFPCEvolve_8cpp.html":[3,0,1,9,1],
 "ERFPCInitializations_8cpp.html":[3,0,1,9,2],
+"ERFPCUtils_8cpp.html":[3,0,1,9,3],
 "ERFPC_8H.html":[3,0,1,9,0],
 "ERFPC_8H_source.html":[3,0,1,9,0],
-"ERFTracers_8cpp.html":[3,0,1,9,3],
+"ERFTracers_8cpp.html":[3,0,1,9,4],
 "ERF_8H.html":[3,0,1,19],
 "ERF_8H_source.html":[3,0,1,19],
 "ERF_8cpp.html":[3,0,1,18],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43":[3,0,1,20,14],
 "ERF__Constants_8H.html#acecae1da25fb8c8d32d1f175e18df41f":[3,0,1,20,16],
 "ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e":[3,0,1,20,48],
-"ERF__Constants_8H.html#ad6e28022b74cd595f282e2cc97c2c0d8":[3,0,1,20,58],
-"ERF__Constants_8H.html#adf319f31edb7d4f2b4b712096189734b":[3,0,1,20,4]
+"ERF__Constants_8H.html#ad6e28022b74cd595f282e2cc97c2c0d8":[3,0,1,20,58]
 };

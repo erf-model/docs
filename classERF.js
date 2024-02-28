@@ -8,6 +8,7 @@ var classERF =
     [ "advance_dycore", "classERF.html#a9068176f45cea5fdbbbf3c8eb08bd808", null ],
     [ "advance_lsm", "classERF.html#ac3f83ba16254a0efd4395900cef97efc", null ],
     [ "advance_microphysics", "classERF.html#a87c9bb3f5c35218b85024312261b098c", null ],
+    [ "appendPlotVariables", "classERF.html#a7758f75dc7c9029eddc4c58ac0567654", null ],
     [ "AverageDown", "classERF.html#a8202de1f8f372e3e6fdc483447c6a55f", null ],
     [ "AverageDownTo", "classERF.html#ae17524f168760cf435685a08d97480e7", null ],
     [ "build_fine_mask", "classERF.html#a419ba9adca32073e70aae4a8fe8cfcee", null ],
