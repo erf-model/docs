@@ -36,7 +36,8 @@ var dir_528efc400cc48bc5f175d9531879efeb =
       [ "surface_temp_charnock", "structsurface__temp__charnock.html", "structsurface__temp__charnock" ],
       [ "surface_temp_mod_charnock", "structsurface__temp__mod__charnock.html", "structsurface__temp__mod__charnock" ],
       [ "moeng_flux", "structmoeng__flux.html", "structmoeng__flux" ],
-      [ "donelan_flux", "structdonelan__flux.html", "structdonelan__flux" ]
+      [ "donelan_flux", "structdonelan__flux.html", "structdonelan__flux" ],
+      [ "custom_flux", "structcustom__flux.html", "structcustom__flux" ]
     ] ],
     [ "TimeInterpolatedData.H", "TimeInterpolatedData_8H.html", [
       [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ]

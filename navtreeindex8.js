@@ -1,5 +1,11 @@
 var NAVTREEINDEX8 =
 {
+"classncutils_1_1NCGroup.html#acf2801c26458fb99bd82733b1302285a":[2,0,0,3,31],
+"classncutils_1_1NCGroup.html#acf73ea254afaf7d74596fa07523b322f":[2,0,0,3,28],
+"classncutils_1_1NCGroup.html#ad7cd6c7e21d9d71df49549b95595f823":[2,0,0,3,5],
+"classncutils_1_1NCGroup.html#addc8bbac9a2cfa8d9c49497b7da0310f":[2,0,0,3,10],
+"classncutils_1_1NCGroup.html#aef6b6e2be36e6179a001d9873e94df82":[2,0,0,3,11],
+"classncutils_1_1NCGroup.html#af7847ff27ccb8499814b7f21559e2e84":[2,0,0,3,24],
 "classncutils_1_1NCGroup.html#affa2e62434110dd4fa47d093162e56cf":[2,0,0,3,4],
 "console__io_8cpp.html":[3,0,1,5,1],
 "console__io_8cpp.html#a8f794ff24efbc4b60058492d1a073c78":[3,0,1,5,1,0],
@@ -84,8 +90,8 @@ var NAVTREEINDEX8 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -116,8 +122,8 @@ var NAVTREEINDEX8 =
 "functions_y.html":[2,3,0,24],
 "functions_z.html":[2,3,0,25],
 "functions_~.html":[2,3,0,26],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX8 =
 "structAdvChoice.html#a1fc6421356a6c2ecfea0a46b3928d9cf":[2,0,5,7],
 "structAdvChoice.html#a22f84c60e56d4b3bde6b7f9548c87af3":[2,0,5,12],
 "structAdvChoice.html#a2dd44749e2d4f224ae1da4f9e53e257a":[2,0,5,10],
-"structAdvChoice.html#a2f888dfcb79cdb766ee04f21aada83ec":[2,0,5,14],
-"structAdvChoice.html#a334139583accdc5718a939b20b308bb9":[2,0,5,15],
-"structAdvChoice.html#a48a2a3eb5899f899e202df67fd8bb2e0":[2,0,5,11],
-"structAdvChoice.html#a50c43113d4bd0ccaf9f1878134f00bb8":[2,0,5,17],
-"structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1":[2,0,5,3],
-"structAdvChoice.html#a667cbedb89514e330b6ca144298857da":[2,0,5,16],
-"structAdvChoice.html#a69b32bcee6cd30f3f88280d0ec49cd35":[2,0,5,13]
+"structAdvChoice.html#a2f888dfcb79cdb766ee04f21aada83ec":[2,0,5,14]
 };

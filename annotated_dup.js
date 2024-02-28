@@ -17,6 +17,7 @@ var annotated_dup =
     [ "CENTERED4", "structCENTERED4.html", "structCENTERED4" ],
     [ "CENTERED6", "structCENTERED6.html", "structCENTERED6" ],
     [ "CloudRadProps", "classCloudRadProps.html", "classCloudRadProps" ],
+    [ "custom_flux", "structcustom__flux.html", "structcustom__flux" ],
     [ "DiffChoice", "structDiffChoice.html", "structDiffChoice" ],
     [ "DirectionSelector", "structDirectionSelector.html", "structDirectionSelector" ],
     [ "DirectionSelector< 0 >", "structDirectionSelector_3_010_01_4.html", "structDirectionSelector_3_010_01_4" ],

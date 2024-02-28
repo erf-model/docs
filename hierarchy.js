@@ -15,6 +15,7 @@ var hierarchy =
     [ "CENTERED4", "structCENTERED4.html", null ],
     [ "CENTERED6", "structCENTERED6.html", null ],
     [ "CloudRadProps", "classCloudRadProps.html", null ],
+    [ "custom_flux", "structcustom__flux.html", null ],
     [ "DiffChoice", "structDiffChoice.html", null ],
     [ "DirectionSelector< Index >", "structDirectionSelector.html", null ],
     [ "DirectionSelector< 0 >", "structDirectionSelector_3_010_01_4.html", null ],
