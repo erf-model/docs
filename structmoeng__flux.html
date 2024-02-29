@@ -97,9 +97,9 @@ Collaboration diagram for moeng_flux:</div>
 <div class="dyncontent">
 <div class="center"><img src="structmoeng__flux__coll__graph.png" border="0" usemap="#amoeng__flux_coll__map" alt="Collaboration graph"/></div>
 <map name="amoeng__flux_coll__map" id="amoeng__flux_coll__map">
-<area shape="rect" title=" " alt="" coords="16,95,115,121"/>
+<area shape="rect" title=" " alt="" coords="23,109,121,136"/>
 <area shape="rect" title=" " alt="" coords="5,5,56,32"/>
-<area shape="rect" title=" " alt="" coords="81,5,119,32"/>
+<area shape="rect" title=" " alt="" coords="94,5,133,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -120,8 +120,10 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a32dd97697698052a006613da3a0b7e67"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a></td></tr>
 <tr class="separator:a32dd97697698052a006613da3a0b7e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d06eff1aa7d6c357e1245eb8f5b96f7"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">eps</a> = 1e-16</td></tr>
+<tr class="memitem:a3d06eff1aa7d6c357e1245eb8f5b96f7"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">eps</a> = 1e-15</td></tr>
 <tr class="separator:a3d06eff1aa7d6c357e1245eb8f5b96f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67cae16850c061bb189a783159ac6406"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmoeng__flux.html#a67cae16850c061bb189a783159ac6406">eta_eps</a> = 1e-8</td></tr>
+<tr class="separator:a67cae16850c061bb189a783159ac6406"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Moeng flux formulation </p>
@@ -289,7 +291,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa436a31a93a198683f07cc3afe46b8f33">rho</a>   = cons_arr(ic,jc,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae560111c760df2c025ccf516adf07fc3">qv</a>    = cons_arr(ic,jc,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa436a31a93a198683f07cc3afe46b8f33">rho</a>;</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        eta   = eta_arr(ie,je,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea4166b9561a2ef0ad6d1b6d2c34cb9580">EddyDiff::Q_v</a>); <span class="comment">// == rho * alpha [kg/m^3 * m^2/s]</span></div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        eta   = amrex::max(eta,<a class="code" href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">eps</a>);</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        eta   = amrex::max(eta,<a class="code" href="structmoeng__flux.html#a67cae16850c061bb189a783159ac6406">eta_eps</a>);</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160; </div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        <span class="comment">// TODO: Integrate MOST with moisture and MOENG FLUX type</span></div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        amrex::Real moflux  = 0.0;</div>
@@ -304,7 +306,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea4166b9561a2ef0ad6d1b6d2c34cb9580"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea4166b9561a2ef0ad6d1b6d2c34cb9580">EddyDiff::Q_v</a></div><div class="ttdeci">@ Q_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:132</div></div>
 <div class="ttc" id="anamespaceMicVar__FE_html_a0ae341cd83b667d19fd9fd0f4564cb9fa436a31a93a198683f07cc3afe46b8f33"><div class="ttname"><a href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa436a31a93a198683f07cc3afe46b8f33">MicVar_FE::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> FastEddy.H:21</div></div>
 <div class="ttc" id="anamespaceMicVar__FE_html_a0ae341cd83b667d19fd9fd0f4564cb9fae560111c760df2c025ccf516adf07fc3"><div class="ttname"><a href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae560111c760df2c025ccf516adf07fc3">MicVar_FE::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> FastEddy.H:27</div></div>
-<div class="ttc" id="astructmoeng__flux_html_a3d06eff1aa7d6c357e1245eb8f5b96f7"><div class="ttname"><a href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">moeng_flux::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:835</div></div>
+<div class="ttc" id="astructmoeng__flux_html_a67cae16850c061bb189a783159ac6406"><div class="ttname"><a href="structmoeng__flux.html#a67cae16850c061bb189a783159ac6406">moeng_flux::eta_eps</a></div><div class="ttdeci">const amrex::Real eta_eps</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:836</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -454,7 +456,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa436a31a93a198683f07cc3afe46b8f33">rho</a>   = cons_arr(ic,jc,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        <a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a> = cons_arr(ic,jc,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / <a class="code" href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa436a31a93a198683f07cc3afe46b8f33">rho</a>;</div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        eta   = eta_arr(ie,je,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>); <span class="comment">// == rho * alpha [kg/m^3 * m^2/s]</span></div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;        eta   = amrex::max(eta,<a class="code" href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">eps</a>);</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;        eta   = amrex::max(eta,<a class="code" href="structmoeng__flux.html#a67cae16850c061bb189a783159ac6406">eta_eps</a>);</div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; </div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;        amrex::Real theta_mean  = tm_arr(ic,jc,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>);</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;        amrex::Real wsp_mean    = umm_arr(ic,jc,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>);</div>
@@ -476,6 +478,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:128</div></div>
 <div class="ttc" id="anamespaceLsmVar__MM5_html_a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68"><div class="ttname"><a href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> MM5.H:20</div></div>
+<div class="ttc" id="astructmoeng__flux_html_a3d06eff1aa7d6c357e1245eb8f5b96f7"><div class="ttname"><a href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">moeng_flux::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:835</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -605,7 +608,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                     + cons_arr(ic  ,jc,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        eta   = 0.5 *(  eta_arr(ie-1,je,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                      + eta_arr(ie  ,je,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        eta   = amrex::max(eta,<a class="code" href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">eps</a>);</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        eta   = amrex::max(eta,<a class="code" href="structmoeng__flux.html#a67cae16850c061bb189a783159ac6406">eta_eps</a>);</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160; </div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;        amrex::Real umean    = um_arr(i,j,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>);</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        amrex::Real wsp_mean = 0.5 * ( umm_arr(ic-1,jc,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>) + umm_arr(ic,jc,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>) );</div>
@@ -753,7 +756,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                    + cons_arr(ic,jc  ,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        eta   = 0.5*(  eta_arr(ie,je-1,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                     + eta_arr(ie,je  ,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;        eta   = amrex::max(eta,<a class="code" href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">eps</a>);</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;        eta   = amrex::max(eta,<a class="code" href="structmoeng__flux.html#a67cae16850c061bb189a783159ac6406">eta_eps</a>);</div>
 <div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160; </div>
 <div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        amrex::Real vmean     = vm_arr(i,j,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>);</div>
 <div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        amrex::Real wsp_mean  = 0.5 * ( umm_arr(ic,jc-1,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>) + umm_arr(ic,jc,<a class="code" href="structmoeng__flux.html#a32dd97697698052a006613da3a0b7e67">zlo</a>) );</div>
@@ -785,7 +788,31 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const amrex::Real moeng_flux::eps = 1e-16</td>
+          <td class="memname">const amrex::Real moeng_flux::eps = 1e-15</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="structmoeng__flux.html#af57a103ce6a4237a25afc801c0be5957">compute_t_flux()</a>.</p>
+
+</div>
+</div>
+<a id="a67cae16850c061bb189a783159ac6406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67cae16850c061bb189a783159ac6406">&#9670;&nbsp;</a></span>eta_eps</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const amrex::Real moeng_flux::eta_eps = 1e-8</td>
         </tr>
       </table>
   </td>

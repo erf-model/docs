@@ -6,5 +6,6 @@ var structcustom__flux =
     [ "compute_u_flux", "structcustom__flux.html#a966cb1817c2857046c11dbeeae958d88", null ],
     [ "compute_v_flux", "structcustom__flux.html#abb9a640c5105a2a886801071894afa88", null ],
     [ "eps", "structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17", null ],
+    [ "eta_eps", "structcustom__flux.html#aa04871c3e8d2e06f502cde2404c90be4", null ],
     [ "zlo", "structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208", null ]
 ];

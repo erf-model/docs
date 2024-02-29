@@ -177,11 +177,11 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ad837d92390012682056ffac0b5f9a8f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0">FluxCalcType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#ad837d92390012682056ffac0b5f9a8f9">flux_type</a></td></tr>
+<tr class="memitem:ad837d92390012682056ffac0b5f9a8f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0">FluxCalcType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#ad837d92390012682056ffac0b5f9a8f9">flux_type</a> {<a class="el" href="classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0a0525d4394471c332f3c0a497584923d5">FluxCalcType::MOENG</a>}</td></tr>
 <tr class="separator:ad837d92390012682056ffac0b5f9a8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d1394fa01c8c29b20dfb790c0f3ec6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classABLMost.html#a46fbd9260d2adfa7c18edad6452f9bab">ThetaCalcType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a7d1394fa01c8c29b20dfb790c0f3ec6b">theta_type</a></td></tr>
+<tr class="memitem:a7d1394fa01c8c29b20dfb790c0f3ec6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classABLMost.html#a46fbd9260d2adfa7c18edad6452f9bab">ThetaCalcType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a7d1394fa01c8c29b20dfb790c0f3ec6b">theta_type</a> {<a class="el" href="classABLMost.html#a46fbd9260d2adfa7c18edad6452f9baba10548012f42e962e7945ce998b571c5c">ThetaCalcType::ADIABATIC</a>}</td></tr>
 <tr class="separator:a7d1394fa01c8c29b20dfb790c0f3ec6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96fe21af762c91f2e3aa360f4c2e9a8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13">RoughCalcType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a96fe21af762c91f2e3aa360f4c2e9a8e">rough_type</a></td></tr>
+<tr class="memitem:a96fe21af762c91f2e3aa360f4c2e9a8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13">RoughCalcType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a96fe21af762c91f2e3aa360f4c2e9a8e">rough_type</a> {<a class="el" href="classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13a8d6b5cada83510220f59e00ce86d4d92">RoughCalcType::CONSTANT</a>}</td></tr>
 <tr class="separator:a96fe21af762c91f2e3aa360f4c2e9a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -843,35 +843,35 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> u_mean     = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,0);</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> v_mean     = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,1);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> t_mean     = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,2);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> u_mag_mean = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,3);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> um_arr  = u_mean-&gt;array(mfi);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> vm_arr  = v_mean-&gt;array(mfi);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> tm_arr  = t_mean-&gt;array(mfi);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> umm_arr = u_mag_mean-&gt;array(mfi);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment">// Get derived arrays</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> u_star_arr = <a class="code" href="classABLMost.html#acd5510d2f47502a57107f12c66f8a552">u_star</a>[lev]-&gt;array(mfi);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> t_star_arr = <a class="code" href="classABLMost.html#ac9d90016f196c3861d225132e8b6a921">t_star</a>[lev]-&gt;array(mfi);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> q_star_arr = <a class="code" href="classABLMost.html#a0630def935d5ca0d24160b9b9567f3e1">q_star</a>[lev]-&gt;array(mfi);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> t_surf_arr = <a class="code" href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">t_surf</a>[lev]-&gt;array(mfi);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="comment">// Get LSM fluxes</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keyword">auto</span> lmask_arr    = (<a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0])    ? <a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0]-&gt;array(mfi) :</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                                                       Array4&lt;int&gt; {};</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keyword">auto</span> lsm_flux_arr = (<a class="code" href="classABLMost.html#a422336bc908d29f98dafb3b745b4f060">m_lsm_flux_lev</a>[lev][0]) ? <a class="code" href="classABLMost.html#a422336bc908d29f98dafb3b745b4f060">m_lsm_flux_lev</a>[lev][0]-&gt;array(mfi) :</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                                                       Array4&lt;Real&gt; {};</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>; ++var_idx)</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keyword">const</span> Box&amp; bx = (*mfs[var_idx])[mfi].box();</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keyword">auto</span> dest_arr = (*mfs[var_idx])[mfi].array();</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>) {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                Box b2d = bx;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                b2d.setBig(2,zlo-1);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <span class="keywordtype">int</span> n = <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> q_mean     = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,3);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> u_mag_mean = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,4);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> um_arr  = u_mean-&gt;array(mfi);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> vm_arr  = v_mean-&gt;array(mfi);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> tm_arr  = t_mean-&gt;array(mfi);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> umm_arr = u_mag_mean-&gt;array(mfi);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="comment">// Get derived arrays</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> u_star_arr = <a class="code" href="classABLMost.html#acd5510d2f47502a57107f12c66f8a552">u_star</a>[lev]-&gt;array(mfi);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> t_star_arr = <a class="code" href="classABLMost.html#ac9d90016f196c3861d225132e8b6a921">t_star</a>[lev]-&gt;array(mfi);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> q_star_arr = <a class="code" href="classABLMost.html#a0630def935d5ca0d24160b9b9567f3e1">q_star</a>[lev]-&gt;array(mfi);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> t_surf_arr = <a class="code" href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">t_surf</a>[lev]-&gt;array(mfi);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">// Get LSM fluxes</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keyword">auto</span> lmask_arr    = (<a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0])    ? <a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0]-&gt;array(mfi) :</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                                                       Array4&lt;int&gt; {};</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keyword">auto</span> lsm_flux_arr = (<a class="code" href="classABLMost.html#a422336bc908d29f98dafb3b745b4f060">m_lsm_flux_lev</a>[lev][0]) ? <a class="code" href="classABLMost.html#a422336bc908d29f98dafb3b745b4f060">m_lsm_flux_lev</a>[lev][0]-&gt;array(mfi) :</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                                                       Array4&lt;Real&gt; {};</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>; ++var_idx)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keyword">const</span> Box&amp; bx = (*mfs[var_idx])[mfi].box();</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="keyword">auto</span> dest_arr = (*mfs[var_idx])[mfi].array();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>) {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                Box b2d = bx;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                b2d.setBig(2,zlo-1);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                <span class="keywordtype">int</span> n = <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                {</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                    Real dz = (zphys_arr) ? ( zphys_arr(i,j,zlo) - zphys_arr(i,j,zlo-1) ) : dz_no_terrain;</div>
@@ -1173,8 +1173,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
 <div class="ttc" id="aclassABLMost_html_a684ddba5d81510dc583246c7c7289eed"><div class="ttname"><a href="classABLMost.html#a684ddba5d81510dc583246c7c7289eed">ABLMost::compute_most_bcs</a></div><div class="ttdeci">void compute_most_bcs(const int &amp;lev, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;mfs, amrex::MultiFab *eddyDiffs, amrex::MultiFab *z_phys, const amrex::Real &amp;dz_no_terrain, const FluxCalc &amp;flux_comp)</div></div>
-<div class="ttc" id="astructcustom__flux_html"><div class="ttname"><a href="structcustom__flux.html">custom_flux</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:1079</div></div>
-<div class="ttc" id="astructdonelan__flux_html"><div class="ttname"><a href="structdonelan__flux.html">donelan_flux</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:843</div></div>
+<div class="ttc" id="astructcustom__flux_html"><div class="ttname"><a href="structcustom__flux.html">custom_flux</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:1080</div></div>
+<div class="ttc" id="astructdonelan__flux_html"><div class="ttname"><a href="structdonelan__flux.html">donelan_flux</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:844</div></div>
 <div class="ttc" id="astructmoeng__flux_html"><div class="ttname"><a href="structmoeng__flux.html">moeng_flux</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:589</div></div>
 </div><!-- fragment -->
 </div>
@@ -1339,7 +1339,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassABLMost_html_ad878840b1c998160ba79c1e9714adc70"><div class="ttname"><a href="classABLMost.html#ad878840b1c998160ba79c1e9714adc70">ABLMost::update_surf_temp</a></div><div class="ttdeci">void update_surf_temp(const amrex::Real &amp;time)</div><div class="ttdef"><b>Definition:</b> ABLMost.H:237</div></div>
 <div class="ttc" id="aclassABLMost_html_ae28fd8a21f4b514875c24fe4b8e85081"><div class="ttname"><a href="classABLMost.html#ae28fd8a21f4b514875c24fe4b8e85081">ABLMost::get_lsm_tsurf</a></div><div class="ttdeci">void get_lsm_tsurf(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ABLMost.cpp:301</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a5b590fcba4d5d99178a0f8de14a1f174"><div class="ttname"><a href="classMOSTAverage.html#a5b590fcba4d5d99178a0f8de14a1f174">MOSTAverage::get_zref</a></div><div class="ttdeci">amrex::Real get_zref() const</div><div class="ttdef"><b>Definition:</b> MOSTAverage.H:90</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a7a28005871bb8abb49f44c3976133a4f"><div class="ttname"><a href="classMOSTAverage.html#a7a28005871bb8abb49f44c3976133a4f">MOSTAverage::compute_averages</a></div><div class="ttdeci">void compute_averages(int lev)</div><div class="ttdef"><b>Definition:</b> MOSTAverage.cpp:527</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a7a28005871bb8abb49f44c3976133a4f"><div class="ttname"><a href="classMOSTAverage.html#a7a28005871bb8abb49f44c3976133a4f">MOSTAverage::compute_averages</a></div><div class="ttdeci">void compute_averages(int lev)</div><div class="ttdef"><b>Definition:</b> MOSTAverage.cpp:533</div></div>
 <div class="ttc" id="astructadiabatic__charnock_html"><div class="ttname"><a href="structadiabatic__charnock.html">adiabatic_charnock</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:108</div></div>
 <div class="ttc" id="astructadiabatic__mod__charnock_html"><div class="ttname"><a href="structadiabatic__mod__charnock.html">adiabatic_mod_charnock</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:160</div></div>
 <div class="ttc" id="astructadiabatic_html"><div class="ttname"><a href="structadiabatic.html">adiabatic</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:70</div></div>
@@ -1506,7 +1506,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0">FluxCalcType</a> ABLMost::flux_type</td>
+          <td class="memname"><a class="el" href="classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0">FluxCalcType</a> ABLMost::flux_type {<a class="el" href="classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0a0525d4394471c332f3c0a497584923d5">FluxCalcType::MOENG</a>}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1758,7 +1758,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13">RoughCalcType</a> ABLMost::rough_type</td>
+          <td class="memname"><a class="el" href="classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13">RoughCalcType</a> ABLMost::rough_type {<a class="el" href="classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13a8d6b5cada83510220f59e00ce86d4d92">RoughCalcType::CONSTANT</a>}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1942,7 +1942,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classABLMost.html#a46fbd9260d2adfa7c18edad6452f9bab">ThetaCalcType</a> ABLMost::theta_type</td>
+          <td class="memname"><a class="el" href="classABLMost.html#a46fbd9260d2adfa7c18edad6452f9bab">ThetaCalcType</a> ABLMost::theta_type {<a class="el" href="classABLMost.html#a46fbd9260d2adfa7c18edad6452f9baba10548012f42e962e7945ce998b571c5c">ThetaCalcType::ADIABATIC</a>}</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -83,7 +83,7 @@ var NAVTREEINDEX =
 "classncutils_1_1NCGroup.html#acf2801c26458fb99bd82733b1302285a",
 "structAdvChoice.html#a334139583accdc5718a939b20b308bb9",
 "structSpongeChoice.html#a0d60faef2ee2597c1df7807fc25204e2",
-"structncutils_1_1NCVar.html#ae0ab15dc4c1033271878c3bf5102f911"
+"structncutils_1_1NCVar.html#ad8b9aedc67e38c49522bd98459a26290"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
