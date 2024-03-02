@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"classncutils_1_1NCGroup.html#ac9453daf888eed4f479ae69f37490d6e":[2,0,0,3,8],
 "classncutils_1_1NCGroup.html#acf2801c26458fb99bd82733b1302285a":[2,0,0,3,31],
 "classncutils_1_1NCGroup.html#acf73ea254afaf7d74596fa07523b322f":[2,0,0,3,28],
 "classncutils_1_1NCGroup.html#ad7cd6c7e21d9d71df49549b95595f823":[2,0,0,3,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "structAdvChoice.html#a191cb08c4e809d1982ea90e4b4f9a528":[2,0,5,1],
 "structAdvChoice.html#a1fc6421356a6c2ecfea0a46b3928d9cf":[2,0,5,7],
 "structAdvChoice.html#a22f84c60e56d4b3bde6b7f9548c87af3":[2,0,5,12],
-"structAdvChoice.html#a2dd44749e2d4f224ae1da4f9e53e257a":[2,0,5,10],
-"structAdvChoice.html#a2f888dfcb79cdb766ee04f21aada83ec":[2,0,5,14]
+"structAdvChoice.html#a2dd44749e2d4f224ae1da4f9e53e257a":[2,0,5,10]
 };
