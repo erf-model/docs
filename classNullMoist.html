@@ -123,8 +123,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aab112947c592c330b45a2d7e5529ec07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09b68ec4789030267ce6dccc0af195d9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a09b68ec4789030267ce6dccc0af195d9">Init</a> (const amrex::MultiFab &amp;, const amrex::BoxArray &amp;, const amrex::Geometry &amp;, const amrex::Real &amp;)</td></tr>
 <tr class="separator:a09b68ec4789030267ce6dccc0af195d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbc464f6bac8b1bb59137421d008ebf2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#abbc464f6bac8b1bb59137421d008ebf2">Advance</a> (const amrex::Real &amp;)</td></tr>
-<tr class="separator:abbc464f6bac8b1bb59137421d008ebf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2f97dcd622bc4ef212421d496ee2297"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#aa2f97dcd622bc4ef212421d496ee2297">Advance</a> (const amrex::Real &amp;, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;)</td></tr>
+<tr class="separator:aa2f97dcd622bc4ef212421d496ee2297"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aece7a50f16bf40e3e9d536cc030458f7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#aece7a50f16bf40e3e9d536cc030458f7">Update_Micro_Vars</a> (amrex::MultiFab &amp;)</td></tr>
 <tr class="separator:aece7a50f16bf40e3e9d536cc030458f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24f0528f7d31b89f36a3c225c7e53010"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a24f0528f7d31b89f36a3c225c7e53010">Update_State_Vars</a> (amrex::MultiFab &amp;)</td></tr>
@@ -202,8 +202,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abbc464f6bac8b1bb59137421d008ebf2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbc464f6bac8b1bb59137421d008ebf2">&#9670;&nbsp;</a></span>Advance()</h2>
+<a id="aa2f97dcd622bc4ef212421d496ee2297"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2f97dcd622bc4ef212421d496ee2297">&#9670;&nbsp;</a></span>Advance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,8 +215,18 @@ Private Attributes</h2></td></tr>
           <td class="memname">virtual void NullMoist::Advance </td>
           <td>(</td>
           <td class="paramtype">const amrex::Real &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -226,8 +236,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classSAM.html#a0e80b665cbf3d37f1b172d342ba2e7d6">SAM</a>, <a class="el" href="classKessler.html#a1b9437d4cf7dd4d88b6be8b391a74fa6">Kessler</a>, and <a class="el" href="classFastEddy.html#a4bc7e30c7607d2dfe28f4af7178ba3f8">FastEddy</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{ }</div>
+<p>Reimplemented in <a class="el" href="classSAM.html#aa63fa30ea27a549b86a2b3a42c55d77f">SAM</a>, <a class="el" href="classKessler.html#adbfb72df664abc2f02fede6b91b066b6">Kessler</a>, and <a class="el" href="classFastEddy.html#aff4d2d93abbebddeaae3432f941705e4">FastEddy</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                    { }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -256,7 +266,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#a007ed40ac7278996d257b4c0ab6c1320">SAM</a>, <a class="el" href="classKessler.html#a747a85d4c8004b299ca49dcb1f221c7c">Kessler</a>, and <a class="el" href="classFastEddy.html#a242ec9790163189ebded12ad840701c1">FastEddy</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -285,7 +295,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#a1df931f91be89514c09f69f24cfeca53">SAM</a>, <a class="el" href="classKessler.html#a18f83fc4dff53c8c29ee9ee974e65ac2">Kessler</a>, and <a class="el" href="classFastEddy.html#a1e0ba9966a846d8e7ef10a1487619a59">FastEddy</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -342,7 +352,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#ac44e447994022361e74cf7c00a756605">SAM</a>, <a class="el" href="classKessler.html#a18ff380f181cf61b1142be32cb79d093">Kessler</a>, and <a class="el" href="classFastEddy.html#aa910d64363fd2bf136846be368c8e4aa">FastEddy</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -422,7 +432,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#af6652cb6f7b93a1e418da98b5a8b57b7">SAM</a>, <a class="el" href="classKessler.html#a0a84c629a080e71ed93a5f349ad7724a">Kessler</a>, and <a class="el" href="classFastEddy.html#a4b34de751f34ec4b445abe8064d5dccb">FastEddy</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -450,8 +460,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#ae27c1d50525a70f838fa9ba73e61ef46">SAM</a>, <a class="el" href="classKessler.html#a3925ff722ac968e306dbcc233718030a">Kessler</a>, and <a class="el" href="classFastEddy.html#a8f6a62a48c8fc6f209e4fd90e73a8d57">FastEddy</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullMoist.html#a645f66b91b08d84aa7451a9da0c11a72">NullMoist::m_qmoist_size</a>; }</div>
-<div class="ttc" id="aclassNullMoist_html_a645f66b91b08d84aa7451a9da0c11a72"><div class="ttname"><a href="classNullMoist.html#a645f66b91b08d84aa7451a9da0c11a72">NullMoist::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> NullMoist.H:62</div></div>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullMoist.html#a645f66b91b08d84aa7451a9da0c11a72">NullMoist::m_qmoist_size</a>; }</div>
+<div class="ttc" id="aclassNullMoist_html_a645f66b91b08d84aa7451a9da0c11a72"><div class="ttname"><a href="classNullMoist.html#a645f66b91b08d84aa7451a9da0c11a72">NullMoist::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> NullMoist.H:63</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -479,8 +489,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#aba750ad815594f21255d26d24810d3fe">SAM</a>, <a class="el" href="classKessler.html#a25a6c3f8cda023e5ea70f1ddd983626c">Kessler</a>, and <a class="el" href="classFastEddy.html#a02dbf304f4ebbd4dfc852040ac95cf3e">FastEddy</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullMoist.html#a3cb016aa9c0f1ee7534ad678723d1c59">NullMoist::m_qstate_size</a>; }</div>
-<div class="ttc" id="aclassNullMoist_html_a3cb016aa9c0f1ee7534ad678723d1c59"><div class="ttname"><a href="classNullMoist.html#a3cb016aa9c0f1ee7534ad678723d1c59">NullMoist::m_qstate_size</a></div><div class="ttdeci">int m_qstate_size</div><div class="ttdef"><b>Definition:</b> NullMoist.H:63</div></div>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullMoist.html#a3cb016aa9c0f1ee7534ad678723d1c59">NullMoist::m_qstate_size</a>; }</div>
+<div class="ttc" id="aclassNullMoist_html_a3cb016aa9c0f1ee7534ad678723d1c59"><div class="ttname"><a href="classNullMoist.html#a3cb016aa9c0f1ee7534ad678723d1c59">NullMoist::m_qstate_size</a></div><div class="ttdeci">int m_qstate_size</div><div class="ttdef"><b>Definition:</b> NullMoist.H:64</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -509,7 +519,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#a2e6ff95cf827306bbcf3661c954a692e">SAM</a>, <a class="el" href="classKessler.html#a05b9426e9fd6af90ea40aa77ed0cbe66">Kessler</a>, and <a class="el" href="classFastEddy.html#ae954582b00f9d875826f53378d895839">FastEddy</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -538,7 +548,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#aea5fdd520cbb1bc936a0f11d55400029">SAM</a>, <a class="el" href="classKessler.html#add7ed88ab0086ee53aa15e87cc8686ef">Kessler</a>, and <a class="el" href="classFastEddy.html#ab773e3413ad009fb81953573e17346af">FastEddy</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>

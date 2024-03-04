@@ -148,8 +148,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2e6ff95cf827306bbcf3661c954a692e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea5fdd520cbb1bc936a0f11d55400029"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aea5fdd520cbb1bc936a0f11d55400029">Update_State_Vars</a> (amrex::MultiFab &amp;cons_in) override</td></tr>
 <tr class="separator:aea5fdd520cbb1bc936a0f11d55400029"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e80b665cbf3d37f1b172d342ba2e7d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a0e80b665cbf3d37f1b172d342ba2e7d6">Advance</a> (const amrex::Real &amp;dt_advance) override</td></tr>
-<tr class="separator:a0e80b665cbf3d37f1b172d342ba2e7d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa63fa30ea27a549b86a2b3a42c55d77f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aa63fa30ea27a549b86a2b3a42c55d77f">Advance</a> (const amrex::Real &amp;dt_advance, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice) override</td></tr>
+<tr class="separator:aa63fa30ea27a549b86a2b3a42c55d77f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6652cb6f7b93a1e418da98b5a8b57b7"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#af6652cb6f7b93a1e418da98b5a8b57b7">Qmoist_Ptr</a> (const int &amp;varIdx) override</td></tr>
 <tr class="separator:af6652cb6f7b93a1e418da98b5a8b57b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77dd99de0896cf9f9bf8299c2c80bc40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40">Compute_Coefficients</a> ()</td></tr>
@@ -324,8 +324,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0e80b665cbf3d37f1b172d342ba2e7d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e80b665cbf3d37f1b172d342ba2e7d6">&#9670;&nbsp;</a></span>Advance()</h2>
+<a id="aa63fa30ea27a549b86a2b3a42c55d77f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa63fa30ea27a549b86a2b3a42c55d77f">&#9670;&nbsp;</a></span>Advance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -337,8 +337,18 @@ Private Attributes</h2></td></tr>
           <td class="memname">void SAM::Advance </td>
           <td>(</td>
           <td class="paramtype">const amrex::Real &amp;&#160;</td>
-          <td class="paramname"><em>dt_advance</em></td><td>)</td>
+          <td class="paramname"><em>dt_advance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
+          <td class="paramname"><em>solverChoice</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -348,25 +358,25 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classNullMoist.html#abbc464f6bac8b1bb59137421d008ebf2">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a> = dt_advance;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a7a43f42ffe12f7ed7e32d0abdbea4133">Cloud</a>();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a02c82a7d07676312819cfc9d2ed37cec">IceFall</a>();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        this-&gt;<a class="code" href="classSAM.html#ae2e767f439749aeec7168bc98006caf0">Precip</a>();</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a0b1c947ade2fda0357e32a25ca0cf211">PrecipFall</a>();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<p>Reimplemented from <a class="el" href="classNullMoist.html#aa2f97dcd622bc4ef212421d496ee2297">NullMoist</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a> = dt_advance;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a7a43f42ffe12f7ed7e32d0abdbea4133">Cloud</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a02c82a7d07676312819cfc9d2ed37cec">IceFall</a>();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        this-&gt;<a class="code" href="classSAM.html#ae2e767f439749aeec7168bc98006caf0">Precip</a>();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a0b1c947ade2fda0357e32a25ca0cf211">PrecipFall</a>();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
 <div class="ttc" id="aclassSAM_html_a02c82a7d07676312819cfc9d2ed37cec"><div class="ttname"><a href="classSAM.html#a02c82a7d07676312819cfc9d2ed37cec">SAM::IceFall</a></div><div class="ttdeci">void IceFall()</div><div class="ttdef"><b>Definition:</b> IceFall.cpp:10</div></div>
 <div class="ttc" id="aclassSAM_html_a0b1c947ade2fda0357e32a25ca0cf211"><div class="ttname"><a href="classSAM.html#a0b1c947ade2fda0357e32a25ca0cf211">SAM::PrecipFall</a></div><div class="ttdeci">void PrecipFall(int hydro_type=2)</div><div class="ttdef"><b>Definition:</b> PrecipFall.cpp:14</div></div>
 <div class="ttc" id="aclassSAM_html_a7a43f42ffe12f7ed7e32d0abdbea4133"><div class="ttname"><a href="classSAM.html#a7a43f42ffe12f7ed7e32d0abdbea4133">SAM::Cloud</a></div><div class="ttdeci">void Cloud()</div><div class="ttdef"><b>Definition:</b> Cloud_SAM.cpp:11</div></div>
 <div class="ttc" id="aclassSAM_html_ae2e767f439749aeec7168bc98006caf0"><div class="ttname"><a href="classSAM.html#ae2e767f439749aeec7168bc98006caf0">SAM::Precip</a></div><div class="ttdeci">void Precip()</div><div class="ttdef"><b>Definition:</b> Precip.cpp:9</div></div>
-<div class="ttc" id="aclassSAM_html_af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9"><div class="ttname"><a href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">SAM::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> SAM.H:164</div></div>
+<div class="ttc" id="aclassSAM_html_af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9"><div class="ttname"><a href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">SAM::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> SAM.H:165</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classSAM_a0e80b665cbf3d37f1b172d342ba2e7d6_cgraph.png" border="0" usemap="#aclassSAM_a0e80b665cbf3d37f1b172d342ba2e7d6_cgraph" alt=""/></div>
-<map name="aclassSAM_a0e80b665cbf3d37f1b172d342ba2e7d6_cgraph" id="aclassSAM_a0e80b665cbf3d37f1b172d342ba2e7d6_cgraph">
+<div class="center"><img src="classSAM_aa63fa30ea27a549b86a2b3a42c55d77f_cgraph.png" border="0" usemap="#aclassSAM_aa63fa30ea27a549b86a2b3a42c55d77f_cgraph" alt=""/></div>
+<map name="aclassSAM_aa63fa30ea27a549b86a2b3a42c55d77f_cgraph" id="aclassSAM_aa63fa30ea27a549b86a2b3a42c55d77f_cgraph">
 <area shape="rect" title=" " alt="" coords="5,208,121,235"/>
 <area shape="rect" href="classSAM.html#a7a43f42ffe12f7ed7e32d0abdbea4133" title=" " alt="" coords="182,120,279,147"/>
 <area shape="rect" href="classSAM.html#a02c82a7d07676312819cfc9d2ed37cec" title=" " alt="" coords="180,233,281,260"/>
@@ -610,11 +620,11 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aMicrophysics__Utils_8H_html_a7baba5d74922033bf93526933a0d77ec"><div class="ttname"><a href="Microphysics__Utils_8H.html#a7baba5d74922033bf93526933a0d77ec">erf_dtqsati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_dtqsati(amrex::Real t, amrex::Real p, amrex::Real &amp;dtqsati)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:129</div></div>
 <div class="ttc" id="aMicrophysics__Utils_8H_html_a8e4b0c6ed8b95c2040dc0c9e8fcb8615"><div class="ttname"><a href="Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;qsatw)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:122</div></div>
 <div class="ttc" id="aMicrophysics__Utils_8H_html_ac39ef2a869ef543f708d5ed7da4754d3"><div class="ttname"><a href="Microphysics__Utils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsati(amrex::Real t, amrex::Real p, amrex::Real &amp;qsati)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:115</div></div>
-<div class="ttc" id="aclassSAM_html_a36ee9e1e1a94d22304f46e064f16e11e"><div class="ttname"><a href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">SAM::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> SAM.H:183</div></div>
-<div class="ttc" id="aclassSAM_html_a3b461d5620f6b9a08a1e62b60a463af7"><div class="ttname"><a href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">SAM::m_rdOcp</a></div><div class="ttdeci">amrex::Real m_rdOcp</div><div class="ttdef"><b>Definition:</b> SAM.H:180</div></div>
-<div class="ttc" id="aclassSAM_html_a53d38219476c32ba2dd751c02bcae53c"><div class="ttname"><a href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">SAM::m_fac_fus</a></div><div class="ttdeci">amrex::Real m_fac_fus</div><div class="ttdef"><b>Definition:</b> SAM.H:177</div></div>
-<div class="ttc" id="aclassSAM_html_a66b0ffc2f98c96c5a3b3c760a854be95"><div class="ttname"><a href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">SAM::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> SAM.H:176</div></div>
-<div class="ttc" id="aclassSAM_html_a8653cbf2c13ac3595f5f8710a3f1beec"><div class="ttname"><a href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">SAM::m_fac_sub</a></div><div class="ttdeci">amrex::Real m_fac_sub</div><div class="ttdef"><b>Definition:</b> SAM.H:178</div></div>
+<div class="ttc" id="aclassSAM_html_a36ee9e1e1a94d22304f46e064f16e11e"><div class="ttname"><a href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">SAM::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> SAM.H:184</div></div>
+<div class="ttc" id="aclassSAM_html_a3b461d5620f6b9a08a1e62b60a463af7"><div class="ttname"><a href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">SAM::m_rdOcp</a></div><div class="ttdeci">amrex::Real m_rdOcp</div><div class="ttdef"><b>Definition:</b> SAM.H:181</div></div>
+<div class="ttc" id="aclassSAM_html_a53d38219476c32ba2dd751c02bcae53c"><div class="ttname"><a href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">SAM::m_fac_fus</a></div><div class="ttdeci">amrex::Real m_fac_fus</div><div class="ttdef"><b>Definition:</b> SAM.H:178</div></div>
+<div class="ttc" id="aclassSAM_html_a66b0ffc2f98c96c5a3b3c760a854be95"><div class="ttname"><a href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">SAM::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> SAM.H:177</div></div>
+<div class="ttc" id="aclassSAM_html_a8653cbf2c13ac3595f5f8710a3f1beec"><div class="ttname"><a href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">SAM::m_fac_sub</a></div><div class="ttdeci">amrex::Real m_fac_sub</div><div class="ttdef"><b>Definition:</b> SAM.H:179</div></div>
 <div class="ttc" id="anamespaceMicVar__FE_html_a0ae341cd83b667d19fd9fd0f4564cb9fa5c0fa7f0120a3ead7a99d0f8545ab606"><div class="ttname"><a href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa5c0fa7f0120a3ead7a99d0f8545ab606">MicVar_FE::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> FastEddy.H:24</div></div>
 <div class="ttc" id="anamespaceMicVar__FE_html_a0ae341cd83b667d19fd9fd0f4564cb9fa72fbd3861cd0ae9f103201d1cc7482eb"><div class="ttname"><a href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fa72fbd3861cd0ae9f103201d1cc7482eb">MicVar_FE::tabs</a></div><div class="ttdeci">@ tabs</div><div class="ttdef"><b>Definition:</b> FastEddy.H:23</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37">MicVar::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> SAM.H:33</div></div>
@@ -631,7 +641,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34ae960e0fe1fea5fc017938ab2b92757ed"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34ae960e0fe1fea5fc017938ab2b92757ed">MicVar::qps</a></div><div class="ttdeci">@ qps</div><div class="ttdef"><b>Definition:</b> SAM.H:43</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34af86a273a88ba038dd1ea798c51ebf8c4"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34af86a273a88ba038dd1ea798c51ebf8c4">MicVar::qp</a></div><div class="ttdeci">@ qp</div><div class="ttdef"><b>Definition:</b> SAM.H:41</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classSAM.html#a0e80b665cbf3d37f1b172d342ba2e7d6">Advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSAM.html#aa63fa30ea27a549b86a2b3a42c55d77f">Advance()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -655,7 +665,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classSAM_a7a43f42ffe12f7ed7e32d0abdbea4133_icgraph.png" border="0" usemap="#aclassSAM_a7a43f42ffe12f7ed7e32d0abdbea4133_icgraph" alt=""/></div>
 <map name="aclassSAM_a7a43f42ffe12f7ed7e32d0abdbea4133_icgraph" id="aclassSAM_a7a43f42ffe12f7ed7e32d0abdbea4133_icgraph">
 <area shape="rect" title=" " alt="" coords="169,5,267,32"/>
-<area shape="rect" href="classSAM.html#a0e80b665cbf3d37f1b172d342ba2e7d6" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" href="classSAM.html#aa63fa30ea27a549b86a2b3a42c55d77f" title=" " alt="" coords="5,5,121,32"/>
 </map>
 </div>
 
@@ -832,27 +842,27 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aMicrophysics__Utils_8H_html_a4ea516e89f4e87b4ffc305504e8f0bf1"><div class="ttname"><a href="Microphysics__Utils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1">erf_esati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_esati(amrex::Real t)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:21</div></div>
 <div class="ttc" id="aMicrophysics__Utils_8H_html_abd125e107924437493cbcbac9a97c017"><div class="ttname"><a href="Microphysics__Utils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_gammafff(amrex::Real x)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:15</div></div>
 <div class="ttc" id="aclassPlaneAverage_html"><div class="ttname"><a href="classPlaneAverage.html">PlaneAverage</a></div><div class="ttdef"><b>Definition:</b> PlaneAverage.H:13</div></div>
-<div class="ttc" id="aclassSAM_html_a0853b1a3a4ec94178ca208ea594fc455"><div class="ttname"><a href="classSAM.html#a0853b1a3a4ec94178ca208ea594fc455">SAM::rho1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; rho1d</div><div class="ttdef"><b>Definition:</b> SAM.H:200</div></div>
-<div class="ttc" id="aclassSAM_html_a0edeaaddf7573079fdc9af1484ce5582"><div class="ttname"><a href="classSAM.html#a0edeaaddf7573079fdc9af1484ce5582">SAM::evapr2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr2</div><div class="ttdef"><b>Definition:</b> SAM.H:197</div></div>
-<div class="ttc" id="aclassSAM_html_a2e241fff555231e1cc87947a624bb5d6"><div class="ttname"><a href="classSAM.html#a2e241fff555231e1cc87947a624bb5d6">SAM::evapg1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg1</div><div class="ttdef"><b>Definition:</b> SAM.H:194</div></div>
-<div class="ttc" id="aclassSAM_html_a2ec33470030fdfd34b9b9436f0b56cfd"><div class="ttname"><a href="classSAM.html#a2ec33470030fdfd34b9b9436f0b56cfd">SAM::accrgi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgi</div><div class="ttdef"><b>Definition:</b> SAM.H:192</div></div>
-<div class="ttc" id="aclassSAM_html_a3117e23160d027ccb4dacf744a477a40"><div class="ttname"><a href="classSAM.html#a3117e23160d027ccb4dacf744a477a40">SAM::evapg2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg2</div><div class="ttdef"><b>Definition:</b> SAM.H:195</div></div>
-<div class="ttc" id="aclassSAM_html_a37854ec84283a4229cf86b54cfcfc72b"><div class="ttname"><a href="classSAM.html#a37854ec84283a4229cf86b54cfcfc72b">SAM::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> SAM.H:170</div></div>
-<div class="ttc" id="aclassSAM_html_a3a76b3fc76d33c147dcaab81a738f41c"><div class="ttname"><a href="classSAM.html#a3a76b3fc76d33c147dcaab81a738f41c">SAM::m_gOcp</a></div><div class="ttdeci">amrex::Real m_gOcp</div><div class="ttdef"><b>Definition:</b> SAM.H:179</div></div>
-<div class="ttc" id="aclassSAM_html_a56c463cbd313722b567dd88e7ac6fccd"><div class="ttname"><a href="classSAM.html#a56c463cbd313722b567dd88e7ac6fccd">SAM::evaps1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps1</div><div class="ttdef"><b>Definition:</b> SAM.H:190</div></div>
-<div class="ttc" id="aclassSAM_html_a5a5228929f2e9032152efe0a5cb9476b"><div class="ttname"><a href="classSAM.html#a5a5228929f2e9032152efe0a5cb9476b">SAM::zmid</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; zmid</div><div class="ttdef"><b>Definition:</b> SAM.H:208</div></div>
-<div class="ttc" id="aclassSAM_html_a6b848cc96480f05c0c7b1e811cdb50d7"><div class="ttname"><a href="classSAM.html#a6b848cc96480f05c0c7b1e811cdb50d7">SAM::accrsi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsi</div><div class="ttdef"><b>Definition:</b> SAM.H:187</div></div>
-<div class="ttc" id="aclassSAM_html_a74856cc0ee48b638ee5263cd51fd1090"><div class="ttname"><a href="classSAM.html#a74856cc0ee48b638ee5263cd51fd1090">SAM::accrrc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrrc</div><div class="ttdef"><b>Definition:</b> SAM.H:186</div></div>
-<div class="ttc" id="aclassSAM_html_a77e43f5c8a68a43f8109aa18b71fa64e"><div class="ttname"><a href="classSAM.html#a77e43f5c8a68a43f8109aa18b71fa64e">SAM::pres1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; pres1d</div><div class="ttdef"><b>Definition:</b> SAM.H:201</div></div>
-<div class="ttc" id="aclassSAM_html_a7da420869410dc959c2442962524259f"><div class="ttname"><a href="classSAM.html#a7da420869410dc959c2442962524259f">SAM::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> SAM.H:167</div></div>
-<div class="ttc" id="aclassSAM_html_a8242fff43eb2cf417036eb36f5e4a3d8"><div class="ttname"><a href="classSAM.html#a8242fff43eb2cf417036eb36f5e4a3d8">SAM::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> SAM.H:158</div></div>
-<div class="ttc" id="aclassSAM_html_a8350a31a9f29bedee48b24bb43d5b0fc"><div class="ttname"><a href="classSAM.html#a8350a31a9f29bedee48b24bb43d5b0fc">SAM::evapr1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr1</div><div class="ttdef"><b>Definition:</b> SAM.H:196</div></div>
-<div class="ttc" id="aclassSAM_html_a8f9e9699afd94d393be846cd26933fd0"><div class="ttname"><a href="classSAM.html#a8f9e9699afd94d393be846cd26933fd0">SAM::evaps2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps2</div><div class="ttdef"><b>Definition:</b> SAM.H:191</div></div>
-<div class="ttc" id="aclassSAM_html_aa2de795ae7721e5070a8f4844e3897f6"><div class="ttname"><a href="classSAM.html#aa2de795ae7721e5070a8f4844e3897f6">SAM::accrgc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgc</div><div class="ttdef"><b>Definition:</b> SAM.H:193</div></div>
-<div class="ttc" id="aclassSAM_html_aa32720be8b27907466650050dc73e110"><div class="ttname"><a href="classSAM.html#aa32720be8b27907466650050dc73e110">SAM::accrsc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsc</div><div class="ttdef"><b>Definition:</b> SAM.H:188</div></div>
-<div class="ttc" id="aclassSAM_html_aad8c4616221c01599e4e32f2ebb08698"><div class="ttname"><a href="classSAM.html#aad8c4616221c01599e4e32f2ebb08698">SAM::coefice</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; coefice</div><div class="ttdef"><b>Definition:</b> SAM.H:189</div></div>
-<div class="ttc" id="aclassSAM_html_aee5da977a069c0b9cb98d150027f746c"><div class="ttname"><a href="classSAM.html#aee5da977a069c0b9cb98d150027f746c">SAM::tabs1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; tabs1d</div><div class="ttdef"><b>Definition:</b> SAM.H:202</div></div>
-<div class="ttc" id="aclassSAM_html_af47c1dda6481ee4549b60f2c03bdec18"><div class="ttname"><a href="classSAM.html#af47c1dda6481ee4549b60f2c03bdec18">SAM::gamaz</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; gamaz</div><div class="ttdef"><b>Definition:</b> SAM.H:207</div></div>
+<div class="ttc" id="aclassSAM_html_a0853b1a3a4ec94178ca208ea594fc455"><div class="ttname"><a href="classSAM.html#a0853b1a3a4ec94178ca208ea594fc455">SAM::rho1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; rho1d</div><div class="ttdef"><b>Definition:</b> SAM.H:201</div></div>
+<div class="ttc" id="aclassSAM_html_a0edeaaddf7573079fdc9af1484ce5582"><div class="ttname"><a href="classSAM.html#a0edeaaddf7573079fdc9af1484ce5582">SAM::evapr2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr2</div><div class="ttdef"><b>Definition:</b> SAM.H:198</div></div>
+<div class="ttc" id="aclassSAM_html_a2e241fff555231e1cc87947a624bb5d6"><div class="ttname"><a href="classSAM.html#a2e241fff555231e1cc87947a624bb5d6">SAM::evapg1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg1</div><div class="ttdef"><b>Definition:</b> SAM.H:195</div></div>
+<div class="ttc" id="aclassSAM_html_a2ec33470030fdfd34b9b9436f0b56cfd"><div class="ttname"><a href="classSAM.html#a2ec33470030fdfd34b9b9436f0b56cfd">SAM::accrgi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgi</div><div class="ttdef"><b>Definition:</b> SAM.H:193</div></div>
+<div class="ttc" id="aclassSAM_html_a3117e23160d027ccb4dacf744a477a40"><div class="ttname"><a href="classSAM.html#a3117e23160d027ccb4dacf744a477a40">SAM::evapg2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg2</div><div class="ttdef"><b>Definition:</b> SAM.H:196</div></div>
+<div class="ttc" id="aclassSAM_html_a37854ec84283a4229cf86b54cfcfc72b"><div class="ttname"><a href="classSAM.html#a37854ec84283a4229cf86b54cfcfc72b">SAM::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> SAM.H:171</div></div>
+<div class="ttc" id="aclassSAM_html_a3a76b3fc76d33c147dcaab81a738f41c"><div class="ttname"><a href="classSAM.html#a3a76b3fc76d33c147dcaab81a738f41c">SAM::m_gOcp</a></div><div class="ttdeci">amrex::Real m_gOcp</div><div class="ttdef"><b>Definition:</b> SAM.H:180</div></div>
+<div class="ttc" id="aclassSAM_html_a56c463cbd313722b567dd88e7ac6fccd"><div class="ttname"><a href="classSAM.html#a56c463cbd313722b567dd88e7ac6fccd">SAM::evaps1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps1</div><div class="ttdef"><b>Definition:</b> SAM.H:191</div></div>
+<div class="ttc" id="aclassSAM_html_a5a5228929f2e9032152efe0a5cb9476b"><div class="ttname"><a href="classSAM.html#a5a5228929f2e9032152efe0a5cb9476b">SAM::zmid</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; zmid</div><div class="ttdef"><b>Definition:</b> SAM.H:209</div></div>
+<div class="ttc" id="aclassSAM_html_a6b848cc96480f05c0c7b1e811cdb50d7"><div class="ttname"><a href="classSAM.html#a6b848cc96480f05c0c7b1e811cdb50d7">SAM::accrsi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsi</div><div class="ttdef"><b>Definition:</b> SAM.H:188</div></div>
+<div class="ttc" id="aclassSAM_html_a74856cc0ee48b638ee5263cd51fd1090"><div class="ttname"><a href="classSAM.html#a74856cc0ee48b638ee5263cd51fd1090">SAM::accrrc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrrc</div><div class="ttdef"><b>Definition:</b> SAM.H:187</div></div>
+<div class="ttc" id="aclassSAM_html_a77e43f5c8a68a43f8109aa18b71fa64e"><div class="ttname"><a href="classSAM.html#a77e43f5c8a68a43f8109aa18b71fa64e">SAM::pres1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; pres1d</div><div class="ttdef"><b>Definition:</b> SAM.H:202</div></div>
+<div class="ttc" id="aclassSAM_html_a7da420869410dc959c2442962524259f"><div class="ttname"><a href="classSAM.html#a7da420869410dc959c2442962524259f">SAM::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> SAM.H:168</div></div>
+<div class="ttc" id="aclassSAM_html_a8242fff43eb2cf417036eb36f5e4a3d8"><div class="ttname"><a href="classSAM.html#a8242fff43eb2cf417036eb36f5e4a3d8">SAM::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> SAM.H:159</div></div>
+<div class="ttc" id="aclassSAM_html_a8350a31a9f29bedee48b24bb43d5b0fc"><div class="ttname"><a href="classSAM.html#a8350a31a9f29bedee48b24bb43d5b0fc">SAM::evapr1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr1</div><div class="ttdef"><b>Definition:</b> SAM.H:197</div></div>
+<div class="ttc" id="aclassSAM_html_a8f9e9699afd94d393be846cd26933fd0"><div class="ttname"><a href="classSAM.html#a8f9e9699afd94d393be846cd26933fd0">SAM::evaps2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps2</div><div class="ttdef"><b>Definition:</b> SAM.H:192</div></div>
+<div class="ttc" id="aclassSAM_html_aa2de795ae7721e5070a8f4844e3897f6"><div class="ttname"><a href="classSAM.html#aa2de795ae7721e5070a8f4844e3897f6">SAM::accrgc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgc</div><div class="ttdef"><b>Definition:</b> SAM.H:194</div></div>
+<div class="ttc" id="aclassSAM_html_aa32720be8b27907466650050dc73e110"><div class="ttname"><a href="classSAM.html#aa32720be8b27907466650050dc73e110">SAM::accrsc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsc</div><div class="ttdef"><b>Definition:</b> SAM.H:189</div></div>
+<div class="ttc" id="aclassSAM_html_aad8c4616221c01599e4e32f2ebb08698"><div class="ttname"><a href="classSAM.html#aad8c4616221c01599e4e32f2ebb08698">SAM::coefice</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; coefice</div><div class="ttdef"><b>Definition:</b> SAM.H:190</div></div>
+<div class="ttc" id="aclassSAM_html_aee5da977a069c0b9cb98d150027f746c"><div class="ttname"><a href="classSAM.html#aee5da977a069c0b9cb98d150027f746c">SAM::tabs1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; tabs1d</div><div class="ttdef"><b>Definition:</b> SAM.H:203</div></div>
+<div class="ttc" id="aclassSAM_html_af47c1dda6481ee4549b60f2c03bdec18"><div class="ttname"><a href="classSAM.html#af47c1dda6481ee4549b60f2c03bdec18">SAM::gamaz</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; gamaz</div><div class="ttdef"><b>Definition:</b> SAM.H:208</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSAM.html#a2e6ff95cf827306bbcf3661c954a692e">Update_Micro_Vars()</a>.</p>
 <div class="dynheader">
@@ -1118,13 +1128,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0f65ea12b4405c50f1d777f7ca82dcfd"><div class="ttname"><a href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a></div><div class="ttdeci">constexpr amrex::Real lfus</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:67</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
-<div class="ttc" id="aclassSAM_html_a54766f324324d579d2591a0bdc60e359"><div class="ttname"><a href="classSAM.html#a54766f324324d579d2591a0bdc60e359">SAM::doprecip</a></div><div class="ttdeci">bool doprecip</div><div class="ttdef"><b>Definition:</b> SAM.H:173</div></div>
-<div class="ttc" id="aclassSAM_html_a77c335e68b7ad8e6069d1318ea673a16"><div class="ttname"><a href="classSAM.html#a77c335e68b7ad8e6069d1318ea673a16">SAM::docloud</a></div><div class="ttdeci">bool docloud</div><div class="ttdef"><b>Definition:</b> SAM.H:173</div></div>
-<div class="ttc" id="astructSolverChoice_html_a2e1ef762ee1dc1bd3d4cbd08125c758a"><div class="ttname"><a href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">SolverChoice::rdOcp</a></div><div class="ttdeci">amrex::Real rdOcp</div><div class="ttdef"><b>Definition:</b> DataStruct.H:377</div></div>
-<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> DataStruct.H:376</div></div>
-<div class="ttc" id="astructSolverChoice_html_a766e5884354ed6483704f8257036ee75"><div class="ttname"><a href="structSolverChoice.html#a766e5884354ed6483704f8257036ee75">SolverChoice::do_precip</a></div><div class="ttdeci">bool do_precip</div><div class="ttdef"><b>Definition:</b> DataStruct.H:414</div></div>
-<div class="ttc" id="astructSolverChoice_html_af352bb75ceaeae4ac534d3378fbf393a"><div class="ttname"><a href="structSolverChoice.html#af352bb75ceaeae4ac534d3378fbf393a">SolverChoice::do_cloud</a></div><div class="ttdeci">bool do_cloud</div><div class="ttdef"><b>Definition:</b> DataStruct.H:413</div></div>
-<div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> DataStruct.H:411</div></div>
+<div class="ttc" id="aclassSAM_html_a54766f324324d579d2591a0bdc60e359"><div class="ttname"><a href="classSAM.html#a54766f324324d579d2591a0bdc60e359">SAM::doprecip</a></div><div class="ttdeci">bool doprecip</div><div class="ttdef"><b>Definition:</b> SAM.H:174</div></div>
+<div class="ttc" id="aclassSAM_html_a77c335e68b7ad8e6069d1318ea673a16"><div class="ttname"><a href="classSAM.html#a77c335e68b7ad8e6069d1318ea673a16">SAM::docloud</a></div><div class="ttdeci">bool docloud</div><div class="ttdef"><b>Definition:</b> SAM.H:174</div></div>
+<div class="ttc" id="astructSolverChoice_html_a2e1ef762ee1dc1bd3d4cbd08125c758a"><div class="ttname"><a href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">SolverChoice::rdOcp</a></div><div class="ttdeci">amrex::Real rdOcp</div><div class="ttdef"><b>Definition:</b> DataStruct.H:379</div></div>
+<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> DataStruct.H:378</div></div>
+<div class="ttc" id="astructSolverChoice_html_a766e5884354ed6483704f8257036ee75"><div class="ttname"><a href="structSolverChoice.html#a766e5884354ed6483704f8257036ee75">SolverChoice::do_precip</a></div><div class="ttdeci">bool do_precip</div><div class="ttdef"><b>Definition:</b> DataStruct.H:416</div></div>
+<div class="ttc" id="astructSolverChoice_html_af352bb75ceaeae4ac534d3378fbf393a"><div class="ttname"><a href="structSolverChoice.html#af352bb75ceaeae4ac534d3378fbf393a">SolverChoice::do_cloud</a></div><div class="ttdeci">bool do_cloud</div><div class="ttdef"><b>Definition:</b> DataStruct.H:415</div></div>
+<div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> DataStruct.H:413</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1297,7 +1307,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceMicVar__FE_html_a0ae341cd83b667d19fd9fd0f4564cb9fae86803d64a7966eb16dd9d8835f86fb9"><div class="ttname"><a href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae86803d64a7966eb16dd9d8835f86fb9">MicVar_FE::qt</a></div><div class="ttdeci">@ qt</div><div class="ttdef"><b>Definition:</b> FastEddy.H:26</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a3e8bdf864aa73d27b5870cf155c3a86aa6b81d3dc642e339490ef9ab50db41a65"><div class="ttname"><a href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa6b81d3dc642e339490ef9ab50db41a65">MicVar_Kess::qcl</a></div><div class="ttdeci">@ qcl</div><div class="ttdef"><b>Definition:</b> Kessler.H:37</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classSAM.html#a0e80b665cbf3d37f1b172d342ba2e7d6">Advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSAM.html#aa63fa30ea27a549b86a2b3a42c55d77f">Advance()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1313,7 +1323,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classSAM_a02c82a7d07676312819cfc9d2ed37cec_icgraph.png" border="0" usemap="#aclassSAM_a02c82a7d07676312819cfc9d2ed37cec_icgraph" alt=""/></div>
 <map name="aclassSAM_a02c82a7d07676312819cfc9d2ed37cec_icgraph" id="aclassSAM_a02c82a7d07676312819cfc9d2ed37cec_icgraph">
 <area shape="rect" title=" " alt="" coords="169,5,271,32"/>
-<area shape="rect" href="classSAM.html#a0e80b665cbf3d37f1b172d342ba2e7d6" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" href="classSAM.html#aa63fa30ea27a549b86a2b3a42c55d77f" title=" " alt="" coords="5,5,121,32"/>
 </map>
 </div>
 
@@ -1428,11 +1438,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="classSAM.html#a5a5228929f2e9032152efe0a5cb9476b">zmid</a>.resize({<a class="code" href="classSAM.html#a0473906305a6eaea0bad212893b9c911">zlo</a>}, {<a class="code" href="classSAM.html#aaf2fc082e80f1c5cc9de339ff25ca27b">zhi</a>});</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
-<div class="ttc" id="aclassSAM_html_a0473906305a6eaea0bad212893b9c911"><div class="ttname"><a href="classSAM.html#a0473906305a6eaea0bad212893b9c911">SAM::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> SAM.H:167</div></div>
-<div class="ttc" id="aclassSAM_html_a4bf36ad050daafdcfea1aa83ad75f9cf"><div class="ttname"><a href="classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf">SAM::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> SAM.H:149</div></div>
-<div class="ttc" id="aclassSAM_html_a579b5a1e16d7b9d8d317e475a6a43705"><div class="ttname"><a href="classSAM.html#a579b5a1e16d7b9d8d317e475a6a43705">SAM::m_gtoe</a></div><div class="ttdeci">amrex::BoxArray m_gtoe</div><div class="ttdef"><b>Definition:</b> SAM.H:161</div></div>
-<div class="ttc" id="aclassSAM_html_a6008487ad12ada77acdcb3ee41371c98"><div class="ttname"><a href="classSAM.html#a6008487ad12ada77acdcb3ee41371c98">SAM::MicVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; MicVarMap</div><div class="ttdef"><b>Definition:</b> SAM.H:155</div></div>
-<div class="ttc" id="aclassSAM_html_aaf2fc082e80f1c5cc9de339ff25ca27b"><div class="ttname"><a href="classSAM.html#aaf2fc082e80f1c5cc9de339ff25ca27b">SAM::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> SAM.H:167</div></div>
+<div class="ttc" id="aclassSAM_html_a0473906305a6eaea0bad212893b9c911"><div class="ttname"><a href="classSAM.html#a0473906305a6eaea0bad212893b9c911">SAM::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> SAM.H:168</div></div>
+<div class="ttc" id="aclassSAM_html_a4bf36ad050daafdcfea1aa83ad75f9cf"><div class="ttname"><a href="classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf">SAM::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> SAM.H:150</div></div>
+<div class="ttc" id="aclassSAM_html_a579b5a1e16d7b9d8d317e475a6a43705"><div class="ttname"><a href="classSAM.html#a579b5a1e16d7b9d8d317e475a6a43705">SAM::m_gtoe</a></div><div class="ttdeci">amrex::BoxArray m_gtoe</div><div class="ttdef"><b>Definition:</b> SAM.H:162</div></div>
+<div class="ttc" id="aclassSAM_html_a6008487ad12ada77acdcb3ee41371c98"><div class="ttname"><a href="classSAM.html#a6008487ad12ada77acdcb3ee41371c98">SAM::MicVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; MicVarMap</div><div class="ttdef"><b>Definition:</b> SAM.H:156</div></div>
+<div class="ttc" id="aclassSAM_html_aaf2fc082e80f1c5cc9de339ff25ca27b"><div class="ttname"><a href="classSAM.html#aaf2fc082e80f1c5cc9de339ff25ca27b">SAM::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> SAM.H:168</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34a0a8da919c111613d4806217dce5cd1e3"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a0a8da919c111613d4806217dce5cd1e3">MicVar::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> SAM.H:47</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1691,7 +1701,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__Constants_8H_html_a956656dbad95153bb8d3f0e42fa3d356"><div class="ttname"><a href="ERF__Constants_8H.html#a956656dbad95153bb8d3f0e42fa3d356">qp_threshold</a></div><div class="ttdeci">constexpr amrex::Real qp_threshold</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:60</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_afddfdf9f48fef3929914f786ce79022a"><div class="ttname"><a href="ERF__Constants_8H.html#afddfdf9f48fef3929914f786ce79022a">a_pr</a></div><div class="ttdeci">constexpr amrex::Real a_pr</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:77</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classSAM.html#a0e80b665cbf3d37f1b172d342ba2e7d6">Advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSAM.html#aa63fa30ea27a549b86a2b3a42c55d77f">Advance()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1711,7 +1721,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classSAM_ae2e767f439749aeec7168bc98006caf0_icgraph.png" border="0" usemap="#aclassSAM_ae2e767f439749aeec7168bc98006caf0_icgraph" alt=""/></div>
 <map name="aclassSAM_ae2e767f439749aeec7168bc98006caf0_icgraph" id="aclassSAM_ae2e767f439749aeec7168bc98006caf0_icgraph">
 <area shape="rect" title=" " alt="" coords="169,5,269,32"/>
-<area shape="rect" href="classSAM.html#a0e80b665cbf3d37f1b172d342ba2e7d6" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" href="classSAM.html#aa63fa30ea27a549b86a2b3a42c55d77f" title=" " alt="" coords="5,5,121,32"/>
 </map>
 </div>
 
@@ -2042,7 +2052,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a3e8bdf864aa73d27b5870cf155c3a86aa2edc86e05fd080c928faeb1f6f39c701"><div class="ttname"><a href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa2edc86e05fd080c928faeb1f6f39c701">MicVar_Kess::qp</a></div><div class="ttdeci">@ qp</div><div class="ttdef"><b>Definition:</b> Kessler.H:39</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34a40820295afd4707e596461de893e54ae"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a40820295afd4707e596461de893e54ae">MicVar::omega</a></div><div class="ttdeci">@ omega</div><div class="ttdef"><b>Definition:</b> SAM.H:46</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classSAM.html#a0e80b665cbf3d37f1b172d342ba2e7d6">Advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSAM.html#aa63fa30ea27a549b86a2b3a42c55d77f">Advance()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2062,7 +2072,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classSAM_a0b1c947ade2fda0357e32a25ca0cf211_icgraph.png" border="0" usemap="#aclassSAM_a0b1c947ade2fda0357e32a25ca0cf211_icgraph" alt=""/></div>
 <map name="aclassSAM_a0b1c947ade2fda0357e32a25ca0cf211_icgraph" id="aclassSAM_a0b1c947ade2fda0357e32a25ca0cf211_icgraph">
 <area shape="rect" title=" " alt="" coords="169,5,292,32"/>
-<area shape="rect" href="classSAM.html#a0e80b665cbf3d37f1b172d342ba2e7d6" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" href="classSAM.html#aa63fa30ea27a549b86a2b3a42c55d77f" title=" " alt="" coords="5,5,121,32"/>
 </map>
 </div>
 
@@ -2093,10 +2103,10 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a1b6a72d67d9b2642e99a5b768315476c">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        AMREX_ALWAYS_ASSERT(varIdx &lt; <a class="code" href="classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf">m_qmoist_size</a>);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="classSAM.html#a6008487ad12ada77acdcb3ee41371c98">MicVarMap</a>[varIdx]].get();</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        AMREX_ALWAYS_ASSERT(varIdx &lt; <a class="code" href="classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf">m_qmoist_size</a>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="classSAM.html#a6008487ad12ada77acdcb3ee41371c98">MicVarMap</a>[varIdx]].get();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2124,7 +2134,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#abdf706f193bbb09c62e41734570f3cd1">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf">SAM::m_qmoist_size</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf">SAM::m_qmoist_size</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2152,8 +2162,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#afaa201a3a1dc21c18888d9c6a068f956">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSAM.html#a81c775ecb78f3f228a98a9c39d1d098d">SAM::m_qstate_size</a>; }</div>
-<div class="ttc" id="aclassSAM_html_a81c775ecb78f3f228a98a9c39d1d098d"><div class="ttname"><a href="classSAM.html#a81c775ecb78f3f228a98a9c39d1d098d">SAM::m_qstate_size</a></div><div class="ttdeci">int m_qstate_size</div><div class="ttdef"><b>Definition:</b> SAM.H:152</div></div>
+<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSAM.html#a81c775ecb78f3f228a98a9c39d1d098d">SAM::m_qstate_size</a>; }</div>
+<div class="ttc" id="aclassSAM_html_a81c775ecb78f3f228a98a9c39d1d098d"><div class="ttname"><a href="classSAM.html#a81c775ecb78f3f228a98a9c39d1d098d">SAM::m_qstate_size</a></div><div class="ttdeci">int m_qstate_size</div><div class="ttdef"><b>Definition:</b> SAM.H:153</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2452,7 +2462,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classSAM.html#a0e80b665cbf3d37f1b172d342ba2e7d6">Advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSAM.html#aa63fa30ea27a549b86a2b3a42c55d77f">Advance()</a>.</p>
 
 </div>
 </div>

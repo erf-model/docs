@@ -141,8 +141,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae954582b00f9d875826f53378d895839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab773e3413ad009fb81953573e17346af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#ab773e3413ad009fb81953573e17346af">Update_State_Vars</a> (amrex::MultiFab &amp;cons_in) override</td></tr>
 <tr class="separator:ab773e3413ad009fb81953573e17346af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bc7e30c7607d2dfe28f4af7178ba3f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#a4bc7e30c7607d2dfe28f4af7178ba3f8">Advance</a> (const amrex::Real &amp;dt_advance) override</td></tr>
-<tr class="separator:a4bc7e30c7607d2dfe28f4af7178ba3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff4d2d93abbebddeaae3432f941705e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#aff4d2d93abbebddeaae3432f941705e4">Advance</a> (const amrex::Real &amp;dt_advance, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice) override</td></tr>
+<tr class="separator:aff4d2d93abbebddeaae3432f941705e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b34de751f34ec4b445abe8064d5dccb"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#a4b34de751f34ec4b445abe8064d5dccb">Qmoist_Ptr</a> (const int &amp;varIdx) override</td></tr>
 <tr class="separator:a4b34de751f34ec4b445abe8064d5dccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f6a62a48c8fc6f209e4fd90e73a8d57"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFastEddy.html#a8f6a62a48c8fc6f209e4fd90e73a8d57">Qmoist_Size</a> () override</td></tr>
@@ -273,8 +273,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4bc7e30c7607d2dfe28f4af7178ba3f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bc7e30c7607d2dfe28f4af7178ba3f8">&#9670;&nbsp;</a></span>Advance()</h2>
+<a id="aff4d2d93abbebddeaae3432f941705e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff4d2d93abbebddeaae3432f941705e4">&#9670;&nbsp;</a></span>Advance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -286,8 +286,18 @@ Private Attributes</h2></td></tr>
           <td class="memname">void FastEddy::Advance </td>
           <td>(</td>
           <td class="paramtype">const amrex::Real &amp;&#160;</td>
-          <td class="paramname"><em>dt_advance</em></td><td>)</td>
+          <td class="paramname"><em>dt_advance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
+          <td class="paramname"><em>solverChoice</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -297,7 +307,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classNullMoist.html#abbc464f6bac8b1bb59137421d008ebf2">NullMoist</a>.</p>
+<p>Reimplemented from <a class="el" href="classNullMoist.html#aa2f97dcd622bc4ef212421d496ee2297">NullMoist</a>.</p>
 <div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classFastEddy.html#af95e2f068604bb7eb14f22fa0644c9ca">dt</a> = dt_advance;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
@@ -310,8 +320,8 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classFastEddy_a4bc7e30c7607d2dfe28f4af7178ba3f8_cgraph.png" border="0" usemap="#aclassFastEddy_a4bc7e30c7607d2dfe28f4af7178ba3f8_cgraph" alt=""/></div>
-<map name="aclassFastEddy_a4bc7e30c7607d2dfe28f4af7178ba3f8_cgraph" id="aclassFastEddy_a4bc7e30c7607d2dfe28f4af7178ba3f8_cgraph">
+<div class="center"><img src="classFastEddy_aff4d2d93abbebddeaae3432f941705e4_cgraph.png" border="0" usemap="#aclassFastEddy_aff4d2d93abbebddeaae3432f941705e4_cgraph" alt=""/></div>
+<map name="aclassFastEddy_aff4d2d93abbebddeaae3432f941705e4_cgraph" id="aclassFastEddy_aff4d2d93abbebddeaae3432f941705e4_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,148,57"/>
 <area shape="rect" href="classFastEddy.html#a2aded048e1e6bef2c9f611af7829837a" title=" " alt="" coords="196,5,355,32"/>
 <area shape="rect" href="classFastEddy.html#aa910d64363fd2bf136846be368c8e4aa" title=" " alt="" coords="201,56,349,83"/>
@@ -410,7 +420,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceMicVar__FE_html_a0ae341cd83b667d19fd9fd0f4564cb9fae560111c760df2c025ccf516adf07fc3"><div class="ttname"><a href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae560111c760df2c025ccf516adf07fc3">MicVar_FE::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> FastEddy.H:27</div></div>
 <div class="ttc" id="anamespaceMicVar__FE_html_a0ae341cd83b667d19fd9fd0f4564cb9fae86803d64a7966eb16dd9d8835f86fb9"><div class="ttname"><a href="namespaceMicVar__FE.html#a0ae341cd83b667d19fd9fd0f4564cb9fae86803d64a7966eb16dd9d8835f86fb9">MicVar_FE::qt</a></div><div class="ttdeci">@ qt</div><div class="ttdef"><b>Definition:</b> FastEddy.H:26</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classFastEddy.html#a4bc7e30c7607d2dfe28f4af7178ba3f8">Advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classFastEddy.html#aff4d2d93abbebddeaae3432f941705e4">Advance()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -427,7 +437,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classFastEddy_a2aded048e1e6bef2c9f611af7829837a_icgraph.png" border="0" usemap="#aclassFastEddy_a2aded048e1e6bef2c9f611af7829837a_icgraph" alt=""/></div>
 <map name="aclassFastEddy_a2aded048e1e6bef2c9f611af7829837a_icgraph" id="aclassFastEddy_a2aded048e1e6bef2c9f611af7829837a_icgraph">
 <area shape="rect" title=" " alt="" coords="196,5,355,32"/>
-<area shape="rect" href="classFastEddy.html#a4bc7e30c7607d2dfe28f4af7178ba3f8" title=" " alt="" coords="5,5,148,32"/>
+<area shape="rect" href="classFastEddy.html#aff4d2d93abbebddeaae3432f941705e4" title=" " alt="" coords="5,5,148,32"/>
 </map>
 </div>
 
@@ -645,10 +655,10 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassFastEddy_html_ac21f4270d5b5e01e9bf99cb6f14372b9"><div class="ttname"><a href="classFastEddy.html#ac21f4270d5b5e01e9bf99cb6f14372b9">FastEddy::m_fac_sub</a></div><div class="ttdeci">amrex::Real m_fac_sub</div><div class="ttdef"><b>Definition:</b> FastEddy.H:149</div></div>
 <div class="ttc" id="aclassFastEddy_html_ae9a1e08109abb1c5ac99fd210510c4d7"><div class="ttname"><a href="classFastEddy.html#ae9a1e08109abb1c5ac99fd210510c4d7">FastEddy::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> FastEddy.H:141</div></div>
 <div class="ttc" id="aclassFastEddy_html_af93558de4f781831d772c3462dbc05a0"><div class="ttname"><a href="classFastEddy.html#af93558de4f781831d772c3462dbc05a0">FastEddy::m_gOcp</a></div><div class="ttdeci">amrex::Real m_gOcp</div><div class="ttdef"><b>Definition:</b> FastEddy.H:150</div></div>
-<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> DataStruct.H:376</div></div>
-<div class="ttc" id="astructSolverChoice_html_a766e5884354ed6483704f8257036ee75"><div class="ttname"><a href="structSolverChoice.html#a766e5884354ed6483704f8257036ee75">SolverChoice::do_precip</a></div><div class="ttdeci">bool do_precip</div><div class="ttdef"><b>Definition:</b> DataStruct.H:414</div></div>
-<div class="ttc" id="astructSolverChoice_html_af352bb75ceaeae4ac534d3378fbf393a"><div class="ttname"><a href="structSolverChoice.html#af352bb75ceaeae4ac534d3378fbf393a">SolverChoice::do_cloud</a></div><div class="ttdeci">bool do_cloud</div><div class="ttdef"><b>Definition:</b> DataStruct.H:413</div></div>
-<div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> DataStruct.H:411</div></div>
+<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> DataStruct.H:378</div></div>
+<div class="ttc" id="astructSolverChoice_html_a766e5884354ed6483704f8257036ee75"><div class="ttname"><a href="structSolverChoice.html#a766e5884354ed6483704f8257036ee75">SolverChoice::do_precip</a></div><div class="ttdeci">bool do_precip</div><div class="ttdef"><b>Definition:</b> DataStruct.H:416</div></div>
+<div class="ttc" id="astructSolverChoice_html_af352bb75ceaeae4ac534d3378fbf393a"><div class="ttname"><a href="structSolverChoice.html#af352bb75ceaeae4ac534d3378fbf393a">SolverChoice::do_cloud</a></div><div class="ttdeci">bool do_cloud</div><div class="ttdef"><b>Definition:</b> DataStruct.H:415</div></div>
+<div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> DataStruct.H:413</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -680,14 +690,14 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                         {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classFastEddy.html#a4bc7e30c7607d2dfe28f4af7178ba3f8">Advance()</a>, and <a class="el" href="classFastEddy.html#ae954582b00f9d875826f53378d895839">Update_Micro_Vars()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classFastEddy.html#aff4d2d93abbebddeaae3432f941705e4">Advance()</a>, and <a class="el" href="classFastEddy.html#ae954582b00f9d875826f53378d895839">Update_Micro_Vars()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFastEddy_aa910d64363fd2bf136846be368c8e4aa_icgraph.png" border="0" usemap="#aclassFastEddy_aa910d64363fd2bf136846be368c8e4aa_icgraph" alt=""/></div>
 <map name="aclassFastEddy_aa910d64363fd2bf136846be368c8e4aa_icgraph" id="aclassFastEddy_aa910d64363fd2bf136846be368c8e4aa_icgraph">
 <area shape="rect" title=" " alt="" coords="265,31,413,57"/>
-<area shape="rect" href="classFastEddy.html#a4bc7e30c7607d2dfe28f4af7178ba3f8" title=" " alt="" coords="40,5,183,32"/>
+<area shape="rect" href="classFastEddy.html#aff4d2d93abbebddeaae3432f941705e4" title=" " alt="" coords="40,5,183,32"/>
 <area shape="rect" href="classFastEddy.html#ae954582b00f9d875826f53378d895839" title=" " alt="" coords="5,56,217,83"/>
 </map>
 </div>
@@ -1046,7 +1056,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classFastEddy.html#a4bc7e30c7607d2dfe28f4af7178ba3f8">Advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classFastEddy.html#aff4d2d93abbebddeaae3432f941705e4">Advance()</a>.</p>
 
 </div>
 </div>

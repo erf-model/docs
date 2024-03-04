@@ -3,7 +3,7 @@ var classSAM =
     [ "FabPtr", "classSAM.html#a2ffb00984d39bfc39057c68f708774a9", null ],
     [ "SAM", "classSAM.html#a14fc54f233862c3c339abcc16412078c", null ],
     [ "~SAM", "classSAM.html#a301ce0c7f6cff77d6388c2d706e73a42", null ],
-    [ "Advance", "classSAM.html#a0e80b665cbf3d37f1b172d342ba2e7d6", null ],
+    [ "Advance", "classSAM.html#aa63fa30ea27a549b86a2b3a42c55d77f", null ],
     [ "Cloud", "classSAM.html#a7a43f42ffe12f7ed7e32d0abdbea4133", null ],
     [ "Compute_Coefficients", "classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40", null ],
     [ "Copy_Micro_to_State", "classSAM.html#a007ed40ac7278996d257b4c0ab6c1320", null ],

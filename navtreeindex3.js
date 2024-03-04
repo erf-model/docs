@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classAerRadProps.html#af174fea4281252e1cf87c621ab532aeb":[2,0,6,24],
 "classAerRadProps.html#af2dc3b884340390993212e03e99112af":[2,0,6,20],
 "classAerRadProps.html#af6e6827c17d2247b72337a35875ea0e0":[2,0,6,6],
 "classAerRadProps.html#afb607ae14bfc3e46dd66c9e04627a57d":[2,0,6,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classERF.html#acb607b2e675b45fdcabc09b640ce5ae2":[2,0,19,236],
 "classERF.html#ad03da3399e893728741fac33100ce476":[2,0,19,172],
 "classERF.html#ad101fd46096db2d6b21544bfede6551f":[2,0,19,99],
-"classERF.html#ad17ff2753e754ff3eb1330612b820b5f":[2,0,19,199],
-"classERF.html#ad2e1a979c0ad68e87eaee349beb7e9fd":[2,0,19,148]
+"classERF.html#ad17ff2753e754ff3eb1330612b820b5f":[2,0,19,199]
 };

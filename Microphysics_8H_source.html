@@ -93,100 +93,102 @@ $(document).ready(function(){initNavTree('Microphysics_8H_source.html',''); init
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="SAM_8H.html">SAM.H</a>&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Kessler_8H.html">Kessler.H</a>&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="FastEddy_8H.html">FastEddy.H</a>&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classMicrophysics.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMicrophysics.html">Microphysics</a> {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e">   13</a></span>&#160;    <a class="code" href="classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e">Microphysics</a> () { }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classMicrophysics.html#ab9d9d3f804f3d0d9aacf12c15b1b1417">   15</a></span>&#160;    <a class="code" href="classMicrophysics.html#ab9d9d3f804f3d0d9aacf12c15b1b1417">~Microphysics</a> () = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a1cb53d4c36c2faae0cfd8b5a50755418">   18</a></span>&#160;    <a class="code" href="classMicrophysics.html#a1cb53d4c36c2faae0cfd8b5a50755418">ReSize</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; nlev) { <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>.resize(nlev); }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> NewMoistModel&gt;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a5d637a7ba3efb3c71aebbba9609c32b5">   22</a></span>&#160;    <a class="code" href="classMicrophysics.html#a5d637a7ba3efb3c71aebbba9609c32b5">SetModel</a> ()</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev(0); lev&lt;<a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>.size(); ++lev) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev] = std::make_unique&lt;NewMoistModel&gt;();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a8e6a09354d94f3966fd44c5c7d7bb44c">   30</a></span>&#160;    <a class="code" href="classMicrophysics.html#a8e6a09354d94f3966fd44c5c7d7bb44c">Define</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; sc)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Define(sc);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a55f898c6bd88a6799971a104c49158b7">   37</a></span>&#160;    <a class="code" href="classMicrophysics.html#a55f898c6bd88a6799971a104c49158b7">Init</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;          <span class="keyword">const</span> amrex::MultiFab&amp; cons_in,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;          <span class="keyword">const</span> amrex::BoxArray&amp; grids,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          <span class="keyword">const</span> amrex::Geometry&amp; geom,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;          <span class="keyword">const</span> amrex::Real&amp; dt_advance)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Init(cons_in, grids, geom, dt_advance);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a2efb99e303fcfb87fffe4bf0f199aeae">   47</a></span>&#160;    <a class="code" href="classMicrophysics.html#a2efb99e303fcfb87fffe4bf0f199aeae">Advance</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="keyword">const</span> amrex::Real&amp; dt_advance)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Advance(dt_advance);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classMicrophysics.html#ae34ada2d4de3118a2d58d1895a7ff5e9">   53</a></span>&#160;    <a class="code" href="classMicrophysics.html#ae34ada2d4de3118a2d58d1895a7ff5e9">Diagnose</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Diagnose();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a51d0e22030ffdc3e66574bbf6e50889e">   59</a></span>&#160;    <a class="code" href="classMicrophysics.html#a51d0e22030ffdc3e66574bbf6e50889e">Update_Micro_Vars_Lev</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, amrex::MultiFab&amp; cons_in)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Update_Micro_Vars(cons_in);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classMicrophysics.html#ae6fb3098b3b2398fb618f805c5067eb3">   65</a></span>&#160;    <a class="code" href="classMicrophysics.html#ae6fb3098b3b2398fb618f805c5067eb3">Update_State_Vars_Lev</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, amrex::MultiFab&amp; cons_in)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Update_State_Vars(cons_in);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    amrex::MultiFab*</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a09d615436206800272f684eedac79256">   71</a></span>&#160;    <a class="code" href="classMicrophysics.html#a09d615436206800272f684eedac79256">Get_Qmoist_Ptr</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; varIdx) { <span class="keywordflow">return</span> <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Qmoist_Ptr(varIdx); }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a7238a5f8a3a5a1281ef3e7f6dac3fd68">   74</a></span>&#160;    <a class="code" href="classMicrophysics.html#a7238a5f8a3a5a1281ef3e7f6dac3fd68">Get_Qmoist_Size</a> () { <span class="keywordflow">return</span> <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[0]-&gt;Qmoist_Size(); }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4">   77</a></span>&#160;    <a class="code" href="classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4">Get_Qstate_Size</a> () { <span class="keywordflow">return</span> <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[0]-&gt;Qstate_Size(); }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">   80</a></span>&#160;    amrex::Vector&lt;std::unique_ptr&lt;NullMoist&gt;&gt; <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="ERF_8H.html">ERF.H</a>&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classMicrophysics.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMicrophysics.html">Microphysics</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e">   14</a></span>&#160;    <a class="code" href="classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e">Microphysics</a> () { }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classMicrophysics.html#ab9d9d3f804f3d0d9aacf12c15b1b1417">   16</a></span>&#160;    <a class="code" href="classMicrophysics.html#ab9d9d3f804f3d0d9aacf12c15b1b1417">~Microphysics</a> () = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a1cb53d4c36c2faae0cfd8b5a50755418">   19</a></span>&#160;    <a class="code" href="classMicrophysics.html#a1cb53d4c36c2faae0cfd8b5a50755418">ReSize</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; nlev) { <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>.resize(nlev); }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> NewMoistModel&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a5d637a7ba3efb3c71aebbba9609c32b5">   23</a></span>&#160;    <a class="code" href="classMicrophysics.html#a5d637a7ba3efb3c71aebbba9609c32b5">SetModel</a> ()</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev(0); lev&lt;<a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>.size(); ++lev) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev] = std::make_unique&lt;NewMoistModel&gt;();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a8e6a09354d94f3966fd44c5c7d7bb44c">   31</a></span>&#160;    <a class="code" href="classMicrophysics.html#a8e6a09354d94f3966fd44c5c7d7bb44c">Define</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; sc)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Define(sc);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a55f898c6bd88a6799971a104c49158b7">   38</a></span>&#160;    <a class="code" href="classMicrophysics.html#a55f898c6bd88a6799971a104c49158b7">Init</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;          <span class="keyword">const</span> amrex::MultiFab&amp; cons_in,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          <span class="keyword">const</span> amrex::BoxArray&amp; grids,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;          <span class="keyword">const</span> amrex::Geometry&amp; geom,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;          <span class="keyword">const</span> amrex::Real&amp; dt_advance)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Init(cons_in, grids, geom, dt_advance);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a7327b7c6f43c2d5f24fd427aac1a0e2d">   48</a></span>&#160;    <a class="code" href="classMicrophysics.html#a7327b7c6f43c2d5f24fd427aac1a0e2d">Advance</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="keyword">const</span> amrex::Real&amp; dt_advance, <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Advance(dt_advance, solverChoice);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classMicrophysics.html#ae34ada2d4de3118a2d58d1895a7ff5e9">   54</a></span>&#160;    <a class="code" href="classMicrophysics.html#ae34ada2d4de3118a2d58d1895a7ff5e9">Diagnose</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Diagnose();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a51d0e22030ffdc3e66574bbf6e50889e">   60</a></span>&#160;    <a class="code" href="classMicrophysics.html#a51d0e22030ffdc3e66574bbf6e50889e">Update_Micro_Vars_Lev</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, amrex::MultiFab&amp; cons_in)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Update_Micro_Vars(cons_in);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classMicrophysics.html#ae6fb3098b3b2398fb618f805c5067eb3">   66</a></span>&#160;    <a class="code" href="classMicrophysics.html#ae6fb3098b3b2398fb618f805c5067eb3">Update_State_Vars_Lev</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, amrex::MultiFab&amp; cons_in)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Update_State_Vars(cons_in);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    amrex::MultiFab*</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a09d615436206800272f684eedac79256">   72</a></span>&#160;    <a class="code" href="classMicrophysics.html#a09d615436206800272f684eedac79256">Get_Qmoist_Ptr</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; varIdx) { <span class="keywordflow">return</span> <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Qmoist_Ptr(varIdx); }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">int</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a7238a5f8a3a5a1281ef3e7f6dac3fd68">   75</a></span>&#160;    <a class="code" href="classMicrophysics.html#a7238a5f8a3a5a1281ef3e7f6dac3fd68">Get_Qmoist_Size</a> () { <span class="keywordflow">return</span> <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[0]-&gt;Qmoist_Size(); }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">int</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4">   78</a></span>&#160;    <a class="code" href="classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4">Get_Qstate_Size</a> () { <span class="keywordflow">return</span> <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[0]-&gt;Qstate_Size(); }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">   81</a></span>&#160;    amrex::Vector&lt;std::unique_ptr&lt;NullMoist&gt;&gt; <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aERF_8H_html"><div class="ttname"><a href="ERF_8H.html">ERF.H</a></div></div>
 <div class="ttc" id="aFastEddy_8H_html"><div class="ttname"><a href="FastEddy_8H.html">FastEddy.H</a></div></div>
 <div class="ttc" id="aKessler_8H_html"><div class="ttname"><a href="Kessler_8H.html">Kessler.H</a></div></div>
 <div class="ttc" id="aNullMoist_8H_html"><div class="ttname"><a href="NullMoist_8H.html">NullMoist.H</a></div></div>
 <div class="ttc" id="aSAM_8H_html"><div class="ttname"><a href="SAM_8H.html">SAM.H</a></div></div>
-<div class="ttc" id="aclassMicrophysics_html"><div class="ttname"><a href="classMicrophysics.html">Microphysics</a></div><div class="ttdef"><b>Definition:</b> Microphysics.H:9</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a09d615436206800272f684eedac79256"><div class="ttname"><a href="classMicrophysics.html#a09d615436206800272f684eedac79256">Microphysics::Get_Qmoist_Ptr</a></div><div class="ttdeci">amrex::MultiFab * Get_Qmoist_Ptr(const int &amp;lev, const int &amp;varIdx)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:71</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a1cb53d4c36c2faae0cfd8b5a50755418"><div class="ttname"><a href="classMicrophysics.html#a1cb53d4c36c2faae0cfd8b5a50755418">Microphysics::ReSize</a></div><div class="ttdeci">void ReSize(const int &amp;nlev)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:18</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a2efb99e303fcfb87fffe4bf0f199aeae"><div class="ttname"><a href="classMicrophysics.html#a2efb99e303fcfb87fffe4bf0f199aeae">Microphysics::Advance</a></div><div class="ttdeci">void Advance(const int &amp;lev, const amrex::Real &amp;dt_advance)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:47</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a51d0e22030ffdc3e66574bbf6e50889e"><div class="ttname"><a href="classMicrophysics.html#a51d0e22030ffdc3e66574bbf6e50889e">Microphysics::Update_Micro_Vars_Lev</a></div><div class="ttdeci">void Update_Micro_Vars_Lev(const int &amp;lev, amrex::MultiFab &amp;cons_in)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:59</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a55f898c6bd88a6799971a104c49158b7"><div class="ttname"><a href="classMicrophysics.html#a55f898c6bd88a6799971a104c49158b7">Microphysics::Init</a></div><div class="ttdeci">void Init(const int &amp;lev, const amrex::MultiFab &amp;cons_in, const amrex::BoxArray &amp;grids, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt_advance)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:37</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a5d637a7ba3efb3c71aebbba9609c32b5"><div class="ttname"><a href="classMicrophysics.html#a5d637a7ba3efb3c71aebbba9609c32b5">Microphysics::SetModel</a></div><div class="ttdeci">void SetModel()</div><div class="ttdef"><b>Definition:</b> Microphysics.H:22</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a7238a5f8a3a5a1281ef3e7f6dac3fd68"><div class="ttname"><a href="classMicrophysics.html#a7238a5f8a3a5a1281ef3e7f6dac3fd68">Microphysics::Get_Qmoist_Size</a></div><div class="ttdeci">int Get_Qmoist_Size()</div><div class="ttdef"><b>Definition:</b> Microphysics.H:74</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a79bf043906abc7e4d738318ec8e7aa2e"><div class="ttname"><a href="classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e">Microphysics::Microphysics</a></div><div class="ttdeci">Microphysics()</div><div class="ttdef"><b>Definition:</b> Microphysics.H:13</div></div>
-<div class="ttc" id="aclassMicrophysics_html_a8e6a09354d94f3966fd44c5c7d7bb44c"><div class="ttname"><a href="classMicrophysics.html#a8e6a09354d94f3966fd44c5c7d7bb44c">Microphysics::Define</a></div><div class="ttdeci">void Define(const int &amp;lev, SolverChoice &amp;sc)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:30</div></div>
-<div class="ttc" id="aclassMicrophysics_html_aaa5855f1992b34c6e520f426ec0657d4"><div class="ttname"><a href="classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4">Microphysics::Get_Qstate_Size</a></div><div class="ttdeci">int Get_Qstate_Size()</div><div class="ttdef"><b>Definition:</b> Microphysics.H:77</div></div>
+<div class="ttc" id="aclassMicrophysics_html"><div class="ttname"><a href="classMicrophysics.html">Microphysics</a></div><div class="ttdef"><b>Definition:</b> Microphysics.H:10</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a09d615436206800272f684eedac79256"><div class="ttname"><a href="classMicrophysics.html#a09d615436206800272f684eedac79256">Microphysics::Get_Qmoist_Ptr</a></div><div class="ttdeci">amrex::MultiFab * Get_Qmoist_Ptr(const int &amp;lev, const int &amp;varIdx)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:72</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a1cb53d4c36c2faae0cfd8b5a50755418"><div class="ttname"><a href="classMicrophysics.html#a1cb53d4c36c2faae0cfd8b5a50755418">Microphysics::ReSize</a></div><div class="ttdeci">void ReSize(const int &amp;nlev)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:19</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a51d0e22030ffdc3e66574bbf6e50889e"><div class="ttname"><a href="classMicrophysics.html#a51d0e22030ffdc3e66574bbf6e50889e">Microphysics::Update_Micro_Vars_Lev</a></div><div class="ttdeci">void Update_Micro_Vars_Lev(const int &amp;lev, amrex::MultiFab &amp;cons_in)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:60</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a55f898c6bd88a6799971a104c49158b7"><div class="ttname"><a href="classMicrophysics.html#a55f898c6bd88a6799971a104c49158b7">Microphysics::Init</a></div><div class="ttdeci">void Init(const int &amp;lev, const amrex::MultiFab &amp;cons_in, const amrex::BoxArray &amp;grids, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt_advance)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:38</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a5d637a7ba3efb3c71aebbba9609c32b5"><div class="ttname"><a href="classMicrophysics.html#a5d637a7ba3efb3c71aebbba9609c32b5">Microphysics::SetModel</a></div><div class="ttdeci">void SetModel()</div><div class="ttdef"><b>Definition:</b> Microphysics.H:23</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a7238a5f8a3a5a1281ef3e7f6dac3fd68"><div class="ttname"><a href="classMicrophysics.html#a7238a5f8a3a5a1281ef3e7f6dac3fd68">Microphysics::Get_Qmoist_Size</a></div><div class="ttdeci">int Get_Qmoist_Size()</div><div class="ttdef"><b>Definition:</b> Microphysics.H:75</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a7327b7c6f43c2d5f24fd427aac1a0e2d"><div class="ttname"><a href="classMicrophysics.html#a7327b7c6f43c2d5f24fd427aac1a0e2d">Microphysics::Advance</a></div><div class="ttdeci">void Advance(const int &amp;lev, const amrex::Real &amp;dt_advance, const SolverChoice &amp;solverChoice)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:48</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a79bf043906abc7e4d738318ec8e7aa2e"><div class="ttname"><a href="classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e">Microphysics::Microphysics</a></div><div class="ttdeci">Microphysics()</div><div class="ttdef"><b>Definition:</b> Microphysics.H:14</div></div>
+<div class="ttc" id="aclassMicrophysics_html_a8e6a09354d94f3966fd44c5c7d7bb44c"><div class="ttname"><a href="classMicrophysics.html#a8e6a09354d94f3966fd44c5c7d7bb44c">Microphysics::Define</a></div><div class="ttdeci">void Define(const int &amp;lev, SolverChoice &amp;sc)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:31</div></div>
+<div class="ttc" id="aclassMicrophysics_html_aaa5855f1992b34c6e520f426ec0657d4"><div class="ttname"><a href="classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4">Microphysics::Get_Qstate_Size</a></div><div class="ttdeci">int Get_Qstate_Size()</div><div class="ttdef"><b>Definition:</b> Microphysics.H:78</div></div>
 <div class="ttc" id="aclassMicrophysics_html_ab9d9d3f804f3d0d9aacf12c15b1b1417"><div class="ttname"><a href="classMicrophysics.html#ab9d9d3f804f3d0d9aacf12c15b1b1417">Microphysics::~Microphysics</a></div><div class="ttdeci">~Microphysics()=default</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ad53f319f160cd8c76a1b66594fb92c46"><div class="ttname"><a href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">Microphysics::m_moist_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullMoist &gt; &gt; m_moist_model</div><div class="ttdef"><b>Definition:</b> Microphysics.H:80</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ae34ada2d4de3118a2d58d1895a7ff5e9"><div class="ttname"><a href="classMicrophysics.html#ae34ada2d4de3118a2d58d1895a7ff5e9">Microphysics::Diagnose</a></div><div class="ttdeci">void Diagnose(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:53</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ae6fb3098b3b2398fb618f805c5067eb3"><div class="ttname"><a href="classMicrophysics.html#ae6fb3098b3b2398fb618f805c5067eb3">Microphysics::Update_State_Vars_Lev</a></div><div class="ttdeci">void Update_State_Vars_Lev(const int &amp;lev, amrex::MultiFab &amp;cons_in)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:65</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ad53f319f160cd8c76a1b66594fb92c46"><div class="ttname"><a href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">Microphysics::m_moist_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullMoist &gt; &gt; m_moist_model</div><div class="ttdef"><b>Definition:</b> Microphysics.H:81</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ae34ada2d4de3118a2d58d1895a7ff5e9"><div class="ttname"><a href="classMicrophysics.html#ae34ada2d4de3118a2d58d1895a7ff5e9">Microphysics::Diagnose</a></div><div class="ttdeci">void Diagnose(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:54</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ae6fb3098b3b2398fb618f805c5067eb3"><div class="ttname"><a href="classMicrophysics.html#ae6fb3098b3b2398fb618f805c5067eb3">Microphysics::Update_State_Vars_Lev</a></div><div class="ttdeci">void Update_State_Vars_Lev(const int &amp;lev, amrex::MultiFab &amp;cons_in)</div><div class="ttdef"><b>Definition:</b> Microphysics.H:66</div></div>
 <div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> DataStruct.H:55</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
