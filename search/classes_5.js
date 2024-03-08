@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['gas_5ft_2046',['gas_t',['../structMamConstituents_1_1gas__t.html',1,'MamConstituents']]],
-  ['gaslist_5ft_2047',['gaslist_t',['../structMamConstituents_1_1gaslist__t.html',1,'MamConstituents']]]
+  ['inputsoundingdata_2040',['InputSoundingData',['../structInputSoundingData.html',1,'']]],
+  ['interptype_2041',['InterpType',['../structLinInterp_1_1InterpType.html',1,'LinInterp']]]
 ];

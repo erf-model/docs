@@ -1957,10 +1957,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  amrex::Real v = (k == 0) ? 1.5 * (0.5*(v_arr(i,j,k)+v_arr(i,j+1,k))) - 0.5*(0.5*(v_arr(i,j,k+1)+v_arr(i,j+1,k+1))) :</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    0.25 * ( v_arr(i,j,k-1) + v_arr(i,j+1,k-1) + v_arr(i,j,k) + v_arr(i,j+1,k) );</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  amrex::Real <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a40820295afd4707e596461de893e54ae">omega</a> =  w - met_zlo_xi * u - met_zlo_eta * v;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a40820295afd4707e596461de893e54ae">omega</a>;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  amrex::Real <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae">omega</a> =  w - met_zlo_xi * u - met_zlo_eta * v;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae">omega</a>;</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;}</div>
-<div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34a40820295afd4707e596461de893e54ae"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a40820295afd4707e596461de893e54ae">MicVar::omega</a></div><div class="ttdeci">@ omega</div><div class="ttdef"><b>Definition:</b> SAM.H:46</div></div>
+<div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae">MicVar::omega</a></div><div class="ttdeci">@ omega</div><div class="ttdef"><b>Definition:</b> SAM.H:46</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#a249a2247bb7a4f3a3f9414477f0dbd3a">erf_fast_rhs_T()</a>, <a class="el" href="ERF__slow__rhs__inc_8cpp.html#aa929d925d1563cc718fec1f02bf9005b">erf_slow_rhs_inc()</a>, and <a class="el" href="ERF__slow__rhs__pre_8cpp.html#ad45bad3781c80e16be26068785bc4111">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
@@ -2051,7 +2051,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i  ,j+1,k  )    <span class="comment">// hi j, lo k</span></div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;     -z_nd(i+1,j  ,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo j, lo k</span></div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;  amrex::Real w = <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a40820295afd4707e596461de893e54ae">omega</a> + met_zlo_xi * u + met_zlo_eta * v;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;  amrex::Real w = <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae">omega</a> + met_zlo_xi * u + met_zlo_eta * v;</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  <span class="keywordflow">return</span> w;</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;}</div>
 </div><!-- fragment -->
@@ -2141,7 +2141,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  amrex::Real v = (k == 0) ? 1.5 * (0.5*(v_arr(i,j,k)+v_arr(i,j+1,k))) - 0.5*(0.5*(v_arr(i,j,k+1)+v_arr(i,j+1,k+1))) :</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    0.25 * ( v_arr(i,j,k-1) + v_arr(i,j+1,k-1) + v_arr(i,j,k) + v_arr(i,j+1,k) );</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  amrex::Real w = <a class="code" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a>(i,j,k,<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a40820295afd4707e596461de893e54ae">omega</a>,u,v,z_nd,dxInv);</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  amrex::Real w = <a class="code" href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a>(i,j,k,<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae">omega</a>,u,v,z_nd,dxInv);</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  <span class="keywordflow">return</span> w;</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;}</div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a53ec395d493c2308315f7512c5438087"><div class="ttname"><a href="TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real WFromOmega(int i, int j, int k, amrex::Real omega, amrex::Real u, amrex::Real v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:399</div></div>
