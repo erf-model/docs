@@ -20,6 +20,11 @@ var DataStruct_8H =
       [ "MM5", "DataStruct_8H.html#abeec366fd5381f3bb7ba39f6e5c1e7e4a4594809823de21e46cbf63b1bcd316b5", null ],
       [ "None", "DataStruct_8H.html#abeec366fd5381f3bb7ba39f6e5c1e7e4a6adf97f83acf6453d4a6a4b1070f3754", null ]
     ] ],
+    [ "MoistureModelType", "DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5", [
+      [ "Eulerian", "DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5aff01d2011cc56dfe241e0002bb9df778", null ],
+      [ "Lagrangian", "DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5a2e32ba26d0dfb8d9502608639fcac451", null ],
+      [ "Undefined", "DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5aec0fc0100c4fc1ce4eea230c3dc10360", null ]
+    ] ],
     [ "MoistureType", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0", [
       [ "Kessler", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0af918ea9a492942625a661a22ac6af91d", null ],
       [ "SAM", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a9f1b3be4a82b11d104e4ef7f7ccb1c19", null ],

@@ -28,6 +28,7 @@ var annotated_dup =
     [ "ERF", "classERF.html", "classERF" ],
     [ "ERFFillPatcher", "classERFFillPatcher.html", "classERFFillPatcher" ],
     [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", "classERFPhysBCFunct" ],
+    [ "EulerianMicrophysics", "classEulerianMicrophysics.html", "classEulerianMicrophysics" ],
     [ "InputSoundingData", "structInputSoundingData.html", "structInputSoundingData" ],
     [ "Kessler", "classKessler.html", "classKessler" ],
     [ "LandSurface", "classLandSurface.html", "classLandSurface" ],

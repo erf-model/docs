@@ -36,7 +36,9 @@ var hierarchy =
     [ "LinInterp", "classLinInterp.html", null ],
     [ "Mam4_aer", "classMam4__aer.html", null ],
     [ "MamConstituents", "classMamConstituents.html", null ],
-    [ "Microphysics", "classMicrophysics.html", null ],
+    [ "Microphysics", "classMicrophysics.html", [
+      [ "EulerianMicrophysics", "classEulerianMicrophysics.html", null ]
+    ] ],
     [ "ModalAeroWateruptake", "classModalAeroWateruptake.html", null ],
     [ "MamConstituents::mode_component_t", "structMamConstituents_1_1mode__component__t.html", null ],
     [ "MamConstituents::modelist_t", "structMamConstituents_1_1modelist__t.html", null ],

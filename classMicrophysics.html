@@ -84,60 +84,72 @@ $(document).ready(function(){initNavTree('classMicrophysics.html',''); initResiz
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classMicrophysics-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Microphysics Class Reference</div>  </div>
+<div class="title">Microphysics Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>Base class for microphysics interface.  
+ <a href="classMicrophysics.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Microphysics_8H_source.html">Microphysics.H</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for Microphysics:</div>
+Inheritance diagram for Microphysics:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMicrophysics__coll__graph.png" border="0" usemap="#aMicrophysics_coll__map" alt="Collaboration graph"/></div>
-<map name="aMicrophysics_coll__map" id="aMicrophysics_coll__map">
-<area shape="rect" title=" " alt="" coords="29,109,136,136"/>
-<area shape="rect" title=" " alt="" coords="5,5,160,47"/>
+<div class="center"><img src="classMicrophysics__inherit__graph.png" border="0" usemap="#aMicrophysics_inherit__map" alt="Inheritance graph"/></div>
+<map name="aMicrophysics_inherit__map" id="aMicrophysics_inherit__map">
+<area shape="rect" title="Base class for microphysics interface." alt="" coords="32,5,139,32"/>
+<area shape="rect" href="classEulerianMicrophysics.html" title="Eulerian microphysics interface." alt="" coords="5,80,165,107"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a79bf043906abc7e4d738318ec8e7aa2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e">Microphysics</a> ()</td></tr>
+<tr class="memdesc:a79bf043906abc7e4d738318ec8e7aa2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Null constructor.  <a href="classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e">More...</a><br /></td></tr>
 <tr class="separator:a79bf043906abc7e4d738318ec8e7aa2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9d9d3f804f3d0d9aacf12c15b1b1417"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#ab9d9d3f804f3d0d9aacf12c15b1b1417">~Microphysics</a> ()=default</td></tr>
-<tr class="separator:ab9d9d3f804f3d0d9aacf12c15b1b1417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cb53d4c36c2faae0cfd8b5a50755418"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a1cb53d4c36c2faae0cfd8b5a50755418">ReSize</a> (const int &amp;nlev)</td></tr>
-<tr class="separator:a1cb53d4c36c2faae0cfd8b5a50755418"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d637a7ba3efb3c71aebbba9609c32b5"><td class="memTemplParams" colspan="2">template&lt;class NewMoistModel &gt; </td></tr>
-<tr class="memitem:a5d637a7ba3efb3c71aebbba9609c32b5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a5d637a7ba3efb3c71aebbba9609c32b5">SetModel</a> ()</td></tr>
-<tr class="separator:a5d637a7ba3efb3c71aebbba9609c32b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e6a09354d94f3966fd44c5c7d7bb44c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a8e6a09354d94f3966fd44c5c7d7bb44c">Define</a> (const int &amp;lev, <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;sc)</td></tr>
-<tr class="separator:a8e6a09354d94f3966fd44c5c7d7bb44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55f898c6bd88a6799971a104c49158b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a55f898c6bd88a6799971a104c49158b7">Init</a> (const int &amp;lev, const amrex::MultiFab &amp;cons_in, const amrex::BoxArray &amp;grids, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt_advance)</td></tr>
-<tr class="separator:a55f898c6bd88a6799971a104c49158b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7327b7c6f43c2d5f24fd427aac1a0e2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a7327b7c6f43c2d5f24fd427aac1a0e2d">Advance</a> (const int &amp;lev, const amrex::Real &amp;dt_advance, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice)</td></tr>
-<tr class="separator:a7327b7c6f43c2d5f24fd427aac1a0e2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae34ada2d4de3118a2d58d1895a7ff5e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#ae34ada2d4de3118a2d58d1895a7ff5e9">Diagnose</a> (const int &amp;lev)</td></tr>
-<tr class="separator:ae34ada2d4de3118a2d58d1895a7ff5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51d0e22030ffdc3e66574bbf6e50889e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a51d0e22030ffdc3e66574bbf6e50889e">Update_Micro_Vars_Lev</a> (const int &amp;lev, amrex::MultiFab &amp;cons_in)</td></tr>
-<tr class="separator:a51d0e22030ffdc3e66574bbf6e50889e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6fb3098b3b2398fb618f805c5067eb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#ae6fb3098b3b2398fb618f805c5067eb3">Update_State_Vars_Lev</a> (const int &amp;lev, amrex::MultiFab &amp;cons_in)</td></tr>
-<tr class="separator:ae6fb3098b3b2398fb618f805c5067eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09d615436206800272f684eedac79256"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a09d615436206800272f684eedac79256">Get_Qmoist_Ptr</a> (const int &amp;lev, const int &amp;varIdx)</td></tr>
-<tr class="separator:a09d615436206800272f684eedac79256"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7238a5f8a3a5a1281ef3e7f6dac3fd68"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a7238a5f8a3a5a1281ef3e7f6dac3fd68">Get_Qmoist_Size</a> ()</td></tr>
-<tr class="separator:a7238a5f8a3a5a1281ef3e7f6dac3fd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa5855f1992b34c6e520f426ec0657d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4">Get_Qstate_Size</a> ()</td></tr>
-<tr class="separator:aaa5855f1992b34c6e520f426ec0657d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09486c3bc292538d5a26683fb1e19451"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a09486c3bc292538d5a26683fb1e19451">~Microphysics</a> ()=default</td></tr>
+<tr class="memdesc:a09486c3bc292538d5a26683fb1e19451"><td class="mdescLeft">&#160;</td><td class="mdescRight">default destructor  <a href="classMicrophysics.html#a09486c3bc292538d5a26683fb1e19451">More...</a><br /></td></tr>
+<tr class="separator:a09486c3bc292538d5a26683fb1e19451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380240aa9ec93af02a9b27ba1be4172a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a380240aa9ec93af02a9b27ba1be4172a">Define</a> (const int &amp;, <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;)=0</td></tr>
+<tr class="memdesc:a380240aa9ec93af02a9b27ba1be4172a"><td class="mdescLeft">&#160;</td><td class="mdescRight">define the microphysics object  <a href="classMicrophysics.html#a380240aa9ec93af02a9b27ba1be4172a">More...</a><br /></td></tr>
+<tr class="separator:a380240aa9ec93af02a9b27ba1be4172a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add47219ead426230ea0eaaef1e378e38"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#add47219ead426230ea0eaaef1e378e38">Init</a> (const int &amp;, const amrex::MultiFab &amp;, const amrex::BoxArray &amp;, const amrex::Geometry &amp;, const amrex::Real &amp;)=0</td></tr>
+<tr class="memdesc:add47219ead426230ea0eaaef1e378e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize the microphysics object  <a href="classMicrophysics.html#add47219ead426230ea0eaaef1e378e38">More...</a><br /></td></tr>
+<tr class="separator:add47219ead426230ea0eaaef1e378e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc653271370514111ec2ee2430394a63"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#abc653271370514111ec2ee2430394a63">Advance</a> (const int &amp;, const amrex::Real &amp;, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;)=0</td></tr>
+<tr class="memdesc:abc653271370514111ec2ee2430394a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">advance microphysics for one time step  <a href="classMicrophysics.html#abc653271370514111ec2ee2430394a63">More...</a><br /></td></tr>
+<tr class="separator:abc653271370514111ec2ee2430394a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4630241e6d1a3ebd9ef94348bc7412e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a4630241e6d1a3ebd9ef94348bc7412e9">Diagnose</a> (const int &amp;)=0</td></tr>
+<tr class="memdesc:a4630241e6d1a3ebd9ef94348bc7412e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute diagnostics  <a href="classMicrophysics.html#a4630241e6d1a3ebd9ef94348bc7412e9">More...</a><br /></td></tr>
+<tr class="separator:a4630241e6d1a3ebd9ef94348bc7412e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b8a14f003da6293f7a9ee118bc60149"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a6b8a14f003da6293f7a9ee118bc60149">Update_Micro_Vars_Lev</a> (const int &amp;, amrex::MultiFab &amp;)=0</td></tr>
+<tr class="memdesc:a6b8a14f003da6293f7a9ee118bc60149"><td class="mdescLeft">&#160;</td><td class="mdescRight">update microphysics variables from <a class="el" href="classERF.html">ERF</a> state variables  <a href="classMicrophysics.html#a6b8a14f003da6293f7a9ee118bc60149">More...</a><br /></td></tr>
+<tr class="separator:a6b8a14f003da6293f7a9ee118bc60149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d7ee0e4867e53e492b8179365e85bb4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a5d7ee0e4867e53e492b8179365e85bb4">Update_State_Vars_Lev</a> (const int &amp;, amrex::MultiFab &amp;)=0</td></tr>
+<tr class="memdesc:a5d7ee0e4867e53e492b8179365e85bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">update <a class="el" href="classERF.html">ERF</a> state variables from microphysics variables  <a href="classMicrophysics.html#a5d7ee0e4867e53e492b8179365e85bb4">More...</a><br /></td></tr>
+<tr class="separator:a5d7ee0e4867e53e492b8179365e85bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8edecc53bfdfd0d916d37e3584ebb9ff"><td class="memItemLeft" align="right" valign="top">virtual amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a8edecc53bfdfd0d916d37e3584ebb9ff">Get_Qmoist_Ptr</a> (const int &amp;, const int &amp;)=0</td></tr>
+<tr class="memdesc:a8edecc53bfdfd0d916d37e3584ebb9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">get pointer to a moisture variable  <a href="classMicrophysics.html#a8edecc53bfdfd0d916d37e3584ebb9ff">More...</a><br /></td></tr>
+<tr class="separator:a8edecc53bfdfd0d916d37e3584ebb9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a069e6013efb78d268394868d0cfc6382"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a069e6013efb78d268394868d0cfc6382">Get_Qmoist_Size</a> (const int &amp;)=0</td></tr>
+<tr class="memdesc:a069e6013efb78d268394868d0cfc6382"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of moisture model variables  <a href="classMicrophysics.html#a069e6013efb78d268394868d0cfc6382">More...</a><br /></td></tr>
+<tr class="separator:a069e6013efb78d268394868d0cfc6382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72f6091687c014c5be34275b0975d194"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a72f6091687c014c5be34275b0975d194">Get_Qstate_Size</a> ()=0</td></tr>
+<tr class="memdesc:a72f6091687c014c5be34275b0975d194"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of moisture-model-related conserved state variables  <a href="classMicrophysics.html#a72f6091687c014c5be34275b0975d194">More...</a><br /></td></tr>
+<tr class="separator:a72f6091687c014c5be34275b0975d194"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:ad53f319f160cd8c76a1b66594fb92c46"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::unique_ptr&lt; <a class="el" href="classNullMoist.html">NullMoist</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a></td></tr>
-<tr class="separator:ad53f319f160cd8c76a1b66594fb92c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ac10e6fce2e6cb49373d56ca0e1a5b366"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5">MoistureModelType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">modelType</a> (const <a class="el" href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0">MoistureType</a> a_moisture_type)</td></tr>
+<tr class="memdesc:ac10e6fce2e6cb49373d56ca0e1a5b366"><td class="mdescLeft">&#160;</td><td class="mdescRight">query if a specified moisture model is Eulerian or Lagrangian  <a href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">More...</a><br /></td></tr>
+<tr class="separator:ac10e6fce2e6cb49373d56ca0e1a5b366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for microphysics interface. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a79bf043906abc7e4d738318ec8e7aa2e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a79bf043906abc7e4d738318ec8e7aa2e">&#9670;&nbsp;</a></span>Microphysics()</h2>
 
@@ -160,12 +172,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{ }</div>
+
+<p>Null constructor. </p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ab9d9d3f804f3d0d9aacf12c15b1b1417"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9d9d3f804f3d0d9aacf12c15b1b1417">&#9670;&nbsp;</a></span>~Microphysics()</h2>
+<a id="a09486c3bc292538d5a26683fb1e19451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09486c3bc292538d5a26683fb1e19451">&#9670;&nbsp;</a></span>~Microphysics()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +188,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Microphysics::~Microphysics </td>
+          <td class="memname">virtual Microphysics::~Microphysics </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -182,16 +196,18 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p>default destructor </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7327b7c6f43c2d5f24fd427aac1a0e2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7327b7c6f43c2d5f24fd427aac1a0e2d">&#9670;&nbsp;</a></span>Advance()</h2>
+<a id="abc653271370514111ec2ee2430394a63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc653271370514111ec2ee2430394a63">&#9670;&nbsp;</a></span>Advance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,22 +216,34 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Microphysics::Advance </td>
+          <td class="memname">virtual void Microphysics::Advance </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>lev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Real &amp;&#160;</td>
-          <td class="paramname"><em>dt_advance</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
-          <td class="paramname"><em>solverChoice</em>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -225,19 +253,19 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Advance(dt_advance, solverChoice);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="ttc" id="aclassMicrophysics_html_ad53f319f160cd8c76a1b66594fb92c46"><div class="ttname"><a href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">Microphysics::m_moist_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullMoist &gt; &gt; m_moist_model</div><div class="ttdef"><b>Definition:</b> Microphysics.H:80</div></div>
-</div><!-- fragment -->
+
+<p>advance microphysics for one time step </p>
+
+<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#ad643f2ee8d838735f86ca49f4d9491e6">EulerianMicrophysics</a>.</p>
+
 </div>
 </div>
-<a id="a8e6a09354d94f3966fd44c5c7d7bb44c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e6a09354d94f3966fd44c5c7d7bb44c">&#9670;&nbsp;</a></span>Define()</h2>
+<a id="a380240aa9ec93af02a9b27ba1be4172a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a380240aa9ec93af02a9b27ba1be4172a">&#9670;&nbsp;</a></span>Define()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,16 +274,16 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Microphysics::Define </td>
+          <td class="memname">virtual void Microphysics::Define </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>lev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
-          <td class="paramname"><em>sc</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -265,18 +293,19 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Define(sc);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-</div><!-- fragment -->
+
+<p>define the microphysics object </p>
+
+<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#a444c916c5bb1167ea1efc9f2b9595436">EulerianMicrophysics</a>.</p>
+
 </div>
 </div>
-<a id="ae34ada2d4de3118a2d58d1895a7ff5e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae34ada2d4de3118a2d58d1895a7ff5e9">&#9670;&nbsp;</a></span>Diagnose()</h2>
+<a id="a4630241e6d1a3ebd9ef94348bc7412e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4630241e6d1a3ebd9ef94348bc7412e9">&#9670;&nbsp;</a></span>Diagnose()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -285,27 +314,28 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Microphysics::Diagnose </td>
+          <td class="memname">virtual void Microphysics::Diagnose </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>lev</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Diagnose();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-</div><!-- fragment -->
+
+<p>compute diagnostics </p>
+
+<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#aeb8448f2c2db975c40a4f91e11c0713b">EulerianMicrophysics</a>.</p>
+
 </div>
 </div>
-<a id="a09d615436206800272f684eedac79256"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09d615436206800272f684eedac79256">&#9670;&nbsp;</a></span>Get_Qmoist_Ptr()</h2>
+<a id="a8edecc53bfdfd0d916d37e3584ebb9ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8edecc53bfdfd0d916d37e3584ebb9ff">&#9670;&nbsp;</a></span>Get_Qmoist_Ptr()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,16 +344,16 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::MultiFab* Microphysics::Get_Qmoist_Ptr </td>
+          <td class="memname">virtual amrex::MultiFab* Microphysics::Get_Qmoist_Ptr </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>lev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>varIdx</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -333,16 +363,19 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Qmoist_Ptr(varIdx); }</div>
-</div><!-- fragment -->
+
+<p>get pointer to a moisture variable </p>
+
+<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#a416981f230a126387b9a664a5a241e9c">EulerianMicrophysics</a>.</p>
+
 </div>
 </div>
-<a id="a7238a5f8a3a5a1281ef3e7f6dac3fd68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7238a5f8a3a5a1281ef3e7f6dac3fd68">&#9670;&nbsp;</a></span>Get_Qmoist_Size()</h2>
+<a id="a069e6013efb78d268394868d0cfc6382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a069e6013efb78d268394868d0cfc6382">&#9670;&nbsp;</a></span>Get_Qmoist_Size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -351,86 +384,93 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Microphysics::Get_Qmoist_Size </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[0]-&gt;Qmoist_Size(); }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aaa5855f1992b34c6e520f426ec0657d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa5855f1992b34c6e520f426ec0657d4">&#9670;&nbsp;</a></span>Get_Qstate_Size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Microphysics::Get_Qstate_Size </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[0]-&gt;Qstate_Size(); }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a55f898c6bd88a6799971a104c49158b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55f898c6bd88a6799971a104c49158b7">&#9670;&nbsp;</a></span>Init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Microphysics::Init </td>
+          <td class="memname">virtual int Microphysics::Get_Qmoist_Size </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>lev</em>, </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the number of moisture model variables </p>
+
+<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#ad4983e19f621a55ad7d942c881215c72">EulerianMicrophysics</a>.</p>
+
+</div>
+</div>
+<a id="a72f6091687c014c5be34275b0975d194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72f6091687c014c5be34275b0975d194">&#9670;&nbsp;</a></span>Get_Qstate_Size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Microphysics::Get_Qstate_Size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the number of moisture-model-related conserved state variables </p>
+
+<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#a3e973738b4e0bbaa7269ab2395322929">EulerianMicrophysics</a>.</p>
+
+</div>
+</div>
+<a id="add47219ead426230ea0eaaef1e378e38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add47219ead426230ea0eaaef1e378e38">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Microphysics::Init </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>cons_in</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::BoxArray &amp;&#160;</td>
-          <td class="paramname"><em>grids</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
-          <td class="paramname"><em>geom</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Real &amp;&#160;</td>
-          <td class="paramname"><em>dt_advance</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -440,18 +480,19 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Init(cons_in, grids, geom, dt_advance);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-</div><!-- fragment -->
+
+<p>initialize the microphysics object </p>
+
+<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#ae3cea6e7467625cd0023f766b0361a69">EulerianMicrophysics</a>.</p>
+
 </div>
 </div>
-<a id="a1cb53d4c36c2faae0cfd8b5a50755418"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cb53d4c36c2faae0cfd8b5a50755418">&#9670;&nbsp;</a></span>ReSize()</h2>
+<a id="ac10e6fce2e6cb49373d56ca0e1a5b366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac10e6fce2e6cb49373d56ca0e1a5b366">&#9670;&nbsp;</a></span>modelType()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -460,136 +501,58 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Microphysics::ReSize </td>
+          <td class="memname">static <a class="el" href="DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5">MoistureModelType</a> Microphysics::modelType </td>
           <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>nlev</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0">MoistureType</a>&#160;</td>
+          <td class="paramname"><em>a_moisture_type</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{ <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>.resize(nlev); }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a5d637a7ba3efb3c71aebbba9609c32b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d637a7ba3efb3c71aebbba9609c32b5">&#9670;&nbsp;</a></span>SetModel()</h2>
 
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class NewMoistModel &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Microphysics::SetModel </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev(0); lev&lt;<a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>.size(); ++lev) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev] = std::make_unique&lt;NewMoistModel&gt;();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a51d0e22030ffdc3e66574bbf6e50889e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51d0e22030ffdc3e66574bbf6e50889e">&#9670;&nbsp;</a></span>Update_Micro_Vars_Lev()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Microphysics::Update_Micro_Vars_Lev </td>
-          <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>lev</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>cons_in</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Update_Micro_Vars(cons_in);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ae6fb3098b3b2398fb618f805c5067eb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6fb3098b3b2398fb618f805c5067eb3">&#9670;&nbsp;</a></span>Update_State_Vars_Lev()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Microphysics::Update_State_Vars_Lev </td>
-          <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>lev</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>cons_in</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46">m_moist_model</a>[lev]-&gt;Update_State_Vars(cons_in);</div>
+<p>query if a specified moisture model is Eulerian or Lagrangian </p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (    (a_moisture_type == <a class="code" href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a9f1b3be4a82b11d104e4ef7f7ccb1c19">MoistureType::SAM</a>)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;             || (a_moisture_type == <a class="code" href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0af918ea9a492942625a661a22ac6af91d">MoistureType::Kessler</a>)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;             || (a_moisture_type == <a class="code" href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0ab367ee4b7b1fe3bae62b649e580db4f4">MoistureType::Kessler_NoRain</a>)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;             || (a_moisture_type == <a class="code" href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754">MoistureType::None</a>) ) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5aff01d2011cc56dfe241e0002bb9df778">MoistureModelType::Eulerian</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Dont know this moisture_type!&quot;</span>) ;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5aec0fc0100c4fc1ce4eea230c3dc10360">MoistureModelType::Undefined</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="ttc" id="aDataStruct_8H_html_a62a5a9bde82457a1611cde231a43bfe5aec0fc0100c4fc1ce4eea230c3dc10360"><div class="ttname"><a href="DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5aec0fc0100c4fc1ce4eea230c3dc10360">MoistureModelType::Undefined</a></div><div class="ttdeci">@ Undefined</div></div>
+<div class="ttc" id="aDataStruct_8H_html_a62a5a9bde82457a1611cde231a43bfe5aff01d2011cc56dfe241e0002bb9df778"><div class="ttname"><a href="DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5aff01d2011cc56dfe241e0002bb9df778">MoistureModelType::Eulerian</a></div><div class="ttdeci">@ Eulerian</div></div>
+<div class="ttc" id="aDataStruct_8H_html_ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754">MoistureType::None</a></div><div class="ttdeci">@ None</div></div>
+<div class="ttc" id="aDataStruct_8H_html_ab34704153a585940411c26587cb82ad0a9f1b3be4a82b11d104e4ef7f7ccb1c19"><div class="ttname"><a href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a9f1b3be4a82b11d104e4ef7f7ccb1c19">MoistureType::SAM</a></div><div class="ttdeci">@ SAM</div></div>
+<div class="ttc" id="aDataStruct_8H_html_ab34704153a585940411c26587cb82ad0ab367ee4b7b1fe3bae62b649e580db4f4"><div class="ttname"><a href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0ab367ee4b7b1fe3bae62b649e580db4f4">MoistureType::Kessler_NoRain</a></div><div class="ttdeci">@ Kessler_NoRain</div></div>
+<div class="ttc" id="aDataStruct_8H_html_ab34704153a585940411c26587cb82ad0af918ea9a492942625a661a22ac6af91d"><div class="ttname"><a href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0af918ea9a492942625a661a22ac6af91d">MoistureType::Kessler</a></div><div class="ttdeci">@ Kessler</div></div>
 </div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classEulerianMicrophysics.html#a26a985c76efcd1dd68b5c853bbd264f6">EulerianMicrophysics::EulerianMicrophysics()</a>, <a class="el" href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData()</a>, and <a class="el" href="classERF.html#afc2898daad269536c1a15443abf3fa75">ERF::initializeMicrophysics()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMicrophysics_ac10e6fce2e6cb49373d56ca0e1a5b366_icgraph.png" border="0" usemap="#aclassMicrophysics_ac10e6fce2e6cb49373d56ca0e1a5b366_icgraph" alt=""/></div>
+<map name="aclassMicrophysics_ac10e6fce2e6cb49373d56ca0e1a5b366_icgraph" id="aclassMicrophysics_ac10e6fce2e6cb49373d56ca0e1a5b366_icgraph">
+<area shape="rect" title="query if a specified moisture model is Eulerian or Lagrangian" alt="" coords="553,71,740,98"/>
+<area shape="rect" href="classEulerianMicrophysics.html#a26a985c76efcd1dd68b5c853bbd264f6" title="Constructor: create the moisture model." alt="" coords="324,5,492,47"/>
+<area shape="rect" href="classERF.html#ad5d585e110291969767013a515719224" title=" " alt="" coords="355,71,461,98"/>
+<area shape="rect" href="classERF.html#afc2898daad269536c1a15443abf3fa75" title=" " alt="" coords="311,122,505,149"/>
+<area shape="rect" href="classMultiBlockContainer.html#a34f2b57ec5aafb88be61d6ffd3dea55c" title=" " alt="" coords="108,35,263,76"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,71,60,98"/>
+</map>
+</div>
+
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="ad53f319f160cd8c76a1b66594fb92c46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad53f319f160cd8c76a1b66594fb92c46">&#9670;&nbsp;</a></span>m_moist_model</h2>
+<a id="a6b8a14f003da6293f7a9ee118bc60149"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b8a14f003da6293f7a9ee118bc60149">&#9670;&nbsp;</a></span>Update_Micro_Vars_Lev()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -598,17 +561,73 @@ template&lt;class NewMoistModel &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;std::unique_ptr&lt;<a class="el" href="classNullMoist.html">NullMoist</a>&gt; &gt; Microphysics::m_moist_model</td>
+          <td class="memname">virtual void Microphysics::Update_Micro_Vars_Lev </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classMicrophysics.html#a7327b7c6f43c2d5f24fd427aac1a0e2d">Advance()</a>, <a class="el" href="classMicrophysics.html#a8e6a09354d94f3966fd44c5c7d7bb44c">Define()</a>, <a class="el" href="classMicrophysics.html#ae34ada2d4de3118a2d58d1895a7ff5e9">Diagnose()</a>, <a class="el" href="classMicrophysics.html#a09d615436206800272f684eedac79256">Get_Qmoist_Ptr()</a>, <a class="el" href="classMicrophysics.html#a7238a5f8a3a5a1281ef3e7f6dac3fd68">Get_Qmoist_Size()</a>, <a class="el" href="classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4">Get_Qstate_Size()</a>, <a class="el" href="classMicrophysics.html#a55f898c6bd88a6799971a104c49158b7">Init()</a>, <a class="el" href="classMicrophysics.html#a1cb53d4c36c2faae0cfd8b5a50755418">ReSize()</a>, <a class="el" href="classMicrophysics.html#a5d637a7ba3efb3c71aebbba9609c32b5">SetModel()</a>, <a class="el" href="classMicrophysics.html#a51d0e22030ffdc3e66574bbf6e50889e">Update_Micro_Vars_Lev()</a>, and <a class="el" href="classMicrophysics.html#ae6fb3098b3b2398fb618f805c5067eb3">Update_State_Vars_Lev()</a>.</p>
+<p>update microphysics variables from <a class="el" href="classERF.html">ERF</a> state variables </p>
+
+<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#a0f8fc766c44f4331bfc86337eb43f6cc">EulerianMicrophysics</a>.</p>
+
+</div>
+</div>
+<a id="a5d7ee0e4867e53e492b8179365e85bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d7ee0e4867e53e492b8179365e85bb4">&#9670;&nbsp;</a></span>Update_State_Vars_Lev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Microphysics::Update_State_Vars_Lev </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>update <a class="el" href="classERF.html">ERF</a> state variables from microphysics variables </p>
+
+<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#a6f0dc90119a228e56c5616267eba6009">EulerianMicrophysics</a>.</p>
 
 </div>
 </div>

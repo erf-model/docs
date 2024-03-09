@@ -1,17 +1,15 @@
 var classMicrophysics =
 [
     [ "Microphysics", "classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e", null ],
-    [ "~Microphysics", "classMicrophysics.html#ab9d9d3f804f3d0d9aacf12c15b1b1417", null ],
-    [ "Advance", "classMicrophysics.html#a7327b7c6f43c2d5f24fd427aac1a0e2d", null ],
-    [ "Define", "classMicrophysics.html#a8e6a09354d94f3966fd44c5c7d7bb44c", null ],
-    [ "Diagnose", "classMicrophysics.html#ae34ada2d4de3118a2d58d1895a7ff5e9", null ],
-    [ "Get_Qmoist_Ptr", "classMicrophysics.html#a09d615436206800272f684eedac79256", null ],
-    [ "Get_Qmoist_Size", "classMicrophysics.html#a7238a5f8a3a5a1281ef3e7f6dac3fd68", null ],
-    [ "Get_Qstate_Size", "classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4", null ],
-    [ "Init", "classMicrophysics.html#a55f898c6bd88a6799971a104c49158b7", null ],
-    [ "ReSize", "classMicrophysics.html#a1cb53d4c36c2faae0cfd8b5a50755418", null ],
-    [ "SetModel", "classMicrophysics.html#a5d637a7ba3efb3c71aebbba9609c32b5", null ],
-    [ "Update_Micro_Vars_Lev", "classMicrophysics.html#a51d0e22030ffdc3e66574bbf6e50889e", null ],
-    [ "Update_State_Vars_Lev", "classMicrophysics.html#ae6fb3098b3b2398fb618f805c5067eb3", null ],
-    [ "m_moist_model", "classMicrophysics.html#ad53f319f160cd8c76a1b66594fb92c46", null ]
+    [ "~Microphysics", "classMicrophysics.html#a09486c3bc292538d5a26683fb1e19451", null ],
+    [ "Advance", "classMicrophysics.html#abc653271370514111ec2ee2430394a63", null ],
+    [ "Define", "classMicrophysics.html#a380240aa9ec93af02a9b27ba1be4172a", null ],
+    [ "Diagnose", "classMicrophysics.html#a4630241e6d1a3ebd9ef94348bc7412e9", null ],
+    [ "Get_Qmoist_Ptr", "classMicrophysics.html#a8edecc53bfdfd0d916d37e3584ebb9ff", null ],
+    [ "Get_Qmoist_Size", "classMicrophysics.html#a069e6013efb78d268394868d0cfc6382", null ],
+    [ "Get_Qstate_Size", "classMicrophysics.html#a72f6091687c014c5be34275b0975d194", null ],
+    [ "Init", "classMicrophysics.html#add47219ead426230ea0eaaef1e378e38", null ],
+    [ "modelType", "classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366", null ],
+    [ "Update_Micro_Vars_Lev", "classMicrophysics.html#a6b8a14f003da6293f7a9ee118bc60149", null ],
+    [ "Update_State_Vars_Lev", "classMicrophysics.html#a5d7ee0e4867e53e492b8179365e85bb4", null ]
 ];
