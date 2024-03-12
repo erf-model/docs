@@ -2163,29 +2163,29 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;{</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="comment">// Mask for zeroing covered cells</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    AMREX_ASSERT(level &gt; 0);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keyword">const</span> amrex::BoxArray&amp; cba = grids[level-1];</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keyword">const</span> amrex::DistributionMapping&amp; cdm = dmap[level-1];</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="comment">// TODO -- we should make a vector of these a member of ERF class</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <a class="code" href="classERF.html#a83c244120a15f0d9b9bca54e93976428">fine_mask</a>.define(cba, cdm, 1, 0, amrex::MFInfo());</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <a class="code" href="classERF.html#a83c244120a15f0d9b9bca54e93976428">fine_mask</a>.setVal(1.0);</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    amrex::BoxArray fba = grids[level];</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    amrex::iMultiFab ifine_mask = makeFineMask(cba, cdm, fba, ref_ratio[level-1], 1, 0);</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>  fma =  <a class="code" href="classERF.html#a83c244120a15f0d9b9bca54e93976428">fine_mask</a>.arrays();</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> ifma = ifine_mask.arrays();</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    ParallelFor(<a class="code" href="classERF.html#a83c244120a15f0d9b9bca54e93976428">fine_mask</a>, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> bno, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    {</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;       fma[bno](i,j,k) = ifma[bno](i,j,k);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    });</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classERF.html#a83c244120a15f0d9b9bca54e93976428">fine_mask</a>;</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;{</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="comment">// Mask for zeroing covered cells</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    AMREX_ASSERT(level &gt; 0);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keyword">const</span> amrex::BoxArray&amp; cba = grids[level-1];</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keyword">const</span> amrex::DistributionMapping&amp; cdm = dmap[level-1];</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="comment">// TODO -- we should make a vector of these a member of ERF class</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <a class="code" href="classERF.html#a83c244120a15f0d9b9bca54e93976428">fine_mask</a>.define(cba, cdm, 1, 0, amrex::MFInfo());</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <a class="code" href="classERF.html#a83c244120a15f0d9b9bca54e93976428">fine_mask</a>.setVal(1.0);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    amrex::BoxArray fba = grids[level];</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    amrex::iMultiFab ifine_mask = makeFineMask(cba, cdm, fba, ref_ratio[level-1], 1, 0);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>  fma =  <a class="code" href="classERF.html#a83c244120a15f0d9b9bca54e93976428">fine_mask</a>.arrays();</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> ifma = ifine_mask.arrays();</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    ParallelFor(<a class="code" href="classERF.html#a83c244120a15f0d9b9bca54e93976428">fine_mask</a>, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> bno, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    {</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;       fma[bno](i,j,k) = ifma[bno](i,j,k);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    });</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classERF.html#a83c244120a15f0d9b9bca54e93976428">fine_mask</a>;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;}</div>
 <div class="ttc" id="aclassERF_html_a83c244120a15f0d9b9bca54e93976428"><div class="ttname"><a href="classERF.html#a83c244120a15f0d9b9bca54e93976428">ERF::fine_mask</a></div><div class="ttdeci">amrex::MultiFab fine_mask</div><div class="ttdef"><b>Definition:</b> ERF.H:842</div></div>
 </div><!-- fragment -->
 </div>
@@ -6818,7 +6818,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a9737ddb0de6b9e8a5b17c109d5ad3e08"><div class="ttname"><a href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">ERF::sampleptlog</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt; sampleptlog</div><div class="ttdef"><b>Definition:</b> ERF.H:1027</div></div>
 <div class="ttc" id="aclassERF_html_aa0c07f31b23d977646b8161e5473fab5"><div class="ttname"><a href="classERF.html#aa0c07f31b23d977646b8161e5473fab5">ERF::start_time</a></div><div class="ttdeci">amrex::Real start_time</div><div class="ttdef"><b>Definition:</b> ERF.H:658</div></div>
 <div class="ttc" id="aclassERF_html_aa53035f34ba133b86172e180abda4209"><div class="ttname"><a href="classERF.html#aa53035f34ba133b86172e180abda4209">ERF::m_w2d</a></div><div class="ttdeci">std::unique_ptr&lt; WriteBndryPlanes &gt; m_w2d</div><div class="ttdef"><b>Definition:</b> ERF.H:829</div></div>
-<div class="ttc" id="aclassERF_html_ad4c61fad53912d1e8d0f774d365bcf0f"><div class="ttname"><a href="classERF.html#ad4c61fad53912d1e8d0f774d365bcf0f">ERF::is_it_time_for_action</a></div><div class="ttdeci">static bool is_it_time_for_action(int nstep, amrex::Real time, amrex::Real dt, int action_interval, amrex::Real action_per)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:363</div></div>
+<div class="ttc" id="aclassERF_html_ad4c61fad53912d1e8d0f774d365bcf0f"><div class="ttname"><a href="classERF.html#ad4c61fad53912d1e8d0f774d365bcf0f">ERF::is_it_time_for_action</a></div><div class="ttdeci">static bool is_it_time_for_action(int nstep, amrex::Real time, amrex::Real dt, int action_interval, amrex::Real action_per)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:399</div></div>
 <div class="ttc" id="aclassERF_html_ad5d585e110291969767013a515719224"><div class="ttname"><a href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData</a></div><div class="ttdeci">void InitData()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:470</div></div>
 <div class="ttc" id="aclassERF_html_adc00038dfe4c332e5d15f621184c69e8"><div class="ttname"><a href="classERF.html#adc00038dfe4c332e5d15f621184c69e8">ERF::plot_file_on_restart</a></div><div class="ttdeci">int plot_file_on_restart</div><div class="ttdef"><b>Definition:</b> ERF.H:651</div></div>
 <div class="ttc" id="aclassERF_html_adc284f421c5fd9dd15c0e5cbe4ff5fc8"><div class="ttname"><a href="classERF.html#adc284f421c5fd9dd15c0e5cbe4ff5fc8">ERF::Construct_ERFFillPatchers</a></div><div class="ttdeci">void Construct_ERFFillPatchers(int lev)</div><div class="ttdef"><b>Definition:</b> ERF.cpp:1581</div></div>
@@ -7243,21 +7243,21 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  <span class="keywordtype">bool</span> int_test = (action_interval &gt; 0 &amp;&amp; nstep % action_interval == 0);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <span class="keywordtype">bool</span> per_test = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  <span class="keywordflow">if</span> (action_per &gt; 0.0) {</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> num_per_old = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((time - dtlev) / action_per));</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> num_per_new = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((time) / action_per));</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordflow">if</span> (num_per_old != num_per_new) {</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;      per_test = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    }</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  }</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <span class="keywordflow">return</span> int_test || per_test;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;{</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  <span class="keywordtype">bool</span> int_test = (action_interval &gt; 0 &amp;&amp; nstep % action_interval == 0);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  <span class="keywordtype">bool</span> per_test = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  <span class="keywordflow">if</span> (action_per &gt; 0.0) {</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> num_per_old = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((time - dtlev) / action_per));</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> num_per_new = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((time) / action_per));</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">if</span> (num_per_old != num_per_new) {</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;      per_test = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    }</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;  }</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  <span class="keywordflow">return</span> int_test || per_test;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -9604,85 +9604,85 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">int</span> datwidth = 14;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">int</span> datprecision = 6;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">int</span> ifile = 0;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = mf.nComp(); <span class="comment">// cell-centered state vars</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    MultiFab mf_vels(grids[lev], dmap[lev], AMREX_SPACEDIM, 0);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    average_face_to_cellcenter(mf_vels, 0,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                               Array&lt;const MultiFab*,3&gt;{&amp;<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],&amp;<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],&amp;<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>]});</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">// Sample the data at a line (in direction &quot;dir&quot;) in space</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// In this case we sample in the vertical direction so dir = 2</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="comment">// The &quot;k&quot; value of &quot;cell&quot; is ignored</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordtype">int</span> dir = 2;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    MultiFab my_line       = get_line_data(mf,              dir, cell);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    MultiFab my_line_vels  = get_line_data(mf_vels,         dir, cell);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    MultiFab my_line_tau11 = get_line_data(*<a class="code" href="classERF.html#aeb9348353b2415d023d8f52c293cad7e">Tau11_lev</a>[lev], dir, cell);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    MultiFab my_line_tau12 = get_line_data(*<a class="code" href="classERF.html#ad8c2eca71737b102cc5cf75f97c6bd63">Tau12_lev</a>[lev], dir, cell);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    MultiFab my_line_tau13 = get_line_data(*<a class="code" href="classERF.html#a5392e6104804d799b3fd943dfe390766">Tau13_lev</a>[lev], dir, cell);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    MultiFab my_line_tau22 = get_line_data(*<a class="code" href="classERF.html#afb4294f848d86e4aefb74848bb71047e">Tau22_lev</a>[lev], dir, cell);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    MultiFab my_line_tau23 = get_line_data(*<a class="code" href="classERF.html#a03a4ad7368c1c98b492cd9d9fec9cbc5">Tau23_lev</a>[lev], dir, cell);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    MultiFab my_line_tau33 = get_line_data(*<a class="code" href="classERF.html#a60a185c47f07bf4fb537a15d5a226d8a">Tau33_lev</a>[lev], dir, cell);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(my_line, <span class="keyword">false</span>); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="comment">// HERE DO WHATEVER YOU WANT TO THE DATA BEFORE WRITING</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        std::ostream&amp; sample_log = <a class="code" href="classERF.html#aa559426d0435e669b04148c58b20caef">SampleLineLog</a>(ifile);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordflow">if</span> (sample_log.good()) {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;          sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; time;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_arr = my_line[0].const_array();</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_vels_arr = my_line_vels[0].const_array();</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_tau11_arr = my_line_tau11[0].const_array();</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_tau12_arr = my_line_tau12[0].const_array();</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_tau13_arr = my_line_tau13[0].const_array();</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_tau22_arr = my_line_tau22[0].const_array();</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_tau23_arr = my_line_tau23[0].const_array();</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_tau33_arr = my_line_tau33[0].const_array();</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;          <span class="keyword">const</span> Box&amp;  my_box = my_line[0].box();</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> klo = my_box.smallEnd(2);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> khi = my_box.bigEnd(2);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;          <span class="keywordtype">int</span> i = cell[0];</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;          <span class="keywordtype">int</span> j = cell[1];</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                  sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_arr(i,j,k,n);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;              }</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;          }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; AMREX_SPACEDIM; n++) {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                  sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_vels_arr(i,j,k,n);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;              }</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;          }</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_tau11_arr(i,j,k);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;          }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_tau12_arr(i,j,k);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;          }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_tau13_arr(i,j,k);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;          }</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_tau22_arr(i,j,k);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;          }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_tau23_arr(i,j,k);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;          }</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_tau33_arr(i,j,k);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;          }</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;          sample_log &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        } <span class="comment">// if good</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;{</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">int</span> datwidth = 14;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordtype">int</span> datprecision = 6;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordtype">int</span> ifile = 0;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = mf.nComp(); <span class="comment">// cell-centered state vars</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    MultiFab mf_vels(grids[lev], dmap[lev], AMREX_SPACEDIM, 0);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    average_face_to_cellcenter(mf_vels, 0,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                               Array&lt;const MultiFab*,3&gt;{&amp;<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],&amp;<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],&amp;<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>]});</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="comment">// Sample the data at a line (in direction &quot;dir&quot;) in space</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment">// In this case we sample in the vertical direction so dir = 2</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// The &quot;k&quot; value of &quot;cell&quot; is ignored</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordtype">int</span> dir = 2;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    MultiFab my_line       = get_line_data(mf,              dir, cell);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    MultiFab my_line_vels  = get_line_data(mf_vels,         dir, cell);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    MultiFab my_line_tau11 = get_line_data(*<a class="code" href="classERF.html#aeb9348353b2415d023d8f52c293cad7e">Tau11_lev</a>[lev], dir, cell);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    MultiFab my_line_tau12 = get_line_data(*<a class="code" href="classERF.html#ad8c2eca71737b102cc5cf75f97c6bd63">Tau12_lev</a>[lev], dir, cell);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    MultiFab my_line_tau13 = get_line_data(*<a class="code" href="classERF.html#a5392e6104804d799b3fd943dfe390766">Tau13_lev</a>[lev], dir, cell);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    MultiFab my_line_tau22 = get_line_data(*<a class="code" href="classERF.html#afb4294f848d86e4aefb74848bb71047e">Tau22_lev</a>[lev], dir, cell);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    MultiFab my_line_tau23 = get_line_data(*<a class="code" href="classERF.html#a03a4ad7368c1c98b492cd9d9fec9cbc5">Tau23_lev</a>[lev], dir, cell);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    MultiFab my_line_tau33 = get_line_data(*<a class="code" href="classERF.html#a60a185c47f07bf4fb537a15d5a226d8a">Tau33_lev</a>[lev], dir, cell);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(my_line, <span class="keyword">false</span>); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="comment">// HERE DO WHATEVER YOU WANT TO THE DATA BEFORE WRITING</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        std::ostream&amp; sample_log = <a class="code" href="classERF.html#aa559426d0435e669b04148c58b20caef">SampleLineLog</a>(ifile);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keywordflow">if</span> (sample_log.good()) {</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;          sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; time;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_arr = my_line[0].const_array();</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_vels_arr = my_line_vels[0].const_array();</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_tau11_arr = my_line_tau11[0].const_array();</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_tau12_arr = my_line_tau12[0].const_array();</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_tau13_arr = my_line_tau13[0].const_array();</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_tau22_arr = my_line_tau22[0].const_array();</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_tau23_arr = my_line_tau23[0].const_array();</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_line_tau33_arr = my_line_tau33[0].const_array();</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;          <span class="keyword">const</span> Box&amp;  my_box = my_line[0].box();</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> klo = my_box.smallEnd(2);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> khi = my_box.bigEnd(2);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;          <span class="keywordtype">int</span> i = cell[0];</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;          <span class="keywordtype">int</span> j = cell[1];</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                  sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_arr(i,j,k,n);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;              }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;          }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; AMREX_SPACEDIM; n++) {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                  sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_vels_arr(i,j,k,n);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;              }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;          }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_tau11_arr(i,j,k);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;          }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_tau12_arr(i,j,k);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;          }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_tau13_arr(i,j,k);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;          }</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_tau22_arr(i,j,k);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;          }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_tau23_arr(i,j,k);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;          }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision) &lt;&lt; my_line_tau33_arr(i,j,k);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;          }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;          sample_log &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        } <span class="comment">// if good</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;}</div>
 <div class="ttc" id="aclassERF_html_aa559426d0435e669b04148c58b20caef"><div class="ttname"><a href="classERF.html#aa559426d0435e669b04148c58b20caef">ERF::SampleLineLog</a></div><div class="ttdeci">AMREX_FORCE_INLINE std::ostream &amp; SampleLineLog(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:921</div></div>
 </div><!-- fragment -->
 </div>
@@ -9734,32 +9734,32 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">int</span> datwidth = 14;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">int</span> ifile = 0;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// Sample the data at a single point in space</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">int</span> ncomp = mf.nComp();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    Vector&lt;Real&gt; my_point = get_cell_data(mf, cell);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span> (!my_point.empty()) {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">// HERE DO WHATEVER YOU WANT TO THE DATA BEFORE WRITING</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        std::ostream&amp; sample_log = <a class="code" href="classERF.html#af5f6c32cc5463e52901f21117d3156c7">SamplePointLog</a>(ifile);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">if</span> (sample_log.good()) {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;          sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; time;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ncomp; ++i)</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;          {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; my_point[i];</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;          }</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;          sample_log &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        } <span class="comment">// if good</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    } <span class="comment">// only write from processor that holds the cell</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;{</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">int</span> datwidth = 14;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">int</span> ifile = 0;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// Sample the data at a single point in space</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">int</span> ncomp = mf.nComp();</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    Vector&lt;Real&gt; my_point = get_cell_data(mf, cell);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">if</span> (!my_point.empty()) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="comment">// HERE DO WHATEVER YOU WANT TO THE DATA BEFORE WRITING</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        std::ostream&amp; sample_log = <a class="code" href="classERF.html#af5f6c32cc5463e52901f21117d3156c7">SamplePointLog</a>(ifile);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">if</span> (sample_log.good()) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;          sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; time;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ncomp; ++i)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;          {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;              sample_log &lt;&lt; std::setw(datwidth) &lt;&lt; my_point[i];</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;          }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;          sample_log &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        } <span class="comment">// if good</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    } <span class="comment">// only write from processor that holds the cell</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
 <div class="ttc" id="aclassERF_html_af5f6c32cc5463e52901f21117d3156c7"><div class="ttname"><a href="classERF.html#af5f6c32cc5463e52901f21117d3156c7">ERF::SamplePointLog</a></div><div class="ttdeci">AMREX_FORCE_INLINE std::ostream &amp; SamplePointLog(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:907</div></div>
 </div><!-- fragment -->
 </div>
@@ -10371,131 +10371,167 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> datwidth = 14;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> datprecision = 6;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// Multilevel sums</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Real mass_ml = 0.0;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Real rhth_ml = 0.0;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Real scal_ml = 0.0;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// Level 0 sums</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    Real mass_sl = <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(0,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[0][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],      <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[0],<span class="keyword">false</span>,<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    Real rhth_sl = <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(0,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[0][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>], <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[0],<span class="keyword">false</span>,<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    Real scal_sl = <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(0,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[0][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],<a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[0],<span class="keyword">false</span>,<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// Single level sum</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Real mass_sl;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Multilevel sums</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Real mass_ml = 0.0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    Real rhth_ml = 0.0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    Real scal_ml = 0.0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#if 1</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    mass_sl = <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(0,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[0][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[0],<span class="keyword">false</span>,<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        mass_ml += <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(lev,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],      <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[lev],<span class="keyword">false</span>,<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        rhth_ml += <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(lev,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>], <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[lev],<span class="keyword">false</span>,<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        scal_ml += <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(lev,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],<a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[lev],<span class="keyword">false</span>,<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a> &gt; 0) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        Gpu::HostVector&lt;Real&gt; h_avg_ustar; h_avg_ustar.resize(1);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        Gpu::HostVector&lt;Real&gt; h_avg_tstar; h_avg_tstar.resize(1);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        Gpu::HostVector&lt;Real&gt; h_avg_olen; h_avg_olen.resize(1);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a> != <span class="keyword">nullptr</span>) &amp;&amp; (<a class="code" href="classERF.html#ac1238c1616826c66df1dfd9076e6a3da">NumDataLogs</a>() &gt; 0)) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Box domain = geom[0].Domain();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordtype">int</span> zdir = 2;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            h_avg_ustar = sumToLine(*<a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>-&gt;get_u_star(0),0,1,domain,zdir);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            h_avg_tstar = sumToLine(*<a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>-&gt;get_t_star(0),0,1,domain,zdir);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            h_avg_olen  = sumToLine(*<a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>-&gt;get_olen(0),0,1,domain,zdir);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="comment">// Divide by the total number of cells we are averaging over</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            Real area_z = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(domain.length(0)*domain.length(1));</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            h_avg_ustar[0] /= area_z;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            h_avg_tstar[0] /= area_z;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            h_avg_olen[0]  /= area_z;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            h_avg_ustar[0] = 0.;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            h_avg_tstar[0] = 0.;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            h_avg_olen[0]  = 0.;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nfoo = 6;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        amrex::Real foo[nfoo] = {mass_sl,rhth_sl,scal_sl,mass_ml,rhth_ml,scal_ml};</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#ifdef AMREX_LAZY</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        Lazy::QueueReduction([=]() <span class="keyword">mutable</span> {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        amrex::ParallelDescriptor::ReduceRealSum(</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            foo, nfoo, amrex::ParallelDescriptor::IOProcessorNumber());</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;          <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            mass_sl = foo[i++];</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            rhth_sl = foo[i++];</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            scal_sl = foo[i++];</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            mass_ml = foo[i++];</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            rhth_ml = foo[i++];</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            scal_ml = foo[i++];</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            amrex::Print() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">if</span> (finest_level ==  0) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; MASS              = &quot;</span> &lt;&lt; mass_sl &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; RHO THETA         = &quot;</span> &lt;&lt; rhth_sl &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; RHO SCALAR        = &quot;</span> &lt;&lt; scal_sl &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; MASS        SL/ML = &quot;</span> &lt;&lt; mass_sl &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; mass_ml &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; RHO THETA   SL/ML = &quot;</span> &lt;&lt; rhth_sl &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; rhth_ml &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; RHO SCALAR  SL/ML = &quot;</span> &lt;&lt; scal_sl &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; scal_ml &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        mass_ml += <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(lev,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[lev],<span class="keyword">false</span>,<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        MultiFab pert_dens(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].boxArray(),</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                           <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].DistributionMap(),</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                           1,0);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        MultiFab r_hse (<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev], make_alias, 0, 1); <span class="comment">// r_0 is first  component</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(pert_dens,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keyword">const</span> Array4&lt;Real      &gt;&amp; pert_dens_arr = pert_dens.array(mfi);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">const</span> Array4&lt;Real const&gt;&amp;         S_arr = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].const_array(mfi);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">const</span> Array4&lt;Real const&gt;&amp;        r0_arr = r_hse.const_array(mfi);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                pert_dens_arr(i, j, k, 0) = S_arr(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) - r0_arr(i,j,k);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            });</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (lev == 0) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            mass_sl = <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(0,pert_dens,0,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[0],<span class="keyword">false</span>,<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        mass_ml += <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(lev,pert_dens,0,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[lev],<span class="keyword">false</span>,<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    } <span class="comment">// lev</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Real rhth_sl = <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(0,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[0][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>], <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[0],<span class="keyword">false</span>,<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    Real scal_sl = <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(0,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[0][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],<a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[0],<span class="keyword">false</span>,<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        rhth_ml += <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(lev,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>], <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[lev],<span class="keyword">false</span>,<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        scal_ml += <a class="code" href="classERF.html#a92798729bcf472f381683f69e5bb104e">volWgtSumMF</a>(lev,<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],<a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>,*<a class="code" href="classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497">mapfac_m</a>[lev],<span class="keyword">false</span>,<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a> &gt; 0) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        Gpu::HostVector&lt;Real&gt; h_avg_ustar; h_avg_ustar.resize(1);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        Gpu::HostVector&lt;Real&gt; h_avg_tstar; h_avg_tstar.resize(1);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        Gpu::HostVector&lt;Real&gt; h_avg_olen; h_avg_olen.resize(1);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a> != <span class="keyword">nullptr</span>) &amp;&amp; (<a class="code" href="classERF.html#ac1238c1616826c66df1dfd9076e6a3da">NumDataLogs</a>() &gt; 0)) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            Box domain = geom[0].Domain();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordtype">int</span> zdir = 2;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            h_avg_ustar = sumToLine(*<a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>-&gt;get_u_star(0),0,1,domain,zdir);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            h_avg_tstar = sumToLine(*<a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>-&gt;get_t_star(0),0,1,domain,zdir);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            h_avg_olen  = sumToLine(*<a class="code" href="classERF.html#a051364b2373d8d86151c0b4a958035bd">m_most</a>-&gt;get_olen(0),0,1,domain,zdir);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="comment">// Divide by the total number of cells we are averaging over</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            Real area_z = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(domain.length(0)*domain.length(1));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            h_avg_ustar[0] /= area_z;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            h_avg_tstar[0] /= area_z;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            h_avg_olen[0]  /= area_z;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            h_avg_ustar[0] = 0.;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            h_avg_tstar[0] = 0.;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            h_avg_olen[0]  = 0.;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="comment">// The first data log only holds scalars</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ac1238c1616826c66df1dfd9076e6a3da">NumDataLogs</a>() &gt; 0)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordtype">int</span> nd = 0;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                std::ostream&amp; data_log1 = <a class="code" href="classERF.html#aa2c3ee1910008b828b9da79ccdfe3871">DataLog</a>(nd);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordflow">if</span> (data_log1.good()) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    <span class="keywordflow">if</span> (time == 0.0) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                        data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; <span class="stringliteral">&quot;          time&quot;</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                        data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; <span class="stringliteral">&quot;          u_star&quot;</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                        data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; <span class="stringliteral">&quot;          t_star&quot;</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                        data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; <span class="stringliteral">&quot;          olen&quot;</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        data_log1 &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    } <span class="comment">// time = 0</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                  <span class="comment">// Write the quantities at this time</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                  data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; time;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                  data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                            &lt;&lt; h_avg_ustar[0];</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                  data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                            &lt;&lt; h_avg_tstar[0];</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                  data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                            &lt;&lt; h_avg_olen[0];</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                  data_log1 &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                } <span class="comment">// if good</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            } <span class="comment">// loop over i</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;          } <span class="comment">// if IOProcessor</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#ifdef AMREX_LAZY</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        });</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    } <span class="comment">// if verbose</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// This is just an alias for convenience</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">int</span> lev = 0;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a41324a4b5610fde725fe721550b23c85">NumSamplePointLogs</a>() &gt; 0 &amp;&amp; <a class="code" href="classERF.html#a5bc7dd2c7e1ebf65b7dc1d9bf0dfb36f">NumSamplePoints</a>() &gt; 0) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classERF.html#a5bc7dd2c7e1ebf65b7dc1d9bf0dfb36f">NumSamplePoints</a>(); ++i)</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <a class="code" href="classERF.html#aa28182226262c67cfd686d35bfeabcad">sample_points</a>(lev, time, <a class="code" href="classERF.html#a9095d1b641b4d7f32ca5acb679786891">SamplePoint</a>(i), <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a14f922bdc3a0f23c087afa32c67ac119">NumSampleLineLogs</a>() &gt; 0 &amp;&amp; <a class="code" href="classERF.html#a70d78ca624acf09d8faab9a2d51264d9">NumSampleLines</a>() &gt; 0) {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classERF.html#a70d78ca624acf09d8faab9a2d51264d9">NumSampleLines</a>(); ++i)</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <a class="code" href="classERF.html#afb798c72ea4fde6f4da8d01a24c8c165">sample_lines</a>(lev, time, <a class="code" href="classERF.html#a54357e2f81f3d7d3a9189a3e21283e6b">SampleLine</a>(i), <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nfoo = 6;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        amrex::Real foo[nfoo] = {mass_sl,rhth_sl,scal_sl,mass_ml,rhth_ml,scal_ml};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#ifdef AMREX_LAZY</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        Lazy::QueueReduction([=]() <span class="keyword">mutable</span> {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        amrex::ParallelDescriptor::ReduceRealSum(</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            foo, nfoo, amrex::ParallelDescriptor::IOProcessorNumber());</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;          <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            mass_sl = foo[i++];</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            rhth_sl = foo[i++];</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            scal_sl = foo[i++];</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            mass_ml = foo[i++];</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            rhth_ml = foo[i++];</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            scal_ml = foo[i++];</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            amrex::Print() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">if</span> (finest_level ==  0) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#if 1</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot;      MASS         = &quot;</span> &lt;&lt; mass_sl &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; PERT MASS         = &quot;</span> &lt;&lt; mass_sl &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; RHO THETA         = &quot;</span> &lt;&lt; rhth_sl &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; RHO SCALAR        = &quot;</span> &lt;&lt; scal_sl &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#if 1</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot;      MASS   SL/ML = &quot;</span> &lt;&lt; mass_sl &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; mass_ml &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; PERT MASS   SL/ML = &quot;</span> &lt;&lt; mass_sl &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; mass_ml &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; RHO THETA   SL/ML = &quot;</span> &lt;&lt; rhth_sl &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; rhth_ml &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;               amrex::Print() &lt;&lt; <span class="stringliteral">&quot;TIME= &quot;</span> &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; RHO SCALAR  SL/ML = &quot;</span> &lt;&lt; scal_sl &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; scal_ml &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="comment">// The first data log only holds scalars</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ac1238c1616826c66df1dfd9076e6a3da">NumDataLogs</a>() &gt; 0)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordtype">int</span> nd = 0;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                std::ostream&amp; data_log1 = <a class="code" href="classERF.html#aa2c3ee1910008b828b9da79ccdfe3871">DataLog</a>(nd);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="keywordflow">if</span> (data_log1.good()) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                    <span class="keywordflow">if</span> (time == 0.0) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                        data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; <span class="stringliteral">&quot;          time&quot;</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                        data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; <span class="stringliteral">&quot;          u_star&quot;</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                        data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; <span class="stringliteral">&quot;          t_star&quot;</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                        data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; <span class="stringliteral">&quot;          olen&quot;</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                        data_log1 &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                    } <span class="comment">// time = 0</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                  <span class="comment">// Write the quantities at this time</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                  data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; time;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                  data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                            &lt;&lt; h_avg_ustar[0];</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                  data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                            &lt;&lt; h_avg_tstar[0];</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                  data_log1 &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision)</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                            &lt;&lt; h_avg_olen[0];</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                  data_log1 &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                } <span class="comment">// if good</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            } <span class="comment">// loop over i</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;          } <span class="comment">// if IOProcessor</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#ifdef AMREX_LAZY</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        });</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    } <span class="comment">// if verbose</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// This is just an alias for convenience</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">int</span> lev = 0;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a41324a4b5610fde725fe721550b23c85">NumSamplePointLogs</a>() &gt; 0 &amp;&amp; <a class="code" href="classERF.html#a5bc7dd2c7e1ebf65b7dc1d9bf0dfb36f">NumSamplePoints</a>() &gt; 0) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classERF.html#a5bc7dd2c7e1ebf65b7dc1d9bf0dfb36f">NumSamplePoints</a>(); ++i)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="classERF.html#aa28182226262c67cfd686d35bfeabcad">sample_points</a>(lev, time, <a class="code" href="classERF.html#a9095d1b641b4d7f32ca5acb679786891">SamplePoint</a>(i), <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a14f922bdc3a0f23c087afa32c67ac119">NumSampleLineLogs</a>() &gt; 0 &amp;&amp; <a class="code" href="classERF.html#a70d78ca624acf09d8faab9a2d51264d9">NumSampleLines</a>() &gt; 0) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classERF.html#a70d78ca624acf09d8faab9a2d51264d9">NumSampleLines</a>(); ++i)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <a class="code" href="classERF.html#afb798c72ea4fde6f4da8d01a24c8c165">sample_lines</a>(lev, time, <a class="code" href="classERF.html#a54357e2f81f3d7d3a9189a3e21283e6b">SampleLine</a>(i), <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
 <div class="ttc" id="aclassERF_html_a14f922bdc3a0f23c087afa32c67ac119"><div class="ttname"><a href="classERF.html#a14f922bdc3a0f23c087afa32c67ac119">ERF::NumSampleLineLogs</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumSampleLineLogs() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:928</div></div>
 <div class="ttc" id="aclassERF_html_a41324a4b5610fde725fe721550b23c85"><div class="ttname"><a href="classERF.html#a41324a4b5610fde725fe721550b23c85">ERF::NumSamplePointLogs</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumSamplePointLogs() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:914</div></div>
 <div class="ttc" id="aclassERF_html_a54357e2f81f3d7d3a9189a3e21283e6b"><div class="ttname"><a href="classERF.html#a54357e2f81f3d7d3a9189a3e21283e6b">ERF::SampleLine</a></div><div class="ttdeci">amrex::IntVect &amp; SampleLine(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:947</div></div>
 <div class="ttc" id="aclassERF_html_a5bc7dd2c7e1ebf65b7dc1d9bf0dfb36f"><div class="ttname"><a href="classERF.html#a5bc7dd2c7e1ebf65b7dc1d9bf0dfb36f">ERF::NumSamplePoints</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumSamplePoints() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:941</div></div>
 <div class="ttc" id="aclassERF_html_a70d78ca624acf09d8faab9a2d51264d9"><div class="ttname"><a href="classERF.html#a70d78ca624acf09d8faab9a2d51264d9">ERF::NumSampleLines</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumSampleLines() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:954</div></div>
 <div class="ttc" id="aclassERF_html_a9095d1b641b4d7f32ca5acb679786891"><div class="ttname"><a href="classERF.html#a9095d1b641b4d7f32ca5acb679786891">ERF::SamplePoint</a></div><div class="ttdeci">amrex::IntVect &amp; SamplePoint(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:934</div></div>
-<div class="ttc" id="aclassERF_html_a92798729bcf472f381683f69e5bb104e"><div class="ttname"><a href="classERF.html#a92798729bcf472f381683f69e5bb104e">ERF::volWgtSumMF</a></div><div class="ttdeci">amrex::Real volWgtSumMF(int lev, const amrex::MultiFab &amp;mf, int comp, const amrex::MultiFab &amp;mapfac, bool local, bool finemask)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:277</div></div>
-<div class="ttc" id="aclassERF_html_aa28182226262c67cfd686d35bfeabcad"><div class="ttname"><a href="classERF.html#aa28182226262c67cfd686d35bfeabcad">ERF::sample_points</a></div><div class="ttdeci">void sample_points(int lev, amrex::Real time, amrex::IntVect cell, amrex::MultiFab &amp;mf)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:148</div></div>
+<div class="ttc" id="aclassERF_html_a92798729bcf472f381683f69e5bb104e"><div class="ttname"><a href="classERF.html#a92798729bcf472f381683f69e5bb104e">ERF::volWgtSumMF</a></div><div class="ttdeci">amrex::Real volWgtSumMF(int lev, const amrex::MultiFab &amp;mf, int comp, const amrex::MultiFab &amp;mapfac, bool local, bool finemask)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:313</div></div>
+<div class="ttc" id="aclassERF_html_aa28182226262c67cfd686d35bfeabcad"><div class="ttname"><a href="classERF.html#aa28182226262c67cfd686d35bfeabcad">ERF::sample_points</a></div><div class="ttdeci">void sample_points(int lev, amrex::Real time, amrex::IntVect cell, amrex::MultiFab &amp;mf)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:184</div></div>
 <div class="ttc" id="aclassERF_html_aa2c3ee1910008b828b9da79ccdfe3871"><div class="ttname"><a href="classERF.html#aa2c3ee1910008b828b9da79ccdfe3871">ERF::DataLog</a></div><div class="ttdeci">AMREX_FORCE_INLINE std::ostream &amp; DataLog(int i)</div><div class="ttdef"><b>Definition:</b> ERF.H:893</div></div>
 <div class="ttc" id="aclassERF_html_ac1238c1616826c66df1dfd9076e6a3da"><div class="ttname"><a href="classERF.html#ac1238c1616826c66df1dfd9076e6a3da">ERF::NumDataLogs</a></div><div class="ttdeci">AMREX_FORCE_INLINE int NumDataLogs() noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:900</div></div>
-<div class="ttc" id="aclassERF_html_afb798c72ea4fde6f4da8d01a24c8c165"><div class="ttname"><a href="classERF.html#afb798c72ea4fde6f4da8d01a24c8c165">ERF::sample_lines</a></div><div class="ttdeci">void sample_lines(int lev, amrex::Real time, amrex::IntVect cell, amrex::MultiFab &amp;mf)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:186</div></div>
+<div class="ttc" id="aclassERF_html_afb798c72ea4fde6f4da8d01a24c8c165"><div class="ttname"><a href="classERF.html#afb798c72ea4fde6f4da8d01a24c8c165">ERF::sample_lines</a></div><div class="ttdeci">void sample_lines(int lev, amrex::Real time, amrex::IntVect cell, amrex::MultiFab &amp;mf)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:222</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -10852,44 +10888,44 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;{</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERF::volWgtSumMF()&quot;</span>);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    Real sum = 0.0;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    MultiFab tmp(grids[lev], dmap[lev], 1, 0);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    MultiFab::Copy(tmp, mf, comp, 0, 1, 0);</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="comment">// The quantity that is conserved is not (rho S), but rather (rho S / m^2) where</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">// m is the map scale factor at cell centers</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(tmp, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;    tmp_arr =    tmp.array(mfi);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt; mapfac_arr = mapfac.const_array(mfi);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        {</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            tmp_arr(i,j,k) /= (mapfac_arr(i,j,0)*mapfac_arr(i,j,0));</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        });</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">if</span> (lev &lt; finest_level &amp;&amp; finemask) {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keyword">const</span> amrex::MultiFab&amp; mask = <a class="code" href="classERF.html#a419ba9adca32073e70aae4a8fe8cfcee">build_fine_mask</a>(lev+1);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        MultiFab::Multiply(tmp, mask, 0, 0, 1, 0);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    MultiFab volume(grids[lev], dmap[lev], 1, 0);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dx = geom[lev].CellSizeArray();</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    Real cell_vol = dx[0]*dx[1]*dx[2];</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    volume.setVal(cell_vol);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a063a88594452100497651e8aaf1f68d7">use_terrain</a>)</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        amrex::MultiFab::Multiply(volume, *<a class="code" href="classERF.html#a30f8b851ed29d38695d44cff257f14e6">detJ_cc</a>[lev], 0, 0, 1, 0);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    sum = MultiFab::Dot(tmp, 0, volume, 0, 1, 0, local);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">if</span> (!local)</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;      ParallelDescriptor::ReduceRealSum(sum);</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">return</span> sum;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
-<div class="ttc" id="aclassERF_html_a419ba9adca32073e70aae4a8fe8cfcee"><div class="ttname"><a href="classERF.html#a419ba9adca32073e70aae4a8fe8cfcee">ERF::build_fine_mask</a></div><div class="ttdeci">amrex::MultiFab &amp; build_fine_mask(int lev)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:326</div></div>
+<div class="fragment"><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;{</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERF::volWgtSumMF()&quot;</span>);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    Real sum = 0.0;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    MultiFab tmp(grids[lev], dmap[lev], 1, 0);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    MultiFab::Copy(tmp, mf, comp, 0, 1, 0);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="comment">// The quantity that is conserved is not (rho S), but rather (rho S / m^2) where</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">// m is the map scale factor at cell centers</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(tmp, TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;    tmp_arr =    tmp.array(mfi);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt; mapfac_arr = mapfac.const_array(mfi);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        {</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            tmp_arr(i,j,k) /= (mapfac_arr(i,j,0)*mapfac_arr(i,j,0));</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        });</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">if</span> (lev &lt; finest_level &amp;&amp; finemask) {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keyword">const</span> amrex::MultiFab&amp; mask = <a class="code" href="classERF.html#a419ba9adca32073e70aae4a8fe8cfcee">build_fine_mask</a>(lev+1);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        MultiFab::Multiply(tmp, mask, 0, 0, 1, 0);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    }</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    MultiFab volume(grids[lev], dmap[lev], 1, 0);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dx = geom[lev].CellSizeArray();</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    Real cell_vol = dx[0]*dx[1]*dx[2];</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    volume.setVal(cell_vol);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a063a88594452100497651e8aaf1f68d7">use_terrain</a>)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        amrex::MultiFab::Multiply(volume, *<a class="code" href="classERF.html#a30f8b851ed29d38695d44cff257f14e6">detJ_cc</a>[lev], 0, 0, 1, 0);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    sum = MultiFab::Dot(tmp, 0, volume, 0, 1, 0, local);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">if</span> (!local)</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;      ParallelDescriptor::ReduceRealSum(sum);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
+<div class="ttc" id="aclassERF_html_a419ba9adca32073e70aae4a8fe8cfcee"><div class="ttname"><a href="classERF.html#a419ba9adca32073e70aae4a8fe8cfcee">ERF::build_fine_mask</a></div><div class="ttdeci">amrex::MultiFab &amp; build_fine_mask(int lev)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:362</div></div>
 </div><!-- fragment -->
 </div>
 </div>

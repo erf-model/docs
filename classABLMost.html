@@ -841,169 +841,171 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="comment">// Valid CC box</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        Box vbx = mfi.validbox(); vbx.makeSlab(2,klo-1);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        Box vbxx = surroundingNodes(vbx,0);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        Box vbxy = surroundingNodes(vbx,1);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="comment">// Get field arrays</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> cons_arr  = mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> velx_arr  = mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> vely_arr  = mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">#ifdef ERF_EXPLICIT_MOST_STRESS</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keyword">auto</span> t13_arr = xzmom_flux-&gt;array(mfi);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keyword">auto</span> t23_arr = yzmom_flux-&gt;array(mfi);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keyword">auto</span> t31_arr = (zxmom_flux) ? zxmom_flux-&gt;array(mfi) : Array4&lt;Real&gt;{};</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keyword">auto</span> t32_arr = (zymom_flux) ? zymom_flux-&gt;array(mfi) : Array4&lt;Real&gt;{};</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keyword">auto</span> hfx_arr =  heat_flux-&gt;array(mfi);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>  eta_arr  = eddyDiffs-&gt;array(mfi);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> zphys_arr = (z_phys) ? z_phys-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="comment">// Get average arrays</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> u_mean     = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,0);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> v_mean     = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,1);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> t_mean     = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,2);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> q_mean     = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,3);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> u_mag_mean = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,4);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> um_arr  = u_mean-&gt;array(mfi);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> vm_arr  = v_mean-&gt;array(mfi);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> tm_arr  = t_mean-&gt;array(mfi);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> umm_arr = u_mag_mean-&gt;array(mfi);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="comment">// Get derived arrays</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> u_star_arr = <a class="code" href="classABLMost.html#acd5510d2f47502a57107f12c66f8a552">u_star</a>[lev]-&gt;array(mfi);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> t_star_arr = <a class="code" href="classABLMost.html#ac9d90016f196c3861d225132e8b6a921">t_star</a>[lev]-&gt;array(mfi);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> q_star_arr = <a class="code" href="classABLMost.html#a0630def935d5ca0d24160b9b9567f3e1">q_star</a>[lev]-&gt;array(mfi);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> t_surf_arr = <a class="code" href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">t_surf</a>[lev]-&gt;array(mfi);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="comment">// Get LSM fluxes</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keyword">auto</span> lmask_arr    = (<a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0])    ? <a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0]-&gt;array(mfi) :</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                                       Array4&lt;int&gt; {};</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keyword">auto</span> lsm_flux_arr = (<a class="code" href="classABLMost.html#a422336bc908d29f98dafb3b745b4f060">m_lsm_flux_lev</a>[lev][0]) ? <a class="code" href="classABLMost.html#a422336bc908d29f98dafb3b745b4f060">m_lsm_flux_lev</a>[lev][0]-&gt;array(mfi) :</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                                       Array4&lt;Real&gt; {};</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>; ++var_idx)</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="keyword">const</span> Box&amp; bx = (*mfs[var_idx])[mfi].box();</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keyword">auto</span> dest_arr = (*mfs[var_idx])[mfi].array();</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>) {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                Box b2d = bx;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                b2d.setBig(2,klo-1);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                <span class="keywordtype">int</span> n = <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    Real dz = (zphys_arr) ? ( zphys_arr(i,j,klo) - zphys_arr(i,j,klo-1) ) : dz_no_terrain;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="preprocessor">#ifdef ERF_EXPLICIT_MOST_STRESS</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    Real dz1 = (zphys_arr) ? ( zphys_arr(i,j,klo+1) - zphys_arr(i,j,klo) ) : dz_no_terrain;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    <span class="comment">// This is the _kinematic_ heat flux [K m/s]</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    Real Tflux = flux_comp.compute_t_flux(i, j, k, n, icomp, dz, dz1,</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                                                          cons_arr, velx_arr, vely_arr,</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                                                          umm_arr, tm_arr, u_star_arr, t_star_arr, t_surf_arr,</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                                                          dest_arr);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                    Real Tflux = flux_comp.compute_t_flux(i, j, k, n, icomp, dz,</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                                                          cons_arr, velx_arr, vely_arr,</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                                                          eta_arr,</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                                                          umm_arr, tm_arr, u_star_arr, t_star_arr, t_surf_arr,</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                                                          dest_arr);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                    <span class="comment">// TODO: make sure not to double-count surface heat flux if using a LSM</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,klo) : 1;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    <span class="keywordflow">if</span> (is_land &amp;&amp; lsm_flux_arr &amp;&amp; vbx.contains(i,j,k)) {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                        lsm_flux_arr(i,j,klo) = Tflux;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    }</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor">#ifdef ERF_EXPLICIT_MOST_STRESS</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((k == klo-1) &amp;&amp; vbx.contains(i,j,k)) {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                        hfx_arr(i,j,klo-1) = Tflux;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                    }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                });</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                <span class="comment">// TODO: Generalize MOST q flux with MOENG &amp; DONELAN flux types</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <span class="keywordflow">if</span> ((<a class="code" href="classABLMost.html#ad837d92390012682056ffac0b5f9a8f9">flux_type</a> == <a class="code" href="classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0a72baef04098f035e8a320b03ad197818">FluxCalcType::CUSTOM</a>) &amp;&amp; <a class="code" href="classABLMost.html#ab55a547b6b74a177128af6c6a107930c">use_moisture</a>) {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                    n = <a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                    ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                    {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                        Real dz = (zphys_arr) ? ( zphys_arr(i,j,klo) - zphys_arr(i,j,klo-1) ) : dz_no_terrain;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="preprocessor">#ifdef ERF_EXPLICIT_MOST_STRESS</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                        Real dz1 = (zphys_arr) ? ( zphys_arr(i,j,klo+1) - zphys_arr(i,j,klo) ) : dz_no_terrain;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                        Real Qflux = flux_comp.compute_q_flux(i, j, k, n, icomp, dz, dz1,</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                                              cons_arr, velx_arr, vely_arr,</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                                              umm_arr, tm_arr, u_star_arr, q_star_arr, t_surf_arr,</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                                                              dest_arr);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                        Real Qflux = flux_comp.compute_q_flux(i, j, k, n, icomp, dz,</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                                                              cons_arr, velx_arr, vely_arr,</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                                                              eta_arr,</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                                              umm_arr, tm_arr, u_star_arr, q_star_arr, t_surf_arr,</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                                                              dest_arr);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                    });</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                }</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor">#ifdef ERF_EXPLICIT_MOST_STRESS</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        Box vbxx = surroundingNodes(vbx,0);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        Box vbxy = surroundingNodes(vbx,1);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="comment">// Get field arrays</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> cons_arr  = mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> velx_arr  = mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> vely_arr  = mfs[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor">#ifdef ERF_EXPLICIT_MOST_STRESS</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keyword">auto</span> t13_arr = xzmom_flux-&gt;array(mfi);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keyword">auto</span> t23_arr = yzmom_flux-&gt;array(mfi);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keyword">auto</span> t31_arr = (zxmom_flux) ? zxmom_flux-&gt;array(mfi) : Array4&lt;Real&gt;{};</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keyword">auto</span> t32_arr = (zymom_flux) ? zymom_flux-&gt;array(mfi) : Array4&lt;Real&gt;{};</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keyword">auto</span> hfx_arr =  heat_flux-&gt;array(mfi);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>  eta_arr  = eddyDiffs-&gt;array(mfi);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> zphys_arr = (z_phys) ? z_phys-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="comment">// Get average arrays</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> u_mean     = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,0);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> v_mean     = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,1);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> t_mean     = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,2);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="comment">// const auto *const q_mean     = m_ma.get_average(lev,3);</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> u_mag_mean = <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#aa52cd2c83e24eef47d6a409b7bcf4c81">get_average</a>(lev,4);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> um_arr  = u_mean-&gt;array(mfi);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> vm_arr  = v_mean-&gt;array(mfi);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> tm_arr  = t_mean-&gt;array(mfi);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> umm_arr = u_mag_mean-&gt;array(mfi);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="comment">// Get derived arrays</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> u_star_arr = <a class="code" href="classABLMost.html#acd5510d2f47502a57107f12c66f8a552">u_star</a>[lev]-&gt;array(mfi);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> t_star_arr = <a class="code" href="classABLMost.html#ac9d90016f196c3861d225132e8b6a921">t_star</a>[lev]-&gt;array(mfi);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> q_star_arr = <a class="code" href="classABLMost.html#a0630def935d5ca0d24160b9b9567f3e1">q_star</a>[lev]-&gt;array(mfi);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> t_surf_arr = <a class="code" href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">t_surf</a>[lev]-&gt;array(mfi);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="comment">// Get LSM fluxes</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keyword">auto</span> lmask_arr    = (<a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0])    ? <a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0]-&gt;array(mfi) :</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                                       Array4&lt;int&gt; {};</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keyword">auto</span> lsm_flux_arr = (<a class="code" href="classABLMost.html#a422336bc908d29f98dafb3b745b4f060">m_lsm_flux_lev</a>[lev][0]) ? <a class="code" href="classABLMost.html#a422336bc908d29f98dafb3b745b4f060">m_lsm_flux_lev</a>[lev][0]-&gt;array(mfi) :</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                                                       Array4&lt;Real&gt; {};</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var_idx = 0; var_idx &lt; <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a5deccaa24d5e74279425d7749f7d1494">Vars::NumTypes</a>; ++var_idx)</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keyword">const</span> Box&amp; bx = (*mfs[var_idx])[mfi].box();</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keyword">auto</span> dest_arr = (*mfs[var_idx])[mfi].array();</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>) {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                Box b2d = bx;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                b2d.setBig(2,klo-1);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                <span class="keywordtype">int</span> n = <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    Real dz = (zphys_arr) ? ( zphys_arr(i,j,klo) - zphys_arr(i,j,klo-1) ) : dz_no_terrain;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="preprocessor">#ifdef ERF_EXPLICIT_MOST_STRESS</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    Real dz1 = (zphys_arr) ? ( zphys_arr(i,j,klo+1) - zphys_arr(i,j,klo) ) : dz_no_terrain;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                    <span class="comment">// This is the _kinematic_ heat flux [K m/s]</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    Real Tflux = flux_comp.compute_t_flux(i, j, k, n, icomp, dz, dz1,</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                                                          cons_arr, velx_arr, vely_arr,</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                                                          umm_arr, tm_arr, u_star_arr, t_star_arr, t_surf_arr,</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                                                          dest_arr);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                    Real Tflux = flux_comp.compute_t_flux(i, j, k, n, icomp, dz,</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                                                          cons_arr, velx_arr, vely_arr,</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                                                          eta_arr,</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                                                          umm_arr, tm_arr, u_star_arr, t_star_arr, t_surf_arr,</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                                          dest_arr);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    <span class="comment">// TODO: make sure not to double-count surface heat flux if using a LSM</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,klo) : 1;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    <span class="keywordflow">if</span> (is_land &amp;&amp; lsm_flux_arr &amp;&amp; vbx.contains(i,j,k)) {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                        lsm_flux_arr(i,j,klo) = Tflux;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                    }</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor">#ifdef ERF_EXPLICIT_MOST_STRESS</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((k == klo-1) &amp;&amp; vbx.contains(i,j,k)) {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                        hfx_arr(i,j,klo-1) = Tflux;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                    }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                });</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                <span class="comment">// TODO: Generalize MOST q flux with MOENG &amp; DONELAN flux types</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                <span class="keywordflow">if</span> ((<a class="code" href="classABLMost.html#ad837d92390012682056ffac0b5f9a8f9">flux_type</a> == <a class="code" href="classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0a72baef04098f035e8a320b03ad197818">FluxCalcType::CUSTOM</a>) &amp;&amp; <a class="code" href="classABLMost.html#ab55a547b6b74a177128af6c6a107930c">use_moisture</a>) {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                    n = <a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                    ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                        Real dz = (zphys_arr) ? ( zphys_arr(i,j,klo) - zphys_arr(i,j,klo-1) ) : dz_no_terrain;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor">#ifdef ERF_EXPLICIT_MOST_STRESS</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                        Real dz1 = (zphys_arr) ? ( zphys_arr(i,j,klo+1) - zphys_arr(i,j,klo) ) : dz_no_terrain;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                        <span class="comment">//Real Qflux = flux_comp.compute_q_flux(i, j, k, n, icomp, dz, dz1,</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                        <span class="comment">//                                      cons_arr, velx_arr, vely_arr,</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                        <span class="comment">//                                      umm_arr, tm_arr, u_star_arr, q_star_arr, t_surf_arr,</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                        <span class="comment">//                                      dest_arr);</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                        <span class="comment">//Real Qflux = flux_comp.compute_q_flux(i, j, k, n, icomp, dz,</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                        <span class="comment">//                                      cons_arr, velx_arr, vely_arr,</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                        <span class="comment">//                                      eta_arr,</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                        <span class="comment">//                                      umm_arr, tm_arr, u_star_arr, q_star_arr, t_surf_arr,</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                        <span class="comment">//                                      dest_arr);</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                    });</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                }</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                Box xb2d = surroundingNodes(bx,0);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                xb2d.setBig(2,klo-1);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                ParallelFor(xb2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                    Real dz = (zphys_arr) ? ( zphys_arr(i,j,klo) - zphys_arr(i,j,klo-1) ) : dz_no_terrain;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor">#ifdef ERF_EXPLICIT_MOST_STRESS</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                    Real dz1 = (zphys_arr) ? ( zphys_arr(i,j,klo+1) - zphys_arr(i,j,klo) ) : dz_no_terrain;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                    Real stressx = flux_comp.compute_u_flux(i, j, k, icomp, dz, dz1,</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                                                            cons_arr, velx_arr, vely_arr,</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                                                            umm_arr, um_arr, u_star_arr,</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                                                            dest_arr);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    <span class="keywordflow">if</span> ((k == klo-1) &amp;&amp; vbxx.contains(i,j,k)) {</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                        t13_arr(i,j,klo) = -stressx;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                        <span class="keywordflow">if</span> (t31_arr) t31_arr(i,j,klo) = -stressx;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                    }</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    Real stressx = flux_comp.compute_u_flux(i, j, k, icomp, dz,</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                                            cons_arr, velx_arr, vely_arr,</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                                                            eta_arr,</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                                                            umm_arr, um_arr, u_star_arr,</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                                                            dest_arr);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                });</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>) {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>) {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                Box xb2d = surroundingNodes(bx,0);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                xb2d.setBig(2,klo-1);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                ParallelFor(xb2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                    Real dz = (zphys_arr) ? ( zphys_arr(i,j,klo) - zphys_arr(i,j,klo-1) ) : dz_no_terrain;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="preprocessor">#ifdef ERF_EXPLICIT_MOST_STRESS</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                    Real dz1 = (zphys_arr) ? ( zphys_arr(i,j,klo+1) - zphys_arr(i,j,klo) ) : dz_no_terrain;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                    Real stressx = flux_comp.compute_u_flux(i, j, k, icomp, dz, dz1,</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                                                            cons_arr, velx_arr, vely_arr,</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                                            umm_arr, um_arr, u_star_arr,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                            dest_arr);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                    <span class="keywordflow">if</span> ((k == klo-1) &amp;&amp; vbxx.contains(i,j,k)) {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                        t13_arr(i,j,klo) = -stressx;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                        <span class="keywordflow">if</span> (t31_arr) t31_arr(i,j,klo) = -stressx;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    }</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                    <span class="comment">//Real stressx = flux_comp.compute_u_flux(i, j, k, icomp, dz,</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                    <span class="comment">//                                        cons_arr, velx_arr, vely_arr,</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                    <span class="comment">//                                        eta_arr,</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                    <span class="comment">//                                        umm_arr, um_arr, u_star_arr,</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                    <span class="comment">//                                        dest_arr);</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                });</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                Box yb2d = surroundingNodes(bx,1);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                yb2d.setBig(2,klo-1);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                ParallelFor(yb2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                {</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                    Real dz = (zphys_arr) ? ( zphys_arr(i,j,klo) - zphys_arr(i,j,klo-1) ) : dz_no_terrain;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="preprocessor">#ifdef ERF_EXPLICIT_MOST_STRESS</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                    Real dz1 = (zphys_arr) ? ( zphys_arr(i,j,klo+1) - zphys_arr(i,j,klo) ) : dz_no_terrain;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                    Real stressy = flux_comp.compute_v_flux(i, j, k, icomp, dz, dz1,</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                                                            cons_arr, velx_arr, vely_arr,</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                                                            umm_arr, vm_arr, u_star_arr,</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                                            dest_arr);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                    <span class="keywordflow">if</span> ((k == klo-1) &amp;&amp; vbxy.contains(i,j,k)) {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                        t23_arr(i,j,klo) = -stressy;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                        <span class="keywordflow">if</span> (t32_arr) t32_arr(i,j,klo) = -stressy;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                    }</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                    Real stressy = flux_comp.compute_v_flux(i, j, k, icomp, dz,</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                                                            cons_arr, velx_arr, vely_arr,</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                                                            eta_arr,</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                                                            umm_arr, vm_arr, u_star_arr,</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                                                            dest_arr);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                });</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            }</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        } <span class="comment">// var_idx</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    } <span class="comment">// mfiter</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;}</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (var_idx == <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>) {</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                Box yb2d = surroundingNodes(bx,1);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                yb2d.setBig(2,klo-1);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                ParallelFor(yb2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                {</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                    Real dz = (zphys_arr) ? ( zphys_arr(i,j,klo) - zphys_arr(i,j,klo-1) ) : dz_no_terrain;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="preprocessor">#ifdef ERF_EXPLICIT_MOST_STRESS</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                    Real dz1 = (zphys_arr) ? ( zphys_arr(i,j,klo+1) - zphys_arr(i,j,klo) ) : dz_no_terrain;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                    Real stressy = flux_comp.compute_v_flux(i, j, k, icomp, dz, dz1,</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                                            cons_arr, velx_arr, vely_arr,</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                                                            umm_arr, vm_arr, u_star_arr,</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                                                            dest_arr);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                    <span class="keywordflow">if</span> ((k == klo-1) &amp;&amp; vbxy.contains(i,j,k)) {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                        t23_arr(i,j,klo) = -stressy;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                        <span class="keywordflow">if</span> (t32_arr) t32_arr(i,j,klo) = -stressy;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                    }</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                    <span class="comment">//Real stressy = flux_comp.compute_v_flux(i, j, k, icomp, dz,</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                    <span class="comment">//                                        cons_arr, velx_arr, vely_arr,</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                    <span class="comment">//                                        eta_arr,</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                    <span class="comment">//                                        umm_arr, vm_arr, u_star_arr,</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                    <span class="comment">//                                        dest_arr);</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                });</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            }</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        } <span class="comment">// var_idx</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    } <span class="comment">// mfiter</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;}</div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:17</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:100</div></div>
@@ -1027,36 +1029,36 @@ template&lt;typename FluxCalc &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;{</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">t_surf</a>[lev]); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    {</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        Box gtbx = mfi.growntilebox();</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <span class="comment">// TODO: LSM does not carry lateral ghost cells.</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="comment">//       This copies the valid box into the ghost cells.</span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="comment">//       Fillboundary is called after this to pick up the</span></div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="comment">//       interior ghost and periodic directions. Is there</span></div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="comment">//       a better approach?</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        Box vbx  = mfi.validbox();</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="keywordtype">int</span> i_lo = vbx.smallEnd(0); <span class="keywordtype">int</span> i_hi = vbx.bigEnd(0);</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keywordtype">int</span> j_lo = vbx.smallEnd(1); <span class="keywordtype">int</span> j_hi = vbx.bigEnd(1);</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keyword">auto</span> t_surf_arr = <a class="code" href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">t_surf</a>[lev]-&gt;array(mfi);</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keyword">auto</span> lmask_arr  = (<a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0]) ? <a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0]-&gt;array(mfi) :</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                                                  Array4&lt;int&gt; {};</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> lsm_arr = <a class="code" href="classABLMost.html#a958aaaf9e040462197c88c6c77f2aaf6">m_lsm_data_lev</a>[lev][0]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        ParallelFor(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        {</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,k) : 1;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            <span class="keywordflow">if</span> (is_land) {</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                <span class="keywordtype">int</span> li = amrex::min(amrex::max(i, i_lo), i_hi);</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, j_lo), j_hi);</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                t_surf_arr(i,j,k) = lsm_arr(li,lj,k);</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            }</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        });</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    }</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;{</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">t_surf</a>[lev]); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        Box gtbx = mfi.growntilebox();</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="comment">// TODO: LSM does not carry lateral ghost cells.</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="comment">//       This copies the valid box into the ghost cells.</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="comment">//       Fillboundary is called after this to pick up the</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="comment">//       interior ghost and periodic directions. Is there</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="comment">//       a better approach?</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        Box vbx  = mfi.validbox();</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keywordtype">int</span> i_lo = vbx.smallEnd(0); <span class="keywordtype">int</span> i_hi = vbx.bigEnd(0);</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordtype">int</span> j_lo = vbx.smallEnd(1); <span class="keywordtype">int</span> j_hi = vbx.bigEnd(1);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keyword">auto</span> t_surf_arr = <a class="code" href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">t_surf</a>[lev]-&gt;array(mfi);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keyword">auto</span> lmask_arr  = (<a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0]) ? <a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0]-&gt;array(mfi) :</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                                                  Array4&lt;int&gt; {};</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> lsm_arr = <a class="code" href="classABLMost.html#a958aaaf9e040462197c88c6c77f2aaf6">m_lsm_data_lev</a>[lev][0]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        ParallelFor(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        {</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,k) : 1;</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            <span class="keywordflow">if</span> (is_land) {</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                <span class="keywordtype">int</span> li = amrex::min(amrex::max(i, i_lo), i_hi);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, j_lo), j_hi);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                t_surf_arr(i,j,k) = lsm_arr(li,lj,k);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            }</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        });</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    }</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1302,37 +1304,37 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;{</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="comment">// Time interpolation</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    Real dT = <a class="code" href="classABLMost.html#a049bc06685178431599f3bfaa57d63bd">m_bdy_time_interval</a>;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    Real time_since_start = time - <a class="code" href="classABLMost.html#a4fb97b28e44e9ff6930f18083923343a">m_start_bdy_time</a>;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordtype">int</span> n_time = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>( time_since_start /  dT);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    Real alpha = (time_since_start - n_time * dT) / dT;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    AMREX_ALWAYS_ASSERT( alpha &gt;= 0. &amp;&amp; alpha &lt;= 1.0);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    Real oma   = 1.0 - alpha;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    AMREX_ALWAYS_ASSERT( (n_time &gt;= 0) &amp;&amp; (n_time &lt; (<a class="code" href="classABLMost.html#ad8f1957bba407e17edb0a84ace515cde">m_sst_lev</a>[lev].size()-1)));</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="comment">// Populate t_surf</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">t_surf</a>[lev]); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        Box gtbx = mfi.growntilebox();</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keyword">auto</span> t_surf_arr = <a class="code" href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">t_surf</a>[lev]-&gt;array(mfi);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> sst_hi_arr = <a class="code" href="classABLMost.html#ad8f1957bba407e17edb0a84ace515cde">m_sst_lev</a>[lev][n_time+1]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> sst_lo_arr = <a class="code" href="classABLMost.html#ad8f1957bba407e17edb0a84ace515cde">m_sst_lev</a>[lev][n_time  ]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keyword">auto</span> lmask_arr  = (<a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0]) ? <a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0]-&gt;array(mfi) :</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                                                  Array4&lt;int&gt; {};</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        ParallelFor(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,k) : 1;</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="keywordflow">if</span> (!is_land) {</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                t_surf_arr(i,j,k) = oma   * sst_lo_arr(i,j,k)</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                                  + alpha * sst_hi_arr(i,j,k);</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            }</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        });</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    }</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;{</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="comment">// Time interpolation</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    Real dT = <a class="code" href="classABLMost.html#a049bc06685178431599f3bfaa57d63bd">m_bdy_time_interval</a>;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    Real time_since_start = time - <a class="code" href="classABLMost.html#a4fb97b28e44e9ff6930f18083923343a">m_start_bdy_time</a>;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordtype">int</span> n_time = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>( time_since_start /  dT);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    amrex::Real alpha = (time_since_start - n_time * dT) / dT;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    AMREX_ALWAYS_ASSERT( alpha &gt;= 0. &amp;&amp; alpha &lt;= 1.0);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    amrex::Real oma   = 1.0 - alpha;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    AMREX_ALWAYS_ASSERT( (n_time &gt;= 0) &amp;&amp; (n_time &lt; (<a class="code" href="classABLMost.html#ad8f1957bba407e17edb0a84ace515cde">m_sst_lev</a>[lev].size()-1)));</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="comment">// Populate t_surf</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">t_surf</a>[lev]); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        Box gtbx = mfi.growntilebox();</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keyword">auto</span> t_surf_arr = <a class="code" href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">t_surf</a>[lev]-&gt;array(mfi);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> sst_hi_arr = <a class="code" href="classABLMost.html#ad8f1957bba407e17edb0a84ace515cde">m_sst_lev</a>[lev][n_time+1]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> sst_lo_arr = <a class="code" href="classABLMost.html#ad8f1957bba407e17edb0a84ace515cde">m_sst_lev</a>[lev][n_time  ]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keyword">auto</span> lmask_arr  = (<a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0]) ? <a class="code" href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">m_lmask_lev</a>[lev][0]-&gt;array(mfi) :</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                                                  Array4&lt;int&gt; {};</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        ParallelFor(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        {</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,k) : 1;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="keywordflow">if</span> (!is_land) {</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                t_surf_arr(i,j,k) = oma   * sst_lo_arr(i,j,k)</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                                  + alpha * sst_hi_arr(i,j,k);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            }</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        });</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    }</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1433,11 +1435,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 <div class="ttc" id="aclassABLMost_html_a635adcd2b8ed3c11bcf63f5386937639"><div class="ttname"><a href="classABLMost.html#a635adcd2b8ed3c11bcf63f5386937639">ABLMost::compute_fluxes</a></div><div class="ttdeci">void compute_fluxes(const int &amp;lev, const int &amp;max_iters, const FluxIter &amp;most_flux)</div><div class="ttdef"><b>Definition:</b> ABLMost.cpp:84</div></div>
-<div class="ttc" id="aclassABLMost_html_aaeef06eb7d0ab7e3d100e583337121cc"><div class="ttname"><a href="classABLMost.html#aaeef06eb7d0ab7e3d100e583337121cc">ABLMost::time_interp_sst</a></div><div class="ttdeci">void time_interp_sst(const int &amp;lev, const amrex::Real &amp;time)</div><div class="ttdef"><b>Definition:</b> ABLMost.cpp:367</div></div>
+<div class="ttc" id="aclassABLMost_html_aaeef06eb7d0ab7e3d100e583337121cc"><div class="ttname"><a href="classABLMost.html#aaeef06eb7d0ab7e3d100e583337121cc">ABLMost::time_interp_sst</a></div><div class="ttdeci">void time_interp_sst(const int &amp;lev, const amrex::Real &amp;time)</div><div class="ttdef"><b>Definition:</b> ABLMost.cpp:369</div></div>
 <div class="ttc" id="aclassABLMost_html_ad878840b1c998160ba79c1e9714adc70"><div class="ttname"><a href="classABLMost.html#ad878840b1c998160ba79c1e9714adc70">ABLMost::update_surf_temp</a></div><div class="ttdeci">void update_surf_temp(const amrex::Real &amp;time)</div><div class="ttdef"><b>Definition:</b> ABLMost.H:255</div></div>
-<div class="ttc" id="aclassABLMost_html_ae28fd8a21f4b514875c24fe4b8e85081"><div class="ttname"><a href="classABLMost.html#ae28fd8a21f4b514875c24fe4b8e85081">ABLMost::get_lsm_tsurf</a></div><div class="ttdeci">void get_lsm_tsurf(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ABLMost.cpp:402</div></div>
+<div class="ttc" id="aclassABLMost_html_ae28fd8a21f4b514875c24fe4b8e85081"><div class="ttname"><a href="classABLMost.html#ae28fd8a21f4b514875c24fe4b8e85081">ABLMost::get_lsm_tsurf</a></div><div class="ttdeci">void get_lsm_tsurf(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ABLMost.cpp:404</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a5b590fcba4d5d99178a0f8de14a1f174"><div class="ttname"><a href="classMOSTAverage.html#a5b590fcba4d5d99178a0f8de14a1f174">MOSTAverage::get_zref</a></div><div class="ttdeci">amrex::Real get_zref() const</div><div class="ttdef"><b>Definition:</b> MOSTAverage.H:90</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a7a28005871bb8abb49f44c3976133a4f"><div class="ttname"><a href="classMOSTAverage.html#a7a28005871bb8abb49f44c3976133a4f">MOSTAverage::compute_averages</a></div><div class="ttdeci">void compute_averages(int lev)</div><div class="ttdef"><b>Definition:</b> MOSTAverage.cpp:533</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a7a28005871bb8abb49f44c3976133a4f"><div class="ttname"><a href="classMOSTAverage.html#a7a28005871bb8abb49f44c3976133a4f">MOSTAverage::compute_averages</a></div><div class="ttdeci">void compute_averages(int lev)</div><div class="ttdef"><b>Definition:</b> MOSTAverage.cpp:539</div></div>
 <div class="ttc" id="astructadiabatic__charnock_html"><div class="ttname"><a href="structadiabatic__charnock.html">adiabatic_charnock</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:108</div></div>
 <div class="ttc" id="astructadiabatic__mod__charnock_html"><div class="ttname"><a href="structadiabatic__mod__charnock.html">adiabatic_mod_charnock</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:160</div></div>
 <div class="ttc" id="astructadiabatic_html"><div class="ttname"><a href="structadiabatic.html">adiabatic</a></div><div class="ttdef"><b>Definition:</b> MOSTStress.H:70</div></div>
