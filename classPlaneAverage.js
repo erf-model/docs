@@ -1,6 +1,6 @@
 var classPlaneAverage =
 [
-    [ "PlaneAverage", "classPlaneAverage.html#ab1056e661cdb1265047e7a31abef0ebf", null ],
+    [ "PlaneAverage", "classPlaneAverage.html#ae9fb25948e525a6d7e2db872e97a4b4e", null ],
     [ "PlaneAverage", "classPlaneAverage.html#ae021681bed8e81747b36dd6bcbd1a257", null ],
     [ "~PlaneAverage", "classPlaneAverage.html#a961decb14c2137f36e17ceeaf560b452", null ],
     [ "axis", "classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a", null ],
@@ -23,12 +23,15 @@ var classPlaneAverage =
     [ "m_dx", "classPlaneAverage.html#ade7352e3a72a2e09561e031acd32cc8a", null ],
     [ "m_field", "classPlaneAverage.html#a6c29e3eafbbb7028e801c513b29a1c09", null ],
     [ "m_geom", "classPlaneAverage.html#ae359b042dfa8a0b951a3d34706c3c385", null ],
+    [ "m_inc_ghost", "classPlaneAverage.html#abe59333d5fc9969465111df40dd9892e", null ],
+    [ "m_ixtype", "classPlaneAverage.html#a45ad4c1f2922be9ba838bab13657385f", null ],
     [ "m_level", "classPlaneAverage.html#a6a25218bd5754ec121caab7e4acfc537", null ],
     [ "m_line_average", "classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d", null ],
     [ "m_line_xcentroid", "classPlaneAverage.html#a560dbd7059fb6cbb0421635c5d405d2b", null ],
     [ "m_ncell_line", "classPlaneAverage.html#a049c64513c0ed306d7e68ef95df87033", null ],
     [ "m_ncell_plane", "classPlaneAverage.html#a98ad1b7801e75ac43ddd3d06b0c5d7da", null ],
     [ "m_ncomp", "classPlaneAverage.html#af07d85c4bd48f4bedc0b180001c728dc", null ],
+    [ "m_ng", "classPlaneAverage.html#a4a8c3eb911548a254ef75c24659b1317", null ],
     [ "m_precision", "classPlaneAverage.html#a1f08f5f76700c51c42243410ffce6e66", null ],
     [ "m_xlo", "classPlaneAverage.html#a42c7dfa900a0b69ba1d294455ca8ba51", null ]
 ];

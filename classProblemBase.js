@@ -11,5 +11,6 @@ var classProblemBase =
     [ "name", "classProblemBase.html#a3a8fb70110fb25623cdfa7b508dee9cf", null ],
     [ "update_rhoqt_sources", "classProblemBase.html#a9ef723333579aac2295b535c79193088", null ],
     [ "update_rhotheta_sources", "classProblemBase.html#ad8f582edde4d124612f67d9d2a17f4a4", null ],
+    [ "update_w_subsidence", "classProblemBase.html#aeea63567f941d0ee6f5a653bd8404268", null ],
     [ "base_parms", "classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda", null ]
 ];

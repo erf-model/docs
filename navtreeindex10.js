@@ -1,5 +1,12 @@
 var NAVTREEINDEX10 =
 {
+"structSpongeChoice.html#a5e70ccbf1d7de42a4d938416635eee36":[2,0,55,18],
+"structSpongeChoice.html#a66fd55eceebbe3e97e31325cc55369de":[2,0,55,0],
+"structSpongeChoice.html#a830ff63e204ed6c9dd381fd2baa1b33e":[2,0,55,7],
+"structSpongeChoice.html#a980e2c4485a0769eb0405a77445e3db1":[2,0,55,8],
+"structSpongeChoice.html#aad5ca098e341c3f76dc8420daeb8b629":[2,0,55,5],
+"structSpongeChoice.html#ac20a8660aca19e9655611c3d2eb9f672":[2,0,55,1],
+"structSpongeChoice.html#ac335f4f1640ad959aadb8e9054c3fda2":[2,0,55,12],
 "structSpongeChoice.html#adacf43edb29544376743fa98ce7d8cb6":[2,0,55,16],
 "structSpongeChoice.html#adb74ee3cbc24251272d6ad5fafdb885d":[2,0,55,3],
 "structSpongeChoice.html#ae2907fb8c5755c951b765b7d835013f6":[2,0,55,10],
@@ -242,12 +249,5 @@ var NAVTREEINDEX10 =
 "structncutils_1_1NCVar.html#ae4d3aaba3b410438132b65bb8ab47512":[2,0,0,2,28],
 "structncutils_1_1NCVar.html#af036d4858171a98b8a951348a654a36c":[2,0,0,2,7],
 "structncutils_1_1NCVar.html#af09b0c94dceb8666a7be0d6167bfc4b4":[2,0,0,2,13],
-"structsimilarity__funs.html":[2,0,51],
-"structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2":[2,0,51,1],
-"structsimilarity__funs.html#a3658f855e05c54c9cbc27c8dfb3b0355":[2,0,51,3],
-"structsimilarity__funs.html#a5254469dd7ec9856ed6d1e0034306cc4":[2,0,51,2],
-"structsimilarity__funs.html#a6c53efd885ed922115193bc9a36cb0e6":[2,0,51,4],
-"structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2":[2,0,51,0],
-"structsimilarity__funs.html#ae78007489e8da2bf08c6f999381b9512":[2,0,51,5],
-"structsurface__flux.html":[2,0,56]
+"structsimilarity__funs.html":[2,0,51]
 };
