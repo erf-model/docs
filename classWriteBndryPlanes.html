@@ -363,7 +363,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(Temp, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            {</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <a class="code" href="namespacederived.html#ab3c82aef26b750dfedc3d29ca9fae7e3">derived::erf_dertemp</a>(bx, Temp[mfi], 0, 1, S[mfi], <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>], time, <span class="keyword">nullptr</span>, <a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <a class="code" href="namespacederived.html#ac1ae463bfedf6bcb54f5f025e1beaae6">derived::erf_dertemp</a>(bx, Temp[mfi], 0, 1, S[mfi], <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>], time, <span class="keyword">nullptr</span>, <a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            }</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            bndry.copyFrom(Temp, nghost, 0, 0, ncomp, <a class="code" href="classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb">m_geom</a>[<a class="code" href="classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca">bndry_lev</a>].periodicity());</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
@@ -406,7 +406,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:99</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:102</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:101</div></div>
-<div class="ttc" id="anamespacederived_html_ab3c82aef26b750dfedc3d29ca9fae7e3"><div class="ttname"><a href="namespacederived.html#ab3c82aef26b750dfedc3d29ca9fae7e3">derived::erf_dertemp</a></div><div class="ttdeci">void erf_dertemp(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:89</div></div>
+<div class="ttc" id="anamespacederived_html_ac1ae463bfedf6bcb54f5f025e1beaae6"><div class="ttname"><a href="namespacederived.html#ac1ae463bfedf6bcb54f5f025e1beaae6">derived::erf_dertemp</a></div><div class="ttdeci">void erf_dertemp(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int, int, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;, Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> Derive.cpp:91</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -414,7 +414,7 @@ Here is the call graph for this function:</div>
 <map name="aclassWriteBndryPlanes_a1010dd3e951cad55702ae47607f8dd1e_cgraph" id="aclassWriteBndryPlanes_a1010dd3e951cad55702ae47607f8dd1e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,184,65"/>
 <area shape="rect" href="ERF__WriteBndryPlanes_8cpp.html#a84c19e5c5555fe13da12dc8ba44e7da8" title=" " alt="" coords="276,5,347,32"/>
-<area shape="rect" href="namespacederived.html#ab3c82aef26b750dfedc3d29ca9fae7e3" title=" " alt="" coords="232,56,391,83"/>
+<area shape="rect" href="namespacederived.html#ac1ae463bfedf6bcb54f5f025e1beaae6" title=" " alt="" coords="232,56,391,83"/>
 <area shape="rect" href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="439,56,583,83"/>
 </map>
 </div>

@@ -77,13 +77,13 @@ var NAVTREEINDEX =
 "NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a2f43039d16fd9942908dc0b55b462b18",
 "classAerRadProps.html#ae0eb6fbcd6b30a8e4538b8db3944d1e0",
 "classERF.html#ac94ddee2f501dbcea2a516284b7119b5",
-"classMOSTAverage.html#a612fdb06ff433e33c717198c7e3e4b0b",
-"classNullSurf.html#ac722d317f14ff1793ce7a38362987513",
-"classReadBndryPlanes.html#a16ed881bb428b7abb89e4284b356c8d6",
-"classncutils_1_1NCGroup.html#af7847ff27ccb8499814b7f21559e2e84",
-"structAdvChoice.html#a81152997920406ea2aa97cbb5af2d9b6",
-"structSpongeChoice.html#a5e70ccbf1d7de42a4d938416635eee36",
-"structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2"
+"classMOSTAverage.html#a5a0413a85da2e6a13f21cc875c8295d0",
+"classNullSurf.html#aad733e954aefc643ed1f2c6a1bb564ac",
+"classReadBndryPlanes.html#a14bf0864afdd66d2f497ad5372d526ff",
+"classncutils_1_1NCGroup.html#addc8bbac9a2cfa8d9c49497b7da0310f",
+"structAdvChoice.html#a2dd44749e2d4f224ae1da4f9e53e257a",
+"structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c",
+"structncutils_1_1NCVar.html#ad6fc629cd035e5779e9e891fd37e68ae"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1307,9 +1307,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    Real dT = <a class="code" href="classABLMost.html#a049bc06685178431599f3bfaa57d63bd">m_bdy_time_interval</a>;</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    Real time_since_start = time - <a class="code" href="classABLMost.html#a4fb97b28e44e9ff6930f18083923343a">m_start_bdy_time</a>;</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordtype">int</span> n_time = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>( time_since_start /  dT);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    amrex::Real alpha = (time_since_start - n_time * dT) / dT;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    Real alpha = (time_since_start - n_time * dT) / dT;</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    AMREX_ALWAYS_ASSERT( alpha &gt;= 0. &amp;&amp; alpha &lt;= 1.0);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    amrex::Real oma   = 1.0 - alpha;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    Real oma   = 1.0 - alpha;</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    AMREX_ALWAYS_ASSERT( (n_time &gt;= 0) &amp;&amp; (n_time &lt; (<a class="code" href="classABLMost.html#ad8f1957bba407e17edb0a84ace515cde">m_sst_lev</a>[lev].size()-1)));</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="comment">// Populate t_surf</span></div>

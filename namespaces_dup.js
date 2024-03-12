@@ -8,14 +8,21 @@ var namespaces_dup =
     ] ],
     [ "BCVars", "namespaceBCVars.html", null ],
     [ "derived", "namespacederived.html", [
-      [ "erf_derKE", "namespacederived.html#aa1fcac44ae779cdfa2fd5266bc206e2d", null ],
-      [ "erf_dernull", "namespacederived.html#af8efb799157f5dbb8fe00416458db9e1", null ],
-      [ "erf_derQKE", "namespacederived.html#aa850437283651e137b82322c0437d487", null ],
+      [ "erf_derKE", "namespacederived.html#aeaeabd5f649796984f61651a6733e96b", null ],
+      [ "erf_derKE", "namespacederived.html#a13ece1bd78017d86a12887fbf8a8bdce", null ],
+      [ "erf_dernull", "namespacederived.html#a1ebffbf9fafd9096a49e72644e4bb8d7", null ],
+      [ "erf_dernull", "namespacederived.html#a7128ad75cf0f6b317ae8689bd7eb1597", null ],
+      [ "erf_derQKE", "namespacederived.html#a268588c6b7dfb634a44ff9b66e852807", null ],
+      [ "erf_derQKE", "namespacederived.html#ac8afaefccc721cd9c99ba9c09d5d4ad7", null ],
       [ "erf_derrhodivide", "namespacederived.html#a9935603239fe8510b11179da8e76c39c", null ],
-      [ "erf_derscalar", "namespacederived.html#a2d9c0cabf04515367f2b721320dcddab", null ],
-      [ "erf_dersoundspeed", "namespacederived.html#ae13ef28ab10c6102bf43c9a7fbe99f35", null ],
-      [ "erf_dertemp", "namespacederived.html#ab3c82aef26b750dfedc3d29ca9fae7e3", null ],
-      [ "erf_dertheta", "namespacederived.html#ab8895d9d9775ea0b8f643483a5a4127e", null ]
+      [ "erf_derscalar", "namespacederived.html#a13666be87e55d1759f57322b33f7e495", null ],
+      [ "erf_derscalar", "namespacederived.html#a711a75ab6861bb59e4570ccb7cc8913b", null ],
+      [ "erf_dersoundspeed", "namespacederived.html#abec1266940e40d642fca2aa685b7f314", null ],
+      [ "erf_dersoundspeed", "namespacederived.html#af2e3b89a0721e24fc92446bc4e9e14ef", null ],
+      [ "erf_dertemp", "namespacederived.html#a37ac1508c4001f9f1e38ca507dd15f31", null ],
+      [ "erf_dertemp", "namespacederived.html#ac1ae463bfedf6bcb54f5f025e1beaae6", null ],
+      [ "erf_dertheta", "namespacederived.html#af5e075e5b8b2e3964ae6af3f5f06f497", null ],
+      [ "erf_dertheta", "namespacederived.html#a0980f29298dff37bce62a912dbd96926", null ]
     ] ],
     [ "EddyDiff", "namespaceEddyDiff.html", null ],
     [ "ERFBCType", "namespaceERFBCType.html", [

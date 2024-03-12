@@ -151,14 +151,14 @@ Functions</h2></td></tr>
 <tr class="separator:af6de5e53feec26f9acdbee6ad6e473ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b7c51dd21b8f01c325ca8760f684a7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Advection_8H.html#a5b7c51dd21b8f01c325ca8760f684a7e">AdvectionSrcForScalars</a> (const amrex::Box &amp;bx, const int icomp, const int ncomp, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const bool use_terrain, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr)</td></tr>
 <tr class="separator:a5b7c51dd21b8f01c325ca8760f684a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06b54d707fadae046393ce9cb031046c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Advection_8H.html#a06b54d707fadae046393ce9cb031046c">AdvectionSrcForMom</a> (const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;Omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const bool use_terrain, const int domhi_z)</td></tr>
-<tr class="separator:a06b54d707fadae046393ce9cb031046c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0077aeed9e38c1bfec8152a7024bc3de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Advection_8H.html#a0077aeed9e38c1bfec8152a7024bc3de">AdvectionSrcForMom</a> (const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;Omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const bool use_terrain, const int lo_z_face, const int hi_z_face)</td></tr>
+<tr class="separator:a0077aeed9e38c1bfec8152a7024bc3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff14fe9e4f76b499843517b2c41c0fbb"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Advection_8H.html#aff14fe9e4f76b499843517b2c41c0fbb">EfficientAdvType</a> (int nrk, <a class="el" href="IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> adv_type)</td></tr>
 <tr class="separator:aff14fe9e4f76b499843517b2c41c0fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a06b54d707fadae046393ce9cb031046c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06b54d707fadae046393ce9cb031046c">&#9670;&nbsp;</a></span>AdvectionSrcForMom()</h2>
+<a id="a0077aeed9e38c1bfec8152a7024bc3de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0077aeed9e38c1bfec8152a7024bc3de">&#9670;&nbsp;</a></span>AdvectionSrcForMom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -305,7 +305,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>domhi_z</em>&#160;</td>
+          <td class="paramname"><em>lo_z_face</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>hi_z_face</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -320,8 +326,8 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Advection_8H_a06b54d707fadae046393ce9cb031046c_icgraph.png" border="0" usemap="#aAdvection_8H_a06b54d707fadae046393ce9cb031046c_icgraph" alt=""/></div>
-<map name="aAdvection_8H_a06b54d707fadae046393ce9cb031046c_icgraph" id="aAdvection_8H_a06b54d707fadae046393ce9cb031046c_icgraph">
+<div class="center"><img src="Advection_8H_a0077aeed9e38c1bfec8152a7024bc3de_icgraph.png" border="0" usemap="#aAdvection_8H_a0077aeed9e38c1bfec8152a7024bc3de_icgraph" alt=""/></div>
+<map name="aAdvection_8H_a0077aeed9e38c1bfec8152a7024bc3de_icgraph" id="aAdvection_8H_a0077aeed9e38c1bfec8152a7024bc3de_icgraph">
 <area shape="rect" title=" " alt="" coords="185,31,345,57"/>
 <area shape="rect" href="ERF__slow__rhs__inc_8cpp.html#a57305daad0d9f549218f4bfd5d877918" title=" " alt="" coords="6,5,137,32"/>
 <area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a79a79dae7b384230ffd7bdf95b54515a" title=" " alt="" coords="5,56,137,83"/>
