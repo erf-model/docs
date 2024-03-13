@@ -76,14 +76,14 @@ var NAVTREEINDEX =
 "ERF__Constants_8H.html#acecae1da25fb8c8d32d1f175e18df41f",
 "NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a2f43039d16fd9942908dc0b55b462b18",
 "classAerRadProps.html#ae0eb6fbcd6b30a8e4538b8db3944d1e0",
-"classERF.html#ac94ddee2f501dbcea2a516284b7119b5",
+"classERF.html#acab120bb9324e7298534d765c447d703",
 "classMOSTAverage.html#a5a0413a85da2e6a13f21cc875c8295d0",
 "classNullSurf.html#aad733e954aefc643ed1f2c6a1bb564ac",
 "classReadBndryPlanes.html#a14bf0864afdd66d2f497ad5372d526ff",
 "classncutils_1_1NCGroup.html#addc8bbac9a2cfa8d9c49497b7da0310f",
-"structAdvChoice.html#a2dd44749e2d4f224ae1da4f9e53e257a",
-"structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c",
-"structncutils_1_1NCVar.html#ad6fc629cd035e5779e9e891fd37e68ae"
+"structAdvChoice.html#a22f84c60e56d4b3bde6b7f9548c87af3",
+"structSolverChoice.html#af976afa61859c07e6249963edc367c2d",
+"structncutils_1_1NCVar.html#ac88fd209afde1f05e4f8f62e4c628bba"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -10,7 +10,7 @@ var searchData=
   ['nbndlw_3568',['nbndlw',['../classRadConstants.html#a960db6e337b49d1d4a714615a5fa4b7e',1,'RadConstants']]],
   ['nbndsw_3569',['nbndsw',['../classRadConstants.html#a2d23948379a116a266cfd943b3275be4',1,'RadConstants']]],
   ['nc_5fbdy_5ffile_3570',['nc_bdy_file',['../classERF.html#a7e9040f32464f1a6dee6e0384393451d',1,'ERF']]],
-  ['nc_5finit_5ffile_3571',['nc_init_file',['../classERF.html#a99757524a49a79368069f66f71797c9d',1,'ERF']]],
+  ['nc_5finit_5ffile_3571',['nc_init_file',['../classERF.html#a7ef14f6028b577eba70aef46b508be19',1,'ERF']]],
   ['ncid_3572',['ncid',['../structncutils_1_1NCDim.html#a3272d1768518ba020b9bcd0d3699d544',1,'ncutils::NCDim::ncid()'],['../structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218',1,'ncutils::NCVar::ncid()'],['../classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd',1,'ncutils::NCGroup::ncid()']]],
   ['ncoef_3573',['ncoef',['../classMam4__aer.html#afcd94bccbfcc44e6a5d8262abc42a9ca',1,'Mam4_aer::ncoef()'],['../structPhysProp_1_1physprop__t.html#acc1135d01fd7ca5a6f0ba980e23e5a55',1,'PhysProp::physprop_t::ncoef()']]],
   ['ncol_3574',['ncol',['../classRadiation.html#a8f47b85f948822c0e450beddb92373f4',1,'Radiation::ncol()'],['../classAerRadProps.html#a551936497e3a360746d6bfd53513d508',1,'AerRadProps::ncol()'],['../classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18',1,'Mam4_aer::ncol()']]],

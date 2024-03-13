@@ -163,12 +163,12 @@ Include dependency graph for ERF_slow_rhs_pre.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a79a79dae7b384230ffd7bdf95b54515a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__slow__rhs__pre_8cpp.html#a79a79dae7b384230ffd7bdf95b54515a">erf_slow_rhs_pre</a> (int level, int finest_level, int nrk, Real dt, Vector&lt; MultiFab &gt; &amp;S_rhs, Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, Vector&lt; MultiFab &gt; &amp;S_scratch, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, std::unique_ptr&lt; MultiFab &gt; &amp;z_t_mf, MultiFab &amp;Omega, const MultiFab &amp;source, const MultiFab &amp;buoyancy, MultiFab *Tau11, MultiFab *Tau22, MultiFab *Tau33, MultiFab *Tau12, MultiFab *Tau13, MultiFab *Tau21, MultiFab *Tau23, MultiFab *Tau31, MultiFab *Tau32, MultiFab *SmnSmn, MultiFab *eddyDiffs, MultiFab *Hfx3, MultiFab *Diss, const Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const Gpu::DeviceVector&lt; BCRec &gt; &amp;domain_bcs_type_d, const Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;detJ, const MultiFab *p0, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v, YAFluxRegister *fr_as_crse, YAFluxRegister *fr_as_fine, const Real *dptr_rhotheta_src, const Real *dptr_wbar_sub, const Vector&lt; Real * &gt; d_rayleigh_ptrs_at_lev)</td></tr>
-<tr class="separator:a79a79dae7b384230ffd7bdf95b54515a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55891a17ba442aa7c0c9925a3baa7d48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48">erf_slow_rhs_pre</a> (int level, int finest_level, int nrk, Real dt, Vector&lt; MultiFab &gt; &amp;S_rhs, Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, Vector&lt; MultiFab &gt; &amp;S_scratch, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, std::unique_ptr&lt; MultiFab &gt; &amp;z_t_mf, MultiFab &amp;Omega, const MultiFab &amp;source, const MultiFab &amp;buoyancy, MultiFab *Tau11, MultiFab *Tau22, MultiFab *Tau33, MultiFab *Tau12, MultiFab *Tau13, MultiFab *Tau21, MultiFab *Tau23, MultiFab *Tau31, MultiFab *Tau32, MultiFab *SmnSmn, MultiFab *eddyDiffs, MultiFab *Hfx3, MultiFab *Diss, const Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const Gpu::DeviceVector&lt; BCRec &gt; &amp;domain_bcs_type_d, const Vector&lt; BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;detJ, const MultiFab *p0, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v, YAFluxRegister *fr_as_crse, YAFluxRegister *fr_as_fine, const Real *dptr_rhotheta_src, const Real *dptr_wbar_sub, const Vector&lt; Real * &gt; d_rayleigh_ptrs_at_lev)</td></tr>
+<tr class="separator:a55891a17ba442aa7c0c9925a3baa7d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a79a79dae7b384230ffd7bdf95b54515a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79a79dae7b384230ffd7bdf95b54515a">&#9670;&nbsp;</a></span>erf_slow_rhs_pre()</h2>
+<a id="a55891a17ba442aa7c0c9925a3baa7d48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55891a17ba442aa7c0c9925a3baa7d48">&#9670;&nbsp;</a></span>erf_slow_rhs_pre()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -368,7 +368,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Vector&lt; amrex::BCRec &gt; &amp;&#160;</td>
+          <td class="paramtype">const Vector&lt; BCRec &gt; &amp;&#160;</td>
           <td class="paramname"><em>domain_bcs_type</em>, </td>
         </tr>
         <tr>
@@ -532,8 +532,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> use_moisture = (solverChoice.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> != <a class="code" href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754">MoistureType::None</a>);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> use_most     = (most != <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keyword">const</span> amrex::BCRec* bc_ptr   = domain_bcs_type_d.data();</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">const</span> amrex::BCRec* bc_ptr_h = domain_bcs_type.data();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keyword">const</span> BCRec* bc_ptr   = domain_bcs_type_d.data();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">const</span> BCRec* bc_ptr_h = domain_bcs_type.data();</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> domhi_z = domain.bigEnd(2);</div>
@@ -646,7 +646,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                                         : 2.0 * dc.<a class="code" href="structDiffChoice.html#abaff02e5f99628d6a91b546f3ad1fae6">dynamicViscosity</a>;</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;#ifdef _OPENMP</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;#pragma omp parallel if (Gpu::notInLaunchRegion())</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;#endif</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(S_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>],<a class="code" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        {</div>
@@ -966,7 +966,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <span class="comment">// Define updates and fluxes in the current RK stage</span></div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="comment">// *************************************************************************</span></div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    {</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    std::array&lt;FArrayBox,AMREX_SPACEDIM&gt; flux;</div>
@@ -1029,7 +1029,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        <span class="comment">// Define flux arrays for use in advection</span></div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        <span class="comment">// *************************************************************************</span></div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;            flux[dir].resize(amrex::surroundingNodes(bx,dir),2);</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;            flux[dir].resize(surroundingNodes(bx,dir),2);</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;            flux[dir].setVal&lt;RunOn::Device&gt;(0.);</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;        }</div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        <span class="keyword">const</span> GpuArray&lt;const Array4&lt;Real&gt;, AMREX_SPACEDIM&gt;</div>
@@ -1194,12 +1194,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;<span class="preprocessor">#ifdef ERF_USE_RRTMGP</span></div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; qheating_arr = qheating_rates.const_array(mfi);</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain &amp;&amp; l_moving_terrain) {</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                {</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                    cell_rhs(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += (qheating_arr(i,j,k,0) + qheating_arr(i,j,k,1)) / detJ_arr(i,j,k);</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                });</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                amrex::ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                {</div>
 <div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                    cell_rhs(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += qheating_arr(i,j,k,0) + qheating_arr(i,j,k,1);</div>
 <div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                });</div>
@@ -1537,7 +1537,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160; </div>
 <div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;        {</div>
 <div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_pre_zmom_2d&quot;</span>);</div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;        amrex::Box b2d = tbz;</div>
+<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;        Box b2d = tbz;</div>
 <div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;        b2d.setSmall(2,lo_z_face);</div>
 <div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;        b2d.setBig(2,lo_z_face);</div>
 <div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;        <span class="comment">// Enforce no forcing term at top and bottom boundaries</span></div>
@@ -1621,7 +1621,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;                }</div>
 <div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;        });</div>
 <div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;        } <span class="comment">// no terrain</span></div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;            <a class="code" href="ERF__ApplySpongeZoneBCs_8cpp.html#aad2064b6261264a3516ff07bde053f18">ApplySpongeZoneBCs</a>(solverChoice.<a class="code" href="structSolverChoice.html#ac066852f06a6409e1638f59868b7c57d">spongeChoice</a>, geom, tbx, tby, tbz, rho_u_rhs, rho_v_rhs, rho_w_rhs, rho_u, rho_v,</div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;            <a class="code" href="ERF__ApplySpongeZoneBCs_8cpp.html#aa62e472449c57162ab148f5729a4b3b7">ApplySpongeZoneBCs</a>(solverChoice.<a class="code" href="structSolverChoice.html#ac066852f06a6409e1638f59868b7c57d">spongeChoice</a>, geom, tbx, tby, tbz, rho_u_rhs, rho_v_rhs, rho_w_rhs, rho_u, rho_v,</div>
 <div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;                               rho_w, bx, cell_rhs, cell_data);</div>
 <div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;        } <span class="comment">// end profile</span></div>
 <div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160; </div>
@@ -1636,12 +1636,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;            <span class="keywordflow">if</span> (level &lt; finest_level) {</div>
 <div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;                fr_as_crse-&gt;CrseAdd(mfi,</div>
 <div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
-<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;                    dx, dt, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, amrex::RunOn::Device);</div>
+<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;                    dx, dt, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
 <div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;            }</div>
 <div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;            <span class="keywordflow">if</span> (level &gt; 0) {</div>
 <div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;                fr_as_fine-&gt;FineAdd(mfi,</div>
 <div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
-<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;                    dx, dt, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, amrex::RunOn::Device);</div>
+<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;                    dx, dt, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
 <div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;            }</div>
 <div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;        } <span class="comment">// two-way coupling</span></div>
 <div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;        } <span class="comment">// end profile</span></div>
@@ -1674,7 +1674,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aDiffusion_8H_html_a9c81dadeb1784c3274f6f8c9a9d1bcb7"><div class="ttname"><a href="Diffusion_8H.html#a9c81dadeb1784c3274f6f8c9a9d1bcb7">DiffusionSrcForMom_T</a></div><div class="ttdeci">void DiffusionSrcForMom_T(const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau11, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau22, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau33, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau12, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau13, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau21, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau23, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau31, const amrex::Array4&lt; const amrex::Real &gt; &amp;tau32, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v)</div></div>
 <div class="ttc" id="aDirectionSelector_8H_html_aca321ed7fddfe43ff7549b4632a3c0d1"><div class="ttname"><a href="DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a></div><div class="ttdeci">DirectionSelector&lt; 2 &gt; ZDir</div><div class="ttdef"><b>Definition:</b> DirectionSelector.H:38</div></div>
 <div class="ttc" id="aEOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> EOS.H:62</div></div>
-<div class="ttc" id="aERF__ApplySpongeZoneBCs_8cpp_html_aad2064b6261264a3516ff07bde053f18"><div class="ttname"><a href="ERF__ApplySpongeZoneBCs_8cpp.html#aad2064b6261264a3516ff07bde053f18">ApplySpongeZoneBCs</a></div><div class="ttdeci">void ApplySpongeZoneBCs(const SpongeChoice &amp;spongeChoice, const amrex::Geometry geom, const Box &amp;tbx, const Box &amp;tby, const Box &amp;tbz, const Array4&lt; Real &gt; &amp;rho_u_rhs, const Array4&lt; Real &gt; &amp;rho_v_rhs, const Array4&lt; Real &gt; &amp;rho_w_rhs, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;rho_w, const Box &amp;bx, const Array4&lt; Real &gt; &amp;cell_rhs, const Array4&lt; const Real &gt; &amp;cell_data)</div><div class="ttdef"><b>Definition:</b> ERF_ApplySpongeZoneBCs.cpp:21</div></div>
+<div class="ttc" id="aERF__ApplySpongeZoneBCs_8cpp_html_aa62e472449c57162ab148f5729a4b3b7"><div class="ttname"><a href="ERF__ApplySpongeZoneBCs_8cpp.html#aa62e472449c57162ab148f5729a4b3b7">ApplySpongeZoneBCs</a></div><div class="ttdeci">void ApplySpongeZoneBCs(const SpongeChoice &amp;spongeChoice, const Geometry geom, const Box &amp;tbx, const Box &amp;tby, const Box &amp;tbz, const Array4&lt; Real &gt; &amp;rho_u_rhs, const Array4&lt; Real &gt; &amp;rho_v_rhs, const Array4&lt; Real &gt; &amp;rho_w_rhs, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;rho_w, const Box &amp;bx, const Array4&lt; Real &gt; &amp;cell_rhs, const Array4&lt; const Real &gt; &amp;cell_data)</div><div class="ttdef"><b>Definition:</b> ERF_ApplySpongeZoneBCs.cpp:21</div></div>
 <div class="ttc" id="aEddyViscosity_8H_html_ac65b7bc704e954fdb6c75920639b1cec"><div class="ttname"><a href="EddyViscosity_8H.html#ac65b7bc704e954fdb6c75920639b1cec">ComputeSmnSmn</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeSmnSmn(int &amp;i, int &amp;j, int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau11, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau22, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau33, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau12, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau13, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau23, const int &amp;klo, const bool &amp;use_most)</div><div class="ttdef"><b>Definition:</b> EddyViscosity.H:28</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a046484d86c968f85c3b8e574c1fe3e29"><div class="ttname"><a href="IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a></div><div class="ttdeci">#define PrimQ1_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:37</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a2564ef35937a97a2a6c90ca51ae7cdf3"><div class="ttname"><a href="IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a></div><div class="ttdeci">#define PrimQ2_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:38</div></div>
@@ -1746,13 +1746,13 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__slow__rhs__pre_8cpp_a79a79dae7b384230ffd7bdf95b54515a_cgraph.png" border="0" usemap="#aERF__slow__rhs__pre_8cpp_a79a79dae7b384230ffd7bdf95b54515a_cgraph" alt=""/></div>
-<map name="aERF__slow__rhs__pre_8cpp_a79a79dae7b384230ffd7bdf95b54515a_cgraph" id="aERF__slow__rhs__pre_8cpp_a79a79dae7b384230ffd7bdf95b54515a_cgraph">
+<div class="center"><img src="ERF__slow__rhs__pre_8cpp_a55891a17ba442aa7c0c9925a3baa7d48_cgraph.png" border="0" usemap="#aERF__slow__rhs__pre_8cpp_a55891a17ba442aa7c0c9925a3baa7d48_cgraph" alt=""/></div>
+<map name="aERF__slow__rhs__pre_8cpp_a55891a17ba442aa7c0c9925a3baa7d48_cgraph" id="aERF__slow__rhs__pre_8cpp_a55891a17ba442aa7c0c9925a3baa7d48_cgraph">
 <area shape="rect" title=" " alt="" coords="5,705,137,732"/>
 <area shape="rect" href="Advection_8H.html#a0077aeed9e38c1bfec8152a7024bc3de" title=" " alt="" coords="204,5,364,32"/>
 <area shape="rect" href="Advection_8H.html#af6de5e53feec26f9acdbee6ad6e473ef" title=" " alt="" coords="208,56,360,83"/>
 <area shape="rect" href="Advection_8H.html#a5b7c51dd21b8f01c325ca8760f684a7e" title=" " alt="" coords="197,107,371,133"/>
-<area shape="rect" href="ERF__ApplySpongeZoneBCs_8cpp.html#aad2064b6261264a3516ff07bde053f18" title=" " alt="" coords="201,157,367,184"/>
+<area shape="rect" href="ERF__ApplySpongeZoneBCs_8cpp.html#aa62e472449c57162ab148f5729a4b3b7" title=" " alt="" coords="201,157,367,184"/>
 <area shape="rect" href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e" title=" " alt="" coords="196,209,372,250"/>
 <area shape="rect" href="TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce" title=" " alt="" coords="195,275,373,301"/>
 <area shape="rect" href="TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7" title=" " alt="" coords="200,325,368,352"/>

@@ -363,7 +363,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Function in <a class="el" href="classReadBndryPlanes.html">ReadBndryPlanes</a> class for allocating space for the boundary plane data <a class="el" href="classERF.html">ERF</a> will need. </p>
 <div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;ReadBndryPlanes::define_level_data&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;ReadBndryPlanes::define_level_data&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// *********************************************************</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Allocate space for all of the boundary planes we may need</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// *********************************************************</span></div>
@@ -654,8 +654,8 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    AMREX_ALWAYS_ASSERT(<a class="code" href="classReadBndryPlanes.html#ade779c58aa5ea62cf1e03cbfaf98bb61">m_tn</a> &lt;= time &amp;&amp; time &lt;= <a class="code" href="classReadBndryPlanes.html#aca1dcdc531215bfd5a12fb286d064c8c">m_tnp2</a>);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;interp_in_time at time &quot; &lt;&lt; time &lt;&lt; &quot; given &quot; &lt;&lt; m_tn &lt;&lt; &quot; &quot; &lt;&lt; m_tnp1 &lt;&lt; &quot; &quot; &lt;&lt; m_tnp2 &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">//amrex::Print() &lt;&lt; &quot;m_tinterp &quot; &lt;&lt; m_tinterp &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">//Print() &lt;&lt; &quot;interp_in_time at time &quot; &lt;&lt; time &lt;&lt; &quot; given &quot; &lt;&lt; m_tn &lt;&lt; &quot; &quot; &lt;&lt; m_tnp1 &lt;&lt; &quot; &quot; &lt;&lt; m_tnp2 &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">//Print() &lt;&lt; &quot;m_tinterp &quot; &lt;&lt; m_tinterp &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (time == <a class="code" href="classReadBndryPlanes.html#a3f5e28f23e03b5c32f23ac953987728a">m_tinterp</a>) {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">// We have already interpolated to this time</span></div>
@@ -824,7 +824,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;qp&quot;</span>)          n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa502372fe4399d381375f39c17301030c">BCVars::RhoQ2_bc_comp</a>;</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;velocity&quot;</span>)    n_offset = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>;</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="comment">// amrex::Print() &lt;&lt; &quot;Reading &quot; &lt;&lt; chkname1 &lt;&lt; &quot; for variable &quot; &lt;&lt; var_name &lt;&lt; &quot; with n_offset == &quot; &lt;&lt; n_offset &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="comment">// Print() &lt;&lt; &quot;Reading &quot; &lt;&lt; chkname1 &lt;&lt; &quot; for variable &quot; &lt;&lt; var_name &lt;&lt; &quot; with n_offset == &quot; &lt;&lt; n_offset &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        BndryRegister bndry(ba, dm, <a class="code" href="classReadBndryPlanes.html#a8269a127a4db1fd93794dcb8062f5fa9">m_in_rad</a>, <a class="code" href="classReadBndryPlanes.html#acb820b3ebc4c07d210831e6081c47aa9">m_out_rad</a>, <a class="code" href="classReadBndryPlanes.html#ae341a8d70430128e78f7cac75e0d4e8a">m_extent_rad</a>, ncomp);</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        bndry.setVal(1.0e13);</div>
@@ -1176,7 +1176,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="comment">// Allocate data we will need -- for now just at one level</span></div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordtype">int</span> lev = 0;</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <a class="code" href="classReadBndryPlanes.html#a16ed881bb428b7abb89e4284b356c8d6">define_level_data</a>(lev);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Successfully read time file and allocated data&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;Successfully read time file and allocated data&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
 <div class="ttc" id="aclassReadBndryPlanes_html_a16ed881bb428b7abb89e4284b356c8d6"><div class="ttname"><a href="classReadBndryPlanes.html#a16ed881bb428b7abb89e4284b356c8d6">ReadBndryPlanes::define_level_data</a></div><div class="ttdeci">void define_level_data(int lev)</div><div class="ttdef"><b>Definition:</b> ERF_ReadBndryPlanes.cpp:43</div></div>
 </div><!-- fragment --><div class="dynheader">

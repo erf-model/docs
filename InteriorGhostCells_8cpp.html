@@ -436,7 +436,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        <span class="keywordtype">int</span> num_var = fmf.nComp();</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        fmf_p_v.emplace_back(fmf.boxArray(), fmf.DistributionMap(), num_var, fmf.nGrowVect());</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        MultiFab&amp; fmf_p = fmf_p_v[ivar_idx];</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        amrex::MultiFab::Copy(fmf_p,fmf, 0, 0, num_var, fmf.nGrowVect());</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        MultiFab::Copy(fmf_p,fmf, 0, 0, num_var, fmf.nGrowVect());</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160; </div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;        <span class="comment">// Integer mask MF</span></div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        <span class="keywordtype">int</span> set_mask_val;</div>
@@ -460,9 +460,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            relax_mask_val = FPr_u-&gt;<a class="code" href="classERFFillPatcher.html#ae36410e2a848977e145b29c755ac8b5d">GetRelaxMaskVal</a>();</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160; </div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(fmf_p,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(fmf_p,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            {</div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                Box vbx = mfi.validbox();</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
@@ -487,9 +487,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;            relax_mask_val = FPr_v-&gt;<a class="code" href="classERFFillPatcher.html#ae36410e2a848977e145b29c755ac8b5d">GetRelaxMaskVal</a>();</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160; </div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(fmf_p,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(fmf_p,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;            {</div>
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                Box vbx = mfi.validbox();</div>
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160; </div>
@@ -514,9 +514,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;            relax_mask_val = FPr_w-&gt;<a class="code" href="classERFFillPatcher.html#ae36410e2a848977e145b29c755ac8b5d">GetRelaxMaskVal</a>();</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160; </div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(fmf_p,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(fmf_p,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;            {</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                Box vbx = mfi.validbox();</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160; </div>
@@ -533,16 +533,16 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                });</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;            } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Dont recognize this variable type in fine_compute_interior_ghost_RHS&quot;</span>);</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;            Abort(<span class="stringliteral">&quot;Dont recognize this variable type in fine_compute_interior_ghost_RHS&quot;</span>);</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        }</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160; </div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="comment">// Zero RHS in set region</span></div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        <span class="comment">//==========================================================</span></div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(rhs,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(rhs,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        {</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;            Box vbx = mfi.validbox();</div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; rhs_arr  = rhs.array(mfi);</div>
@@ -563,9 +563,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        <span class="comment">// Compute RHS in relaxation region</span></div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        <span class="comment">//==========================================================</span></div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(fmf_p,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(fmf_p,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        {</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;            Box vbx = mfi.validbox();</div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp;        rhs_arr = rhs.array(mfi);</div>
@@ -580,8 +580,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160; </div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;            <span class="keywordtype">int</span> Spec_z  = set_width;</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;            <span class="keywordtype">int</span> Relax_z = width - Spec_z;</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            amrex::Real num   = amrex::Real(Spec_z + Relax_z);</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;            amrex::Real denom = amrex::Real(Relax_z - 1);</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            Real num   = Real(Spec_z + Relax_z);</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;            Real denom = Real(Relax_z - 1);</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;            ParallelFor(vbx, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;            {</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;               <span class="keywordflow">if</span> (mask_arr(i,j,k) == relax_mask_val) {</div>
@@ -636,10 +636,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                               }</div>
 <div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                           }</div>
 <div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                           <span class="keywordflow">if</span> (mask_y_found) {</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                               Real mag = sqrt( amrex::Real(dj_min*dj_min + ii*ii) );</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                               Real mag = sqrt( Real(dj_min*dj_min + ii*ii) );</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                               n_ind = std::min(mag,width-1.0) + 1.0;</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                           } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                               amrex::Abort(<span class="stringliteral">&quot;Mask not found near x wall!&quot;</span>);</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                               Abort(<span class="stringliteral">&quot;Mask not found near x wall!&quot;</span>);</div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                           }</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                       } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (near_y_lo_wall || near_y_hi_wall) {</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                           Real di_min{width-1.0};</div>
@@ -653,28 +653,28 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                               }</div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                           }</div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;                           <span class="keywordflow">if</span> (mask_x_found) {</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                               Real mag = sqrt( amrex::Real(di_min*di_min + jj*jj) );</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                               Real mag = sqrt( Real(di_min*di_min + jj*jj) );</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                               n_ind = std::min(mag,width-1.0) + 1.0;</div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                           } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                               amrex::Abort(<span class="stringliteral">&quot;Mask not found near y wall!&quot;</span>);</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                               Abort(<span class="stringliteral">&quot;Mask not found near y wall!&quot;</span>);</div>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                           }</div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                       } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                           amrex::Abort(<span class="stringliteral">&quot;Relaxation cell must be near a wall!&quot;</span>);</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                           Abort(<span class="stringliteral">&quot;Relaxation cell must be near a wall!&quot;</span>);</div>
 <div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;                       }</div>
 <div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                   }</div>
 <div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160; </div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                   amrex::Real Factor   = (num - n_ind)/denom;</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;                   amrex::Real d        = data_arr(i  ,j  ,k  ,n+icomp) + delta_t*rhs_arr(i  , j  , k  ,n+icomp);</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;                   amrex::Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp) + delta_t*rhs_arr(i+1, j  , k  ,n+icomp);</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;                   amrex::Real d_im1    = data_arr(i-1,j  ,k  ,n+icomp) + delta_t*rhs_arr(i-1, j  , k  ,n+icomp);</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;                   amrex::Real d_jp1    = data_arr(i  ,j+1,k  ,n+icomp) + delta_t*rhs_arr(i  , j+1, k  ,n+icomp);</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                   amrex::Real d_jm1    = data_arr(i  ,j-1,k  ,n+icomp) + delta_t*rhs_arr(i  , j-1, k  ,n+icomp);</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;                   amrex::Real delta    = fine_arr(i  ,j  ,k,n) - d;</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                   amrex::Real delta_xp = fine_arr(i+1,j  ,k,n) - d_ip1;</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;                   amrex::Real delta_xm = fine_arr(i-1,j  ,k,n) - d_im1;</div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;                   amrex::Real delta_yp = fine_arr(i  ,j+1,k,n) - d_jp1;</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;                   amrex::Real delta_ym = fine_arr(i  ,j-1,k,n) - d_jm1;</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;                   amrex::Real Laplacian = delta_xp + delta_xm + delta_yp + delta_ym - 4.0*delta;</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                   Real Factor   = (num - n_ind)/denom;</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;                   Real d        = data_arr(i  ,j  ,k  ,n+icomp) + delta_t*rhs_arr(i  , j  , k  ,n+icomp);</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;                   Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp) + delta_t*rhs_arr(i+1, j  , k  ,n+icomp);</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;                   Real d_im1    = data_arr(i-1,j  ,k  ,n+icomp) + delta_t*rhs_arr(i-1, j  , k  ,n+icomp);</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;                   Real d_jp1    = data_arr(i  ,j+1,k  ,n+icomp) + delta_t*rhs_arr(i  , j+1, k  ,n+icomp);</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                   Real d_jm1    = data_arr(i  ,j-1,k  ,n+icomp) + delta_t*rhs_arr(i  , j-1, k  ,n+icomp);</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;                   Real delta    = fine_arr(i  ,j  ,k,n) - d;</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                   Real delta_xp = fine_arr(i+1,j  ,k,n) - d_ip1;</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;                   Real delta_xm = fine_arr(i-1,j  ,k,n) - d_im1;</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;                   Real delta_yp = fine_arr(i  ,j+1,k,n) - d_jp1;</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;                   Real delta_ym = fine_arr(i  ,j-1,k,n) - d_jm1;</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;                   Real Laplacian = delta_xp + delta_xm + delta_yp + delta_ym - 4.0*delta;</div>
 <div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;                   rhs_arr(i,j,k,n) += (F1*delta - F2*Laplacian) * Factor;</div>
 <div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;               }</div>
 <div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;            });</div>
@@ -851,9 +851,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    Real dT = bdy_time_interval;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    Real time_since_start = time - start_bdy_time;</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">int</span> n_time = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>( time_since_start /  dT);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    amrex::Real alpha = (time_since_start - n_time * dT) / dT;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    Real alpha = (time_since_start - n_time * dT) / dT;</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    AMREX_ALWAYS_ASSERT( alpha &gt;= 0. &amp;&amp; alpha &lt;= 1.0);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    amrex::Real oma   = 1.0 - alpha;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    Real oma   = 1.0 - alpha;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">    // UNIT TEST DEBUG</span></div>
@@ -1110,9 +1110,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_lo = lbound(domain);</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(S_old_data[ivar_idx],amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(S_old_data[ivar_idx],TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                Box tbx = mfi.tilebox();</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                Box tbx_xlo, tbx_xhi, tbx_ylo, tbx_yhi;</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <a class="code" href="InteriorGhostCells_8cpp.html#a58aa7f6d6812d4dea186477114d1a47c">compute_interior_ghost_bxs_xy</a>(tbx, domain, width, 0,</div>
@@ -1172,9 +1172,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            <span class="keywordflow">if</span> (ivar_idx == <a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>) width2 -= 1;</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160; </div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(S_cur_data[ivar_idx],amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(S_cur_data[ivar_idx],TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                Box tbx = mfi.tilebox();</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                Box tbx_xlo, tbx_xhi, tbx_ylo, tbx_yhi;</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                <a class="code" href="InteriorGhostCells_8cpp.html#a58aa7f6d6812d4dea186477114d1a47c">compute_interior_ghost_bxs_xy</a>(tbx, domain, width2, set_width,</div>
@@ -1222,28 +1222,28 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;<span class="comment">                ParallelFor(tbx_xlo, [=] AMREX_GPU_DEVICE (int i, int j, int k) noexcept</span></div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;<span class="comment">                {</span></div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;<span class="comment">                    if (arr_xlo(i,j,k) != data_arr(i,j,k,icomp)) {</span></div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;<span class="comment">                        amrex::Print() &lt;&lt; &quot;ERROR XLO: &quot; &lt;&lt; ivar &lt;&lt; &#39; &#39; &lt;&lt; icomp &lt;&lt; &#39; &#39; &lt;&lt; IntVect(i,j,k) &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;<span class="comment">                        Print() &lt;&lt; &quot;ERROR XLO: &quot; &lt;&lt; ivar &lt;&lt; &#39; &#39; &lt;&lt; icomp &lt;&lt; &#39; &#39; &lt;&lt; IntVect(i,j,k) &lt;&lt; &quot;\n&quot;;</span></div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;<span class="comment">                        exit(0);</span></div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;<span class="comment">                    }</span></div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;<span class="comment">                });</span></div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;<span class="comment">                ParallelFor(tbx_xhi, [=] AMREX_GPU_DEVICE (int i, int j, int k) noexcept</span></div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;<span class="comment">                {</span></div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;<span class="comment">                    if (arr_xhi(i,j,k) != data_arr(i,j,k,icomp)) {</span></div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;<span class="comment">                        amrex::Print() &lt;&lt; &quot;ERROR XHI: &quot; &lt;&lt; ivar &lt;&lt; &#39; &#39; &lt;&lt; icomp &lt;&lt; &#39; &#39; &lt;&lt; IntVect(i,j,k) &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;<span class="comment">                        Print() &lt;&lt; &quot;ERROR XHI: &quot; &lt;&lt; ivar &lt;&lt; &#39; &#39; &lt;&lt; icomp &lt;&lt; &#39; &#39; &lt;&lt; IntVect(i,j,k) &lt;&lt; &quot;\n&quot;;</span></div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;<span class="comment">                        exit(0);</span></div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;<span class="comment">                    }</span></div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;<span class="comment">                });</span></div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;<span class="comment">                ParallelFor(tbx_ylo, [=] AMREX_GPU_DEVICE (int i, int j, int k) noexcept</span></div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;<span class="comment">                {</span></div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;<span class="comment">                    if (arr_ylo(i,j,k) != data_arr(i,j,k,icomp)) {</span></div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;<span class="comment">                        amrex::Print() &lt;&lt; &quot;ERROR YLO: &quot; &lt;&lt; ivar &lt;&lt; &#39; &#39; &lt;&lt; icomp &lt;&lt; &#39; &#39; &lt;&lt; IntVect(i,j,k) &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;<span class="comment">                        Print() &lt;&lt; &quot;ERROR YLO: &quot; &lt;&lt; ivar &lt;&lt; &#39; &#39; &lt;&lt; icomp &lt;&lt; &#39; &#39; &lt;&lt; IntVect(i,j,k) &lt;&lt; &quot;\n&quot;;</span></div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<span class="comment">                        exit(0);</span></div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="comment">                    }</span></div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;<span class="comment">                });</span></div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;<span class="comment">                ParallelFor(tbx_yhi, [=] AMREX_GPU_DEVICE (int i, int j, int k) noexcept</span></div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;<span class="comment">                {</span></div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;<span class="comment">                    if (arr_yhi(i,j,k) != data_arr(i,j,k,icomp)) {</span></div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;<span class="comment">                        amrex::Print() &lt;&lt; &quot;ERROR YHI: &quot; &lt;&lt; ivar &lt;&lt; &#39; &#39; &lt;&lt; icomp &lt;&lt; &#39; &#39; &lt;&lt; IntVect(i,j,k) &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;<span class="comment">                        Print() &lt;&lt; &quot;ERROR YHI: &quot; &lt;&lt; ivar &lt;&lt; &#39; &#39; &lt;&lt; icomp &lt;&lt; &#39; &#39; &lt;&lt; IntVect(i,j,k) &lt;&lt; &quot;\n&quot;;</span></div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;<span class="comment">                        exit(0);</span></div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;<span class="comment">                    }</span></div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;<span class="comment">                });</span></div>

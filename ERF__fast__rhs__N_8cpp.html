@@ -145,12 +145,12 @@ Include dependency graph for ERF_fast_rhs_N.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a76ad7290cacb767d262b543a340b0a43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__fast__rhs__N_8cpp.html#a76ad7290cacb767d262b543a340b0a43">erf_fast_rhs_N</a> (int step, int nrk, int level, int finest_level, Vector&lt; MultiFab &gt; &amp;S_slow_rhs, const Vector&lt; MultiFab &gt; &amp;S_prev, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_data, Vector&lt; MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const Real gravity, const Real dtau, const Real beta_s, const Real facinv, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v, YAFluxRegister *fr_as_crse, YAFluxRegister *fr_as_fine, bool l_use_moisture, bool l_reflux)</td></tr>
-<tr class="separator:a76ad7290cacb767d262b543a340b0a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6e78f7c7efa8a0108529be2516cfcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__fast__rhs__N_8cpp.html#aec6e78f7c7efa8a0108529be2516cfcc">erf_fast_rhs_N</a> (int step, int nrk, int level, int finest_level, Vector&lt; MultiFab &gt; &amp;S_slow_rhs, const Vector&lt; MultiFab &gt; &amp;S_prev, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_data, Vector&lt; MultiFab &gt; &amp;S_scratch, const Geometry geom, const Real gravity, const Real dtau, const Real beta_s, const Real facinv, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v, YAFluxRegister *fr_as_crse, YAFluxRegister *fr_as_fine, bool l_use_moisture, bool l_reflux)</td></tr>
+<tr class="separator:aec6e78f7c7efa8a0108529be2516cfcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a76ad7290cacb767d262b543a340b0a43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76ad7290cacb767d262b543a340b0a43">&#9670;&nbsp;</a></span>erf_fast_rhs_N()</h2>
+<a id="aec6e78f7c7efa8a0108529be2516cfcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec6e78f7c7efa8a0108529be2516cfcc">&#9670;&nbsp;</a></span>erf_fast_rhs_N()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,7 +230,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Geometry&#160;</td>
+          <td class="paramtype">const Geometry&#160;</td>
           <td class="paramname"><em>geom</em>, </td>
         </tr>
         <tr>
@@ -358,11 +358,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    MultiFab Delta_rho  (            ba                , dm, 1, 1);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    MultiFab Delta_rho_theta(        ba                , dm, 1, 1);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    MultiFab     coeff_A_mf(fast_coeffs, amrex::make_alias, 0, 1);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    MultiFab inv_coeff_B_mf(fast_coeffs, amrex::make_alias, 1, 1);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    MultiFab     coeff_C_mf(fast_coeffs, amrex::make_alias, 2, 1);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    MultiFab     coeff_P_mf(fast_coeffs, amrex::make_alias, 3, 1);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    MultiFab     coeff_Q_mf(fast_coeffs, amrex::make_alias, 4, 1);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    MultiFab     coeff_A_mf(fast_coeffs, make_alias, 0, 1);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    MultiFab inv_coeff_B_mf(fast_coeffs, make_alias, 1, 1);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    MultiFab     coeff_C_mf(fast_coeffs, make_alias, 2, 1);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    MultiFab     coeff_P_mf(fast_coeffs, make_alias, 3, 1);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    MultiFab     coeff_Q_mf(fast_coeffs, make_alias, 4, 1);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// *************************************************************************</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// Set gravity as a vector</span></div>
@@ -384,7 +384,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// *************************************************************************</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(S_stage_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    {</div>
@@ -431,7 +431,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(S_stage_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    {</div>
@@ -451,7 +451,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">// *************************************************************************</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(S_stage_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    {</div>
@@ -539,7 +539,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    } <span class="comment">//mfi</span></div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    {</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    std::array&lt;FArrayBox,AMREX_SPACEDIM&gt; flux;</div>
@@ -599,7 +599,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="comment">// Define flux arrays for use in advection</span></div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="comment">// *************************************************************************</span></div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            flux[dir].resize(amrex::surroundingNodes(bx,dir),2);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            flux[dir].resize(surroundingNodes(bx,dir),2);</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            flux[dir].setVal&lt;RunOn::Device&gt;(0.);</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        }</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keyword">const</span> GpuArray&lt;const Array4&lt;Real&gt;, AMREX_SPACEDIM&gt;</div>
@@ -695,14 +695,14 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        });</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        } <span class="comment">// end profile</span></div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        amrex::Box b2d = tbz; <span class="comment">// Copy constructor</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        Box b2d = tbz; <span class="comment">// Copy constructor</span></div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        b2d.setRange(2,0);</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        {</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;fast_rhs_b2d_loop&quot;</span>);</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> lo = amrex::lbound(bx);</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> hi = amrex::ubound(bx);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> lo = lbound(bx);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> hi = ubound(bx);</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        {</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;          <span class="comment">// w_0 = 0</span></div>
@@ -726,8 +726,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;          }</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;        }); <span class="comment">// b2d</span></div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> lo = amrex::lbound(bx);</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> hi = amrex::ubound(bx);</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> lo = lbound(bx);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> hi = ubound(bx);</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;            AMREX_PRAGMA_SIMD</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
@@ -802,19 +802,19 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            <span class="keywordflow">if</span> (level &lt; finest_level) {</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                fr_as_crse-&gt;CrseAdd(mfi,</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                    dx, dtau, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, amrex::RunOn::Device);</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                    dx, dtau, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;            }</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            <span class="keywordflow">if</span> (level &gt; 0) {</div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                fr_as_fine-&gt;FineAdd(mfi,</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                    dx, dtau, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, amrex::RunOn::Device);</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                    dx, dtau, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            }</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        } <span class="comment">// two-way coupling</span></div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    } <span class="comment">// OMP</span></div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(S_stage_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    {</div>
@@ -866,8 +866,8 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__fast__rhs__N_8cpp_a76ad7290cacb767d262b543a340b0a43_cgraph.png" border="0" usemap="#aERF__fast__rhs__N_8cpp_a76ad7290cacb767d262b543a340b0a43_cgraph" alt=""/></div>
-<map name="aERF__fast__rhs__N_8cpp_a76ad7290cacb767d262b543a340b0a43_cgraph" id="aERF__fast__rhs__N_8cpp_a76ad7290cacb767d262b543a340b0a43_cgraph">
+<div class="center"><img src="ERF__fast__rhs__N_8cpp_aec6e78f7c7efa8a0108529be2516cfcc_cgraph.png" border="0" usemap="#aERF__fast__rhs__N_8cpp_aec6e78f7c7efa8a0108529be2516cfcc_cgraph" alt=""/></div>
+<map name="aERF__fast__rhs__N_8cpp_aec6e78f7c7efa8a0108529be2516cfcc_cgraph" id="aERF__fast__rhs__N_8cpp_aec6e78f7c7efa8a0108529be2516cfcc_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,121,32"/>
 <area shape="rect" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="169,5,243,32"/>
 </map>

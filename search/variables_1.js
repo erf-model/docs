@@ -6,7 +6,7 @@ var searchData=
   ['base_5fparms_3128',['base_parms',['../classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda',1,'ProblemBase']]],
   ['base_5fstate_3129',['base_state',['../classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c',1,'ERF']]],
   ['base_5fstate_5fnew_3130',['base_state_new',['../classERF.html#a37b2a4257df8ff53d4450de47f16ace1',1,'ERF']]],
-  ['bcnames_3131',['BCNames',['../ERF_8cpp.html#a85eb8269776aad2fdab8e269a2a03bb1',1,'ERF.cpp']]],
+  ['bcnames_3131',['BCNames',['../ERF_8cpp.html#a6f88b0d6d3b295286a69983d08d9985f',1,'ERF.cpp']]],
   ['beta_5fh_3132',['beta_h',['../structsimilarity__funs.html#a5254469dd7ec9856ed6d1e0034306cc4',1,'similarity_funs']]],
   ['beta_5fm_3133',['beta_m',['../structsimilarity__funs.html#a3658f855e05c54c9cbc27c8dfb3b0355',1,'similarity_funs']]],
   ['betaelq_3134',['betaelq',['../ERF__Constants_8H.html#a2bf4e906e54dd5044116807d54709e48',1,'ERF_Constants.H']]],
