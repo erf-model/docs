@@ -22,7 +22,7 @@ var TerrainMetrics_8H =
     [ "Compute_h_zeta_AtJface", "TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f", null ],
     [ "Compute_h_zeta_AtKface", "TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0", null ],
     [ "Compute_Zrel_AtCellCenter", "TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565", null ],
-    [ "init_terrain_grid", "TerrainMetrics_8H.html#a255f4f591cbd8301d69c4c0f5499589a", null ],
+    [ "init_terrain_grid", "TerrainMetrics_8H.html#a27eaf03ca6d8c246f95f6b38ba7e9ccb", null ],
     [ "init_zlevels", "TerrainMetrics_8H.html#a73d2a3a82a32b34ed710f4891a3056df", null ],
     [ "OmegaFromW", "TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18", null ],
     [ "WFromOmega", "TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087", null ],

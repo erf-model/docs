@@ -17,7 +17,11 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     ] ],
     [ "ERF_PhysBCFunct.cpp", "ERF__PhysBCFunct_8cpp.html", null ],
     [ "ERF_PhysBCFunct.H", "ERF__PhysBCFunct_8H.html", [
-      [ "ERFPhysBCFunct", "classERFPhysBCFunct.html", "classERFPhysBCFunct" ]
+      [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html", "classERFPhysBCFunct__cons" ],
+      [ "ERFPhysBCFunct_u", "classERFPhysBCFunct__u.html", "classERFPhysBCFunct__u" ],
+      [ "ERFPhysBCFunct_v", "classERFPhysBCFunct__v.html", "classERFPhysBCFunct__v" ],
+      [ "ERFPhysBCFunct_w", "classERFPhysBCFunct__w.html", "classERFPhysBCFunct__w" ],
+      [ "ERFPhysBCFunct_w_no_terrain", "classERFPhysBCFunct__w__no__terrain.html", "classERFPhysBCFunct__w__no__terrain" ]
     ] ],
     [ "MOSTAverage.cpp", "MOSTAverage_8cpp.html", null ],
     [ "MOSTAverage.H", "MOSTAverage_8H.html", [

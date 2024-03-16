@@ -170,8 +170,8 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a73d2a3a82a32b34ed710f4891a3056df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#a73d2a3a82a32b34ed710f4891a3056df">init_zlevels</a> (amrex::Vector&lt; amrex::Real &gt; &amp;zlevels_stag, const amrex::Geometry &amp;geom, const amrex::Real grid_stretching_ratio, const amrex::Real zsurf, const amrex::Real dz0)</td></tr>
 <tr class="separator:a73d2a3a82a32b34ed710f4891a3056df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a255f4f591cbd8301d69c4c0f5499589a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#a255f4f591cbd8301d69c4c0f5499589a">init_terrain_grid</a> (const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::Vector&lt; amrex::Real &gt; const &amp;z_levels_h)</td></tr>
-<tr class="separator:a255f4f591cbd8301d69c4c0f5499589a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27eaf03ca6d8c246f95f6b38ba7e9ccb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#a27eaf03ca6d8c246f95f6b38ba7e9ccb">init_terrain_grid</a> (int lev, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::Vector&lt; amrex::Real &gt; const &amp;z_levels_h)</td></tr>
+<tr class="separator:a27eaf03ca6d8c246f95f6b38ba7e9ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32eeeb066c70da970aa6a60918515987"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE AMREX_GPU_DEVICE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a> (const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</td></tr>
 <tr class="separator:a32eeeb066c70da970aa6a60918515987"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada44020dc4ec27c5bebf8fd82d336cee"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee">Compute_h_xi_AtCellCenter</a> (const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</td></tr>
@@ -275,19 +275,19 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> met_h_eta;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ComputeStrain__T_8cpp.html#ac6a307fd66f18cab5974d8f9487ec352">ComputeStrain_T()</a>, <a class="el" href="ComputeStress__T_8cpp.html#ad784118ffdc1e94299030bc77cc1105f">ComputeStressConsVisc_T()</a>, <a class="el" href="ComputeStress__T_8cpp.html#af000894240c5d767e227b75bb2e5e63f">ComputeStressVarVisc_T()</a>, <a class="el" href="classERFPhysBCFunct.html#af44e8c58a8d5c8b804ec68d7a1d289e5">ERFPhysBCFunct::impose_vertical_cons_bcs()</a>, <a class="el" href="classMOSTAverage.html#a2908278cc9088e345af422a187eba337">MOSTAverage::set_norm_indices_T()</a>, and <a class="el" href="classMOSTAverage.html#a697396705fddae5c919c7e4020cf20b2">MOSTAverage::set_norm_positions_T()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ComputeStrain__T_8cpp.html#ac6a307fd66f18cab5974d8f9487ec352">ComputeStrain_T()</a>, <a class="el" href="ComputeStress__T_8cpp.html#ad784118ffdc1e94299030bc77cc1105f">ComputeStressConsVisc_T()</a>, <a class="el" href="ComputeStress__T_8cpp.html#af000894240c5d767e227b75bb2e5e63f">ComputeStressVarVisc_T()</a>, <a class="el" href="classERFPhysBCFunct__cons.html#ad56fdfadfae102cf4e7419eaf756cb80">ERFPhysBCFunct_cons::impose_vertical_cons_bcs()</a>, <a class="el" href="classMOSTAverage.html#a2908278cc9088e345af422a187eba337">MOSTAverage::set_norm_indices_T()</a>, and <a class="el" href="classMOSTAverage.html#a697396705fddae5c919c7e4020cf20b2">MOSTAverage::set_norm_positions_T()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="TerrainMetrics_8H_a43b431cbd97421014ff80245883e06d2_icgraph.png" border="0" usemap="#aTerrainMetrics_8H_a43b431cbd97421014ff80245883e06d2_icgraph" alt=""/></div>
 <map name="aTerrainMetrics_8H_a43b431cbd97421014ff80245883e06d2_icgraph" id="aTerrainMetrics_8H_a43b431cbd97421014ff80245883e06d2_icgraph">
-<area shape="rect" title=" " alt="" coords="456,136,669,163"/>
-<area shape="rect" href="ComputeStrain__T_8cpp.html#ac6a307fd66f18cab5974d8f9487ec352" title=" " alt="" coords="243,5,378,32"/>
-<area shape="rect" href="ComputeStress__T_8cpp.html#ad784118ffdc1e94299030bc77cc1105f" title=" " alt="" coords="213,56,408,83"/>
-<area shape="rect" href="ComputeStress__T_8cpp.html#af000894240c5d767e227b75bb2e5e63f" title=" " alt="" coords="219,107,403,133"/>
-<area shape="rect" href="classERFPhysBCFunct.html#af44e8c58a8d5c8b804ec68d7a1d289e5" title=" " alt="" coords="217,158,404,199"/>
-<area shape="rect" href="classMOSTAverage.html#a2908278cc9088e345af422a187eba337" title=" " alt="" coords="220,223,401,265"/>
-<area shape="rect" href="classMOSTAverage.html#a697396705fddae5c919c7e4020cf20b2" title=" " alt="" coords="220,289,401,330"/>
+<area shape="rect" title=" " alt="" coords="461,136,675,163"/>
+<area shape="rect" href="ComputeStrain__T_8cpp.html#ac6a307fd66f18cab5974d8f9487ec352" title=" " alt="" coords="246,5,381,32"/>
+<area shape="rect" href="ComputeStress__T_8cpp.html#ad784118ffdc1e94299030bc77cc1105f" title=" " alt="" coords="216,56,411,83"/>
+<area shape="rect" href="ComputeStress__T_8cpp.html#af000894240c5d767e227b75bb2e5e63f" title=" " alt="" coords="221,107,405,133"/>
+<area shape="rect" href="classERFPhysBCFunct__cons.html#ad56fdfadfae102cf4e7419eaf756cb80" title=" " alt="" coords="213,158,413,199"/>
+<area shape="rect" href="classMOSTAverage.html#a2908278cc9088e345af422a187eba337" title=" " alt="" coords="223,223,404,265"/>
+<area shape="rect" href="classMOSTAverage.html#a697396705fddae5c919c7e4020cf20b2" title=" " alt="" coords="223,289,404,330"/>
 <area shape="rect" href="classERF.html#a9068176f45cea5fdbbbf3c8eb08bd808" title=" " alt="" coords="5,5,165,32"/>
 <area shape="rect" href="ERF__slow__rhs__inc_8cpp.html#a57305daad0d9f549218f4bfd5d877918" title=" " alt="" coords="20,107,151,133"/>
 <area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48" title=" " alt="" coords="19,56,151,83"/>
@@ -547,14 +547,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> met_h_eta;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERFPhysBCFunct.html#a6ca43d34a9908abbb1c09cdf0fa70917">ERFPhysBCFunct::impose_vertical_xvel_bcs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERFPhysBCFunct__u.html#afdf8afb39002a2daac0fc16a5db76d17">ERFPhysBCFunct_u::impose_vertical_xvel_bcs()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="TerrainMetrics_8H_ad06b0ae003cb3d59227ce85a5fa8a669_icgraph.png" border="0" usemap="#aTerrainMetrics_8H_ad06b0ae003cb3d59227ce85a5fa8a669_icgraph" alt=""/></div>
 <map name="aTerrainMetrics_8H_ad06b0ae003cb3d59227ce85a5fa8a669_icgraph" id="aTerrainMetrics_8H_ad06b0ae003cb3d59227ce85a5fa8a669_icgraph">
-<area shape="rect" title=" " alt="" coords="240,13,417,39"/>
-<area shape="rect" href="classERFPhysBCFunct.html#a6ca43d34a9908abbb1c09cdf0fa70917" title=" " alt="" coords="5,5,192,47"/>
+<area shape="rect" title=" " alt="" coords="256,13,433,39"/>
+<area shape="rect" href="classERFPhysBCFunct__u.html#afdf8afb39002a2daac0fc16a5db76d17" title=" " alt="" coords="5,5,208,47"/>
 </map>
 </div>
 
@@ -611,19 +611,19 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> met_h_eta;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0">DiffusionSrcForState_T()</a>, <a class="el" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1">erf_fast_rhs_T()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48">erf_slow_rhs_pre()</a>, <a class="el" href="classERFPhysBCFunct.html#a77c31e351dd3e5380ada114c4148edca">ERFPhysBCFunct::impose_vertical_yvel_bcs()</a>, and <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0">DiffusionSrcForState_T()</a>, <a class="el" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1">erf_fast_rhs_T()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48">erf_slow_rhs_pre()</a>, <a class="el" href="classERFPhysBCFunct__v.html#a9e295ac17321f4d577f1d103f6b665a2">ERFPhysBCFunct_v::impose_vertical_yvel_bcs()</a>, and <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="TerrainMetrics_8H_ae609a5c1f84347b66e9a8b712271c4ce_icgraph.png" border="0" usemap="#aTerrainMetrics_8H_ae609a5c1f84347b66e9a8b712271c4ce_icgraph" alt=""/></div>
 <map name="aTerrainMetrics_8H_ae609a5c1f84347b66e9a8b712271c4ce_icgraph" id="aTerrainMetrics_8H_ae609a5c1f84347b66e9a8b712271c4ce_icgraph">
-<area shape="rect" title=" " alt="" coords="240,132,417,159"/>
-<area shape="rect" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0" title=" " alt="" coords="14,5,183,32"/>
-<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed" title=" " alt="" coords="35,56,162,83"/>
-<area shape="rect" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1" title=" " alt="" coords="41,107,156,133"/>
-<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48" title=" " alt="" coords="33,157,165,184"/>
-<area shape="rect" href="classERFPhysBCFunct.html#a77c31e351dd3e5380ada114c4148edca" title=" " alt="" coords="5,209,192,250"/>
-<area shape="rect" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a" title=" " alt="" coords="30,275,167,301"/>
+<area shape="rect" title=" " alt="" coords="255,132,432,159"/>
+<area shape="rect" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0" title=" " alt="" coords="21,5,191,32"/>
+<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed" title=" " alt="" coords="43,56,169,83"/>
+<area shape="rect" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1" title=" " alt="" coords="49,107,163,133"/>
+<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48" title=" " alt="" coords="40,157,172,184"/>
+<area shape="rect" href="classERFPhysBCFunct__v.html#a9e295ac17321f4d577f1d103f6b665a2" title=" " alt="" coords="5,209,207,250"/>
+<area shape="rect" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a" title=" " alt="" coords="37,275,175,301"/>
 </map>
 </div>
 
@@ -743,19 +743,19 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> met_h_xi;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ComputeStrain__T_8cpp.html#ac6a307fd66f18cab5974d8f9487ec352">ComputeStrain_T()</a>, <a class="el" href="ComputeStress__T_8cpp.html#ad784118ffdc1e94299030bc77cc1105f">ComputeStressConsVisc_T()</a>, <a class="el" href="ComputeStress__T_8cpp.html#af000894240c5d767e227b75bb2e5e63f">ComputeStressVarVisc_T()</a>, <a class="el" href="classERFPhysBCFunct.html#af44e8c58a8d5c8b804ec68d7a1d289e5">ERFPhysBCFunct::impose_vertical_cons_bcs()</a>, <a class="el" href="classMOSTAverage.html#a2908278cc9088e345af422a187eba337">MOSTAverage::set_norm_indices_T()</a>, and <a class="el" href="classMOSTAverage.html#a697396705fddae5c919c7e4020cf20b2">MOSTAverage::set_norm_positions_T()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ComputeStrain__T_8cpp.html#ac6a307fd66f18cab5974d8f9487ec352">ComputeStrain_T()</a>, <a class="el" href="ComputeStress__T_8cpp.html#ad784118ffdc1e94299030bc77cc1105f">ComputeStressConsVisc_T()</a>, <a class="el" href="ComputeStress__T_8cpp.html#af000894240c5d767e227b75bb2e5e63f">ComputeStressVarVisc_T()</a>, <a class="el" href="classERFPhysBCFunct__cons.html#ad56fdfadfae102cf4e7419eaf756cb80">ERFPhysBCFunct_cons::impose_vertical_cons_bcs()</a>, <a class="el" href="classMOSTAverage.html#a2908278cc9088e345af422a187eba337">MOSTAverage::set_norm_indices_T()</a>, and <a class="el" href="classMOSTAverage.html#a697396705fddae5c919c7e4020cf20b2">MOSTAverage::set_norm_positions_T()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="TerrainMetrics_8H_ada44020dc4ec27c5bebf8fd82d336cee_icgraph.png" border="0" usemap="#aTerrainMetrics_8H_ada44020dc4ec27c5bebf8fd82d336cee_icgraph" alt=""/></div>
 <map name="aTerrainMetrics_8H_ada44020dc4ec27c5bebf8fd82d336cee_icgraph" id="aTerrainMetrics_8H_ada44020dc4ec27c5bebf8fd82d336cee_icgraph">
-<area shape="rect" title=" " alt="" coords="456,136,660,163"/>
-<area shape="rect" href="ComputeStrain__T_8cpp.html#ac6a307fd66f18cab5974d8f9487ec352" title=" " alt="" coords="243,5,378,32"/>
-<area shape="rect" href="ComputeStress__T_8cpp.html#ad784118ffdc1e94299030bc77cc1105f" title=" " alt="" coords="213,56,408,83"/>
-<area shape="rect" href="ComputeStress__T_8cpp.html#af000894240c5d767e227b75bb2e5e63f" title=" " alt="" coords="219,107,403,133"/>
-<area shape="rect" href="classERFPhysBCFunct.html#af44e8c58a8d5c8b804ec68d7a1d289e5" title=" " alt="" coords="217,158,404,199"/>
-<area shape="rect" href="classMOSTAverage.html#a2908278cc9088e345af422a187eba337" title=" " alt="" coords="220,223,401,265"/>
-<area shape="rect" href="classMOSTAverage.html#a697396705fddae5c919c7e4020cf20b2" title=" " alt="" coords="220,289,401,330"/>
+<area shape="rect" title=" " alt="" coords="461,136,665,163"/>
+<area shape="rect" href="ComputeStrain__T_8cpp.html#ac6a307fd66f18cab5974d8f9487ec352" title=" " alt="" coords="246,5,381,32"/>
+<area shape="rect" href="ComputeStress__T_8cpp.html#ad784118ffdc1e94299030bc77cc1105f" title=" " alt="" coords="216,56,411,83"/>
+<area shape="rect" href="ComputeStress__T_8cpp.html#af000894240c5d767e227b75bb2e5e63f" title=" " alt="" coords="221,107,405,133"/>
+<area shape="rect" href="classERFPhysBCFunct__cons.html#ad56fdfadfae102cf4e7419eaf756cb80" title=" " alt="" coords="213,158,413,199"/>
+<area shape="rect" href="classMOSTAverage.html#a2908278cc9088e345af422a187eba337" title=" " alt="" coords="223,223,404,265"/>
+<area shape="rect" href="classMOSTAverage.html#a697396705fddae5c919c7e4020cf20b2" title=" " alt="" coords="223,289,404,330"/>
 <area shape="rect" href="classERF.html#a9068176f45cea5fdbbbf3c8eb08bd808" title=" " alt="" coords="5,5,165,32"/>
 <area shape="rect" href="ERF__slow__rhs__inc_8cpp.html#a57305daad0d9f549218f4bfd5d877918" title=" " alt="" coords="20,107,151,133"/>
 <area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48" title=" " alt="" coords="19,56,151,83"/>
@@ -1016,19 +1016,19 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> met_h_xi;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0">DiffusionSrcForState_T()</a>, <a class="el" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1">erf_fast_rhs_T()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48">erf_slow_rhs_pre()</a>, <a class="el" href="classERFPhysBCFunct.html#a6ca43d34a9908abbb1c09cdf0fa70917">ERFPhysBCFunct::impose_vertical_xvel_bcs()</a>, and <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0">DiffusionSrcForState_T()</a>, <a class="el" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1">erf_fast_rhs_T()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48">erf_slow_rhs_pre()</a>, <a class="el" href="classERFPhysBCFunct__u.html#afdf8afb39002a2daac0fc16a5db76d17">ERFPhysBCFunct_u::impose_vertical_xvel_bcs()</a>, and <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="TerrainMetrics_8H_a2116df83b61a39fb50b9a2d7474c00d7_icgraph.png" border="0" usemap="#aTerrainMetrics_8H_a2116df83b61a39fb50b9a2d7474c00d7_icgraph" alt=""/></div>
 <map name="aTerrainMetrics_8H_a2116df83b61a39fb50b9a2d7474c00d7_icgraph" id="aTerrainMetrics_8H_a2116df83b61a39fb50b9a2d7474c00d7_icgraph">
-<area shape="rect" title=" " alt="" coords="240,132,408,159"/>
-<area shape="rect" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0" title=" " alt="" coords="14,5,183,32"/>
-<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed" title=" " alt="" coords="35,56,162,83"/>
-<area shape="rect" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1" title=" " alt="" coords="41,107,156,133"/>
-<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48" title=" " alt="" coords="33,157,165,184"/>
-<area shape="rect" href="classERFPhysBCFunct.html#a6ca43d34a9908abbb1c09cdf0fa70917" title=" " alt="" coords="5,209,192,250"/>
-<area shape="rect" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a" title=" " alt="" coords="30,275,167,301"/>
+<area shape="rect" title=" " alt="" coords="256,132,424,159"/>
+<area shape="rect" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0" title=" " alt="" coords="22,5,191,32"/>
+<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed" title=" " alt="" coords="43,56,170,83"/>
+<area shape="rect" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1" title=" " alt="" coords="49,107,164,133"/>
+<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48" title=" " alt="" coords="41,157,173,184"/>
+<area shape="rect" href="classERFPhysBCFunct__u.html#afdf8afb39002a2daac0fc16a5db76d17" title=" " alt="" coords="5,209,208,250"/>
+<area shape="rect" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a" title=" " alt="" coords="38,275,175,301"/>
 </map>
 </div>
 
@@ -1084,14 +1084,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">return</span> met_h_xi;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERFPhysBCFunct.html#a77c31e351dd3e5380ada114c4148edca">ERFPhysBCFunct::impose_vertical_yvel_bcs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERFPhysBCFunct__v.html#a9e295ac17321f4d577f1d103f6b665a2">ERFPhysBCFunct_v::impose_vertical_yvel_bcs()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="TerrainMetrics_8H_a9ec5ec17f16954e56733db6dd98fe07d_icgraph.png" border="0" usemap="#aTerrainMetrics_8H_a9ec5ec17f16954e56733db6dd98fe07d_icgraph" alt=""/></div>
 <map name="aTerrainMetrics_8H_a9ec5ec17f16954e56733db6dd98fe07d_icgraph" id="aTerrainMetrics_8H_a9ec5ec17f16954e56733db6dd98fe07d_icgraph">
-<area shape="rect" title=" " alt="" coords="240,13,408,39"/>
-<area shape="rect" href="classERFPhysBCFunct.html#a77c31e351dd3e5380ada114c4148edca" title=" " alt="" coords="5,5,192,47"/>
+<area shape="rect" title=" " alt="" coords="255,13,423,39"/>
+<area shape="rect" href="classERFPhysBCFunct__v.html#a9e295ac17321f4d577f1d103f6b665a2" title=" " alt="" coords="5,5,207,47"/>
 </map>
 </div>
 
@@ -1211,7 +1211,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> met_h_zeta;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="AdvectionSrcForMom_8cpp.html#ae36cb8456e4d47dfe5a772e91ff69329">AdvectionSrcForMom()</a>, <a class="el" href="AdvectionSrcForMom__T_8H.html#a695ee7d98bd0b3d66423af0295083122">AdvectionSrcForXMom_T()</a>, <a class="el" href="AdvectionSrcForMom__T_8H.html#a6a99518c2692667ff5a6ba9acbaee751">AdvectionSrcForYMom_T()</a>, <a class="el" href="classMOSTAverage.html#aaea0b00766b3cdeefd2b54bade8a86bd">MOSTAverage::compute_region_averages()</a>, <a class="el" href="ComputeStrain__T_8cpp.html#ac6a307fd66f18cab5974d8f9487ec352">ComputeStrain_T()</a>, <a class="el" href="ComputeStress__T_8cpp.html#ad784118ffdc1e94299030bc77cc1105f">ComputeStressConsVisc_T()</a>, <a class="el" href="ComputeStress__T_8cpp.html#af000894240c5d767e227b75bb2e5e63f">ComputeStressVarVisc_T()</a>, <a class="el" href="ComputeTurbulentViscosity_8cpp.html#ab6f1ccaf44801ed9da070dcfc808d326">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ComputeTurbulentViscosity_8cpp.html#af51a779cc7294b769e8c6d37451e9639">ComputeTurbulentViscosityPBL()</a>, <a class="el" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0">DiffusionSrcForState_T()</a>, and <a class="el" href="classERFPhysBCFunct.html#af44e8c58a8d5c8b804ec68d7a1d289e5">ERFPhysBCFunct::impose_vertical_cons_bcs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="AdvectionSrcForMom_8cpp.html#ae36cb8456e4d47dfe5a772e91ff69329">AdvectionSrcForMom()</a>, <a class="el" href="AdvectionSrcForMom__T_8H.html#a695ee7d98bd0b3d66423af0295083122">AdvectionSrcForXMom_T()</a>, <a class="el" href="AdvectionSrcForMom__T_8H.html#a6a99518c2692667ff5a6ba9acbaee751">AdvectionSrcForYMom_T()</a>, <a class="el" href="classMOSTAverage.html#aaea0b00766b3cdeefd2b54bade8a86bd">MOSTAverage::compute_region_averages()</a>, <a class="el" href="ComputeStrain__T_8cpp.html#ac6a307fd66f18cab5974d8f9487ec352">ComputeStrain_T()</a>, <a class="el" href="ComputeStress__T_8cpp.html#ad784118ffdc1e94299030bc77cc1105f">ComputeStressConsVisc_T()</a>, <a class="el" href="ComputeStress__T_8cpp.html#af000894240c5d767e227b75bb2e5e63f">ComputeStressVarVisc_T()</a>, <a class="el" href="ComputeTurbulentViscosity_8cpp.html#ab6f1ccaf44801ed9da070dcfc808d326">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ComputeTurbulentViscosity_8cpp.html#af51a779cc7294b769e8c6d37451e9639">ComputeTurbulentViscosityPBL()</a>, <a class="el" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0">DiffusionSrcForState_T()</a>, and <a class="el" href="classERFPhysBCFunct__cons.html#ad56fdfadfae102cf4e7419eaf756cb80">ERFPhysBCFunct_cons::impose_vertical_cons_bcs()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1228,7 +1228,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#ab6f1ccaf44801ed9da070dcfc808d326" title=" " alt="" coords="493,275,715,301"/>
 <area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#af51a779cc7294b769e8c6d37451e9639" title=" " alt="" coords="492,224,716,251"/>
 <area shape="rect" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0" title=" " alt="" coords="519,477,689,504"/>
-<area shape="rect" href="classERFPhysBCFunct.html#af44e8c58a8d5c8b804ec68d7a1d289e5" title=" " alt="" coords="511,529,697,570"/>
+<area shape="rect" href="classERFPhysBCFunct__cons.html#ad56fdfadfae102cf4e7419eaf756cb80" title=" " alt="" coords="504,529,704,570"/>
 <area shape="rect" href="AdvectionSrcForMom__T_8H.html#af96be5f3b54fd94018639d3e4f5df056" title=" " alt="" coords="213,81,444,108"/>
 <area shape="rect" href="classMOSTAverage.html#a7a28005871bb8abb49f44c3976133a4f" title=" " alt="" coords="240,158,417,199"/>
 <area shape="rect" href="classERF.html#a9068176f45cea5fdbbbf3c8eb08bd808" title=" " alt="" coords="5,300,165,327"/>
@@ -1503,21 +1503,21 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> met_h_zeta;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="AdvectionSrcForState_8cpp.html#a2e5597831ca712b5f432347a8bf60484">AdvectionSrcForRho()</a>, <a class="el" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0">DiffusionSrcForState_T()</a>, <a class="el" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1">erf_fast_rhs_T()</a>, <a class="el" href="ERF__slow__rhs__inc_8cpp.html#a57305daad0d9f549218f4bfd5d877918">erf_slow_rhs_inc()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48">erf_slow_rhs_pre()</a>, <a class="el" href="classERFPhysBCFunct.html#a6ca43d34a9908abbb1c09cdf0fa70917">ERFPhysBCFunct::impose_vertical_xvel_bcs()</a>, and <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="AdvectionSrcForState_8cpp.html#a2e5597831ca712b5f432347a8bf60484">AdvectionSrcForRho()</a>, <a class="el" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0">DiffusionSrcForState_T()</a>, <a class="el" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1">erf_fast_rhs_T()</a>, <a class="el" href="ERF__slow__rhs__inc_8cpp.html#a57305daad0d9f549218f4bfd5d877918">erf_slow_rhs_inc()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48">erf_slow_rhs_pre()</a>, <a class="el" href="classERFPhysBCFunct__u.html#afdf8afb39002a2daac0fc16a5db76d17">ERFPhysBCFunct_u::impose_vertical_xvel_bcs()</a>, and <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="TerrainMetrics_8H_a8d96671d41364f1e24391375a2bc0f1e_icgraph.png" border="0" usemap="#aTerrainMetrics_8H_a8d96671d41364f1e24391375a2bc0f1e_icgraph" alt=""/></div>
 <map name="aTerrainMetrics_8H_a8d96671d41364f1e24391375a2bc0f1e_icgraph" id="aTerrainMetrics_8H_a8d96671d41364f1e24391375a2bc0f1e_icgraph">
-<area shape="rect" title=" " alt="" coords="240,183,424,209"/>
-<area shape="rect" href="AdvectionSrcForState_8cpp.html#a2e5597831ca712b5f432347a8bf60484" title=" " alt="" coords="23,5,175,32"/>
-<area shape="rect" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0" title=" " alt="" coords="14,56,183,83"/>
-<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed" title=" " alt="" coords="35,107,162,133"/>
-<area shape="rect" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1" title=" " alt="" coords="41,157,156,184"/>
-<area shape="rect" href="ERF__slow__rhs__inc_8cpp.html#a57305daad0d9f549218f4bfd5d877918" title=" " alt="" coords="33,208,164,235"/>
-<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48" title=" " alt="" coords="33,259,165,285"/>
-<area shape="rect" href="classERFPhysBCFunct.html#a6ca43d34a9908abbb1c09cdf0fa70917" title=" " alt="" coords="5,310,192,351"/>
-<area shape="rect" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a" title=" " alt="" coords="30,376,167,403"/>
+<area shape="rect" title=" " alt="" coords="256,183,440,209"/>
+<area shape="rect" href="AdvectionSrcForState_8cpp.html#a2e5597831ca712b5f432347a8bf60484" title=" " alt="" coords="31,5,183,32"/>
+<area shape="rect" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0" title=" " alt="" coords="22,56,191,83"/>
+<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed" title=" " alt="" coords="43,107,170,133"/>
+<area shape="rect" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1" title=" " alt="" coords="49,157,164,184"/>
+<area shape="rect" href="ERF__slow__rhs__inc_8cpp.html#a57305daad0d9f549218f4bfd5d877918" title=" " alt="" coords="41,208,172,235"/>
+<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48" title=" " alt="" coords="41,259,173,285"/>
+<area shape="rect" href="classERFPhysBCFunct__u.html#afdf8afb39002a2daac0fc16a5db76d17" title=" " alt="" coords="5,310,208,351"/>
+<area shape="rect" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a" title=" " alt="" coords="38,376,175,403"/>
 </map>
 </div>
 
@@ -1573,21 +1573,21 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> met_h_zeta;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="AdvectionSrcForState_8cpp.html#a2e5597831ca712b5f432347a8bf60484">AdvectionSrcForRho()</a>, <a class="el" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0">DiffusionSrcForState_T()</a>, <a class="el" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1">erf_fast_rhs_T()</a>, <a class="el" href="ERF__slow__rhs__inc_8cpp.html#a57305daad0d9f549218f4bfd5d877918">erf_slow_rhs_inc()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48">erf_slow_rhs_pre()</a>, <a class="el" href="classERFPhysBCFunct.html#a77c31e351dd3e5380ada114c4148edca">ERFPhysBCFunct::impose_vertical_yvel_bcs()</a>, and <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="AdvectionSrcForState_8cpp.html#a2e5597831ca712b5f432347a8bf60484">AdvectionSrcForRho()</a>, <a class="el" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0">DiffusionSrcForState_T()</a>, <a class="el" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1">erf_fast_rhs_T()</a>, <a class="el" href="ERF__slow__rhs__inc_8cpp.html#a57305daad0d9f549218f4bfd5d877918">erf_slow_rhs_inc()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48">erf_slow_rhs_pre()</a>, <a class="el" href="classERFPhysBCFunct__v.html#a9e295ac17321f4d577f1d103f6b665a2">ERFPhysBCFunct_v::impose_vertical_yvel_bcs()</a>, and <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="TerrainMetrics_8H_ada12bcb6beb3fa0d00dbdacb37f3c60f_icgraph.png" border="0" usemap="#aTerrainMetrics_8H_ada12bcb6beb3fa0d00dbdacb37f3c60f_icgraph" alt=""/></div>
 <map name="aTerrainMetrics_8H_ada12bcb6beb3fa0d00dbdacb37f3c60f_icgraph" id="aTerrainMetrics_8H_ada12bcb6beb3fa0d00dbdacb37f3c60f_icgraph">
-<area shape="rect" title=" " alt="" coords="240,183,424,209"/>
-<area shape="rect" href="AdvectionSrcForState_8cpp.html#a2e5597831ca712b5f432347a8bf60484" title=" " alt="" coords="23,5,175,32"/>
-<area shape="rect" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0" title=" " alt="" coords="14,56,183,83"/>
-<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed" title=" " alt="" coords="35,107,162,133"/>
-<area shape="rect" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1" title=" " alt="" coords="41,157,156,184"/>
-<area shape="rect" href="ERF__slow__rhs__inc_8cpp.html#a57305daad0d9f549218f4bfd5d877918" title=" " alt="" coords="33,208,164,235"/>
-<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48" title=" " alt="" coords="33,259,165,285"/>
-<area shape="rect" href="classERFPhysBCFunct.html#a77c31e351dd3e5380ada114c4148edca" title=" " alt="" coords="5,310,192,351"/>
-<area shape="rect" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a" title=" " alt="" coords="30,376,167,403"/>
+<area shape="rect" title=" " alt="" coords="255,183,439,209"/>
+<area shape="rect" href="AdvectionSrcForState_8cpp.html#a2e5597831ca712b5f432347a8bf60484" title=" " alt="" coords="30,5,182,32"/>
+<area shape="rect" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0" title=" " alt="" coords="21,56,191,83"/>
+<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed" title=" " alt="" coords="43,107,169,133"/>
+<area shape="rect" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1" title=" " alt="" coords="49,157,163,184"/>
+<area shape="rect" href="ERF__slow__rhs__inc_8cpp.html#a57305daad0d9f549218f4bfd5d877918" title=" " alt="" coords="41,208,171,235"/>
+<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html#a55891a17ba442aa7c0c9925a3baa7d48" title=" " alt="" coords="40,259,172,285"/>
+<area shape="rect" href="classERFPhysBCFunct__v.html#a9e295ac17321f4d577f1d103f6b665a2" title=" " alt="" coords="5,310,207,351"/>
+<area shape="rect" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a" title=" " alt="" coords="37,376,175,403"/>
 </map>
 </div>
 
@@ -1724,8 +1724,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a255f4f591cbd8301d69c4c0f5499589a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a255f4f591cbd8301d69c4c0f5499589a">&#9670;&nbsp;</a></span>init_terrain_grid()</h2>
+<a id="a27eaf03ca6d8c246f95f6b38ba7e9ccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27eaf03ca6d8c246f95f6b38ba7e9ccb">&#9670;&nbsp;</a></span>init_terrain_grid()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1733,6 +1733,12 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void init_terrain_grid </td>
           <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
           <td class="paramname"><em>geom</em>, </td>
         </tr>
@@ -1983,18 +1989,18 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  <span class="keywordflow">return</span> w;</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1">erf_fast_rhs_T()</a>, <a class="el" href="classERFPhysBCFunct.html#a5724f0889c6d7d5d615289a7d66e9ebd">ERFPhysBCFunct::impose_lateral_zvel_bcs()</a>, <a class="el" href="classERFPhysBCFunct.html#a5c3a04621a15053368cefcf242c71538">ERFPhysBCFunct::impose_vertical_zvel_bcs()</a>, and <a class="el" href="TerrainMetrics_8H.html#afcf8f856b0f93b149c115ca1ff240039">WFromOmega()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1">erf_fast_rhs_T()</a>, <a class="el" href="classERFPhysBCFunct__w.html#a937e050d4ebcd36c0b8a2ba2b73189e5">ERFPhysBCFunct_w::impose_lateral_zvel_bcs()</a>, <a class="el" href="classERFPhysBCFunct__w.html#a9225c49cf092c6eed2bf9bdf1ef4b9cf">ERFPhysBCFunct_w::impose_vertical_zvel_bcs()</a>, and <a class="el" href="TerrainMetrics_8H.html#afcf8f856b0f93b149c115ca1ff240039">WFromOmega()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="TerrainMetrics_8H_a53ec395d493c2308315f7512c5438087_icgraph.png" border="0" usemap="#aTerrainMetrics_8H_a53ec395d493c2308315f7512c5438087_icgraph" alt=""/></div>
 <map name="aTerrainMetrics_8H_a53ec395d493c2308315f7512c5438087_icgraph" id="aTerrainMetrics_8H_a53ec395d493c2308315f7512c5438087_icgraph">
-<area shape="rect" title=" " alt="" coords="240,115,355,141"/>
-<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed" title=" " alt="" coords="35,5,162,32"/>
-<area shape="rect" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1" title=" " alt="" coords="41,56,156,83"/>
-<area shape="rect" href="classERFPhysBCFunct.html#a5724f0889c6d7d5d615289a7d66e9ebd" title=" " alt="" coords="5,107,192,149"/>
-<area shape="rect" href="classERFPhysBCFunct.html#a5c3a04621a15053368cefcf242c71538" title=" " alt="" coords="5,173,192,214"/>
-<area shape="rect" href="TerrainMetrics_8H.html#afcf8f856b0f93b149c115ca1ff240039" title=" " alt="" coords="41,239,156,265"/>
+<area shape="rect" title=" " alt="" coords="257,115,372,141"/>
+<area shape="rect" href="ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed" title=" " alt="" coords="44,5,171,32"/>
+<area shape="rect" href="ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1" title=" " alt="" coords="50,56,165,83"/>
+<area shape="rect" href="classERFPhysBCFunct__w.html#a937e050d4ebcd36c0b8a2ba2b73189e5" title=" " alt="" coords="5,107,209,149"/>
+<area shape="rect" href="classERFPhysBCFunct__w.html#a9225c49cf092c6eed2bf9bdf1ef4b9cf" title=" " alt="" coords="5,173,209,214"/>
+<area shape="rect" href="TerrainMetrics_8H.html#afcf8f856b0f93b149c115ca1ff240039" title=" " alt="" coords="50,239,165,265"/>
 </map>
 </div>
 
