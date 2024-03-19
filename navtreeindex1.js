@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"ERF__Constants_8H.html#acecae1da25fb8c8d32d1f175e18df41f":[3,0,1,20,16],
-"ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e":[3,0,1,20,48],
 "ERF__Constants_8H.html#ad6e28022b74cd595f282e2cc97c2c0d8":[3,0,1,20,58],
 "ERF__Constants_8H.html#adf319f31edb7d4f2b4b712096189734b":[3,0,1,20,4],
 "ERF__Constants_8H.html#ae56996ced8497f129d813e2f9c94786e":[3,0,1,20,44],
@@ -96,7 +94,7 @@ var NAVTREEINDEX1 =
 "HSE__utils_8H.html#aace33d14958f235a111e6cead400a61e":[3,0,1,23,3],
 "HSE__utils_8H.html#ab38b424f8934564898ddc0e0ee852b07":[3,0,1,23,1],
 "HSE__utils_8H_source.html":[3,0,1,23],
-"IceFall_8cpp.html":[3,0,1,7,2,2],
+"IceFall_8cpp.html":[3,0,1,7,2,1],
 "IndexDefines_8H.html":[3,0,1,24],
 "IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f":[3,0,1,24,21],
 "IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29":[3,0,1,24,3],
@@ -154,8 +152,8 @@ var NAVTREEINDEX1 =
 "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9ae6ffdec5e14fce371eb7ae99edebbbee":[3,0,1,24,24,5],
 "IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64":[3,0,1,24,13],
 "IndexDefines_8H_source.html":[3,0,1,24],
-"Init__Kessler_8cpp.html":[3,0,1,7,0,1],
-"Init__SAM_8cpp.html":[3,0,1,7,2,3],
+"Init__Kessler_8cpp.html":[3,0,1,7,0,0],
+"Init__SAM_8cpp.html":[3,0,1,7,2,2],
 "Init__rrtmgp_8cpp.html":[3,0,1,11,8],
 "InputSoundingData_8H.html":[3,0,1,4,8],
 "InputSoundingData_8H_source.html":[3,0,1,4,8],
@@ -181,9 +179,9 @@ var NAVTREEINDEX1 =
 "Interpolation__WENO_8H_source.html":[3,0,1,13,6],
 "Interpolation__WENO__Z_8H.html":[3,0,1,13,7],
 "Interpolation__WENO__Z_8H_source.html":[3,0,1,13,7],
-"Kessler_8H.html":[3,0,1,7,0,3],
-"Kessler_8H_source.html":[3,0,1,7,0,3],
-"Kessler_8cpp.html":[3,0,1,7,0,2],
+"Kessler_8H.html":[3,0,1,7,0,2],
+"Kessler_8H_source.html":[3,0,1,7,0,2],
+"Kessler_8cpp.html":[3,0,1,7,0,1],
 "LagrangianMicrophysics_8H.html":[3,0,1,7,4],
 "LagrangianMicrophysics_8H_source.html":[3,0,1,7,4],
 "LandSurface_8H.html":[3,0,1,6,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX1 =
 "NCPlotFile_8cpp.html":[3,0,1,5,14],
 "NCWpsFile_8H.html":[3,0,1,5,16],
 "NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06":[3,0,1,5,16,2],
-"NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a1bfaf1bd09d922faf1b4bb0ffb3a6ec3":[3,0,1,5,16,2,7]
+"NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a1bfaf1bd09d922faf1b4bb0ffb3a6ec3":[3,0,1,5,16,2,7],
+"NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a2f43039d16fd9942908dc0b55b462b18":[3,0,1,5,16,2,4],
+"NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a539ca443eab3c322b2b37046e896dc62":[3,0,1,5,16,2,2]
 };

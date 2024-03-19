@@ -135,8 +135,6 @@ var NAVTREEINDEX0 =
 "Derive_8cpp.html#ad3b06be920cca917ee17183db46d77ba":[3,0,1,15,2],
 "Derive_8cpp.html#adc3c787125484205e4fc7cd85c25ab6c":[3,0,1,15,7],
 "Derive_8cpp.html#afe57e0f13e2e24c73d0ed373a9cd0d09":[3,0,1,15,5],
-"Diagnose__Kessler_8cpp.html":[3,0,1,7,0,0],
-"Diagnose__SAM_8cpp.html":[3,0,1,7,2,1],
 "DiffStruct_8H.html":[3,0,1,2,2],
 "DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735":[3,0,1,2,2,1],
 "DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6adf97f83acf6453d4a6a4b1070f3754":[3,0,1,2,2,1,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX0 =
 "ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8":[3,0,1,20,62],
 "ERF__Constants_8H.html#ac0e05183a58d4400f06346d18371218f":[3,0,1,20,59],
 "ERF__Constants_8H.html#ac16a7511bec41b7d5a558b5841e8f3b1":[3,0,1,20,25],
-"ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43":[3,0,1,20,14]
+"ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43":[3,0,1,20,14],
+"ERF__Constants_8H.html#acecae1da25fb8c8d32d1f175e18df41f":[3,0,1,20,16],
+"ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e":[3,0,1,20,48]
 };

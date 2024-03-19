@@ -1,7 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a2f43039d16fd9942908dc0b55b462b18":[3,0,1,5,16,2,4],
-"NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a539ca443eab3c322b2b37046e896dc62":[3,0,1,5,16,2,2],
 "NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a5f93bace93896872075eae75770cadc4":[3,0,1,5,16,2,1],
 "NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a7d998330c55b56c1e46c449b2e39e89f":[3,0,1,5,16,2,6],
 "NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aa3968158227ea04595d4003503cca22b":[3,0,1,5,16,2,0],
@@ -50,8 +48,8 @@ var NAVTREEINDEX2 =
 "PlaneAverage_8H_source.html":[3,0,1,13,11],
 "Plotfile_8cpp.html":[3,0,1,5,17],
 "Plotfile_8cpp.html#a1f8554e7b211b0acfc202e8a600e7d67":[3,0,1,5,17,0],
-"PrecipFall_8cpp.html":[3,0,1,7,2,5],
-"Precip_8cpp.html":[3,0,1,7,2,4],
+"PrecipFall_8cpp.html":[3,0,1,7,2,4],
+"Precip_8cpp.html":[3,0,1,7,2,3],
 "Rad__constants_8H.html":[3,0,1,11,18],
 "Rad__constants_8H_source.html":[3,0,1,11,18],
 "Radiation_8H.html":[3,0,1,11,20],
@@ -67,8 +65,8 @@ var NAVTREEINDEX2 =
 "Rrtmgp_8H_source.html":[3,0,1,11,21],
 "Run__longwave__rrtmgp_8cpp.html":[3,0,1,11,22],
 "Run__shortwave__rrtmgp_8cpp.html":[3,0,1,11,23],
-"SAM_8H.html":[3,0,1,7,2,6],
-"SAM_8H_source.html":[3,0,1,7,2,6],
+"SAM_8H.html":[3,0,1,7,2,5],
+"SAM_8H_source.html":[3,0,1,7,2,5],
 "SLM_8H.html":[3,0,1,6,2,1],
 "SLM_8H_source.html":[3,0,1,6,2,1],
 "SLM_8cpp.html":[3,0,1,6,2,0],
@@ -153,8 +151,8 @@ var NAVTREEINDEX2 =
 "TurbStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500a6adf97f83acf6453d4a6a4b1070f3754":[3,0,1,2,4,1,0],
 "TurbStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf":[3,0,1,2,4,1,2],
 "TurbStruct_8H_source.html":[3,0,1,2,4],
-"Update__Kessler_8cpp.html":[3,0,1,7,0,4],
-"Update__SAM_8cpp.html":[3,0,1,7,2,7],
+"Update__Kessler_8cpp.html":[3,0,1,7,0,3],
+"Update__SAM_8cpp.html":[3,0,1,7,2,6],
 "Utils_8H.html":[3,0,1,13,16],
 "Utils_8H.html#a24bd17e30cc54cbd189ac72bddd17a99":[3,0,1,13,16,6],
 "Utils_8H.html#a26382a1781acfcd6b4740685db28d6b2":[3,0,1,13,16,4],
@@ -249,5 +247,7 @@ var NAVTREEINDEX2 =
 "classAerRadProps.html#ab56e110ccf8deaa71d452a64e69b8647":[2,0,6,26],
 "classAerRadProps.html#ac82b4bf91bb3a23e33074e00381388e3":[2,0,6,31],
 "classAerRadProps.html#acf87aa0fdbfa3b73924a1f7c56088e55":[2,0,6,13],
-"classAerRadProps.html#aded12109795a3f22556faecdd3fb3d03":[2,0,6,23]
+"classAerRadProps.html#aded12109795a3f22556faecdd3fb3d03":[2,0,6,23],
+"classAerRadProps.html#ae0eb6fbcd6b30a8e4538b8db3944d1e0":[2,0,6,0],
+"classAerRadProps.html#ae41f31dfce03d5b3952114e12436bec9":[2,0,6,18]
 };

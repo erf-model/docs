@@ -120,16 +120,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a75e2d77cb28efa62759818d066b53bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab112947c592c330b45a2d7e5529ec07"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#aab112947c592c330b45a2d7e5529ec07">Define</a> (<a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;)</td></tr>
 <tr class="separator:aab112947c592c330b45a2d7e5529ec07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09b68ec4789030267ce6dccc0af195d9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a09b68ec4789030267ce6dccc0af195d9">Init</a> (const amrex::MultiFab &amp;, const amrex::BoxArray &amp;, const amrex::Geometry &amp;, const amrex::Real &amp;)</td></tr>
-<tr class="separator:a09b68ec4789030267ce6dccc0af195d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f526044328db858069e4b6a70fdbdf7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a6f526044328db858069e4b6a70fdbdf7">Init</a> (const amrex::MultiFab &amp;, const amrex::BoxArray &amp;, const amrex::Geometry &amp;, const amrex::Real &amp;, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;)</td></tr>
+<tr class="separator:a6f526044328db858069e4b6a70fdbdf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2f97dcd622bc4ef212421d496ee2297"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#aa2f97dcd622bc4ef212421d496ee2297">Advance</a> (const amrex::Real &amp;, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;)</td></tr>
 <tr class="separator:aa2f97dcd622bc4ef212421d496ee2297"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aece7a50f16bf40e3e9d536cc030458f7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#aece7a50f16bf40e3e9d536cc030458f7">Update_Micro_Vars</a> (amrex::MultiFab &amp;)</td></tr>
 <tr class="separator:aece7a50f16bf40e3e9d536cc030458f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24f0528f7d31b89f36a3c225c7e53010"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a24f0528f7d31b89f36a3c225c7e53010">Update_State_Vars</a> (amrex::MultiFab &amp;)</td></tr>
 <tr class="separator:a24f0528f7d31b89f36a3c225c7e53010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d380b4f76e92ee946649c2a93ab8e20"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a7d380b4f76e92ee946649c2a93ab8e20">Diagnose</a> ()</td></tr>
-<tr class="separator:a7d380b4f76e92ee946649c2a93ab8e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacb06ee696c6870e899d1bc26aa9933e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#aacb06ee696c6870e899d1bc26aa9933e">Copy_State_to_Micro</a> (const amrex::MultiFab &amp;)</td></tr>
 <tr class="separator:aacb06ee696c6870e899d1bc26aa9933e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11a25944d4ddb955f74e355838b9d8b0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a11a25944d4ddb955f74e355838b9d8b0">Copy_Micro_to_State</a> (amrex::MultiFab &amp;)</td></tr>
@@ -236,7 +234,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classKessler.html#adbfb72df664abc2f02fede6b91b066b6">Kessler</a>, and <a class="el" href="classSAM.html#a575f86c6a302c831ce3d9256c63c5519">SAM</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                    { }</div>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                    { }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -265,7 +263,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#a007ed40ac7278996d257b4c0ab6c1320">SAM</a>, and <a class="el" href="classKessler.html#a747a85d4c8004b299ca49dcb1f221c7c">Kessler</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -294,7 +292,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#a1df931f91be89514c09f69f24cfeca53">SAM</a>, and <a class="el" href="classKessler.html#a18f83fc4dff53c8c29ee9ee974e65ac2">Kessler</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -327,36 +325,8 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a7d380b4f76e92ee946649c2a93ab8e20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d380b4f76e92ee946649c2a93ab8e20">&#9670;&nbsp;</a></span>Diagnose()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void NullMoist::Diagnose </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="classSAM.html#ac44e447994022361e74cf7c00a756605">SAM</a>, and <a class="el" href="classKessler.html#a18ff380f181cf61b1142be32cb79d093">Kessler</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{ }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a09b68ec4789030267ce6dccc0af195d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09b68ec4789030267ce6dccc0af195d9">&#9670;&nbsp;</a></span>Init()</h2>
+<a id="a6f526044328db858069e4b6a70fdbdf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f526044328db858069e4b6a70fdbdf7">&#9670;&nbsp;</a></span>Init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -386,6 +356,18 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -401,8 +383,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classSAM.html#aab6ecbd188dbcf29728dd62f20903fce">SAM</a>, and <a class="el" href="classKessler.html#a19e5ef36b710864ed6357d6253ea8ab6">Kessler</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                   { }</div>
+<p>Reimplemented in <a class="el" href="classSAM.html#a927f4531f9c2452e5b7fc7ab965c5b78">SAM</a>, and <a class="el" href="classKessler.html#ab1eaffdd038f2eda89f44f150036a405">Kessler</a>.</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                                { }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -431,7 +413,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#af6652cb6f7b93a1e418da98b5a8b57b7">SAM</a>, and <a class="el" href="classKessler.html#a0a84c629a080e71ed93a5f349ad7724a">Kessler</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -459,8 +441,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#ae27c1d50525a70f838fa9ba73e61ef46">SAM</a>, and <a class="el" href="classKessler.html#a3925ff722ac968e306dbcc233718030a">Kessler</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullMoist.html#a645f66b91b08d84aa7451a9da0c11a72">NullMoist::m_qmoist_size</a>; }</div>
-<div class="ttc" id="aclassNullMoist_html_a645f66b91b08d84aa7451a9da0c11a72"><div class="ttname"><a href="classNullMoist.html#a645f66b91b08d84aa7451a9da0c11a72">NullMoist::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> NullMoist.H:63</div></div>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullMoist.html#a645f66b91b08d84aa7451a9da0c11a72">NullMoist::m_qmoist_size</a>; }</div>
+<div class="ttc" id="aclassNullMoist_html_a645f66b91b08d84aa7451a9da0c11a72"><div class="ttname"><a href="classNullMoist.html#a645f66b91b08d84aa7451a9da0c11a72">NullMoist::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> NullMoist.H:61</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -488,8 +470,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#aba750ad815594f21255d26d24810d3fe">SAM</a>, and <a class="el" href="classKessler.html#a25a6c3f8cda023e5ea70f1ddd983626c">Kessler</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullMoist.html#a3cb016aa9c0f1ee7534ad678723d1c59">NullMoist::m_qstate_size</a>; }</div>
-<div class="ttc" id="aclassNullMoist_html_a3cb016aa9c0f1ee7534ad678723d1c59"><div class="ttname"><a href="classNullMoist.html#a3cb016aa9c0f1ee7534ad678723d1c59">NullMoist::m_qstate_size</a></div><div class="ttdeci">int m_qstate_size</div><div class="ttdef"><b>Definition:</b> NullMoist.H:64</div></div>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullMoist.html#a3cb016aa9c0f1ee7534ad678723d1c59">NullMoist::m_qstate_size</a>; }</div>
+<div class="ttc" id="aclassNullMoist_html_a3cb016aa9c0f1ee7534ad678723d1c59"><div class="ttname"><a href="classNullMoist.html#a3cb016aa9c0f1ee7534ad678723d1c59">NullMoist::m_qstate_size</a></div><div class="ttdeci">int m_qstate_size</div><div class="ttdef"><b>Definition:</b> NullMoist.H:62</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -518,7 +500,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#a2e6ff95cf827306bbcf3661c954a692e">SAM</a>, and <a class="el" href="classKessler.html#a05b9426e9fd6af90ea40aa77ed0cbe66">Kessler</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -547,7 +529,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classSAM.html#aea5fdd520cbb1bc936a0f11d55400029">SAM</a>, and <a class="el" href="classKessler.html#add7ed88ab0086ee53aa15e87cc8686ef">Kessler</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
