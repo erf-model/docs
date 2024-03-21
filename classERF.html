@@ -1222,8 +1222,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#if defined(ERF_USE_WINDFARM)</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// Update with the Fitch source terms</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">windfarm_type</a> == <a class="code" href="DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a2b00d051a8acd949c63ac94efa793efe">WindFarmType::Fitch</a>) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="AdvanceFitch_8cpp.html#ad97355595cc7b033548c7b30513e2760">fitch_advance</a>(lev, Geom(lev), dt_lev, S_old,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                      U_old, V_old, W_old, <a class="code" href="classERF.html#a47c13e4cf7d4bd9b7b2be81886619fd9">vars_fitch</a>[lev]);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="AdvanceFitch_8cpp.html#a2a736a47fa4a390fa9082c98c0eb0c96">fitch_advance</a>(lev, Geom(lev), dt_lev, S_old,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                      U_old, V_old, W_old, <a class="code" href="classERF.html#a47c13e4cf7d4bd9b7b2be81886619fd9">vars_fitch</a>[lev], <a class="code" href="classERF.html#a8e6f53a430ed3842f51fd569b908fa28">Nturb</a>[lev]);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
@@ -1328,7 +1328,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        }</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
-<div class="ttc" id="aAdvanceFitch_8cpp_html_ad97355595cc7b033548c7b30513e2760"><div class="ttname"><a href="AdvanceFitch_8cpp.html#ad97355595cc7b033548c7b30513e2760">fitch_advance</a></div><div class="ttdeci">void fitch_advance(int lev, const Geometry &amp;geom, const Real &amp;dt_advance, MultiFab &amp;cons_in, MultiFab &amp;U_old, MultiFab &amp;V_old, MultiFab &amp;W_old, MultiFab &amp;mf_vars_fitch)</div><div class="ttdef"><b>Definition:</b> AdvanceFitch.cpp:40</div></div>
+<div class="ttc" id="aAdvanceFitch_8cpp_html_a2a736a47fa4a390fa9082c98c0eb0c96"><div class="ttname"><a href="AdvanceFitch_8cpp.html#a2a736a47fa4a390fa9082c98c0eb0c96">fitch_advance</a></div><div class="ttdeci">void fitch_advance(int lev, const Geometry &amp;geom, const Real &amp;dt_advance, MultiFab &amp;cons_in, MultiFab &amp;U_old, MultiFab &amp;V_old, MultiFab &amp;W_old, MultiFab &amp;mf_vars_fitch, const amrex::MultiFab &amp;mf_Nturb)</div><div class="ttdef"><b>Definition:</b> AdvanceFitch.cpp:40</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39"><div class="ttname"><a href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a></div><div class="ttdeci">@ nvars</div><div class="ttdef"><b>Definition:</b> DataStruct.H:52</div></div>
 <div class="ttc" id="aDataStruct_8H_html_ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754">MoistureType::None</a></div><div class="ttdeci">@ None</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
@@ -1363,8 +1363,8 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classERF_a47413fe5588f7dd71a1d5087a9e804f9_cgraph.png" border="0" usemap="#aclassERF_a47413fe5588f7dd71a1d5087a9e804f9_cgraph" alt=""/></div>
 <map name="aclassERF_a47413fe5588f7dd71a1d5087a9e804f9_cgraph" id="aclassERF_a47413fe5588f7dd71a1d5087a9e804f9_cgraph">
 <area shape="rect" title=" " alt="" coords="5,42,116,69"/>
-<area shape="rect" href="AdvanceFitch_8cpp.html#ad97355595cc7b033548c7b30513e2760" title=" " alt="" coords="164,42,276,69"/>
-<area shape="rect" href="AdvanceFitch_8cpp.html#a471f7bd67ab4c260fed4a09c984a54ed" title=" " alt="" coords="324,5,469,47"/>
+<area shape="rect" href="AdvanceFitch_8cpp.html#a2a736a47fa4a390fa9082c98c0eb0c96" title=" " alt="" coords="164,42,276,69"/>
+<area shape="rect" href="AdvanceFitch_8cpp.html#a57cb33df91a6f292be17c93d461f5772" title=" " alt="" coords="324,5,469,47"/>
 <area shape="rect" href="AdvanceFitch_8cpp.html#aa3d620903fe9c72b3d91efbd15990624" title=" " alt="" coords="345,71,448,98"/>
 <area shape="rect" href="AdvanceFitch_8cpp.html#ad6dacb1871f0220ea196b85482548fdb" title=" " alt="" coords="517,13,628,39"/>
 <area shape="rect" href="AdvanceFitch_8cpp.html#ad9c41fe197e66da6d9e2226544131c14" title=" " alt="" coords="676,13,771,39"/>
@@ -6311,7 +6311,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">windfarm_type</a> == <a class="code" href="DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a2b00d051a8acd949c63ac94efa793efe">WindFarmType::Fitch</a>){</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        <span class="keywordtype">int</span> ngrow_state = <a class="code" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ComputeGhostCells</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aaadbd092e9e176b7f088c7992c866c6e">advChoice</a>, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28">use_NumDiff</a>) + 1;</div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        <a class="code" href="classERF.html#a47c13e4cf7d4bd9b7b2be81886619fd9">vars_fitch</a>[lev].define(ba, dm, 5, ngrow_state); <span class="comment">// V, dVabsdt, dudt, dvdt, dTKEdt</span></div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        <a class="code" href="classERF.html#a8e6f53a430ed3842f51fd569b908fa28">Nturb</a>[lev].define(ba, dm, 1, 0); <span class="comment">// Number of turbines in a cell</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        <a class="code" href="classERF.html#a8e6f53a430ed3842f51fd569b908fa28">Nturb</a>[lev].define(ba, dm, 1, ngrow_state); <span class="comment">// Number of turbines in a cell</span></div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    }</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;}</div>

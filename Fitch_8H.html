@@ -114,16 +114,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa6c598e372a5ee6230621d5de1d7d278"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Fitch_8H.html#aa6c598e372a5ee6230621d5de1d7d278">fitch_advance</a> (int lev, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, amrex::MultiFab &amp;W_old, amrex::MultiFab &amp;mf_vars_fitch)</td></tr>
-<tr class="separator:aa6c598e372a5ee6230621d5de1d7d278"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91e4c959cc35ffd02c2b3faffcdce0a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Fitch_8H.html#a91e4c959cc35ffd02c2b3faffcdce0a3">fitch_source_terms_cellcentered</a> (const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;W_old, amrex::MultiFab &amp;mf_vars_fitch)</td></tr>
-<tr class="separator:a91e4c959cc35ffd02c2b3faffcdce0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc2c7ccce34400779a6d5a85f38e3c98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Fitch_8H.html#adc2c7ccce34400779a6d5a85f38e3c98">fitch_advance</a> (int lev, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, amrex::MultiFab &amp;W_old, amrex::MultiFab &amp;mf_vars_fitch, const amrex::MultiFab &amp;mf_Nturb)</td></tr>
+<tr class="separator:adc2c7ccce34400779a6d5a85f38e3c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270185a0c7c8002d21924f9308a12613"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Fitch_8H.html#a270185a0c7c8002d21924f9308a12613">fitch_source_terms_cellcentered</a> (const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;W_old, amrex::MultiFab &amp;mf_vars_fitch, const amrex::MultiFab &amp;mf_Nturb)</td></tr>
+<tr class="separator:a270185a0c7c8002d21924f9308a12613"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac64bf0c20baf5bae35fbfa842b8b17cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Fitch_8H.html#ac64bf0c20baf5bae35fbfa842b8b17cf">fitch_update</a> (const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_vars_fitch)</td></tr>
 <tr class="separator:ac64bf0c20baf5bae35fbfa842b8b17cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aa6c598e372a5ee6230621d5de1d7d278"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6c598e372a5ee6230621d5de1d7d278">&#9670;&nbsp;</a></span>fitch_advance()</h2>
+<a id="adc2c7ccce34400779a6d5a85f38e3c98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc2c7ccce34400779a6d5a85f38e3c98">&#9670;&nbsp;</a></span>fitch_advance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +174,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>mf_vars_fitch</em>&#160;</td>
+          <td class="paramname"><em>mf_vars_fitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>mf_Nturb</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -186,8 +192,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a91e4c959cc35ffd02c2b3faffcdce0a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91e4c959cc35ffd02c2b3faffcdce0a3">&#9670;&nbsp;</a></span>fitch_source_terms_cellcentered()</h2>
+<a id="a270185a0c7c8002d21924f9308a12613"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a270185a0c7c8002d21924f9308a12613">&#9670;&nbsp;</a></span>fitch_source_terms_cellcentered()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,7 +232,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>mf_vars_fitch</em>&#160;</td>
+          <td class="paramname"><em>mf_vars_fitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>mf_Nturb</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
