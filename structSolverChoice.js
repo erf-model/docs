@@ -14,6 +14,7 @@ var structSolverChoice =
     [ "cosphi", "structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f", null ],
     [ "coupling_type", "structSolverChoice.html#af976afa61859c07e6249963edc367c2d", null ],
     [ "custom_forcing_prim_vars", "structSolverChoice.html#aae4f377d36d01b85a1f322c45009ac75", null ],
+    [ "custom_geostrophic_profile", "structSolverChoice.html#a5e8754b29072596a584633734a9f64ef", null ],
     [ "custom_moisture_forcing", "structSolverChoice.html#aa2e312b4e6d08797fc3c1b6d67313d48", null ],
     [ "custom_rhotheta_forcing", "structSolverChoice.html#a4e81a09c9f454c680568b7776a3ed90e", null ],
     [ "custom_w_subsidence", "structSolverChoice.html#a596f061b796ada0389c81a6125150b6e", null ],

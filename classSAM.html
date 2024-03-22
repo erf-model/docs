@@ -1114,11 +1114,11 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
 <div class="ttc" id="aclassSAM_html_a54766f324324d579d2591a0bdc60e359"><div class="ttname"><a href="classSAM.html#a54766f324324d579d2591a0bdc60e359">SAM::doprecip</a></div><div class="ttdeci">bool doprecip</div><div class="ttdef"><b>Definition:</b> SAM.H:173</div></div>
 <div class="ttc" id="aclassSAM_html_a77c335e68b7ad8e6069d1318ea673a16"><div class="ttname"><a href="classSAM.html#a77c335e68b7ad8e6069d1318ea673a16">SAM::docloud</a></div><div class="ttdeci">bool docloud</div><div class="ttdef"><b>Definition:</b> SAM.H:173</div></div>
-<div class="ttc" id="astructSolverChoice_html_a2e1ef762ee1dc1bd3d4cbd08125c758a"><div class="ttname"><a href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">SolverChoice::rdOcp</a></div><div class="ttdeci">amrex::Real rdOcp</div><div class="ttdef"><b>Definition:</b> DataStruct.H:386</div></div>
-<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> DataStruct.H:385</div></div>
-<div class="ttc" id="astructSolverChoice_html_a766e5884354ed6483704f8257036ee75"><div class="ttname"><a href="structSolverChoice.html#a766e5884354ed6483704f8257036ee75">SolverChoice::do_precip</a></div><div class="ttdeci">bool do_precip</div><div class="ttdef"><b>Definition:</b> DataStruct.H:425</div></div>
-<div class="ttc" id="astructSolverChoice_html_af352bb75ceaeae4ac534d3378fbf393a"><div class="ttname"><a href="structSolverChoice.html#af352bb75ceaeae4ac534d3378fbf393a">SolverChoice::do_cloud</a></div><div class="ttdeci">bool do_cloud</div><div class="ttdef"><b>Definition:</b> DataStruct.H:424</div></div>
-<div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> DataStruct.H:422</div></div>
+<div class="ttc" id="astructSolverChoice_html_a2e1ef762ee1dc1bd3d4cbd08125c758a"><div class="ttname"><a href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">SolverChoice::rdOcp</a></div><div class="ttdeci">amrex::Real rdOcp</div><div class="ttdef"><b>Definition:</b> DataStruct.H:387</div></div>
+<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> DataStruct.H:386</div></div>
+<div class="ttc" id="astructSolverChoice_html_a766e5884354ed6483704f8257036ee75"><div class="ttname"><a href="structSolverChoice.html#a766e5884354ed6483704f8257036ee75">SolverChoice::do_precip</a></div><div class="ttdeci">bool do_precip</div><div class="ttdef"><b>Definition:</b> DataStruct.H:427</div></div>
+<div class="ttc" id="astructSolverChoice_html_af352bb75ceaeae4ac534d3378fbf393a"><div class="ttname"><a href="structSolverChoice.html#af352bb75ceaeae4ac534d3378fbf393a">SolverChoice::do_cloud</a></div><div class="ttdeci">bool do_cloud</div><div class="ttdef"><b>Definition:</b> DataStruct.H:426</div></div>
+<div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> DataStruct.H:424</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1166,71 +1166,66 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">auto</span> rho_array = <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>-&gt;array(mfi);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">auto</span> fz_array  = fz.array(mfi);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> dJ_array = (<a class="code" href="classSAM.html#a1b09febe32fbfebb402091fd31cd9996">m_detJ_cc</a>) ? <a class="code" href="classSAM.html#a1b09febe32fbfebb402091fd31cd9996">m_detJ_cc</a>-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d  = mfi.tilebox();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d  = mfi.tilebox();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="comment">// Jacobian determinant</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Real dJinv = (dJ_array) ? 1.0/dJ_array(i,j,k) : 1.0;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            Real rho_avg, qci_avg;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> (k==k_lo) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                rho_avg = rho_array(i,j,k);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                qci_avg = qci_array(i,j,k);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k==k_hi+1) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                rho_avg = rho_array(i,j,k-1);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                qci_avg = qci_array(i,j,k-1);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                rho_avg = 0.5*(rho_array(i,j,k-1) + rho_array(i,j,k));</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                qci_avg = 0.5*(qci_array(i,j,k-1) + qci_array(i,j,k));</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            Real vt_ice = min( 0.4 , 8.66 * pow( (max(0.,qci_avg)+1.e-10) , 0.24) );</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">// NOTE: Fz is the sedimentation flux from the advective operator.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="comment">//       In the terrain-following coordinate system, the z-deriv in</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="comment">//       the divergence uses the normal velocity (Omega). However,</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="comment">//       there are no u/v components to the sedimentation velocity.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment">//       Therefore, we simply end up with a division by detJ when</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="comment">//       evaluating the source term: dJinv * (flux_hi - flux_lo) * dzinv.</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            fz_array(i,j,k) = rho_avg*vt_ice*qci_avg;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        });</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a1bb53b1131a676fadffc9e0a53c0309a">qci</a>, <a class="code" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">auto</span> qci_array   = <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a1bb53b1131a676fadffc9e0a53c0309a">qci</a>-&gt;array(mfi);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">auto</span> qn_array    = <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a62db2b95f840b974246d431152593fb8">qn</a>-&gt;array(mfi);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">auto</span> qt_array    = <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea9f81c8a38dd25b5ae5821d48e8878b03">qt</a>-&gt;array(mfi);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">auto</span> rho_array   = <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>-&gt;array(mfi);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">auto</span> fz_array    = fz.array(mfi);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> dJ_array = (<a class="code" href="classSAM.html#a1b09febe32fbfebb402091fd31cd9996">m_detJ_cc</a>) ? <a class="code" href="classSAM.html#a1b09febe32fbfebb402091fd31cd9996">m_detJ_cc</a>-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d  = mfi.tilebox();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            Real rho_avg, qci_avg;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> (k==k_lo) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                rho_avg = rho_array(i,j,k);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                qci_avg = qci_array(i,j,k);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k==k_hi+1) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                rho_avg = rho_array(i,j,k-1);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                qci_avg = qci_array(i,j,k-1);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                rho_avg = 0.5*(rho_array(i,j,k-1) + rho_array(i,j,k));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                qci_avg = 0.5*(qci_array(i,j,k-1) + qci_array(i,j,k));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            Real vt_ice = min( 0.4 , 8.66 * pow( (max(0.,qci_avg)+1.e-10) , 0.24) );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="comment">// NOTE: Fz is the sedimentation flux from the advective operator.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">//       In the terrain-following coordinate system, the z-deriv in</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">//       the divergence uses the normal velocity (Omega). However,</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">//       there are no u/v components to the sedimentation velocity.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">//       Therefore, we simply end up with a division by detJ when</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">//       evaluating the source term: dJinv * (flux_hi - flux_lo) * dzinv.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            fz_array(i,j,k) = rho_avg*vt_ice*qci_avg;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        });</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a1bb53b1131a676fadffc9e0a53c0309a">qci</a>, <a class="code" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">auto</span> qci_array   = <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a1bb53b1131a676fadffc9e0a53c0309a">qci</a>-&gt;array(mfi);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">auto</span> qn_array    = <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a62db2b95f840b974246d431152593fb8">qn</a>-&gt;array(mfi);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">auto</span> qt_array    = <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea9f81c8a38dd25b5ae5821d48e8878b03">qt</a>-&gt;array(mfi);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">auto</span> rho_array   = <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>-&gt;array(mfi);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">auto</span> fz_array    = fz.array(mfi);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> dJ_array = (<a class="code" href="classSAM.html#a1b09febe32fbfebb402091fd31cd9996">m_detJ_cc</a>) ? <a class="code" href="classSAM.html#a1b09febe32fbfebb402091fd31cd9996">m_detJ_cc</a>-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d  = mfi.tilebox();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="comment">// Jacobian determinant</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            Real dJinv = (dJ_array) ? 1.0/dJ_array(i,j,k) : 1.0;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="comment">// Jacobian determinant</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            Real dJinv = (dJ_array) ? 1.0/dJ_array(i,j,k) : 1.0;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="comment">//==================================================</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="comment">// Cloud ice sedimentation (A32)</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="comment">//==================================================</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            Real dqi  = dJinv * (1.0/rho_array(i,j,k)) * ( fz_array(i,j,k+1) - fz_array(i,j,k) ) * coef;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            dqi = std::max(-qci_array(i,j,k), dqi);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="comment">//==================================================</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="comment">// Cloud ice sedimentation (A32)</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="comment">//==================================================</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            Real dqi  = dJinv * (1.0/rho_array(i,j,k)) * ( fz_array(i,j,k+1) - fz_array(i,j,k) ) * coef;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            dqi = std::max(-qci_array(i,j,k), dqi);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="comment">// Add this increment to both non-precipitating and total water.</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            qci_array(i,j,k) += dqi;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;             qn_array(i,j,k) += dqi;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;             qt_array(i,j,k) += dqi;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="comment">// Add this increment to both non-precipitating and total water.</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            qci_array(i,j,k) += dqi;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;             qn_array(i,j,k) += dqi;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;             qt_array(i,j,k) += dqi;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="comment">// NOTE: Sedimentation does not affect the potential temperature,</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="comment">//       but it does affect the liquid/ice static energy.</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="comment">//       No source to Theta occurs here.</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        });</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="comment">// NOTE: Sedimentation does not affect the potential temperature,</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="comment">//       but it does affect the liquid/ice static energy.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="comment">//       No source to Theta occurs here.</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        });</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="ttc" id="aTileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> TileNoZ.H:11</div></div>
 <div class="ttc" id="aclassSAM_html_a1b09febe32fbfebb402091fd31cd9996"><div class="ttname"><a href="classSAM.html#a1b09febe32fbfebb402091fd31cd9996">SAM::m_detJ_cc</a></div><div class="ttdeci">amrex::MultiFab * m_detJ_cc</div><div class="ttdef"><b>Definition:</b> SAM.H:184</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_ad6f84c7e649afdd998b2f37ba87476bea6b81d3dc642e339490ef9ab50db41a65"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea6b81d3dc642e339490ef9ab50db41a65">MicVar_Kess::qcl</a></div><div class="ttdeci">@ qcl</div><div class="ttdef"><b>Definition:</b> Kessler.H:37</div></div>
