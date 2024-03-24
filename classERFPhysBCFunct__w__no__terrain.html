@@ -292,7 +292,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="comment">//      0 is used as starting index for bcrs</span></div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordtype">int</span> ncomp = 1;</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    Vector&lt;BCRec&gt; bcrs_w(1);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    setBC(bx, domain, bccomp, 0, 1, <a class="code" href="classERFPhysBCFunct__w__no__terrain.html#a1c27696ce2fb04cb8e0f9e41d2c21196">m_domain_bcs_type</a>, bcrs_w);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    setBC(enclosedCells(bx), domain, bccomp, 0, 1, <a class="code" href="classERFPhysBCFunct__w__no__terrain.html#a1c27696ce2fb04cb8e0f9e41d2c21196">m_domain_bcs_type</a>, bcrs_w);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">// xlo: ori = 0</span></div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// ylo: ori = 1</span></div>
@@ -450,7 +450,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="comment">//      0 is used as starting index for bcrs</span></div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keywordtype">int</span> ncomp = 1;</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    Vector&lt;BCRec&gt; bcrs_w(1);</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    setBC(bx, domain, bccomp_w, 0, 1, <a class="code" href="classERFPhysBCFunct__w__no__terrain.html#a1c27696ce2fb04cb8e0f9e41d2c21196">m_domain_bcs_type</a>, bcrs_w);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    setBC(enclosedCells(bx), domain, bccomp_w, 0, 1, <a class="code" href="classERFPhysBCFunct__w__no__terrain.html#a1c27696ce2fb04cb8e0f9e41d2c21196">m_domain_bcs_type</a>, bcrs_w);</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="comment">// We use these for the asserts below</span></div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="keyword">const</span> BCRec* bc_ptr_w_h = bcrs_w.data();</div>
@@ -467,50 +467,36 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="comment">// Bottom boundary</span></div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="comment">// *******************************************************</span></div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="comment">// At the bottom boundary we always assert no normal flow</span></div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__w__no__terrain.html#a490eb84b4d60adb33dfe5f705b333b2d">m_lev</a> == 0) {</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        AMREX_ALWAYS_ASSERT(bc_ptr_w_h[0].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>);</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;       <span class="comment">// If we do not reach to the top or bottom boundary then the z-vel should be</span></div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;       <span class="comment">//    filled by interpolation from the coarser grid using ERF_FillPatcher.</span></div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    }</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    <span class="keywordflow">if</span> (bx.smallEnd(2) == dom_lo.z) {</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        ParallelFor(makeSlab(bx,2,dom_lo.z), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;           dest_arr(i,j,k) = l_bc_extdir_vals_d[0][2];</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        });</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    }</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    <span class="comment">// *******************************************************</span></div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    <span class="comment">// Top boundary</span></div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="comment">// *******************************************************</span></div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__w__no__terrain.html#a490eb84b4d60adb33dfe5f705b333b2d">m_lev</a> == 0) {</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;       AMREX_ALWAYS_ASSERT(bc_ptr_w_h[0].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a> ||</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                           bc_ptr_w_h[0].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9">ERFBCType::neumann_int</a>);</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;       <span class="comment">// If we do not reach to the top or bottom boundary then the z-vel should be</span></div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;       <span class="comment">//    filled by interpolation from the coarser grid using ERF_FillPatcher.</span></div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    }</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160; </div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="comment">// NOTE: if we set SlipWall at top, that generates ERFBCType::ext_dir which sets w=0 here</span></div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="comment">// NOTE: if we set  Outflow at top, that generates ERFBCType::foextrap which doesn&#39;t touch w here</span></div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <span class="keywordflow">if</span> (bx.bigEnd(2) == dom_hi.z+1) {</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <span class="keywordflow">if</span> (bc_ptr_w_h[0].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            ParallelFor(makeSlab(bx,2,dom_hi.z+1), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            {</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                dest_arr(i,j,k) = l_bc_extdir_vals_d[0][5];</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;            });</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_w_h[0].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9">ERFBCType::neumann_int</a>) {</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;            ParallelFor(makeSlab(bx,2,dom_hi.z+1), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;            {</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                dest_arr(i,j,k) = (4.0*dest_arr(i,j,dom_hi.z) - dest_arr(i,j,dom_hi.z-1))/3.0;</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;            });</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        }</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    }</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    Gpu::streamSynchronize();</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;}</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keywordflow">if</span> (bx.smallEnd(2) == dom_lo.z) {</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        AMREX_ALWAYS_ASSERT(bc_ptr_w_h[0].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        ParallelFor(makeSlab(bx,2,dom_lo.z), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;           dest_arr(i,j,k) = l_bc_extdir_vals_d[0][2];</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        });</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    }</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160; </div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    <span class="comment">// *******************************************************</span></div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    <span class="comment">// Top boundary</span></div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <span class="comment">// *******************************************************</span></div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160; </div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <span class="comment">// NOTE: if we set SlipWall at top, that generates ERFBCType::ext_dir which sets w=0 here</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <span class="comment">// NOTE: if we set  Outflow at top, that generates ERFBCType::foextrap which doesn&#39;t touch w here</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    <span class="keywordflow">if</span> (bx.bigEnd(2) == dom_hi.z+1) {</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        AMREX_ALWAYS_ASSERT(bc_ptr_w_h[0].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a> ||</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                            bc_ptr_w_h[0].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9">ERFBCType::neumann_int</a>);</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        <span class="keywordflow">if</span> (bc_ptr_w_h[0].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            ParallelFor(makeSlab(bx,2,dom_hi.z+1), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            {</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                dest_arr(i,j,k) = l_bc_extdir_vals_d[0][5];</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            });</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_w_h[0].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9">ERFBCType::neumann_int</a>) {</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;            ParallelFor(makeSlab(bx,2,dom_hi.z+1), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            {</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                dest_arr(i,j,k) = (4.0*dest_arr(i,j,dom_hi.z) - dest_arr(i,j,dom_hi.z-1))/3.0;</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            });</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        }</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    }</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;}</div>
 <div class="ttc" id="aclassERFPhysBCFunct__w__no__terrain_html_ab4e5639d9ae8abd973c0d5329705d200"><div class="ttname"><a href="classERFPhysBCFunct__w__no__terrain.html#ab4e5639d9ae8abd973c0d5329705d200">ERFPhysBCFunct_w_no_terrain::impose_vertical_zvel_bcs</a></div><div class="ttdeci">void impose_vertical_zvel_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int bccomp_w)</div><div class="ttdef"><b>Definition:</b> BoundaryConditions_zvel.cpp:408</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9">ERFBCType::neumann_int</a></div><div class="ttdeci">@ neumann_int</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:156</div></div>
 </div><!-- fragment -->

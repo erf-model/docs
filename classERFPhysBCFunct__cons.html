@@ -622,64 +622,69 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="comment">// Loop over each component</span></div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = icomp; n &lt; icomp+ncomp; n++) {</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="comment">// Hit for Neumann condition at kmin</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keywordflow">if</span>( bcrs[n].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <span class="comment">// Loop over ghost cells in bottom XY-plane (valid box)</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                Box xybx = bx;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                xybx.setBig(2,dom_lo.z-1);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                xybx.setSmall(2,bx.smallEnd()[2]);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keywordflow">if</span>( bcrs[n].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>)</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                <span class="comment">// Loop over ghost cells in bottom XY-plane (valid box)</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                Box xybx = bx;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                <span class="keywordtype">int</span> k0 = 0;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                <span class="comment">// Get the dz cell size</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                Real dz = geomdata.CellSize(2);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                <span class="comment">// Fill all the Neumann srcs with terrain</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                ParallelFor(xybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                    <span class="comment">// Clip indices for ghost-cells</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                    <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                    <span class="comment">// Get metrics</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                    Real met_h_xi   = <a class="code" href="TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee">Compute_h_xi_AtCellCenter</a>  (ii,jj,k0,dxInv,z_phys_nd);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                    Real met_h_eta  = <a class="code" href="TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2">Compute_h_eta_AtCellCenter</a> (ii,jj,k0,dxInv,z_phys_nd);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                    Real met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a>(ii,jj,k0,dxInv,z_phys_nd);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                    <span class="comment">// GradX at IJK location inside domain -- this relies on the assumption that we have</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                    Real GradVarx, GradVary;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                    <span class="keywordflow">if</span> (i &lt; dom_lo.x-1 || i &gt; dom_hi.x+1) {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                        GradVarx = 0.0;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i+1 &gt; bx_hi.x) {</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                        GradVarx =       dxInv[0] * (dest_arr(i  ,j,k0,n) - dest_arr(i-1,j,k0,n));</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i-1 &lt; bx_lo.x) {</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                        GradVarx =       dxInv[0] * (dest_arr(i+1,j,k0,n) - dest_arr(i  ,j,k0,n));</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                        GradVarx = 0.5 * dxInv[0] * (dest_arr(i+1,j,k0,n) - dest_arr(i-1,j,k0,n));</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                    }</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    <span class="comment">// GradY at IJK location inside domain -- this relies on the assumption that we have</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    <span class="keywordflow">if</span> (j &lt; dom_lo.y-1 || j &gt; dom_hi.y+1) {</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                        GradVary = 0.0;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j+1 &gt; bx_hi.y) {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                        GradVary =       dxInv[1] * (dest_arr(i,j  ,k0,n) - dest_arr(i,j-1,k0,n));</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j-1 &lt; bx_lo.y) {</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                        GradVary =       dxInv[1] * (dest_arr(i,j+1,k0,n) - dest_arr(i,j  ,k0,n));</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                        GradVary = 0.5 * dxInv[1] * (dest_arr(i,j+1,k0,n) - dest_arr(i,j-1,k0,n));</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                    }</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                    <span class="comment">// Prefactor</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                    Real met_fac =  met_h_zeta / ( met_h_xi*met_h_xi + met_h_eta*met_h_eta + 1. );</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                    <span class="comment">// Accumulate in bottom ghost cell (EXTRAP already populated)</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                    dest_arr(i,j,k,n) -= dz * met_fac * ( met_h_xi * GradVarx + met_h_eta * GradVary );</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                });</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            } <span class="comment">// foextrap</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        } <span class="comment">// ncomp</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    } <span class="comment">// m_z_phys_nd</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    Gpu::streamSynchronize();</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;}</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="keywordflow">if</span> (xybx.smallEnd(2) &lt; 0) {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    xybx.setBig(2,dom_lo.z-1);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                    xybx.setSmall(2,bx.smallEnd()[2]);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    <span class="comment">// Get the dz cell size</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    Real dz = geomdata.CellSize(2);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                    <span class="comment">// Fill all the Neumann srcs with terrain</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    ParallelFor(xybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                    {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                        <span class="comment">// Clip indices for ghost-cells</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                        <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                        <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                        <span class="comment">// Get metrics</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                        Real met_h_xi   = <a class="code" href="TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee">Compute_h_xi_AtCellCenter</a>  (ii,jj,k0,dxInv,z_phys_nd);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                        Real met_h_eta  = <a class="code" href="TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2">Compute_h_eta_AtCellCenter</a> (ii,jj,k0,dxInv,z_phys_nd);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                        Real met_h_zeta = <a class="code" href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a>(ii,jj,k0,dxInv,z_phys_nd);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                        <span class="comment">// GradX at IJK location inside domain -- this relies on the assumption that we have</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                        <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                        Real GradVarx, GradVary;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                        <span class="keywordflow">if</span> (i &lt; dom_lo.x-1 || i &gt; dom_hi.x+1) {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                            GradVarx = 0.0;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i+1 &gt; bx_hi.x) {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                            GradVarx =       dxInv[0] * (dest_arr(i  ,j,k0,n) - dest_arr(i-1,j,k0,n));</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i-1 &lt; bx_lo.x) {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                            GradVarx =       dxInv[0] * (dest_arr(i+1,j,k0,n) - dest_arr(i  ,j,k0,n));</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                            GradVarx = 0.5 * dxInv[0] * (dest_arr(i+1,j,k0,n) - dest_arr(i-1,j,k0,n));</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                        }</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                        <span class="comment">// GradY at IJK location inside domain -- this relies on the assumption that we have</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                        <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                        <span class="keywordflow">if</span> (j &lt; dom_lo.y-1 || j &gt; dom_hi.y+1) {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                            GradVary = 0.0;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j+1 &gt; bx_hi.y) {</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                            GradVary =       dxInv[1] * (dest_arr(i,j  ,k0,n) - dest_arr(i,j-1,k0,n));</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j-1 &lt; bx_lo.y) {</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                            GradVary =       dxInv[1] * (dest_arr(i,j+1,k0,n) - dest_arr(i,j  ,k0,n));</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                            GradVary = 0.5 * dxInv[1] * (dest_arr(i,j+1,k0,n) - dest_arr(i,j-1,k0,n));</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                        }</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                        <span class="comment">// Prefactor</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                        Real met_fac =  met_h_zeta / ( met_h_xi*met_h_xi + met_h_eta*met_h_eta + 1. );</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                        <span class="comment">// Accumulate in bottom ghost cell (EXTRAP already populated)</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                        dest_arr(i,j,k,n) -= dz * met_fac * ( met_h_xi * GradVarx + met_h_eta * GradVary );</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                    });</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                } <span class="comment">// box includes k0</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            } <span class="comment">// foextrap</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        } <span class="comment">// ncomp</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    } <span class="comment">// m_z_phys_nd</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;}</div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a32eeeb066c70da970aa6a60918515987"><div class="ttname"><a href="TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE amrex::Real Compute_h_zeta_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:31</div></div>
 <div class="ttc" id="aTerrainMetrics_8H_html_a43b431cbd97421014ff80245883e06d2"><div class="ttname"><a href="TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2">Compute_h_eta_AtCellCenter</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:61</div></div>

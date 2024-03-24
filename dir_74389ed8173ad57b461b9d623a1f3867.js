@@ -21,6 +21,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ERF.cpp", "ERF_8cpp.html", "ERF_8cpp" ],
     [ "ERF.H", "ERF_8H.html", "ERF_8H" ],
     [ "ERF_Constants.H", "ERF__Constants_8H.html", "ERF__Constants_8H" ],
+    [ "ERF_make_new_arrays.cpp", "ERF__make__new__arrays_8cpp.html", null ],
     [ "ERF_make_new_level.cpp", "ERF__make__new__level_8cpp.html", null ],
     [ "ERF_Tagging.cpp", "ERF__Tagging_8cpp.html", null ],
     [ "HSE_utils.H", "HSE__utils_8H.html", "HSE__utils_8H" ],
