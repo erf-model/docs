@@ -7,5 +7,6 @@ var Derive_8H =
     [ "erf_derscalar", "Derive_8H.html#a13666be87e55d1759f57322b33f7e495", null ],
     [ "erf_dersoundspeed", "Derive_8H.html#abec1266940e40d642fca2aa685b7f314", null ],
     [ "erf_dertemp", "Derive_8H.html#a37ac1508c4001f9f1e38ca507dd15f31", null ],
-    [ "erf_dertheta", "Derive_8H.html#af5e075e5b8b2e3964ae6af3f5f06f497", null ]
+    [ "erf_dertheta", "Derive_8H.html#af5e075e5b8b2e3964ae6af3f5f06f497", null ],
+    [ "erf_dervort", "Derive_8H.html#ab80fb03ad34497a843405b353d03cced", null ]
 ];

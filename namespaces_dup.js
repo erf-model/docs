@@ -23,7 +23,8 @@ var namespaces_dup =
       [ "erf_dertemp", "namespacederived.html#a37ac1508c4001f9f1e38ca507dd15f31", null ],
       [ "erf_dertemp", "namespacederived.html#a8d96f91847cec51636c122ab27a5f8a2", null ],
       [ "erf_dertheta", "namespacederived.html#af5e075e5b8b2e3964ae6af3f5f06f497", null ],
-      [ "erf_dertheta", "namespacederived.html#adc3c787125484205e4fc7cd85c25ab6c", null ]
+      [ "erf_dertheta", "namespacederived.html#adc3c787125484205e4fc7cd85c25ab6c", null ],
+      [ "erf_dervort", "namespacederived.html#ab80fb03ad34497a843405b353d03cced", null ]
     ] ],
     [ "EddyDiff", "namespaceEddyDiff.html", null ],
     [ "ERFBCType", "namespaceERFBCType.html", [

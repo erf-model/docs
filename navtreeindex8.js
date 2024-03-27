@@ -1,5 +1,8 @@
 var NAVTREEINDEX8 =
 {
+"classSatMethods.html#a8458bd6a233082c463c070ddc692080f":[2,0,54,7],
+"classSatMethods.html#a8668cfc2892409c9aaeb26762486ac50":[2,0,54,9],
+"classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f":[2,0,54,4],
 "classSatMethods.html#a97d1392753f7f866850e99c89c815bcf":[2,0,54,10],
 "classSatMethods.html#a9a256423ef50446cfdf6d4dcc1c1f73b":[2,0,54,8],
 "classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758":[2,0,54,2],
@@ -114,8 +117,8 @@ var NAVTREEINDEX8 =
 "dir_fbd11baa4baa1a8b78c4a3d08373cbc6.html":[3,0,1,9],
 "dir_fc0c15590968603ac439df7b0a572228.html":[3,0,1,3],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -231,8 +234,8 @@ var NAVTREEINDEX8 =
 "globals_y.html":[3,1,0,23],
 "globals_z.html":[3,1,0,24],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX8 =
 "init__density__hse__dry_8H_source.html":[3,0,1,10,1],
 "init__rayleigh__damping_8H.html":[3,0,1,10,2],
 "init__rayleigh__damping_8H.html#a3e175bfe4dac6bfbd6e929f9c5d75fda":[3,0,1,10,2,0],
-"init__rayleigh__damping_8H_source.html":[3,0,1,10,2],
-"m2005__effradius_8H.html":[3,0,1,11,10],
-"m2005__effradius_8H.html#aa8be1a517640718ec08df40a3613244a":[3,0,1,11,10,0],
-"m2005__effradius_8H_source.html":[3,0,1,11,10]
+"init__rayleigh__damping_8H_source.html":[3,0,1,10,2]
 };

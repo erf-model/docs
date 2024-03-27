@@ -1,5 +1,8 @@
 var NAVTREEINDEX9 =
 {
+"m2005__effradius_8H.html":[3,0,1,11,10],
+"m2005__effradius_8H.html#aa8be1a517640718ec08df40a3613244a":[3,0,1,11,10,0],
+"m2005__effradius_8H_source.html":[3,0,1,11,10],
 "main_8cpp.html":[3,0,1,26],
 "main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[3,0,1,26,1],
 "main_8cpp.html#a183e783116d02836167ccbed3b28c1d3":[3,0,1,26,0],
@@ -49,6 +52,7 @@ var NAVTREEINDEX9 =
 "namespacederived.html#a7fb98e12fceaa6f691dfef83db453757":[1,0,2,3],
 "namespacederived.html#a8d96f91847cec51636c122ab27a5f8a2":[1,0,2,13],
 "namespacederived.html#a9935603239fe8510b11179da8e76c39c":[1,0,2,6],
+"namespacederived.html#ab80fb03ad34497a843405b353d03cced":[1,0,2,16],
 "namespacederived.html#abec1266940e40d642fca2aa685b7f314":[1,0,2,10],
 "namespacederived.html#acc3f245c73a0826afc9e7626f12126d3":[1,0,2,1],
 "namespacederived.html#ad3b06be920cca917ee17183db46d77ba":[1,0,2,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX9 =
 "structPhysProp_1_1physprop__t.html#a3e3968847760816c03052a8b76da1a13":[2,0,45,0,35],
 "structPhysProp_1_1physprop__t.html#a3f78f2921f22ba1912926ef62da7b19f":[2,0,45,0,34],
 "structPhysProp_1_1physprop__t.html#a4789a50f02b5f5cdee6a284cc782eed9":[2,0,45,0,39],
-"structPhysProp_1_1physprop__t.html#a55622eb338277f3ce9c7d5b774a9c2c5":[2,0,45,0,9],
-"structPhysProp_1_1physprop__t.html#a55a195e47028b0355c737bffb1f60fbd":[2,0,45,0,2],
-"structPhysProp_1_1physprop__t.html#a66b63e7d4250ce345343af372d529193":[2,0,45,0,5],
-"structPhysProp_1_1physprop__t.html#a744ddbbe6c903be22244e84cbc85c567":[2,0,45,0,40],
-"structPhysProp_1_1physprop__t.html#a7a536b72896ed7e80fe3b13d990bce61":[2,0,45,0,29]
+"structPhysProp_1_1physprop__t.html#a55622eb338277f3ce9c7d5b774a9c2c5":[2,0,45,0,9]
 };
