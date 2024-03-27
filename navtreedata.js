@@ -76,7 +76,7 @@ var NAVTREEINDEX =
 "ERF__Constants_8H.html#ad6e28022b74cd595f282e2cc97c2c0d8",
 "NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a2f43039d16fd9942908dc0b55b462b18",
 "classAerRadProps.html#ae0eb6fbcd6b30a8e4538b8db3944d1e0",
-"classERF.html#ac020980af9dbf46be43dd9f7127c06da",
+"classERF.html#ac0951404aa6802aad7a3be6b7375dfa2",
 "classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26",
 "classMicrophysics.html#a4e781e2a953a088477cfc5a1e3691f2e",
 "classRadiation.html#a3308c21539f43b459729b9b02652dd01",
