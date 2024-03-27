@@ -40,6 +40,7 @@ var IndexDefines_8H =
       [ "symmetry", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a40e712f30d56083318ab20a2402921d2", null ],
       [ "inflow", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9ad37e67db17cfd059f2852e2673b9e8ef", null ],
       [ "outflow", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acac0c32caf84a889ec9b2b4cb2d56972", null ],
+      [ "open", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a7cef8a734855777c2a9d0caf42666e69", null ],
       [ "no_slip_wall", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3", null ],
       [ "slip_wall", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a03ee6de9fd100444c5c0567ea01bd538", null ],
       [ "periodic", "IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9ae6ffdec5e14fce371eb7ae99edebbbee", null ],
@@ -56,6 +57,7 @@ var IndexDefines_8H =
       [ "MOST", "IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca42d0838b4e8d40ee76fbaf2d55c3402e", null ],
       [ "ext_dir_ingested", "IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462", null ],
       [ "neumann", "IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60", null ],
-      [ "neumann_int", "IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9", null ]
+      [ "neumann_int", "IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9", null ],
+      [ "open", "IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914", null ]
     ] ]
 ];
