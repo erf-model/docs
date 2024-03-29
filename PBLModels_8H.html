@@ -106,12 +106,12 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a4f010fa74c87ce3a524f53c2f501255b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PBLModels_8H.html#a4f010fa74c87ce3a524f53c2f501255b">ComputeVerticalDerivativesPBL</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int izmin, const int izmax, const amrex::Real &amp;dz_inv, const bool c_ext_dir_on_zlo, const bool c_ext_dir_on_zhi, const bool u_ext_dir_on_zlo, const bool u_ext_dir_on_zhi, const bool v_ext_dir_on_zlo, const bool v_ext_dir_on_zhi, amrex::Real &amp;dthetadz, amrex::Real &amp;dudz, amrex::Real &amp;dvdz)</td></tr>
 <tr class="separator:a4f010fa74c87ce3a524f53c2f501255b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e48e1dba31b4575723d6c277956a4ea"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PBLModels_8H.html#a0e48e1dba31b4575723d6c277956a4ea">ComputeQKESourceTerms</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;K_turb, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Box &amp;domain, amrex::Real pbl_B1_l, const amrex::Real theta_mean, bool c_ext_dir_on_zlo, bool c_ext_dir_on_zhi, bool u_ext_dir_on_zlo, bool u_ext_dir_on_zhi, bool v_ext_dir_on_zlo, bool v_ext_dir_on_zhi, const amrex::Real met_h_zeta=1.0)</td></tr>
-<tr class="separator:a0e48e1dba31b4575723d6c277956a4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ce76ae2ddb12da46b999c3c58201cdd"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PBLModels_8H.html#a4ce76ae2ddb12da46b999c3c58201cdd">ComputeQKESourceTerms</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;K_turb, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Box &amp;domain, amrex::Real pbl_mynn_B1_l, const amrex::Real theta_mean, bool c_ext_dir_on_zlo, bool c_ext_dir_on_zhi, bool u_ext_dir_on_zlo, bool u_ext_dir_on_zhi, bool v_ext_dir_on_zlo, bool v_ext_dir_on_zhi, const amrex::Real met_h_zeta=1.0)</td></tr>
+<tr class="separator:a4ce76ae2ddb12da46b999c3c58201cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a0e48e1dba31b4575723d6c277956a4ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e48e1dba31b4575723d6c277956a4ea">&#9670;&nbsp;</a></span>ComputeQKESourceTerms()</h2>
+<a id="a4ce76ae2ddb12da46b999c3c58201cdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ce76ae2ddb12da46b999c3c58201cdd">&#9670;&nbsp;</a></span>ComputeQKESourceTerms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,7 +180,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::Real&#160;</td>
-          <td class="paramname"><em>pbl_B1_l</em>, </td>
+          <td class="paramname"><em>pbl_mynn_B1_l</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -247,7 +247,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">K_turb</td><td>turbulent viscosity </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cellSizeInv</td><td>inverse cell size array </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>box of the whole domain </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">pbl_B1_l</td><td>a parameter </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pbl_mynn_B1_l</td><td>a parameter </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">theta_mean</td><td>average theta </td></tr>
   </table>
   </dd>
@@ -278,7 +278,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    amrex::Real qke = cell_prim(i,j,k,<a class="code" href="IndexDefines_8H.html#ad6174e899597e766afde82f9c11def75">PrimQKE_comp</a>);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span> (std::abs(qke) &gt; 0.0) {</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        source_term -= 2.0 * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,1.5) /</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            (pbl_B1_l * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea6a553b28d62930bdda7b473e28464b73">EddyDiff::PBL_lengthscale</a>));</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            (pbl_mynn_B1_l * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea6a553b28d62930bdda7b473e28464b73">EddyDiff::PBL_lengthscale</a>));</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> source_term;</div>
@@ -295,8 +295,8 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="PBLModels_8H_a0e48e1dba31b4575723d6c277956a4ea_cgraph.png" border="0" usemap="#aPBLModels_8H_a0e48e1dba31b4575723d6c277956a4ea_cgraph" alt=""/></div>
-<map name="aPBLModels_8H_a0e48e1dba31b4575723d6c277956a4ea_cgraph" id="aPBLModels_8H_a0e48e1dba31b4575723d6c277956a4ea_cgraph">
+<div class="center"><img src="PBLModels_8H_a4ce76ae2ddb12da46b999c3c58201cdd_cgraph.png" border="0" usemap="#aPBLModels_8H_a4ce76ae2ddb12da46b999c3c58201cdd_cgraph" alt=""/></div>
+<map name="aPBLModels_8H_a4ce76ae2ddb12da46b999c3c58201cdd_cgraph" id="aPBLModels_8H_a4ce76ae2ddb12da46b999c3c58201cdd_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,196,32"/>
 <area shape="rect" href="PBLModels_8H.html#a4f010fa74c87ce3a524f53c2f501255b" title=" " alt="" coords="244,5,473,32"/>
 </map>
@@ -304,8 +304,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="PBLModels_8H_a0e48e1dba31b4575723d6c277956a4ea_icgraph.png" border="0" usemap="#aPBLModels_8H_a0e48e1dba31b4575723d6c277956a4ea_icgraph" alt=""/></div>
-<map name="aPBLModels_8H_a0e48e1dba31b4575723d6c277956a4ea_icgraph" id="aPBLModels_8H_a0e48e1dba31b4575723d6c277956a4ea_icgraph">
+<div class="center"><img src="PBLModels_8H_a4ce76ae2ddb12da46b999c3c58201cdd_icgraph.png" border="0" usemap="#aPBLModels_8H_a4ce76ae2ddb12da46b999c3c58201cdd_icgraph" alt=""/></div>
+<map name="aPBLModels_8H_a4ce76ae2ddb12da46b999c3c58201cdd_icgraph" id="aPBLModels_8H_a4ce76ae2ddb12da46b999c3c58201cdd_icgraph">
 <area shape="rect" title=" " alt="" coords="224,31,415,57"/>
 <area shape="rect" href="DiffusionSrcForState__N_8cpp.html#aae122730346227a473ea77c05c0b9e01" title=" " alt="" coords="5,5,176,32"/>
 <area shape="rect" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0" title=" " alt="" coords="6,56,175,83"/>
@@ -480,18 +480,18 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="PBLModels_8H.html#a0e48e1dba31b4575723d6c277956a4ea">ComputeQKESourceTerms()</a>, and <a class="el" href="ComputeTurbulentViscosity_8cpp.html#af51a779cc7294b769e8c6d37451e9639">ComputeTurbulentViscosityPBL()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PBLModels_8H.html#a4ce76ae2ddb12da46b999c3c58201cdd">ComputeQKESourceTerms()</a>, and <a class="el" href="ComputeTurbulentViscosity_8cpp.html#aac21239e5369ac8cdfcc2a3d4f292eaa">ComputeTurbulentViscosityPBL()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="PBLModels_8H_a4f010fa74c87ce3a524f53c2f501255b_icgraph.png" border="0" usemap="#aPBLModels_8H_a4f010fa74c87ce3a524f53c2f501255b_icgraph" alt=""/></div>
 <map name="aPBLModels_8H_a4f010fa74c87ce3a524f53c2f501255b_icgraph" id="aPBLModels_8H_a4f010fa74c87ce3a524f53c2f501255b_icgraph">
 <area shape="rect" title=" " alt="" coords="733,81,963,108"/>
-<area shape="rect" href="PBLModels_8H.html#a0e48e1dba31b4575723d6c277956a4ea" title=" " alt="" coords="478,56,669,83"/>
-<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#af51a779cc7294b769e8c6d37451e9639" title=" " alt="" coords="461,107,685,133"/>
+<area shape="rect" href="PBLModels_8H.html#a4ce76ae2ddb12da46b999c3c58201cdd" title=" " alt="" coords="478,56,669,83"/>
+<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#aac21239e5369ac8cdfcc2a3d4f292eaa" title=" " alt="" coords="461,107,685,133"/>
 <area shape="rect" href="DiffusionSrcForState__N_8cpp.html#aae122730346227a473ea77c05c0b9e01" title=" " alt="" coords="228,5,399,32"/>
 <area shape="rect" href="DiffusionSrcForState__T_8cpp.html#aaf311efacea175d9cd8bbf8248badcc0" title=" " alt="" coords="229,56,398,83"/>
-<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#a38abb469c263e5cb1c09ba83272bd94a" title=" " alt="" coords="213,107,413,133"/>
+<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#a3aee7ea3b0629ef60c6e160256ea40e8" title=" " alt="" coords="213,107,413,133"/>
 <area shape="rect" href="classERF.html#a9068176f45cea5fdbbbf3c8eb08bd808" title=" " alt="" coords="5,107,165,133"/>
 </map>
 </div>
