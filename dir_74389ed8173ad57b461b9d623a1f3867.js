@@ -4,6 +4,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "BoundaryConditions", "dir_528efc400cc48bc5f175d9531879efeb.html", "dir_528efc400cc48bc5f175d9531879efeb" ],
     [ "DataStructs", "dir_aba9de7b86b72c00c61e401832cdb2fc.html", "dir_aba9de7b86b72c00c61e401832cdb2fc" ],
     [ "Diffusion", "dir_fc0c15590968603ac439df7b0a572228.html", "dir_fc0c15590968603ac439df7b0a572228" ],
+    [ "EB", "dir_9c08f4b6b7cd879dc853cee646ab55d3.html", "dir_9c08f4b6b7cd879dc853cee646ab55d3" ],
     [ "Initialization", "dir_71a4420ed1f8982e7234eb6a0b7e6d5d.html", "dir_71a4420ed1f8982e7234eb6a0b7e6d5d" ],
     [ "IO", "dir_4c48f420b74c1f1cc31b316243ca788c.html", "dir_4c48f420b74c1f1cc31b316243ca788c" ],
     [ "LandSurfaceModel", "dir_9a689d3cc574517c40c68b6e60e836b7.html", "dir_9a689d3cc574517c40c68b6e60e836b7" ],

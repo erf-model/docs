@@ -29,13 +29,21 @@ var hierarchy =
     [ "ERFPhysBCFunct_v", "classERFPhysBCFunct__v.html", null ],
     [ "ERFPhysBCFunct_w", "classERFPhysBCFunct__w.html", null ],
     [ "ERFPhysBCFunct_w_no_terrain", "classERFPhysBCFunct__w__no__terrain.html", null ],
+    [ "F", "classF.html", [
+      [ "CIF< F >", "classCIF.html", null ]
+    ] ],
     [ "MamConstituents::gas_t", "structMamConstituents_1_1gas__t.html", null ],
     [ "MamConstituents::gaslist_t", "structMamConstituents_1_1gaslist__t.html", null ],
+    [ "amrex::GPUable", null, [
+      [ "FlowerIF", "classFlowerIF.html", null ],
+      [ "TerrainIF", "classTerrainIF.html", null ]
+    ] ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
     [ "amrex::IntegratorBase", null, [
       [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ]
     ] ],
     [ "LinInterp::InterpType", "structLinInterp_1_1InterpType.html", null ],
+    [ "IntersectionCIF< F1, F2 >", "classIntersectionCIF.html", null ],
     [ "LandSurface", "classLandSurface.html", null ],
     [ "LinInterp", "classLinInterp.html", null ],
     [ "Mam4_aer", "classMam4__aer.html", null ],
@@ -89,6 +97,8 @@ var hierarchy =
     [ "surface_temp_mod_charnock", "structsurface__temp__mod__charnock.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
     [ "TurbChoice", "structTurbChoice.html", null ],
+    [ "UnionCIF< F1, F2 >", "classUnionCIF.html", null ],
+    [ "UnionListIF< F >", "classUnionListIF.html", null ],
     [ "UPWIND3", "structUPWIND3.html", null ],
     [ "UPWIND5", "structUPWIND5.html", null ],
     [ "UPWINDALL", "structUPWINDALL.html", null ],
