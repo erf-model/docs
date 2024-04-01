@@ -6,11 +6,10 @@ var NAVTREEINDEX0 =
 "AdvStruct_8H.html":[3,0,1,2,0],
 "AdvStruct_8H_source.html":[3,0,1,2,0],
 "AdvanceFitch_8cpp.html":[3,0,1,15,0,0],
-"AdvanceFitch_8cpp.html#a260ac6cbdf6885bf3d3baee82de6b4b3":[3,0,1,15,0,0,9],
+"AdvanceFitch_8cpp.html#a260ac6cbdf6885bf3d3baee82de6b4b3":[3,0,1,15,0,0,8],
 "AdvanceFitch_8cpp.html#a2a736a47fa4a390fa9082c98c0eb0c96":[3,0,1,15,0,0,2],
-"AdvanceFitch_8cpp.html#a3ffed99a6157d892a0d4071529e2aea2":[3,0,1,15,0,0,7],
 "AdvanceFitch_8cpp.html#a4bebb1482efec51903571e3bf8a7b7f8":[3,0,1,15,0,0,5],
-"AdvanceFitch_8cpp.html#a4e4b2d6d06248fbcb36bdcc730ed1ab4":[3,0,1,15,0,0,8],
+"AdvanceFitch_8cpp.html#a4e4b2d6d06248fbcb36bdcc730ed1ab4":[3,0,1,15,0,0,7],
 "AdvanceFitch_8cpp.html#a57cb33df91a6f292be17c93d461f5772":[3,0,1,15,0,0,3],
 "AdvanceFitch_8cpp.html#a88bf834504be290bcd153d7155910540":[3,0,1,15,0,0,6],
 "AdvanceFitch_8cpp.html#aa3d620903fe9c72b3d91efbd15990624":[3,0,1,15,0,0,4],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57":[3,0,1,21,67],
 "ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518":[3,0,1,21,36],
 "ERF__Constants_8H.html#a86f34aeefa355fa0d6d0cca8f033a878":[3,0,1,21,50],
-"ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000":[3,0,1,21,30]
+"ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000":[3,0,1,21,30],
+"ERF__Constants_8H.html#a9180d622aa39d89312941eba03fa1347":[3,0,1,21,69]
 };

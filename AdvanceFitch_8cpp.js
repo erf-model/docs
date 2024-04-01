@@ -7,7 +7,6 @@ var AdvanceFitch_8cpp =
     [ "fitch_update", "AdvanceFitch_8cpp.html#aa3d620903fe9c72b3d91efbd15990624", null ],
     [ "C_T", "AdvanceFitch_8cpp.html#a4bebb1482efec51903571e3bf8a7b7f8", null ],
     [ "C_TKE", "AdvanceFitch_8cpp.html#a88bf834504be290bcd153d7155910540", null ],
-    [ "Nturb", "AdvanceFitch_8cpp.html#a3ffed99a6157d892a0d4071529e2aea2", null ],
     [ "R", "AdvanceFitch_8cpp.html#a4e4b2d6d06248fbcb36bdcc730ed1ab4", null ],
     [ "z_c", "AdvanceFitch_8cpp.html#a260ac6cbdf6885bf3d3baee82de6b4b3", null ]
 ];
