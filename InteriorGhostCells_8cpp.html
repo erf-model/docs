@@ -288,15 +288,14 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    bx_yhi = (bx &amp; gdom_yhi);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__post_8cpp.html#aafb32e94906164818397a82b9ad2c356">erf_slow_rhs_post()</a>, and <a class="el" href="InteriorGhostCells_8cpp.html#a41e809a463649991c08af8667d3947cb">realbdy_compute_interior_ghost_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="InteriorGhostCells_8cpp.html#a41e809a463649991c08af8667d3947cb">realbdy_compute_interior_ghost_rhs()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="InteriorGhostCells_8cpp_a58aa7f6d6812d4dea186477114d1a47c_icgraph.png" border="0" usemap="#aInteriorGhostCells_8cpp_a58aa7f6d6812d4dea186477114d1a47c_icgraph" alt=""/></div>
 <map name="aInteriorGhostCells_8cpp_a58aa7f6d6812d4dea186477114d1a47c_icgraph" id="aInteriorGhostCells_8cpp_a58aa7f6d6812d4dea186477114d1a47c_icgraph">
-<area shape="rect" title=" " alt="" coords="243,27,419,69"/>
-<area shape="rect" href="ERF__slow__rhs__post_8cpp.html#aafb32e94906164818397a82b9ad2c356" title=" " alt="" coords="31,5,169,32"/>
-<area shape="rect" href="InteriorGhostCells_8cpp.html#a41e809a463649991c08af8667d3947cb" title=" " alt="" coords="5,57,195,98"/>
+<area shape="rect" title=" " alt="" coords="243,5,419,47"/>
+<area shape="rect" href="InteriorGhostCells_8cpp.html#a41e809a463649991c08af8667d3947cb" title=" " alt="" coords="5,5,195,47"/>
 </map>
 </div>
 
@@ -1146,7 +1145,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                    <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                }</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                <a class="code" href="Utils_8H.html#af1b2ed87ddd47a5a3ac91fe6dd2ade3d">wrfbdy_set_rhs_in_spec_region</a>(delta_t, icomp, 1,</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                <a class="code" href="Utils_8H.html#a07e79832d9bdb9c05a939bee38a06b9c">wrfbdy_set_rhs_in_spec_region</a>(delta_t, icomp, 1,</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                                              width, set_width, dom_lo, dom_hi,</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                                              tbx_xlo, tbx_xhi, tbx_ylo, tbx_yhi,</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                                              arr_xlo, arr_xhi, arr_ylo, arr_yhi,</div>
@@ -1256,8 +1255,8 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 <div class="ttc" id="aInteriorGhostCells_8cpp_html_a58aa7f6d6812d4dea186477114d1a47c"><div class="ttname"><a href="InteriorGhostCells_8cpp.html#a58aa7f6d6812d4dea186477114d1a47c">compute_interior_ghost_bxs_xy</a></div><div class="ttdeci">void compute_interior_ghost_bxs_xy(const Box &amp;bx, const Box &amp;domain, const int &amp;width, const int &amp;set_width, Box &amp;bx_xlo, Box &amp;bx_xhi, Box &amp;bx_ylo, Box &amp;bx_yhi, const IntVect &amp;ng_vect, const bool get_int_ng)</div><div class="ttdef"><b>Definition:</b> InteriorGhostCells.cpp:23</div></div>
+<div class="ttc" id="aUtils_8H_html_a07e79832d9bdb9c05a939bee38a06b9c"><div class="ttname"><a href="Utils_8H.html#a07e79832d9bdb9c05a939bee38a06b9c">wrfbdy_set_rhs_in_spec_region</a></div><div class="ttdeci">AMREX_GPU_HOST AMREX_FORCE_INLINE void wrfbdy_set_rhs_in_spec_region(const amrex::Real &amp;dt, const int &amp;icomp, const int &amp;num_var, const int &amp;width, const int &amp;set_width, const amrex::Dim3 &amp;dom_lo, const amrex::Dim3 &amp;dom_hi, const amrex::Box &amp;bx_xlo, const amrex::Box &amp;bx_xhi, const amrex::Box &amp;bx_ylo, const amrex::Box &amp;bx_yhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xlo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_ylo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_yhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;data_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs_arr)</div><div class="ttdef"><b>Definition:</b> Utils.H:120</div></div>
 <div class="ttc" id="aUtils_8H_html_af0d5ce71ebff8b1ef263dbaccfaf7758"><div class="ttname"><a href="Utils_8H.html#af0d5ce71ebff8b1ef263dbaccfaf7758">wrfbdy_compute_laplacian_relaxation</a></div><div class="ttdeci">AMREX_GPU_HOST AMREX_FORCE_INLINE void wrfbdy_compute_laplacian_relaxation(const int &amp;icomp, const int &amp;num_var, const int &amp;width, const int &amp;set_width, const amrex::Dim3 &amp;dom_lo, const amrex::Dim3 &amp;dom_hi, const amrex::Real &amp;F1, const amrex::Real &amp;F2, const amrex::Box &amp;bx_xlo, const amrex::Box &amp;bx_xhi, const amrex::Box &amp;bx_ylo, const amrex::Box &amp;bx_yhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xlo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_ylo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_yhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;data_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs_arr)</div><div class="ttdef"><b>Definition:</b> Utils.H:210</div></div>
-<div class="ttc" id="aUtils_8H_html_af1b2ed87ddd47a5a3ac91fe6dd2ade3d"><div class="ttname"><a href="Utils_8H.html#af1b2ed87ddd47a5a3ac91fe6dd2ade3d">wrfbdy_set_rhs_in_spec_region</a></div><div class="ttdeci">AMREX_GPU_HOST AMREX_FORCE_INLINE void wrfbdy_set_rhs_in_spec_region(const amrex::Real &amp;dt, const int &amp;icomp, const int &amp;num_var, const int &amp;width, const int &amp;set_width, const amrex::Dim3 &amp;dom_lo, const amrex::Dim3 &amp;dom_hi, const amrex::Box &amp;bx_xlo, const amrex::Box &amp;bx_xhi, const amrex::Box &amp;bx_ylo, const amrex::Box &amp;bx_yhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xlo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_ylo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_yhi, const amrex::Array4&lt; amrex::Real &gt; &amp;data_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs_arr)</div><div class="ttdef"><b>Definition:</b> Utils.H:120</div></div>
 <div class="ttc" id="anamespaceRealBdyVars_html_aa4743649b85ade11df23692d7c3947bda00b4f21134a7ba868f49f0d2ed3f7506"><div class="ttname"><a href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda00b4f21134a7ba868f49f0d2ed3f7506">RealBdyVars::R</a></div><div class="ttdeci">@ R</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:66</div></div>
 <div class="ttc" id="anamespaceRealBdyVars_html_aa4743649b85ade11df23692d7c3947bda18f2b09699f8c7ee3796d766f288f411"><div class="ttname"><a href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda18f2b09699f8c7ee3796d766f288f411">RealBdyVars::U</a></div><div class="ttdeci">@ U</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:64</div></div>
 <div class="ttc" id="anamespaceRealBdyVars_html_aa4743649b85ade11df23692d7c3947bda642348f19beb023be6cb81f253b41e7e"><div class="ttname"><a href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda642348f19beb023be6cb81f253b41e7e">RealBdyVars::NumTypes</a></div><div class="ttdeci">@ NumTypes</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:69</div></div>
@@ -1275,7 +1274,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="InteriorGhostCells_8cpp.html#a58aa7f6d6812d4dea186477114d1a47c" title=" " alt="" coords="253,5,429,47"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="312,71,371,98"/>
 <area shape="rect" href="Utils_8H.html#af0d5ce71ebff8b1ef263dbaccfaf7758" title=" " alt="" coords="243,123,440,164"/>
-<area shape="rect" href="Utils_8H.html#af1b2ed87ddd47a5a3ac91fe6dd2ade3d" title=" " alt="" coords="253,188,430,229"/>
+<area shape="rect" href="Utils_8H.html#a07e79832d9bdb9c05a939bee38a06b9c" title=" " alt="" coords="253,188,430,229"/>
 </map>
 </div>
 

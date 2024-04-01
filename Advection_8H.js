@@ -8,6 +8,6 @@ var Advection_8H =
     [ "AdvectionSrcForOpenBC_Tangent_Ymom", "Advection_8H.html#afc8eb10b17bbda96543131714c40f574", null ],
     [ "AdvectionSrcForOpenBC_Tangent_Zmom", "Advection_8H.html#ab448af9c158984ef8529a483cbe8e5b0", null ],
     [ "AdvectionSrcForRho", "Advection_8H.html#af6de5e53feec26f9acdbee6ad6e473ef", null ],
-    [ "AdvectionSrcForScalars", "Advection_8H.html#a5b7c51dd21b8f01c325ca8760f684a7e", null ],
+    [ "AdvectionSrcForScalars", "Advection_8H.html#afc82706318724ece6354a8e1b70911ce", null ],
     [ "EfficientAdvType", "Advection_8H.html#aff14fe9e4f76b499843517b2c41c0fbb", null ]
 ];

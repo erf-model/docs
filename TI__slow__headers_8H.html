@@ -148,13 +148,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="TI__slow__headers_8H__dep__incl.png" border="0" usemap="#aSource_2TimeIntegration_2TI__slow__headers_8Hdep" alt=""/></div>
 <map name="aSource_2TimeIntegration_2TI__slow__headers_8Hdep" id="aSource_2TimeIntegration_2TI__slow__headers_8Hdep">
-<area shape="rect" title=" " alt="" coords="4812,5,4987,47"/>
-<area shape="rect" href="ERF__MRI_8H.html" title=" " alt="" coords="4513,95,4688,136"/>
-<area shape="rect" href="ERF__slow__rhs__inc_8cpp.html" title=" " alt="" coords="4712,95,4887,136"/>
-<area shape="rect" href="ERF__slow__rhs__post_8cpp.html" title=" " alt="" coords="4911,95,5088,136"/>
-<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html" title=" " alt="" coords="5112,95,5287,136"/>
-<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="4502,184,4609,211"/>
-<area shape="rect" href="ERF__advance__dycore_8cpp.html" title=" " alt="" coords="8989,266,9180,307"/>
+<area shape="rect" title=" " alt="" coords="5689,5,5864,47"/>
+<area shape="rect" href="ERF__make__sources_8cpp.html" title=" " alt="" coords="5287,95,5466,136"/>
+<area shape="rect" href="ERF__MRI_8H.html" title=" " alt="" coords="5491,95,5665,136"/>
+<area shape="rect" href="ERF__slow__rhs__inc_8cpp.html" title=" " alt="" coords="5689,95,5864,136"/>
+<area shape="rect" href="ERF__slow__rhs__post_8cpp.html" title=" " alt="" coords="5888,95,6065,136"/>
+<area shape="rect" href="ERF__slow__rhs__pre_8cpp.html" title=" " alt="" coords="6089,95,6264,136"/>
+<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="4397,184,4503,211"/>
+<area shape="rect" href="ERF__advance__dycore_8cpp.html" title=" " alt="" coords="8776,266,8967,307"/>
 <area shape="rect" href="BoundaryConditions__bndryreg_8cpp.html" title=" " alt="" coords="5,266,255,307"/>
 <area shape="rect" href="BoundaryConditions__realbdy_8cpp.html" title=" " alt="" coords="279,266,517,307"/>
 <area shape="rect" href="ERF__FillPatch_8cpp.html" title=" " alt="" coords="541,266,743,307"/>
@@ -197,7 +198,6 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" href="ERF__advance__radiation_8cpp.html" title=" " alt="" coords="8063,266,8269,307"/>
 <area shape="rect" href="ERF__ApplySpongeZoneBCs_8cpp.html" title=" " alt="" coords="8293,266,8521,307"/>
 <area shape="rect" href="ERF__ComputeTimestep_8cpp.html" title=" " alt="" coords="8546,266,8751,307"/>
-<area shape="rect" href="ERF__make__buoyancy_8cpp.html" title=" " alt="" coords="8775,266,8965,307"/>
 </map>
 </div>
 </div>
@@ -205,10 +205,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad1369dce23ef8af2d3099d960ace5a8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__slow__headers_8H.html#ad1369dce23ef8af2d3099d960ace5a8d">erf_slow_rhs_pre</a> (int level, int finest_level, int nrk, amrex::Real dt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_t, amrex::MultiFab &amp;Omega, const amrex::MultiFab &amp;source, const amrex::MultiFab &amp;buoyancy, amrex::MultiFab *Tau11, amrex::MultiFab *Tau22, amrex::MultiFab *Tau33, amrex::MultiFab *Tau12, amrex::MultiFab *Tau13, amrex::MultiFab *Tau21, amrex::MultiFab *Tau23, amrex::MultiFab *Tau31, amrex::MultiFab *Tau32, amrex::MultiFab *SmnSmn, amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ, const amrex::MultiFab *p0, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine, const amrex::Real *dptr_rhotheta_src, const amrex::Real *dptr_rhoqt_src, const amrex::Real *dptr_u_geos, const amrex::Real *dptr_v_geos, const amrex::Real *dptr_wbar_sub, const amrex::Vector&lt; amrex::Real * &gt; d_rayleigh_ptrs_at_lev)</td></tr>
-<tr class="separator:ad1369dce23ef8af2d3099d960ace5a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf163a4e2051f584c7ad06bcf524d667"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__slow__headers_8H.html#acf163a4e2051f584c7ad06bcf524d667">erf_slow_rhs_post</a> (int level, int finest_level, int nrk, amrex::Real dt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_new, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, const amrex::MultiFab &amp;source, const amrex::MultiFab *SmnSmn, const amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, const amrex::Real *dptr_rhoqt_src, const amrex::Real *dptr_wbar_sub, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine)</td></tr>
-<tr class="separator:acf163a4e2051f584c7ad06bcf524d667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e1f60c68ec56cbea4578c69e775e4bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__slow__headers_8H.html#a8e1f60c68ec56cbea4578c69e775e4bc">erf_slow_rhs_pre</a> (int level, int finest_level, int nrk, amrex::Real dt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_t, amrex::MultiFab &amp;Omega, const amrex::MultiFab &amp;source, const amrex::MultiFab &amp;buoyancy, amrex::MultiFab *Tau11, amrex::MultiFab *Tau22, amrex::MultiFab *Tau33, amrex::MultiFab *Tau12, amrex::MultiFab *Tau13, amrex::MultiFab *Tau21, amrex::MultiFab *Tau23, amrex::MultiFab *Tau31, amrex::MultiFab *Tau32, amrex::MultiFab *SmnSmn, amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ, const amrex::MultiFab *p0, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine, const amrex::Real *dptr_u_geos, const amrex::Real *dptr_v_geos, const amrex::Real *dptr_wbar_sub, const amrex::Vector&lt; amrex::Real * &gt; d_rayleigh_ptrs_at_lev)</td></tr>
+<tr class="separator:a8e1f60c68ec56cbea4578c69e775e4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8afb76fdc76a70f1bdc30caaf0cd24d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__slow__headers_8H.html#ad8afb76fdc76a70f1bdc30caaf0cd24d">erf_slow_rhs_post</a> (int level, int finest_level, int nrk, amrex::Real dt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_new, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, const amrex::MultiFab &amp;source, const amrex::MultiFab *SmnSmn, const amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine)</td></tr>
+<tr class="separator:ad8afb76fdc76a70f1bdc30caaf0cd24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab885f039a33a636000e83551301905bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__slow__headers_8H.html#ab885f039a33a636000e83551301905bf">ApplySpongeZoneBCs</a> (const <a class="el" href="structSpongeChoice.html">SpongeChoice</a> &amp;spongeChoice, const amrex::Geometry geom, const amrex::Box &amp;tbx, const amrex::Box &amp;tby, const amrex::Box &amp;tbz, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_w, const amrex::Box &amp;bx, const amrex::Array4&lt; amrex::Real &gt; &amp;cell_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data)</td></tr>
 <tr class="separator:ab885f039a33a636000e83551301905bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -313,8 +313,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acf163a4e2051f584c7ad06bcf524d667"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf163a4e2051f584c7ad06bcf524d667">&#9670;&nbsp;</a></span>erf_slow_rhs_post()</h2>
+<a id="ad8afb76fdc76a70f1bdc30caaf0cd24d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8afb76fdc76a70f1bdc30caaf0cd24d">&#9670;&nbsp;</a></span>erf_slow_rhs_post()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -496,18 +496,6 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
-          <td class="paramname"><em>dptr_rhoqt_src</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
-          <td class="paramname"><em>dptr_wbar_sub</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">amrex::YAFluxRegister *&#160;</td>
           <td class="paramname"><em>fr_as_crse</em>, </td>
         </tr>
@@ -528,8 +516,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad1369dce23ef8af2d3099d960ace5a8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1369dce23ef8af2d3099d960ace5a8d">&#9670;&nbsp;</a></span>erf_slow_rhs_pre()</h2>
+<a id="a8e1f60c68ec56cbea4578c69e775e4bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e1f60c68ec56cbea4578c69e775e4bc">&#9670;&nbsp;</a></span>erf_slow_rhs_pre()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -779,18 +767,6 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">amrex::YAFluxRegister *&#160;</td>
           <td class="paramname"><em>fr_as_fine</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
-          <td class="paramname"><em>dptr_rhotheta_src</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
-          <td class="paramname"><em>dptr_rhoqt_src</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

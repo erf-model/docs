@@ -174,8 +174,8 @@ Functions</h2></td></tr>
 <tr class="separator:a64ede26fe5618a31fe1e297ef29095cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a666ef6030bc3baa94198a32754fc65f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Utils_8H.html#a666ef6030bc3baa94198a32754fc65f2">fine_compute_interior_ghost_rhs</a> (const amrex::Real &amp;time, const amrex::Real &amp;delta_t, const int &amp;width, const int &amp;set_width, const amrex::Geometry &amp;geom, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_c, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_u, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_v, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_w, amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs_f, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data_f)</td></tr>
 <tr class="separator:a666ef6030bc3baa94198a32754fc65f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1b2ed87ddd47a5a3ac91fe6dd2ade3d"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Utils_8H.html#af1b2ed87ddd47a5a3ac91fe6dd2ade3d">wrfbdy_set_rhs_in_spec_region</a> (const amrex::Real &amp;dt, const int &amp;icomp, const int &amp;num_var, const int &amp;width, const int &amp;set_width, const amrex::Dim3 &amp;dom_lo, const amrex::Dim3 &amp;dom_hi, const amrex::Box &amp;bx_xlo, const amrex::Box &amp;bx_xhi, const amrex::Box &amp;bx_ylo, const amrex::Box &amp;bx_yhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xlo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_ylo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_yhi, const amrex::Array4&lt; amrex::Real &gt; &amp;data_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs_arr)</td></tr>
-<tr class="separator:af1b2ed87ddd47a5a3ac91fe6dd2ade3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07e79832d9bdb9c05a939bee38a06b9c"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Utils_8H.html#a07e79832d9bdb9c05a939bee38a06b9c">wrfbdy_set_rhs_in_spec_region</a> (const amrex::Real &amp;dt, const int &amp;icomp, const int &amp;num_var, const int &amp;width, const int &amp;set_width, const amrex::Dim3 &amp;dom_lo, const amrex::Dim3 &amp;dom_hi, const amrex::Box &amp;bx_xlo, const amrex::Box &amp;bx_xhi, const amrex::Box &amp;bx_ylo, const amrex::Box &amp;bx_yhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xlo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_ylo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_yhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;data_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs_arr)</td></tr>
+<tr class="separator:a07e79832d9bdb9c05a939bee38a06b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0d5ce71ebff8b1ef263dbaccfaf7758"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Utils_8H.html#af0d5ce71ebff8b1ef263dbaccfaf7758">wrfbdy_compute_laplacian_relaxation</a> (const int &amp;icomp, const int &amp;num_var, const int &amp;width, const int &amp;set_width, const amrex::Dim3 &amp;dom_lo, const amrex::Dim3 &amp;dom_hi, const amrex::Real &amp;F1, const amrex::Real &amp;F2, const amrex::Box &amp;bx_xlo, const amrex::Box &amp;bx_xhi, const amrex::Box &amp;bx_ylo, const amrex::Box &amp;bx_yhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xlo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_xhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_ylo, const amrex::Array4&lt; const amrex::Real &gt; &amp;arr_yhi, const amrex::Array4&lt; const amrex::Real &gt; &amp;data_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs_arr)</td></tr>
 <tr class="separator:af0d5ce71ebff8b1ef263dbaccfaf7758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -937,22 +937,21 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    });</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__post_8cpp.html#aafb32e94906164818397a82b9ad2c356">erf_slow_rhs_post()</a>, and <a class="el" href="InteriorGhostCells_8cpp.html#a41e809a463649991c08af8667d3947cb">realbdy_compute_interior_ghost_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="InteriorGhostCells_8cpp.html#a41e809a463649991c08af8667d3947cb">realbdy_compute_interior_ghost_rhs()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Utils_8H_af0d5ce71ebff8b1ef263dbaccfaf7758_icgraph.png" border="0" usemap="#aUtils_8H_af0d5ce71ebff8b1ef263dbaccfaf7758_icgraph" alt=""/></div>
 <map name="aUtils_8H_af0d5ce71ebff8b1ef263dbaccfaf7758_icgraph" id="aUtils_8H_af0d5ce71ebff8b1ef263dbaccfaf7758_icgraph">
-<area shape="rect" title=" " alt="" coords="243,27,440,69"/>
-<area shape="rect" href="ERF__slow__rhs__post_8cpp.html#aafb32e94906164818397a82b9ad2c356" title=" " alt="" coords="31,5,169,32"/>
-<area shape="rect" href="InteriorGhostCells_8cpp.html#a41e809a463649991c08af8667d3947cb" title=" " alt="" coords="5,57,195,98"/>
+<area shape="rect" title=" " alt="" coords="243,5,440,47"/>
+<area shape="rect" href="InteriorGhostCells_8cpp.html#a41e809a463649991c08af8667d3947cb" title=" " alt="" coords="5,5,195,47"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="af1b2ed87ddd47a5a3ac91fe6dd2ade3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1b2ed87ddd47a5a3ac91fe6dd2ade3d">&#9670;&nbsp;</a></span>wrfbdy_set_rhs_in_spec_region()</h2>
+<a id="a07e79832d9bdb9c05a939bee38a06b9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07e79832d9bdb9c05a939bee38a06b9c">&#9670;&nbsp;</a></span>wrfbdy_set_rhs_in_spec_region()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1050,7 +1049,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>data_arr</em>, </td>
         </tr>
         <tr>
@@ -1126,15 +1125,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    });</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__post_8cpp.html#aafb32e94906164818397a82b9ad2c356">erf_slow_rhs_post()</a>, and <a class="el" href="InteriorGhostCells_8cpp.html#a41e809a463649991c08af8667d3947cb">realbdy_compute_interior_ghost_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="InteriorGhostCells_8cpp.html#a41e809a463649991c08af8667d3947cb">realbdy_compute_interior_ghost_rhs()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Utils_8H_af1b2ed87ddd47a5a3ac91fe6dd2ade3d_icgraph.png" border="0" usemap="#aUtils_8H_af1b2ed87ddd47a5a3ac91fe6dd2ade3d_icgraph" alt=""/></div>
-<map name="aUtils_8H_af1b2ed87ddd47a5a3ac91fe6dd2ade3d_icgraph" id="aUtils_8H_af1b2ed87ddd47a5a3ac91fe6dd2ade3d_icgraph">
-<area shape="rect" title=" " alt="" coords="243,27,420,69"/>
-<area shape="rect" href="ERF__slow__rhs__post_8cpp.html#aafb32e94906164818397a82b9ad2c356" title=" " alt="" coords="31,5,169,32"/>
-<area shape="rect" href="InteriorGhostCells_8cpp.html#a41e809a463649991c08af8667d3947cb" title=" " alt="" coords="5,57,195,98"/>
+<div class="center"><img src="Utils_8H_a07e79832d9bdb9c05a939bee38a06b9c_icgraph.png" border="0" usemap="#aUtils_8H_a07e79832d9bdb9c05a939bee38a06b9c_icgraph" alt=""/></div>
+<map name="aUtils_8H_a07e79832d9bdb9c05a939bee38a06b9c_icgraph" id="aUtils_8H_a07e79832d9bdb9c05a939bee38a06b9c_icgraph">
+<area shape="rect" title=" " alt="" coords="243,5,420,47"/>
+<area shape="rect" href="InteriorGhostCells_8cpp.html#a41e809a463649991c08af8667d3947cb" title=" " alt="" coords="5,5,195,47"/>
 </map>
 </div>
 
