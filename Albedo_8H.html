@@ -140,17 +140,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="comment">// Albedos for land type I (Briegleb)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">auto</span> nswbands = albedo_dir.extent(0);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">auto</span> ncol     = albedo_dif.extent(1);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">using</span> yakl::fortran::parallel_for;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">using</span> yakl::fortran::SimpleBounds;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">// Albedos for land type I (Briegleb)</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">auto</span> nswbands = albedo_dir.extent(0);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">auto</span> ncol     = albedo_dif.extent(1);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">using</span> yakl::fortran::parallel_for;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">using</span> yakl::fortran::SimpleBounds;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  parallel_for(SimpleBounds&lt;2&gt;(nswbands,ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> icol) {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    albedo_dir(ibnd, icol) = 1.4 * 0.24 / ( 1. + 0.8 * coszrs(icol));</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    albedo_dif(ibnd, icol) = 1.2 * 0.24;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  });</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    parallel_for(SimpleBounds&lt;2&gt;(nswbands,ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> icol)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        albedo_dir(ibnd, icol) = 1.4 * 0.24 / ( 1. + 0.8 * coszrs(icol));</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        albedo_dif(ibnd, icol) = 1.2 * 0.24;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    });</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classRadiation.html#a748f2155d330eecb6d0ce4fba32db8e7">Radiation::run()</a>.</p>
 <div class="dynheader">
