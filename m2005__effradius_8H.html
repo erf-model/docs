@@ -295,7 +295,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="comment">// set the minimum droplet number as 20/cm3.</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="comment">// nlic   = max(nlic,20.e6_r8/rho) ! sghan minimum in #/cm3</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keyword">auto</span> tempnc = nlic/<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>/1.0e6;    <span class="comment">// #/kg --&gt; #/cm3</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="comment">//auto tempnc = nlic/rho/1.0e6;    // #/kg --&gt; #/cm3</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="comment">// Should be the in-cloud dropelt number calculated as nlic*rho/1.0e6_r8 ????!!!! +++mhwang</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keyword">auto</span> pgam   = 0.0005714*(nlic*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>/1.e6) + 0.2714;</div>

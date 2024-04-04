@@ -1038,7 +1038,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    boolHost1d top_at_1_h(<span class="stringliteral">&quot;top_at_1_h&quot;</span>,1);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> top_at_1;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    real2d toa_flux(<span class="stringliteral">&quot;toa_flux&quot;</span>, ncol, nswgpts);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.gas_optics(ncol, nlay, &amp;top_at_1, pmid, pint, tmid, gas_concs, combined_optics, toa_flux);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.gas_optics(ncol, nlay, &amp;top_at_1, pmid, pint, tmid, gas_concs, combined_optics, toa_flux); <span class="comment">// TODO: top_at_1 is not a valid address and this doesn&#39;t match longwave call</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Apply TOA flux scaling</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    parallel_for(SimpleBounds&lt;2&gt;(nswgpts,ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> igpt, <span class="keywordtype">int</span> icol) {</div>

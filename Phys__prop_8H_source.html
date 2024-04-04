@@ -573,7 +573,7 @@ $(document).ready(function(){initNavTree('Phys__prop_8H_source.html',''); initRe
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        real2d flw_abs;</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160; </div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;        <span class="keyword">auto</span> nrh       = <a class="code" href="classRadConstants.html#aaa19beec8cd86a9e09db7a2b34a7d883">RadConstants::nrh</a>;</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        <span class="keyword">auto</span> nbnd      = prop.getDimSize( <span class="stringliteral">&quot;lw_band&quot;</span> );</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        <span class="comment">//auto nbnd      = prop.getDimSize( &quot;lw_band&quot; );</span></div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        <span class="keyword">auto</span> nswbands  = prop.getDimSize( <span class="stringliteral">&quot;sw_band&quot;</span> );</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160; </div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        prop.read( fsw_ext, <span class="stringliteral">&quot;ext_sw&quot;</span>);</div>
@@ -666,9 +666,9 @@ $(document).ready(function(){initNavTree('Phys__prop_8H_source.html',''); initRe
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <span class="comment">// Read optics data of type &#39;volcanic_radius&#39;</span></div>
 <div class="line"><a name="l00579"></a><span class="lineno"><a class="line" href="classPhysProp.html#adf9483b1971e6a0e2d7e14bcfd2779c1">  579</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPhysProp.html#adf9483b1971e6a0e2d7e14bcfd2779c1">volcanic_radius_optics_init</a> (<a class="code" href="structPhysProp_1_1physprop__t.html">physprop_t</a>&amp; phys_prop, yakl::SimpleNetCDF&amp; prop)</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    {</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;        <span class="keyword">auto</span> n_mu_samples = prop.getDimSize( <span class="stringliteral">&quot;mu_samples&quot;</span> );</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        <span class="keyword">auto</span> nbnd         = prop.getDimSize( <span class="stringliteral">&quot;lw_band&quot;</span> );</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;        <span class="keyword">auto</span> nswbands     = prop.getDimSize( <span class="stringliteral">&quot;sw_band&quot;</span> );</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;        <span class="comment">//auto n_mu_samples = prop.getDimSize( &quot;mu_samples&quot; );</span></div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        <span class="comment">//auto nbnd         = prop.getDimSize( &quot;lw_band&quot; );</span></div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;        <span class="comment">//auto nswbands     = prop.getDimSize( &quot;sw_band&quot; );</span></div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; </div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a2c8b9cd5f27f8c039d9ec76d665f08bc">r_sw_ext</a>,   <span class="stringliteral">&quot;bext_sw&quot;</span>);</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#ad3d6e9851177a676ab13788002e83bc0">r_sw_scat</a>,  <span class="stringliteral">&quot;bsca_sw&quot;</span>);</div>
@@ -683,8 +683,8 @@ $(document).ready(function(){initNavTree('Phys__prop_8H_source.html',''); initRe
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <span class="comment">// Read optics data of type &#39;volcanic&#39;</span></div>
 <div class="line"><a name="l00596"></a><span class="lineno"><a class="line" href="classPhysProp.html#a0ad3529b5187f2cfbc7f502655910f32">  596</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPhysProp.html#a0ad3529b5187f2cfbc7f502655910f32">volcanic_optics_init</a> (<a class="code" href="structPhysProp_1_1physprop__t.html">physprop_t</a>&amp; phys_prop, yakl::SimpleNetCDF&amp; prop)</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    {</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        <span class="keyword">auto</span> nbnd     = prop.getDimSize( <span class="stringliteral">&quot;lw_band&quot;</span> );</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        <span class="keyword">auto</span> nswbands = prop.getDimSize( <span class="stringliteral">&quot;sw_band&quot;</span> );</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        <span class="comment">//auto nbnd     = prop.getDimSize( &quot;lw_band&quot; );</span></div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        <span class="comment">//auto nswbands = prop.getDimSize( &quot;sw_band&quot; );</span></div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160; </div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a3b762bb10073922aba1fdc89e8f4d412">sw_nonhygro_ext</a>,   <span class="stringliteral">&quot;bext_sw&quot;</span>);</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#abbcc9ba3c0f329c98e7ba078f2ebf1dc">sw_nonhygro_scat</a>,  <span class="stringliteral">&quot;bsca_sw&quot;</span>);</div>
@@ -699,7 +699,7 @@ $(document).ready(function(){initNavTree('Phys__prop_8H_source.html',''); initRe
 <div class="line"><a name="l00611"></a><span class="lineno"><a class="line" href="classPhysProp.html#a012aafa0dfffea201ceb407815094ffd">  611</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPhysProp.html#a012aafa0dfffea201ceb407815094ffd">hygroscopic_optics_init</a> (<a class="code" href="structPhysProp_1_1physprop__t.html">physprop_t</a>&amp; phys_prop, yakl::SimpleNetCDF&amp; prop)</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    {</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;        <span class="comment">// temp data from hygroscopic file before interpolation onto cam-rh-mesh</span></div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        <span class="keywordtype">int</span> nfilerh; <span class="comment">// number of rh values in file</span></div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        <span class="comment">//int nfilerh; // number of rh values in file</span></div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;        real1d frh;</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        real2d fsw_ext, fsw_ssa, fsw_asm, flw_abs;</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160; </div>
@@ -719,7 +719,7 @@ $(document).ready(function(){initNavTree('Phys__prop_8H_source.html',''); initRe
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        prop.read( frh,     <span class="stringliteral">&quot;rh&quot;</span>);</div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160; </div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        real1d fswe(<span class="stringliteral">&quot;&quot;</span>,nrh), fsws(<span class="stringliteral">&quot;&quot;</span>,nrh),</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;            fswa(<span class="stringliteral">&quot;&quot;</span>,nrh), flwa(<span class="stringliteral">&quot;&quot;</span>,nrh);</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;               fswa(<span class="stringliteral">&quot;&quot;</span>,nrh), flwa(<span class="stringliteral">&quot;&quot;</span>,nrh);</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160; </div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        <span class="comment">// interpolate onto cam&#39;s rh mesh</span></div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;        parallel_for (SimpleBounds&lt;2&gt; (nswbands, nrh), YAKL_LAMBDA (<span class="keywordtype">int</span> kbnd, <span class="keywordtype">int</span> krh)</div>
@@ -759,8 +759,8 @@ $(document).ready(function(){initNavTree('Phys__prop_8H_source.html',''); initRe
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <span class="comment">// Read optics data of type &#39;nonhygro&#39;</span></div>
 <div class="line"><a name="l00672"></a><span class="lineno"><a class="line" href="classPhysProp.html#adce35521cf33d13c6345ac5a9586c829">  672</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPhysProp.html#adce35521cf33d13c6345ac5a9586c829">nonhygro_optics_init</a> (<a class="code" href="structPhysProp_1_1physprop__t.html">physprop_t</a>&amp; phys_prop, yakl::SimpleNetCDF&amp; prop)</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    {</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        <span class="keyword">auto</span> nlwbands = prop.getDimSize( <span class="stringliteral">&quot;lw_band&quot;</span> );</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        <span class="keyword">auto</span> nswbands = prop.getDimSize( <span class="stringliteral">&quot;sw_band&quot;</span> );</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        <span class="comment">//auto nlwbands = prop.getDimSize( &quot;lw_band&quot; );</span></div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        <span class="comment">//auto nswbands = prop.getDimSize( &quot;sw_band&quot; );</span></div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160; </div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a3b762bb10073922aba1fdc89e8f4d412">sw_nonhygro_ext</a>, <span class="stringliteral">&quot;ext_sw&quot;</span>);</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#aad14342b28b8939c5ae115605318ed02">sw_nonhygro_ssa</a>, <span class="stringliteral">&quot;ssa_sw&quot;</span>);</div>
@@ -921,9 +921,9 @@ $(document).ready(function(){initNavTree('Phys__prop_8H_source.html',''); initRe
 <div class="line"><a name="l00833"></a><span class="lineno"><a class="line" href="classPhysProp.html#a1099f5de19b69524e4c2bb0b78e497b7">  833</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPhysProp.html#a1099f5de19b69524e4c2bb0b78e497b7">aer_optics_log_rh</a> (std::string name, <span class="keyword">const</span> real1d&amp; ext, <span class="keyword">const</span> real1d&amp; ssa, <span class="keyword">const</span> real1d&amp; asmin)</div>
 <div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    {</div>
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nrh_test = 36;</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;        <span class="keywordtype">int</span> krh;</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;        <span class="comment">//int krh;</span></div>
 <div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;        real1d rh_test(<span class="stringliteral">&quot;rh_test&quot;</span>, nrh_test);</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;        <span class="keyword">auto</span> nrh = ext.extent(0);</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;        <span class="comment">//auto nrh = ext.extent(0);</span></div>
 <div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160; </div>
 <div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        parallel_for (SimpleBounds&lt;1&gt; (nrh_test), YAKL_LAMBDA (<span class="keywordtype">int</span> krh_test)</div>
 <div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        {</div>
@@ -933,18 +933,20 @@ $(document).ready(function(){initNavTree('Phys__prop_8H_source.html',''); initRe
 <div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;        <span class="comment">// loop through test rh values</span></div>
 <div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        parallel_for (SimpleBounds&lt;1&gt; (nrh_test), YAKL_LAMBDA (<span class="keywordtype">int</span> krh_test)</div>
 <div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        {</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;            <span class="comment">// find corresponding rh index</span></div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;            <span class="keyword">auto</span> rh = rh_test(krh_test);</div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;            <span class="keyword">auto</span> krh = std::min(floor( (rh) * nrh ) + 1, <span class="keyword">static_cast&lt;</span>real<span class="keyword">&gt;</span>(nrh - 1));</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;            <span class="keyword">auto</span> wrh = (rh) *nrh - krh;</div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;            <span class="keyword">auto</span> exti = ext(krh + 1) * (wrh + 1) - ext(krh) * wrh;</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;            <span class="keyword">auto</span> ssai = ssa(krh + 1) * (wrh + 1) - ssa(krh) * wrh;</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;            <span class="keyword">auto</span> asmi = asmin(krh + 1) * (wrh + 1) - asmin(krh) * wrh;</div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;        });</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;    }</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;};</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160; </div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;            <span class="comment">/*</span></div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;<span class="comment">            // find corresponding rh index</span></div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;<span class="comment">            auto rh = rh_test(krh_test);</span></div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;<span class="comment">            auto krh = std::min(floor( (rh) * nrh ) + 1, static_cast&lt;real&gt;(nrh - 1));</span></div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;<span class="comment">            auto wrh = (rh) *nrh - krh;</span></div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;<span class="comment">            auto exti = ext(krh + 1) * (wrh + 1) - ext(krh) * wrh;</span></div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;<span class="comment">            auto ssai = ssa(krh + 1) * (wrh + 1) - ssa(krh) * wrh;</span></div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;<span class="comment">            auto asmi = asmin(krh + 1) * (wrh + 1) - asmin(krh) * wrh;</span></div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;<span class="comment">            */</span></div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;        });</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;    }</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;};</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160; </div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aRad__constants_8H_html"><div class="ttname"><a href="Rad__constants_8H.html">Rad_constants.H</a></div></div>
