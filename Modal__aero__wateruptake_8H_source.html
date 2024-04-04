@@ -357,7 +357,7 @@ $(document).ready(function(){initNavTree('Modal__aero__wateruptake_8H_source.htm
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    YAKL_INLINE</div>
 <div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="classModalAeroWateruptake.html#abdedb99ff569dd300dd3046820da78e8">  270</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classModalAeroWateruptake.html#abdedb99ff569dd300dd3046820da78e8">modal_aero_kohler</a> (<span class="keyword">const</span> real&amp; rdry_in,</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                                   <span class="keyword">const</span> real&amp; hygro, <span class="keyword">const</span> real&amp; s,</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                  real&amp; rwet_out)</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                   real&amp; rwet_out)</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    {</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keyword">const</span> real eps = 1.e-4;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keyword">const</span> real mw = 18.;</div>
@@ -375,31 +375,31 @@ $(document).ready(function(){initNavTree('Modal__aero__wateruptake_8H_source.htm
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keyword">auto</span> b    = vol*hygro;</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="comment">//quartic</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keyword">auto</span> ss   = std::min(s,1.-eps); <span class="comment">// relative humidity</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        ss   = std::max(ss,1.e-10);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keyword">auto</span> slog = std::log(ss); <span class="comment">// log relative humidity</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keyword">auto</span> p43  = -a/slog;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keyword">auto</span> p42  = 0.;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keyword">auto</span> p41  = b/slog-vol;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keyword">auto</span> p40  = a*vol/slog;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="comment">// cubic for rh=1</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keyword">auto</span> p32 = 0.;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keyword">auto</span> p31 = -b/a;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keyword">auto</span> p30 = -vol;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        real r, r3, r4;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keywordflow">if</span>(vol &lt;= 1.e-12) {</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            r=rdry;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        }</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keyword">auto</span> p = std::abs(p31)/(rdry*rdry);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">if</span>(p &lt; eps) {</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="comment">//approximate solution for small particles</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            r=rdry*(1.+p*<a class="code" href="classModalAeroWateruptake.html#a77bdba258f0d10234a98a54a39a5fb7f">third</a>/(1.-slog*rdry/a));</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        }</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keyword">auto</span> ss   = std::max(std::min(s,1.-eps), 1.e-10); <span class="comment">// relative humidity</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keyword">auto</span> slog = std::log(ss); <span class="comment">// log relative humidity</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keyword">auto</span> p43  = -a/slog;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keyword">auto</span> p42  = 0.;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keyword">auto</span> p41  = b/slog-vol;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keyword">auto</span> p40  = a*vol/slog;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="comment">// cubic for rh=1</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="keyword">auto</span> p32 = 0.;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keyword">auto</span> p31 = -b/a;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keyword">auto</span> p30 = -vol;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        real r, r3, r4;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">if</span>(vol &lt;= 1.e-12) {</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            r=rdry;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        }</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keyword">auto</span> p = std::abs(p31)/(rdry*rdry);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">if</span>(p &lt; eps) {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <span class="comment">//approximate solution for small particles</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            r=rdry*(1.+p*<a class="code" href="classModalAeroWateruptake.html#a77bdba258f0d10234a98a54a39a5fb7f">third</a>/(1.-slog*rdry/a));</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        }</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            <span class="comment">// AML TODO: FIX WHATEVER THIS IS TRYING TO DO...</span></div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            amrex::GpuComplex&lt;real&gt; cx4[4];</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <a class="code" href="classModalAeroWateruptake.html#a63dc4418d21ddbc2f88a86e6b5e05640">makoh_quartic</a>(cx4,p43,p42,p41,p40);</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="comment">//find smallest real(r8) solution</span></div>
@@ -510,39 +510,38 @@ $(document).ready(function(){initNavTree('Modal__aero__wateruptake_8H_source.htm
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keyword">const</span> real <a class="code" href="classModalAeroWateruptake.html#a77bdba258f0d10234a98a54a39a5fb7f">third</a>=1./3.;</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keyword">auto</span> q = -p2*p2/36.+(p3*p1-4*p0)/12.;</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keyword">auto</span> r = -std::pow((p2/6), 3.0) + p2*(p3*p1-4.*p0)/48.</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            +(4.*p0*p2-p0*p3*p3-p1*p1)/16.;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;               + (4.*p0*p2-p0*p3*p3-p1*p1)/16.;</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="keyword">auto</span> crad = amrex::GpuComplex&lt;real&gt;(r*r+q*q*q, 0.);</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        crad = amrex::sqrt(crad);</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keyword">auto</span> cb = r-crad;</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <span class="keywordflow">if</span> (cb.real() == 0. &amp;&amp; cb.imag() == 0.) {</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            <span class="comment">// insoluble particle</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            cx[0] = amrex::pow(amrex::GpuComplex&lt;real&gt;(-p1, 0.0), <a class="code" href="classModalAeroWateruptake.html#a77bdba258f0d10234a98a54a39a5fb7f">third</a>);</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            cx[1] = cx[0];</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            cx[2] = cx[0];</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            cx[3] = cx[0];</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        }</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            cb = amrex::pow(cb, <a class="code" href="classModalAeroWateruptake.html#a77bdba258f0d10234a98a54a39a5fb7f">third</a>);</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            <span class="keyword">auto</span> cy = -cb+q/cb+p2/6.;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            <span class="keyword">auto</span> cb0 = amrex::sqrt(cy*cy-p0);</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            <span class="keyword">auto</span> cb1 = (p3*cy-p1)/(2.*cb0);</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            cb   = p3/2.+cb1;</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            crad = cb*cb-4.*(cy+cb0);</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            crad = amrex::sqrt(crad);</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            cx[1] = (-cb+crad)/2.;</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            cx[2] = (-cb-crad)/2.;</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            cb    = p3/2.-cb1;</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            crad  = cb*cb-4.*(cy-cb0);</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            crad  = amrex::sqrt(crad);</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            cx[3] = (-cb+crad)/2.;</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            cx[4] = (-cb-crad)/2.;</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        }</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    }</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;};</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="keyword">auto</span> crad = amrex::sqrt(amrex::GpuComplex&lt;real&gt;(r*r+q*q*q, 0.));</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="keyword">auto</span> cb   = r-crad;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordflow">if</span> (cb.real() == 0. &amp;&amp; cb.imag() == 0.) {</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <span class="comment">// insoluble particle</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            cx[0] = amrex::pow(amrex::GpuComplex&lt;real&gt;(-p1, 0.0), <a class="code" href="classModalAeroWateruptake.html#a77bdba258f0d10234a98a54a39a5fb7f">third</a>);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            cx[1] = cx[0];</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            cx[2] = cx[0];</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            cx[3] = cx[0];</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        }</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            cb = amrex::pow(cb, <a class="code" href="classModalAeroWateruptake.html#a77bdba258f0d10234a98a54a39a5fb7f">third</a>);</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            <span class="keyword">auto</span> cy = -cb+q/cb+p2/6.;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            <span class="keyword">auto</span> cb0 = amrex::sqrt(cy*cy-p0);</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            <span class="keyword">auto</span> cb1 = (p3*cy-p1)/(2.*cb0);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;            cb   = p3/2.+cb1;</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            crad = cb*cb-4.*(cy+cb0);</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            crad = amrex::sqrt(crad);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            cx[1] = (-cb+crad)/2.;</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            cx[2] = (-cb-crad)/2.;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            cb    = p3/2.-cb1;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            crad  = cb*cb-4.*(cy-cb0);</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            crad  = amrex::sqrt(crad);</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            cx[3] = (-cb+crad)/2.;</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            cx[4] = (-cb-crad)/2.;</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        }</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    }</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;};</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAero__rad__props_8H_html"><div class="ttname"><a href="Aero__rad__props_8H.html">Aero_rad_props.H</a></div></div>
 <div class="ttc" id="aCloud__rad__props_8H_html"><div class="ttname"><a href="Cloud__rad__props_8H.html">Cloud_rad_props.H</a></div></div>
 <div class="ttc" id="aERF__Constants_8H_html"><div class="ttname"><a href="ERF__Constants_8H.html">ERF_Constants.H</a></div></div>
@@ -550,11 +549,11 @@ $(document).ready(function(){initNavTree('Modal__aero__wateruptake_8H_source.htm
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aMam4__constituents_8H_html"><div class="ttname"><a href="Mam4__constituents_8H.html">Mam4_constituents.H</a></div></div>
 <div class="ttc" id="aclassMamConstituents_html"><div class="ttname"><a href="classMamConstituents.html">MamConstituents</a></div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:18</div></div>
-<div class="ttc" id="aclassMamConstituents_html_a00fcbe86b80e26221e3895c920d7cbc2"><div class="ttname"><a href="classMamConstituents.html#a00fcbe86b80e26221e3895c920d7cbc2">MamConstituents::get_mode_nspec</a></div><div class="ttdeci">const void get_mode_nspec(int list_idx, int m_idx, int &amp;nspec)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:402</div></div>
-<div class="ttc" id="aclassMamConstituents_html_a0d5796bba8b3031a99ef09309a2508e5"><div class="ttname"><a href="classMamConstituents.html#a0d5796bba8b3031a99ef09309a2508e5">MamConstituents::get_mam_density_aer</a></div><div class="ttdeci">const void get_mam_density_aer(int list_idx, int mode_idx, int spec_idx, real &amp;density_aer)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:912</div></div>
-<div class="ttc" id="aclassMamConstituents_html_a3bafcd362a064a323c1b6a241a6ece68"><div class="ttname"><a href="classMamConstituents.html#a3bafcd362a064a323c1b6a241a6ece68">MamConstituents::get_mode_props</a></div><div class="ttdeci">const void get_mode_props(int list_idx, int mode_idx, real &amp;sigmag, real &amp;rhcrystal, real &amp;rhdeliques)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:828</div></div>
-<div class="ttc" id="aclassMamConstituents_html_a53ef55dfb6cfe3f77dcd16d4ccec5237"><div class="ttname"><a href="classMamConstituents.html#a53ef55dfb6cfe3f77dcd16d4ccec5237">MamConstituents::get_mam_hygro_aer</a></div><div class="ttdeci">const void get_mam_hygro_aer(int list_idx, int mode_idx, int spec_idx, real &amp;hygro_aer)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:926</div></div>
-<div class="ttc" id="aclassMamConstituents_html_afb5674421ff78c9688d71bfbf460a746"><div class="ttname"><a href="classMamConstituents.html#afb5674421ff78c9688d71bfbf460a746">MamConstituents::rad_cnst_get_mam_mmr_by_idx</a></div><div class="ttdeci">const void rad_cnst_get_mam_mmr_by_idx(int list_idx, int mode_idx, int spec_idx, const std::string &amp;phase, real2d &amp;mmr)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:654</div></div>
+<div class="ttc" id="aclassMamConstituents_html_a00fcbe86b80e26221e3895c920d7cbc2"><div class="ttname"><a href="classMamConstituents.html#a00fcbe86b80e26221e3895c920d7cbc2">MamConstituents::get_mode_nspec</a></div><div class="ttdeci">const void get_mode_nspec(int list_idx, int m_idx, int &amp;nspec)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:400</div></div>
+<div class="ttc" id="aclassMamConstituents_html_a0d5796bba8b3031a99ef09309a2508e5"><div class="ttname"><a href="classMamConstituents.html#a0d5796bba8b3031a99ef09309a2508e5">MamConstituents::get_mam_density_aer</a></div><div class="ttdeci">const void get_mam_density_aer(int list_idx, int mode_idx, int spec_idx, real &amp;density_aer)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:910</div></div>
+<div class="ttc" id="aclassMamConstituents_html_a3bafcd362a064a323c1b6a241a6ece68"><div class="ttname"><a href="classMamConstituents.html#a3bafcd362a064a323c1b6a241a6ece68">MamConstituents::get_mode_props</a></div><div class="ttdeci">const void get_mode_props(int list_idx, int mode_idx, real &amp;sigmag, real &amp;rhcrystal, real &amp;rhdeliques)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:826</div></div>
+<div class="ttc" id="aclassMamConstituents_html_a53ef55dfb6cfe3f77dcd16d4ccec5237"><div class="ttname"><a href="classMamConstituents.html#a53ef55dfb6cfe3f77dcd16d4ccec5237">MamConstituents::get_mam_hygro_aer</a></div><div class="ttdeci">const void get_mam_hygro_aer(int list_idx, int mode_idx, int spec_idx, real &amp;hygro_aer)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:924</div></div>
+<div class="ttc" id="aclassMamConstituents_html_afb5674421ff78c9688d71bfbf460a746"><div class="ttname"><a href="classMamConstituents.html#afb5674421ff78c9688d71bfbf460a746">MamConstituents::rad_cnst_get_mam_mmr_by_idx</a></div><div class="ttdeci">const void rad_cnst_get_mam_mmr_by_idx(int list_idx, int mode_idx, int spec_idx, const std::string &amp;phase, real2d &amp;mmr)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:652</div></div>
 <div class="ttc" id="aclassModalAeroWateruptake_html"><div class="ttname"><a href="classModalAeroWateruptake.html">ModalAeroWateruptake</a></div><div class="ttdef"><b>Definition:</b> Modal_aero_wateruptake.H:18</div></div>
 <div class="ttc" id="aclassModalAeroWateruptake_html_a134cf0f1fd68266a37a7683e362553c4"><div class="ttname"><a href="classModalAeroWateruptake.html#a134cf0f1fd68266a37a7683e362553c4">ModalAeroWateruptake::makoh_cubic</a></div><div class="ttdeci">static void makoh_cubic(amrex::GpuComplex&lt; real &gt; cx[], const real &amp;p2, const real &amp;p1, const real &amp;p0)</div><div class="ttdef"><b>Definition:</b> Modal_aero_wateruptake.H:377</div></div>
 <div class="ttc" id="aclassModalAeroWateruptake_html_a4a9705a6205eb9fad502289968668b77"><div class="ttname"><a href="classModalAeroWateruptake.html#a4a9705a6205eb9fad502289968668b77">ModalAeroWateruptake::pi43</a></div><div class="ttdeci">constexpr static real pi43</div><div class="ttdef"><b>Definition:</b> Modal_aero_wateruptake.H:21</div></div>

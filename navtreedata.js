@@ -80,10 +80,10 @@ var NAVTREEINDEX =
 "classFlowerIF.html#a6e09a1d51eb36041dcb175f8784b8eeb",
 "classMamConstituents.html#a036428179a899d517fc19379ab73e22f",
 "classPlaneAverage.html#abe59333d5fc9969465111df40dd9892e",
-"classSAM.html#aea5fdd520cbb1bc936a0f11d55400029",
+"classSAM.html#ae2e767f439749aeec7168bc98006caf0",
 "functions_vars.html",
-"structMamConstituents_1_1aerlist__t.html#a21f61436cc2e4a150e675d9d0163fcdf",
-"structUPWIND5.html#a87865225127cac26ae09dc75a23fc0af"
+"structMamConstituents_1_1aerlist__t.html",
+"structUPWIND5.html#a6020e2c4e4c44b76a2456ac7d2636007"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
