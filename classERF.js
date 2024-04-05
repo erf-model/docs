@@ -19,7 +19,7 @@ var classERF =
     [ "DataLog", "classERF.html#aa2c3ee1910008b828b9da79ccdfe3871", null ],
     [ "DataLogName", "classERF.html#a16e1f6b8bbb05ae738daf2abe626c159", null ],
     [ "Define_ERFFillPatchers", "classERF.html#ac0951404aa6802aad7a3be6b7375dfa2", null ],
-    [ "derive_diag_profiles", "classERF.html#a07f151e7fbc8aa6c4ac8b52bd4c49e2e", null ],
+    [ "derive_diag_profiles", "classERF.html#abd66e4106f6b6a6662313e98a4daff6e", null ],
     [ "derive_diag_profiles_stag", "classERF.html#a8e3bb984f352bb1b0887d4cf88bc7139", null ],
     [ "derive_stress_profiles", "classERF.html#a0f0aaad01835b2f1ce8f42112877ef47", null ],
     [ "derive_stress_profiles_stag", "classERF.html#aa1d539b1b91119c61ec5d3efd2897cc9", null ],
