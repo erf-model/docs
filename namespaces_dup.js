@@ -24,7 +24,9 @@ var namespaces_dup =
       [ "erf_dertemp", "namespacederived.html#a8d96f91847cec51636c122ab27a5f8a2", null ],
       [ "erf_dertheta", "namespacederived.html#af5e075e5b8b2e3964ae6af3f5f06f497", null ],
       [ "erf_dertheta", "namespacederived.html#adc3c787125484205e4fc7cd85c25ab6c", null ],
-      [ "erf_dervort", "namespacederived.html#ab80fb03ad34497a843405b353d03cced", null ]
+      [ "erf_dervortx", "namespacederived.html#a0a37dd4fa4a044e34891e6222d06654c", null ],
+      [ "erf_dervorty", "namespacederived.html#a2a85aedf7c75ca416dbb931559c4b21e", null ],
+      [ "erf_dervortz", "namespacederived.html#a8bc196f7dfb365c426b0b7e720e479e2", null ]
     ] ],
     [ "EddyDiff", "namespaceEddyDiff.html", null ],
     [ "ERFBCType", "namespaceERFBCType.html", [
