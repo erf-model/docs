@@ -1,5 +1,16 @@
 var NAVTREEINDEX7 =
 {
+"classPlaneAverage.html#a6a25218bd5754ec121caab7e4acfc537":[2,0,50,25],
+"classPlaneAverage.html#a6c29e3eafbbb7028e801c513b29a1c09":[2,0,50,21],
+"classPlaneAverage.html#a86402b90cf369ad0613ff325328e05b4":[2,0,50,8],
+"classPlaneAverage.html#a961decb14c2137f36e17ceeaf560b452":[2,0,50,2],
+"classPlaneAverage.html#a98ad1b7801e75ac43ddd3d06b0c5d7da":[2,0,50,29],
+"classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d":[2,0,50,26],
+"classPlaneAverage.html#a9ed43e3c2cfd2ef0f3fb23d2097a1b6d":[2,0,50,18],
+"classPlaneAverage.html#aa58d4a708d46cd0d12120e9bf90d5de2":[2,0,50,16],
+"classPlaneAverage.html#aaf4e5c9b73f65af3eb0ccdc6a82e76f2":[2,0,50,14],
+"classPlaneAverage.html#ab1c325b8a1241cb446bad96fa558e770":[2,0,50,19],
+"classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1":[2,0,50,13],
 "classPlaneAverage.html#abe59333d5fc9969465111df40dd9892e":[2,0,50,23],
 "classPlaneAverage.html#abf7bfae5c1b6fed56ff09fd06368b12c":[2,0,50,6],
 "classPlaneAverage.html#ade7352e3a72a2e09561e031acd32cc8a":[2,0,50,20],
@@ -238,16 +249,5 @@ var NAVTREEINDEX7 =
 "classSAM.html#a81c775ecb78f3f228a98a9c39d1d098d":[2,0,57,43],
 "classSAM.html#a8242fff43eb2cf417036eb36f5e4a3d8":[2,0,57,39],
 "classSAM.html#a8350a31a9f29bedee48b24bb43d5b0fc":[2,0,57,29],
-"classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec":[2,0,57,38],
-"classSAM.html#a8f9e9699afd94d393be846cd26933fd0":[2,0,57,32],
-"classSAM.html#a927f4531f9c2452e5b7fc7ab965c5b78":[2,0,57,10],
-"classSAM.html#a9fafcc2e5b063f7ccb94e2cc78324d35":[2,0,57,50],
-"classSAM.html#aa2de795ae7721e5070a8f4844e3897f6":[2,0,57,18],
-"classSAM.html#aa32720be8b27907466650050dc73e110":[2,0,57,21],
-"classSAM.html#aaa3dd79bbd6ac41ae1170d003b1a423d":[2,0,57,51],
-"classSAM.html#aad8c4616221c01599e4e32f2ebb08698":[2,0,57,23],
-"classSAM.html#aaf2fc082e80f1c5cc9de339ff25ca27b":[2,0,57,55],
-"classSAM.html#aba6460f2d34882d6b512574106e44531":[2,0,57,8],
-"classSAM.html#aba750ad815594f21255d26d24810d3fe":[2,0,57,15],
-"classSAM.html#ae27c1d50525a70f838fa9ba73e61ef46":[2,0,57,14]
+"classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec":[2,0,57,38]
 };

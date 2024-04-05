@@ -119,6 +119,8 @@ Functions</h2></td></tr>
 <tr class="separator:ab4ed6da36c5cfb17fcc586771300cee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c1ecbedddfe464d9db02960e5422564"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8cpp.html#a9c1ecbedddfe464d9db02960e5422564">make_J</a> (const Geometry &amp;geom, MultiFab &amp;z_phys_nd, MultiFab &amp;detJ_cc)</td></tr>
 <tr class="separator:a9c1ecbedddfe464d9db02960e5422564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a920c175414adfaaa26687bfb8e7585bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8cpp.html#a920c175414adfaaa26687bfb8e7585bb">make_areas</a> (const Geometry &amp;geom, MultiFab &amp;z_phys_nd, MultiFab &amp;ax, MultiFab &amp;ay, MultiFab &amp;az)</td></tr>
+<tr class="separator:a920c175414adfaaa26687bfb8e7585bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc28d890df44cf0082a848c057042178"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TerrainMetrics_8cpp.html#acc28d890df44cf0082a848c057042178">make_zcc</a> (const Geometry &amp;geom, MultiFab &amp;z_phys_nd, MultiFab &amp;z_phys_cc)</td></tr>
 <tr class="separator:acc28d890df44cf0082a848c057042178"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -677,6 +679,121 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a920c175414adfaaa26687bfb8e7585bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a920c175414adfaaa26687bfb8e7585bb">&#9670;&nbsp;</a></span>make_areas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void make_areas </td>
+          <td>(</td>
+          <td class="paramtype">const Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>z_phys_nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>ax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>ay</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>az</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Computation of area fractions on faces </p>
+<div class="fragment"><div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;{</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>* dx = geom.CellSize();</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    Real dzInv = 1.0/dx[2];</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160; </div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    <span class="comment">// Domain valid box (z_nd is nodal)</span></div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    <span class="keywordtype">int</span> domlo_z = domain.smallEnd(2);</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="comment">// The z-faces are always full when using terrain-fitted coordinates</span></div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    az.setVal(1.0);</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="comment">// x-areas</span></div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(ax, TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    {</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        Box gbx = mfi.growntilebox(ax.nGrow());</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        <span class="keywordflow">if</span> (gbx.smallEnd(2) &lt; domlo_z) {</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;            gbx.setSmall(2,domlo_z);</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        }</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;        Array4&lt;Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        Array4&lt;Real      &gt; ax_arr = ax.array(mfi);</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;               ax_arr(i, j, k) = .5 * dzInv * (</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                       z_nd(i,j,k+1) + z_nd(i,j+1,k+1) - z_nd(i,j,k) - z_nd(i,j+1,k));</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        });</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    }</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <span class="comment">// y-areas</span></div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(ay, TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    {</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        Box gbx = mfi.growntilebox(ay.nGrow());</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <span class="keywordflow">if</span> (gbx.smallEnd(2) &lt; domlo_z) {</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            gbx.setSmall(2,domlo_z);</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        }</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160; </div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        Array4&lt;Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        Array4&lt;Real      &gt; ay_arr = ay.array(mfi);</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;               ay_arr(i, j, k) = .5 * dzInv * (</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                       z_nd(i,j,k+1) + z_nd(i+1,j,k+1) - z_nd(i,j,k) - z_nd(i+1,j,k));</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        });</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    }</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; </div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    ax.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    ay.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    az.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a900a0119c110486650f2759287e22cba">ERF::update_terrain_arrays()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="TerrainMetrics_8cpp_a920c175414adfaaa26687bfb8e7585bb_icgraph.png" border="0" usemap="#aTerrainMetrics_8cpp_a920c175414adfaaa26687bfb8e7585bb_icgraph" alt=""/></div>
+<map name="aTerrainMetrics_8cpp_a920c175414adfaaa26687bfb8e7585bb_icgraph" id="aTerrainMetrics_8cpp_a920c175414adfaaa26687bfb8e7585bb_icgraph">
+<area shape="rect" title=" " alt="" coords="203,13,304,39"/>
+<area shape="rect" href="classERF.html#a900a0119c110486650f2759287e22cba" title=" " alt="" coords="5,5,155,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a9c1ecbedddfe464d9db02960e5422564"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9c1ecbedddfe464d9db02960e5422564">&#9670;&nbsp;</a></span>make_J()</h2>
 
@@ -785,32 +902,32 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Computation of z_phys at cell-center </p>
-<div class="fragment"><div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;{</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="comment">// Domain valid box (z_nd is nodal)</span></div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    <span class="keywordtype">int</span> domlo_z = domain.smallEnd(2);</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="comment">// Number of ghost cells</span></div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    <span class="keywordtype">int</span> ngrow= z_phys_cc.nGrow();</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(z_phys_cc, TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    {</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        Box gbx = mfi.growntilebox(ngrow);</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        <span class="keywordflow">if</span> (gbx.smallEnd(2) &lt; domlo_z) {</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;            gbx.setSmall(2,domlo_z);</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        }</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        Array4&lt;Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        Array4&lt;Real      &gt; z_cc = z_phys_cc.array(mfi);</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;           z_cc(i, j, k) = .125 * ( z_nd(i,j,k  ) + z_nd(i+1,j,k  ) + z_nd(i,j+1,k  ) + z_nd(i+1,j+1,k  )</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                                   +z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1) );</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;       });</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    }</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    z_phys_cc.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;{</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <span class="comment">// Domain valid box (z_nd is nodal)</span></div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="keywordtype">int</span> domlo_z = domain.smallEnd(2);</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160; </div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="comment">// Number of ghost cells</span></div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    <span class="keywordtype">int</span> ngrow= z_phys_cc.nGrow();</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(z_phys_cc, TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    {</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        Box gbx = mfi.growntilebox(ngrow);</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;        <span class="keywordflow">if</span> (gbx.smallEnd(2) &lt; domlo_z) {</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            gbx.setSmall(2,domlo_z);</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        }</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        Array4&lt;Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        Array4&lt;Real      &gt; z_cc = z_phys_cc.array(mfi);</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;           z_cc(i, j, k) = .125 * ( z_nd(i,j,k  ) + z_nd(i+1,j,k  ) + z_nd(i,j+1,k  ) + z_nd(i+1,j+1,k  )</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;                                   +z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1) );</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;       });</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    }</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    z_phys_cc.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a58f6683aff0fbe6949bfe8b49275a8b3">ERF::post_timestep()</a>, and <a class="el" href="classERF.html#a900a0119c110486650f2759287e22cba">ERF::update_terrain_arrays()</a>.</p>
 <div class="dynheader">

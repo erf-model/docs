@@ -1114,7 +1114,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            AMREX_ASSERT_WITH_MESSAGE(<a class="code" href="classMOSTAverage.html#af2f1477f6bc5e4b2f2ddee27d17dab9f">m_zref</a> &lt;= m_zhi - 0.5 * m_dz,</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                                      <span class="stringliteral">&quot;Query point must be below the last z-cell!&quot;</span>);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordtype">int</span> lk = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(floor((<a class="code" href="classMOSTAverage.html#af2f1477f6bc5e4b2f2ddee27d17dab9f">m_zref</a> - m_zlo) / m_dz));</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordtype">int</span> lk = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(floor((<a class="code" href="classMOSTAverage.html#af2f1477f6bc5e4b2f2ddee27d17dab9f">m_zref</a> - m_zlo) / m_dz - 0.5));</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <a class="code" href="classMOSTAverage.html#af2f1477f6bc5e4b2f2ddee27d17dab9f">m_zref</a> = (lk + 0.5) * m_dz + m_zlo;</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
