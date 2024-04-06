@@ -59,7 +59,7 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
-        [ "Functions", "globals_func.html", null ],
+        [ "Functions", "globals_func.html", "globals_func" ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
@@ -74,16 +74,17 @@ var NAVTREEINDEX =
 [
 "ABLMost_8H.html",
 "ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518",
-"Microphysics__Utils_8H.html#abd125e107924437493cbcbac9a97c017",
-"classABLMost.html#ad837d92390012682056ffac0b5f9a8f9",
-"classERF.html#a86a0bc8e41668411ee0ab5801d4688a7",
-"classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048",
-"classMam4__aer.html#aba67cb233002e4fd50c766e73ec3d022",
-"classPlaneAverage.html#a560dbd7059fb6cbb0421635c5d405d2b",
-"classSAM.html#a7da420869410dc959c2442962524259f",
-"functions_h.html",
-"structInputSoundingData.html#a7710e6498adaf4b94a54e600ef6a0ca7",
-"structTurbChoice.html#aeb3c184b540858407426a606327fba3a"
+"Microphysics__Utils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615",
+"classABLMost.html#aca21d4f7aae064515bfec992b263d6d2",
+"classERF.html#a83572d8dfad51158945b4a5ab06b2f72",
+"classERFPhysBCFunct__w__no__terrain.html#af10baf7824fa75f859317b7b0c8cc3f4",
+"classMam4__aer.html#a54577b94ef6180a27a5f0b5ab7e1b022",
+"classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5",
+"classSAM.html#a654b0b383d81815845230ac2fb322688",
+"functions_func_s.html",
+"structCENTERED6.html#addc1b756f97d4883080045a187e4d433",
+"structTimeInterpolatedData.html#a6eeb9167e2d8051c16fdbb1e7fee54ed",
+"structsurface__flux__mod__charnock.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

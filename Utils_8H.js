@@ -1,5 +1,7 @@
 var Utils_8H =
 [
+    [ "ApplyInvertedMask", "Utils_8H.html#acbc6116a3309adf87b7dc24242dc50ec", null ],
+    [ "ApplyMask", "Utils_8H.html#acebead6f3a33cb7737a1fea98341c3ae", null ],
     [ "compute_interior_ghost_bxs_xy", "Utils_8H.html#aaa3f051b9681a4e20d0d88b3715d8897", null ],
     [ "fine_compute_interior_ghost_rhs", "Utils_8H.html#a666ef6030bc3baa94198a32754fc65f2", null ],
     [ "make_areas", "Utils_8H.html#afd5f5cf174d096726815e6d7dc325c41", null ],

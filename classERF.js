@@ -290,6 +290,9 @@ var classERF =
     [ "Tau32_lev", "classERF.html#aa650bf1f6885b179fd8d4c24b48668cb", null ],
     [ "Tau33_lev", "classERF.html#a60a185c47f07bf4fb537a15d5a226d8a", null ],
     [ "Theta_prim", "classERF.html#a71629ae2fda396472198691b75d83b2e", null ],
+    [ "thin_xforce", "classERF.html#a5b9b8d719a87a6940f611c6a30e8ccf5", null ],
+    [ "thin_yforce", "classERF.html#a18c1142552120bbd22987f34995ee939", null ],
+    [ "thin_zforce", "classERF.html#a56a23d298bc66218bf257d0e793e341f", null ],
     [ "thrust_coeff", "classERF.html#acede0e5c683fd282d6027772392b2b3d", null ],
     [ "thrust_coeff_standing", "classERF.html#afe8aaca105443c421c00d5a47a7d57b5", null ],
     [ "use_real_bcs", "classERF.html#a86208285bf705f360a3c318a75097f61", null ],
@@ -298,10 +301,13 @@ var classERF =
     [ "vars_old", "classERF.html#af31e928baa970a1507dfb0233b352542", null ],
     [ "verbose", "classERF.html#a43d0b17f6e155691a1e9474526df3af5", null ],
     [ "wind_speed", "classERF.html#a1a79c09d7ef84167ef65fe4690b54260", null ],
+    [ "xflux_imask", "classERF.html#af044f075df34caa2a530aa13e1801a5b", null ],
+    [ "yflux_imask", "classERF.html#aa4448d06a3e4fe9740927a636030939d", null ],
     [ "z_phys_cc", "classERF.html#a31be0f1ae705c52c8ccc520369013284", null ],
     [ "z_phys_nd", "classERF.html#a93e63e5af35efa564fd4195e8703f84c", null ],
     [ "z_phys_nd_new", "classERF.html#a4ef635c22e72c715f5703a6b95a7abe5", null ],
     [ "z_phys_nd_src", "classERF.html#a30dcf40e8f104fb6b6132805d2eff47c", null ],
     [ "z_t_rk", "classERF.html#a72a59614c6d5ab840b924c84d5682270", null ],
+    [ "zflux_imask", "classERF.html#ada098767690d194f89717b0deb3adeac", null ],
     [ "zlevels_stag", "classERF.html#a7a4d6e7887fa8f30c33a0b8899035ddb", null ]
 ];

@@ -17,5 +17,8 @@ var structAdvChoice =
     [ "moistscal_vert_adv_type", "structAdvChoice.html#a2f888dfcb79cdb766ee04f21aada83ec", null ],
     [ "moistscal_vert_upw_frac", "structAdvChoice.html#a334139583accdc5718a939b20b308bb9", null ],
     [ "pp_prefix", "structAdvChoice.html#a667cbedb89514e330b6ca144298857da", null ],
-    [ "use_efficient_advection", "structAdvChoice.html#a50c43113d4bd0ccaf9f1878134f00bb8", null ]
+    [ "use_efficient_advection", "structAdvChoice.html#a50c43113d4bd0ccaf9f1878134f00bb8", null ],
+    [ "zero_xflux", "structAdvChoice.html#a7a086b9e2aabb65d2e5e9053e7bd6018", null ],
+    [ "zero_yflux", "structAdvChoice.html#a118575fe302e72fcd231e77be6d117a9", null ],
+    [ "zero_zflux", "structAdvChoice.html#a7da4e5242e05aeba4822b71fab596954", null ]
 ];
