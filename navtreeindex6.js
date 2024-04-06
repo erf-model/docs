@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"classMam4__aer.html#aba67cb233002e4fd50c766e73ec3d022":[2,0,35,29],
 "classMam4__aer.html#abc58cbc8ee25e23731610007e0f62fe4":[2,0,35,20],
 "classMam4__aer.html#ac1ba4ccab45c000472b4d40cb43c9ef9":[2,0,35,0],
 "classMam4__aer.html#ad48a521caea628250a1faa6154f6094b":[2,0,35,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "classPlaneAverage.html#a3860fd72df3e8dbb6b8decfdc360864f":[2,0,50,15],
 "classPlaneAverage.html#a42c7dfa900a0b69ba1d294455ca8ba51":[2,0,50,33],
 "classPlaneAverage.html#a45ad4c1f2922be9ba838bab13657385f":[2,0,50,24],
-"classPlaneAverage.html#a4a8c3eb911548a254ef75c24659b1317":[2,0,50,31],
-"classPlaneAverage.html#a560dbd7059fb6cbb0421635c5d405d2b":[2,0,50,27]
+"classPlaneAverage.html#a4a8c3eb911548a254ef75c24659b1317":[2,0,50,31]
 };

@@ -31,6 +31,7 @@ var classERF =
     [ "Factory", "classERF.html#add33a9ec6db918b2ef03de4a92adc764", null ],
     [ "fill_from_bndryregs", "classERF.html#a2135641de33dea5057799569c74cac42", null ],
     [ "fill_rhs", "classERF.html#a76600d7a4a0451c9727d2cc57dae4220", null ],
+    [ "FillBdyCCVels", "classERF.html#a19c8017ca1ff0eead61abd7e0ce62232", null ],
     [ "FillCoarsePatch", "classERF.html#ac4497025ab94461899960ee067c2c72a", null ],
     [ "FillIntermediatePatch", "classERF.html#a5434c771d76cf50e4a0dd9e1b0eb27fc", null ],
     [ "FillPatch", "classERF.html#a8de69f537859f576fba1d94844cfbd33", null ],

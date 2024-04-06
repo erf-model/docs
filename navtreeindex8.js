@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"classSAM.html#a7da420869410dc959c2442962524259f":[2,0,57,48],
 "classSAM.html#a81c775ecb78f3f228a98a9c39d1d098d":[2,0,57,43],
 "classSAM.html#a8242fff43eb2cf417036eb36f5e4a3d8":[2,0,57,39],
 "classSAM.html#a8350a31a9f29bedee48b24bb43d5b0fc":[2,0,57,29],
@@ -213,8 +214,8 @@ var NAVTREEINDEX8 =
 "eb__if_8H_source.html":[3,0,1,4,2],
 "eb__regular_8cpp.html":[3,0,1,4,3],
 "files.html":[3,0],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -222,8 +223,8 @@ var NAVTREEINDEX8 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1,0],
 "functions_func.html":[2,3,1],
+"functions_func.html":[2,3,1,0],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "functions_func_x.html":[2,3,1,22],
 "functions_func_z.html":[2,3,1,23],
 "functions_func_~.html":[2,3,1,24],
-"functions_g.html":[2,3,0,6],
-"functions_h.html":[2,3,0,7]
+"functions_g.html":[2,3,0,6]
 };
