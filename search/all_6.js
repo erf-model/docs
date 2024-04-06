@@ -157,7 +157,7 @@ var searchData=
   ['getepochtime_780',['getEpochTime',['../NCWpsFile_8H.html#a370a1cca0113b3529a59c031ff71ffb8',1,'NCWpsFile.H']]],
   ['getexnergivenp_781',['getExnergivenP',['../EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b',1,'EOS.H']]],
   ['getexnergivenrth_782',['getExnergivenRTh',['../EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a',1,'EOS.H']]],
-  ['getindx_783',['getIndx',['../structDirectionSelector.html#a3950b636303028f398441fdc43d66dba',1,'DirectionSelector::getIndx()'],['../structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e',1,'DirectionSelector&lt; 0 &gt;::getIndx()'],['../structDirectionSelector_3_011_01_4.html#ae5631c2b7917d2bc7cb479a266a61834',1,'DirectionSelector&lt; 1 &gt;::getIndx()'],['../structDirectionSelector_3_012_01_4.html#a5708ddb92c7d49cc9ba821f978251160',1,'DirectionSelector&lt; 2 &gt;::getIndx()']]],
+  ['getindx_783',['getIndx',['../structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e',1,'DirectionSelector&lt; 0 &gt;::getIndx()'],['../structDirectionSelector_3_012_01_4.html#a5708ddb92c7d49cc9ba821f978251160',1,'DirectionSelector&lt; 2 &gt;::getIndx()'],['../structDirectionSelector_3_011_01_4.html#ae5631c2b7917d2bc7cb479a266a61834',1,'DirectionSelector&lt; 1 &gt;::getIndx()'],['../structDirectionSelector.html#a3950b636303028f398441fdc43d66dba',1,'DirectionSelector::getIndx()']]],
   ['getmask_784',['GetMask',['../classERFFillPatcher.html#a2c0b26e7da60e74734191617c50754e1',1,'ERFFillPatcher']]],
   ['getpgivenrth_785',['getPgivenRTh',['../EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e',1,'EOS.H']]],
   ['getrelaxmaskval_786',['GetRelaxMaskVal',['../classERFFillPatcher.html#ae36410e2a848977e145b29c755ac8b5d',1,'ERFFillPatcher']]],
@@ -171,7 +171,8 @@ var searchData=
   ['goffgratch_5fsvp_5fice_794',['GoffGratch_svp_ice',['../classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758',1,'SatMethods']]],
   ['goffgratch_5fsvp_5fwater_795',['GoffGratch_svp_water',['../classSatMethods.html#a264a283910d028a29c374900fc03017f',1,'SatMethods']]],
   ['gotonextline_796',['GotoNextLine',['../classERF.html#aaee255b031e63bd9b5807f6612739dbd',1,'ERF']]],
-  ['gravity_797',['gravity',['../structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b',1,'SolverChoice::gravity()'],['../structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b',1,'most_data::gravity()']]],
-  ['grid_5fstretching_5fratio_798',['grid_stretching_ratio',['../structSolverChoice.html#a63b6fffe930de9eb25f92c2bafb00c00',1,'SolverChoice']]],
-  ['group_799',['group',['../classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333',1,'ncutils::NCGroup']]]
+  ['graup_5faccum_797',['graup_accum',['../namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8aa13fe479c935eca35c9375907e524992',1,'MicVar']]],
+  ['gravity_798',['gravity',['../structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b',1,'SolverChoice::gravity()'],['../structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b',1,'most_data::gravity()']]],
+  ['grid_5fstretching_5fratio_799',['grid_stretching_ratio',['../structSolverChoice.html#a63b6fffe930de9eb25f92c2bafb00c00',1,'SolverChoice']]],
+  ['group_800',['group',['../classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333',1,'ncutils::NCGroup']]]
 ];
