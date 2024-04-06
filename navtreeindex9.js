@@ -1,13 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"functions_func_s.html":[2,3,1,17],
-"functions_func_t.html":[2,3,1,18],
-"functions_func_u.html":[2,3,1,19],
-"functions_func_v.html":[2,3,1,20],
-"functions_func_w.html":[2,3,1,21],
-"functions_func_x.html":[2,3,1,22],
-"functions_func_z.html":[2,3,1,23],
-"functions_func_~.html":[2,3,1,24],
 "functions_g.html":[2,3,0,6],
 "functions_h.html":[2,3,0,7],
 "functions_i.html":[2,3,0,8],
@@ -249,5 +241,13 @@ var NAVTREEINDEX9 =
 "structCENTERED6.html#a732a4a686c30a3233c939f453b74f0b9":[2,0,9,8],
 "structCENTERED6.html#aacd79f8ed62a166d5f4d44a20d09fc13":[2,0,9,1],
 "structCENTERED6.html#acedba4c2b029f363a47c32ad0c6f30e8":[2,0,9,0],
-"structCENTERED6.html#ad80522d3ef86f7d5dc0173d50132d80e":[2,0,9,4]
+"structCENTERED6.html#ad80522d3ef86f7d5dc0173d50132d80e":[2,0,9,4],
+"structCENTERED6.html#addc1b756f97d4883080045a187e4d433":[2,0,9,7],
+"structCENTERED6.html#af5abc40fa48386ff2e8853265ab2f636":[2,0,9,2],
+"structDiffChoice.html":[2,0,13],
+"structDiffChoice.html#a4df179b6e7d84efc89a22ac5900f98c8":[2,0,13,7],
+"structDiffChoice.html#a553bdd290d667cca9699ed37f86f7e22":[2,0,13,8],
+"structDiffChoice.html#a574cf6ad397fd50169cafe025c9da5f3":[2,0,13,9],
+"structDiffChoice.html#a7013ac6c12a0fab52b3c212457441517":[2,0,13,3],
+"structDiffChoice.html#a9a4435111bba7cde59e3187e4ea85d6d":[2,0,13,2]
 };

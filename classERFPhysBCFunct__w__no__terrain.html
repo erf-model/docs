@@ -587,25 +587,24 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="comment">//</span></div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            Box zbx = surroundingNodes(bx,2); zbx.grow(0,nghost[0]);</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                                              zbx.grow(1,nghost[1]);</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            Array4&lt;const Real&gt; z_nd_arr;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classERFPhysBCFunct__w__no__terrain.html#a6ec9592d34b537392cbcb34ffb63f99a">m_use_real_bcs</a>)</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            {</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                Array4&lt;      Real&gt; <span class="keyword">const</span>&amp; velz_arr = mf.array(mfi);;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                <span class="keywordflow">if</span> (!gdomainz.contains(zbx))</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                {</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                    <a class="code" href="classERFPhysBCFunct__w__no__terrain.html#a25d10d63224b2acd259cc6309e5bce7e">impose_lateral_zvel_bcs</a>(velz_arr,zbx,domain,bccomp);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            } <span class="comment">// m_use_real_bcs</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt; velz_arr = mf.array(mfi);;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <span class="keywordflow">if</span> (!gdomainz.contains(zbx)) {</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                <a class="code" href="classERFPhysBCFunct__w__no__terrain.html#ab4e5639d9ae8abd973c0d5329705d200">impose_vertical_zvel_bcs</a>(velz_arr,zbx,domain,bccomp);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        } <span class="comment">// MFIter</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    } <span class="comment">// OpenMP</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;} <span class="comment">// operator()</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classERFPhysBCFunct__w__no__terrain.html#a6ec9592d34b537392cbcb34ffb63f99a">m_use_real_bcs</a>)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                Array4&lt;      Real&gt; <span class="keyword">const</span>&amp; velz_arr = mf.array(mfi);;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="keywordflow">if</span> (!gdomainz.contains(zbx))</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    <a class="code" href="classERFPhysBCFunct__w__no__terrain.html#a25d10d63224b2acd259cc6309e5bce7e">impose_lateral_zvel_bcs</a>(velz_arr,zbx,domain,bccomp);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            } <span class="comment">// m_use_real_bcs</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt; velz_arr = mf.array(mfi);;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="keywordflow">if</span> (!gdomainz.contains(zbx)) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                <a class="code" href="classERFPhysBCFunct__w__no__terrain.html#ab4e5639d9ae8abd973c0d5329705d200">impose_vertical_zvel_bcs</a>(velz_arr,zbx,domain,bccomp);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        } <span class="comment">// MFIter</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    } <span class="comment">// OpenMP</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;} <span class="comment">// operator()</span></div>
 </div><!-- fragment -->
 </div>
 </div>

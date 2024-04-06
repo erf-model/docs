@@ -586,36 +586,36 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;               <span class="keywordflow">if</span> (mask_arr(i,j,k) == relax_mask_val) {</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160; </div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                   <span class="comment">// Indices</span></div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                   Real n_ind;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                   <span class="keywordtype">int</span> ii{width-1}; <span class="keywordtype">int</span> jj{width-1};</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                   <span class="keywordtype">bool</span> near_x_lo_wall{<span class="keyword">false</span>}; <span class="keywordtype">bool</span> near_x_hi_wall{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                   <span class="keywordtype">bool</span> near_y_lo_wall{<span class="keyword">false</span>}; <span class="keywordtype">bool</span> near_y_hi_wall{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                   <span class="keywordtype">bool</span> mask_x_found{<span class="keyword">false</span>};   <span class="keywordtype">bool</span> mask_y_found{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                   Real n_ind(-1); <span class="comment">// Set to -1 to quiet compiler warning</span></div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                   <span class="keywordtype">int</span> ii(width-1); <span class="keywordtype">int</span> jj(width-1);</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                   <span class="keywordtype">bool</span> near_x_lo_wall(<span class="keyword">false</span>); <span class="keywordtype">bool</span> near_x_hi_wall(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                   <span class="keywordtype">bool</span> near_y_lo_wall(<span class="keyword">false</span>); <span class="keywordtype">bool</span> near_y_hi_wall(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                   <span class="keywordtype">bool</span> mask_x_found(<span class="keyword">false</span>);   <span class="keywordtype">bool</span> mask_y_found(<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160; </div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                   <span class="comment">// Near x-wall</span></div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                   <span class="keywordflow">if</span> ((i-vbx_lo.x) &lt; width) {</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                       near_x_lo_wall = true;</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                       near_x_lo_wall = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                       ii = i-vbx_lo.x;</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                       if (mask_arr(vbx_lo.x,j,k) == 2) mask_x_found = true;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                   } <span class="keywordflow">else</span> if ((vbx_hi.x-i) &lt; width) {</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                       near_x_hi_wall = true;</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                       <span class="keywordflow">if</span> (mask_arr(vbx_lo.x,j,k) == 2) mask_x_found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                   } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((vbx_hi.x-i) &lt; width) {</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                       near_x_hi_wall = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                       ii = vbx_hi.x-i;</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                       if (mask_arr(vbx_hi.x,j,k) == 2) mask_x_found = true;</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                       <span class="keywordflow">if</span> (mask_arr(vbx_hi.x,j,k) == 2) mask_x_found = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                   }</div>
 <div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160; </div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                   <span class="comment">// Near y-wall</span></div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                   if ((j-vbx_lo.y) &lt; width) {</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                       near_y_lo_wall = true;</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                   <span class="keywordflow">if</span> ((j-vbx_lo.y) &lt; width) {</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                       near_y_lo_wall = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                       jj = j-vbx_lo.y;</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                       if (mask_arr(i,vbx_lo.y,k) == 2) mask_y_found = true;</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                   } <span class="keywordflow">else</span> if ((vbx_hi.y-j) &lt; width) {</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                       near_y_hi_wall = true;</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                       <span class="keywordflow">if</span> (mask_arr(i,vbx_lo.y,k) == 2) mask_y_found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                   } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((vbx_hi.y-j) &lt; width) {</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                       near_y_hi_wall = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                       jj = vbx_hi.y-j;</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                       if (mask_arr(i,vbx_hi.y,k) == 2) mask_y_found = true;</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                       <span class="keywordflow">if</span> (mask_arr(i,vbx_hi.y,k) == 2) mask_y_found = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                   }</div>
 <div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160; </div>
 <div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                   <span class="comment">// Found a nearby masked cell (valid n_ind)</span></div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                   if (mask_x_found &amp;&amp; mask_y_found) {</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                   <span class="keywordflow">if</span> (mask_x_found &amp;&amp; mask_y_found) {</div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                       n_ind = std::min(ii,jj) + 1.0;</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                   } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mask_x_found) {</div>
 <div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                       n_ind = ii + 1.0;</div>

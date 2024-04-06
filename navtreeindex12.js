@@ -1,13 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"structsurface__flux__mod__charnock.html":[2,0,66],
-"structsurface__flux__mod__charnock.html#a30911bffcff946f6ff25f922eddc509b":[2,0,66,1],
-"structsurface__flux__mod__charnock.html#a6fa441221eb1f30d65437ce890adfd46":[2,0,66,2],
-"structsurface__flux__mod__charnock.html#ab0516a2bad4b4a38ecfa71f75fa3b00c":[2,0,66,0],
-"structsurface__flux__mod__charnock.html#ac01a07a59f56ff6683dd9942b4d500ba":[2,0,66,4],
-"structsurface__flux__mod__charnock.html#adb4a96d510f1e437c9efc41ba5fd16f9":[2,0,66,3],
-"structsurface__temp.html":[2,0,67],
-"structsurface__temp.html#a5ee026deda92d3470e0f26e59a1da5a7":[2,0,67,1],
 "structsurface__temp.html#a66e248c3558685f25206441914e8dfbf":[2,0,67,3],
 "structsurface__temp.html#a6b5b55df12e42231fa3d8cf36ab0c734":[2,0,67,0],
 "structsurface__temp.html#a7c4031cfb8cbb020115ee7fae12ddb05":[2,0,67,4],
