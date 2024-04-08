@@ -13,6 +13,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "Particles", "dir_fbd11baa4baa1a8b78c4a3d08373cbc6.html", "dir_fbd11baa4baa1a8b78c4a3d08373cbc6" ],
     [ "Prob", "dir_451f984cbae2157dc09f494ce6fda815.html", "dir_451f984cbae2157dc09f494ce6fda815" ],
     [ "Radiation", "dir_6ac3198e61556f99812dcb8dcfabb874.html", "dir_6ac3198e61556f99812dcb8dcfabb874" ],
+    [ "SourceTerms", "dir_7c1c0d2e2a0285e12a54f57a60f809aa.html", "dir_7c1c0d2e2a0285e12a54f57a60f809aa" ],
     [ "TimeIntegration", "dir_759b90b1f3ea3c20e13693c83a3534b7.html", "dir_759b90b1f3ea3c20e13693c83a3534b7" ],
     [ "Utils", "dir_5c09e96eccedf512ae411d636afd2712.html", "dir_5c09e96eccedf512ae411d636afd2712" ],
     [ "WindFarmParametrization", "dir_4c2ecf32dc8d7cf95ecc0db34c31b5da.html", "dir_4c2ecf32dc8d7cf95ecc0db34c31b5da" ],

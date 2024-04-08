@@ -11,8 +11,6 @@ var dir_fc0c15590968603ac439df7b0a572228 =
     [ "DiffusionSrcForState_N.cpp", "DiffusionSrcForState__N_8cpp.html", "DiffusionSrcForState__N_8cpp" ],
     [ "DiffusionSrcForState_T.cpp", "DiffusionSrcForState__T_8cpp.html", "DiffusionSrcForState__T_8cpp" ],
     [ "EddyViscosity.H", "EddyViscosity_8H.html", "EddyViscosity_8H" ],
-    [ "NumericalDiffusion.cpp", "NumericalDiffusion_8cpp.html", "NumericalDiffusion_8cpp" ],
-    [ "NumericalDiffusion.H", "NumericalDiffusion_8H.html", "NumericalDiffusion_8H" ],
     [ "PBLModels.cpp", "PBLModels_8cpp.html", "PBLModels_8cpp" ],
     [ "PBLModels.H", "PBLModels_8H.html", "PBLModels_8H" ]
 ];

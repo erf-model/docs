@@ -5,15 +5,11 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_advance_lsm.cpp", "ERF__advance__lsm_8cpp.html", null ],
     [ "ERF_advance_microphysics.cpp", "ERF__advance__microphysics_8cpp.html", null ],
     [ "ERF_advance_radiation.cpp", "ERF__advance__radiation_8cpp.html", null ],
-    [ "ERF_ApplySpongeZoneBCs.cpp", "ERF__ApplySpongeZoneBCs_8cpp.html", "ERF__ApplySpongeZoneBCs_8cpp" ],
     [ "ERF_ComputeTimestep.cpp", "ERF__ComputeTimestep_8cpp.html", null ],
     [ "ERF_fast_rhs_MT.cpp", "ERF__fast__rhs__MT_8cpp.html", "ERF__fast__rhs__MT_8cpp" ],
     [ "ERF_fast_rhs_N.cpp", "ERF__fast__rhs__N_8cpp.html", "ERF__fast__rhs__N_8cpp" ],
     [ "ERF_fast_rhs_T.cpp", "ERF__fast__rhs__T_8cpp.html", "ERF__fast__rhs__T_8cpp" ],
-    [ "ERF_make_buoyancy.cpp", "ERF__make__buoyancy_8cpp.html", "ERF__make__buoyancy_8cpp" ],
     [ "ERF_make_fast_coeffs.cpp", "ERF__make__fast__coeffs_8cpp.html", "ERF__make__fast__coeffs_8cpp" ],
-    [ "ERF_make_sources.cpp", "ERF__make__sources_8cpp.html", "ERF__make__sources_8cpp" ],
-    [ "ERF_moist_set_rhs.cpp", "ERF__moist__set__rhs_8cpp.html", null ],
     [ "ERF_MRI.H", "ERF__MRI_8H.html", [
       [ "MRISplitIntegrator", "classMRISplitIntegrator.html", "classMRISplitIntegrator" ]
     ] ],
@@ -23,7 +19,6 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_TimeStep.cpp", "ERF__TimeStep_8cpp.html", null ],
     [ "TI_fast_headers.H", "TI__fast__headers_8H.html", "TI__fast__headers_8H" ],
     [ "TI_fast_rhs_fun.H", "TI__fast__rhs__fun_8H.html", "TI__fast__rhs__fun_8H" ],
-    [ "TI_headers.H", "TI__headers_8H.html", "TI__headers_8H" ],
     [ "TI_no_substep_fun.H", "TI__no__substep__fun_8H.html", "TI__no__substep__fun_8H" ],
     [ "TI_slow_headers.H", "TI__slow__headers_8H.html", "TI__slow__headers_8H" ],
     [ "TI_slow_rhs_fun.H", "TI__slow__rhs__fun_8H.html", "TI__slow__rhs__fun_8H" ],

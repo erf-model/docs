@@ -1,4 +1,5 @@
 var ERF__ApplySpongeZoneBCs_8cpp =
 [
-    [ "ApplySpongeZoneBCs", "ERF__ApplySpongeZoneBCs_8cpp.html#aa62e472449c57162ab148f5729a4b3b7", null ]
+    [ "ApplySpongeZoneBCsForCC", "ERF__ApplySpongeZoneBCs_8cpp.html#a2bb1399e36952baeacfd197a5322d661", null ],
+    [ "ApplySpongeZoneBCsForMom", "ERF__ApplySpongeZoneBCs_8cpp.html#a2f0457a5cf90ed9e3f084a3951a80ae8", null ]
 ];
