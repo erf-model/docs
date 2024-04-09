@@ -1,6 +1,7 @@
 var Derive_8H =
 [
     [ "erf_derKE", "Derive_8H.html#aeaeabd5f649796984f61651a6733e96b", null ],
+    [ "erf_dermagvel", "Derive_8H.html#a5186c6ea33e82af321f529242a615dc2", null ],
     [ "erf_dernull", "Derive_8H.html#a7128ad75cf0f6b317ae8689bd7eb1597", null ],
     [ "erf_derQKE", "Derive_8H.html#a268588c6b7dfb634a44ff9b66e852807", null ],
     [ "erf_derrhodivide", "Derive_8H.html#a9935603239fe8510b11179da8e76c39c", null ],

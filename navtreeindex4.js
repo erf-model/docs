@@ -1,5 +1,10 @@
 var NAVTREEINDEX4 =
 {
+"classERF.html#a7d54d3f2317d06a8dfcde4f65cfc3e92":[2,0,20,190],
+"classERF.html#a7e9040f32464f1a6dee6e0384393451d":[2,0,20,216],
+"classERF.html#a7ef14f6028b577eba70aef46b508be19":[2,0,20,217],
+"classERF.html#a80981e20939a6a38ba17478da2253ff1":[2,0,20,44],
+"classERF.html#a80ad08512968ec45635df68abe66b1fc":[2,0,20,185],
 "classERF.html#a8199cc1ec38b9dfd47262ccc7df6a941":[2,0,20,140],
 "classERF.html#a81f7d2157635b9d3ad7817f5ee0cbe9c":[2,0,20,181],
 "classERF.html#a8202de1f8f372e3e6fdc483447c6a55f":[2,0,20,9],
@@ -244,10 +249,5 @@ var NAVTREEINDEX4 =
 "classERFPhysBCFunct__w.html#ae949a3df422d9d5082146a46c9eca565":[2,0,25,1],
 "classERFPhysBCFunct__w.html#afd4eed563a59fae4744eaac6ced6bb6b":[2,0,25,5],
 "classERFPhysBCFunct__w__no__terrain.html":[2,0,26],
-"classERFPhysBCFunct__w__no__terrain.html#a1c27696ce2fb04cb8e0f9e41d2c21196":[2,0,26,7],
-"classERFPhysBCFunct__w__no__terrain.html#a25d10d63224b2acd259cc6309e5bce7e":[2,0,26,2],
-"classERFPhysBCFunct__w__no__terrain.html#a2949209cfd215346db79ea786d7e977d":[2,0,26,0],
-"classERFPhysBCFunct__w__no__terrain.html#a490eb84b4d60adb33dfe5f705b333b2d":[2,0,26,10],
-"classERFPhysBCFunct__w__no__terrain.html#a5f98e8e83a78de87e1b5c720f3b2ea64":[2,0,26,6],
-"classERFPhysBCFunct__w__no__terrain.html#a6ec9592d34b537392cbcb34ffb63f99a":[2,0,26,11]
+"classERFPhysBCFunct__w__no__terrain.html#a1c27696ce2fb04cb8e0f9e41d2c21196":[2,0,26,7]
 };
