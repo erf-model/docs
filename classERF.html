@@ -12723,82 +12723,82 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;{</div>
-<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;    AMREX_ALWAYS_ASSERT(nlevels &lt;= bArray.size());</div>
-<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;    AMREX_ALWAYS_ASSERT(nlevels &lt;= ref_ratio.size()+1);</div>
-<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;    AMREX_ALWAYS_ASSERT(nlevels &lt;= level_steps.size());</div>
-<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160; </div>
-<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;    HeaderFile.precision(17);</div>
-<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160; </div>
-<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;    <span class="comment">// ---- this is the generic plot file type name</span></div>
-<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;    HeaderFile &lt;&lt; versionName &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160; </div>
-<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;    HeaderFile &lt;&lt; varnames.size() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160; </div>
-<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar = 0; ivar &lt; varnames.size(); ++ivar) {</div>
-<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;        HeaderFile &lt;&lt; varnames[ivar] &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;    }</div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;    HeaderFile &lt;&lt; AMREX_SPACEDIM &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;    HeaderFile &lt;&lt; time &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;    HeaderFile &lt;&lt; finest_level &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
-<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;        HeaderFile &lt;&lt; geom[0].ProbLo(i) &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;    }</div>
-<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;    HeaderFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
-<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;        HeaderFile &lt;&lt; geom[0].ProbHi(i) &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;    }</div>
-<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;    HeaderFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; finest_level; ++i) {</div>
-<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;        HeaderFile &lt;&lt; ref_ratio[i][0] &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;    }</div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;    HeaderFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= finest_level; ++i) {</div>
-<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;        HeaderFile &lt;&lt; geom[i].Domain() &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;    }</div>
-<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;    HeaderFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= finest_level; ++i) {</div>
-<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;        HeaderFile &lt;&lt; level_steps[i] &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;    }</div>
-<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;    HeaderFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= finest_level; ++i) {</div>
-<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; AMREX_SPACEDIM; ++k) {</div>
-<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;            HeaderFile &lt;&lt; geom[i].CellSize()[k] &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;        }</div>
-<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;        HeaderFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    }</div>
-<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;    HeaderFile &lt;&lt; (int) geom[0].<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a>() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    HeaderFile &lt;&lt; <span class="stringliteral">&quot;0\n&quot;</span>;</div>
-<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160; </div>
-<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level &lt;= finest_level; ++level) {</div>
-<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;        HeaderFile &lt;&lt; level &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; bArray[level].size() &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; time &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;        HeaderFile &lt;&lt; level_steps[level] &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160; </div>
-<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;        <span class="keyword">const</span> IntVect&amp; domain_lo = geom[level].Domain().smallEnd();</div>
-<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; bArray[level].size(); ++i)</div>
-<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;        {</div>
-<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;            <span class="comment">// Need to shift because the RealBox ctor we call takes the</span></div>
-<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;            <span class="comment">// physical location of index (0,0,0).  This does not affect</span></div>
-<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;            <span class="comment">// the usual cases where the domain index starts with 0.</span></div>
-<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;            <span class="keyword">const</span> Box&amp; b = shift(bArray[level][i], -domain_lo);</div>
-<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;            RealBox loc = RealBox(b, geom[level].CellSize(), geom[level].ProbLo());</div>
-<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; AMREX_SPACEDIM; ++n) {</div>
-<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;                HeaderFile &lt;&lt; loc.lo(n) &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; loc.hi(n) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;            }</div>
-<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;        }</div>
-<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160; </div>
-<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;        HeaderFile &lt;&lt; MultiFabHeaderPath(level, levelPrefix, mfPrefix) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;    }</div>
-<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;    HeaderFile &lt;&lt; <span class="stringliteral">&quot;1&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;    HeaderFile &lt;&lt; <span class="stringliteral">&quot;3&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;    HeaderFile &lt;&lt; <span class="stringliteral">&quot;amrexvec_nu_x&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;    HeaderFile &lt;&lt; <span class="stringliteral">&quot;amrexvec_nu_y&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;    HeaderFile &lt;&lt; <span class="stringliteral">&quot;amrexvec_nu_z&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;    std::string mf_nodal_prefix = <span class="stringliteral">&quot;Nu_nd&quot;</span>;</div>
-<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level &lt;= finest_level; ++level) {</div>
-<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;        HeaderFile &lt;&lt; MultiFabHeaderPath(level, levelPrefix, mf_nodal_prefix) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;    }</div>
-<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;{</div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;    AMREX_ALWAYS_ASSERT(nlevels &lt;= bArray.size());</div>
+<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;    AMREX_ALWAYS_ASSERT(nlevels &lt;= ref_ratio.size()+1);</div>
+<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;    AMREX_ALWAYS_ASSERT(nlevels &lt;= level_steps.size());</div>
+<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160; </div>
+<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;    HeaderFile.precision(17);</div>
+<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160; </div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;    <span class="comment">// ---- this is the generic plot file type name</span></div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;    HeaderFile &lt;&lt; versionName &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160; </div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;    HeaderFile &lt;&lt; varnames.size() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160; </div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar = 0; ivar &lt; varnames.size(); ++ivar) {</div>
+<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;        HeaderFile &lt;&lt; varnames[ivar] &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;    }</div>
+<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;    HeaderFile &lt;&lt; AMREX_SPACEDIM &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;    HeaderFile &lt;&lt; time &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;    HeaderFile &lt;&lt; finest_level &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;        HeaderFile &lt;&lt; geom[0].ProbLo(i) &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;    }</div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;    HeaderFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;        HeaderFile &lt;&lt; geom[0].ProbHi(i) &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;    }</div>
+<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;    HeaderFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; finest_level; ++i) {</div>
+<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;        HeaderFile &lt;&lt; ref_ratio[i][0] &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;    }</div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;    HeaderFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= finest_level; ++i) {</div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;        HeaderFile &lt;&lt; geom[i].Domain() &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;    }</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;    HeaderFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= finest_level; ++i) {</div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;        HeaderFile &lt;&lt; level_steps[i] &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;    }</div>
+<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;    HeaderFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= finest_level; ++i) {</div>
+<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; AMREX_SPACEDIM; ++k) {</div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;            HeaderFile &lt;&lt; geom[i].CellSize()[k] &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;        }</div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;        HeaderFile &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;    }</div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    HeaderFile &lt;&lt; (int) geom[0].<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a>() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;    HeaderFile &lt;&lt; <span class="stringliteral">&quot;0\n&quot;</span>;</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160; </div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level &lt;= finest_level; ++level) {</div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;        HeaderFile &lt;&lt; level &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; bArray[level].size() &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; time &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;        HeaderFile &lt;&lt; level_steps[level] &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160; </div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;        <span class="keyword">const</span> IntVect&amp; domain_lo = geom[level].Domain().smallEnd();</div>
+<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; bArray[level].size(); ++i)</div>
+<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;        {</div>
+<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;            <span class="comment">// Need to shift because the RealBox ctor we call takes the</span></div>
+<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;            <span class="comment">// physical location of index (0,0,0).  This does not affect</span></div>
+<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;            <span class="comment">// the usual cases where the domain index starts with 0.</span></div>
+<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;            <span class="keyword">const</span> Box&amp; b = shift(bArray[level][i], -domain_lo);</div>
+<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;            RealBox loc = RealBox(b, geom[level].CellSize(), geom[level].ProbLo());</div>
+<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; AMREX_SPACEDIM; ++n) {</div>
+<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;                HeaderFile &lt;&lt; loc.lo(n) &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; loc.hi(n) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;            }</div>
+<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;        }</div>
+<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160; </div>
+<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;        HeaderFile &lt;&lt; MultiFabHeaderPath(level, levelPrefix, mfPrefix) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;    }</div>
+<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;    HeaderFile &lt;&lt; <span class="stringliteral">&quot;1&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;    HeaderFile &lt;&lt; <span class="stringliteral">&quot;3&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;    HeaderFile &lt;&lt; <span class="stringliteral">&quot;amrexvec_nu_x&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;    HeaderFile &lt;&lt; <span class="stringliteral">&quot;amrexvec_nu_y&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;    HeaderFile &lt;&lt; <span class="stringliteral">&quot;amrexvec_nu_z&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;    std::string mf_nodal_prefix = <span class="stringliteral">&quot;Nu_nd&quot;</span>;</div>
+<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level &lt;= finest_level; ++level) {</div>
+<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;        HeaderFile &lt;&lt; MultiFabHeaderPath(level, levelPrefix, mf_nodal_prefix) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;    }</div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;}</div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a></div><div class="ttdeci">Coord</div><div class="ttdef"><b>Definition:</b> DataStruct.H:47</div></div>
 </div><!-- fragment -->
 </div>
@@ -13039,80 +13039,80 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;{</div>
-<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;WriteMultiLevelPlotfileWithTerrain()&quot;</span>);</div>
-<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160; </div>
-<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;    AMREX_ALWAYS_ASSERT(nlevels &lt;= mf.size());</div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;    AMREX_ALWAYS_ASSERT(nlevels &lt;= ref_ratio.size()+1);</div>
-<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;    AMREX_ALWAYS_ASSERT(nlevels &lt;= level_steps.size());</div>
-<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;    AMREX_ALWAYS_ASSERT(mf[0]-&gt;nComp() == varnames.size());</div>
-<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160; </div>
-<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;    <span class="keywordtype">bool</span> callBarrier(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;    PreBuildDirectorHierarchy(plotfilename, levelPrefix, nlevels, callBarrier);</div>
-<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;    <span class="keywordflow">if</span> (!extra_dirs.empty()) {</div>
-<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; d : extra_dirs) {</div>
-<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;            <span class="keyword">const</span> std::string ed = plotfilename+<span class="stringliteral">&quot;/&quot;</span>+d;</div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;            PreBuildDirectorHierarchy(ed, levelPrefix, nlevels, callBarrier);</div>
-<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;        }</div>
-<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;    }</div>
-<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;    ParallelDescriptor::Barrier();</div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160; </div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::MyProc() == ParallelDescriptor::NProcs()-1) {</div>
-<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;        Vector&lt;BoxArray&gt; boxArrays(nlevels);</div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> level(0); level &lt; boxArrays.size(); ++level) {</div>
-<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;            boxArrays[level] = mf[level]-&gt;boxArray();</div>
-<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;        }</div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160; </div>
-<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;        <span class="keyword">auto</span> f = [=]() {</div>
-<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;            VisMF::IO_Buffer io_buffer(VisMF::IO_Buffer_Size);</div>
-<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;            std::string HeaderFileName(plotfilename + <span class="stringliteral">&quot;/Header&quot;</span>);</div>
-<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;            std::ofstream HeaderFile;</div>
-<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;            HeaderFile.rdbuf()-&gt;pubsetbuf(io_buffer.dataPtr(), io_buffer.size());</div>
-<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;            HeaderFile.open(HeaderFileName.c_str(), std::ofstream::out   |</div>
-<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;                                                    std::ofstream::trunc |</div>
-<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;                                                    std::ofstream::binary);</div>
-<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;            <span class="keywordflow">if</span>( ! HeaderFile.good()) FileOpenFailed(HeaderFileName);</div>
-<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;            <a class="code" href="classERF.html#a16e49fd65c68e2afc2140bd9e97bcbe9">WriteGenericPlotfileHeaderWithTerrain</a>(HeaderFile, nlevels, boxArrays, varnames,</div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;                                                  time, level_steps, versionName,</div>
-<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;                                                  levelPrefix, mfPrefix);</div>
-<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;        };</div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160; </div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;        <span class="keywordflow">if</span> (AsyncOut::UseAsyncOut()) {</div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;            AsyncOut::Submit(std::move(f));</div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;            f();</div>
-<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;        }</div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    }</div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160; </div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;    std::string mf_nodal_prefix = <span class="stringliteral">&quot;Nu_nd&quot;</span>;</div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level &lt;= finest_level; ++level)</div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;    {</div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;        <span class="keywordflow">if</span> (AsyncOut::UseAsyncOut()) {</div>
-<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;            VisMF::AsyncWrite(*mf[level],</div>
-<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;                              MultiFabFileFullPrefix(level, plotfilename, levelPrefix, mfPrefix),</div>
-<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;                              <span class="keyword">true</span>);</div>
-<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;            VisMF::AsyncWrite(*mf_nd[level],</div>
-<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;                              MultiFabFileFullPrefix(level, plotfilename, levelPrefix, mf_nodal_prefix),</div>
-<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;                              <span class="keyword">true</span>);</div>
-<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;            <span class="keyword">const</span> MultiFab* data;</div>
-<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;            std::unique_ptr&lt;MultiFab&gt; mf_tmp;</div>
-<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;            <span class="keywordflow">if</span> (mf[level]-&gt;nGrowVect() != 0) {</div>
-<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;                mf_tmp = std::make_unique&lt;MultiFab&gt;(mf[level]-&gt;boxArray(),</div>
-<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;                                                    mf[level]-&gt;DistributionMap(),</div>
-<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;                                                    mf[level]-&gt;nComp(), 0, MFInfo(),</div>
-<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;                                                    mf[level]-&gt;<a class="code" href="classERF.html#add33a9ec6db918b2ef03de4a92adc764">Factory</a>());</div>
-<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;                MultiFab::Copy(*mf_tmp, *mf[level], 0, 0, mf[level]-&gt;nComp(), 0);</div>
-<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;                data = mf_tmp.get();</div>
-<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;                data = mf[level];</div>
-<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;            }</div>
-<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;            VisMF::Write(*data        , MultiFabFileFullPrefix(level, plotfilename, levelPrefix, mfPrefix));</div>
-<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;            VisMF::Write(*mf_nd[level], MultiFabFileFullPrefix(level, plotfilename, levelPrefix, mf_nodal_prefix));</div>
-<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;        }</div>
-<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;    }</div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;}</div>
-<div class="ttc" id="aclassERF_html_a16e49fd65c68e2afc2140bd9e97bcbe9"><div class="ttname"><a href="classERF.html#a16e49fd65c68e2afc2140bd9e97bcbe9">ERF::WriteGenericPlotfileHeaderWithTerrain</a></div><div class="ttdeci">void WriteGenericPlotfileHeaderWithTerrain(std::ostream &amp;HeaderFile, int nlevels, const amrex::Vector&lt; amrex::BoxArray &gt; &amp;bArray, const amrex::Vector&lt; std::string &gt; &amp;varnames, amrex::Real time, const amrex::Vector&lt; int &gt; &amp;level_steps, const std::string &amp;versionName, const std::string &amp;levelPrefix, const std::string &amp;mfPrefix) const</div><div class="ttdef"><b>Definition:</b> Plotfile.cpp:1333</div></div>
+<div class="fragment"><div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;{</div>
+<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;WriteMultiLevelPlotfileWithTerrain()&quot;</span>);</div>
+<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160; </div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;    AMREX_ALWAYS_ASSERT(nlevels &lt;= mf.size());</div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;    AMREX_ALWAYS_ASSERT(nlevels &lt;= ref_ratio.size()+1);</div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;    AMREX_ALWAYS_ASSERT(nlevels &lt;= level_steps.size());</div>
+<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;    AMREX_ALWAYS_ASSERT(mf[0]-&gt;nComp() == varnames.size());</div>
+<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160; </div>
+<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;    <span class="keywordtype">bool</span> callBarrier(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;    PreBuildDirectorHierarchy(plotfilename, levelPrefix, nlevels, callBarrier);</div>
+<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;    <span class="keywordflow">if</span> (!extra_dirs.empty()) {</div>
+<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; d : extra_dirs) {</div>
+<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;            <span class="keyword">const</span> std::string ed = plotfilename+<span class="stringliteral">&quot;/&quot;</span>+d;</div>
+<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;            PreBuildDirectorHierarchy(ed, levelPrefix, nlevels, callBarrier);</div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;        }</div>
+<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;    }</div>
+<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;    ParallelDescriptor::Barrier();</div>
+<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160; </div>
+<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::MyProc() == ParallelDescriptor::NProcs()-1) {</div>
+<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;        Vector&lt;BoxArray&gt; boxArrays(nlevels);</div>
+<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> level(0); level &lt; boxArrays.size(); ++level) {</div>
+<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;            boxArrays[level] = mf[level]-&gt;boxArray();</div>
+<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;        }</div>
+<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160; </div>
+<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;        <span class="keyword">auto</span> f = [=]() {</div>
+<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;            VisMF::IO_Buffer io_buffer(VisMF::IO_Buffer_Size);</div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;            std::string HeaderFileName(plotfilename + <span class="stringliteral">&quot;/Header&quot;</span>);</div>
+<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;            std::ofstream HeaderFile;</div>
+<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;            HeaderFile.rdbuf()-&gt;pubsetbuf(io_buffer.dataPtr(), io_buffer.size());</div>
+<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;            HeaderFile.open(HeaderFileName.c_str(), std::ofstream::out   |</div>
+<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;                                                    std::ofstream::trunc |</div>
+<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;                                                    std::ofstream::binary);</div>
+<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;            <span class="keywordflow">if</span>( ! HeaderFile.good()) FileOpenFailed(HeaderFileName);</div>
+<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;            <a class="code" href="classERF.html#a16e49fd65c68e2afc2140bd9e97bcbe9">WriteGenericPlotfileHeaderWithTerrain</a>(HeaderFile, nlevels, boxArrays, varnames,</div>
+<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;                                                  time, level_steps, versionName,</div>
+<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;                                                  levelPrefix, mfPrefix);</div>
+<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;        };</div>
+<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160; </div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;        <span class="keywordflow">if</span> (AsyncOut::UseAsyncOut()) {</div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;            AsyncOut::Submit(std::move(f));</div>
+<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;            f();</div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;        }</div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;    }</div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160; </div>
+<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;    std::string mf_nodal_prefix = <span class="stringliteral">&quot;Nu_nd&quot;</span>;</div>
+<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level &lt;= finest_level; ++level)</div>
+<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;    {</div>
+<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;        <span class="keywordflow">if</span> (AsyncOut::UseAsyncOut()) {</div>
+<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;            VisMF::AsyncWrite(*mf[level],</div>
+<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;                              MultiFabFileFullPrefix(level, plotfilename, levelPrefix, mfPrefix),</div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;                              <span class="keyword">true</span>);</div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;            VisMF::AsyncWrite(*mf_nd[level],</div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;                              MultiFabFileFullPrefix(level, plotfilename, levelPrefix, mf_nodal_prefix),</div>
+<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;                              <span class="keyword">true</span>);</div>
+<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;            <span class="keyword">const</span> MultiFab* data;</div>
+<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;            std::unique_ptr&lt;MultiFab&gt; mf_tmp;</div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;            <span class="keywordflow">if</span> (mf[level]-&gt;nGrowVect() != 0) {</div>
+<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;                mf_tmp = std::make_unique&lt;MultiFab&gt;(mf[level]-&gt;boxArray(),</div>
+<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;                                                    mf[level]-&gt;DistributionMap(),</div>
+<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;                                                    mf[level]-&gt;nComp(), 0, MFInfo(),</div>
+<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;                                                    mf[level]-&gt;<a class="code" href="classERF.html#add33a9ec6db918b2ef03de4a92adc764">Factory</a>());</div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;                MultiFab::Copy(*mf_tmp, *mf[level], 0, 0, mf[level]-&gt;nComp(), 0);</div>
+<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;                data = mf_tmp.get();</div>
+<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;                data = mf[level];</div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;            }</div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;            VisMF::Write(*data        , MultiFabFileFullPrefix(level, plotfilename, levelPrefix, mfPrefix));</div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;            VisMF::Write(*mf_nd[level], MultiFabFileFullPrefix(level, plotfilename, levelPrefix, mf_nodal_prefix));</div>
+<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;        }</div>
+<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;    }</div>
+<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;}</div>
+<div class="ttc" id="aclassERF_html_a16e49fd65c68e2afc2140bd9e97bcbe9"><div class="ttname"><a href="classERF.html#a16e49fd65c68e2afc2140bd9e97bcbe9">ERF::WriteGenericPlotfileHeaderWithTerrain</a></div><div class="ttdeci">void WriteGenericPlotfileHeaderWithTerrain(std::ostream &amp;HeaderFile, int nlevels, const amrex::Vector&lt; amrex::BoxArray &gt; &amp;bArray, const amrex::Vector&lt; std::string &gt; &amp;varnames, amrex::Real time, const amrex::Vector&lt; int &gt; &amp;level_steps, const std::string &amp;versionName, const std::string &amp;levelPrefix, const std::string &amp;mfPrefix) const</div><div class="ttdef"><b>Definition:</b> Plotfile.cpp:1332</div></div>
 <div class="ttc" id="aclassERF_html_add33a9ec6db918b2ef03de4a92adc764"><div class="ttname"><a href="classERF.html#add33a9ec6db918b2ef03de4a92adc764">ERF::Factory</a></div><div class="ttdeci">amrex::FabFactory&lt; amrex::FArrayBox &gt; const  &amp; Factory(int lev) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF.H:1117</div></div>
 </div><!-- fragment -->
 </div>
@@ -14279,50 +14279,49 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160; </div>
 <div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;            <span class="comment">// Do piecewise interpolation of mf into mf2</span></div>
 <div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 1; lev &lt;= finest_level; ++lev) {</div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;                <span class="keywordflow">for</span> (MFIter mfi(mf2[lev], TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;                    <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;                    pcinterp_interp(bx,mf2[lev].array(mfi), 0, mf[lev].nComp(), mf[lev].const_array(mfi),0,r2[lev-1]);</div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;                }</div>
-<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;            }</div>
-<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160; </div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;            <span class="comment">// Define an effective ref_ratio which is isotropic to be passed into WriteMultiLevelPlotfile</span></div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;            Vector&lt;IntVect&gt; rr(finest_level);</div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; finest_level; ++lev) {</div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;                rr[lev] = IntVect(ref_ratio[lev][0],ref_ratio[lev][1],ref_ratio[lev][0]);</div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;            }</div>
-<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160; </div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;Writing plotfile &quot;</span> &lt;&lt; plotfilename &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a063a88594452100497651e8aaf1f68d7">use_terrain</a>) {</div>
-<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;                <a class="code" href="classERF.html#a898410553492b2add00a72374dcec6ba">WriteMultiLevelPlotfileWithTerrain</a>(plotfilename, finest_level+1,</div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;                                                   GetVecOfConstPtrs(mf),</div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;                                                   GetVecOfConstPtrs(mf_nd),</div>
-<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;                                                   varnames,</div>
-<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;                                                   <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0], <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>);</div>
-<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;                WriteMultiLevelPlotfile(plotfilename, finest_level+1,</div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;                                        GetVecOfConstPtrs(mf2), varnames,</div>
-<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;                                        g2, <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0], <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, rr);</div>
-<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;            }</div>
-<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160; </div>
-<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;            <a class="code" href="classERF.html#aa2d8099655a8779836e63e3e98ea4372">writeJobInfo</a>(plotfilename);</div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160; </div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;<span class="preprocessor">#ifdef ERF_USE_PARTICLES</span></div>
-<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;            particleData.Checkpoint(plotfilename);</div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
-<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ae7b9991150042eb38e2abc89399c0c7c">plotfile_type</a> == <span class="stringliteral">&quot;netcdf&quot;</span> || <a class="code" href="classERF.html#ae7b9991150042eb38e2abc89399c0c7c">plotfile_type</a> == <span class="stringliteral">&quot;NetCDF&quot;</span>) {</div>
-<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev) {</div>
-<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> which_box = 0; which_box &lt; <a class="code" href="classERF.html#adcd9f23975ffa605247b41d391c2a2f0">num_boxes_at_level</a>[lev]; which_box++) {</div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;                     writeNCPlotFile(lev, which_box, plotfilename, GetVecOfConstPtrs(mf), varnames, <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0]);</div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;                 }</div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;             }</div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;        }</div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;    } <span class="comment">// end multi-level</span></div>
-<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;}</div>
+<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;                Interpolater* mapper_c = &amp;pc_interp;</div>
+<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;                InterpFromCoarseLevel(mf2[lev], <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[lev], mf[lev],</div>
+<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;                                      0, 0, ncomp_mf,</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;                                      geom[lev], g2[lev],</div>
+<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;                                      <a class="code" href="Plotfile_8cpp.html#aeb56b4bca6dfa0e3b81d3f983926e8a2">null_bc_for_fill</a>, 0, <a class="code" href="Plotfile_8cpp.html#aeb56b4bca6dfa0e3b81d3f983926e8a2">null_bc_for_fill</a>, 0,</div>
+<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;                                      r2[lev-1], mapper_c, <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, 0);</div>
+<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;            }</div>
+<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160; </div>
+<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;            <span class="comment">// Define an effective ref_ratio which is isotropic to be passed into WriteMultiLevelPlotfile</span></div>
+<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;            Vector&lt;IntVect&gt; rr(finest_level);</div>
+<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; finest_level; ++lev) {</div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;                rr[lev] = IntVect(ref_ratio[lev][0],ref_ratio[lev][1],ref_ratio[lev][0]);</div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;            }</div>
+<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160; </div>
+<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;Writing plotfile &quot;</span> &lt;&lt; plotfilename &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a063a88594452100497651e8aaf1f68d7">use_terrain</a>) {</div>
+<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;                <a class="code" href="classERF.html#a898410553492b2add00a72374dcec6ba">WriteMultiLevelPlotfileWithTerrain</a>(plotfilename, finest_level+1,</div>
+<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;                                                   GetVecOfConstPtrs(mf),</div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;                                                   GetVecOfConstPtrs(mf_nd),</div>
+<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;                                                   varnames,</div>
+<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;                                                   <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0], <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>);</div>
+<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;                WriteMultiLevelPlotfile(plotfilename, finest_level+1,</div>
+<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;                                        GetVecOfConstPtrs(mf2), varnames,</div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;                                        g2, <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0], <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, rr);</div>
+<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;            }</div>
+<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160; </div>
+<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;            <a class="code" href="classERF.html#aa2d8099655a8779836e63e3e98ea4372">writeJobInfo</a>(plotfilename);</div>
+<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160; </div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;<span class="preprocessor">#ifdef ERF_USE_PARTICLES</span></div>
+<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;            particleData.Checkpoint(plotfilename);</div>
+<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
+<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classERF.html#ae7b9991150042eb38e2abc89399c0c7c">plotfile_type</a> == <span class="stringliteral">&quot;netcdf&quot;</span> || <a class="code" href="classERF.html#ae7b9991150042eb38e2abc89399c0c7c">plotfile_type</a> == <span class="stringliteral">&quot;NetCDF&quot;</span>) {</div>
+<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev) {</div>
+<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> which_box = 0; which_box &lt; <a class="code" href="classERF.html#adcd9f23975ffa605247b41d391c2a2f0">num_boxes_at_level</a>[lev]; which_box++) {</div>
+<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;                     writeNCPlotFile(lev, which_box, plotfilename, GetVecOfConstPtrs(mf), varnames, <a class="code" href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">istep</a>, <a class="code" href="classERF.html#a65741b6379d273c19a25cf48bb947614">t_new</a>[0]);</div>
+<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;                 }</div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;             }</div>
+<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;        }</div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;    } <span class="comment">// end multi-level</span></div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;}</div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aEOS_8H_html_a65cf1718b7a1fcc56cb16685642543da"><div class="ttname"><a href="EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> EOS.H:29</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
@@ -14341,7 +14340,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aTerrainMetrics_8H_html_ae609a5c1f84347b66e9a8b712271c4ce"><div class="ttname"><a href="TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> TerrainMetrics.H:150</div></div>
 <div class="ttc" id="aclassERF_html_a19c8017ca1ff0eead61abd7e0ce62232"><div class="ttname"><a href="classERF.html#a19c8017ca1ff0eead61abd7e0ce62232">ERF::FillBdyCCVels</a></div><div class="ttdeci">void FillBdyCCVels(amrex::Vector&lt; amrex::MultiFab &gt; &amp;mf_cc_vel)</div><div class="ttdef"><b>Definition:</b> ERF_FillPatch.cpp:548</div></div>
 <div class="ttc" id="aclassERF_html_a2dcd22cb915d923c687f60267f44542b"><div class="ttname"><a href="classERF.html#a2dcd22cb915d923c687f60267f44542b">ERF::PlotFileVarNames</a></div><div class="ttdeci">static amrex::Vector&lt; std::string &gt; PlotFileVarNames(amrex::Vector&lt; std::string &gt; plot_var_names)</div><div class="ttdef"><b>Definition:</b> Plotfile.cpp:139</div></div>
-<div class="ttc" id="aclassERF_html_a898410553492b2add00a72374dcec6ba"><div class="ttname"><a href="classERF.html#a898410553492b2add00a72374dcec6ba">ERF::WriteMultiLevelPlotfileWithTerrain</a></div><div class="ttdeci">void WriteMultiLevelPlotfileWithTerrain(const std::string &amp;plotfilename, int nlevels, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;mf, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;mf_nd, const amrex::Vector&lt; std::string &gt; &amp;varnames, amrex::Real time, const amrex::Vector&lt; int &gt; &amp;level_steps, const std::string &amp;versionName=&quot;HyperCLaw-V1.1&quot;, const std::string &amp;levelPrefix=&quot;Level_&quot;, const std::string &amp;mfPrefix=&quot;Cell&quot;, const amrex::Vector&lt; std::string &gt; &amp;extra_dirs=amrex::Vector&lt; std::string &gt;()) const</div><div class="ttdef"><b>Definition:</b> Plotfile.cpp:1248</div></div>
+<div class="ttc" id="aclassERF_html_a898410553492b2add00a72374dcec6ba"><div class="ttname"><a href="classERF.html#a898410553492b2add00a72374dcec6ba">ERF::WriteMultiLevelPlotfileWithTerrain</a></div><div class="ttdeci">void WriteMultiLevelPlotfileWithTerrain(const std::string &amp;plotfilename, int nlevels, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;mf, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;mf_nd, const amrex::Vector&lt; std::string &gt; &amp;varnames, amrex::Real time, const amrex::Vector&lt; int &gt; &amp;level_steps, const std::string &amp;versionName=&quot;HyperCLaw-V1.1&quot;, const std::string &amp;levelPrefix=&quot;Level_&quot;, const std::string &amp;mfPrefix=&quot;Cell&quot;, const amrex::Vector&lt; std::string &gt; &amp;extra_dirs=amrex::Vector&lt; std::string &gt;()) const</div><div class="ttdef"><b>Definition:</b> Plotfile.cpp:1247</div></div>
 <div class="ttc" id="aclassERF_html_aa2d8099655a8779836e63e3e98ea4372"><div class="ttname"><a href="classERF.html#aa2d8099655a8779836e63e3e98ea4372">ERF::writeJobInfo</a></div><div class="ttdeci">void writeJobInfo(const std::string &amp;dir) const</div><div class="ttdef"><b>Definition:</b> writeJobInfo.cpp:9</div></div>
 <div class="ttc" id="aclassLandSurface_html_a61290767bd3f0bc65db7a0a344b10899"><div class="ttname"><a href="classLandSurface.html#a61290767bd3f0bc65db7a0a344b10899">LandSurface::Plot_Lsm_Data</a></div><div class="ttdeci">void Plot_Lsm_Data(amrex::Real time, const amrex::Vector&lt; int &gt; &amp;level_steps, const amrex::Vector&lt; amrex::IntVect &gt; &amp;ref_ratio)</div><div class="ttdef"><b>Definition:</b> LandSurface.H:80</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:128</div></div>
