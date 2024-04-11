@@ -802,151 +802,184 @@ $(document).ready(function(){initNavTree('Phys__prop_8H_source.html',''); initRe
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        prop.read(asmpsw, <span class="stringliteral">&quot;asmpsw&quot;</span> );</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        prop.read(absplw, <span class="stringliteral">&quot;absplw&quot;</span> );</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#aa86746c3ce43b7a278d78276bbe0d153">extpsw</a> = real4d(<span class="stringliteral">&quot;extpsw&quot;</span>, nswbnd, prefi, prefr, ncoef);</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#ae6dcba887753559af9ba4942d3d89bb5">abspsw</a> = real4d(<span class="stringliteral">&quot;abspsw&quot;</span>, nswbnd, prefi, prefr, ncoef);</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a14ca153cc7e4dbcc7e097b4014385c8f">asmpsw</a> = real4d(<span class="stringliteral">&quot;asmpsw&quot;</span>, nswbnd, prefi, prefr, ncoef);</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a1b15e2d7f7b059cecb30c630a339b020">absplw</a> = real4d(<span class="stringliteral">&quot;absplw&quot;</span>, nlwbnd, prefi, prefr, ncoef);</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160; </div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        parallel_for (SimpleBounds&lt;4&gt;(nswbnd, prefi, prefr, ncoef),</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                      YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> l)</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        {</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#aa86746c3ce43b7a278d78276bbe0d153">extpsw</a>(i,j,k,l) = extpsw(i,1,j,k,l);</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#ae6dcba887753559af9ba4942d3d89bb5">abspsw</a>(i,j,k,l) = abspsw(i,1,j,k,l);</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;            phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a14ca153cc7e4dbcc7e097b4014385c8f">asmpsw</a>(i,j,k,l) = asmpsw(i,1,j,k,l);</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        });</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160; </div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        parallel_for (SimpleBounds&lt;4&gt;(nlwbnd, prefi, prefr, ncoef),</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                      YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> l)</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        {</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;            phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a1b15e2d7f7b059cecb30c630a339b020">absplw</a>(i,j,k,l) = absplw(i,1,j,k,l);</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        });</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a2cb505dd76f365687ee5e33a22a14e9b">refrtabsw</a>,   <span class="stringliteral">&quot;refindex_real_sw&quot;</span> );</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a7a536b72896ed7e80fe3b13d990bce61">refitabsw</a>,   <span class="stringliteral">&quot;refindex_im_sw&quot;</span> );</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#accf672f5038e149841b092ffb9ee1ba1">refrtablw</a>,   <span class="stringliteral">&quot;refindex_real_lw&quot;</span> );</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a8c8ef5042c0b53fa05d1d97a49de3833">refitablw</a>,   <span class="stringliteral">&quot;refindex_im_lw&quot;</span> );</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160; </div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a3f78f2921f22ba1912926ef62da7b19f">sigmag</a>,      <span class="stringliteral">&quot;sigmag&quot;</span> );</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a66b63e7d4250ce345343af372d529193">dgnum</a>,       <span class="stringliteral">&quot;dgnum&quot;</span> );</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160; </div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a2e423bf4c825875ea8d9a72ead6c3b20">dgnumlo</a>,     <span class="stringliteral">&quot;dgnumlo&quot;</span> );</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a0a6b0b2e1d1906ac628da5c03c54dd2c">dgnumhi</a>,     <span class="stringliteral">&quot;dgnumhi&quot;</span> );</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160; </div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#aedb70926e32d7aaa6655f0a417acb18d">rhcrystal</a>,   <span class="stringliteral">&quot;rhcrystal&quot;</span> );</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a136a646945382e1e7808b61ec9c648fe">rhdeliques</a>,  <span class="stringliteral">&quot;rhdeliques&quot;</span> );</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    }</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160; </div>
-<div class="line"><a name="l00751"></a><span class="lineno"><a class="line" href="classPhysProp.html#a1bd98e99ebbc4373a913a6522b7a604f">  751</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPhysProp.html#a1bd98e99ebbc4373a913a6522b7a604f">bulk_props_init</a> (<a class="code" href="structPhysProp_1_1physprop__t.html">physprop_t</a>&amp; phys_prop, yakl::SimpleNetCDF&amp; prop)</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    {</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        <span class="keyword">using</span> charHost1d = FArray&lt;char,1,yakl::memHost&gt;;</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;        charHost1d temp;</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        prop.read(temp, <span class="stringliteral">&quot;name&quot;</span>);</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a55a195e47028b0355c737bffb1f60fbd">aername</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> ichar = 1 ; ichar &lt;= temp.extent(0); ichar++)</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;            <span class="keywordflow">if</span> (!isspace(temp(ichar))) phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a55a195e47028b0355c737bffb1f60fbd">aername</a> += temp(ichar);</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160; </div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        <span class="comment">//  Read props for bulk aerosols</span></div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a8df74558339352f0e8c0031fc3160a09">density_aer</a>,       <span class="stringliteral">&quot;density&quot;</span> );</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#adf99574ee8aea212bec426dd42a4a9e4">dispersion_aer</a>,    <span class="stringliteral">&quot;sigma_logr&quot;</span> );</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a55622eb338277f3ce9c7d5b774a9c2c5">dryrad_aer</a>,        <span class="stringliteral">&quot;dryrad&quot;</span> );</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#af60d655c402eb7e47763c631b9432552">hygro_aer</a>,         <span class="stringliteral">&quot;hygroscopicity&quot;</span> );</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#aacc68f3bfaf1bcb4d76c0e49aa3d81fb">num_to_mass_aer</a>,   <span class="stringliteral">&quot;num_to_mass_ratio&quot;</span> );</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    }</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160; </div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    <span class="comment">// Purpose:</span></div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    <span class="comment">//interpolates f(x) to point y</span></div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    <span class="comment">//assuming f(x) = f(x0) exp a(x - x0)</span></div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <span class="comment">//where a = ( ln f(x1) - ln f(x0) ) / (x1 - x0)</span></div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    <span class="comment">//x0 &lt;= x &lt;= x1</span></div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    <span class="comment">//assumes x is monotonically increasing</span></div>
-<div class="line"><a name="l00774"></a><span class="lineno"><a class="line" href="classPhysProp.html#a9bc40a34bf3b039dd0d8ad87678e23d1">  774</a></span>&#160;    real <a class="code" href="classPhysProp.html#a9bc40a34bf3b039dd0d8ad87678e23d1">exp_interpol</a> (<span class="keyword">const</span> real1d&amp; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <span class="keyword">const</span> real1d&amp; f, <span class="keyword">const</span> real&amp; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>)</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    {</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        <span class="keyword">auto</span> n = <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>.extent(0);</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        <span class="keywordtype">int</span> k;</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160; </div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;        <span class="comment">// find k such that x(k) &lt; y =&lt; x(k+1)</span></div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        <span class="comment">// set k = 1 if y &lt;= x(1)  and  k = n-1 if y &gt; x(n)</span></div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(1)) {</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            k = 1;</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        }</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(n)) {</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;            k = n - 1;</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;        }</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            k = 1;</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1) &amp;&amp; k &lt; n) {</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                k = k + 1;</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            }</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        }</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160; </div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        <span class="comment">// interpolate</span></div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        <span class="keyword">auto</span> a = (log(f(k+1)/f(k)))/(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1)-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k));</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;        <span class="keywordflow">return</span> f(k)*exp(a*(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k)));</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    }</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160; </div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    <span class="comment">//Purpose:</span></div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="comment">// interpolates f(x) to point y</span></div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    <span class="comment">// assuming f(x) = f(x0) + a * (x - x0)</span></div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    <span class="comment">// where a = ( f(x1) - f(x0) ) / (x1 - x0)</span></div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    <span class="comment">// x0 &lt;= x &lt;= x1</span></div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    <span class="comment">// assumes x is monotonically increasing</span></div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00806"></a><span class="lineno"><a class="line" href="classPhysProp.html#a7b86495b7ca2bf72c2b3ae3f66538d56">  806</a></span>&#160;    real <a class="code" href="classPhysProp.html#a7b86495b7ca2bf72c2b3ae3f66538d56">lin_interpol</a> (<span class="keyword">const</span> real1d&amp; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <span class="keyword">const</span> real1d&amp; f, <span class="keyword">const</span> real&amp; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>)</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    {</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        <span class="keyword">auto</span> n = <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>.extent(0);</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        <span class="keywordtype">int</span> k;</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        <span class="comment">// find k such that x(k) &lt; y =&lt; x(k+1)</span></div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;        <span class="comment">// set k = 1 if y &lt;= x(1)  and  k = n-1 if y &gt; x(n)</span></div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(1)) {</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            k = 1;</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;        }</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(n)) {</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;            k = n - 1;</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        }</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            k = 1;</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1) &amp;&amp; k &lt; n) {</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                k = k + 1;</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;            }</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;        }</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;        <span class="comment">// interpolate</span></div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;        <span class="keyword">auto</span> a = (f(k+1)-f(k))/(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1)-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k));</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        <span class="keywordflow">return</span> f(k)+a*(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k));</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;    }</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160; </div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    <span class="comment">// Purpose:</span></div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;    <span class="comment">//   write out aerosol optical properties</span></div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    <span class="comment">//   for a set of test rh values</span></div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    <span class="comment">//   to test hygroscopic growth interpolation</span></div>
-<div class="line"><a name="l00833"></a><span class="lineno"><a class="line" href="classPhysProp.html#a1099f5de19b69524e4c2bb0b78e497b7">  833</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPhysProp.html#a1099f5de19b69524e4c2bb0b78e497b7">aer_optics_log_rh</a> (std::string name, <span class="keyword">const</span> real1d&amp; ext, <span class="keyword">const</span> real1d&amp; ssa, <span class="keyword">const</span> real1d&amp; asmin)</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    {</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nrh_test = 36;</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;        <span class="comment">//int krh;</span></div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;        real1d rh_test(<span class="stringliteral">&quot;rh_test&quot;</span>, nrh_test);</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;        <span class="comment">//auto nrh = ext.extent(0);</span></div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160; </div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        parallel_for (SimpleBounds&lt;1&gt; (nrh_test), YAKL_LAMBDA (<span class="keywordtype">int</span> krh_test)</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        {</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;            rh_test(krh_test) = sqrt(sqrt(sqrt(sqrt(((krh_test - 1.0) / (nrh_test - 1))))));</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;        });</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160; </div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;        <span class="comment">// loop through test rh values</span></div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        parallel_for (SimpleBounds&lt;1&gt; (nrh_test), YAKL_LAMBDA (<span class="keywordtype">int</span> krh_test)</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        {</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;            <span class="comment">/*</span></div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;<span class="comment">            // find corresponding rh index</span></div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;<span class="comment">            auto rh = rh_test(krh_test);</span></div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;<span class="comment">            auto krh = std::min(floor( (rh) * nrh ) + 1, static_cast&lt;real&gt;(nrh - 1));</span></div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;<span class="comment">            auto wrh = (rh) *nrh - krh;</span></div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;<span class="comment">            auto exti = ext(krh + 1) * (wrh + 1) - ext(krh) * wrh;</span></div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;<span class="comment">            auto ssai = ssa(krh + 1) * (wrh + 1) - ssa(krh) * wrh;</span></div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;<span class="comment">            auto asmi = asmin(krh + 1) * (wrh + 1) - asmin(krh) * wrh;</span></div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;<span class="comment">            */</span></div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;        });</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;    }</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;};</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160; </div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;<span class="comment">        // DEBUG NETCDF READ ORDER</span></div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;<span class="comment">        {</span></div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;<span class="comment">        auto lb = asmpsw.get_lbounds();</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;<span class="comment">        auto ub = asmpsw.get_ubounds();</span></div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;<span class="comment">        amrex::Print() &lt;&lt; &quot;CHECK: &quot; &lt;&lt; ub.size() &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="comment">        for (int ind(1); ind&lt;=ub.size(); ++ind) {</span></div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;<span class="comment">          amrex::Print() &lt;&lt; &quot;BNDS asmpsw: &quot; &lt;&lt; ind &lt;&lt; &#39; &#39; &lt;&lt; lb(ind) &lt;&lt; &#39; &#39; &lt;&lt; ub(ind) &lt;&lt; &#39; &#39;</span></div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;<span class="comment">                         &lt;&lt; nswbnd &lt;&lt; &#39; &#39; &lt;&lt; prefi &lt;&lt; &#39; &#39; &lt;&lt; prefr &lt;&lt; &#39; &#39; &lt;&lt; ncoef &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;<span class="comment">        {</span></div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;<span class="comment">        auto lb = abspsw.get_lbounds();</span></div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="comment">        auto ub = abspsw.get_ubounds();</span></div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;<span class="comment">        amrex::Print() &lt;&lt; &quot;CHECK: &quot; &lt;&lt; ub.size() &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="comment">        for (int ind(1); ind&lt;=ub.size(); ++ind) {</span></div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;<span class="comment">          amrex::Print() &lt;&lt; &quot;BNDS abspsw: &quot; &lt;&lt; ind &lt;&lt; &#39; &#39; &lt;&lt; lb(ind) &lt;&lt; &#39; &#39; &lt;&lt; ub(ind) &lt;&lt; &#39; &#39;</span></div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;<span class="comment">                         &lt;&lt; nswbnd &lt;&lt; &#39; &#39; &lt;&lt; prefi &lt;&lt; &#39; &#39; &lt;&lt; prefr &lt;&lt; &#39; &#39; &lt;&lt; ncoef &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;<span class="comment">        {</span></div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;<span class="comment">        auto lb = extpsw.get_lbounds();</span></div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;<span class="comment">        auto ub = extpsw.get_ubounds();</span></div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;<span class="comment">        amrex::Print() &lt;&lt; &quot;CHECK: &quot; &lt;&lt; ub.size() &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;<span class="comment">        for (int ind(1); ind&lt;=ub.size(); ++ind) {</span></div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;<span class="comment">          amrex::Print() &lt;&lt; &quot;BNDS extpsw: &quot; &lt;&lt; ind &lt;&lt; &#39; &#39; &lt;&lt; lb(ind) &lt;&lt; &#39; &#39; &lt;&lt; ub(ind) &lt;&lt; &#39; &#39;</span></div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;<span class="comment">                         &lt;&lt; nswbnd &lt;&lt; &#39; &#39; &lt;&lt; prefi &lt;&lt; &#39; &#39; &lt;&lt; prefr &lt;&lt; &#39; &#39; &lt;&lt; ncoef &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;<span class="comment">        */</span></div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160; </div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#aa86746c3ce43b7a278d78276bbe0d153">extpsw</a> = real4d(<span class="stringliteral">&quot;extpsw&quot;</span>, nswbnd, prefi, prefr, ncoef);</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;        phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#ae6dcba887753559af9ba4942d3d89bb5">abspsw</a> = real4d(<span class="stringliteral">&quot;abspsw&quot;</span>, nswbnd, prefi, prefr, ncoef);</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a14ca153cc7e4dbcc7e097b4014385c8f">asmpsw</a> = real4d(<span class="stringliteral">&quot;asmpsw&quot;</span>, nswbnd, prefi, prefr, ncoef);</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a1b15e2d7f7b059cecb30c630a339b020">absplw</a> = real4d(<span class="stringliteral">&quot;absplw&quot;</span>, nlwbnd, prefi, prefr, ncoef);</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160; </div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        parallel_for (SimpleBounds&lt;4&gt;(nswbnd, prefi, prefr, ncoef),</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                      YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> l)</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;        {</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;            phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#aa86746c3ce43b7a278d78276bbe0d153">extpsw</a>(i,j,k,l) = extpsw(l,k,j,1,i); <span class="comment">//extpsw(i,1,j,k,l);</span></div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;            phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#ae6dcba887753559af9ba4942d3d89bb5">abspsw</a>(i,j,k,l) = abspsw(l,k,j,1,i); <span class="comment">//abspsw(i,1,j,k,l);</span></div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;            phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a14ca153cc7e4dbcc7e097b4014385c8f">asmpsw</a>(i,j,k,l) = asmpsw(l,k,j,1,i); <span class="comment">//asmpsw(i,1,j,k,l);</span></div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        });</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160; </div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        parallel_for (SimpleBounds&lt;4&gt;(nlwbnd, prefi, prefr, ncoef),</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                      YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> l)</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        {</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;            phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a1b15e2d7f7b059cecb30c630a339b020">absplw</a>(i,j,k,l) = absplw(l,k,j,1,i); <span class="comment">//absplw(i,1,j,k,l);</span></div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;        });</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160; </div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a2cb505dd76f365687ee5e33a22a14e9b">refrtabsw</a>,   <span class="stringliteral">&quot;refindex_real_sw&quot;</span> );</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a7a536b72896ed7e80fe3b13d990bce61">refitabsw</a>,   <span class="stringliteral">&quot;refindex_im_sw&quot;</span> );</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#accf672f5038e149841b092ffb9ee1ba1">refrtablw</a>,   <span class="stringliteral">&quot;refindex_real_lw&quot;</span> );</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a8c8ef5042c0b53fa05d1d97a49de3833">refitablw</a>,   <span class="stringliteral">&quot;refindex_im_lw&quot;</span> );</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160; </div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a3f78f2921f22ba1912926ef62da7b19f">sigmag</a>,      <span class="stringliteral">&quot;sigmag&quot;</span> );</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a66b63e7d4250ce345343af372d529193">dgnum</a>,       <span class="stringliteral">&quot;dgnum&quot;</span> );</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a2e423bf4c825875ea8d9a72ead6c3b20">dgnumlo</a>,     <span class="stringliteral">&quot;dgnumlo&quot;</span> );</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a0a6b0b2e1d1906ac628da5c03c54dd2c">dgnumhi</a>,     <span class="stringliteral">&quot;dgnumhi&quot;</span> );</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160; </div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#aedb70926e32d7aaa6655f0a417acb18d">rhcrystal</a>,   <span class="stringliteral">&quot;rhcrystal&quot;</span> );</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        prop.read(phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a136a646945382e1e7808b61ec9c648fe">rhdeliques</a>,  <span class="stringliteral">&quot;rhdeliques&quot;</span> );</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    }</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160; </div>
+<div class="line"><a name="l00784"></a><span class="lineno"><a class="line" href="classPhysProp.html#a1bd98e99ebbc4373a913a6522b7a604f">  784</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPhysProp.html#a1bd98e99ebbc4373a913a6522b7a604f">bulk_props_init</a> (<a class="code" href="structPhysProp_1_1physprop__t.html">physprop_t</a>&amp; phys_prop, yakl::SimpleNetCDF&amp; prop)</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    {</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;        <span class="keyword">using</span> charHost1d = FArray&lt;char,1,yakl::memHost&gt;;</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        charHost1d temp;</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        prop.read(temp, <span class="stringliteral">&quot;name&quot;</span>);</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a55a195e47028b0355c737bffb1f60fbd">aername</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> ichar = 1 ; ichar &lt;= temp.extent(0); ichar++)</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            <span class="keywordflow">if</span> (!isspace(temp(ichar))) phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a55a195e47028b0355c737bffb1f60fbd">aername</a> += temp(ichar);</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160; </div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        <span class="comment">//  Read props for bulk aerosols</span></div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a8df74558339352f0e8c0031fc3160a09">density_aer</a>,       <span class="stringliteral">&quot;density&quot;</span> );</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#adf99574ee8aea212bec426dd42a4a9e4">dispersion_aer</a>,    <span class="stringliteral">&quot;sigma_logr&quot;</span> );</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#a55622eb338277f3ce9c7d5b774a9c2c5">dryrad_aer</a>,        <span class="stringliteral">&quot;dryrad&quot;</span> );</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#af60d655c402eb7e47763c631b9432552">hygro_aer</a>,         <span class="stringliteral">&quot;hygroscopicity&quot;</span> );</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;        prop.read( phys_prop.<a class="code" href="structPhysProp_1_1physprop__t.html#aacc68f3bfaf1bcb4d76c0e49aa3d81fb">num_to_mass_aer</a>,   <span class="stringliteral">&quot;num_to_mass_ratio&quot;</span> );</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    }</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160; </div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    <span class="comment">// Purpose:</span></div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    <span class="comment">//interpolates f(x) to point y</span></div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    <span class="comment">//assuming f(x) = f(x0) exp a(x - x0)</span></div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    <span class="comment">//where a = ( ln f(x1) - ln f(x0) ) / (x1 - x0)</span></div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <span class="comment">//x0 &lt;= x &lt;= x1</span></div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    <span class="comment">//assumes x is monotonically increasing</span></div>
+<div class="line"><a name="l00807"></a><span class="lineno"><a class="line" href="classPhysProp.html#a9bc40a34bf3b039dd0d8ad87678e23d1">  807</a></span>&#160;    real <a class="code" href="classPhysProp.html#a9bc40a34bf3b039dd0d8ad87678e23d1">exp_interpol</a> (<span class="keyword">const</span> real1d&amp; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <span class="keyword">const</span> real1d&amp; f, <span class="keyword">const</span> real&amp; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>)</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    {</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        <span class="keyword">auto</span> n = <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>.extent(0);</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        <span class="keywordtype">int</span> k;</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160; </div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        <span class="comment">// find k such that x(k) &lt; y =&lt; x(k+1)</span></div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;        <span class="comment">// set k = 1 if y &lt;= x(1)  and  k = n-1 if y &gt; x(n)</span></div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(1)) {</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;            k = 1;</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        }</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(n)) {</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;            k = n - 1;</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        }</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;            k = 1;</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1) &amp;&amp; k &lt; n) {</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                k = k + 1;</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;            }</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;        }</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160; </div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;        <span class="comment">// interpolate</span></div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;        <span class="keyword">auto</span> a = (log(f(k+1)/f(k)))/(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1)-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k));</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;        <span class="keywordflow">return</span> f(k)*exp(a*(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k)));</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;    }</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160; </div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    <span class="comment">//Purpose:</span></div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    <span class="comment">// interpolates f(x) to point y</span></div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    <span class="comment">// assuming f(x) = f(x0) + a * (x - x0)</span></div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    <span class="comment">// where a = ( f(x1) - f(x0) ) / (x1 - x0)</span></div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    <span class="comment">// x0 &lt;= x &lt;= x1</span></div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    <span class="comment">// assumes x is monotonically increasing</span></div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00839"></a><span class="lineno"><a class="line" href="classPhysProp.html#a7b86495b7ca2bf72c2b3ae3f66538d56">  839</a></span>&#160;    real <a class="code" href="classPhysProp.html#a7b86495b7ca2bf72c2b3ae3f66538d56">lin_interpol</a> (<span class="keyword">const</span> real1d&amp; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>, <span class="keyword">const</span> real1d&amp; f, <span class="keyword">const</span> real&amp; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>)</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;    {</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        <span class="keyword">auto</span> n = <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>.extent(0);</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;        <span class="keywordtype">int</span> k;</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;        <span class="comment">// find k such that x(k) &lt; y =&lt; x(k+1)</span></div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;        <span class="comment">// set k = 1 if y &lt;= x(1)  and  k = n-1 if y &gt; x(n)</span></div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(1)) {</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;            k = 1;</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        }</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(n)) {</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;            k = n - 1;</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;        }</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;            k = 1;</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1) &amp;&amp; k &lt; n) {</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;                k = k + 1;</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;            }</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        }</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;        <span class="comment">// interpolate</span></div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;        <span class="keyword">auto</span> a = (f(k+1)-f(k))/(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1)-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k));</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;        <span class="keywordflow">return</span> f(k)+a*(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k));</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;    }</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160; </div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;    <span class="comment">// Purpose:</span></div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;    <span class="comment">//   write out aerosol optical properties</span></div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;    <span class="comment">//   for a set of test rh values</span></div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;    <span class="comment">//   to test hygroscopic growth interpolation</span></div>
+<div class="line"><a name="l00866"></a><span class="lineno"><a class="line" href="classPhysProp.html#a1099f5de19b69524e4c2bb0b78e497b7">  866</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPhysProp.html#a1099f5de19b69524e4c2bb0b78e497b7">aer_optics_log_rh</a> (std::string name, <span class="keyword">const</span> real1d&amp; ext, <span class="keyword">const</span> real1d&amp; ssa, <span class="keyword">const</span> real1d&amp; asmin)</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    {</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nrh_test = 36;</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        <span class="comment">//int krh;</span></div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;        real1d rh_test(<span class="stringliteral">&quot;rh_test&quot;</span>, nrh_test);</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;        <span class="comment">//auto nrh = ext.extent(0);</span></div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160; </div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;        parallel_for (SimpleBounds&lt;1&gt; (nrh_test), YAKL_LAMBDA (<span class="keywordtype">int</span> krh_test)</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;        {</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;            rh_test(krh_test) = sqrt(sqrt(sqrt(sqrt(((krh_test - 1.0) / (nrh_test - 1))))));</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;        });</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160; </div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        <span class="comment">// loop through test rh values</span></div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;        parallel_for (SimpleBounds&lt;1&gt; (nrh_test), YAKL_LAMBDA (<span class="keywordtype">int</span> krh_test)</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;        {</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;            <span class="comment">/*</span></div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;<span class="comment">            // find corresponding rh index</span></div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;<span class="comment">            auto rh = rh_test(krh_test);</span></div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;<span class="comment">            auto krh = std::min(floor( (rh) * nrh ) + 1, static_cast&lt;real&gt;(nrh - 1));</span></div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;<span class="comment">            auto wrh = (rh) *nrh - krh;</span></div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;<span class="comment">            auto exti = ext(krh + 1) * (wrh + 1) - ext(krh) * wrh;</span></div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;<span class="comment">            auto ssai = ssa(krh + 1) * (wrh + 1) - ssa(krh) * wrh;</span></div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;<span class="comment">            auto asmi = asmin(krh + 1) * (wrh + 1) - asmin(krh) * wrh;</span></div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;<span class="comment">            */</span></div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;        });</div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;    }</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;};</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160; </div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aRad__constants_8H_html"><div class="ttname"><a href="Rad__constants_8H.html">Rad_constants.H</a></div></div>
@@ -960,11 +993,11 @@ $(document).ready(function(){initNavTree('Phys__prop_8H_source.html',''); initRe
 <div class="ttc" id="aclassPhysProp_html_a0be655aa777ad0bcd46e6b896942a733"><div class="ttname"><a href="classPhysProp.html#a0be655aa777ad0bcd46e6b896942a733">PhysProp::refindex_aer_init</a></div><div class="ttdeci">void refindex_aer_init(physprop_t &amp;phys_prop, yakl::SimpleNetCDF &amp;prop)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:690</div></div>
 <div class="ttc" id="aclassPhysProp_html_a0c6b02b2894408623fa1a18770e1013f"><div class="ttname"><a href="classPhysProp.html#a0c6b02b2894408623fa1a18770e1013f">PhysProp::get_ref_im_aer_sw</a></div><div class="ttdeci">void get_ref_im_aer_sw(int &amp;id, real1d &amp;ref_im_aer_sw)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:236</div></div>
 <div class="ttc" id="aclassPhysProp_html_a0d6fc83cc794bd18f9bd8df70983b44e"><div class="ttname"><a href="classPhysProp.html#a0d6fc83cc794bd18f9bd8df70983b44e">PhysProp::get_sw_hygro_ext</a></div><div class="ttdeci">void get_sw_hygro_ext(int &amp;id, real2d &amp;sw_hygro_ext)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:152</div></div>
-<div class="ttc" id="aclassPhysProp_html_a1099f5de19b69524e4c2bb0b78e497b7"><div class="ttname"><a href="classPhysProp.html#a1099f5de19b69524e4c2bb0b78e497b7">PhysProp::aer_optics_log_rh</a></div><div class="ttdeci">void aer_optics_log_rh(std::string name, const real1d &amp;ext, const real1d &amp;ssa, const real1d &amp;asmin)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:833</div></div>
+<div class="ttc" id="aclassPhysProp_html_a1099f5de19b69524e4c2bb0b78e497b7"><div class="ttname"><a href="classPhysProp.html#a1099f5de19b69524e4c2bb0b78e497b7">PhysProp::aer_optics_log_rh</a></div><div class="ttdeci">void aer_optics_log_rh(std::string name, const real1d &amp;ext, const real1d &amp;ssa, const real1d &amp;asmin)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:866</div></div>
 <div class="ttc" id="aclassPhysProp_html_a10da2795ee22a59a6bf00065db618038"><div class="ttname"><a href="classPhysProp.html#a10da2795ee22a59a6bf00065db618038">PhysProp::get_opticstype</a></div><div class="ttdeci">void get_opticstype(int &amp;id, std::string &amp;opticstype)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:145</div></div>
 <div class="ttc" id="aclassPhysProp_html_a15547827a05a343bfb5079fb03df1d07"><div class="ttname"><a href="classPhysProp.html#a15547827a05a343bfb5079fb03df1d07">PhysProp::get_sw_nonhygro_scat</a></div><div class="ttdeci">void get_sw_nonhygro_scat(int &amp;id, real1d &amp;sw_nonhygro_scat)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:201</div></div>
 <div class="ttc" id="aclassPhysProp_html_a18f5b5ef7efc62872920880ae0387abb"><div class="ttname"><a href="classPhysProp.html#a18f5b5ef7efc62872920880ae0387abb">PhysProp::get_dgnumlo</a></div><div class="ttdeci">void get_dgnumlo(int &amp;id, real &amp;dgnumlo)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:418</div></div>
-<div class="ttc" id="aclassPhysProp_html_a1bd98e99ebbc4373a913a6522b7a604f"><div class="ttname"><a href="classPhysProp.html#a1bd98e99ebbc4373a913a6522b7a604f">PhysProp::bulk_props_init</a></div><div class="ttdeci">void bulk_props_init(physprop_t &amp;phys_prop, yakl::SimpleNetCDF &amp;prop)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:751</div></div>
+<div class="ttc" id="aclassPhysProp_html_a1bd98e99ebbc4373a913a6522b7a604f"><div class="ttname"><a href="classPhysProp.html#a1bd98e99ebbc4373a913a6522b7a604f">PhysProp::bulk_props_init</a></div><div class="ttdeci">void bulk_props_init(physprop_t &amp;phys_prop, yakl::SimpleNetCDF &amp;prop)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:784</div></div>
 <div class="ttc" id="aclassPhysProp_html_a21de4ee0b6f23318467ecadf0490f03d"><div class="ttname"><a href="classPhysProp.html#a21de4ee0b6f23318467ecadf0490f03d">PhysProp::get_sw_nonhygro_ascat</a></div><div class="ttdeci">void get_sw_nonhygro_ascat(int &amp;id, real1d &amp;sw_nonhygro_ascat)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:208</div></div>
 <div class="ttc" id="aclassPhysProp_html_a2582929edf17c117af20c4b0005988c4"><div class="ttname"><a href="classPhysProp.html#a2582929edf17c117af20c4b0005988c4">PhysProp::get_refrtabsw</a></div><div class="ttdeci">void get_refrtabsw(int &amp;id, real2d &amp;refrtabsw)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:313</div></div>
 <div class="ttc" id="aclassPhysProp_html_a2d695487896685188cfc27622d7d8b92"><div class="ttname"><a href="classPhysProp.html#a2d695487896685188cfc27622d7d8b92">PhysProp::get_density_aer</a></div><div class="ttdeci">void get_density_aer(int &amp;id, real &amp;density_aer)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:348</div></div>
@@ -988,7 +1021,7 @@ $(document).ready(function(){initNavTree('Phys__prop_8H_source.html',''); initRe
 <div class="ttc" id="aclassPhysProp_html_a743d0450322b6d533f2c613ef016d4ab"><div class="ttname"><a href="classPhysProp.html#a743d0450322b6d533f2c613ef016d4ab">PhysProp::insoluble_optics_init</a></div><div class="ttdeci">void insoluble_optics_init(physprop_t &amp;phys_prop, yakl::SimpleNetCDF &amp;prop)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:543</div></div>
 <div class="ttc" id="aclassPhysProp_html_a7736eb5e1fc41ef331f9562daacf2a19"><div class="ttname"><a href="classPhysProp.html#a7736eb5e1fc41ef331f9562daacf2a19">PhysProp::get_extpsw</a></div><div class="ttdeci">void get_extpsw(int &amp;id, real4d &amp;extpsw)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:285</div></div>
 <div class="ttc" id="aclassPhysProp_html_a78c11ff5d667d5eaf5b7388e8c835384"><div class="ttname"><a href="classPhysProp.html#a78c11ff5d667d5eaf5b7388e8c835384">PhysProp::get_sw_nonhygro_ssa</a></div><div class="ttdeci">void get_sw_nonhygro_ssa(int &amp;id, real1d &amp;sw_nonhygro_ssa)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:187</div></div>
-<div class="ttc" id="aclassPhysProp_html_a7b86495b7ca2bf72c2b3ae3f66538d56"><div class="ttname"><a href="classPhysProp.html#a7b86495b7ca2bf72c2b3ae3f66538d56">PhysProp::lin_interpol</a></div><div class="ttdeci">real lin_interpol(const real1d &amp;x, const real1d &amp;f, const real &amp;y)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:806</div></div>
+<div class="ttc" id="aclassPhysProp_html_a7b86495b7ca2bf72c2b3ae3f66538d56"><div class="ttname"><a href="classPhysProp.html#a7b86495b7ca2bf72c2b3ae3f66538d56">PhysProp::lin_interpol</a></div><div class="ttdeci">real lin_interpol(const real1d &amp;x, const real1d &amp;f, const real &amp;y)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:839</div></div>
 <div class="ttc" id="aclassPhysProp_html_a7f41249b88ac23b67a77b08f6315d5d3"><div class="ttname"><a href="classPhysProp.html#a7f41249b88ac23b67a77b08f6315d5d3">PhysProp::get_refitabsw</a></div><div class="ttdeci">void get_refitabsw(int &amp;id, real2d &amp;refitabsw)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:320</div></div>
 <div class="ttc" id="aclassPhysProp_html_a8390c01827baf6d2b47eede1766cf548"><div class="ttname"><a href="classPhysProp.html#a8390c01827baf6d2b47eede1766cf548">PhysProp::get_r_sw_scat</a></div><div class="ttdeci">void get_r_sw_scat(int &amp;id, real2d &amp;r_sw_scat)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:257</div></div>
 <div class="ttc" id="aclassPhysProp_html_a85cfc46f9dba253c1680a8098a862c7a"><div class="ttname"><a href="classPhysProp.html#a85cfc46f9dba253c1680a8098a862c7a">PhysProp::get_dispersion_aer</a></div><div class="ttdeci">void get_dispersion_aer(int &amp;id, real &amp;dispersion_aer)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:369</div></div>
@@ -997,7 +1030,7 @@ $(document).ready(function(){initNavTree('Phys__prop_8H_source.html',''); initRe
 <div class="ttc" id="aclassPhysProp_html_a8c3737a4e44479924b64bd2fa1bb630e"><div class="ttname"><a href="classPhysProp.html#a8c3737a4e44479924b64bd2fa1bb630e">PhysProp::get_mu</a></div><div class="ttdeci">void get_mu(int &amp;id, real1d &amp;mu)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:278</div></div>
 <div class="ttc" id="aclassPhysProp_html_a913350d86621759ab91c3712cad9215f"><div class="ttname"><a href="classPhysProp.html#a913350d86621759ab91c3712cad9215f">PhysProp::get_num_to_mass_aer</a></div><div class="ttdeci">void get_num_to_mass_aer(int &amp;id, real &amp;num_to_mass_aer)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:376</div></div>
 <div class="ttc" id="aclassPhysProp_html_a98643d482d2a30bfeb3cf4fc4b183c61"><div class="ttname"><a href="classPhysProp.html#a98643d482d2a30bfeb3cf4fc4b183c61">PhysProp::get_rhdeliques</a></div><div class="ttdeci">void get_rhdeliques(int &amp;id, real &amp;rhdeliques)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:439</div></div>
-<div class="ttc" id="aclassPhysProp_html_a9bc40a34bf3b039dd0d8ad87678e23d1"><div class="ttname"><a href="classPhysProp.html#a9bc40a34bf3b039dd0d8ad87678e23d1">PhysProp::exp_interpol</a></div><div class="ttdeci">real exp_interpol(const real1d &amp;x, const real1d &amp;f, const real &amp;y)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:774</div></div>
+<div class="ttc" id="aclassPhysProp_html_a9bc40a34bf3b039dd0d8ad87678e23d1"><div class="ttname"><a href="classPhysProp.html#a9bc40a34bf3b039dd0d8ad87678e23d1">PhysProp::exp_interpol</a></div><div class="ttdeci">real exp_interpol(const real1d &amp;x, const real1d &amp;f, const real &amp;y)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:807</div></div>
 <div class="ttc" id="aclassPhysProp_html_aa623054605a298be89c3019768e6c974"><div class="ttname"><a href="classPhysProp.html#aa623054605a298be89c3019768e6c974">PhysProp::get_sw_nonhygro_asm</a></div><div class="ttdeci">void get_sw_nonhygro_asm(int &amp;id, real1d &amp;sw_nonhygro_asm)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:194</div></div>
 <div class="ttc" id="aclassPhysProp_html_aafbca319b8c744f5d9c1bded51e79d66"><div class="ttname"><a href="classPhysProp.html#aafbca319b8c744f5d9c1bded51e79d66">PhysProp::get_rhcrystal</a></div><div class="ttdeci">void get_rhcrystal(int &amp;id, real &amp;rhcrystal)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:432</div></div>
 <div class="ttc" id="aclassPhysProp_html_ab7161938f929a323e8deab03e78065a4"><div class="ttname"><a href="classPhysProp.html#ab7161938f929a323e8deab03e78065a4">PhysProp::get_sigmag</a></div><div class="ttdeci">void get_sigmag(int &amp;id, real &amp;sigmag)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:404</div></div>
