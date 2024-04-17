@@ -297,31 +297,31 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    {</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nrh_test = 36;</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        <span class="comment">//int krh;</span></div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;        real1d rh_test(<span class="stringliteral">&quot;rh_test&quot;</span>, nrh_test);</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;        <span class="comment">//auto nrh = ext.extent(0);</span></div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160; </div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;        parallel_for (SimpleBounds&lt;1&gt; (nrh_test), YAKL_LAMBDA (<span class="keywordtype">int</span> krh_test)</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;        {</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;            rh_test(krh_test) = sqrt(sqrt(sqrt(sqrt(((krh_test - 1.0) / (nrh_test - 1))))));</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;        });</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160; </div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        <span class="comment">// loop through test rh values</span></div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;        parallel_for (SimpleBounds&lt;1&gt; (nrh_test), YAKL_LAMBDA (<span class="keywordtype">int</span> krh_test)</div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;        {</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;            <span class="comment">/*</span></div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;<span class="comment">            // find corresponding rh index</span></div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;<span class="comment">            auto rh = rh_test(krh_test);</span></div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;<span class="comment">            auto krh = std::min(floor( (rh) * nrh ) + 1, static_cast&lt;real&gt;(nrh - 1));</span></div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;<span class="comment">            auto wrh = (rh) *nrh - krh;</span></div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;<span class="comment">            auto exti = ext(krh + 1) * (wrh + 1) - ext(krh) * wrh;</span></div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;<span class="comment">            auto ssai = ssa(krh + 1) * (wrh + 1) - ssa(krh) * wrh;</span></div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;<span class="comment">            auto asmi = asmin(krh + 1) * (wrh + 1) - asmin(krh) * wrh;</span></div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;<span class="comment">            */</span></div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;        });</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    {</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nrh_test = 36;</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;        <span class="comment">//int krh;</span></div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        real1d rh_test(<span class="stringliteral">&quot;rh_test&quot;</span>, nrh_test);</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        <span class="comment">//auto nrh = ext.extent(0);</span></div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160; </div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;        parallel_for (SimpleBounds&lt;1&gt; (nrh_test), YAKL_LAMBDA (<span class="keywordtype">int</span> krh_test)</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;        {</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;            rh_test(krh_test) = sqrt(sqrt(sqrt(sqrt(((krh_test - 1.0) / (nrh_test - 1))))));</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        });</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160; </div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;        <span class="comment">// loop through test rh values</span></div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;        parallel_for (SimpleBounds&lt;1&gt; (nrh_test), YAKL_LAMBDA (<span class="keywordtype">int</span> krh_test)</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;        {</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;            <span class="comment">/*</span></div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;<span class="comment">            // find corresponding rh index</span></div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;<span class="comment">            auto rh = rh_test(krh_test);</span></div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;<span class="comment">            auto krh = std::min(floor( (rh) * nrh ) + 1, static_cast&lt;real&gt;(nrh - 1));</span></div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;<span class="comment">            auto wrh = (rh) *nrh - krh;</span></div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;<span class="comment">            auto exti = ext(krh + 1) * (wrh + 1) - ext(krh) * wrh;</span></div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;<span class="comment">            auto ssai = ssa(krh + 1) * (wrh + 1) - ssa(krh) * wrh;</span></div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;<span class="comment">            auto asmi = asmin(krh + 1) * (wrh + 1) - asmin(krh) * wrh;</span></div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;<span class="comment">            */</span></div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;        });</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -454,21 +454,21 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    {</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;        <span class="keyword">using</span> charHost1d = FArray&lt;char,1,yakl::memHost&gt;;</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        charHost1d temp;</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        prop.read(temp, <span class="stringliteral">&quot;name&quot;</span>);</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        phys_prop.aername = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> ichar = 1 ; ichar &lt;= temp.extent(0); ichar++)</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            <span class="keywordflow">if</span> (!isspace(temp(ichar))) phys_prop.aername += temp(ichar);</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160; </div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        <span class="comment">//  Read props for bulk aerosols</span></div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        prop.read( phys_prop.density_aer,       <span class="stringliteral">&quot;density&quot;</span> );</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        prop.read( phys_prop.dispersion_aer,    <span class="stringliteral">&quot;sigma_logr&quot;</span> );</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;        prop.read( phys_prop.dryrad_aer,        <span class="stringliteral">&quot;dryrad&quot;</span> );</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        prop.read( phys_prop.hygro_aer,         <span class="stringliteral">&quot;hygroscopicity&quot;</span> );</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;        prop.read( phys_prop.num_to_mass_aer,   <span class="stringliteral">&quot;num_to_mass_ratio&quot;</span> );</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    {</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        <span class="keyword">using</span> charHost1d = FArray&lt;char,1,yakl::memHost&gt;;</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;        charHost1d temp;</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;        prop.read(temp, <span class="stringliteral">&quot;name&quot;</span>);</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        phys_prop.aername = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> ichar = 1 ; ichar &lt;= temp.extent(0); ichar++)</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;            <span class="keywordflow">if</span> (!isspace(temp(ichar))) phys_prop.aername += temp(ichar);</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160; </div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        <span class="comment">//  Read props for bulk aerosols</span></div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;        prop.read( phys_prop.density_aer,       <span class="stringliteral">&quot;density&quot;</span> );</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        prop.read( phys_prop.dispersion_aer,    <span class="stringliteral">&quot;sigma_logr&quot;</span> );</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;        prop.read( phys_prop.dryrad_aer,        <span class="stringliteral">&quot;dryrad&quot;</span> );</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;        prop.read( phys_prop.hygro_aer,         <span class="stringliteral">&quot;hygroscopicity&quot;</span> );</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;        prop.read( phys_prop.num_to_mass_aer,   <span class="stringliteral">&quot;num_to_mass_ratio&quot;</span> );</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classPhysProp.html#a6c73b423727e5d04394d0c030fd217f0">hygro_optics_init()</a>, <a class="el" href="classPhysProp.html#a012aafa0dfffea201ceb407815094ffd">hygroscopic_optics_init()</a>, <a class="el" href="classPhysProp.html#a743d0450322b6d533f2c613ef016d4ab">insoluble_optics_init()</a>, <a class="el" href="classPhysProp.html#adce35521cf33d13c6345ac5a9586c829">nonhygro_optics_init()</a>, <a class="el" href="classPhysProp.html#a0ad3529b5187f2cfbc7f502655910f32">volcanic_optics_init()</a>, and <a class="el" href="classPhysProp.html#adf9483b1971e6a0e2d7e14bcfd2779c1">volcanic_radius_optics_init()</a>.</p>
 <div class="dynheader">
@@ -531,29 +531,29 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    {</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        <span class="keyword">auto</span> n = <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>.extent(0);</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        <span class="keywordtype">int</span> k;</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160; </div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        <span class="comment">// find k such that x(k) &lt; y =&lt; x(k+1)</span></div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;        <span class="comment">// set k = 1 if y &lt;= x(1)  and  k = n-1 if y &gt; x(n)</span></div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(1)) {</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;            k = 1;</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        }</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(n)) {</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;            k = n - 1;</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        }</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;            k = 1;</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1) &amp;&amp; k &lt; n) {</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                k = k + 1;</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;            }</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;        }</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160; </div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;        <span class="comment">// interpolate</span></div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;        <span class="keyword">auto</span> a = (log(f(k+1)/f(k)))/(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1)-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k));</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;        <span class="keywordflow">return</span> f(k)*exp(a*(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k)));</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    {</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;        <span class="keyword">auto</span> n = <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>.extent(0);</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        <span class="keywordtype">int</span> k;</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160; </div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        <span class="comment">// find k such that x(k) &lt; y =&lt; x(k+1)</span></div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        <span class="comment">// set k = 1 if y &lt;= x(1)  and  k = n-1 if y &gt; x(n)</span></div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(1)) {</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;            k = 1;</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;        }</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(n)) {</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            k = n - 1;</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        }</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            k = 1;</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1) &amp;&amp; k &lt; n) {</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                k = k + 1;</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;            }</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        }</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        <span class="comment">// interpolate</span></div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;        <span class="keyword">auto</span> a = (log(f(k+1)/f(k)))/(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1)-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k));</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;        <span class="keywordflow">return</span> f(k)*exp(a*(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k)));</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    }</div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 </div><!-- fragment -->
@@ -3048,9 +3048,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        <a class="code" href="classPhysProp.html#a1bd98e99ebbc4373a913a6522b7a604f">bulk_props_init</a>(phys_prop, prop);</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    }</div>
 <div class="ttc" id="aclassPhysProp_html_a0be655aa777ad0bcd46e6b896942a733"><div class="ttname"><a href="classPhysProp.html#a0be655aa777ad0bcd46e6b896942a733">PhysProp::refindex_aer_init</a></div><div class="ttdeci">void refindex_aer_init(physprop_t &amp;phys_prop, yakl::SimpleNetCDF &amp;prop)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:690</div></div>
-<div class="ttc" id="aclassPhysProp_html_a1bd98e99ebbc4373a913a6522b7a604f"><div class="ttname"><a href="classPhysProp.html#a1bd98e99ebbc4373a913a6522b7a604f">PhysProp::bulk_props_init</a></div><div class="ttdeci">void bulk_props_init(physprop_t &amp;phys_prop, yakl::SimpleNetCDF &amp;prop)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:784</div></div>
-<div class="ttc" id="aclassPhysProp_html_a7b86495b7ca2bf72c2b3ae3f66538d56"><div class="ttname"><a href="classPhysProp.html#a7b86495b7ca2bf72c2b3ae3f66538d56">PhysProp::lin_interpol</a></div><div class="ttdeci">real lin_interpol(const real1d &amp;x, const real1d &amp;f, const real &amp;y)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:839</div></div>
-<div class="ttc" id="aclassPhysProp_html_a9bc40a34bf3b039dd0d8ad87678e23d1"><div class="ttname"><a href="classPhysProp.html#a9bc40a34bf3b039dd0d8ad87678e23d1">PhysProp::exp_interpol</a></div><div class="ttdeci">real exp_interpol(const real1d &amp;x, const real1d &amp;f, const real &amp;y)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:807</div></div>
+<div class="ttc" id="aclassPhysProp_html_a1bd98e99ebbc4373a913a6522b7a604f"><div class="ttname"><a href="classPhysProp.html#a1bd98e99ebbc4373a913a6522b7a604f">PhysProp::bulk_props_init</a></div><div class="ttdeci">void bulk_props_init(physprop_t &amp;phys_prop, yakl::SimpleNetCDF &amp;prop)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:754</div></div>
+<div class="ttc" id="aclassPhysProp_html_a7b86495b7ca2bf72c2b3ae3f66538d56"><div class="ttname"><a href="classPhysProp.html#a7b86495b7ca2bf72c2b3ae3f66538d56">PhysProp::lin_interpol</a></div><div class="ttdeci">real lin_interpol(const real1d &amp;x, const real1d &amp;f, const real &amp;y)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:809</div></div>
+<div class="ttc" id="aclassPhysProp_html_a9bc40a34bf3b039dd0d8ad87678e23d1"><div class="ttname"><a href="classPhysProp.html#a9bc40a34bf3b039dd0d8ad87678e23d1">PhysProp::exp_interpol</a></div><div class="ttdeci">real exp_interpol(const real1d &amp;x, const real1d &amp;f, const real &amp;y)</div><div class="ttdef"><b>Definition:</b> Phys_prop.H:777</div></div>
 <div class="ttc" id="aclassRadConstants_html_aaa19beec8cd86a9e09db7a2b34a7d883"><div class="ttname"><a href="classRadConstants.html#aaa19beec8cd86a9e09db7a2b34a7d883">RadConstants::nrh</a></div><div class="ttdeci">static constexpr int nrh</div><div class="ttdef"><b>Definition:</b> Rad_constants.H:77</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classPhysProp.html#a2f4be5c79cc5394f258c6e2e4570f897">aerosol_optics_init()</a>.</p>
@@ -3333,27 +3333,27 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;    {</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        <span class="keyword">auto</span> n = <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>.extent(0);</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;        <span class="keywordtype">int</span> k;</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;        <span class="comment">// find k such that x(k) &lt; y =&lt; x(k+1)</span></div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;        <span class="comment">// set k = 1 if y &lt;= x(1)  and  k = n-1 if y &gt; x(n)</span></div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(1)) {</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;            k = 1;</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        }</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(n)) {</div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;            k = n - 1;</div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;        }</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;            k = 1;</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1) &amp;&amp; k &lt; n) {</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;                k = k + 1;</div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;            }</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        }</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;        <span class="comment">// interpolate</span></div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;        <span class="keyword">auto</span> a = (f(k+1)-f(k))/(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1)-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k));</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;        <span class="keywordflow">return</span> f(k)+a*(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k));</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    {</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;        <span class="keyword">auto</span> n = <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>.extent(0);</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        <span class="keywordtype">int</span> k;</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;        <span class="comment">// find k such that x(k) &lt; y =&lt; x(k+1)</span></div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;        <span class="comment">// set k = 1 if y &lt;= x(1)  and  k = n-1 if y &gt; x(n)</span></div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &lt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(1)) {</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;            k = 1;</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        }</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt;= <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(n)) {</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            k = n - 1;</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;        }</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;            k = 1;</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> &gt; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1) &amp;&amp; k &lt; n) {</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                k = k + 1;</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;            }</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        }</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;        <span class="comment">// interpolate</span></div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;        <span class="keyword">auto</span> a = (f(k+1)-f(k))/(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k+1)-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k));</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;        <span class="keywordflow">return</span> f(k)+a*(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(k));</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classPhysProp.html#a6c73b423727e5d04394d0c030fd217f0">hygro_optics_init()</a>, and <a class="el" href="classPhysProp.html#a012aafa0dfffea201ceb407815094ffd">hygroscopic_optics_init()</a>.</p>
 <div class="dynheader">
@@ -3407,87 +3407,57 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    {</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        realHost5d extpsw, abspsw, asmpsw, absplw;</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        <span class="keyword">auto</span> nlwbnd = prop.getDimSize( <span class="stringliteral">&quot;lw_band&quot;</span> );</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        <span class="keyword">auto</span> nswbnd = prop.getDimSize( <span class="stringliteral">&quot;sw_band&quot;</span> );</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="keyword">auto</span> ncoef  = prop.getDimSize( <span class="stringliteral">&quot;coef_number&quot;</span> );</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        <span class="keyword">auto</span> prefr  = prop.getDimSize( <span class="stringliteral">&quot;refindex_real&quot;</span> );</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        <span class="keyword">auto</span> prefi  = prop.getDimSize( <span class="stringliteral">&quot;refindex_im&quot;</span> );</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        phys_prop.ncoef = ncoef;</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        phys_prop.prefr = prefr;</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        phys_prop.prefi = prefi;</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        prop.read(extpsw, <span class="stringliteral">&quot;extpsw&quot;</span> );</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        prop.read(abspsw, <span class="stringliteral">&quot;abspsw&quot;</span> );</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        prop.read(asmpsw, <span class="stringliteral">&quot;asmpsw&quot;</span> );</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        prop.read(absplw, <span class="stringliteral">&quot;absplw&quot;</span> );</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        <span class="comment">/*</span></div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;<span class="comment">        // DEBUG NETCDF READ ORDER</span></div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;<span class="comment">        {</span></div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;<span class="comment">        auto lb = asmpsw.get_lbounds();</span></div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;<span class="comment">        auto ub = asmpsw.get_ubounds();</span></div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;<span class="comment">        amrex::Print() &lt;&lt; &quot;CHECK: &quot; &lt;&lt; ub.size() &lt;&lt; &quot;\n&quot;;</span></div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="comment">        for (int ind(1); ind&lt;=ub.size(); ++ind) {</span></div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;<span class="comment">          amrex::Print() &lt;&lt; &quot;BNDS asmpsw: &quot; &lt;&lt; ind &lt;&lt; &#39; &#39; &lt;&lt; lb(ind) &lt;&lt; &#39; &#39; &lt;&lt; ub(ind) &lt;&lt; &#39; &#39;</span></div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;<span class="comment">                         &lt;&lt; nswbnd &lt;&lt; &#39; &#39; &lt;&lt; prefi &lt;&lt; &#39; &#39; &lt;&lt; prefr &lt;&lt; &#39; &#39; &lt;&lt; ncoef &lt;&lt; &quot;\n&quot;;</span></div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;<span class="comment">        {</span></div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;<span class="comment">        auto lb = abspsw.get_lbounds();</span></div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="comment">        auto ub = abspsw.get_ubounds();</span></div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;<span class="comment">        amrex::Print() &lt;&lt; &quot;CHECK: &quot; &lt;&lt; ub.size() &lt;&lt; &quot;\n&quot;;</span></div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="comment">        for (int ind(1); ind&lt;=ub.size(); ++ind) {</span></div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;<span class="comment">          amrex::Print() &lt;&lt; &quot;BNDS abspsw: &quot; &lt;&lt; ind &lt;&lt; &#39; &#39; &lt;&lt; lb(ind) &lt;&lt; &#39; &#39; &lt;&lt; ub(ind) &lt;&lt; &#39; &#39;</span></div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;<span class="comment">                         &lt;&lt; nswbnd &lt;&lt; &#39; &#39; &lt;&lt; prefi &lt;&lt; &#39; &#39; &lt;&lt; prefr &lt;&lt; &#39; &#39; &lt;&lt; ncoef &lt;&lt; &quot;\n&quot;;</span></div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;<span class="comment">        {</span></div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;<span class="comment">        auto lb = extpsw.get_lbounds();</span></div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;<span class="comment">        auto ub = extpsw.get_ubounds();</span></div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;<span class="comment">        amrex::Print() &lt;&lt; &quot;CHECK: &quot; &lt;&lt; ub.size() &lt;&lt; &quot;\n&quot;;</span></div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;<span class="comment">        for (int ind(1); ind&lt;=ub.size(); ++ind) {</span></div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;<span class="comment">          amrex::Print() &lt;&lt; &quot;BNDS extpsw: &quot; &lt;&lt; ind &lt;&lt; &#39; &#39; &lt;&lt; lb(ind) &lt;&lt; &#39; &#39; &lt;&lt; ub(ind) &lt;&lt; &#39; &#39;</span></div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;<span class="comment">                         &lt;&lt; nswbnd &lt;&lt; &#39; &#39; &lt;&lt; prefi &lt;&lt; &#39; &#39; &lt;&lt; prefr &lt;&lt; &#39; &#39; &lt;&lt; ncoef &lt;&lt; &quot;\n&quot;;</span></div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;<span class="comment">        */</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        <span class="comment">// NOTE: Definitions for real arrays come from rrtmgp_const.h</span></div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        <span class="comment">//       and they default to styleFortran ordering.</span></div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        realHost5d extpsw, abspsw, asmpsw, absplw;</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="keyword">auto</span> nlwbnd = prop.getDimSize( <span class="stringliteral">&quot;lw_band&quot;</span> );</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        <span class="keyword">auto</span> nswbnd = prop.getDimSize( <span class="stringliteral">&quot;sw_band&quot;</span> );</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        <span class="keyword">auto</span> ncoef  = prop.getDimSize( <span class="stringliteral">&quot;coef_number&quot;</span> );</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        <span class="keyword">auto</span> prefr  = prop.getDimSize( <span class="stringliteral">&quot;refindex_real&quot;</span> );</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        <span class="keyword">auto</span> prefi  = prop.getDimSize( <span class="stringliteral">&quot;refindex_im&quot;</span> );</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        phys_prop.ncoef = ncoef;</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        phys_prop.prefr = prefr;</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        phys_prop.prefi = prefi;</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        prop.read(extpsw, <span class="stringliteral">&quot;extpsw&quot;</span> );</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        prop.read(abspsw, <span class="stringliteral">&quot;abspsw&quot;</span> );</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        prop.read(asmpsw, <span class="stringliteral">&quot;asmpsw&quot;</span> );</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        prop.read(absplw, <span class="stringliteral">&quot;absplw&quot;</span> );</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160; </div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <span class="comment">// styleFortran ordering to be consistent with realHost5d definition</span></div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        phys_prop.extpsw = real4d(<span class="stringliteral">&quot;extpsw&quot;</span>, ncoef, prefr, prefi, nswbnd);</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        phys_prop.abspsw = real4d(<span class="stringliteral">&quot;abspsw&quot;</span>, ncoef, prefr, prefi, nswbnd);</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        phys_prop.asmpsw = real4d(<span class="stringliteral">&quot;asmpsw&quot;</span>, ncoef, prefr, prefi, nswbnd);</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        phys_prop.absplw = real4d(<span class="stringliteral">&quot;absplw&quot;</span>, ncoef, prefr, prefi, nswbnd);</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160; </div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        parallel_for (SimpleBounds&lt;4&gt;(nswbnd, prefr, prefi, ncoef),</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                      YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> l)</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        {</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;            phys_prop.extpsw(i,j,k,l) = extpsw(i,j,k,1,l);</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            phys_prop.abspsw(i,j,k,l) = abspsw(i,j,k,1,l);</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            phys_prop.asmpsw(i,j,k,l) = asmpsw(i,j,k,1,l);</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        });</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        parallel_for (SimpleBounds&lt;4&gt;(nlwbnd, prefr, prefi, ncoef),</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                      YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> l)</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        {</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            phys_prop.absplw(i,j,k,l) = absplw(i,j,k,1,l);</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        });</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160; </div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        prop.read(phys_prop.refrtabsw,   <span class="stringliteral">&quot;refindex_real_sw&quot;</span> );</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        prop.read(phys_prop.refitabsw,   <span class="stringliteral">&quot;refindex_im_sw&quot;</span> );</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        prop.read(phys_prop.refrtablw,   <span class="stringliteral">&quot;refindex_real_lw&quot;</span> );</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        prop.read(phys_prop.refitablw,   <span class="stringliteral">&quot;refindex_im_lw&quot;</span> );</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160; </div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        prop.read(phys_prop.sigmag,      <span class="stringliteral">&quot;sigmag&quot;</span> );</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        prop.read(phys_prop.dgnum,       <span class="stringliteral">&quot;dgnum&quot;</span> );</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160; </div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        prop.read(phys_prop.dgnumlo,     <span class="stringliteral">&quot;dgnumlo&quot;</span> );</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        prop.read(phys_prop.dgnumhi,     <span class="stringliteral">&quot;dgnumhi&quot;</span> );</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160; </div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        phys_prop.extpsw = real4d(<span class="stringliteral">&quot;extpsw&quot;</span>, nswbnd, prefi, prefr, ncoef);</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;        phys_prop.abspsw = real4d(<span class="stringliteral">&quot;abspsw&quot;</span>, nswbnd, prefi, prefr, ncoef);</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        phys_prop.asmpsw = real4d(<span class="stringliteral">&quot;asmpsw&quot;</span>, nswbnd, prefi, prefr, ncoef);</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        phys_prop.absplw = real4d(<span class="stringliteral">&quot;absplw&quot;</span>, nlwbnd, prefi, prefr, ncoef);</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160; </div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        parallel_for (SimpleBounds&lt;4&gt;(nswbnd, prefi, prefr, ncoef),</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                      YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> l)</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;        {</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;            phys_prop.extpsw(i,j,k,l) = extpsw(l,k,j,1,i); <span class="comment">//extpsw(i,1,j,k,l);</span></div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;            phys_prop.abspsw(i,j,k,l) = abspsw(l,k,j,1,i); <span class="comment">//abspsw(i,1,j,k,l);</span></div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;            phys_prop.asmpsw(i,j,k,l) = asmpsw(l,k,j,1,i); <span class="comment">//asmpsw(i,1,j,k,l);</span></div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        });</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160; </div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        parallel_for (SimpleBounds&lt;4&gt;(nlwbnd, prefi, prefr, ncoef),</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                      YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> l)</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        {</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;            phys_prop.absplw(i,j,k,l) = absplw(l,k,j,1,i); <span class="comment">//absplw(i,1,j,k,l);</span></div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;        });</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160; </div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;        prop.read(phys_prop.refrtabsw,   <span class="stringliteral">&quot;refindex_real_sw&quot;</span> );</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        prop.read(phys_prop.refitabsw,   <span class="stringliteral">&quot;refindex_im_sw&quot;</span> );</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        prop.read(phys_prop.refrtablw,   <span class="stringliteral">&quot;refindex_real_lw&quot;</span> );</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        prop.read(phys_prop.refitablw,   <span class="stringliteral">&quot;refindex_im_lw&quot;</span> );</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160; </div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        prop.read(phys_prop.sigmag,      <span class="stringliteral">&quot;sigmag&quot;</span> );</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        prop.read(phys_prop.dgnum,       <span class="stringliteral">&quot;dgnum&quot;</span> );</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        prop.read(phys_prop.dgnumlo,     <span class="stringliteral">&quot;dgnumlo&quot;</span> );</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        prop.read(phys_prop.dgnumhi,     <span class="stringliteral">&quot;dgnumhi&quot;</span> );</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160; </div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        prop.read(phys_prop.rhcrystal,   <span class="stringliteral">&quot;rhcrystal&quot;</span> );</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        prop.read(phys_prop.rhdeliques,  <span class="stringliteral">&quot;rhdeliques&quot;</span> );</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    }</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        prop.read(phys_prop.rhcrystal,   <span class="stringliteral">&quot;rhcrystal&quot;</span> );</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;        prop.read(phys_prop.rhdeliques,  <span class="stringliteral">&quot;rhdeliques&quot;</span> );</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classPhysProp.html#a2f4be5c79cc5394f258c6e2e4570f897">aerosol_optics_init()</a>.</p>
 <div class="dynheader">
