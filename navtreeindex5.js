@@ -1,5 +1,10 @@
 var NAVTREEINDEX5 =
 {
+"classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b":[2,0,25,13],
+"classERFPhysBCFunct__w.html#ae949a3df422d9d5082146a46c9eca565":[2,0,25,1],
+"classERFPhysBCFunct__w.html#afd4eed563a59fae4744eaac6ced6bb6b":[2,0,25,5],
+"classERFPhysBCFunct__w__no__terrain.html":[2,0,26],
+"classERFPhysBCFunct__w__no__terrain.html#a1c27696ce2fb04cb8e0f9e41d2c21196":[2,0,26,7],
 "classERFPhysBCFunct__w__no__terrain.html#a25d10d63224b2acd259cc6309e5bce7e":[2,0,26,2],
 "classERFPhysBCFunct__w__no__terrain.html#a2949209cfd215346db79ea786d7e977d":[2,0,26,0],
 "classERFPhysBCFunct__w__no__terrain.html#a490eb84b4d60adb33dfe5f705b333b2d":[2,0,26,10],
@@ -244,10 +249,5 @@ var NAVTREEINDEX5 =
 "classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1":[2,0,43,37],
 "classMRISplitIntegrator.html#ad698d348d3e7fa695077134839254738":[2,0,43,12],
 "classMRISplitIntegrator.html#af086d3c68787442d07f0a9d530618cc1":[2,0,43,19],
-"classMRISplitIntegrator.html#afa0623b638cd29d3f307d34ef5a98d0f":[2,0,43,32],
-"classMam4__aer.html":[2,0,35],
-"classMam4__aer.html#a0f94d150e77cc227c30e434a851f7d52":[2,0,35,26],
-"classMam4__aer.html#a1097c2d484ccac94860e32f0bdf54915":[2,0,35,5],
-"classMam4__aer.html#a12eaca69207827a3988597c3e2f2bb0e":[2,0,35,12],
-"classMam4__aer.html#a139c9796ada84ff24405114f8691d7cd":[2,0,35,11]
+"classMRISplitIntegrator.html#afa0623b638cd29d3f307d34ef5a98d0f":[2,0,43,32]
 };
