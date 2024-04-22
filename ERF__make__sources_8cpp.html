@@ -371,10 +371,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="comment">// Add radiation source terms to (rho theta)</span></div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; qheating_arr = qheating_rates.const_array(mfi);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; qheating_arr = qheating_rates-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                cell_src(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += qheating_arr(i,j,k,0) + qheating_arr(i,j,k,1);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                cell_src(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += qheating_arr(i,j,k);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            });</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        }</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>

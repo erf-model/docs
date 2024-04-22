@@ -713,7 +713,7 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160; </div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;<span class="preprocessor">#if defined(ERF_USE_RRTMGP)</span></div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    <a class="code" href="classRadiation.html">Radiation</a> rad;</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    amrex::Vector&lt;amrex::MultiFab&gt; qheating_rates;  <span class="comment">// radiation heating rate source terms</span></div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt; qheating_rates;  <span class="comment">// radiation heating rate source terms</span></div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160; </div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="comment">// Fillpatcher classes for coarse-fine boundaries</span></div>

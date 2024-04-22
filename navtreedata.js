@@ -80,11 +80,11 @@ var NAVTREEINDEX =
 "classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b",
 "classMam4__aer.html",
 "classPhysProp.html#acf52dbf154af6672eaa9bcf52f73d5c3",
-"classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e",
-"functions_func_h.html",
-"structCENTERED4.html#a548363e6720cc5e30fe3e0968bfa7ace",
-"structSpongeChoice.html#af06b59184315514abdadd3b54c073909",
-"structsurface__flux.html#a01e8827b2f7e84c4d72496993822d806"
+"classSAM.html#a3117e23160d027ccb4dacf744a477a40",
+"functions_func_g.html",
+"structCENTERED4.html#a36a14bbf9f418feee5e1af3685e1b4fb",
+"structSpongeChoice.html#aec7c88a5686affc9c0ff6f9bb53fbd9f",
+"structsurface__flux.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"structSpongeChoice.html#aec7c88a5686affc9c0ff6f9bb53fbd9f":[2,0,63,14],
 "structSpongeChoice.html#af06b59184315514abdadd3b54c073909":[2,0,63,2],
 "structSpongeChoice.html#afc444169c9f347bb2e3dd4eb99bc4158":[2,0,63,17],
 "structTimeInterpolatedData.html":[2,0,71],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "structsimilarity__funs.html#a5254469dd7ec9856ed6d1e0034306cc4":[2,0,59,2],
 "structsimilarity__funs.html#a6c53efd885ed922115193bc9a36cb0e6":[2,0,59,4],
 "structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2":[2,0,59,0],
-"structsimilarity__funs.html#ae78007489e8da2bf08c6f999381b9512":[2,0,59,5],
-"structsurface__flux.html":[2,0,64]
+"structsimilarity__funs.html#ae78007489e8da2bf08c6f999381b9512":[2,0,59,5]
 };
