@@ -1037,103 +1037,107 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    bool1d top_at_1_g(<span class="stringliteral">&quot;top_at_1_g&quot;</span>,1);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    boolHost1d top_at_1_h(<span class="stringliteral">&quot;top_at_1_h&quot;</span>,1);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> top_at_1;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    real2d toa_flux(<span class="stringliteral">&quot;toa_flux&quot;</span>, ncol, nswgpts);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.gas_optics(ncol, nlay, &amp;top_at_1, pmid, pint, tmid, gas_concs, combined_optics, toa_flux); <span class="comment">// TODO: top_at_1 is not a valid address and this doesn&#39;t match longwave call</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Apply TOA flux scaling</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    parallel_for(SimpleBounds&lt;2&gt;(nswgpts,ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> igpt, <span class="keywordtype">int</span> icol) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;       toa_flux(icol, igpt) = tsi_scaling * toa_flux(icol,igpt);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;       top_at_1_g(1) = pmid(1, 1) &lt; pmid (1, 2);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    });</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    top_at_1_g.deep_copy_to(top_at_1_h);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    top_at_1 = top_at_1_h(1);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Add in aerosol</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// TODO: should we avoid allocating here?</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    OpticalProps2str aerosol_optics;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">auto</span> &amp;aerosol_optics_tau = aerosol_optics.tau;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">auto</span> &amp;aerosol_optics_ssa = aerosol_optics.ssa;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">auto</span> &amp;aerosol_optics_g   = aerosol_optics.g  ;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        aerosol_optics.alloc_2str(ncol, nlay, <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">auto</span> gpt_bnd = aerosol_optics.get_gpoint_bands();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        parallel_for(SimpleBounds&lt;3&gt;(nswgpts,nlay,ncol) , YAKL_LAMBDA (<span class="keywordtype">int</span> igpt, <span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> icol) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            aerosol_optics_tau(icol,ilay,igpt) = aer_tau_bnd(icol,ilay,gpt_bnd(igpt));</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            aerosol_optics_ssa(icol,ilay,igpt) = aer_ssa_bnd(icol,ilay,gpt_bnd(igpt));</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            aerosol_optics_g  (icol,ilay,igpt) = aer_asm_bnd(icol,ilay,gpt_bnd(igpt));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        });</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        aerosol_optics.alloc_2str(ncol, nlay, <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.get_band_lims_wavenumber());</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        parallel_for(SimpleBounds&lt;3&gt;(nswbands,nlay,ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> icol) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            aerosol_optics_tau(icol,ilay,ibnd) = aer_tau_bnd(icol,ilay,ibnd);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            aerosol_optics_ssa(icol,ilay,ibnd) = aer_ssa_bnd(icol,ilay,ibnd);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            aerosol_optics_g  (icol,ilay,ibnd) = aer_asm_bnd(icol,ilay,ibnd);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        });</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    aerosol_optics.delta_scale();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    parallel_for(SimpleBounds&lt;1&gt;(1), YAKL_LAMBDA (<span class="keywordtype">int</span> icol) { <span class="comment">// HACK: Single loop kernel is not efficient</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;       top_at_1_g(1) = pmid(1, 1) &lt; pmid (1, 2);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    });</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    top_at_1_g.deep_copy_to(top_at_1_h);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    top_at_1 = top_at_1_h(1);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    real2d toa_flux(<span class="stringliteral">&quot;toa_flux&quot;</span>, ncol, nswgpts);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.gas_optics(ncol, nlay, top_at_1, pmid, pint, tmid, gas_concs, combined_optics, toa_flux);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Apply TOA flux scaling</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    parallel_for(SimpleBounds&lt;2&gt;(nswgpts,ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> igpt, <span class="keywordtype">int</span> icol) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;       toa_flux(icol, igpt) = tsi_scaling * toa_flux(icol,igpt);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    });</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Add in aerosol</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// TODO: should we avoid allocating here?</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    OpticalProps2str aerosol_optics;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">auto</span> &amp;aerosol_optics_tau = aerosol_optics.tau;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">auto</span> &amp;aerosol_optics_ssa = aerosol_optics.ssa;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span> &amp;aerosol_optics_g   = aerosol_optics.g  ;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        aerosol_optics.alloc_2str(ncol, nlay, <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">auto</span> gpt_bnd = aerosol_optics.get_gpoint_bands();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        parallel_for(SimpleBounds&lt;3&gt;(nswgpts,nlay,ncol) , YAKL_LAMBDA (<span class="keywordtype">int</span> igpt, <span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> icol) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            aerosol_optics_tau(icol,ilay,igpt) = aer_tau_bnd(icol,ilay,gpt_bnd(igpt));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            aerosol_optics_ssa(icol,ilay,igpt) = aer_ssa_bnd(icol,ilay,gpt_bnd(igpt));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            aerosol_optics_g  (icol,ilay,igpt) = aer_asm_bnd(icol,ilay,gpt_bnd(igpt));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        });</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        aerosol_optics.alloc_2str(ncol, nlay, <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>.get_band_lims_wavenumber());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        parallel_for(SimpleBounds&lt;3&gt;(nswbands,nlay,ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> icol) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            aerosol_optics_tau(icol,ilay,ibnd) = aer_tau_bnd(icol,ilay,ibnd);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            aerosol_optics_ssa(icol,ilay,ibnd) = aer_ssa_bnd(icol,ilay,ibnd);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            aerosol_optics_g  (icol,ilay,ibnd) = aer_asm_bnd(icol,ilay,ibnd);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        });</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    aerosol_optics.increment(combined_optics);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    aerosol_optics.delta_scale();</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Do the clearsky calculation before adding in clouds</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    FluxesByband fluxes_clrsky;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    fluxes_clrsky.flux_up = real2d(<span class="stringliteral">&quot;clrsky_flux_up&quot;</span>, ncol, nlay+1); <span class="comment">// clrsky_flux_up;</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    fluxes_clrsky.flux_dn = real2d(<span class="stringliteral">&quot;clrsky_flux_up&quot;</span>, ncol, nlay+1); <span class="comment">//clrsky_flux_dn;</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    fluxes_clrsky.flux_dn_dir = real2d(<span class="stringliteral">&quot;clrsky_flux_up&quot;</span>, ncol, nlay+1); <span class="comment">//clrsky_flux_dn_dir;</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    fluxes_clrsky.flux_net = real2d(<span class="stringliteral">&quot;clrsky_flux_up&quot;</span>, ncol, nlay+1); <span class="comment">//clrsky_flux_net;</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    fluxes_clrsky.bnd_flux_up = real3d(<span class="stringliteral">&quot;clrsky_flux_up&quot;</span>, ncol, nlay+1, nswbands); <span class="comment">//clrsky_bnd_flux_up;</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    fluxes_clrsky.bnd_flux_dn = real3d(<span class="stringliteral">&quot;clrsky_flux_up&quot;</span>, ncol, nlay+1, nswbands); <span class="comment">//clrsky_bnd_flux_dn;</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    fluxes_clrsky.bnd_flux_dn_dir = real3d(<span class="stringliteral">&quot;clrsky_flux_up&quot;</span>, ncol, nlay+1, nswbands); <span class="comment">//clrsky_bnd_flux_dn_dir;</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    fluxes_clrsky.bnd_flux_net = real3d(<span class="stringliteral">&quot;clrsky_flux_up&quot;</span>, ncol, nlay+1, nswbands); <span class="comment">//clrsky_bnd_flux_net;</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    rte_sw(combined_optics, top_at_1, coszrs, toa_flux, albedo_dir, albedo_dif, fluxes_clrsky);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Copy fluxes back out of FluxesByband object</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    fluxes_clrsky.flux_up.deep_copy_to(clrsky_flux_up);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    fluxes_clrsky.flux_dn.deep_copy_to(clrsky_flux_dn);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    fluxes_clrsky.flux_dn_dir.deep_copy_to(clrsky_flux_dn_dir);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    fluxes_clrsky.flux_net.deep_copy_to(clrsky_flux_net);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    fluxes_clrsky.bnd_flux_up.deep_copy_to(clrsky_bnd_flux_up);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    fluxes_clrsky.bnd_flux_dn.deep_copy_to(clrsky_bnd_flux_dn);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    fluxes_clrsky.bnd_flux_dn_dir.deep_copy_to(clrsky_bnd_flux_dn_dir);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    fluxes_clrsky.bnd_flux_net.deep_copy_to(clrsky_bnd_flux_net);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Add in clouds</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    OpticalProps2str cloud_optics;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    cloud_optics.alloc_2str(ncol, nlay, <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">auto</span> &amp;cloud_optics_tau = cloud_optics.tau;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">auto</span> &amp;cloud_optics_ssa = cloud_optics.ssa;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">auto</span> &amp;cloud_optics_g   = cloud_optics.g  ;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nswgpts,nlay,ncol) , YAKL_LAMBDA (<span class="keywordtype">int</span> igpt, <span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> icol) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        cloud_optics_tau(icol,ilay,igpt) = cld_tau_gpt(icol,ilay,igpt);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        cloud_optics_ssa(icol,ilay,igpt) = cld_ssa_gpt(icol,ilay,igpt);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        cloud_optics_g  (icol,ilay,igpt) = cld_asm_gpt(icol,ilay,igpt);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    });</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    cloud_optics.delta_scale();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    cloud_optics.increment(combined_optics);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// Call SW flux driver</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    FluxesByband fluxes_allsky;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    fluxes_allsky.flux_up = real2d(<span class="stringliteral">&quot;allsky_flux_up&quot;</span>, ncol, nlay+1); <span class="comment">// allsky_flux_up;</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    fluxes_allsky.flux_dn = real2d(<span class="stringliteral">&quot;allsky_flux_up&quot;</span>, ncol, nlay+1); <span class="comment">//allsky_flux_dn;</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    fluxes_allsky.flux_dn_dir = real2d(<span class="stringliteral">&quot;allsky_flux_up&quot;</span>, ncol, nlay+1); <span class="comment">//allsky_flux_dn_dir;</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    fluxes_allsky.flux_net = real2d(<span class="stringliteral">&quot;allsky_flux_up&quot;</span>, ncol, nlay+1); <span class="comment">//allsky_flux_net;</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    fluxes_allsky.bnd_flux_up = real3d(<span class="stringliteral">&quot;allsky_flux_up&quot;</span>, ncol, nlay+1, nswbands); <span class="comment">//allsky_bnd_flux_up;</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    fluxes_allsky.bnd_flux_dn = real3d(<span class="stringliteral">&quot;allsky_flux_up&quot;</span>, ncol, nlay+1, nswbands); <span class="comment">//allsky_bnd_flux_dn;</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    fluxes_allsky.bnd_flux_dn_dir = real3d(<span class="stringliteral">&quot;allsky_flux_up&quot;</span>, ncol, nlay+1, nswbands); <span class="comment">//allsky_bnd_flux_dn_dir;</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    fluxes_allsky.bnd_flux_net = real3d(<span class="stringliteral">&quot;allsky_flux_up&quot;</span>, ncol, nlay+1, nswbands); <span class="comment">//allsky_bnd_flux_net;</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    rte_sw(combined_optics, top_at_1, coszrs, toa_flux, albedo_dir, albedo_dif, fluxes_allsky);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// Copy fluxes back out of FluxesByband object</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    fluxes_allsky.flux_up.deep_copy_to(allsky_flux_up);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    fluxes_allsky.flux_dn.deep_copy_to(allsky_flux_dn);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    fluxes_allsky.flux_dn_dir.deep_copy_to(allsky_flux_dn_dir);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    fluxes_allsky.flux_net.deep_copy_to(allsky_flux_net);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    fluxes_allsky.bnd_flux_up.deep_copy_to(allsky_bnd_flux_up);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    fluxes_allsky.bnd_flux_dn.deep_copy_to(allsky_bnd_flux_dn);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    fluxes_allsky.bnd_flux_dn_dir.deep_copy_to(allsky_bnd_flux_dn_dir);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    fluxes_allsky.bnd_flux_net.deep_copy_to(allsky_bnd_flux_net);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    yakl::fence();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    aerosol_optics.increment(combined_optics);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Do the clearsky calculation before adding in clouds</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    FluxesByband fluxes_clrsky;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    fluxes_clrsky.flux_up  = real2d(<span class="stringliteral">&quot;clrsky_flux_up&quot;</span> , ncol, nlay+1); <span class="comment">// clrsky_flux_up;</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    fluxes_clrsky.flux_dn  = real2d(<span class="stringliteral">&quot;clrsky_flux_nd&quot;</span> , ncol, nlay+1); <span class="comment">//clrsky_flux_dn;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    fluxes_clrsky.flux_net = real2d(<span class="stringliteral">&quot;clrsky_flux_net&quot;</span>, ncol, nlay+1); <span class="comment">//clrsky_flux_net;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    fluxes_clrsky.flux_dn_dir = real2d(<span class="stringliteral">&quot;clrsky_flux_dn_dir&quot;</span>, ncol, nlay+1); <span class="comment">//clrsky_flux_dn_dir;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    fluxes_clrsky.bnd_flux_up  = real3d(<span class="stringliteral">&quot;clrsky_bnd_flux_up&quot;</span> , ncol, nlay+1, nswbands); <span class="comment">//clrsky_bnd_flux_up;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    fluxes_clrsky.bnd_flux_dn  = real3d(<span class="stringliteral">&quot;clrsky_bnd_flux_dn&quot;</span> , ncol, nlay+1, nswbands); <span class="comment">//clrsky_bnd_flux_dn;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    fluxes_clrsky.bnd_flux_net = real3d(<span class="stringliteral">&quot;clrsky_bnd_flux_net&quot;</span>, ncol, nlay+1, nswbands); <span class="comment">//clrsky_bnd_flux_net;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    fluxes_clrsky.bnd_flux_dn_dir = real3d(<span class="stringliteral">&quot;clrsky_bnd_flux_dn_dir&quot;</span>, ncol, nlay+1, nswbands); <span class="comment">//clrsky_bnd_flux_dn_dir;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    rte_sw(combined_optics, top_at_1, coszrs, toa_flux, albedo_dir, albedo_dif, fluxes_clrsky);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Copy fluxes back out of FluxesByband object</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    fluxes_clrsky.flux_up.deep_copy_to (clrsky_flux_up);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    fluxes_clrsky.flux_dn.deep_copy_to (clrsky_flux_dn);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    fluxes_clrsky.flux_net.deep_copy_to(clrsky_flux_net);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    fluxes_clrsky.flux_dn_dir.deep_copy_to(clrsky_flux_dn_dir);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    fluxes_clrsky.bnd_flux_up.deep_copy_to (clrsky_bnd_flux_up);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    fluxes_clrsky.bnd_flux_dn.deep_copy_to (clrsky_bnd_flux_dn);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    fluxes_clrsky.bnd_flux_net.deep_copy_to(clrsky_bnd_flux_net);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    fluxes_clrsky.bnd_flux_dn_dir.deep_copy_to(clrsky_bnd_flux_dn_dir);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Add in clouds</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    OpticalProps2str cloud_optics;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    cloud_optics.alloc_2str(ncol, nlay, <a class="code" href="classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26">k_dist_sw</a>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">auto</span> &amp;cloud_optics_tau = cloud_optics.tau;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">auto</span> &amp;cloud_optics_ssa = cloud_optics.ssa;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">auto</span> &amp;cloud_optics_g   = cloud_optics.g  ;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nswgpts,nlay,ncol) , YAKL_LAMBDA (<span class="keywordtype">int</span> igpt, <span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> icol) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        cloud_optics_tau(icol,ilay,igpt) = cld_tau_gpt(icol,ilay,igpt);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        cloud_optics_ssa(icol,ilay,igpt) = cld_ssa_gpt(icol,ilay,igpt);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        cloud_optics_g  (icol,ilay,igpt) = cld_asm_gpt(icol,ilay,igpt);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    });</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    cloud_optics.delta_scale();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    cloud_optics.increment(combined_optics);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// Call SW flux driver</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    FluxesByband fluxes_allsky;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    fluxes_allsky.flux_up  = real2d(<span class="stringliteral">&quot;allsky_flux_up&quot;</span> , ncol, nlay+1); <span class="comment">//allsky_flux_up;</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    fluxes_allsky.flux_dn  = real2d(<span class="stringliteral">&quot;allsky_flux_dn&quot;</span> , ncol, nlay+1); <span class="comment">//allsky_flux_dn;</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    fluxes_allsky.flux_net = real2d(<span class="stringliteral">&quot;allsky_flux_net&quot;</span>, ncol, nlay+1); <span class="comment">//allsky_flux_net;</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    fluxes_allsky.flux_dn_dir = real2d(<span class="stringliteral">&quot;allsky_flux_dn_dir&quot;</span>, ncol, nlay+1); <span class="comment">//allsky_flux_dn_dir;</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    fluxes_allsky.bnd_flux_up  = real3d(<span class="stringliteral">&quot;allsky_bnd_flux_up&quot;</span> , ncol, nlay+1, nswbands); <span class="comment">//allsky_bnd_flux_up;</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    fluxes_allsky.bnd_flux_dn  = real3d(<span class="stringliteral">&quot;allsky_bnd_flux_dn&quot;</span> , ncol, nlay+1, nswbands); <span class="comment">//allsky_bnd_flux_dn;</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    fluxes_allsky.bnd_flux_net = real3d(<span class="stringliteral">&quot;allsky_bnd_flux_net&quot;</span>, ncol, nlay+1, nswbands); <span class="comment">//allsky_bnd_flux_net;</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    fluxes_allsky.bnd_flux_dn_dir = real3d(<span class="stringliteral">&quot;allsky_bnd_flux_dn_dir&quot;</span>, ncol, nlay+1, nswbands); <span class="comment">//allsky_bnd_flux_dn_dir;</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    rte_sw(combined_optics, top_at_1, coszrs, toa_flux, albedo_dir, albedo_dif, fluxes_allsky);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// Copy fluxes back out of FluxesByband object</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    fluxes_allsky.flux_up.deep_copy_to(allsky_flux_up);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    fluxes_allsky.flux_dn.deep_copy_to(allsky_flux_dn);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    fluxes_allsky.flux_net.deep_copy_to(allsky_flux_net);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    fluxes_allsky.flux_dn_dir.deep_copy_to(allsky_flux_dn_dir);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    fluxes_allsky.bnd_flux_up.deep_copy_to(allsky_bnd_flux_up);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    fluxes_allsky.bnd_flux_dn.deep_copy_to(allsky_bnd_flux_dn);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    fluxes_allsky.bnd_flux_net.deep_copy_to(allsky_bnd_flux_net);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    fluxes_allsky.bnd_flux_dn_dir.deep_copy_to(allsky_bnd_flux_dn_dir);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    yakl::fence();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
