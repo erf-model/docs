@@ -44,6 +44,7 @@ var DataStruct_8H =
       [ "Moving", "DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127adefe967ad0373b2274fc298f19125ca7", null ]
     ] ],
     [ "WindFarmType", "DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847", [
-      [ "Fitch", "DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a2b00d051a8acd949c63ac94efa793efe", null ]
+      [ "Fitch", "DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a2b00d051a8acd949c63ac94efa793efe", null ],
+      [ "EWP", "DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847ac49b3a43f2f11cf252c3a9f35d1c4441", null ]
     ] ]
 ];

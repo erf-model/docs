@@ -297,6 +297,7 @@ var classERF =
     [ "thrust_coeff", "classERF.html#acede0e5c683fd282d6027772392b2b3d", null ],
     [ "thrust_coeff_standing", "classERF.html#afe8aaca105443c421c00d5a47a7d57b5", null ],
     [ "use_real_bcs", "classERF.html#a86208285bf705f360a3c318a75097f61", null ],
+    [ "vars_ewp", "classERF.html#a010d6c4120b2c5290855323f4ac12008", null ],
     [ "vars_fitch", "classERF.html#a47c13e4cf7d4bd9b7b2be81886619fd9", null ],
     [ "vars_new", "classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b", null ],
     [ "vars_old", "classERF.html#af31e928baa970a1507dfb0233b352542", null ],
