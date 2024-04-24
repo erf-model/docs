@@ -39,6 +39,11 @@ var DataStruct_8H =
       [ "thetabar", "DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239ae41e9f65f26ee3b04db07f2db7f28bdb", null ],
       [ "nvars", "DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39", null ]
     ] ],
+    [ "Sponge", "DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcb", [
+      [ "ubar_sponge", "DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcbac159d9fae0d25be7ce907e1feb87cdaa", null ],
+      [ "vbar_sponge", "DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcbaad1bdec1c0213a18483e81bcb4926964", null ],
+      [ "nvars_sponge", "DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcba7f0566bdfe36c67d532a7e2aca33d9a4", null ]
+    ] ],
     [ "TerrainType", "DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127", [
       [ "Static", "DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127a84a8921b25f505d0d2077aeb5db4bc16", null ],
       [ "Moving", "DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127adefe967ad0373b2274fc298f19125ca7", null ]

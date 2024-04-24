@@ -37,6 +37,7 @@ var annotated_dup =
     [ "F", "classF.html", null ],
     [ "FlowerIF", "classFlowerIF.html", "classFlowerIF" ],
     [ "InputSoundingData", "structInputSoundingData.html", "structInputSoundingData" ],
+    [ "InputSpongeData", "structInputSpongeData.html", "structInputSpongeData" ],
     [ "IntersectionCIF", "classIntersectionCIF.html", "classIntersectionCIF" ],
     [ "Kessler", "classKessler.html", "classKessler" ],
     [ "LandSurface", "classLandSurface.html", "classLandSurface" ],

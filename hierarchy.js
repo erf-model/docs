@@ -39,6 +39,7 @@ var hierarchy =
       [ "TerrainIF", "classTerrainIF.html", null ]
     ] ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
+    [ "InputSpongeData", "structInputSpongeData.html", null ],
     [ "amrex::IntegratorBase", null, [
       [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ]
     ] ],
