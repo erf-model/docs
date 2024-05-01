@@ -25,6 +25,8 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     ] ],
     [ "Microphysics_Utils.H", "Microphysics__Utils_8H.html", "Microphysics__Utils_8H" ],
     [ "MomentumToVelocity.cpp", "MomentumToVelocity_8cpp.html", "MomentumToVelocity_8cpp" ],
+    [ "Orbit.cpp", "Orbit_8cpp.html", "Orbit_8cpp" ],
+    [ "Orbit.H", "Orbit_8H.html", "Orbit_8H" ],
     [ "ParFunctions.H", "ParFunctions_8H.html", "ParFunctions_8H" ],
     [ "PlaneAverage.H", "PlaneAverage_8H.html", [
       [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ]

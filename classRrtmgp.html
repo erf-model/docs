@@ -726,7 +726,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    parallel_for(SimpleBounds&lt;1&gt;(ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> icol)</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        t_sfc(icol) = tint(icol,nlay+1);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        top_at_1_g(1) = pmid(1, 1) &lt; pmid (1, 2);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        top_at_1_g(1) = pmid(1, 1) &lt; pmid (1, nlay);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    });</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    top_at_1_g.deep_copy_to(top_at_1_h);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    top_at_1 = top_at_1_h(1);</div>
@@ -1039,8 +1039,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    bool1d top_at_1_g(<span class="stringliteral">&quot;top_at_1_g&quot;</span>,1);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    boolHost1d top_at_1_h(<span class="stringliteral">&quot;top_at_1_h&quot;</span>,1);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> top_at_1;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    parallel_for(SimpleBounds&lt;1&gt;(1), YAKL_LAMBDA (<span class="keywordtype">int</span> icol) { <span class="comment">// HACK: Single loop kernel is not efficient</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;       top_at_1_g(1) = pmid(1, 1) &lt; pmid (1, 2);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    parallel_for(SimpleBounds&lt;1&gt;(1), YAKL_LAMBDA (<span class="keywordtype">int</span> ilay) { <span class="comment">// HACK: Single loop kernel is not efficient</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;       top_at_1_g(1) = pmid(1, 1) &lt; pmid (1, nlay);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    });</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    top_at_1_g.deep_copy_to(top_at_1_h);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    top_at_1 = top_at_1_h(1);</div>
