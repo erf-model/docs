@@ -211,8 +211,8 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#ifdef ERF_USE_POISSON_SOLVE</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// Project the velocities to be divergence-free</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span> project_velocities (              amrex::Vector&lt;amrex::MultiFab &gt;&amp; vars);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> project_velocities (amrex::Vector&lt;amrex::Vector&lt;amrex::MultiFab&gt;&gt;&amp; vars);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span> project_velocities (                                        amrex::Vector&lt;amrex::MultiFab &gt;&amp; vars);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> project_velocities (<span class="keywordtype">int</span> lev_min, <span class="keywordtype">int</span> lev_max, amrex::Vector&lt;amrex::Vector&lt;amrex::MultiFab&gt;&gt;&amp; vars);</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// Define the projection bc&#39;s based on the domain bc types</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    amrex::Array&lt;amrex::LinOpBCType,AMREX_SPACEDIM&gt;</div>
