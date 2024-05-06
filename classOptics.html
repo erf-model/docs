@@ -159,8 +159,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a078568b5fcba367944981fe065623e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cbf46804754b07ab0ccf03e6db25207"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptics.html#a6cbf46804754b07ab0ccf03e6db25207">combine_properties</a> (int nbands, int ncols, int nlevs, const real2d &amp;fraction1, const real3d &amp;property1, const real2d &amp;fraction2, const real3d &amp;property2, const real3d &amp;combined_property)</td></tr>
 <tr class="separator:a6cbf46804754b07ab0ccf03e6db25207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2472dd458109b58bc71cc44f57ff02f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptics.html#a2472dd458109b58bc71cc44f57ff02f9">initialize</a> (int <a class="el" href="classOptics.html#abb94e5d9dc89e539796740c6f0b9a229">ngas</a>, int nmodes, int num_aeros, int nswbands, int nlwbands, int ncol, int nlev, int nrh, int top_lev, const std::vector&lt; std::string &gt; &amp;aero_names, const real2d &amp;zi, const real2d &amp;pmid, const real2d &amp;temp, const real2d &amp;qi, const real2d &amp;geom_radius)</td></tr>
-<tr class="separator:a2472dd458109b58bc71cc44f57ff02f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50e2de641f604b4bf2e2826cb3699257"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptics.html#a50e2de641f604b4bf2e2826cb3699257">initialize</a> (int <a class="el" href="classOptics.html#abb94e5d9dc89e539796740c6f0b9a229">ngas</a>, int nmodes, int num_aeros, int nswbands, int nlwbands, int ncol, int nlev, int nrh, int top_lev, const std::vector&lt; std::string &gt; &amp;aero_names, const real2d &amp;zi, const real2d &amp;pmid, const real2d &amp;pint, const real2d &amp;temp, const real2d &amp;qi, const real2d &amp;geom_radius)</td></tr>
+<tr class="separator:a50e2de641f604b4bf2e2826cb3699257"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad044034219080c4d8bc696c4c259cb4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptics.html#ad044034219080c4d8bc696c4c259cb4d">finalize</a> ()</td></tr>
 <tr class="separator:ad044034219080c4d8bc696c4c259cb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -328,28 +328,28 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;{</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">// Combined fraction (max of property 1 and 2)</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    real2d combined_fraction(<span class="stringliteral">&quot;combined_fraction&quot;</span>, ncols,nlevs);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="comment">// Combined fraction</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    parallel_for(SimpleBounds&lt;2&gt;(ncols, nlevs), YAKL_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                 {</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        combined_fraction(icol, ilev) = std::max(fraction1(icol, ilev), fraction2(icol, ilev));</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    });</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="comment">// Combine optical properties by weighting by amount of cloud and snow</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    yakl::memset(combined_property, 0.);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nlevs, ncols, nbands), YAKL_LAMBDA (<span class="keywordtype">int</span> ilev, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> iband)</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordflow">if</span> (combined_fraction(icol,ilev) &gt; 0) {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            combined_property(iband,icol,ilev) = (</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                                                  fraction1(icol,ilev) * property1(iband,icol,ilev)</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                                                + fraction2(icol,ilev) * property2(iband,icol,ilev)</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                                                  ) / combined_fraction(icol,ilev);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        }</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    });</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;{</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">// Combined fraction (max of property 1 and 2)</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    real2d combined_fraction(<span class="stringliteral">&quot;combined_fraction&quot;</span>, ncols,nlevs);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="comment">// Combined fraction</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    parallel_for(SimpleBounds&lt;2&gt;(ncols, nlevs), YAKL_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                 {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        combined_fraction(icol, ilev) = std::max(fraction1(icol, ilev), fraction2(icol, ilev));</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    });</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">// Combine optical properties by weighting by amount of cloud and snow</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    yakl::memset(combined_property, 0.);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nlevs, ncols, nbands), YAKL_LAMBDA (<span class="keywordtype">int</span> ilev, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> iband)</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordflow">if</span> (combined_fraction(icol,ilev) &gt; 0) {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            combined_property(iband,icol,ilev) = (</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                                                  fraction1(icol,ilev) * property1(iband,icol,ilev)</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                                                + fraction2(icol,ilev) * property2(iband,icol,ilev)</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                                                  ) / combined_fraction(icol,ilev);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    });</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classOptics.html#af5f3fa679301f0ead8b8155626b2e710">get_cloud_optics_lw()</a>, and <a class="el" href="classOptics.html#aee82856b88240c428aefc6f47bf9500c">get_cloud_optics_sw()</a>.</p>
 <div class="dynheader">
@@ -379,9 +379,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   <span class="comment">// nothing needs to be done here</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <span class="comment">// nothing needs to be done here</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -506,78 +506,78 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;{</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="comment">// Temporary variables to hold absorption optical depth</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    real3d ice_tau(<span class="stringliteral">&quot;ice_tau&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    real3d liq_tau(<span class="stringliteral">&quot;liq_tau&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    real3d snow_tau(<span class="stringliteral">&quot;snow_tau&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    real3d cld_tau(<span class="stringliteral">&quot;cld_tau&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    real3d combined_tau(<span class="stringliteral">&quot;combined_tau&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">// Initialize outputs</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    yakl::memset(tau_out, 0.);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    yakl::memset(liq_tau_out, 0.);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    yakl::memset(ice_tau_out, 0.);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    yakl::memset(snw_tau_out, 0.);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// Initialize local variables</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    yakl::memset(ice_tau, 0.);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    yakl::memset(liq_tau, 0.);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    yakl::memset(snow_tau, 0.);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    yakl::memset(cld_tau, 0.);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    yakl::memset(combined_tau, 0.);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="comment">// Get ice optics</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a357f26f1bf42c917131a48782732ce03">icecldoptics</a> == <span class="stringliteral">&quot;mitchell&quot;</span>) {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#a1ab01da075a2a82b9fb4c341ff85e373">mitchell_ice_optics_lw</a>(ncol, nlev, iciwp, dei, ice_tau);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a357f26f1bf42c917131a48782732ce03">icecldoptics</a> == <span class="stringliteral">&quot;ebertcurry&quot;</span>) {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <a class="code" href="classEbertCurry.html#ae258a04b9aaba9ca0052793a2d57f05e">EbertCurry::ec_ice_optics_lw</a>(ncol, nlev, nbnd, cld, iclwp, iciwp, rei, ice_tau);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="comment">// Get liquid optics</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a87abc901496b039c596eed89b297a679">liqcldoptics</a> == <span class="stringliteral">&quot;gammadist&quot;</span>) {</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#a31a396f1997438a7cbb347767dca311a">gammadist_liq_optics_lw</a>(ncol, nlev, iclwp, lambdac, mu, liq_tau);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a87abc901496b039c596eed89b297a679">liqcldoptics</a> == <span class="stringliteral">&quot;slingo&quot;</span>) {</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <a class="code" href="classSlingo.html#aedbfc95f917b864354b84a9a78d74c94">Slingo::slingo_liq_optics_lw</a>(ncol, nlev, nbnd, cld, iclwp, iciwp, liq_tau);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// Combined cloud optics</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nbnd, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        cld_tau(ibnd, icol, ilev) = liq_tau(ibnd, icol, ilev) + ice_tau(ibnd, icol, ilev);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    });</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment">// Get snow optics?</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">if</span> (do_snow) {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#a1ab01da075a2a82b9fb4c341ff85e373">mitchell_ice_optics_lw</a>(ncol, nlev, icswp, des, snow_tau);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <a class="code" href="classOptics.html#a6cbf46804754b07ab0ccf03e6db25207">combine_properties</a>(nbnd, ncol, nlev,</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                           cld, cld_tau, cldfsnow, snow_tau, combined_tau);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    }</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        parallel_for(SimpleBounds&lt;3&gt;(nbnd, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        {</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            combined_tau(ibnd,icol,ilev) = cld_tau(ibnd,icol,ilev);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        });</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;      <span class="comment">// Set output optics</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nbnd, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        tau_out(icol,ilev,ibnd) = combined_tau(ibnd,icol,ilev);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        liq_tau_out(icol,ilev,ibnd) = liq_tau(ibnd,icol,ilev);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        ice_tau_out(icol,ilev,ibnd) = ice_tau(ibnd,icol,ilev);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        snw_tau_out(icol,ilev,ibnd) = snow_tau(ibnd,icol,ilev);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    });</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;{</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="comment">// Temporary variables to hold absorption optical depth</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    real3d ice_tau(<span class="stringliteral">&quot;ice_tau&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    real3d liq_tau(<span class="stringliteral">&quot;liq_tau&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    real3d snow_tau(<span class="stringliteral">&quot;snow_tau&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    real3d cld_tau(<span class="stringliteral">&quot;cld_tau&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    real3d combined_tau(<span class="stringliteral">&quot;combined_tau&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">// Initialize outputs</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    yakl::memset(tau_out, 0.);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    yakl::memset(liq_tau_out, 0.);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    yakl::memset(ice_tau_out, 0.);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    yakl::memset(snw_tau_out, 0.);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">// Initialize local variables</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    yakl::memset(ice_tau, 0.);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    yakl::memset(liq_tau, 0.);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    yakl::memset(snow_tau, 0.);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    yakl::memset(cld_tau, 0.);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    yakl::memset(combined_tau, 0.);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">// Get ice optics</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a357f26f1bf42c917131a48782732ce03">icecldoptics</a> == <span class="stringliteral">&quot;mitchell&quot;</span>) {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#a1ab01da075a2a82b9fb4c341ff85e373">mitchell_ice_optics_lw</a>(ncol, nlev, iciwp, dei, ice_tau);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a357f26f1bf42c917131a48782732ce03">icecldoptics</a> == <span class="stringliteral">&quot;ebertcurry&quot;</span>) {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <a class="code" href="classEbertCurry.html#ae258a04b9aaba9ca0052793a2d57f05e">EbertCurry::ec_ice_optics_lw</a>(ncol, nlev, nbnd, cld, iclwp, iciwp, rei, ice_tau);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="comment">// Get liquid optics</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a87abc901496b039c596eed89b297a679">liqcldoptics</a> == <span class="stringliteral">&quot;gammadist&quot;</span>) {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#a31a396f1997438a7cbb347767dca311a">gammadist_liq_optics_lw</a>(ncol, nlev, iclwp, lambdac, mu, liq_tau);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a87abc901496b039c596eed89b297a679">liqcldoptics</a> == <span class="stringliteral">&quot;slingo&quot;</span>) {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <a class="code" href="classSlingo.html#aedbfc95f917b864354b84a9a78d74c94">Slingo::slingo_liq_optics_lw</a>(ncol, nlev, nbnd, cld, iclwp, iciwp, liq_tau);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="comment">// Combined cloud optics</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nbnd, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        cld_tau(ibnd, icol, ilev) = liq_tau(ibnd, icol, ilev) + ice_tau(ibnd, icol, ilev);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    });</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">// Get snow optics?</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">if</span> (do_snow) {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#a1ab01da075a2a82b9fb4c341ff85e373">mitchell_ice_optics_lw</a>(ncol, nlev, icswp, des, snow_tau);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <a class="code" href="classOptics.html#a6cbf46804754b07ab0ccf03e6db25207">combine_properties</a>(nbnd, ncol, nlev,</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                           cld, cld_tau, cldfsnow, snow_tau, combined_tau);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        parallel_for(SimpleBounds&lt;3&gt;(nbnd, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            combined_tau(ibnd,icol,ilev) = cld_tau(ibnd,icol,ilev);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        });</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <span class="comment">// Set output optics</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nbnd, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        tau_out(icol,ilev,ibnd) = combined_tau(ibnd,icol,ilev);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        liq_tau_out(icol,ilev,ibnd) = liq_tau(ibnd,icol,ilev);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        ice_tau_out(icol,ilev,ibnd) = ice_tau(ibnd,icol,ilev);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        snw_tau_out(icol,ilev,ibnd) = snow_tau(ibnd,icol,ilev);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    });</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
 <div class="ttc" id="aclassCloudRadProps_html_a1ab01da075a2a82b9fb4c341ff85e373"><div class="ttname"><a href="classCloudRadProps.html#a1ab01da075a2a82b9fb4c341ff85e373">CloudRadProps::mitchell_ice_optics_lw</a></div><div class="ttdeci">void mitchell_ice_optics_lw(const int &amp;ncol, const int &amp;nlev, const real2d &amp;iciwpth, const real2d &amp;dei, real3d &amp;abs_od)</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.cpp:215</div></div>
 <div class="ttc" id="aclassCloudRadProps_html_a31a396f1997438a7cbb347767dca311a"><div class="ttname"><a href="classCloudRadProps.html#a31a396f1997438a7cbb347767dca311a">CloudRadProps::gammadist_liq_optics_lw</a></div><div class="ttdeci">void gammadist_liq_optics_lw(const int &amp;ncol, const int &amp;nlev, const real2d &amp;iclwpth, const real2d &amp;lamc, const real2d &amp;pgam, real3d &amp;abs_od)</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.cpp:132</div></div>
 <div class="ttc" id="aclassEbertCurry_html_ae258a04b9aaba9ca0052793a2d57f05e"><div class="ttname"><a href="classEbertCurry.html#ae258a04b9aaba9ca0052793a2d57f05e">EbertCurry::ec_ice_optics_lw</a></div><div class="ttdeci">static void ec_ice_optics_lw(int ncol, int nlev, int nlwbands, const real2d &amp;cldn, const real2d &amp;iclwpth, const real2d &amp;iciwpth, const real2d &amp;rei, const real3d &amp;abs_od)</div><div class="ttdef"><b>Definition:</b> Ebert_curry.H:116</div></div>
-<div class="ttc" id="aclassOptics_html_a357f26f1bf42c917131a48782732ce03"><div class="ttname"><a href="classOptics.html#a357f26f1bf42c917131a48782732ce03">Optics::icecldoptics</a></div><div class="ttdeci">std::string icecldoptics</div><div class="ttdef"><b>Definition:</b> Optics.H:90</div></div>
-<div class="ttc" id="aclassOptics_html_a6cbf46804754b07ab0ccf03e6db25207"><div class="ttname"><a href="classOptics.html#a6cbf46804754b07ab0ccf03e6db25207">Optics::combine_properties</a></div><div class="ttdeci">void combine_properties(int nbands, int ncols, int nlevs, const real2d &amp;fraction1, const real3d &amp;property1, const real2d &amp;fraction2, const real3d &amp;property2, const real3d &amp;combined_property)</div><div class="ttdef"><b>Definition:</b> Optics.cpp:255</div></div>
-<div class="ttc" id="aclassOptics_html_a87abc901496b039c596eed89b297a679"><div class="ttname"><a href="classOptics.html#a87abc901496b039c596eed89b297a679">Optics::liqcldoptics</a></div><div class="ttdeci">std::string liqcldoptics</div><div class="ttdef"><b>Definition:</b> Optics.H:91</div></div>
-<div class="ttc" id="aclassOptics_html_a90c700e69b63c61c6275b12c63033334"><div class="ttname"><a href="classOptics.html#a90c700e69b63c61c6275b12c63033334">Optics::cloud_optics</a></div><div class="ttdeci">CloudRadProps cloud_optics</div><div class="ttdef"><b>Definition:</b> Optics.H:93</div></div>
+<div class="ttc" id="aclassOptics_html_a357f26f1bf42c917131a48782732ce03"><div class="ttname"><a href="classOptics.html#a357f26f1bf42c917131a48782732ce03">Optics::icecldoptics</a></div><div class="ttdeci">std::string icecldoptics</div><div class="ttdef"><b>Definition:</b> Optics.H:91</div></div>
+<div class="ttc" id="aclassOptics_html_a6cbf46804754b07ab0ccf03e6db25207"><div class="ttname"><a href="classOptics.html#a6cbf46804754b07ab0ccf03e6db25207">Optics::combine_properties</a></div><div class="ttdeci">void combine_properties(int nbands, int ncols, int nlevs, const real2d &amp;fraction1, const real3d &amp;property1, const real2d &amp;fraction2, const real3d &amp;property2, const real3d &amp;combined_property)</div><div class="ttdef"><b>Definition:</b> Optics.cpp:256</div></div>
+<div class="ttc" id="aclassOptics_html_a87abc901496b039c596eed89b297a679"><div class="ttname"><a href="classOptics.html#a87abc901496b039c596eed89b297a679">Optics::liqcldoptics</a></div><div class="ttdeci">std::string liqcldoptics</div><div class="ttdef"><b>Definition:</b> Optics.H:92</div></div>
+<div class="ttc" id="aclassOptics_html_a90c700e69b63c61c6275b12c63033334"><div class="ttname"><a href="classOptics.html#a90c700e69b63c61c6275b12c63033334">Optics::cloud_optics</a></div><div class="ttdeci">CloudRadProps cloud_optics</div><div class="ttdef"><b>Definition:</b> Optics.H:94</div></div>
 <div class="ttc" id="aclassSlingo_html_aedbfc95f917b864354b84a9a78d74c94"><div class="ttname"><a href="classSlingo.html#aedbfc95f917b864354b84a9a78d74c94">Slingo::slingo_liq_optics_lw</a></div><div class="ttdeci">static void slingo_liq_optics_lw(int ncol, int nlev, int nlwbands, const real2d &amp;cldn, const real2d &amp;iclwpth, const real2d &amp;iciwpth, const real3d &amp;abs_od)</div><div class="ttdef"><b>Definition:</b> Slingo.H:126</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -739,148 +739,148 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//Temporary variables to hold cloud optical properties before combining into</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// output arrays. Same shape as output arrays, so get shapes from output.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    real3d liq_tau(<span class="stringliteral">&quot;liq_tau&quot;</span>,nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    real3d liq_tau_ssa(<span class="stringliteral">&quot;liq_tau_ssa&quot;</span>,nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    real3d liq_tau_ssa_g(<span class="stringliteral">&quot;liq_tau_ssa_g&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    real3d liq_tau_ssa_f(<span class="stringliteral">&quot;liq_tau_ssa_f&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    real3d ice_tau(<span class="stringliteral">&quot;ice_tau&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    real3d ice_tau_ssa(<span class="stringliteral">&quot;ice_tau_ssa&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    real3d ice_tau_ssa_g(<span class="stringliteral">&quot;ice_tau_ssa_g&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    real3d ice_tau_ssa_f(<span class="stringliteral">&quot;ice_tau_ssa_f&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    real3d cld_tau(<span class="stringliteral">&quot;cld_tau&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    real3d cld_tau_ssa(<span class="stringliteral">&quot;cld_tau_ssa&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    real3d cld_tau_ssa_g(<span class="stringliteral">&quot;cld_tau_ssa_g&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    real3d cld_tau_ssa_f(<span class="stringliteral">&quot;cld_tau_ssa_f&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    real3d snow_tau(<span class="stringliteral">&quot;snow_tau&quot;</span>, nbnd, ncol, nlev );</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    real3d snow_tau_ssa(<span class="stringliteral">&quot;snow_tau_ssa&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    real3d snow_tau_ssa_g(<span class="stringliteral">&quot;snow_tau_ssa_g&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    real3d snow_tau_ssa_f(<span class="stringliteral">&quot;snow_tau_ssa_f&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    real3d combined_tau(<span class="stringliteral">&quot;combined_tau&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    real3d combined_tau_ssa(<span class="stringliteral">&quot;combined_tau_ssa&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    real3d combined_tau_ssa_g(<span class="stringliteral">&quot;combined_tau_ssa_g&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    real3d combined_tau_ssa_f(<span class="stringliteral">&quot;combined_tau_ssa_f&quot;</span>, nbnd, ncol, nlev);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Initialize outputs</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    yakl::memset(tau_out, 0.);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    yakl::memset(ssa_out, 0.);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    yakl::memset(asm_out, 0.);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    yakl::memset(liq_tau_out, 0.);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    yakl::memset(ice_tau_out, 0.);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    yakl::memset(snw_tau_out, 0.);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Initialize local variables</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    yakl::memset(ice_tau, 0.);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    yakl::memset(ice_tau_ssa, 0.);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    yakl::memset(ice_tau_ssa_g, 0.);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    yakl::memset(ice_tau_ssa_f, 0.);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    yakl::memset(liq_tau, 0.);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    yakl::memset(liq_tau_ssa, 0.);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    yakl::memset(liq_tau_ssa_g, 0.);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    yakl::memset(liq_tau_ssa_f, 0.);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    yakl::memset(snow_tau, 0.);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    yakl::memset(snow_tau_ssa, 0.);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    yakl::memset(snow_tau_ssa_g, 0.);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    yakl::memset(snow_tau_ssa_f, 0.);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    yakl::memset(combined_tau, 0.);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    yakl::memset(combined_tau_ssa, 0.);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    yakl::memset(combined_tau_ssa_g, 0.);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    yakl::memset(combined_tau_ssa_f, 0.);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Get ice cloud optics</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a357f26f1bf42c917131a48782732ce03">icecldoptics</a> == <span class="stringliteral">&quot;mitchell&quot;</span>) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#a32483def8d0d82a6d1cb57834fe04b7d">mitchell_ice_optics_sw</a>(ncol, nlev, iciwp, dei,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                            ice_tau, ice_tau_ssa,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                            ice_tau_ssa_g, ice_tau_ssa_f);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a357f26f1bf42c917131a48782732ce03">icecldoptics</a> == <span class="stringliteral">&quot;ebertcurry&quot;</span>) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="classEbertCurry.html#aed435ba6c3e2c62f6ba2d8111c7c2f08">EbertCurry::ec_ice_optics_sw</a>(ncol, nlev, nbnd, cld, iciwp,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                     rei, ice_tau, ice_tau_ssa,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                     ice_tau_ssa_g, ice_tau_ssa_f);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Get liquid cloud optics</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a87abc901496b039c596eed89b297a679">liqcldoptics</a> == <span class="stringliteral">&quot;gammadist&quot;</span>) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#adcaf1c142347cdcd3b761af9c7ee5c56">gammadist_liq_optics_sw</a>(ncol, nlev, iclwp, lambdac, mu,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                             liq_tau, liq_tau_ssa,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                             liq_tau_ssa_g, liq_tau_ssa_f);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a87abc901496b039c596eed89b297a679">liqcldoptics</a> == <span class="stringliteral">&quot;slingo&quot;</span>) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="classSlingo.html#ab37f1c288e0dcc71337629a65fb65e17">Slingo::slingo_liq_optics_sw</a>(ncol, nlev, nbnd, cld, iclwp, rel,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                     liq_tau, liq_tau_ssa,</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                     liq_tau_ssa_g, liq_tau_ssa_f);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// Get snow cloud optics</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (do_snow) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#a32483def8d0d82a6d1cb57834fe04b7d">mitchell_ice_optics_sw</a>(ncol, nlev, icswp, des,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                            snow_tau, snow_tau_ssa,</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                            snow_tau_ssa_g, snow_tau_ssa_f);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="comment">// We are not doing snow optics, so set these to zero so we can still use</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment">// the arrays without additional logic</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        yakl::memset(snow_tau, 0.);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        yakl::memset(snow_tau_ssa, 0.);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        yakl::memset(snow_tau_ssa_g, 0.);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        yakl::memset(snow_tau_ssa_f, 0.);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// Combine all cloud optics from CAM routines</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nbnd, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        cld_tau(ibnd, icol, ilev) = ice_tau(ibnd, icol, ilev) + liq_tau(ibnd, icol, ilev);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        cld_tau_ssa(ibnd, icol, ilev) = ice_tau_ssa(ibnd, icol, ilev) + liq_tau_ssa(ibnd, icol, ilev);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        cld_tau_ssa_g(ibnd, icol, ilev) = ice_tau_ssa_g(ibnd, icol, ilev) + liq_tau_ssa_g(ibnd, icol, ilev);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    });</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (do_snow) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <a class="code" href="classOptics.html#a6cbf46804754b07ab0ccf03e6db25207">combine_properties</a>( nbnd, ncol, nlev,</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                            cld, cld_tau, cldfsnow, snow_tau, combined_tau);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="classOptics.html#a6cbf46804754b07ab0ccf03e6db25207">combine_properties</a>( nbnd, ncol, nlev,</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                            cld, cld_tau_ssa, cldfsnow, snow_tau_ssa, combined_tau_ssa);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="classOptics.html#a6cbf46804754b07ab0ccf03e6db25207">combine_properties</a>( nbnd, ncol, nlev,</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                            cld, cld_tau_ssa_g, cldfsnow, snow_tau_ssa_g, combined_tau_ssa_g);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        parallel_for(SimpleBounds&lt;3&gt;(nbnd, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            combined_tau(ibnd, icol, ilev) = cld_tau(ibnd, icol, ilev);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            combined_tau_ssa(ibnd, icol, ilev) = cld_tau_ssa(ibnd, icol, ilev);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            combined_tau_ssa_g(ibnd, icol, ilev) = cld_tau_ssa_g(ibnd, icol, ilev);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        });</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">// Copy to output arrays, converting to optical depth, single scattering</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// albedo, and assymmetry parameter from the products that the CAM routines</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// return. Make sure we do not try to divide by zero...</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nbnd, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> iband, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        tau_out(icol,ilev,iband) = combined_tau(iband,icol,ilev);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">if</span> (combined_tau(iband,icol,ilev) &gt; 0) {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            ssa_out(icol,ilev,iband)</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                = combined_tau_ssa(iband,icol,ilev) / combined_tau(iband,icol,ilev);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            ssa_out(icol,ilev,iband) = 1.;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">if</span> (combined_tau_ssa(iband,icol,ilev) &gt; 0) {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            asm_out(icol,ilev,iband)</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                = combined_tau_ssa_g(iband,icol,ilev) / combined_tau_ssa(iband,icol,ilev);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            asm_out(icol,ilev,iband) = 0.;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="comment">// Re-order diagnostics outputs</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        liq_tau_out(icol,ilev,iband) = liq_tau(iband,icol,ilev);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        ice_tau_out(icol,ilev,iband) = ice_tau(iband,icol,ilev);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        snw_tau_out(icol,ilev,iband) = snow_tau(iband,icol,ilev);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    });</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">//Temporary variables to hold cloud optical properties before combining into</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// output arrays. Same shape as output arrays, so get shapes from output.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    real3d liq_tau(<span class="stringliteral">&quot;liq_tau&quot;</span>,nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    real3d liq_tau_ssa(<span class="stringliteral">&quot;liq_tau_ssa&quot;</span>,nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    real3d liq_tau_ssa_g(<span class="stringliteral">&quot;liq_tau_ssa_g&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    real3d liq_tau_ssa_f(<span class="stringliteral">&quot;liq_tau_ssa_f&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    real3d ice_tau(<span class="stringliteral">&quot;ice_tau&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    real3d ice_tau_ssa(<span class="stringliteral">&quot;ice_tau_ssa&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    real3d ice_tau_ssa_g(<span class="stringliteral">&quot;ice_tau_ssa_g&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    real3d ice_tau_ssa_f(<span class="stringliteral">&quot;ice_tau_ssa_f&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    real3d cld_tau(<span class="stringliteral">&quot;cld_tau&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    real3d cld_tau_ssa(<span class="stringliteral">&quot;cld_tau_ssa&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    real3d cld_tau_ssa_g(<span class="stringliteral">&quot;cld_tau_ssa_g&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    real3d cld_tau_ssa_f(<span class="stringliteral">&quot;cld_tau_ssa_f&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    real3d snow_tau(<span class="stringliteral">&quot;snow_tau&quot;</span>, nbnd, ncol, nlev );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    real3d snow_tau_ssa(<span class="stringliteral">&quot;snow_tau_ssa&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    real3d snow_tau_ssa_g(<span class="stringliteral">&quot;snow_tau_ssa_g&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    real3d snow_tau_ssa_f(<span class="stringliteral">&quot;snow_tau_ssa_f&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    real3d combined_tau(<span class="stringliteral">&quot;combined_tau&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    real3d combined_tau_ssa(<span class="stringliteral">&quot;combined_tau_ssa&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    real3d combined_tau_ssa_g(<span class="stringliteral">&quot;combined_tau_ssa_g&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    real3d combined_tau_ssa_f(<span class="stringliteral">&quot;combined_tau_ssa_f&quot;</span>, nbnd, ncol, nlev);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Initialize outputs</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    yakl::memset(tau_out, 0.);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    yakl::memset(ssa_out, 0.);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    yakl::memset(asm_out, 0.);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    yakl::memset(liq_tau_out, 0.);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    yakl::memset(ice_tau_out, 0.);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    yakl::memset(snw_tau_out, 0.);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Initialize local variables</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    yakl::memset(ice_tau, 0.);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    yakl::memset(ice_tau_ssa, 0.);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    yakl::memset(ice_tau_ssa_g, 0.);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    yakl::memset(ice_tau_ssa_f, 0.);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    yakl::memset(liq_tau, 0.);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    yakl::memset(liq_tau_ssa, 0.);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    yakl::memset(liq_tau_ssa_g, 0.);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    yakl::memset(liq_tau_ssa_f, 0.);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    yakl::memset(snow_tau, 0.);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    yakl::memset(snow_tau_ssa, 0.);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    yakl::memset(snow_tau_ssa_g, 0.);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    yakl::memset(snow_tau_ssa_f, 0.);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    yakl::memset(combined_tau, 0.);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    yakl::memset(combined_tau_ssa, 0.);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    yakl::memset(combined_tau_ssa_g, 0.);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    yakl::memset(combined_tau_ssa_f, 0.);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// Get ice cloud optics</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a357f26f1bf42c917131a48782732ce03">icecldoptics</a> == <span class="stringliteral">&quot;mitchell&quot;</span>) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#a32483def8d0d82a6d1cb57834fe04b7d">mitchell_ice_optics_sw</a>(ncol, nlev, iciwp, dei,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                            ice_tau, ice_tau_ssa,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                            ice_tau_ssa_g, ice_tau_ssa_f);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a357f26f1bf42c917131a48782732ce03">icecldoptics</a> == <span class="stringliteral">&quot;ebertcurry&quot;</span>) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="classEbertCurry.html#aed435ba6c3e2c62f6ba2d8111c7c2f08">EbertCurry::ec_ice_optics_sw</a>(ncol, nlev, nbnd, cld, iciwp,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                     rei, ice_tau, ice_tau_ssa,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                     ice_tau_ssa_g, ice_tau_ssa_f);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Get liquid cloud optics</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a87abc901496b039c596eed89b297a679">liqcldoptics</a> == <span class="stringliteral">&quot;gammadist&quot;</span>) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#adcaf1c142347cdcd3b761af9c7ee5c56">gammadist_liq_optics_sw</a>(ncol, nlev, iclwp, lambdac, mu,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                             liq_tau, liq_tau_ssa,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                             liq_tau_ssa_g, liq_tau_ssa_f);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classOptics.html#a87abc901496b039c596eed89b297a679">liqcldoptics</a> == <span class="stringliteral">&quot;slingo&quot;</span>) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="classSlingo.html#ab37f1c288e0dcc71337629a65fb65e17">Slingo::slingo_liq_optics_sw</a>(ncol, nlev, nbnd, cld, iclwp, rel,</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                     liq_tau, liq_tau_ssa,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                     liq_tau_ssa_g, liq_tau_ssa_f);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// Get snow cloud optics</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (do_snow) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#a32483def8d0d82a6d1cb57834fe04b7d">mitchell_ice_optics_sw</a>(ncol, nlev, icswp, des,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                            snow_tau, snow_tau_ssa,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                            snow_tau_ssa_g, snow_tau_ssa_f);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment">// We are not doing snow optics, so set these to zero so we can still use</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="comment">// the arrays without additional logic</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        yakl::memset(snow_tau, 0.);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        yakl::memset(snow_tau_ssa, 0.);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        yakl::memset(snow_tau_ssa_g, 0.);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        yakl::memset(snow_tau_ssa_f, 0.);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// Combine all cloud optics from CAM routines</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nbnd, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        cld_tau(ibnd, icol, ilev) = ice_tau(ibnd, icol, ilev) + liq_tau(ibnd, icol, ilev);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        cld_tau_ssa(ibnd, icol, ilev) = ice_tau_ssa(ibnd, icol, ilev) + liq_tau_ssa(ibnd, icol, ilev);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        cld_tau_ssa_g(ibnd, icol, ilev) = ice_tau_ssa_g(ibnd, icol, ilev) + liq_tau_ssa_g(ibnd, icol, ilev);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    });</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span> (do_snow) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <a class="code" href="classOptics.html#a6cbf46804754b07ab0ccf03e6db25207">combine_properties</a>( nbnd, ncol, nlev,</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                            cld, cld_tau, cldfsnow, snow_tau, combined_tau);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="classOptics.html#a6cbf46804754b07ab0ccf03e6db25207">combine_properties</a>( nbnd, ncol, nlev,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                            cld, cld_tau_ssa, cldfsnow, snow_tau_ssa, combined_tau_ssa);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <a class="code" href="classOptics.html#a6cbf46804754b07ab0ccf03e6db25207">combine_properties</a>( nbnd, ncol, nlev,</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                            cld, cld_tau_ssa_g, cldfsnow, snow_tau_ssa_g, combined_tau_ssa_g);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        parallel_for(SimpleBounds&lt;3&gt;(nbnd, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            combined_tau(ibnd, icol, ilev) = cld_tau(ibnd, icol, ilev);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            combined_tau_ssa(ibnd, icol, ilev) = cld_tau_ssa(ibnd, icol, ilev);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            combined_tau_ssa_g(ibnd, icol, ilev) = cld_tau_ssa_g(ibnd, icol, ilev);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        });</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// Copy to output arrays, converting to optical depth, single scattering</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// albedo, and assymmetry parameter from the products that the CAM routines</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">// return. Make sure we do not try to divide by zero...</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nbnd, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> iband, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        tau_out(icol,ilev,iband) = combined_tau(iband,icol,ilev);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">if</span> (combined_tau(iband,icol,ilev) &gt; 0) {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            ssa_out(icol,ilev,iband)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                = combined_tau_ssa(iband,icol,ilev) / combined_tau(iband,icol,ilev);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            ssa_out(icol,ilev,iband) = 1.;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">if</span> (combined_tau_ssa(iband,icol,ilev) &gt; 0) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            asm_out(icol,ilev,iband)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                = combined_tau_ssa_g(iband,icol,ilev) / combined_tau_ssa(iband,icol,ilev);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            asm_out(icol,ilev,iband) = 0.;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment">// Re-order diagnostics outputs</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        liq_tau_out(icol,ilev,iband) = liq_tau(iband,icol,ilev);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        ice_tau_out(icol,ilev,iband) = ice_tau(iband,icol,ilev);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        snw_tau_out(icol,ilev,iband) = snow_tau(iband,icol,ilev);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    });</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
 <div class="ttc" id="aclassCloudRadProps_html_a32483def8d0d82a6d1cb57834fe04b7d"><div class="ttname"><a href="classCloudRadProps.html#a32483def8d0d82a6d1cb57834fe04b7d">CloudRadProps::mitchell_ice_optics_sw</a></div><div class="ttdeci">void mitchell_ice_optics_sw(const int &amp;ncol, const int &amp;nlev, const real2d &amp;iciwpth, const real2d &amp;dei, real3d &amp;tau, real3d &amp;tau_w, real3d &amp;tau_w_g, real3d &amp;tau_w_f)</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.cpp:153</div></div>
 <div class="ttc" id="aclassCloudRadProps_html_adcaf1c142347cdcd3b761af9c7ee5c56"><div class="ttname"><a href="classCloudRadProps.html#adcaf1c142347cdcd3b761af9c7ee5c56">CloudRadProps::gammadist_liq_optics_sw</a></div><div class="ttdeci">void gammadist_liq_optics_sw(const int &amp;ncol, const int &amp;nlev, const real2d &amp;iclwpth, const real2d &amp;lamc, const real2d &amp;pgam, real3d &amp;tau, real3d &amp;tau_w, real3d &amp;tau_w_g, real3d &amp;tau_w_f)</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.cpp:96</div></div>
 <div class="ttc" id="aclassEbertCurry_html_aed435ba6c3e2c62f6ba2d8111c7c2f08"><div class="ttname"><a href="classEbertCurry.html#aed435ba6c3e2c62f6ba2d8111c7c2f08">EbertCurry::ec_ice_optics_sw</a></div><div class="ttdeci">static void ec_ice_optics_sw(int ncol, int nlev, int nswbands, const real2d &amp;cldn, const real2d &amp;cicewp, const real2d &amp;rei, const real3d &amp;ice_tau, const real3d &amp;ice_tau_w, const real3d &amp;ice_tau_w_g, const real3d &amp;ice_tau_w_f)</div><div class="ttdef"><b>Definition:</b> Ebert_curry.H:11</div></div>
@@ -907,8 +907,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a2472dd458109b58bc71cc44f57ff02f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2472dd458109b58bc71cc44f57ff02f9">&#9670;&nbsp;</a></span>initialize()</h2>
+<a id="a50e2de641f604b4bf2e2826cb3699257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50e2de641f604b4bf2e2826cb3699257">&#9670;&nbsp;</a></span>initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -989,6 +989,12 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const real2d &amp;&#160;</td>
+          <td class="paramname"><em>pint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const real2d &amp;&#160;</td>
           <td class="paramname"><em>temp</em>, </td>
         </tr>
         <tr>
@@ -1010,24 +1016,24 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#ac733936ee2d3e88f07631b30fc5758ef">initialize</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">aero_optics</a>.<a class="code" href="classAerRadProps.html#a634863be4fb35a52ccdcdeccfac47253">initialize</a>(<a class="code" href="classOptics.html#abb94e5d9dc89e539796740c6f0b9a229">ngas</a>, nmodes, num_aeros,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                           nswbands, nlwbands, ncol, nlev, nrh, top_lev,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                           aero_names, zi, pmid, temp, qi, geom_radius);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="ttc" id="aclassAerRadProps_html_a634863be4fb35a52ccdcdeccfac47253"><div class="ttname"><a href="classAerRadProps.html#a634863be4fb35a52ccdcdeccfac47253">AerRadProps::initialize</a></div><div class="ttdeci">void initialize(int num_gas, int num_modes, int naeroes, int nswbands_, int nlwbands_, int ncoloum, int nlevel, int num_rh, int top_levels, const std::vector&lt; std::string &gt; &amp;aerosol_names, const real2d &amp;zint, const real2d &amp;pmiddle, const real2d &amp;temperature, const real2d &amp;qtotal, const real2d &amp;geom_rad)</div><div class="ttdef"><b>Definition:</b> Aero_rad_props.cpp:12</div></div>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#ac733936ee2d3e88f07631b30fc5758ef">initialize</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">aero_optics</a>.<a class="code" href="classAerRadProps.html#ac9a8b0b0923ad124305ac1e228f44f04">initialize</a>(<a class="code" href="classOptics.html#abb94e5d9dc89e539796740c6f0b9a229">ngas</a>, nmodes, num_aeros,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                           nswbands, nlwbands, ncol, nlev, nrh, top_lev,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                           aero_names, zi, pmid, pint, temp, qi, geom_radius);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="ttc" id="aclassAerRadProps_html_ac9a8b0b0923ad124305ac1e228f44f04"><div class="ttname"><a href="classAerRadProps.html#ac9a8b0b0923ad124305ac1e228f44f04">AerRadProps::initialize</a></div><div class="ttdeci">void initialize(int num_gas, int num_modes, int naeroes, int nswbands_, int nlwbands_, int ncoloum, int nlevel, int num_rh, int top_levels, const std::vector&lt; std::string &gt; &amp;aerosol_names, const real2d &amp;zint, const real2d &amp;pmiddle, const real2d &amp;pint, const real2d &amp;temperature, const real2d &amp;qtotal, const real2d &amp;geom_rad)</div><div class="ttdef"><b>Definition:</b> Aero_rad_props.cpp:12</div></div>
 <div class="ttc" id="aclassCloudRadProps_html_ac733936ee2d3e88f07631b30fc5758ef"><div class="ttname"><a href="classCloudRadProps.html#ac733936ee2d3e88f07631b30fc5758ef">CloudRadProps::initialize</a></div><div class="ttdeci">void initialize()</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.cpp:11</div></div>
-<div class="ttc" id="aclassOptics_html_a2153b2cf09af64100464587e8afb6d8f"><div class="ttname"><a href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">Optics::aero_optics</a></div><div class="ttdeci">AerRadProps aero_optics</div><div class="ttdef"><b>Definition:</b> Optics.H:94</div></div>
-<div class="ttc" id="aclassOptics_html_abb94e5d9dc89e539796740c6f0b9a229"><div class="ttname"><a href="classOptics.html#abb94e5d9dc89e539796740c6f0b9a229">Optics::ngas</a></div><div class="ttdeci">int ngas</div><div class="ttdef"><b>Definition:</b> Optics.H:87</div></div>
+<div class="ttc" id="aclassOptics_html_a2153b2cf09af64100464587e8afb6d8f"><div class="ttname"><a href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">Optics::aero_optics</a></div><div class="ttdeci">AerRadProps aero_optics</div><div class="ttdef"><b>Definition:</b> Optics.H:95</div></div>
+<div class="ttc" id="aclassOptics_html_abb94e5d9dc89e539796740c6f0b9a229"><div class="ttname"><a href="classOptics.html#abb94e5d9dc89e539796740c6f0b9a229">Optics::ngas</a></div><div class="ttdeci">int ngas</div><div class="ttdef"><b>Definition:</b> Optics.H:88</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classOptics_a2472dd458109b58bc71cc44f57ff02f9_cgraph.png" border="0" usemap="#aclassOptics_a2472dd458109b58bc71cc44f57ff02f9_cgraph" alt=""/></div>
-<map name="aclassOptics_a2472dd458109b58bc71cc44f57ff02f9_cgraph" id="aclassOptics_a2472dd458109b58bc71cc44f57ff02f9_cgraph">
+<div class="center"><img src="classOptics_a50e2de641f604b4bf2e2826cb3699257_cgraph.png" border="0" usemap="#aclassOptics_a50e2de641f604b4bf2e2826cb3699257_cgraph" alt=""/></div>
+<map name="aclassOptics_a50e2de641f604b4bf2e2826cb3699257_cgraph" id="aclassOptics_a50e2de641f604b4bf2e2826cb3699257_cgraph">
 <area shape="rect" title=" " alt="" coords="5,96,132,123"/>
 <area shape="rect" href="classCloudRadProps.html#ac733936ee2d3e88f07631b30fc5758ef" title=" " alt="" coords="180,71,364,97"/>
-<area shape="rect" href="classAerRadProps.html#a634863be4fb35a52ccdcdeccfac47253" title=" " alt="" coords="187,121,357,148"/>
+<area shape="rect" href="classAerRadProps.html#ac9a8b0b0923ad124305ac1e228f44f04" title=" " alt="" coords="187,121,357,148"/>
 <area shape="rect" href="classMam4__aer.html#a54577b94ef6180a27a5f0b5ab7e1b022" title=" " alt="" coords="412,121,567,148"/>
 <area shape="rect" href="classMamConstituents.html#a3bafcd362a064a323c1b6a241a6ece68" title=" " alt="" coords="617,49,784,90"/>
 <area shape="rect" href="classMamConstituents.html#a6e5af88612848490459d63da05a18360" title=" " alt="" coords="617,114,784,155"/>
@@ -1083,43 +1089,43 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;{</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="comment">// Local vars</span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="keyword">const</span> real cldmin = 1.0e-80;      <span class="comment">// min cloud fraction</span></div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    real2d cldf(<span class="stringliteral">&quot;cldf&quot;</span>,ncol,nlev);    <span class="comment">// cloud fraction clipped to cldmin</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    real3d cdf(<span class="stringliteral">&quot;cdf&quot;</span>, ngpt, ncol, nlev);   <span class="comment">// random numbers</span></div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="comment">// clip cloud fraction</span></div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    parallel_for(SimpleBounds&lt;2&gt;(ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    {</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        cldf(icol,ilev) = cldfrac(icol,ilev);</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="keywordflow">if</span> (cldf(icol,ilev) &lt; cldmin) cldf(icol,ilev) = 0.;</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    });</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    amrex::RandomEngine engine;</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="comment">// Generate random numbers in each subcolumn at every level</span></div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(ngpt, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> isubcol, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    {</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        cdf(isubcol,icol,ilev) = amrex::Random(engine);</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    });</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="comment">// Maximum-Random overlap</span></div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="comment">// i) pick a random number for top layer.</span></div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <span class="comment">// ii) walk down the column:</span></div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    <span class="comment">//    - if the layer above is cloudy, use the same random number as in the layer above</span></div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    <span class="comment">//    - if the layer above is clear, use a new random number</span></div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nlev, ncol, ngpt), YAKL_LAMBDA (<span class="keywordtype">int</span> k, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> isubcol)</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    {</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        <span class="keywordflow">if</span> (k &gt; 1) {</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;            <span class="keywordflow">if</span> (cdf(isubcol,i,k-1) &gt; 1. - cldf(i,k-1) ) {</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                cdf(isubcol,i,k) = cdf(isubcol,i,k-1);</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                cdf(isubcol,i,k) = cdf(isubcol,i,k) * (1. - cldf(i,k-1));</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            }</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            iscloudy(isubcol,i,k) = cdf(isubcol,i,k) &gt;= 1.-cldf(i,k) ? true : <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        }</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    });</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;{</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="comment">// Local vars</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keyword">const</span> real cldmin = 1.0e-80;      <span class="comment">// min cloud fraction</span></div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    real2d cldf(<span class="stringliteral">&quot;cldf&quot;</span>,ncol,nlev);    <span class="comment">// cloud fraction clipped to cldmin</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    real3d cdf(<span class="stringliteral">&quot;cdf&quot;</span>, ngpt, ncol, nlev);   <span class="comment">// random numbers</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="comment">// clip cloud fraction</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    parallel_for(SimpleBounds&lt;2&gt;(ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    {</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        cldf(icol,ilev) = cldfrac(icol,ilev);</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        <span class="keywordflow">if</span> (cldf(icol,ilev) &lt; cldmin) cldf(icol,ilev) = 0.;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    });</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    amrex::RandomEngine engine;</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="comment">// Generate random numbers in each subcolumn at every level</span></div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(ngpt, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> isubcol, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    {</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        cdf(isubcol,icol,ilev) = amrex::Random(engine);</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    });</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; </div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="comment">// Maximum-Random overlap</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <span class="comment">// i) pick a random number for top layer.</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    <span class="comment">// ii) walk down the column:</span></div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    <span class="comment">//    - if the layer above is cloudy, use the same random number as in the layer above</span></div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <span class="comment">//    - if the layer above is clear, use a new random number</span></div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nlev, ncol, ngpt), YAKL_LAMBDA (<span class="keywordtype">int</span> k, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> isubcol)</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    {</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        <span class="keywordflow">if</span> (k &gt; 1) {</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            <span class="keywordflow">if</span> (cdf(isubcol,i,k-1) &gt; 1. - cldf(i,k-1) ) {</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;                cdf(isubcol,i,k) = cdf(isubcol,i,k-1);</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                cdf(isubcol,i,k) = cdf(isubcol,i,k) * (1. - cldf(i,k-1));</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            }</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            iscloudy(isubcol,i,k) = cdf(isubcol,i,k) &gt;= 1.-cldf(i,k) ? true : <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        }</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    });</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classOptics.html#aa4a9d3efc9d464090f9a803bdab51ca1">sample_cloud_optics_lw()</a>, and <a class="el" href="classOptics.html#abf585c4bba33e85f0eb2f685c87b22a7">sample_cloud_optics_sw()</a>.</p>
 <div class="dynheader">
@@ -1202,36 +1208,36 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;{</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="comment">//real(r8), dimension(ncol,nlev) :: combined_cld</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    real2d combined_cld(<span class="stringliteral">&quot;combined_cld&quot;</span>, ncol, nlev);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="comment">//logical, dimension(ngpt,ncol,nlev) :: iscloudy</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    bool3d iscloudy(<span class="stringliteral">&quot;iscloudy&quot;</span>, ngpt, ncol, nlev);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="comment">// Combine cloud and snow fractions for MCICA sampling</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    parallel_for(SimpleBounds&lt;2&gt;(ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        combined_cld(icol,ilev) = std::max(cld(icol,ilev), cldfsnow(icol,ilev));</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    });</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">// Get the stochastic subcolumn cloudy mask</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <a class="code" href="classOptics.html#a078568b5fcba367944981fe065623e0c">mcica_subcol_mask</a>(ngpt, ncol, nlev, combined_cld, iscloudy);</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment">// Map optics to g-points, selecting a single subcolumn for each</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="comment">// g-point. This implementation generates homogeneous clouds, but it would be</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="comment">// straightforward to extend this to handle horizontally heterogeneous clouds</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="comment">// as well.</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(ngpt, nlev, ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> igpt, <span class="keywordtype">int</span> ilev, <span class="keywordtype">int</span> icol)</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">if</span> (iscloudy(igpt,icol,ilev) &amp;&amp; combined_cld(icol,ilev) &gt; 0.) {</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            tau_gpt(icol,ilev,igpt) = tau_bnd(icol,ilev,gpt2bnd(igpt));</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            tau_gpt(icol,ilev,igpt) = 0.;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        }</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    });</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; }</div>
-<div class="ttc" id="aclassOptics_html_a078568b5fcba367944981fe065623e0c"><div class="ttname"><a href="classOptics.html#a078568b5fcba367944981fe065623e0c">Optics::mcica_subcol_mask</a></div><div class="ttdeci">void mcica_subcol_mask(int ngpt, int ncol, int nlev, const real2d &amp;cldfrac, const bool3d &amp;iscloudy)</div><div class="ttdef"><b>Definition:</b> Optics.cpp:427</div></div>
+<div class="fragment"><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;{</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="comment">//real(r8), dimension(ncol,nlev) :: combined_cld</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    real2d combined_cld(<span class="stringliteral">&quot;combined_cld&quot;</span>, ncol, nlev);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="comment">//logical, dimension(ngpt,ncol,nlev) :: iscloudy</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    bool3d iscloudy(<span class="stringliteral">&quot;iscloudy&quot;</span>, ngpt, ncol, nlev);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="comment">// Combine cloud and snow fractions for MCICA sampling</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    parallel_for(SimpleBounds&lt;2&gt;(ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        combined_cld(icol,ilev) = std::max(cld(icol,ilev), cldfsnow(icol,ilev));</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    });</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="comment">// Get the stochastic subcolumn cloudy mask</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <a class="code" href="classOptics.html#a078568b5fcba367944981fe065623e0c">mcica_subcol_mask</a>(ngpt, ncol, nlev, combined_cld, iscloudy);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="comment">// Map optics to g-points, selecting a single subcolumn for each</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="comment">// g-point. This implementation generates homogeneous clouds, but it would be</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="comment">// straightforward to extend this to handle horizontally heterogeneous clouds</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="comment">// as well.</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(ngpt, nlev, ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> igpt, <span class="keywordtype">int</span> ilev, <span class="keywordtype">int</span> icol)</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    {</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="keywordflow">if</span> (iscloudy(igpt,icol,ilev) &amp;&amp; combined_cld(icol,ilev) &gt; 0.) {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            tau_gpt(icol,ilev,igpt) = tau_bnd(icol,ilev,gpt2bnd(igpt));</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            tau_gpt(icol,ilev,igpt) = 0.;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        }</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    });</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; }</div>
+<div class="ttc" id="aclassOptics_html_a078568b5fcba367944981fe065623e0c"><div class="ttname"><a href="classOptics.html#a078568b5fcba367944981fe065623e0c">Optics::mcica_subcol_mask</a></div><div class="ttdeci">void mcica_subcol_mask(int ngpt, int ncol, int nlev, const real2d &amp;cldfrac, const bool3d &amp;iscloudy)</div><div class="ttdef"><b>Definition:</b> Optics.cpp:428</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1335,36 +1341,36 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;{</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="comment">//real(r8), dimension(ncol,nlev) :: combined_cld</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    real2d combined_cld(<span class="stringliteral">&quot;combined_cld&quot;</span>, ncol, nlev);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="comment">//logical, dimension(ngpt,ncol,nlev) :: iscloudy</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    bool3d iscloudy(<span class="stringliteral">&quot;iscloudy&quot;</span>, ngpt, ncol, nlev);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// Combined snow and cloud fraction</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    parallel_for(SimpleBounds&lt;2&gt;(ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        combined_cld(icol,ilev) = std::max(cld(icol,ilev), cldfsnow(icol,ilev));</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    });</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="comment">// Get stochastic subcolumn cloud mask</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="classOptics.html#a078568b5fcba367944981fe065623e0c">mcica_subcol_mask</a>(ngpt, ncol, nlev, combined_cld, iscloudy);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">// Generate subcolumns for homogeneous clouds</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(ngpt, nlev, ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> igpt, <span class="keywordtype">int</span> ilev, <span class="keywordtype">int</span> icol)</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">if</span> (iscloudy(igpt,icol,ilev) &amp;&amp; combined_cld(icol,ilev) &gt; 0.) {</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            tau_gpt(icol,ilev,igpt) = tau_bnd(icol,ilev,gpt2bnd(igpt));</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            ssa_gpt(icol,ilev,igpt) = ssa_bnd(icol,ilev,gpt2bnd(igpt));</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            asm_gpt(icol,ilev,igpt) = asm_bnd(icol,ilev,gpt2bnd(igpt));</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            tau_gpt(icol,ilev,igpt) = 0.;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            ssa_gpt(icol,ilev,igpt) = 1.;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            asm_gpt(icol,ilev,igpt) = 0.;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        }</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    });</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; }</div>
+<div class="fragment"><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;{</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="comment">//real(r8), dimension(ncol,nlev) :: combined_cld</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    real2d combined_cld(<span class="stringliteral">&quot;combined_cld&quot;</span>, ncol, nlev);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="comment">//logical, dimension(ngpt,ncol,nlev) :: iscloudy</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    bool3d iscloudy(<span class="stringliteral">&quot;iscloudy&quot;</span>, ngpt, ncol, nlev);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="comment">// Combined snow and cloud fraction</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    parallel_for(SimpleBounds&lt;2&gt;(ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        combined_cld(icol,ilev) = std::max(cld(icol,ilev), cldfsnow(icol,ilev));</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    });</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="comment">// Get stochastic subcolumn cloud mask</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <a class="code" href="classOptics.html#a078568b5fcba367944981fe065623e0c">mcica_subcol_mask</a>(ngpt, ncol, nlev, combined_cld, iscloudy);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// Generate subcolumns for homogeneous clouds</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(ngpt, nlev, ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> igpt, <span class="keywordtype">int</span> ilev, <span class="keywordtype">int</span> icol)</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">if</span> (iscloudy(igpt,icol,ilev) &amp;&amp; combined_cld(icol,ilev) &gt; 0.) {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            tau_gpt(icol,ilev,igpt) = tau_bnd(icol,ilev,gpt2bnd(igpt));</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            ssa_gpt(icol,ilev,igpt) = ssa_bnd(icol,ilev,gpt2bnd(igpt));</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            asm_gpt(icol,ilev,igpt) = asm_bnd(icol,ilev,gpt2bnd(igpt));</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            tau_gpt(icol,ilev,igpt) = 0.;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            ssa_gpt(icol,ilev,igpt) = 1.;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            asm_gpt(icol,ilev,igpt) = 0.;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    });</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1426,13 +1432,13 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;{</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="comment">// Get aerosol absorption optical depth from CAM routine</span></div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    yakl::memset(<a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, 0.);</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <a class="code" href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">aero_optics</a>.<a class="code" href="classAerRadProps.html#a6aabfa89e9a9d91bae79c7a0d91f17b3">aer_rad_props_lw</a>(is_cmip6_volc, icall, dt, zi, <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, clear_rh);</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;{</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="comment">// Get aerosol absorption optical depth from CAM routine</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    yakl::memset(<a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, 0.);</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <a class="code" href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">aero_optics</a>.<a class="code" href="classAerRadProps.html#a6aabfa89e9a9d91bae79c7a0d91f17b3">aer_rad_props_lw</a>(is_cmip6_volc, icall, dt, zi, <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, clear_rh);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;}</div>
 <div class="ttc" id="aDataStruct_8H_html_a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f"><div class="ttname"><a href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a></div><div class="ttdeci">@ tau</div><div class="ttdef"><b>Definition:</b> DataStruct.H:52</div></div>
-<div class="ttc" id="aclassAerRadProps_html_a6aabfa89e9a9d91bae79c7a0d91f17b3"><div class="ttname"><a href="classAerRadProps.html#a6aabfa89e9a9d91bae79c7a0d91f17b3">AerRadProps::aer_rad_props_lw</a></div><div class="ttdeci">void aer_rad_props_lw(const bool &amp;is_cmip6_volc, const int &amp;list_idx, const real &amp;dt, const real2d &amp;zi, const real3d &amp;odap_aer, const real2d &amp;clear_rh)</div><div class="ttdef"><b>Definition:</b> Aero_rad_props.cpp:292</div></div>
+<div class="ttc" id="aclassAerRadProps_html_a6aabfa89e9a9d91bae79c7a0d91f17b3"><div class="ttname"><a href="classAerRadProps.html#a6aabfa89e9a9d91bae79c7a0d91f17b3">AerRadProps::aer_rad_props_lw</a></div><div class="ttdeci">void aer_rad_props_lw(const bool &amp;is_cmip6_volc, const int &amp;list_idx, const real &amp;dt, const real2d &amp;zi, const real3d &amp;odap_aer, const real2d &amp;clear_rh)</div><div class="ttdef"><b>Definition:</b> Aero_rad_props.cpp:300</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1572,58 +1578,58 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;{</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="comment">// NOTE: aer_rad_props expects 0:pver indexing on these! It appears this is to</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="comment">// account for the extra layer added above model top, but it is not entirely</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="comment">// clear. This is not done for the longwave, and it is not really documented</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="comment">// anywhere that I can find. Regardless, optical properties for the zero index</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="comment">// are set to zero in aer_rad_props_sw as far as I can tell.</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="comment">// NOTE: dimension ordering is different than for cloud optics!</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    real3d <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>(<span class="stringliteral">&quot;tau&quot;</span>, ncol, nlev+1, nswbands);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    real3d tau_w(<span class="stringliteral">&quot;tau_w&quot;</span>, ncol, nlev+1, nswbands);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    real3d tau_w_g(<span class="stringliteral">&quot;tau_w_g&quot;</span>, ncol, nlev+1, nswbands);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    real3d tau_w_f(<span class="stringliteral">&quot;tau_w_f&quot;</span>, ncol, nlev+1, nswbands);</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="comment">// Get aerosol absorption optical depth from CAM routine</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    yakl::memset(<a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, 0.);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    yakl::memset(tau_w, 0.);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    yakl::memset(tau_w_g, 0.);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    yakl::memset(tau_w_f, 0.);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    int1d ic(<span class="stringliteral">&quot;icount&quot;</span>,1);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    intHost1d ic_host(<span class="stringliteral">&quot;ic_host&quot;</span>,1);</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    parallel_for(SimpleBounds&lt;1&gt;(ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> i)</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    {</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordflow">if</span> (night_indices(i) &gt; 0) ++ic(1);</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    });</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    ic.deep_copy_to(ic_host);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <a class="code" href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">aero_optics</a>.<a class="code" href="classAerRadProps.html#a433097bd85637100b16f3e120e9d6fa1">aer_rad_props_sw</a>(icall, dt,</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                                 ic_host(1), night_indices, is_cmip6_volc,</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                                 <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, tau_w, tau_w_g, tau_w_f, clear_rh);</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="comment">// Extract quantities from products</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(ncol, nlev, nswbands), YAKL_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev, <span class="keywordtype">int</span> iband)</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    {</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="comment">// Copy cloud optical depth over directly</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        tau_out(icol,ilev,iband) = <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>(icol,ilev,iband);</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="comment">// Extract single scattering albedo from the product-defined fields</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>(icol,ilev,iband) &gt; 0) {</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            ssa_out(icol,ilev,iband) = tau_w(icol,ilev,iband) / <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>(icol,ilev,iband);</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            ssa_out(icol,ilev,iband) = 1.;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        }</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="comment">// Extract assymmetry parameter from the product-defined fields</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <span class="keywordflow">if</span> (tau_w(icol,ilev,iband) &gt; 0) {</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            asm_out(icol,ilev,iband) = tau_w_g(icol,ilev,iband) / tau_w(icol,ilev,iband);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            asm_out(icol,ilev,iband) = 0.;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        }</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    });</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  }</div>
-<div class="ttc" id="aclassAerRadProps_html_a433097bd85637100b16f3e120e9d6fa1"><div class="ttname"><a href="classAerRadProps.html#a433097bd85637100b16f3e120e9d6fa1">AerRadProps::aer_rad_props_sw</a></div><div class="ttdeci">void aer_rad_props_sw(const int &amp;list_idx, const real &amp;dt, const int &amp;nnite, const int1d &amp;idxnite, const bool is_cmip6_volc, const real3d &amp;tau, const real3d &amp;tau_w, const real3d &amp;tau_w_g, const real3d &amp;tau_w_f, const real2d &amp;clear_rh)</div><div class="ttdef"><b>Definition:</b> Aero_rad_props.cpp:43</div></div>
+<div class="fragment"><div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;{</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="comment">// NOTE: aer_rad_props expects 0:pver indexing on these! It appears this is to</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="comment">// account for the extra layer added above model top, but it is not entirely</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="comment">// clear. This is not done for the longwave, and it is not really documented</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="comment">// anywhere that I can find. Regardless, optical properties for the zero index</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="comment">// are set to zero in aer_rad_props_sw as far as I can tell.</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="comment">// NOTE: dimension ordering is different than for cloud optics!</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    real3d <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>(<span class="stringliteral">&quot;tau&quot;</span>, ncol, nlev+1, nswbands);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    real3d tau_w(<span class="stringliteral">&quot;tau_w&quot;</span>, ncol, nlev+1, nswbands);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    real3d tau_w_g(<span class="stringliteral">&quot;tau_w_g&quot;</span>, ncol, nlev+1, nswbands);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    real3d tau_w_f(<span class="stringliteral">&quot;tau_w_f&quot;</span>, ncol, nlev+1, nswbands);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="comment">// Get aerosol absorption optical depth from CAM routine</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    yakl::memset(<a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, 0.);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    yakl::memset(tau_w, 0.);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    yakl::memset(tau_w_g, 0.);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    yakl::memset(tau_w_f, 0.);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    int1d ic(<span class="stringliteral">&quot;icount&quot;</span>,1);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    intHost1d ic_host(<span class="stringliteral">&quot;ic_host&quot;</span>,1);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    parallel_for(SimpleBounds&lt;1&gt;(ncol), YAKL_LAMBDA (<span class="keywordtype">int</span> i)</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordflow">if</span> (night_indices(i) &gt; 0) ++ic(1);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    });</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    ic.deep_copy_to(ic_host);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <a class="code" href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">aero_optics</a>.<a class="code" href="classAerRadProps.html#a433097bd85637100b16f3e120e9d6fa1">aer_rad_props_sw</a>(icall, dt,</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                                 ic_host(1), night_indices, is_cmip6_volc,</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                                 <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, tau_w, tau_w_g, tau_w_f, clear_rh);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="comment">// Extract quantities from products</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(ncol, nlev, nswbands), YAKL_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev, <span class="keywordtype">int</span> iband)</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="comment">// Copy cloud optical depth over directly</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        tau_out(icol,ilev,iband) = <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>(icol,ilev,iband);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="comment">// Extract single scattering albedo from the product-defined fields</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>(icol,ilev,iband) &gt; 0) {</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            ssa_out(icol,ilev,iband) = tau_w(icol,ilev,iband) / <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>(icol,ilev,iband);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            ssa_out(icol,ilev,iband) = 1.;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        }</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <span class="comment">// Extract assymmetry parameter from the product-defined fields</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">if</span> (tau_w(icol,ilev,iband) &gt; 0) {</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            asm_out(icol,ilev,iband) = tau_w_g(icol,ilev,iband) / tau_w(icol,ilev,iband);</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            asm_out(icol,ilev,iband) = 0.;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        }</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    });</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;  }</div>
+<div class="ttc" id="aclassAerRadProps_html_a433097bd85637100b16f3e120e9d6fa1"><div class="ttname"><a href="classAerRadProps.html#a433097bd85637100b16f3e120e9d6fa1">AerRadProps::aer_rad_props_sw</a></div><div class="ttdeci">void aer_rad_props_sw(const int &amp;list_idx, const real &amp;dt, const int &amp;nnite, const int1d &amp;idxnite, const bool is_cmip6_volc, const real3d &amp;tau, const real3d &amp;tau_w, const real3d &amp;tau_w_g, const real3d &amp;tau_w_f, const real2d &amp;clear_rh)</div><div class="ttdef"><b>Definition:</b> Aero_rad_props.cpp:52</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1705,7 +1711,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classOptics.html#a2472dd458109b58bc71cc44f57ff02f9">initialize()</a>, <a class="el" href="classOptics.html#aecf608be7db530dc74beb0a03b2279f2">set_aerosol_optics_lw()</a>, and <a class="el" href="classOptics.html#a54463b4d74c22934fcbf36a7c95f0b3f">set_aerosol_optics_sw()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classOptics.html#a50e2de641f604b4bf2e2826cb3699257">initialize()</a>, <a class="el" href="classOptics.html#aecf608be7db530dc74beb0a03b2279f2">set_aerosol_optics_lw()</a>, and <a class="el" href="classOptics.html#a54463b4d74c22934fcbf36a7c95f0b3f">set_aerosol_optics_sw()</a>.</p>
 
 </div>
 </div>
@@ -1729,7 +1735,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classOptics.html#af5f3fa679301f0ead8b8155626b2e710">get_cloud_optics_lw()</a>, <a class="el" href="classOptics.html#aee82856b88240c428aefc6f47bf9500c">get_cloud_optics_sw()</a>, and <a class="el" href="classOptics.html#a2472dd458109b58bc71cc44f57ff02f9">initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classOptics.html#af5f3fa679301f0ead8b8155626b2e710">get_cloud_optics_lw()</a>, <a class="el" href="classOptics.html#aee82856b88240c428aefc6f47bf9500c">get_cloud_optics_sw()</a>, and <a class="el" href="classOptics.html#a50e2de641f604b4bf2e2826cb3699257">initialize()</a>.</p>
 
 </div>
 </div>
@@ -1823,7 +1829,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classOptics.html#a2472dd458109b58bc71cc44f57ff02f9">initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classOptics.html#a50e2de641f604b4bf2e2826cb3699257">initialize()</a>.</p>
 
 </div>
 </div>

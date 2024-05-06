@@ -693,63 +693,64 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERFPhysBCFunct_u::()&quot;</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__u.html#a12a1e078b61a3e00958bf0f3f69bfe5f">m_geom</a>.isAllPeriodic()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; domain = <a class="code" href="classERFPhysBCFunct__u.html#a12a1e078b61a3e00958bf0f3f69bfe5f">m_geom</a>.Domain();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dxInv   = <a class="code" href="classERFPhysBCFunct__u.html#a12a1e078b61a3e00958bf0f3f69bfe5f">m_geom</a>.InvCellSizeArray();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    Box gdomainx = surroundingNodes(domain,0);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__u.html#a12a1e078b61a3e00958bf0f3f69bfe5f">m_geom</a>.isPeriodic(i)) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            gdomainx.grow(i, nghost[i]);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(mf,<span class="keyword">false</span>); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="comment">// This is the box we pass to the different routines</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="comment">// NOTE -- this is the full grid NOT the tile box</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            Box bx  = mfi.validbox();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="comment">// These are the boxes we use to test on relative to the domain</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            Box xbx = surroundingNodes(bx,0); xbx.grow(nghost);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            Array4&lt;const Real&gt; z_nd_arr;</div>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERFPhysBCFunct_u::()&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__u.html#a12a1e078b61a3e00958bf0f3f69bfe5f">m_geom</a>.isAllPeriodic()) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; domain = <a class="code" href="classERFPhysBCFunct__u.html#a12a1e078b61a3e00958bf0f3f69bfe5f">m_geom</a>.Domain();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dxInv   = <a class="code" href="classERFPhysBCFunct__u.html#a12a1e078b61a3e00958bf0f3f69bfe5f">m_geom</a>.InvCellSizeArray();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    Box gdomainx = surroundingNodes(domain,0);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__u.html#a12a1e078b61a3e00958bf0f3f69bfe5f">m_geom</a>.isPeriodic(i)) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            gdomainx.grow(i, nghost[i]);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(mf,<span class="keyword">false</span>); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="comment">// This is the box we pass to the different routines</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="comment">// NOTE -- this is the full grid NOT the tile box</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            Box bx  = mfi.validbox();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="comment">// These are the boxes we use to test on relative to the domain</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            Box xbx1 = surroundingNodes(bx,0); xbx1.grow(IntVect(nghost[0],nghost[1],0));</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            Box xbx2 = surroundingNodes(bx,0); xbx2.grow(nghost);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__u.html#aefe9bc994735627162154bc289a0de3c">m_z_phys_nd</a>)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                z_nd_arr = <a class="code" href="classERFPhysBCFunct__u.html#aefe9bc994735627162154bc289a0de3c">m_z_phys_nd</a>-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">if</span> (!gdomainx.contains(xbx))</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt; velx_arr = mf.array(mfi);;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classERFPhysBCFunct__u.html#a4a1ce4ec8f730cb61568aee6eceefe1f">m_use_real_bcs</a>)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <span class="keywordflow">if</span> (!gdomainx.contains(xbx))</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                        <a class="code" href="classERFPhysBCFunct__u.html#a9b203cbd4f9a1fd40961067424ae5f81">impose_lateral_xvel_bcs</a>(velx_arr,xbx,domain,bccomp);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <a class="code" href="classERFPhysBCFunct__u.html#afdf8afb39002a2daac0fc16a5db76d17">impose_vertical_xvel_bcs</a>(velx_arr,xbx,domain,z_nd_arr,dxInv,bccomp,time);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        } <span class="comment">// MFIter</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    } <span class="comment">// OpenMP</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;} <span class="comment">// operator()</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            Array4&lt;const Real&gt; z_nd_arr;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__u.html#aefe9bc994735627162154bc289a0de3c">m_z_phys_nd</a>)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                z_nd_arr = <a class="code" href="classERFPhysBCFunct__u.html#aefe9bc994735627162154bc289a0de3c">m_z_phys_nd</a>-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">if</span> (!gdomainx.contains(xbx2))</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt; velx_arr = mf.array(mfi);;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classERFPhysBCFunct__u.html#a4a1ce4ec8f730cb61568aee6eceefe1f">m_use_real_bcs</a>)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    <span class="keywordflow">if</span> (!gdomainx.contains(xbx1))</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                        <a class="code" href="classERFPhysBCFunct__u.html#a9b203cbd4f9a1fd40961067424ae5f81">impose_lateral_xvel_bcs</a>(velx_arr,xbx1,domain,bccomp);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <a class="code" href="classERFPhysBCFunct__u.html#afdf8afb39002a2daac0fc16a5db76d17">impose_vertical_xvel_bcs</a>(velx_arr,xbx2,domain,z_nd_arr,dxInv,bccomp,time);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        } <span class="comment">// MFIter</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    } <span class="comment">// OpenMP</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;} <span class="comment">// operator()</span></div>
 </div><!-- fragment -->
 </div>
 </div>

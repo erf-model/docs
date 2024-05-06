@@ -475,8 +475,8 @@ $(document).ready(function(){initNavTree('Mam4__aero_8H_source.html',''); initRe
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        parallel_for(SimpleBounds&lt;2&gt;(<a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>, <a class="code" href="classMam4__aer.html#add9c70abae797f609d24a8ed47848030">nlev</a>), YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        {</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            mass(i,k)        = pdeldry(i,k)*<a class="code" href="ERF__Constants_8H.html#a562f6dc5abcd5944a1d3cd8f22146d31">rgas</a>;</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            air_density(i,k) = pmid(i,k)/(<a class="code" href="ERF__Constants_8H.html#ab3c1496f763e9dbf12ed5f9180d4c035">rv</a>*temperature(i,k));</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            mass(i,k)        = pdeldry(i,k)*<a class="code" href="ERF__Constants_8H.html#a379aa3c3394d67b78990663a36ed5285">rga</a>;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            air_density(i,k) = pmid(i,k)/(<a class="code" href="ERF__Constants_8H.html#a864e81eb46f4207f25cb52e5046c23b8">rair</a>*temperature(i,k));</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        });</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="comment">// Calculate aerosol size distribution parameters and aerosol water uptake</span></div>
@@ -517,8 +517,8 @@ $(document).ready(function(){initNavTree('Mam4__aero_8H_source.html',''); initRe
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> k = <a class="code" href="classMam4__aer.html#ae15e0c356e4fed002069ecd5d8bb33af">top_lev</a>; k &lt;= <a class="code" href="classMam4__aer.html#add9c70abae797f609d24a8ed47848030">nlev</a>; ++k) {</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                    <span class="comment">// form bulk refractive index</span></div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                    yakl::memset(crefin_real, 0.);</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                    yakl::memset(crefin_im, 0.);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                    yakl::memset(dryvol, 0.);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                    yakl::memset(crefin_im  , 0.);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                    yakl::memset(dryvol     , 0.);</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                    <span class="comment">// aerosol species loop</span></div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> l = 0; l &lt; <a class="code" href="classMam4__aer.html#a5167f5c7a13a42532cf945dcaa687c77">nspec</a>; ++l) {</div>
@@ -691,7 +691,7 @@ $(document).ready(function(){initNavTree('Mam4__aero_8H_source.html',''); initRe
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        <span class="comment">// dry mass in each cell</span></div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        parallel_for (SimpleBounds&lt;2&gt; (<a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>, <a class="code" href="classMam4__aer.html#add9c70abae797f609d24a8ed47848030">nlev</a>), YAKL_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        {</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;            <span class="comment">//mass(icol,ilev) = pdeldry(icol,ilev)*rga;</span></div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;            mass(icol,ilev) = pdeldry(icol,ilev)*<a class="code" href="ERF__Constants_8H.html#a379aa3c3394d67b78990663a36ed5285">rga</a>;</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        });</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160; </div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        <span class="comment">// Calculate aerosol size distribution parameters and aerosol water uptake</span></div>
@@ -726,7 +726,7 @@ $(document).ready(function(){initNavTree('Mam4__aero_8H_source.html',''); initRe
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            <span class="comment">// some intermediate results are saved and the chebyshev polynomials are stored</span></div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            <span class="comment">// in a array with different index order.  Could be unified.</span></div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            <a class="code" href="classMam4__aer.html#ae15e0c356e4fed002069ecd5d8bb33af">top_lev</a> = 1;</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            <span class="keywordflow">for</span>(<span class="keyword">auto</span> k = <a class="code" href="classMam4__aer.html#ae15e0c356e4fed002069ecd5d8bb33af">top_lev</a>; k &gt; <a class="code" href="classMam4__aer.html#add9c70abae797f609d24a8ed47848030">nlev</a>; ++k) {</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            <span class="keywordflow">for</span>(<span class="keyword">auto</span> k = <a class="code" href="classMam4__aer.html#ae15e0c356e4fed002069ecd5d8bb33af">top_lev</a>; k &lt;= <a class="code" href="classMam4__aer.html#add9c70abae797f609d24a8ed47848030">nlev</a>; ++k) {</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 1; i &lt;= <a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>; ++i) {</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                    alnsg_amode = std::log(sigma_logr_aer);</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                    <span class="comment">// convert from number diameter to surface area</span></div>
@@ -738,113 +738,115 @@ $(document).ready(function(){initNavTree('Mam4__aero_8H_source.html',''); initRe
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                    <span class="comment">// chebyshev polynomials</span></div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                    cheby(1,i,k) = 1.0;</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                    cheby(2,i,k) = xrad(i);</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> nc = 3; nc &lt; <a class="code" href="classMam4__aer.html#afcd94bccbfcc44e6a5d8262abc42a9ca">ncoef</a>; ++nc) {</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> nc = 3; nc &lt;= <a class="code" href="classMam4__aer.html#afcd94bccbfcc44e6a5d8262abc42a9ca">ncoef</a>; ++nc) {</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                        cheby(nc,i,k) = 2.0*xrad(i)*cheby(nc-1,i,k)-cheby(nc-2,i,k);</div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                    }</div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                }</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;            }</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160; </div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;            <span class="comment">//int nlwbands; // add by xyuan to be compiled</span></div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;            <span class="keywordflow">for</span>(<span class="keyword">auto</span> ilw = 1; ilw &lt;= <a class="code" href="classMam4__aer.html#abc58cbc8ee25e23731610007e0f62fe4">nlwbands</a>; ++ilw) {</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> k = <a class="code" href="classMam4__aer.html#ae15e0c356e4fed002069ecd5d8bb33af">top_lev</a>; k &gt; <a class="code" href="classMam4__aer.html#add9c70abae797f609d24a8ed47848030">nlev</a>; --k) {</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                    <span class="comment">// form bulk refractive index. Use volume mixing for infrared</span></div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                    yakl::memset(crefinr, 0.0);</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                    yakl::memset(crefini, 0.0);</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                    yakl::memset(dryvol, 0.0);</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                    <span class="comment">// aerosol species loop</span></div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> l = 0; l &lt; <a class="code" href="classMam4__aer.html#a5167f5c7a13a42532cf945dcaa687c77">nspec</a>; ++l) {</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                        <a class="code" href="classMam4__aer.html#a2dcd6d3b6a38a2f0e8bc389c80fb4ae9">mam_consti</a>.<a class="code" href="classMamConstituents.html#afb5674421ff78c9688d71bfbf460a746">rad_cnst_get_mam_mmr_by_idx</a>(list_idx, m, l, <span class="stringliteral">&quot;a&quot;</span>, specmmr);</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                        <a class="code" href="classMam4__aer.html#a2dcd6d3b6a38a2f0e8bc389c80fb4ae9">mam_consti</a>.<a class="code" href="classMamConstituents.html#a4e30afbc74de6ccb53def99d3d2b89d7">get_mam_props_lw</a>(list_idx, m, l, specdens, specrefrindex, specrefiindex);</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                        <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 1; i &lt;= <a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>; ++i) {</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                            vol(i)     = specmmr(i,k)/specdens;</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                            dryvol(i)  = dryvol(i) + vol(i);</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                            crefinr(i) = crefinr(i) + vol(i)*specrefrindex(ilw);</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                            crefini(i) = crefini(i) + vol(i)*specrefiindex(ilw);</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                        }</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                    }</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 1; i &lt;= <a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>; ++i) {</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                        watervol(i) = qaerwat(i,k)/<a class="code" href="ERF__Constants_8H.html#a404d50fe6660930b74e3b191e2088754">rhoh2o</a>;</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                        wetvol(i)   = watervol(i) + dryvol(i);</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                        <span class="keywordflow">if</span> (watervol(i) &lt; 0.0) {</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                            <span class="keywordflow">if</span> (abs(watervol(i)) &gt; 1.e-1*wetvol(i)) {</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                                amrex::Print() &lt;&lt; <span class="stringliteral">&quot;watervol is too large\n&quot;</span>;</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                            }</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                            watervol(i) = 0.;</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                            wetvol(i)   = dryvol(i);</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                        }</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                        crefinr(i) = crefinr(i) + watervol(i)*<a class="code" href="classMam4__aer.html#ae1eea21725e40b02e21086cd73dc9d66">crefwlwr</a>(ilw);</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                        crefini(i) = crefini(i) + watervol(i)*<a class="code" href="classMam4__aer.html#a32d3651a6f9299ecee85fee320dfda50">crefwlwi</a>(ilw);</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                        <span class="keywordflow">if</span> (wetvol(i) &gt; 1.e-40) {</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                            crefinr(i) = crefinr(i)/wetvol(i);</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                            crefini(i) = crefini(i)/wetvol(i);</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                        }</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                        refr(i) = crefinr(i);</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                        refi(i) = crefini(i);</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                    }</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160; </div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                    <span class="comment">// interpolate coefficients linear in refractive index</span></div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                    <span class="comment">// first call calcs itab,jtab,ttab,utab</span></div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                    yakl::memset(itab, 0);</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                    real3d absplwr(<span class="stringliteral">&quot;absplwr&quot;</span>, <a class="code" href="classMam4__aer.html#afcd94bccbfcc44e6a5d8262abc42a9ca">ncoef</a>, <a class="code" href="classMam4__aer.html#a7211d56f004f39cd34118af3c380a71e">prefr</a>, <a class="code" href="classMam4__aer.html#adffbde9f294834c29b86c8d74f4155b8">prefi</a>);</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                    real1d refitablwr(<span class="stringliteral">&quot;refitablwr&quot;</span>, <a class="code" href="classMam4__aer.html#adffbde9f294834c29b86c8d74f4155b8">prefi</a>);</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                    real1d refrtablwr(<span class="stringliteral">&quot;refrtablwr&quot;</span>, <a class="code" href="classMam4__aer.html#a7211d56f004f39cd34118af3c380a71e">prefr</a>);</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160; </div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                    parallel_for(SimpleBounds&lt;3&gt;(<a class="code" href="classMam4__aer.html#afcd94bccbfcc44e6a5d8262abc42a9ca">ncoef</a>,<a class="code" href="classMam4__aer.html#a7211d56f004f39cd34118af3c380a71e">prefr</a>,<a class="code" href="classMam4__aer.html#adffbde9f294834c29b86c8d74f4155b8">prefi</a>) , YAKL_LAMBDA (<span class="keywordtype">int</span> icoef, <span class="keywordtype">int</span> irefr, <span class="keywordtype">int</span> irefi)</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                    {</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                        absplwr(icoef,irefr,irefi) = absplw(icoef,irefr,irefi,ilw);</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                        refitablwr(irefi)          = refitablw(irefi,ilw);</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                        refrtablwr(irefr)          = refrtablw(irefr,ilw);</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                    });</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                    <a class="code" href="classMam4__aer.html#ac1ba4ccab45c000472b4d40cb43c9ef9">binterp</a>(absplwr, <a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>, <a class="code" href="classMam4__aer.html#afcd94bccbfcc44e6a5d8262abc42a9ca">ncoef</a>, <a class="code" href="classMam4__aer.html#a7211d56f004f39cd34118af3c380a71e">prefr</a>, <a class="code" href="classMam4__aer.html#adffbde9f294834c29b86c8d74f4155b8">prefi</a>, refr, refi,</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                            refrtablwr, refitablwr, itab, jtab, ttab, utab, cabs);</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160; </div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                    <span class="comment">// parameterized optical properties</span></div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 1; i &lt;= <a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>; ++i) {</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                        pabs(i) = 0.5*cabs(i,1);</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;                        <span class="keywordflow">for</span>(<span class="keyword">auto</span> nc = 2; nc &lt; <a class="code" href="classMam4__aer.html#afcd94bccbfcc44e6a5d8262abc42a9ca">ncoef</a>; ++nc) {</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                            pabs(i) = pabs(i) + cheby(nc,i,k)*cabs(i,nc);</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;                        }</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                        pabs(i)   = pabs(i)*wetvol(i)*<a class="code" href="ERF__Constants_8H.html#a404d50fe6660930b74e3b191e2088754">rhoh2o</a>;</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                        pabs(i)   = std::max(0.,pabs(i));</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                        dopaer(i) = pabs(i)*mass(i,k);</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                    }</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160; </div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 1; i &lt;= <a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>; ++i) {</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                        <span class="keywordflow">if</span> ((dopaer(i) &lt;= -1.e-10) || (dopaer(i) &gt;= 20.)) {</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                            <span class="keywordflow">if</span> (dopaer(i) &lt;= -1.e-10)</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                                amrex::Print() &lt;&lt;  <span class="stringliteral">&quot;ERROR: Negative aerosol optical depth in this layer.\n&quot;</span>;</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                                amrex::Print() &lt;&lt; <span class="stringliteral">&quot;WARNING: Aerosol optical depth is unreasonably high in this layer.\n&quot;</span>;</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                            <span class="keywordflow">for</span>(<span class="keyword">auto</span> l = 0; l &lt; <a class="code" href="classMam4__aer.html#a5167f5c7a13a42532cf945dcaa687c77">nspec</a>; ++l) {</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                                <a class="code" href="classMam4__aer.html#a2dcd6d3b6a38a2f0e8bc389c80fb4ae9">mam_consti</a>.<a class="code" href="classMamConstituents.html#afb5674421ff78c9688d71bfbf460a746">rad_cnst_get_mam_mmr_by_idx</a>(list_idx, m, l, <span class="stringliteral">&quot;a&quot;</span>, specmmr);</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                                <a class="code" href="classMam4__aer.html#a2dcd6d3b6a38a2f0e8bc389c80fb4ae9">mam_consti</a>.<a class="code" href="classMamConstituents.html#a4e30afbc74de6ccb53def99d3d2b89d7">get_mam_props_lw</a>(list_idx, m, l, specdens, specrefrindex, specrefiindex);</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                                volf = specmmr(i,k)/specdens;</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                            }</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160; </div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                            nerr_dopaer = nerr_dopaer + 1;</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                            <span class="keywordflow">if</span> (nerr_dopaer &gt;= nerrmax_dopaer || dopaer(i) &lt; -1.e-10) {</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                                amrex::Print() &lt;&lt;  <span class="stringliteral">&quot;*** halting after nerr_dopaer = &quot;</span> &lt;&lt; nerr_dopaer;</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                                exit(EXIT_FAILURE);</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                            }</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                        }</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                    }</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 1; i &lt;= <a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>; ++i) tauxar(i,k,ilw) = tauxar(i,k,ilw) + dopaer(i);</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                } <span class="comment">// k = top_lev, nlev</span></div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            }   <span class="comment">// nlwbands</span></div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        }  <span class="comment">// m = 1, nmodes</span></div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    }     <span class="comment">// modal_aero_lw</span></div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;};</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_MAM4_AERO_H_</span></div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;            <span class="keywordflow">for</span>(<span class="keyword">auto</span> ilw = 1; ilw &lt;= <a class="code" href="classMam4__aer.html#abc58cbc8ee25e23731610007e0f62fe4">nlwbands</a>; ++ilw) {</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> k = <a class="code" href="classMam4__aer.html#ae15e0c356e4fed002069ecd5d8bb33af">top_lev</a>; k &lt;= <a class="code" href="classMam4__aer.html#add9c70abae797f609d24a8ed47848030">nlev</a>; ++k) {</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                    <span class="comment">// form bulk refractive index. Use volume mixing for infrared</span></div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                    yakl::memset(crefinr, 0.0);</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                    yakl::memset(crefini, 0.0);</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                    yakl::memset(dryvol, 0.0);</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                    <span class="comment">// aerosol species loop</span></div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> l = 0; l &lt; <a class="code" href="classMam4__aer.html#a5167f5c7a13a42532cf945dcaa687c77">nspec</a>; ++l) {</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                        <a class="code" href="classMam4__aer.html#a2dcd6d3b6a38a2f0e8bc389c80fb4ae9">mam_consti</a>.<a class="code" href="classMamConstituents.html#afb5674421ff78c9688d71bfbf460a746">rad_cnst_get_mam_mmr_by_idx</a>(list_idx, m, l, <span class="stringliteral">&quot;a&quot;</span>, specmmr);</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                        <a class="code" href="classMam4__aer.html#a2dcd6d3b6a38a2f0e8bc389c80fb4ae9">mam_consti</a>.<a class="code" href="classMamConstituents.html#a4e30afbc74de6ccb53def99d3d2b89d7">get_mam_props_lw</a>(list_idx, m, l, specdens, specrefrindex, specrefiindex);</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                        <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 1; i &lt;= <a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>; ++i) {</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                            vol(i)     = specmmr(i,k)/specdens;</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                            dryvol(i)  = dryvol(i)  + vol(i);</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                            crefinr(i) = crefinr(i) + vol(i)*specrefrindex(ilw);</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                            crefini(i) = crefini(i) + vol(i)*specrefiindex(ilw);</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                        }</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                    }</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 1; i &lt;= <a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>; ++i) {</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                        watervol(i) = qaerwat(i,k)/<a class="code" href="ERF__Constants_8H.html#a404d50fe6660930b74e3b191e2088754">rhoh2o</a>;</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                        wetvol(i)   = watervol(i) + dryvol(i);</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                        <span class="keywordflow">if</span> (watervol(i) &lt; 0.0) {</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                            <span class="keywordflow">if</span> (abs(watervol(i)) &gt; 1.e-1*wetvol(i)) {</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                                amrex::Print() &lt;&lt; <span class="stringliteral">&quot;watervol is too large\n&quot;</span>;</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                            }</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                            watervol(i) = 0.;</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                            wetvol(i)   = dryvol(i);</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                        }</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                        crefinr(i) = crefinr(i) + watervol(i)*<a class="code" href="classMam4__aer.html#ae1eea21725e40b02e21086cd73dc9d66">crefwlwr</a>(ilw);</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                        crefini(i) = crefini(i) + watervol(i)*<a class="code" href="classMam4__aer.html#a32d3651a6f9299ecee85fee320dfda50">crefwlwi</a>(ilw);</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                        <span class="keywordflow">if</span> (wetvol(i) &gt; 1.e-40) {</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                            crefinr(i) = crefinr(i)/wetvol(i);</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                            crefini(i) = crefini(i)/wetvol(i);</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                        }</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                        refr(i) = crefinr(i);</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                        refi(i) = crefini(i);</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                    }</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160; </div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                    <span class="comment">// interpolate coefficients linear in refractive index</span></div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                    <span class="comment">// first call calcs itab,jtab,ttab,utab</span></div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                    yakl::memset(itab, 0);</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160; </div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                    real3d absplwr(<span class="stringliteral">&quot;absplwr&quot;</span>, <a class="code" href="classMam4__aer.html#afcd94bccbfcc44e6a5d8262abc42a9ca">ncoef</a>, <a class="code" href="classMam4__aer.html#a7211d56f004f39cd34118af3c380a71e">prefr</a>, <a class="code" href="classMam4__aer.html#adffbde9f294834c29b86c8d74f4155b8">prefi</a>);</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                    real1d refitablwr(<span class="stringliteral">&quot;refitablwr&quot;</span>, <a class="code" href="classMam4__aer.html#adffbde9f294834c29b86c8d74f4155b8">prefi</a>);</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                    real1d refrtablwr(<span class="stringliteral">&quot;refrtablwr&quot;</span>, <a class="code" href="classMam4__aer.html#a7211d56f004f39cd34118af3c380a71e">prefr</a>);</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                    parallel_for(SimpleBounds&lt;3&gt;(<a class="code" href="classMam4__aer.html#afcd94bccbfcc44e6a5d8262abc42a9ca">ncoef</a>,<a class="code" href="classMam4__aer.html#a7211d56f004f39cd34118af3c380a71e">prefr</a>,<a class="code" href="classMam4__aer.html#adffbde9f294834c29b86c8d74f4155b8">prefi</a>) , YAKL_LAMBDA (<span class="keywordtype">int</span> icoef, <span class="keywordtype">int</span> irefr, <span class="keywordtype">int</span> irefi)</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                    {</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                        absplwr(icoef,irefr,irefi) = absplw(icoef,irefr,irefi,ilw);</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                        refitablwr(irefi)          = refitablw(irefi,ilw);</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                        refrtablwr(irefr)          = refrtablw(irefr,ilw);</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                    });</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                    <a class="code" href="classMam4__aer.html#ac1ba4ccab45c000472b4d40cb43c9ef9">binterp</a>(absplwr, <a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>, <a class="code" href="classMam4__aer.html#afcd94bccbfcc44e6a5d8262abc42a9ca">ncoef</a>, <a class="code" href="classMam4__aer.html#a7211d56f004f39cd34118af3c380a71e">prefr</a>, <a class="code" href="classMam4__aer.html#adffbde9f294834c29b86c8d74f4155b8">prefi</a>, refr, refi,</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                            refrtablwr, refitablwr, itab, jtab, ttab, utab, cabs);</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;                    <span class="comment">// parameterized optical properties</span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 1; i &lt;= <a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>; ++i) {</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                        pabs(i) = 0.5*cabs(i,1);</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                        <span class="keywordflow">for</span>(<span class="keyword">auto</span> nc = 2; nc &lt;= <a class="code" href="classMam4__aer.html#afcd94bccbfcc44e6a5d8262abc42a9ca">ncoef</a>; ++nc) {</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;                            pabs(i) = pabs(i) + cheby(nc,i,k)*cabs(i,nc);</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                        }</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;                        pabs(i)   = pabs(i)*wetvol(i)*<a class="code" href="ERF__Constants_8H.html#a404d50fe6660930b74e3b191e2088754">rhoh2o</a>;</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                        pabs(i)   = std::max(0.,pabs(i));</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                        dopaer(i) = pabs(i)*mass(i,k);</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                    }</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160; </div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 1; i &lt;= <a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>; ++i) {</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                        <span class="keywordflow">if</span> ((dopaer(i) &lt;= -1.e-10) || (dopaer(i) &gt;= 20.)) {</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                            <span class="keywordflow">if</span> (dopaer(i) &lt;= -1.e-10)</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                                amrex::Print() &lt;&lt;  <span class="stringliteral">&quot;ERROR: Negative aerosol optical depth in this layer.\n&quot;</span>;</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                                amrex::Print() &lt;&lt; <span class="stringliteral">&quot;WARNING: Aerosol optical depth is unreasonably high in this layer.\n&quot;</span>;</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160; </div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                            <span class="keywordflow">for</span>(<span class="keyword">auto</span> l = 0; l &lt; <a class="code" href="classMam4__aer.html#a5167f5c7a13a42532cf945dcaa687c77">nspec</a>; ++l) {</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                                <a class="code" href="classMam4__aer.html#a2dcd6d3b6a38a2f0e8bc389c80fb4ae9">mam_consti</a>.<a class="code" href="classMamConstituents.html#afb5674421ff78c9688d71bfbf460a746">rad_cnst_get_mam_mmr_by_idx</a>(list_idx, m, l, <span class="stringliteral">&quot;a&quot;</span>, specmmr);</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                                <a class="code" href="classMam4__aer.html#a2dcd6d3b6a38a2f0e8bc389c80fb4ae9">mam_consti</a>.<a class="code" href="classMamConstituents.html#a4e30afbc74de6ccb53def99d3d2b89d7">get_mam_props_lw</a>(list_idx, m, l, specdens, specrefrindex, specrefiindex);</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                                volf = specmmr(i,k)/specdens;</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                            }</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160; </div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                            nerr_dopaer = nerr_dopaer + 1;</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                            <span class="keywordflow">if</span> (nerr_dopaer &gt;= nerrmax_dopaer || dopaer(i) &lt; -1.e-10) {</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                                amrex::Print() &lt;&lt;  <span class="stringliteral">&quot;*** halting after nerr_dopaer = &quot;</span> &lt;&lt; nerr_dopaer;</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                                exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                            }</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                        }</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                    }</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160; </div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 1; i &lt;= <a class="code" href="classMam4__aer.html#aaf29baf8a0903c3401e8577e811f5d18">ncol</a>; ++i) {</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                        tauxar(i,k,ilw) = tauxar(i,k,ilw) + dopaer(i);</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                    }</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                } <span class="comment">// k = top_lev, nlev</span></div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;            }   <span class="comment">// nlwbands</span></div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;        }  <span class="comment">// m = 1, nmodes</span></div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    }     <span class="comment">// modal_aero_lw</span></div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;};</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_MAM4_AERO_H_</span></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aERF__Constants_8H_html"><div class="ttname"><a href="ERF__Constants_8H.html">ERF_Constants.H</a></div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a404d50fe6660930b74e3b191e2088754"><div class="ttname"><a href="ERF__Constants_8H.html#a404d50fe6660930b74e3b191e2088754">rhoh2o</a></div><div class="ttdeci">constexpr amrex::Real rhoh2o</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:93</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a562f6dc5abcd5944a1d3cd8f22146d31"><div class="ttname"><a href="ERF__Constants_8H.html#a562f6dc5abcd5944a1d3cd8f22146d31">rgas</a></div><div class="ttdeci">constexpr amrex::Real rgas</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:69</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a379aa3c3394d67b78990663a36ed5285"><div class="ttname"><a href="ERF__Constants_8H.html#a379aa3c3394d67b78990663a36ed5285">rga</a></div><div class="ttdeci">constexpr amrex::Real rga</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:71</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a404d50fe6660930b74e3b191e2088754"><div class="ttname"><a href="ERF__Constants_8H.html#a404d50fe6660930b74e3b191e2088754">rhoh2o</a></div><div class="ttdeci">constexpr amrex::Real rhoh2o</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:94</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a864e81eb46f4207f25cb52e5046c23b8"><div class="ttname"><a href="ERF__Constants_8H.html#a864e81eb46f4207f25cb52e5046c23b8">rair</a></div><div class="ttdeci">constexpr amrex::Real rair</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:69</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_ab3c1496f763e9dbf12ed5f9180d4c035"><div class="ttname"><a href="ERF__Constants_8H.html#ab3c1496f763e9dbf12ed5f9180d4c035">rv</a></div><div class="ttdeci">constexpr amrex::Real rv</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:70</div></div>
 <div class="ttc" id="aMam4__constituents_8H_html"><div class="ttname"><a href="Mam4__constituents_8H.html">Mam4_constituents.H</a></div></div>
 <div class="ttc" id="aModal__aero__wateruptake_8H_html"><div class="ttname"><a href="Modal__aero__wateruptake_8H.html">Modal_aero_wateruptake.H</a></div></div>
 <div class="ttc" id="aRad__constants_8H_html"><div class="ttname"><a href="Rad__constants_8H.html">Rad_constants.H</a></div></div>

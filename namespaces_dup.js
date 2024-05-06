@@ -42,7 +42,8 @@ var namespaces_dup =
         [ "ext_dir_ingested", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462", null ],
         [ "neumann", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60", null ],
         [ "neumann_int", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9", null ],
-        [ "open", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914", null ]
+        [ "open", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914", null ],
+        [ "hoextrapcc", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca71e344f745a7b29eb00c25df691f410d", null ]
       ] ]
     ] ],
     [ "HSEutils", "namespaceHSEutils.html", [

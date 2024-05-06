@@ -1,5 +1,8 @@
 var NAVTREEINDEX6 =
 {
+"classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7":[2,0,44,26],
+"classMRISplitIntegrator.html#a0d098cde79e83464b8b019fca2d9c158":[2,0,44,29],
+"classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80":[2,0,44,42],
 "classMRISplitIntegrator.html#a137a1ceb1e8051b5a97aaab40492c0e1":[2,0,44,20],
 "classMRISplitIntegrator.html#a168352ef9fbddab9850fc5d1686d3e66":[2,0,44,40],
 "classMRISplitIntegrator.html#a16941f966b288f15498914965786649d":[2,0,44,5],
@@ -219,9 +222,9 @@ var NAVTREEINDEX6 =
 "classOptics.html":[2,0,49],
 "classOptics.html#a078568b5fcba367944981fe065623e0c":[2,0,49,8],
 "classOptics.html#a2153b2cf09af64100464587e8afb6d8f":[2,0,49,13],
-"classOptics.html#a2472dd458109b58bc71cc44f57ff02f9":[2,0,49,7],
 "classOptics.html#a357f26f1bf42c917131a48782732ce03":[2,0,49,16],
 "classOptics.html#a3ec67cc89ceb33196552b89616728040":[2,0,49,0],
+"classOptics.html#a50e2de641f604b4bf2e2826cb3699257":[2,0,49,7],
 "classOptics.html#a54463b4d74c22934fcbf36a7c95f0b3f":[2,0,49,12],
 "classOptics.html#a6cbf46804754b07ab0ccf03e6db25207":[2,0,49,3],
 "classOptics.html#a87abc901496b039c596eed89b297a679":[2,0,49,17],
@@ -246,8 +249,5 @@ var NAVTREEINDEX6 =
 "classPhysProp.html#a0be655aa777ad0bcd46e6b896942a733":[2,0,50,58],
 "classPhysProp.html#a0c6b02b2894408623fa1a18770e1013f":[2,0,50,30],
 "classPhysProp.html#a0d6fc83cc794bd18f9bd8df70983b44e":[2,0,50,42],
-"classPhysProp.html#a1099f5de19b69524e4c2bb0b78e497b7":[2,0,50,1],
-"classPhysProp.html#a10da2795ee22a59a6bf00065db618038":[2,0,50,22],
-"classPhysProp.html#a15547827a05a343bfb5079fb03df1d07":[2,0,50,47],
-"classPhysProp.html#a18f5b5ef7efc62872920880ae0387abb":[2,0,50,12]
+"classPhysProp.html#a1099f5de19b69524e4c2bb0b78e497b7":[2,0,50,1]
 };

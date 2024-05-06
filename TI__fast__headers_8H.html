@@ -200,8 +200,8 @@ Functions</h2></td></tr>
 <tr class="separator:af993ea724f392520e7240055ecbe58bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdacd58e8e0a4cb99d45bf970cfadfea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__fast__headers_8H.html#abdacd58e8e0a4cb99d45bf970cfadfea">erf_fast_rhs_MT</a> (int step, int nrk, int level, int finest_level, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_slow_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_prev, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stg_data, const amrex::MultiFab &amp;S_stg_prim, const amrex::MultiFab &amp;pi_stage, const amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const amrex::Real gravity, const bool use_lagged_delta_rt, amrex::MultiFab &amp;Omega, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_t_rk, const amrex::MultiFab *z_t_pert, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd_stg, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc_stg, const amrex::Real dtau, const amrex::Real beta_s, const amrex::Real facinv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine, bool l_use_moisture, bool l_reflux)</td></tr>
 <tr class="separator:abdacd58e8e0a4cb99d45bf970cfadfea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90bc397d38773ac5ce6a52f686997ff2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__fast__headers_8H.html#a90bc397d38773ac5ce6a52f686997ff2">make_fast_coeffs</a> (int level, amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::Geometry geom, const bool use_moisture, const bool use_terrain, const amrex::Real gravity, const amrex::Real c_p, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc, const amrex::MultiFab *r0, const amrex::MultiFab *pi0, const amrex::Real dtau, const amrex::Real beta_s)</td></tr>
-<tr class="separator:a90bc397d38773ac5ce6a52f686997ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfda58e818c53254b1fa053669e911e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TI__fast__headers_8H.html#adfda58e818c53254b1fa053669e911e8">make_fast_coeffs</a> (int level, amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::Geometry geom, const bool use_moisture, const bool use_terrain, const amrex::Real gravity, const amrex::Real c_p, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc, const amrex::MultiFab *r0, const amrex::MultiFab *pi0, const amrex::Real dtau, const amrex::Real beta_s, amrex::GpuArray&lt; <a class="el" href="IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</td></tr>
+<tr class="separator:adfda58e818c53254b1fa053669e911e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="abdacd58e8e0a4cb99d45bf970cfadfea"></a>
@@ -765,8 +765,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a90bc397d38773ac5ce6a52f686997ff2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90bc397d38773ac5ce6a52f686997ff2">&#9670;&nbsp;</a></span>make_fast_coeffs()</h2>
+<a id="adfda58e818c53254b1fa053669e911e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfda58e818c53254b1fa053669e911e8">&#9670;&nbsp;</a></span>make_fast_coeffs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -859,7 +859,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Real&#160;</td>
-          <td class="paramname"><em>beta_s</em>&#160;</td>
+          <td class="paramname"><em>beta_s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::GpuArray&lt; <a class="el" href="IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>phys_bc_type</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

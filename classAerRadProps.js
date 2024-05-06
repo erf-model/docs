@@ -9,7 +9,7 @@ var classAerRadProps =
     [ "get_nonhygro_rad_props", "classAerRadProps.html#af6e6827c17d2247b72337a35875ea0e0", null ],
     [ "get_volcanic_rad_props", "classAerRadProps.html#a74842fff81711719376fc035b86dc1a7", null ],
     [ "get_volcanic_radius_rad_props", "classAerRadProps.html#a55507a56c5808f7480e42f4369cbf5a7", null ],
-    [ "initialize", "classAerRadProps.html#a634863be4fb35a52ccdcdeccfac47253", null ],
+    [ "initialize", "classAerRadProps.html#ac9a8b0b0923ad124305ac1e228f44f04", null ],
     [ "volcanic_cmip_sw", "classAerRadProps.html#aa4241f4adcf62ef3c537a91bdfce66db", null ],
     [ "aero_names", "classAerRadProps.html#a6dcb735fda4651c893ce9d3c2860a0af", null ],
     [ "af_cmip6_sw", "classAerRadProps.html#afd083b451cf913a409380fb0b95de4c0", null ],
