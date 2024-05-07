@@ -50,6 +50,7 @@ var structSolverChoice =
     [ "time_avg_vel", "structSolverChoice.html#af3119a4089367206db9fc3a17664e874", null ],
     [ "turbChoice", "structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4", null ],
     [ "use_coriolis", "structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606", null ],
+    [ "use_explicit_most", "structSolverChoice.html#a15db794855101421e20ba970dcd634e9", null ],
     [ "use_gravity", "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5", null ],
     [ "use_lagged_delta_rt", "structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0", null ],
     [ "use_moist_background", "structSolverChoice.html#aab88dd74d39b1ad369ae6324e05d7a35", null ],
