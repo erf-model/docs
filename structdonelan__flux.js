@@ -1,7 +1,7 @@
 var structdonelan__flux =
 [
     [ "donelan_flux", "structdonelan__flux.html#a804902863523b5f641c44aadc3602e97", null ],
-    [ "compute_q_flux", "structdonelan__flux.html#adb397919f3dc33f33d8bdc7b99c52efc", null ],
+    [ "compute_q_flux", "structdonelan__flux.html#a8d0fc02fd064b22206380d593b628efa", null ],
     [ "compute_t_flux", "structdonelan__flux.html#a999e3bdb322d29fcdfbd51047fb32ee0", null ],
     [ "compute_u_flux", "structdonelan__flux.html#a44a032acc6bd6f42ff90f5a0ac14f4cf", null ],
     [ "compute_v_flux", "structdonelan__flux.html#ad2da09025b821f79782fa580010c4df2", null ],
