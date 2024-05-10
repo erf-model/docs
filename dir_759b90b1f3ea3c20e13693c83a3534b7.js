@@ -10,6 +10,7 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_fast_rhs_N.cpp", "ERF__fast__rhs__N_8cpp.html", "ERF__fast__rhs__N_8cpp" ],
     [ "ERF_fast_rhs_T.cpp", "ERF__fast__rhs__T_8cpp.html", "ERF__fast__rhs__T_8cpp" ],
     [ "ERF_make_fast_coeffs.cpp", "ERF__make__fast__coeffs_8cpp.html", "ERF__make__fast__coeffs_8cpp" ],
+    [ "ERF_make_tau_terms.cpp", "ERF__make__tau__terms_8cpp.html", "ERF__make__tau__terms_8cpp" ],
     [ "ERF_MRI.H", "ERF__MRI_8H.html", [
       [ "MRISplitIntegrator", "classMRISplitIntegrator.html", "classMRISplitIntegrator" ]
     ] ],
