@@ -1,7 +1,7 @@
 var structSolverChoice =
 [
     [ "build_coriolis_forcings", "structSolverChoice.html#a3b31e3a91b502cabfc9fd8778492ad46", null ],
-    [ "display", "structSolverChoice.html#abb95d84167308078ce369b4196ef979c", null ],
+    [ "display", "structSolverChoice.html#a9d26abef2007eb7c93180b0a6699cf8e", null ],
     [ "init_params", "structSolverChoice.html#a8c15b7cf354e53ddb58bad9577d124d5", null ],
     [ "abl_driver_type", "structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f", null ],
     [ "abl_geo_forcing", "structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69", null ],
@@ -26,7 +26,7 @@ var structSolverChoice =
     [ "force_stage1_single_substep", "structSolverChoice.html#a3f8ae511632557066f6662eec79591e1", null ],
     [ "gravity", "structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b", null ],
     [ "grid_stretching_ratio", "structSolverChoice.html#a63b6fffe930de9eb25f92c2bafb00c00", null ],
-    [ "incompressible", "structSolverChoice.html#af39df4d1618645dcc1fb8678f738e3f0", null ],
+    [ "incompressible", "structSolverChoice.html#ad77ddc1a1eff7c49195d54b69aab46f5", null ],
     [ "latitude_lo", "structSolverChoice.html#adddf7760d02dee6c92d3ab21c845d8ef", null ],
     [ "longitude_lo", "structSolverChoice.html#a678e249df6763ba01a9b2790dc3dc8b9", null ],
     [ "lsm_type", "structSolverChoice.html#a43c1741535574c7e6f4fe6bf90552f31", null ],
