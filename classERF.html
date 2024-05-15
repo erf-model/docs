@@ -1900,7 +1900,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    mri_integrator.<a class="code" href="classMRISplitIntegrator.html#a95b3c0742918b516a3d12a60eb280b48">set_post_update</a>(<a class="code" href="TI__slow__rhs__fun_8H.html#afd90eac481ef47af3b095c56653098e8">post_update_fun</a>);</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="preprocessor">#ifdef ERF_USE_POISSON_SOLVE</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ad77ddc1a1eff7c49195d54b69aab46f5">incompressible</a>) {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ad77ddc1a1eff7c49195d54b69aab46f5">incompressible</a>[level]) {</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        mri_integrator.<a class="code" href="classMRISplitIntegrator.html#a26955c190dfb0d6cef7237198dbfd099">set_slow_rhs_inc</a>(slow_rhs_fun_inc);</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="preprocessor">#endif</span></div>
