@@ -11,6 +11,7 @@ var classSAM =
     [ "Define", "classSAM.html#aba6460f2d34882d6b512574106e44531", null ],
     [ "IceFall", "classSAM.html#a02c82a7d07676312819cfc9d2ed37cec", null ],
     [ "Init", "classSAM.html#a927f4531f9c2452e5b7fc7ab965c5b78", null ],
+    [ "NewtonIterSat", "classSAM.html#a0154097dd0c769a35dcc52c484dd0dc6", null ],
     [ "Precip", "classSAM.html#ae2e767f439749aeec7168bc98006caf0", null ],
     [ "PrecipFall", "classSAM.html#a654b0b383d81815845230ac2fb322688", null ],
     [ "Qmoist_Ptr", "classSAM.html#af6652cb6f7b93a1e418da98b5a8b57b7", null ],

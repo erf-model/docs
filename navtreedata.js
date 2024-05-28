@@ -81,10 +81,10 @@ var NAVTREEINDEX =
 "classMOSTAverage.html#ae1d62c88d62bbef8458d0084200f65f2",
 "classPhysProp.html#a01e533ca883ebcbdecb7262c38d3da89",
 "classReadBndryPlanes.html#a65d7253b6c2237c3aa60343740d25dd6",
-"classncutils_1_1NCGroup.html#acf2801c26458fb99bd82733b1302285a",
-"namespacederived.html#a5186c6ea33e82af321f529242a615dc2",
-"structSolverChoice.html#a15db794855101421e20ba970dcd634e9",
-"structmoeng__flux.html#a2843a181e875e6599b04964c28117900"
+"classncutils_1_1NCGroup.html#ac5beadfdf8519b384504dc82f6bdecc5",
+"namespacederived.html#a37ac1508c4001f9f1e38ca507dd15f31",
+"structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3",
+"structmoeng__flux.html#a2451f21fea8f87cec2e5f626c36489cb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
