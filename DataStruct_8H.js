@@ -28,6 +28,7 @@ var DataStruct_8H =
     [ "MoistureType", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0", [
       [ "Kessler", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0af918ea9a492942625a661a22ac6af91d", null ],
       [ "SAM", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a9f1b3be4a82b11d104e4ef7f7ccb1c19", null ],
+      [ "SAM_NoIce", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0aca8fb8e2f9829763f29ce489f9f6e535", null ],
       [ "SAM_NoPrecip_NoIce", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a1571939639d68374fc4af7fae4b66d03", null ],
       [ "Kessler_NoRain", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0ab367ee4b7b1fe3bae62b649e580db4f4", null ],
       [ "None", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754", null ]

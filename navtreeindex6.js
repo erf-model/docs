@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"classMOSTAverage.html#add74667e947201bbb2ddf2785f02ee0c":[2,0,43,3],
 "classMOSTAverage.html#ae1d62c88d62bbef8458d0084200f65f2":[2,0,43,26],
 "classMOSTAverage.html#aeac5da9c3972fdde64f60720f88efe2e":[2,0,43,30],
 "classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1":[2,0,43,28],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "classOptics.html#aee82856b88240c428aefc6f47bf9500c":[2,0,49,6],
 "classOptics.html#af5f3fa679301f0ead8b8155626b2e710":[2,0,49,5],
 "classPhysProp.html":[2,0,50],
-"classPhysProp.html#a00e635f7c927cf65fb9849888954c5a8":[2,0,50,14],
-"classPhysProp.html#a012aafa0dfffea201ceb407815094ffd":[2,0,50,50]
+"classPhysProp.html#a00e635f7c927cf65fb9849888954c5a8":[2,0,50,14]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"classncutils_1_1NCGroup.html#ac25f1ca78fc2cd66e7b80fdcc30f512f":[2,0,0,3,14],
 "classncutils_1_1NCGroup.html#ac5beadfdf8519b384504dc82f6bdecc5":[2,0,0,3,15],
 "classncutils_1_1NCGroup.html#acf2801c26458fb99bd82733b1302285a":[2,0,0,3,29],
 "classncutils_1_1NCGroup.html#acf73ea254afaf7d74596fa07523b322f":[2,0,0,3,26],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "namespacederived.html#a13666be87e55d1759f57322b33f7e495":[1,0,2,9],
 "namespacederived.html#a268588c6b7dfb634a44ff9b66e852807":[1,0,2,5],
 "namespacederived.html#a2a85aedf7c75ca416dbb931559c4b21e":[1,0,2,18],
-"namespacederived.html#a37560f4d3e2c7c10f64d41db2ce76a06":[1,0,2,10],
-"namespacederived.html#a3786c6a8399bc2508bc129337c446af1":[1,0,2,8]
+"namespacederived.html#a37560f4d3e2c7c10f64d41db2ce76a06":[1,0,2,10]
 };
