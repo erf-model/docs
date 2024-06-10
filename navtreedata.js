@@ -76,15 +76,15 @@ var NAVTREEINDEX =
 "ERF__Constants_8H.html#a2c83556bc439f3f48ca5eb1cb5c81842",
 "Linear__interpolate_8H.html",
 "Utils_8H.html#accb87d367dfa749571761aa789fd3fea",
-"classERF.html#a5392e6104804d799b3fd943dfe390766",
-"classERFPhysBCFunct__cons.html#a117a7e4d21a16df5748a801f530b22c7",
-"classMOSTAverage.html#add74667e947201bbb2ddf2785f02ee0c",
-"classPhysProp.html#a012aafa0dfffea201ceb407815094ffd",
-"classReadBndryPlanes.html#a6545891550da1a217d5e566ddafdd566",
-"classncutils_1_1NCGroup.html#ac25f1ca78fc2cd66e7b80fdcc30f512f",
-"namespacederived.html#a3786c6a8399bc2508bc129337c446af1",
-"structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0",
-"structmoeng__flux.html"
+"classERF.html#a521d1faf157e3bccc86c0f26ee923576",
+"classERFFillPatcher.html#ae6ce0e1d59fc62d812c779d536a95c58",
+"classMOSTAverage.html#ac95147c0d7961323ca8b079f63cd4be9",
+"classOptics.html#ae33a3d262417ad9bb96adc3a32519e5f",
+"classReadBndryPlanes.html#a4343c3c0761df0f96c58f8d268a43017",
+"classncutils_1_1NCGroup.html#a8c9376a217f29012f565a13f131bea84",
+"namespacederived.html",
+"structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6",
+"structcustom__flux.html#aa9715fd8b84d6df19fa17c89a703210a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

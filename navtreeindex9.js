@@ -1,5 +1,11 @@
 var NAVTREEINDEX9 =
 {
+"classncutils_1_1NCGroup.html#a8c9376a217f29012f565a13f131bea84":[2,0,0,3,6],
+"classncutils_1_1NCGroup.html#a8e01fe072fa48f4fa9c8be33a3a401b0":[2,0,0,3,2],
+"classncutils_1_1NCGroup.html#a91efbd2b8ef280b7eb3b426bbbf16cca":[2,0,0,3,27],
+"classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65":[2,0,0,3,0],
+"classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192":[2,0,0,3,20],
+"classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042":[2,0,0,3,18],
 "classncutils_1_1NCGroup.html#ac25f1ca78fc2cd66e7b80fdcc30f512f":[2,0,0,3,14],
 "classncutils_1_1NCGroup.html#ac5beadfdf8519b384504dc82f6bdecc5":[2,0,0,3,15],
 "classncutils_1_1NCGroup.html#acf2801c26458fb99bd82733b1302285a":[2,0,0,3,29],
@@ -48,8 +54,8 @@ var NAVTREEINDEX9 =
 "eb__if_8H_source.html":[3,0,1,4,2],
 "eb__regular_8cpp.html":[3,0,1,4,3],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -57,8 +63,8 @@ var NAVTREEINDEX9 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1,0],
 "functions_func.html":[2,3,1],
+"functions_func.html":[2,3,1,0],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX9 =
 "namespaceamrex.html#a8f794ff24efbc4b60058492d1a073c78":[1,0,0,0],
 "namespaceamrex.html#a9d270ec83f99e836cca454cac4e0af5e":[1,0,0,1],
 "namespaceamrex.html#aab3ca155f0d0a6d198817df9c35352f8":[1,0,0,2],
-"namespaceamrex.html#afa2dbdd17ead719f97272c9a0a2b0f8a":[1,0,0,3],
-"namespacederived.html":[1,0,2],
-"namespacederived.html#a0a37dd4fa4a044e34891e6222d06654c":[1,0,2,17],
-"namespacederived.html#a13666be87e55d1759f57322b33f7e495":[1,0,2,9],
-"namespacederived.html#a268588c6b7dfb634a44ff9b66e852807":[1,0,2,5],
-"namespacederived.html#a2a85aedf7c75ca416dbb931559c4b21e":[1,0,2,18],
-"namespacederived.html#a37560f4d3e2c7c10f64d41db2ce76a06":[1,0,2,10]
+"namespaceamrex.html#afa2dbdd17ead719f97272c9a0a2b0f8a":[1,0,0,3]
 };
