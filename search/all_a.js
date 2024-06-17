@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['k_5fdist_5flw_1009',['k_dist_lw',['../classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414',1,'Rrtmgp']]],
-  ['k_5fdist_5fsw_1010',['k_dist_sw',['../classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26',1,'Rrtmgp']]],
+  ['k_5fdist_5flw_1008',['k_dist_lw',['../classRrtmgp.html#a9b6fe178ed49089a3ba56db0909e7414',1,'Rrtmgp']]],
+  ['k_5fdist_5fsw_1009',['k_dist_sw',['../classRrtmgp.html#aa59a2a79cee48c24f60ec786e84edb26',1,'Rrtmgp']]],
+  ['k_5fturb_1010',['K_turb',['../AdvanceEWP_8cpp.html#aee45380fb1bdbf642fa98acf33c0edd2',1,'AdvanceEWP.cpp']]],
   ['kappa_1011',['kappa',['../structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe',1,'most_data']]],
   ['kappa_1012',['KAPPA',['../ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093',1,'ERF_Constants.H']]],
   ['ke_5fh_1013',['KE_h',['../namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149eafa0c87454b22a819e328491f78bf6767',1,'EddyDiff']]],

@@ -50,6 +50,11 @@ var DataStruct_8H =
       [ "Static", "DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127a84a8921b25f505d0d2077aeb5db4bc16", null ],
       [ "Moving", "DataStruct_8H.html#af82ff6f1edafee12190434b73fe91127adefe967ad0373b2274fc298f19125ca7", null ]
     ] ],
+    [ "WindFarmLocType", "DataStruct_8H.html#acc2aa74379de57a98956ae09f0a11c9b", [
+      [ "lat_lon", "DataStruct_8H.html#acc2aa74379de57a98956ae09f0a11c9ba17fee101a502e526f68bdfb76a231372", null ],
+      [ "x_y", "DataStruct_8H.html#acc2aa74379de57a98956ae09f0a11c9ba52102d8e853322150c95bd20cec93d2a", null ],
+      [ "None", "DataStruct_8H.html#acc2aa74379de57a98956ae09f0a11c9ba6adf97f83acf6453d4a6a4b1070f3754", null ]
+    ] ],
     [ "WindFarmType", "DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847", [
       [ "Fitch", "DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a2b00d051a8acd949c63ac94efa793efe", null ],
       [ "EWP", "DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847ac49b3a43f2f11cf252c3a9f35d1c4441", null ],

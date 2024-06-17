@@ -56,6 +56,9 @@ var structSolverChoice =
     [ "use_moist_background", "structSolverChoice.html#aab88dd74d39b1ad369ae6324e05d7a35", null ],
     [ "use_NumDiff", "structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28", null ],
     [ "use_terrain", "structSolverChoice.html#a063a88594452100497651e8aaf1f68d7", null ],
+    [ "windfarm_loc_table", "structSolverChoice.html#a44bc0227f088664e4e2c1090ebb1381d", null ],
+    [ "windfarm_loc_type", "structSolverChoice.html#a54214b71edb43f251f04b79281c39375", null ],
+    [ "windfarm_spec_table", "structSolverChoice.html#a34c427126677860aa8acad633e6fb2be", null ],
     [ "windfarm_type", "structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645", null ],
     [ "zsurf", "structSolverChoice.html#aa4659e9babdc5d7327266f967d9a80ff", null ]
 ];

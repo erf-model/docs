@@ -83,7 +83,8 @@ $(document).ready(function(){initNavTree('WindFarm_8cpp.html',''); initResizable
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">WindFarm.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -121,8 +122,27 @@ Include dependency graph for WindFarm.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ac09db850ee839b2eea75547cbe5998d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="WindFarm_8cpp.html#ac09db850ee839b2eea75547cbe5998d2">read_in_table</a> (std::string windfarm_spec_table)</td></tr>
+<tr class="separator:ac09db850ee839b2eea75547cbe5998d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57727cd48b123336e2eadd6fb44c03c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="WindFarm_8cpp.html#a57727cd48b123336e2eadd6fb44c03c9">advance_windfarm</a> (int lev, const Geometry &amp;geom, const Real &amp;dt_advance, MultiFab &amp;cons_in, MultiFab &amp;U_old, MultiFab &amp;V_old, MultiFab &amp;W_old, MultiFab &amp;mf_vars_windfarm, const amrex::MultiFab &amp;mf_Nturb, <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solver_choice)</td></tr>
 <tr class="separator:a57727cd48b123336e2eadd6fb44c03c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a300b4d928d07af5017f671785eac6cc1"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="WindFarm_8cpp.html#a300b4d928d07af5017f671785eac6cc1">hub_height</a></td></tr>
+<tr class="separator:a300b4d928d07af5017f671785eac6cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7e7946e70b87bff4af7cf6318aecac6"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="WindFarm_8cpp.html#ad7e7946e70b87bff4af7cf6318aecac6">rotor_rad</a></td></tr>
+<tr class="separator:ad7e7946e70b87bff4af7cf6318aecac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1abfab3e916977e500ef73b74df0aa56"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="WindFarm_8cpp.html#a1abfab3e916977e500ef73b74df0aa56">thrust_coeff_standing</a></td></tr>
+<tr class="separator:a1abfab3e916977e500ef73b74df0aa56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc6edec138877bb4e47450adf187e953"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="WindFarm_8cpp.html#adc6edec138877bb4e47450adf187e953">nominal_power</a></td></tr>
+<tr class="separator:adc6edec138877bb4e47450adf187e953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af17b7b8b705cdc24fa41fbcab3b465b2"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="WindFarm_8cpp.html#af17b7b8b705cdc24fa41fbcab3b465b2">wind_speed</a></td></tr>
+<tr class="separator:af17b7b8b705cdc24fa41fbcab3b465b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfea4ec7261abe107cc6aa8de6589508"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="WindFarm_8cpp.html#acfea4ec7261abe107cc6aa8de6589508">thrust_coeff</a></td></tr>
+<tr class="separator:acfea4ec7261abe107cc6aa8de6589508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f42125a611560a0e6d85c2fc8a647b2"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="WindFarm_8cpp.html#a6f42125a611560a0e6d85c2fc8a647b2">power</a></td></tr>
+<tr class="separator:a6f42125a611560a0e6d85c2fc8a647b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a57727cd48b123336e2eadd6fb44c03c9"></a>
@@ -198,20 +218,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (solver_choice.<a class="code" href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">windfarm_type</a> == <a class="code" href="DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a2b00d051a8acd949c63ac94efa793efe">WindFarmType::Fitch</a>) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="AdvanceFitch_8cpp.html#a2a736a47fa4a390fa9082c98c0eb0c96">fitch_advance</a>(lev, geom, dt_advance, cons_in, U_old, V_old, W_old,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                       mf_vars_windfarm, mf_Nturb);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (solver_choice.<a class="code" href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">windfarm_type</a> == <a class="code" href="DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847ac49b3a43f2f11cf252c3a9f35d1c4441">WindFarmType::EWP</a>) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;          <a class="code" href="AdvanceEWP_8cpp.html#a785dfafe3154574a42d5a6b5058a73c8">ewp_advance</a>(lev, geom, dt_advance, cons_in, U_old, V_old, W_old,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                      mf_vars_windfarm, mf_Nturb);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="ttc" id="aAdvanceEWP_8cpp_html_a785dfafe3154574a42d5a6b5058a73c8"><div class="ttname"><a href="AdvanceEWP_8cpp.html#a785dfafe3154574a42d5a6b5058a73c8">ewp_advance</a></div><div class="ttdeci">void ewp_advance(int lev, const Geometry &amp;geom, const Real &amp;dt_advance, MultiFab &amp;cons_in, MultiFab &amp;U_old, MultiFab &amp;V_old, MultiFab &amp;W_old, MultiFab &amp;mf_vars_ewp, const amrex::MultiFab &amp;mf_Nturb)</div><div class="ttdef"><b>Definition:</b> AdvanceEWP.cpp:9</div></div>
-<div class="ttc" id="aAdvanceFitch_8cpp_html_a2a736a47fa4a390fa9082c98c0eb0c96"><div class="ttname"><a href="AdvanceFitch_8cpp.html#a2a736a47fa4a390fa9082c98c0eb0c96">fitch_advance</a></div><div class="ttdeci">void fitch_advance(int lev, const Geometry &amp;geom, const Real &amp;dt_advance, MultiFab &amp;cons_in, MultiFab &amp;U_old, MultiFab &amp;V_old, MultiFab &amp;W_old, MultiFab &amp;mf_vars_fitch, const amrex::MultiFab &amp;mf_Nturb)</div><div class="ttdef"><b>Definition:</b> AdvanceFitch.cpp:39</div></div>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (solver_choice.<a class="code" href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">windfarm_type</a> == <a class="code" href="DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a2b00d051a8acd949c63ac94efa793efe">WindFarmType::Fitch</a>) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="AdvanceFitch_8cpp.html#a2a736a47fa4a390fa9082c98c0eb0c96">fitch_advance</a>(lev, geom, dt_advance, cons_in, U_old, V_old, W_old,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                       mf_vars_windfarm, mf_Nturb);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (solver_choice.<a class="code" href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">windfarm_type</a> == <a class="code" href="DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847ac49b3a43f2f11cf252c3a9f35d1c4441">WindFarmType::EWP</a>) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          <a class="code" href="AdvanceEWP_8cpp.html#a785dfafe3154574a42d5a6b5058a73c8">ewp_advance</a>(lev, geom, dt_advance, cons_in, U_old, V_old, W_old,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                      mf_vars_windfarm, mf_Nturb);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="ttc" id="aAdvanceEWP_8cpp_html_a785dfafe3154574a42d5a6b5058a73c8"><div class="ttname"><a href="AdvanceEWP_8cpp.html#a785dfafe3154574a42d5a6b5058a73c8">ewp_advance</a></div><div class="ttdeci">void ewp_advance(int lev, const Geometry &amp;geom, const Real &amp;dt_advance, MultiFab &amp;cons_in, MultiFab &amp;U_old, MultiFab &amp;V_old, MultiFab &amp;W_old, MultiFab &amp;mf_vars_ewp, const amrex::MultiFab &amp;mf_Nturb)</div><div class="ttdef"><b>Definition:</b> AdvanceEWP.cpp:11</div></div>
+<div class="ttc" id="aAdvanceFitch_8cpp_html_a2a736a47fa4a390fa9082c98c0eb0c96"><div class="ttname"><a href="AdvanceFitch_8cpp.html#a2a736a47fa4a390fa9082c98c0eb0c96">fitch_advance</a></div><div class="ttdeci">void fitch_advance(int lev, const Geometry &amp;geom, const Real &amp;dt_advance, MultiFab &amp;cons_in, MultiFab &amp;U_old, MultiFab &amp;V_old, MultiFab &amp;W_old, MultiFab &amp;mf_vars_fitch, const amrex::MultiFab &amp;mf_Nturb)</div><div class="ttdef"><b>Definition:</b> AdvanceFitch.cpp:40</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a5930188cdc2dd4def9ce58fdf5f46847a2b00d051a8acd949c63ac94efa793efe"><div class="ttname"><a href="DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a2b00d051a8acd949c63ac94efa793efe">WindFarmType::Fitch</a></div><div class="ttdeci">@ Fitch</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a5930188cdc2dd4def9ce58fdf5f46847ac49b3a43f2f11cf252c3a9f35d1c4441"><div class="ttname"><a href="DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847ac49b3a43f2f11cf252c3a9f35d1c4441">WindFarmType::EWP</a></div><div class="ttdeci">@ EWP</div></div>
-<div class="ttc" id="astructSolverChoice_html_ac0a723e8797cdc0fe06b3fc781fca645"><div class="ttname"><a href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">SolverChoice::windfarm_type</a></div><div class="ttdeci">WindFarmType windfarm_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:475</div></div>
+<div class="ttc" id="astructSolverChoice_html_ac0a723e8797cdc0fe06b3fc781fca645"><div class="ttname"><a href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">SolverChoice::windfarm_type</a></div><div class="ttdeci">WindFarmType windfarm_type</div><div class="ttdef"><b>Definition:</b> DataStruct.H:497</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9">ERF::Advance()</a>.</p>
 <div class="dynheader">
@@ -224,10 +244,11 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="AdvanceFitch_8cpp.html#a2a736a47fa4a390fa9082c98c0eb0c96" title=" " alt="" coords="200,115,312,141"/>
 <area shape="rect" href="AdvanceEWP_8cpp.html#a50bc68d8de01b0355fa84c3bbe0a9f00" title=" " alt="" coords="360,5,591,32"/>
 <area shape="rect" href="AdvanceEWP_8cpp.html#aba3f12bc8fbb9d1193ac08e761f7b2d9" title=" " alt="" coords="425,56,526,83"/>
+<area shape="rect" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="639,35,755,61"/>
 <area shape="rect" href="AdvanceFitch_8cpp.html#a57cb33df91a6f292be17c93d461f5772" title=" " alt="" coords="403,107,548,149"/>
 <area shape="rect" href="AdvanceFitch_8cpp.html#aa3d620903fe9c72b3d91efbd15990624" title=" " alt="" coords="424,173,527,200"/>
-<area shape="rect" href="AdvanceFitch_8cpp.html#ad6dacb1871f0220ea196b85482548fdb" title=" " alt="" coords="639,115,749,141"/>
-<area shape="rect" href="AdvanceFitch_8cpp.html#ad9c41fe197e66da6d9e2226544131c14" title=" " alt="" coords="797,115,892,141"/>
+<area shape="rect" href="AdvanceFitch_8cpp.html#ad6dacb1871f0220ea196b85482548fdb" title=" " alt="" coords="641,115,752,141"/>
+<area shape="rect" href="AdvanceFitch_8cpp.html#ad9c41fe197e66da6d9e2226544131c14" title=" " alt="" coords="803,115,897,141"/>
 </map>
 </div>
 <div class="dynheader">
@@ -239,6 +260,186 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="5,5,116,32"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="ac09db850ee839b2eea75547cbe5998d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac09db850ee839b2eea75547cbe5998d2">&#9670;&nbsp;</a></span>read_in_table()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void read_in_table </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>windfarm_spec_table</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">//The first line is the number of pairs entries for the power curve and thrust coefficient.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">//The second line gives first the height in meters of the turbine hub, second, the diameter in</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">//meters of the rotor, third the standing thrust coefficient, and fourth the nominal power of</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">//the turbine in MW.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">//The remaining lines contain the three values of: wind speed, thrust coefficient, and power production in kW.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;     <span class="comment">// Read turbine data from wind-turbine-1.tbl</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::ifstream file_turb_table(windfarm_spec_table);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (!file_turb_table.is_open()) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        amrex::Error(<span class="stringliteral">&quot;Wind farm specifications table not found. Either the inputs is missing the &quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                      <span class="stringliteral">&quot;erf.windfarm_spec_table entry or the file specified in the entry - &quot;</span> + windfarm_spec_table + <span class="stringliteral">&quot; is missing.&quot;</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading in wind farm specifications table: &quot;</span> &lt;&lt; windfarm_spec_table &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> nlines;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    file_turb_table &gt;&gt; nlines;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="WindFarm_8cpp.html#af17b7b8b705cdc24fa41fbcab3b465b2">wind_speed</a>.resize(nlines);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="WindFarm_8cpp.html#acfea4ec7261abe107cc6aa8de6589508">thrust_coeff</a>.resize(nlines);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="WindFarm_8cpp.html#a6f42125a611560a0e6d85c2fc8a647b2">power</a>.resize(nlines);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    Real rotor_dia;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    file_turb_table &gt;&gt; <a class="code" href="WindFarm_8cpp.html#a300b4d928d07af5017f671785eac6cc1">hub_height</a> &gt;&gt; rotor_dia &gt;&gt; <a class="code" href="WindFarm_8cpp.html#a1abfab3e916977e500ef73b74df0aa56">thrust_coeff_standing</a> &gt;&gt; <a class="code" href="WindFarm_8cpp.html#adc6edec138877bb4e47450adf187e953">nominal_power</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="WindFarm_8cpp.html#ad7e7946e70b87bff4af7cf6318aecac6">rotor_rad</a> = rotor_dia*0.5;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="WindFarm_8cpp.html#ad7e7946e70b87bff4af7cf6318aecac6">rotor_rad</a> &gt; <a class="code" href="WindFarm_8cpp.html#a300b4d928d07af5017f671785eac6cc1">hub_height</a>) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;The blade length is more than the hub height. Check the second line in wind-turbine-1.tbl. Aborting.....&quot;</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="WindFarm_8cpp.html#a1abfab3e916977e500ef73b74df0aa56">thrust_coeff_standing</a> &gt; 1.0) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;The standing thrust coefficient is greater than 1. Check the second line in wind-turbine-1.tbl. Aborting.....&quot;</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> iline=0;iline&lt;nlines;iline++){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        file_turb_table &gt;&gt; <a class="code" href="WindFarm_8cpp.html#af17b7b8b705cdc24fa41fbcab3b465b2">wind_speed</a>[iline] &gt;&gt; <a class="code" href="WindFarm_8cpp.html#acfea4ec7261abe107cc6aa8de6589508">thrust_coeff</a>[iline] &gt;&gt; <a class="code" href="WindFarm_8cpp.html#a6f42125a611560a0e6d85c2fc8a647b2">power</a>[iline];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="WindFarm_8cpp.html#acfea4ec7261abe107cc6aa8de6589508">thrust_coeff</a>[iline] &gt; 1.0) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;The thrust coefficient is greater than 1. Check wind-turbine-1.tbl. Aborting.....&quot;</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    file_turb_table.close();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="ttc" id="aWindFarm_8cpp_html_a1abfab3e916977e500ef73b74df0aa56"><div class="ttname"><a href="WindFarm_8cpp.html#a1abfab3e916977e500ef73b74df0aa56">thrust_coeff_standing</a></div><div class="ttdeci">amrex::Real thrust_coeff_standing</div><div class="ttdef"><b>Definition:</b> WindFarm.cpp:6</div></div>
+<div class="ttc" id="aWindFarm_8cpp_html_a300b4d928d07af5017f671785eac6cc1"><div class="ttname"><a href="WindFarm_8cpp.html#a300b4d928d07af5017f671785eac6cc1">hub_height</a></div><div class="ttdeci">amrex::Real hub_height</div><div class="ttdef"><b>Definition:</b> WindFarm.cpp:6</div></div>
+<div class="ttc" id="aWindFarm_8cpp_html_a6f42125a611560a0e6d85c2fc8a647b2"><div class="ttname"><a href="WindFarm_8cpp.html#a6f42125a611560a0e6d85c2fc8a647b2">power</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; power</div><div class="ttdef"><b>Definition:</b> WindFarm.cpp:7</div></div>
+<div class="ttc" id="aWindFarm_8cpp_html_acfea4ec7261abe107cc6aa8de6589508"><div class="ttname"><a href="WindFarm_8cpp.html#acfea4ec7261abe107cc6aa8de6589508">thrust_coeff</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; thrust_coeff</div><div class="ttdef"><b>Definition:</b> WindFarm.cpp:7</div></div>
+<div class="ttc" id="aWindFarm_8cpp_html_ad7e7946e70b87bff4af7cf6318aecac6"><div class="ttname"><a href="WindFarm_8cpp.html#ad7e7946e70b87bff4af7cf6318aecac6">rotor_rad</a></div><div class="ttdeci">amrex::Real rotor_rad</div><div class="ttdef"><b>Definition:</b> WindFarm.cpp:6</div></div>
+<div class="ttc" id="aWindFarm_8cpp_html_adc6edec138877bb4e47450adf187e953"><div class="ttname"><a href="WindFarm_8cpp.html#adc6edec138877bb4e47450adf187e953">nominal_power</a></div><div class="ttdeci">amrex::Real nominal_power</div><div class="ttdef"><b>Definition:</b> WindFarm.cpp:6</div></div>
+<div class="ttc" id="aWindFarm_8cpp_html_af17b7b8b705cdc24fa41fbcab3b465b2"><div class="ttname"><a href="WindFarm_8cpp.html#af17b7b8b705cdc24fa41fbcab3b465b2">wind_speed</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; wind_speed</div><div class="ttdef"><b>Definition:</b> WindFarm.cpp:7</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a300b4d928d07af5017f671785eac6cc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a300b4d928d07af5017f671785eac6cc1">&#9670;&nbsp;</a></span>hub_height</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Real hub_height</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="AdvanceFitch_8cpp.html#ad9c41fe197e66da6d9e2226544131c14">compute_A()</a>, <a class="el" href="AdvanceFitch_8cpp.html#ad6dacb1871f0220ea196b85482548fdb">compute_Aijk()</a>, <a class="el" href="AdvanceEWP_8cpp.html#a50bc68d8de01b0355fa84c3bbe0a9f00">ewp_source_terms_cellcentered()</a>, and <a class="el" href="WindFarm_8cpp.html#ac09db850ee839b2eea75547cbe5998d2">read_in_table()</a>.</p>
+
+</div>
+</div>
+<a id="adc6edec138877bb4e47450adf187e953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc6edec138877bb4e47450adf187e953">&#9670;&nbsp;</a></span>nominal_power</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Real nominal_power</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="WindFarm_8cpp.html#ac09db850ee839b2eea75547cbe5998d2">read_in_table()</a>.</p>
+
+</div>
+</div>
+<a id="a6f42125a611560a0e6d85c2fc8a647b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f42125a611560a0e6d85c2fc8a647b2">&#9670;&nbsp;</a></span>power</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; power</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="WindFarm_8cpp.html#ac09db850ee839b2eea75547cbe5998d2">read_in_table()</a>.</p>
+
+</div>
+</div>
+<a id="ad7e7946e70b87bff4af7cf6318aecac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7e7946e70b87bff4af7cf6318aecac6">&#9670;&nbsp;</a></span>rotor_rad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Real rotor_rad</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="AdvanceFitch_8cpp.html#ad9c41fe197e66da6d9e2226544131c14">compute_A()</a>, <a class="el" href="AdvanceEWP_8cpp.html#a50bc68d8de01b0355fa84c3bbe0a9f00">ewp_source_terms_cellcentered()</a>, and <a class="el" href="WindFarm_8cpp.html#ac09db850ee839b2eea75547cbe5998d2">read_in_table()</a>.</p>
+
+</div>
+</div>
+<a id="acfea4ec7261abe107cc6aa8de6589508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfea4ec7261abe107cc6aa8de6589508">&#9670;&nbsp;</a></span>thrust_coeff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; thrust_coeff</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="AdvanceEWP_8cpp.html#a50bc68d8de01b0355fa84c3bbe0a9f00">ewp_source_terms_cellcentered()</a>, <a class="el" href="AdvanceFitch_8cpp.html#a57cb33df91a6f292be17c93d461f5772">fitch_source_terms_cellcentered()</a>, and <a class="el" href="WindFarm_8cpp.html#ac09db850ee839b2eea75547cbe5998d2">read_in_table()</a>.</p>
+
+</div>
+</div>
+<a id="a1abfab3e916977e500ef73b74df0aa56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1abfab3e916977e500ef73b74df0aa56">&#9670;&nbsp;</a></span>thrust_coeff_standing</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Real thrust_coeff_standing</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="WindFarm_8cpp.html#ac09db850ee839b2eea75547cbe5998d2">read_in_table()</a>.</p>
+
+</div>
+</div>
+<a id="af17b7b8b705cdc24fa41fbcab3b465b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af17b7b8b705cdc24fa41fbcab3b465b2">&#9670;&nbsp;</a></span>wind_speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; wind_speed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="AdvanceEWP_8cpp.html#a50bc68d8de01b0355fa84c3bbe0a9f00">ewp_source_terms_cellcentered()</a>, <a class="el" href="AdvanceFitch_8cpp.html#a57cb33df91a6f292be17c93d461f5772">fitch_source_terms_cellcentered()</a>, and <a class="el" href="WindFarm_8cpp.html#ac09db850ee839b2eea75547cbe5998d2">read_in_table()</a>.</p>
 
 </div>
 </div>
