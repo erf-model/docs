@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"structadiabatic__mod__charnock.html#ad33aa4fea2aa05dbb4057dcef251e0da":[2,0,4,2],
 "structadiabatic__wave__coupled.html":[2,0,5],
 "structadiabatic__wave__coupled.html#a235804b8350d1985b4027ac300fe4dee":[2,0,5,1],
 "structadiabatic__wave__coupled.html#a3f907fc7025d3d3f7e44c222e12b4df1":[2,0,5,2],

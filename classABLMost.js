@@ -17,7 +17,7 @@ var classABLMost =
       [ "SURFACE_TEMPERATURE", "classABLMost.html#a46fbd9260d2adfa7c18edad6452f9baba317cef85d14b4909f1d76becb00dc0f1", null ]
     ] ],
     [ "ABLMost", "classABLMost.html#a4ee786860369e5a42ba353308590b372", null ],
-    [ "compute_fluxes", "classABLMost.html#a635adcd2b8ed3c11bcf63f5386937639", null ],
+    [ "compute_fluxes", "classABLMost.html#a829339fc8e70a5dff8b7c85f3c2e4138", null ],
     [ "compute_most_bcs", "classABLMost.html#a67df60526193cba93df934a540f7a258", null ],
     [ "compute_most_bcs", "classABLMost.html#a0c33b98848bdb3beb8249d5b60ec1a83", null ],
     [ "get_lsm_tsurf", "classABLMost.html#ae28fd8a21f4b514875c24fe4b8e85081", null ],
@@ -53,7 +53,8 @@ var classABLMost =
     [ "m_start_bdy_time", "classABLMost.html#a4fb97b28e44e9ff6930f18083923343a", null ],
     [ "olen", "classABLMost.html#a0d6aa5a113a45ae1e56c0284241cfd01", null ],
     [ "q_star", "classABLMost.html#a0630def935d5ca0d24160b9b9567f3e1", null ],
-    [ "rough_type", "classABLMost.html#a96fe21af762c91f2e3aa360f4c2e9a8e", null ],
+    [ "rough_type_land", "classABLMost.html#ab052d62a07e8765a6de67264d05aff37", null ],
+    [ "rough_type_sea", "classABLMost.html#ab5041b7c6a15b759a8f33dadd1a67e92", null ],
     [ "surf_heating_rate", "classABLMost.html#a39402ac3794b9a218289cd0d4adec670", null ],
     [ "surf_temp", "classABLMost.html#a73621a1b429f2e910a29adac72b7c581", null ],
     [ "surf_temp_flux", "classABLMost.html#a98390481d302c2a2c7346bf2328305a8", null ],
