@@ -25,6 +25,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ERF_Constants.H", "ERF__Constants_8H.html", "ERF__Constants_8H" ],
     [ "ERF_make_new_arrays.cpp", "ERF__make__new__arrays_8cpp.html", null ],
     [ "ERF_make_new_level.cpp", "ERF__make__new__level_8cpp.html", null ],
+    [ "ERF_read_waves.cpp", "ERF__read__waves_8cpp.html", null ],
     [ "ERF_Tagging.cpp", "ERF__Tagging_8cpp.html", null ],
     [ "HSE_utils.H", "HSE__utils_8H.html", "HSE__utils_8H" ],
     [ "IndexDefines.H", "IndexDefines_8H.html", "IndexDefines_8H" ],

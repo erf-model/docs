@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"classERFFillPatcher.html#a69bc23658f5c545f654c7ddd0cabb105":[2,0,22,4],
+"classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67":[2,0,22,10],
+"classERFFillPatcher.html#a83a91e2dc7bd7c39a27327024814061c":[2,0,22,26],
+"classERFFillPatcher.html#a874bf44ab38e936013bbf8454a41a680":[2,0,22,16],
 "classERFFillPatcher.html#a89f24e6cfe30a2180b1667aead7edf28":[2,0,22,14],
 "classERFFillPatcher.html#a9d188e7b7e85221b257799a5a9c5098e":[2,0,22,29],
 "classERFFillPatcher.html#aa1dd4ccdd7812057d8ee529015e3750d":[2,0,22,8],
@@ -245,9 +249,5 @@ var NAVTREEINDEX5 =
 "classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2":[2,0,44,40],
 "classMOSTAverage.html#a81ff1b7e8d026f0cd74147cbcc016d15":[2,0,44,50],
 "classMOSTAverage.html#a8928b9f9d6d45fdd9fd88053fcae34e2":[2,0,44,11],
-"classMOSTAverage.html#a89b9ec10eb8dee9a8be7c9597a3f5008":[2,0,44,36],
-"classMOSTAverage.html#a8e48f835a742b02f039aeb6bc520aef8":[2,0,44,42],
-"classMOSTAverage.html#a90d1df8bd48dd2bf45776a01ba1a89f7":[2,0,44,38],
-"classMOSTAverage.html#a94ece9d178d0e85296cce07bab556bc7":[2,0,44,39],
-"classMOSTAverage.html#a960bae1d528aef6d0e7034dbea65a2c3":[2,0,44,25]
+"classMOSTAverage.html#a89b9ec10eb8dee9a8be7c9597a3f5008":[2,0,44,36]
 };
