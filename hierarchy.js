@@ -41,9 +41,6 @@ var hierarchy =
     ] ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
     [ "InputSpongeData", "structInputSpongeData.html", null ],
-    [ "amrex::IntegratorBase", null, [
-      [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ]
-    ] ],
     [ "LinInterp::InterpType", "structLinInterp_1_1InterpType.html", null ],
     [ "IntersectionCIF< F1, F2 >", "classIntersectionCIF.html", null ],
     [ "LandSurface", "classLandSurface.html", null ],
@@ -60,6 +57,7 @@ var hierarchy =
     [ "moeng_flux", "structmoeng__flux.html", null ],
     [ "most_data", "structmost__data.html", null ],
     [ "MOSTAverage", "classMOSTAverage.html", null ],
+    [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ],
     [ "MultiBlockContainer", "classMultiBlockContainer.html", null ],
     [ "ncutils::NCDim", "structncutils_1_1NCDim.html", null ],
     [ "ncutils::NCDType", "structncutils_1_1NCDType.html", null ],
