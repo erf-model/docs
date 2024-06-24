@@ -8,5 +8,6 @@ var dir_aba9de7b86b72c00c61e401832cdb2fc =
     [ "SpongeStruct.H", "SpongeStruct_8H.html", [
       [ "SpongeChoice", "structSpongeChoice.html", "structSpongeChoice" ]
     ] ],
+    [ "TurbPertStruct.H", "TurbPertStruct_8H.html", "TurbPertStruct_8H" ],
     [ "TurbStruct.H", "TurbStruct_8H.html", "TurbStruct_8H" ]
 ];

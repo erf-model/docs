@@ -99,6 +99,7 @@ var hierarchy =
     [ "surface_temp_wave_coupled", "structsurface__temp__wave__coupled.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
     [ "TurbChoice", "structTurbChoice.html", null ],
+    [ "TurbulentPerturbation", "structTurbulentPerturbation.html", null ],
     [ "UnionCIF< F1, F2 >", "classUnionCIF.html", null ],
     [ "UnionListIF< F >", "classUnionListIF.html", null ],
     [ "UPWIND3", "structUPWIND3.html", null ],

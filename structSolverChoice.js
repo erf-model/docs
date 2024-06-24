@@ -34,6 +34,7 @@ var structSolverChoice =
     [ "ncorr", "structSolverChoice.html#a3b9fef36e4613507eef87379c2c9bf03", null ],
     [ "no_substepping", "structSolverChoice.html#a35e0c82996e345337368bc720bbd6070", null ],
     [ "NumDiffCoeff", "structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2", null ],
+    [ "pert_type", "structSolverChoice.html#abfd94767b3721755632c45a5ef290544", null ],
     [ "poisson_abstol", "structSolverChoice.html#ad7f586d62fb0872ba0340fb03d462c64", null ],
     [ "poisson_reltol", "structSolverChoice.html#a238b0871f38f8b134ff3fe5af0d05479", null ],
     [ "pp_prefix", "structSolverChoice.html#a4b0edf29a032ff18b10a42825fa9e4b6", null ],

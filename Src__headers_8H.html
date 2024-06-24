@@ -90,28 +90,33 @@ $(document).ready(function(){initNavTree('Src__headers_8H.html',''); initResizab
 <div class="contents">
 <div class="textblock"><code>#include &lt;AMReX_MultiFab.H&gt;</code><br />
 <code>#include &quot;<a class="el" href="DataStruct_8H_source.html">DataStruct.H</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TurbPertStruct_8H_source.html">TurbPertStruct.H</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Src_headers.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="Src__headers_8H__incl.png" border="0" usemap="#aSource_2SourceTerms_2Src__headers_8H" alt=""/></div>
 <map name="aSource_2SourceTerms_2Src__headers_8H" id="aSource_2SourceTerms_2Src__headers_8H">
-<area shape="rect" title=" " alt="" coords="374,5,527,47"/>
-<area shape="rect" title=" " alt="" coords="303,95,449,121"/>
-<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="473,95,578,121"/>
-<area shape="rect" title=" " alt="" coords="5,244,64,271"/>
-<area shape="rect" title=" " alt="" coords="88,244,168,271"/>
-<area shape="rect" title=" " alt="" coords="193,244,351,271"/>
-<area shape="rect" title=" " alt="" coords="376,244,496,271"/>
-<area shape="rect" title=" " alt="" coords="521,244,637,271"/>
-<area shape="rect" title=" " alt="" coords="661,244,814,271"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="839,244,972,271"/>
-<area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="997,244,1118,271"/>
-<area shape="rect" href="AdvStruct_8H.html" title=" " alt="" coords="520,169,619,196"/>
-<area shape="rect" href="DiffStruct_8H.html" title=" " alt="" coords="150,169,247,196"/>
-<area shape="rect" href="SpongeStruct_8H.html" title=" " alt="" coords="272,169,395,196"/>
-<area shape="rect" href="TurbStruct_8H.html" title=" " alt="" coords="845,169,947,196"/>
-<area shape="rect" title=" " alt="" coords="845,319,968,345"/>
-<area shape="rect" title=" " alt="" coords="993,319,1121,345"/>
+<area shape="rect" title=" " alt="" coords="541,5,695,47"/>
+<area shape="rect" title=" " alt="" coords="396,95,541,121"/>
+<area shape="rect" href="DataStruct_8H.html" title=" " alt="" coords="565,95,671,121"/>
+<area shape="rect" href="TurbPertStruct_8H.html" title=" " alt="" coords="1101,169,1228,196"/>
+<area shape="rect" title=" " alt="" coords="250,244,309,271"/>
+<area shape="rect" title=" " alt="" coords="146,244,226,271"/>
+<area shape="rect" title=" " alt="" coords="333,244,492,271"/>
+<area shape="rect" title=" " alt="" coords="517,244,637,271"/>
+<area shape="rect" title=" " alt="" coords="5,244,121,271"/>
+<area shape="rect" title=" " alt="" coords="661,244,815,271"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="839,244,973,271"/>
+<area shape="rect" href="IndexDefines_8H.html" title=" " alt="" coords="997,244,1119,271"/>
+<area shape="rect" href="AdvStruct_8H.html" title=" " alt="" coords="526,169,625,196"/>
+<area shape="rect" href="DiffStruct_8H.html" title=" " alt="" coords="353,169,451,196"/>
+<area shape="rect" href="SpongeStruct_8H.html" title=" " alt="" coords="155,169,278,196"/>
+<area shape="rect" href="TurbStruct_8H.html" title=" " alt="" coords="699,169,801,196"/>
+<area shape="rect" title=" " alt="" coords="846,319,969,345"/>
+<area shape="rect" title=" " alt="" coords="994,319,1122,345"/>
+<area shape="rect" title=" " alt="" coords="1143,244,1311,271"/>
+<area shape="rect" href="TileNoZ_8H.html" title=" " alt="" coords="1336,244,1423,271"/>
+<area shape="rect" title=" " alt="" coords="1338,319,1421,345"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -138,8 +143,8 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:ab8d1e0300960f8aeabc92f0ffa82aefe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Src__headers_8H.html#ab8d1e0300960f8aeabc92f0ffa82aefe">make_buoyancy</a> (amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::MultiFab &amp;buoyancy, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::MultiFab *r0, const int &amp;qstate_size)</td></tr>
 <tr class="separator:ab8d1e0300960f8aeabc92f0ffa82aefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81b99001e22f7d6a3f5ff66d5f796435"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Src__headers_8H.html#a81b99001e22f7d6a3f5ff66d5f796435">make_sources</a> (int level, int nrk, amrex::Real dt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::MultiFab &amp;cc_source, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, const amrex::Real *dptr_rhotheta_src, const amrex::Real *dptr_rhoqt_src, const amrex::Real *dptr_wbar_sub, const amrex::Vector&lt; amrex::Real * &gt; d_rayleigh_ptrs_at_lev)</td></tr>
-<tr class="separator:a81b99001e22f7d6a3f5ff66d5f796435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a162bf8f8a720e76a5fa7f8babaa7bd41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Src__headers_8H.html#a162bf8f8a720e76a5fa7f8babaa7bd41">make_sources</a> (int level, int nrk, amrex::Real dt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::MultiFab &amp;cc_source, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, const amrex::Real *dptr_rhotheta_src, const amrex::Real *dptr_rhoqt_src, const amrex::Real *dptr_wbar_sub, const amrex::Vector&lt; amrex::Real * &gt; d_rayleigh_ptrs_at_lev, <a class="el" href="structTurbulentPerturbation.html">TurbulentPerturbation</a> &amp;turbPert)</td></tr>
+<tr class="separator:a162bf8f8a720e76a5fa7f8babaa7bd41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a752957bae3f28998131ff3d42becf41d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Src__headers_8H.html#a752957bae3f28998131ff3d42becf41d">make_mom_sources</a> (int level, int nrk, amrex::Real dt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, amrex::MultiFab &amp;xmom_source, amrex::MultiFab &amp;ymom_source, amrex::MultiFab &amp;zmom_source, amrex::MultiFab *r0, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, const amrex::Real *dptr_rhotheta_src, const amrex::Real *dptr_rhoqt_src, const amrex::Real *dptr_wbar_sub, const amrex::Vector&lt; amrex::Real * &gt; d_rayleigh_ptrs_at_lev, const amrex::Vector&lt; amrex::Real * &gt; d_sponge_ptrs_at_lev, const int n_qstate)</td></tr>
 <tr class="separator:a752957bae3f28998131ff3d42becf41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b82614fa1590f73caf25dc65b1c937d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Src__headers_8H.html#a5b82614fa1590f73caf25dc65b1c937d">add_thin_body_sources</a> (amrex::MultiFab &amp;xmom_source, amrex::MultiFab &amp;ymom_source, amrex::MultiFab &amp;zmom_source, std::unique_ptr&lt; amrex::iMultiFab &gt; &amp;xflux_imask_lev, std::unique_ptr&lt; amrex::iMultiFab &gt; &amp;yflux_imask_lev, std::unique_ptr&lt; amrex::iMultiFab &gt; &amp;zflux_imask_lev, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;thin_xforce_lev, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;thin_yforce_lev, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;thin_zforce_lev)</td></tr>
@@ -633,8 +638,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a81b99001e22f7d6a3f5ff66d5f796435"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81b99001e22f7d6a3f5ff66d5f796435">&#9670;&nbsp;</a></span>make_sources()</h2>
+<a id="a162bf8f8a720e76a5fa7f8babaa7bd41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a162bf8f8a720e76a5fa7f8babaa7bd41">&#9670;&nbsp;</a></span>make_sources()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -721,7 +726,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Vector&lt; amrex::Real * &gt;&#160;</td>
-          <td class="paramname"><em>d_rayleigh_ptrs_at_lev</em>&#160;</td>
+          <td class="paramname"><em>d_rayleigh_ptrs_at_lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structTurbulentPerturbation.html">TurbulentPerturbation</a> &amp;&#160;</td>
+          <td class="paramname"><em>turbPert</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

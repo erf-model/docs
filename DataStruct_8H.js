@@ -33,6 +33,11 @@ var DataStruct_8H =
       [ "Kessler_NoRain", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0ab367ee4b7b1fe3bae62b649e580db4f4", null ],
       [ "None", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754", null ]
     ] ],
+    [ "PerturbationType", "DataStruct_8H.html#a335364b39450e23bfefded6b7af8908c", [
+      [ "BPM", "DataStruct_8H.html#a335364b39450e23bfefded6b7af8908cafb7218d9dac59e6acee0d6b50ee0c4b7", null ],
+      [ "CPM", "DataStruct_8H.html#a335364b39450e23bfefded6b7af8908cacbdaba5605992f8e1635ad782152d65a", null ],
+      [ "None", "DataStruct_8H.html#a335364b39450e23bfefded6b7af8908ca6adf97f83acf6453d4a6a4b1070f3754", null ]
+    ] ],
     [ "Rayleigh", "DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239", [
       [ "tau", "DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f", null ],
       [ "ubar", "DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d2cdf8cea6cb933d4ce759c1ff1b948", null ],
