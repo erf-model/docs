@@ -97,10 +97,10 @@ Collaboration diagram for adiabatic_wave_coupled:</div>
 <div class="dyncontent">
 <div class="center"><img src="structadiabatic__wave__coupled__coll__graph.png" border="0" usemap="#aadiabatic__wave__coupled_coll__map" alt="Collaboration graph"/></div>
 <map name="aadiabatic__wave__coupled_coll__map" id="aadiabatic__wave__coupled_coll__map">
-<area shape="rect" title=" " alt="" coords="22,363,205,389"/>
-<area shape="rect" title=" " alt="" coords="88,5,139,32"/>
-<area shape="rect" href="structmost__data.html" title=" " alt="" coords="68,265,159,291"/>
-<area shape="rect" href="structsimilarity__funs.html" title=" " alt="" coords="183,265,302,291"/>
+<area shape="rect" title=" " alt="" coords="30,377,213,404"/>
+<area shape="rect" title=" " alt="" coords="96,5,147,32"/>
+<area shape="rect" href="structmost__data.html" title=" " alt="" coords="76,272,167,299"/>
+<area shape="rect" href="structsimilarity__funs.html" title=" " alt="" coords="192,272,310,299"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -123,6 +123,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a3f907fc7025d3d3f7e44c222e12b4df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cbf5ad24a59a72131bae5b57038ff72"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structadiabatic__wave__coupled.html#a7cbf5ad24a59a72131bae5b57038ff72">z0_eps</a> = 1.0e-6</td></tr>
 <tr class="separator:a7cbf5ad24a59a72131bae5b57038ff72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb0e6712baaff337c761988f6ec42b9b"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structadiabatic__wave__coupled.html#afb0e6712baaff337c761988f6ec42b9b">z0_max</a> = 0.1</td></tr>
+<tr class="separator:afb0e6712baaff337c761988f6ec42b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Adiabatic with wave-coupled roughness </p>
@@ -288,8 +290,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        u_star_arr(i,j,k) = <a class="code" href="structadiabatic__wave__coupled.html#a812ea5ea7d6223e5512c372b3260d1bc">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm_arr(i,j,k) / std::log(<a class="code" href="structadiabatic__wave__coupled.html#a812ea5ea7d6223e5512c372b3260d1bc">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k));</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">do</span> {</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            ustar = u_star_arr(i,j,k);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            z0    = std::max(1200.0 * Hwave_arr(i,j,k) * std::pow( Hwave_arr(i,j,k)/(Lwave_arr(i,j,k)+<a class="code" href="structadiabatic__wave__coupled.html#a3f907fc7025d3d3f7e44c222e12b4df1">eps</a>), 4.5 )</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                             + 0.11 * eta_arr(ie,je,k,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) / ustar, <a class="code" href="structadiabatic__wave__coupled.html#a7cbf5ad24a59a72131bae5b57038ff72">z0_eps</a>);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            z0    = std::min( std::max(1200.0 * Hwave_arr(i,j,k) * std::pow( Hwave_arr(i,j,k)/(Lwave_arr(i,j,k)+<a class="code" href="structadiabatic__wave__coupled.html#a3f907fc7025d3d3f7e44c222e12b4df1">eps</a>), 4.5 )</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                                      + 0.11 * eta_arr(ie,je,k,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) / ustar, <a class="code" href="structadiabatic__wave__coupled.html#a7cbf5ad24a59a72131bae5b57038ff72">z0_eps</a>), <a class="code" href="structadiabatic__wave__coupled.html#afb0e6712baaff337c761988f6ec42b9b">z0_max</a> );</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structadiabatic__wave__coupled.html#a812ea5ea7d6223e5512c372b3260d1bc">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm_arr(i,j,k) / std::log(<a class="code" href="structadiabatic__wave__coupled.html#a812ea5ea7d6223e5512c372b3260d1bc">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0);</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            ++iter;</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structadiabatic__wave__coupled.html#ad18802ec131991fbaaebfb80a1a12d07">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
@@ -302,6 +304,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="astructadiabatic__wave__coupled_html_a3f907fc7025d3d3f7e44c222e12b4df1"><div class="ttname"><a href="structadiabatic__wave__coupled.html#a3f907fc7025d3d3f7e44c222e12b4df1">adiabatic_wave_coupled::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:274</div></div>
 <div class="ttc" id="astructadiabatic__wave__coupled_html_a7cbf5ad24a59a72131bae5b57038ff72"><div class="ttname"><a href="structadiabatic__wave__coupled.html#a7cbf5ad24a59a72131bae5b57038ff72">adiabatic_wave_coupled::z0_eps</a></div><div class="ttdeci">const amrex::Real z0_eps</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:275</div></div>
 <div class="ttc" id="astructadiabatic__wave__coupled_html_ad18802ec131991fbaaebfb80a1a12d07"><div class="ttname"><a href="structadiabatic__wave__coupled.html#ad18802ec131991fbaaebfb80a1a12d07">adiabatic_wave_coupled::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:273</div></div>
+<div class="ttc" id="astructadiabatic__wave__coupled_html_afb0e6712baaff337c761988f6ec42b9b"><div class="ttname"><a href="structadiabatic__wave__coupled.html#afb0e6712baaff337c761988f6ec42b9b">adiabatic_wave_coupled::z0_max</a></div><div class="ttdeci">const amrex::Real z0_max</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:276</div></div>
 <div class="ttc" id="astructmost__data_html_a73da7dc37cb1555348e956a4e2c932fe"><div class="ttname"><a href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">most_data::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:15</div></div>
 </div><!-- fragment -->
 </div>
@@ -412,6 +415,30 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">const amrex::Real adiabatic_wave_coupled::z0_eps = 1.0e-6</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="structadiabatic__wave__coupled.html#a235804b8350d1985b4027ac300fe4dee">iterate_flux()</a>.</p>
+
+</div>
+</div>
+<a id="afb0e6712baaff337c761988f6ec42b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb0e6712baaff337c761988f6ec42b9b">&#9670;&nbsp;</a></span>z0_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const amrex::Real adiabatic_wave_coupled::z0_max = 0.1</td>
         </tr>
       </table>
   </td>
