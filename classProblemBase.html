@@ -126,6 +126,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afea9b8ed327ad86ee7c66588dd014eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af79c90b1e65ab01db0f17576818e3661"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#af79c90b1e65ab01db0f17576818e3661">init_custom_terrain</a> (const amrex::Geometry &amp;, amrex::FArrayBox &amp;z_phys_nd, const amrex::Real &amp;)</td></tr>
 <tr class="separator:af79c90b1e65ab01db0f17576818e3661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7497a6e90bebb14387f5716ee2e51c2d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#a7497a6e90bebb14387f5716ee2e51c2d">read_custom_terrain</a> (const std::string &amp;fname, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, const amrex::Real &amp;)</td></tr>
+<tr class="separator:a7497a6e90bebb14387f5716ee2e51c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae29f0d7569a8538739692f98e6194286"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#ae29f0d7569a8538739692f98e6194286">erf_init_rayleigh</a> (amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; &amp;, amrex::Geometry const &amp;, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;)</td></tr>
 <tr class="separator:ae29f0d7569a8538739692f98e6194286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6752f5d7122d68914e67896d21db6c43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#a6752f5d7122d68914e67896d21db6c43">init_uniform</a> (const amrex::Box &amp;bx, amrex::Array4&lt; amrex::Real &gt; const &amp;state)</td></tr>
@@ -343,9 +345,9 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    {</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        amrex::Error(<span class="stringliteral">&quot;Should never call erf_init_rayleigh for &quot;</span>+<a class="code" href="classProblemBase.html#a3a8fb70110fb25623cdfa7b508dee9cf">name</a>()+<span class="stringliteral">&quot; problem&quot;</span>);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    {</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        amrex::Error(<span class="stringliteral">&quot;Should never call erf_init_rayleigh for &quot;</span>+<a class="code" href="classProblemBase.html#a3a8fb70110fb25623cdfa7b508dee9cf">name</a>()+<span class="stringliteral">&quot; problem&quot;</span>);</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -392,11 +394,11 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Function to update default base parameters, currently only used for init_type=='uniform' </p>
-<div class="fragment"><div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                                                          {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">rho_0</a> = rho_0;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a> = T_0;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    }</div>
-<div class="ttc" id="aclassProblemBase_html_ae21bdcbfbf32d1ec423b6a0edd92dbda"><div class="ttname"><a href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">ProblemBase::base_parms</a></div><div class="ttdeci">ProbParmDefaults base_parms</div><div class="ttdef"><b>Definition:</b> prob_common.H:380</div></div>
+<div class="fragment"><div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                                                          {</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">rho_0</a> = rho_0;</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a> = T_0;</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    }</div>
+<div class="ttc" id="aclassProblemBase_html_ae21bdcbfbf32d1ec423b6a0edd92dbda"><div class="ttname"><a href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">ProblemBase::base_parms</a></div><div class="ttdeci">ProbParmDefaults base_parms</div><div class="ttdef"><b>Definition:</b> prob_common.H:460</div></div>
 <div class="ttc" id="astructProbParmDefaults_html_a16db7fa78b123f2a956bacbce26f32c6"><div class="ttname"><a href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">ProbParmDefaults::T_0</a></div><div class="ttdeci">amrex::Real T_0</div><div class="ttdef"><b>Definition:</b> prob_common.H:16</div></div>
 <div class="ttc" id="astructProbParmDefaults_html_af75997d9e4a94ab3b221657799ef720f"><div class="ttname"><a href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">ProbParmDefaults::rho_0</a></div><div class="ttdeci">amrex::Real rho_0</div><div class="ttdef"><b>Definition:</b> prob_common.H:15</div></div>
 </div><!-- fragment -->
@@ -733,10 +735,10 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Function to set constant values for turbulent pertubation calculation </p>
-<div class="fragment"><div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    {</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        turbPert.<a class="code" href="structTurbulentPerturbation.html#a700ce4d666c53dd25e01cd3bf5f59f0a">tpi_Tinfty</a> = <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a>;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        turbPert.<a class="code" href="structTurbulentPerturbation.html#abe0155dd9b530c537b1f639ab4dc8691">tpi_nonDim</a> = 0.042;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    {</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        turbPert.<a class="code" href="structTurbulentPerturbation.html#a700ce4d666c53dd25e01cd3bf5f59f0a">tpi_Tinfty</a> = <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a>;</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        turbPert.<a class="code" href="structTurbulentPerturbation.html#abe0155dd9b530c537b1f639ab4dc8691">tpi_nonDim</a> = 0.042;</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    }</div>
 <div class="ttc" id="astructTurbulentPerturbation_html_a700ce4d666c53dd25e01cd3bf5f59f0a"><div class="ttname"><a href="structTurbulentPerturbation.html#a700ce4d666c53dd25e01cd3bf5f59f0a">TurbulentPerturbation::tpi_Tinfty</a></div><div class="ttdeci">amrex::Real tpi_Tinfty</div><div class="ttdef"><b>Definition:</b> TurbPertStruct.H:307</div></div>
 <div class="ttc" id="astructTurbulentPerturbation_html_abe0155dd9b530c537b1f639ab4dc8691"><div class="ttname"><a href="structTurbulentPerturbation.html#abe0155dd9b530c537b1f639ab4dc8691">TurbulentPerturbation::tpi_nonDim</a></div><div class="ttdeci">amrex::Real tpi_nonDim</div><div class="ttdef"><b>Definition:</b> TurbPertStruct.H:308</div></div>
 </div><!-- fragment -->
@@ -776,20 +778,20 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Function to set uniform background density and pressure fields </p>
-<div class="fragment"><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        amrex::Real rho_0 = <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">rho_0</a>;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        amrex::Real T_0 = <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a>;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Initializing uniform fields&quot;</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; rho=&quot;</span> &lt;&lt; rho_0 &lt;&lt; <span class="stringliteral">&quot; theta=&quot;</span> &lt;&lt; T_0</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; -- this probably only makes sense with gravity turned off&quot;</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        {</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            state(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) = rho_0;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            state(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = rho_0 * T_0;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        });</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    {</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        amrex::Real rho_0 = <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">rho_0</a>;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        amrex::Real T_0 = <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a>;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Initializing uniform fields&quot;</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; rho=&quot;</span> &lt;&lt; rho_0 &lt;&lt; <span class="stringliteral">&quot; theta=&quot;</span> &lt;&lt; T_0</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; -- this probably only makes sense with gravity turned off&quot;</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        {</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;            state(i, j, k, <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) = rho_0;</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            state(i, j, k, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = rho_0 * T_0;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        });</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    }</div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 </div><!-- fragment -->
@@ -835,6 +837,131 @@ Here is the caller graph for this function:</div>
 </map>
 </div>
 
+</div>
+</div>
+<a id="a7497a6e90bebb14387f5716ee2e51c2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7497a6e90bebb14387f5716ee2e51c2d">&#9670;&nbsp;</a></span>read_custom_terrain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ProblemBase::read_custom_terrain </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>z_phys_nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Function to perform custom initialization of terrain from an input file</p>
+<p>Note: Terrain functionality can also be used to provide grid stretching.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>container for geometric information </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">z_phys_nd</td><td>height coordinate at nodes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>current time </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    {</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="comment">// Read terrain file on the host</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        amrex::Print()&lt;&lt;<span class="stringliteral">&quot;Reading terrain file: &quot;</span>&lt;&lt; fname &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        std::ifstream file(fname);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        amrex::Gpu::HostVector&lt;amrex::Real&gt; m_xterrain,m_yterrain,m_zterrain;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        amrex::Real value1,value2,value3;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordflow">while</span>(file&gt;&gt;value1&gt;&gt;value2&gt;&gt;value3){</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            m_xterrain.push_back(value1);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            m_yterrain.push_back(value2);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            m_zterrain.push_back(value3);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        }</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        file.close();</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="comment">// Copy data to the GPU</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keywordtype">int</span> ncell = m_xterrain.size();</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        amrex::Gpu::DeviceVector&lt;amrex::Real&gt; d_xterrain(ncell),d_yterrain(ncell),d_zterrain(ncell);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, m_xterrain.begin(), m_xterrain.end(), d_xterrain.begin());</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, m_yterrain.begin(), m_yterrain.end(), d_yterrain.begin());</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, m_zterrain.begin(), m_zterrain.end(), d_zterrain.begin());</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        amrex::Real* d_xt = d_xterrain.data();</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        amrex::Real* d_yt = d_yterrain.data();</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        amrex::Real* d_zt = d_zterrain.data();</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="comment">// Populate z_phys data</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        amrex::Real tol = 1.0e-4;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keywordtype">int</span> ngrow = z_phys_nd.nGrow();</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keyword">auto</span> dx = geom.CellSizeArray();</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keyword">auto</span> ProbLoArr = geom.ProbLoArray();</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keywordtype">int</span> ilo = geom.Domain().smallEnd(0);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordtype">int</span> jlo = geom.Domain().smallEnd(1);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordtype">int</span> klo = geom.Domain().smallEnd(2);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordtype">int</span> ihi = geom.Domain().bigEnd(0);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keywordtype">int</span> jhi = geom.Domain().bigEnd(1);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(z_phys_nd,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="comment">// Grown box with no z range</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            amrex::Box xybx = mfi.growntilebox(ngrow);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            xybx.setRange(2,0);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; z_arr = z_phys_nd.array(mfi);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            amrex::ParallelFor(xybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            {</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                <span class="comment">// Clip indices for ghost-cells</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,ilo),ihi);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,jlo),jhi);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                <span class="comment">// Location of nodes</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = ProbLoArr[0]  + ii  * dx[0];</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = ProbLoArr[1]  + jj  * dx[1];</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                amrex::Real zloc = 0.0;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> n=0; n&lt;ncell; ++n)</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                {</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                    amrex::Real delta=std::sqrt(std::pow(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-d_xt[n],2)+std::pow(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-d_yt[n],2));</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                    <span class="keywordflow">if</span>(delta&lt;tol){</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                        found=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                        zloc=d_zt[n];</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                    }</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                }</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                AMREX_ASSERT_WITH_MESSAGE(found, <span class="stringliteral">&quot;Location read from terrain file does not match the grid!&quot;</span>);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                z_arr(i,j,klo) = zloc;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            });</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        }</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    }</div>
+<div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
+<div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7ca260b5527bb1ecbae0aa78897dd666"></a>

@@ -11,6 +11,7 @@ var classProblemBase =
     [ "init_turbPert_const", "classProblemBase.html#a8d05a5a7fabf35317010618d14ae83e9", null ],
     [ "init_uniform", "classProblemBase.html#a6752f5d7122d68914e67896d21db6c43", null ],
     [ "name", "classProblemBase.html#a3a8fb70110fb25623cdfa7b508dee9cf", null ],
+    [ "read_custom_terrain", "classProblemBase.html#a7497a6e90bebb14387f5716ee2e51c2d", null ],
     [ "update_geostrophic_profile", "classProblemBase.html#a7ca260b5527bb1ecbae0aa78897dd666", null ],
     [ "update_rhoqt_sources", "classProblemBase.html#a9ef723333579aac2295b535c79193088", null ],
     [ "update_rhotheta_sources", "classProblemBase.html#ad8f582edde4d124612f67d9d2a17f4a4", null ],
