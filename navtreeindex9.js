@@ -1,5 +1,8 @@
 var NAVTREEINDEX9 =
 {
+"classWriteBndryPlanes.html#a7b350ac1d0c6151ed748a575475f8fbd":[2,0,89,6],
+"classWriteBndryPlanes.html#a7cab948881900ffa97145c47221dcb44":[2,0,89,8],
+"classWriteBndryPlanes.html#a85703bf41a6ba0382f13a90f64ba417b":[2,0,89,11],
 "classWriteBndryPlanes.html#a91c8abe5b1a15f5fe630db40230f08c1":[2,0,89,10],
 "classWriteBndryPlanes.html#abbc94048dfd43b653b7754d785c11d2f":[2,0,89,4],
 "classes.html":[2,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX9 =
 "namespaceBCVars.html":[1,0,1],
 "namespaceERFBCType.html":[1,0,4],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,4,0],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,4,0,8],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[1,0,4,0,7],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914":[1,0,4,0,10],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705":[1,0,4,0,1]
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,4,0,8]
 };

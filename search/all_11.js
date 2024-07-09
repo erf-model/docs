@@ -120,7 +120,7 @@ var searchData=
   ['rhotheta_5fbc_5fcomp_1759',['RhoTheta_bc_comp',['../namespaceBCVars.html#a00367571247ba920989360b94c156f4aa417d2de099d125a0f6b3e32cde3733d1',1,'BCVars']]],
   ['rhotheta_5fcomp_1760',['RhoTheta_comp',['../IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877',1,'IndexDefines.H']]],
   ['rhs_1761',['rhs',['../classMRISplitIntegrator.html#ab0f2e5848bf5e8f4959b6f990cb73053',1,'MRISplitIntegrator']]],
-  ['rotor_5frad_1762',['rotor_rad',['../WindFarm_8H.html#ad7e7946e70b87bff4af7cf6318aecac6',1,'rotor_rad():&#160;WindFarm.H'],['../WindFarm_8cpp.html#ad7e7946e70b87bff4af7cf6318aecac6',1,'rotor_rad():&#160;WindFarm.cpp']]],
+  ['rotor_5frad_1762',['rotor_rad',['../WindFarm_8H.html#ad7e7946e70b87bff4af7cf6318aecac6',1,'rotor_rad():&#160;WindFarm.H'],['../WindFarm_8cpp.html#a20d0bb6abddad15a7f8fbf641cd4d337',1,'rotor_rad():&#160;WindFarm.cpp']]],
   ['rough_5ftype_5fland_1763',['rough_type_land',['../classABLMost.html#ab052d62a07e8765a6de67264d05aff37',1,'ABLMost']]],
   ['rough_5ftype_5fsea_1764',['rough_type_sea',['../classABLMost.html#ab5041b7c6a15b759a8f33dadd1a67e92',1,'ABLMost']]],
   ['roughcalctype_1765',['RoughCalcType',['../classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13',1,'ABLMost']]],

@@ -53,7 +53,7 @@ var searchData=
   ['poisson_5freltol_4079',['poisson_reltol',['../structSolverChoice.html#a238b0871f38f8b134ff3fe5af0d05479',1,'SolverChoice']]],
   ['post_5fupdate_4080',['post_update',['../classMRISplitIntegrator.html#a02e299d44fcd24c67717267dd15a7895',1,'MRISplitIntegrator']]],
   ['post_5fupdate_5ffun_4081',['post_update_fun',['../TI__slow__rhs__fun_8H.html#afd90eac481ef47af3b095c56653098e8',1,'TI_slow_rhs_fun.H']]],
-  ['power_4082',['power',['../WindFarm_8H.html#a6f42125a611560a0e6d85c2fc8a647b2',1,'power():&#160;WindFarm.H'],['../WindFarm_8cpp.html#a6f42125a611560a0e6d85c2fc8a647b2',1,'power():&#160;WindFarm.cpp']]],
+  ['power_4082',['power',['../WindFarm_8H.html#a6f42125a611560a0e6d85c2fc8a647b2',1,'power():&#160;WindFarm.H'],['../WindFarm_8cpp.html#a29b7bcc7af0bf199a43a89cf2d068e4c',1,'power():&#160;WindFarm.cpp']]],
   ['pp_5fprefix_4083',['pp_prefix',['../structAdvChoice.html#a667cbedb89514e330b6ca144298857da',1,'AdvChoice::pp_prefix()'],['../structSolverChoice.html#a4b0edf29a032ff18b10a42825fa9e4b6',1,'SolverChoice::pp_prefix()'],['../structDiffChoice.html#a9e8b6878f4d18ee6fe61a220612d70df',1,'DiffChoice::pp_prefix()'],['../structSpongeChoice.html#af06b59184315514abdadd3b54c073909',1,'SpongeChoice::pp_prefix()'],['../structTurbChoice.html#a6b8e56e5ace640df7834c013c6788020',1,'TurbChoice::pp_prefix()'],['../classERF.html#a59df30e7a5537c8543bb00772bd98b58',1,'ERF::pp_prefix()']]],
   ['pr_5ft_4084',['Pr_t',['../structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566',1,'TurbChoice']]],
   ['pr_5ft_5finv_4085',['Pr_t_inv',['../structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5',1,'TurbChoice']]],

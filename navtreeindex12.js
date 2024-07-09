@@ -1,5 +1,8 @@
 var NAVTREEINDEX12 =
 {
+"structWENO__MZQ3.html#ab9cb2f483989b377e7de79587d44c8c1":[2,0,86,3],
+"structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099":[2,0,86,5],
+"structWENO__MZQ3.html#ad6c988889194e31f809b878a8b75390e":[2,0,86,6],
 "structWENO__MZQ3.html#af1d30022fe1ebe59529f45843dff3ae5":[2,0,86,10],
 "structWENO__Z3.html":[2,0,87],
 "structWENO__Z3.html#a04370c4cf4d845f967ec610ff66f5d2b":[2,0,87,5],

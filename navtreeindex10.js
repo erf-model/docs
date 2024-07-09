@@ -1,5 +1,8 @@
 var NAVTREEINDEX10 =
 {
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[1,0,4,0,7],
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914":[1,0,4,0,10],
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705":[1,0,4,0,1],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42d0838b4e8d40ee76fbaf2d55c3402e":[1,0,4,0,6],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846":[1,0,4,0,4],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af":[1,0,4,0,5],
@@ -246,8 +249,5 @@ var NAVTREEINDEX10 =
 "structPhysProp_1_1physprop__t.html#a2e423bf4c825875ea8d9a72ead6c3b20":[2,0,51,0,7],
 "structPhysProp_1_1physprop__t.html#a39ec574c71085ec5a6aa268b3b752a23":[2,0,51,0,27],
 "structPhysProp_1_1physprop__t.html#a3b762bb10073922aba1fdc89e8f4d412":[2,0,51,0,41],
-"structPhysProp_1_1physprop__t.html#a3e3968847760816c03052a8b76da1a13":[2,0,51,0,35],
-"structPhysProp_1_1physprop__t.html#a3f78f2921f22ba1912926ef62da7b19f":[2,0,51,0,34],
-"structPhysProp_1_1physprop__t.html#a4789a50f02b5f5cdee6a284cc782eed9":[2,0,51,0,39],
-"structPhysProp_1_1physprop__t.html#a55622eb338277f3ce9c7d5b774a9c2c5":[2,0,51,0,9]
+"structPhysProp_1_1physprop__t.html#a3e3968847760816c03052a8b76da1a13":[2,0,51,0,35]
 };

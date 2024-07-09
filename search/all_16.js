@@ -23,7 +23,7 @@ var searchData=
   ['wfromomega_2151',['WFromOmega',['../TerrainMetrics_8H.html#afcf8f856b0f93b149c115ca1ff240039',1,'WFromOmega(int i, int j, int k, amrex::Real omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv):&#160;TerrainMetrics.H'],['../TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087',1,'WFromOmega(int i, int j, int k, amrex::Real omega, amrex::Real u, amrex::Real v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv):&#160;TerrainMetrics.H']]],
   ['wgtn_2152',['wgtn',['../structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da',1,'LinInterp::InterpType']]],
   ['wgts_2153',['wgts',['../structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b',1,'LinInterp::InterpType']]],
-  ['wind_5fspeed_2154',['wind_speed',['../WindFarm_8H.html#af17b7b8b705cdc24fa41fbcab3b465b2',1,'wind_speed():&#160;WindFarm.cpp'],['../WindFarm_8cpp.html#af17b7b8b705cdc24fa41fbcab3b465b2',1,'wind_speed():&#160;WindFarm.cpp']]],
+  ['wind_5fspeed_2154',['wind_speed',['../WindFarm_8H.html#af17b7b8b705cdc24fa41fbcab3b465b2',1,'wind_speed():&#160;WindFarm.cpp'],['../WindFarm_8cpp.html#a080ad8f33fdef07a1f58e437a4ac381a',1,'wind_speed():&#160;WindFarm.cpp']]],
   ['windfarm_2ecpp_2155',['WindFarm.cpp',['../WindFarm_8cpp.html',1,'']]],
   ['windfarm_2eh_2156',['WindFarm.H',['../WindFarm_8H.html',1,'']]],
   ['windfarm_5floc_5ftable_2157',['windfarm_loc_table',['../structSolverChoice.html#a44bc0227f088664e4e2c1090ebb1381d',1,'SolverChoice']]],
