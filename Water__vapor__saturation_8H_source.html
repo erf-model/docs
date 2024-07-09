@@ -163,8 +163,8 @@ $(document).ready(function(){initNavTree('Water__vapor__saturation_8H_source.htm
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classWaterVaporSat.html#ad2bce1bf12d7f01fd354c36e17bfe635">   76</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classWaterVaporSat.html#ad2bce1bf12d7f01fd354c36e17bfe635">no_ip_hltalt</a> (<span class="keyword">const</span> amrex::Real&amp; t,</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                              amrex::Real hltalt) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        hltalt = <a class="code" href="ERF__Constants_8H.html#a6b828bce1244497992779734cf3eaa6f">latvap</a>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// Account for change of latvap with t above freezing where</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        hltalt = <a class="code" href="ERF__Constants_8H.html#a1a4a1b5aaf1d37a8a175a7b7177e9e2c">lat_vap</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// Account for change of lat_vap with t above freezing where</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// constant slope is given by -2369 j/(kg c) = cpv - cw</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (t &gt;= <a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>) hltalt = hltalt - 2369.0*(t-<a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
@@ -198,7 +198,7 @@ $(document).ready(function(){initNavTree('Water__vapor__saturation_8H_source.htm
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                weight = 1.0;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            }</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            hltalt = hltalt + weight*<a class="code" href="ERF__Constants_8H.html#a3ab7326e9d28db12940b0ef4f52a4fa2">latice</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            hltalt = hltalt + weight*<a class="code" href="ERF__Constants_8H.html#ab9605510ecc8468f94a0ba1842a0bf13">lat_ice</a>;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
@@ -308,7 +308,7 @@ $(document).ready(function(){initNavTree('Water__vapor__saturation_8H_source.htm
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="classSatMethods.html#a9a256423ef50446cfdf6d4dcc1c1f73b">SatMethods::wv_sat_qsat_ice</a>(t, p, es, qs);</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="comment">// For pure ice, just add latent heats.</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        hltalt = <a class="code" href="ERF__Constants_8H.html#a6b828bce1244497992779734cf3eaa6f">latvap</a> + <a class="code" href="ERF__Constants_8H.html#a3ab7326e9d28db12940b0ef4f52a4fa2">latice</a>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        hltalt = <a class="code" href="ERF__Constants_8H.html#a1a4a1b5aaf1d37a8a175a7b7177e9e2c">lat_vap</a> + <a class="code" href="ERF__Constants_8H.html#ab9605510ecc8468f94a0ba1842a0bf13">lat_ice</a>;</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        enthalpy = <a class="code" href="classWaterVaporSat.html#afae0dfb4f85c8ac528ff330ccfa182b2">tq_enthalpy</a>(t, qs, hltalt);</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
@@ -455,11 +455,11 @@ $(document).ready(function(){initNavTree('Water__vapor__saturation_8H_source.htm
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// WATER_VAPOR_SATURATION_H_</span></div>
 <div class="ttc" id="aERF__Constants_8H_html"><div class="ttname"><a href="ERF__Constants_8H.html">ERF_Constants.H</a></div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a0ab59ff21ef0b178fde0843394f5674a"><div class="ttname"><a href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a></div><div class="ttdeci">constexpr amrex::Real R_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a1a4a1b5aaf1d37a8a175a7b7177e9e2c"><div class="ttname"><a href="ERF__Constants_8H.html#a1a4a1b5aaf1d37a8a175a7b7177e9e2c">lat_vap</a></div><div class="ttdeci">constexpr amrex::Real lat_vap</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:85</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a3ab7326e9d28db12940b0ef4f52a4fa2"><div class="ttname"><a href="ERF__Constants_8H.html#a3ab7326e9d28db12940b0ef4f52a4fa2">latice</a></div><div class="ttdeci">constexpr amrex::Real latice</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:86</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a6b828bce1244497992779734cf3eaa6f"><div class="ttname"><a href="ERF__Constants_8H.html#a6b828bce1244497992779734cf3eaa6f">latvap</a></div><div class="ttdeci">constexpr amrex::Real latvap</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:85</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a764526b482e006cd52004d3f53467b57"><div class="ttname"><a href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a></div><div class="ttdeci">constexpr amrex::Real tmelt</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:88</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a9b3da60e1e65429fe546d18c9c926105"><div class="ttname"><a href="ERF__Constants_8H.html#a9b3da60e1e65429fe546d18c9c926105">ttrice</a></div><div class="ttdeci">constexpr amrex::Real ttrice</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:91</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_ab9605510ecc8468f94a0ba1842a0bf13"><div class="ttname"><a href="ERF__Constants_8H.html#ab9605510ecc8468f94a0ba1842a0bf13">lat_ice</a></div><div class="ttdeci">constexpr amrex::Real lat_ice</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:86</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_af04ee89db2f653c028681f044bd16222"><div class="ttname"><a href="ERF__Constants_8H.html#af04ee89db2f653c028681f044bd16222">omeps</a></div><div class="ttdeci">constexpr amrex::Real omeps</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:93</div></div>
 <div class="ttc" id="aSat__methods_8H_html"><div class="ttname"><a href="Sat__methods_8H.html">Sat_methods.H</a></div></div>
 <div class="ttc" id="aclassSatMethods_html_a1c4bb9729c75dd1160d45ae638635766"><div class="ttname"><a href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766">SatMethods::wv_sat_svp_water</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real wv_sat_svp_water(const amrex::Real &amp;t, const int idx=1)</div><div class="ttdef"><b>Definition:</b> Sat_methods.H:97</div></div>

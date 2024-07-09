@@ -437,7 +437,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                qp_array(i,j,k) = std::max(0.0, qp_array(i,j,k));</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="comment">//------- Autoconversion/accretion</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                Real qcc, autor, accrr;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                Real qcc, auto_r, accrr;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                Real dq_clwater_to_rain, dq_rain_to_vapor, dq_clwater_to_vapor, dq_vapor_to_clwater, qsat;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                Real pressure = pres_array(i,j,k);</div>
@@ -455,7 +455,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                Real fac = qsat*4093.0*<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>/(<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>*std::pow(tabs_array(i,j,k)-36.0,2));</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="comment">//Real fac = qsat*L_v*L_v/(Cp_d*R_v*tabs_array(i,j,k)*tabs_array(i,j,k));</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="comment">// If water vapor content exceeds saturation value, then vapor condenses to waterm and latent heat is released, increasing temperature</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="comment">// If water vapor content exceeds saturation value, then vapor condenses to water and latent heat is released, increasing temperature</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="keywordflow">if</span> (qv_array(i,j,k) &gt; qsat) {</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    dq_vapor_to_clwater = std::min(qv_array(i,j,k), (qv_array(i,j,k)-qsat)/(1.0 + fac));</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                }</div>
@@ -481,14 +481,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                <span class="keywordflow">if</span> (qc_array(i,j,k) &gt; 0.0) {</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                    qcc = qc_array(i,j,k);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                    autor = 0.0;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                    auto_r = 0.0;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    <span class="keywordflow">if</span> (qcc &gt; <a class="code" href="ERF__Constants_8H.html#a86f34aeefa355fa0d6d0cca8f033a878">qcw0</a>) {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        autor = <a class="code" href="ERF__Constants_8H.html#a3c70f890015491421d536954a374324d">alphaelq</a>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        auto_r = <a class="code" href="ERF__Constants_8H.html#a3c70f890015491421d536954a374324d">alphaelq</a>;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    }</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                    accrr = 0.0;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                    accrr = 2.2 * std::pow(qp_array(i,j,k) , 0.875);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                    dq_clwater_to_rain = dtn *(accrr*qcc + autor*(qcc - <a class="code" href="ERF__Constants_8H.html#a86f34aeefa355fa0d6d0cca8f033a878">qcw0</a>));</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                    dq_clwater_to_rain = dtn *(accrr*qcc + auto_r*(qcc - <a class="code" href="ERF__Constants_8H.html#a86f34aeefa355fa0d6d0cca8f033a878">qcw0</a>));</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                    <span class="comment">// If the amount of change is more than the amount of qc present, then dq = qc</span></div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                    dq_clwater_to_rain = std::min(dq_clwater_to_rain, qc_array(i,j,k));</div>
@@ -551,7 +551,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                <span class="comment">//Real fac = qsat*4093.0*L_v/(Cp_d*std::pow(tabs_array(i,j,k)-36.0,2));</span></div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                Real fac = qsat*<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>*<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>/(<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>*<a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>*tabs_array(i,j,k)*tabs_array(i,j,k));</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                <span class="comment">// If water vapor content exceeds saturation value, then vapor condenses to waterm and latent heat is released, increasing temperature</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                <span class="comment">// If water vapor content exceeds saturation value, then vapor condenses to water and latent heat is released, increasing temperature</span></div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                <span class="keywordflow">if</span> (qv_array(i,j,k) &gt; qsat){</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    dq_vapor_to_clwater = std::min(qv_array(i,j,k), (qv_array(i,j,k)-qsat)/(1.0 + fac));</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                }</div>

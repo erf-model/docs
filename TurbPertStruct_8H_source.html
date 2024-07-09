@@ -171,7 +171,7 @@ $(document).ready(function(){initNavTree('TurbPertStruct_8H_source.html',''); in
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Perturbation update frequency check.</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// This function will trigger calc_tpi_meanMag() and calc_tpi_amp(), when</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// the local elasped time is greater than the perturbation frequency</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// the local elapsed time is greater than the perturbation frequency</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="structTurbulentPerturbation.html#a5e6200f8b6bea3c4944dccc6c7285102">   87</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structTurbulentPerturbation.html#a5e6200f8b6bea3c4944dccc6c7285102">calc_tpi_update</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> lev,</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                          <span class="keyword">const</span> amrex::Real dt,</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                          amrex::MultiFab&amp; mf_xvel,</div>
@@ -205,7 +205,7 @@ $(document).ready(function(){initNavTree('TurbPertStruct_8H_source.html',''); in
 <div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="TurbPertStruct_8H.html#a1cd6e2210df20afb1fdec3183cbef7ba">  117</a></span>&#160;<span class="preprocessor">#define USE_VOLUME_AVERAGE</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// Perturbation box mean velocity magnitude calculation</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// This is pulled into the strucutre to also utilize during runtime</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// This is pulled into the structure to also utilize during runtime</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="structTurbulentPerturbation.html#a0766df39a2c466d487125bba6dff6d34">  121</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structTurbulentPerturbation.html#a0766df39a2c466d487125bba6dff6d34">calc_tpi_meanMag</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> boxIdx,</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                           <span class="keyword">const</span> <span class="keywordtype">int</span> lev,</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                           amrex::MultiFab&amp; mf_xvel,</div>
@@ -328,7 +328,7 @@ $(document).ready(function(){initNavTree('TurbPertStruct_8H_source.html',''); in
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">//#define ECKERT_FORMULATION</span></div>
 <div class="line"><a name="l00241"></a><span class="lineno"><a class="line" href="TurbPertStruct_8H.html#af297c94285f14acdfdc2f1fabc6486df">  241</a></span>&#160;<span class="preprocessor">#define BULK_RICHARDSON_FORMULATION</span></div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="comment">// Perturbation amplitude calcluation</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="comment">// Perturbation amplitude calculation</span></div>
 <div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="structTurbulentPerturbation.html#afa143d3aa844913aa5a51d05422f6afd">  244</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structTurbulentPerturbation.html#afa143d3aa844913aa5a51d05422f6afd">calc_tpi_amp</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> boxIdx)</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    {</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        amrex::Real g = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>;</div>

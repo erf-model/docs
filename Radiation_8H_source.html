@@ -88,11 +88,11 @@ $(document).ready(function(){initNavTree('Radiation_8H_source.html',''); initRes
 <div class="contents">
 <a href="Radiation_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * RTE-RRTMGP radiation model interface to ERF</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * The orginal code is developed by RobertPincus, and the code is open source available at:</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * The original code is developed by RobertPincus, and the code is open source available at:</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                        https://github.com/earth-system-radiation/rte-rrtmgp</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Please reference to the following paper,</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                        https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019MS001621</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * NOTE: we use the C++ version of RTE-RRTMGP, which is the implemention of the original Fortran</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * NOTE: we use the C++ version of RTE-RRTMGP, which is the implementation of the original Fortran</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * code using C++ YAKL for CUDA, HiP and SYCL application by E3SM ECP team, the C++ version</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * of the rte-rrtmgp code is located at:</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *                       https://github.com/E3SM-Project/rte-rrtmgp</span></div>
@@ -231,7 +231,7 @@ $(document).ready(function(){initNavTree('Radiation_8H_source.html',''); initRes
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">// rrtmgp</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classRadiation.html#adbdd39584f1836cc21a816a7ee7098bb">  144</a></span>&#160;    <a class="code" href="classRrtmgp.html">Rrtmgp</a> <a class="code" href="classRadiation.html#adbdd39584f1836cc21a816a7ee7098bb">radiation</a>;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// optics radation properties</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// optics radiation properties</span></div>
 <div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classRadiation.html#ab0464f3862987a09a9f4713937a984c3">  147</a></span>&#160;    <a class="code" href="classOptics.html">Optics</a> <a class="code" href="classRadiation.html#ab0464f3862987a09a9f4713937a984c3">optics</a>;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">// aerosol optics properties</span></div>
@@ -273,7 +273,7 @@ $(document).ready(function(){initNavTree('Radiation_8H_source.html',''); initRes
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="comment">// Disabled when value is less than 0.</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="classRadiation.html#a0cdd06e704e50fd3f6f18781f7d4ec38">  186</a></span>&#160;    real <a class="code" href="classRadiation.html#a0cdd06e704e50fd3f6f18781f7d4ec38">fixed_total_solar_irradiance</a> = -1.;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">// The RRTMGP warnings are printed when the state variables need to be limted,</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">// The RRTMGP warnings are printed when the state variables need to be limited,</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment">// such as when the temperature drops too low. This is not normally an issue,</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// but in aquaplanet and RCE configurations these situations occur much more</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// frequently, so this flag was added to be able to disable those messages.</span></div>

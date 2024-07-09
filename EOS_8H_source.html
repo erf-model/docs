@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('EOS_8H_source.html',''); initResizable
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * @params[in] pressure</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * @params[in] temperature</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @params[in] rd0cp ratio of R_d to c_p</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @params[in] rdOcp ratio of R_d to c_p</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">   17</a></span>&#160;amrex::Real <a class="code" href="EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(<span class="keyword">const</span> amrex::Real <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda8ecd2dbb16824e5c68db7daf2254fc79">T</a>, <span class="keyword">const</span> amrex::Real P, <span class="keyword">const</span> amrex::Real rdOcp)</div>
@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('EOS_8H_source.html',''); initResizable
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * @params[in] rho density</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> * @params[in] T temperature</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * @params[in] rd0cp ratio of R_d to c_p</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * @params[in] rdOcp ratio of R_d to c_p</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="EOS_8H.html#ad0e28e4df049e6e34fa4a973dd446506">   47</a></span>&#160;amrex::Real <a class="code" href="EOS_8H.html#ad0e28e4df049e6e34fa4a973dd446506">getThgivenRandT</a>(<span class="keyword">const</span> amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>, <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda8ecd2dbb16824e5c68db7daf2254fc79">T</a>, <span class="keyword">const</span> amrex::Real rdOcp, <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>=0.0)</div>
@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('EOS_8H_source.html',''); initResizable
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> * @params[in] theta potential temperature</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> * @params[in] p pressure</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> * @params[in] rd0cp ratio of R_d to c_p</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> * @params[in] rdOcp ratio of R_d to c_p</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="EOS_8H.html#ae6954ba7deb6ec80482087dbbc51f4ed">   75</a></span>&#160;amrex::Real <a class="code" href="EOS_8H.html#ae6954ba7deb6ec80482087dbbc51f4ed">getRhogivenThetaPress</a> (<span class="keyword">const</span> amrex::Real <a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a>, <span class="keyword">const</span> amrex::Real p, <span class="keyword">const</span> amrex::Real rdOcp, <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>=0.0)</div>
@@ -172,7 +172,7 @@ $(document).ready(function(){initNavTree('EOS_8H_source.html',''); initResizable
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> * @params[in] theta potential temperature</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> * @params[in] p pressure</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> * @params[in] rd0cp ratio of R_d to c_p</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> * @params[in] rdOcp ratio of R_d to c_p</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="EOS_8H.html#a91cb501e961a0d0a6a3c62b5c36702cd">   90</a></span>&#160;amrex::Real <a class="code" href="EOS_8H.html#a91cb501e961a0d0a6a3c62b5c36702cd">getdPdRgivenConstantTheta</a>(<span class="keyword">const</span> amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>, <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a>, <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>=0.0)</div>
@@ -185,7 +185,7 @@ $(document).ready(function(){initNavTree('EOS_8H_source.html',''); initResizable
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"> * Function to return the Exner function pi given pressure</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"> * @params[in] p pressure</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"> * @params[in] rd0cp ratio of R_d to c_p</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"> * @params[in] rdOcp ratio of R_d to c_p</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">  103</a></span>&#160;amrex::Real <a class="code" href="EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(<span class="keyword">const</span> amrex::Real P, <span class="keyword">const</span> amrex::Real rdOcp)</div>
@@ -198,7 +198,7 @@ $(document).ready(function(){initNavTree('EOS_8H_source.html',''); initResizable
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"> * Function to return the Exner function pi given densith times potential temperature</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> * @params[in] rhotheta density times potential temperature</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> * @params[in] rd0cp ratio of R_d to c_p</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> * @params[in] rdOcp ratio of R_d to c_p</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a">  116</a></span>&#160;amrex::Real <a class="code" href="EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a">getExnergivenRTh</a>(<span class="keyword">const</span> amrex::Real rhotheta, <span class="keyword">const</span> amrex::Real rdOcp, <span class="keyword">const</span> amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>=0.0 )</div>
@@ -219,7 +219,7 @@ $(document).ready(function(){initNavTree('EOS_8H_source.html',''); initResizable
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// diagnostic relation for the full pressure</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// see https://erf.readthedocs.io/en/latest/theory/NavierStokesEquations.html</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// For cases with mositure theta = theta_m / (1 + R_v/R_d*qv)</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// For cases with moisture, theta = theta_m / (1 + R_v/R_d*qv)</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> std::pow(p*std::pow(<a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>-1), <a class="code" href="ERF__Constants_8H.html#ab24194b3b11ee04368e1087acda6bde7">iGamma</a>) * <a class="code" href="ERF__Constants_8H.html#a2c83556bc439f3f48ca5eb1cb5c81842">iR_d</a> / (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) ;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>

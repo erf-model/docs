@@ -6,7 +6,7 @@ var classLinInterp =
       [ "extrap_method_bndry", "classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26", null ],
       [ "extrap_method_cycle", "classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2aeec66ba685aaa33115191d8f6bc9c0e6", null ]
     ] ],
-    [ "init", "classLinInterp.html#ae4ee554a1de89d9a85319088f81288e1", null ],
+    [ "init", "classLinInterp.html#a00b249a492135098785c7cf3d2296a91", null ],
     [ "interp1d", "classLinInterp.html#aad318a6d1364e9369ea02fe34542de24", null ],
     [ "interp2d1d", "classLinInterp.html#adcd3fbce06341f370d0e7bcabb6a5e1c", null ],
     [ "interp2d2d", "classLinInterp.html#a646cb2d20182e9d2073b08d0897dac76", null ],

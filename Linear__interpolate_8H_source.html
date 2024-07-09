@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('Linear__interpolate_8H_source.html',''
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Initialize a variable of type(interp_type) with weights for linear interpolation.</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//       this variable can then be used in calls to lininterp1d and lininterp2d.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//   yin is a 1d array of length nin of locations to interpolate from - this array must</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//   yin is a 1d array of length n_in of locations to interpolate from - this array must</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//       be monotonic but can be increasing or decreasing</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">//   yout is a 1d array of length nout of locations to interpolate to, this array need</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">//       not be ordered</span></div>
@@ -125,8 +125,8 @@ $(document).ready(function(){initNavTree('Linear__interpolate_8H_source.html',''
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//         optional values cyclicmin and cyclicmax can be used to set the bounds of the</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//         cyclic mapping - these default to 0 and 360.</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    YAKL_INLINE</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classLinInterp.html#ae4ee554a1de89d9a85319088f81288e1">   40</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLinInterp.html#ae4ee554a1de89d9a85319088f81288e1">init</a> (<span class="keyword">const</span> real1d&amp; yin,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; nin,</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classLinInterp.html#a00b249a492135098785c7cf3d2296a91">   40</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classLinInterp.html#a00b249a492135098785c7cf3d2296a91">init</a> (<span class="keyword">const</span> real1d&amp; yin,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; n_in,</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                      <span class="keyword">const</span> real1d&amp; yout,</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; nout,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                      <span class="keyword">const</span> <a class="code" href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2">InterpMethod</a>&amp; extrap_method,</div>
@@ -159,7 +159,7 @@ $(document).ready(function(){initNavTree('Linear__interpolate_8H_source.html',''
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a> = real1d(<span class="stringliteral">&quot;wgts&quot;</span>, nout);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a> = real1d(<span class="stringliteral">&quot;wgtn&quot;</span>, nout);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        parallel_for(SimpleBounds&lt;1&gt;(nin-1), YAKL_LAMBDA (<span class="keywordtype">int</span> j)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        parallel_for(SimpleBounds&lt;1&gt;(n_in-1), YAKL_LAMBDA (<span class="keywordtype">int</span> j)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span>(yin(j) &gt; yin(j+1)) {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                printf(<span class="stringliteral">&quot;init: inputs are not monotonic!\n&quot;</span>);</div>
@@ -191,9 +191,9 @@ $(document).ready(function(){initNavTree('Linear__interpolate_8H_source.html',''
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a>(j) = 0.;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = 0.;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (yout(j) &gt; yin(nin)) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = nin;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">jjp</a>(j) = nin;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (yout(j) &gt; yin(n_in)) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = n_in;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">jjp</a>(j) = n_in;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a>(j) = 0.;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = 0.;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    }</div>
@@ -208,9 +208,9 @@ $(document).ready(function(){initNavTree('Linear__interpolate_8H_source.html',''
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a>(j) = 0.;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = 0.;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (yout(j) &lt; yin(nin)) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = nin;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">jjp</a>(j) = nin;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (yout(j) &lt; yin(n_in)) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = n_in;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">jjp</a>(j) = n_in;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a>(j) = 0.;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = 0.;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    }</div>
@@ -231,9 +231,9 @@ $(document).ready(function(){initNavTree('Linear__interpolate_8H_source.html',''
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a>(j) = 1.;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = 0.;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                    }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (yout(j) &gt; yin(nin)) {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = nin;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">jjp</a>(j) = nin;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (yout(j) &gt; yin(n_in)) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = n_in;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">jjp</a>(j) = n_in;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a>(j) = 1.;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = 0.;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                    }</div>
@@ -248,9 +248,9 @@ $(document).ready(function(){initNavTree('Linear__interpolate_8H_source.html',''
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a>(j) = 1.;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = 0.;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                    }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (yout(j) &lt;= yin(nin)) {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = nin;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">jjp</a>(j) = nin;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (yout(j) &lt;= yin(n_in)) {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = n_in;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">jjp</a>(j) = n_in;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a>(j) = 1.;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = 0.;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    }</div>
@@ -262,28 +262,28 @@ $(document).ready(function(){initNavTree('Linear__interpolate_8H_source.html',''
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="comment">// For values which extend beyond boundaries, set weights</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="comment">// for circular boundaries</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            dyinwrap = yin(1) + (cmax-cmin) - yin(nin);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            avgdyin = abs(yin(nin)-yin(1))/(nin-1.);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            dyinwrap = yin(1) + (cmax-cmin) - yin(n_in);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            avgdyin = abs(yin(n_in)-yin(1))/(n_in-1.);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <span class="keyword">auto</span> ratio = dyinwrap/avgdyin;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">if</span> (ratio &lt; 0.9 || ratio &gt; 1.1) {</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                printf(<span class="stringliteral">&quot;ratio is too large, dyinwrap= %13.6e, avgdyin= %13.6e, yin(1) = %13.6e, yin(nin)= %13.6e\n&quot;</span>,</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                       dyinwrap, avgdyin, yin(1), yin(nin));</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                printf(<span class="stringliteral">&quot;ratio is too large, dyinwrap= %13.6e, avgdyin= %13.6e, yin(1) = %13.6e, yin(n_in)= %13.6e\n&quot;</span>,</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                       dyinwrap, avgdyin, yin(1), yin(n_in));</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            }</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">if</span>(increasing) {</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                parallel_for(SimpleBounds&lt;1&gt;(nout), YAKL_LAMBDA (<span class="keywordtype">int</span> j)</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                {</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    <span class="keywordflow">if</span> (yout(j) &lt;= yin(1)) {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = nin;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = n_in;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">jjp</a>(j) = 1;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a>(j) = (yin(1)-yout(j))/dyinwrap;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = (yout(j)+(cmax-cmin) - yin(nin))/dyinwrap;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = (yout(j)+(cmax-cmin) - yin(n_in))/dyinwrap;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (yout(j) &gt; yin(nin)) {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = nin;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (yout(j) &gt; yin(n_in)) {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = n_in;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">jjp</a>(j) = 1;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a>(j) = (yin(1)+(cmax-cmin)-yout(j))/dyinwrap;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = (yout(j)-yin(nin))/dyinwrap;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = (yout(j)-yin(n_in))/dyinwrap;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    }</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                });</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            }</div>
@@ -291,16 +291,16 @@ $(document).ready(function(){initNavTree('Linear__interpolate_8H_source.html',''
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                parallel_for(SimpleBounds&lt;1&gt;(nout), YAKL_LAMBDA (<span class="keywordtype">int</span> j)</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                {</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                    <span class="keywordflow">if</span> (yout(j) &gt; yin(1)) {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = nin;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = n_in;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">jjp</a>(j) = 1;</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a>(j) = (yin(1)-yout(j))/dyinwrap;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = (yout(j)+(cmax-cmin) - yin(nin))/dyinwrap;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = (yout(j)+(cmax-cmin) - yin(n_in))/dyinwrap;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    }</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (yout(j) &lt;= yin(nin)) {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = nin;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (yout(j) &lt;= yin(n_in)) {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = n_in;</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">jjp</a>(j) = 1;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a>(j) = (yin(1)+(cmax-cmin)-yout(j))/dyinwrap;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = (yout(j)+(cmax-cmin)-yin(nin))/dyinwrap;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                        interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>(j) = (yout(j)+(cmax-cmin)-yin(n_in))/dyinwrap;</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    }</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                });</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            }</div>
@@ -310,7 +310,7 @@ $(document).ready(function(){initNavTree('Linear__interpolate_8H_source.html',''
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="comment">// Loop though output indices finding input indices and weights</span></div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="comment">//</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordflow">if</span>(increasing) {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            parallel_for(SimpleBounds&lt;2&gt;(nout, nin-1), YAKL_LAMBDA (<span class="keywordtype">int</span> j, <span class="keywordtype">int</span> jj)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            parallel_for(SimpleBounds&lt;2&gt;(nout, n_in-1), YAKL_LAMBDA (<span class="keywordtype">int</span> j, <span class="keywordtype">int</span> jj)</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            {</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                <span class="keywordflow">if</span> (yout(j) &gt; yin(jj) &amp;&amp; yout(j) &lt;= yin(jj+1)) {</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                    interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = jj;</div>
@@ -322,7 +322,7 @@ $(document).ready(function(){initNavTree('Linear__interpolate_8H_source.html',''
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            });</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        }</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            parallel_for(SimpleBounds&lt;2&gt;(nout, nin-1), YAKL_LAMBDA (<span class="keywordtype">int</span> j, <span class="keywordtype">int</span> jj)</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            parallel_for(SimpleBounds&lt;2&gt;(nout, n_in-1), YAKL_LAMBDA (<span class="keywordtype">int</span> j, <span class="keywordtype">int</span> jj)</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            {</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                <span class="keywordflow">if</span> (yout(j) &lt;= yin(jj) &amp;&amp; yout(j) &gt; yin(jj+1)) {</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                    interp_wgts.<a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>(j) = jj;</div>
@@ -428,6 +428,7 @@ $(document).ready(function(){initNavTree('Linear__interpolate_8H_source.html',''
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;};</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassLinInterp_html"><div class="ttname"><a href="classLinInterp.html">LinInterp</a></div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:12</div></div>
+<div class="ttc" id="aclassLinInterp_html_a00b249a492135098785c7cf3d2296a91"><div class="ttname"><a href="classLinInterp.html#a00b249a492135098785c7cf3d2296a91">LinInterp::init</a></div><div class="ttdeci">static YAKL_INLINE void init(const real1d &amp;yin, const int &amp;n_in, const real1d &amp;yout, const int &amp;nout, const InterpMethod &amp;extrap_method, InterpType &amp;interp_wgts, real cyclicmin=0., real cyclicmax=0.)</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:40</div></div>
 <div class="ttc" id="aclassLinInterp_html_a1f3e9aabd558af36cbc7accfc6e523a2"><div class="ttname"><a href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2">LinInterp::InterpMethod</a></div><div class="ttdeci">InterpMethod</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:14</div></div>
 <div class="ttc" id="aclassLinInterp_html_a1f3e9aabd558af36cbc7accfc6e523a2aa8778034b0e18c190776623750b945b5"><div class="ttname"><a href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2aa8778034b0e18c190776623750b945b5">LinInterp::extrap_method_zero</a></div><div class="ttdeci">@ extrap_method_zero</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:15</div></div>
 <div class="ttc" id="aclassLinInterp_html_a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26"><div class="ttname"><a href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26">LinInterp::extrap_method_bndry</a></div><div class="ttdeci">@ extrap_method_bndry</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:16</div></div>
@@ -436,7 +437,6 @@ $(document).ready(function(){initNavTree('Linear__interpolate_8H_source.html',''
 <div class="ttc" id="aclassLinInterp_html_a646cb2d20182e9d2073b08d0897dac76"><div class="ttname"><a href="classLinInterp.html#a646cb2d20182e9d2073b08d0897dac76">LinInterp::interp2d2d</a></div><div class="ttdeci">static YAKL_INLINE void interp2d2d(const real2d &amp;arrin, const int &amp;n1, const int &amp;n2, const real2d &amp;arrout, const int &amp;m1, const int &amp;m2, const InterpType &amp;wgt1, const InterpType &amp;wgt2)</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:284</div></div>
 <div class="ttc" id="aclassLinInterp_html_aad318a6d1364e9369ea02fe34542de24"><div class="ttname"><a href="classLinInterp.html#aad318a6d1364e9369ea02fe34542de24">LinInterp::interp1d</a></div><div class="ttdeci">static YAKL_INLINE void interp1d(const real1d &amp;arrin, const int &amp;n1, const real1d &amp;arrout, const int &amp;m1, const InterpType &amp;interp_wgts)</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:267</div></div>
 <div class="ttc" id="aclassLinInterp_html_adcd3fbce06341f370d0e7bcabb6a5e1c"><div class="ttname"><a href="classLinInterp.html#adcd3fbce06341f370d0e7bcabb6a5e1c">LinInterp::interp2d1d</a></div><div class="ttdeci">static YAKL_INLINE void interp2d1d(const real2d &amp;arrin, const int &amp;n1, const int &amp;n2, const real1d &amp;arrout, const int &amp;m1, const InterpType &amp;wgt1, const InterpType &amp;wgt2)</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:308</div></div>
-<div class="ttc" id="aclassLinInterp_html_ae4ee554a1de89d9a85319088f81288e1"><div class="ttname"><a href="classLinInterp.html#ae4ee554a1de89d9a85319088f81288e1">LinInterp::init</a></div><div class="ttdeci">static YAKL_INLINE void init(const real1d &amp;yin, const int &amp;nin, const real1d &amp;yout, const int &amp;nout, const InterpMethod &amp;extrap_method, InterpType &amp;interp_wgts, real cyclicmin=0., real cyclicmax=0.)</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:40</div></div>
 <div class="ttc" id="anamespaceInterpType_html"><div class="ttname"><a href="namespaceInterpType.html">InterpType</a></div><div class="ttdef"><b>Definition:</b> ERF.H:68</div></div>
 <div class="ttc" id="astructLinInterp_1_1InterpType_html_a445ddb0a782f40cab78521e5fdc3bd8b"><div class="ttname"><a href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">LinInterp::InterpType::wgts</a></div><div class="ttdeci">real1d wgts</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:21</div></div>
 <div class="ttc" id="astructLinInterp_1_1InterpType_html_a4afbbafb5bb8bf9742bdb82b166bef76"><div class="ttname"><a href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">LinInterp::InterpType::jjp</a></div><div class="ttdeci">int1d jjp</div><div class="ttdef"><b>Definition:</b> Linear_interpolate.H:24</div></div>

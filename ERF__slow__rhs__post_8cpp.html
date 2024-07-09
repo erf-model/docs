@@ -551,14 +551,14 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keyword">const</span> GpuArray&lt;int, IntVars::NumTypes&gt; scomp_slow = {  2,0,0,0};</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keyword">const</span> GpuArray&lt;int, IntVars::NumTypes&gt; ncomp_slow = {nsv,0,0,0};</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;rhs_post_7&quot;</span>);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        ParallelFor(tbx, ncomp_slow[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>],</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn) {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> n = scomp_slow[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>] + nn;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            cur_cons(i,j,k,n) = new_cons(i,j,k,n);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        });</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="comment">// **************************************************************************</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="comment">// Note that here we do copy only the &quot;slow&quot; variables, not (rho) or (rho theta)</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="comment">// **************************************************************************</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        ParallelFor(tbx, ncomp_slow[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>],</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> n = scomp_slow[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>] + nn;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            cur_cons(i,j,k,n) = new_cons(i,j,k,n);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        });</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="comment">// We have projected the velocities stored in S_data but we will use</span></div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="comment">//    the velocities stored in S_scratch to update the scalars, so</span></div>
@@ -660,7 +660,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                    <span class="keywordflow">if</span> (l_use_terrain) {</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                        <a class="code" href="Diffusion_8H.html#a3df09010b00994febf7d88c723cdf597">DiffusionSrcForState_T</a>(tbx, domain, start_comp, num_comp, exp_most, u, v,</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                                               cur_cons, cur_prim, cell_rhs,</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                                               new_cons, cur_prim, cell_rhs,</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                                               diffflux_x, diffflux_y, diffflux_z,</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                                               z_nd, ax_arr, ay_arr, az_arr, detJ_arr,</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                                               dxInv, SmnSmn_a, mf_m, mf_u, mf_v,</div>
@@ -668,7 +668,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                                               mu_turb, dc, tc, tm_arr, grav_gpu, bc_ptr_d, use_most);</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                        <a class="code" href="Diffusion_8H.html#a1412378561085f485fc5a1309d5d1573">DiffusionSrcForState_N</a>(tbx, domain, start_comp, num_comp, exp_most, u, v,</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                                               cur_cons, cur_prim, cell_rhs,</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                                               new_cons, cur_prim, cell_rhs,</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                                               diffflux_x, diffflux_y, diffflux_z,</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                                               dxInv, SmnSmn_a, mf_m, mf_u, mf_v,</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                                               hfx_z, diss,</div>

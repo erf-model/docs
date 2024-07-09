@@ -124,9 +124,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aa75682bb872d7917ffb8fddb21532f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbf3b28d53a35977d4ff77e6928122c0"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#afbf3b28d53a35977d4ff77e6928122c0">CI</a> = 0.0</td></tr>
 <tr class="separator:afbf3b28d53a35977d4ff77e6928122c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1bec6cf14226b68f692f86daa1c5566"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566">Pr_t</a> = 1. / 3.</td></tr>
+<tr class="memitem:ae1bec6cf14226b68f692f86daa1c5566"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566">Pr_t</a> = amrex::Real(1.0) / amrex::Real(3.0)</td></tr>
 <tr class="separator:ae1bec6cf14226b68f692f86daa1c5566"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa90aa6c577f632a8c4582a3538d98ad5"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5">Pr_t_inv</a> = 3.0</td></tr>
+<tr class="memitem:aa90aa6c577f632a8c4582a3538d98ad5"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5">Pr_t_inv</a> = amrex::Real(3.0)</td></tr>
 <tr class="separator:aa90aa6c577f632a8c4582a3538d98ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed763f56a6349187c9c0c0e4c952d05a"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a">Sc_t</a> = 1.0</td></tr>
 <tr class="separator:aed763f56a6349187c9c0c0e4c952d05a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -396,8 +396,8 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <a class="code" href="Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;Sc_t&quot;</span>, <a class="code" href="structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a">Sc_t</a>);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="comment">// Compute relevant forms of diffusion parameters</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5">Pr_t_inv</a> = 1.0 / <a class="code" href="structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566">Pr_t</a>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="structTurbChoice.html#a2daa4d23f9d89ee777a0d0fbd43196b6">Sc_t_inv</a> = 1.0 / <a class="code" href="structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a">Sc_t</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5">Pr_t_inv</a> = amrex::Real(1.0) / <a class="code" href="structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566">Pr_t</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="structTurbChoice.html#a2daa4d23f9d89ee777a0d0fbd43196b6">Sc_t_inv</a> = amrex::Real(1.0) / <a class="code" href="structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a">Sc_t</a>;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <a class="code" href="Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;Ce&quot;</span> , <a class="code" href="structTurbChoice.html#ab6d0ae39e92dcbe7362abf53364c1a8e">Ce</a>);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <a class="code" href="Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;Ce_wall&quot;</span> , <a class="code" href="structTurbChoice.html#ab2d1ecb36171ca19ea851e8e682a1478">Ce_wall</a>);</div>
@@ -481,8 +481,8 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <a class="code" href="Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;Sc_t&quot;</span>,<a class="code" href="structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a">Sc_t</a>, lev);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="comment">// Compute relevant forms of diffusion parameters</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <a class="code" href="structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5">Pr_t_inv</a> = 1.0 / <a class="code" href="structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566">Pr_t</a>;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <a class="code" href="structTurbChoice.html#a2daa4d23f9d89ee777a0d0fbd43196b6">Sc_t_inv</a> = 1.0 / <a class="code" href="structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a">Sc_t</a>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <a class="code" href="structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5">Pr_t_inv</a> = amrex::Real(1.0) / <a class="code" href="structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566">Pr_t</a>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <a class="code" href="structTurbChoice.html#a2daa4d23f9d89ee777a0d0fbd43196b6">Sc_t_inv</a> = amrex::Real(1.0) / <a class="code" href="structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a">Sc_t</a>;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <a class="code" href="Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;Ce&quot;</span>      , <a class="code" href="structTurbChoice.html#ab6d0ae39e92dcbe7362abf53364c1a8e">Ce</a>, lev);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <a class="code" href="Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;Ce_wall&quot;</span> , <a class="code" href="structTurbChoice.html#ab2d1ecb36171ca19ea851e8e682a1478">Ce_wall</a>, lev);</div>
@@ -890,7 +890,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Real TurbChoice::Pr_t = 1. / 3.</td>
+          <td class="memname">amrex::Real TurbChoice::Pr_t = amrex::Real(1.0) / amrex::Real(3.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -906,7 +906,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Real TurbChoice::Pr_t_inv = 3.0</td>
+          <td class="memname">amrex::Real TurbChoice::Pr_t_inv = amrex::Real(3.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">

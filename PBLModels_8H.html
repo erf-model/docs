@@ -271,7 +271,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// Production (We store mu_turb, which is 0.5*K_turb)</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    source_term += 4.0*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * (dudz*dudz + dvdz*dvdz);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// Bouyancy</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// Buoyancy</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    source_term -= 2.0*(<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta_mean)*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>)*dthetadz;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// Dissipation</span></div>

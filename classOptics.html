@@ -593,7 +593,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classCloudRadProps.html#a5772a63dc315f019d951785ebdb9c13d" title=" " alt="" coords="507,177,664,218"/>
 <area shape="rect" href="classCloudRadProps.html#ab5a9764068553f94a590310ff990a97d" title=" " alt="" coords="721,177,885,218"/>
 <area shape="rect" href="classLinInterp.html#adcd3fbce06341f370d0e7bcabb6a5e1c" title=" " alt="" coords="724,243,881,269"/>
-<area shape="rect" href="classLinInterp.html#ae4ee554a1de89d9a85319088f81288e1" title=" " alt="" coords="958,123,1066,149"/>
+<area shape="rect" href="classLinInterp.html#a00b249a492135098785c7cf3d2296a91" title=" " alt="" coords="958,123,1066,149"/>
 <area shape="rect" href="classLinInterp.html#aad318a6d1364e9369ea02fe34542de24" title=" " alt="" coords="941,177,1083,204"/>
 </map>
 </div>
@@ -856,7 +856,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// Copy to output arrays, converting to optical depth, single scattering</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// albedo, and assymmetry parameter from the products that the CAM routines</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// albedo, and asymmetry parameter from the products that the CAM routines</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">// return. Make sure we do not try to divide by zero...</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    parallel_for(SimpleBounds&lt;3&gt;(nbnd, ncol, nlev), YAKL_LAMBDA (<span class="keywordtype">int</span> iband, <span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilev)</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    {</div>
@@ -900,7 +900,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classCloudRadProps.html#a2890fa11a8f395809fe215447e339c20" title=" " alt="" coords="514,239,671,281"/>
 <area shape="rect" href="classCloudRadProps.html#ab5a9764068553f94a590310ff990a97d" title=" " alt="" coords="733,298,897,339"/>
 <area shape="rect" href="classLinInterp.html#adcd3fbce06341f370d0e7bcabb6a5e1c" title=" " alt="" coords="736,247,893,273"/>
-<area shape="rect" href="classLinInterp.html#ae4ee554a1de89d9a85319088f81288e1" title=" " alt="" coords="970,205,1078,232"/>
+<area shape="rect" href="classLinInterp.html#a00b249a492135098785c7cf3d2296a91" title=" " alt="" coords="970,205,1078,232"/>
 <area shape="rect" href="classLinInterp.html#aad318a6d1364e9369ea02fe34542de24" title=" " alt="" coords="953,272,1095,299"/>
 </map>
 </div>
@@ -1621,7 +1621,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            ssa_out(icol,ilev,iband) = 1.;</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        }</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <span class="comment">// Extract assymmetry parameter from the product-defined fields</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <span class="comment">// Extract asymmetry parameter from the product-defined fields</span></div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">if</span> (tau_w(icol,ilev,iband) &gt; 0) {</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            asm_out(icol,ilev,iband) = tau_w_g(icol,ilev,iband) / tau_w(icol,ilev,iband);</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        } <span class="keywordflow">else</span> {</div>
