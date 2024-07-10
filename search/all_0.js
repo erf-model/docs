@@ -114,7 +114,7 @@ var searchData=
   ['amrex_5fprobinit_111',['amrex_probinit',['../prob__common_8H.html#a177c505462e3d544fae638344f900397',1,'prob_common.H']]],
   ['appendplotvariables_112',['appendPlotVariables',['../classERF.html#a7758f75dc7c9029eddc4c58ac0567654',1,'ERF']]],
   ['apply_5fbcs_113',['apply_bcs',['../TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f',1,'TI_utils.H']]],
-  ['apply_5ftpi_114',['apply_tpi',['../structTurbulentPerturbation.html#a5599d39bbecd334712fe773f448fd149',1,'TurbulentPerturbation']]],
+  ['apply_5ftpi_114',['apply_tpi',['../structTurbulentPerturbation.html#ad1f0cffbb1e22369caeff7794d126648',1,'TurbulentPerturbation']]],
   ['applyinvertedmask_115',['ApplyInvertedMask',['../Utils_8H.html#acbc6116a3309adf87b7dc24242dc50ec',1,'Utils.H']]],
   ['applymask_116',['ApplyMask',['../Utils_8H.html#acebead6f3a33cb7737a1fea98341c3ae',1,'Utils.H']]],
   ['applyspongezonebcsforcc_117',['ApplySpongeZoneBCsForCC',['../ERF__ApplySpongeZoneBCs_8cpp.html#a2bb1399e36952baeacfd197a5322d661',1,'ApplySpongeZoneBCsForCC(const SpongeChoice &amp;spongeChoice, const Geometry geom, const Box &amp;bx, const Array4&lt; Real &gt; &amp;cell_rhs, const Array4&lt; const Real &gt; &amp;cell_data):&#160;ERF_ApplySpongeZoneBCs.cpp'],['../Src__headers_8H.html#a2cafd6a78e2987d7566c34f8f1f57cff',1,'ApplySpongeZoneBCsForCC(const SpongeChoice &amp;spongeChoice, const amrex::Geometry geom, const amrex::Box &amp;bx, const amrex::Array4&lt; amrex::Real &gt; &amp;cell_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data):&#160;Src_headers.H']]],

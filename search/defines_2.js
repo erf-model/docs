@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['debug_5fpertbox_5fmsg_4599',['DEBUG_PERTBOX_MSG',['../ERF__init__TurbPert_8cpp.html#ae25c3a3b2e75731ee7899b093af91e38',1,'ERF_init_TurbPert.cpp']]]
+  ['erf_5fparameterizations_5fh_5f_4612',['ERF_PARAMETERIZATIONS_H_',['../Parameterizations_8H.html#aaaed1350d0f8e31d22b4a25c8c99245a',1,'Parameterizations.H']]]
 ];

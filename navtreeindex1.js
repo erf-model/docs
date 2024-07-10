@@ -97,7 +97,6 @@ var NAVTREEINDEX1 =
 "ERF__fast__rhs__T_8cpp.html#ae4a7d29a6d504859aace287598d99eb1":[3,0,1,14,8,0],
 "ERF__init1d_8cpp.html":[3,0,1,5,0],
 "ERF__init__TurbPert_8cpp.html":[3,0,1,5,7],
-"ERF__init__TurbPert_8cpp.html#ae25c3a3b2e75731ee7899b093af91e38":[3,0,1,5,7,0],
 "ERF__init__bcs_8cpp.html":[3,0,1,5,1],
 "ERF__init__custom_8cpp.html":[3,0,1,5,2],
 "ERF__init__from__hse_8cpp.html":[3,0,1,5,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "Kessler_8H.html":[3,0,1,8,0,2],
 "Kessler_8H_source.html":[3,0,1,8,0,2],
 "Kessler_8cpp.html":[3,0,1,8,0,1],
-"LagrangianMicrophysics_8H.html":[3,0,1,8,4]
+"LagrangianMicrophysics_8H.html":[3,0,1,8,4],
+"LagrangianMicrophysics_8H_source.html":[3,0,1,8,4]
 };

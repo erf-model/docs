@@ -132,8 +132,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae29f0d7569a8538739692f98e6194286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6752f5d7122d68914e67896d21db6c43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#a6752f5d7122d68914e67896d21db6c43">init_uniform</a> (const amrex::Box &amp;bx, amrex::Array4&lt; amrex::Real &gt; const &amp;state)</td></tr>
 <tr class="separator:a6752f5d7122d68914e67896d21db6c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d05a5a7fabf35317010618d14ae83e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#a8d05a5a7fabf35317010618d14ae83e9">init_turbPert_const</a> (<a class="el" href="structTurbulentPerturbation.html">TurbulentPerturbation</a> &amp;turbPert)</td></tr>
-<tr class="separator:a8d05a5a7fabf35317010618d14ae83e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -394,11 +392,11 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Function to update default base parameters, currently only used for init_type=='uniform' </p>
-<div class="fragment"><div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                                                          {</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">rho_0</a> = rho_0;</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a> = T_0;</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    }</div>
-<div class="ttc" id="aclassProblemBase_html_ae21bdcbfbf32d1ec423b6a0edd92dbda"><div class="ttname"><a href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">ProblemBase::base_parms</a></div><div class="ttdeci">ProbParmDefaults base_parms</div><div class="ttdef"><b>Definition:</b> prob_common.H:460</div></div>
+<div class="fragment"><div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                                                          {</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">rho_0</a> = rho_0;</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a> = T_0;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    }</div>
+<div class="ttc" id="aclassProblemBase_html_ae21bdcbfbf32d1ec423b6a0edd92dbda"><div class="ttname"><a href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">ProblemBase::base_parms</a></div><div class="ttdeci">ProbParmDefaults base_parms</div><div class="ttdef"><b>Definition:</b> prob_common.H:450</div></div>
 <div class="ttc" id="astructProbParmDefaults_html_a16db7fa78b123f2a956bacbce26f32c6"><div class="ttname"><a href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">ProbParmDefaults::T_0</a></div><div class="ttdeci">amrex::Real T_0</div><div class="ttdef"><b>Definition:</b> prob_common.H:16</div></div>
 <div class="ttc" id="astructProbParmDefaults_html_af75997d9e4a94ab3b221657799ef720f"><div class="ttname"><a href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">ProbParmDefaults::rho_0</a></div><div class="ttdeci">amrex::Real rho_0</div><div class="ttdef"><b>Definition:</b> prob_common.H:15</div></div>
 </div><!-- fragment -->
@@ -708,39 +706,6 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            }</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        }</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a8d05a5a7fabf35317010618d14ae83e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d05a5a7fabf35317010618d14ae83e9">&#9670;&nbsp;</a></span>init_turbPert_const()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ProblemBase::init_turbPert_const </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structTurbulentPerturbation.html">TurbulentPerturbation</a> &amp;&#160;</td>
-          <td class="paramname"><em>turbPert</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Function to set constant values for turbulent perturbation calculation </p>
-<div class="fragment"><div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    {</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        turbPert.<a class="code" href="structTurbulentPerturbation.html#a700ce4d666c53dd25e01cd3bf5f59f0a">tpi_Tinfty</a> = <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a>;</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        turbPert.<a class="code" href="structTurbulentPerturbation.html#abe0155dd9b530c537b1f639ab4dc8691">tpi_nonDim</a> = 0.042;</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    }</div>
-<div class="ttc" id="astructTurbulentPerturbation_html_a700ce4d666c53dd25e01cd3bf5f59f0a"><div class="ttname"><a href="structTurbulentPerturbation.html#a700ce4d666c53dd25e01cd3bf5f59f0a">TurbulentPerturbation::tpi_Tinfty</a></div><div class="ttdeci">amrex::Real tpi_Tinfty</div><div class="ttdef"><b>Definition:</b> TurbPertStruct.H:307</div></div>
-<div class="ttc" id="astructTurbulentPerturbation_html_abe0155dd9b530c537b1f639ab4dc8691"><div class="ttname"><a href="structTurbulentPerturbation.html#abe0155dd9b530c537b1f639ab4dc8691">TurbulentPerturbation::tpi_nonDim</a></div><div class="ttdeci">amrex::Real tpi_nonDim</div><div class="ttdef"><b>Definition:</b> TurbPertStruct.H:308</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1377,7 +1342,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f">init_base_parms()</a>, <a class="el" href="classProblemBase.html#a8d05a5a7fabf35317010618d14ae83e9">init_turbPert_const()</a>, and <a class="el" href="classProblemBase.html#a6752f5d7122d68914e67896d21db6c43">init_uniform()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f">init_base_parms()</a>, and <a class="el" href="classProblemBase.html#a6752f5d7122d68914e67896d21db6c43">init_uniform()</a>.</p>
 
 </div>
 </div>

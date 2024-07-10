@@ -34,8 +34,8 @@ var DataStruct_8H =
       [ "None", "DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754", null ]
     ] ],
     [ "PerturbationType", "DataStruct_8H.html#a335364b39450e23bfefded6b7af8908c", [
-      [ "BPM", "DataStruct_8H.html#a335364b39450e23bfefded6b7af8908cafb7218d9dac59e6acee0d6b50ee0c4b7", null ],
-      [ "CPM", "DataStruct_8H.html#a335364b39450e23bfefded6b7af8908cacbdaba5605992f8e1635ad782152d65a", null ],
+      [ "perturbSource", "DataStruct_8H.html#a335364b39450e23bfefded6b7af8908ca97033369409e3c8abdcb8026cf1bdcc8", null ],
+      [ "perturbDirect", "DataStruct_8H.html#a335364b39450e23bfefded6b7af8908ca22ff088526a64c994976d9a158972c69", null ],
       [ "None", "DataStruct_8H.html#a335364b39450e23bfefded6b7af8908ca6adf97f83acf6453d4a6a4b1070f3754", null ]
     ] ],
     [ "Rayleigh", "DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239", [
