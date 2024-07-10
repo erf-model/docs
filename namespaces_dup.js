@@ -11,6 +11,8 @@ var namespaces_dup =
       [ "erf_derKE", "namespacederived.html#aeaeabd5f649796984f61651a6733e96b", null ],
       [ "erf_derKE", "namespacederived.html#acc3f245c73a0826afc9e7626f12126d3", null ],
       [ "erf_dermagvel", "namespacederived.html#a5186c6ea33e82af321f529242a615dc2", null ],
+      [ "erf_dermoisttemp", "namespacederived.html#a7292c8c78a618eb0f6ca6a5356705362", null ],
+      [ "erf_dermoisttemp", "namespacederived.html#add1791d7423c133ba6e7ab55975cf34f", null ],
       [ "erf_dernull", "namespacederived.html#a7128ad75cf0f6b317ae8689bd7eb1597", null ],
       [ "erf_dernull", "namespacederived.html#a7fb98e12fceaa6f691dfef83db453757", null ],
       [ "erf_derQKE", "namespacederived.html#a268588c6b7dfb634a44ff9b66e852807", null ],

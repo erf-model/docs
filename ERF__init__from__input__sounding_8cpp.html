@@ -422,33 +422,28 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        p_hse_arr (i, j, k) = <a class="code" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(rhoTh_k, qv_k);</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        pi_hse_arr(i, j, k) = <a class="code" href="EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a">getExnergivenRTh</a>(rhoTh_k, l_rdOcp);</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="comment">// Boundary treatment</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="comment">// FOEXTRAP hse arrays</span></div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">if</span> (k==0)</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="comment">// set the ghost cell with dz and rho at boundary</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            Real rho_surf =</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, rho_inp_sound, 0.0, inp_sound_size);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            p_hse_arr (i, j, k-1) = p_hse_arr(i,j,k) + dz * rho_surf * l_gravity;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            pi_hse_arr(i, j, k-1) = <a class="code" href="EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(p_hse_arr(i, j, k-1), l_rdOcp);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        }</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k==ktop)</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="comment">// set the ghost cell with dz and rho at boundary</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            Real rho_top =</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, rho_inp_sound, z+dz/2, inp_sound_size);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            p_hse_arr (i, j, k+1) = p_hse_arr(i,j,k) - dz * rho_top * l_gravity;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            pi_hse_arr(i, j, k+1) = <a class="code" href="EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(p_hse_arr(i, j, k+1), l_rdOcp);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        }</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="comment">// total nonprecipitating water (Q1) == water vapor (Qv), i.e., there</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="comment">// is no cloud water or cloud ice</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">if</span> (l_moist)</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            state(i, j, k, <a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) = rho_k * qv_k;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    });</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            r_hse_arr (i, j, k-1) = r_hse_arr (i,j,k);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            p_hse_arr (i, j, k-1) = p_hse_arr (i,j,k);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            pi_hse_arr(i, j, k-1) = pi_hse_arr(i,j,k);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k==ktop)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            r_hse_arr (i, j, k+1) = r_hse_arr (i,j,k);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            p_hse_arr (i, j, k+1) = p_hse_arr (i,j,k);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            pi_hse_arr(i, j, k+1) = pi_hse_arr(i,j,k);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="comment">// total nonprecipitating water (Q1) == water vapor (Qv), i.e., there</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="comment">// is no cloud water or cloud ice</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">if</span> (l_moist)</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            state(i, j, k, <a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) = rho_k * qv_k;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    });</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
 <div class="ttc" id="aEOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> EOS.H:62</div></div>
 <div class="ttc" id="aEOS_8H_html_a24b76fd72f051dc593840f006d79fd1a"><div class="ttname"><a href="EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a">getExnergivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenRTh(const amrex::Real rhotheta, const amrex::Real rdOcp, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> EOS.H:116</div></div>
-<div class="ttc" id="aEOS_8H_html_ab415ab4061cbbea05723267a0bf82c6b"><div class="ttname"><a href="EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenP(const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> EOS.H:103</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec">ERF::init_from_input_sounding()</a>.</p>
 <div class="dynheader">
@@ -456,12 +451,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__init__from__input__sounding_8cpp_af361420f8bc21f523a05894f83c85604_cgraph.png" border="0" usemap="#aERF__init__from__input__sounding_8cpp_af361420f8bc21f523a05894f83c85604_cgraph" alt=""/></div>
 <map name="aERF__init__from__input__sounding_8cpp_af361420f8bc21f523a05894f83c85604_cgraph" id="aERF__init__from__input__sounding_8cpp_af361420f8bc21f523a05894f83c85604_cgraph">
-<area shape="rect" title=" " alt="" coords="5,99,164,141"/>
-<area shape="rect" href="EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b" title=" " alt="" coords="240,5,364,32"/>
-<area shape="rect" href="EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a" title=" " alt="" coords="232,56,372,83"/>
-<area shape="rect" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="247,107,357,133"/>
-<area shape="rect" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="244,157,360,184"/>
-<area shape="rect" href="structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240" title=" " alt="" coords="212,208,392,235"/>
+<area shape="rect" title=" " alt="" coords="5,74,164,115"/>
+<area shape="rect" href="EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a" title=" " alt="" coords="232,5,372,32"/>
+<area shape="rect" href="EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="247,56,357,83"/>
+<area shape="rect" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="244,107,360,133"/>
+<area shape="rect" href="structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240" title=" " alt="" coords="212,157,392,184"/>
 </map>
 </div>
 <div class="dynheader">
@@ -543,59 +537,59 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;{</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keyword">const</span> Real* z_inp_sound     = inputSoundingData.z_inp_sound_d.dataPtr();</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keyword">const</span> Real* U_inp_sound     = inputSoundingData.U_inp_sound_d.dataPtr();</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keyword">const</span> Real* V_inp_sound     = inputSoundingData.V_inp_sound_d.dataPtr();</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>   inp_sound_size  = inputSoundingData.size();</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="comment">// Geometry</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keyword">const</span> Real* prob_lo = geomdata.ProbLo();</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keyword">const</span> Real* dx = geomdata.CellSize();</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keyword">const</span> Real  z_lo = prob_lo[2];</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keyword">const</span> Real  dz   = dx[2];</div>
+<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;{</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keyword">const</span> Real* z_inp_sound     = inputSoundingData.z_inp_sound_d.dataPtr();</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keyword">const</span> Real* U_inp_sound     = inputSoundingData.U_inp_sound_d.dataPtr();</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keyword">const</span> Real* V_inp_sound     = inputSoundingData.V_inp_sound_d.dataPtr();</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>   inp_sound_size  = inputSoundingData.size();</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">// Geometry</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keyword">const</span> Real* prob_lo = geomdata.ProbLo();</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keyword">const</span> Real* dx = geomdata.CellSize();</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keyword">const</span> Real  z_lo = prob_lo[2];</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keyword">const</span> Real  dz   = dx[2];</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="comment">// We want to set the lateral BC values, too</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    Box gbx = bx; <span class="comment">// Copy constructor</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    gbx.grow(0,1); gbx.grow(1,1); <span class="comment">// Grow by one in the lateral directions</span></div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="comment">// We want to set the lateral BC values, too</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    Box gbx = bx; <span class="comment">// Copy constructor</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    gbx.grow(0,1); gbx.grow(1,1); <span class="comment">// Grow by one in the lateral directions</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="comment">// Construct a box that is on x-faces</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keyword">const</span> Box&amp; xbx = surroundingNodes(gbx,0);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="comment">// Construct a box that is on y-faces</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keyword">const</span> Box&amp; ybx = surroundingNodes(gbx,1);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// Construct a box that is on z-faces</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keyword">const</span> Box&amp; zbx = surroundingNodes(gbx,2);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="comment">// Set the x,y,z-velocities</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    ParallelFor(xbx, ybx, zbx,</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="comment">// Note that this is called on a box of x-faces</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_nd_arr) ? 0.25*( z_nd_arr(i,j  ,k  )</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                                                + z_nd_arr(i,j+1,k  )</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                                                + z_nd_arr(i,j  ,k+1)</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                                                + z_nd_arr(i,j+1,k+1))</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                                         : z_lo + (k + 0.5) * dz;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="comment">// Set the x-velocity</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        x_vel(i, j, k) = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, U_inp_sound, z, inp_sound_size);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    },</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="comment">// Note that this is called on a box of y-faces</span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_nd_arr) ? 0.25*( z_nd_arr(i  ,j,k  )</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                                                + z_nd_arr(i+1,j,k  )</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                                                + z_nd_arr(i  ,j,k+1)</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                                                + z_nd_arr(i+1,j,k+1))</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                         : z_lo + (k + 0.5) * dz;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="comment">// Set the y-velocity</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        y_vel(i, j, k) = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, V_inp_sound, z, inp_sound_size);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    },</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="comment">// Note that this is called on a box of z-faces</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="comment">// Set the z-velocity</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        z_vel(i, j, k) = 0.0;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    });</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="comment">// Construct a box that is on x-faces</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keyword">const</span> Box&amp; xbx = surroundingNodes(gbx,0);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="comment">// Construct a box that is on y-faces</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keyword">const</span> Box&amp; ybx = surroundingNodes(gbx,1);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="comment">// Construct a box that is on z-faces</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keyword">const</span> Box&amp; zbx = surroundingNodes(gbx,2);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">// Set the x,y,z-velocities</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    ParallelFor(xbx, ybx, zbx,</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="comment">// Note that this is called on a box of x-faces</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_nd_arr) ? 0.25*( z_nd_arr(i,j  ,k  )</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                                                + z_nd_arr(i,j+1,k  )</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                                                + z_nd_arr(i,j  ,k+1)</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                                                + z_nd_arr(i,j+1,k+1))</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                         : z_lo + (k + 0.5) * dz;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="comment">// Set the x-velocity</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        x_vel(i, j, k) = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, U_inp_sound, z, inp_sound_size);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    },</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="comment">// Note that this is called on a box of y-faces</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_nd_arr) ? 0.25*( z_nd_arr(i  ,j,k  )</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                                                + z_nd_arr(i+1,j,k  )</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                                + z_nd_arr(i  ,j,k+1)</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                + z_nd_arr(i+1,j,k+1))</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                         : z_lo + (k + 0.5) * dz;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="comment">// Set the y-velocity</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        y_vel(i, j, k) = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, V_inp_sound, z, inp_sound_size);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    },</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="comment">// Note that this is called on a box of z-faces</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="comment">// Set the z-velocity</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        z_vel(i, j, k) = 0.0;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    });</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec">ERF::init_from_input_sounding()</a>.</p>
 <div class="dynheader">
