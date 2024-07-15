@@ -497,79 +497,78 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a596f061b796ada0389c81a6125150b6e">custom_w_subsidence</a> &amp;&amp; (solverChoice.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> != <a class="code" href="DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754">MoistureType::None</a>)) {</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> nv = <a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> nc = <a class="code" href="IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#aae4f377d36d01b85a1f322c45009ac75">custom_forcing_prim_vars</a>) {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> nr = <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    Real Qv_hi = dptr_qv_plane(k+1) / dptr_r_plane(k+1);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    Real Qv_lo = dptr_qv_plane(k-1) / dptr_r_plane(k-1);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    Real wbar_cc = 0.5 * (dptr_wbar_sub[k] + dptr_wbar_sub[k+1]);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                    cell_src(i, j, k, nv) -= cell_data(i,j,k,nr) * wbar_cc *</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                                             0.5 * (Qv_hi - Qv_lo) * dxInv[2];</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                });</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                {</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                    Real Qv_hi = dptr_qv_plane(k+1) / dptr_r_plane(k+1);</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                    Real Qv_lo = dptr_qv_plane(k-1) / dptr_r_plane(k-1);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                    Real wbar_cc = 0.5 * (dptr_wbar_sub[k] + dptr_wbar_sub[k+1]);</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                    cell_src(i, j, k, nv) -= wbar_cc *</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                                             0.5 * (Qv_hi - Qv_lo) * dxInv[2];</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                });</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            }</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        }</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="comment">// Add numerical diffuion for rho and (rho theta)</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordflow">if</span> (l_use_ndiff) {</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            <span class="keywordtype">int</span> start_comp = 0;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="keywordtype">int</span>   num_comp = 2;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; mf_u   = mapfac_u-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; mf_v   = mapfac_v-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            <a class="code" href="NumericalDiffusion_8cpp.html#ae451ae3f674c2317abcabb5ccc2c8854">NumericalDiffusion</a>(bx, start_comp, num_comp, dt, solverChoice.<a class="code" href="structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2">NumDiffCoeff</a>,</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                               cell_data, cell_src, mf_u, mf_v, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <span class="keywordflow">if</span> (l_use_deardorff) {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                <span class="keywordtype">int</span> sc = <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                <span class="keywordtype">int</span> nc = 1;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                <a class="code" href="NumericalDiffusion_8cpp.html#ae451ae3f674c2317abcabb5ccc2c8854">NumericalDiffusion</a>(bx, sc, nc, dt, solverChoice.<a class="code" href="structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2">NumDiffCoeff</a>,</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                                   cell_data, cell_src, mf_u, mf_v, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            <span class="keywordflow">if</span> (l_use_QKE) {</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                <span class="keywordtype">int</span> sc = <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                <span class="keywordtype">int</span> nc = 1;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                <a class="code" href="NumericalDiffusion_8cpp.html#ae451ae3f674c2317abcabb5ccc2c8854">NumericalDiffusion</a>(bx, sc, nc, dt, solverChoice.<a class="code" href="structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2">NumDiffCoeff</a>,</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                                   cell_data, cell_src, mf_u, mf_v, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            }</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            {</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="keywordtype">int</span> sc = <a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                <span class="keywordtype">int</span> nc = 1;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                <a class="code" href="NumericalDiffusion_8cpp.html#ae451ae3f674c2317abcabb5ccc2c8854">NumericalDiffusion</a>(bx, sc, nc, dt, solverChoice.<a class="code" href="structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2">NumDiffCoeff</a>,</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                   cell_data, cell_src, mf_u, mf_v, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            }</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        }</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="comment">// Add sponging</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">if</span>(!(solverChoice.<a class="code" href="structSolverChoice.html#ac066852f06a6409e1638f59868b7c57d">spongeChoice</a>.<a class="code" href="structSpongeChoice.html#a1a41f754595d713df32583f0b0fa606e">sponge_type</a> == <span class="stringliteral">&quot;input_sponge&quot;</span>)){</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            <a class="code" href="ERF__ApplySpongeZoneBCs_8cpp.html#a2bb1399e36952baeacfd197a5322d661">ApplySpongeZoneBCsForCC</a>(solverChoice.<a class="code" href="structSolverChoice.html#ac066852f06a6409e1638f59868b7c57d">spongeChoice</a>, geom, bx, cell_src, cell_data);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        }</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="comment">// Add perturbation</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#abfd94767b3721755632c45a5ef290544">pert_type</a> == <a class="code" href="DataStruct_8H.html#a335364b39450e23bfefded6b7af8908ca97033369409e3c8abdcb8026cf1bdcc8">PerturbationType::perturbSource</a>) {</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <span class="keyword">auto</span> m_ixtype = S_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].boxArray().ixType(); <span class="comment">// Conserved term</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            turbPert.<a class="code" href="structTurbulentPerturbation.html#ad1f0cffbb1e22369caeff7794d126648">apply_tpi</a>(level, bx, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>, m_ixtype, cell_src); <span class="comment">// Applied as source term</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        }</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    } <span class="comment">// OMP</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;}</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#aae4f377d36d01b85a1f322c45009ac75">custom_forcing_prim_vars</a>) {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> nr = <a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    Real Qv_hi = dptr_qv_plane(k+1) / dptr_r_plane(k+1);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    Real Qv_lo = dptr_qv_plane(k-1) / dptr_r_plane(k-1);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    Real wbar_cc = 0.5 * (dptr_wbar_sub[k] + dptr_wbar_sub[k+1]);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    cell_src(i, j, k, nv) -= cell_data(i,j,k,nr) * wbar_cc *</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                                             0.5 * (Qv_hi - Qv_lo) * dxInv[2];</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                });</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                    Real Qv_hi = dptr_qv_plane(k+1) / dptr_r_plane(k+1);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                    Real Qv_lo = dptr_qv_plane(k-1) / dptr_r_plane(k-1);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                    Real wbar_cc = 0.5 * (dptr_wbar_sub[k] + dptr_wbar_sub[k+1]);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                    cell_src(i, j, k, nv) -= wbar_cc *</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                                             0.5 * (Qv_hi - Qv_lo) * dxInv[2];</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                });</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="comment">// Add numerical diffuion for rho and (rho theta)</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">if</span> (l_use_ndiff) {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="keywordtype">int</span> start_comp = 0;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            <span class="keywordtype">int</span>   num_comp = 2;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; mf_u   = mapfac_u-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; mf_v   = mapfac_v-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <a class="code" href="NumericalDiffusion_8cpp.html#ae451ae3f674c2317abcabb5ccc2c8854">NumericalDiffusion</a>(bx, start_comp, num_comp, dt, solverChoice.<a class="code" href="structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2">NumDiffCoeff</a>,</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                               cell_data, cell_src, mf_u, mf_v, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <span class="keywordflow">if</span> (l_use_deardorff) {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                <span class="keywordtype">int</span> sc = <a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                <span class="keywordtype">int</span> nc = 1;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                <a class="code" href="NumericalDiffusion_8cpp.html#ae451ae3f674c2317abcabb5ccc2c8854">NumericalDiffusion</a>(bx, sc, nc, dt, solverChoice.<a class="code" href="structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2">NumDiffCoeff</a>,</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                                   cell_data, cell_src, mf_u, mf_v, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordflow">if</span> (l_use_QKE) {</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                <span class="keywordtype">int</span> sc = <a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                <span class="keywordtype">int</span> nc = 1;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                <a class="code" href="NumericalDiffusion_8cpp.html#ae451ae3f674c2317abcabb5ccc2c8854">NumericalDiffusion</a>(bx, sc, nc, dt, solverChoice.<a class="code" href="structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2">NumDiffCoeff</a>,</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                                   cell_data, cell_src, mf_u, mf_v, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            {</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                <span class="keywordtype">int</span> sc = <a class="code" href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="keywordtype">int</span> nc = 1;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                <a class="code" href="NumericalDiffusion_8cpp.html#ae451ae3f674c2317abcabb5ccc2c8854">NumericalDiffusion</a>(bx, sc, nc, dt, solverChoice.<a class="code" href="structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2">NumDiffCoeff</a>,</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                   cell_data, cell_src, mf_u, mf_v, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            }</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        }</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="comment">// Add sponging</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">if</span>(!(solverChoice.<a class="code" href="structSolverChoice.html#ac066852f06a6409e1638f59868b7c57d">spongeChoice</a>.<a class="code" href="structSpongeChoice.html#a1a41f754595d713df32583f0b0fa606e">sponge_type</a> == <span class="stringliteral">&quot;input_sponge&quot;</span>)){</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            <a class="code" href="ERF__ApplySpongeZoneBCs_8cpp.html#a2bb1399e36952baeacfd197a5322d661">ApplySpongeZoneBCsForCC</a>(solverChoice.<a class="code" href="structSolverChoice.html#ac066852f06a6409e1638f59868b7c57d">spongeChoice</a>, geom, bx, cell_src, cell_data);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        }</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="comment">// Add perturbation</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#abfd94767b3721755632c45a5ef290544">pert_type</a> == <a class="code" href="DataStruct_8H.html#a335364b39450e23bfefded6b7af8908ca97033369409e3c8abdcb8026cf1bdcc8">PerturbationType::perturbSource</a>) {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <span class="keyword">auto</span> m_ixtype = S_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].boxArray().ixType(); <span class="comment">// Conserved term</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            turbPert.<a class="code" href="structTurbulentPerturbation.html#ad1f0cffbb1e22369caeff7794d126648">apply_tpi</a>(level, bx, <a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>, m_ixtype, cell_src); <span class="comment">// Applied as source term</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        }</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    } <span class="comment">// OMP</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;}</div>
 <div class="ttc" id="aDataStruct_8H_html_a335364b39450e23bfefded6b7af8908ca97033369409e3c8abdcb8026cf1bdcc8"><div class="ttname"><a href="DataStruct_8H.html#a335364b39450e23bfefded6b7af8908ca97033369409e3c8abdcb8026cf1bdcc8">PerturbationType::perturbSource</a></div><div class="ttdeci">@ perturbSource</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f"><div class="ttname"><a href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a></div><div class="ttdeci">@ tau</div><div class="ttdef"><b>Definition:</b> DataStruct.H:57</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a3856c8a2f055327ada182186bfd70239ae41e9f65f26ee3b04db07f2db7f28bdb"><div class="ttname"><a href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239ae41e9f65f26ee3b04db07f2db7f28bdb">thetabar</a></div><div class="ttdeci">@ thetabar</div><div class="ttdef"><b>Definition:</b> DataStruct.H:57</div></div>
@@ -580,7 +579,6 @@ Functions</h2></td></tr>
 <div class="ttc" id="aIndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:16</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_a3bf0a4783e82ba30db2b7c0a332c2f16"><div class="ttname"><a href="IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a></div><div class="ttdeci">#define RhoQ2_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:18</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:33</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:17</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:15</div></div>
