@@ -87,9 +87,11 @@ var NAVTREEINDEX2 =
 "NullSurf_8H.html":[3,0,1,7,1,0],
 "NullSurf_8H_source.html":[3,0,1,7,1,0],
 "NumericalDiffusion_8H.html":[3,0,1,13,8],
+"NumericalDiffusion_8H.html#a6e0d8ff49fd56c19488385130631c161":[3,0,1,13,8,1],
 "NumericalDiffusion_8H.html#aac5237931765783ba1e8aba39e37b4e1":[3,0,1,13,8,0],
 "NumericalDiffusion_8H_source.html":[3,0,1,13,8],
 "NumericalDiffusion_8cpp.html":[3,0,1,13,7],
+"NumericalDiffusion_8cpp.html#a8952e6a1f264de82be2054dfec9fe5d9":[3,0,1,13,7,1],
 "NumericalDiffusion_8cpp.html#ae451ae3f674c2317abcabb5ccc2c8854":[3,0,1,13,7,0],
 "Optics_8H.html":[3,0,1,12,15],
 "Optics_8H_source.html":[3,0,1,12,15],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "TurbStruct_8H.html#aa346fa9f5c0cb101a7766563fb76c500ab7106655ebb5e00e0f040302bf4129bf":[3,0,1,2,5,1,2],
 "TurbStruct_8H_source.html":[3,0,1,2,5],
 "Update__Kessler_8cpp.html":[3,0,1,8,0,3],
-"Update__SAM_8cpp.html":[3,0,1,8,2,6],
-"Utils_8H.html":[3,0,1,15,20],
-"Utils_8H.html#a07e79832d9bdb9c05a939bee38a06b9c":[3,0,1,15,20,12]
+"Update__SAM_8cpp.html":[3,0,1,8,2,6]
 };
