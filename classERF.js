@@ -43,6 +43,7 @@ var classERF =
     [ "init1DArrays", "classERF.html#a7261c4eb7722af0dfe6cdfb8e2e9e4db", null ],
     [ "init_bcs", "classERF.html#a618e8fdff3239cc79d4145d02b1ecaa2", null ],
     [ "init_custom", "classERF.html#a604939a8058f7efa36a427adb889739c", null ],
+    [ "init_Dirichlet_bc_data", "classERF.html#a3079a30cce7e1a01d5c9705f393b5a63", null ],
     [ "init_from_hse", "classERF.html#a857a8f76768ec4451b995cbf4f4ac176", null ],
     [ "init_from_input_sounding", "classERF.html#a2908bcd920ab5e3fef171a37302853ec", null ],
     [ "init_only", "classERF.html#a80981e20939a6a38ba17478da2253ff1", null ],
@@ -315,12 +316,15 @@ var classERF =
     [ "vel_t_avg", "classERF.html#a3e146164ca6929ec6d4984b6a3f43c81", null ],
     [ "verbose", "classERF.html#a43d0b17f6e155691a1e9474526df3af5", null ],
     [ "xflux_imask", "classERF.html#af044f075df34caa2a530aa13e1801a5b", null ],
+    [ "xvel_bc_data", "classERF.html#a81a98263940c84b971e52fe555a7b98d", null ],
     [ "yflux_imask", "classERF.html#aa4448d06a3e4fe9740927a636030939d", null ],
+    [ "yvel_bc_data", "classERF.html#af1921b4091015ef81ef6531d676a6b48", null ],
     [ "z_phys_cc", "classERF.html#a31be0f1ae705c52c8ccc520369013284", null ],
     [ "z_phys_nd", "classERF.html#a93e63e5af35efa564fd4195e8703f84c", null ],
     [ "z_phys_nd_new", "classERF.html#a4ef635c22e72c715f5703a6b95a7abe5", null ],
     [ "z_phys_nd_src", "classERF.html#a30dcf40e8f104fb6b6132805d2eff47c", null ],
     [ "z_t_rk", "classERF.html#a72a59614c6d5ab840b924c84d5682270", null ],
     [ "zflux_imask", "classERF.html#ada098767690d194f89717b0deb3adeac", null ],
-    [ "zlevels_stag", "classERF.html#a7a4d6e7887fa8f30c33a0b8899035ddb", null ]
+    [ "zlevels_stag", "classERF.html#a7a4d6e7887fa8f30c33a0b8899035ddb", null ],
+    [ "zvel_bc_data", "classERF.html#a7eaa274e3e2193a19bfbe3e684bf692b", null ]
 ];

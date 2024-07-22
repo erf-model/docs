@@ -1,6 +1,6 @@
 var classERFPhysBCFunct__w__no__terrain =
 [
-    [ "ERFPhysBCFunct_w_no_terrain", "classERFPhysBCFunct__w__no__terrain.html#a2949209cfd215346db79ea786d7e977d", null ],
+    [ "ERFPhysBCFunct_w_no_terrain", "classERFPhysBCFunct__w__no__terrain.html#a349901fd3b5c9c03f6b318a2d6a4c41b", null ],
     [ "~ERFPhysBCFunct_w_no_terrain", "classERFPhysBCFunct__w__no__terrain.html#ac503f5e78b39c513480007824709c573", null ],
     [ "impose_lateral_zvel_bcs", "classERFPhysBCFunct__w__no__terrain.html#a25d10d63224b2acd259cc6309e5bce7e", null ],
     [ "impose_vertical_zvel_bcs", "classERFPhysBCFunct__w__no__terrain.html#ab4e5639d9ae8abd973c0d5329705d200", null ],
@@ -11,5 +11,6 @@ var classERFPhysBCFunct__w__no__terrain =
     [ "m_domain_bcs_type_d", "classERFPhysBCFunct__w__no__terrain.html#ad821ab72c32d159e12d2b80a718767bd", null ],
     [ "m_geom", "classERFPhysBCFunct__w__no__terrain.html#a7f695c3d80d3c166dce59565c4d8dffc", null ],
     [ "m_lev", "classERFPhysBCFunct__w__no__terrain.html#a490eb84b4d60adb33dfe5f705b333b2d", null ],
-    [ "m_use_real_bcs", "classERFPhysBCFunct__w__no__terrain.html#a6ec9592d34b537392cbcb34ffb63f99a", null ]
+    [ "m_use_real_bcs", "classERFPhysBCFunct__w__no__terrain.html#a6ec9592d34b537392cbcb34ffb63f99a", null ],
+    [ "m_w_bc_data", "classERFPhysBCFunct__w__no__terrain.html#a061d0fb277d977056e7485d4ab4abc3c", null ]
 ];

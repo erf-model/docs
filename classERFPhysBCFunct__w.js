@@ -1,6 +1,6 @@
 var classERFPhysBCFunct__w =
 [
-    [ "ERFPhysBCFunct_w", "classERFPhysBCFunct__w.html#a403c5a58514a1016ccd87be254b22262", null ],
+    [ "ERFPhysBCFunct_w", "classERFPhysBCFunct__w.html#a7377738d5511aaf90cbd3615f9485a73", null ],
     [ "~ERFPhysBCFunct_w", "classERFPhysBCFunct__w.html#ae949a3df422d9d5082146a46c9eca565", null ],
     [ "impose_lateral_zvel_bcs", "classERFPhysBCFunct__w.html#a9cd6e53c9598fe025c3c78945c2b1b83", null ],
     [ "impose_vertical_zvel_bcs", "classERFPhysBCFunct__w.html#a9225c49cf092c6eed2bf9bdf1ef4b9cf", null ],
@@ -13,5 +13,6 @@ var classERFPhysBCFunct__w =
     [ "m_lev", "classERFPhysBCFunct__w.html#a277641c1cc5a27c2a01e49d21a9c88f4", null ],
     [ "m_terrain_type", "classERFPhysBCFunct__w.html#a96add99b86d3a03a872af7af85ad8e96", null ],
     [ "m_use_real_bcs", "classERFPhysBCFunct__w.html#a6e6cdc32da147f7bc00d8c408b5df9a1", null ],
+    [ "m_w_bc_data", "classERFPhysBCFunct__w.html#a4c66456080eb954ef8c80fc3dcfc4c3a", null ],
     [ "m_z_phys_nd", "classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b", null ]
 ];

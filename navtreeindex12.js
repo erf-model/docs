@@ -1,5 +1,13 @@
 var NAVTREEINDEX12 =
 {
+"structWENO3.html#ad693dfd8b54bf52e2076b911df389c2a":[2,0,84,4],
+"structWENO5.html":[2,0,85],
+"structWENO5.html#a0eb3eb8be72f02731cd24f03d5c2b9ca":[2,0,85,6],
+"structWENO5.html#a28727bda47dc47677cf20c4d4bbda9a8":[2,0,85,10],
+"structWENO5.html#a3acb5e8bde92b17f3eefb2a0cc3dad2e":[2,0,85,5],
+"structWENO5.html#a4e300b80fa08a8a265ca1b3caa1fe009":[2,0,85,8],
+"structWENO5.html#a912e48be65b9a2c9f3b774fe4188b611":[2,0,85,0],
+"structWENO5.html#a979941971dd839129c0e424f262f3cdc":[2,0,85,2],
 "structWENO5.html#a99f8a8620164e0e1460c7bce55ec3b02":[2,0,85,11],
 "structWENO5.html#aa604f451ba89411ee6c667588ffe2cf7":[2,0,85,4],
 "structWENO5.html#aad28f5b549554b6f04ac3c27e29b9588":[2,0,85,3],
