@@ -7,7 +7,7 @@ var classProblemBase =
     [ "init_base_parms", "classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f", null ],
     [ "init_custom_pert", "classProblemBase.html#a1c41568b22a4f37247d816a8d20b0757", null ],
     [ "init_custom_terrain", "classProblemBase.html#af79c90b1e65ab01db0f17576818e3661", null ],
-    [ "init_custom_terrain", "classProblemBase.html#afea9b8ed327ad86ee7c66588dd014eb3", null ],
+    [ "init_custom_terrain", "classProblemBase.html#a4a43dd346d2cafb2ba36eff6507613bf", null ],
     [ "init_uniform", "classProblemBase.html#a6752f5d7122d68914e67896d21db6c43", null ],
     [ "name", "classProblemBase.html#a3a8fb70110fb25623cdfa7b508dee9cf", null ],
     [ "read_custom_terrain", "classProblemBase.html#a7497a6e90bebb14387f5716ee2e51c2d", null ],

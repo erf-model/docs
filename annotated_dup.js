@@ -35,7 +35,9 @@ var annotated_dup =
     [ "ERFPhysBCFunct_w", "classERFPhysBCFunct__w.html", "classERFPhysBCFunct__w" ],
     [ "ERFPhysBCFunct_w_no_terrain", "classERFPhysBCFunct__w__no__terrain.html", "classERFPhysBCFunct__w__no__terrain" ],
     [ "EulerianMicrophysics", "classEulerianMicrophysics.html", "classEulerianMicrophysics" ],
+    [ "EWP", "classEWP.html", "classEWP" ],
     [ "F", "classF.html", null ],
+    [ "Fitch", "classFitch.html", "classFitch" ],
     [ "FlowerIF", "classFlowerIF.html", "classFlowerIF" ],
     [ "InputSoundingData", "structInputSoundingData.html", "structInputSoundingData" ],
     [ "InputSpongeData", "structInputSpongeData.html", "structInputSpongeData" ],
@@ -56,6 +58,7 @@ var annotated_dup =
     [ "NDArray", "structNDArray.html", "structNDArray" ],
     [ "NullMoist", "classNullMoist.html", "classNullMoist" ],
     [ "NullSurf", "classNullSurf.html", "classNullSurf" ],
+    [ "NullWindFarm", "classNullWindFarm.html", "classNullWindFarm" ],
     [ "Optics", "classOptics.html", "classOptics" ],
     [ "PhysProp", "classPhysProp.html", "classPhysProp" ],
     [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ],
@@ -68,6 +71,7 @@ var annotated_dup =
     [ "SAM", "classSAM.html", "classSAM" ],
     [ "SatMethods", "classSatMethods.html", "classSatMethods" ],
     [ "similarity_funs", "structsimilarity__funs.html", "structsimilarity__funs" ],
+    [ "SimpleAD", "classSimpleAD.html", "classSimpleAD" ],
     [ "Slingo", "classSlingo.html", "classSlingo" ],
     [ "SLM", "classSLM.html", "classSLM" ],
     [ "SolverChoice", "structSolverChoice.html", "structSolverChoice" ],
@@ -95,5 +99,6 @@ var annotated_dup =
     [ "WENO_MZQ3", "structWENO__MZQ3.html", "structWENO__MZQ3" ],
     [ "WENO_Z3", "structWENO__Z3.html", "structWENO__Z3" ],
     [ "WENO_Z5", "structWENO__Z5.html", "structWENO__Z5" ],
+    [ "WindFarm", "classWindFarm.html", "classWindFarm" ],
     [ "WriteBndryPlanes", "classWriteBndryPlanes.html", "classWriteBndryPlanes" ]
 ];

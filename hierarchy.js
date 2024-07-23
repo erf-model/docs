@@ -74,6 +74,12 @@ var hierarchy =
       [ "MM5", "classMM5.html", null ],
       [ "SLM", "classSLM.html", null ]
     ] ],
+    [ "NullWindFarm", "classNullWindFarm.html", [
+      [ "EWP", "classEWP.html", null ],
+      [ "Fitch", "classFitch.html", null ],
+      [ "SimpleAD", "classSimpleAD.html", null ],
+      [ "WindFarm", "classWindFarm.html", null ]
+    ] ],
     [ "Optics", "classOptics.html", null ],
     [ "PhysProp", "classPhysProp.html", null ],
     [ "PhysProp::physprop_t", "structPhysProp_1_1physprop__t.html", null ],
