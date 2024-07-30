@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"structTurbulentPerturbation.html#a37cd2d582d2102a94d25a3fa6631e8dc":[2,0,81,11],
+"structTurbulentPerturbation.html#a40f3307cf523b625489b8591869bbb47":[2,0,81,16],
 "structTurbulentPerturbation.html#a4b075473cfeaf70617e053cf77db0168":[2,0,81,10],
 "structTurbulentPerturbation.html#a527059d3c18b59ed53edd0d9d34e6ece":[2,0,81,1],
 "structTurbulentPerturbation.html#a5e6200f8b6bea3c4944dccc6c7285102":[2,0,81,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "structsurface__flux__mod__charnock.html#adb4a96d510f1e437c9efc41ba5fd16f9":[2,0,72,3],
 "structsurface__flux__wave__coupled.html":[2,0,73],
 "structsurface__flux__wave__coupled.html#a1f7495d05cf04a69be3d51e6535644d6":[2,0,73,0],
-"structsurface__flux__wave__coupled.html#a4b611e4bf853e12e5dd76e095b27c1ac":[2,0,73,1],
-"structsurface__flux__wave__coupled.html#a4f273873e2304563f10674c497cfad30":[2,0,73,7],
-"structsurface__flux__wave__coupled.html#a6cf8c26b09960af5adea37c6e7ccbb0b":[2,0,73,6]
+"structsurface__flux__wave__coupled.html#a4b611e4bf853e12e5dd76e095b27c1ac":[2,0,73,1]
 };
