@@ -423,8 +423,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        Gpu::HostVector&lt;    Real&gt; u_plane_h(u_ncell), v_plane_h(v_ncell);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        Gpu::DeviceVector&lt;  Real&gt; u_plane_d(u_ncell), v_plane_d(v_ncell);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        u_ave.line_average(0 , u_plane_h);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        v_ave.line_average(0 , v_plane_h);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        u_ave.line_average(0, u_plane_h);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        v_ave.line_average(0, v_plane_h);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        Gpu::copyAsync(Gpu::hostToDevice, u_plane_h.begin(), u_plane_h.end(), u_plane_d.begin());</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        Gpu::copyAsync(Gpu::hostToDevice, v_plane_h.begin(), v_plane_h.end(), v_plane_d.begin());</div>

@@ -284,7 +284,7 @@ template&lt;typename IndexSelector &gt; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        line_hi = {iv[0], iv[1], bx.bigEnd(2)};</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    amrex::Box lbx(line_lo, line_hi);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    amrex::Box lbx(line_lo, line_hi, bx.type());</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> lbx;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
@@ -340,7 +340,7 @@ template&lt;typename IndexSelector &gt; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        plane_hi = {bx.bigEnd(0), bx.bigEnd(1), iv[2]};</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    amrex::Box pbx(plane_lo, plane_hi);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    amrex::Box pbx(plane_lo, plane_hi, bx.type());</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> pbx;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
