@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bulk_5frichardson_5fformulation_4696',['BULK_RICHARDSON_FORMULATION',['../TurbPertStruct_8H.html#af297c94285f14acdfdc2f1fabc6486df',1,'TurbPertStruct.H']]]
+  ['erf_5fparameterizations_5fh_5f_4705',['ERF_PARAMETERIZATIONS_H_',['../Parameterizations_8H.html#aaaed1350d0f8e31d22b4a25c8c99245a',1,'Parameterizations.H']]]
 ];

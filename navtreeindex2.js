@@ -230,8 +230,7 @@ var NAVTREEINDEX2 =
 "Time__Avg__Vel_8cpp.html":[3,0,1,15,19],
 "Time__Avg__Vel_8cpp.html#a2241063c19e843eaaa749c3b51b6b0fe":[3,0,1,15,19,0],
 "TurbPertStruct_8H.html":[3,0,1,2,4],
-"TurbPertStruct_8H.html#a1cd6e2210df20afb1fdec3183cbef7ba":[3,0,1,2,4,2],
-"TurbPertStruct_8H.html#af297c94285f14acdfdc2f1fabc6486df":[3,0,1,2,4,1],
+"TurbPertStruct_8H.html#a1cd6e2210df20afb1fdec3183cbef7ba":[3,0,1,2,4,1],
 "TurbPertStruct_8H_source.html":[3,0,1,2,4],
 "TurbStruct_8H.html":[3,0,1,2,5],
 "TurbStruct_8H.html#a4a079f2650ca30c787a8375ec5f17ca5":[3,0,1,2,5,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "Utils_8H.html#a07e79832d9bdb9c05a939bee38a06b9c":[3,0,1,15,20,12],
 "Utils_8H.html#a26382a1781acfcd6b4740685db28d6b2":[3,0,1,15,20,7],
 "Utils_8H.html#a5e2e36af19c0192915a2ca721c0cded4":[3,0,1,15,20,10],
-"Utils_8H.html#a64ede26fe5618a31fe1e297ef29095cd":[3,0,1,15,20,8]
+"Utils_8H.html#a64ede26fe5618a31fe1e297ef29095cd":[3,0,1,15,20,8],
+"Utils_8H.html#a666ef6030bc3baa94198a32754fc65f2":[3,0,1,15,20,3]
 };

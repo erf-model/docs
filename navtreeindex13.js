@@ -1,5 +1,9 @@
 var NAVTREEINDEX13 =
 {
+"structsurface__flux__mod__charnock.html#ad462a086f9f3533cbf5c0177041e532f":[2,0,72,1],
+"structsurface__flux__mod__charnock.html#adb4a96d510f1e437c9efc41ba5fd16f9":[2,0,72,3],
+"structsurface__flux__wave__coupled.html":[2,0,73],
+"structsurface__flux__wave__coupled.html#a1f7495d05cf04a69be3d51e6535644d6":[2,0,73,0],
 "structsurface__flux__wave__coupled.html#a4b611e4bf853e12e5dd76e095b27c1ac":[2,0,73,1],
 "structsurface__flux__wave__coupled.html#a4f273873e2304563f10674c497cfad30":[2,0,73,7],
 "structsurface__flux__wave__coupled.html#a6cf8c26b09960af5adea37c6e7ccbb0b":[2,0,73,6],

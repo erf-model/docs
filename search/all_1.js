@@ -39,6 +39,5 @@ var searchData=
   ['buildinfogetgithash_172',['buildInfoGetGitHash',['../namespaceamrex.html#afa2dbdd17ead719f97272c9a0a2b0f8a',1,'amrex']]],
   ['buildmask_173',['BuildMask',['../classERFFillPatcher.html#ace667632120f87025e805461dd796599',1,'ERFFillPatcher']]],
   ['bulk_5fprops_5finit_174',['bulk_props_init',['../classPhysProp.html#a1bd98e99ebbc4373a913a6522b7a604f',1,'PhysProp']]],
-  ['bulk_5frichardson_5fformulation_175',['BULK_RICHARDSON_FORMULATION',['../TurbPertStruct_8H.html#af297c94285f14acdfdc2f1fabc6486df',1,'TurbPertStruct.H']]],
-  ['buoyancy_5ftype_176',['buoyancy_type',['../structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0',1,'SolverChoice']]]
+  ['buoyancy_5ftype_175',['buoyancy_type',['../structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0',1,'SolverChoice']]]
 ];
