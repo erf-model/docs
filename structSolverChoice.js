@@ -11,6 +11,7 @@ var structSolverChoice =
     [ "buoyancy_type", "structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0", null ],
     [ "c_p", "structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a", null ],
     [ "constant_density", "structSolverChoice.html#aa9cf425ef14a7e28ec3411044e737b23", null ],
+    [ "coriolis_3d", "structSolverChoice.html#a7e93900ec3e84826fcf1e02435bdae42", null ],
     [ "coriolis_factor", "structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3", null ],
     [ "cosphi", "structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f", null ],
     [ "coupling_type", "structSolverChoice.html#af976afa61859c07e6249963edc367c2d", null ],

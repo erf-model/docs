@@ -84,8 +84,8 @@ var NAVTREEINDEX =
 "classUnionCIF.html#a150413e8d9e4bbd2b44e924c839f296a",
 "globals_func.html",
 "structMamConstituents_1_1aerosol__t.html#a300418f68393143be3f4852641ac465b",
-"structTurbulentPerturbation.html#a37cd2d582d2102a94d25a3fa6631e8dc",
-"structsurface__flux__wave__coupled.html#a4f273873e2304563f10674c497cfad30"
+"structTurbulentPerturbation.html#a287ae1e88114174731f07a5dceaefc19",
+"structsurface__flux__wave__coupled.html#a4b611e4bf853e12e5dd76e095b27c1ac"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
