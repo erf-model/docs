@@ -46,6 +46,7 @@ var classERF =
     [ "init_Dirichlet_bc_data", "classERF.html#a3079a30cce7e1a01d5c9705f393b5a63", null ],
     [ "init_from_hse", "classERF.html#a857a8f76768ec4451b995cbf4f4ac176", null ],
     [ "init_from_input_sounding", "classERF.html#a2908bcd920ab5e3fef171a37302853ec", null ],
+    [ "init_geo_wind_profile", "classERF.html#aacc932516cb277301951a8258545873c", null ],
     [ "init_only", "classERF.html#a80981e20939a6a38ba17478da2253ff1", null ],
     [ "init_stuff", "classERF.html#a976799d747d046615ccbf27f366a8b96", null ],
     [ "init_uniform", "classERF.html#ae618963cf90e247b72fbd71d5b13599d", null ],
