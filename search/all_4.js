@@ -133,7 +133,7 @@ var searchData=
   ['eulerian_578',['Eulerian',['../DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5aff01d2011cc56dfe241e0002bb9df778',1,'DataStruct.H']]],
   ['eulerianmicrophysics_579',['EulerianMicrophysics',['../classEulerianMicrophysics.html#af78c2f059431d49deec9f570ada4daaa',1,'EulerianMicrophysics::EulerianMicrophysics()'],['../classEulerianMicrophysics.html',1,'EulerianMicrophysics'],['../classEulerianMicrophysics.html#a26a985c76efcd1dd68b5c853bbd264f6',1,'EulerianMicrophysics::EulerianMicrophysics()']]],
   ['eulerianmicrophysics_2eh_580',['EulerianMicrophysics.H',['../EulerianMicrophysics_8H.html',1,'']]],
-  ['evaluate_581',['Evaluate',['../structCENTERED4.html#ae67620f7c851fbadb31ff439601ac7fe',1,'CENTERED4::Evaluate()'],['../structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91',1,'CENTERED2::Evaluate()'],['../structUPWIND3.html#a247a547b52d1bf118e8a9cb44d46b744',1,'UPWIND3::Evaluate()'],['../structUPWIND5.html#a267b7805b0761e01b0532a986307b79d',1,'UPWIND5::Evaluate()'],['../structWENO__Z5.html#a06568f71bdf16e718756dcd66a26fd97',1,'WENO_Z5::Evaluate()'],['../structWENO__MZQ3.html#a8dcc9655166c1217b7056f244d4cfde2',1,'WENO_MZQ3::Evaluate()'],['../structWENO__Z3.html#aa6c2eefc18b5f0365c0357ee4f066080',1,'WENO_Z3::Evaluate()'],['../structWENO5.html#ae77d5f8032cf91c84551f51170ec9111',1,'WENO5::Evaluate()'],['../structWENO3.html#a6a48e6b00e04466ca779a2b3ee62770b',1,'WENO3::Evaluate()'],['../structUPWINDALL.html#a781c3531bb77c6282c88c9cc3d64c722',1,'UPWINDALL::Evaluate()'],['../structCENTERED6.html#aacd79f8ed62a166d5f4d44a20d09fc13',1,'CENTERED6::Evaluate()']]],
+  ['evaluate_581',['Evaluate',['../structUPWIND3.html#a247a547b52d1bf118e8a9cb44d46b744',1,'UPWIND3::Evaluate()'],['../structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91',1,'CENTERED2::Evaluate()'],['../structCENTERED4.html#ae67620f7c851fbadb31ff439601ac7fe',1,'CENTERED4::Evaluate()'],['../structUPWIND5.html#a267b7805b0761e01b0532a986307b79d',1,'UPWIND5::Evaluate()'],['../structWENO__Z5.html#a06568f71bdf16e718756dcd66a26fd97',1,'WENO_Z5::Evaluate()'],['../structWENO__MZQ3.html#a8dcc9655166c1217b7056f244d4cfde2',1,'WENO_MZQ3::Evaluate()'],['../structWENO__Z3.html#aa6c2eefc18b5f0365c0357ee4f066080',1,'WENO_Z3::Evaluate()'],['../structWENO5.html#ae77d5f8032cf91c84551f51170ec9111',1,'WENO5::Evaluate()'],['../structWENO3.html#a6a48e6b00e04466ca779a2b3ee62770b',1,'WENO3::Evaluate()'],['../structUPWINDALL.html#a781c3531bb77c6282c88c9cc3d64c722',1,'UPWINDALL::Evaluate()'],['../structCENTERED6.html#aacd79f8ed62a166d5f4d44a20d09fc13',1,'CENTERED6::Evaluate()']]],
   ['evapg1_582',['evapg1',['../classSAM.html#a2e241fff555231e1cc87947a624bb5d6',1,'SAM']]],
   ['evapg2_583',['evapg2',['../classSAM.html#a3117e23160d027ccb4dacf744a477a40',1,'SAM']]],
   ['evapr1_584',['evapr1',['../classSAM.html#a8350a31a9f29bedee48b24bb43d5b0fc',1,'SAM']]],
@@ -150,10 +150,11 @@ var searchData=
   ['ext_5fcmip6_5fsw_595',['ext_cmip6_sw',['../classAerRadProps.html#acf87aa0fdbfa3b73924a1f7c56088e55',1,'AerRadProps']]],
   ['ext_5fdir_596',['ext_dir',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af',1,'ERFBCType']]],
   ['ext_5fdir_5fingested_597',['ext_dir_ingested',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462',1,'ERFBCType']]],
-  ['ext_5fsw_5fice_598',['ext_sw_ice',['../classCloudRadProps.html#a4664e7123fdc065b7ff40e716453b050',1,'CloudRadProps']]],
-  ['ext_5fsw_5fliq_599',['ext_sw_liq',['../classCloudRadProps.html#a98a74e616e9952f22102a6d3c3f4af51',1,'CloudRadProps']]],
-  ['extpsw_600',['extpsw',['../structPhysProp_1_1physprop__t.html#aa86746c3ce43b7a278d78276bbe0d153',1,'PhysProp::physprop_t']]],
-  ['extrap_5fmethod_5fbndry_601',['extrap_method_bndry',['../classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26',1,'LinInterp']]],
-  ['extrap_5fmethod_5fcycle_602',['extrap_method_cycle',['../classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2aeec66ba685aaa33115191d8f6bc9c0e6',1,'LinInterp']]],
-  ['extrap_5fmethod_5fzero_603',['extrap_method_zero',['../classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2aa8778034b0e18c190776623750b945b5',1,'LinInterp']]]
+  ['ext_5fdir_5fprim_598',['ext_dir_prim',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca52a76d5c6aeb74655f726be3ae8a1eab',1,'ERFBCType']]],
+  ['ext_5fsw_5fice_599',['ext_sw_ice',['../classCloudRadProps.html#a4664e7123fdc065b7ff40e716453b050',1,'CloudRadProps']]],
+  ['ext_5fsw_5fliq_600',['ext_sw_liq',['../classCloudRadProps.html#a98a74e616e9952f22102a6d3c3f4af51',1,'CloudRadProps']]],
+  ['extpsw_601',['extpsw',['../structPhysProp_1_1physprop__t.html#aa86746c3ce43b7a278d78276bbe0d153',1,'PhysProp::physprop_t']]],
+  ['extrap_5fmethod_5fbndry_602',['extrap_method_bndry',['../classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2ac291677b47a4b2b3276ea6ebf30d6e26',1,'LinInterp']]],
+  ['extrap_5fmethod_5fcycle_603',['extrap_method_cycle',['../classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2aeec66ba685aaa33115191d8f6bc9c0e6',1,'LinInterp']]],
+  ['extrap_5fmethod_5fzero_604',['extrap_method_zero',['../classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2aa8778034b0e18c190776623750b945b5',1,'LinInterp']]]
 ];

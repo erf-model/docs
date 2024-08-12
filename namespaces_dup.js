@@ -41,6 +41,7 @@ var namespaces_dup =
         [ "foextrap", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846", null ],
         [ "ext_dir", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af", null ],
         [ "MOST", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42d0838b4e8d40ee76fbaf2d55c3402e", null ],
+        [ "ext_dir_prim", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca52a76d5c6aeb74655f726be3ae8a1eab", null ],
         [ "ext_dir_ingested", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462", null ],
         [ "neumann", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60", null ],
         [ "neumann_int", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9", null ],

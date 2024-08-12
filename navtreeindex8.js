@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"classRadiation.html#a6a65d086e75212c5d372c2fbdb694843":[2,0,59,26],
 "classRadiation.html#a748f2155d330eecb6d0ce4fba32db8e7":[2,0,59,9],
 "classRadiation.html#a753f36a08e04e4332b9f6851dbd34128":[2,0,59,12],
 "classRadiation.html#a76bb14b6a6eafd04ffad69f50547be41":[2,0,59,76],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "classTerrainIF.html#ad0a9adc95fd3d0b5903d5ef7f5b74176":[2,0,78,2],
 "classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110":[2,0,78,1],
 "classTerrainIF.html#aeb902107efd92150abad59ec0a8cf088":[2,0,78,3],
-"classUnionCIF.html":[2,0,82],
-"classUnionCIF.html#a0bbd9d187f7efd622fb063c08d06151c":[2,0,82,7]
+"classUnionCIF.html":[2,0,82]
 };

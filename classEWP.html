@@ -379,12 +379,12 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  Real d_rotor_rad = <a class="code" href="classEWP.html#ac89ee08eabbf2cc7a64a7908a449f016">rotor_rad</a>;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  Real d_hub_height = <a class="code" href="classEWP.html#a2ee471b0dcad3057297b809f4c5141ab">hub_height</a>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_wind_speed(<a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>.size());</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_thrust_coeff(<a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>.size());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  Gpu::DeviceVector&lt;Real&gt; d_wind_speed(<a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>.size());</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  Gpu::DeviceVector&lt;Real&gt; d_thrust_coeff(<a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>.size());</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// Copy data from host vectors to device vectors</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>.begin(), <a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>.end(), d_wind_speed.begin());</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>.begin(), <a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>.end(), d_thrust_coeff.begin());</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  Gpu::copy(Gpu::hostToDevice, <a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>.begin(), <a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>.end(), d_wind_speed.begin());</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  Gpu::copy(Gpu::hostToDevice, <a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>.begin(), <a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>.end(), d_thrust_coeff.begin());</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">// Domain valid box</span></div>
