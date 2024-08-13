@@ -1,5 +1,9 @@
 var NAVTREEINDEX8 =
 {
+"classRadiation.html#a65e14eac1882d0877cb60c185b91f670":[2,0,59,34],
+"classRadiation.html#a65f94329afd4aad11489c87e5174c462":[2,0,59,47],
+"classRadiation.html#a687fe7137c6cb0b0040addeb90249a0c":[2,0,59,60],
+"classRadiation.html#a6a43bd5c228b629042b73e06f8fbcf87":[2,0,59,17],
 "classRadiation.html#a6a65d086e75212c5d372c2fbdb694843":[2,0,59,26],
 "classRadiation.html#a748f2155d330eecb6d0ce4fba32db8e7":[2,0,59,9],
 "classRadiation.html#a753f36a08e04e4332b9f6851dbd34128":[2,0,59,12],
@@ -245,9 +249,5 @@ var NAVTREEINDEX8 =
 "classSlingo.html#aedbfc95f917b864354b84a9a78d74c94":[2,0,66,0],
 "classTerrainIF.html":[2,0,78],
 "classTerrainIF.html#a3e1f2814d20da7b5dd6d1d620b04784c":[2,0,78,4],
-"classTerrainIF.html#ac037e7de054cca909a921eccc620ef4a":[2,0,78,0],
-"classTerrainIF.html#ad0a9adc95fd3d0b5903d5ef7f5b74176":[2,0,78,2],
-"classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110":[2,0,78,1],
-"classTerrainIF.html#aeb902107efd92150abad59ec0a8cf088":[2,0,78,3],
-"classUnionCIF.html":[2,0,82]
+"classTerrainIF.html#ac037e7de054cca909a921eccc620ef4a":[2,0,78,0]
 };
