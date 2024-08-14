@@ -60,6 +60,7 @@ var structSolverChoice =
     [ "use_moist_background", "structSolverChoice.html#aab88dd74d39b1ad369ae6324e05d7a35", null ],
     [ "use_mono_adv", "structSolverChoice.html#a3660145ad90d59b2a6693fd88bb01381", null ],
     [ "use_NumDiff", "structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28", null ],
+    [ "use_rotate_most", "structSolverChoice.html#af3dab90d6c6d356aa2f35c3dbe151411", null ],
     [ "use_terrain", "structSolverChoice.html#a063a88594452100497651e8aaf1f68d7", null ],
     [ "windfarm_loc_table", "structSolverChoice.html#a44bc0227f088664e4e2c1090ebb1381d", null ],
     [ "windfarm_loc_type", "structSolverChoice.html#a54214b71edb43f251f04b79281c39375", null ],

@@ -84,8 +84,8 @@ var NAVTREEINDEX =
 "classTerrainIF.html#ad0a9adc95fd3d0b5903d5ef7f5b74176",
 "globals_defs.html",
 "structMamConstituents_1_1aerlist__t.html#a21f61436cc2e4a150e675d9d0163fcdf",
-"structTurbChoice.html#afbf3b28d53a35977d4ff77e6928122c0",
-"structsurface__flux__charnock.html#a08529386a7d5012684c818249a7d76ba"
+"structTurbChoice.html#afa27861e0ffa1f4c9373d465d1db378f",
+"structsurface__flux__charnock.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -18,11 +18,12 @@ var searchData=
   ['use_5fqke_4444',['use_QKE',['../structTurbChoice.html#a81d6903354abbc64e7dc12b7da91070b',1,'TurbChoice']]],
   ['use_5frad_5fdt_5fcosz_4445',['use_rad_dt_cosz',['../classRadiation.html#a18cd8ea8ce343768fc2f630bcda8629d',1,'Radiation']]],
   ['use_5freal_5fbcs_4446',['use_real_bcs',['../classERF.html#a86208285bf705f360a3c318a75097f61',1,'ERF']]],
-  ['use_5fterrain_4447',['use_terrain',['../structSolverChoice.html#a063a88594452100497651e8aaf1f68d7',1,'SolverChoice']]],
-  ['use_5fxhi_5fsponge_5fdamping_4448',['use_xhi_sponge_damping',['../structSpongeChoice.html#a980e2c4485a0769eb0405a77445e3db1',1,'SpongeChoice']]],
-  ['use_5fxlo_5fsponge_5fdamping_4449',['use_xlo_sponge_damping',['../structSpongeChoice.html#a0d60faef2ee2597c1df7807fc25204e2',1,'SpongeChoice']]],
-  ['use_5fyhi_5fsponge_5fdamping_4450',['use_yhi_sponge_damping',['../structSpongeChoice.html#ae2907fb8c5755c951b765b7d835013f6',1,'SpongeChoice']]],
-  ['use_5fylo_5fsponge_5fdamping_4451',['use_ylo_sponge_damping',['../structSpongeChoice.html#a5e3fe59ec39bd6ed95b33bd568dd711b',1,'SpongeChoice']]],
-  ['use_5fzhi_5fsponge_5fdamping_4452',['use_zhi_sponge_damping',['../structSpongeChoice.html#ac335f4f1640ad959aadb8e9054c3fda2',1,'SpongeChoice']]],
-  ['use_5fzlo_5fsponge_5fdamping_4453',['use_zlo_sponge_damping',['../structSpongeChoice.html#a2ac1def940f7e6666a1076be69b3cc33',1,'SpongeChoice']]]
+  ['use_5frotate_5fmost_4447',['use_rotate_most',['../structSolverChoice.html#af3dab90d6c6d356aa2f35c3dbe151411',1,'SolverChoice']]],
+  ['use_5fterrain_4448',['use_terrain',['../structSolverChoice.html#a063a88594452100497651e8aaf1f68d7',1,'SolverChoice']]],
+  ['use_5fxhi_5fsponge_5fdamping_4449',['use_xhi_sponge_damping',['../structSpongeChoice.html#a980e2c4485a0769eb0405a77445e3db1',1,'SpongeChoice']]],
+  ['use_5fxlo_5fsponge_5fdamping_4450',['use_xlo_sponge_damping',['../structSpongeChoice.html#a0d60faef2ee2597c1df7807fc25204e2',1,'SpongeChoice']]],
+  ['use_5fyhi_5fsponge_5fdamping_4451',['use_yhi_sponge_damping',['../structSpongeChoice.html#ae2907fb8c5755c951b765b7d835013f6',1,'SpongeChoice']]],
+  ['use_5fylo_5fsponge_5fdamping_4452',['use_ylo_sponge_damping',['../structSpongeChoice.html#a5e3fe59ec39bd6ed95b33bd568dd711b',1,'SpongeChoice']]],
+  ['use_5fzhi_5fsponge_5fdamping_4453',['use_zhi_sponge_damping',['../structSpongeChoice.html#ac335f4f1640ad959aadb8e9054c3fda2',1,'SpongeChoice']]],
+  ['use_5fzlo_5fsponge_5fdamping_4454',['use_zlo_sponge_damping',['../structSpongeChoice.html#a2ac1def940f7e6666a1076be69b3cc33',1,'SpongeChoice']]]
 ];
