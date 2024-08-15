@@ -260,6 +260,7 @@ var classERF =
     [ "prob", "classERF.html#a60e8cb933f237903e3fbcd6376c26db0", null ],
     [ "profile_int", "classERF.html#a633cd0b44d2e38f02c23e953aecd69eb", null ],
     [ "qmoist", "classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc", null ],
+    [ "Qr_prim", "classERF.html#a57d8432920785f8e58cf11a3232d76b5", null ],
     [ "Qv_prim", "classERF.html#a521d1faf157e3bccc86c0f26ee923576", null ],
     [ "real_set_width", "classERF.html#acab120bb9324e7298534d765c447d703", null ],
     [ "real_width", "classERF.html#abb15119348ad5399947bc8883084b230", null ],

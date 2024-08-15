@@ -59,6 +59,7 @@ var hierarchy =
     [ "MOSTAverage", "classMOSTAverage.html", null ],
     [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ],
     [ "MultiBlockContainer", "classMultiBlockContainer.html", null ],
+    [ "MYNNLevel2", "structMYNNLevel2.html", null ],
     [ "ncutils::NCDim", "structncutils_1_1NCDim.html", null ],
     [ "ncutils::NCDType", "structncutils_1_1NCDType.html", null ],
     [ "ncutils::NCGroup", "classncutils_1_1NCGroup.html", [

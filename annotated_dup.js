@@ -55,6 +55,7 @@ var annotated_dup =
     [ "MOSTAverage", "classMOSTAverage.html", "classMOSTAverage" ],
     [ "MRISplitIntegrator", "classMRISplitIntegrator.html", "classMRISplitIntegrator" ],
     [ "MultiBlockContainer", "classMultiBlockContainer.html", "classMultiBlockContainer" ],
+    [ "MYNNLevel2", "structMYNNLevel2.html", "structMYNNLevel2" ],
     [ "NDArray", "structNDArray.html", "structNDArray" ],
     [ "NullMoist", "classNullMoist.html", "classNullMoist" ],
     [ "NullSurf", "classNullSurf.html", "classNullSurf" ],

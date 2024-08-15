@@ -19,6 +19,8 @@ var structTurbChoice =
     [ "pbl_mynn_C3", "structTurbChoice.html#a5129ba60955a0990ef80166638acaa07", null ],
     [ "pbl_mynn_C4", "structTurbChoice.html#afa27861e0ffa1f4c9373d465d1db378f", null ],
     [ "pbl_mynn_C5", "structTurbChoice.html#a86360cd9caf3bf7a97e09a9118c5d2b5", null ],
+    [ "pbl_mynn_diffuse_moistvars", "structTurbChoice.html#a9fd80af51de803954aa43e1e86668deb", null ],
+    [ "pbl_mynn_level2", "structTurbChoice.html#a475d862a63ab672577fc2429f535feb9", null ],
     [ "pbl_type", "structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9", null ],
     [ "pbl_ysu_coriolis_freq", "structTurbChoice.html#ac20bc5ed8f1482a520b623dc9cc1ef52", null ],
     [ "pbl_ysu_land_Ribcr", "structTurbChoice.html#a96c1a42307db82ece270acdac75da9a3", null ],

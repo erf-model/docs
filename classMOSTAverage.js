@@ -1,6 +1,6 @@
 var classMOSTAverage =
 [
-    [ "MOSTAverage", "classMOSTAverage.html#a63d4ee91f32fe95e61b0dfe8fa5fac22", null ],
+    [ "MOSTAverage", "classMOSTAverage.html#a17b44f1af3c89b1b2fbaaf9c03bdfa0a", null ],
     [ "~MOSTAverage", "classMOSTAverage.html#ac755f71a35f1231c8add20993364832a", null ],
     [ "MOSTAverage", "classMOSTAverage.html#acfc77dc21a0821d4b446f7be289c64d6", null ],
     [ "MOSTAverage", "classMOSTAverage.html#add74667e947201bbb2ddf2785f02ee0c", null ],
@@ -20,7 +20,7 @@ var classMOSTAverage =
     [ "set_rotated_fields", "classMOSTAverage.html#a314ac1672f7b8ce2cf9f9d32d00191a5", null ],
     [ "set_z_positions_T", "classMOSTAverage.html#a96178b02bec37f171ef608cec9a246bf", null ],
     [ "trilinear_interp_T", "classMOSTAverage.html#aefb42b9f2a5c3347e7ab87abdfcab3d7", null ],
-    [ "update_field_ptrs", "classMOSTAverage.html#acdb5e2dec5f3e9b0a37e194430ca32a7", null ],
+    [ "update_field_ptrs", "classMOSTAverage.html#a1d1a06b1f807c7018950fe91ddc435bd", null ],
     [ "write_averages", "classMOSTAverage.html#ac37b71ce655ea973ad6fc4c564b040c1", null ],
     [ "write_k_indices", "classMOSTAverage.html#a612fdb06ff433e33c717198c7e3e4b0b", null ],
     [ "write_norm_indices", "classMOSTAverage.html#ab886a0b96314880c4769318c81b23fbb", null ],
