@@ -284,6 +284,8 @@ var classERF =
     [ "SFS_hfx1_lev", "classERF.html#a25174b4ae6cfcac8f7d183ce5c9fe67b", null ],
     [ "SFS_hfx2_lev", "classERF.html#acb607b2e675b45fdcabc09b640ce5ae2", null ],
     [ "SFS_hfx3_lev", "classERF.html#a1a2e3faf5dd90ad2f9ded28b486f3b46", null ],
+    [ "SFS_q1fx1_lev", "classERF.html#ae0316d5ae567a2da8439d204bace12ce", null ],
+    [ "SFS_q1fx2_lev", "classERF.html#a53fab1172ec3f01356355f8cda0919fe", null ],
     [ "SFS_q1fx3_lev", "classERF.html#a101ceb89b1a249efeea3f4e8052bc8c0", null ],
     [ "SFS_q2fx3_lev", "classERF.html#a3ea10ef7383e594b6ee5e7a9ad67607b", null ],
     [ "SmnSmn_lev", "classERF.html#a9faaa96a7c270d2b2b062d9f30f19711", null ],

@@ -25,6 +25,8 @@ var TerrainMetrics_8H =
     [ "init_terrain_grid", "TerrainMetrics_8H.html#ad179b260b388fdbca904a7bb89a27849", null ],
     [ "init_zlevels", "TerrainMetrics_8H.html#a73d2a3a82a32b34ed710f4891a3056df", null ],
     [ "OmegaFromW", "TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18", null ],
+    [ "rotate_scalar_flux", "TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae", null ],
+    [ "rotate_stress_tensor", "TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b", null ],
     [ "WFromOmega", "TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087", null ],
     [ "WFromOmega", "TerrainMetrics_8H.html#afcf8f856b0f93b149c115ca1ff240039", null ]
 ];

@@ -3,7 +3,8 @@ var classABLMost =
     [ "FluxCalcType", "classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0", [
       [ "MOENG", "classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0a0525d4394471c332f3c0a497584923d5", null ],
       [ "DONELAN", "classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0afbf950ece84b8c4c7ebcf6492db726f7", null ],
-      [ "CUSTOM", "classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0a72baef04098f035e8a320b03ad197818", null ]
+      [ "CUSTOM", "classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0a72baef04098f035e8a320b03ad197818", null ],
+      [ "ROTATE", "classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0a9faf4e337734315fde20af1922cc6f9d", null ]
     ] ],
     [ "RoughCalcType", "classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13", [
       [ "CONSTANT", "classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13a8d6b5cada83510220f59e00ce86d4d92", null ],
@@ -18,8 +19,8 @@ var classABLMost =
     ] ],
     [ "ABLMost", "classABLMost.html#ac6260dfbdf304cd8b8284c544a20dbb4", null ],
     [ "compute_fluxes", "classABLMost.html#a829339fc8e70a5dff8b7c85f3c2e4138", null ],
-    [ "compute_most_bcs", "classABLMost.html#ae861d3a129d1ce6258618d5ee328ce50", null ],
-    [ "compute_most_bcs", "classABLMost.html#aadd50c993e0def89367e8ef298ece00e", null ],
+    [ "compute_most_bcs", "classABLMost.html#ac1b3a987e1f8518eec9552f6b747a4b1", null ],
+    [ "compute_most_bcs", "classABLMost.html#a10ead55e11cc666e966cc68a1d1513b9", null ],
     [ "get_lsm_tsurf", "classABLMost.html#ae28fd8a21f4b514875c24fe4b8e85081", null ],
     [ "get_mac_avg", "classABLMost.html#af26cdc6b8c162c14b2db32eb395f0565", null ],
     [ "get_olen", "classABLMost.html#aef7480dbb43cafff3be93a95240c1ec3", null ],
@@ -29,7 +30,7 @@ var classABLMost =
     [ "get_u_star", "classABLMost.html#a0890b6ae8c80d8888effa040af808df0", null ],
     [ "get_z0", "classABLMost.html#a626a97f944cb297c966a2ff7ce0bad97", null ],
     [ "get_zref", "classABLMost.html#ae638411093a2d3cc6cc525d4d7efa7ed", null ],
-    [ "impose_most_bcs", "classABLMost.html#a90bb7bfc2d9d170d46df06484404f356", null ],
+    [ "impose_most_bcs", "classABLMost.html#aa6c480227398080885f5bd48466c71e0", null ],
     [ "time_interp_sst", "classABLMost.html#aaeef06eb7d0ab7e3d100e583337121cc", null ],
     [ "update_fluxes", "classABLMost.html#af82057d4fbaaf1d8347cf18c7efd7b53", null ],
     [ "update_mac_ptrs", "classABLMost.html#a5fcdd773bc7314a2655bf3ce0e7536fe", null ],

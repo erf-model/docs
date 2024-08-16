@@ -68,6 +68,7 @@ var annotated_dup =
     [ "RadConstants", "classRadConstants.html", "classRadConstants" ],
     [ "Radiation", "classRadiation.html", "classRadiation" ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", "classReadBndryPlanes" ],
+    [ "rotate_flux", "structrotate__flux.html", "structrotate__flux" ],
     [ "Rrtmgp", "classRrtmgp.html", "classRrtmgp" ],
     [ "SAM", "classSAM.html", "classSAM" ],
     [ "SatMethods", "classSatMethods.html", "classSatMethods" ],

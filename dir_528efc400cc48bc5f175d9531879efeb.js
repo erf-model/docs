@@ -44,7 +44,8 @@ var dir_528efc400cc48bc5f175d9531879efeb =
       [ "surface_temp_wave_coupled", "structsurface__temp__wave__coupled.html", "structsurface__temp__wave__coupled" ],
       [ "moeng_flux", "structmoeng__flux.html", "structmoeng__flux" ],
       [ "donelan_flux", "structdonelan__flux.html", "structdonelan__flux" ],
-      [ "custom_flux", "structcustom__flux.html", "structcustom__flux" ]
+      [ "custom_flux", "structcustom__flux.html", "structcustom__flux" ],
+      [ "rotate_flux", "structrotate__flux.html", "structrotate__flux" ]
     ] ],
     [ "TimeInterpolatedData.H", "TimeInterpolatedData_8H.html", [
       [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ]

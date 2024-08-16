@@ -90,6 +90,7 @@ var hierarchy =
     [ "RadConstants", "classRadConstants.html", null ],
     [ "Radiation", "classRadiation.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
+    [ "rotate_flux", "structrotate__flux.html", null ],
     [ "Rrtmgp", "classRrtmgp.html", null ],
     [ "SatMethods", "classSatMethods.html", null ],
     [ "similarity_funs", "structsimilarity__funs.html", null ],
