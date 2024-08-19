@@ -73,7 +73,7 @@ var searchData=
   ['init_5fshrink_948',['init_shrink',['../classERF.html#ad353aa9e275612ff2110c5a1405c1176',1,'ERF']]],
   ['init_5fsounding_5fideal_949',['init_sounding_ideal',['../classERF.html#a2eb81c590271b429f132103c9af25830',1,'ERF']]],
   ['init_5fstate_5ffrom_5fmetgrid_950',['init_state_from_metgrid',['../Metgrid__utils_8H.html#a92d40e10695502f2d12d5e71437b9003',1,'Metgrid_utils.H']]],
-  ['init_5fstuff_951',['init_stuff',['../classERF.html#a976799d747d046615ccbf27f366a8b96',1,'ERF']]],
+  ['init_5fstuff_951',['init_stuff',['../classERF.html#af7345cb689d8f3eefc38ad661942e294',1,'ERF']]],
   ['init_5fterrain_5ffrom_5fmetgrid_952',['init_terrain_from_metgrid',['../Metgrid__utils_8H.html#ad3ae9b317366b5e880366135708ba5d5',1,'Metgrid_utils.H']]],
   ['init_5fterrain_5fgrid_953',['init_terrain_grid',['../TerrainMetrics_8H.html#ad179b260b388fdbca904a7bb89a27849',1,'init_terrain_grid(int lev, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::Vector&lt; amrex::Real &gt; const &amp;z_levels_h, amrex::GpuArray&lt; ERF_BC, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type):&#160;TerrainMetrics.H'],['../TerrainMetrics_8cpp.html#a6184f65a98c75d738ea36165cb0ddf8d',1,'init_terrain_grid(int lev, const Geometry &amp;geom, MultiFab &amp;z_phys_nd, Vector&lt; Real &gt; const &amp;z_levels_h, GpuArray&lt; ERF_BC, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type):&#160;TerrainMetrics.cpp']]],
   ['init_5ftpi_954',['init_tpi',['../structTurbulentPerturbation.html#a6f6d1321050b4a5709f3eaecff1a8926',1,'TurbulentPerturbation']]],
