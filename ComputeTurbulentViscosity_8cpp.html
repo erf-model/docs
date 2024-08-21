@@ -601,7 +601,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;          <span class="comment">// NOTE: This gets us the lateral ghost cells for lev&gt;0; which</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;          <span class="comment">//       have been filled from FP Two Levels.</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;          Box bxcc  = mfi.growntilebox() &amp; domain;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;          Box bxcc  = mfi.growntilebox(1) &amp; domain;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;          <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mu_turb = eddyViscosity.array(mfi);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;          <span class="keyword">const</span> Array4&lt;Real&gt;&amp; hfx_x   = Hfx1.array(mfi);</div>
@@ -727,7 +727,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                    dtheta_dz = 0.5 * ( cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                                      - cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k-1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) )*dzInv;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                Real E              = cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                Real E              = amrex::max(cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>)/cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),Real(0.0));</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                Real stratification = l_abs_g * dtheta_dz * l_inv_theta0; <span class="comment">// stratification</span></div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                Real length;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                <span class="keywordflow">if</span> (stratification &lt;= eps) {</div>

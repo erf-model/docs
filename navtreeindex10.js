@@ -1,5 +1,7 @@
 var NAVTREEINDEX10 =
 {
+"functions_vars_y.html":[2,3,2,24],
+"functions_vars_z.html":[2,3,2,25],
 "functions_w.html":[2,3,0,22],
 "functions_x.html":[2,3,0,23],
 "functions_y.html":[2,3,0,24],
@@ -15,8 +17,8 @@ var NAVTREEINDEX10 =
 "globals_enum.html":[3,1,4],
 "globals_eval.html":[3,1,5],
 "globals_f.html":[3,1,0,5],
-"globals_func.html":[3,1,1,0],
 "globals_func.html":[3,1,1],
+"globals_func.html":[3,1,1,0],
 "globals_func_b.html":[3,1,1,1],
 "globals_func_c.html":[3,1,1,2],
 "globals_func_d.html":[3,1,1,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX10 =
 "structInputSoundingData.html#ae990e8cfad78f0fa5a603db3154d0124":[2,0,33,14],
 "structInputSoundingData.html#af2e8c00eb0bd0d64abf35528b33b3240":[2,0,33,4],
 "structInputSoundingData.html#af913103d9ecab49f09b2b107832d265f":[2,0,33,1],
-"structInputSpongeData.html":[2,0,34],
-"structInputSpongeData.html#a1cf017339a236d02cc0c6f970398940a":[2,0,34,0],
-"structInputSpongeData.html#a8480886e7e481c5f83915d5feae62907":[2,0,34,1]
+"structInputSpongeData.html":[2,0,34]
 };

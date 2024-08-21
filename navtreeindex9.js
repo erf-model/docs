@@ -1,5 +1,7 @@
 var NAVTREEINDEX9 =
 {
+"classSimpleAD.html#a708d4346c7d8900854def95ffd127985":[2,0,67,0],
+"classSimpleAD.html#a740ca3e67d7489e03f6f599ad2f162e7":[2,0,67,3],
 "classSimpleAD.html#a83857d42fc25895b88b10b52af871b3d":[2,0,67,13],
 "classSimpleAD.html#a846f49f7333ed47f1c92d5cc8b57cb08":[2,0,67,2],
 "classSimpleAD.html#af9dae2d9db9de431b450e61c55a83ffe":[2,0,67,6],
@@ -180,8 +182,8 @@ var NAVTREEINDEX9 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1],
 "functions_func.html":[2,3,1,0],
+"functions_func.html":[2,3,1],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX9 =
 "functions_vars_u.html":[2,3,2,20],
 "functions_vars_v.html":[2,3,2,21],
 "functions_vars_w.html":[2,3,2,22],
-"functions_vars_x.html":[2,3,2,23],
-"functions_vars_y.html":[2,3,2,24],
-"functions_vars_z.html":[2,3,2,25]
+"functions_vars_x.html":[2,3,2,23]
 };
