@@ -97,8 +97,10 @@ Collaboration diagram for InputSpongeData:</div>
 <div class="dyncontent">
 <div class="center"><img src="structInputSpongeData__coll__graph.png" border="0" usemap="#aInputSpongeData_coll__map" alt="Collaboration graph"/></div>
 <map name="aInputSpongeData_coll__map" id="aInputSpongeData_coll__map">
-<area shape="rect" title=" " alt="" coords="24,124,159,151"/>
-<area shape="rect" title=" " alt="" coords="5,5,177,32"/>
+<area shape="rect" title=" " alt="" coords="93,215,228,241"/>
+<area shape="rect" title=" " alt="" coords="5,96,177,123"/>
+<area shape="rect" title=" " alt="" coords="201,96,288,123"/>
+<area shape="rect" title=" " alt="" coords="175,5,314,47"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -106,13 +108,15 @@ Collaboration diagram for InputSpongeData:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1cf017339a236d02cc0c6f970398940a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structInputSpongeData.html#a1cf017339a236d02cc0c6f970398940a">InputSpongeData</a> ()</td></tr>
 <tr class="separator:a1cf017339a236d02cc0c6f970398940a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8480886e7e481c5f83915d5feae62907"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structInputSpongeData.html#a8480886e7e481c5f83915d5feae62907">read_from_file</a> (const std::string input_sponge_file, const amrex::Geometry &amp;geom, const amrex::Vector&lt; amrex::Real &gt; &amp;zlevels_stag)</td></tr>
-<tr class="separator:a8480886e7e481c5f83915d5feae62907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a39e770aef38396af5f31cda9879fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structInputSpongeData.html#a75a39e770aef38396af5f31cda9879fc">read_from_file</a> (const amrex::Geometry &amp;geom, const amrex::Vector&lt; amrex::Real &gt; &amp;zlevels_stag)</td></tr>
+<tr class="separator:a75a39e770aef38396af5f31cda9879fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff9684faaf6b3a26494766819e4ba6dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structInputSpongeData.html#aff9684faaf6b3a26494766819e4ba6dd">size</a> () const</td></tr>
 <tr class="separator:aff9684faaf6b3a26494766819e4ba6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a944b8ce681cef2752c8797d83cae5eae"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structInputSpongeData.html#a944b8ce681cef2752c8797d83cae5eae">input_sponge_file</a> = &quot;input_sponge_file.txt&quot;</td></tr>
+<tr class="separator:a944b8ce681cef2752c8797d83cae5eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae430ab35b7ded846911bd26b0d984155"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a></td></tr>
 <tr class="separator:ae430ab35b7ded846911bd26b0d984155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aece8029ec7a192a21d88a796ada8e917"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917">U_inp_sponge</a></td></tr>
@@ -145,13 +149,28 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{}</div>
-</div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">// Text input_sounding file</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        amrex::ParmParse <a class="code" href="Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;input_sponge_file&quot;</span>, <a class="code" href="structInputSpongeData.html#a944b8ce681cef2752c8797d83cae5eae">input_sponge_file</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="ttc" id="aMicrophysics__Utils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> Microphysics_Utils.H:183</div></div>
+<div class="ttc" id="astructInputSpongeData_html_a944b8ce681cef2752c8797d83cae5eae"><div class="ttname"><a href="structInputSpongeData.html#a944b8ce681cef2752c8797d83cae5eae">InputSpongeData::input_sponge_file</a></div><div class="ttdeci">std::string input_sponge_file</div><div class="ttdef"><b>Definition:</b> InputSpongeData.H:111</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structInputSpongeData_a1cf017339a236d02cc0c6f970398940a_cgraph.png" border="0" usemap="#astructInputSpongeData_a1cf017339a236d02cc0c6f970398940a_cgraph" alt=""/></div>
+<map name="astructInputSpongeData_a1cf017339a236d02cc0c6f970398940a_cgraph" id="astructInputSpongeData_a1cf017339a236d02cc0c6f970398940a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,260,32"/>
+<area shape="rect" href="Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="308,5,347,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8480886e7e481c5f83915d5feae62907"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8480886e7e481c5f83915d5feae62907">&#9670;&nbsp;</a></span>read_from_file()</h2>
+<a id="a75a39e770aef38396af5f31cda9879fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75a39e770aef38396af5f31cda9879fc">&#9670;&nbsp;</a></span>read_from_file()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,12 +181,6 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void InputSpongeData::read_from_file </td>
           <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>input_sponge_file</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
           <td class="paramname"><em>geom</em>, </td>
         </tr>
@@ -189,89 +202,89 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> klo = 0;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> khi = geom.Domain().bigEnd()[AMREX_SPACEDIM-1];</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> Nz = geom.Domain().size()[AMREX_SPACEDIM-1];</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">const</span> amrex::Real dz = geom.CellSize()[AMREX_SPACEDIM-1];</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> use_terrain = (zlevels_stag.size() &gt; 0);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">const</span> amrex::Real zbot = (use_terrain) ? zlevels_stag[klo]   : geom.ProbLo(AMREX_SPACEDIM-1);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">const</span> amrex::Real ztop = (use_terrain) ? zlevels_stag[khi+1] : geom.ProbHi(AMREX_SPACEDIM-1);</div>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> klo = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> khi = geom.Domain().bigEnd()[AMREX_SPACEDIM-1];</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> Nz = geom.Domain().size()[AMREX_SPACEDIM-1];</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">const</span> amrex::Real dz = geom.CellSize()[AMREX_SPACEDIM-1];</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>.resize(Nz+2);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917">U_inp_sponge</a>.resize(Nz+2);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="structInputSpongeData.html#a8cc25a2bbb25e676dadc57cf3e8f6db1">V_inp_sponge</a>.resize(Nz+2);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> use_terrain = (zlevels_stag.size() &gt; 0);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">const</span> amrex::Real zbot = (use_terrain) ? zlevels_stag[klo]   : geom.ProbLo(AMREX_SPACEDIM-1);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">const</span> amrex::Real ztop = (use_terrain) ? zlevels_stag[khi+1] : geom.ProbHi(AMREX_SPACEDIM-1);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// Read the input_sponge file</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;input_sponge file location : &quot;</span> &lt;&lt; input_sponge_file &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        std::ifstream input_sponge_reader(input_sponge_file);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span>(!input_sponge_reader.is_open()) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            amrex::Error(<span class="stringliteral">&quot;Error opening the input_sponge file.\n&quot;</span>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="comment">// Read the contents of the input_sponge file</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Successfully opened the input_sponge file. Now reading... &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            std::string line;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">// First, read the input data into temp vectors; then, interpolate vectors to the</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="comment">// domain lo/hi and cell centers (from level 0)</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            amrex::Vector&lt;amrex::Real&gt; z_inp_sponge_tmp, U_inp_sponge_tmp, V_inp_sponge_tmp;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>.resize(Nz+2);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917">U_inp_sponge</a>.resize(Nz+2);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="structInputSpongeData.html#a8cc25a2bbb25e676dadc57cf3e8f6db1">V_inp_sponge</a>.resize(Nz+2);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">// Read the input_sponge file</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;input_sponge file location : &quot;</span> &lt;&lt; <a class="code" href="structInputSpongeData.html#a944b8ce681cef2752c8797d83cae5eae">input_sponge_file</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        std::ifstream input_sponge_reader(<a class="code" href="structInputSpongeData.html#a944b8ce681cef2752c8797d83cae5eae">input_sponge_file</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span>(!input_sponge_reader.is_open()) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            amrex::Error(<span class="stringliteral">&quot;Error opening the input_sponge file.\n&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">// Read the contents of the input_sponge file</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Successfully opened the input_sponge file. Now reading... &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            std::string line;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">// Add surface</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            z_inp_sponge_tmp.push_back(zbot); <span class="comment">// height above sea level [m]</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            U_inp_sponge_tmp.push_back(0);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            V_inp_sponge_tmp.push_back(0);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">// Read the vertical profile at each given height</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>, <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda18f2b09699f8c7ee3796d766f288f411">U</a>, <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bdaeb7c7786202be202372af9778caaa59a">V</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">while</span>(std::getline(input_sponge_reader, line)) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                std::istringstream iss_z(line);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                iss_z &gt;&gt; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &gt;&gt; <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda18f2b09699f8c7ee3796d766f288f411">U</a> &gt;&gt; <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bdaeb7c7786202be202372af9778caaa59a">V</a>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> == zbot) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    U_inp_sponge_tmp[0] = <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda18f2b09699f8c7ee3796d766f288f411">U</a>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    V_inp_sponge_tmp[0] = <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bdaeb7c7786202be202372af9778caaa59a">V</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    AMREX_ALWAYS_ASSERT(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &gt; z_inp_sponge_tmp[z_inp_sponge_tmp.size()-1]); <span class="comment">// sounding is increasing in height</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    z_inp_sponge_tmp.push_back(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    U_inp_sponge_tmp.push_back(<a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda18f2b09699f8c7ee3796d766f288f411">U</a>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    V_inp_sponge_tmp.push_back(<a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bdaeb7c7786202be202372af9778caaa59a">V</a>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &gt;= ztop) <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="comment">// At this point, we have an input_sponge from zbot up to</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="comment">// z_inp_sponge_tmp[N-1] &gt;= ztop. Now, interpolate to grid level 0 heights</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> Ninp = z_inp_sponge_tmp.size();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>[0]     = zbot;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917">U_inp_sponge</a>[0]     = U_inp_sponge_tmp[0];</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="structInputSpongeData.html#a8cc25a2bbb25e676dadc57cf3e8f6db1">V_inp_sponge</a>[0]     = V_inp_sponge_tmp[0];</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=0; k &lt; Nz; ++k) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>[k+1] = (use_terrain) ? 0.5 * (zlevels_stag[k] + zlevels_stag[k+1])</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                 : zbot + (k + 0.5) * dz;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <a class="code" href="structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917">U_inp_sponge</a>[k+1] = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sponge_tmp.dataPtr(), U_inp_sponge_tmp.dataPtr(), <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>[k+1], Ninp);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <a class="code" href="structInputSpongeData.html#a8cc25a2bbb25e676dadc57cf3e8f6db1">V_inp_sponge</a>[k+1] = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sponge_tmp.dataPtr(), V_inp_sponge_tmp.dataPtr(), <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>[k+1], Ninp);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>[Nz+1]     = ztop;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917">U_inp_sponge</a>[Nz+1] = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sponge_tmp.dataPtr(), U_inp_sponge_tmp.dataPtr(), ztop, Ninp);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <a class="code" href="structInputSpongeData.html#a8cc25a2bbb25e676dadc57cf3e8f6db1">V_inp_sponge</a>[Nz+1] = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sponge_tmp.dataPtr(), V_inp_sponge_tmp.dataPtr(), ztop, Ninp);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Successfully read the input_sponge file...&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        input_sponge_reader.close();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">// First, read the input data into temp vectors; then, interpolate vectors to the</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="comment">// domain lo/hi and cell centers (from level 0)</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            amrex::Vector&lt;amrex::Real&gt; z_inp_sponge_tmp, U_inp_sponge_tmp, V_inp_sponge_tmp;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">// Add surface</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            z_inp_sponge_tmp.push_back(zbot); <span class="comment">// height above sea level [m]</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            U_inp_sponge_tmp.push_back(0);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            V_inp_sponge_tmp.push_back(0);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="comment">// Read the vertical profile at each given height</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            amrex::Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>, <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda18f2b09699f8c7ee3796d766f288f411">U</a>, <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bdaeb7c7786202be202372af9778caaa59a">V</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">while</span>(std::getline(input_sponge_reader, line)) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                std::istringstream iss_z(line);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                iss_z &gt;&gt; <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &gt;&gt; <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda18f2b09699f8c7ee3796d766f288f411">U</a> &gt;&gt; <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bdaeb7c7786202be202372af9778caaa59a">V</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> == zbot) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    U_inp_sponge_tmp[0] = <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda18f2b09699f8c7ee3796d766f288f411">U</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    V_inp_sponge_tmp[0] = <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bdaeb7c7786202be202372af9778caaa59a">V</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    AMREX_ALWAYS_ASSERT(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &gt; z_inp_sponge_tmp[z_inp_sponge_tmp.size()-1]); <span class="comment">// sounding is increasing in height</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    z_inp_sponge_tmp.push_back(<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    U_inp_sponge_tmp.push_back(<a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda18f2b09699f8c7ee3796d766f288f411">U</a>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    V_inp_sponge_tmp.push_back(<a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bdaeb7c7786202be202372af9778caaa59a">V</a>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &gt;= ztop) <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="comment">// At this point, we have an input_sponge from zbot up to</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="comment">// z_inp_sponge_tmp[N-1] &gt;= ztop. Now, interpolate to grid level 0 heights</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> Ninp = z_inp_sponge_tmp.size();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>[0]     = zbot;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917">U_inp_sponge</a>[0]     = U_inp_sponge_tmp[0];</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <a class="code" href="structInputSpongeData.html#a8cc25a2bbb25e676dadc57cf3e8f6db1">V_inp_sponge</a>[0]     = V_inp_sponge_tmp[0];</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=0; k &lt; Nz; ++k) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>[k+1] = (use_terrain) ? 0.5 * (zlevels_stag[k] + zlevels_stag[k+1])</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                                 : zbot + (k + 0.5) * dz;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <a class="code" href="structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917">U_inp_sponge</a>[k+1] = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sponge_tmp.dataPtr(), U_inp_sponge_tmp.dataPtr(), <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>[k+1], Ninp);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <a class="code" href="structInputSpongeData.html#a8cc25a2bbb25e676dadc57cf3e8f6db1">V_inp_sponge</a>[k+1] = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sponge_tmp.dataPtr(), V_inp_sponge_tmp.dataPtr(), <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>[k+1], Ninp);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>[Nz+1]     = ztop;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917">U_inp_sponge</a>[Nz+1] = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sponge_tmp.dataPtr(), U_inp_sponge_tmp.dataPtr(), ztop, Ninp);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="structInputSpongeData.html#a8cc25a2bbb25e676dadc57cf3e8f6db1">V_inp_sponge</a>[Nz+1] = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sponge_tmp.dataPtr(), V_inp_sponge_tmp.dataPtr(), ztop, Ninp);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Successfully read the input_sponge file...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        input_sponge_reader.close();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
 <div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="aInterpolation__1D_8H_html_a803d0d35d4ca4791556cbe02bbf51cbb"><div class="ttname"><a href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real interpolate_1d(const amrex::Real *alpha, const amrex::Real *beta, const amrex::Real alpha_interp, const int alpha_size)</div><div class="ttdef"><b>Definition:</b> Interpolation_1D.H:12</div></div>
 <div class="ttc" id="anamespaceRealBdyVars_html_aa4743649b85ade11df23692d7c3947bda18f2b09699f8c7ee3796d766f288f411"><div class="ttname"><a href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda18f2b09699f8c7ee3796d766f288f411">RealBdyVars::U</a></div><div class="ttdeci">@ U</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:64</div></div>
 <div class="ttc" id="anamespaceRealBdyVars_html_aa4743649b85ade11df23692d7c3947bdaeb7c7786202be202372af9778caaa59a"><div class="ttname"><a href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bdaeb7c7786202be202372af9778caaa59a">RealBdyVars::V</a></div><div class="ttdeci">@ V</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:65</div></div>
-<div class="ttc" id="astructInputSpongeData_html_a8cc25a2bbb25e676dadc57cf3e8f6db1"><div class="ttname"><a href="structInputSpongeData.html#a8cc25a2bbb25e676dadc57cf3e8f6db1">InputSpongeData::V_inp_sponge</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; V_inp_sponge</div><div class="ttdef"><b>Definition:</b> InputSpongeData.H:107</div></div>
-<div class="ttc" id="astructInputSpongeData_html_ae430ab35b7ded846911bd26b0d984155"><div class="ttname"><a href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">InputSpongeData::z_inp_sponge</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; z_inp_sponge</div><div class="ttdef"><b>Definition:</b> InputSpongeData.H:107</div></div>
-<div class="ttc" id="astructInputSpongeData_html_aece8029ec7a192a21d88a796ada8e917"><div class="ttname"><a href="structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917">InputSpongeData::U_inp_sponge</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; U_inp_sponge</div><div class="ttdef"><b>Definition:</b> InputSpongeData.H:107</div></div>
+<div class="ttc" id="astructInputSpongeData_html_a8cc25a2bbb25e676dadc57cf3e8f6db1"><div class="ttname"><a href="structInputSpongeData.html#a8cc25a2bbb25e676dadc57cf3e8f6db1">InputSpongeData::V_inp_sponge</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; V_inp_sponge</div><div class="ttdef"><b>Definition:</b> InputSpongeData.H:114</div></div>
+<div class="ttc" id="astructInputSpongeData_html_ae430ab35b7ded846911bd26b0d984155"><div class="ttname"><a href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">InputSpongeData::z_inp_sponge</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; z_inp_sponge</div><div class="ttdef"><b>Definition:</b> InputSpongeData.H:114</div></div>
+<div class="ttc" id="astructInputSpongeData_html_aece8029ec7a192a21d88a796ada8e917"><div class="ttname"><a href="structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917">InputSpongeData::U_inp_sponge</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; U_inp_sponge</div><div class="ttdef"><b>Definition:</b> InputSpongeData.H:114</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structInputSpongeData_a8480886e7e481c5f83915d5feae62907_cgraph.png" border="0" usemap="#astructInputSpongeData_a8480886e7e481c5f83915d5feae62907_cgraph" alt=""/></div>
-<map name="astructInputSpongeData_a8480886e7e481c5f83915d5feae62907_cgraph" id="astructInputSpongeData_a8480886e7e481c5f83915d5feae62907_cgraph">
+<div class="center"><img src="structInputSpongeData_a75a39e770aef38396af5f31cda9879fc_cgraph.png" border="0" usemap="#astructInputSpongeData_a75a39e770aef38396af5f31cda9879fc_cgraph" alt=""/></div>
+<map name="astructInputSpongeData_a75a39e770aef38396af5f31cda9879fc_cgraph" id="astructInputSpongeData_a75a39e770aef38396af5f31cda9879fc_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,176,47"/>
 <area shape="rect" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="224,13,340,39"/>
 </map>
@@ -301,15 +314,31 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        AMREX_ALWAYS_ASSERT(<a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>.size() == <a class="code" href="structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917">U_inp_sponge</a>.size());</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        AMREX_ALWAYS_ASSERT(<a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>.size() == <a class="code" href="structInputSpongeData.html#a8cc25a2bbb25e676dadc57cf3e8f6db1">V_inp_sponge</a>.size());</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>.size();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        AMREX_ALWAYS_ASSERT(<a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>.size() == <a class="code" href="structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917">U_inp_sponge</a>.size());</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        AMREX_ALWAYS_ASSERT(<a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>.size() == <a class="code" href="structInputSpongeData.html#a8cc25a2bbb25e676dadc57cf3e8f6db1">V_inp_sponge</a>.size());</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155">z_inp_sponge</a>.size();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a944b8ce681cef2752c8797d83cae5eae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a944b8ce681cef2752c8797d83cae5eae">&#9670;&nbsp;</a></span>input_sponge_file</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string InputSpongeData::input_sponge_file = &quot;input_sponge_file.txt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="structInputSpongeData.html#a1cf017339a236d02cc0c6f970398940a">InputSpongeData()</a>, and <a class="el" href="structInputSpongeData.html#a75a39e770aef38396af5f31cda9879fc">read_from_file()</a>.</p>
+
+</div>
+</div>
 <a id="aece8029ec7a192a21d88a796ada8e917"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aece8029ec7a192a21d88a796ada8e917">&#9670;&nbsp;</a></span>U_inp_sponge</h2>
 
@@ -322,7 +351,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSpongeData.html#a8480886e7e481c5f83915d5feae62907">read_from_file()</a>, and <a class="el" href="structInputSpongeData.html#aff9684faaf6b3a26494766819e4ba6dd">size()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSpongeData.html#a75a39e770aef38396af5f31cda9879fc">read_from_file()</a>, and <a class="el" href="structInputSpongeData.html#aff9684faaf6b3a26494766819e4ba6dd">size()</a>.</p>
 
 </div>
 </div>
@@ -338,7 +367,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSpongeData.html#a8480886e7e481c5f83915d5feae62907">read_from_file()</a>, and <a class="el" href="structInputSpongeData.html#aff9684faaf6b3a26494766819e4ba6dd">size()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSpongeData.html#a75a39e770aef38396af5f31cda9879fc">read_from_file()</a>, and <a class="el" href="structInputSpongeData.html#aff9684faaf6b3a26494766819e4ba6dd">size()</a>.</p>
 
 </div>
 </div>
@@ -354,12 +383,12 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSpongeData.html#a8480886e7e481c5f83915d5feae62907">read_from_file()</a>, and <a class="el" href="structInputSpongeData.html#aff9684faaf6b3a26494766819e4ba6dd">size()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSpongeData.html#a75a39e770aef38396af5f31cda9879fc">read_from_file()</a>, and <a class="el" href="structInputSpongeData.html#aff9684faaf6b3a26494766819e4ba6dd">size()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Source/Initialization/<a class="el" href="InputSpongeData_8H_source.html">InputSpongeData.H</a></li>
+<li>Source/DataStructs/<a class="el" href="InputSpongeData_8H_source.html">InputSpongeData.H</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

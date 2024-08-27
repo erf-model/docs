@@ -5,6 +5,12 @@ var dir_aba9de7b86b72c00c61e401832cdb2fc =
     ] ],
     [ "DataStruct.H", "DataStruct_8H.html", "DataStruct_8H" ],
     [ "DiffStruct.H", "DiffStruct_8H.html", "DiffStruct_8H" ],
+    [ "InputSoundingData.H", "InputSoundingData_8H.html", [
+      [ "InputSoundingData", "structInputSoundingData.html", "structInputSoundingData" ]
+    ] ],
+    [ "InputSpongeData.H", "InputSpongeData_8H.html", [
+      [ "InputSpongeData", "structInputSpongeData.html", "structInputSpongeData" ]
+    ] ],
     [ "MYNNStruct.H", "MYNNStruct_8H.html", [
       [ "MYNNLevel2", "structMYNNLevel2.html", "structMYNNLevel2" ]
     ] ],

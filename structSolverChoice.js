@@ -36,6 +36,7 @@ var structSolverChoice =
     [ "moisture_type", "structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b", null ],
     [ "ncorr", "structSolverChoice.html#a3b9fef36e4613507eef87379c2c9bf03", null ],
     [ "no_substepping", "structSolverChoice.html#a35e0c82996e345337368bc720bbd6070", null ],
+    [ "nudging_from_input_sounding", "structSolverChoice.html#a5a9eef80b6339778c29acb7fb87dd9f1", null ],
     [ "NumDiffCoeff", "structSolverChoice.html#a6dba64151e2e2f958e7c0e55db477bf2", null ],
     [ "pert_type", "structSolverChoice.html#abfd94767b3721755632c45a5ef290544", null ],
     [ "poisson_abstol", "structSolverChoice.html#ad7f586d62fb0872ba0340fb03d462c64", null ],

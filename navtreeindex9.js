@@ -1,6 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"classSimpleAD.html#a708d4346c7d8900854def95ffd127985":[2,0,67,0],
 "classSimpleAD.html#a740ca3e67d7489e03f6f599ad2f162e7":[2,0,67,3],
 "classSimpleAD.html#a83857d42fc25895b88b10b52af871b3d":[2,0,67,13],
 "classSimpleAD.html#a846f49f7333ed47f1c92d5cc8b57cb08":[2,0,67,2],
@@ -173,8 +172,8 @@ var NAVTREEINDEX9 =
 "eb__if_8H_source.html":[3,0,1,4,2],
 "eb__regular_8cpp.html":[3,0,1,4,3],
 "files.html":[3,0],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -225,8 +224,8 @@ var NAVTREEINDEX9 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX9 =
 "functions_vars_u.html":[2,3,2,20],
 "functions_vars_v.html":[2,3,2,21],
 "functions_vars_w.html":[2,3,2,22],
-"functions_vars_x.html":[2,3,2,23]
+"functions_vars_x.html":[2,3,2,23],
+"functions_vars_y.html":[2,3,2,24]
 };
