@@ -9,7 +9,7 @@ var classRadConstants =
     ] ],
     [ "get_lw_spectral_boundaries", "classRadConstants.html#a242b8b89c7cd6415af91e2bc35a5fd58", null ],
     [ "get_lw_spectral_midpoints", "classRadConstants.html#a1ac73a96f506a7f16b7fd7500e1fa592", null ],
-    [ "get_number_sw_bands", "classRadConstants.html#a2ebe3ffd07e9c18b028da947715f3f8f", null ],
+    [ "get_number_sw_bands", "classRadConstants.html#afefd717015853c1a0f91ac4f5284702c", null ],
     [ "get_ref_solar_band_irrad", "classRadConstants.html#ae7b4458f5981571e705ec1e0bfce7958", null ],
     [ "get_ref_total_solar_irrad", "classRadConstants.html#a424fcb301777b7ff20173ad5e04ce9c7", null ],
     [ "get_solar_band_fraction_irrad", "classRadConstants.html#ab017176abc1bf3d9b8f3f4250d75b77d", null ],

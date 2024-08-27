@@ -425,13 +425,14 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        parallel_for(SimpleBounds&lt;1&gt;(nout), YAKL_LAMBDA (<span class="keywordtype">int</span> j)</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        {</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keywordtype">int</span> count = 0;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordflow">if</span> (interp_wgts.jjm(j) == 0 || interp_wgts.jjp(j) == 0) count +=  1;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keyword">auto</span> frac = interp_wgts.wgts(j) + interp_wgts.wgtn(j);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            if ((frac &lt; 0.9 || frac &gt; 1.1) &amp;&amp; extrap_method != 0)</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                printf(<span class="stringliteral">&quot;interpolation error!\n&quot;</span>);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        });</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            amrex::ignore_unused(count);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keywordflow">if</span> (interp_wgts.jjm(j) == 0 || interp_wgts.jjp(j) == 0) count +=  1;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keyword">auto</span> frac = interp_wgts.wgts(j) + interp_wgts.wgtn(j);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordflow">if</span> ((frac &lt; 0.9 || frac &gt; 1.1) &amp;&amp; extrap_method != 0)</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                printf(<span class="stringliteral">&quot;interpolation error!\n&quot;</span>);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        });</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classCloudRadProps.html#ab5a9764068553f94a590310ff990a97d">CloudRadProps::get_mu_lambda_weights()</a>, <a class="el" href="classCloudRadProps.html#a1ab01da075a2a82b9fb4c341ff85e373">CloudRadProps::mitchell_ice_optics_lw()</a>, and <a class="el" href="classCloudRadProps.html#a32483def8d0d82a6d1cb57834fe04b7d">CloudRadProps::mitchell_ice_optics_sw()</a>.</p>
 <div class="dynheader">
@@ -505,16 +506,16 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="comment">// Do the interpolation</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        parallel_for(SimpleBounds&lt;1&gt;(m1), YAKL_LAMBDA (<span class="keywordtype">int</span> j)</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            arrout(j) = arrin(interp_wgts.jjm(j))*interp_wgts.wgts(j) +</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                        arrin(interp_wgts.jjp(j))*interp_wgts.wgtn(j);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        });</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="comment">// Do the interpolation</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        parallel_for(SimpleBounds&lt;1&gt;(m1), YAKL_LAMBDA (<span class="keywordtype">int</span> j)</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            arrout(j) = arrin(interp_wgts.jjm(j))*interp_wgts.wgts(j) +</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                        arrin(interp_wgts.jjp(j))*interp_wgts.wgtn(j);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        });</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classCloudRadProps.html#ab5a9764068553f94a590310ff990a97d">CloudRadProps::get_mu_lambda_weights()</a>, <a class="el" href="classCloudRadProps.html#a1ab01da075a2a82b9fb4c341ff85e373">CloudRadProps::mitchell_ice_optics_lw()</a>, and <a class="el" href="classCloudRadProps.html#a32483def8d0d82a6d1cb57834fe04b7d">CloudRadProps::mitchell_ice_optics_sw()</a>.</p>
 <div class="dynheader">
@@ -600,13 +601,13 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    {</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        parallel_for(SimpleBounds&lt;1&gt;(m1), YAKL_LAMBDA (<span class="keywordtype">int</span> i)</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            arrout(i) = arrin(wgt1.jjm(i),wgt2.jjm(i))*wgt1.wgts(i)*wgt2.wgts(i)+arrin(wgt1.jjp(i),wgt2.jjm(i))*wgt1.wgtn(i)*wgt2.wgts(i)</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                      + arrin(wgt1.jjm(i),wgt2.jjp(i))*wgt1.wgtn(i)*wgt2.wgtn(i)+arrin(wgt1.jjp(i),wgt2.jjp(i))*wgt1.wgtn(i)*wgt2.wgtn(i);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        });</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        parallel_for(SimpleBounds&lt;1&gt;(m1), YAKL_LAMBDA (<span class="keywordtype">int</span> i)</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        {</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            arrout(i) = arrin(wgt1.jjm(i),wgt2.jjm(i))*wgt1.wgts(i)*wgt2.wgts(i)+arrin(wgt1.jjp(i),wgt2.jjm(i))*wgt1.wgtn(i)*wgt2.wgts(i)</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                      + arrin(wgt1.jjm(i),wgt2.jjp(i))*wgt1.wgtn(i)*wgt2.wgtn(i)+arrin(wgt1.jjp(i),wgt2.jjp(i))*wgt1.wgtn(i)*wgt2.wgtn(i);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        });</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classCloudRadProps.html#a5772a63dc315f019d951785ebdb9c13d">CloudRadProps::gam_liquid_lw()</a>, and <a class="el" href="classCloudRadProps.html#a2890fa11a8f395809fe215447e339c20">CloudRadProps::gam_liquid_sw()</a>.</p>
 <div class="dynheader">
@@ -695,20 +696,20 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        real2d arrtmp(<span class="stringliteral">&quot;arrtmp&quot;</span>,n1,m2);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        parallel_for(SimpleBounds&lt;2&gt;(n1, m2), YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j)</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        {</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            arrtmp(i,j) = arrin(i,wgt2.jjm(j))*wgt2.wgts(j) + arrin(i,wgt2.jjp(j))*wgt2.wgtn(j);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        });</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        parallel_for(SimpleBounds&lt;2&gt;(n1, m2), YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j)</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        {</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            arrout(i,j) = arrtmp(wgt1.jjm(i),j)*wgt1.wgts(i) + arrtmp(wgt1.jjp(i),j)*wgt1.wgtn(i);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        });</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        real2d arrtmp(<span class="stringliteral">&quot;arrtmp&quot;</span>,n1,m2);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        parallel_for(SimpleBounds&lt;2&gt;(n1, m2), YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j)</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        {</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            arrtmp(i,j) = arrin(i,wgt2.jjm(j))*wgt2.wgts(j) + arrin(i,wgt2.jjp(j))*wgt2.wgtn(j);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        });</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        parallel_for(SimpleBounds&lt;2&gt;(n1, m2), YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j)</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        {</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            arrout(i,j) = arrtmp(wgt1.jjm(i),j)*wgt1.wgts(i) + arrtmp(wgt1.jjp(i),j)*wgt1.wgtn(i);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        });</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -787,13 +788,13 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    {</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        parallel_for(SimpleBounds&lt;2&gt;(m1, n3), YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            arrout(i,k) = arrin(wgt1.jjm(i),wgt2.jjm(i),k)*wgt1.wgts(i)*wgt2.wgts(i)+arrin(wgt1.jjp(i),wgt2.jjm(i),k)*wgt1.wgtn(i)*wgt2.wgts(i) +</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                          arrin(wgt1.jjm(i),wgt2.jjp(i),k)*wgt1.wgts(i)*wgt2.wgtn(i)+arrin(wgt1.jjp(i),wgt2.jjp(i),k)*wgt1.wgtn(i)*wgt2.wgtn(i);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        });</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    {</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        parallel_for(SimpleBounds&lt;2&gt;(m1, n3), YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            arrout(i,k) = arrin(wgt1.jjm(i),wgt2.jjm(i),k)*wgt1.wgts(i)*wgt2.wgts(i)+arrin(wgt1.jjp(i),wgt2.jjm(i),k)*wgt1.wgtn(i)*wgt2.wgts(i) +</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                          arrin(wgt1.jjm(i),wgt2.jjp(i),k)*wgt1.wgts(i)*wgt2.wgtn(i)+arrin(wgt1.jjp(i),wgt2.jjp(i),k)*wgt1.wgtn(i)*wgt2.wgtn(i);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        });</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

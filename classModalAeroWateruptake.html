@@ -682,16 +682,16 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            yakl::memset(dryvolmr, 0.);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="comment">// get mode properties</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            consti.<a class="code" href="classMamConstituents.html#a3bafcd362a064a323c1b6a241a6ece68">get_mode_props</a>(list_idx, m-1, sigmag, rhcrystal(m), rhdeliques(m));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            consti.<a class="code" href="classMamConstituents.html#adc3ace4b56e9fe92cae40983334c52d3">get_mode_props</a>(list_idx, m-1, sigmag, rhcrystal(m), rhdeliques(m));</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="comment">// get mode species</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordtype">int</span> nspec;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            consti.<a class="code" href="classMamConstituents.html#a00fcbe86b80e26221e3895c920d7cbc2">get_mode_nspec</a>(list_idx, m-1, nspec);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            consti.<a class="code" href="classMamConstituents.html#a4741e14c61b6fb2dbac43af6c9aeec4a">get_mode_nspec</a>(list_idx, m-1, nspec);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">for</span>(<span class="keyword">auto</span> l = 0; l &lt; nspec; ++l) {</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="comment">// get species interstitial mixing ratio (&#39;a&#39;)</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                consti.<a class="code" href="classMamConstituents.html#afb5674421ff78c9688d71bfbf460a746">rad_cnst_get_mam_mmr_by_idx</a>(list_idx, m-1, l, <span class="stringliteral">&quot;a&quot;</span>, raer);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                consti.<a class="code" href="classMamConstituents.html#a0d5796bba8b3031a99ef09309a2508e5">get_mam_density_aer</a>(list_idx, m-1, l, specdens);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                consti.<a class="code" href="classMamConstituents.html#a53ef55dfb6cfe3f77dcd16d4ccec5237">get_mam_hygro_aer</a>(list_idx, m-1, l, spechygro);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                consti.<a class="code" href="classMamConstituents.html#a9008651a99628af62f3f5494d68a2b99">rad_cnst_get_mam_mmr_by_idx</a>(list_idx, m-1, l, <span class="stringliteral">&quot;a&quot;</span>, raer);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                consti.<a class="code" href="classMamConstituents.html#aaff13adc5b53a73c3247e33451b3889c">get_mam_density_aer</a>(list_idx, m-1, l, specdens);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                consti.<a class="code" href="classMamConstituents.html#ad55d7f5b5933d5586271523a02ac2d55">get_mam_hygro_aer</a>(list_idx, m-1, l, spechygro);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">if</span> (l == 1) {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    <span class="comment">// save off these values to be used as defaults</span></div>
@@ -765,7 +765,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="comment">// estimate clear air relative humidity using cloud fraction</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="keywordflow">for</span>(<span class="keyword">auto</span> k = top_lev; k &lt;= nlev; ++k) {</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 1; i &lt;= ncol; ++i) {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    <a class="code" href="classWaterVaporSat.html#a4dac5d0ff52b333add64a13539fca1c8">WaterVaporSat::qsat</a>(t(i,k), pmid(i,k), es(i), qs(i));</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    <a class="code" href="classWaterVaporSat.html#a964d1dd8ddaba9c5a482480fc51d7eba">WaterVaporSat::qsat</a>(t(i,k), pmid(i,k), es(i), qs(i));</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                    <span class="keywordflow">if</span> (qs(i) &gt; h2ommr(i,k)) {</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                        rh(i,k) = h2ommr(i,k)/qs(i);</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                    } <span class="keywordflow">else</span> {</div>
@@ -810,15 +810,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a404d50fe6660930b74e3b191e2088754"><div class="ttname"><a href="ERF__Constants_8H.html#a404d50fe6660930b74e3b191e2088754">rhoh2o</a></div><div class="ttdeci">constexpr amrex::Real rhoh2o</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:94</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
-<div class="ttc" id="aclassMamConstituents_html_a00fcbe86b80e26221e3895c920d7cbc2"><div class="ttname"><a href="classMamConstituents.html#a00fcbe86b80e26221e3895c920d7cbc2">MamConstituents::get_mode_nspec</a></div><div class="ttdeci">const void get_mode_nspec(int list_idx, int m_idx, int &amp;nspec)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:400</div></div>
-<div class="ttc" id="aclassMamConstituents_html_a0d5796bba8b3031a99ef09309a2508e5"><div class="ttname"><a href="classMamConstituents.html#a0d5796bba8b3031a99ef09309a2508e5">MamConstituents::get_mam_density_aer</a></div><div class="ttdeci">const void get_mam_density_aer(int list_idx, int mode_idx, int spec_idx, real &amp;density_aer)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:910</div></div>
-<div class="ttc" id="aclassMamConstituents_html_a3bafcd362a064a323c1b6a241a6ece68"><div class="ttname"><a href="classMamConstituents.html#a3bafcd362a064a323c1b6a241a6ece68">MamConstituents::get_mode_props</a></div><div class="ttdeci">const void get_mode_props(int list_idx, int mode_idx, real &amp;sigmag, real &amp;rhcrystal, real &amp;rhdeliques)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:826</div></div>
-<div class="ttc" id="aclassMamConstituents_html_a53ef55dfb6cfe3f77dcd16d4ccec5237"><div class="ttname"><a href="classMamConstituents.html#a53ef55dfb6cfe3f77dcd16d4ccec5237">MamConstituents::get_mam_hygro_aer</a></div><div class="ttdeci">const void get_mam_hygro_aer(int list_idx, int mode_idx, int spec_idx, real &amp;hygro_aer)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:924</div></div>
-<div class="ttc" id="aclassMamConstituents_html_afb5674421ff78c9688d71bfbf460a746"><div class="ttname"><a href="classMamConstituents.html#afb5674421ff78c9688d71bfbf460a746">MamConstituents::rad_cnst_get_mam_mmr_by_idx</a></div><div class="ttdeci">const void rad_cnst_get_mam_mmr_by_idx(int list_idx, int mode_idx, int spec_idx, const std::string &amp;phase, real2d &amp;mmr)</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:652</div></div>
+<div class="ttc" id="aclassMamConstituents_html_a4741e14c61b6fb2dbac43af6c9aeec4a"><div class="ttname"><a href="classMamConstituents.html#a4741e14c61b6fb2dbac43af6c9aeec4a">MamConstituents::get_mode_nspec</a></div><div class="ttdeci">void get_mode_nspec(int list_idx, int m_idx, int &amp;nspec) const</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:394</div></div>
+<div class="ttc" id="aclassMamConstituents_html_a9008651a99628af62f3f5494d68a2b99"><div class="ttname"><a href="classMamConstituents.html#a9008651a99628af62f3f5494d68a2b99">MamConstituents::rad_cnst_get_mam_mmr_by_idx</a></div><div class="ttdeci">void rad_cnst_get_mam_mmr_by_idx(int list_idx, int mode_idx, int spec_idx, const std::string &amp;phase, real2d &amp;mmr) const</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:639</div></div>
+<div class="ttc" id="aclassMamConstituents_html_aaff13adc5b53a73c3247e33451b3889c"><div class="ttname"><a href="classMamConstituents.html#aaff13adc5b53a73c3247e33451b3889c">MamConstituents::get_mam_density_aer</a></div><div class="ttdeci">void get_mam_density_aer(int list_idx, int mode_idx, int spec_idx, real &amp;density_aer) const</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:889</div></div>
+<div class="ttc" id="aclassMamConstituents_html_ad55d7f5b5933d5586271523a02ac2d55"><div class="ttname"><a href="classMamConstituents.html#ad55d7f5b5933d5586271523a02ac2d55">MamConstituents::get_mam_hygro_aer</a></div><div class="ttdeci">void get_mam_hygro_aer(int list_idx, int mode_idx, int spec_idx, real &amp;hygro_aer) const</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:903</div></div>
+<div class="ttc" id="aclassMamConstituents_html_adc3ace4b56e9fe92cae40983334c52d3"><div class="ttname"><a href="classMamConstituents.html#adc3ace4b56e9fe92cae40983334c52d3">MamConstituents::get_mode_props</a></div><div class="ttdeci">void get_mode_props(int list_idx, int mode_idx, real &amp;sigmag, real &amp;rhcrystal, real &amp;rhdeliques) const</div><div class="ttdef"><b>Definition:</b> Mam4_constituents.H:808</div></div>
 <div class="ttc" id="aclassModalAeroWateruptake_html_a4a9705a6205eb9fad502289968668b77"><div class="ttname"><a href="classModalAeroWateruptake.html#a4a9705a6205eb9fad502289968668b77">ModalAeroWateruptake::pi43</a></div><div class="ttdeci">constexpr static real pi43</div><div class="ttdef"><b>Definition:</b> Modal_aero_wateruptake.H:21</div></div>
 <div class="ttc" id="aclassModalAeroWateruptake_html_a7b99efd9601245afe2274c268afb5305"><div class="ttname"><a href="classModalAeroWateruptake.html#a7b99efd9601245afe2274c268afb5305">ModalAeroWateruptake::huge_real</a></div><div class="ttdeci">constexpr static real huge_real</div><div class="ttdef"><b>Definition:</b> Modal_aero_wateruptake.H:22</div></div>
 <div class="ttc" id="aclassModalAeroWateruptake_html_a7c1e0109c368bd156beb85a2e98a8878"><div class="ttname"><a href="classModalAeroWateruptake.html#a7c1e0109c368bd156beb85a2e98a8878">ModalAeroWateruptake::modal_aero_wateruptake_sub</a></div><div class="ttdeci">static void modal_aero_wateruptake_sub(int ncol, int nlev, int nmodes, int top_lev, const real1d &amp;rhcrystal, const real1d &amp;rhdeliques, const real3d &amp;dryrad, const real3d &amp;hygro, const real2d &amp;rh, const real3d &amp;dryvol, const real3d &amp;wetrad, const real3d &amp;wetvol, const real3d &amp;wtrvol)</div><div class="ttdef"><b>Definition:</b> Modal_aero_wateruptake.H:225</div></div>
-<div class="ttc" id="aclassWaterVaporSat_html_a4dac5d0ff52b333add64a13539fca1c8"><div class="ttname"><a href="classWaterVaporSat.html#a4dac5d0ff52b333add64a13539fca1c8">WaterVaporSat::qsat</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE void qsat(const amrex::Real &amp;t, const amrex::Real &amp;p, amrex::Real &amp;es, amrex::Real &amp;qs, amrex::Real gam=0., amrex::Real dqsdt=0., amrex::Real enthalpy=0.)</div><div class="ttdef"><b>Definition:</b> Water_vapor_saturation.H:149</div></div>
+<div class="ttc" id="aclassWaterVaporSat_html_a964d1dd8ddaba9c5a482480fc51d7eba"><div class="ttname"><a href="classWaterVaporSat.html#a964d1dd8ddaba9c5a482480fc51d7eba">WaterVaporSat::qsat</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE void qsat(const amrex::Real &amp;t, const amrex::Real &amp;p, amrex::Real &amp;es, amrex::Real &amp;qs, amrex::Real *gam=nullptr, amrex::Real *dqsdt=nullptr, amrex::Real *enthalpy=nullptr)</div><div class="ttdef"><b>Definition:</b> Water_vapor_saturation.H:152</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMam4__aer.html#a893de418ed6818eeece9ed80b72cb685">Mam4_aer::modal_aero_lw()</a>, and <a class="el" href="classMam4__aer.html#a2327a69b0d90bb5e4d77f8864a1196f8">Mam4_aer::modal_aero_sw()</a>.</p>
 <div class="dynheader">
@@ -827,27 +827,27 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classModalAeroWateruptake_aab174a0054ce6dfa80f15e391d9489c6_cgraph.png" border="0" usemap="#aclassModalAeroWateruptake_aab174a0054ce6dfa80f15e391d9489c6_cgraph" alt=""/></div>
 <map name="aclassModalAeroWateruptake_aab174a0054ce6dfa80f15e391d9489c6_cgraph" id="aclassModalAeroWateruptake_aab174a0054ce6dfa80f15e391d9489c6_cgraph">
 <area shape="rect" title=" " alt="" coords="5,201,220,243"/>
-<area shape="rect" href="classMamConstituents.html#a0d5796bba8b3031a99ef09309a2508e5" title=" " alt="" coords="297,5,464,47"/>
-<area shape="rect" href="classMamConstituents.html#a53ef55dfb6cfe3f77dcd16d4ccec5237" title=" " alt="" coords="297,71,464,112"/>
-<area shape="rect" href="classMamConstituents.html#a00fcbe86b80e26221e3895c920d7cbc2" title=" " alt="" coords="297,136,464,177"/>
-<area shape="rect" href="classMamConstituents.html#a3bafcd362a064a323c1b6a241a6ece68" title=" " alt="" coords="297,201,464,243"/>
+<area shape="rect" href="classMamConstituents.html#aaff13adc5b53a73c3247e33451b3889c" title=" " alt="" coords="297,5,464,47"/>
+<area shape="rect" href="classMamConstituents.html#ad55d7f5b5933d5586271523a02ac2d55" title=" " alt="" coords="297,71,464,112"/>
+<area shape="rect" href="classMamConstituents.html#a4741e14c61b6fb2dbac43af6c9aeec4a" title=" " alt="" coords="297,136,464,177"/>
+<area shape="rect" href="classMamConstituents.html#adc3ace4b56e9fe92cae40983334c52d3" title=" " alt="" coords="297,201,464,243"/>
 <area shape="rect" href="classModalAeroWateruptake.html#a7c1e0109c368bd156beb85a2e98a8878" title=" " alt="" coords="268,267,493,308"/>
-<area shape="rect" href="classWaterVaporSat.html#a4dac5d0ff52b333add64a13539fca1c8" title=" " alt="" coords="303,405,458,431"/>
-<area shape="rect" href="classMamConstituents.html#afb5674421ff78c9688d71bfbf460a746" title=" " alt="" coords="274,456,487,497"/>
-<area shape="rect" href="classPhysProp.html#a2d695487896685188cfc27622d7d8b92" title=" " alt="" coords="545,13,740,39"/>
-<area shape="rect" href="classPhysProp.html#a484174f1c3c34929564175635ac0cea4" title=" " alt="" coords="551,63,734,90"/>
-<area shape="rect" href="classPhysProp.html#aafbca319b8c744f5d9c1bded51e79d66" title=" " alt="" coords="555,114,730,141"/>
-<area shape="rect" href="classPhysProp.html#a98643d482d2a30bfeb3cf4fc4b183c61" title=" " alt="" coords="549,165,736,191"/>
-<area shape="rect" href="classPhysProp.html#ab7161938f929a323e8deab03e78065a4" title=" " alt="" coords="559,215,726,242"/>
+<area shape="rect" href="classWaterVaporSat.html#a964d1dd8ddaba9c5a482480fc51d7eba" title=" " alt="" coords="303,405,458,431"/>
+<area shape="rect" href="classMamConstituents.html#a9008651a99628af62f3f5494d68a2b99" title=" " alt="" coords="274,456,487,497"/>
+<area shape="rect" href="classPhysProp.html#adb91fa4653cd03d2eefbab2e6577500c" title=" " alt="" coords="545,13,740,39"/>
+<area shape="rect" href="classPhysProp.html#a5808428f8d4a9c4f118e52a46ba1f9d0" title=" " alt="" coords="551,63,734,90"/>
+<area shape="rect" href="classPhysProp.html#aed30118f34b9185873ef6081ca8d6bc5" title=" " alt="" coords="555,114,730,141"/>
+<area shape="rect" href="classPhysProp.html#acb14a6112ce9896ae00e331897a2349c" title=" " alt="" coords="549,165,736,191"/>
+<area shape="rect" href="classPhysProp.html#a379fe355eb015655be603356966f57fd" title=" " alt="" coords="559,215,726,242"/>
 <area shape="rect" href="classModalAeroWateruptake.html#abdedb99ff569dd300dd3046820da78e8" title=" " alt="" coords="555,267,730,308"/>
 <area shape="rect" href="classModalAeroWateruptake.html#a134cf0f1fd68266a37a7683e362553c4" title=" " alt="" coords="792,201,967,243"/>
 <area shape="rect" href="classModalAeroWateruptake.html#a63dc4418d21ddbc2f88a86e6b5e05640" title=" " alt="" coords="792,267,967,308"/>
-<area shape="rect" href="classWaterVaporSat.html#a071cc1a28405ce131d1c1bcb216d471a" title=" " alt="" coords="567,332,719,373"/>
+<area shape="rect" href="classWaterVaporSat.html#a6e0a9f07f0f59514f56536e44025e980" title=" " alt="" coords="567,332,719,373"/>
 <area shape="rect" href="classWaterVaporSat.html#a9d72a29e54869f42ec419639d6c3d70f" title=" " alt="" coords="563,397,722,439"/>
 <area shape="rect" href="classWaterVaporSat.html#a65b6cc3dc802016e84bc19030f6ad65a" title=" " alt="" coords="568,463,717,504"/>
 <area shape="rect" href="classWaterVaporSat.html#afae0dfb4f85c8ac528ff330ccfa182b2" title=" " alt="" coords="541,529,744,555"/>
 <area shape="rect" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa" title=" " alt="" coords="566,580,719,621"/>
-<area shape="rect" href="classWaterVaporSat.html#ad2bce1bf12d7f01fd354c36e17bfe635" title=" " alt="" coords="799,332,960,373"/>
+<area shape="rect" href="classWaterVaporSat.html#ab306b9991f43384bc11b84b9a43f5280" title=" " alt="" coords="799,332,960,373"/>
 <area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title=" " alt="" coords="803,463,956,504"/>
 <area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title=" " alt="" coords="1015,397,1168,439"/>
 <area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title=" " alt="" coords="1015,528,1168,569"/>

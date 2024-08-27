@@ -159,8 +159,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a078568b5fcba367944981fe065623e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cbf46804754b07ab0ccf03e6db25207"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptics.html#a6cbf46804754b07ab0ccf03e6db25207">combine_properties</a> (int nbands, int ncols, int nlevs, const real2d &amp;fraction1, const real3d &amp;property1, const real2d &amp;fraction2, const real3d &amp;property2, const real3d &amp;combined_property)</td></tr>
 <tr class="separator:a6cbf46804754b07ab0ccf03e6db25207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50e2de641f604b4bf2e2826cb3699257"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptics.html#a50e2de641f604b4bf2e2826cb3699257">initialize</a> (int <a class="el" href="classOptics.html#abb94e5d9dc89e539796740c6f0b9a229">ngas</a>, int nmodes, int num_aeros, int nswbands, int nlwbands, int ncol, int nlev, int nrh, int top_lev, const std::vector&lt; std::string &gt; &amp;aero_names, const real2d &amp;zi, const real2d &amp;pmid, const real2d &amp;pint, const real2d &amp;temp, const real2d &amp;qi, const real2d &amp;geom_radius)</td></tr>
-<tr class="separator:a50e2de641f604b4bf2e2826cb3699257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a001c26ecdd54b6a87c997c61ba32d681"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptics.html#a001c26ecdd54b6a87c997c61ba32d681">initialize</a> (int <a class="el" href="classOptics.html#abb94e5d9dc89e539796740c6f0b9a229">ngas</a>, int nmodes, int num_aeros, int nswbands, int nlwbands, int ncol, int nlev, int nrh, int top_lev, const std::vector&lt; std::string &gt; &amp;aero_names, const real2d &amp;zi, const real2d &amp;pmid, const real2d &amp;pdel, const real2d &amp;temp, const real2d &amp;qi, const real2d &amp;geom_radius)</td></tr>
+<tr class="separator:a001c26ecdd54b6a87c997c61ba32d681"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad044034219080c4d8bc696c4c259cb4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptics.html#ad044034219080c4d8bc696c4c259cb4d">finalize</a> ()</td></tr>
 <tr class="separator:ad044034219080c4d8bc696c4c259cb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -907,8 +907,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a50e2de641f604b4bf2e2826cb3699257"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50e2de641f604b4bf2e2826cb3699257">&#9670;&nbsp;</a></span>initialize()</h2>
+<a id="a001c26ecdd54b6a87c997c61ba32d681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a001c26ecdd54b6a87c997c61ba32d681">&#9670;&nbsp;</a></span>initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -989,7 +989,7 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const real2d &amp;&#160;</td>
-          <td class="paramname"><em>pint</em>, </td>
+          <td class="paramname"><em>pdel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1018,29 +1018,29 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classOptics.html#a90c700e69b63c61c6275b12c63033334">cloud_optics</a>.<a class="code" href="classCloudRadProps.html#ac733936ee2d3e88f07631b30fc5758ef">initialize</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">aero_optics</a>.<a class="code" href="classAerRadProps.html#ac9a8b0b0923ad124305ac1e228f44f04">initialize</a>(<a class="code" href="classOptics.html#abb94e5d9dc89e539796740c6f0b9a229">ngas</a>, nmodes, num_aeros,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">aero_optics</a>.<a class="code" href="classAerRadProps.html#ad1319c07557304aa02bd3c5c20808c3f">initialize</a>(<a class="code" href="classOptics.html#abb94e5d9dc89e539796740c6f0b9a229">ngas</a>, nmodes, num_aeros,</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                           nswbands, nlwbands, ncol, nlev, nrh, top_lev,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                           aero_names, zi, pmid, pint, temp, qi, geom_radius);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                           aero_names, zi, pmid, pdel, temp, qi, geom_radius);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="ttc" id="aclassAerRadProps_html_ac9a8b0b0923ad124305ac1e228f44f04"><div class="ttname"><a href="classAerRadProps.html#ac9a8b0b0923ad124305ac1e228f44f04">AerRadProps::initialize</a></div><div class="ttdeci">void initialize(int num_gas, int num_modes, int naeroes, int nswbands_, int nlwbands_, int ncoloum, int nlevel, int num_rh, int top_levels, const std::vector&lt; std::string &gt; &amp;aerosol_names, const real2d &amp;zint, const real2d &amp;pmiddle, const real2d &amp;pint, const real2d &amp;temperature, const real2d &amp;qtotal, const real2d &amp;geom_rad)</div><div class="ttdef"><b>Definition:</b> Aero_rad_props.cpp:12</div></div>
+<div class="ttc" id="aclassAerRadProps_html_ad1319c07557304aa02bd3c5c20808c3f"><div class="ttname"><a href="classAerRadProps.html#ad1319c07557304aa02bd3c5c20808c3f">AerRadProps::initialize</a></div><div class="ttdeci">void initialize(int num_gas, int num_modes, int naeroes, int nswbands_, int nlwbands_, int ncoloum, int nlevel, int num_rh, int top_levels, const std::vector&lt; std::string &gt; &amp;aerosol_names, const real2d &amp;zint, const real2d &amp;pmiddle, const real2d &amp;pdel, const real2d &amp;temperature, const real2d &amp;qtotal, const real2d &amp;geom_rad)</div><div class="ttdef"><b>Definition:</b> Aero_rad_props.cpp:12</div></div>
 <div class="ttc" id="aclassCloudRadProps_html_ac733936ee2d3e88f07631b30fc5758ef"><div class="ttname"><a href="classCloudRadProps.html#ac733936ee2d3e88f07631b30fc5758ef">CloudRadProps::initialize</a></div><div class="ttdeci">void initialize()</div><div class="ttdef"><b>Definition:</b> Cloud_rad_props.cpp:11</div></div>
 <div class="ttc" id="aclassOptics_html_a2153b2cf09af64100464587e8afb6d8f"><div class="ttname"><a href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">Optics::aero_optics</a></div><div class="ttdeci">AerRadProps aero_optics</div><div class="ttdef"><b>Definition:</b> Optics.H:95</div></div>
 <div class="ttc" id="aclassOptics_html_abb94e5d9dc89e539796740c6f0b9a229"><div class="ttname"><a href="classOptics.html#abb94e5d9dc89e539796740c6f0b9a229">Optics::ngas</a></div><div class="ttdeci">int ngas</div><div class="ttdef"><b>Definition:</b> Optics.H:88</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classOptics_a50e2de641f604b4bf2e2826cb3699257_cgraph.png" border="0" usemap="#aclassOptics_a50e2de641f604b4bf2e2826cb3699257_cgraph" alt=""/></div>
-<map name="aclassOptics_a50e2de641f604b4bf2e2826cb3699257_cgraph" id="aclassOptics_a50e2de641f604b4bf2e2826cb3699257_cgraph">
+<div class="center"><img src="classOptics_a001c26ecdd54b6a87c997c61ba32d681_cgraph.png" border="0" usemap="#aclassOptics_a001c26ecdd54b6a87c997c61ba32d681_cgraph" alt=""/></div>
+<map name="aclassOptics_a001c26ecdd54b6a87c997c61ba32d681_cgraph" id="aclassOptics_a001c26ecdd54b6a87c997c61ba32d681_cgraph">
 <area shape="rect" title=" " alt="" coords="5,96,132,123"/>
 <area shape="rect" href="classCloudRadProps.html#ac733936ee2d3e88f07631b30fc5758ef" title=" " alt="" coords="180,71,364,97"/>
-<area shape="rect" href="classAerRadProps.html#ac9a8b0b0923ad124305ac1e228f44f04" title=" " alt="" coords="187,121,357,148"/>
+<area shape="rect" href="classAerRadProps.html#ad1319c07557304aa02bd3c5c20808c3f" title=" " alt="" coords="187,121,357,148"/>
 <area shape="rect" href="classMam4__aer.html#a54577b94ef6180a27a5f0b5ab7e1b022" title=" " alt="" coords="412,121,567,148"/>
-<area shape="rect" href="classMamConstituents.html#a3bafcd362a064a323c1b6a241a6ece68" title=" " alt="" coords="617,49,784,90"/>
-<area shape="rect" href="classMamConstituents.html#a6e5af88612848490459d63da05a18360" title=" " alt="" coords="617,114,784,155"/>
+<area shape="rect" href="classMamConstituents.html#adc3ace4b56e9fe92cae40983334c52d3" title=" " alt="" coords="617,49,784,90"/>
+<area shape="rect" href="classMamConstituents.html#ab6dd677adef9ea89d15a8f1795cb4904" title=" " alt="" coords="617,114,784,155"/>
 <area shape="rect" href="classMam4__aer.html#a4bd98954eadce524390046791a1730a1" title=" " alt="" coords="615,179,787,221"/>
-<area shape="rect" href="classPhysProp.html#aafbca319b8c744f5d9c1bded51e79d66" title=" " alt="" coords="841,5,1015,32"/>
-<area shape="rect" href="classPhysProp.html#a98643d482d2a30bfeb3cf4fc4b183c61" title=" " alt="" coords="835,56,1021,83"/>
-<area shape="rect" href="classPhysProp.html#ab7161938f929a323e8deab03e78065a4" title=" " alt="" coords="845,107,1011,133"/>
+<area shape="rect" href="classPhysProp.html#aed30118f34b9185873ef6081ca8d6bc5" title=" " alt="" coords="841,5,1015,32"/>
+<area shape="rect" href="classPhysProp.html#acb14a6112ce9896ae00e331897a2349c" title=" " alt="" coords="835,56,1021,83"/>
+<area shape="rect" href="classPhysProp.html#a379fe355eb015655be603356966f57fd" title=" " alt="" coords="845,107,1011,133"/>
 </map>
 </div>
 
@@ -1438,7 +1438,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <a class="code" href="classOptics.html#a2153b2cf09af64100464587e8afb6d8f">aero_optics</a>.<a class="code" href="classAerRadProps.html#a6aabfa89e9a9d91bae79c7a0d91f17b3">aer_rad_props_lw</a>(is_cmip6_volc, icall, dt, zi, <a class="code" href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a>, clear_rh);</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;}</div>
 <div class="ttc" id="aDataStruct_8H_html_a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f"><div class="ttname"><a href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f">tau</a></div><div class="ttdeci">@ tau</div><div class="ttdef"><b>Definition:</b> DataStruct.H:57</div></div>
-<div class="ttc" id="aclassAerRadProps_html_a6aabfa89e9a9d91bae79c7a0d91f17b3"><div class="ttname"><a href="classAerRadProps.html#a6aabfa89e9a9d91bae79c7a0d91f17b3">AerRadProps::aer_rad_props_lw</a></div><div class="ttdeci">void aer_rad_props_lw(const bool &amp;is_cmip6_volc, const int &amp;list_idx, const real &amp;dt, const real2d &amp;zi, const real3d &amp;odap_aer, const real2d &amp;clear_rh)</div><div class="ttdef"><b>Definition:</b> Aero_rad_props.cpp:300</div></div>
+<div class="ttc" id="aclassAerRadProps_html_a6aabfa89e9a9d91bae79c7a0d91f17b3"><div class="ttname"><a href="classAerRadProps.html#a6aabfa89e9a9d91bae79c7a0d91f17b3">AerRadProps::aer_rad_props_lw</a></div><div class="ttdeci">void aer_rad_props_lw(const bool &amp;is_cmip6_volc, const int &amp;list_idx, const real &amp;dt, const real2d &amp;zi, const real3d &amp;odap_aer, const real2d &amp;clear_rh)</div><div class="ttdef"><b>Definition:</b> Aero_rad_props.cpp:304</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1446,50 +1446,50 @@ Here is the call graph for this function:</div>
 <map name="aclassOptics_aecf608be7db530dc74beb0a03b2279f2_cgraph" id="aclassOptics_aecf608be7db530dc74beb0a03b2279f2_cgraph">
 <area shape="rect" title=" " alt="" coords="5,267,152,308"/>
 <area shape="rect" href="classAerRadProps.html#a6aabfa89e9a9d91bae79c7a0d91f17b3" title=" " alt="" coords="200,267,363,308"/>
-<area shape="rect" href="classMamConstituents.html#abced5d5167a48eec9a0923e2acab5ad3" title=" " alt="" coords="427,5,593,47"/>
-<area shape="rect" href="classMamConstituents.html#a615c6fe6e689806ebea977248a801859" title=" " alt="" coords="427,71,593,112"/>
-<area shape="rect" href="classMamConstituents.html#a45a7f8dfd5b8b6f26fa5c5dd7628bfe9" title=" " alt="" coords="427,136,593,177"/>
-<area shape="rect" href="classMamConstituents.html#a00c16dcafa756dac9f1e3191c39cf45a" title=" " alt="" coords="427,201,593,243"/>
-<area shape="rect" href="classMamConstituents.html#aa9738a1eeff88e7f5985c7ec990f37fd" title=" " alt="" coords="427,267,593,308"/>
-<area shape="rect" href="classMamConstituents.html#a4bfaf145eff109a2e41fa964735b6f79" title=" " alt="" coords="427,332,593,373"/>
-<area shape="rect" href="classMamConstituents.html#a6e5af88612848490459d63da05a18360" title=" " alt="" coords="427,397,593,439"/>
+<area shape="rect" href="classMamConstituents.html#a39c17e36a63359f40e0d3d32189aab96" title=" " alt="" coords="427,5,593,47"/>
+<area shape="rect" href="classMamConstituents.html#a0de07ed11529ba2b684aeba702294d03" title=" " alt="" coords="427,71,593,112"/>
+<area shape="rect" href="classMamConstituents.html#aa5ae6b3a2418d42d2d8e39a35a71a88d" title=" " alt="" coords="427,136,593,177"/>
+<area shape="rect" href="classMamConstituents.html#abec0c34aadac9883294cdc35a507856a" title=" " alt="" coords="427,201,593,243"/>
+<area shape="rect" href="classMamConstituents.html#acda5a38c4660d35fe7453bddc6106808" title=" " alt="" coords="427,267,593,308"/>
+<area shape="rect" href="classMamConstituents.html#aec2a842a29c81c329c98202e33c74740" title=" " alt="" coords="427,332,593,373"/>
+<area shape="rect" href="classMamConstituents.html#ab6dd677adef9ea89d15a8f1795cb4904" title=" " alt="" coords="427,397,593,439"/>
 <area shape="rect" href="classMam4__aer.html#a893de418ed6818eeece9ed80b72cb685" title=" " alt="" coords="411,493,609,519"/>
-<area shape="rect" href="classWaterVaporSat.html#a4dac5d0ff52b333add64a13539fca1c8" title=" " alt="" coords="955,995,1110,1022"/>
-<area shape="rect" href="classPhysProp.html#aee93d9cfecbcef45bc4ff5c55e924d3c" title=" " alt="" coords="683,13,846,39"/>
-<area shape="rect" href="classPhysProp.html#ada1267eec64ed72b370c245bdaf28cde" title=" " alt="" coords="661,78,868,105"/>
-<area shape="rect" href="classPhysProp.html#a8c3737a4e44479924b64bd2fa1bb630e" title=" " alt="" coords="695,143,834,170"/>
-<area shape="rect" href="classPhysProp.html#a10da2795ee22a59a6bf00065db618038" title=" " alt="" coords="671,201,858,227"/>
-<area shape="rect" href="classPhysProp.html#a025a2d9ecc2c4d271d08d0cb75b49f33" title=" " alt="" coords="677,251,852,278"/>
+<area shape="rect" href="classWaterVaporSat.html#a964d1dd8ddaba9c5a482480fc51d7eba" title=" " alt="" coords="955,995,1110,1022"/>
+<area shape="rect" href="classPhysProp.html#af7d8981c1033f1eb0e48168e0d52c572" title=" " alt="" coords="683,13,846,39"/>
+<area shape="rect" href="classPhysProp.html#a30f4cd3f9cfc6e7e69c5e5c732f0d7be" title=" " alt="" coords="661,78,868,105"/>
+<area shape="rect" href="classPhysProp.html#a5b078a171f29ecd73946aadf4024beeb" title=" " alt="" coords="695,143,834,170"/>
+<area shape="rect" href="classPhysProp.html#a61a4b378d133e890ff2b354f94ef5b37" title=" " alt="" coords="671,201,858,227"/>
+<area shape="rect" href="classPhysProp.html#a4021cec87565fb8d2f83d246764b207c" title=" " alt="" coords="677,251,852,278"/>
 <area shape="rect" href="classMam4__aer.html#ac1ba4ccab45c000472b4d40cb43c9ef9" title=" " alt="" coords="692,690,837,717"/>
-<area shape="rect" href="classMamConstituents.html#a4e30afbc74de6ccb53def99d3d2b89d7" title=" " alt="" coords="681,303,848,344"/>
-<area shape="rect" href="classMamConstituents.html#a00fcbe86b80e26221e3895c920d7cbc2" title=" " alt="" coords="949,397,1116,439"/>
-<area shape="rect" href="classMamConstituents.html#a3bafcd362a064a323c1b6a241a6ece68" title=" " alt="" coords="949,789,1116,831"/>
+<area shape="rect" href="classMamConstituents.html#aaf6b7130c9c8322fdf76384d13e8a2e5" title=" " alt="" coords="681,303,848,344"/>
+<area shape="rect" href="classMamConstituents.html#a4741e14c61b6fb2dbac43af6c9aeec4a" title=" " alt="" coords="949,397,1116,439"/>
+<area shape="rect" href="classMamConstituents.html#adc3ace4b56e9fe92cae40983334c52d3" title=" " alt="" coords="949,789,1116,831"/>
 <area shape="rect" href="classMam4__aer.html#adedd31f2c7c2a293e6f3dfc4818b175d" title=" " alt="" coords="677,456,853,497"/>
-<area shape="rect" href="classMamConstituents.html#afb5674421ff78c9688d71bfbf460a746" title=" " alt="" coords="926,463,1139,504"/>
+<area shape="rect" href="classMamConstituents.html#a9008651a99628af62f3f5494d68a2b99" title=" " alt="" coords="926,463,1139,504"/>
 <area shape="rect" href="classModalAeroWateruptake.html#aab174a0054ce6dfa80f15e391d9489c6" title=" " alt="" coords="657,573,872,615"/>
-<area shape="rect" href="classPhysProp.html#a2d695487896685188cfc27622d7d8b92" title=" " alt="" coords="1197,477,1392,503"/>
-<area shape="rect" href="classPhysProp.html#acf52dbf154af6672eaa9bcf52f73d5c3" title=" " alt="" coords="953,201,1113,243"/>
-<area shape="rect" href="classPhysProp.html#ac1fffb326bba13fcf21a913a019a715b" title=" " alt="" coords="949,267,1117,308"/>
-<area shape="rect" href="classPhysProp.html#aafbca319b8c744f5d9c1bded51e79d66" title=" " alt="" coords="1207,777,1382,803"/>
-<area shape="rect" href="classPhysProp.html#a98643d482d2a30bfeb3cf4fc4b183c61" title=" " alt="" coords="1201,827,1388,854"/>
-<area shape="rect" href="classPhysProp.html#ab7161938f929a323e8deab03e78065a4" title=" " alt="" coords="1211,878,1378,905"/>
-<area shape="rect" href="classMamConstituents.html#ae8c4861e3d2d79f208f5b78270aa72f6" title=" " alt="" coords="949,593,1116,635"/>
-<area shape="rect" href="classMamConstituents.html#a47b426e82c4a19365d77eaa51c7cac32" title=" " alt="" coords="949,332,1116,373"/>
-<area shape="rect" href="classPhysProp.html#a484174f1c3c34929564175635ac0cea4" title=" " alt="" coords="1203,659,1386,686"/>
-<area shape="rect" href="classPhysProp.html#a0c6b02b2894408623fa1a18770e1013f" title=" " alt="" coords="1215,593,1375,635"/>
-<area shape="rect" href="classPhysProp.html#ae549c86a3cd5b8645006f5d39393429e" title=" " alt="" coords="1211,528,1379,569"/>
-<area shape="rect" href="classMamConstituents.html#a0d5796bba8b3031a99ef09309a2508e5" title=" " alt="" coords="949,528,1116,569"/>
-<area shape="rect" href="classMamConstituents.html#a53ef55dfb6cfe3f77dcd16d4ccec5237" title=" " alt="" coords="949,659,1116,700"/>
+<area shape="rect" href="classPhysProp.html#adb91fa4653cd03d2eefbab2e6577500c" title=" " alt="" coords="1197,477,1392,503"/>
+<area shape="rect" href="classPhysProp.html#a7d6616b7a8f6620f73398bf070dfa1dc" title=" " alt="" coords="953,201,1113,243"/>
+<area shape="rect" href="classPhysProp.html#a4fbfb5110a6a66802698c216c1bac1fb" title=" " alt="" coords="949,267,1117,308"/>
+<area shape="rect" href="classPhysProp.html#aed30118f34b9185873ef6081ca8d6bc5" title=" " alt="" coords="1207,777,1382,803"/>
+<area shape="rect" href="classPhysProp.html#acb14a6112ce9896ae00e331897a2349c" title=" " alt="" coords="1201,827,1388,854"/>
+<area shape="rect" href="classPhysProp.html#a379fe355eb015655be603356966f57fd" title=" " alt="" coords="1211,878,1378,905"/>
+<area shape="rect" href="classMamConstituents.html#a7c3b6e3de312e64999a8465e89ff66e0" title=" " alt="" coords="949,593,1116,635"/>
+<area shape="rect" href="classMamConstituents.html#a1331df86e7023172d2ecdb50b5554bf4" title=" " alt="" coords="949,332,1116,373"/>
+<area shape="rect" href="classPhysProp.html#a5808428f8d4a9c4f118e52a46ba1f9d0" title=" " alt="" coords="1203,659,1386,686"/>
+<area shape="rect" href="classPhysProp.html#a2d4a11394149074c3162c5a590f21c06" title=" " alt="" coords="1215,593,1375,635"/>
+<area shape="rect" href="classPhysProp.html#a18e492337d988412b003d05ef4e80d7c" title=" " alt="" coords="1211,528,1379,569"/>
+<area shape="rect" href="classMamConstituents.html#aaff13adc5b53a73c3247e33451b3889c" title=" " alt="" coords="949,528,1116,569"/>
+<area shape="rect" href="classMamConstituents.html#ad55d7f5b5933d5586271523a02ac2d55" title=" " alt="" coords="949,659,1116,700"/>
 <area shape="rect" href="classModalAeroWateruptake.html#a7c1e0109c368bd156beb85a2e98a8878" title=" " alt="" coords="920,724,1145,765"/>
 <area shape="rect" href="classModalAeroWateruptake.html#abdedb99ff569dd300dd3046820da78e8" title=" " alt="" coords="1207,711,1382,752"/>
 <area shape="rect" href="classModalAeroWateruptake.html#a134cf0f1fd68266a37a7683e362553c4" title=" " alt="" coords="1444,679,1619,720"/>
 <area shape="rect" href="classModalAeroWateruptake.html#a63dc4418d21ddbc2f88a86e6b5e05640" title=" " alt="" coords="1444,744,1619,785"/>
-<area shape="rect" href="classWaterVaporSat.html#a071cc1a28405ce131d1c1bcb216d471a" title=" " alt="" coords="1219,1112,1371,1153"/>
+<area shape="rect" href="classWaterVaporSat.html#a6e0a9f07f0f59514f56536e44025e980" title=" " alt="" coords="1219,1112,1371,1153"/>
 <area shape="rect" href="classWaterVaporSat.html#a9d72a29e54869f42ec419639d6c3d70f" title=" " alt="" coords="1215,1177,1374,1219"/>
 <area shape="rect" href="classWaterVaporSat.html#a65b6cc3dc802016e84bc19030f6ad65a" title=" " alt="" coords="1220,929,1369,971"/>
 <area shape="rect" href="classWaterVaporSat.html#afae0dfb4f85c8ac528ff330ccfa182b2" title=" " alt="" coords="1193,995,1396,1022"/>
 <area shape="rect" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa" title=" " alt="" coords="1218,1047,1371,1088"/>
-<area shape="rect" href="classWaterVaporSat.html#ad2bce1bf12d7f01fd354c36e17bfe635" title=" " alt="" coords="1451,1112,1612,1153"/>
+<area shape="rect" href="classWaterVaporSat.html#ab306b9991f43384bc11b84b9a43f5280" title=" " alt="" coords="1451,1112,1612,1153"/>
 <area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title=" " alt="" coords="1455,929,1608,971"/>
 <area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title=" " alt="" coords="1667,897,1820,939"/>
 <area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title=" " alt="" coords="1667,963,1820,1004"/>
@@ -1629,7 +1629,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        }</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    });</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;  }</div>
-<div class="ttc" id="aclassAerRadProps_html_a433097bd85637100b16f3e120e9d6fa1"><div class="ttname"><a href="classAerRadProps.html#a433097bd85637100b16f3e120e9d6fa1">AerRadProps::aer_rad_props_sw</a></div><div class="ttdeci">void aer_rad_props_sw(const int &amp;list_idx, const real &amp;dt, const int &amp;nnite, const int1d &amp;idxnite, const bool is_cmip6_volc, const real3d &amp;tau, const real3d &amp;tau_w, const real3d &amp;tau_w_g, const real3d &amp;tau_w_f, const real2d &amp;clear_rh)</div><div class="ttdef"><b>Definition:</b> Aero_rad_props.cpp:52</div></div>
+<div class="ttc" id="aclassAerRadProps_html_a433097bd85637100b16f3e120e9d6fa1"><div class="ttname"><a href="classAerRadProps.html#a433097bd85637100b16f3e120e9d6fa1">AerRadProps::aer_rad_props_sw</a></div><div class="ttdeci">void aer_rad_props_sw(const int &amp;list_idx, const real &amp;dt, const int &amp;nnite, const int1d &amp;idxnite, const bool is_cmip6_volc, const real3d &amp;tau, const real3d &amp;tau_w, const real3d &amp;tau_w_g, const real3d &amp;tau_w_f, const real2d &amp;clear_rh)</div><div class="ttdef"><b>Definition:</b> Aero_rad_props.cpp:56</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1637,52 +1637,52 @@ Here is the call graph for this function:</div>
 <map name="aclassOptics_a54463b4d74c22934fcbf36a7c95f0b3f_cgraph" id="aclassOptics_a54463b4d74c22934fcbf36a7c95f0b3f_cgraph">
 <area shape="rect" title=" " alt="" coords="5,724,152,765"/>
 <area shape="rect" href="classAerRadProps.html#a433097bd85637100b16f3e120e9d6fa1" title=" " alt="" coords="200,724,363,765"/>
-<area shape="rect" href="classMamConstituents.html#a45a7f8dfd5b8b6f26fa5c5dd7628bfe9" title=" " alt="" coords="429,5,596,47"/>
-<area shape="rect" href="classMamConstituents.html#a00c16dcafa756dac9f1e3191c39cf45a" title=" " alt="" coords="429,71,596,112"/>
-<area shape="rect" href="classMamConstituents.html#abea6b6de83d265c3d1ff0c0ef625dfac" title=" " alt="" coords="429,136,596,177"/>
-<area shape="rect" href="classMamConstituents.html#afd11f880a3bfdd56a327b33802cb9e5d" title=" " alt="" coords="429,201,596,243"/>
-<area shape="rect" href="classMamConstituents.html#a5d379f3c6f64728cb5e2d983096e2320" title=" " alt="" coords="429,267,596,308"/>
-<area shape="rect" href="classMamConstituents.html#a80a18aa331fc8986442ec2c1d19c0fc3" title=" " alt="" coords="429,332,596,373"/>
-<area shape="rect" href="classMamConstituents.html#a4b5f7c567835d54155d36cb7b7dd1016" title=" " alt="" coords="429,397,596,439"/>
-<area shape="rect" href="classMamConstituents.html#a55f18bc19313997a05e90bda52aca5ff" title=" " alt="" coords="429,463,596,504"/>
-<area shape="rect" href="classMamConstituents.html#a563e58d03a7787ca3a40c602591de716" title=" " alt="" coords="420,528,605,569"/>
-<area shape="rect" href="classMamConstituents.html#a82c89926169f83caec2e2cb1b17c98dd" title=" " alt="" coords="423,593,602,635"/>
-<area shape="rect" href="classMamConstituents.html#a6253e342c1dfeac6b7516ed20182d621" title=" " alt="" coords="427,659,598,700"/>
-<area shape="rect" href="classMamConstituents.html#ad441f881bce9bd57dcf87f906935e315" title=" " alt="" coords="424,724,601,765"/>
-<area shape="rect" href="classMamConstituents.html#a25c7c70ec61cb1fc2ed73020c483bc01" title=" " alt="" coords="427,789,599,831"/>
+<area shape="rect" href="classMamConstituents.html#aa5ae6b3a2418d42d2d8e39a35a71a88d" title=" " alt="" coords="429,5,596,47"/>
+<area shape="rect" href="classMamConstituents.html#abec0c34aadac9883294cdc35a507856a" title=" " alt="" coords="429,71,596,112"/>
+<area shape="rect" href="classMamConstituents.html#a0d3f86cd0ffb6e60c4df7ad4ce6a11bc" title=" " alt="" coords="429,136,596,177"/>
+<area shape="rect" href="classMamConstituents.html#a2f8b2adaa3a57f55957f3ae733a2d824" title=" " alt="" coords="429,201,596,243"/>
+<area shape="rect" href="classMamConstituents.html#a01578fc8bfc4e59b9d3718fe28f5b618" title=" " alt="" coords="429,267,596,308"/>
+<area shape="rect" href="classMamConstituents.html#aa10ea52298c1c8c1e2761a77e95ecce0" title=" " alt="" coords="429,332,596,373"/>
+<area shape="rect" href="classMamConstituents.html#ab71a35dafa0ad47969c8b313dbcf08e7" title=" " alt="" coords="429,397,596,439"/>
+<area shape="rect" href="classMamConstituents.html#ab4b263716e034493d0b8568954f97cf8" title=" " alt="" coords="429,463,596,504"/>
+<area shape="rect" href="classMamConstituents.html#a9b76d886c4a041e4a04632c8826f720f" title=" " alt="" coords="420,528,605,569"/>
+<area shape="rect" href="classMamConstituents.html#a8b1568c4a639828008d0355f92461e34" title=" " alt="" coords="423,593,602,635"/>
+<area shape="rect" href="classMamConstituents.html#a4a957acf92c695c67d59c57549f27e1f" title=" " alt="" coords="427,659,598,700"/>
+<area shape="rect" href="classMamConstituents.html#a134c22a50d8162187020229e600d955a" title=" " alt="" coords="424,724,601,765"/>
+<area shape="rect" href="classMamConstituents.html#ab56197f3c64da14398867aa6f8d38183" title=" " alt="" coords="427,789,599,831"/>
 <area shape="rect" href="classAerRadProps.html#a6a1e71160911bbc52d09bdbd73acb219" title=" " alt="" coords="423,855,602,896"/>
-<area shape="rect" href="classMamConstituents.html#a4bfaf145eff109a2e41fa964735b6f79" title=" " alt="" coords="429,920,596,961"/>
-<area shape="rect" href="classMamConstituents.html#aa46c21d9af275e89afd383ca15dd0585" title=" " alt="" coords="411,986,615,1013"/>
-<area shape="rect" href="classMamConstituents.html#a6e5af88612848490459d63da05a18360" title=" " alt="" coords="429,1037,596,1079"/>
+<area shape="rect" href="classMamConstituents.html#aec2a842a29c81c329c98202e33c74740" title=" " alt="" coords="429,920,596,961"/>
+<area shape="rect" href="classMamConstituents.html#a9f278742417afa46505432a0d243e8ea" title=" " alt="" coords="411,986,615,1013"/>
+<area shape="rect" href="classMamConstituents.html#ab6dd677adef9ea89d15a8f1795cb4904" title=" " alt="" coords="429,1037,596,1079"/>
 <area shape="rect" href="classAerRadProps.html#af6e6827c17d2247b72337a35875ea0e0" title=" " alt="" coords="411,1103,614,1144"/>
 <area shape="rect" href="classAerRadProps.html#a74842fff81711719376fc035b86dc1a7" title=" " alt="" coords="415,1168,610,1209"/>
 <area shape="rect" href="classAerRadProps.html#a55507a56c5808f7480e42f4369cbf5a7" title=" " alt="" coords="415,1233,610,1275"/>
 <area shape="rect" href="classMam4__aer.html#a2327a69b0d90bb5e4d77f8864a1196f8" title=" " alt="" coords="412,1299,613,1326"/>
-<area shape="rect" href="classWaterVaporSat.html#a4dac5d0ff52b333add64a13539fca1c8" title=" " alt="" coords="979,1478,1133,1505"/>
+<area shape="rect" href="classWaterVaporSat.html#a964d1dd8ddaba9c5a482480fc51d7eba" title=" " alt="" coords="979,1478,1133,1505"/>
 <area shape="rect" href="classAerRadProps.html#aa4241f4adcf62ef3c537a91bdfce66db" title=" " alt="" coords="429,1585,596,1627"/>
-<area shape="rect" href="classPhysProp.html#a8c3737a4e44479924b64bd2fa1bb630e" title=" " alt="" coords="713,13,851,39"/>
-<area shape="rect" href="classPhysProp.html#a10da2795ee22a59a6bf00065db618038" title=" " alt="" coords="689,78,875,105"/>
-<area shape="rect" href="classPhysProp.html#a4f1f95c6a1c59e037e52668e88b10191" title=" " alt="" coords="708,136,856,177"/>
-<area shape="rect" href="classPhysProp.html#a3b73c4eb2b4d224b99a67053944b5e91" title=" " alt="" coords="694,209,870,235"/>
-<area shape="rect" href="classPhysProp.html#a8390c01827baf6d2b47eede1766cf548" title=" " alt="" coords="691,274,873,301"/>
-<area shape="rect" href="classPhysProp.html#a88a179db56f5d5981ebe32aec54c2b5f" title=" " alt="" coords="675,339,889,366"/>
-<area shape="rect" href="classPhysProp.html#a0d6fc83cc794bd18f9bd8df70983b44e" title=" " alt="" coords="678,405,886,431"/>
-<area shape="rect" href="classPhysProp.html#afb27495eba78aaf7973ebc6a7b7d3dc5" title=" " alt="" coords="677,470,887,497"/>
-<area shape="rect" href="classPhysProp.html#a21de4ee0b6f23318467ecadf0490f03d" title=" " alt="" coords="680,528,884,569"/>
-<area shape="rect" href="classPhysProp.html#aa623054605a298be89c3019768e6c974" title=" " alt="" coords="663,601,901,627"/>
-<area shape="rect" href="classPhysProp.html#a41916458742151ca9c3e22d3250f3862" title=" " alt="" coords="666,666,898,693"/>
-<area shape="rect" href="classPhysProp.html#a15547827a05a343bfb5079fb03df1d07" title=" " alt="" coords="663,731,901,758"/>
-<area shape="rect" href="classPhysProp.html#a78c11ff5d667d5eaf5b7388e8c835384" title=" " alt="" coords="665,797,899,823"/>
+<area shape="rect" href="classPhysProp.html#a5b078a171f29ecd73946aadf4024beeb" title=" " alt="" coords="713,13,851,39"/>
+<area shape="rect" href="classPhysProp.html#a61a4b378d133e890ff2b354f94ef5b37" title=" " alt="" coords="689,78,875,105"/>
+<area shape="rect" href="classPhysProp.html#aecc133d246b9b4b8abdb9fa421e55f97" title=" " alt="" coords="708,136,856,177"/>
+<area shape="rect" href="classPhysProp.html#a1320880e1247f0a01dcbb9ae3816c99c" title=" " alt="" coords="694,209,870,235"/>
+<area shape="rect" href="classPhysProp.html#aa702f18a2ac818d9d7e0766cf2869bcf" title=" " alt="" coords="691,274,873,301"/>
+<area shape="rect" href="classPhysProp.html#af40202fdb4c7bf65c229ff85f48e4927" title=" " alt="" coords="675,339,889,366"/>
+<area shape="rect" href="classPhysProp.html#a9f8a60becbd6e1c5be14e6e42c043552" title=" " alt="" coords="678,405,886,431"/>
+<area shape="rect" href="classPhysProp.html#a8a18207db0b0c00b2f3ab728762fcee4" title=" " alt="" coords="677,470,887,497"/>
+<area shape="rect" href="classPhysProp.html#aa76012e67298ec9e2a682f4e1ae4406e" title=" " alt="" coords="680,528,884,569"/>
+<area shape="rect" href="classPhysProp.html#a5f7966a98bc34562f868a85081520fc7" title=" " alt="" coords="663,601,901,627"/>
+<area shape="rect" href="classPhysProp.html#a15220c4ef45d858fe3dddb9ed1c14879" title=" " alt="" coords="666,666,898,693"/>
+<area shape="rect" href="classPhysProp.html#a1b7539cc5e72663a669fd912b006a2ea" title=" " alt="" coords="663,731,901,758"/>
+<area shape="rect" href="classPhysProp.html#a07b254998ca2806c8c307529c2596ef8" title=" " alt="" coords="665,797,899,823"/>
 <area shape="rect" href="classMam4__aer.html#ac1ba4ccab45c000472b4d40cb43c9ef9" title=" " alt="" coords="709,1081,855,1107"/>
-<area shape="rect" href="classMamConstituents.html#ae8c4861e3d2d79f208f5b78270aa72f6" title=" " alt="" coords="973,1143,1139,1184"/>
-<area shape="rect" href="classMamConstituents.html#a93e2f68e7941afb2fa38f23970e27967" title=" " alt="" coords="699,1468,865,1509"/>
-<area shape="rect" href="classMamConstituents.html#a00fcbe86b80e26221e3895c920d7cbc2" title=" " alt="" coords="973,1227,1139,1268"/>
-<area shape="rect" href="classMamConstituents.html#a3bafcd362a064a323c1b6a241a6ece68" title=" " alt="" coords="973,1292,1139,1333"/>
+<area shape="rect" href="classMamConstituents.html#a7c3b6e3de312e64999a8465e89ff66e0" title=" " alt="" coords="973,1143,1139,1184"/>
+<area shape="rect" href="classMamConstituents.html#aff2f99c0ce814bed40bf8256e68e9c2c" title=" " alt="" coords="699,1468,865,1509"/>
+<area shape="rect" href="classMamConstituents.html#a4741e14c61b6fb2dbac43af6c9aeec4a" title=" " alt="" coords="973,1227,1139,1268"/>
+<area shape="rect" href="classMamConstituents.html#adc3ace4b56e9fe92cae40983334c52d3" title=" " alt="" coords="973,1292,1139,1333"/>
 <area shape="rect" href="classMam4__aer.html#adedd31f2c7c2a293e6f3dfc4818b175d" title=" " alt="" coords="694,1233,870,1275"/>
-<area shape="rect" href="classMamConstituents.html#afb5674421ff78c9688d71bfbf460a746" title=" " alt="" coords="949,1357,1163,1399"/>
+<area shape="rect" href="classMamConstituents.html#a9008651a99628af62f3f5494d68a2b99" title=" " alt="" coords="949,1357,1163,1399"/>
 <area shape="rect" href="classModalAeroWateruptake.html#aab174a0054ce6dfa80f15e391d9489c6" title=" " alt="" coords="675,1351,889,1392"/>
 <area shape="rect" href="classMam4__aer.html#a1097c2d484ccac94860e32f0bdf54915" title=" " alt="" coords="695,1015,869,1056"/>
-<area shape="rect" href="classWaterVaporSat.html#a071cc1a28405ce131d1c1bcb216d471a" title=" " alt="" coords="1214,1405,1366,1447"/>
+<area shape="rect" href="classWaterVaporSat.html#a6e0a9f07f0f59514f56536e44025e980" title=" " alt="" coords="1214,1405,1366,1447"/>
 <area shape="rect" href="classWaterVaporSat.html#a9d72a29e54869f42ec419639d6c3d70f" title=" " alt="" coords="1211,1471,1369,1512"/>
 <area shape="rect" href="classWaterVaporSat.html#a65b6cc3dc802016e84bc19030f6ad65a" title=" " alt="" coords="1215,1536,1365,1577"/>
 </map>
@@ -1711,7 +1711,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classOptics.html#a50e2de641f604b4bf2e2826cb3699257">initialize()</a>, <a class="el" href="classOptics.html#aecf608be7db530dc74beb0a03b2279f2">set_aerosol_optics_lw()</a>, and <a class="el" href="classOptics.html#a54463b4d74c22934fcbf36a7c95f0b3f">set_aerosol_optics_sw()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classOptics.html#a001c26ecdd54b6a87c997c61ba32d681">initialize()</a>, <a class="el" href="classOptics.html#aecf608be7db530dc74beb0a03b2279f2">set_aerosol_optics_lw()</a>, and <a class="el" href="classOptics.html#a54463b4d74c22934fcbf36a7c95f0b3f">set_aerosol_optics_sw()</a>.</p>
 
 </div>
 </div>
@@ -1735,7 +1735,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classOptics.html#af5f3fa679301f0ead8b8155626b2e710">get_cloud_optics_lw()</a>, <a class="el" href="classOptics.html#aee82856b88240c428aefc6f47bf9500c">get_cloud_optics_sw()</a>, and <a class="el" href="classOptics.html#a50e2de641f604b4bf2e2826cb3699257">initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classOptics.html#af5f3fa679301f0ead8b8155626b2e710">get_cloud_optics_lw()</a>, <a class="el" href="classOptics.html#aee82856b88240c428aefc6f47bf9500c">get_cloud_optics_sw()</a>, and <a class="el" href="classOptics.html#a001c26ecdd54b6a87c997c61ba32d681">initialize()</a>.</p>
 
 </div>
 </div>
@@ -1829,7 +1829,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classOptics.html#a50e2de641f604b4bf2e2826cb3699257">initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classOptics.html#a001c26ecdd54b6a87c997c61ba32d681">initialize()</a>.</p>
 
 </div>
 </div>

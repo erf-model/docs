@@ -126,8 +126,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a424fcb301777b7ff20173ad5e04ce9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7b4458f5981571e705ec1e0bfce7958"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadConstants.html#ae7b4458f5981571e705ec1e0bfce7958">get_ref_solar_band_irrad</a> (real1d &amp;band_irrad)</td></tr>
 <tr class="separator:ae7b4458f5981571e705ec1e0bfce7958"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ebe3ffd07e9c18b028da947715f3f8f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadConstants.html#a2ebe3ffd07e9c18b028da947715f3f8f">get_number_sw_bands</a> (int number_of_bands)</td></tr>
-<tr class="separator:a2ebe3ffd07e9c18b028da947715f3f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afefd717015853c1a0f91ac4f5284702c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadConstants.html#afefd717015853c1a0f91ac4f5284702c">get_number_sw_bands</a> (int &amp;number_of_bands)</td></tr>
+<tr class="separator:afefd717015853c1a0f91ac4f5284702c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a242b8b89c7cd6415af91e2bc35a5fd58"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadConstants.html#a242b8b89c7cd6415af91e2bc35a5fd58">get_lw_spectral_boundaries</a> (real1d &amp;low_boundaries, real1d &amp;high_boundaries, <a class="el" href="classRadConstants.html#a2de1ff8cbc3cafe6a42e8f884002e4f1">Units</a> units)</td></tr>
 <tr class="separator:a242b8b89c7cd6415af91e2bc35a5fd58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ac73a96f506a7f16b7fd7500e1fa592"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRadConstants.html#a1ac73a96f506a7f16b7fd7500e1fa592">get_lw_spectral_midpoints</a> (real1d &amp;band_midpoints, <a class="el" href="classRadConstants.html#a2de1ff8cbc3cafe6a42e8f884002e4f1">Units</a> units)</td></tr>
@@ -364,8 +364,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a2ebe3ffd07e9c18b028da947715f3f8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ebe3ffd07e9c18b028da947715f3f8f">&#9670;&nbsp;</a></span>get_number_sw_bands()</h2>
+<a id="afefd717015853c1a0f91ac4f5284702c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afefd717015853c1a0f91ac4f5284702c">&#9670;&nbsp;</a></span>get_number_sw_bands()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -376,7 +376,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">static void RadConstants::get_number_sw_bands </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">int &amp;&#160;</td>
           <td class="paramname"><em>number_of_bands</em></td><td>)</td>
           <td></td>
         </tr>
@@ -664,20 +664,21 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> igas = 0; igas &lt; <a class="code" href="classRadConstants.html#acc3330716cd598dc36881b44c70687c5">nradgas</a>; ++igas) {</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classRadConstants.html#abaa201a157c245b8f20605e3d3c94938">gaslist</a>[igas] == gasname) <span class="keywordflow">return</span> igas;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        }</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;rad_gas_index: can not find gas with name&quot;</span> &lt;&lt; gasname &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;rad_gas_index: can not find gas with name &quot;</span> + gasname);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
 <div class="ttc" id="aclassRadConstants_html_abaa201a157c245b8f20605e3d3c94938"><div class="ttname"><a href="classRadConstants.html#abaa201a157c245b8f20605e3d3c94938">RadConstants::gaslist</a></div><div class="ttdeci">static constexpr const char * gaslist[]</div><div class="ttdef"><b>Definition:</b> Rad_constants.H:101</div></div>
 <div class="ttc" id="aclassRadConstants_html_acc3330716cd598dc36881b44c70687c5"><div class="ttname"><a href="classRadConstants.html#acc3330716cd598dc36881b44c70687c5">RadConstants::nradgas</a></div><div class="ttdeci">static constexpr int nradgas</div><div class="ttdef"><b>Definition:</b> Rad_constants.H:100</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classMamConstituents.html#abb525061b723e29201646eb76f460672">MamConstituents::get_gas_names()</a>, and <a class="el" href="classMamConstituents.html#a54283f7f7c2d8b81a37a6c4fa84c88ff">MamConstituents::rad_cnst_get_gas()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classMamConstituents.html#a737daa041cc666d79764053a35175a15">MamConstituents::get_gas_names()</a>, and <a class="el" href="classMamConstituents.html#aa08fdee60e1f2eb70e418cca0f4376fd">MamConstituents::rad_cnst_get_gas()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRadConstants_a41beba72a1d7ac337497bca58b5ff6f7_icgraph.png" border="0" usemap="#aclassRadConstants_a41beba72a1d7ac337497bca58b5ff6f7_icgraph" alt=""/></div>
 <map name="aclassRadConstants_a41beba72a1d7ac337497bca58b5ff6f7_icgraph" id="aclassRadConstants_a41beba72a1d7ac337497bca58b5ff6f7_icgraph">
 <area shape="rect" title=" " alt="" coords="220,39,391,80"/>
-<area shape="rect" href="classMamConstituents.html#abb525061b723e29201646eb76f460672" title=" " alt="" coords="5,5,172,47"/>
-<area shape="rect" href="classMamConstituents.html#a54283f7f7c2d8b81a37a6c4fa84c88ff" title=" " alt="" coords="5,71,172,112"/>
+<area shape="rect" href="classMamConstituents.html#a737daa041cc666d79764053a35175a15" title=" " alt="" coords="5,5,172,47"/>
+<area shape="rect" href="classMamConstituents.html#aa08fdee60e1f2eb70e418cca0f4376fd" title=" " alt="" coords="5,71,172,112"/>
 </map>
 </div>
 
@@ -960,7 +961,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classRadConstants.html#a2ebe3ffd07e9c18b028da947715f3f8f">get_number_sw_bands()</a>, <a class="el" href="classRadConstants.html#ae7b4458f5981571e705ec1e0bfce7958">get_ref_solar_band_irrad()</a>, <a class="el" href="classRadConstants.html#a424fcb301777b7ff20173ad5e04ce9c7">get_ref_total_solar_irrad()</a>, <a class="el" href="classRadConstants.html#ab017176abc1bf3d9b8f3f4250d75b77d">get_solar_band_fraction_irrad()</a>, <a class="el" href="classRadConstants.html#a7d32f7699c2933c60da5163952bfc4cb">get_sw_spectral_boundaries()</a>, and <a class="el" href="classRadConstants.html#adbfa470ed64a37cb47761a3a8a4678b7">get_sw_spectral_midpoints()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classRadConstants.html#afefd717015853c1a0f91ac4f5284702c">get_number_sw_bands()</a>, <a class="el" href="classRadConstants.html#ae7b4458f5981571e705ec1e0bfce7958">get_ref_solar_band_irrad()</a>, <a class="el" href="classRadConstants.html#a424fcb301777b7ff20173ad5e04ce9c7">get_ref_total_solar_irrad()</a>, <a class="el" href="classRadConstants.html#ab017176abc1bf3d9b8f3f4250d75b77d">get_solar_band_fraction_irrad()</a>, <a class="el" href="classRadConstants.html#a7d32f7699c2933c60da5163952bfc4cb">get_sw_spectral_boundaries()</a>, and <a class="el" href="classRadConstants.html#adbfa470ed64a37cb47761a3a8a4678b7">get_sw_spectral_midpoints()</a>.</p>
 
 </div>
 </div>

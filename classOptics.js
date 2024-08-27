@@ -7,7 +7,7 @@ var classOptics =
     [ "finalize", "classOptics.html#ad044034219080c4d8bc696c4c259cb4d", null ],
     [ "get_cloud_optics_lw", "classOptics.html#af5f3fa679301f0ead8b8155626b2e710", null ],
     [ "get_cloud_optics_sw", "classOptics.html#aee82856b88240c428aefc6f47bf9500c", null ],
-    [ "initialize", "classOptics.html#a50e2de641f604b4bf2e2826cb3699257", null ],
+    [ "initialize", "classOptics.html#a001c26ecdd54b6a87c997c61ba32d681", null ],
     [ "mcica_subcol_mask", "classOptics.html#a078568b5fcba367944981fe065623e0c", null ],
     [ "sample_cloud_optics_lw", "classOptics.html#aa4a9d3efc9d464090f9a803bdab51ca1", null ],
     [ "sample_cloud_optics_sw", "classOptics.html#abf585c4bba33e85f0eb2f685c87b22a7", null ],
