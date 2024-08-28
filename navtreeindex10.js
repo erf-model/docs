@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"functions_vars_w.html":[2,3,2,22],
 "functions_vars_x.html":[2,3,2,23],
 "functions_vars_y.html":[2,3,2,24],
 "functions_vars_z.html":[2,3,2,25],
@@ -8,8 +9,8 @@ var NAVTREEINDEX10 =
 "functions_y.html":[2,3,0,24],
 "functions_z.html":[2,3,0,25],
 "functions_~.html":[2,3,0,26],
-"globals.html":[3,1,0,0],
 "globals.html":[3,1,0],
+"globals.html":[3,1,0,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "structInputSoundingData.html#a749f99cf96305b40d55beb3d5d98bb93":[2,0,33,17],
 "structInputSoundingData.html#a7cde9c67da9ade1d385047732b106943":[2,0,33,20],
 "structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31":[2,0,33,1],
-"structInputSoundingData.html#a9cb5ab7b69363eca08231b634e94e109":[2,0,33,16],
-"structInputSoundingData.html#a9f73eb54af79291b72454e2840455b71":[2,0,33,27]
+"structInputSoundingData.html#a9cb5ab7b69363eca08231b634e94e109":[2,0,33,16]
 };

@@ -21,6 +21,7 @@ var classABLMost =
     [ "compute_fluxes", "classABLMost.html#a829339fc8e70a5dff8b7c85f3c2e4138", null ],
     [ "compute_most_bcs", "classABLMost.html#ac1b3a987e1f8518eec9552f6b747a4b1", null ],
     [ "compute_most_bcs", "classABLMost.html#a10ead55e11cc666e966cc68a1d1513b9", null ],
+    [ "get_lmask", "classABLMost.html#a48a21c911803192130c2472c89b72c72", null ],
     [ "get_lsm_tsurf", "classABLMost.html#ae28fd8a21f4b514875c24fe4b8e85081", null ],
     [ "get_mac_avg", "classABLMost.html#af26cdc6b8c162c14b2db32eb395f0565", null ],
     [ "get_olen", "classABLMost.html#aef7480dbb43cafff3be93a95240c1ec3", null ],
