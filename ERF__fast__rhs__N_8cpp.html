@@ -697,11 +697,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        {</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;          <span class="comment">// w at bottom boundary of grid is 0 if at domain boundary, otherwise w = w_old + dt * slow_rhs</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;          RHS_a(i,j,lo.z) = dt * slow_rhs_rho_w(i,j,k);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;          RHS_a(i,j,lo.z) = dt * slow_rhs_rho_w(i,j,lo.z);</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;          <span class="comment">// w at top boundary of grid is 0 if at domain boundary, otherwise w = w_old + dt * slow_rhs</span></div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;          <span class="comment">// TODO TODO: Note that if we ever change this, we will need to include it in avg_zmom at the top</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;          RHS_a(i,j,hi.z+1) = dt * slow_rhs_rho_w(i,j,k);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;          RHS_a(i,j,hi.z+1) = dt * slow_rhs_rho_w(i,j,hi.z+1);</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;          <span class="comment">// w = specified Dirichlet value at k = lo.z</span></div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            soln_a(i,j,lo.z) = RHS_a(i,j,lo.z) * inv_coeffB_a(i,j,lo.z);</div>
