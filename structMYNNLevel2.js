@@ -1,8 +1,8 @@
 var structMYNNLevel2 =
 [
-    [ "calc_Rf", "structMYNNLevel2.html#a5ffe67817d184916cb688265fa935eda", null ],
-    [ "calc_SH", "structMYNNLevel2.html#a387bc3c0cd9e9a1d4afe30e0aee38ace", null ],
-    [ "calc_SM", "structMYNNLevel2.html#ae3da1acb2f5eb203ed812c812271aaed", null ],
+    [ "calc_Rf", "structMYNNLevel2.html#a2970f316de64a2a1c605baaea1f34aec", null ],
+    [ "calc_SH", "structMYNNLevel2.html#a75e52da99ede6eb7b361e3ae12c08b1e", null ],
+    [ "calc_SM", "structMYNNLevel2.html#a5e7e202941dd61d8aa7f3367031c9b8f", null ],
     [ "init_coeffs", "structMYNNLevel2.html#aaab2f004c0ddd5b3fce84004d9d450b6", null ],
     [ "A1", "structMYNNLevel2.html#ab4b88d6873a172ac886f94ea35c26a98", null ],
     [ "A2", "structMYNNLevel2.html#a02ae067397dad9810d528dc84ffe631d", null ],

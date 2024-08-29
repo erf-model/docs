@@ -11,9 +11,6 @@ var dir_aba9de7b86b72c00c61e401832cdb2fc =
     [ "InputSpongeData.H", "InputSpongeData_8H.html", [
       [ "InputSpongeData", "structInputSpongeData.html", "structInputSpongeData" ]
     ] ],
-    [ "MYNNStruct.H", "MYNNStruct_8H.html", [
-      [ "MYNNLevel2", "structMYNNLevel2.html", "structMYNNLevel2" ]
-    ] ],
     [ "SpongeStruct.H", "SpongeStruct_8H.html", [
       [ "SpongeChoice", "structSpongeChoice.html", "structSpongeChoice" ]
     ] ],

@@ -154,7 +154,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (z_phys_cc) {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="comment">// use_terrain=1</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="comment">// calculate the damping strength based on the max height at each k</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="ParFunctions_8H.html#a7e646d3f1b936883c143204caa88c7c5">reduce_to_max_per_level</a>(zcc, z_phys_cc);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="ParFunctions_8H.html#ae0f0ec55ed7951e173987f3e511f082e">reduce_to_max_per_height</a>(zcc, z_phys_cc);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">const</span> amrex::Real* prob_lo = geom.ProbLo();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> dx              = geom.CellSize();</div>
@@ -197,14 +197,14 @@ Functions</h2></td></tr>
 <div class="ttc" id="aDataStruct_8H_html_a3856c8a2f055327ada182186bfd70239acb08c6a1b8bca5e9e4ef6162aef2cfa4"><div class="ttname"><a href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239acb08c6a1b8bca5e9e4ef6162aef2cfa4">vbar</a></div><div class="ttdeci">@ vbar</div><div class="ttdef"><b>Definition:</b> DataStruct.H:57</div></div>
 <div class="ttc" id="aDataStruct_8H_html_a3856c8a2f055327ada182186bfd70239ae41e9f65f26ee3b04db07f2db7f28bdb"><div class="ttname"><a href="DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239ae41e9f65f26ee3b04db07f2db7f28bdb">thetabar</a></div><div class="ttdeci">@ thetabar</div><div class="ttdef"><b>Definition:</b> DataStruct.H:57</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ad51e17db99d11b190b2b57a23a518f7e"><div class="ttname"><a href="ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e">PIoTwo</a></div><div class="ttdeci">constexpr amrex::Real PIoTwo</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:7</div></div>
-<div class="ttc" id="aParFunctions_8H_html_a7e646d3f1b936883c143204caa88c7c5"><div class="ttname"><a href="ParFunctions_8H.html#a7e646d3f1b936883c143204caa88c7c5">reduce_to_max_per_level</a></div><div class="ttdeci">AMREX_FORCE_INLINE void reduce_to_max_per_level(amrex::Vector&lt; amrex::Real &gt; &amp;v, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mf)</div><div class="ttdef"><b>Definition:</b> ParFunctions.H:8</div></div>
+<div class="ttc" id="aParFunctions_8H_html_ae0f0ec55ed7951e173987f3e511f082e"><div class="ttname"><a href="ParFunctions_8H.html#ae0f0ec55ed7951e173987f3e511f082e">reduce_to_max_per_height</a></div><div class="ttdeci">AMREX_FORCE_INLINE void reduce_to_max_per_height(amrex::Vector&lt; amrex::Real &gt; &amp;v, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mf)</div><div class="ttdef"><b>Definition:</b> ParFunctions.H:8</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="init__rayleigh__damping_8H_a3e175bfe4dac6bfbd6e929f9c5d75fda_cgraph.png" border="0" usemap="#ainit__rayleigh__damping_8H_a3e175bfe4dac6bfbd6e929f9c5d75fda_cgraph" alt=""/></div>
 <map name="ainit__rayleigh__damping_8H_a3e175bfe4dac6bfbd6e929f9c5d75fda_cgraph" id="ainit__rayleigh__damping_8H_a3e175bfe4dac6bfbd6e929f9c5d75fda_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,133,32"/>
-<area shape="rect" href="ParFunctions_8H.html#a7e646d3f1b936883c143204caa88c7c5" title=" " alt="" coords="181,5,371,32"/>
+<area shape="rect" href="ParFunctions_8H.html#ae0f0ec55ed7951e173987f3e511f082e" title=" " alt="" coords="181,5,380,32"/>
 </map>
 </div>
 

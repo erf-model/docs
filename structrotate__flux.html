@@ -149,8 +149,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01711"></a><span class="lineno"> 1711</span>&#160;      :  <a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>(l_zlo) {}</div>
-<div class="ttc" id="astructrotate__flux_html_a17aa8cfa0cb8ee81926a938b8b826032"><div class="ttname"><a href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">rotate_flux::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:1870</div></div>
+<div class="fragment"><div class="line"><a name="l02094"></a><span class="lineno"> 2094</span>&#160;      :  <a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>(l_zlo) {}</div>
+<div class="ttc" id="astructrotate__flux_html_a17aa8cfa0cb8ee81926a938b8b826032"><div class="ttname"><a href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">rotate_flux::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:2253</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -284,30 +284,30 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01735"></a><span class="lineno"> 1735</span>&#160;    {</div>
-<div class="line"><a name="l01736"></a><span class="lineno"> 1736</span>&#160;        <span class="keywordtype">int</span> ic, jc;</div>
-<div class="line"><a name="l01737"></a><span class="lineno"> 1737</span>&#160;        ic = i  &lt; lbound(cons_arr).x ? lbound(cons_arr).x : i;</div>
-<div class="line"><a name="l01738"></a><span class="lineno"> 1738</span>&#160;        jc = j  &lt; lbound(cons_arr).y ? lbound(cons_arr).y : j;</div>
-<div class="line"><a name="l01739"></a><span class="lineno"> 1739</span>&#160;        ic = ic &gt; ubound(cons_arr).x ? ubound(cons_arr).x : ic;</div>
-<div class="line"><a name="l01740"></a><span class="lineno"> 1740</span>&#160;        jc = jc &gt; ubound(cons_arr).y ? ubound(cons_arr).y : jc;</div>
-<div class="line"><a name="l01741"></a><span class="lineno"> 1741</span>&#160; </div>
-<div class="line"><a name="l01742"></a><span class="lineno"> 1742</span>&#160;        <span class="comment">// surface gradient equal to gradient at first zface</span></div>
-<div class="line"><a name="l01743"></a><span class="lineno"> 1743</span>&#160;        amrex::Real deltaz      = dz * (<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a> - k);</div>
-<div class="line"><a name="l01744"></a><span class="lineno"> 1744</span>&#160;        amrex::Real rqvgrad  = ( cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>+1,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)</div>
-<div class="line"><a name="l01745"></a><span class="lineno"> 1745</span>&#160;                               - cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>  ,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) ) / (0.5*(dz+dz1));</div>
-<div class="line"><a name="l01746"></a><span class="lineno"> 1746</span>&#160;        dest_arr(i,j,k,icomp+n) = cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) - rqvgrad * deltaz;</div>
-<div class="line"><a name="l01747"></a><span class="lineno"> 1747</span>&#160; </div>
-<div class="line"><a name="l01748"></a><span class="lineno"> 1748</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
-<div class="line"><a name="l01749"></a><span class="lineno"> 1749</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>    = cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01750"></a><span class="lineno"> 1750</span>&#160;        amrex::Real qstar  = 0.0; <span class="comment">//q_star_arr(ic,jc,zlo);</span></div>
-<div class="line"><a name="l01751"></a><span class="lineno"> 1751</span>&#160;        amrex::Real moflux = (std::abs(qstar) &gt; <a class="code" href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">eps</a>) ? -<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * qstar : 0.0;</div>
-<div class="line"><a name="l01752"></a><span class="lineno"> 1752</span>&#160; </div>
-<div class="line"><a name="l01753"></a><span class="lineno"> 1753</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
-<div class="line"><a name="l01754"></a><span class="lineno"> 1754</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l02118"></a><span class="lineno"> 2118</span>&#160;    {</div>
+<div class="line"><a name="l02119"></a><span class="lineno"> 2119</span>&#160;        <span class="keywordtype">int</span> ic, jc;</div>
+<div class="line"><a name="l02120"></a><span class="lineno"> 2120</span>&#160;        ic = i  &lt; lbound(cons_arr).x ? lbound(cons_arr).x : i;</div>
+<div class="line"><a name="l02121"></a><span class="lineno"> 2121</span>&#160;        jc = j  &lt; lbound(cons_arr).y ? lbound(cons_arr).y : j;</div>
+<div class="line"><a name="l02122"></a><span class="lineno"> 2122</span>&#160;        ic = ic &gt; ubound(cons_arr).x ? ubound(cons_arr).x : ic;</div>
+<div class="line"><a name="l02123"></a><span class="lineno"> 2123</span>&#160;        jc = jc &gt; ubound(cons_arr).y ? ubound(cons_arr).y : jc;</div>
+<div class="line"><a name="l02124"></a><span class="lineno"> 2124</span>&#160; </div>
+<div class="line"><a name="l02125"></a><span class="lineno"> 2125</span>&#160;        <span class="comment">// surface gradient equal to gradient at first zface</span></div>
+<div class="line"><a name="l02126"></a><span class="lineno"> 2126</span>&#160;        amrex::Real deltaz      = dz * (<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a> - k);</div>
+<div class="line"><a name="l02127"></a><span class="lineno"> 2127</span>&#160;        amrex::Real rqvgrad  = ( cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>+1,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)</div>
+<div class="line"><a name="l02128"></a><span class="lineno"> 2128</span>&#160;                               - cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>  ,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) ) / (0.5*(dz+dz1));</div>
+<div class="line"><a name="l02129"></a><span class="lineno"> 2129</span>&#160;        dest_arr(i,j,k,icomp+n) = cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) - rqvgrad * deltaz;</div>
+<div class="line"><a name="l02130"></a><span class="lineno"> 2130</span>&#160; </div>
+<div class="line"><a name="l02131"></a><span class="lineno"> 2131</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
+<div class="line"><a name="l02132"></a><span class="lineno"> 2132</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>    = cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l02133"></a><span class="lineno"> 2133</span>&#160;        amrex::Real qstar  = 0.0; <span class="comment">//q_star_arr(ic,jc,zlo);</span></div>
+<div class="line"><a name="l02134"></a><span class="lineno"> 2134</span>&#160;        amrex::Real moflux = (std::abs(qstar) &gt; <a class="code" href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">eps</a>) ? -<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * qstar : 0.0;</div>
+<div class="line"><a name="l02135"></a><span class="lineno"> 2135</span>&#160; </div>
+<div class="line"><a name="l02136"></a><span class="lineno"> 2136</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
+<div class="line"><a name="l02137"></a><span class="lineno"> 2137</span>&#160;    }</div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:17</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> Kessler.H:30</div></div>
-<div class="ttc" id="astructrotate__flux_html_ae2e4dd388a9a609acf27d90fea305e11"><div class="ttname"><a href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">rotate_flux::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:1871</div></div>
+<div class="ttc" id="astructrotate__flux_html_ae2e4dd388a9a609acf27d90fea305e11"><div class="ttname"><a href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">rotate_flux::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:2254</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -440,28 +440,28 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01777"></a><span class="lineno"> 1777</span>&#160;    {</div>
-<div class="line"><a name="l01778"></a><span class="lineno"> 1778</span>&#160;        <span class="keywordtype">int</span> ic, jc;</div>
-<div class="line"><a name="l01779"></a><span class="lineno"> 1779</span>&#160;        ic = i  &lt; lbound(cons_arr).x ? lbound(cons_arr).x : i;</div>
-<div class="line"><a name="l01780"></a><span class="lineno"> 1780</span>&#160;        jc = j  &lt; lbound(cons_arr).y ? lbound(cons_arr).y : j;</div>
-<div class="line"><a name="l01781"></a><span class="lineno"> 1781</span>&#160;        ic = ic &gt; ubound(cons_arr).x ? ubound(cons_arr).x : ic;</div>
-<div class="line"><a name="l01782"></a><span class="lineno"> 1782</span>&#160;        jc = jc &gt; ubound(cons_arr).y ? ubound(cons_arr).y : jc;</div>
-<div class="line"><a name="l01783"></a><span class="lineno"> 1783</span>&#160; </div>
-<div class="line"><a name="l01784"></a><span class="lineno"> 1784</span>&#160;        <span class="comment">// surface gradient equal to gradient at first zface</span></div>
-<div class="line"><a name="l01785"></a><span class="lineno"> 1785</span>&#160;        amrex::Real deltaz      = dz * (<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a> - k);</div>
-<div class="line"><a name="l01786"></a><span class="lineno"> 1786</span>&#160;        amrex::Real rthetagrad  = ( cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)</div>
-<div class="line"><a name="l01787"></a><span class="lineno"> 1787</span>&#160;                                  - cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>  ,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) ) / (0.5*(dz+dz1));</div>
-<div class="line"><a name="l01788"></a><span class="lineno"> 1788</span>&#160;        dest_arr(i,j,k,icomp+n) = cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - rthetagrad * deltaz;</div>
-<div class="line"><a name="l01789"></a><span class="lineno"> 1789</span>&#160; </div>
-<div class="line"><a name="l01790"></a><span class="lineno"> 1790</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
-<div class="line"><a name="l01791"></a><span class="lineno"> 1791</span>&#160;        amrex::Real theta_mean = tm_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>);</div>
-<div class="line"><a name="l01792"></a><span class="lineno"> 1792</span>&#160;        amrex::Real theta_surf = t_surf_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>);</div>
-<div class="line"><a name="l01793"></a><span class="lineno"> 1793</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>    = cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01794"></a><span class="lineno"> 1794</span>&#160;        amrex::Real tstar  = t_star_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>);</div>
-<div class="line"><a name="l01795"></a><span class="lineno"> 1795</span>&#160;        amrex::Real moflux = (std::abs(tstar) &gt; <a class="code" href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">eps</a>) ? -<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * tstar * (theta_mean-theta_surf) : 0.0;</div>
-<div class="line"><a name="l01796"></a><span class="lineno"> 1796</span>&#160; </div>
-<div class="line"><a name="l01797"></a><span class="lineno"> 1797</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
-<div class="line"><a name="l01798"></a><span class="lineno"> 1798</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l02160"></a><span class="lineno"> 2160</span>&#160;    {</div>
+<div class="line"><a name="l02161"></a><span class="lineno"> 2161</span>&#160;        <span class="keywordtype">int</span> ic, jc;</div>
+<div class="line"><a name="l02162"></a><span class="lineno"> 2162</span>&#160;        ic = i  &lt; lbound(cons_arr).x ? lbound(cons_arr).x : i;</div>
+<div class="line"><a name="l02163"></a><span class="lineno"> 2163</span>&#160;        jc = j  &lt; lbound(cons_arr).y ? lbound(cons_arr).y : j;</div>
+<div class="line"><a name="l02164"></a><span class="lineno"> 2164</span>&#160;        ic = ic &gt; ubound(cons_arr).x ? ubound(cons_arr).x : ic;</div>
+<div class="line"><a name="l02165"></a><span class="lineno"> 2165</span>&#160;        jc = jc &gt; ubound(cons_arr).y ? ubound(cons_arr).y : jc;</div>
+<div class="line"><a name="l02166"></a><span class="lineno"> 2166</span>&#160; </div>
+<div class="line"><a name="l02167"></a><span class="lineno"> 2167</span>&#160;        <span class="comment">// surface gradient equal to gradient at first zface</span></div>
+<div class="line"><a name="l02168"></a><span class="lineno"> 2168</span>&#160;        amrex::Real deltaz      = dz * (<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a> - k);</div>
+<div class="line"><a name="l02169"></a><span class="lineno"> 2169</span>&#160;        amrex::Real rthetagrad  = ( cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)</div>
+<div class="line"><a name="l02170"></a><span class="lineno"> 2170</span>&#160;                                  - cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>  ,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) ) / (0.5*(dz+dz1));</div>
+<div class="line"><a name="l02171"></a><span class="lineno"> 2171</span>&#160;        dest_arr(i,j,k,icomp+n) = cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - rthetagrad * deltaz;</div>
+<div class="line"><a name="l02172"></a><span class="lineno"> 2172</span>&#160; </div>
+<div class="line"><a name="l02173"></a><span class="lineno"> 2173</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
+<div class="line"><a name="l02174"></a><span class="lineno"> 2174</span>&#160;        amrex::Real theta_mean = tm_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>);</div>
+<div class="line"><a name="l02175"></a><span class="lineno"> 2175</span>&#160;        amrex::Real theta_surf = t_surf_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>);</div>
+<div class="line"><a name="l02176"></a><span class="lineno"> 2176</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>    = cons_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l02177"></a><span class="lineno"> 2177</span>&#160;        amrex::Real tstar  = t_star_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>);</div>
+<div class="line"><a name="l02178"></a><span class="lineno"> 2178</span>&#160;        amrex::Real moflux = (std::abs(tstar) &gt; <a class="code" href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">eps</a>) ? -<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * tstar * (theta_mean-theta_surf) : 0.0;</div>
+<div class="line"><a name="l02179"></a><span class="lineno"> 2179</span>&#160; </div>
+<div class="line"><a name="l02180"></a><span class="lineno"> 2180</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
+<div class="line"><a name="l02181"></a><span class="lineno"> 2181</span>&#160;    }</div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 </div><!-- fragment -->
 </div>
@@ -577,26 +577,26 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01818"></a><span class="lineno"> 1818</span>&#160;    {</div>
-<div class="line"><a name="l01819"></a><span class="lineno"> 1819</span>&#160;        <span class="keywordtype">int</span> ic, jc;</div>
-<div class="line"><a name="l01820"></a><span class="lineno"> 1820</span>&#160;        ic = i  &lt; lbound(cons_arr).x+1 ? lbound(cons_arr).x+1 : i;</div>
-<div class="line"><a name="l01821"></a><span class="lineno"> 1821</span>&#160;        jc = j  &lt; lbound(cons_arr).y   ? lbound(cons_arr).y   : j;</div>
-<div class="line"><a name="l01822"></a><span class="lineno"> 1822</span>&#160;        ic = ic &gt; ubound(cons_arr).x   ? ubound(cons_arr).x   : ic;</div>
-<div class="line"><a name="l01823"></a><span class="lineno"> 1823</span>&#160;        jc = jc &gt; ubound(cons_arr).y   ? ubound(cons_arr).y   : jc;</div>
-<div class="line"><a name="l01824"></a><span class="lineno"> 1824</span>&#160; </div>
-<div class="line"><a name="l01825"></a><span class="lineno"> 1825</span>&#160;        <span class="comment">// surface gradient equal to gradient at first zface</span></div>
-<div class="line"><a name="l01826"></a><span class="lineno"> 1826</span>&#160;        amrex::Real deltaz    = dz * (<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a> - k);</div>
-<div class="line"><a name="l01827"></a><span class="lineno"> 1827</span>&#160;        amrex::Real ugrad     = (velx_arr(i,j,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>+1) - velx_arr(i,j,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>)) / (0.5*(dz+dz1));</div>
-<div class="line"><a name="l01828"></a><span class="lineno"> 1828</span>&#160;        dest_arr(i,j,k,icomp) = velx_arr(i,j,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>) - ugrad * deltaz;</div>
-<div class="line"><a name="l01829"></a><span class="lineno"> 1829</span>&#160; </div>
-<div class="line"><a name="l01830"></a><span class="lineno"> 1830</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
-<div class="line"><a name="l01831"></a><span class="lineno"> 1831</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>     = 0.5 *( cons_arr(ic-1,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
-<div class="line"><a name="l01832"></a><span class="lineno"> 1832</span>&#160;                                   + cons_arr(ic  ,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
-<div class="line"><a name="l01833"></a><span class="lineno"> 1833</span>&#160;        amrex::Real ustar   = 0.5 * ( u_star_arr(ic-1,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>) + u_star_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>) );</div>
-<div class="line"><a name="l01834"></a><span class="lineno"> 1834</span>&#160;        amrex::Real stressx = -<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * ustar * ustar;</div>
-<div class="line"><a name="l01835"></a><span class="lineno"> 1835</span>&#160; </div>
-<div class="line"><a name="l01836"></a><span class="lineno"> 1836</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
-<div class="line"><a name="l01837"></a><span class="lineno"> 1837</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l02201"></a><span class="lineno"> 2201</span>&#160;    {</div>
+<div class="line"><a name="l02202"></a><span class="lineno"> 2202</span>&#160;        <span class="keywordtype">int</span> ic, jc;</div>
+<div class="line"><a name="l02203"></a><span class="lineno"> 2203</span>&#160;        ic = i  &lt; lbound(cons_arr).x+1 ? lbound(cons_arr).x+1 : i;</div>
+<div class="line"><a name="l02204"></a><span class="lineno"> 2204</span>&#160;        jc = j  &lt; lbound(cons_arr).y   ? lbound(cons_arr).y   : j;</div>
+<div class="line"><a name="l02205"></a><span class="lineno"> 2205</span>&#160;        ic = ic &gt; ubound(cons_arr).x   ? ubound(cons_arr).x   : ic;</div>
+<div class="line"><a name="l02206"></a><span class="lineno"> 2206</span>&#160;        jc = jc &gt; ubound(cons_arr).y   ? ubound(cons_arr).y   : jc;</div>
+<div class="line"><a name="l02207"></a><span class="lineno"> 2207</span>&#160; </div>
+<div class="line"><a name="l02208"></a><span class="lineno"> 2208</span>&#160;        <span class="comment">// surface gradient equal to gradient at first zface</span></div>
+<div class="line"><a name="l02209"></a><span class="lineno"> 2209</span>&#160;        amrex::Real deltaz    = dz * (<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a> - k);</div>
+<div class="line"><a name="l02210"></a><span class="lineno"> 2210</span>&#160;        amrex::Real ugrad     = (velx_arr(i,j,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>+1) - velx_arr(i,j,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>)) / (0.5*(dz+dz1));</div>
+<div class="line"><a name="l02211"></a><span class="lineno"> 2211</span>&#160;        dest_arr(i,j,k,icomp) = velx_arr(i,j,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>) - ugrad * deltaz;</div>
+<div class="line"><a name="l02212"></a><span class="lineno"> 2212</span>&#160; </div>
+<div class="line"><a name="l02213"></a><span class="lineno"> 2213</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
+<div class="line"><a name="l02214"></a><span class="lineno"> 2214</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>     = 0.5 *( cons_arr(ic-1,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l02215"></a><span class="lineno"> 2215</span>&#160;                                   + cons_arr(ic  ,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l02216"></a><span class="lineno"> 2216</span>&#160;        amrex::Real ustar   = 0.5 * ( u_star_arr(ic-1,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>) + u_star_arr(ic,jc,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>) );</div>
+<div class="line"><a name="l02217"></a><span class="lineno"> 2217</span>&#160;        amrex::Real stressx = -<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * ustar * ustar;</div>
+<div class="line"><a name="l02218"></a><span class="lineno"> 2218</span>&#160; </div>
+<div class="line"><a name="l02219"></a><span class="lineno"> 2219</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
+<div class="line"><a name="l02220"></a><span class="lineno"> 2220</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -711,17 +711,17 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01857"></a><span class="lineno"> 1857</span>&#160;    {</div>
-<div class="line"><a name="l01858"></a><span class="lineno"> 1858</span>&#160;        <span class="comment">// surface gradient equal to gradient at first zface</span></div>
-<div class="line"><a name="l01859"></a><span class="lineno"> 1859</span>&#160;        amrex::Real deltaz    = dz * (<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a> - k);</div>
-<div class="line"><a name="l01860"></a><span class="lineno"> 1860</span>&#160;        amrex::Real vgrad     = (vely_arr(i,j,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>+1) - vely_arr(i,j,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>)) / (0.5*(dz+dz1));</div>
-<div class="line"><a name="l01861"></a><span class="lineno"> 1861</span>&#160;        dest_arr(i,j,k,icomp) = vely_arr(i,j,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>) - vgrad * deltaz;</div>
-<div class="line"><a name="l01862"></a><span class="lineno"> 1862</span>&#160; </div>
-<div class="line"><a name="l01863"></a><span class="lineno"> 1863</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
-<div class="line"><a name="l01864"></a><span class="lineno"> 1864</span>&#160;        amrex::Real stressy = 0.0;</div>
-<div class="line"><a name="l01865"></a><span class="lineno"> 1865</span>&#160; </div>
-<div class="line"><a name="l01866"></a><span class="lineno"> 1866</span>&#160;        <span class="keywordflow">return</span> stressy;</div>
-<div class="line"><a name="l01867"></a><span class="lineno"> 1867</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l02240"></a><span class="lineno"> 2240</span>&#160;    {</div>
+<div class="line"><a name="l02241"></a><span class="lineno"> 2241</span>&#160;        <span class="comment">// surface gradient equal to gradient at first zface</span></div>
+<div class="line"><a name="l02242"></a><span class="lineno"> 2242</span>&#160;        amrex::Real deltaz    = dz * (<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a> - k);</div>
+<div class="line"><a name="l02243"></a><span class="lineno"> 2243</span>&#160;        amrex::Real vgrad     = (vely_arr(i,j,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>+1) - vely_arr(i,j,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>)) / (0.5*(dz+dz1));</div>
+<div class="line"><a name="l02244"></a><span class="lineno"> 2244</span>&#160;        dest_arr(i,j,k,icomp) = vely_arr(i,j,<a class="code" href="structrotate__flux.html#a17aa8cfa0cb8ee81926a938b8b826032">zlo</a>) - vgrad * deltaz;</div>
+<div class="line"><a name="l02245"></a><span class="lineno"> 2245</span>&#160; </div>
+<div class="line"><a name="l02246"></a><span class="lineno"> 2246</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
+<div class="line"><a name="l02247"></a><span class="lineno"> 2247</span>&#160;        amrex::Real stressy = 0.0;</div>
+<div class="line"><a name="l02248"></a><span class="lineno"> 2248</span>&#160; </div>
+<div class="line"><a name="l02249"></a><span class="lineno"> 2249</span>&#160;        <span class="keywordflow">return</span> stressy;</div>
+<div class="line"><a name="l02250"></a><span class="lineno"> 2250</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
