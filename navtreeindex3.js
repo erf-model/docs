@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"TurbPertStruct_8H.html":[3,0,1,2,6],
 "TurbPertStruct_8H.html#a1cd6e2210df20afb1fdec3183cbef7ba":[3,0,1,2,6,1],
 "TurbPertStruct_8H_source.html":[3,0,1,2,6],
 "TurbStruct_8H.html":[3,0,1,2,7],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "classERF.html#a20f8ed606dd006f84efa4ebed7b96130":[2,0,22,178],
 "classERF.html#a2135641de33dea5057799569c74cac42":[2,0,22,31],
 "classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497":[2,0,22,226],
-"classERF.html#a2486b49bb0d7917f812318822e42a03c":[2,0,22,101]
+"classERF.html#a2486b49bb0d7917f812318822e42a03c":[2,0,22,101],
+"classERF.html#a25174b4ae6cfcac8f7d183ce5c9fe67b":[2,0,22,283]
 };

@@ -14,7 +14,7 @@ var searchData=
   ['beta_5fm_151',['beta_m',['../structsimilarity__funs.html#a3658f855e05c54c9cbc27c8dfb3b0355',1,'similarity_funs']]],
   ['betaelq_152',['betaelq',['../ERF__Constants_8H.html#a2bf4e906e54dd5044116807d54709e48',1,'ERF_Constants.H']]],
   ['binterp_153',['binterp',['../classMam4__aer.html#ac1ba4ccab45c000472b4d40cb43c9ef9',1,'Mam4_aer']]],
-  ['bjr_5fbeta_154',['Bjr_beta',['../structmost__data.html#ab614f0d7ee8834980cacdb98ef5dc899',1,'most_data']]],
+  ['bjr_5fbeta_154',['Bjr_beta',['../structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d',1,'most_data']]],
   ['blv_155',['blv',['../classMultiBlockContainer.html#a1e364c34a67e56ae960b56b6fb835a7b',1,'MultiBlockContainer']]],
   ['bndry_5flev_156',['bndry_lev',['../classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca',1,'WriteBndryPlanes']]],
   ['bndry_5foutput_5fplanes_5finterval_157',['bndry_output_planes_interval',['../classERF.html#aab4575d8fb57595a2f1aaf088c60447a',1,'ERF']]],

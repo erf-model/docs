@@ -84,8 +84,7 @@ $(document).ready(function(){initNavTree('MOSTStress_8H.html',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">MOSTStress.H File Reference</div>  </div>
 </div><!--header-->
@@ -217,11 +216,6 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a83577688af6d1136ab7a0be1b16f4674"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MOSTStress_8H.html#a83577688af6d1136ab7a0be1b16f4674">air_viscosity</a> (amrex::Real T_degK)</td></tr>
 <tr class="separator:a83577688af6d1136ab7a0be1b16f4674"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a267a6d14795f9c46a0845fc44c93c0f2"><td class="memItemLeft" align="right" valign="top">static constexpr amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MOSTStress_8H.html#a267a6d14795f9c46a0845fc44c93c0f2">WSMIN</a> = 0.1</td></tr>
-<tr class="separator:a267a6d14795f9c46a0845fc44c93c0f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a83577688af6d1136ab7a0be1b16f4674"></a>
@@ -240,10 +234,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Empirical kinematic viscosity [m2/s] formula from Andreas (1989) CRREL Rep. 89-11, valid between -173 and 277 deg C. </p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    amrex::Real TC = T_degK - 273.15;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> 1.326e-5*(1. + 6.542e-3*TC + 8.301e-6*TC*TC - 4.84e-9*TC*TC*TC);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    amrex::Real TC = T_degK - 273.15;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> 1.326e-5*(1. + 6.542e-3*TC + 8.301e-6*TC*TC - 4.84e-9*TC*TC*TC);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structadiabatic__charnock.html#a4b2881e7b3fb5730c6e2d55a41dd9bd0">adiabatic_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__charnock.html#a9f88180c90bc865136d2f153c82d4fe3">surface_flux_charnock::iterate_flux()</a>, and <a class="el" href="structsurface__temp__charnock.html#a95809501feb05aea7aa17bb4ab21a0fb">surface_temp_charnock::iterate_flux()</a>.</p>
 <div class="dynheader">
@@ -257,31 +251,6 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="structsurface__temp__charnock.html#a95809501feb05aea7aa17bb4ab21a0fb" title=" " alt="" coords="5,136,183,177"/>
 </map>
 </div>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a267a6d14795f9c46a0845fc44c93c0f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a267a6d14795f9c46a0845fc44c93c0f2">&#9670;&nbsp;</a></span>WSMIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr amrex::Real WSMIN = 0.1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="structmoeng__flux.html#a946d89f0b1c8287c83bea9ff628bdb1e">moeng_flux::compute_t_flux()</a>, <a class="el" href="structmoeng__flux.html#a2451f21fea8f87cec2e5f626c36489cb">moeng_flux::compute_u_flux()</a>, <a class="el" href="structmoeng__flux.html#a5ec0786b043f57c8c41edfd677dde8c9">moeng_flux::compute_v_flux()</a>, <a class="el" href="structadiabatic__mod__charnock.html#acfe52a64ebafd1135f6f215b8462d718">adiabatic_mod_charnock::iterate_flux()</a>, <a class="el" href="structadiabatic__donelan.html#a2ad15699c4fd0a566c45dca957df4e48">adiabatic_donelan::iterate_flux()</a>, <a class="el" href="structadiabatic__wave__coupled.html#a4604487fd489620672f85bc517a4729a">adiabatic_wave_coupled::iterate_flux()</a>, <a class="el" href="structadiabatic__charnock.html#a4b2881e7b3fb5730c6e2d55a41dd9bd0">adiabatic_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__charnock.html#a9f88180c90bc865136d2f153c82d4fe3">surface_flux_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__mod__charnock.html#aeed3a1d89568498a381abca31ecff25d">surface_flux_mod_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__donelan.html#a1a698342ed730384eef2b9974d0f65ac">surface_flux_donelan::iterate_flux()</a>, <a class="el" href="structsurface__temp__charnock.html#a95809501feb05aea7aa17bb4ab21a0fb">surface_temp_charnock::iterate_flux()</a>, <a class="el" href="structsurface__temp__mod__charnock.html#aee58e170ad409e01495f1f32a9e2efaa">surface_temp_mod_charnock::iterate_flux()</a>, <a class="el" href="structsurface__temp__donelan.html#aaf6cda638512738d8fdcda9277a84402">surface_temp_donelan::iterate_flux()</a>, <a class="el" href="structsurface__flux__wave__coupled.html#a303023c95fd8121c335eb33b5efbc0bf">surface_flux_wave_coupled::iterate_flux()</a>, <a class="el" href="structsurface__temp__wave__coupled.html#a46050c5d081b11e873c0078b3e7b5e7b">surface_temp_wave_coupled::iterate_flux()</a>, <a class="el" href="structsurface__flux.html#a629c64ea10e8f36b6d4ef17120772e82">surface_flux::iterate_flux()</a>, and <a class="el" href="structsurface__temp.html#a5871a69ecd45836e43e208d094bf4a4a">surface_temp::iterate_flux()</a>.</p>
 
 </div>
 </div>

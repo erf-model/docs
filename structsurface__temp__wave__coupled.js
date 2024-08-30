@@ -6,6 +6,7 @@ var structsurface__temp__wave__coupled =
     [ "mdata", "structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288", null ],
     [ "sfuns", "structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96", null ],
     [ "tol", "structsurface__temp__wave__coupled.html#a3715864e9c6bfdc6e4556925d0fc48fa", null ],
+    [ "WSMIN", "structsurface__temp__wave__coupled.html#af09bca4efd34fd9d8b6bb6a2f363ebee", null ],
     [ "z0_eps", "structsurface__temp__wave__coupled.html#abd39570dca269dda79fbb946df0a02ca", null ],
     [ "z0_max", "structsurface__temp__wave__coupled.html#aedbd53ee9bf7b4c98f5a2b88207cbb01", null ]
 ];

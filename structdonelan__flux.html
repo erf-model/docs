@@ -149,8 +149,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01556"></a><span class="lineno"> 1556</span>&#160;      :  <a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>(l_zlo) {}</div>
-<div class="ttc" id="astructdonelan__flux_html_af7428f0272064ef770035521c9c9a98b"><div class="ttname"><a href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">donelan_flux::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:1826</div></div>
+<div class="fragment"><div class="line"><a name="l01570"></a><span class="lineno"> 1570</span>&#160;      :  <a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>(l_zlo) {}</div>
+<div class="ttc" id="astructdonelan__flux_html_af7428f0272064ef770035521c9c9a98b"><div class="ttname"><a href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">donelan_flux::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:1840</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -284,45 +284,45 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01580"></a><span class="lineno"> 1580</span>&#160;    {</div>
-<div class="line"><a name="l01581"></a><span class="lineno"> 1581</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>, eta;</div>
-<div class="line"><a name="l01582"></a><span class="lineno"> 1582</span>&#160; </div>
-<div class="line"><a name="l01583"></a><span class="lineno"> 1583</span>&#160;        <span class="keywordtype">int</span> ic, jc;</div>
-<div class="line"><a name="l01584"></a><span class="lineno"> 1584</span>&#160;        ic = i  &lt; lbound(cons_arr).x ? lbound(cons_arr).x : i;</div>
-<div class="line"><a name="l01585"></a><span class="lineno"> 1585</span>&#160;        jc = j  &lt; lbound(cons_arr).y ? lbound(cons_arr).y : j;</div>
-<div class="line"><a name="l01586"></a><span class="lineno"> 1586</span>&#160;        ic = ic &gt; ubound(cons_arr).x ? ubound(cons_arr).x : ic;</div>
-<div class="line"><a name="l01587"></a><span class="lineno"> 1587</span>&#160;        jc = jc &gt; ubound(cons_arr).y ? ubound(cons_arr).y : jc;</div>
-<div class="line"><a name="l01588"></a><span class="lineno"> 1588</span>&#160; </div>
-<div class="line"><a name="l01589"></a><span class="lineno"> 1589</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01590"></a><span class="lineno"> 1590</span>&#160; </div>
-<div class="line"><a name="l01591"></a><span class="lineno"> 1591</span>&#160;        <span class="comment">// TODO: Integrate MOST with moisture and DONELAN FLUX type</span></div>
-<div class="line"><a name="l01592"></a><span class="lineno"> 1592</span>&#160;        amrex::Real deltaz  = dz * (<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a> - k);</div>
-<div class="line"><a name="l01593"></a><span class="lineno"> 1593</span>&#160; </div>
-<div class="line"><a name="l01594"></a><span class="lineno"> 1594</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;q&#39;w&#39;&gt; = -K dqdz</span></div>
-<div class="line"><a name="l01595"></a><span class="lineno"> 1595</span>&#160;        amrex::Real moflux  = 0.0;</div>
+<div class="fragment"><div class="line"><a name="l01594"></a><span class="lineno"> 1594</span>&#160;    {</div>
+<div class="line"><a name="l01595"></a><span class="lineno"> 1595</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>, eta;</div>
 <div class="line"><a name="l01596"></a><span class="lineno"> 1596</span>&#160; </div>
-<div class="line"><a name="l01597"></a><span class="lineno"> 1597</span>&#160;        <span class="keywordflow">if</span> (exp_most) {</div>
-<div class="line"><a name="l01598"></a><span class="lineno"> 1598</span>&#160;            <span class="comment">// surface gradient equal to gradient at first zface</span></div>
-<div class="line"><a name="l01599"></a><span class="lineno"> 1599</span>&#160;            amrex::Real rqvgrad = (cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>+1,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) - cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>  ,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)) / (0.5*(dz+dz1));</div>
-<div class="line"><a name="l01600"></a><span class="lineno"> 1600</span>&#160;            dest_arr(i,j,k,icomp+n) = cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) - rqvgrad * deltaz;</div>
-<div class="line"><a name="l01601"></a><span class="lineno"> 1601</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01602"></a><span class="lineno"> 1602</span>&#160;            <span class="keywordtype">int</span> ie, je;</div>
-<div class="line"><a name="l01603"></a><span class="lineno"> 1603</span>&#160;            ie = i  &lt; lbound(eta_arr).x ? lbound(eta_arr).x : i;</div>
-<div class="line"><a name="l01604"></a><span class="lineno"> 1604</span>&#160;            je = j  &lt; lbound(eta_arr).y ? lbound(eta_arr).y : j;</div>
-<div class="line"><a name="l01605"></a><span class="lineno"> 1605</span>&#160;            ie = ie &gt; ubound(eta_arr).x ? ubound(eta_arr).x : ie;</div>
-<div class="line"><a name="l01606"></a><span class="lineno"> 1606</span>&#160;            je = je &gt; ubound(eta_arr).y ? ubound(eta_arr).y : je;</div>
-<div class="line"><a name="l01607"></a><span class="lineno"> 1607</span>&#160;            eta   = eta_arr(ie,je,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea4166b9561a2ef0ad6d1b6d2c34cb9580">EddyDiff::Q_v</a>); <span class="comment">// == rho * alpha [kg/m^3 * m^2/s]</span></div>
-<div class="line"><a name="l01608"></a><span class="lineno"> 1608</span>&#160;            eta   = amrex::max(eta,<a class="code" href="structdonelan__flux.html#aac38c6d44658be0daa32dc8bd0b29adb">eta_eps</a>);</div>
-<div class="line"><a name="l01609"></a><span class="lineno"> 1609</span>&#160;            dest_arr(i,j,k,icomp+n) = dest_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,icomp+n) + moflux*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>/eta*deltaz;</div>
-<div class="line"><a name="l01610"></a><span class="lineno"> 1610</span>&#160;        }</div>
-<div class="line"><a name="l01611"></a><span class="lineno"> 1611</span>&#160; </div>
-<div class="line"><a name="l01612"></a><span class="lineno"> 1612</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
-<div class="line"><a name="l01613"></a><span class="lineno"> 1613</span>&#160;    }</div>
+<div class="line"><a name="l01597"></a><span class="lineno"> 1597</span>&#160;        <span class="keywordtype">int</span> ic, jc;</div>
+<div class="line"><a name="l01598"></a><span class="lineno"> 1598</span>&#160;        ic = i  &lt; lbound(cons_arr).x ? lbound(cons_arr).x : i;</div>
+<div class="line"><a name="l01599"></a><span class="lineno"> 1599</span>&#160;        jc = j  &lt; lbound(cons_arr).y ? lbound(cons_arr).y : j;</div>
+<div class="line"><a name="l01600"></a><span class="lineno"> 1600</span>&#160;        ic = ic &gt; ubound(cons_arr).x ? ubound(cons_arr).x : ic;</div>
+<div class="line"><a name="l01601"></a><span class="lineno"> 1601</span>&#160;        jc = jc &gt; ubound(cons_arr).y ? ubound(cons_arr).y : jc;</div>
+<div class="line"><a name="l01602"></a><span class="lineno"> 1602</span>&#160; </div>
+<div class="line"><a name="l01603"></a><span class="lineno"> 1603</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01604"></a><span class="lineno"> 1604</span>&#160; </div>
+<div class="line"><a name="l01605"></a><span class="lineno"> 1605</span>&#160;        <span class="comment">// TODO: Integrate MOST with moisture and DONELAN FLUX type</span></div>
+<div class="line"><a name="l01606"></a><span class="lineno"> 1606</span>&#160;        amrex::Real deltaz  = dz * (<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a> - k);</div>
+<div class="line"><a name="l01607"></a><span class="lineno"> 1607</span>&#160; </div>
+<div class="line"><a name="l01608"></a><span class="lineno"> 1608</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;q&#39;w&#39;&gt; = -K dqdz</span></div>
+<div class="line"><a name="l01609"></a><span class="lineno"> 1609</span>&#160;        amrex::Real moflux  = 0.0;</div>
+<div class="line"><a name="l01610"></a><span class="lineno"> 1610</span>&#160; </div>
+<div class="line"><a name="l01611"></a><span class="lineno"> 1611</span>&#160;        <span class="keywordflow">if</span> (exp_most) {</div>
+<div class="line"><a name="l01612"></a><span class="lineno"> 1612</span>&#160;            <span class="comment">// surface gradient equal to gradient at first zface</span></div>
+<div class="line"><a name="l01613"></a><span class="lineno"> 1613</span>&#160;            amrex::Real rqvgrad = (cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>+1,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) - cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>  ,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)) / (0.5*(dz+dz1));</div>
+<div class="line"><a name="l01614"></a><span class="lineno"> 1614</span>&#160;            dest_arr(i,j,k,icomp+n) = cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) - rqvgrad * deltaz;</div>
+<div class="line"><a name="l01615"></a><span class="lineno"> 1615</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01616"></a><span class="lineno"> 1616</span>&#160;            <span class="keywordtype">int</span> ie, je;</div>
+<div class="line"><a name="l01617"></a><span class="lineno"> 1617</span>&#160;            ie = i  &lt; lbound(eta_arr).x ? lbound(eta_arr).x : i;</div>
+<div class="line"><a name="l01618"></a><span class="lineno"> 1618</span>&#160;            je = j  &lt; lbound(eta_arr).y ? lbound(eta_arr).y : j;</div>
+<div class="line"><a name="l01619"></a><span class="lineno"> 1619</span>&#160;            ie = ie &gt; ubound(eta_arr).x ? ubound(eta_arr).x : ie;</div>
+<div class="line"><a name="l01620"></a><span class="lineno"> 1620</span>&#160;            je = je &gt; ubound(eta_arr).y ? ubound(eta_arr).y : je;</div>
+<div class="line"><a name="l01621"></a><span class="lineno"> 1621</span>&#160;            eta   = eta_arr(ie,je,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea4166b9561a2ef0ad6d1b6d2c34cb9580">EddyDiff::Q_v</a>); <span class="comment">// == rho * alpha [kg/m^3 * m^2/s]</span></div>
+<div class="line"><a name="l01622"></a><span class="lineno"> 1622</span>&#160;            eta   = amrex::max(eta,<a class="code" href="structdonelan__flux.html#aac38c6d44658be0daa32dc8bd0b29adb">eta_eps</a>);</div>
+<div class="line"><a name="l01623"></a><span class="lineno"> 1623</span>&#160;            dest_arr(i,j,k,icomp+n) = dest_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,icomp+n) + moflux*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>/eta*deltaz;</div>
+<div class="line"><a name="l01624"></a><span class="lineno"> 1624</span>&#160;        }</div>
+<div class="line"><a name="l01625"></a><span class="lineno"> 1625</span>&#160; </div>
+<div class="line"><a name="l01626"></a><span class="lineno"> 1626</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
+<div class="line"><a name="l01627"></a><span class="lineno"> 1627</span>&#160;    }</div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:12</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:17</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea4166b9561a2ef0ad6d1b6d2c34cb9580"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea4166b9561a2ef0ad6d1b6d2c34cb9580">EddyDiff::Q_v</a></div><div class="ttdeci">@ Q_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:132</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> Kessler.H:30</div></div>
-<div class="ttc" id="astructdonelan__flux_html_aac38c6d44658be0daa32dc8bd0b29adb"><div class="ttname"><a href="structdonelan__flux.html#aac38c6d44658be0daa32dc8bd0b29adb">donelan_flux::eta_eps</a></div><div class="ttdeci">const amrex::Real eta_eps</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:1827</div></div>
+<div class="ttc" id="astructdonelan__flux_html_aac38c6d44658be0daa32dc8bd0b29adb"><div class="ttname"><a href="structdonelan__flux.html#aac38c6d44658be0daa32dc8bd0b29adb">donelan_flux::eta_eps</a></div><div class="ttdeci">const amrex::Real eta_eps</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:1841</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -455,46 +455,46 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160;    {</div>
-<div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>, eta;</div>
-<div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160; </div>
-<div class="line"><a name="l01639"></a><span class="lineno"> 1639</span>&#160;        <span class="keywordtype">int</span> ic, jc;</div>
-<div class="line"><a name="l01640"></a><span class="lineno"> 1640</span>&#160;        ic = i  &lt; lbound(cons_arr).x ? lbound(cons_arr).x : i;</div>
-<div class="line"><a name="l01641"></a><span class="lineno"> 1641</span>&#160;        jc = j  &lt; lbound(cons_arr).y ? lbound(cons_arr).y : j;</div>
-<div class="line"><a name="l01642"></a><span class="lineno"> 1642</span>&#160;        ic = ic &gt; ubound(cons_arr).x ? ubound(cons_arr).x : ic;</div>
-<div class="line"><a name="l01643"></a><span class="lineno"> 1643</span>&#160;        jc = jc &gt; ubound(cons_arr).y ? ubound(cons_arr).y : jc;</div>
-<div class="line"><a name="l01644"></a><span class="lineno"> 1644</span>&#160; </div>
-<div class="line"><a name="l01645"></a><span class="lineno"> 1645</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01646"></a><span class="lineno"> 1646</span>&#160; </div>
-<div class="line"><a name="l01647"></a><span class="lineno"> 1647</span>&#160;        amrex::Real Ch = 0.0012;</div>
-<div class="line"><a name="l01648"></a><span class="lineno"> 1648</span>&#160;        amrex::Real wsp_mean    = umm_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>);</div>
-<div class="line"><a name="l01649"></a><span class="lineno"> 1649</span>&#160;        amrex::Real theta_surf  = t_surf_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>);</div>
-<div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160;        amrex::Real theta_mean  = tm_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>);</div>
-<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;        amrex::Real deltaz      = dz * (<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a> - k);</div>
+<div class="fragment"><div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160;    {</div>
+<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>, eta;</div>
 <div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160; </div>
-<div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;T&#39;w&#39;&gt; = -K dTdz</span></div>
-<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;        amrex::Real moflux      = -<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * Ch * wsp_mean * (theta_mean - theta_surf);</div>
-<div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160; </div>
-<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;        <span class="keywordflow">if</span> (exp_most) {</div>
-<div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;            <span class="comment">// surface gradient equal to gradient at first zface</span></div>
-<div class="line"><a name="l01658"></a><span class="lineno"> 1658</span>&#160;            amrex::Real rthetagrad = (cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)) / (0.5*(dz+dz1));</div>
-<div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;            dest_arr(i,j,k,icomp+n) = cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - rthetagrad * deltaz;</div>
-<div class="line"><a name="l01660"></a><span class="lineno"> 1660</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01661"></a><span class="lineno"> 1661</span>&#160;            <span class="keywordtype">int</span> ie, je;</div>
-<div class="line"><a name="l01662"></a><span class="lineno"> 1662</span>&#160;            ie = i  &lt; lbound(eta_arr).x ? lbound(eta_arr).x : i;</div>
-<div class="line"><a name="l01663"></a><span class="lineno"> 1663</span>&#160;            je = j  &lt; lbound(eta_arr).y ? lbound(eta_arr).y : j;</div>
-<div class="line"><a name="l01664"></a><span class="lineno"> 1664</span>&#160;            ie = ie &gt; ubound(eta_arr).x ? ubound(eta_arr).x : ie;</div>
-<div class="line"><a name="l01665"></a><span class="lineno"> 1665</span>&#160;            je = je &gt; ubound(eta_arr).y ? ubound(eta_arr).y : je;</div>
-<div class="line"><a name="l01666"></a><span class="lineno"> 1666</span>&#160;            eta   = eta_arr(ie,je,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>); <span class="comment">// == rho * alpha [kg/m^3 * m^2/s]</span></div>
-<div class="line"><a name="l01667"></a><span class="lineno"> 1667</span>&#160;            eta   = amrex::max(eta,<a class="code" href="structdonelan__flux.html#aac38c6d44658be0daa32dc8bd0b29adb">eta_eps</a>);</div>
-<div class="line"><a name="l01668"></a><span class="lineno"> 1668</span>&#160;            <span class="comment">// Note: Kh = eta/rho</span></div>
-<div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160;            <span class="comment">//      hfx = -Kh dT/dz  ==&gt; +ve hfx corresponds to heating from the surface</span></div>
-<div class="line"><a name="l01670"></a><span class="lineno"> 1670</span>&#160;            <span class="comment">// Extrapolate from klo to ghost cell a distance of -deltaz; negative signs cancel</span></div>
-<div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;            dest_arr(i,j,k,icomp+n) = dest_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,icomp+n) + moflux*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>/eta*deltaz;</div>
-<div class="line"><a name="l01672"></a><span class="lineno"> 1672</span>&#160;        }</div>
-<div class="line"><a name="l01673"></a><span class="lineno"> 1673</span>&#160; </div>
-<div class="line"><a name="l01674"></a><span class="lineno"> 1674</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
-<div class="line"><a name="l01675"></a><span class="lineno"> 1675</span>&#160;    }</div>
+<div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;        <span class="keywordtype">int</span> ic, jc;</div>
+<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;        ic = i  &lt; lbound(cons_arr).x ? lbound(cons_arr).x : i;</div>
+<div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;        jc = j  &lt; lbound(cons_arr).y ? lbound(cons_arr).y : j;</div>
+<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;        ic = ic &gt; ubound(cons_arr).x ? ubound(cons_arr).x : ic;</div>
+<div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;        jc = jc &gt; ubound(cons_arr).y ? ubound(cons_arr).y : jc;</div>
+<div class="line"><a name="l01658"></a><span class="lineno"> 1658</span>&#160; </div>
+<div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01660"></a><span class="lineno"> 1660</span>&#160; </div>
+<div class="line"><a name="l01661"></a><span class="lineno"> 1661</span>&#160;        amrex::Real Ch = 0.0012;</div>
+<div class="line"><a name="l01662"></a><span class="lineno"> 1662</span>&#160;        amrex::Real wsp_mean    = umm_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>);</div>
+<div class="line"><a name="l01663"></a><span class="lineno"> 1663</span>&#160;        amrex::Real theta_surf  = t_surf_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>);</div>
+<div class="line"><a name="l01664"></a><span class="lineno"> 1664</span>&#160;        amrex::Real theta_mean  = tm_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>);</div>
+<div class="line"><a name="l01665"></a><span class="lineno"> 1665</span>&#160;        amrex::Real deltaz      = dz * (<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a> - k);</div>
+<div class="line"><a name="l01666"></a><span class="lineno"> 1666</span>&#160; </div>
+<div class="line"><a name="l01667"></a><span class="lineno"> 1667</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;T&#39;w&#39;&gt; = -K dTdz</span></div>
+<div class="line"><a name="l01668"></a><span class="lineno"> 1668</span>&#160;        amrex::Real moflux      = -<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * Ch * wsp_mean * (theta_mean - theta_surf);</div>
+<div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160; </div>
+<div class="line"><a name="l01670"></a><span class="lineno"> 1670</span>&#160;        <span class="keywordflow">if</span> (exp_most) {</div>
+<div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;            <span class="comment">// surface gradient equal to gradient at first zface</span></div>
+<div class="line"><a name="l01672"></a><span class="lineno"> 1672</span>&#160;            amrex::Real rthetagrad = (cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)) / (0.5*(dz+dz1));</div>
+<div class="line"><a name="l01673"></a><span class="lineno"> 1673</span>&#160;            dest_arr(i,j,k,icomp+n) = cons_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - rthetagrad * deltaz;</div>
+<div class="line"><a name="l01674"></a><span class="lineno"> 1674</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01675"></a><span class="lineno"> 1675</span>&#160;            <span class="keywordtype">int</span> ie, je;</div>
+<div class="line"><a name="l01676"></a><span class="lineno"> 1676</span>&#160;            ie = i  &lt; lbound(eta_arr).x ? lbound(eta_arr).x : i;</div>
+<div class="line"><a name="l01677"></a><span class="lineno"> 1677</span>&#160;            je = j  &lt; lbound(eta_arr).y ? lbound(eta_arr).y : j;</div>
+<div class="line"><a name="l01678"></a><span class="lineno"> 1678</span>&#160;            ie = ie &gt; ubound(eta_arr).x ? ubound(eta_arr).x : ie;</div>
+<div class="line"><a name="l01679"></a><span class="lineno"> 1679</span>&#160;            je = je &gt; ubound(eta_arr).y ? ubound(eta_arr).y : je;</div>
+<div class="line"><a name="l01680"></a><span class="lineno"> 1680</span>&#160;            eta   = eta_arr(ie,je,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>); <span class="comment">// == rho * alpha [kg/m^3 * m^2/s]</span></div>
+<div class="line"><a name="l01681"></a><span class="lineno"> 1681</span>&#160;            eta   = amrex::max(eta,<a class="code" href="structdonelan__flux.html#aac38c6d44658be0daa32dc8bd0b29adb">eta_eps</a>);</div>
+<div class="line"><a name="l01682"></a><span class="lineno"> 1682</span>&#160;            <span class="comment">// Note: Kh = eta/rho</span></div>
+<div class="line"><a name="l01683"></a><span class="lineno"> 1683</span>&#160;            <span class="comment">//      hfx = -Kh dT/dz  ==&gt; +ve hfx corresponds to heating from the surface</span></div>
+<div class="line"><a name="l01684"></a><span class="lineno"> 1684</span>&#160;            <span class="comment">// Extrapolate from klo to ghost cell a distance of -deltaz; negative signs cancel</span></div>
+<div class="line"><a name="l01685"></a><span class="lineno"> 1685</span>&#160;            dest_arr(i,j,k,icomp+n) = dest_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,icomp+n) + moflux*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>/eta*deltaz;</div>
+<div class="line"><a name="l01686"></a><span class="lineno"> 1686</span>&#160;        }</div>
+<div class="line"><a name="l01687"></a><span class="lineno"> 1687</span>&#160; </div>
+<div class="line"><a name="l01688"></a><span class="lineno"> 1688</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
+<div class="line"><a name="l01689"></a><span class="lineno"> 1689</span>&#160;    }</div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:13</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:128</div></div>
 </div><!-- fragment -->
@@ -611,61 +611,61 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01695"></a><span class="lineno"> 1695</span>&#160;    {</div>
-<div class="line"><a name="l01696"></a><span class="lineno"> 1696</span>&#160;        amrex::Real velx, vely, <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>, eta;</div>
-<div class="line"><a name="l01697"></a><span class="lineno"> 1697</span>&#160;        <span class="keywordtype">int</span> jy, ic, jc;</div>
-<div class="line"><a name="l01698"></a><span class="lineno"> 1698</span>&#160; </div>
-<div class="line"><a name="l01699"></a><span class="lineno"> 1699</span>&#160;        <span class="keywordtype">int</span> iylo = i &lt;= lbound(vely_arr).x ? lbound(vely_arr).x : i-1;</div>
-<div class="line"><a name="l01700"></a><span class="lineno"> 1700</span>&#160;        <span class="keywordtype">int</span> iyhi = i &gt;  ubound(vely_arr).x ? ubound(vely_arr).x : i;</div>
-<div class="line"><a name="l01701"></a><span class="lineno"> 1701</span>&#160; </div>
-<div class="line"><a name="l01702"></a><span class="lineno"> 1702</span>&#160;        jy = j  &lt; lbound(vely_arr).y   ? lbound(vely_arr).y   : j;</div>
-<div class="line"><a name="l01703"></a><span class="lineno"> 1703</span>&#160;        jy = jy &gt; ubound(vely_arr).y-1 ? ubound(vely_arr).y-1 : jy;</div>
-<div class="line"><a name="l01704"></a><span class="lineno"> 1704</span>&#160; </div>
-<div class="line"><a name="l01705"></a><span class="lineno"> 1705</span>&#160;        ic = i  &lt; lbound(cons_arr).x+1 ? lbound(cons_arr).x+1 : i;</div>
-<div class="line"><a name="l01706"></a><span class="lineno"> 1706</span>&#160;        jc = j  &lt; lbound(cons_arr).y   ? lbound(cons_arr).y   : j;</div>
-<div class="line"><a name="l01707"></a><span class="lineno"> 1707</span>&#160;        ic = ic &gt; ubound(cons_arr).x   ? ubound(cons_arr).x   : ic;</div>
-<div class="line"><a name="l01708"></a><span class="lineno"> 1708</span>&#160;        jc = jc &gt; ubound(cons_arr).y   ? ubound(cons_arr).y   : jc;</div>
-<div class="line"><a name="l01709"></a><span class="lineno"> 1709</span>&#160; </div>
-<div class="line"><a name="l01710"></a><span class="lineno"> 1710</span>&#160;        velx  = velx_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>);</div>
-<div class="line"><a name="l01711"></a><span class="lineno"> 1711</span>&#160;        vely  = 0.25*( vely_arr(iyhi,jy,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>)+vely_arr(iyhi,jy+1,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>)</div>
-<div class="line"><a name="l01712"></a><span class="lineno"> 1712</span>&#160;                     + vely_arr(iylo,jy,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>)+vely_arr(iylo,jy+1,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>) );</div>
-<div class="line"><a name="l01713"></a><span class="lineno"> 1713</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5 *( cons_arr(ic-1,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
-<div class="line"><a name="l01714"></a><span class="lineno"> 1714</span>&#160;                     + cons_arr(ic  ,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="fragment"><div class="line"><a name="l01709"></a><span class="lineno"> 1709</span>&#160;    {</div>
+<div class="line"><a name="l01710"></a><span class="lineno"> 1710</span>&#160;        amrex::Real velx, vely, <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>, eta;</div>
+<div class="line"><a name="l01711"></a><span class="lineno"> 1711</span>&#160;        <span class="keywordtype">int</span> jy, ic, jc;</div>
+<div class="line"><a name="l01712"></a><span class="lineno"> 1712</span>&#160; </div>
+<div class="line"><a name="l01713"></a><span class="lineno"> 1713</span>&#160;        <span class="keywordtype">int</span> iylo = i &lt;= lbound(vely_arr).x ? lbound(vely_arr).x : i-1;</div>
+<div class="line"><a name="l01714"></a><span class="lineno"> 1714</span>&#160;        <span class="keywordtype">int</span> iyhi = i &gt;  ubound(vely_arr).x ? ubound(vely_arr).x : i;</div>
 <div class="line"><a name="l01715"></a><span class="lineno"> 1715</span>&#160; </div>
-<div class="line"><a name="l01716"></a><span class="lineno"> 1716</span>&#160;        amrex::Real Cd       = 0.001;</div>
-<div class="line"><a name="l01717"></a><span class="lineno"> 1717</span>&#160;        <span class="keyword">const</span> amrex::Real c  = 7e-5;</div>
-<div class="line"><a name="l01718"></a><span class="lineno"> 1718</span>&#160;        amrex::Real wsp      = sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l01719"></a><span class="lineno"> 1719</span>&#160;        amrex::Real wsp_mean = 0.5 * ( umm_arr(ic-1,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>) + umm_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>) );</div>
-<div class="line"><a name="l01720"></a><span class="lineno"> 1720</span>&#160;        <span class="keywordflow">if</span> (wsp_mean &lt;= 5.0) {</div>
-<div class="line"><a name="l01721"></a><span class="lineno"> 1721</span>&#160;            Cd = 0.001;</div>
-<div class="line"><a name="l01722"></a><span class="lineno"> 1722</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (wsp_mean &lt; 25.0 &amp;&amp; wsp_mean &gt; 5.0) {</div>
-<div class="line"><a name="l01723"></a><span class="lineno"> 1723</span>&#160;            Cd = 0.001 + c * (wsp_mean - 5.0);</div>
-<div class="line"><a name="l01724"></a><span class="lineno"> 1724</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01725"></a><span class="lineno"> 1725</span>&#160;            Cd = 0.0024;</div>
-<div class="line"><a name="l01726"></a><span class="lineno"> 1726</span>&#160;        }</div>
-<div class="line"><a name="l01727"></a><span class="lineno"> 1727</span>&#160;        amrex::Real deltaz  = dz * (<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a> - k);</div>
-<div class="line"><a name="l01728"></a><span class="lineno"> 1728</span>&#160; </div>
-<div class="line"><a name="l01729"></a><span class="lineno"> 1729</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;u&#39;w&#39;&gt; = -K dudz</span></div>
-<div class="line"><a name="l01730"></a><span class="lineno"> 1730</span>&#160;        amrex::Real stressx = -<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * Cd * velx * wsp;</div>
-<div class="line"><a name="l01731"></a><span class="lineno"> 1731</span>&#160; </div>
-<div class="line"><a name="l01732"></a><span class="lineno"> 1732</span>&#160;        <span class="keywordflow">if</span> (exp_most) {</div>
-<div class="line"><a name="l01733"></a><span class="lineno"> 1733</span>&#160;            <span class="comment">// surface gradient equal to gradient at first zface</span></div>
-<div class="line"><a name="l01734"></a><span class="lineno"> 1734</span>&#160;            amrex::Real ugrad = (velx_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>+1) - velx) / (0.5*(dz+dz1));</div>
-<div class="line"><a name="l01735"></a><span class="lineno"> 1735</span>&#160;            dest_arr(i,j,k,icomp) = velx - ugrad * deltaz;</div>
-<div class="line"><a name="l01736"></a><span class="lineno"> 1736</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01737"></a><span class="lineno"> 1737</span>&#160;            <span class="keywordtype">int</span> ie, je;</div>
-<div class="line"><a name="l01738"></a><span class="lineno"> 1738</span>&#160;            ie = i  &lt; lbound(eta_arr).x+1 ? lbound(eta_arr).x+1 : i;</div>
-<div class="line"><a name="l01739"></a><span class="lineno"> 1739</span>&#160;            je = j  &lt; lbound(eta_arr).y   ? lbound(eta_arr).y   : j;</div>
-<div class="line"><a name="l01740"></a><span class="lineno"> 1740</span>&#160;            ie = ie &gt; ubound(eta_arr).x   ? ubound(eta_arr).x   : ie;</div>
-<div class="line"><a name="l01741"></a><span class="lineno"> 1741</span>&#160;            je = je &gt; ubound(eta_arr).y   ? ubound(eta_arr).y   : je;</div>
-<div class="line"><a name="l01742"></a><span class="lineno"> 1742</span>&#160;            eta   = 0.5 *(  eta_arr(ie-1,je,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
-<div class="line"><a name="l01743"></a><span class="lineno"> 1743</span>&#160;                          + eta_arr(ie  ,je,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
-<div class="line"><a name="l01744"></a><span class="lineno"> 1744</span>&#160;            eta   = amrex::max(eta,<a class="code" href="structdonelan__flux.html#aac38c6d44658be0daa32dc8bd0b29adb">eta_eps</a>);</div>
-<div class="line"><a name="l01745"></a><span class="lineno"> 1745</span>&#160;            dest_arr(i,j,k,icomp) = dest_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,icomp) + stressx/eta*deltaz;</div>
-<div class="line"><a name="l01746"></a><span class="lineno"> 1746</span>&#160;        }</div>
-<div class="line"><a name="l01747"></a><span class="lineno"> 1747</span>&#160; </div>
-<div class="line"><a name="l01748"></a><span class="lineno"> 1748</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
-<div class="line"><a name="l01749"></a><span class="lineno"> 1749</span>&#160;    }</div>
+<div class="line"><a name="l01716"></a><span class="lineno"> 1716</span>&#160;        jy = j  &lt; lbound(vely_arr).y   ? lbound(vely_arr).y   : j;</div>
+<div class="line"><a name="l01717"></a><span class="lineno"> 1717</span>&#160;        jy = jy &gt; ubound(vely_arr).y-1 ? ubound(vely_arr).y-1 : jy;</div>
+<div class="line"><a name="l01718"></a><span class="lineno"> 1718</span>&#160; </div>
+<div class="line"><a name="l01719"></a><span class="lineno"> 1719</span>&#160;        ic = i  &lt; lbound(cons_arr).x+1 ? lbound(cons_arr).x+1 : i;</div>
+<div class="line"><a name="l01720"></a><span class="lineno"> 1720</span>&#160;        jc = j  &lt; lbound(cons_arr).y   ? lbound(cons_arr).y   : j;</div>
+<div class="line"><a name="l01721"></a><span class="lineno"> 1721</span>&#160;        ic = ic &gt; ubound(cons_arr).x   ? ubound(cons_arr).x   : ic;</div>
+<div class="line"><a name="l01722"></a><span class="lineno"> 1722</span>&#160;        jc = jc &gt; ubound(cons_arr).y   ? ubound(cons_arr).y   : jc;</div>
+<div class="line"><a name="l01723"></a><span class="lineno"> 1723</span>&#160; </div>
+<div class="line"><a name="l01724"></a><span class="lineno"> 1724</span>&#160;        velx  = velx_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>);</div>
+<div class="line"><a name="l01725"></a><span class="lineno"> 1725</span>&#160;        vely  = 0.25*( vely_arr(iyhi,jy,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>)+vely_arr(iyhi,jy+1,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>)</div>
+<div class="line"><a name="l01726"></a><span class="lineno"> 1726</span>&#160;                     + vely_arr(iylo,jy,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>)+vely_arr(iylo,jy+1,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>) );</div>
+<div class="line"><a name="l01727"></a><span class="lineno"> 1727</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5 *( cons_arr(ic-1,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l01728"></a><span class="lineno"> 1728</span>&#160;                     + cons_arr(ic  ,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l01729"></a><span class="lineno"> 1729</span>&#160; </div>
+<div class="line"><a name="l01730"></a><span class="lineno"> 1730</span>&#160;        amrex::Real Cd       = 0.001;</div>
+<div class="line"><a name="l01731"></a><span class="lineno"> 1731</span>&#160;        <span class="keyword">const</span> amrex::Real c  = 7e-5;</div>
+<div class="line"><a name="l01732"></a><span class="lineno"> 1732</span>&#160;        amrex::Real wsp      = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l01733"></a><span class="lineno"> 1733</span>&#160;        amrex::Real wsp_mean = 0.5 * ( umm_arr(ic-1,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>) + umm_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>) );</div>
+<div class="line"><a name="l01734"></a><span class="lineno"> 1734</span>&#160;        <span class="keywordflow">if</span> (wsp_mean &lt;= 5.0) {</div>
+<div class="line"><a name="l01735"></a><span class="lineno"> 1735</span>&#160;            Cd = 0.001;</div>
+<div class="line"><a name="l01736"></a><span class="lineno"> 1736</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (wsp_mean &lt; 25.0 &amp;&amp; wsp_mean &gt; 5.0) {</div>
+<div class="line"><a name="l01737"></a><span class="lineno"> 1737</span>&#160;            Cd = 0.001 + c * (wsp_mean - 5.0);</div>
+<div class="line"><a name="l01738"></a><span class="lineno"> 1738</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01739"></a><span class="lineno"> 1739</span>&#160;            Cd = 0.0024;</div>
+<div class="line"><a name="l01740"></a><span class="lineno"> 1740</span>&#160;        }</div>
+<div class="line"><a name="l01741"></a><span class="lineno"> 1741</span>&#160;        amrex::Real deltaz  = dz * (<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a> - k);</div>
+<div class="line"><a name="l01742"></a><span class="lineno"> 1742</span>&#160; </div>
+<div class="line"><a name="l01743"></a><span class="lineno"> 1743</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;u&#39;w&#39;&gt; = -K dudz</span></div>
+<div class="line"><a name="l01744"></a><span class="lineno"> 1744</span>&#160;        amrex::Real stressx = -<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * Cd * velx * wsp;</div>
+<div class="line"><a name="l01745"></a><span class="lineno"> 1745</span>&#160; </div>
+<div class="line"><a name="l01746"></a><span class="lineno"> 1746</span>&#160;        <span class="keywordflow">if</span> (exp_most) {</div>
+<div class="line"><a name="l01747"></a><span class="lineno"> 1747</span>&#160;            <span class="comment">// surface gradient equal to gradient at first zface</span></div>
+<div class="line"><a name="l01748"></a><span class="lineno"> 1748</span>&#160;            amrex::Real ugrad = (velx_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>+1) - velx) / (0.5*(dz+dz1));</div>
+<div class="line"><a name="l01749"></a><span class="lineno"> 1749</span>&#160;            dest_arr(i,j,k,icomp) = velx - ugrad * deltaz;</div>
+<div class="line"><a name="l01750"></a><span class="lineno"> 1750</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01751"></a><span class="lineno"> 1751</span>&#160;            <span class="keywordtype">int</span> ie, je;</div>
+<div class="line"><a name="l01752"></a><span class="lineno"> 1752</span>&#160;            ie = i  &lt; lbound(eta_arr).x+1 ? lbound(eta_arr).x+1 : i;</div>
+<div class="line"><a name="l01753"></a><span class="lineno"> 1753</span>&#160;            je = j  &lt; lbound(eta_arr).y   ? lbound(eta_arr).y   : j;</div>
+<div class="line"><a name="l01754"></a><span class="lineno"> 1754</span>&#160;            ie = ie &gt; ubound(eta_arr).x   ? ubound(eta_arr).x   : ie;</div>
+<div class="line"><a name="l01755"></a><span class="lineno"> 1755</span>&#160;            je = je &gt; ubound(eta_arr).y   ? ubound(eta_arr).y   : je;</div>
+<div class="line"><a name="l01756"></a><span class="lineno"> 1756</span>&#160;            eta   = 0.5 *(  eta_arr(ie-1,je,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
+<div class="line"><a name="l01757"></a><span class="lineno"> 1757</span>&#160;                          + eta_arr(ie  ,je,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
+<div class="line"><a name="l01758"></a><span class="lineno"> 1758</span>&#160;            eta   = amrex::max(eta,<a class="code" href="structdonelan__flux.html#aac38c6d44658be0daa32dc8bd0b29adb">eta_eps</a>);</div>
+<div class="line"><a name="l01759"></a><span class="lineno"> 1759</span>&#160;            dest_arr(i,j,k,icomp) = dest_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,icomp) + stressx/eta*deltaz;</div>
+<div class="line"><a name="l01760"></a><span class="lineno"> 1760</span>&#160;        }</div>
+<div class="line"><a name="l01761"></a><span class="lineno"> 1761</span>&#160; </div>
+<div class="line"><a name="l01762"></a><span class="lineno"> 1762</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
+<div class="line"><a name="l01763"></a><span class="lineno"> 1763</span>&#160;    }</div>
 <div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:127</div></div>
 </div><!-- fragment -->
 </div>
@@ -781,61 +781,61 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01769"></a><span class="lineno"> 1769</span>&#160;    {</div>
-<div class="line"><a name="l01770"></a><span class="lineno"> 1770</span>&#160;        amrex::Real velx, vely, <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>, eta;</div>
-<div class="line"><a name="l01771"></a><span class="lineno"> 1771</span>&#160;        <span class="keywordtype">int</span> ix, ic, jc;</div>
-<div class="line"><a name="l01772"></a><span class="lineno"> 1772</span>&#160; </div>
-<div class="line"><a name="l01773"></a><span class="lineno"> 1773</span>&#160;        ix = i  &lt; lbound(velx_arr).x ? lbound(velx_arr).x : i;</div>
-<div class="line"><a name="l01774"></a><span class="lineno"> 1774</span>&#160;        ix = ix &gt; ubound(velx_arr).x ? ubound(velx_arr).x : ix;</div>
-<div class="line"><a name="l01775"></a><span class="lineno"> 1775</span>&#160; </div>
-<div class="line"><a name="l01776"></a><span class="lineno"> 1776</span>&#160;        <span class="keywordtype">int</span> jxlo = j &lt;= lbound(velx_arr).y ? lbound(velx_arr).y : j-1;</div>
-<div class="line"><a name="l01777"></a><span class="lineno"> 1777</span>&#160;        <span class="keywordtype">int</span> jxhi = j &gt;  ubound(velx_arr).y ? ubound(velx_arr).y : j;</div>
-<div class="line"><a name="l01778"></a><span class="lineno"> 1778</span>&#160; </div>
-<div class="line"><a name="l01779"></a><span class="lineno"> 1779</span>&#160;        ic = i  &lt; lbound(cons_arr).x   ? lbound(cons_arr).x   : i;</div>
-<div class="line"><a name="l01780"></a><span class="lineno"> 1780</span>&#160;        jc = j  &lt; lbound(cons_arr).y+1 ? lbound(cons_arr).y+1 : j;</div>
-<div class="line"><a name="l01781"></a><span class="lineno"> 1781</span>&#160;        ic = ic &gt; ubound(cons_arr).x   ? ubound(cons_arr).x   : ic;</div>
-<div class="line"><a name="l01782"></a><span class="lineno"> 1782</span>&#160;        jc = jc &gt; ubound(cons_arr).y   ? ubound(cons_arr).y   : jc;</div>
-<div class="line"><a name="l01783"></a><span class="lineno"> 1783</span>&#160; </div>
-<div class="line"><a name="l01784"></a><span class="lineno"> 1784</span>&#160;        velx  = 0.25*( velx_arr(ix,jxhi,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>)+velx_arr(ix+1,jxhi,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>)</div>
-<div class="line"><a name="l01785"></a><span class="lineno"> 1785</span>&#160;                     + velx_arr(ix,jxlo,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>)+velx_arr(ix+1,jxlo,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>) );</div>
-<div class="line"><a name="l01786"></a><span class="lineno"> 1786</span>&#160;        vely  = vely_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>);</div>
-<div class="line"><a name="l01787"></a><span class="lineno"> 1787</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5*( cons_arr(ic,jc-1,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
-<div class="line"><a name="l01788"></a><span class="lineno"> 1788</span>&#160;                    + cons_arr(ic,jc  ,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="fragment"><div class="line"><a name="l01783"></a><span class="lineno"> 1783</span>&#160;    {</div>
+<div class="line"><a name="l01784"></a><span class="lineno"> 1784</span>&#160;        amrex::Real velx, vely, <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>, eta;</div>
+<div class="line"><a name="l01785"></a><span class="lineno"> 1785</span>&#160;        <span class="keywordtype">int</span> ix, ic, jc;</div>
+<div class="line"><a name="l01786"></a><span class="lineno"> 1786</span>&#160; </div>
+<div class="line"><a name="l01787"></a><span class="lineno"> 1787</span>&#160;        ix = i  &lt; lbound(velx_arr).x ? lbound(velx_arr).x : i;</div>
+<div class="line"><a name="l01788"></a><span class="lineno"> 1788</span>&#160;        ix = ix &gt; ubound(velx_arr).x ? ubound(velx_arr).x : ix;</div>
 <div class="line"><a name="l01789"></a><span class="lineno"> 1789</span>&#160; </div>
-<div class="line"><a name="l01790"></a><span class="lineno"> 1790</span>&#160;        amrex::Real Cd       = 0.001;</div>
-<div class="line"><a name="l01791"></a><span class="lineno"> 1791</span>&#160;        <span class="keyword">const</span> amrex::Real c  = 7e-5;</div>
-<div class="line"><a name="l01792"></a><span class="lineno"> 1792</span>&#160;        amrex::Real wsp      = sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l01793"></a><span class="lineno"> 1793</span>&#160;        amrex::Real wsp_mean = 0.5 * ( umm_arr(ic,jc-1,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>) + umm_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>) );</div>
-<div class="line"><a name="l01794"></a><span class="lineno"> 1794</span>&#160;        <span class="keywordflow">if</span> (wsp_mean &lt;= 5.0) {</div>
-<div class="line"><a name="l01795"></a><span class="lineno"> 1795</span>&#160;            Cd = 0.001;</div>
-<div class="line"><a name="l01796"></a><span class="lineno"> 1796</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (wsp_mean &lt; 25.0 &amp;&amp; wsp_mean &gt; 5.0) {</div>
-<div class="line"><a name="l01797"></a><span class="lineno"> 1797</span>&#160;            Cd = 0.001 + c * (wsp_mean - 5.0);</div>
-<div class="line"><a name="l01798"></a><span class="lineno"> 1798</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01799"></a><span class="lineno"> 1799</span>&#160;            Cd = 0.0024;</div>
-<div class="line"><a name="l01800"></a><span class="lineno"> 1800</span>&#160;        }</div>
-<div class="line"><a name="l01801"></a><span class="lineno"> 1801</span>&#160;        amrex::Real deltaz  = dz * (<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a> - k);</div>
-<div class="line"><a name="l01802"></a><span class="lineno"> 1802</span>&#160; </div>
-<div class="line"><a name="l01803"></a><span class="lineno"> 1803</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;v&#39;w&#39;&gt; = -K dvdz</span></div>
-<div class="line"><a name="l01804"></a><span class="lineno"> 1804</span>&#160;        amrex::Real stressy = -<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * Cd * vely * wsp;</div>
-<div class="line"><a name="l01805"></a><span class="lineno"> 1805</span>&#160; </div>
-<div class="line"><a name="l01806"></a><span class="lineno"> 1806</span>&#160;        <span class="keywordflow">if</span> (exp_most) {</div>
-<div class="line"><a name="l01807"></a><span class="lineno"> 1807</span>&#160;            <span class="comment">// surface gradient equal to gradient at first zface</span></div>
-<div class="line"><a name="l01808"></a><span class="lineno"> 1808</span>&#160;            amrex::Real vgrad = (vely_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>+1) - vely) / (0.5*(dz+dz1));</div>
-<div class="line"><a name="l01809"></a><span class="lineno"> 1809</span>&#160;            dest_arr(i,j,k,icomp) = vely - vgrad * deltaz;</div>
-<div class="line"><a name="l01810"></a><span class="lineno"> 1810</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01811"></a><span class="lineno"> 1811</span>&#160;            <span class="keywordtype">int</span> ie, je;</div>
-<div class="line"><a name="l01812"></a><span class="lineno"> 1812</span>&#160;            ie = i  &lt; lbound(eta_arr).x   ? lbound(eta_arr).x   : i;</div>
-<div class="line"><a name="l01813"></a><span class="lineno"> 1813</span>&#160;            je = j  &lt; lbound(eta_arr).y+1 ? lbound(eta_arr).y+1 : j;</div>
-<div class="line"><a name="l01814"></a><span class="lineno"> 1814</span>&#160;            ie = ie &gt; ubound(eta_arr).x   ? ubound(eta_arr).x   : ie;</div>
-<div class="line"><a name="l01815"></a><span class="lineno"> 1815</span>&#160;            je = je &gt; ubound(eta_arr).y   ? ubound(eta_arr).y   : je;</div>
-<div class="line"><a name="l01816"></a><span class="lineno"> 1816</span>&#160;            eta   = 0.5*(  eta_arr(ie,je-1,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
-<div class="line"><a name="l01817"></a><span class="lineno"> 1817</span>&#160;                         + eta_arr(ie,je  ,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
-<div class="line"><a name="l01818"></a><span class="lineno"> 1818</span>&#160;            eta   = amrex::max(eta,<a class="code" href="structdonelan__flux.html#aac38c6d44658be0daa32dc8bd0b29adb">eta_eps</a>);</div>
-<div class="line"><a name="l01819"></a><span class="lineno"> 1819</span>&#160;            dest_arr(i,j,k,icomp) = dest_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,icomp) + stressy/eta*deltaz;</div>
-<div class="line"><a name="l01820"></a><span class="lineno"> 1820</span>&#160;        }</div>
-<div class="line"><a name="l01821"></a><span class="lineno"> 1821</span>&#160; </div>
-<div class="line"><a name="l01822"></a><span class="lineno"> 1822</span>&#160;        <span class="keywordflow">return</span> stressy;</div>
-<div class="line"><a name="l01823"></a><span class="lineno"> 1823</span>&#160;    }</div>
+<div class="line"><a name="l01790"></a><span class="lineno"> 1790</span>&#160;        <span class="keywordtype">int</span> jxlo = j &lt;= lbound(velx_arr).y ? lbound(velx_arr).y : j-1;</div>
+<div class="line"><a name="l01791"></a><span class="lineno"> 1791</span>&#160;        <span class="keywordtype">int</span> jxhi = j &gt;  ubound(velx_arr).y ? ubound(velx_arr).y : j;</div>
+<div class="line"><a name="l01792"></a><span class="lineno"> 1792</span>&#160; </div>
+<div class="line"><a name="l01793"></a><span class="lineno"> 1793</span>&#160;        ic = i  &lt; lbound(cons_arr).x   ? lbound(cons_arr).x   : i;</div>
+<div class="line"><a name="l01794"></a><span class="lineno"> 1794</span>&#160;        jc = j  &lt; lbound(cons_arr).y+1 ? lbound(cons_arr).y+1 : j;</div>
+<div class="line"><a name="l01795"></a><span class="lineno"> 1795</span>&#160;        ic = ic &gt; ubound(cons_arr).x   ? ubound(cons_arr).x   : ic;</div>
+<div class="line"><a name="l01796"></a><span class="lineno"> 1796</span>&#160;        jc = jc &gt; ubound(cons_arr).y   ? ubound(cons_arr).y   : jc;</div>
+<div class="line"><a name="l01797"></a><span class="lineno"> 1797</span>&#160; </div>
+<div class="line"><a name="l01798"></a><span class="lineno"> 1798</span>&#160;        velx  = 0.25*( velx_arr(ix,jxhi,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>)+velx_arr(ix+1,jxhi,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>)</div>
+<div class="line"><a name="l01799"></a><span class="lineno"> 1799</span>&#160;                     + velx_arr(ix,jxlo,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>)+velx_arr(ix+1,jxlo,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>) );</div>
+<div class="line"><a name="l01800"></a><span class="lineno"> 1800</span>&#160;        vely  = vely_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>);</div>
+<div class="line"><a name="l01801"></a><span class="lineno"> 1801</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5*( cons_arr(ic,jc-1,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l01802"></a><span class="lineno"> 1802</span>&#160;                    + cons_arr(ic,jc  ,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l01803"></a><span class="lineno"> 1803</span>&#160; </div>
+<div class="line"><a name="l01804"></a><span class="lineno"> 1804</span>&#160;        amrex::Real Cd       = 0.001;</div>
+<div class="line"><a name="l01805"></a><span class="lineno"> 1805</span>&#160;        <span class="keyword">const</span> amrex::Real c  = 7e-5;</div>
+<div class="line"><a name="l01806"></a><span class="lineno"> 1806</span>&#160;        amrex::Real wsp      = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l01807"></a><span class="lineno"> 1807</span>&#160;        amrex::Real wsp_mean = 0.5 * ( umm_arr(ic,jc-1,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>) + umm_arr(ic,jc,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>) );</div>
+<div class="line"><a name="l01808"></a><span class="lineno"> 1808</span>&#160;        <span class="keywordflow">if</span> (wsp_mean &lt;= 5.0) {</div>
+<div class="line"><a name="l01809"></a><span class="lineno"> 1809</span>&#160;            Cd = 0.001;</div>
+<div class="line"><a name="l01810"></a><span class="lineno"> 1810</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (wsp_mean &lt; 25.0 &amp;&amp; wsp_mean &gt; 5.0) {</div>
+<div class="line"><a name="l01811"></a><span class="lineno"> 1811</span>&#160;            Cd = 0.001 + c * (wsp_mean - 5.0);</div>
+<div class="line"><a name="l01812"></a><span class="lineno"> 1812</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01813"></a><span class="lineno"> 1813</span>&#160;            Cd = 0.0024;</div>
+<div class="line"><a name="l01814"></a><span class="lineno"> 1814</span>&#160;        }</div>
+<div class="line"><a name="l01815"></a><span class="lineno"> 1815</span>&#160;        amrex::Real deltaz  = dz * (<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a> - k);</div>
+<div class="line"><a name="l01816"></a><span class="lineno"> 1816</span>&#160; </div>
+<div class="line"><a name="l01817"></a><span class="lineno"> 1817</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;v&#39;w&#39;&gt; = -K dvdz</span></div>
+<div class="line"><a name="l01818"></a><span class="lineno"> 1818</span>&#160;        amrex::Real stressy = -<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * Cd * vely * wsp;</div>
+<div class="line"><a name="l01819"></a><span class="lineno"> 1819</span>&#160; </div>
+<div class="line"><a name="l01820"></a><span class="lineno"> 1820</span>&#160;        <span class="keywordflow">if</span> (exp_most) {</div>
+<div class="line"><a name="l01821"></a><span class="lineno"> 1821</span>&#160;            <span class="comment">// surface gradient equal to gradient at first zface</span></div>
+<div class="line"><a name="l01822"></a><span class="lineno"> 1822</span>&#160;            amrex::Real vgrad = (vely_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>+1) - vely) / (0.5*(dz+dz1));</div>
+<div class="line"><a name="l01823"></a><span class="lineno"> 1823</span>&#160;            dest_arr(i,j,k,icomp) = vely - vgrad * deltaz;</div>
+<div class="line"><a name="l01824"></a><span class="lineno"> 1824</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01825"></a><span class="lineno"> 1825</span>&#160;            <span class="keywordtype">int</span> ie, je;</div>
+<div class="line"><a name="l01826"></a><span class="lineno"> 1826</span>&#160;            ie = i  &lt; lbound(eta_arr).x   ? lbound(eta_arr).x   : i;</div>
+<div class="line"><a name="l01827"></a><span class="lineno"> 1827</span>&#160;            je = j  &lt; lbound(eta_arr).y+1 ? lbound(eta_arr).y+1 : j;</div>
+<div class="line"><a name="l01828"></a><span class="lineno"> 1828</span>&#160;            ie = ie &gt; ubound(eta_arr).x   ? ubound(eta_arr).x   : ie;</div>
+<div class="line"><a name="l01829"></a><span class="lineno"> 1829</span>&#160;            je = je &gt; ubound(eta_arr).y   ? ubound(eta_arr).y   : je;</div>
+<div class="line"><a name="l01830"></a><span class="lineno"> 1830</span>&#160;            eta   = 0.5*(  eta_arr(ie,je-1,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
+<div class="line"><a name="l01831"></a><span class="lineno"> 1831</span>&#160;                         + eta_arr(ie,je  ,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
+<div class="line"><a name="l01832"></a><span class="lineno"> 1832</span>&#160;            eta   = amrex::max(eta,<a class="code" href="structdonelan__flux.html#aac38c6d44658be0daa32dc8bd0b29adb">eta_eps</a>);</div>
+<div class="line"><a name="l01833"></a><span class="lineno"> 1833</span>&#160;            dest_arr(i,j,k,icomp) = dest_arr(i,j,<a class="code" href="structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b">zlo</a>,icomp) + stressy/eta*deltaz;</div>
+<div class="line"><a name="l01834"></a><span class="lineno"> 1834</span>&#160;        }</div>
+<div class="line"><a name="l01835"></a><span class="lineno"> 1835</span>&#160; </div>
+<div class="line"><a name="l01836"></a><span class="lineno"> 1836</span>&#160;        <span class="keywordflow">return</span> stressy;</div>
+<div class="line"><a name="l01837"></a><span class="lineno"> 1837</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

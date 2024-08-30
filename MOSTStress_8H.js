@@ -21,6 +21,5 @@ var MOSTStress_8H =
     [ "donelan_flux", "structdonelan__flux.html", "structdonelan__flux" ],
     [ "custom_flux", "structcustom__flux.html", "structcustom__flux" ],
     [ "rotate_flux", "structrotate__flux.html", "structrotate__flux" ],
-    [ "air_viscosity", "MOSTStress_8H.html#a83577688af6d1136ab7a0be1b16f4674", null ],
-    [ "WSMIN", "MOSTStress_8H.html#a267a6d14795f9c46a0845fc44c93c0f2", null ]
+    [ "air_viscosity", "MOSTStress_8H.html#a83577688af6d1136ab7a0be1b16f4674", null ]
 ];

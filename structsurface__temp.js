@@ -4,5 +4,6 @@ var structsurface__temp =
     [ "iterate_flux", "structsurface__temp.html#a5871a69ecd45836e43e208d094bf4a4a", null ],
     [ "mdata", "structsurface__temp.html#afec351f7cde260c6e96a27297cb4010f", null ],
     [ "sfuns", "structsurface__temp.html#a66e248c3558685f25206441914e8dfbf", null ],
-    [ "tol", "structsurface__temp.html#a7c4031cfb8cbb020115ee7fae12ddb05", null ]
+    [ "tol", "structsurface__temp.html#a7c4031cfb8cbb020115ee7fae12ddb05", null ],
+    [ "WSMIN", "structsurface__temp.html#aeb169255fca0a94d9fb3a74c62606eed", null ]
 ];

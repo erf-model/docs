@@ -120,7 +120,7 @@ var searchData=
   ['turbstruct_2eh_2174',['TurbStruct.H',['../TurbStruct_8H.html',1,'']]],
   ['turbulentperturbation_2175',['TurbulentPerturbation',['../structTurbulentPerturbation.html',1,'']]],
   ['twoway_2176',['TwoWay',['../DataStruct_8H.html#ad285be248c0803917aaf5cf8ce62139ba6c267346f8ebb889610a5a90838be815',1,'DataStruct.H']]],
-  ['type_2177',['Type',['../classSatMethods.html#a62096d95f324cd2a3504554437067ef7',1,'SatMethods']]],
-  ['type_2178',['type',['../structMamConstituents_1_1mode__component__t.html#a96f5cdd50364b1e2760b1cb4e88cd153',1,'MamConstituents::mode_component_t']]],
+  ['type_2177',['type',['../structMamConstituents_1_1mode__component__t.html#a96f5cdd50364b1e2760b1cb4e88cd153',1,'MamConstituents::mode_component_t']]],
+  ['type_2178',['Type',['../classSatMethods.html#a62096d95f324cd2a3504554437067ef7',1,'SatMethods']]],
   ['types_2179',['types',['../structMamConstituents_1_1modes__t.html#aea58b375f13ddc20860b2bd2a183899b',1,'MamConstituents::modes_t']]]
 ];

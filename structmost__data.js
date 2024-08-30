@@ -1,6 +1,6 @@
 var structmost__data =
 [
-    [ "Bjr_beta", "structmost__data.html#ab614f0d7ee8834980cacdb98ef5dc899", null ],
+    [ "Bjr_beta", "structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d", null ],
     [ "Cnk_a", "structmost__data.html#a83c3a7004441c335b630dd2d6973f518", null ],
     [ "Cnk_b", "structmost__data.html#a51b78fb4a4b8fb6aa512d4bd4fcd3cd7", null ],
     [ "Cnk_b1", "structmost__data.html#acfac0135facabddbdd699609bac908e4", null ],
