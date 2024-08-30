@@ -43,6 +43,7 @@ var classABLMost =
     [ "get_zref", "classABLMost.html#ae638411093a2d3cc6cc525d4d7efa7ed", null ],
     [ "have_variable_sea_roughness", "classABLMost.html#a4c4d9a950ce5f1115f701100795ac405", null ],
     [ "impose_most_bcs", "classABLMost.html#aa6c480227398080885f5bd48466c71e0", null ],
+    [ "lmask_min_reduce", "classABLMost.html#a4a8ee389a82fe46164ffed9417500a98", null ],
     [ "read_custom_roughness", "classABLMost.html#a659a78a3d5c58ec4dff9ea0933413474", null ],
     [ "time_interp_sst", "classABLMost.html#aaeef06eb7d0ab7e3d100e583337121cc", null ],
     [ "update_fluxes", "classABLMost.html#af82057d4fbaaf1d8347cf18c7efd7b53", null ],
