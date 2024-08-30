@@ -27,6 +27,7 @@ var classERF =
     [ "derive_stress_profiles_stag", "classERF.html#ae09680325ba108583147eb2e254a266e", null ],
     [ "derive_upwp", "classERF.html#af1981699bedbbfd6785f26ca340a74d8", null ],
     [ "erf_enforce_hse", "classERF.html#add029fcf0244ea86d2e0b419a2c6ef52", null ],
+    [ "ERF_shared", "classERF.html#aab5871c91a4d8888c110865e9d35e8b2", null ],
     [ "ErrorEst", "classERF.html#a18e6dbbf968b4492e78aa427791620f4", null ],
     [ "estTimeStep", "classERF.html#a6b1d727e63de2e49aa4f8e00b0dda1d5", null ],
     [ "Evolve", "classERF.html#a0be12798b46f52fa4b5a995f147c3f96", null ],
