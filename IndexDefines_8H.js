@@ -1,6 +1,8 @@
 var IndexDefines_8H =
 [
+    [ "NDRY", "IndexDefines_8H.html#a38d6fda9ca3d40309838c64d398b54c1", null ],
     [ "NMOIST_max", "IndexDefines_8H.html#abe87e298e9d558e0659a67ad3b9be71f", null ],
+    [ "NSCALARS", "IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9", null ],
     [ "NVAR_max", "IndexDefines_8H.html#a46e292b965f80d15acfbdc11ffe1e0f0", null ],
     [ "PrimKE_comp", "IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2", null ],
     [ "PrimQ1_comp", "IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29", null ],

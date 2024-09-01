@@ -1,5 +1,8 @@
 var NAVTREEINDEX12 =
 {
+"structSolverChoice.html#a596f061b796ada0389c81a6125150b6e":[2,0,73,20],
+"structSolverChoice.html#a5a9eef80b6339778c29acb7fb87dd9f1":[2,0,73,36],
+"structSolverChoice.html#a5aed4016dd7d17a2d2904c60af59ae9d":[2,0,73,44],
 "structSolverChoice.html#a5e8754b29072596a584633734a9f64ef":[2,0,73,17],
 "structSolverChoice.html#a63b6fffe930de9eb25f92c2bafb00c00":[2,0,73,27],
 "structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf":[2,0,73,49],
@@ -246,8 +249,5 @@ var NAVTREEINDEX12 =
 "structadiabatic__donelan.html":[2,0,4],
 "structadiabatic__donelan.html#a190709c5c95b8f0eae6b8b2e89bac0ab":[2,0,4,3],
 "structadiabatic__donelan.html#a22f8894821e62c7be32e764b2855a6ea":[2,0,4,5],
-"structadiabatic__donelan.html#a2ad15699c4fd0a566c45dca957df4e48":[2,0,4,1],
-"structadiabatic__donelan.html#a624c0ce51ab19d526d3e934735770bb0":[2,0,4,0],
-"structadiabatic__donelan.html#a6b220db789638a784c51dfedcda1ffb9":[2,0,4,2],
-"structadiabatic__donelan.html#aaba2ad764346c1a35eacc4b89c993bea":[2,0,4,4]
+"structadiabatic__donelan.html#a2ad15699c4fd0a566c45dca957df4e48":[2,0,4,1]
 };
