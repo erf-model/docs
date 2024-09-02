@@ -150,12 +150,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a89aa48bf7a37eb4dc0f4b9de65823d14"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Thetav_8H.html#a89aa48bf7a37eb4dc0f4b9de65823d14">Thetav</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int moist_flag)</td></tr>
-<tr class="separator:a89aa48bf7a37eb4dc0f4b9de65823d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7af8b3624ec46045f269761983ec238e"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int RhoQv_comp, const int RhoQr_comp)</td></tr>
+<tr class="separator:a7af8b3624ec46045f269761983ec238e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a89aa48bf7a37eb4dc0f4b9de65823d14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89aa48bf7a37eb4dc0f4b9de65823d14">&#9670;&nbsp;</a></span>Thetav()</h2>
+<a id="a7af8b3624ec46045f269761983ec238e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7af8b3624ec46045f269761983ec238e">&#9670;&nbsp;</a></span>Thetav()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,7 +188,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>moist_flag</em>&#160;</td>
+          <td class="paramname"><em>RhoQv_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>RhoQr_comp</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -197,38 +203,38 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    amrex::Real thetav = cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (moist_flag &gt; <a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="comment">// RhoQr_comp == moist_flag</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        thetav *= (1.0 + 0.61 * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                              - cell_data(i,j,k,moist_flag) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (moist_flag &gt; 0) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="comment">// We only have Qv</span></div>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    amrex::Real thetav = cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (RhoQr_comp &gt; 0) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        thetav *= (1.0 + 0.61 * cell_data(i,j,k,RhoQv_comp) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                              - cell_data(i,j,k,RhoQr_comp) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (RhoQv_comp &gt; 0) {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        thetav *= (1.0 + 0.61 * cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / cell_data(i,j,k,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> thetav;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> thetav;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:27</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:28</div></div>
 <div class="ttc" id="aIndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:34</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="structMYNNPBLH.html#a63a448036d5499ca7e6047d98aabd509">MYNNPBLH::compute_pblh()</a>, and <a class="el" href="PBLModels_8H.html#a2bc95ec6cec40da1f58308293b91f340">ComputeVerticalDerivativesPBL()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structMYNNPBLH.html#a3911e13c78754ba2bf50e3e94f74bba8">MYNNPBLH::compute_pblh()</a>, and <a class="el" href="PBLModels_8H.html#a92e9438bf82154dc036df6c17fa6b02f">ComputeVerticalDerivativesPBL()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Thetav_8H_a89aa48bf7a37eb4dc0f4b9de65823d14_icgraph.png" border="0" usemap="#aThetav_8H_a89aa48bf7a37eb4dc0f4b9de65823d14_icgraph" alt=""/></div>
-<map name="aThetav_8H_a89aa48bf7a37eb4dc0f4b9de65823d14_icgraph" id="aThetav_8H_a89aa48bf7a37eb4dc0f4b9de65823d14_icgraph">
+<div class="center"><img src="Thetav_8H_a7af8b3624ec46045f269761983ec238e_icgraph.png" border="0" usemap="#aThetav_8H_a7af8b3624ec46045f269761983ec238e_icgraph" alt=""/></div>
+<map name="aThetav_8H_a7af8b3624ec46045f269761983ec238e_icgraph" id="aThetav_8H_a7af8b3624ec46045f269761983ec238e_icgraph">
 <area shape="rect" title=" " alt="" coords="991,31,1057,57"/>
-<area shape="rect" href="structMYNNPBLH.html#a63a448036d5499ca7e6047d98aabd509" title=" " alt="" coords="730,5,926,32"/>
-<area shape="rect" href="PBLModels_8H.html#a2bc95ec6cec40da1f58308293b91f340" title=" " alt="" coords="713,56,943,83"/>
-<area shape="rect" href="ComputeDiffusivityMYNN25_8cpp.html#accc4d7a384dbce9e688e1f2443c442d8" title=" " alt="" coords="461,5,665,32"/>
+<area shape="rect" href="structMYNNPBLH.html#a3911e13c78754ba2bf50e3e94f74bba8" title=" " alt="" coords="730,5,926,32"/>
+<area shape="rect" href="PBLModels_8H.html#a92e9438bf82154dc036df6c17fa6b02f" title=" " alt="" coords="713,56,943,83"/>
+<area shape="rect" href="ComputeDiffusivityMYNN25_8cpp.html#a4b51698073bd67922bc46675fce968cf" title=" " alt="" coords="461,5,665,32"/>
 <area shape="rect" href="ComputeDiffusivityYSU_8cpp.html#a22f1a268ea7d16d0817f082a47ffc98a" title=" " alt="" coords="476,56,651,83"/>
-<area shape="rect" href="PBLModels_8H.html#a70a3b1d4f525d2026fad128a314f802f" title=" " alt="" coords="468,107,659,133"/>
-<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#adc476dcc0cf2c0b05b86357cb4835c60" title=" " alt="" coords="213,19,413,45"/>
+<area shape="rect" href="PBLModels_8H.html#ae68a993bcf33372d71160581e5f697fc" title=" " alt="" coords="468,107,659,133"/>
+<area shape="rect" href="ComputeTurbulentViscosity_8cpp.html#a3865612b809df828f44e9c18218b1e37" title=" " alt="" coords="213,19,413,45"/>
 <area shape="rect" href="classERF.html#af836d1bb05ac4c9f535358e14714f13e" title=" " alt="" coords="5,19,165,45"/>
-<area shape="rect" href="DiffusionSrcForState__N_8cpp.html#a8834e52a9bc7b96d1213dc0b2abf1ec2" title=" " alt="" coords="228,81,399,108"/>
-<area shape="rect" href="DiffusionSrcForState__T_8cpp.html#abce056fd5dcf7bf5e961d351adb72df4" title=" " alt="" coords="229,132,398,159"/>
+<area shape="rect" href="DiffusionSrcForState__N_8cpp.html#a61d842d8a45b6d97948ce19b106bba0a" title=" " alt="" coords="228,81,399,108"/>
+<area shape="rect" href="DiffusionSrcForState__T_8cpp.html#aa9ad4aa5331cda9e8e5c6dd2f190aba7" title=" " alt="" coords="229,132,398,159"/>
 </map>
 </div>
 

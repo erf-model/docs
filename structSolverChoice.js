@@ -48,6 +48,8 @@ var structSolverChoice =
     [ "rayleigh_damp_V", "structSolverChoice.html#a1bae456f7b26e8ed50d78ce1af1b5ef0", null ],
     [ "rayleigh_damp_W", "structSolverChoice.html#abf35af2e52f5c1197264d895396ca59c", null ],
     [ "rdOcp", "structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a", null ],
+    [ "RhoQr_comp", "structSolverChoice.html#a1d9237205fd632dcde1599511f203131", null ],
+    [ "RhoQv_comp", "structSolverChoice.html#a9ac649bbebc73403e291d2af180d4061", null ],
     [ "sampling_distance_by_D", "structSolverChoice.html#a9029114db3f1983d2d720210dcf87c69", null ],
     [ "sinphi", "structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf", null ],
     [ "spongeChoice", "structSolverChoice.html#ac066852f06a6409e1638f59868b7c57d", null ],
