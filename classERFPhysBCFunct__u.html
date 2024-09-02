@@ -327,7 +327,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    Gpu::copyAsync(Gpu::hostToDevice, bcrs.begin(), bcrs.end(), bcrs_d.begin());</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> BCRec* bc_ptr = bcrs_d.data();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    GpuArray&lt;GpuArray&lt;Real, AMREX_SPACEDIM*2&gt;,AMREX_SPACEDIM+<a class="code" href="IndexDefines_8H.html#a46e292b965f80d15acfbdc11ffe1e0f0">NVAR_max</a>&gt; l_bc_extdir_vals_d;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    GpuArray&lt;GpuArray&lt;Real, AMREX_SPACEDIM*2&gt;,1&gt; l_bc_extdir_vals_d;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ncomp; i++)</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ori = 0; ori &lt; 2*AMREX_SPACEDIM; ori++)</div>
@@ -443,7 +443,6 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    Gpu::streamSynchronize();</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
-<div class="ttc" id="aIndexDefines_8H_html_a46e292b965f80d15acfbdc11ffe1e0f0"><div class="ttname"><a href="IndexDefines_8H.html#a46e292b965f80d15acfbdc11ffe1e0f0">NVAR_max</a></div><div class="ttdeci">#define NVAR_max</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:24</div></div>
 <div class="ttc" id="aclassERFPhysBCFunct__u_html_a9b203cbd4f9a1fd40961067424ae5f81"><div class="ttname"><a href="classERFPhysBCFunct__u.html#a9b203cbd4f9a1fd40961067424ae5f81">ERFPhysBCFunct_u::impose_lateral_xvel_bcs</a></div><div class="ttdeci">void impose_lateral_xvel_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int bccomp)</div><div class="ttdef"><b>Definition:</b> BoundaryConditions_xvel.cpp:17</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a></div><div class="ttdeci">@ open</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:167</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705">ERFBCType::reflect_odd</a></div><div class="ttdeci">@ reflect_odd</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:157</div></div>
@@ -534,7 +533,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    Gpu::copyAsync(Gpu::hostToDevice, bcrs.begin(), bcrs.end(), bcrs_d.begin());</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keyword">const</span> BCRec* bc_ptr = bcrs_d.data();</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    GpuArray&lt;GpuArray&lt;Real, AMREX_SPACEDIM*2&gt;,AMREX_SPACEDIM+<a class="code" href="IndexDefines_8H.html#a46e292b965f80d15acfbdc11ffe1e0f0">NVAR_max</a>&gt; l_bc_extdir_vals_d;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    GpuArray&lt;GpuArray&lt;Real, AMREX_SPACEDIM*2&gt;,1&gt; l_bc_extdir_vals_d;</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ncomp; i++)</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ori = 0; ori &lt; 2*AMREX_SPACEDIM; ori++)</div>
