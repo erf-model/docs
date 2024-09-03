@@ -1,12 +1,12 @@
 var classERFPhysBCFunct__cons =
 [
-    [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html#a12eafafca9393d7099b88368845a9cf7", null ],
+    [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html#a946d62bb44e2344fac3fe34ed4c27d3a", null ],
     [ "~ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html#ab1f895ffdda9477b380a088bdf48a6de", null ],
-    [ "impose_lateral_cons_bcs", "classERFPhysBCFunct__cons.html#a4eecb0d3283fae6a0c0d523364537c43", null ],
-    [ "impose_vertical_cons_bcs", "classERFPhysBCFunct__cons.html#ad56fdfadfae102cf4e7419eaf756cb80", null ],
+    [ "impose_lateral_cons_bcs", "classERFPhysBCFunct__cons.html#a150af9888a6eecc66230896ba7ad2558", null ],
+    [ "impose_vertical_cons_bcs", "classERFPhysBCFunct__cons.html#a22d846e0ea593afa850ece78233013ee", null ],
     [ "operator()", "classERFPhysBCFunct__cons.html#a117a7e4d21a16df5748a801f530b22c7", null ],
-    [ "m_bc_extdir_vals", "classERFPhysBCFunct__cons.html#a75abbe15fe3c056e3ee6c5b250bdac44", null ],
-    [ "m_bc_neumann_vals", "classERFPhysBCFunct__cons.html#a4ddeefc7be1abe021ebcdb272fc9db45", null ],
+    [ "m_bc_extdir_vals", "classERFPhysBCFunct__cons.html#a2765ac9561c270b92ef8bd77c3c96045", null ],
+    [ "m_bc_neumann_vals", "classERFPhysBCFunct__cons.html#a390ff8852b8e8807798c1adff0dc4a75", null ],
     [ "m_domain_bcs_type", "classERFPhysBCFunct__cons.html#ab131fcff8649a5dde5f39fe890b6b383", null ],
     [ "m_domain_bcs_type_d", "classERFPhysBCFunct__cons.html#aa39c1df9dc816a85f84c43c1b065be35", null ],
     [ "m_geom", "classERFPhysBCFunct__cons.html#a1a3121bc392962a3c3149a6e2db2791b", null ],

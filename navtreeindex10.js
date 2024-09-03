@@ -1,5 +1,7 @@
 var NAVTREEINDEX10 =
 {
+"functions_func_s.html":[2,3,1,17],
+"functions_func_t.html":[2,3,1,18],
 "functions_func_u.html":[2,3,1,19],
 "functions_func_v.html":[2,3,1,20],
 "functions_func_w.html":[2,3,1,21],
@@ -23,8 +25,8 @@ var NAVTREEINDEX10 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX10 =
 "structCENTERED4.html#affba80f935c74285d66f7b86c7b859db":[2,0,10,6],
 "structCENTERED6.html":[2,0,11],
 "structCENTERED6.html#a16a6ea9f7d0663518b97353b2224ee33":[2,0,11,3],
-"structCENTERED6.html#a32c3566f07adb5481cf94c54893a4206":[2,0,11,6],
-"structCENTERED6.html#a6ffd5cab531876c4cb61598e3021e401":[2,0,11,5],
-"structCENTERED6.html#a732a4a686c30a3233c939f453b74f0b9":[2,0,11,8]
+"structCENTERED6.html#a32c3566f07adb5481cf94c54893a4206":[2,0,11,6]
 };
