@@ -755,7 +755,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>) {</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  bx_lo = lbound(bx);</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  bx_hi = ubound(bx);</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="keyword">const</span> BCRec* bc_ptr_h = bcrs.data();</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="comment">// Neumann conditions (d&lt;var&gt;/dn = 0) must be aware of the surface normal with terrain.</span></div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="comment">// An additional source term arises from d&lt;var&gt;/dx &amp; d&lt;var&gt;/dy &amp; met_h_xi/eta/zeta.</span></div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="comment">//=====================================================================================</span></div>
@@ -764,7 +764,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            <span class="comment">// Hit for Neumann condition at kmin</span></div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            <span class="keywordtype">int</span> dest_comp = icomp+n;</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            <span class="keywordtype">int</span> l_bc_type = bc_ptr[n].lo(2);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            <span class="keywordtype">int</span> l_bc_type = bc_ptr_h[n].lo(2);</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            <span class="keywordflow">if</span>(l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>)</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            {</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                <span class="comment">// Loop over ghost cells in bottom XY-plane (valid box)</span></div>
