@@ -1,6 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"dir_87c27e56fd01e6f1a6e2085b6fe8a1a5.html":[3,0,1,0],
 "dir_8e137399e310a4eba9aad8aaa56311f6.html":[3,0,1,7,1],
 "dir_988434024952cd186327a8c7555a3c66.html":[3,0,1,8],
 "dir_9a689d3cc574517c40c68b6e60e836b7.html":[3,0,1,7],
@@ -20,8 +19,8 @@ var NAVTREEINDEX10 =
 "eb__if_8H_source.html":[3,0,1,4,2],
 "eb__regular_8cpp.html":[3,0,1,4,3],
 "files.html":[3,0],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -73,8 +72,8 @@ var NAVTREEINDEX10 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -158,8 +157,8 @@ var NAVTREEINDEX10 =
 "globals_y.html":[3,1,0,23],
 "globals_z.html":[3,1,0,24],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX10 =
 "namespacemembers.html":[1,1,0],
 "namespacemembers_enum.html":[1,1,3],
 "namespacemembers_eval.html":[1,1,4],
-"namespacemembers_func.html":[1,1,1]
+"namespacemembers_func.html":[1,1,1],
+"namespacemembers_vars.html":[1,1,2]
 };
