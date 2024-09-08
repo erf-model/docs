@@ -12,7 +12,6 @@ var classERF =
     [ "AverageDown", "classERF.html#a8202de1f8f372e3e6fdc483447c6a55f", null ],
     [ "AverageDownTo", "classERF.html#ae17524f168760cf435685a08d97480e7", null ],
     [ "build_fine_mask", "classERF.html#af46289079e053a6d74ddef0bf1a5d8a3", null ],
-    [ "ChopGrids2D", "classERF.html#af001da1427ad419b90583969e250ffd1", null ],
     [ "ClearLevel", "classERF.html#ac44e400a7ce68e18fa44e9416cb1344e", null ],
     [ "cloud_fraction", "classERF.html#a0f6effb7eeed11385b20e4bbf516b459", null ],
     [ "ComputeDt", "classERF.html#aa38639155e79bab8a0c283aa6e7afa81", null ],
