@@ -1,7 +1,7 @@
 var dir_7bb2838aff122ee7773366ab73f450cd =
 [
-    [ "AdvanceEWP.cpp", "AdvanceEWP_8cpp.html", null ],
-    [ "EWP.H", "EWP_8H.html", [
+    [ "ERF_AdvanceEWP.cpp", "ERF__AdvanceEWP_8cpp.html", null ],
+    [ "ERF_EWP.H", "ERF__EWP_8H.html", [
       [ "EWP", "classEWP.html", "classEWP" ]
     ] ]
 ];

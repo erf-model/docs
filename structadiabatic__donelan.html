@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('structadiabatic__donelan.html',''); in
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="MOSTStress_8H_source.html">MOSTStress.H</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ERF__MOSTStress_8H_source.html">ERF_MOSTStress.H</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for adiabatic_donelan:</div>
 <div class="dyncontent">
@@ -163,9 +163,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <a class="code" href="structadiabatic__donelan.html#a6b220db789638a784c51dfedcda1ffb9">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> = zref;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <a class="code" href="structadiabatic__donelan.html#a6b220db789638a784c51dfedcda1ffb9">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a> = flux;</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
-<div class="ttc" id="astructadiabatic__donelan_html_a6b220db789638a784c51dfedcda1ffb9"><div class="ttname"><a href="structadiabatic__donelan.html#a6b220db789638a784c51dfedcda1ffb9">adiabatic_donelan::mdata</a></div><div class="ttdeci">most_data mdata</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:319</div></div>
-<div class="ttc" id="astructmost__data_html_a1acd5276639042ca0834c56656302ea6"><div class="ttname"><a href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">most_data::zref</a></div><div class="ttdeci">amrex::Real zref</div><div class="ttdoc">Reference height (m)</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:15</div></div>
-<div class="ttc" id="astructmost__data_html_af1d069399319831cf4ae17fba1dda19f"><div class="ttname"><a href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">most_data::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdoc">Heat flux.</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:19</div></div>
+<div class="ttc" id="astructadiabatic__donelan_html_a6b220db789638a784c51dfedcda1ffb9"><div class="ttname"><a href="structadiabatic__donelan.html#a6b220db789638a784c51dfedcda1ffb9">adiabatic_donelan::mdata</a></div><div class="ttdeci">most_data mdata</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:319</div></div>
+<div class="ttc" id="astructmost__data_html_a1acd5276639042ca0834c56656302ea6"><div class="ttname"><a href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">most_data::zref</a></div><div class="ttdeci">amrex::Real zref</div><div class="ttdoc">Reference height (m)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:15</div></div>
+<div class="ttc" id="astructmost__data_html_af1d069399319831cf4ae17fba1dda19f"><div class="ttname"><a href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">most_data::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdoc">Heat flux.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:19</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -313,7 +313,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        u_star_arr(i,j,k) = <a class="code" href="structadiabatic__donelan.html#a6b220db789638a784c51dfedcda1ffb9">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / std::log(<a class="code" href="structadiabatic__donelan.html#a6b220db789638a784c51dfedcda1ffb9">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k));</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">do</span> {</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            ustar = u_star_arr(i,j,k);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            z0    = <a class="code" href="MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860">Donelan_roughness</a>(ustar);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            z0    = <a class="code" href="ERF__MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860">Donelan_roughness</a>(ustar);</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structadiabatic__donelan.html#a6b220db789638a784c51dfedcda1ffb9">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / std::log(<a class="code" href="structadiabatic__donelan.html#a6b220db789638a784c51dfedcda1ffb9">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0);</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            ++iter;</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structadiabatic__donelan.html#aaba2ad764346c1a35eacc4b89c993bea">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
@@ -322,17 +322,17 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;          olen_arr(i,j,k) = 1.0e16;</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            z0_arr(i,j,k) = z0;</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    }</div>
-<div class="ttc" id="aMOSTRoughness_8H_html_a5b6ef1e185702e95631d5f22ff728860"><div class="ttname"><a href="MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860">Donelan_roughness</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Donelan_roughness(amrex::Real ustar)</div><div class="ttdef"><b>Definition:</b> MOSTRoughness.H:29</div></div>
-<div class="ttc" id="astructadiabatic__donelan_html_a22f8894821e62c7be32e764b2855a6ea"><div class="ttname"><a href="structadiabatic__donelan.html#a22f8894821e62c7be32e764b2855a6ea">adiabatic_donelan::WSMIN</a></div><div class="ttdeci">const amrex::Real WSMIN</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:322</div></div>
-<div class="ttc" id="astructadiabatic__donelan_html_aaba2ad764346c1a35eacc4b89c993bea"><div class="ttname"><a href="structadiabatic__donelan.html#aaba2ad764346c1a35eacc4b89c993bea">adiabatic_donelan::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:321</div></div>
-<div class="ttc" id="astructmost__data_html_a73da7dc37cb1555348e956a4e2c932fe"><div class="ttname"><a href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">most_data::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:17</div></div>
+<div class="ttc" id="aERF__MOSTRoughness_8H_html_a5b6ef1e185702e95631d5f22ff728860"><div class="ttname"><a href="ERF__MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860">Donelan_roughness</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Donelan_roughness(amrex::Real ustar)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTRoughness.H:29</div></div>
+<div class="ttc" id="astructadiabatic__donelan_html_a22f8894821e62c7be32e764b2855a6ea"><div class="ttname"><a href="structadiabatic__donelan.html#a22f8894821e62c7be32e764b2855a6ea">adiabatic_donelan::WSMIN</a></div><div class="ttdeci">const amrex::Real WSMIN</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:322</div></div>
+<div class="ttc" id="astructadiabatic__donelan_html_aaba2ad764346c1a35eacc4b89c993bea"><div class="ttname"><a href="structadiabatic__donelan.html#aaba2ad764346c1a35eacc4b89c993bea">adiabatic_donelan::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:321</div></div>
+<div class="ttc" id="astructmost__data_html_a73da7dc37cb1555348e956a4e2c932fe"><div class="ttname"><a href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">most_data::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:17</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structadiabatic__donelan_a2ad15699c4fd0a566c45dca957df4e48_cgraph.png" border="0" usemap="#astructadiabatic__donelan_a2ad15699c4fd0a566c45dca957df4e48_cgraph" alt=""/></div>
 <map name="astructadiabatic__donelan_a2ad15699c4fd0a566c45dca957df4e48_cgraph" id="astructadiabatic__donelan_a2ad15699c4fd0a566c45dca957df4e48_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,155,47"/>
-<area shape="rect" href="MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860" title=" " alt="" coords="203,13,353,39"/>
+<area shape="rect" href="ERF__MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860" title=" " alt="" coords="203,13,353,39"/>
 </map>
 </div>
 
@@ -434,7 +434,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Source/BoundaryConditions/<a class="el" href="MOSTStress_8H_source.html">MOSTStress.H</a></li>
+<li>Source/BoundaryConditions/<a class="el" href="ERF__MOSTStress_8H_source.html">ERF_MOSTStress.H</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,29 +1,29 @@
 var dir_6ac3198e61556f99812dcb8dcfabb874 =
 [
-    [ "Aero_rad_props.cpp", "Aero__rad__props_8cpp.html", null ],
-    [ "Aero_rad_props.H", "Aero__rad__props_8H.html", [
+    [ "ERF_Aero_rad_props.cpp", "ERF__Aero__rad__props_8cpp.html", null ],
+    [ "ERF_Aero_rad_props.H", "ERF__Aero__rad__props_8H.html", [
       [ "AerRadProps", "classAerRadProps.html", "classAerRadProps" ]
     ] ],
-    [ "Albedo.cpp", "Albedo_8cpp.html", "Albedo_8cpp" ],
-    [ "Albedo.H", "Albedo_8H.html", "Albedo_8H" ],
-    [ "Cloud_rad_props.cpp", "Cloud__rad__props_8cpp.html", null ],
-    [ "Cloud_rad_props.H", "Cloud__rad__props_8H.html", [
+    [ "ERF_Albedo.cpp", "ERF__Albedo_8cpp.html", "ERF__Albedo_8cpp" ],
+    [ "ERF_Albedo.H", "ERF__Albedo_8H.html", "ERF__Albedo_8H" ],
+    [ "ERF_Cloud_rad_props.cpp", "ERF__Cloud__rad__props_8cpp.html", null ],
+    [ "ERF_Cloud_rad_props.H", "ERF__Cloud__rad__props_8H.html", [
       [ "CloudRadProps", "classCloudRadProps.html", "classCloudRadProps" ]
     ] ],
-    [ "Ebert_curry.H", "Ebert__curry_8H.html", [
+    [ "ERF_Ebert_curry.H", "ERF__Ebert__curry_8H.html", [
       [ "EbertCurry", "classEbertCurry.html", "classEbertCurry" ]
     ] ],
-    [ "Finalize_rrtmgp.cpp", "Finalize__rrtmgp_8cpp.html", null ],
-    [ "Init_rrtmgp.cpp", "Init__rrtmgp_8cpp.html", null ],
-    [ "Linear_interpolate.H", "Linear__interpolate_8H.html", [
+    [ "ERF_Finalize_rrtmgp.cpp", "ERF__Finalize__rrtmgp_8cpp.html", null ],
+    [ "ERF_Init_rrtmgp.cpp", "ERF__Init__rrtmgp_8cpp.html", null ],
+    [ "ERF_Linear_interpolate.H", "ERF__Linear__interpolate_8H.html", [
       [ "LinInterp", "classLinInterp.html", "classLinInterp" ],
       [ "InterpType", "structLinInterp_1_1InterpType.html", "structLinInterp_1_1InterpType" ]
     ] ],
-    [ "m2005_effradius.H", "m2005__effradius_8H.html", "m2005__effradius_8H" ],
-    [ "Mam4_aero.H", "Mam4__aero_8H.html", [
+    [ "ERF_m2005_effradius.H", "ERF__m2005__effradius_8H.html", "ERF__m2005__effradius_8H" ],
+    [ "ERF_Mam4_aero.H", "ERF__Mam4__aero_8H.html", [
       [ "Mam4_aer", "classMam4__aer.html", "classMam4__aer" ]
     ] ],
-    [ "Mam4_constituents.H", "Mam4__constituents_8H.html", [
+    [ "ERF_Mam4_constituents.H", "ERF__Mam4__constituents_8H.html", [
       [ "MamConstituents", "classMamConstituents.html", "classMamConstituents" ],
       [ "mode_component_t", "structMamConstituents_1_1mode__component__t.html", "structMamConstituents_1_1mode__component__t" ],
       [ "modes_t", "structMamConstituents_1_1modes__t.html", "structMamConstituents_1_1modes__t" ],
@@ -33,31 +33,31 @@ var dir_6ac3198e61556f99812dcb8dcfabb874 =
       [ "aerlist_t", "structMamConstituents_1_1aerlist__t.html", "structMamConstituents_1_1aerlist__t" ],
       [ "modelist_t", "structMamConstituents_1_1modelist__t.html", "structMamConstituents_1_1modelist__t" ]
     ] ],
-    [ "Modal_aero_wateruptake.H", "Modal__aero__wateruptake_8H.html", [
+    [ "ERF_Modal_aero_wateruptake.H", "ERF__Modal__aero__wateruptake_8H.html", [
       [ "ModalAeroWateruptake", "classModalAeroWateruptake.html", "classModalAeroWateruptake" ]
     ] ],
-    [ "Optics.cpp", "Optics_8cpp.html", null ],
-    [ "Optics.H", "Optics_8H.html", [
+    [ "ERF_Optics.cpp", "ERF__Optics_8cpp.html", null ],
+    [ "ERF_Optics.H", "ERF__Optics_8H.html", [
       [ "Optics", "classOptics.html", "classOptics" ]
     ] ],
-    [ "Parameterizations.H", "Parameterizations_8H.html", "Parameterizations_8H" ],
-    [ "Phys_prop.H", "Phys__prop_8H.html", [
+    [ "ERF_Parameterizations.H", "ERF__Parameterizations_8H.html", "ERF__Parameterizations_8H" ],
+    [ "ERF_Phys_prop.H", "ERF__Phys__prop_8H.html", [
       [ "PhysProp", "classPhysProp.html", "classPhysProp" ],
       [ "physprop_t", "structPhysProp_1_1physprop__t.html", "structPhysProp_1_1physprop__t" ]
     ] ],
-    [ "Rad_constants.H", "Rad__constants_8H.html", [
+    [ "ERF_Rad_constants.H", "ERF__Rad__constants_8H.html", [
       [ "RadConstants", "classRadConstants.html", "classRadConstants" ]
     ] ],
-    [ "Radiation.cpp", "Radiation_8cpp.html", "Radiation_8cpp" ],
-    [ "Radiation.H", "Radiation_8H.html", [
+    [ "ERF_Radiation.cpp", "ERF__Radiation_8cpp.html", "ERF__Radiation_8cpp" ],
+    [ "ERF_Radiation.H", "ERF__Radiation_8H.html", [
       [ "Radiation", "classRadiation.html", "classRadiation" ]
     ] ],
-    [ "Rrtmgp.H", "Rrtmgp_8H.html", [
+    [ "ERF_Rrtmgp.H", "ERF__Rrtmgp_8H.html", [
       [ "Rrtmgp", "classRrtmgp.html", "classRrtmgp" ]
     ] ],
-    [ "Run_longwave_rrtmgp.cpp", "Run__longwave__rrtmgp_8cpp.html", null ],
-    [ "Run_shortwave_rrtmgp.cpp", "Run__shortwave__rrtmgp_8cpp.html", null ],
-    [ "Slingo.H", "Slingo_8H.html", [
+    [ "ERF_Run_longwave_rrtmgp.cpp", "ERF__Run__longwave__rrtmgp_8cpp.html", null ],
+    [ "ERF_Run_shortwave_rrtmgp.cpp", "ERF__Run__shortwave__rrtmgp_8cpp.html", null ],
+    [ "ERF_Slingo.H", "ERF__Slingo_8H.html", [
       [ "Slingo", "classSlingo.html", "classSlingo" ]
     ] ]
 ];

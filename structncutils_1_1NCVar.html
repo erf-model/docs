@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('structncutils_1_1NCVar.html',''); init
 <p>Representation of a NetCDF variable.  
  <a href="structncutils_1_1NCVar.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="NCInterface_8H_source.html">NCInterface.H</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ERF__NCInterface_8H_source.html">ERF_NCInterface.H</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for ncutils::NCVar:</div>
 <div class="dyncontent">
@@ -240,8 +240,8 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    check_nc_error(</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            nc_get_vara_text(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, start.data(), count.data(), dptr));</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
-<div class="ttc" id="astructncutils_1_1NCVar_html_a233d94aa3ccbef1cc12565340bcc7218"><div class="ttname"><a href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncutils::NCVar::ncid</a></div><div class="ttdeci">const int ncid</div><div class="ttdoc">File/Group identifier.</div><div class="ttdef"><b>Definition:</b> NCInterface.H:55</div></div>
-<div class="ttc" id="astructncutils_1_1NCVar_html_a2dce982c1ddb8f3b89b071bc3bf15532"><div class="ttname"><a href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">ncutils::NCVar::varid</a></div><div class="ttdeci">const int varid</div><div class="ttdoc">Variable ID used with NetCDF API.</div><div class="ttdef"><b>Definition:</b> NCInterface.H:58</div></div>
+<div class="ttc" id="astructncutils_1_1NCVar_html_a233d94aa3ccbef1cc12565340bcc7218"><div class="ttname"><a href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncutils::NCVar::ncid</a></div><div class="ttdeci">const int ncid</div><div class="ttdoc">File/Group identifier.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:55</div></div>
+<div class="ttc" id="astructncutils_1_1NCVar_html_a2dce982c1ddb8f3b89b071bc3bf15532"><div class="ttname"><a href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">ncutils::NCVar::varid</a></div><div class="ttdeci">const int varid</div><div class="ttdoc">Variable ID used with NetCDF API.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:58</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -692,7 +692,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    check_nc_error(nc_get_att_text(<a class="code" href="structncutils_1_1NCVar.html#a233d94aa3ccbef1cc12565340bcc7218">ncid</a>, <a class="code" href="structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532">varid</a>, <a class="code" href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">name</a>.data(), aval.data()));</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="keywordflow">return</span> std::string{aval.begin(), aval.end()};</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;}</div>
-<div class="ttc" id="astructncutils_1_1NCVar_html_a4b34f3722befd10e92d1267bcbd49724"><div class="ttname"><a href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">ncutils::NCVar::name</a></div><div class="ttdeci">std::string name() const</div><div class="ttdoc">Name of this variable.</div><div class="ttdef"><b>Definition:</b> NCInterface.cpp:50</div></div>
+<div class="ttc" id="astructncutils_1_1NCVar_html_a4b34f3722befd10e92d1267bcbd49724"><div class="ttname"><a href="structncutils_1_1NCVar.html#a4b34f3722befd10e92d1267bcbd49724">ncutils::NCVar::name</a></div><div class="ttdeci">std::string name() const</div><div class="ttdoc">Name of this variable.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:50</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1651,7 +1651,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> vshape;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="ttc" id="astructncutils_1_1NCVar_html_ae0ab15dc4c1033271878c3bf5102f911"><div class="ttname"><a href="structncutils_1_1NCVar.html#ae0ab15dc4c1033271878c3bf5102f911">ncutils::NCVar::ndim</a></div><div class="ttdeci">int ndim() const</div><div class="ttdoc">Number of array dimensions for this variable.</div><div class="ttdef"><b>Definition:</b> NCInterface.cpp:59</div></div>
+<div class="ttc" id="astructncutils_1_1NCVar_html_ae0ab15dc4c1033271878c3bf5102f911"><div class="ttname"><a href="structncutils_1_1NCVar.html#ae0ab15dc4c1033271878c3bf5102f911">ncutils::NCVar::ndim</a></div><div class="ttdeci">int ndim() const</div><div class="ttdoc">Number of array dimensions for this variable.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:59</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1702,8 +1702,8 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li>Source/IO/<a class="el" href="NCInterface_8H_source.html">NCInterface.H</a></li>
-<li>Source/IO/<a class="el" href="NCInterface_8cpp.html">NCInterface.cpp</a></li>
+<li>Source/IO/<a class="el" href="ERF__NCInterface_8H_source.html">ERF_NCInterface.H</a></li>
+<li>Source/IO/<a class="el" href="ERF__NCInterface_8cpp.html">ERF_NCInterface.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

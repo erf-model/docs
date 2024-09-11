@@ -1,19 +1,19 @@
 var dir_aba9de7b86b72c00c61e401832cdb2fc =
 [
-    [ "AdvStruct.H", "AdvStruct_8H.html", [
+    [ "ERF_AdvStruct.H", "ERF__AdvStruct_8H.html", [
       [ "AdvChoice", "structAdvChoice.html", "structAdvChoice" ]
     ] ],
-    [ "DataStruct.H", "DataStruct_8H.html", "DataStruct_8H" ],
-    [ "DiffStruct.H", "DiffStruct_8H.html", "DiffStruct_8H" ],
-    [ "InputSoundingData.H", "InputSoundingData_8H.html", [
+    [ "ERF_DataStruct.H", "ERF__DataStruct_8H.html", "ERF__DataStruct_8H" ],
+    [ "ERF_DiffStruct.H", "ERF__DiffStruct_8H.html", "ERF__DiffStruct_8H" ],
+    [ "ERF_InputSoundingData.H", "ERF__InputSoundingData_8H.html", [
       [ "InputSoundingData", "structInputSoundingData.html", "structInputSoundingData" ]
     ] ],
-    [ "InputSpongeData.H", "InputSpongeData_8H.html", [
+    [ "ERF_InputSpongeData.H", "ERF__InputSpongeData_8H.html", [
       [ "InputSpongeData", "structInputSpongeData.html", "structInputSpongeData" ]
     ] ],
-    [ "SpongeStruct.H", "SpongeStruct_8H.html", [
+    [ "ERF_SpongeStruct.H", "ERF__SpongeStruct_8H.html", [
       [ "SpongeChoice", "structSpongeChoice.html", "structSpongeChoice" ]
     ] ],
-    [ "TurbPertStruct.H", "TurbPertStruct_8H.html", "TurbPertStruct_8H" ],
-    [ "TurbStruct.H", "TurbStruct_8H.html", "TurbStruct_8H" ]
+    [ "ERF_TurbPertStruct.H", "ERF__TurbPertStruct_8H.html", "ERF__TurbPertStruct_8H" ],
+    [ "ERF_TurbStruct.H", "ERF__TurbStruct_8H.html", "ERF__TurbStruct_8H" ]
 ];

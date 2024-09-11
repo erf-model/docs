@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('structsurface__flux.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="MOSTStress_8H_source.html">MOSTStress.H</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ERF__MOSTStress_8H_source.html">ERF_MOSTStress.H</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for surface_flux:</div>
 <div class="dyncontent">
@@ -163,9 +163,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <a class="code" href="structsurface__flux.html#a960909fe387424192cf802afccdc7bed">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> = zref;</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <a class="code" href="structsurface__flux.html#a960909fe387424192cf802afccdc7bed">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a> = flux;</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    }</div>
-<div class="ttc" id="astructmost__data_html_a1acd5276639042ca0834c56656302ea6"><div class="ttname"><a href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">most_data::zref</a></div><div class="ttdeci">amrex::Real zref</div><div class="ttdoc">Reference height (m)</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:15</div></div>
-<div class="ttc" id="astructmost__data_html_af1d069399319831cf4ae17fba1dda19f"><div class="ttname"><a href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">most_data::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdoc">Heat flux.</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:19</div></div>
-<div class="ttc" id="astructsurface__flux_html_a960909fe387424192cf802afccdc7bed"><div class="ttname"><a href="structsurface__flux.html#a960909fe387424192cf802afccdc7bed">surface_flux::mdata</a></div><div class="ttdeci">most_data mdata</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:466</div></div>
+<div class="ttc" id="astructmost__data_html_a1acd5276639042ca0834c56656302ea6"><div class="ttname"><a href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">most_data::zref</a></div><div class="ttdeci">amrex::Real zref</div><div class="ttdoc">Reference height (m)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:15</div></div>
+<div class="ttc" id="astructmost__data_html_af1d069399319831cf4ae17fba1dda19f"><div class="ttname"><a href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">most_data::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdoc">Heat flux.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:19</div></div>
+<div class="ttc" id="astructsurface__flux_html_a960909fe387424192cf802afccdc7bed"><div class="ttname"><a href="structsurface__flux.html#a960909fe387424192cf802afccdc7bed">surface_flux::mdata</a></div><div class="ttdeci">most_data mdata</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:466</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -321,7 +321,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            tflux = <a class="code" href="structsurface__flux.html#a960909fe387424192cf802afccdc7bed">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a>*(1 + 0.61*qvm_arr(i,j,k)) - 0.61*tm_arr(i,j,k)*ustar*q_star_arr(i,j,k);</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;            <span class="keywordflow">if</span> (w_star_arr) {</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                <span class="comment">// update w* and Umagmean</span></div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                w_star_arr(i,j,k) = <a class="code" href="Wstar_8H.html#a07708294fc196cae6c560e47360c6600">calc_wstar</a>(tflux, pblh_arr(i,j,k), tvm_arr(i,j,k));</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                w_star_arr(i,j,k) = <a class="code" href="ERF__Wstar_8H.html#a07708294fc196cae6c560e47360c6600">calc_wstar</a>(tflux, pblh_arr(i,j,k), tvm_arr(i,j,k));</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                wstar = <a class="code" href="structsurface__flux.html#a960909fe387424192cf802afccdc7bed">mdata</a>.<a class="code" href="structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d">Bjr_beta</a> * w_star_arr(i,j,k);</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                umm = std::sqrt(umm_arr(i,j,k)*umm_arr(i,j,k) + wstar*wstar);</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                umm = std::max(umm, <a class="code" href="structsurface__flux.html#a6f66a7f868790814d4c30aee5c2502e5">WSMIN</a>);</div>
@@ -340,15 +340,15 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        t_star_arr(i,j,k) = -<a class="code" href="structsurface__flux.html#a960909fe387424192cf802afccdc7bed">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a> / u_star_arr(i,j,k);</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        olen_arr(i,j,k)   = Olen;</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    }</div>
-<div class="ttc" id="aWstar_8H_html_a07708294fc196cae6c560e47360c6600"><div class="ttname"><a href="Wstar_8H.html#a07708294fc196cae6c560e47360c6600">calc_wstar</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real calc_wstar(const amrex::Real &amp;ust, const amrex::Real &amp;tst, const amrex::Real &amp;qst, const amrex::Real &amp;pblh, const amrex::Real &amp;th, const amrex::Real &amp;thv, const amrex::Real &amp;qv=0.0)</div><div class="ttdef"><b>Definition:</b> Wstar.H:13</div></div>
-<div class="ttc" id="astructmost__data_html_a73da7dc37cb1555348e956a4e2c932fe"><div class="ttname"><a href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">most_data::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:17</div></div>
-<div class="ttc" id="astructmost__data_html_a7e3410c5a9916b84524bda4f324eec3b"><div class="ttname"><a href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">most_data::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdoc">Acceleration due to gravity (m/s^2)</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:18</div></div>
-<div class="ttc" id="astructmost__data_html_acdc883c0d7a7eb90774ea0c8e376d91d"><div class="ttname"><a href="structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d">most_data::Bjr_beta</a></div><div class="ttdeci">const amrex::Real Bjr_beta</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:28</div></div>
-<div class="ttc" id="astructsimilarity__funs_html_a21cb206b0dd78dc2ac7211de8dbcb8d2"><div class="ttname"><a href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">similarity_funs::calc_psi_m</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_m(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:40</div></div>
-<div class="ttc" id="astructsimilarity__funs_html_a7dcb32f637eab66d2314902d03289bc2"><div class="ttname"><a href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">similarity_funs::calc_psi_h</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_h(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:54</div></div>
-<div class="ttc" id="astructsurface__flux_html_a01e8827b2f7e84c4d72496993822d806"><div class="ttname"><a href="structsurface__flux.html#a01e8827b2f7e84c4d72496993822d806">surface_flux::sfuns</a></div><div class="ttdeci">similarity_funs sfuns</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:467</div></div>
-<div class="ttc" id="astructsurface__flux_html_a6f66a7f868790814d4c30aee5c2502e5"><div class="ttname"><a href="structsurface__flux.html#a6f66a7f868790814d4c30aee5c2502e5">surface_flux::WSMIN</a></div><div class="ttdeci">const amrex::Real WSMIN</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:469</div></div>
-<div class="ttc" id="astructsurface__flux_html_abd16b92a75ae384f9fe490b59f046b6a"><div class="ttname"><a href="structsurface__flux.html#abd16b92a75ae384f9fe490b59f046b6a">surface_flux::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:468</div></div>
+<div class="ttc" id="aERF__Wstar_8H_html_a07708294fc196cae6c560e47360c6600"><div class="ttname"><a href="ERF__Wstar_8H.html#a07708294fc196cae6c560e47360c6600">calc_wstar</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real calc_wstar(const amrex::Real &amp;ust, const amrex::Real &amp;tst, const amrex::Real &amp;qst, const amrex::Real &amp;pblh, const amrex::Real &amp;th, const amrex::Real &amp;thv, const amrex::Real &amp;qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_Wstar.H:13</div></div>
+<div class="ttc" id="astructmost__data_html_a73da7dc37cb1555348e956a4e2c932fe"><div class="ttname"><a href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">most_data::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:17</div></div>
+<div class="ttc" id="astructmost__data_html_a7e3410c5a9916b84524bda4f324eec3b"><div class="ttname"><a href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">most_data::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdoc">Acceleration due to gravity (m/s^2)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:18</div></div>
+<div class="ttc" id="astructmost__data_html_acdc883c0d7a7eb90774ea0c8e376d91d"><div class="ttname"><a href="structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d">most_data::Bjr_beta</a></div><div class="ttdeci">const amrex::Real Bjr_beta</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:28</div></div>
+<div class="ttc" id="astructsimilarity__funs_html_a21cb206b0dd78dc2ac7211de8dbcb8d2"><div class="ttname"><a href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">similarity_funs::calc_psi_m</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_m(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:40</div></div>
+<div class="ttc" id="astructsimilarity__funs_html_a7dcb32f637eab66d2314902d03289bc2"><div class="ttname"><a href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">similarity_funs::calc_psi_h</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_h(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:54</div></div>
+<div class="ttc" id="astructsurface__flux_html_a01e8827b2f7e84c4d72496993822d806"><div class="ttname"><a href="structsurface__flux.html#a01e8827b2f7e84c4d72496993822d806">surface_flux::sfuns</a></div><div class="ttdeci">similarity_funs sfuns</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:467</div></div>
+<div class="ttc" id="astructsurface__flux_html_a6f66a7f868790814d4c30aee5c2502e5"><div class="ttname"><a href="structsurface__flux.html#a6f66a7f868790814d4c30aee5c2502e5">surface_flux::WSMIN</a></div><div class="ttdeci">const amrex::Real WSMIN</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:469</div></div>
+<div class="ttc" id="astructsurface__flux_html_abd16b92a75ae384f9fe490b59f046b6a"><div class="ttname"><a href="structsurface__flux.html#abd16b92a75ae384f9fe490b59f046b6a">surface_flux::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:468</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -357,7 +357,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,78,188,105"/>
 <area shape="rect" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2" title=" " alt="" coords="236,5,389,47"/>
 <area shape="rect" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2" title=" " alt="" coords="236,71,389,112"/>
-<area shape="rect" href="Wstar_8H.html#a07708294fc196cae6c560e47360c6600" title=" " alt="" coords="267,137,358,163"/>
+<area shape="rect" href="ERF__Wstar_8H.html#a07708294fc196cae6c560e47360c6600" title=" " alt="" coords="267,137,358,163"/>
 </map>
 </div>
 
@@ -461,7 +461,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Source/BoundaryConditions/<a class="el" href="MOSTStress_8H_source.html">MOSTStress.H</a></li>
+<li>Source/BoundaryConditions/<a class="el" href="ERF__MOSTStress_8H_source.html">ERF_MOSTStress.H</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

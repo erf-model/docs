@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('structUPWIND3.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="Interpolation__UPW_8H_source.html">Interpolation_UPW.H</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ERF__Interpolation__UPW_8H_source.html">ERF_Interpolation_UPW.H</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for UPWIND3:</div>
 <div class="dyncontent">
@@ -156,7 +156,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        : <a class="code" href="structUPWIND3.html#a4f184417f94f60775a46357fbafe1cca">m_phi</a>(phi) {}</div>
-<div class="ttc" id="astructUPWIND3_html_a4f184417f94f60775a46357fbafe1cca"><div class="ttname"><a href="structUPWIND3.html#a4f184417f94f60775a46357fbafe1cca">UPWIND3::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:198</div></div>
+<div class="ttc" id="astructUPWIND3_html_a4f184417f94f60775a46357fbafe1cca"><div class="ttname"><a href="structUPWIND3.html#a4f184417f94f60775a46357fbafe1cca">UPWIND3::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:198</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -222,8 +222,8 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="comment">// Interpolated value</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">return</span> ( <a class="code" href="structUPWIND3.html#a552999e68e80fcc77c602ba6818df36c">g1</a>*a1 - <a class="code" href="structUPWIND3.html#a2a9ea3ce4eb7b5ba778a5a0a7a9a1922">g2</a>*a2 + upw * <a class="code" href="structUPWIND3.html#a2a9ea3ce4eb7b5ba778a5a0a7a9a1922">g2</a> * (d2 - 3.0*d1) );</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
-<div class="ttc" id="astructUPWIND3_html_a2a9ea3ce4eb7b5ba778a5a0a7a9a1922"><div class="ttname"><a href="structUPWIND3.html#a2a9ea3ce4eb7b5ba778a5a0a7a9a1922">UPWIND3::g2</a></div><div class="ttdeci">static constexpr amrex::Real g2</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:200</div></div>
-<div class="ttc" id="astructUPWIND3_html_a552999e68e80fcc77c602ba6818df36c"><div class="ttname"><a href="structUPWIND3.html#a552999e68e80fcc77c602ba6818df36c">UPWIND3::g1</a></div><div class="ttdeci">static constexpr amrex::Real g1</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:199</div></div>
+<div class="ttc" id="astructUPWIND3_html_a2a9ea3ce4eb7b5ba778a5a0a7a9a1922"><div class="ttname"><a href="structUPWIND3.html#a2a9ea3ce4eb7b5ba778a5a0a7a9a1922">UPWIND3::g2</a></div><div class="ttdeci">static constexpr amrex::Real g2</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:200</div></div>
+<div class="ttc" id="astructUPWIND3_html_a552999e68e80fcc77c602ba6818df36c"><div class="ttname"><a href="structUPWIND3.html#a552999e68e80fcc77c602ba6818df36c">UPWIND3::g1</a></div><div class="ttdeci">static constexpr amrex::Real g1</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:199</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structUPWIND3.html#ab5aa8215b1d63920781081235329e88f">InterpolateInX()</a>, <a class="el" href="structUPWIND3.html#a49e40adf20c8ec95cfb5a27e87a6d01a">InterpolateInY()</a>, and <a class="el" href="structUPWIND3.html#ae5281fb5aa8b8c66e1612fa6a749f5b7">InterpolateInZ()</a>.</p>
 <div class="dynheader">
@@ -319,7 +319,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="comment">// Interpolate lo</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        val_lo = <a class="code" href="structUPWIND3.html#a247a547b52d1bf118e8a9cb44d46b744">Evaluate</a>(sp1,s,sm1,sm2,upw_lo);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
-<div class="ttc" id="astructUPWIND3_html_a247a547b52d1bf118e8a9cb44d46b744"><div class="ttname"><a href="structUPWIND3.html#a247a547b52d1bf118e8a9cb44d46b744">UPWIND3::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;sp1, const amrex::Real &amp;s, const amrex::Real &amp;sm1, const amrex::Real &amp;sm2, const amrex::Real &amp;upw) const</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:181</div></div>
+<div class="ttc" id="astructUPWIND3_html_a247a547b52d1bf118e8a9cb44d46b744"><div class="ttname"><a href="structUPWIND3.html#a247a547b52d1bf118e8a9cb44d46b744">UPWIND3::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;sp1, const amrex::Real &amp;s, const amrex::Real &amp;sm1, const amrex::Real &amp;sm2, const amrex::Real &amp;upw) const</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:181</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -588,7 +588,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Source/Utils/<a class="el" href="Interpolation__UPW_8H_source.html">Interpolation_UPW.H</a></li>
+<li>Source/Utils/<a class="el" href="ERF__Interpolation__UPW_8H_source.html">ERF_Interpolation_UPW.H</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

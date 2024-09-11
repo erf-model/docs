@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('structMYNNPBLH.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="PBLHeight_8H_source.html">PBLHeight.H</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ERF__PBLHeight_8H_source.html">ERF_PBLHeight.H</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for MYNNPBLH:</div>
 <div class="dyncontent">
@@ -193,7 +193,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">auto</span> thetav_min = amrex::ReduceToPlane&lt;amrex::ReduceOpMin,amrex::Real&gt;(dir, bxlow, <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">cons</a>,</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> box_no, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) -&gt; amrex::Real</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k,cons_arrs[box_no],RhoQv_comp,RhoQr_comp);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k,cons_arrs[box_no],RhoQv_comp,RhoQr_comp);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            });</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
@@ -211,7 +211,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        pblh-&gt;setVal(0);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">// Now, loop over columns...</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">cons</a>,<a class="code" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">cons</a>,<a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keyword">const</span> amrex::Box&amp; domain = geom.Domain();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            amrex::Box gtbx = mfi.growntilebox();</div>
@@ -246,7 +246,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    <span class="keywordtype">int</span> jj = amrex::max(amrex::min(j,jmax),jmin);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    <span class="keywordflow">if</span> (zphys_arr(ii,jj,k) &lt; <a class="code" href="structMYNNPBLH.html#aa607f6576c6029c132a0f7b33aec72f1">thetamin_height</a>) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        amrex::Real thv = <a class="code" href="Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k,cons_arr,RhoQv_comp,RhoQr_comp);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        amrex::Real thv = <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k,cons_arr,RhoQv_comp,RhoQr_comp);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        <span class="keywordflow">if</span> (min_thv_arr(i,j,0) &gt; thv) min_thv_arr(i,j,0) = thv;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                });</div>
@@ -262,8 +262,8 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                        <span class="comment">//</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                        <span class="comment">// Find PBL height based on thetav increase (best for CBLs)</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                        <span class="comment">//</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        amrex::Real thv  = <a class="code" href="Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k  ,cons_arr,RhoQv_comp,RhoQr_comp);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        amrex::Real thv1 = <a class="code" href="Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k+1,cons_arr,RhoQv_comp,RhoQr_comp);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        amrex::Real thv  = <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k  ,cons_arr,RhoQv_comp,RhoQr_comp);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        amrex::Real thv1 = <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k+1,cons_arr,RhoQv_comp,RhoQr_comp);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                        <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,0) : 1;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        <span class="keywordflow">if</span> (is_land &amp;&amp; (thv1 &gt;= min_thv_arr(i,j,0) + <a class="code" href="structMYNNPBLH.html#a16169bdfadcc27219d7c6dde54ef6bd9">theta_incr_land</a>)</div>
@@ -288,9 +288,9 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                        <span class="comment">//</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                        <span class="comment">// Find PBL height based on TKE (for SBLs only)</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                        <span class="comment">//</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                        amrex::Real tke    = 0.5 * cons_arr(i,j,k  ,<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                        amrex::Real tke1   = 0.5 * cons_arr(i,j,k+1,<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                        amrex::Real maxtke = 0.5 * cons_arr(i,j,0  ,<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,0  ,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                        amrex::Real tke    = 0.5 * cons_arr(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                        amrex::Real tke1   = 0.5 * cons_arr(i,j,k+1,<a class="code" href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,k+1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                        amrex::Real maxtke = 0.5 * cons_arr(i,j,0  ,<a class="code" href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,0  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                        <span class="comment">// - threshold is 5% of max TKE (Kosovic &amp; Curry 2000, JAS)</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                        amrex::Real TKEeps = 0.05 * maxtke;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                        TKEeps = amrex::max(TKEeps, 0.02); <span class="comment">// min val from WRF</span></div>
@@ -322,7 +322,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                ParallelFor(gtbxlow, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    amrex::Real thv = <a class="code" href="Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k,cons_arr,RhoQv_comp,RhoQr_comp);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    amrex::Real thv = <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k,cons_arr,RhoQv_comp,RhoQr_comp);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    <span class="keywordflow">if</span> (min_thv_arr(i,j,0) &gt; thv) min_thv_arr(i,j,0) = thv;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                });</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
@@ -334,8 +334,8 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                        <span class="comment">//</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                        <span class="comment">// Find PBL height based on thetav increase (best for CBLs)</span></div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                        <span class="comment">//</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                        amrex::Real thv  = <a class="code" href="Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k  ,cons_arr,RhoQv_comp,RhoQr_comp);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                        amrex::Real thv1 = <a class="code" href="Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k+1,cons_arr,RhoQv_comp,RhoQr_comp);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                        amrex::Real thv  = <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k  ,cons_arr,RhoQv_comp,RhoQr_comp);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                        amrex::Real thv1 = <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k+1,cons_arr,RhoQv_comp,RhoQr_comp);</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                        <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,0) : 1;</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                        <span class="keywordflow">if</span> (is_land &amp;&amp; (thv1 &gt;= min_thv_arr(i,j,0) + <a class="code" href="structMYNNPBLH.html#a16169bdfadcc27219d7c6dde54ef6bd9">theta_incr_land</a>)</div>
@@ -360,9 +360,9 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                        <span class="comment">//</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                        <span class="comment">// Find PBL height based on TKE (for SBLs only)</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        <span class="comment">//</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        amrex::Real tke    = 0.5 * cons_arr(i,j,k  ,<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,k  ,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        amrex::Real tke1   = 0.5 * cons_arr(i,j,k+1,<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,k+1,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        amrex::Real maxtke = 0.5 * cons_arr(i,j,0  ,<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,0  ,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        amrex::Real tke    = 0.5 * cons_arr(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        amrex::Real tke1   = 0.5 * cons_arr(i,j,k+1,<a class="code" href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,k+1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        amrex::Real maxtke = 0.5 * cons_arr(i,j,0  ,<a class="code" href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,0  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                        <span class="comment">// - threshold is 5% of max TKE (Kosovic &amp; Curry 2000, JAS)</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        amrex::Real TKEeps = 0.05 * maxtke;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                        TKEeps = amrex::max(TKEeps, 0.02); <span class="comment">// min val from WRF</span></div>
@@ -407,7 +407,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                <span class="comment">//</span></div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <span class="comment">// Finally, blend between the two PBLH estimates</span></div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                <span class="comment">//</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                amrex::Real maxqke = cons_arr(i,j,0  ,<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,0  ,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                amrex::Real maxqke = cons_arr(i,j,0  ,<a class="code" href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) / cons_arr(i,j,0  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <span class="keywordflow">if</span> (maxqke &gt; 0.05) {</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    amrex::Real wt = 0.5*std::tanh((zi - <a class="code" href="structMYNNPBLH.html#a12e1467dfe07775e2ef9c8a57ae473ad">sbl_lim</a>)/<a class="code" href="structMYNNPBLH.html#adf4c7c74040b1b560b509f1c035edd32">sbl_damp</a>) + 0.5;</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    pblh_arr(i,j,0) = (1.-wt)*pblh_tke_arr(i,j,0) + wt*pblh_arr(i,j,0);</div>
@@ -415,24 +415,24 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            });</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        }<span class="comment">//MFIter</span></div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    }</div>
-<div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:35</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:38</div></div>
-<div class="ttc" id="aThetav_8H_html_a7af8b3624ec46045f269761983ec238e"><div class="ttname"><a href="Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Thetav(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int RhoQv_comp, const int RhoQr_comp)</div><div class="ttdef"><b>Definition:</b> Thetav.H:10</div></div>
-<div class="ttc" id="aTileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> TileNoZ.H:11</div></div>
-<div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:117</div></div>
-<div class="ttc" id="astructMYNNPBLH_html_a12e1467dfe07775e2ef9c8a57ae473ad"><div class="ttname"><a href="structMYNNPBLH.html#a12e1467dfe07775e2ef9c8a57ae473ad">MYNNPBLH::sbl_lim</a></div><div class="ttdeci">static constexpr amrex::Real sbl_lim</div><div class="ttdef"><b>Definition:</b> PBLHeight.H:264</div></div>
-<div class="ttc" id="astructMYNNPBLH_html_a16169bdfadcc27219d7c6dde54ef6bd9"><div class="ttname"><a href="structMYNNPBLH.html#a16169bdfadcc27219d7c6dde54ef6bd9">MYNNPBLH::theta_incr_land</a></div><div class="ttdeci">static constexpr amrex::Real theta_incr_land</div><div class="ttdef"><b>Definition:</b> PBLHeight.H:262</div></div>
-<div class="ttc" id="astructMYNNPBLH_html_aa607f6576c6029c132a0f7b33aec72f1"><div class="ttname"><a href="structMYNNPBLH.html#aa607f6576c6029c132a0f7b33aec72f1">MYNNPBLH::thetamin_height</a></div><div class="ttdeci">static constexpr amrex::Real thetamin_height</div><div class="ttdef"><b>Definition:</b> PBLHeight.H:261</div></div>
-<div class="ttc" id="astructMYNNPBLH_html_ad830dc7c3282256b729ad09b8cc0572e"><div class="ttname"><a href="structMYNNPBLH.html#ad830dc7c3282256b729ad09b8cc0572e">MYNNPBLH::theta_incr_water</a></div><div class="ttdeci">static constexpr amrex::Real theta_incr_water</div><div class="ttdef"><b>Definition:</b> PBLHeight.H:263</div></div>
-<div class="ttc" id="astructMYNNPBLH_html_adf4c7c74040b1b560b509f1c035edd32"><div class="ttname"><a href="structMYNNPBLH.html#adf4c7c74040b1b560b509f1c035edd32">MYNNPBLH::sbl_damp</a></div><div class="ttdeci">static constexpr amrex::Real sbl_damp</div><div class="ttdef"><b>Definition:</b> PBLHeight.H:265</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:35</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:38</div></div>
+<div class="ttc" id="aERF__Thetav_8H_html_a7af8b3624ec46045f269761983ec238e"><div class="ttname"><a href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Thetav(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int RhoQv_comp, const int RhoQr_comp)</div><div class="ttdef"><b>Definition:</b> ERF_Thetav.H:10</div></div>
+<div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
+<div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:117</div></div>
+<div class="ttc" id="astructMYNNPBLH_html_a12e1467dfe07775e2ef9c8a57ae473ad"><div class="ttname"><a href="structMYNNPBLH.html#a12e1467dfe07775e2ef9c8a57ae473ad">MYNNPBLH::sbl_lim</a></div><div class="ttdeci">static constexpr amrex::Real sbl_lim</div><div class="ttdef"><b>Definition:</b> ERF_PBLHeight.H:264</div></div>
+<div class="ttc" id="astructMYNNPBLH_html_a16169bdfadcc27219d7c6dde54ef6bd9"><div class="ttname"><a href="structMYNNPBLH.html#a16169bdfadcc27219d7c6dde54ef6bd9">MYNNPBLH::theta_incr_land</a></div><div class="ttdeci">static constexpr amrex::Real theta_incr_land</div><div class="ttdef"><b>Definition:</b> ERF_PBLHeight.H:262</div></div>
+<div class="ttc" id="astructMYNNPBLH_html_aa607f6576c6029c132a0f7b33aec72f1"><div class="ttname"><a href="structMYNNPBLH.html#aa607f6576c6029c132a0f7b33aec72f1">MYNNPBLH::thetamin_height</a></div><div class="ttdeci">static constexpr amrex::Real thetamin_height</div><div class="ttdef"><b>Definition:</b> ERF_PBLHeight.H:261</div></div>
+<div class="ttc" id="astructMYNNPBLH_html_ad830dc7c3282256b729ad09b8cc0572e"><div class="ttname"><a href="structMYNNPBLH.html#ad830dc7c3282256b729ad09b8cc0572e">MYNNPBLH::theta_incr_water</a></div><div class="ttdeci">static constexpr amrex::Real theta_incr_water</div><div class="ttdef"><b>Definition:</b> ERF_PBLHeight.H:263</div></div>
+<div class="ttc" id="astructMYNNPBLH_html_adf4c7c74040b1b560b509f1c035edd32"><div class="ttname"><a href="structMYNNPBLH.html#adf4c7c74040b1b560b509f1c035edd32">MYNNPBLH::sbl_damp</a></div><div class="ttdeci">static constexpr amrex::Real sbl_damp</div><div class="ttdef"><b>Definition:</b> ERF_PBLHeight.H:265</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structMYNNPBLH_a3911e13c78754ba2bf50e3e94f74bba8_cgraph.png" border="0" usemap="#astructMYNNPBLH_a3911e13c78754ba2bf50e3e94f74bba8_cgraph" alt=""/></div>
 <map name="astructMYNNPBLH_a3911e13c78754ba2bf50e3e94f74bba8_cgraph" id="astructMYNNPBLH_a3911e13c78754ba2bf50e3e94f74bba8_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,201,57"/>
-<area shape="rect" href="Thetav_8H.html#a7af8b3624ec46045f269761983ec238e" title=" " alt="" coords="253,5,319,32"/>
-<area shape="rect" href="TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="249,56,323,83"/>
+<area shape="rect" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e" title=" " alt="" coords="253,5,319,32"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="249,56,323,83"/>
 </map>
 </div>
 
@@ -560,7 +560,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Source/PBL/<a class="el" href="PBLHeight_8H_source.html">PBLHeight.H</a></li>
+<li>Source/PBL/<a class="el" href="ERF__PBLHeight_8H_source.html">ERF_PBLHeight.H</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

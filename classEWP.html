@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('classEWP.html',''); initResizable(); }
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="EWP_8H_source.html">EWP.H</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ERF__EWP_8H_source.html">ERF_EWP.H</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for EWP:</div>
 <div class="dyncontent">
@@ -307,8 +307,8 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classEWP.html#a4f28000173748f88919eda5fbed1368e">source_terms_cellcentered</a>(geom, cons_in, mf_vars_ewp, U_old, V_old, W_old, mf_Nturb);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classEWP.html#a762189d5d9c02d32fa1e6186adb35ae0">update</a>(dt_advance, cons_in, U_old, V_old, mf_vars_ewp);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="ttc" id="aclassEWP_html_a4f28000173748f88919eda5fbed1368e"><div class="ttname"><a href="classEWP.html#a4f28000173748f88919eda5fbed1368e">EWP::source_terms_cellcentered</a></div><div class="ttdeci">void source_terms_cellcentered(const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;mf_vars, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_Nturb)</div><div class="ttdef"><b>Definition:</b> AdvanceEWP.cpp:58</div></div>
-<div class="ttc" id="aclassEWP_html_a762189d5d9c02d32fa1e6186adb35ae0"><div class="ttname"><a href="classEWP.html#a762189d5d9c02d32fa1e6186adb35ae0">EWP::update</a></div><div class="ttdeci">void update(const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_vars_ewp)</div><div class="ttdef"><b>Definition:</b> AdvanceEWP.cpp:24</div></div>
+<div class="ttc" id="aclassEWP_html_a4f28000173748f88919eda5fbed1368e"><div class="ttname"><a href="classEWP.html#a4f28000173748f88919eda5fbed1368e">EWP::source_terms_cellcentered</a></div><div class="ttdeci">void source_terms_cellcentered(const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;mf_vars, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_Nturb)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceEWP.cpp:58</div></div>
+<div class="ttc" id="aclassEWP_html_a762189d5d9c02d32fa1e6186adb35ae0"><div class="ttname"><a href="classEWP.html#a762189d5d9c02d32fa1e6186adb35ae0">EWP::update</a></div><div class="ttdeci">void update(const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_vars_ewp)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceEWP.cpp:24</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -411,7 +411,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordtype">int</span> kk = amrex::min(amrex::max(k, domlo_z), domhi_z);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            Real <a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = ProbLoArr[2] + (kk+0.5) * dx[2];</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = ProbLoArr[2] + (kk+0.5) * dx[2];</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="comment">// Compute Fitch source terms</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
@@ -419,7 +419,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                 v_vel(i,j,k)*v_vel(i,j,k) +</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                 w_vel(i,j,kk)*w_vel(i,j,kk), 0.5);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            Real C_T = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(wind_speed_d, thrust_coeff_d, Vabs, n_spec_table);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            Real C_T = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(wind_speed_d, thrust_coeff_d, Vabs, n_spec_table);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            Real C_TKE = 0.0;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            Real K_turb = 1.0;</div>
@@ -431,30 +431,30 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            Real phi     = std::atan2(v_vel(i,j,k),u_vel(i,j,k)); <span class="comment">// Wind direction w.r.t the x-dreiction</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            Real fac = -std::pow(<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>/8.0,0.5)*C_T*std::pow(d_rotor_rad,2)*</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                        std::pow(Vabs,2)/(dx[0]*dx[1]*sigma_e)*</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                        std::exp(-0.5*std::pow((<a class="code" href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - d_hub_height)/sigma_e,2));</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                        std::exp(-0.5*std::pow((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - d_hub_height)/sigma_e,2));</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            ewp_array(i,j,k,0) = fac*std::cos(phi)*Nturb_array(i,j,k);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            ewp_array(i,j,k,1) = fac*std::sin(phi)*Nturb_array(i,j,k);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            ewp_array(i,j,k,2) = C_TKE*0.0;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;         });</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
-<div class="ttc" id="aDataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
-<div class="ttc" id="aInterpolation__1D_8H_html_a803d0d35d4ca4791556cbe02bbf51cbb"><div class="ttname"><a href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real interpolate_1d(const amrex::Real *alpha, const amrex::Real *beta, const amrex::Real alpha_interp, const int alpha_size)</div><div class="ttdef"><b>Definition:</b> Interpolation_1D.H:12</div></div>
-<div class="ttc" id="aclassEWP_html_a22f50393881ced019cae2a74ee04cdea"><div class="ttname"><a href="classEWP.html#a22f50393881ced019cae2a74ee04cdea">EWP::thrust_coeff_standing</a></div><div class="ttdeci">amrex::Real thrust_coeff_standing</div><div class="ttdef"><b>Definition:</b> EWP.H:41</div></div>
-<div class="ttc" id="aclassEWP_html_a2ee471b0dcad3057297b809f4c5141ab"><div class="ttname"><a href="classEWP.html#a2ee471b0dcad3057297b809f4c5141ab">EWP::hub_height</a></div><div class="ttdeci">amrex::Real hub_height</div><div class="ttdef"><b>Definition:</b> EWP.H:41</div></div>
-<div class="ttc" id="aclassEWP_html_a30275b7045b523cfe7afb5683f66d87a"><div class="ttname"><a href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">EWP::wind_speed</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; wind_speed</div><div class="ttdef"><b>Definition:</b> EWP.H:42</div></div>
-<div class="ttc" id="aclassEWP_html_a9cdc57dc5a1a63c4a4e62ba85dffecc4"><div class="ttname"><a href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">EWP::thrust_coeff</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; thrust_coeff</div><div class="ttdef"><b>Definition:</b> EWP.H:42</div></div>
-<div class="ttc" id="aclassEWP_html_ab9a34e54d36268a3f7a0b376543bbff5"><div class="ttname"><a href="classEWP.html#ab9a34e54d36268a3f7a0b376543bbff5">EWP::power</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; power</div><div class="ttdef"><b>Definition:</b> EWP.H:42</div></div>
-<div class="ttc" id="aclassEWP_html_ac89ee08eabbf2cc7a64a7908a449f016"><div class="ttname"><a href="classEWP.html#ac89ee08eabbf2cc7a64a7908a449f016">EWP::rotor_rad</a></div><div class="ttdeci">amrex::Real rotor_rad</div><div class="ttdef"><b>Definition:</b> EWP.H:41</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_a11fd7bf185b205f71197da8ba41edfb6"><div class="ttname"><a href="classNullWindFarm.html#a11fd7bf185b205f71197da8ba41edfb6">NullWindFarm::get_turb_spec</a></div><div class="ttdeci">void get_turb_spec(amrex::Real &amp;rotor_rad, amrex::Real &amp;hub_height, amrex::Real &amp;thrust_coeff_standing, amrex::Vector&lt; amrex::Real &gt; &amp;wind_speed, amrex::Vector&lt; amrex::Real &gt; &amp;thrust_coeff, amrex::Vector&lt; amrex::Real &gt; &amp;power)</div><div class="ttdef"><b>Definition:</b> NullWindFarm.H:51</div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
+<div class="ttc" id="aERF__Interpolation__1D_8H_html_a803d0d35d4ca4791556cbe02bbf51cbb"><div class="ttname"><a href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real interpolate_1d(const amrex::Real *alpha, const amrex::Real *beta, const amrex::Real alpha_interp, const int alpha_size)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_1D.H:12</div></div>
+<div class="ttc" id="aclassEWP_html_a22f50393881ced019cae2a74ee04cdea"><div class="ttname"><a href="classEWP.html#a22f50393881ced019cae2a74ee04cdea">EWP::thrust_coeff_standing</a></div><div class="ttdeci">amrex::Real thrust_coeff_standing</div><div class="ttdef"><b>Definition:</b> ERF_EWP.H:41</div></div>
+<div class="ttc" id="aclassEWP_html_a2ee471b0dcad3057297b809f4c5141ab"><div class="ttname"><a href="classEWP.html#a2ee471b0dcad3057297b809f4c5141ab">EWP::hub_height</a></div><div class="ttdeci">amrex::Real hub_height</div><div class="ttdef"><b>Definition:</b> ERF_EWP.H:41</div></div>
+<div class="ttc" id="aclassEWP_html_a30275b7045b523cfe7afb5683f66d87a"><div class="ttname"><a href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">EWP::wind_speed</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; wind_speed</div><div class="ttdef"><b>Definition:</b> ERF_EWP.H:42</div></div>
+<div class="ttc" id="aclassEWP_html_a9cdc57dc5a1a63c4a4e62ba85dffecc4"><div class="ttname"><a href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">EWP::thrust_coeff</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; thrust_coeff</div><div class="ttdef"><b>Definition:</b> ERF_EWP.H:42</div></div>
+<div class="ttc" id="aclassEWP_html_ab9a34e54d36268a3f7a0b376543bbff5"><div class="ttname"><a href="classEWP.html#ab9a34e54d36268a3f7a0b376543bbff5">EWP::power</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; power</div><div class="ttdef"><b>Definition:</b> ERF_EWP.H:42</div></div>
+<div class="ttc" id="aclassEWP_html_ac89ee08eabbf2cc7a64a7908a449f016"><div class="ttname"><a href="classEWP.html#ac89ee08eabbf2cc7a64a7908a449f016">EWP::rotor_rad</a></div><div class="ttdeci">amrex::Real rotor_rad</div><div class="ttdef"><b>Definition:</b> ERF_EWP.H:41</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_a11fd7bf185b205f71197da8ba41edfb6"><div class="ttname"><a href="classNullWindFarm.html#a11fd7bf185b205f71197da8ba41edfb6">NullWindFarm::get_turb_spec</a></div><div class="ttdeci">void get_turb_spec(amrex::Real &amp;rotor_rad, amrex::Real &amp;hub_height, amrex::Real &amp;thrust_coeff_standing, amrex::Vector&lt; amrex::Real &gt; &amp;wind_speed, amrex::Vector&lt; amrex::Real &gt; &amp;thrust_coeff, amrex::Vector&lt; amrex::Real &gt; &amp;power)</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:51</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classEWP_a4f28000173748f88919eda5fbed1368e_cgraph.png" border="0" usemap="#aclassEWP_a4f28000173748f88919eda5fbed1368e_cgraph" alt=""/></div>
 <map name="aclassEWP_a4f28000173748f88919eda5fbed1368e_cgraph" id="aclassEWP_a4f28000173748f88919eda5fbed1368e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,240,32"/>
-<area shape="rect" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="288,5,404,32"/>
+<area shape="rect" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="288,5,404,32"/>
 </map>
 </div>
 
@@ -527,11 +527,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        },</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            cons_array(i,j,k,<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) = cons_array(i,j,k,<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) + ewp_array(i,j,k,2)*dt_advance;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            cons_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) = cons_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) + ewp_array(i,j,k,2)*dt_advance;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        });</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="ttc" id="aIndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:38</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:38</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -735,8 +735,8 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Source/WindFarmParametrization/EWP/<a class="el" href="EWP_8H_source.html">EWP.H</a></li>
-<li>Source/WindFarmParametrization/EWP/<a class="el" href="AdvanceEWP_8cpp.html">AdvanceEWP.cpp</a></li>
+<li>Source/WindFarmParametrization/EWP/<a class="el" href="ERF__EWP_8H_source.html">ERF_EWP.H</a></li>
+<li>Source/WindFarmParametrization/EWP/<a class="el" href="ERF__AdvanceEWP_8cpp.html">ERF_AdvanceEWP.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

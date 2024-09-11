@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('structWENO__Z3.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="Interpolation__WENO__Z_8H_source.html">Interpolation_WENO_Z.H</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ERF__Interpolation__WENO__Z_8H_source.html">ERF_Interpolation_WENO_Z.H</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for WENO_Z3:</div>
 <div class="dyncontent">
@@ -160,7 +160,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        : <a class="code" href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">m_phi</a>(phi) {}</div>
-<div class="ttc" id="astructWENO__Z3_html_a8269a48070f989c0183112ccd8e57489"><div class="ttname"><a href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">WENO_Z3::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:120</div></div>
+<div class="ttc" id="astructWENO__Z3_html_a8269a48070f989c0183112ccd8e57489"><div class="ttname"><a href="structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489">WENO_Z3::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO_Z.H:120</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -224,9 +224,9 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="comment">// Interpolated value</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> ( (w1 * v1 + w2 * v2) / (2.0 * wsum) );</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="ttc" id="astructWENO__Z3_html_a04370c4cf4d845f967ec610ff66f5d2b"><div class="ttname"><a href="structWENO__Z3.html#a04370c4cf4d845f967ec610ff66f5d2b">WENO_Z3::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:121</div></div>
-<div class="ttc" id="astructWENO__Z3_html_aa7976a5cf48e2e1cd1feecbaaa2218f9"><div class="ttname"><a href="structWENO__Z3.html#aa7976a5cf48e2e1cd1feecbaaa2218f9">WENO_Z3::g2</a></div><div class="ttdeci">static constexpr amrex::Real g2</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:124</div></div>
-<div class="ttc" id="astructWENO__Z3_html_acc8bf5960d4d7e92184f50911c0a4871"><div class="ttname"><a href="structWENO__Z3.html#acc8bf5960d4d7e92184f50911c0a4871">WENO_Z3::g1</a></div><div class="ttdeci">static constexpr amrex::Real g1</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:123</div></div>
+<div class="ttc" id="astructWENO__Z3_html_a04370c4cf4d845f967ec610ff66f5d2b"><div class="ttname"><a href="structWENO__Z3.html#a04370c4cf4d845f967ec610ff66f5d2b">WENO_Z3::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO_Z.H:121</div></div>
+<div class="ttc" id="astructWENO__Z3_html_aa7976a5cf48e2e1cd1feecbaaa2218f9"><div class="ttname"><a href="structWENO__Z3.html#aa7976a5cf48e2e1cd1feecbaaa2218f9">WENO_Z3::g2</a></div><div class="ttdeci">static constexpr amrex::Real g2</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO_Z.H:124</div></div>
+<div class="ttc" id="astructWENO__Z3_html_acc8bf5960d4d7e92184f50911c0a4871"><div class="ttname"><a href="structWENO__Z3.html#acc8bf5960d4d7e92184f50911c0a4871">WENO_Z3::g1</a></div><div class="ttdeci">static constexpr amrex::Real g1</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO_Z.H:123</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structWENO__Z3.html#a70222f603b0f834b5c6cab9d2d500149">InterpolateInX()</a>, <a class="el" href="structWENO__Z3.html#a448d977459d12ff43f0a74da29e94014">InterpolateInY()</a>, and <a class="el" href="structWENO__Z3.html#aa18592e1e73ba3a08e57fbb694266138">InterpolateInZ()</a>.</p>
 <div class="dynheader">
@@ -321,8 +321,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            val_lo = 0.5 * (s + sm1);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="ttc" id="astructWENO__Z3_html_aa6c2eefc18b5f0365c0357ee4f066080"><div class="ttname"><a href="structWENO__Z3.html#aa6c2eefc18b5f0365c0357ee4f066080">WENO_Z3::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;sm1, const amrex::Real &amp;s, const amrex::Real &amp;sp1) const</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:95</div></div>
-<div class="ttc" id="astructWENO__Z3_html_aec489e3be4dbc31eb46b729b8510fdfc"><div class="ttname"><a href="structWENO__Z3.html#aec489e3be4dbc31eb46b729b8510fdfc">WENO_Z3::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> Interpolation_WENO_Z.H:122</div></div>
+<div class="ttc" id="astructWENO__Z3_html_aa6c2eefc18b5f0365c0357ee4f066080"><div class="ttname"><a href="structWENO__Z3.html#aa6c2eefc18b5f0365c0357ee4f066080">WENO_Z3::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;sm1, const amrex::Real &amp;s, const amrex::Real &amp;sp1) const</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO_Z.H:95</div></div>
+<div class="ttc" id="astructWENO__Z3_html_aec489e3be4dbc31eb46b729b8510fdfc"><div class="ttname"><a href="structWENO__Z3.html#aec489e3be4dbc31eb46b729b8510fdfc">WENO_Z3::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO_Z.H:122</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -637,7 +637,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Source/Utils/<a class="el" href="Interpolation__WENO__Z_8H_source.html">Interpolation_WENO_Z.H</a></li>
+<li>Source/Utils/<a class="el" href="ERF__Interpolation__WENO__Z_8H_source.html">ERF_Interpolation_WENO_Z.H</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

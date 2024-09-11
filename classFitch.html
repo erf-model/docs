@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('classFitch.html',''); initResizable();
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="Fitch_8H_source.html">Fitch.H</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ERF__Fitch_8H_source.html">ERF_Fitch.H</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Fitch:</div>
 <div class="dyncontent">
@@ -307,8 +307,8 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classFitch.html#aa56821341be1cf4d01558e297993c0f2">source_terms_cellcentered</a>(geom, cons_in, mf_vars_fitch, U_old, V_old, W_old, mf_Nturb);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classFitch.html#a1a2db68abb0185de73bd870884f0b019">update</a>(dt_advance, cons_in, U_old, V_old, mf_vars_fitch);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="ttc" id="aclassFitch_html_a1a2db68abb0185de73bd870884f0b019"><div class="ttname"><a href="classFitch.html#a1a2db68abb0185de73bd870884f0b019">Fitch::update</a></div><div class="ttdeci">void update(const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_vars_fitch)</div><div class="ttdef"><b>Definition:</b> AdvanceFitch.cpp:63</div></div>
-<div class="ttc" id="aclassFitch_html_aa56821341be1cf4d01558e297993c0f2"><div class="ttname"><a href="classFitch.html#aa56821341be1cf4d01558e297993c0f2">Fitch::source_terms_cellcentered</a></div><div class="ttdeci">void source_terms_cellcentered(const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;mf_vars_ewp, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_Nturb)</div><div class="ttdef"><b>Definition:</b> AdvanceFitch.cpp:97</div></div>
+<div class="ttc" id="aclassFitch_html_a1a2db68abb0185de73bd870884f0b019"><div class="ttname"><a href="classFitch.html#a1a2db68abb0185de73bd870884f0b019">Fitch::update</a></div><div class="ttdeci">void update(const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_vars_fitch)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceFitch.cpp:63</div></div>
+<div class="ttc" id="aclassFitch_html_aa56821341be1cf4d01558e297993c0f2"><div class="ttname"><a href="classFitch.html#aa56821341be1cf4d01558e297993c0f2">Fitch::source_terms_cellcentered</a></div><div class="ttdeci">void source_terms_cellcentered(const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;mf_vars_ewp, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_Nturb)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceFitch.cpp:97</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -413,7 +413,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            Real z_k   = kk*dx[2];</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            Real z_kp1 = (kk+1)*dx[2];</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            Real A_ijk = <a class="code" href="AdvanceFitch_8cpp.html#a68e0a40af0744df9f7e79d181225f615">compute_Aijk</a>(z_k, z_kp1, d_hub_height, d_rotor_rad);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            Real A_ijk = <a class="code" href="ERF__AdvanceFitch_8cpp.html#a68e0a40af0744df9f7e79d181225f615">compute_Aijk</a>(z_k, z_kp1, d_hub_height, d_rotor_rad);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <span class="comment">// Compute Fitch source terms</span></div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
@@ -421,7 +421,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                 v_vel(i,j,k)*v_vel(i,j,k) +</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                 w_vel(i,j,kk)*w_vel(i,j,kk), 0.5);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            Real C_T = <a class="code" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(wind_speed_d, thrust_coeff_d, Vabs, n_spec_table);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            Real C_T = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(wind_speed_d, thrust_coeff_d, Vabs, n_spec_table);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            Real C_TKE = 0.0;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            fitch_array(i,j,k,0) = Vabs;</div>
@@ -437,24 +437,24 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment">//printf(&quot;%0.15g, %0.15g\n&quot;, *sum_area , PI*R*R);</span></div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="comment">//exit(0);</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
-<div class="ttc" id="aAdvanceFitch_8cpp_html_a68e0a40af0744df9f7e79d181225f615"><div class="ttname"><a href="AdvanceFitch_8cpp.html#a68e0a40af0744df9f7e79d181225f615">compute_Aijk</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE Real compute_Aijk(const Real z_k, const Real z_kp1, const Real hub_height, const Real rotor_rad)</div><div class="ttdef"><b>Definition:</b> AdvanceFitch.cpp:25</div></div>
-<div class="ttc" id="aInterpolation__1D_8H_html_a803d0d35d4ca4791556cbe02bbf51cbb"><div class="ttname"><a href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real interpolate_1d(const amrex::Real *alpha, const amrex::Real *beta, const amrex::Real alpha_interp, const int alpha_size)</div><div class="ttdef"><b>Definition:</b> Interpolation_1D.H:12</div></div>
-<div class="ttc" id="aclassFitch_html_a7cafd25264dba6194d42285153683f34"><div class="ttname"><a href="classFitch.html#a7cafd25264dba6194d42285153683f34">Fitch::thrust_coeff</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; thrust_coeff</div><div class="ttdef"><b>Definition:</b> Fitch.H:42</div></div>
-<div class="ttc" id="aclassFitch_html_a88af1c4430e37f4950396b5a92e9ba03"><div class="ttname"><a href="classFitch.html#a88af1c4430e37f4950396b5a92e9ba03">Fitch::power</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; power</div><div class="ttdef"><b>Definition:</b> Fitch.H:42</div></div>
-<div class="ttc" id="aclassFitch_html_aadaedef0e6f0ac149483ee6b4d8b1a4e"><div class="ttname"><a href="classFitch.html#aadaedef0e6f0ac149483ee6b4d8b1a4e">Fitch::rotor_rad</a></div><div class="ttdeci">amrex::Real rotor_rad</div><div class="ttdef"><b>Definition:</b> Fitch.H:41</div></div>
-<div class="ttc" id="aclassFitch_html_adc5df318361103709d0fa5421358e29d"><div class="ttname"><a href="classFitch.html#adc5df318361103709d0fa5421358e29d">Fitch::thrust_coeff_standing</a></div><div class="ttdeci">amrex::Real thrust_coeff_standing</div><div class="ttdef"><b>Definition:</b> Fitch.H:41</div></div>
-<div class="ttc" id="aclassFitch_html_ae3af34c6c07fd2d8b9b081b5c7ceb443"><div class="ttname"><a href="classFitch.html#ae3af34c6c07fd2d8b9b081b5c7ceb443">Fitch::hub_height</a></div><div class="ttdeci">amrex::Real hub_height</div><div class="ttdef"><b>Definition:</b> Fitch.H:41</div></div>
-<div class="ttc" id="aclassFitch_html_aed06c922f243b8a80c17d17770430af5"><div class="ttname"><a href="classFitch.html#aed06c922f243b8a80c17d17770430af5">Fitch::wind_speed</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; wind_speed</div><div class="ttdef"><b>Definition:</b> Fitch.H:42</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_a11fd7bf185b205f71197da8ba41edfb6"><div class="ttname"><a href="classNullWindFarm.html#a11fd7bf185b205f71197da8ba41edfb6">NullWindFarm::get_turb_spec</a></div><div class="ttdeci">void get_turb_spec(amrex::Real &amp;rotor_rad, amrex::Real &amp;hub_height, amrex::Real &amp;thrust_coeff_standing, amrex::Vector&lt; amrex::Real &gt; &amp;wind_speed, amrex::Vector&lt; amrex::Real &gt; &amp;thrust_coeff, amrex::Vector&lt; amrex::Real &gt; &amp;power)</div><div class="ttdef"><b>Definition:</b> NullWindFarm.H:51</div></div>
+<div class="ttc" id="aERF__AdvanceFitch_8cpp_html_a68e0a40af0744df9f7e79d181225f615"><div class="ttname"><a href="ERF__AdvanceFitch_8cpp.html#a68e0a40af0744df9f7e79d181225f615">compute_Aijk</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE Real compute_Aijk(const Real z_k, const Real z_kp1, const Real hub_height, const Real rotor_rad)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceFitch.cpp:25</div></div>
+<div class="ttc" id="aERF__Interpolation__1D_8H_html_a803d0d35d4ca4791556cbe02bbf51cbb"><div class="ttname"><a href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real interpolate_1d(const amrex::Real *alpha, const amrex::Real *beta, const amrex::Real alpha_interp, const int alpha_size)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_1D.H:12</div></div>
+<div class="ttc" id="aclassFitch_html_a7cafd25264dba6194d42285153683f34"><div class="ttname"><a href="classFitch.html#a7cafd25264dba6194d42285153683f34">Fitch::thrust_coeff</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; thrust_coeff</div><div class="ttdef"><b>Definition:</b> ERF_Fitch.H:42</div></div>
+<div class="ttc" id="aclassFitch_html_a88af1c4430e37f4950396b5a92e9ba03"><div class="ttname"><a href="classFitch.html#a88af1c4430e37f4950396b5a92e9ba03">Fitch::power</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; power</div><div class="ttdef"><b>Definition:</b> ERF_Fitch.H:42</div></div>
+<div class="ttc" id="aclassFitch_html_aadaedef0e6f0ac149483ee6b4d8b1a4e"><div class="ttname"><a href="classFitch.html#aadaedef0e6f0ac149483ee6b4d8b1a4e">Fitch::rotor_rad</a></div><div class="ttdeci">amrex::Real rotor_rad</div><div class="ttdef"><b>Definition:</b> ERF_Fitch.H:41</div></div>
+<div class="ttc" id="aclassFitch_html_adc5df318361103709d0fa5421358e29d"><div class="ttname"><a href="classFitch.html#adc5df318361103709d0fa5421358e29d">Fitch::thrust_coeff_standing</a></div><div class="ttdeci">amrex::Real thrust_coeff_standing</div><div class="ttdef"><b>Definition:</b> ERF_Fitch.H:41</div></div>
+<div class="ttc" id="aclassFitch_html_ae3af34c6c07fd2d8b9b081b5c7ceb443"><div class="ttname"><a href="classFitch.html#ae3af34c6c07fd2d8b9b081b5c7ceb443">Fitch::hub_height</a></div><div class="ttdeci">amrex::Real hub_height</div><div class="ttdef"><b>Definition:</b> ERF_Fitch.H:41</div></div>
+<div class="ttc" id="aclassFitch_html_aed06c922f243b8a80c17d17770430af5"><div class="ttname"><a href="classFitch.html#aed06c922f243b8a80c17d17770430af5">Fitch::wind_speed</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; wind_speed</div><div class="ttdef"><b>Definition:</b> ERF_Fitch.H:42</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_a11fd7bf185b205f71197da8ba41edfb6"><div class="ttname"><a href="classNullWindFarm.html#a11fd7bf185b205f71197da8ba41edfb6">NullWindFarm::get_turb_spec</a></div><div class="ttdeci">void get_turb_spec(amrex::Real &amp;rotor_rad, amrex::Real &amp;hub_height, amrex::Real &amp;thrust_coeff_standing, amrex::Vector&lt; amrex::Real &gt; &amp;wind_speed, amrex::Vector&lt; amrex::Real &gt; &amp;thrust_coeff, amrex::Vector&lt; amrex::Real &gt; &amp;power)</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:51</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFitch_aa56821341be1cf4d01558e297993c0f2_cgraph.png" border="0" usemap="#aclassFitch_aa56821341be1cf4d01558e297993c0f2_cgraph" alt=""/></div>
 <map name="aclassFitch_aa56821341be1cf4d01558e297993c0f2_cgraph" id="aclassFitch_aa56821341be1cf4d01558e297993c0f2_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,155,65"/>
-<area shape="rect" href="AdvanceFitch_8cpp.html#a68e0a40af0744df9f7e79d181225f615" title=" " alt="" coords="205,5,316,32"/>
-<area shape="rect" href="Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="203,56,319,83"/>
-<area shape="rect" href="AdvanceFitch_8cpp.html#a7b6c67da0ff16af60b10f434632b06ce" title=" " alt="" coords="367,5,461,32"/>
+<area shape="rect" href="ERF__AdvanceFitch_8cpp.html#a68e0a40af0744df9f7e79d181225f615" title=" " alt="" coords="205,5,316,32"/>
+<area shape="rect" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="203,56,319,83"/>
+<area shape="rect" href="ERF__AdvanceFitch_8cpp.html#a7b6c67da0ff16af60b10f434632b06ce" title=" " alt="" coords="367,5,461,32"/>
 </map>
 </div>
 
@@ -527,11 +527,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        },</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            cons_array(i,j,k,<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) = cons_array(i,j,k,<a class="code" href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) + fitch_array(i,j,k,4)*dt_advance;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            cons_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) = cons_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>) + fitch_array(i,j,k,4)*dt_advance;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        });</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="ttc" id="aIndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:38</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:38</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -735,8 +735,8 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Source/WindFarmParametrization/Fitch/<a class="el" href="Fitch_8H_source.html">Fitch.H</a></li>
-<li>Source/WindFarmParametrization/Fitch/<a class="el" href="AdvanceFitch_8cpp.html">AdvanceFitch.cpp</a></li>
+<li>Source/WindFarmParametrization/Fitch/<a class="el" href="ERF__Fitch_8H_source.html">ERF_Fitch.H</a></li>
+<li>Source/WindFarmParametrization/Fitch/<a class="el" href="ERF__AdvanceFitch_8cpp.html">ERF_AdvanceFitch.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

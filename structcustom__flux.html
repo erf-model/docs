@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('structcustom__flux.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="MOSTStress_8H_source.html">MOSTStress.H</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ERF__MOSTStress_8H_source.html">ERF_MOSTStress.H</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for custom_flux:</div>
 <div class="dyncontent">
@@ -152,7 +152,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l01850"></a><span class="lineno"> 1850</span>&#160;      :  <a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>(l_zlo) {}</div>
-<div class="ttc" id="astructcustom__flux_html_a3b40812bce1c4be2d850abe1bbc2d208"><div class="ttname"><a href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">custom_flux::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:2096</div></div>
+<div class="ttc" id="astructcustom__flux_html_a3b40812bce1c4be2d850abe1bbc2d208"><div class="ttname"><a href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">custom_flux::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:2096</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -295,7 +295,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01880"></a><span class="lineno"> 1880</span>&#160;        ic = ic &gt; ubound(cons_arr).x ? ubound(cons_arr).x : ic;</div>
 <div class="line"><a name="l01881"></a><span class="lineno"> 1881</span>&#160;        jc = jc &gt; ubound(cons_arr).y ? ubound(cons_arr).y : jc;</div>
 <div class="line"><a name="l01882"></a><span class="lineno"> 1882</span>&#160; </div>
-<div class="line"><a name="l01883"></a><span class="lineno"> 1883</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01883"></a><span class="lineno"> 1883</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l01884"></a><span class="lineno"> 1884</span>&#160; </div>
 <div class="line"><a name="l01885"></a><span class="lineno"> 1885</span>&#160;        amrex::Real qstar   = q_star_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>);</div>
 <div class="line"><a name="l01886"></a><span class="lineno"> 1886</span>&#160;        amrex::Real deltaz  = dz * (<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a> - k);</div>
@@ -305,8 +305,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01890"></a><span class="lineno"> 1890</span>&#160; </div>
 <div class="line"><a name="l01891"></a><span class="lineno"> 1891</span>&#160;        <span class="keywordflow">if</span> (exp_most) {</div>
 <div class="line"><a name="l01892"></a><span class="lineno"> 1892</span>&#160;            <span class="comment">// surface gradient equal to gradient at first zface</span></div>
-<div class="line"><a name="l01893"></a><span class="lineno"> 1893</span>&#160;            amrex::Real rqvgrad = ( cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>+1,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) - cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>  ,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) ) / (0.5*(dz+dz1));</div>
-<div class="line"><a name="l01894"></a><span class="lineno"> 1894</span>&#160;            dest_arr(i,j,k,icomp+n) = cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) - rqvgrad * deltaz;</div>
+<div class="line"><a name="l01893"></a><span class="lineno"> 1893</span>&#160;            amrex::Real rqvgrad = ( cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>+1,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) - cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>  ,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) ) / (0.5*(dz+dz1));</div>
+<div class="line"><a name="l01894"></a><span class="lineno"> 1894</span>&#160;            dest_arr(i,j,k,icomp+n) = cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) - rqvgrad * deltaz;</div>
 <div class="line"><a name="l01895"></a><span class="lineno"> 1895</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l01896"></a><span class="lineno"> 1896</span>&#160;            <span class="keywordtype">int</span> ie, je;</div>
 <div class="line"><a name="l01897"></a><span class="lineno"> 1897</span>&#160;            ie = i  &lt; lbound(eta_arr).x ? lbound(eta_arr).x : i;</div>
@@ -320,12 +320,12 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01905"></a><span class="lineno"> 1905</span>&#160; </div>
 <div class="line"><a name="l01906"></a><span class="lineno"> 1906</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
 <div class="line"><a name="l01907"></a><span class="lineno"> 1907</span>&#160;    }</div>
-<div class="ttc" id="aIndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:35</div></div>
-<div class="ttc" id="aIndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:42</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea4166b9561a2ef0ad6d1b6d2c34cb9580"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea4166b9561a2ef0ad6d1b6d2c34cb9580">EddyDiff::Q_v</a></div><div class="ttdeci">@ Q_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:150</div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> Kessler.H:30</div></div>
-<div class="ttc" id="astructcustom__flux_html_aa04871c3e8d2e06f502cde2404c90be4"><div class="ttname"><a href="structcustom__flux.html#aa04871c3e8d2e06f502cde2404c90be4">custom_flux::eta_eps</a></div><div class="ttdeci">const amrex::Real eta_eps</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:2098</div></div>
-<div class="ttc" id="astructcustom__flux_html_ae0e2af01151c51f4c335f053a8bb8f17"><div class="ttname"><a href="structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17">custom_flux::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> MOSTStress.H:2097</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:35</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea4166b9561a2ef0ad6d1b6d2c34cb9580"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea4166b9561a2ef0ad6d1b6d2c34cb9580">EddyDiff::Q_v</a></div><div class="ttdeci">@ Q_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:150</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:30</div></div>
+<div class="ttc" id="astructcustom__flux_html_aa04871c3e8d2e06f502cde2404c90be4"><div class="ttname"><a href="structcustom__flux.html#aa04871c3e8d2e06f502cde2404c90be4">custom_flux::eta_eps</a></div><div class="ttdeci">const amrex::Real eta_eps</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:2098</div></div>
+<div class="ttc" id="astructcustom__flux_html_ae0e2af01151c51f4c335f053a8bb8f17"><div class="ttname"><a href="structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17">custom_flux::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:2097</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -467,7 +467,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01936"></a><span class="lineno"> 1936</span>&#160;        ic = ic &gt; ubound(cons_arr).x ? ubound(cons_arr).x : ic;</div>
 <div class="line"><a name="l01937"></a><span class="lineno"> 1937</span>&#160;        jc = jc &gt; ubound(cons_arr).y ? ubound(cons_arr).y : jc;</div>
 <div class="line"><a name="l01938"></a><span class="lineno"> 1938</span>&#160; </div>
-<div class="line"><a name="l01939"></a><span class="lineno"> 1939</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01939"></a><span class="lineno"> 1939</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l01940"></a><span class="lineno"> 1940</span>&#160; </div>
 <div class="line"><a name="l01941"></a><span class="lineno"> 1941</span>&#160;        amrex::Real tstar   = t_star_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>);</div>
 <div class="line"><a name="l01942"></a><span class="lineno"> 1942</span>&#160;        amrex::Real deltaz  = dz * (<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a> - k);</div>
@@ -477,8 +477,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01946"></a><span class="lineno"> 1946</span>&#160; </div>
 <div class="line"><a name="l01947"></a><span class="lineno"> 1947</span>&#160;        <span class="keywordflow">if</span> (exp_most) {</div>
 <div class="line"><a name="l01948"></a><span class="lineno"> 1948</span>&#160;            <span class="comment">// surface gradient equal to gradient at first zface</span></div>
-<div class="line"><a name="l01949"></a><span class="lineno"> 1949</span>&#160;            amrex::Real rthetagrad = ( cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>+1,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>  ,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) ) / (0.5*(dz+dz1));</div>
-<div class="line"><a name="l01950"></a><span class="lineno"> 1950</span>&#160;            dest_arr(i,j,k,icomp+n) = cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - rthetagrad * deltaz;</div>
+<div class="line"><a name="l01949"></a><span class="lineno"> 1949</span>&#160;            amrex::Real rthetagrad = ( cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>+1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>  ,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) ) / (0.5*(dz+dz1));</div>
+<div class="line"><a name="l01950"></a><span class="lineno"> 1950</span>&#160;            dest_arr(i,j,k,icomp+n) = cons_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - rthetagrad * deltaz;</div>
 <div class="line"><a name="l01951"></a><span class="lineno"> 1951</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l01952"></a><span class="lineno"> 1952</span>&#160;            <span class="keywordtype">int</span> ie, je;</div>
 <div class="line"><a name="l01953"></a><span class="lineno"> 1953</span>&#160;            ie = i  &lt; lbound(eta_arr).x ? lbound(eta_arr).x : i;</div>
@@ -492,8 +492,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01961"></a><span class="lineno"> 1961</span>&#160; </div>
 <div class="line"><a name="l01962"></a><span class="lineno"> 1962</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
 <div class="line"><a name="l01963"></a><span class="lineno"> 1963</span>&#160;    }</div>
-<div class="ttc" id="aIndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:36</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:146</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:146</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -626,8 +626,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01998"></a><span class="lineno"> 1998</span>&#160;        velx  = velx_arr(i,j,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>);</div>
 <div class="line"><a name="l01999"></a><span class="lineno"> 1999</span>&#160;        vely  = 0.25*( vely_arr(iyhi,jy,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>)+vely_arr(iyhi,jy+1,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>)</div>
 <div class="line"><a name="l02000"></a><span class="lineno"> 2000</span>&#160;                     + vely_arr(iylo,jy,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>)+vely_arr(iylo,jy+1,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>) );</div>
-<div class="line"><a name="l02001"></a><span class="lineno"> 2001</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5 *( cons_arr(ic-1,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
-<div class="line"><a name="l02002"></a><span class="lineno"> 2002</span>&#160;                     + cons_arr(ic  ,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l02001"></a><span class="lineno"> 2001</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5 *( cons_arr(ic-1,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l02002"></a><span class="lineno"> 2002</span>&#160;                     + cons_arr(ic  ,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
 <div class="line"><a name="l02003"></a><span class="lineno"> 2003</span>&#160; </div>
 <div class="line"><a name="l02004"></a><span class="lineno"> 2004</span>&#160;        amrex::Real ustar   = 0.5 * ( u_star_arr(ic-1,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>) + u_star_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>) );</div>
 <div class="line"><a name="l02005"></a><span class="lineno"> 2005</span>&#160;        amrex::Real wsp     = sqrt(velx*velx+vely*vely);</div>
@@ -654,7 +654,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l02026"></a><span class="lineno"> 2026</span>&#160; </div>
 <div class="line"><a name="l02027"></a><span class="lineno"> 2027</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
 <div class="line"><a name="l02028"></a><span class="lineno"> 2028</span>&#160;    }</div>
-<div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> IndexDefines.H:145</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:145</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -787,8 +787,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l02063"></a><span class="lineno"> 2063</span>&#160;        velx  = 0.25*( velx_arr(ix,jxhi,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>)+velx_arr(ix+1,jxhi,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>)</div>
 <div class="line"><a name="l02064"></a><span class="lineno"> 2064</span>&#160;                     + velx_arr(ix,jxlo,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>)+velx_arr(ix+1,jxlo,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>) );</div>
 <div class="line"><a name="l02065"></a><span class="lineno"> 2065</span>&#160;        vely  = vely_arr(i,j,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>);</div>
-<div class="line"><a name="l02066"></a><span class="lineno"> 2066</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5*( cons_arr(ic,jc-1,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
-<div class="line"><a name="l02067"></a><span class="lineno"> 2067</span>&#160;                    + cons_arr(ic,jc  ,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l02066"></a><span class="lineno"> 2066</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5*( cons_arr(ic,jc-1,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l02067"></a><span class="lineno"> 2067</span>&#160;                    + cons_arr(ic,jc  ,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
 <div class="line"><a name="l02068"></a><span class="lineno"> 2068</span>&#160; </div>
 <div class="line"><a name="l02069"></a><span class="lineno"> 2069</span>&#160;        amrex::Real ustar   = 0.5 * ( u_star_arr(ic,jc-1,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>) + u_star_arr(ic,jc,<a class="code" href="structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208">zlo</a>) );</div>
 <div class="line"><a name="l02070"></a><span class="lineno"> 2070</span>&#160;        amrex::Real wsp     = sqrt(velx*velx+vely*vely);</div>
@@ -892,7 +892,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Source/BoundaryConditions/<a class="el" href="MOSTStress_8H_source.html">MOSTStress.H</a></li>
+<li>Source/BoundaryConditions/<a class="el" href="ERF__MOSTStress_8H_source.html">ERF_MOSTStress.H</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

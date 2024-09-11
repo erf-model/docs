@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('structCENTERED4.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="Interpolation__UPW_8H_source.html">Interpolation_UPW.H</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ERF__Interpolation__UPW_8H_source.html">ERF_Interpolation_UPW.H</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for CENTERED4:</div>
 <div class="dyncontent">
@@ -156,7 +156,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        : <a class="code" href="structCENTERED4.html#a2a0e8c62c2eb7e34a73c94f212a21cb3">m_phi</a>(phi) {}</div>
-<div class="ttc" id="astructCENTERED4_html_a2a0e8c62c2eb7e34a73c94f212a21cb3"><div class="ttname"><a href="structCENTERED4.html#a2a0e8c62c2eb7e34a73c94f212a21cb3">CENTERED4::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:292</div></div>
+<div class="ttc" id="astructCENTERED4_html_a2a0e8c62c2eb7e34a73c94f212a21cb3"><div class="ttname"><a href="structCENTERED4.html#a2a0e8c62c2eb7e34a73c94f212a21cb3">CENTERED4::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:292</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -214,8 +214,8 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="comment">// Interpolated value</span></div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">return</span> ( <a class="code" href="structCENTERED4.html#a2ae59ff4c8afe044deeb7a0b2569e34a">g1</a>*a1 - <a class="code" href="structCENTERED4.html#affba80f935c74285d66f7b86c7b859db">g2</a>*a2 );</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    }</div>
-<div class="ttc" id="astructCENTERED4_html_a2ae59ff4c8afe044deeb7a0b2569e34a"><div class="ttname"><a href="structCENTERED4.html#a2ae59ff4c8afe044deeb7a0b2569e34a">CENTERED4::g1</a></div><div class="ttdeci">static constexpr amrex::Real g1</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:293</div></div>
-<div class="ttc" id="astructCENTERED4_html_affba80f935c74285d66f7b86c7b859db"><div class="ttname"><a href="structCENTERED4.html#affba80f935c74285d66f7b86c7b859db">CENTERED4::g2</a></div><div class="ttdeci">static constexpr amrex::Real g2</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:294</div></div>
+<div class="ttc" id="astructCENTERED4_html_a2ae59ff4c8afe044deeb7a0b2569e34a"><div class="ttname"><a href="structCENTERED4.html#a2ae59ff4c8afe044deeb7a0b2569e34a">CENTERED4::g1</a></div><div class="ttdeci">static constexpr amrex::Real g1</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:293</div></div>
+<div class="ttc" id="astructCENTERED4_html_affba80f935c74285d66f7b86c7b859db"><div class="ttname"><a href="structCENTERED4.html#affba80f935c74285d66f7b86c7b859db">CENTERED4::g2</a></div><div class="ttdeci">static constexpr amrex::Real g2</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:294</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structCENTERED4.html#a548363e6720cc5e30fe3e0968bfa7ace">InterpolateInX()</a>, <a class="el" href="structCENTERED4.html#a0fa7b6e32435f939963adf76f9a461f1">InterpolateInY()</a>, and <a class="el" href="structCENTERED4.html#a0ab3e64ef904a4890845941199c3fccf">InterpolateInZ()</a>.</p>
 <div class="dynheader">
@@ -305,7 +305,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="comment">// Interpolate lo</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        val_lo = <a class="code" href="structCENTERED4.html#ae67620f7c851fbadb31ff439601ac7fe">Evaluate</a>(sp1,s,sm1,sm2);</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
-<div class="ttc" id="astructCENTERED4_html_ae67620f7c851fbadb31ff439601ac7fe"><div class="ttname"><a href="structCENTERED4.html#ae67620f7c851fbadb31ff439601ac7fe">CENTERED4::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;sp1, const amrex::Real &amp;s, const amrex::Real &amp;sm1, const amrex::Real &amp;sm2) const</div><div class="ttdef"><b>Definition:</b> Interpolation_UPW.H:278</div></div>
+<div class="ttc" id="astructCENTERED4_html_ae67620f7c851fbadb31ff439601ac7fe"><div class="ttname"><a href="structCENTERED4.html#ae67620f7c851fbadb31ff439601ac7fe">CENTERED4::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;sp1, const amrex::Real &amp;s, const amrex::Real &amp;sm1, const amrex::Real &amp;sm2) const</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:278</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -562,7 +562,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Source/Utils/<a class="el" href="Interpolation__UPW_8H_source.html">Interpolation_UPW.H</a></li>
+<li>Source/Utils/<a class="el" href="ERF__Interpolation__UPW_8H_source.html">ERF_Interpolation_UPW.H</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
