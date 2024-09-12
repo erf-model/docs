@@ -62,7 +62,7 @@ var searchData=
   ['init_5ffrom_5fhse_1112',['init_from_hse',['../classERF.html#a857a8f76768ec4451b995cbf4f4ac176',1,'ERF']]],
   ['init_5ffrom_5finput_5fsounding_1113',['init_from_input_sounding',['../classERF.html#a2908bcd920ab5e3fef171a37302853ec',1,'ERF']]],
   ['init_5fgeo_5fwind_5fprofile_1114',['init_geo_wind_profile',['../classERF.html#aab564dd3009ef83466b50db6d997b563',1,'ERF']]],
-  ['init_5fisentropic_5fhse_1115',['init_isentropic_hse',['../namespaceHSEutils.html#a531678cdabf38cca3d47317e33a82fa5',1,'HSEutils']]],
+  ['init_5fisentropic_5fhse_1115',['init_isentropic_hse',['../namespaceHSEutils.html#acea3d9d853ef0fbeee3f94b4b62cc224',1,'HSEutils']]],
   ['init_5fisentropic_5fhse_5fterrain_1116',['init_isentropic_hse_terrain',['../namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07',1,'HSEutils']]],
   ['init_5fmode_5fcomps_1117',['init_mode_comps',['../classMamConstituents.html#ab22d164f561b0c76816ad2df12079782',1,'MamConstituents']]],
   ['init_5fmsfs_5ffrom_5fmetgrid_1118',['init_msfs_from_metgrid',['../ERF__Metgrid__utils_8H.html#a85cf6fab999905de4234fa639771bbe1',1,'ERF_Metgrid_utils.H']]],

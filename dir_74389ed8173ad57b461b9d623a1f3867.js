@@ -23,8 +23,6 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ERF_Constants.H", "ERF__Constants_8H.html", "ERF__Constants_8H" ],
     [ "ERF_Derive.cpp", "ERF__Derive_8cpp.html", "ERF__Derive_8cpp" ],
     [ "ERF_Derive.H", "ERF__Derive_8H.html", "ERF__Derive_8H" ],
-    [ "ERF_EOS.H", "ERF__EOS_8H.html", "ERF__EOS_8H" ],
-    [ "ERF_HSE_utils.H", "ERF__HSE__utils_8H.html", "ERF__HSE__utils_8H" ],
     [ "ERF_IndexDefines.H", "ERF__IndexDefines_8H.html", "ERF__IndexDefines_8H" ],
     [ "ERF_make_new_arrays.cpp", "ERF__make__new__arrays_8cpp.html", null ],
     [ "ERF_make_new_level.cpp", "ERF__make__new__level_8cpp.html", null ],

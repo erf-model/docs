@@ -2,6 +2,8 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
 [
     [ "ERF_ChopGrids.cpp", "ERF__ChopGrids_8cpp.html", "ERF__ChopGrids_8cpp" ],
     [ "ERF_DirectionSelector.H", "ERF__DirectionSelector_8H.html", "ERF__DirectionSelector_8H" ],
+    [ "ERF_EOS.H", "ERF__EOS_8H.html", "ERF__EOS_8H" ],
+    [ "ERF_HSE_utils.H", "ERF__HSE__utils_8H.html", "ERF__HSE__utils_8H" ],
     [ "ERF_InteriorGhostCells.cpp", "ERF__InteriorGhostCells_8cpp.html", "ERF__InteriorGhostCells_8cpp" ],
     [ "ERF_Interpolation.H", "ERF__Interpolation_8H.html", "ERF__Interpolation_8H" ],
     [ "ERF_Interpolation_1D.H", "ERF__Interpolation__1D_8H.html", "ERF__Interpolation__1D_8H" ],
