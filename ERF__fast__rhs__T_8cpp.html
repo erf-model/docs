@@ -975,10 +975,16 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                    dx, dtau, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;            }</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;        } <span class="comment">// two-way coupling</span></div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    } <span class="comment">// OMP</span></div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;}</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; </div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;            <span class="comment">// This is necessary here so we don&#39;t go on to the next FArrayBox without</span></div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;            <span class="comment">// having finished copying the fluxes into the FluxRegisters (since the fluxes</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;            <span class="comment">// are stored in temporary FArrayBox&#39;s)</span></div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;            Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160; </div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        } <span class="comment">// two-way coupling</span></div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    } <span class="comment">// OMP</span></div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_afbb622bf3b404a3e7c77f3103b4d1231"><div class="ttname"><a href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a></div><div class="ttdeci">constexpr amrex::Real Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:19</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a046484d86c968f85c3b8e574c1fe3e29"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a></div><div class="ttdeci">#define PrimQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:54</div></div>
