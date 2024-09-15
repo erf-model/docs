@@ -770,11 +770,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                <span class="comment">// Loop over ghost cells in bottom XY-plane (valid box)</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                Box xybx = bx;</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                <span class="keywordtype">int</span> k0 = 0;</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                <span class="keywordflow">if</span> (xybx.smallEnd(2) &lt; 0) {</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                <span class="keywordtype">int</span> k0 = dom_lo.z;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                <span class="keywordflow">if</span> (xybx.smallEnd(2) &lt; 0)</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                {</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                    xybx.setBig(2,dom_lo.z-1);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                    xybx.setSmall(2,bx.smallEnd()[2]);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                    xybx.setSmall(2,bx.smallEnd(2));</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                    <span class="comment">// Get the dz cell size</span></div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                    Real dz = geomdata.CellSize(2);</div>
@@ -794,7 +794,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                        <span class="comment">// GradX at IJK location inside domain -- this relies on the assumption that we have</span></div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                        <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                        Real GradVarx, GradVary;</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                        <span class="keywordflow">if</span> (i &lt; dom_lo.x-1 || i &gt; dom_hi.x+1) {</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                        <span class="keywordflow">if</span> (i &lt; dom_lo.x-1 || i &gt; dom_hi.x+1 || (i+1 &gt; bx_hi.x &amp;&amp; i-1 &lt; bx_lo.x) ) {</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                            GradVarx = 0.0;</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i+1 &gt; bx_hi.x) {</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                            GradVarx =       dxInv[0] * (dest_arr(i  ,j,k0,dest_comp) - dest_arr(i-1,j,k0,dest_comp));</div>
@@ -806,7 +806,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                        <span class="comment">// GradY at IJK location inside domain -- this relies on the assumption that we have</span></div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                        <span class="comment">// used foextrap for cell-centered quantities outside the domain to define the gradient as zero</span></div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                        <span class="keywordflow">if</span> (j &lt; dom_lo.y-1 || j &gt; dom_hi.y+1) {</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                        <span class="keywordflow">if</span> (j &lt; dom_lo.y-1 || j &gt; dom_hi.y+1 || (j+1 &gt; bx_hi.y &amp;&amp; j-1 &lt; bx_lo.y) ) {</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                            GradVary = 0.0;</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j+1 &gt; bx_hi.y) {</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                            GradVary =       dxInv[1] * (dest_arr(i,j  ,k0,dest_comp) - dest_arr(i,j-1,k0,dest_comp));</div>
@@ -911,64 +911,61 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    Box ndomain  = convert(domain,IntVect(1,1,1));</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    MultiFab z_nd_mf_loc;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        BoxList bl_z_phys = convert(mf.boxArray(),IntVect(1,1,1)).boxList();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : bl_z_phys) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            b &amp;= ndomain;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            b.setSmall(2,0);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            b.setBig(2,1);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        BoxArray ba_z(std::move(bl_z_phys));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        z_nd_mf_loc.define(ba_z,mf.DistributionMap(),1,IntVect(nghost[0],nghost[1],0));</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        z_nd_mf_loc.ParallelCopy(*<a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>,0,0,1,<a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>-&gt;nGrowVect(),</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                                    z_nd_mf_loc.nGrowVect());</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    z_nd_mf_loc.FillBoundary(<a class="code" href="classERFPhysBCFunct__cons.html#a1a3121bc392962a3c3149a6e2db2791b">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(mf,<span class="keyword">false</span>); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    MultiFab z_nd_mf_loc;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>-&gt;FillBoundary(<a class="code" href="classERFPhysBCFunct__cons.html#a1a3121bc392962a3c3149a6e2db2791b">m_geom</a>.periodicity());</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        BoxList bl_z_phys = convert(mf.boxArray(),IntVect(1,1,1)).boxList();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : bl_z_phys) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            b.setSmall(2,0);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            b.setBig(2,1);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        BoxArray ba_z(std::move(bl_z_phys));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        z_nd_mf_loc.define(ba_z,mf.DistributionMap(),1,IntVect(nghost[0],nghost[1],0));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        z_nd_mf_loc.ParallelCopy(*<a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>,0,0,1,<a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>-&gt;nGrowVect(),</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                                    z_nd_mf_loc.nGrowVect());</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(mf,<span class="keyword">false</span>); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="comment">// This is the box we pass to the different routines</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">// NOTE -- this is the full grid box NOT the tile box</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">// This is the box we pass to the different routines</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">// NOTE -- this is the full grid box NOT the tile box</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            Box bx  = mfi.validbox();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            Box bx  = mfi.validbox();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment">// These are the boxes we use to test on relative to the domain</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            Box cbx1 = bx; cbx1.grow(IntVect(nghost[0],nghost[1],0));</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            Box cbx2 = bx; cbx2.grow(nghost);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            Array4&lt;const Real&gt; z_nd_arr;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                z_nd_arr = z_nd_mf_loc.const_array(mfi);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">if</span> (!gdomain.contains(cbx2))</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt; cons_arr = mf.array(mfi);;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classERFPhysBCFunct__cons.html#a0e54453355d6a7c96044113c8827a008">m_use_real_bcs</a>)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    <a class="code" href="classERFPhysBCFunct__cons.html#a150af9888a6eecc66230896ba7ad2558">impose_lateral_cons_bcs</a>(cons_arr,cbx1,domain,icomp,ncomp,nghost[2]);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="comment">// These are the boxes we use to test on relative to the domain</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            Box cbx1 = bx; cbx1.grow(IntVect(nghost[0],nghost[1],0));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            Box cbx2 = bx; cbx2.grow(nghost);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            Array4&lt;const Real&gt; z_nd_arr;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                z_nd_arr = z_nd_mf_loc.const_array(mfi);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">if</span> (!gdomain.contains(cbx2))</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt; cons_arr = mf.array(mfi);;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classERFPhysBCFunct__cons.html#a0e54453355d6a7c96044113c8827a008">m_use_real_bcs</a>)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    <a class="code" href="classERFPhysBCFunct__cons.html#a150af9888a6eecc66230896ba7ad2558">impose_lateral_cons_bcs</a>(cons_arr,cbx1,domain,icomp,ncomp,nghost[2]);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="classERFPhysBCFunct__cons.html#a22d846e0ea593afa850ece78233013ee">impose_vertical_cons_bcs</a>(cons_arr,cbx2,domain,z_nd_arr,dxInv,icomp,ncomp);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <a class="code" href="classERFPhysBCFunct__cons.html#a22d846e0ea593afa850ece78233013ee">impose_vertical_cons_bcs</a>(cons_arr,cbx2,domain,z_nd_arr,dxInv,icomp,ncomp);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        } <span class="comment">// MFIter</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    } <span class="comment">// OpenMP</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;} <span class="comment">// operator()</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        } <span class="comment">// MFIter</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    } <span class="comment">// OpenMP</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;} <span class="comment">// operator()</span></div>
 <div class="ttc" id="aclassERFPhysBCFunct__cons_html_a22d846e0ea593afa850ece78233013ee"><div class="ttname"><a href="classERFPhysBCFunct__cons.html#a22d846e0ea593afa850ece78233013ee">ERFPhysBCFunct_cons::impose_vertical_cons_bcs</a></div><div class="ttdeci">void impose_vertical_cons_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int icomp, int ncomp)</div><div class="ttdef"><b>Definition:</b> ERF_BoundaryConditions_cons.cpp:255</div></div>
 </div><!-- fragment -->
 </div>
