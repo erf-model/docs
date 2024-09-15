@@ -254,9 +254,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        }</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="comment">// total nonprecipitating water (Q1) == water vapor (Qv), i.e., there is no cloud water or cloud ice</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">if</span> (l_moist)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">if</span> (l_moist) {</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            state(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) = rho_0 * <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, qv_inp_sound, z, inp_sound_size);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        }</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    });</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
@@ -443,10 +443,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="comment">// total nonprecipitating water (Q1) == water vapor (Qv), i.e., there</span></div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="comment">// is no cloud water or cloud ice</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">if</span> (l_moist)</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">if</span> (l_moist) {</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            state(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) = rho_k * qv_k;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    });</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;}</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    });</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;}</div>
 <div class="ttc" id="aERF__EOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:62</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_a24b76fd72f051dc593840f006d79fd1a"><div class="ttname"><a href="ERF__EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a">getExnergivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenRTh(const amrex::Real rhotheta, const amrex::Real rdOcp, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:116</div></div>
 </div><!-- fragment -->
@@ -542,59 +543,59 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;{</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keyword">const</span> Real* z_inp_sound     = inputSoundingData.z_inp_sound_d[0].dataPtr();</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keyword">const</span> Real* U_inp_sound     = inputSoundingData.U_inp_sound_d[0].dataPtr();</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keyword">const</span> Real* V_inp_sound     = inputSoundingData.V_inp_sound_d[0].dataPtr();</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>   inp_sound_size  = inputSoundingData.size(0);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="comment">// Geometry</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keyword">const</span> Real* prob_lo = geomdata.ProbLo();</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keyword">const</span> Real* dx = geomdata.CellSize();</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keyword">const</span> Real  z_lo = prob_lo[2];</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keyword">const</span> Real  dz   = dx[2];</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">// We want to set the lateral BC values, too</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    Box gbx = bx; <span class="comment">// Copy constructor</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    gbx.grow(0,1); gbx.grow(1,1); <span class="comment">// Grow by one in the lateral directions</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="comment">// Construct a box that is on x-faces</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keyword">const</span> Box&amp; xbx = surroundingNodes(gbx,0);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="comment">// Construct a box that is on y-faces</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keyword">const</span> Box&amp; ybx = surroundingNodes(gbx,1);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="comment">// Construct a box that is on z-faces</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keyword">const</span> Box&amp; zbx = surroundingNodes(gbx,2);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="comment">// Set the x,y,z-velocities</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    ParallelFor(xbx, ybx, zbx,</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="comment">// Note that this is called on a box of x-faces</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_nd_arr) ? 0.25*( z_nd_arr(i,j  ,k  )</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                                                + z_nd_arr(i,j+1,k  )</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                                                + z_nd_arr(i,j  ,k+1)</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                                                + z_nd_arr(i,j+1,k+1))</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                                         : z_lo + (k + 0.5) * dz;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="comment">// Set the x-velocity</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        x_vel(i, j, k) = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, U_inp_sound, z, inp_sound_size);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    },</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="comment">// Note that this is called on a box of y-faces</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_nd_arr) ? 0.25*( z_nd_arr(i  ,j,k  )</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                                                + z_nd_arr(i+1,j,k  )</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                                                + z_nd_arr(i  ,j,k+1)</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                                                + z_nd_arr(i+1,j,k+1))</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                                         : z_lo + (k + 0.5) * dz;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="comment">// Set the y-velocity</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        y_vel(i, j, k) = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, V_inp_sound, z, inp_sound_size);</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    },</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="comment">// Note that this is called on a box of z-faces</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="comment">// Set the z-velocity</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        z_vel(i, j, k) = 0.0;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    });</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;{</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keyword">const</span> Real* z_inp_sound     = inputSoundingData.z_inp_sound_d[0].dataPtr();</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keyword">const</span> Real* U_inp_sound     = inputSoundingData.U_inp_sound_d[0].dataPtr();</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keyword">const</span> Real* V_inp_sound     = inputSoundingData.V_inp_sound_d[0].dataPtr();</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>   inp_sound_size  = inputSoundingData.size(0);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="comment">// Geometry</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keyword">const</span> Real* prob_lo = geomdata.ProbLo();</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keyword">const</span> Real* dx = geomdata.CellSize();</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keyword">const</span> Real  z_lo = prob_lo[2];</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keyword">const</span> Real  dz   = dx[2];</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="comment">// We want to set the lateral BC values, too</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    Box gbx = bx; <span class="comment">// Copy constructor</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    gbx.grow(0,1); gbx.grow(1,1); <span class="comment">// Grow by one in the lateral directions</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="comment">// Construct a box that is on x-faces</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keyword">const</span> Box&amp; xbx = surroundingNodes(gbx,0);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="comment">// Construct a box that is on y-faces</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keyword">const</span> Box&amp; ybx = surroundingNodes(gbx,1);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="comment">// Construct a box that is on z-faces</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keyword">const</span> Box&amp; zbx = surroundingNodes(gbx,2);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="comment">// Set the x,y,z-velocities</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    ParallelFor(xbx, ybx, zbx,</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="comment">// Note that this is called on a box of x-faces</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_nd_arr) ? 0.25*( z_nd_arr(i,j  ,k  )</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                                                + z_nd_arr(i,j+1,k  )</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                                                + z_nd_arr(i,j  ,k+1)</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                                                + z_nd_arr(i,j+1,k+1))</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                                         : z_lo + (k + 0.5) * dz;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="comment">// Set the x-velocity</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        x_vel(i, j, k) = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, U_inp_sound, z, inp_sound_size);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    },</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="comment">// Note that this is called on a box of y-faces</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_nd_arr) ? 0.25*( z_nd_arr(i  ,j,k  )</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                                                + z_nd_arr(i+1,j,k  )</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                                                + z_nd_arr(i  ,j,k+1)</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                                                + z_nd_arr(i+1,j,k+1))</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                                         : z_lo + (k + 0.5) * dz;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="comment">// Set the y-velocity</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        y_vel(i, j, k) = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, V_inp_sound, z, inp_sound_size);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    },</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="comment">// Note that this is called on a box of z-faces</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="comment">// Set the z-velocity</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        z_vel(i, j, k) = 0.0;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    });</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec">ERF::init_from_input_sounding()</a>.</p>
 <div class="dynheader">
