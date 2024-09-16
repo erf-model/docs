@@ -80,13 +80,13 @@ var NAVTREEINDEX =
 "classERF.html#ad8c2eca71737b102cc5cf75f97c6bd63",
 "classKessler.html#a2d8ae6f03c19821ef6279dcadd5cb36e",
 "classMamConstituents.html#a5e7be8b1cc061652374bb6ab9e2d3645",
-"classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949",
-"classRrtmgp.html#a8c60511318cca878c918dfc131507cb2",
-"classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042",
-"namespacederived.html#afe57e0f13e2e24c73d0ed373a9cd0d09",
-"structPhysProp_1_1physprop__t.html#a66b63e7d4250ce345343af372d529193",
-"structWENO5.html#a979941971dd839129c0e424f262f3cdc",
-"structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288"
+"classPlaneAverage.html#ae359b042dfa8a0b951a3d34706c3c385",
+"classRrtmgp.html#a5fa9f64db9791a7f152055f484113714",
+"classncutils_1_1NCGroup.html#a56f4429492300eabd16fa0d4bd55b8c7",
+"namespacederived.html#a7fb98e12fceaa6f691dfef83db453757",
+"structPhysProp_1_1physprop__t.html#a2c8b9cd5f27f8c039d9ec76d665f08bc",
+"structWENO3.html#a7726242b3b06bf75643f8141d2ca78c8",
+"structsurface__temp__donelan.html#ab39f101456f06c4711711f1db2cb2751"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

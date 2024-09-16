@@ -30,8 +30,6 @@ var structSolverChoice =
     [ "grid_stretching_ratio", "structSolverChoice.html#a63b6fffe930de9eb25f92c2bafb00c00", null ],
     [ "have_geo_wind_profile", "structSolverChoice.html#a65faffc1ea490b3934a9df768cfa26f1", null ],
     [ "incompressible", "structSolverChoice.html#ad77ddc1a1eff7c49195d54b69aab46f5", null ],
-    [ "latitude_lo", "structSolverChoice.html#adddf7760d02dee6c92d3ab21c845d8ef", null ],
-    [ "longitude_lo", "structSolverChoice.html#a678e249df6763ba01a9b2790dc3dc8b9", null ],
     [ "lsm_type", "structSolverChoice.html#a43c1741535574c7e6f4fe6bf90552f31", null ],
     [ "moisture_type", "structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b", null ],
     [ "ncorr", "structSolverChoice.html#a3b9fef36e4613507eef87379c2c9bf03", null ],
@@ -56,6 +54,7 @@ var structSolverChoice =
     [ "terrain_type", "structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60", null ],
     [ "test_mapfactor", "structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107", null ],
     [ "time_avg_vel", "structSolverChoice.html#af3119a4089367206db9fc3a17664e874", null ],
+    [ "turb_disk_angle", "structSolverChoice.html#addcff0f25c6925df38673747b4dea91e", null ],
     [ "turbChoice", "structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4", null ],
     [ "use_coriolis", "structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606", null ],
     [ "use_explicit_most", "structSolverChoice.html#a15db794855101421e20ba970dcd634e9", null ],
@@ -70,5 +69,7 @@ var structSolverChoice =
     [ "windfarm_loc_type", "structSolverChoice.html#a54214b71edb43f251f04b79281c39375", null ],
     [ "windfarm_spec_table", "structSolverChoice.html#a34c427126677860aa8acad633e6fb2be", null ],
     [ "windfarm_type", "structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645", null ],
+    [ "windfarm_x_shift", "structSolverChoice.html#a1b2950247c4d2789597b7610c69ff5b6", null ],
+    [ "windfarm_y_shift", "structSolverChoice.html#adec260ba3c7bd01ffa4fd40bd90920cd", null ],
     [ "zsurf", "structSolverChoice.html#aa4659e9babdc5d7327266f967d9a80ff", null ]
 ];
