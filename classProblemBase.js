@@ -3,7 +3,7 @@ var classProblemBase =
     [ "~ProblemBase", "classProblemBase.html#ac7201619fcd9464f851b0cae82dfbcd1", null ],
     [ "erf_init_dens_hse", "classProblemBase.html#aef7d3d9788867d83e6ec8b2c9499de56", null ],
     [ "erf_init_dens_hse_moist", "classProblemBase.html#ad1a7277d332001542789e488458096b9", null ],
-    [ "erf_init_rayleigh", "classProblemBase.html#ae29f0d7569a8538739692f98e6194286", null ],
+    [ "erf_init_rayleigh", "classProblemBase.html#aaf5cb14c8033c99df446fd943b1f2216", null ],
     [ "init_base_parms", "classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f", null ],
     [ "init_custom_pert", "classProblemBase.html#a1c41568b22a4f37247d816a8d20b0757", null ],
     [ "init_custom_terrain", "classProblemBase.html#af79c90b1e65ab01db0f17576818e3661", null ],

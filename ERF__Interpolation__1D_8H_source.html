@@ -156,9 +156,57 @@ $(document).ready(function(){initNavTree('ERF__Interpolation__1D_8H_source.html'
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> beta_interp;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> * Interpolate between values from a vector of reals (e.g., zlevels_stag) to a</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> * new, expanded vector with refine_fac-1 new uniformly spaced points between</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"> * the original values.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"> * Example:</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> *   Vector&lt;Real&gt; tmp_orig = {0,1,2};</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> *   Vector&lt;Real&gt; tmp(4);</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"> *   expand_and_interpolate_1d(tmp, tmp_orig, 2, false); // tmp == {0, 0.5, 1, 1.5, 2}</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"> *   expand_and_interpolate_1d(tmp, tmp_orig, 2, true); // tmp == {0.25, 0.75, 1.25, 1.75}</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f">   85</a></span>&#160;<a class="code" href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f">expand_and_interpolate_1d</a> (amrex::Vector&lt;amrex::Real&gt;&amp; znew,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                           <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; zorig,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                           <span class="keywordtype">int</span> refine_fac,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                           <span class="keywordtype">bool</span> destag=<span class="keyword">false</span>)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> Nz = zorig.size();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> Nz_refined = refine_fac*(Nz-1) + 1;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (destag) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        AMREX_ALWAYS_ASSERT(znew.size() == Nz_refined-1);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        AMREX_ALWAYS_ASSERT(znew.size() == Nz_refined);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    amrex::Vector&lt;amrex::Real&gt; znew_stag(Nz_refined);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=0; k &lt; Nz; ++k) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        znew_stag[refine_fac*k] = zorig[k];</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (refine_fac &gt; 1) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=0; k &lt; Nz-1; ++k) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            amrex::Real z1 = zorig[k];</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            amrex::Real dz = zorig[k+1] - z1;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> koff=1; koff &lt; refine_fac; ++koff) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                znew_stag[refine_fac*k + koff] = amrex::Real(koff)/refine_fac * dz + z1;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span> (destag) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=0; k &lt; Nz_refined-1; ++k) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            znew[k] = 0.5*(znew_stag[k] + znew_stag[k+1]);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        znew = znew_stag;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aERF__Interpolation__1D_8H_html_a803d0d35d4ca4791556cbe02bbf51cbb"><div class="ttname"><a href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real interpolate_1d(const amrex::Real *alpha, const amrex::Real *beta, const amrex::Real alpha_interp, const int alpha_size)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_1D.H:12</div></div>
+<div class="ttc" id="aERF__Interpolation__1D_8H_html_af71b362e58803c8c29aa5127adcf645f"><div class="ttname"><a href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f">expand_and_interpolate_1d</a></div><div class="ttdeci">AMREX_FORCE_INLINE void expand_and_interpolate_1d(amrex::Vector&lt; amrex::Real &gt; &amp;znew, const amrex::Vector&lt; amrex::Real &gt; &amp;zorig, int refine_fac, bool destag=false)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_1D.H:85</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

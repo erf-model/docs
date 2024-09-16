@@ -39,7 +39,6 @@ var ERF__DataStruct_8H =
       [ "None", "ERF__DataStruct_8H.html#a335364b39450e23bfefded6b7af8908ca6adf97f83acf6453d4a6a4b1070f3754", null ]
     ] ],
     [ "Rayleigh", "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239", [
-      [ "tau", "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a0831ecd8c789131994c1f350dce2b02f", null ],
       [ "ubar", "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d2cdf8cea6cb933d4ce759c1ff1b948", null ],
       [ "vbar", "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239acb08c6a1b8bca5e9e4ef6162aef2cfa4", null ],
       [ "wbar", "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d8bd6001a2421b06c3ec4e9f2dcdffd", null ],
