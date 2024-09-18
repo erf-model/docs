@@ -89,7 +89,7 @@ var classERF =
     [ "ReadCheckpointFileMOST", "classERF.html#a53fbe0d6ca7ba034c618eb7052ed9771", null ],
     [ "ReadParameters", "classERF.html#a2d39cd3bdc3d90609ad3b14e266d190a", null ],
     [ "refinement_criteria_setup", "classERF.html#aa90c9756f684404f8b69b8a23568b535", null ],
-    [ "remake_zphys", "classERF.html#a691172d44ab3e8b4d6fb18c068cc1ab4", null ],
+    [ "remake_zphys", "classERF.html#a18610f7aac948db169cf8a4642573027", null ],
     [ "RemakeLevel", "classERF.html#aae7a3a76e08e54c618cf79b30ed2d73d", null ],
     [ "restart", "classERF.html#a530d2ce59e6fd46e9fb00e4d11eaf737", null ],
     [ "sample_lines", "classERF.html#afb798c72ea4fde6f4da8d01a24c8c165", null ],
@@ -174,7 +174,7 @@ var classERF =
     [ "domain_bcs_type_d", "classERF.html#a8a99e22b1111c803e31b4afd5fcdea60", null ],
     [ "dt", "classERF.html#ad34bae243fdb6c3029f5abe4fb4bca2d", null ],
     [ "dt_mri_ratio", "classERF.html#a3cf7cb2e51eb7b69cb4079ffc6722459", null ],
-    [ "dz_min", "classERF.html#a0656573ffb79f0fda8d02d5ea0482ed2", null ],
+    [ "dz_min", "classERF.html#a15db5266359edba700f523f16da303a7", null ],
     [ "eddyDiffs_lev", "classERF.html#a327d704704abd516be19339cb2d226f9", null ],
     [ "fine_mask", "classERF.html#a83c244120a15f0d9b9bca54e93976428", null ],
     [ "finished_wave", "classERF.html#af282e3bdfdad38a0b898ed567ea446ee", null ],
@@ -330,6 +330,6 @@ var classERF =
     [ "z_phys_nd_src", "classERF.html#a30dcf40e8f104fb6b6132805d2eff47c", null ],
     [ "z_t_rk", "classERF.html#a72a59614c6d5ab840b924c84d5682270", null ],
     [ "zflux_imask", "classERF.html#ada098767690d194f89717b0deb3adeac", null ],
-    [ "zlevels_stag", "classERF.html#a7a4d6e7887fa8f30c33a0b8899035ddb", null ],
+    [ "zlevels_stag", "classERF.html#ace4f0c79f84075dd7a43bd2b0ede1a9b", null ],
     [ "zvel_bc_data", "classERF.html#a7eaa274e3e2193a19bfbe3e684bf692b", null ]
 ];

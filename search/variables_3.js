@@ -63,5 +63,5 @@ var searchData=
   ['dycore_5fvert_5fupw_5ffrac_3983',['dycore_vert_upw_frac',['../structAdvChoice.html#a48a2a3eb5899f899e202df67fd8bb2e0',1,'AdvChoice']]],
   ['dynamicviscosity_3984',['dynamicViscosity',['../structDiffChoice.html#abaff02e5f99628d6a91b546f3ad1fae6',1,'DiffChoice']]],
   ['dz0_3985',['dz0',['../structSolverChoice.html#a0a4f1c55ea1e3a7d50f926ee0d20a21c',1,'SolverChoice']]],
-  ['dz_5fmin_3986',['dz_min',['../classERF.html#a0656573ffb79f0fda8d02d5ea0482ed2',1,'ERF']]]
+  ['dz_5fmin_3986',['dz_min',['../classERF.html#a15db5266359edba700f523f16da303a7',1,'ERF']]]
 ];
