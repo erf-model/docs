@@ -499,7 +499,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">nrk</td><td>which RK stage </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dt</td><td>slow time step </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">S_rhs</td><td>RHS computed here </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">S_old</td><td>old-time solution &ndash; used only for incompressible </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">S_old</td><td>old-time solution &ndash; used only for anelastic </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">S_data</td><td>current solution </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">S_prim</td><td>primitive variables (i.e. conserved variables divided by density) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">S_scratch</td><td>scratch space </td></tr>
@@ -537,7 +537,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">az</td><td>area fractions on z-faces </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">detJ</td><td>Jacobian of the metric transformation (= 1 if use_terrain is false) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">p0</td><td>Reference (hydrostatically stratified) pressure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">pp_inc</td><td>Perturbational pressure only used for incompressible flow </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pp_inc</td><td>Perturbational pressure only used for anelastic flow </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mapfac_m</td><td>map factor at cell centers </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mapfac_u</td><td>map factor at x-faces </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mapfac_v</td><td>map factor at y-faces </td></tr>
@@ -591,15 +591,15 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_rot_most     = (solverChoice.<a class="code" href="structSolverChoice.html#af3dab90d6c6d356aa2f35c3dbe151411">use_rotate_most</a>);</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#ifdef ERF_USE_POISSON_SOLVE</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_incompressible = solverChoice.<a class="code" href="structSolverChoice.html#ad77ddc1a1eff7c49195d54b69aab46f5">incompressible</a>[level];</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_const_rho      = solverChoice.<a class="code" href="structSolverChoice.html#aa9cf425ef14a7e28ec3411044e737b23">constant_density</a>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_anelastic = solverChoice.<a class="code" href="structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec">anelastic</a>[level];</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_const_rho = solverChoice.<a class="code" href="structSolverChoice.html#aa9cf425ef14a7e28ec3411044e737b23">constant_density</a>;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">// We cannot use incompressible with terrain or with moisture</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    AMREX_ALWAYS_ASSERT(!l_use_terrain  || !l_incompressible);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    AMREX_ALWAYS_ASSERT(!l_use_moisture || !l_incompressible);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">// We cannot use anelastic with terrain or with moisture</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    AMREX_ALWAYS_ASSERT(!l_use_terrain  || !l_anelastic);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    AMREX_ALWAYS_ASSERT(!l_use_moisture || !l_anelastic);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_incompressible = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_const_rho      = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_anelastic = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_const_rho = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>
@@ -705,8 +705,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; rho_u_old = S_old[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daaf661293a5a71ca532c214929b98c0bad">IntVars::xmom</a>].array(mfi);</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; rho_v_old = S_old[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e60798bc45154a8f905b1aa228a24e5">IntVars::ymom</a>].array(mfi);</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">if</span> (l_incompressible) {</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="comment">// When incompressible we must reset these to 0 each RK step</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">if</span> (l_anelastic) {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="comment">// When anelastic we must reset these to 0 each RK step</span></div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            S_scratch[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daaf661293a5a71ca532c214929b98c0bad">IntVars::xmom</a>][mfi].template setVal&lt;RunOn::Device&gt;(0.0,tbx);</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            S_scratch[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e60798bc45154a8f905b1aa228a24e5">IntVars::ymom</a>][mfi].template setVal&lt;RunOn::Device&gt;(0.0,tby);</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            S_scratch[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daaaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a>][mfi].template setVal&lt;RunOn::Device&gt;(0.0,tbz);</div>
@@ -771,7 +771,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="comment">// Perturbational pressure field</span></div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        FArrayBox pprime;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">if</span> (!l_incompressible) {</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">if</span> (!l_anelastic) {</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            Box gbx = mfi.tilebox(); gbx.grow(IntVect(1,1,1));</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            <span class="keywordflow">if</span> (gbx.smallEnd(2) &lt; 0) gbx.setSmall(2,0);</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            pprime.resize(gbx,1,The_Async_Arena());</div>
@@ -792,7 +792,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            });</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        }</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor">#ifdef ERF_USE_POISSON_SOLVE</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; pp_arr = (l_incompressible) ? pp_inc.const_array(mfi) : pprime.const_array();</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; pp_arr = (l_anelastic) ? pp_inc.const_array(mfi) : pprime.const_array();</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; pp_arr = pprime.const_array();</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -967,8 +967,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            });</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        }</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160; </div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        <span class="comment">// If incompressible and in second RK stage, take average of old-time and new-time source</span></div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        <span class="keywordflow">if</span> ( l_incompressible &amp;&amp; (nrk == 1) )</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        <span class="comment">// If anelastic and in second RK stage, take average of old-time and new-time source</span></div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        <span class="keywordflow">if</span> ( l_anelastic &amp;&amp; (nrk == 1) )</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        {</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;            {</div>
@@ -1068,7 +1068,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                rho_u_rhs(i, j, k) *= h_zeta;</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            }</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160; </div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            <span class="keywordflow">if</span> ( l_incompressible &amp;&amp; (nrk == 1) ) {</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            <span class="keywordflow">if</span> ( l_anelastic &amp;&amp; (nrk == 1) ) {</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;              rho_u_rhs(i,j,k) *= 0.5;</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;              rho_u_rhs(i,j,k) += 0.5 / dt * (rho_u(i,j,k) - rho_u_old(i,j,k));</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            }</div>
@@ -1116,7 +1116,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                rho_v_rhs(i, j, k) *= h_zeta;</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;            }</div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160; </div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;            <span class="keywordflow">if</span> ( l_incompressible &amp;&amp; (nrk == 1) ) {</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;            <span class="keywordflow">if</span> ( l_anelastic &amp;&amp; (nrk == 1) ) {</div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;              rho_v_rhs(i,j,k) *= 0.5;</div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;              rho_v_rhs(i,j,k) += 0.5 / dt * (rho_v(i,j,k) - rho_v_old(i,j,k));</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;            }</div>
@@ -1256,11 +1256,11 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:564</div></div>
 <div class="ttc" id="astructSolverChoice_html_a69e2f0b874cba8faae57987ead4e3ebb"><div class="ttname"><a href="structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb">SolverChoice::abl_pressure_grad</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; abl_pressure_grad</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:620</div></div>
 <div class="ttc" id="astructSolverChoice_html_aa53b017d79e0067923180a0aa59367b4"><div class="ttname"><a href="structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4">SolverChoice::turbChoice</a></div><div class="ttdeci">amrex::Vector&lt; TurbChoice &gt; turbChoice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:526</div></div>
+<div class="ttc" id="astructSolverChoice_html_aa7be0d60ce3de3441d44082cc1b725ec"><div class="ttname"><a href="structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec">SolverChoice::anelastic</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; anelastic</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:534</div></div>
 <div class="ttc" id="astructSolverChoice_html_aa9cf425ef14a7e28ec3411044e737b23"><div class="ttname"><a href="structSolverChoice.html#aa9cf425ef14a7e28ec3411044e737b23">SolverChoice::constant_density</a></div><div class="ttdeci">int constant_density</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:535</div></div>
 <div class="ttc" id="astructSolverChoice_html_aaadbd092e9e176b7f088c7992c866c6e"><div class="ttname"><a href="structSolverChoice.html#aaadbd092e9e176b7f088c7992c866c6e">SolverChoice::advChoice</a></div><div class="ttdeci">AdvChoice advChoice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:523</div></div>
 <div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:614</div></div>
 <div class="ttc" id="astructSolverChoice_html_ab734eb0a5147b93dc6590038b6decc60"><div class="ttname"><a href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">SolverChoice::terrain_type</a></div><div class="ttdeci">TerrainType terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:613</div></div>
-<div class="ttc" id="astructSolverChoice_html_ad77ddc1a1eff7c49195d54b69aab46f5"><div class="ttname"><a href="structSolverChoice.html#ad77ddc1a1eff7c49195d54b69aab46f5">SolverChoice::incompressible</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; incompressible</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:534</div></div>
 <div class="ttc" id="astructSolverChoice_html_af3dab90d6c6d356aa2f35c3dbe151411"><div class="ttname"><a href="structSolverChoice.html#af3dab90d6c6d356aa2f35c3dbe151411">SolverChoice::use_rotate_most</a></div><div class="ttdeci">bool use_rotate_most</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:597</div></div>
 <div class="ttc" id="astructSolverChoice_html_af976afa61859c07e6249963edc367c2d"><div class="ttname"><a href="structSolverChoice.html#af976afa61859c07e6249963edc367c2d">SolverChoice::coupling_type</a></div><div class="ttdeci">CouplingType coupling_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:612</div></div>
 <div class="ttc" id="astructTurbChoice_html"><div class="ttname"><a href="structTurbChoice.html">TurbChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:29</div></div>
