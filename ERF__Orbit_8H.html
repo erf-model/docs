@@ -131,8 +131,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a86ab981fdb3b32de3c39df4cc028fb42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Orbit_8H.html#a86ab981fdb3b32de3c39df4cc028fb42">zenith</a> (int &amp;calday, amrex::MultiFab *clat, amrex::MultiFab *clon, real1d &amp;coszrs, int &amp;ncol, const amrex::Real &amp;eccen, const amrex::Real &amp;mvelpp, const amrex::Real &amp;lambm0, const amrex::Real &amp;obliqr, amrex::Real uniform_angle=-1.0)</td></tr>
-<tr class="separator:a86ab981fdb3b32de3c39df4cc028fb42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f0a40a53139be3e26be6fcf40c2bd14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Orbit_8H.html#a3f0a40a53139be3e26be6fcf40c2bd14">zenith</a> (int &amp;calday, amrex::MultiFab *clat, amrex::MultiFab *clon, const amrex::Vector&lt; int &gt; &amp;rank_offsets, real1d &amp;coszrs, int &amp;ncol, const amrex::Real &amp;eccen, const amrex::Real &amp;mvelpp, const amrex::Real &amp;lambm0, const amrex::Real &amp;obliqr, amrex::Real uniform_angle=-1.0)</td></tr>
+<tr class="separator:a3f0a40a53139be3e26be6fcf40c2bd14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e24c049c05ea5e14bfc131dcca54c93"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Orbit_8H.html#a5e24c049c05ea5e14bfc131dcca54c93">shr_orb_cosz</a> (const amrex::Real &amp;jday, const amrex::Real &amp;lat, const amrex::Real &amp;lon, const amrex::Real &amp;declin, amrex::Real uniform_angle)</td></tr>
 <tr class="separator:a5e24c049c05ea5e14bfc131dcca54c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a778a20e582ab3eaecfe3a5f67c73d68d"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Orbit_8H.html#a778a20e582ab3eaecfe3a5f67c73d68d">shr_orb_decl</a> (const amrex::Real &amp;calday, const amrex::Real &amp;eccen, const amrex::Real &amp;mvelpp, const amrex::Real &amp;lambm0, const amrex::Real &amp;obliqr, amrex::Real &amp;delta, amrex::Real &amp;eccf)</td></tr>
@@ -182,32 +182,32 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    amrex::Real cos_sol_zen_ang;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// If uniform angle is specified we use that.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// NOTE: uniform angle is in degrees</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (uniform_angle&gt;0.0) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        cos_sol_zen_ang = std::cos(uniform_angle * <a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>/180.0);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// Default method</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        cos_sol_zen_ang = std::sin(lat)*std::sin(declin) - std::cos(lat)*std::cos(declin) *</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                          std::cos((jday-std::floor(jday))*2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> + lon);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> cos_sol_zen_ang;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    amrex::Real cos_sol_zen_ang;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// If uniform angle is specified we use that.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// NOTE: uniform angle is in degrees</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (uniform_angle&gt;0.0) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        cos_sol_zen_ang = std::cos(uniform_angle * <a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>/180.0);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// Default method</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        cos_sol_zen_ang = std::sin(lat)*std::sin(declin) - std::cos(lat)*std::cos(declin) *</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                          std::cos((jday-std::floor(jday))*2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> + lon);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> cos_sol_zen_ang;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__Orbit_8cpp.html#aaee034023d5a18e9dd77ea2c0dd01273">zenith()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__Orbit_8cpp.html#a27837ef90c4844c0240f37b9beab2320">zenith()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Orbit_8H_a5e24c049c05ea5e14bfc131dcca54c93_icgraph.png" border="0" usemap="#aERF__Orbit_8H_a5e24c049c05ea5e14bfc131dcca54c93_icgraph" alt=""/></div>
 <map name="aERF__Orbit_8H_a5e24c049c05ea5e14bfc131dcca54c93_icgraph" id="aERF__Orbit_8H_a5e24c049c05ea5e14bfc131dcca54c93_icgraph">
 <area shape="rect" title=" " alt="" coords="277,5,384,32"/>
-<area shape="rect" href="ERF__Orbit_8cpp.html#aaee034023d5a18e9dd77ea2c0dd01273" title=" " alt="" coords="167,5,229,32"/>
+<area shape="rect" href="ERF__Orbit_8cpp.html#a27837ef90c4844c0240f37b9beab2320" title=" " alt="" coords="167,5,229,32"/>
 <area shape="rect" href="classRadiation.html#a748f2155d330eecb6d0ce4fba32db8e7" title=" " alt="" coords="5,5,119,32"/>
 </map>
 </div>
@@ -269,50 +269,50 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">static</span> constexpr amrex::Real day_p_yr = 365.0;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">static</span> constexpr amrex::Real ve = 80.5;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Compute eccentricity factor and solar declination using</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// day value where a round day (such as 213.0) refers to 0z at</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// Greenwich longitude.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Use formulas from Berger, Andre 1978: Long-Term Variations of Daily</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Insolation and Quaternary Climatic Changes. J. of the Atmo. Sci.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// 35:2362-2367.</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// To get the earths true longitude (position in orbit; lambda in Berger</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// 1978) which is necessary to find the eccentricity factor and declination,</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// must first calculate the mean longitude (lambda m in Berger 1978) at</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// the present day.  This is done by adding to lambm0 (the mean longitude</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// at the vernal equinox, set as March 21 at noon, when lambda=0; in radians)</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// an increment (delta lambda m in Berger 1978) that is the number of</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// days past or before (a negative increment) the vernal equinox divided by</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// the days in a model year times the 2*pi radians in a complete orbit.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    amrex::Real lambm = lambm0 + (calday - ve)*2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>/day_p_yr;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    amrex::Real lmm   = lambm  - mvelpp;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// The earths true longitude, in radians, is then found from</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// the formula in Berger 1978:</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    amrex::Real sinl  = std::sin(lmm);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    amrex::Real lamb  = lambm  + eccen*(2.0*sinl + eccen*(1.25*sin(2.0*lmm)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                               + eccen*((13.0/12.0)*sin(3.0*lmm) - 0.25*sinl)));</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">static</span> constexpr amrex::Real day_p_yr = 365.0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">static</span> constexpr amrex::Real ve = 80.5;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Compute eccentricity factor and solar declination using</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// day value where a round day (such as 213.0) refers to 0z at</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Greenwich longitude.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Use formulas from Berger, Andre 1978: Long-Term Variations of Daily</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Insolation and Quaternary Climatic Changes. J. of the Atmo. Sci.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// 35:2362-2367.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// To get the earths true longitude (position in orbit; lambda in Berger</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// 1978) which is necessary to find the eccentricity factor and declination,</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// must first calculate the mean longitude (lambda m in Berger 1978) at</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// the present day.  This is done by adding to lambm0 (the mean longitude</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// at the vernal equinox, set as March 21 at noon, when lambda=0; in radians)</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// an increment (delta lambda m in Berger 1978) that is the number of</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// days past or before (a negative increment) the vernal equinox divided by</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// the days in a model year times the 2*pi radians in a complete orbit.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    amrex::Real lambm = lambm0 + (calday - ve)*2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>/day_p_yr;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    amrex::Real lmm   = lambm  - mvelpp;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// The earths true longitude, in radians, is then found from</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// the formula in Berger 1978:</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    amrex::Real sinl  = std::sin(lmm);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    amrex::Real lamb  = lambm  + eccen*(2.0*sinl + eccen*(1.25*sin(2.0*lmm)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                               + eccen*((13.0/12.0)*sin(3.0*lmm) - 0.25*sinl)));</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// Using the obliquity, eccentricity, moving vernal equinox longitude of</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// perihelion (plus), and earths true longitude, the declination (delta)</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// and the normalized earth/sun distance (rho in Berger 1978; actually inverse</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// rho will be used), and thus the eccentricity factor (eccf), can be</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// calculated from formulas given in Berger 1978.</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    amrex::Real invrho = (1.0 + eccen*std::cos(lamb - mvelpp)) / (1.0 - eccen*eccen);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Set solar declination and eccentricity factor</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    delta  = std::asin(std::sin(obliqr)*std::sin(lamb));</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    eccf   = invrho*invrho;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Using the obliquity, eccentricity, moving vernal equinox longitude of</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// perihelion (plus), and earths true longitude, the declination (delta)</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// and the normalized earth/sun distance (rho in Berger 1978; actually inverse</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// rho will be used), and thus the eccentricity factor (eccf), can be</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// calculated from formulas given in Berger 1978.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    amrex::Real invrho = (1.0 + eccen*std::cos(lamb - mvelpp)) / (1.0 - eccen*eccen);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Set solar declination and eccentricity factor</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    delta  = std::asin(std::sin(obliqr)*std::sin(lamb));</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    eccf   = invrho*invrho;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classRadiation.html#abf8ab94227c1a5f729ac24d92e52518b">Radiation::radiation_driver_sw()</a>, and <a class="el" href="ERF__Orbit_8cpp.html#aaee034023d5a18e9dd77ea2c0dd01273">zenith()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classRadiation.html#abf8ab94227c1a5f729ac24d92e52518b">Radiation::radiation_driver_sw()</a>, and <a class="el" href="ERF__Orbit_8cpp.html#a27837ef90c4844c0240f37b9beab2320">zenith()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -320,15 +320,15 @@ Here is the caller graph for this function:</div>
 <map name="aERF__Orbit_8H_a778a20e582ab3eaecfe3a5f67c73d68d_icgraph" id="aERF__Orbit_8H_a778a20e582ab3eaecfe3a5f67c73d68d_icgraph">
 <area shape="rect" title=" " alt="" coords="365,42,469,69"/>
 <area shape="rect" href="classRadiation.html#abf8ab94227c1a5f729ac24d92e52518b" title=" " alt="" coords="167,5,317,47"/>
-<area shape="rect" href="ERF__Orbit_8cpp.html#aaee034023d5a18e9dd77ea2c0dd01273" title=" " alt="" coords="211,71,273,98"/>
+<area shape="rect" href="ERF__Orbit_8cpp.html#a27837ef90c4844c0240f37b9beab2320" title=" " alt="" coords="211,71,273,98"/>
 <area shape="rect" href="classRadiation.html#a748f2155d330eecb6d0ce4fba32db8e7" title=" " alt="" coords="5,71,119,98"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a86ab981fdb3b32de3c39df4cc028fb42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86ab981fdb3b32de3c39df4cc028fb42">&#9670;&nbsp;</a></span>zenith()</h2>
+<a id="a3f0a40a53139be3e26be6fcf40c2bd14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f0a40a53139be3e26be6fcf40c2bd14">&#9670;&nbsp;</a></span>zenith()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -350,6 +350,12 @@ Here is the caller graph for this function:</div>
           <td></td>
           <td class="paramtype">amrex::MultiFab *&#160;</td>
           <td class="paramname"><em>clon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rank_offsets</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

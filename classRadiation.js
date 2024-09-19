@@ -115,6 +115,7 @@ var classRadiation =
     [ "qrsc", "classRadiation.html#abb3bb540832d451a76367e441df528a0", null ],
     [ "qt", "classRadiation.html#aa3961f0a2837a89f1d08dd5aba2ed056", null ],
     [ "radiation", "classRadiation.html#adbdd39584f1836cc21a816a7ee7098bb", null ],
+    [ "rank_offsets", "classRadiation.html#a41e89e9dd4b961aeedde124d9f33aead", null ],
     [ "rei", "classRadiation.html#a145c41f0bcb2d103df37c30a5202340e", null ],
     [ "rel", "classRadiation.html#a95d771d1d4157cb2640e6657b1af9937", null ],
     [ "rrtmg_to_rrtmgp", "classRadiation.html#a343cbb13362229a43f02df3a95eaa0ea", null ],
