@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"ERF__NCCheckpoint_8cpp.html":[3,0,1,6,2],
 "ERF__NCColumnFile_8cpp.html":[3,0,1,6,3],
 "ERF__NCInterface_8H.html":[3,0,1,6,5],
 "ERF__NCInterface_8H_source.html":[3,0,1,6,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__WriteScalarProfiles_8cpp.html":[3,0,1,6,21],
 "ERF__Wstar_8H.html":[3,0,1,16,28],
 "ERF__Wstar_8H.html#a07708294fc196cae6c560e47360c6600":[3,0,1,16,28,1],
-"ERF__Wstar_8H.html#ae4dec2546738e08263cd23690c9028fe":[3,0,1,16,28,0],
-"ERF__Wstar_8H_source.html":[3,0,1,16,28]
+"ERF__Wstar_8H.html#ae4dec2546738e08263cd23690c9028fe":[3,0,1,16,28,0]
 };

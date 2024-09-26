@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['windfarmloctype_4881',['WindFarmLocType',['../ERF__DataStruct_8H.html#acc2aa74379de57a98956ae09f0a11c9b',1,'ERF_DataStruct.H']]],
-  ['windfarmtype_4882',['WindFarmType',['../ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847',1,'ERF_DataStruct.H']]]
+  ['windfarmloctype_4883',['WindFarmLocType',['../ERF__DataStruct_8H.html#acc2aa74379de57a98956ae09f0a11c9b',1,'ERF_DataStruct.H']]],
+  ['windfarmtype_4884',['WindFarmType',['../ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847',1,'ERF_DataStruct.H']]]
 ];

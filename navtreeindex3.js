@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"ERF__Wstar_8H_source.html":[3,0,1,16,28],
 "ERF__add__thin__body__sources_8cpp.html":[3,0,1,14,0],
 "ERF__add__thin__body__sources_8cpp.html#afe1f106475861ba9ed98d5163c7f4e20":[3,0,1,14,0,0],
 "ERF__advance__dycore_8cpp.html":[3,0,1,15,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classERF.html#a09d0fb2bd609c898a665d9530a744585":[2,0,22,232],
 "classERF.html#a0b0b4140e117163895e5e2c89a68d12a":[2,0,22,121],
 "classERF.html#a0be12798b46f52fa4b5a995f147c3f96":[2,0,22,29],
-"classERF.html#a0c1fdcfbc9cbd6cb13e41d1170b161f8":[2,0,22,157],
-"classERF.html#a0ef3455d5b4fc9a178e023b233d389a4":[2,0,22,182]
+"classERF.html#a0c1fdcfbc9cbd6cb13e41d1170b161f8":[2,0,22,157]
 };

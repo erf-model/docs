@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"classMamConstituents.html#a5c94b10764d82b018270ebf012cd657b":[2,0,41,71],
 "classMamConstituents.html#a5e7be8b1cc061652374bb6ab9e2d3645":[2,0,41,62],
 "classMamConstituents.html#a6839b6299dcdd8acf1cc859d929e0026":[2,0,41,7],
 "classMamConstituents.html#a737daa041cc666d79764053a35175a15":[2,0,41,31],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1":[2,0,59,13],
 "classPlaneAverage.html#abe59333d5fc9969465111df40dd9892e":[2,0,59,23],
 "classPlaneAverage.html#abf7bfae5c1b6fed56ff09fd06368b12c":[2,0,59,6],
-"classPlaneAverage.html#ade7352e3a72a2e09561e031acd32cc8a":[2,0,59,20],
-"classPlaneAverage.html#ae021681bed8e81747b36dd6bcbd1a257":[2,0,59,1]
+"classPlaneAverage.html#ade7352e3a72a2e09561e031acd32cc8a":[2,0,59,20]
 };
