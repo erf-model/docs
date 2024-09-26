@@ -447,7 +447,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a96295e93c39d249775ba2498eb3d4fc1">MicVar::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">auto</span>  pres_array = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a147204d9af51dec01fb0d95c5cde8d37">MicVar::pres</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox(IntVect(0), IntVect(0,0,1));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
