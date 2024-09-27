@@ -53,6 +53,8 @@ var classERF =
     [ "init_uniform", "classERF.html#ae618963cf90e247b72fbd71d5b13599d", null ],
     [ "init_zphys", "classERF.html#a8f50cd1ba85fbf9ae0579a56ba06eb1b", null ],
     [ "InitData", "classERF.html#ad5d585e110291969767013a515719224", null ],
+    [ "InitData_post", "classERF.html#aa8b243c093bd872b6f7592603ff97792", null ],
+    [ "InitData_pre", "classERF.html#a9084860e0049795487636a9e0ccbc89e", null ],
     [ "initHSE", "classERF.html#a92c020bfaa43e40fb5ffc449427a0318", null ],
     [ "initHSE", "classERF.html#a69c8fce3b0f5b28e98240599c2ee16bb", null ],
     [ "initialize_bcs", "classERF.html#a37a308ae143f1358c0ee5f5c65c0860d", null ],
