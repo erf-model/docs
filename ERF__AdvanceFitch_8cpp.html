@@ -169,7 +169,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Real d  = std::min(std::fabs(z - hub_height), rotor_rad);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Real <a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a> = std::acos(d/rotor_rad);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Real A_s = rotor_rad*rotor_rad*<a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a> - d*std::pow(rotor_rad*rotor_rad - d*d, 0.5);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Real A_s = rotor_rad*rotor_rad*<a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a> - d*std::pow(std::max(rotor_rad*rotor_rad - d*d,0.0), 0.5);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Real A = <a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rotor_rad*rotor_rad/2.0 - A_s;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> A;</div>

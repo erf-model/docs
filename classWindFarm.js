@@ -9,6 +9,8 @@ var classWindFarm =
     [ "init_windfarm_lat_lon", "classWindFarm.html#aab3b5df05c4a5f0604ad7c378ba34d1e", null ],
     [ "init_windfarm_x_y", "classWindFarm.html#aaa79cb89d8f18f2a059d1ff62c5e5dd3", null ],
     [ "read_tables", "classWindFarm.html#a4bfca70fee27062cd4eca4209ddfb16b", null ],
+    [ "read_windfarm_airofil_tables", "classWindFarm.html#ad2df286e9c9e47d8fa4a59d4d8cc4e28", null ],
+    [ "read_windfarm_blade_table", "classWindFarm.html#a584e7ba8dd495cbedf35150dfce68f26", null ],
     [ "read_windfarm_locations_table", "classWindFarm.html#a38b7fff20a8b1882965e1bbfefe5419a", null ],
     [ "read_windfarm_spec_table", "classWindFarm.html#a92bd0b9d5124a84555b8ea2633502191", null ],
     [ "set_turb_disk_angle", "classWindFarm.html#aaf217d3f196edb5499d6988f13e1357a", null ],

@@ -63,6 +63,7 @@ var ERF__DataStruct_8H =
       [ "Fitch", "ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a2b00d051a8acd949c63ac94efa793efe", null ],
       [ "EWP", "ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847ac49b3a43f2f11cf252c3a9f35d1c4441", null ],
       [ "SimpleAD", "ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a492784fb728d5797eb8db8b25fa2b33a", null ],
+      [ "GeneralAD", "ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847ac991ca3bcfb9e4817496a145b16c6a26", null ],
       [ "None", "ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a6adf97f83acf6453d4a6a4b1070f3754", null ]
     ] ]
 ];

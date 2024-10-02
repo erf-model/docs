@@ -19,7 +19,8 @@ var NAVTREEINDEX0 =
 "ERF__AdvanceFitch_8cpp.html":[3,0,1,17,1,0],
 "ERF__AdvanceFitch_8cpp.html#a68e0a40af0744df9f7e79d181225f615":[3,0,1,17,1,0,1],
 "ERF__AdvanceFitch_8cpp.html#a7b6c67da0ff16af60b10f434632b06ce":[3,0,1,17,1,0,0],
-"ERF__AdvanceSimpleAD_8cpp.html":[3,0,1,17,3,0],
+"ERF__AdvanceGeneralAD_8cpp.html":[3,0,1,17,2,0],
+"ERF__AdvanceSimpleAD_8cpp.html":[3,0,1,17,4,0],
 "ERF__Advance_8cpp.html":[3,0,1,15,0],
 "ERF__AdvectionSrcForMom_8cpp.html":[3,0,1,0,1],
 "ERF__AdvectionSrcForMom_8cpp.html#a308c801e1b50746486cee1e6f9ee60fd":[3,0,1,0,1,0],
@@ -195,8 +196,9 @@ var NAVTREEINDEX0 =
 "ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847":[3,0,1,2,1,12],
 "ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a2b00d051a8acd949c63ac94efa793efe":[3,0,1,2,1,12,0],
 "ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a492784fb728d5797eb8db8b25fa2b33a":[3,0,1,2,1,12,2],
-"ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a6adf97f83acf6453d4a6a4b1070f3754":[3,0,1,2,1,12,3],
+"ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847a6adf97f83acf6453d4a6a4b1070f3754":[3,0,1,2,1,12,4],
 "ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847ac49b3a43f2f11cf252c3a9f35d1c4441":[3,0,1,2,1,12,1],
+"ERF__DataStruct_8H.html#a5930188cdc2dd4def9ce58fdf5f46847ac991ca3bcfb9e4817496a145b16c6a26":[3,0,1,2,1,12,3],
 "ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcb":[3,0,1,2,1,9],
 "ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcba7f0566bdfe36c67d532a7e2aca33d9a4":[3,0,1,2,1,9,2],
 "ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcbaad1bdec1c0213a18483e81bcb4926964":[3,0,1,2,1,9,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__Derive_8H.html#a8bc196f7dfb365c426b0b7e720e479e2":[3,0,1,22,12],
 "ERF__Derive_8H.html#a9935603239fe8510b11179da8e76c39c":[3,0,1,22,5],
 "ERF__Derive_8H.html#abec1266940e40d642fca2aa685b7f314":[3,0,1,22,7],
-"ERF__Derive_8H.html#aeaeabd5f649796984f61651a6733e96b":[3,0,1,22,0],
-"ERF__Derive_8H.html#af5e075e5b8b2e3964ae6af3f5f06f497":[3,0,1,22,9],
-"ERF__Derive_8H_source.html":[3,0,1,22]
+"ERF__Derive_8H.html#aeaeabd5f649796984f61651a6733e96b":[3,0,1,22,0]
 };

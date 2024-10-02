@@ -70,6 +70,8 @@ var structSolverChoice =
     [ "use_NumDiff", "structSolverChoice.html#aa2de671156cccf1f3a34b9f250fb0e28", null ],
     [ "use_rotate_most", "structSolverChoice.html#af3dab90d6c6d356aa2f35c3dbe151411", null ],
     [ "use_terrain", "structSolverChoice.html#a063a88594452100497651e8aaf1f68d7", null ],
+    [ "windfarm_airfoil_tables", "structSolverChoice.html#af9c11d4a044eea88bad0b2e32318b412", null ],
+    [ "windfarm_blade_table", "structSolverChoice.html#aa401d2a5d51cb382e0b6e18502d961a9", null ],
     [ "windfarm_loc_table", "structSolverChoice.html#a44bc0227f088664e4e2c1090ebb1381d", null ],
     [ "windfarm_loc_type", "structSolverChoice.html#a54214b71edb43f251f04b79281c39375", null ],
     [ "windfarm_spec_table", "structSolverChoice.html#a34c427126677860aa8acad633e6fb2be", null ],

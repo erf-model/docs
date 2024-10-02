@@ -81,6 +81,7 @@ var hierarchy =
     [ "NullWindFarm", "classNullWindFarm.html", [
       [ "EWP", "classEWP.html", null ],
       [ "Fitch", "classFitch.html", null ],
+      [ "GeneralAD", "classGeneralAD.html", null ],
       [ "SimpleAD", "classSimpleAD.html", null ],
       [ "WindFarm", "classWindFarm.html", null ]
     ] ],
