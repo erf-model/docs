@@ -1,6 +1,7 @@
 var NAVTREEINDEX3 =
 {
-"ERF__Wstar_8H_source.html":[3,0,1,16,28],
+"ERF__Wstar_8H.html#ae4dec2546738e08263cd23690c9028fe":[3,0,1,16,29,0],
+"ERF__Wstar_8H_source.html":[3,0,1,16,29],
 "ERF__add__thin__body__sources_8cpp.html":[3,0,1,14,0],
 "ERF__add__thin__body__sources_8cpp.html#afe1f106475861ba9ed98d5163c7f4e20":[3,0,1,14,0,0],
 "ERF__advance__dycore_8cpp.html":[3,0,1,15,1],
@@ -51,11 +52,11 @@ var NAVTREEINDEX3 =
 "ERF__m2005__effradius_8H.html#aa8be1a517640718ec08df40a3613244a":[3,0,1,13,10,0],
 "ERF__m2005__effradius_8H_source.html":[3,0,1,13,10],
 "ERF__make__buoyancy_8cpp.html":[3,0,1,14,3],
-"ERF__make__buoyancy_8cpp.html#a5b57cae6fc98deebf69bef2645914b62":[3,0,1,14,3,0],
+"ERF__make__buoyancy_8cpp.html#aa89e56be7a54db2a79fc3a3541f70cb9":[3,0,1,14,3,0],
 "ERF__make__fast__coeffs_8cpp.html":[3,0,1,15,9],
 "ERF__make__fast__coeffs_8cpp.html#a76dfae5a4d6b6037b1261e5c42936616":[3,0,1,15,9,0],
 "ERF__make__mom__sources_8cpp.html":[3,0,1,14,4],
-"ERF__make__mom__sources_8cpp.html#aca297eea7c5bd02697c93af2f90f11af":[3,0,1,14,4,0],
+"ERF__make__mom__sources_8cpp.html#a6cb4cc0547bb12c601d1625c288b690f":[3,0,1,14,4,0],
 "ERF__make__new__arrays_8cpp.html":[3,0,1,24],
 "ERF__make__new__level_8cpp.html":[3,0,1,25],
 "ERF__make__sources_8cpp.html":[3,0,1,14,5],
@@ -71,6 +72,7 @@ var NAVTREEINDEX3 =
 "ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66":[3,0,1,15,12,0],
 "ERF__slow__rhs__pre_8cpp.html":[3,0,1,15,13],
 "ERF__slow__rhs__pre_8cpp.html#a98e4d7df0dadc5b00fe3815fc11465c9":[3,0,1,15,13,0],
+"ERF__solve__with__heffte_8cpp.html":[3,0,1,16,20],
 "ERF__writeEBsurface_8cpp.html":[3,0,1,4,7],
 "ERF__writeJobInfo_8cpp.html":[3,0,1,6,20],
 "ERF__writeJobInfo_8cpp.html#aabaa127a3a319c1b86090d6c88568965":[3,0,1,6,20,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "classERF.html#a0877d5a0263641c13b92d2d16f47b689":[2,0,22,103],
 "classERF.html#a09017292c9943ac2ed20ce7ed5c3c767":[2,0,22,210],
 "classERF.html#a09d0fb2bd609c898a665d9530a744585":[2,0,22,234],
-"classERF.html#a0b0b4140e117163895e5e2c89a68d12a":[2,0,22,123],
-"classERF.html#a0be12798b46f52fa4b5a995f147c3f96":[2,0,22,29],
-"classERF.html#a0c1fdcfbc9cbd6cb13e41d1170b161f8":[2,0,22,159]
+"classERF.html#a0b0b4140e117163895e5e2c89a68d12a":[2,0,22,123]
 };

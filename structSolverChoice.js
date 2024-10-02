@@ -1,6 +1,7 @@
 var structSolverChoice =
 [
     [ "build_coriolis_forcings", "structSolverChoice.html#a3b31e3a91b502cabfc9fd8778492ad46", null ],
+    [ "check_params", "structSolverChoice.html#a4c875e5fe0f3dd69fbcc145b7066c766", null ],
     [ "display", "structSolverChoice.html#a9d26abef2007eb7c93180b0a6699cf8e", null ],
     [ "init_params", "structSolverChoice.html#a8c15b7cf354e53ddb58bad9577d124d5", null ],
     [ "read_int_string", "structSolverChoice.html#a31e016e3da7c175ac02427767286bc42", null ],

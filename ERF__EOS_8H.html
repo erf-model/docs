@@ -171,6 +171,8 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:acd37b404bbf95073ffef2a1003dc56c5"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a> (const amrex::Real T, const amrex::Real P, const amrex::Real rdOcp)</td></tr>
 <tr class="separator:acd37b404bbf95073ffef2a1003dc56c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e70b271e9ea46c3fb0bb6c60eccb73"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EOS_8H.html#ab7e70b271e9ea46c3fb0bb6c60eccb73">getTgivenPandTh</a> (const amrex::Real P, const amrex::Real Th, const amrex::Real rdOcp)</td></tr>
+<tr class="separator:ab7e70b271e9ea46c3fb0bb6c60eccb73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65cf1718b7a1fcc56cb16685642543da"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a> (const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=0.0)</td></tr>
 <tr class="separator:a65cf1718b7a1fcc56cb16685642543da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0e28e4df049e6e34fa4a973dd446506"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EOS_8H.html#ad0e28e4df049e6e34fa4a973dd446506">getThgivenRandT</a> (const amrex::Real rho, const amrex::Real T, const amrex::Real rdOcp, const amrex::Real qv=0.0)</td></tr>
@@ -222,11 +224,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Function to return dP/drho at constant theta</p>
 <p>@params[in] theta potential temperature @params[in] p pressure @params[in] rdOcp ratio of R_d to c_p </p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// We should be using moist value of theta when using moisture</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// theta_m = theta * (1 + R_v/R_d*qv)</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> * std::pow( (<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * <a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a> * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) * <a class="code" href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a>), <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>) * std::pow(<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>-1.0) ;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// We should be using moist value of theta when using moisture</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// theta_m = theta * (1 + R_v/R_d*qv)</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> * std::pow( (<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * <a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a> * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) * <a class="code" href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a>), <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>) * std::pow(<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>-1.0) ;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0ab59ff21ef0b178fde0843394f5674a"><div class="ttname"><a href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a></div><div class="ttdeci">constexpr amrex::Real R_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a8e89876f083cff186cc6124a1100e000"><div class="ttname"><a href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a></div><div class="ttdeci">constexpr amrex::Real ip_0</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:24</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a994fea25f28c33c2e8f1e9c63d5b8b56"><div class="ttname"><a href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a></div><div class="ttdeci">constexpr amrex::Real p_0</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:18</div></div>
@@ -277,10 +279,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Function to return the Exner function pi given pressure @params[in] p pressure @params[in] rdOcp ratio of R_d to c_p </p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// Exner function pi in terms of P</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> std::pow(P * <a class="code" href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a>, rdOcp);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// Exner function pi in terms of P</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> std::pow(P * <a class="code" href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a>, rdOcp);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#add029fcf0244ea86d2e0b419a2c6ef52">ERF::erf_enforce_hse()</a>.</p>
 <div class="dynheader">
@@ -328,12 +330,12 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to return the Exner function pi given densith times potential temperature</p>
 <p>@params[in] rhotheta density times potential temperature @params[in] rdOcp ratio of R_d to c_p </p>
-<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// Exner function pi in terms of (rho theta)</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// We should be using moist value of theta when using moisture</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// theta_m = theta * (1 + R_v/R_d*qv)</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> std::pow(<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhotheta *  (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) * <a class="code" href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * rdOcp);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// Exner function pi in terms of (rho theta)</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// We should be using moist value of theta when using moisture</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// theta_m = theta * (1 + R_v/R_d*qv)</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> std::pow(<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhotheta *  (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) * <a class="code" href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * rdOcp);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__init__from__input__sounding_8cpp.html#af361420f8bc21f523a05894f83c85604">init_bx_scalars_from_input_sounding_hse()</a>.</p>
 <div class="dynheader">
@@ -376,9 +378,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to return pressure given density times theta</p>
 <p>@params[in] rhotheta density times potential temperature @params[in] qv water vapor </p>
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> * std::pow(<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhotheta * (1.0+(<a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>)*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) * <a class="code" href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> * std::pow(<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhotheta * (1.0+(<a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>)*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) * <a class="code" href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40">SAM::Compute_Coefficients()</a>, <a class="el" href="classKessler.html#a18f83fc4dff53c8c29ee9ee974e65ac2">Kessler::Copy_State_to_Micro()</a>, <a class="el" href="classSAM.html#a1df931f91be89514c09f69f24cfeca53">SAM::Copy_State_to_Micro()</a>, <a class="el" href="classERF.html#ab5b66549344d8b04b126fa0ef16c7ca2">ERF::derive_diag_profiles()</a>, <a class="el" href="classERF.html#a8b93b715895b00e86e7db653d2a7284a">ERF::derive_diag_profiles_stag()</a>, <a class="el" href="namespacederived.html#afe57e0f13e2e24c73d0ed373a9cd0d09">derived::erf_dersoundspeed()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a98e4d7df0dadc5b00fe3815fc11465c9">erf_slow_rhs_pre()</a>, <a class="el" href="classERF.html#a6b1d727e63de2e49aa4f8e00b0dda1d5">ERF::estTimeStep()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#af361420f8bc21f523a05894f83c85604">init_bx_scalars_from_input_sounding_hse()</a>, <a class="el" href="namespaceHSEutils.html#acea3d9d853ef0fbeee3f94b4b62cc224">HSEutils::init_isentropic_hse()</a>, <a class="el" href="namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07">HSEutils::init_isentropic_hse_terrain()</a>, <a class="el" href="classRadiation.html#a14d24390054f532422c4fc9f761e1ec0">Radiation::initialize()</a>, <a class="el" href="classERF.html#a01987b2556834788694f2f3741a2afe4">ERF::MakeHorizontalAverages()</a>, and <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
@@ -449,11 +451,11 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to return density given theta and pressure</p>
 <p>@params[in] theta potential temperature @params[in] p pressure @params[in] rdOcp ratio of R_d to c_p </p>
-<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// We should be using moist value of theta when using moisture</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// theta_m = theta * (1 + R_v/R_d*qv)</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> std::pow(<a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>, rdOcp) * std::pow(p, <a class="code" href="ERF__Constants_8H.html#ab24194b3b11ee04368e1087acda6bde7">iGamma</a>) / (<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * <a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a> * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) );</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// We should be using moist value of theta when using moisture</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// theta_m = theta * (1 + R_v/R_d*qv)</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> std::pow(<a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>, rdOcp) * std::pow(p, <a class="code" href="ERF__Constants_8H.html#ab24194b3b11ee04368e1087acda6bde7">iGamma</a>) / (<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * <a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a> * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) );</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_ab24194b3b11ee04368e1087acda6bde7"><div class="ttname"><a href="ERF__Constants_8H.html#ab24194b3b11ee04368e1087acda6bde7">iGamma</a></div><div class="ttdeci">constexpr amrex::Real iGamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:26</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__Metgrid__utils_8H.html#a220649f3d8e9fb0793393803b5c9577f">calc_rho_p()</a>, <a class="el" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31">InputSoundingData::calc_rho_p()</a>, and <a class="el" href="namespaceHSEutils.html#a49a3ecd8dc0be35accd87a453bc1224e">HSEutils::Newton_Raphson_hse()</a>.</p>
@@ -498,22 +500,75 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to return the density given pressure</p>
 <p>@params[in] p pressure </p>
-<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// diagnostic relation for the full pressure</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// see https://erf.readthedocs.io/en/latest/theory/NavierStokesEquations.html</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// For cases with moisture, theta = theta_m / (1 + R_v/R_d*qv)</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> std::pow(p*std::pow(<a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>-1), <a class="code" href="ERF__Constants_8H.html#ab24194b3b11ee04368e1087acda6bde7">iGamma</a>) * <a class="code" href="ERF__Constants_8H.html#a2c83556bc439f3f48ca5eb1cb5c81842">iR_d</a> / (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) ;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// diagnostic relation for the full pressure</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">// see https://erf.readthedocs.io/en/latest/theory/NavierStokesEquations.html</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// For cases with moisture, theta = theta_m / (1 + R_v/R_d*qv)</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">return</span> std::pow(p*std::pow(<a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>-1), <a class="code" href="ERF__Constants_8H.html#ab24194b3b11ee04368e1087acda6bde7">iGamma</a>) * <a class="code" href="ERF__Constants_8H.html#a2c83556bc439f3f48ca5eb1cb5c81842">iR_d</a> / (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) ;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a2c83556bc439f3f48ca5eb1cb5c81842"><div class="ttname"><a href="ERF__Constants_8H.html#a2c83556bc439f3f48ca5eb1cb5c81842">iR_d</a></div><div class="ttdeci">constexpr amrex::Real iR_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:25</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a857a8f76768ec4451b995cbf4f4ac176">ERF::init_from_hse()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a857a8f76768ec4451b995cbf4f4ac176">ERF::init_from_hse()</a>, and <a class="el" href="ERF__make__buoyancy_8cpp.html#aa89e56be7a54db2a79fc3a3541f70cb9">make_buoyancy()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__EOS_8H_a3cc0ee7727b26e21a97acfc2ad2e6d4d_icgraph.png" border="0" usemap="#aERF__EOS_8H_a3cc0ee7727b26e21a97acfc2ad2e6d4d_icgraph" alt=""/></div>
 <map name="aERF__EOS_8H_a3cc0ee7727b26e21a97acfc2ad2e6d4d_icgraph" id="aERF__EOS_8H_a3cc0ee7727b26e21a97acfc2ad2e6d4d_icgraph">
-<area shape="rect" title=" " alt="" coords="196,5,345,32"/>
-<area shape="rect" href="classERF.html#a857a8f76768ec4451b995cbf4f4ac176" title=" " alt="" coords="5,5,148,32"/>
+<area shape="rect" title=" " alt="" coords="400,31,549,57"/>
+<area shape="rect" href="classERF.html#a857a8f76768ec4451b995cbf4f4ac176" title=" " alt="" coords="209,5,352,32"/>
+<area shape="rect" href="ERF__make__buoyancy_8cpp.html#aa89e56be7a54db2a79fc3a3541f70cb9" title=" " alt="" coords="217,56,345,83"/>
+<area shape="rect" href="ERF__make__mom__sources_8cpp.html#a6cb4cc0547bb12c601d1625c288b690f" title=" " alt="" coords="5,56,161,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab7e70b271e9ea46c3fb0bb6c60eccb73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7e70b271e9ea46c3fb0bb6c60eccb73">&#9670;&nbsp;</a></span>getTgivenPandTh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenPandTh </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>Th</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>rdOcp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to return temperature given pressure and potential temperature</p>
+<p>@params[in] pressure @params[in] potential temperature @params[in] rdOcp ratio of R_d to c_p </p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> Th / std::pow(<a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>/P, rdOcp);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__make__buoyancy_8cpp.html#aa89e56be7a54db2a79fc3a3541f70cb9">make_buoyancy()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__EOS_8H_ab7e70b271e9ea46c3fb0bb6c60eccb73_icgraph.png" border="0" usemap="#aERF__EOS_8H_ab7e70b271e9ea46c3fb0bb6c60eccb73_icgraph" alt=""/></div>
+<map name="aERF__EOS_8H_ab7e70b271e9ea46c3fb0bb6c60eccb73_icgraph" id="aERF__EOS_8H_ab7e70b271e9ea46c3fb0bb6c60eccb73_icgraph">
+<area shape="rect" title=" " alt="" coords="385,5,520,32"/>
+<area shape="rect" href="ERF__make__buoyancy_8cpp.html#aa89e56be7a54db2a79fc3a3541f70cb9" title=" " alt="" coords="209,5,337,32"/>
+<area shape="rect" href="ERF__make__mom__sources_8cpp.html#a6cb4cc0547bb12c601d1625c288b690f" title=" " alt="" coords="5,5,161,32"/>
 </map>
 </div>
 
@@ -552,16 +607,17 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to return temperature given density and potential temperature</p>
 <p>@params[in] rho density @params[in] rhotheta density times potential temperature theta </p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// rho and rhotheta are dry values. We should be using moist value of theta when using moisture</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// theta_m = theta * (1 + R_v/R_d*qv)</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    amrex::Real p_loc = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> * std::pow(<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhotheta * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) * <a class="code" href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// p = rho_d * R_d * T_v (not T)</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// T_v = T * (1 + R_v/R_d*qv)</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> p_loc / (<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) );</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// rho and rhotheta are dry values. We should be using moist value of theta when using moisture</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// theta_m = theta * (1 + R_v/R_d*qv)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    amrex::Real p_loc = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> * std::pow(<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhotheta * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) * <a class="code" href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// p = rho_d * R_d * T_v (not T)</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// T_v = T * (1 + R_v/R_d*qv)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> p_loc / (<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>) );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40">SAM::Compute_Coefficients()</a>, <a class="el" href="classKessler.html#a18f83fc4dff53c8c29ee9ee974e65ac2">Kessler::Copy_State_to_Micro()</a>, <a class="el" href="classSAM.html#a1df931f91be89514c09f69f24cfeca53">SAM::Copy_State_to_Micro()</a>, <a class="el" href="namespacederived.html#add1791d7423c133ba6e7ab55975cf34f">derived::erf_dermoisttemp()</a>, <a class="el" href="namespacederived.html#a8d96f91847cec51636c122ab27a5f8a2">derived::erf_dertemp()</a>, <a class="el" href="classRadiation.html#a14d24390054f532422c4fc9f761e1ec0">Radiation::initialize()</a>, <a class="el" href="ERF__make__buoyancy_8cpp.html#a5b57cae6fc98deebf69bef2645914b62">make_buoyancy()</a>, and <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40">SAM::Compute_Coefficients()</a>, <a class="el" href="classKessler.html#a18f83fc4dff53c8c29ee9ee974e65ac2">Kessler::Copy_State_to_Micro()</a>, <a class="el" href="classSAM.html#a1df931f91be89514c09f69f24cfeca53">SAM::Copy_State_to_Micro()</a>, <a class="el" href="namespacederived.html#add1791d7423c133ba6e7ab55975cf34f">derived::erf_dermoisttemp()</a>, <a class="el" href="namespacederived.html#a8d96f91847cec51636c122ab27a5f8a2">derived::erf_dertemp()</a>, <a class="el" href="classRadiation.html#a14d24390054f532422c4fc9f761e1ec0">Radiation::initialize()</a>, <a class="el" href="ERF__make__buoyancy_8cpp.html#aa89e56be7a54db2a79fc3a3541f70cb9">make_buoyancy()</a>, and <a class="el" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -575,11 +631,11 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classERF.html#a0b0b4140e117163895e5e2c89a68d12a" title=" " alt="" coords="38,247,175,273"/>
 <area shape="rect" href="namespacederived.html#a8d96f91847cec51636c122ab27a5f8a2" title=" " alt="" coords="278,239,437,265"/>
 <area shape="rect" href="classRadiation.html#a14d24390054f532422c4fc9f761e1ec0" title=" " alt="" coords="283,340,431,367"/>
-<area shape="rect" href="ERF__make__buoyancy_8cpp.html#a5b57cae6fc98deebf69bef2645914b62" title=" " alt="" coords="293,391,421,417"/>
+<area shape="rect" href="ERF__make__buoyancy_8cpp.html#aa89e56be7a54db2a79fc3a3541f70cb9" title=" " alt="" coords="293,391,421,417"/>
 <area shape="rect" href="classSAM.html#a2e6ff95cf827306bbcf3661c954a692e" title=" " alt="" coords="14,35,199,61"/>
 <area shape="rect" href="classKessler.html#a05b9426e9fd6af90ea40aa77ed0cbe66" title=" " alt="" coords="5,129,208,156"/>
 <area shape="rect" href="classWriteBndryPlanes.html#a7159618bddef843704e44e71cebd5d8b" title=" " alt="" coords="17,181,196,222"/>
-<area shape="rect" href="ERF__make__mom__sources_8cpp.html#aca297eea7c5bd02697c93af2f90f11af" title=" " alt="" coords="29,391,185,417"/>
+<area shape="rect" href="ERF__make__mom__sources_8cpp.html#a6cb4cc0547bb12c601d1625c288b690f" title=" " alt="" coords="29,391,185,417"/>
 </map>
 </div>
 
@@ -677,12 +733,12 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to return potential temperature given density and temperature</p>
 <p>@params[in] rho density @params[in] T temperature @params[in] rdOcp ratio of R_d to c_p </p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// p = rho_d * R_d * T_moist</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    amrex::Real p_loc = <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda8ecd2dbb16824e5c68db7daf2254fc79">T</a> * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// theta_d = T * (p0/p)^(R_d/C_p)</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda8ecd2dbb16824e5c68db7daf2254fc79">T</a> * std::pow((<a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>/p_loc),rdOcp);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// p = rho_d * R_d * T_moist</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    amrex::Real p_loc = <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda8ecd2dbb16824e5c68db7daf2254fc79">T</a> * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476beaf099273d19f4b8cdca199c5177231e35">qv</a>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// theta_d = T * (p0/p)^(R_d/C_p)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda8ecd2dbb16824e5c68db7daf2254fc79">T</a> * std::pow((<a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>/p_loc),rdOcp);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classReadBndryPlanes.html#afe03a3b8a1953d94adde87f69ec15c32">ReadBndryPlanes::read_file()</a>.</p>
 <div class="dynheader">

@@ -38,6 +38,7 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_Sat_methods.H", "ERF__Sat__methods_8H.html", [
       [ "SatMethods", "classSatMethods.html", "classSatMethods" ]
     ] ],
+    [ "ERF_solve_with_heffte.cpp", "ERF__solve__with__heffte_8cpp.html", null ],
     [ "ERF_TerrainMetrics.cpp", "ERF__TerrainMetrics_8cpp.html", "ERF__TerrainMetrics_8cpp" ],
     [ "ERF_TerrainMetrics.H", "ERF__TerrainMetrics_8H.html", "ERF__TerrainMetrics_8H" ],
     [ "ERF_Thetav.H", "ERF__Thetav_8H.html", "ERF__Thetav_8H" ],
