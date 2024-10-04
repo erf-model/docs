@@ -788,10 +788,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;<span class="preprocessor">#if defined(ERF_USE_NETCDF)</span></div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="keywordflow">if</span> (moist_set_rhs_bool)</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        {</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            Box tbx_moist  = mfi.tilebox(IntVect(0),IntVect(2,2,0));</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            Box gtbx_moist  = mfi.tilebox(IntVect(0),IntVect(2,2,0));</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; old_cons_const = S_old[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].const_array(mfi);</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; new_cons_const = S_new[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].const_array(mfi);</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            moist_set_rhs(tbx_moist, old_cons_const, new_cons_const, cell_rhs,</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            moist_set_rhs(tbx, gtbx_moist, old_cons_const, new_cons_const, cell_rhs,</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                          bdy_time_interval, start_bdy_time, new_stage_time, dt, width, set_width, domain,</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                          bdy_data_xlo, bdy_data_xhi, bdy_data_ylo, bdy_data_yhi);</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        }</div>
