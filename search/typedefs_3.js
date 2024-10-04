@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rtype_4885',['RType',['../structncutils_1_1NCDType.html#a079bbf4314ad09362b5c8124670c821f',1,'ncutils::NCDType']]]
+  ['planevector_4926',['PlaneVector',['../ERF__NCWpsFile_8H.html#a60014a8d74bed0d5ae984e600c68dc85',1,'PlaneVector():&#160;ERF_NCWpsFile.H'],['../ERF__ReadBndryPlanes_8H.html#a60014a8d74bed0d5ae984e600c68dc85',1,'PlaneVector():&#160;ERF_ReadBndryPlanes.H']]]
 ];

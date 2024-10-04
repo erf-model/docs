@@ -4,6 +4,7 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "ERF_ABLMost.H", "ERF__ABLMost_8H.html", [
       [ "ABLMost", "classABLMost.html", "classABLMost" ]
     ] ],
+    [ "ERF_BoundaryConditions_basestate.cpp", "ERF__BoundaryConditions__basestate_8cpp.html", null ],
     [ "ERF_BoundaryConditions_bndryreg.cpp", "ERF__BoundaryConditions__bndryreg_8cpp.html", null ],
     [ "ERF_BoundaryConditions_cons.cpp", "ERF__BoundaryConditions__cons_8cpp.html", null ],
     [ "ERF_BoundaryConditions_realbdy.cpp", "ERF__BoundaryConditions__realbdy_8cpp.html", null ],
@@ -27,7 +28,8 @@ var dir_528efc400cc48bc5f175d9531879efeb =
       [ "ERFPhysBCFunct_u", "classERFPhysBCFunct__u.html", "classERFPhysBCFunct__u" ],
       [ "ERFPhysBCFunct_v", "classERFPhysBCFunct__v.html", "classERFPhysBCFunct__v" ],
       [ "ERFPhysBCFunct_w", "classERFPhysBCFunct__w.html", "classERFPhysBCFunct__w" ],
-      [ "ERFPhysBCFunct_w_no_terrain", "classERFPhysBCFunct__w__no__terrain.html", "classERFPhysBCFunct__w__no__terrain" ]
+      [ "ERFPhysBCFunct_w_no_terrain", "classERFPhysBCFunct__w__no__terrain.html", "classERFPhysBCFunct__w__no__terrain" ],
+      [ "ERFPhysBCFunct_base", "classERFPhysBCFunct__base.html", "classERFPhysBCFunct__base" ]
     ] ],
     [ "ERF_TimeInterpolatedData.H", "ERF__TimeInterpolatedData_8H.html", [
       [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ]

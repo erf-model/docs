@@ -30,6 +30,7 @@ var annotated_dup =
     [ "EbertCurry", "classEbertCurry.html", "classEbertCurry" ],
     [ "ERF", "classERF.html", "classERF" ],
     [ "ERFFillPatcher", "classERFFillPatcher.html", "classERFFillPatcher" ],
+    [ "ERFPhysBCFunct_base", "classERFPhysBCFunct__base.html", "classERFPhysBCFunct__base" ],
     [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html", "classERFPhysBCFunct__cons" ],
     [ "ERFPhysBCFunct_u", "classERFPhysBCFunct__u.html", "classERFPhysBCFunct__u" ],
     [ "ERFPhysBCFunct_v", "classERFPhysBCFunct__v.html", "classERFPhysBCFunct__v" ],

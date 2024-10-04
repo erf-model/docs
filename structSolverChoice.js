@@ -43,6 +43,7 @@ var structSolverChoice =
     [ "poisson_reltol", "structSolverChoice.html#a238b0871f38f8b134ff3fe5af0d05479", null ],
     [ "pp_prefix", "structSolverChoice.html#a4b0edf29a032ff18b10a42825fa9e4b6", null ],
     [ "project_every_stage", "structSolverChoice.html#afa4e734fc983ec9e6a0382fc369c309e", null ],
+    [ "project_initial_velocity", "structSolverChoice.html#aa7bb7f3c8b475b0e446c271d8aa5497f", null ],
     [ "rayleigh_damp_T", "structSolverChoice.html#a06a0dd1c8f7c1ed73a4f8d24b6b31cdf", null ],
     [ "rayleigh_damp_U", "structSolverChoice.html#a5aed4016dd7d17a2d2904c60af59ae9d", null ],
     [ "rayleigh_damp_V", "structSolverChoice.html#a1bae456f7b26e8ed50d78ce1af1b5ef0", null ],

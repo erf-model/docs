@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dtype_4882',['DType',['../structNDArray.html#a96033b69f69ea0ae537a24288715752d',1,'NDArray']]]
+  ['bctype_4923',['BCType',['../ERF__PoissonSolve_8cpp.html#ad583385d33cdb5a9c28bf474b72cad1c',1,'ERF_PoissonSolve.cpp']]]
 ];

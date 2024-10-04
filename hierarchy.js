@@ -26,6 +26,7 @@ var hierarchy =
     [ "donelan_flux", "structdonelan__flux.html", null ],
     [ "EbertCurry", "classEbertCurry.html", null ],
     [ "ERFFillPatcher", "classERFFillPatcher.html", null ],
+    [ "ERFPhysBCFunct_base", "classERFPhysBCFunct__base.html", null ],
     [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html", null ],
     [ "ERFPhysBCFunct_u", "classERFPhysBCFunct__u.html", null ],
     [ "ERFPhysBCFunct_v", "classERFPhysBCFunct__v.html", null ],

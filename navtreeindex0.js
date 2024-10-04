@@ -77,12 +77,13 @@ var NAVTREEINDEX0 =
 "ERF__ApplySpongeZoneBCs_8cpp.html#a2f0457a5cf90ed9e3f084a3951a80ae8":[3,0,1,14,1,1],
 "ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html":[3,0,1,14,2],
 "ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a43cc085fc4c8dd69e73541c28062925c":[3,0,1,14,2,0],
-"ERF__BoundaryConditions__bndryreg_8cpp.html":[3,0,1,1,2],
-"ERF__BoundaryConditions__cons_8cpp.html":[3,0,1,1,3],
-"ERF__BoundaryConditions__realbdy_8cpp.html":[3,0,1,1,4],
-"ERF__BoundaryConditions__xvel_8cpp.html":[3,0,1,1,5],
-"ERF__BoundaryConditions__yvel_8cpp.html":[3,0,1,1,6],
-"ERF__BoundaryConditions__zvel_8cpp.html":[3,0,1,1,7],
+"ERF__BoundaryConditions__basestate_8cpp.html":[3,0,1,1,2],
+"ERF__BoundaryConditions__bndryreg_8cpp.html":[3,0,1,1,3],
+"ERF__BoundaryConditions__cons_8cpp.html":[3,0,1,1,4],
+"ERF__BoundaryConditions__realbdy_8cpp.html":[3,0,1,1,5],
+"ERF__BoundaryConditions__xvel_8cpp.html":[3,0,1,1,6],
+"ERF__BoundaryConditions__yvel_8cpp.html":[3,0,1,1,7],
+"ERF__BoundaryConditions__zvel_8cpp.html":[3,0,1,1,8],
 "ERF__Checkpoint_8cpp.html":[3,0,1,6,0],
 "ERF__ChopGrids_8cpp.html":[3,0,1,16,0],
 "ERF__ChopGrids_8cpp.html#a6fe49eeaa200ab6ab8ae0a6e048f3ded":[3,0,1,16,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__Derive_8H.html#a7292c8c78a618eb0f6ca6a5356705362":[3,0,1,22,2],
 "ERF__Derive_8H.html#a8bc196f7dfb365c426b0b7e720e479e2":[3,0,1,22,12],
 "ERF__Derive_8H.html#a9935603239fe8510b11179da8e76c39c":[3,0,1,22,5],
-"ERF__Derive_8H.html#abec1266940e40d642fca2aa685b7f314":[3,0,1,22,7],
-"ERF__Derive_8H.html#aeaeabd5f649796984f61651a6733e96b":[3,0,1,22,0]
+"ERF__Derive_8H.html#abec1266940e40d642fca2aa685b7f314":[3,0,1,22,7]
 };
