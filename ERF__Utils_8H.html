@@ -1128,7 +1128,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordtype">int</span> Relax_z = width - Spec_z + 1;</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    amrex::Real num     = amrex::Real(Spec_z + Relax_z);</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    amrex::Real denom   = amrex::Real(Relax_z - 1);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    amrex::Real SpecExp = -std::log(0.01) / amrex::Real(width - Spec_z);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    amrex::Real SpecExp = -std::log(0.1) / amrex::Real(width - Spec_z);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    amrex::ParallelFor(bx_xlo, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    {</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="comment">// Corners with x boxes</span></div>
