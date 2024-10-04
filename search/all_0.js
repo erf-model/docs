@@ -111,7 +111,7 @@ var searchData=
   ['alphaelq_108',['alphaelq',['../ERF__Constants_8H.html#a3c70f890015491421d536954a374324d',1,'ERF_Constants.H']]],
   ['amrex_109',['amrex',['../namespaceamrex.html',1,'']]],
   ['amrex_5fenum_110',['AMREX_ENUM',['../ERF__TurbStruct_8H.html#adb69b8860ddef1a622fd387391d41efc',1,'AMREX_ENUM(LESType, None, Smagorinsky, Deardorff):&#160;ERF_TurbStruct.H'],['../ERF__TurbStruct_8H.html#a9e98bc162980cfe86a62cd289b447f8c',1,'AMREX_ENUM(PBLType, None, MYNN25, YSU):&#160;ERF_TurbStruct.H']]],
-  ['amrex_5fprobinit_111',['amrex_probinit',['../ERF__prob__common_8H.html#a177c505462e3d544fae638344f900397',1,'ERF_prob_common.H']]],
+  ['amrex_5fprobinit_111',['amrex_probinit',['../ERF__prob__common_8H.html#af9d998a7ea02a8866bcbbf8d3d1f8882',1,'ERF_prob_common.H']]],
   ['anelastic_112',['anelastic',['../structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec',1,'SolverChoice::anelastic()'],['../classMRISplitIntegrator.html#a277f590efb755921c145d09f84e740af',1,'MRISplitIntegrator::anelastic()']]],
   ['appendplotvariables_113',['appendPlotVariables',['../classERF.html#a7758f75dc7c9029eddc4c58ac0567654',1,'ERF']]],
   ['apply_5fbcs_114',['apply_bcs',['../ERF__TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f',1,'ERF_TI_utils.H']]],
