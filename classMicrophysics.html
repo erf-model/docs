@@ -137,6 +137,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a72f6091687c014c5be34275b0975d194"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a72f6091687c014c5be34275b0975d194">Get_Qstate_Size</a> ()=0</td></tr>
 <tr class="memdesc:a72f6091687c014c5be34275b0975d194"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of moisture-model-related conserved state variables  <a href="classMicrophysics.html#a72f6091687c014c5be34275b0975d194">More...</a><br /></td></tr>
 <tr class="separator:a72f6091687c014c5be34275b0975d194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef955e7ab8b4c969935786af922d4ea"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a9ef955e7ab8b4c969935786af922d4ea">Get_Qmoist_Restart_Vars</a> (int, std::vector&lt; int &gt; &amp;, std::vector&lt; std::string &gt; &amp;) const =0</td></tr>
+<tr class="memdesc:a9ef955e7ab8b4c969935786af922d4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the indices and names of moisture model variables for restart at a given level  <a href="classMicrophysics.html#a9ef955e7ab8b4c969935786af922d4ea">More...</a><br /></td></tr>
+<tr class="separator:a9ef955e7ab8b4c969935786af922d4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -171,7 +174,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Null constructor. </p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -353,6 +356,52 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9ef955e7ab8b4c969935786af922d4ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef955e7ab8b4c969935786af922d4ea">&#9670;&nbsp;</a></span>Get_Qmoist_Restart_Vars()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Microphysics::Get_Qmoist_Restart_Vars </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the indices and names of moisture model variables for restart at a given level </p>
+
+<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#a23d6676d025a0129cf4ed73d887605bf">EulerianMicrophysics</a>.</p>
+
+</div>
+</div>
 <a id="a069e6013efb78d268394868d0cfc6382"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a069e6013efb78d268394868d0cfc6382">&#9670;&nbsp;</a></span>Get_Qmoist_Size()</h2>
 
@@ -507,19 +556,19 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>query if a specified moisture model is Eulerian or Lagrangian </p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (    (a_moisture_type == <a class="code" href="ERF__DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a9f1b3be4a82b11d104e4ef7f7ccb1c19">MoistureType::SAM</a>)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;             || (a_moisture_type == <a class="code" href="ERF__DataStruct_8H.html#ab34704153a585940411c26587cb82ad0aca8fb8e2f9829763f29ce489f9f6e535">MoistureType::SAM_NoIce</a>)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;             || (a_moisture_type == <a class="code" href="ERF__DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a1571939639d68374fc4af7fae4b66d03">MoistureType::SAM_NoPrecip_NoIce</a>)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;             || (a_moisture_type == <a class="code" href="ERF__DataStruct_8H.html#ab34704153a585940411c26587cb82ad0af918ea9a492942625a661a22ac6af91d">MoistureType::Kessler</a>)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;             || (a_moisture_type == <a class="code" href="ERF__DataStruct_8H.html#ab34704153a585940411c26587cb82ad0ab367ee4b7b1fe3bae62b649e580db4f4">MoistureType::Kessler_NoRain</a>)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;             || (a_moisture_type == <a class="code" href="ERF__DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754">MoistureType::None</a>) ) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5aff01d2011cc56dfe241e0002bb9df778">MoistureModelType::Eulerian</a>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Dont know this moisture_type!&quot;</span>) ;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5aec0fc0100c4fc1ce4eea230c3dc10360">MoistureModelType::Undefined</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> (    (a_moisture_type == <a class="code" href="ERF__DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a9f1b3be4a82b11d104e4ef7f7ccb1c19">MoistureType::SAM</a>)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;             || (a_moisture_type == <a class="code" href="ERF__DataStruct_8H.html#ab34704153a585940411c26587cb82ad0aca8fb8e2f9829763f29ce489f9f6e535">MoistureType::SAM_NoIce</a>)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;             || (a_moisture_type == <a class="code" href="ERF__DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a1571939639d68374fc4af7fae4b66d03">MoistureType::SAM_NoPrecip_NoIce</a>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;             || (a_moisture_type == <a class="code" href="ERF__DataStruct_8H.html#ab34704153a585940411c26587cb82ad0af918ea9a492942625a661a22ac6af91d">MoistureType::Kessler</a>)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;             || (a_moisture_type == <a class="code" href="ERF__DataStruct_8H.html#ab34704153a585940411c26587cb82ad0ab367ee4b7b1fe3bae62b649e580db4f4">MoistureType::Kessler_NoRain</a>)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;             || (a_moisture_type == <a class="code" href="ERF__DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a6adf97f83acf6453d4a6a4b1070f3754">MoistureType::None</a>) ) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5aff01d2011cc56dfe241e0002bb9df778">MoistureModelType::Eulerian</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Dont know this moisture_type!&quot;</span>) ;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5aec0fc0100c4fc1ce4eea230c3dc10360">MoistureModelType::Undefined</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a62a5a9bde82457a1611cde231a43bfe5aec0fc0100c4fc1ce4eea230c3dc10360"><div class="ttname"><a href="ERF__DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5aec0fc0100c4fc1ce4eea230c3dc10360">MoistureModelType::Undefined</a></div><div class="ttdeci">@ Undefined</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a62a5a9bde82457a1611cde231a43bfe5aff01d2011cc56dfe241e0002bb9df778"><div class="ttname"><a href="ERF__DataStruct_8H.html#a62a5a9bde82457a1611cde231a43bfe5aff01d2011cc56dfe241e0002bb9df778">MoistureModelType::Eulerian</a></div><div class="ttdeci">@ Eulerian</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_ab34704153a585940411c26587cb82ad0a1571939639d68374fc4af7fae4b66d03"><div class="ttname"><a href="ERF__DataStruct_8H.html#ab34704153a585940411c26587cb82ad0a1571939639d68374fc4af7fae4b66d03">MoistureType::SAM_NoPrecip_NoIce</a></div><div class="ttdeci">@ SAM_NoPrecip_NoIce</div></div>

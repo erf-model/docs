@@ -8,6 +8,7 @@ var classNullMoist =
     [ "Define", "classNullMoist.html#aab112947c592c330b45a2d7e5529ec07", null ],
     [ "Init", "classNullMoist.html#a6f526044328db858069e4b6a70fdbdf7", null ],
     [ "Qmoist_Ptr", "classNullMoist.html#a1b6a72d67d9b2642e99a5b768315476c", null ],
+    [ "Qmoist_Restart_Vars", "classNullMoist.html#a37d2e492b3e5d1927f79e680d257422c", null ],
     [ "Qmoist_Size", "classNullMoist.html#abdf706f193bbb09c62e41734570f3cd1", null ],
     [ "Qstate_Size", "classNullMoist.html#afaa201a3a1dc21c18888d9c6a068f956", null ],
     [ "Update_Micro_Vars", "classNullMoist.html#aece7a50f16bf40e3e9d536cc030458f7", null ],

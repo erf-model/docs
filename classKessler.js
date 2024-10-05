@@ -10,6 +10,7 @@ var classKessler =
     [ "Define", "classKessler.html#a5e989e5755fb57a853e2f1f0ec4c49e8", null ],
     [ "Init", "classKessler.html#ab1eaffdd038f2eda89f44f150036a405", null ],
     [ "Qmoist_Ptr", "classKessler.html#a0a84c629a080e71ed93a5f349ad7724a", null ],
+    [ "Qmoist_Restart_Vars", "classKessler.html#af5909874026a86cf12523779a3761fb3", null ],
     [ "Qmoist_Size", "classKessler.html#a3925ff722ac968e306dbcc233718030a", null ],
     [ "Qstate_Size", "classKessler.html#a25a6c3f8cda023e5ea70f1ddd983626c", null ],
     [ "Update_Micro_Vars", "classKessler.html#a05b9426e9fd6af90ea40aa77ed0cbe66", null ],

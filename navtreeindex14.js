@@ -1,5 +1,10 @@
 var NAVTREEINDEX14 =
 {
+"structrotate__flux.html#a4a217b139f9bcbfdd615b4decb4c2f17":[2,0,67,1],
+"structrotate__flux.html#a7827a8b9fcf4800189b67242befc1c31":[2,0,67,2],
+"structrotate__flux.html#ab29d4027d09cb56c8cce2fab327bd758":[2,0,67,3],
+"structrotate__flux.html#aca0eb2ba8e9e5fb863297a39ad7cd140":[2,0,67,4],
+"structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11":[2,0,67,5],
 "structrotate__flux.html#ae9a2bb3649414a8dd30d9cec755e83f8":[2,0,67,0],
 "structsimilarity__funs.html":[2,0,71],
 "structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2":[2,0,71,1],
