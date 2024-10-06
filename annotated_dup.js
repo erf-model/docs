@@ -35,7 +35,6 @@ var annotated_dup =
     [ "ERFPhysBCFunct_u", "classERFPhysBCFunct__u.html", "classERFPhysBCFunct__u" ],
     [ "ERFPhysBCFunct_v", "classERFPhysBCFunct__v.html", "classERFPhysBCFunct__v" ],
     [ "ERFPhysBCFunct_w", "classERFPhysBCFunct__w.html", "classERFPhysBCFunct__w" ],
-    [ "ERFPhysBCFunct_w_no_terrain", "classERFPhysBCFunct__w__no__terrain.html", "classERFPhysBCFunct__w__no__terrain" ],
     [ "EulerianMicrophysics", "classEulerianMicrophysics.html", "classEulerianMicrophysics" ],
     [ "EWP", "classEWP.html", "classEWP" ],
     [ "F", "classF.html", null ],

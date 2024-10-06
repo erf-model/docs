@@ -31,7 +31,6 @@ var hierarchy =
     [ "ERFPhysBCFunct_u", "classERFPhysBCFunct__u.html", null ],
     [ "ERFPhysBCFunct_v", "classERFPhysBCFunct__v.html", null ],
     [ "ERFPhysBCFunct_w", "classERFPhysBCFunct__w.html", null ],
-    [ "ERFPhysBCFunct_w_no_terrain", "classERFPhysBCFunct__w__no__terrain.html", null ],
     [ "F", "classF.html", [
       [ "CIF< F >", "classCIF.html", null ]
     ] ],

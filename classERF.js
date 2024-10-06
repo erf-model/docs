@@ -258,7 +258,6 @@ var classERF =
     [ "physbcs_u", "classERF.html#a64e55e5ae9df06433146db657eb9e72e", null ],
     [ "physbcs_v", "classERF.html#a79231b5cfd4576a742e46ae0082b5121", null ],
     [ "physbcs_w", "classERF.html#a45c8ecd777f47732993777a0afb8e140", null ],
-    [ "physbcs_w_no_terrain", "classERF.html#a4d717bb9fe936fd1a124d0d3e720f9d1", null ],
     [ "plot_file_1", "classERF.html#aa54aaa938a18d34caa4d86e977647899", null ],
     [ "plot_file_2", "classERF.html#a18fa84b06132715757d97ec38678aa2c", null ],
     [ "plot_file_on_restart", "classERF.html#adc00038dfe4c332e5d15f621184c69e8", null ],
