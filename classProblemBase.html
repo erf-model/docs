@@ -398,11 +398,11 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Function to update default base parameters, currently only used for init_type=='uniform' </p>
-<div class="fragment"><div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                                                          {</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">rho_0</a> = rho_0;</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a> = T_0;</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    }</div>
-<div class="ttc" id="aclassProblemBase_html_ae21bdcbfbf32d1ec423b6a0edd92dbda"><div class="ttname"><a href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">ProblemBase::base_parms</a></div><div class="ttdeci">ProbParmDefaults base_parms</div><div class="ttdef"><b>Definition:</b> ERF_prob_common.H:468</div></div>
+<div class="fragment"><div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                                                          {</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">rho_0</a> = rho_0;</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a> = T_0;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    }</div>
+<div class="ttc" id="aclassProblemBase_html_ae21bdcbfbf32d1ec423b6a0edd92dbda"><div class="ttname"><a href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">ProblemBase::base_parms</a></div><div class="ttdeci">ProbParmDefaults base_parms</div><div class="ttdef"><b>Definition:</b> ERF_prob_common.H:467</div></div>
 <div class="ttc" id="astructProbParmDefaults_html_a16db7fa78b123f2a956bacbce26f32c6"><div class="ttname"><a href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">ProbParmDefaults::T_0</a></div><div class="ttdeci">amrex::Real T_0</div><div class="ttdef"><b>Definition:</b> ERF_prob_common.H:16</div></div>
 <div class="ttc" id="astructProbParmDefaults_html_af75997d9e4a94ab3b221657799ef720f"><div class="ttname"><a href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">ProbParmDefaults::rho_0</a></div><div class="ttdeci">amrex::Real rho_0</div><div class="ttdef"><b>Definition:</b> ERF_prob_common.H:15</div></div>
 </div><!-- fragment -->
@@ -774,15 +774,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        amrex::Real T_0 = <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a>;</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Initializing uniform fields&quot;</span></div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; rho=&quot;</span> &lt;&lt; rho_0 &lt;&lt; <span class="stringliteral">&quot; theta=&quot;</span> &lt;&lt; T_0</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; -- this probably only makes sense with gravity turned off&quot;</span></div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;            &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        {</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            state(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) = rho_0;</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            state(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = rho_0 * T_0;</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        });</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    }</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;            &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        {</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            state(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) = rho_0;</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            state(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = rho_0 * T_0;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        });</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    }</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 </div><!-- fragment -->

@@ -139,6 +139,8 @@ Include dependency graph for ERF_ChopGrids.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a140e3056fee7f1dcd5a295d2efdaf0b2"><td class="memItemLeft" align="right" valign="top">BoxArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ChopGrids_8cpp.html#a140e3056fee7f1dcd5a295d2efdaf0b2">ERFPostProcessBaseGrids</a> (const Box &amp;domain, bool decompose_in_z)</td></tr>
+<tr class="separator:a140e3056fee7f1dcd5a295d2efdaf0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fe49eeaa200ab6ab8ae0a6e048f3ded"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ChopGrids_8cpp.html#a6fe49eeaa200ab6ab8ae0a6e048f3ded">ChopGrids2D</a> (BoxArray &amp;ba, const Box &amp;domain, int target_size)</td></tr>
 <tr class="separator:a6fe49eeaa200ab6ab8ae0a6e048f3ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -174,35 +176,35 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    IntVect chunk = domain.length();</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">while</span> (ba.size() &lt; target_size)</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        IntVect chunk_prev = chunk;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        std::array&lt;std::pair&lt;int,int&gt;,AMREX_SPACEDIM&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            chunk_dir{std::make_pair(chunk[0],<span class="keywordtype">int</span>(0)),</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                      std::make_pair(chunk[1],<span class="keywordtype">int</span>(1))};</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        std::sort(chunk_dir.begin(), chunk_dir.end());</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="comment">// We only decompose in and y</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idx = 1; idx &gt;= 0; idx--) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordtype">int</span> idim = chunk_dir[idx].second;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordtype">int</span> new_chunk_size = chunk[idim] / 2;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">if</span> (new_chunk_size != 0)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                chunk[idim] = new_chunk_size;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                ba.maxSize(chunk);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">if</span> (chunk == chunk_prev) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    IntVect chunk = domain.length();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">while</span> (ba.size() &lt; target_size)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        IntVect chunk_prev = chunk;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        std::array&lt;std::pair&lt;int,int&gt;,AMREX_SPACEDIM&gt;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            chunk_dir{std::make_pair(chunk[0],<span class="keywordtype">int</span>(0)),</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                      std::make_pair(chunk[1],<span class="keywordtype">int</span>(1))};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::sort(chunk_dir.begin(), chunk_dir.end());</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// We only decompose in and y</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idx = 1; idx &gt;= 0; idx--) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordtype">int</span> idim = chunk_dir[idx].second;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordtype">int</span> new_chunk_size = chunk[idim] / 2;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span> (new_chunk_size != 0)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                chunk[idim] = new_chunk_size;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                ba.maxSize(chunk);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> (chunk == chunk_prev) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__TerrainMetrics_8cpp.html#a6184f65a98c75d738ea36165cb0ddf8d">init_terrain_grid()</a>, and <a class="el" href="classERF.html#a69c8fce3b0f5b28e98240599c2ee16bb">ERF::initHSE()</a>.</p>
 <div class="dynheader">
@@ -215,6 +217,57 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classERF.html#a69c8fce3b0f5b28e98240599c2ee16bb" title=" " alt="" coords="213,81,315,108"/>
 <area shape="rect" href="classERF.html#a8f50cd1ba85fbf9ae0579a56ba06eb1b" title=" " alt="" coords="19,5,139,32"/>
 <area shape="rect" href="classERF.html#a18610f7aac948db169cf8a4642573027" title=" " alt="" coords="5,56,153,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a140e3056fee7f1dcd5a295d2efdaf0b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a140e3056fee7f1dcd5a295d2efdaf0b2">&#9670;&nbsp;</a></span>ERFPostProcessBaseGrids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BoxArray ERFPostProcessBaseGrids </td>
+          <td>(</td>
+          <td class="paramtype">const Box &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>decompose_in_z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">// This is used to avoid the case where the native amrex decomposition makes</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">//     too many grids for the number of processors.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// The idea is to not override the user preference if expressed by max_grid_size</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">//     but instead to ensure that the default behavior is what we want.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    BoxArray ba0 = amrex::decompose(domain, ParallelDescriptor::NProcs(),</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                    {<span class="keyword">true</span>,<span class="keyword">true</span>,decompose_in_z});</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> ba0;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#aaf10bbf8c9a5dbc257a88c4c1b650fee">ERF::MakeNewLevelFromScratch()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__ChopGrids_8cpp_a140e3056fee7f1dcd5a295d2efdaf0b2_icgraph.png" border="0" usemap="#aERF__ChopGrids_8cpp_a140e3056fee7f1dcd5a295d2efdaf0b2_icgraph" alt=""/></div>
+<map name="aERF__ChopGrids_8cpp_a140e3056fee7f1dcd5a295d2efdaf0b2_icgraph" id="aERF__ChopGrids_8cpp_a140e3056fee7f1dcd5a295d2efdaf0b2_icgraph">
+<area shape="rect" title=" " alt="" coords="288,5,479,32"/>
+<area shape="rect" href="classERF.html#aaf10bbf8c9a5dbc257a88c4c1b650fee" title=" " alt="" coords="5,5,240,32"/>
 </map>
 </div>
 

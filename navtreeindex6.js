@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"classIntersectionCIF.html#addd5d1b2d4f051377f8b3b2b2fcc395e":[2,0,37,8],
+"classIntersectionCIF.html#ae7bfcaf3ef685b2ba23765f184c81539":[2,0,37,6],
 "classIntersectionCIF.html#af11428d551013bf6318ef89873537a4e":[2,0,37,11],
 "classIntersectionCIF.html#afbc1eaa42b79f62bb29534390c06faa8":[2,0,37,2],
 "classKessler.html":[2,0,38],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "classMamConstituents.html#a1692c29032818c08c3b1ac985a35d521":[2,0,42,72],
 "classMamConstituents.html#a17b5c0080c2027fd08a2f3fcd7818333":[2,0,42,76],
 "classMamConstituents.html#a19309fc1bfd9a51b5ac412ba7f17734f":[2,0,42,50],
-"classMamConstituents.html#a22531d4c0d7c79629e9ef32e3e42b2e3":[2,0,42,48],
-"classMamConstituents.html#a2a3c67427c13fc60d592017076ddc8ce":[2,0,42,79],
-"classMamConstituents.html#a2f8b2adaa3a57f55957f3ae733a2d824":[2,0,42,14]
+"classMamConstituents.html#a22531d4c0d7c79629e9ef32e3e42b2e3":[2,0,42,48]
 };
