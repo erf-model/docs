@@ -595,10 +595,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="comment">// *********************************************************************</span></div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            Real xflux_lo = (temp_cur_xmom_arr(i  ,j,k) - stage_xmom(i  ,j,k)) / mf_u(i  ,j,0);;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            Real xflux_hi = (temp_cur_xmom_arr(i+1,j,k) - stage_xmom(i+1,j,k)) / mf_u(i+1,j,0);;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            Real yflux_lo = (temp_cur_ymom_arr(i,j  ,k) - stage_ymom(i,j  ,k)) / mf_v(i,j  ,0);;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            Real yflux_hi = (temp_cur_ymom_arr(i,j+1,k) - stage_ymom(i,j+1,k)) / mf_v(i,j+1,0);;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            Real xflux_lo = (temp_cur_xmom_arr(i  ,j,k) - stage_xmom(i  ,j,k)) / mf_u(i  ,j,0);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            Real xflux_hi = (temp_cur_xmom_arr(i+1,j,k) - stage_xmom(i+1,j,k)) / mf_u(i+1,j,0);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            Real yflux_lo = (temp_cur_ymom_arr(i,j  ,k) - stage_ymom(i,j  ,k)) / mf_v(i,j  ,0);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            Real yflux_hi = (temp_cur_ymom_arr(i,j+1,k) - stage_ymom(i,j+1,k)) / mf_v(i,j+1,0);</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            Real mfsq = mf_m(i,j,0) * mf_m(i,j,0);</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>

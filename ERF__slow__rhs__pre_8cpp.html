@@ -1148,7 +1148,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        }</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <span class="keywordflow">if</span> ( (bx.bigEnd(1) == domain.bigEnd(1)) &amp;&amp;</div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;             (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].hi(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) ) {</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;            Box hi_y_dom_face(bx); hi_y_dom_face.setSmall(1,bx.bigEnd(1)+1); hi_y_dom_face.setBig(1,bx.bigEnd(1)+1);;</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;            Box hi_y_dom_face(bx); hi_y_dom_face.setSmall(1,bx.bigEnd(1)+1); hi_y_dom_face.setBig(1,bx.bigEnd(1)+1);</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;            ParallelFor(hi_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                rho_v_rhs(i,j,k) = 0.;</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            });</div>
