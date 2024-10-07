@@ -155,12 +155,12 @@ $(document).ready(function(){initNavTree('ERF__Interpolation__WENO_8H_source.htm
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structWENO3.html#ad693dfd8b54bf52e2076b911df389c2a">   69</a></span>&#160;    <a class="code" href="structWENO3.html#ad693dfd8b54bf52e2076b911df389c2a">InterpolateInZ</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; i,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; j,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; k,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; qty_index,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                       amrex::Real&amp; val_lo,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                       amrex::Real upw_lo,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                       <span class="keyword">const</span> amrex::Real <span class="comment">/*upw_frac*/</span>)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; j,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; k,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; qty_index,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    amrex::Real&amp; val_lo,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    amrex::Real upw_lo,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    <span class="keyword">const</span> amrex::Real <span class="comment">/*upw_frac*/</span>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        amrex::Real sp1 = <a class="code" href="structWENO3.html#a13120486db8a71a2059a9c7c1928b416">m_phi</a>(i  , j  , k+1, qty_index);</div>
@@ -241,7 +241,7 @@ $(document).ready(function(){initNavTree('ERF__Interpolation__WENO_8H_source.htm
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">if</span> (upw_lo &gt; <a class="code" href="structWENO5.html#a99f8a8620164e0e1460c7bce55ec3b02">tol</a>) {</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            val_lo = <a class="code" href="structWENO5.html#ae77d5f8032cf91c84551f51170ec9111">Evaluate</a>(sm3,sm2,sm1,s  ,sp1);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (upw_lo &lt; -<a class="code" href="structWENO5.html#a99f8a8620164e0e1460c7bce55ec3b02">tol</a>) {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            val_lo = <a class="code" href="structWENO5.html#ae77d5f8032cf91c84551f51170ec9111">Evaluate</a>(sp2,sp1,s,sm1,sm2);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            val_lo = <a class="code" href="structWENO5.html#ae77d5f8032cf91c84551f51170ec9111">Evaluate</a>(sp2,sp1,s  ,sm1,sm2);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            val_lo = 0.5 * (s + sm1);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
@@ -269,7 +269,7 @@ $(document).ready(function(){initNavTree('ERF__Interpolation__WENO_8H_source.htm
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">if</span> (upw_lo &gt; <a class="code" href="structWENO5.html#a99f8a8620164e0e1460c7bce55ec3b02">tol</a>) {</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            val_lo = <a class="code" href="structWENO5.html#ae77d5f8032cf91c84551f51170ec9111">Evaluate</a>(sm3,sm2,sm1,s  ,sp1);</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (upw_lo &lt; -<a class="code" href="structWENO5.html#a99f8a8620164e0e1460c7bce55ec3b02">tol</a>) {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            val_lo = <a class="code" href="structWENO5.html#ae77d5f8032cf91c84551f51170ec9111">Evaluate</a>(sp2,sp1,s,sm1,sm2);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            val_lo = <a class="code" href="structWENO5.html#ae77d5f8032cf91c84551f51170ec9111">Evaluate</a>(sp2,sp1,s  ,sm1,sm2);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            val_lo = 0.5 * (s + sm1);</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div>
@@ -279,12 +279,12 @@ $(document).ready(function(){initNavTree('ERF__Interpolation__WENO_8H_source.htm
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="structWENO5.html#aa604f451ba89411ee6c667588ffe2cf7">  193</a></span>&#160;    <a class="code" href="structWENO5.html#aa604f451ba89411ee6c667588ffe2cf7">InterpolateInZ</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; i,</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; j,</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; k,</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; qty_index,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                       amrex::Real&amp; val_lo,</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                       amrex::Real upw_lo,</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                       <span class="keyword">const</span> amrex::Real <span class="comment">/*upw_frac*/</span>)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; j,</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; k,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; qty_index,</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    amrex::Real&amp; val_lo,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    amrex::Real upw_lo,</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    <span class="keyword">const</span> amrex::Real <span class="comment">/*upw_frac*/</span>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        amrex::Real sp2 = <a class="code" href="structWENO5.html#a28727bda47dc47677cf20c4d4bbda9a8">m_phi</a>(i  , j  , k+2, qty_index);</div>
@@ -297,7 +297,7 @@ $(document).ready(function(){initNavTree('ERF__Interpolation__WENO_8H_source.htm
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordflow">if</span> (upw_lo &gt; <a class="code" href="structWENO5.html#a99f8a8620164e0e1460c7bce55ec3b02">tol</a>) {</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            val_lo = <a class="code" href="structWENO5.html#ae77d5f8032cf91c84551f51170ec9111">Evaluate</a>(sm3,sm2,sm1,s  ,sp1);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (upw_lo &lt; -<a class="code" href="structWENO5.html#a99f8a8620164e0e1460c7bce55ec3b02">tol</a>) {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            val_lo = <a class="code" href="structWENO5.html#ae77d5f8032cf91c84551f51170ec9111">Evaluate</a>(sp2,sp1,s,sm1,sm2);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            val_lo = <a class="code" href="structWENO5.html#ae77d5f8032cf91c84551f51170ec9111">Evaluate</a>(sp2,sp1,s  ,sm1,sm2);</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            val_lo = 0.5 * (s + sm1);</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div>
@@ -346,7 +346,187 @@ $(document).ready(function(){initNavTree('ERF__Interpolation__WENO_8H_source.htm
 <div class="line"><a name="l00258"></a><span class="lineno"><a class="line" href="structWENO5.html#a4e300b80fa08a8a265ca1b3caa1fe009">  258</a></span>&#160;    <span class="keyword">static</span> constexpr amrex::Real <a class="code" href="structWENO5.html#a4e300b80fa08a8a265ca1b3caa1fe009">g2</a>=(3.0/5.0);</div>
 <div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="structWENO5.html#acab4e47113826df9a8469d5647507385">  259</a></span>&#160;    <span class="keyword">static</span> constexpr amrex::Real <a class="code" href="structWENO5.html#acab4e47113826df9a8469d5647507385">g3</a>=(3.0/10.0);</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;};</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment"> * Interpolation operators used for WENO-7 scheme</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="structWENO7.html">  265</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structWENO7.html">WENO7</a></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
+<div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="structWENO7.html#a5135b6c5a026093774cb9dbc3e0ace3a">  267</a></span>&#160;    <a class="code" href="structWENO7.html#a5135b6c5a026093774cb9dbc3e0ace3a">WENO7</a> (<span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; phi)</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        : <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(phi) {}</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno"><a class="line" href="structWENO7.html#a5e0851756f4c59f482ec569de02948f8">  273</a></span>&#160;    <a class="code" href="structWENO7.html#a5e0851756f4c59f482ec569de02948f8">InterpolateInX</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; i,</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; j,</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; k,</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; qty_index,</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    amrex::Real&amp; val_lo,</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    amrex::Real upw_lo,</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                    <span class="keyword">const</span> amrex::Real <span class="comment">/*upw_frac*/</span>)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        amrex::Real sp3 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i+3, j  , k  , qty_index);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        amrex::Real sp2 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i+2, j  , k  , qty_index);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        amrex::Real sp1 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i+1, j  , k  , qty_index);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        amrex::Real s   = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j  , k  , qty_index);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        amrex::Real sm1 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i-1, j  , k  , qty_index);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        amrex::Real sm2 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i-2, j  , k  , qty_index);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        amrex::Real sm3 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i-3, j  , k  , qty_index);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        amrex::Real sm4 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i-4, j  , k  , qty_index);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordflow">if</span> (upw_lo &gt; <a class="code" href="structWENO7.html#ab892b0bcfa15175a4791c64e222be320">tol</a>) {</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            val_lo = <a class="code" href="structWENO7.html#a42198ea771144460fff2f08857fa52ee">Evaluate</a>(sm4,sm3,sm2,sm1,s  ,sp1,sp2);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (upw_lo &lt; -<a class="code" href="structWENO7.html#ab892b0bcfa15175a4791c64e222be320">tol</a>) {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            val_lo = <a class="code" href="structWENO7.html#a42198ea771144460fff2f08857fa52ee">Evaluate</a>(sp3,sp2,sp1,s  ,sm1,sm2,sm3);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            val_lo = 0.5 * (s + sm1);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno"><a class="line" href="structWENO7.html#a1d3391fa3ca88b8a2661a5065081c232">  303</a></span>&#160;    <a class="code" href="structWENO7.html#a1d3391fa3ca88b8a2661a5065081c232">InterpolateInY</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; i,</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; j,</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; k,</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; qty_index,</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                    amrex::Real&amp; val_lo,</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                    amrex::Real upw_lo,</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    <span class="keyword">const</span> amrex::Real <span class="comment">/*upw_frac*/</span>)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        amrex::Real sp3 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j+3, k  , qty_index);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        amrex::Real sp2 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j+2, k  , qty_index);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        amrex::Real sp1 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j+1, k  , qty_index);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        amrex::Real s   = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j  , k  , qty_index);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        amrex::Real sm1 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j-1, k  , qty_index);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        amrex::Real sm2 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j-2, k  , qty_index);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        amrex::Real sm3 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j-3, k  , qty_index);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        amrex::Real sm4 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j-4, k  , qty_index);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">if</span> (upw_lo &gt; <a class="code" href="structWENO7.html#ab892b0bcfa15175a4791c64e222be320">tol</a>) {</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            val_lo = <a class="code" href="structWENO7.html#a42198ea771144460fff2f08857fa52ee">Evaluate</a>(sm4,sm3,sm2,sm1,s  ,sp1,sp2);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (upw_lo &lt; -<a class="code" href="structWENO7.html#ab892b0bcfa15175a4791c64e222be320">tol</a>) {</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            val_lo = <a class="code" href="structWENO7.html#a42198ea771144460fff2f08857fa52ee">Evaluate</a>(sp3,sp2,sp1,s  ,sm1,sm2,sm3);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            val_lo = 0.5 * (s + sm1);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        }</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno"><a class="line" href="structWENO7.html#a930079459123947e83a5e01e5347aa2e">  333</a></span>&#160;    <a class="code" href="structWENO7.html#a930079459123947e83a5e01e5347aa2e">InterpolateInZ</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; i,</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; j,</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; k,</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; qty_index,</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                    amrex::Real&amp; val_lo,</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                    amrex::Real upw_lo,</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                    <span class="keyword">const</span> amrex::Real <span class="comment">/*upw_frac*/</span>)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        amrex::Real sp3 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j  , k+2, qty_index);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        amrex::Real sp2 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j  , k+2, qty_index);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        amrex::Real sp1 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j  , k+1, qty_index);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        amrex::Real s   = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j  , k  , qty_index);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        amrex::Real sm1 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j  , k-1, qty_index);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        amrex::Real sm2 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j  , k-2, qty_index);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        amrex::Real sm3 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j  , k-3, qty_index);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        amrex::Real sm4 = <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>(i  , j  , k-3, qty_index);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">if</span> (upw_lo &gt; <a class="code" href="structWENO7.html#ab892b0bcfa15175a4791c64e222be320">tol</a>) {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            val_lo = <a class="code" href="structWENO7.html#a42198ea771144460fff2f08857fa52ee">Evaluate</a>(sm4,sm3,sm2,sm1,s  ,sp1,sp2);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (upw_lo &lt; -<a class="code" href="structWENO7.html#ab892b0bcfa15175a4791c64e222be320">tol</a>) {</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            val_lo = <a class="code" href="structWENO7.html#a42198ea771144460fff2f08857fa52ee">Evaluate</a>(sp3,sp2,sp1,s  ,sm1,sm2,sm3);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            val_lo = 0.5 * (s + sm1);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    }</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    amrex::Real</div>
+<div class="line"><a name="l00363"></a><span class="lineno"><a class="line" href="structWENO7.html#a42198ea771144460fff2f08857fa52ee">  363</a></span>&#160;    <a class="code" href="structWENO7.html#a42198ea771144460fff2f08857fa52ee">Evaluate</a> (<span class="keyword">const</span> amrex::Real&amp; sm3,</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;              <span class="keyword">const</span> amrex::Real&amp; sm2,</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;              <span class="keyword">const</span> amrex::Real&amp; sm1,</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;              <span class="keyword">const</span> amrex::Real&amp; s  ,</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;              <span class="keyword">const</span> amrex::Real&amp; sp1,</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;              <span class="keyword">const</span> amrex::Real&amp; sp2,</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;              <span class="keyword">const</span> amrex::Real&amp; sp3)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="comment">// Smoothing factors</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        amrex::Real b1 = ( sm3 * sm3 * 6649./2880.0</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                         - sm3 * sm2 * 2623./160.0</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                         + sm3 * sm1 * 9449./480.0</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                         - sm3 * s   * 11389./1440.0</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                         + sm2 * sm2 * 28547./960.0</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                         - sm2 * sm1 * 35047./480.0</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                         + sm2 * s   * 14369./480.0</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                         + sm1 * sm1 * 44747./960.0</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                         - sm1 * s   * 6383./160.0</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                         + s   * s   * 25729./2880.0 );</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        amrex::Real b2 = ( sm2 * sm2 * 3169/2880.0</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                         - sm2 * sm1 * 3229/480.0</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                         + sm2 * s   * 3169/480.0</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                         - sm2 * sp1 * 2989/1440.0</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                         + sm1 * sm1 * 11147/960.0</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                         - sm1 * s   * 11767/480.0</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                         + sm1 * sp1 * 1283/160.0</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                         + s   * s   * 13667/960.0</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                         - s   * sp1 * 5069/480.0</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                         + sp1 * sp1 * 6649/2880.0 );</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        amrex::Real b3 = ( sm1 * sm1 * 6649./2880.0</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                         - sm1 * s   * 5069./480.0</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                         + sm1 * sp1 * 1283./160.0</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                         - sm1 * sp2 * 2989./1440.0</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                         + s   * s   * 13667./960.0</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                         - s   * sp1 * 11767./480.0</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                         + s   * sp2 * 3169./480.0</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                         + sp1 * sp1 * 11147./960.0</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                         - sp1 * sp2 * 3229./480.0</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                         + sp2 * sp2 * 3169./2880.0 );</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        amrex::Real b4 = ( s   * s   * 25729./2880.</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                         - s   * sp1 * 6383./160.</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                         + s   * sp2 * 14369./480.</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                         - s   * sp3 * 11389./1440.</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                         + sp1 * sp1 * 44747./960.</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                         - sp1 * sp2 * 35047./480.</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                         + sp1 * sp3 * 9449./480.</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                         + sp2 * sp2 * 28547./960.</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                         - sp2 * sp3 * 2623./160.</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                         + sp3 * sp3 * 6649./2880. );</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="comment">// Weight factors</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        amrex::Real w1 = <a class="code" href="structWENO7.html#a847542024dd131b3455ac46c10969f57">g1</a> / ( (<a class="code" href="structWENO7.html#a51bb3b4aafa54396917073e91d53140b">eps</a> + b1) * (<a class="code" href="structWENO7.html#a51bb3b4aafa54396917073e91d53140b">eps</a> + b1) );</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        amrex::Real w2 = <a class="code" href="structWENO7.html#a6fd89490f6c6a0c209bf34e7fee67d6b">g2</a> / ( (<a class="code" href="structWENO7.html#a51bb3b4aafa54396917073e91d53140b">eps</a> + b2) * (<a class="code" href="structWENO7.html#a51bb3b4aafa54396917073e91d53140b">eps</a> + b2) );</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        amrex::Real w3 = <a class="code" href="structWENO7.html#a6da9486392dffd024784b275584612b1">g3</a> / ( (<a class="code" href="structWENO7.html#a51bb3b4aafa54396917073e91d53140b">eps</a> + b3) * (<a class="code" href="structWENO7.html#a51bb3b4aafa54396917073e91d53140b">eps</a> + b3) );</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        amrex::Real w4 = <a class="code" href="structWENO7.html#a5bc057e9b0e1f937a32733802539acff">g4</a> / ( (<a class="code" href="structWENO7.html#a51bb3b4aafa54396917073e91d53140b">eps</a> + b4) * (<a class="code" href="structWENO7.html#a51bb3b4aafa54396917073e91d53140b">eps</a> + b4) );</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="comment">// Weight factor norm</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        amrex::Real wsum = w1 + w2 + w3 + w4;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="comment">// Taylor expansions</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        amrex::Real v1 = (-0.3125)*sm3 + ( 1.3125)*sm2 + (-2.1875)*sm1 + ( 2.1875)*s;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        amrex::Real v2 = ( 0.0625)*sm2 + (-0.3125)*sm1 + ( 0.9375)*s   + ( 0.3125)*sp1;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        amrex::Real v3 = (-0.0625)*sm1 + ( 0.5625)*s   + ( 0.5625)*sp1 + (-0.0625)*sp2;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        amrex::Real v4 = ( 0.3125)*s   + ( 0.9375)*sp1 + (-0.3125)*sp2 + ( 0.0625)*sp3;</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="comment">// Interpolated value</span></div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keywordflow">return</span> ( (w1 * v1 + w2 * v2 + w3 * v3 + w4 * v4) / (wsum) );</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    }</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00433"></a><span class="lineno"><a class="line" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">  433</a></span>&#160;    amrex::Array4&lt;const amrex::Real&gt; <a class="code" href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">m_phi</a>;   <span class="comment">// Quantity to interpolate</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno"><a class="line" href="structWENO7.html#a51bb3b4aafa54396917073e91d53140b">  434</a></span>&#160;    <span class="keyword">const</span> amrex::Real <a class="code" href="structWENO7.html#a51bb3b4aafa54396917073e91d53140b">eps</a>=1.0e-8;</div>
+<div class="line"><a name="l00435"></a><span class="lineno"><a class="line" href="structWENO7.html#ab892b0bcfa15175a4791c64e222be320">  435</a></span>&#160;    <span class="keyword">const</span> amrex::Real <a class="code" href="structWENO7.html#ab892b0bcfa15175a4791c64e222be320">tol</a>=1.0e-12;</div>
+<div class="line"><a name="l00436"></a><span class="lineno"><a class="line" href="structWENO7.html#a847542024dd131b3455ac46c10969f57">  436</a></span>&#160;    <span class="keyword">static</span> constexpr amrex::Real <a class="code" href="structWENO7.html#a847542024dd131b3455ac46c10969f57">g1</a>=( 1.0/64.0);</div>
+<div class="line"><a name="l00437"></a><span class="lineno"><a class="line" href="structWENO7.html#a6fd89490f6c6a0c209bf34e7fee67d6b">  437</a></span>&#160;    <span class="keyword">static</span> constexpr amrex::Real <a class="code" href="structWENO7.html#a6fd89490f6c6a0c209bf34e7fee67d6b">g2</a>=(21.0/64.0);</div>
+<div class="line"><a name="l00438"></a><span class="lineno"><a class="line" href="structWENO7.html#a6da9486392dffd024784b275584612b1">  438</a></span>&#160;    <span class="keyword">static</span> constexpr amrex::Real <a class="code" href="structWENO7.html#a6da9486392dffd024784b275584612b1">g3</a>=(35.0/64.0);</div>
+<div class="line"><a name="l00439"></a><span class="lineno"><a class="line" href="structWENO7.html#a5bc057e9b0e1f937a32733802539acff">  439</a></span>&#160;    <span class="keyword">static</span> constexpr amrex::Real <a class="code" href="structWENO7.html#a5bc057e9b0e1f937a32733802539acff">g4</a>=( 7.0/64.0);</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;};</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="astructWENO3_html"><div class="ttname"><a href="structWENO3.html">WENO3</a></div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:10</div></div>
 <div class="ttc" id="astructWENO3_html_a0c57f25abcb2dfd9ded1393d14d83568"><div class="ttname"><a href="structWENO3.html#a0c57f25abcb2dfd9ded1393d14d83568">WENO3::g1</a></div><div class="ttdeci">static constexpr amrex::Real g1</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:122</div></div>
@@ -372,6 +552,19 @@ $(document).ready(function(){initNavTree('ERF__Interpolation__WENO_8H_source.htm
 <div class="ttc" id="astructWENO5_html_acab4e47113826df9a8469d5647507385"><div class="ttname"><a href="structWENO5.html#acab4e47113826df9a8469d5647507385">WENO5::g3</a></div><div class="ttdeci">static constexpr amrex::Real g3</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:259</div></div>
 <div class="ttc" id="astructWENO5_html_acedffa739822ba3574a74f6e3e6fe7a3"><div class="ttname"><a href="structWENO5.html#acedffa739822ba3574a74f6e3e6fe7a3">WENO5::g1</a></div><div class="ttdeci">static constexpr amrex::Real g1</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:257</div></div>
 <div class="ttc" id="astructWENO5_html_ae77d5f8032cf91c84551f51170ec9111"><div class="ttname"><a href="structWENO5.html#ae77d5f8032cf91c84551f51170ec9111">WENO5::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;sm2, const amrex::Real &amp;sm1, const amrex::Real &amp;s, const amrex::Real &amp;sp1, const amrex::Real &amp;sp2) const</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:221</div></div>
+<div class="ttc" id="astructWENO7_html"><div class="ttname"><a href="structWENO7.html">WENO7</a></div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:266</div></div>
+<div class="ttc" id="astructWENO7_html_a1d3391fa3ca88b8a2661a5065081c232"><div class="ttname"><a href="structWENO7.html#a1d3391fa3ca88b8a2661a5065081c232">WENO7::InterpolateInY</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void InterpolateInY(const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;qty_index, amrex::Real &amp;val_lo, amrex::Real upw_lo, const amrex::Real) const</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:303</div></div>
+<div class="ttc" id="astructWENO7_html_a42198ea771144460fff2f08857fa52ee"><div class="ttname"><a href="structWENO7.html#a42198ea771144460fff2f08857fa52ee">WENO7::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;sm3, const amrex::Real &amp;sm2, const amrex::Real &amp;sm1, const amrex::Real &amp;s, const amrex::Real &amp;sp1, const amrex::Real &amp;sp2, const amrex::Real &amp;sp3) const</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:363</div></div>
+<div class="ttc" id="astructWENO7_html_a5135b6c5a026093774cb9dbc3e0ace3a"><div class="ttname"><a href="structWENO7.html#a5135b6c5a026093774cb9dbc3e0ace3a">WENO7::WENO7</a></div><div class="ttdeci">WENO7(const amrex::Array4&lt; const amrex::Real &gt; &amp;phi)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:267</div></div>
+<div class="ttc" id="astructWENO7_html_a51bb3b4aafa54396917073e91d53140b"><div class="ttname"><a href="structWENO7.html#a51bb3b4aafa54396917073e91d53140b">WENO7::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:434</div></div>
+<div class="ttc" id="astructWENO7_html_a5bc057e9b0e1f937a32733802539acff"><div class="ttname"><a href="structWENO7.html#a5bc057e9b0e1f937a32733802539acff">WENO7::g4</a></div><div class="ttdeci">static constexpr amrex::Real g4</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:439</div></div>
+<div class="ttc" id="astructWENO7_html_a5e0851756f4c59f482ec569de02948f8"><div class="ttname"><a href="structWENO7.html#a5e0851756f4c59f482ec569de02948f8">WENO7::InterpolateInX</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void InterpolateInX(const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;qty_index, amrex::Real &amp;val_lo, amrex::Real upw_lo, const amrex::Real) const</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:273</div></div>
+<div class="ttc" id="astructWENO7_html_a6da9486392dffd024784b275584612b1"><div class="ttname"><a href="structWENO7.html#a6da9486392dffd024784b275584612b1">WENO7::g3</a></div><div class="ttdeci">static constexpr amrex::Real g3</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:438</div></div>
+<div class="ttc" id="astructWENO7_html_a6fd89490f6c6a0c209bf34e7fee67d6b"><div class="ttname"><a href="structWENO7.html#a6fd89490f6c6a0c209bf34e7fee67d6b">WENO7::g2</a></div><div class="ttdeci">static constexpr amrex::Real g2</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:437</div></div>
+<div class="ttc" id="astructWENO7_html_a847542024dd131b3455ac46c10969f57"><div class="ttname"><a href="structWENO7.html#a847542024dd131b3455ac46c10969f57">WENO7::g1</a></div><div class="ttdeci">static constexpr amrex::Real g1</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:436</div></div>
+<div class="ttc" id="astructWENO7_html_a930079459123947e83a5e01e5347aa2e"><div class="ttname"><a href="structWENO7.html#a930079459123947e83a5e01e5347aa2e">WENO7::InterpolateInZ</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void InterpolateInZ(const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;qty_index, amrex::Real &amp;val_lo, amrex::Real upw_lo, const amrex::Real) const</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:333</div></div>
+<div class="ttc" id="astructWENO7_html_aacefd0bc2d7db63fa68026e0d041c637"><div class="ttname"><a href="structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637">WENO7::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:433</div></div>
+<div class="ttc" id="astructWENO7_html_ab892b0bcfa15175a4791c64e222be320"><div class="ttname"><a href="structWENO7.html#ab892b0bcfa15175a4791c64e222be320">WENO7::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_WENO.H:435</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

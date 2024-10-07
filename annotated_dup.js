@@ -104,9 +104,11 @@ var annotated_dup =
     [ "WaterVaporSat", "classWaterVaporSat.html", "classWaterVaporSat" ],
     [ "WENO3", "structWENO3.html", "structWENO3" ],
     [ "WENO5", "structWENO5.html", "structWENO5" ],
+    [ "WENO7", "structWENO7.html", "structWENO7" ],
     [ "WENO_MZQ3", "structWENO__MZQ3.html", "structWENO__MZQ3" ],
     [ "WENO_Z3", "structWENO__Z3.html", "structWENO__Z3" ],
     [ "WENO_Z5", "structWENO__Z5.html", "structWENO__Z5" ],
+    [ "WENO_Z7", "structWENO__Z7.html", "structWENO__Z7" ],
     [ "WindFarm", "classWindFarm.html", "classWindFarm" ],
     [ "WriteBndryPlanes", "classWriteBndryPlanes.html", "classWriteBndryPlanes" ]
 ];

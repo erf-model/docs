@@ -122,8 +122,10 @@ var hierarchy =
     [ "WaterVaporSat", "classWaterVaporSat.html", null ],
     [ "WENO3", "structWENO3.html", null ],
     [ "WENO5", "structWENO5.html", null ],
+    [ "WENO7", "structWENO7.html", null ],
     [ "WENO_MZQ3", "structWENO__MZQ3.html", null ],
     [ "WENO_Z3", "structWENO__Z3.html", null ],
     [ "WENO_Z5", "structWENO__Z5.html", null ],
+    [ "WENO_Z7", "structWENO__Z7.html", null ],
     [ "WriteBndryPlanes", "classWriteBndryPlanes.html", null ]
 ];

@@ -17,12 +17,14 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     ] ],
     [ "ERF_Interpolation_WENO.H", "ERF__Interpolation__WENO_8H.html", [
       [ "WENO3", "structWENO3.html", "structWENO3" ],
-      [ "WENO5", "structWENO5.html", "structWENO5" ]
+      [ "WENO5", "structWENO5.html", "structWENO5" ],
+      [ "WENO7", "structWENO7.html", "structWENO7" ]
     ] ],
     [ "ERF_Interpolation_WENO_Z.H", "ERF__Interpolation__WENO__Z_8H.html", [
       [ "WENO_Z3", "structWENO__Z3.html", "structWENO__Z3" ],
       [ "WENO_MZQ3", "structWENO__MZQ3.html", "structWENO__MZQ3" ],
-      [ "WENO_Z5", "structWENO__Z5.html", "structWENO__Z5" ]
+      [ "WENO_Z5", "structWENO__Z5.html", "structWENO__Z5" ],
+      [ "WENO_Z7", "structWENO__Z7.html", "structWENO__Z7" ]
     ] ],
     [ "ERF_Microphysics_Utils.H", "ERF__Microphysics__Utils_8H.html", "ERF__Microphysics__Utils_8H" ],
     [ "ERF_MomentumToVelocity.cpp", "ERF__MomentumToVelocity_8cpp.html", "ERF__MomentumToVelocity_8cpp" ],

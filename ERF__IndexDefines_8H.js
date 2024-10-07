@@ -38,6 +38,8 @@ var ERF__IndexDefines_8H =
       [ "Weno_5", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af2429e8de544f3ebd7c9668e3dbebaa8", null ],
       [ "Weno_5Z", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70aeb75f5943c7837da80e2048f2b344efc", null ],
       [ "Weno_3MZQ", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af8b942d20ed08b25df71ea1c87244210", null ],
+      [ "Weno_7", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a3095d588151e351b421893f62411d15e", null ],
+      [ "Weno_7Z", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a6edd20e2cefe2061bec0e1ebbf5c8573", null ],
       [ "Unknown", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a88183b946cc5f0e8c96b2e66e1c74a7e", null ]
     ] ],
     [ "ERF_BC", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9", [
