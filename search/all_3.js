@@ -17,7 +17,7 @@ var searchData=
   ['datalog_383',['datalog',['../classERF.html#a1cade630b005dbcc0f644987ef3db287',1,'ERF']]],
   ['datalogname_384',['DataLogName',['../classERF.html#a16e1f6b8bbb05ae738daf2abe626c159',1,'ERF']]],
   ['datalogname_385',['datalogname',['../classERF.html#a9248a4eb025c2647e003f838cba52a21',1,'ERF']]],
-  ['debug_386',['debug',['../structTurbulentPerturbation.html#aa3eb5d1c48589a8c49d77c8889124657',1,'TurbulentPerturbation']]],
+  ['debug_386',['debug',['../structTurbulentPerturbation.html#aa7c1ce943bf06d347d762131ec0c24cf',1,'TurbulentPerturbation']]],
   ['def_5farray_387',['def_array',['../classncutils_1_1NCGroup.html#acf969a6598527e2d00a84d35e0522fa1',1,'ncutils::NCGroup']]],
   ['def_5fdim_388',['def_dim',['../classncutils_1_1NCGroup.html#a8c9376a217f29012f565a13f131bea84',1,'ncutils::NCGroup']]],
   ['def_5fvar_389',['def_var',['../classncutils_1_1NCGroup.html#ae640d6aef18835f643e3cbaacb43e682',1,'ncutils::NCGroup']]],

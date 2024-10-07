@@ -5,7 +5,7 @@ var structTurbulentPerturbation =
     [ "calc_tpi_amp", "structTurbulentPerturbation.html#a6690a1ccf037f5cf892e72724c21b3a5", null ],
     [ "calc_tpi_meanMag_perBox", "structTurbulentPerturbation.html#ac2f49dd6a95ab0bb291fa4977d9682e5", null ],
     [ "calc_tpi_update", "structTurbulentPerturbation.html#a5e6200f8b6bea3c4944dccc6c7285102", null ],
-    [ "debug", "structTurbulentPerturbation.html#aa3eb5d1c48589a8c49d77c8889124657", null ],
+    [ "debug", "structTurbulentPerturbation.html#aa7c1ce943bf06d347d762131ec0c24cf", null ],
     [ "get_pb_mag", "structTurbulentPerturbation.html#a237c085bf6fa265eef471d19bbca613f", null ],
     [ "get_pb_netZero", "structTurbulentPerturbation.html#aa8a048ec67a9e110cef012105dd615cf", null ],
     [ "init_tpi", "structTurbulentPerturbation.html#a6f6d1321050b4a5709f3eaecff1a8926", null ],

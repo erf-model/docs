@@ -2,7 +2,7 @@ var searchData=
 [
   ['datalog_3046',['DataLog',['../classERF.html#aa2c3ee1910008b828b9da79ccdfe3871',1,'ERF']]],
   ['datalogname_3047',['DataLogName',['../classERF.html#a16e1f6b8bbb05ae738daf2abe626c159',1,'ERF']]],
-  ['debug_3048',['debug',['../structTurbulentPerturbation.html#aa3eb5d1c48589a8c49d77c8889124657',1,'TurbulentPerturbation']]],
+  ['debug_3048',['debug',['../structTurbulentPerturbation.html#aa7c1ce943bf06d347d762131ec0c24cf',1,'TurbulentPerturbation']]],
   ['def_5farray_3049',['def_array',['../classncutils_1_1NCGroup.html#acf969a6598527e2d00a84d35e0522fa1',1,'ncutils::NCGroup']]],
   ['def_5fdim_3050',['def_dim',['../classncutils_1_1NCGroup.html#a8c9376a217f29012f565a13f131bea84',1,'ncutils::NCGroup']]],
   ['def_5fvar_3051',['def_var',['../classncutils_1_1NCGroup.html#ae640d6aef18835f643e3cbaacb43e682',1,'ncutils::NCGroup']]],
