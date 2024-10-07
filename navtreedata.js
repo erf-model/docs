@@ -77,7 +77,7 @@ var NAVTREEINDEX =
 "ERF__NCWpsFile_8H.html#a60014a8d74bed0d5ae984e600c68dc85",
 "ERF__fast__rhs__N_8cpp.html",
 "classERF.html#a18fa84b06132715757d97ec38678aa2c",
-"classERF.html#adca0cddd75f33ecb5fb8e0ef9601dae4",
+"classERF.html#adcd9f23975ffa605247b41d391c2a2f0",
 "classIntersectionCIF.html#addd5d1b2d4f051377f8b3b2b2fcc395e",
 "classMamConstituents.html#a2a3c67427c13fc60d592017076ddc8ce",
 "classPlaneAverage.html#a6c29e3eafbbb7028e801c513b29a1c09",

@@ -12,5 +12,5 @@ var searchData=
   ['xrmin_2421',['xrmin',['../classMam4__aer.html#aa8d09180d0858fe4465698618a2a7391',1,'Mam4_aer']]],
   ['xvel_2422',['xvel',['../namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c',1,'Vars']]],
   ['xvel_5fbc_2423',['xvel_bc',['../namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4',1,'BCVars']]],
-  ['xvel_5fbc_5fdata_2424',['xvel_bc_data',['../classERF.html#a81a98263940c84b971e52fe555a7b98d',1,'ERF']]]
+  ['xvel_5fbc_5fdata_2424',['xvel_bc_data',['../classERF.html#a902f60d94be5eaf86361d1d5ad942105',1,'ERF']]]
 ];
