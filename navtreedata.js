@@ -76,7 +76,7 @@ var NAVTREEINDEX =
 "ERF__DiffusionSrcForState__N_8cpp.html#a61d842d8a45b6d97948ce19b106bba0a",
 "ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aaa684fa862f886663c11fcad18416550",
 "ERF__fast__rhs__MT_8cpp.html",
-"classERF.html#a18c1142552120bbd22987f34995ee939",
+"classERF.html#a18e6dbbf968b4492e78aa427791620f4",
 "classERF.html#adc284f421c5fd9dd15c0e5cbe4ff5fc8",
 "classIntersectionCIF.html#abf356bbe64e8979330be6f8b3417a100",
 "classMamConstituents.html#a19309fc1bfd9a51b5ac412ba7f17734f",
