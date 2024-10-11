@@ -467,8 +467,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="comment">//***********************************************************************************</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">// Cell centered strains</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        tau11(i,j,k) = (u(i+1, j  , k  )/mf_u(i+1,j,0) - u(i, j, k)/mf_u(i,j,0))*dxInv[0]*mf_u(i,j,0)*mf_u(i,j,0);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        tau22(i,j,k) = (v(i  , j+1, k  )/mf_v(i,j+1,0) - v(i, j, k)/mf_v(i,j,0))*dxInv[1]*mf_v(i,j,0)*mf_v(i,j,0);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        tau11(i,j,k) = (u(i+1, j  , k  )/mf_u(i+1,j,0) - u(i, j, k)/mf_u(i,j,0))*dxInv[0]*mf_m(i,j,0)*mf_m(i,j,0);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        tau22(i,j,k) = (v(i  , j+1, k  )/mf_v(i,j+1,0) - v(i, j, k)/mf_v(i,j,0))*dxInv[1]*mf_m(i,j,0)*mf_m(i,j,0);</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        tau33(i,j,k) = (w(i  , j  , k+1) - w(i, j, k))*dxInv[2];</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    });</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
