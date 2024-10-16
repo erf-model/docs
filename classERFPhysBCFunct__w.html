@@ -116,8 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9a009bc8ab1a9916eaa56702b38e7436"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae949a3df422d9d5082146a46c9eca565"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__w.html#ae949a3df422d9d5082146a46c9eca565">~ERFPhysBCFunct_w</a> ()</td></tr>
 <tr class="separator:ae949a3df422d9d5082146a46c9eca565"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f8e28817bb9dafdbc4d3fa94736d389"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__w.html#a6f8e28817bb9dafdbc4d3fa94736d389">operator()</a> (amrex::MultiFab &amp;mf, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, amrex::IntVect const &amp;nghost, const amrex::Real time, int bccomp)</td></tr>
-<tr class="separator:a6f8e28817bb9dafdbc4d3fa94736d389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a2724aec1ad2f9758e5a6ecc67dd55c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__w.html#a5a2724aec1ad2f9758e5a6ecc67dd55c">operator()</a> (amrex::MultiFab &amp;mf, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, amrex::IntVect const &amp;nghost, const amrex::Real time, int bccomp, bool do_fb)</td></tr>
+<tr class="separator:a5a2724aec1ad2f9758e5a6ecc67dd55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cd6e53c9598fe025c3c78945c2b1b83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__w.html#a9cd6e53c9598fe025c3c78945c2b1b83">impose_lateral_zvel_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;xvel_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;yvel_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int bccomp)</td></tr>
 <tr class="separator:a9cd6e53c9598fe025c3c78945c2b1b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9225c49cf092c6eed2bf9bdf1ef4b9cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__w.html#a9225c49cf092c6eed2bf9bdf1ef4b9cf">impose_vertical_zvel_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;xvel_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;yvel_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int bccomp_u, int bccomp_v, int bccomp_w, TerrainType terrain_type)</td></tr>
@@ -228,26 +228,26 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        : <a class="code" href="classERFPhysBCFunct__w.html#a277641c1cc5a27c2a01e49d21a9c88f4">m_lev</a>(lev),</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">m_geom</a>(geom), <a class="code" href="classERFPhysBCFunct__w.html#a052d31c743d030292761e95702615467">m_domain_bcs_type</a>(domain_bcs_type),</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#a87159676dd29c47ebd69e40b6dda5f1a">m_domain_bcs_type_d</a>(domain_bcs_type_d),</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#afcaa9deb9258f849737281efb4327694">m_bc_extdir_vals</a>(bc_extdir_vals),</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#adac2302187d51d560028611a5d6b1743">m_bc_neumann_vals</a>(bc_neumann_vals),</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#a96add99b86d3a03a872af7af85ad8e96">m_terrain_type</a>(terrain_type),</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b">m_z_phys_nd</a>(z_phys_nd.get()),</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#a6e6cdc32da147f7bc00d8c408b5df9a1">m_use_real_bcs</a>(use_real_bcs),</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#a4c66456080eb954ef8c80fc3dcfc4c3a">m_w_bc_data</a>(w_bc_data)</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    { }</div>
-<div class="ttc" id="aclassERFPhysBCFunct__w_html_a052d31c743d030292761e95702615467"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a052d31c743d030292761e95702615467">ERFPhysBCFunct_w::m_domain_bcs_type</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BCRec &gt; m_domain_bcs_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:246</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__w_html_a1e9f9a0981a60be4e8e3a2b906444878"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">ERFPhysBCFunct_w::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:245</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__w_html_a277641c1cc5a27c2a01e49d21a9c88f4"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a277641c1cc5a27c2a01e49d21a9c88f4">ERFPhysBCFunct_w::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:244</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__w_html_a4c66456080eb954ef8c80fc3dcfc4c3a"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a4c66456080eb954ef8c80fc3dcfc4c3a">ERFPhysBCFunct_w::m_w_bc_data</a></div><div class="ttdeci">amrex::Real * m_w_bc_data</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:253</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__w_html_a6e6cdc32da147f7bc00d8c408b5df9a1"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a6e6cdc32da147f7bc00d8c408b5df9a1">ERFPhysBCFunct_w::m_use_real_bcs</a></div><div class="ttdeci">bool m_use_real_bcs</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:252</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__w_html_a87159676dd29c47ebd69e40b6dda5f1a"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a87159676dd29c47ebd69e40b6dda5f1a">ERFPhysBCFunct_w::m_domain_bcs_type_d</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; m_domain_bcs_type_d</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:247</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__w_html_a96add99b86d3a03a872af7af85ad8e96"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a96add99b86d3a03a872af7af85ad8e96">ERFPhysBCFunct_w::m_terrain_type</a></div><div class="ttdeci">TerrainType m_terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:250</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__w_html_aa37508122179536336aa8dba19d34c1b"><div class="ttname"><a href="classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b">ERFPhysBCFunct_w::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:251</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__w_html_adac2302187d51d560028611a5d6b1743"><div class="ttname"><a href="classERFPhysBCFunct__w.html#adac2302187d51d560028611a5d6b1743">ERFPhysBCFunct_w::m_bc_neumann_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NBCVAR_max &gt; m_bc_neumann_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:249</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__w_html_afcaa9deb9258f849737281efb4327694"><div class="ttname"><a href="classERFPhysBCFunct__w.html#afcaa9deb9258f849737281efb4327694">ERFPhysBCFunct_w::m_bc_extdir_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NBCVAR_max &gt; m_bc_extdir_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:248</div></div>
+<div class="fragment"><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        : <a class="code" href="classERFPhysBCFunct__w.html#a277641c1cc5a27c2a01e49d21a9c88f4">m_lev</a>(lev),</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">m_geom</a>(geom), <a class="code" href="classERFPhysBCFunct__w.html#a052d31c743d030292761e95702615467">m_domain_bcs_type</a>(domain_bcs_type),</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#a87159676dd29c47ebd69e40b6dda5f1a">m_domain_bcs_type_d</a>(domain_bcs_type_d),</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#afcaa9deb9258f849737281efb4327694">m_bc_extdir_vals</a>(bc_extdir_vals),</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#adac2302187d51d560028611a5d6b1743">m_bc_neumann_vals</a>(bc_neumann_vals),</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#a96add99b86d3a03a872af7af85ad8e96">m_terrain_type</a>(terrain_type),</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b">m_z_phys_nd</a>(z_phys_nd.get()),</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#a6e6cdc32da147f7bc00d8c408b5df9a1">m_use_real_bcs</a>(use_real_bcs),</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;          <a class="code" href="classERFPhysBCFunct__w.html#a4c66456080eb954ef8c80fc3dcfc4c3a">m_w_bc_data</a>(w_bc_data)</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    { }</div>
+<div class="ttc" id="aclassERFPhysBCFunct__w_html_a052d31c743d030292761e95702615467"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a052d31c743d030292761e95702615467">ERFPhysBCFunct_w::m_domain_bcs_type</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BCRec &gt; m_domain_bcs_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:250</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__w_html_a1e9f9a0981a60be4e8e3a2b906444878"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">ERFPhysBCFunct_w::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:249</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__w_html_a277641c1cc5a27c2a01e49d21a9c88f4"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a277641c1cc5a27c2a01e49d21a9c88f4">ERFPhysBCFunct_w::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:248</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__w_html_a4c66456080eb954ef8c80fc3dcfc4c3a"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a4c66456080eb954ef8c80fc3dcfc4c3a">ERFPhysBCFunct_w::m_w_bc_data</a></div><div class="ttdeci">amrex::Real * m_w_bc_data</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:257</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__w_html_a6e6cdc32da147f7bc00d8c408b5df9a1"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a6e6cdc32da147f7bc00d8c408b5df9a1">ERFPhysBCFunct_w::m_use_real_bcs</a></div><div class="ttdeci">bool m_use_real_bcs</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:256</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__w_html_a87159676dd29c47ebd69e40b6dda5f1a"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a87159676dd29c47ebd69e40b6dda5f1a">ERFPhysBCFunct_w::m_domain_bcs_type_d</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; m_domain_bcs_type_d</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:251</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__w_html_a96add99b86d3a03a872af7af85ad8e96"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a96add99b86d3a03a872af7af85ad8e96">ERFPhysBCFunct_w::m_terrain_type</a></div><div class="ttdeci">TerrainType m_terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:254</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__w_html_aa37508122179536336aa8dba19d34c1b"><div class="ttname"><a href="classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b">ERFPhysBCFunct_w::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:255</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__w_html_adac2302187d51d560028611a5d6b1743"><div class="ttname"><a href="classERFPhysBCFunct__w.html#adac2302187d51d560028611a5d6b1743">ERFPhysBCFunct_w::m_bc_neumann_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NBCVAR_max &gt; m_bc_neumann_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:253</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__w_html_afcaa9deb9258f849737281efb4327694"><div class="ttname"><a href="classERFPhysBCFunct__w.html#afcaa9deb9258f849737281efb4327694">ERFPhysBCFunct_w::m_bc_extdir_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NBCVAR_max &gt; m_bc_extdir_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:252</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -273,7 +273,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -674,8 +674,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a6f8e28817bb9dafdbc4d3fa94736d389"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f8e28817bb9dafdbc4d3fa94736d389">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="a5a2724aec1ad2f9758e5a6ecc67dd55c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a2724aec1ad2f9758e5a6ecc67dd55c">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -714,7 +714,13 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bccomp</em>&#160;</td>
+          <td class="paramname"><em>bccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>do_fb</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -723,84 +729,100 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;{</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERFPhysBCFunct_w::()&quot;</span>);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordtype">int</span> bccomp_u = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordtype">int</span> bccomp_v = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">m_geom</a>.isAllPeriodic()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; domain = <a class="code" href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">m_geom</a>.Domain();</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dxInv   = <a class="code" href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">m_geom</a>.InvCellSizeArray();</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    Box gdomainz = surroundingNodes(domain,2);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">m_geom</a>.isPeriodic(i)) {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            gdomainz.grow(i, nghost[i]);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">// We want to make sure we impose the z-vels at k=0  if the box includes k=0</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">if</span> (gdomainz.smallEnd(2) == 0) gdomainz.setSmall(2,1);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    Box ndomain  = convert(domain,IntVect(1,1,1));</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    MultiFab z_nd_mf_loc;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b">m_z_phys_nd</a>) {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        BoxList bl_z_phys = convert(mf.boxArray(),IntVect(1,1,1)).boxList();</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : bl_z_phys) {</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            b &amp;= ndomain;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        }</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        BoxArray ba_z(std::move(bl_z_phys));</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        z_nd_mf_loc.define(ba_z,mf.DistributionMap(),1,IntVect(nghost[0],nghost[1],0));</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        z_nd_mf_loc.ParallelCopy(*<a class="code" href="classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b">m_z_phys_nd</a>,0,0,1,<a class="code" href="classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b">m_z_phys_nd</a>-&gt;nGrowVect(),</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                                                    z_nd_mf_loc.nGrowVect());</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    }</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    z_nd_mf_loc.FillBoundary(<a class="code" href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    {</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(mf,<span class="keyword">false</span>); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <span class="comment">// This is the box we pass to the different routines</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            <span class="comment">// NOTE -- this is the full grid NOT the tile box</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            Box bx  = mfi.validbox();</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            <span class="comment">// These are the boxes we use to test on relative to the domain</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            Box zbx = surroundingNodes(bx,2); zbx.grow(0,nghost[0]);</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                                              zbx.grow(1,nghost[1]);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            Array4&lt;const Real&gt; z_nd_arr;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b">m_z_phys_nd</a>)</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            {</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                z_nd_arr = z_nd_mf_loc.const_array(mfi);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            }</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            Array4&lt;const Real&gt; <span class="keyword">const</span>&amp; velx_arr = <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">xvel</a>.const_array(mfi);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            Array4&lt;const Real&gt; <span class="keyword">const</span>&amp; vely_arr = <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">yvel</a>.const_array(mfi);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            Array4&lt;      Real&gt; <span class="keyword">const</span>&amp; velz_arr = mf.array(mfi);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classERFPhysBCFunct__w.html#a6e6cdc32da147f7bc00d8c408b5df9a1">m_use_real_bcs</a>)</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            {</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                <span class="keywordflow">if</span> (!gdomainz.contains(zbx))</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                    <a class="code" href="classERFPhysBCFunct__w.html#a9cd6e53c9598fe025c3c78945c2b1b83">impose_lateral_zvel_bcs</a>(velz_arr,velx_arr,vely_arr,zbx,domain,z_nd_arr,dxInv,bccomp_w);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                }</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            } <span class="comment">// m_use_real_bcs</span></div>
+<div class="fragment"><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERFPhysBCFunct_w::()&quot;</span>);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordtype">int</span> bccomp_u = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordtype">int</span> bccomp_v = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">m_geom</a>.isAllPeriodic()) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; domain = <a class="code" href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">m_geom</a>.Domain();</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dxInv   = <a class="code" href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">m_geom</a>.InvCellSizeArray();</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    Box gdomainz = surroundingNodes(domain,2);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">m_geom</a>.isPeriodic(i)) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            gdomainz.grow(i, nghost[i]);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        }</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="comment">// We want to make sure we impose the z-vels at k=0  if the box includes k=0</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">if</span> (gdomainz.smallEnd(2) == 0) gdomainz.setSmall(2,1);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    Box ndomain  = convert(domain,IntVect(1,1,1));</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    MultiFab z_nd_mf_loc;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b">m_z_phys_nd</a>) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        BoxList bl_z_phys = convert(mf.boxArray(),IntVect(1,1,1)).boxList();</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : bl_z_phys) {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            b &amp;= ndomain;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        }</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        BoxArray ba_z(std::move(bl_z_phys));</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        z_nd_mf_loc.define(ba_z,mf.DistributionMap(),1,IntVect(nghost[0],nghost[1],0));</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        z_nd_mf_loc.ParallelCopy(*<a class="code" href="classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b">m_z_phys_nd</a>,0,0,1,<a class="code" href="classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b">m_z_phys_nd</a>-&gt;nGrowVect(),</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                                                    z_nd_mf_loc.nGrowVect());</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    z_nd_mf_loc.FillBoundary(<a class="code" href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">m_geom</a>.periodicity());</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="keywordflow">if</span> (!gdomainz.contains(zbx)) {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                <a class="code" href="classERFPhysBCFunct__w.html#a9225c49cf092c6eed2bf9bdf1ef4b9cf">impose_vertical_zvel_bcs</a>(velz_arr,velx_arr,vely_arr,zbx,domain,z_nd_arr,dxInv,</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                         bccomp_u, bccomp_v, bccomp_w, <a class="code" href="classERFPhysBCFunct__w.html#a96add99b86d3a03a872af7af85ad8e96">m_terrain_type</a>);</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            }</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        } <span class="comment">// MFIter</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    } <span class="comment">// OpenMP</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;} <span class="comment">// operator()</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="comment">// We fill all of the interior and periodic ghost cells first, so we can fill</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="comment">//    those directly inside the lateral and vertical calls.</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">if</span> (do_fb) {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        mf.FillBoundary(<a class="code" href="classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878">m_geom</a>.periodicity());</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(mf,<span class="keyword">false</span>); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="comment">// This is the box we pass to the different routines</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="comment">// NOTE -- this is the full grid NOT the tile box</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            Box bx  = mfi.validbox();</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="comment">// These are the boxes we use to test on relative to the domain</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            Box zbx = surroundingNodes(bx,2); zbx.grow(nghost);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            <span class="keywordflow">if</span> (zbx.smallEnd(2) &lt; domain.smallEnd(2)) zbx.setSmall(2,domain.smallEnd(2));</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="keywordflow">if</span> (zbx.bigEnd(2)   &gt; domain.bigEnd(2))   zbx.setBig(2,domain.bigEnd(2)+1);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            Array4&lt;const Real&gt; z_nd_arr;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__w.html#aa37508122179536336aa8dba19d34c1b">m_z_phys_nd</a>)</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                z_nd_arr = z_nd_mf_loc.const_array(mfi);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            }</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            <span class="comment">// Recall that gdomainz.smallEnd(2) = 1 not 0!</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            <span class="keywordflow">if</span> (!gdomainz.contains(zbx))</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                Array4&lt;const Real&gt; <span class="keyword">const</span>&amp; velx_arr = <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">xvel</a>.const_array(mfi);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                Array4&lt;const Real&gt; <span class="keyword">const</span>&amp; vely_arr = <a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">yvel</a>.const_array(mfi);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                Array4&lt;      Real&gt; <span class="keyword">const</span>&amp; velz_arr = mf.array(mfi);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classERFPhysBCFunct__w.html#a6e6cdc32da147f7bc00d8c408b5df9a1">m_use_real_bcs</a>)</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                    <span class="keywordflow">if</span> (!gdomainz.contains(zbx))</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                    {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                        <a class="code" href="classERFPhysBCFunct__w.html#a9cd6e53c9598fe025c3c78945c2b1b83">impose_lateral_zvel_bcs</a>(velz_arr,velx_arr,vely_arr,zbx,domain,z_nd_arr,dxInv,bccomp_w);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                    }</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                }</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                <a class="code" href="classERFPhysBCFunct__w.html#a9225c49cf092c6eed2bf9bdf1ef4b9cf">impose_vertical_zvel_bcs</a>(velz_arr,velx_arr,vely_arr,zbx,domain,z_nd_arr,dxInv,</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                                         bccomp_u, bccomp_v, bccomp_w, <a class="code" href="classERFPhysBCFunct__w.html#a96add99b86d3a03a872af7af85ad8e96">m_terrain_type</a>);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        } <span class="comment">// MFIter</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    } <span class="comment">// OpenMP</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;} <span class="comment">// operator()</span></div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a></div><div class="ttdeci">@ yvel_bc</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:81</div></div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a></div><div class="ttdeci">@ xvel_bc</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:80</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:122</div></div>

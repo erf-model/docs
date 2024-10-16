@@ -37,7 +37,6 @@ var classERF =
     [ "FillCoarsePatch", "classERF.html#ac4497025ab94461899960ee067c2c72a", null ],
     [ "FillIntermediatePatch", "classERF.html#a5434c771d76cf50e4a0dd9e1b0eb27fc", null ],
     [ "FillPatch", "classERF.html#a8de69f537859f576fba1d94844cfbd33", null ],
-    [ "FillPatchMoistVars", "classERF.html#afb39caf6b6949138c0c3c4a067648321", null ],
     [ "get_projection_bc", "classERF.html#a57580311d47c9fd5e27ba156d287c169", null ],
     [ "getAdvFluxReg", "classERF.html#a4d6d990d8111c170692b1e9cc0e918b8", null ],
     [ "getCPUTime", "classERF.html#ae0597da6edf955cd138e52fd00380ff2", null ],
