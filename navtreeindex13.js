@@ -1,6 +1,5 @@
 var NAVTREEINDEX13 =
 {
-"structUPWIND3.html#a4f184417f94f60775a46357fbafe1cca":[2,0,92,7],
 "structUPWIND3.html#a552999e68e80fcc77c602ba6818df36c":[2,0,92,5],
 "structUPWIND3.html#a8292861e993880bb65b24308d62d52a8":[2,0,92,0],
 "structUPWIND3.html#ab5aa8215b1d63920781081235329e88f":[2,0,92,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX13 =
 "structsimilarity__funs.html#a6c53efd885ed922115193bc9a36cb0e6":[2,0,70,4],
 "structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2":[2,0,70,0],
 "structsimilarity__funs.html#ae78007489e8da2bf08c6f999381b9512":[2,0,70,5],
-"structsurface__flux.html":[2,0,76]
+"structsurface__flux.html":[2,0,76],
+"structsurface__flux.html#a01e8827b2f7e84c4d72496993822d806":[2,0,76,3]
 };
