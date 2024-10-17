@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"ERF__eb__if_8H_source.html":[3,0,1,4,2],
 "ERF__eb__regular_8cpp.html":[3,0,1,4,3],
 "ERF__fast__rhs__MT_8cpp.html":[3,0,1,15,6],
 "ERF__fast__rhs__MT_8cpp.html#ab4d94ede74fb532475b186ed1cbbbfed":[3,0,1,15,6,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classERF.html#a14f922bdc3a0f23c087afa32c67ac119":[2,0,22,72],
 "classERF.html#a15af18ae136cf3a11bb63fe0cf3924c8":[2,0,22,86],
 "classERF.html#a15db5266359edba700f523f16da303a7":[2,0,22,181],
-"classERF.html#a16e1f6b8bbb05ae738daf2abe626c159":[2,0,22,18],
-"classERF.html#a18610f7aac948db169cf8a4642573027":[2,0,22,95]
+"classERF.html#a16e1f6b8bbb05ae738daf2abe626c159":[2,0,22,18]
 };

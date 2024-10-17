@@ -25,7 +25,7 @@ var searchData=
   ['include_5fsubgrid_5fvel_4206',['include_subgrid_vel',['../classMOSTAverage.html#ac3c62b4015d62ae8d1ad85cb6ad651ad',1,'MOSTAverage']]],
   ['init_5fshrink_4207',['init_shrink',['../classERF.html#ad353aa9e275612ff2110c5a1405c1176',1,'ERF']]],
   ['init_5fsounding_5fideal_4208',['init_sounding_ideal',['../classERF.html#a2eb81c590271b429f132103c9af25830',1,'ERF']]],
-  ['init_5ftype_4209',['init_type',['../classERF.html#af5ac3d88a33a1a284bcc120ce0599cf7',1,'ERF']]],
+  ['init_5ftype_4209',['init_type',['../classERF.html#a56ae431ddda8577a797dd939e53a593a',1,'ERF']]],
   ['initialized_4210',['initialized',['../structMYNNLevel2.html#abc9b48297d9605827e5cb375ba714050',1,'MYNNLevel2']]],
   ['input_5fbndry_5fplanes_4211',['input_bndry_planes',['../classERF.html#a80ad08512968ec45635df68abe66b1fc',1,'ERF']]],
   ['input_5fsounding_5fdata_4212',['input_sounding_data',['../classERF.html#a83572d8dfad51158945b4a5ab06b2f72',1,'ERF']]],
