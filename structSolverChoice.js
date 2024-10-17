@@ -76,6 +76,7 @@ var structSolverChoice =
     [ "windfarm_loc_table", "structSolverChoice.html#a44bc0227f088664e4e2c1090ebb1381d", null ],
     [ "windfarm_loc_type", "structSolverChoice.html#a54214b71edb43f251f04b79281c39375", null ],
     [ "windfarm_spec_table", "structSolverChoice.html#a34c427126677860aa8acad633e6fb2be", null ],
+    [ "windfarm_spec_table_extra", "structSolverChoice.html#a40de8b74e8c60f617558ef8a2fa72ddb", null ],
     [ "windfarm_type", "structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645", null ],
     [ "windfarm_x_shift", "structSolverChoice.html#a1b2950247c4d2789597b7610c69ff5b6", null ],
     [ "windfarm_y_shift", "structSolverChoice.html#adec260ba3c7bd01ffa4fd40bd90920cd", null ],

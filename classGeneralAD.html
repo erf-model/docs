@@ -106,10 +106,11 @@ Collaboration diagram for GeneralAD:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGeneralAD__coll__graph.png" border="0" usemap="#aGeneralAD_coll__map" alt="Collaboration graph"/></div>
 <map name="aGeneralAD_coll__map" id="aGeneralAD_coll__map">
-<area shape="rect" title=" " alt="" coords="203,320,295,347"/>
-<area shape="rect" href="classNullWindFarm.html" title=" " alt="" coords="192,199,305,225"/>
-<area shape="rect" title=" " alt="" coords="5,5,177,32"/>
-<area shape="rect" title=" " alt="" coords="219,5,270,32"/>
+<area shape="rect" title=" " alt="" coords="252,467,344,493"/>
+<area shape="rect" href="classNullWindFarm.html" title=" " alt="" coords="393,323,507,350"/>
+<area shape="rect" title=" " alt="" coords="5,5,175,47"/>
+<area shape="rect" title=" " alt="" coords="209,13,381,39"/>
+<area shape="rect" title=" " alt="" coords="411,13,462,39"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -121,10 +122,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac44ff0908ec3c419196fb45efd0c7c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa612af6a1d5bd894e3e9196e0d9e78c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#aa612af6a1d5bd894e3e9196e0d9e78c9">advance</a> (const amrex::Geometry &amp;geom, const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;mf_vars_windfarm, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_Nturb, const amrex::MultiFab &amp;mf_SMark) override</td></tr>
 <tr class="separator:aa612af6a1d5bd894e3e9196e0d9e78c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa071c6bfd4e647404242328fd1b3643"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#aaa071c6bfd4e647404242328fd1b3643">compute_freestream_velocity</a> (const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_SMark)</td></tr>
+<tr class="separator:aaa071c6bfd4e647404242328fd1b3643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5be79013be63b8105a01534ca186de32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#a5be79013be63b8105a01534ca186de32">source_terms_cellcentered</a> (const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;mf_Smark, amrex::MultiFab &amp;mf_vars_generalAD)</td></tr>
 <tr class="separator:a5be79013be63b8105a01534ca186de32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f119bf26de97ae78bd44df44c8c567e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#a0f119bf26de97ae78bd44df44c8c567e">update</a> (const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_vars)</td></tr>
-<tr class="separator:a0f119bf26de97ae78bd44df44c8c567e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c22ccda2fdf9b29e4325c22b84bea2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#a2c22ccda2fdf9b29e4325c22b84bea2c">update</a> (const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_vars)</td></tr>
+<tr class="separator:a2c22ccda2fdf9b29e4325c22b84bea2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classNullWindFarm"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classNullWindFarm')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classNullWindFarm.html">NullWindFarm</a></td></tr>
 <tr class="memitem:ae4797e5a94227d10ed3b39dfd7bf4444 inherit pub_methods_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#ae4797e5a94227d10ed3b39dfd7bf4444">NullWindFarm</a> ()</td></tr>
 <tr class="separator:ae4797e5a94227d10ed3b39dfd7bf4444 inherit pub_methods_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,12 +139,24 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aadf3ba54909c2931d089f631889dbd5b inherit pub_methods_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3f68562d1b6b5a224644e283f8a146d inherit pub_methods_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#ad3f68562d1b6b5a224644e283f8a146d">set_turb_disk_angle</a> (const amrex::Real &amp;turb_disk_angle)</td></tr>
 <tr class="separator:ad3f68562d1b6b5a224644e283f8a146d inherit pub_methods_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc6a8e226961e71a95bda3b3f040225 inherit pub_methods_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#aafc6a8e226961e71a95bda3b3f040225">set_blade_spec</a> (const amrex::Vector&lt; amrex::Real &gt; &amp;bld_rad_loc, const amrex::Vector&lt; amrex::Real &gt; &amp;bld_twist, const amrex::Vector&lt; amrex::Real &gt; &amp;bld_chord)</td></tr>
+<tr class="separator:aafc6a8e226961e71a95bda3b3f040225 inherit pub_methods_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af31330323768a6cc38c99205d987b558 inherit pub_methods_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#af31330323768a6cc38c99205d987b558">set_blade_airfoil_spec</a> (const amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;bld_airfoil_aoa, const amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;bld_airfoil_Cl, const amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;bld_airfoil_Cd)</td></tr>
+<tr class="separator:af31330323768a6cc38c99205d987b558 inherit pub_methods_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade1a0b0eacbb79784db4c49cd8b1bae2 inherit pub_methods_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#ade1a0b0eacbb79784db4c49cd8b1bae2">set_turb_spec_extra</a> (const amrex::Vector&lt; amrex::Real &gt; &amp;velocity, const amrex::Vector&lt; amrex::Real &gt; &amp;C_P, const amrex::Vector&lt; amrex::Real &gt; &amp;C_T, const amrex::Vector&lt; amrex::Real &gt; &amp;rotor_RPM, const amrex::Vector&lt; amrex::Real &gt; &amp;blade_pitch)</td></tr>
+<tr class="separator:ade1a0b0eacbb79784db4c49cd8b1bae2 inherit pub_methods_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11fd7bf185b205f71197da8ba41edfb6 inherit pub_methods_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a11fd7bf185b205f71197da8ba41edfb6">get_turb_spec</a> (amrex::Real &amp;rotor_rad, amrex::Real &amp;hub_height, amrex::Real &amp;thrust_coeff_standing, amrex::Vector&lt; amrex::Real &gt; &amp;wind_speed, amrex::Vector&lt; amrex::Real &gt; &amp;thrust_coeff, amrex::Vector&lt; amrex::Real &gt; &amp;power)</td></tr>
 <tr class="separator:a11fd7bf185b205f71197da8ba41edfb6 inherit pub_methods_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85f4b30a21138dce73af7ea3769d5580 inherit pub_methods_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a85f4b30a21138dce73af7ea3769d5580">get_turb_loc</a> (amrex::Vector&lt; amrex::Real &gt; &amp;xloc, amrex::Vector&lt; amrex::Real &gt; &amp;yloc)</td></tr>
 <tr class="separator:a85f4b30a21138dce73af7ea3769d5580 inherit pub_methods_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1242356bf27b796b89bea7db82e724b inherit pub_methods_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#ac1242356bf27b796b89bea7db82e724b">get_turb_disk_angle</a> (amrex::Real &amp;turb_disk_angle)</td></tr>
 <tr class="separator:ac1242356bf27b796b89bea7db82e724b inherit pub_methods_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac88481b8d5d1cf63fabe89edee9cc8cd inherit pub_methods_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#ac88481b8d5d1cf63fabe89edee9cc8cd">get_blade_spec</a> (amrex::Vector&lt; amrex::Real &gt; &amp;bld_rad_loc, amrex::Vector&lt; amrex::Real &gt; &amp;bld_twist, amrex::Vector&lt; amrex::Real &gt; &amp;bld_chord)</td></tr>
+<tr class="separator:ac88481b8d5d1cf63fabe89edee9cc8cd inherit pub_methods_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc6967908665ee89bd0546d24ef6f2a6 inherit pub_methods_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#abc6967908665ee89bd0546d24ef6f2a6">get_blade_airfoil_spec</a> (amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;bld_airfoil_aoa, amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;bld_airfoil_Cl, amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;bld_airfoil_Cd)</td></tr>
+<tr class="separator:abc6967908665ee89bd0546d24ef6f2a6 inherit pub_methods_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77d2fbe9dc6053701fa98acf5c5c8b25 inherit pub_methods_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a77d2fbe9dc6053701fa98acf5c5c8b25">get_turb_spec_extra</a> (amrex::Vector&lt; amrex::Real &gt; &amp;velocity, amrex::Vector&lt; amrex::Real &gt; &amp;C_P, amrex::Vector&lt; amrex::Real &gt; &amp;C_T, amrex::Vector&lt; amrex::Real &gt; &amp;rotor_RPM, amrex::Vector&lt; amrex::Real &gt; &amp;blade_pitch)</td></tr>
+<tr class="separator:a77d2fbe9dc6053701fa98acf5c5c8b25 inherit pub_methods_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -171,6 +186,28 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:acd1962338f30947c30f916121b8ca0e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a6d71d880f30aeb756885ac4e8d2b5b"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#a4a6d71d880f30aeb756885ac4e8d2b5b">disk_cell_count</a></td></tr>
 <tr class="separator:a4a6d71d880f30aeb756885ac4e8d2b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf37f6f4405fc016a3c6b9afda47b4ff"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#abf37f6f4405fc016a3c6b9afda47b4ff">bld_rad_loc</a></td></tr>
+<tr class="separator:abf37f6f4405fc016a3c6b9afda47b4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dd38f7dc025fcf192e502321ceddc3e"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#a7dd38f7dc025fcf192e502321ceddc3e">bld_twist</a></td></tr>
+<tr class="separator:a7dd38f7dc025fcf192e502321ceddc3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4b3db7ac8efd8610b63ee32349e234e"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#ab4b3db7ac8efd8610b63ee32349e234e">bld_chord</a></td></tr>
+<tr class="separator:ab4b3db7ac8efd8610b63ee32349e234e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae95fc1dda876a138123f8eddce348d28"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#ae95fc1dda876a138123f8eddce348d28">bld_airfoil_aoa</a></td></tr>
+<tr class="separator:ae95fc1dda876a138123f8eddce348d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db6baf8703517d3974b08ba7d854fc4"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#a0db6baf8703517d3974b08ba7d854fc4">bld_airfoil_Cl</a></td></tr>
+<tr class="separator:a0db6baf8703517d3974b08ba7d854fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8542d68395d4daa200c5ea4e25514dc"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#af8542d68395d4daa200c5ea4e25514dc">bld_airfoil_Cd</a></td></tr>
+<tr class="separator:af8542d68395d4daa200c5ea4e25514dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d98b31e348b25201d92055c16b6b6da"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#a5d98b31e348b25201d92055c16b6b6da">velocity</a></td></tr>
+<tr class="separator:a5d98b31e348b25201d92055c16b6b6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a789afc5fc0d7b06f7dc79e6eb05a5760"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#a789afc5fc0d7b06f7dc79e6eb05a5760">C_P</a></td></tr>
+<tr class="separator:a789afc5fc0d7b06f7dc79e6eb05a5760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae82cceda872623720416dc9221693379"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#ae82cceda872623720416dc9221693379">C_T</a></td></tr>
+<tr class="separator:ae82cceda872623720416dc9221693379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeddf04c6e2386ba28aac00e2124c39a5"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#aeddf04c6e2386ba28aac00e2124c39a5">rotor_RPM</a></td></tr>
+<tr class="separator:aeddf04c6e2386ba28aac00e2124c39a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735e81390aef6a10e396bf4b7f1c7661"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeneralAD.html#a735e81390aef6a10e396bf4b7f1c7661">blade_pitch</a></td></tr>
+<tr class="separator:a735e81390aef6a10e396bf4b7f1c7661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classNullWindFarm"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classNullWindFarm')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classNullWindFarm.html">NullWindFarm</a></td></tr>
 <tr class="memitem:ac8ff132b0d2d52032ec19344ec6a74c6 inherit pro_attribs_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#ac8ff132b0d2d52032ec19344ec6a74c6">m_xloc</a></td></tr>
 <tr class="separator:ac8ff132b0d2d52032ec19344ec6a74c6 inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,6 +229,28 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a7fe11fbaf6a246c60156e40aec3835f7 inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61554384fc601d7ae2fb758a8bc7f4f4 inherit pro_attribs_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a61554384fc601d7ae2fb758a8bc7f4f4">m_power</a></td></tr>
 <tr class="separator:a61554384fc601d7ae2fb758a8bc7f4f4 inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27f046283d051fb0abcf5f6d9080b471 inherit pro_attribs_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a27f046283d051fb0abcf5f6d9080b471">m_bld_rad_loc</a></td></tr>
+<tr class="separator:a27f046283d051fb0abcf5f6d9080b471 inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a453673de82ca8ffbced1c32bfb27555d inherit pro_attribs_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a453673de82ca8ffbced1c32bfb27555d">m_bld_twist</a></td></tr>
+<tr class="separator:a453673de82ca8ffbced1c32bfb27555d inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbc82ecabc6211a7d2070f24a805fbc9 inherit pro_attribs_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#acbc82ecabc6211a7d2070f24a805fbc9">m_bld_chord</a></td></tr>
+<tr class="separator:acbc82ecabc6211a7d2070f24a805fbc9 inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f6bd907d33ec99543896b82fac6b4e4 inherit pro_attribs_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a6f6bd907d33ec99543896b82fac6b4e4">m_bld_airfoil_aoa</a></td></tr>
+<tr class="separator:a6f6bd907d33ec99543896b82fac6b4e4 inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad337a725edf9efdaf1fd4a49ddd35505 inherit pro_attribs_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#ad337a725edf9efdaf1fd4a49ddd35505">m_bld_airfoil_Cl</a></td></tr>
+<tr class="separator:ad337a725edf9efdaf1fd4a49ddd35505 inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b5fcee1d9a35f884255e9dec414bfd inherit pro_attribs_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a85b5fcee1d9a35f884255e9dec414bfd">m_bld_airfoil_Cd</a></td></tr>
+<tr class="separator:a85b5fcee1d9a35f884255e9dec414bfd inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af83e2833c70c7374fa00ec94755e8038 inherit pro_attribs_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#af83e2833c70c7374fa00ec94755e8038">m_velocity</a></td></tr>
+<tr class="separator:af83e2833c70c7374fa00ec94755e8038 inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c312d78fc769a3d081c2df6492b5b35 inherit pro_attribs_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a2c312d78fc769a3d081c2df6492b5b35">m_C_P</a></td></tr>
+<tr class="separator:a2c312d78fc769a3d081c2df6492b5b35 inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cb0849867fadd38770da912749adb50 inherit pro_attribs_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a5cb0849867fadd38770da912749adb50">m_C_T</a></td></tr>
+<tr class="separator:a5cb0849867fadd38770da912749adb50 inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad19bb9c4842c561c0024ae6d686b1a78 inherit pro_attribs_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#ad19bb9c4842c561c0024ae6d686b1a78">m_rotor_RPM</a></td></tr>
+<tr class="separator:ad19bb9c4842c561c0024ae6d686b1a78 inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb34a6b16b5001624bf06c98aa226a9 inherit pro_attribs_classNullWindFarm"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#aabb34a6b16b5001624bf06c98aa226a9">m_blade_pitch</a></td></tr>
+<tr class="separator:aabb34a6b16b5001624bf06c98aa226a9 inherit pro_attribs_classNullWindFarm"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -329,15 +388,134 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="classNullWindFarm.html#a4a46aef32059d41812d54f3e15ed5e68">NullWindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    AMREX_ALWAYS_ASSERT(W_old.nComp() &gt; 0);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    AMREX_ALWAYS_ASSERT(mf_Nturb.nComp() &gt; 0);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    AMREX_ALWAYS_ASSERT(mf_vars_generalAD.nComp() &gt; 0);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classGeneralAD.html#a5be79013be63b8105a01534ca186de32">source_terms_cellcentered</a>(geom, cons_in, mf_SMark, mf_vars_generalAD);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classGeneralAD.html#a0f119bf26de97ae78bd44df44c8c567e">update</a>(dt_advance, cons_in, U_old, V_old, mf_vars_generalAD);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="ttc" id="aclassGeneralAD_html_a0f119bf26de97ae78bd44df44c8c567e"><div class="ttname"><a href="classGeneralAD.html#a0f119bf26de97ae78bd44df44c8c567e">GeneralAD::update</a></div><div class="ttdeci">void update(const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_vars)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceGeneralAD.cpp:26</div></div>
-<div class="ttc" id="aclassGeneralAD_html_a5be79013be63b8105a01534ca186de32"><div class="ttname"><a href="classGeneralAD.html#a5be79013be63b8105a01534ca186de32">GeneralAD::source_terms_cellcentered</a></div><div class="ttdeci">void source_terms_cellcentered(const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;mf_Smark, amrex::MultiFab &amp;mf_vars_generalAD)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceGeneralAD.cpp:54</div></div>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    AMREX_ALWAYS_ASSERT(W_old.nComp() &gt; 0);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    AMREX_ALWAYS_ASSERT(mf_Nturb.nComp() &gt; 0);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    AMREX_ALWAYS_ASSERT(mf_vars_generalAD.nComp() &gt; 0);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classGeneralAD.html#aaa071c6bfd4e647404242328fd1b3643">compute_freestream_velocity</a>(cons_in, U_old, V_old, mf_SMark);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classGeneralAD.html#a5be79013be63b8105a01534ca186de32">source_terms_cellcentered</a>(geom, cons_in, mf_SMark, mf_vars_generalAD);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classGeneralAD.html#a2c22ccda2fdf9b29e4325c22b84bea2c">update</a>(dt_advance, cons_in, U_old, V_old, W_old, mf_vars_generalAD);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="ttc" id="aclassGeneralAD_html_a2c22ccda2fdf9b29e4325c22b84bea2c"><div class="ttname"><a href="classGeneralAD.html#a2c22ccda2fdf9b29e4325c22b84bea2c">GeneralAD::update</a></div><div class="ttdeci">void update(const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_vars)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceGeneralAD.cpp:28</div></div>
+<div class="ttc" id="aclassGeneralAD_html_a5be79013be63b8105a01534ca186de32"><div class="ttname"><a href="classGeneralAD.html#a5be79013be63b8105a01534ca186de32">GeneralAD::source_terms_cellcentered</a></div><div class="ttdeci">void source_terms_cellcentered(const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;mf_Smark, amrex::MultiFab &amp;mf_vars_generalAD)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceGeneralAD.cpp:285</div></div>
+<div class="ttc" id="aclassGeneralAD_html_aaa071c6bfd4e647404242328fd1b3643"><div class="ttname"><a href="classGeneralAD.html#aaa071c6bfd4e647404242328fd1b3643">GeneralAD::compute_freestream_velocity</a></div><div class="ttdeci">void compute_freestream_velocity(const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_SMark)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceGeneralAD.cpp:64</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaa071c6bfd4e647404242328fd1b3643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa071c6bfd4e647404242328fd1b3643">&#9670;&nbsp;</a></span>compute_freestream_velocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeneralAD::compute_freestream_velocity </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>cons_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>U_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>V_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>mf_SMark</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;     <a class="code" href="classNullWindFarm.html#a85f4b30a21138dce73af7ea3769d5580">get_turb_loc</a>(<a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>, <a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;     <a class="code" href="classGeneralAD.html#a2232a2f38c6bfd8102e38e383b10ea0b">freestream_velocity</a>.clear();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;     <a class="code" href="classGeneralAD.html#acd1962338f30947c30f916121b8ca0e0">freestream_phi</a>.clear();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;     <a class="code" href="classGeneralAD.html#a4a6d71d880f30aeb756885ac4e8d2b5b">disk_cell_count</a>.clear();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;     <a class="code" href="classGeneralAD.html#a2232a2f38c6bfd8102e38e383b10ea0b">freestream_velocity</a>.resize(<a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.size(),0.0);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;     <a class="code" href="classGeneralAD.html#acd1962338f30947c30f916121b8ca0e0">freestream_phi</a>.resize(<a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.size(),0.0);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;     <a class="code" href="classGeneralAD.html#a4a6d71d880f30aeb756885ac4e8d2b5b">disk_cell_count</a>.resize(<a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.size(),0.0);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;     Gpu::DeviceVector&lt;Real&gt; d_freestream_velocity(<a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.size());</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;     Gpu::DeviceVector&lt;Real&gt; d_freestream_phi(<a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>.size());</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;     Gpu::DeviceVector&lt;Real&gt; d_disk_cell_count(<a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>.size());</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;     Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#a2232a2f38c6bfd8102e38e383b10ea0b">freestream_velocity</a>.begin(), <a class="code" href="classGeneralAD.html#a2232a2f38c6bfd8102e38e383b10ea0b">freestream_velocity</a>.end(), d_freestream_velocity.begin());</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;     Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#acd1962338f30947c30f916121b8ca0e0">freestream_phi</a>.begin(), <a class="code" href="classGeneralAD.html#acd1962338f30947c30f916121b8ca0e0">freestream_phi</a>.end(), d_freestream_phi.begin());</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;     Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#a4a6d71d880f30aeb756885ac4e8d2b5b">disk_cell_count</a>.begin(), <a class="code" href="classGeneralAD.html#a4a6d71d880f30aeb756885ac4e8d2b5b">disk_cell_count</a>.end(), d_disk_cell_count.begin());</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;     Real* d_freestream_velocity_ptr = d_freestream_velocity.data();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;     Real* d_freestream_phi_ptr = d_freestream_phi.data();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;     Real* d_disk_cell_count_ptr     = d_disk_cell_count.data();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;     <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keyword">auto</span> SMark_array    = mf_SMark.array(mfi);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">auto</span> u_vel          = U_old.array(mfi);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">auto</span> v_vel          = V_old.array(mfi);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        Box tbx = mfi.nodaltilebox(0);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        ParallelFor(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">if</span>(SMark_array(i,j,k,0) != -1.0) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keywordtype">int</span> turb_index = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(SMark_array(i,j,k,0));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                Real phi = std::atan2(v_vel(i,j,k),u_vel(i,j,k)); <span class="comment">// Wind direction w.r.t the x-dreiction</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                Gpu::Atomic::Add(&amp;d_freestream_velocity_ptr[turb_index],std::pow(u_vel(i,j,k)*u_vel(i,j,k) + v_vel(i,j,k)*v_vel(i,j,k),0.5));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                Gpu::Atomic::Add(&amp;d_disk_cell_count_ptr[turb_index],1.0);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                Gpu::Atomic::Add(&amp;d_freestream_phi_ptr[turb_index],phi);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        });</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// Copy back to host</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    Gpu::copy(Gpu::deviceToHost, d_freestream_velocity.begin(), d_freestream_velocity.end(), <a class="code" href="classGeneralAD.html#a2232a2f38c6bfd8102e38e383b10ea0b">freestream_velocity</a>.begin());</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    Gpu::copy(Gpu::deviceToHost, d_freestream_phi.begin(), d_freestream_phi.end(), <a class="code" href="classGeneralAD.html#acd1962338f30947c30f916121b8ca0e0">freestream_phi</a>.begin());</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    Gpu::copy(Gpu::deviceToHost, d_disk_cell_count.begin(), d_disk_cell_count.end(), <a class="code" href="classGeneralAD.html#a4a6d71d880f30aeb756885ac4e8d2b5b">disk_cell_count</a>.begin());</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// Reduce the data on every processor</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    amrex::ParallelAllReduce::Sum(<a class="code" href="classGeneralAD.html#a2232a2f38c6bfd8102e38e383b10ea0b">freestream_velocity</a>.data(),</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                  <a class="code" href="classGeneralAD.html#a2232a2f38c6bfd8102e38e383b10ea0b">freestream_velocity</a>.size(),</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                  amrex::ParallelContext::CommunicatorAll());</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    amrex::ParallelAllReduce::Sum(<a class="code" href="classGeneralAD.html#acd1962338f30947c30f916121b8ca0e0">freestream_phi</a>.data(),</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                  <a class="code" href="classGeneralAD.html#acd1962338f30947c30f916121b8ca0e0">freestream_phi</a>.size(),</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                  amrex::ParallelContext::CommunicatorAll());</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;   amrex::ParallelAllReduce::Sum(<a class="code" href="classGeneralAD.html#a4a6d71d880f30aeb756885ac4e8d2b5b">disk_cell_count</a>.data(),</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                                 <a class="code" href="classGeneralAD.html#a4a6d71d880f30aeb756885ac4e8d2b5b">disk_cell_count</a>.size(),</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                                 amrex::ParallelContext::CommunicatorAll());</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="classNullWindFarm.html#a85f4b30a21138dce73af7ea3769d5580">get_turb_loc</a>(<a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>, <a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()){</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> it=0; it&lt;<a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.size(); it++){</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="comment">//std::cout &lt;&lt; &quot;turbine index, freestream velocity is &quot; &lt;&lt; it &lt;&lt; &quot; &quot; &lt;&lt; freestream_velocity[it] &lt;&lt; &quot; &quot; &lt;&lt;</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="comment">//                                                 disk_cell_count[it]  &lt;&lt;  &quot; &quot; &lt;&lt;</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="comment">//                                                freestream_velocity[it]/(disk_cell_count[it] + 1e-10) &lt;&lt; &quot; &quot; &lt;&lt;</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="comment">//                                              freestream_phi[it]/(disk_cell_count[it] + 1e-10) &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="ttc" id="aclassGeneralAD_html_a2232a2f38c6bfd8102e38e383b10ea0b"><div class="ttname"><a href="classGeneralAD.html#a2232a2f38c6bfd8102e38e383b10ea0b">GeneralAD::freestream_velocity</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; freestream_velocity</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:48</div></div>
+<div class="ttc" id="aclassGeneralAD_html_a370786ec406f37da4fb54cc21745c1f3"><div class="ttname"><a href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">GeneralAD::xloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; xloc</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:44</div></div>
+<div class="ttc" id="aclassGeneralAD_html_a4a6d71d880f30aeb756885ac4e8d2b5b"><div class="ttname"><a href="classGeneralAD.html#a4a6d71d880f30aeb756885ac4e8d2b5b">GeneralAD::disk_cell_count</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; disk_cell_count</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:48</div></div>
+<div class="ttc" id="aclassGeneralAD_html_acd1962338f30947c30f916121b8ca0e0"><div class="ttname"><a href="classGeneralAD.html#acd1962338f30947c30f916121b8ca0e0">GeneralAD::freestream_phi</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; freestream_phi</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:48</div></div>
+<div class="ttc" id="aclassGeneralAD_html_ad75081940389e9013c4ca501713883e1"><div class="ttname"><a href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">GeneralAD::yloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; yloc</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:44</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_a85f4b30a21138dce73af7ea3769d5580"><div class="ttname"><a href="classNullWindFarm.html#a85f4b30a21138dce73af7ea3769d5580">NullWindFarm::get_turb_loc</a></div><div class="ttdeci">void get_turb_loc(amrex::Vector&lt; amrex::Real &gt; &amp;xloc, amrex::Vector&lt; amrex::Real &gt; &amp;yloc)</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:95</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -378,125 +556,261 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classNullWindFarm.html#a85f4b30a21138dce73af7ea3769d5580">get_turb_loc</a>(<a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>, <a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classNullWindFarm.html#a11fd7bf185b205f71197da8ba41edfb6">get_turb_spec</a>(<a class="code" href="classGeneralAD.html#a5c234bf71184a01e624baf9f9247b3d5">rotor_rad</a>, <a class="code" href="classGeneralAD.html#ac82bba9c2818ca1e77adb01fdcdcaf66">hub_height</a>, <a class="code" href="classGeneralAD.html#ad96abbb1f20b4ea0abf49d0fb88b289a">thrust_coeff_standing</a>,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                  <a class="code" href="classGeneralAD.html#a0c19baa06277206decbdc1da57c02ea5">wind_speed</a>, <a class="code" href="classGeneralAD.html#a45f8887ce8907918ceebf0a804eaffea">thrust_coeff</a>, <a class="code" href="classGeneralAD.html#a1a247dae534aad8b40e7780b3f296afe">power</a>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_xloc(<a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.size());</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_yloc(<a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>.size());</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.begin(), <a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.end(), d_xloc.begin());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>.begin(), <a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>.end(), d_yloc.begin());</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keyword">auto</span> dx = geom.CellSizeArray();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// Domain valid box</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keyword">const</span> amrex::Box&amp; domain = geom.Domain();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keywordtype">int</span> domlo_x = domain.smallEnd(0);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="keywordtype">int</span> domhi_x = domain.bigEnd(0) + 1;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keywordtype">int</span> domlo_y = domain.smallEnd(1);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="keywordtype">int</span> domhi_y = domain.bigEnd(1) + 1;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordtype">int</span> domlo_z = domain.smallEnd(2);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordtype">int</span> domhi_z = domain.bigEnd(2) + 1;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="comment">// The order of variables are - Vabs dVabsdt, dudt, dvdt, dTKEdt</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      mf_vars_generalAD.setVal(0.0);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nturbs = <a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.size();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="classNullWindFarm.html#ac1242356bf27b796b89bea7db82e724b">get_turb_disk_angle</a>(<a class="code" href="classGeneralAD.html#ad5945bec35f72c63369436bf3edce069">turb_disk_angle</a>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    Real nx = -std::cos(<a class="code" href="classGeneralAD.html#ad5945bec35f72c63369436bf3edce069">turb_disk_angle</a>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    Real ny = -std::sin(<a class="code" href="classGeneralAD.html#ad5945bec35f72c63369436bf3edce069">turb_disk_angle</a>);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    Real d_turb_disk_angle = <a class="code" href="classGeneralAD.html#ad5945bec35f72c63369436bf3edce069">turb_disk_angle</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_wind_speed(<a class="code" href="classGeneralAD.html#a0c19baa06277206decbdc1da57c02ea5">wind_speed</a>.size());</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_thrust_coeff(<a class="code" href="classGeneralAD.html#a45f8887ce8907918ceebf0a804eaffea">thrust_coeff</a>.size());</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// Copy data from host vectors to device vectors</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#a0c19baa06277206decbdc1da57c02ea5">wind_speed</a>.begin(), <a class="code" href="classGeneralAD.html#a0c19baa06277206decbdc1da57c02ea5">wind_speed</a>.end(), d_wind_speed.begin());</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#a45f8887ce8907918ceebf0a804eaffea">thrust_coeff</a>.begin(), <a class="code" href="classGeneralAD.html#a45f8887ce8907918ceebf0a804eaffea">thrust_coeff</a>.end(), d_thrust_coeff.begin());</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">const</span> Real* wind_speed_d     = d_wind_speed.dataPtr();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">const</span> Real* thrust_coeff_d   = d_thrust_coeff.dataPtr();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> n_spec_table = d_wind_speed.size();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keyword">const</span> Box&amp; gbx      = mfi.growntilebox(1);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">auto</span> SMark_array    = mf_SMark.array(mfi);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keyword">auto</span> generalAD_array = mf_vars_generalAD.array(mfi);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i, domlo_x), domhi_x);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j, domlo_y), domhi_y);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordtype">int</span> kk = amrex::min(amrex::max(k, domlo_z), domhi_z);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordtype">int</span> check_int = 0;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            Real source_x = 0.0;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            Real source_y = 0.0;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> it=0;it&lt;nturbs;it++) {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                Real avg_vel  = 10.0;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                Real phi      = 0.0;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                Real C_T = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(wind_speed_d, thrust_coeff_d, avg_vel, n_spec_table);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                Real a;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keywordflow">if</span>(C_T &lt;= 1) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    a = 0.5 - 0.5*std::pow(1.0-C_T,0.5);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                Real Uinfty_dot_nhat = avg_vel*(std::cos(phi)*nx + std::sin(phi)*ny);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="comment">// Add the source terms in the location of the actuator disk</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="keywordflow">if</span>(SMark_array(ii,jj,kk,1) == <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(it)) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    check_int++;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                    <span class="keywordflow">if</span>(C_T &lt;= 1) {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                        source_x = -2.0*std::pow(Uinfty_dot_nhat, 2.0)*a*(1.0-a)*dx[1]*dx[2]*std::cos(d_turb_disk_angle)/(dx[0]*dx[1]*dx[2])*std::cos(phi);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                        source_y = -2.0*std::pow(Uinfty_dot_nhat, 2.0)*a*(1.0-a)*dx[1]*dx[2]*std::cos(d_turb_disk_angle)/(dx[0]*dx[1]*dx[2])*std::sin(phi);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                        source_x = -0.5*C_T*std::pow(Uinfty_dot_nhat, 2.0)*dx[1]*dx[2]*std::cos(d_turb_disk_angle)/(dx[0]*dx[1]*dx[2])*std::cos(phi);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                        source_y = -0.5*C_T*std::pow(Uinfty_dot_nhat, 2.0)*dx[1]*dx[2]*std::cos(d_turb_disk_angle)/(dx[0]*dx[1]*dx[2])*std::sin(phi);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="keywordflow">if</span>(check_int &gt; 1){</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                amrex::Error(<span class="stringliteral">&quot;Actuator disks are overlapping. Visualize actuator_disks.vtk &quot;</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                             <span class="stringliteral">&quot;and check the windturbine locations input file. Exiting..&quot;</span>);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            generalAD_array(i,j,k,0) = source_x;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            generalAD_array(i,j,k,1) = source_y;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;         });</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
-<div class="ttc" id="aERF__Interpolation__1D_8H_html_a803d0d35d4ca4791556cbe02bbf51cbb"><div class="ttname"><a href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real interpolate_1d(const amrex::Real *alpha, const amrex::Real *beta, const amrex::Real alpha_interp, const int alpha_size)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_1D.H:12</div></div>
-<div class="ttc" id="aclassGeneralAD_html_a0c19baa06277206decbdc1da57c02ea5"><div class="ttname"><a href="classGeneralAD.html#a0c19baa06277206decbdc1da57c02ea5">GeneralAD::wind_speed</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; wind_speed</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:41</div></div>
-<div class="ttc" id="aclassGeneralAD_html_a1a247dae534aad8b40e7780b3f296afe"><div class="ttname"><a href="classGeneralAD.html#a1a247dae534aad8b40e7780b3f296afe">GeneralAD::power</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; power</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:41</div></div>
-<div class="ttc" id="aclassGeneralAD_html_a370786ec406f37da4fb54cc21745c1f3"><div class="ttname"><a href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">GeneralAD::xloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; xloc</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:38</div></div>
-<div class="ttc" id="aclassGeneralAD_html_a45f8887ce8907918ceebf0a804eaffea"><div class="ttname"><a href="classGeneralAD.html#a45f8887ce8907918ceebf0a804eaffea">GeneralAD::thrust_coeff</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; thrust_coeff</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:41</div></div>
-<div class="ttc" id="aclassGeneralAD_html_a5c234bf71184a01e624baf9f9247b3d5"><div class="ttname"><a href="classGeneralAD.html#a5c234bf71184a01e624baf9f9247b3d5">GeneralAD::rotor_rad</a></div><div class="ttdeci">amrex::Real rotor_rad</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:40</div></div>
-<div class="ttc" id="aclassGeneralAD_html_ac82bba9c2818ca1e77adb01fdcdcaf66"><div class="ttname"><a href="classGeneralAD.html#ac82bba9c2818ca1e77adb01fdcdcaf66">GeneralAD::hub_height</a></div><div class="ttdeci">amrex::Real hub_height</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:40</div></div>
-<div class="ttc" id="aclassGeneralAD_html_ad5945bec35f72c63369436bf3edce069"><div class="ttname"><a href="classGeneralAD.html#ad5945bec35f72c63369436bf3edce069">GeneralAD::turb_disk_angle</a></div><div class="ttdeci">amrex::Real turb_disk_angle</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:39</div></div>
-<div class="ttc" id="aclassGeneralAD_html_ad75081940389e9013c4ca501713883e1"><div class="ttname"><a href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">GeneralAD::yloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; yloc</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:38</div></div>
-<div class="ttc" id="aclassGeneralAD_html_ad96abbb1f20b4ea0abf49d0fb88b289a"><div class="ttname"><a href="classGeneralAD.html#ad96abbb1f20b4ea0abf49d0fb88b289a">GeneralAD::thrust_coeff_standing</a></div><div class="ttdeci">amrex::Real thrust_coeff_standing</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:40</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_a11fd7bf185b205f71197da8ba41edfb6"><div class="ttname"><a href="classNullWindFarm.html#a11fd7bf185b205f71197da8ba41edfb6">NullWindFarm::get_turb_spec</a></div><div class="ttdeci">void get_turb_spec(amrex::Real &amp;rotor_rad, amrex::Real &amp;hub_height, amrex::Real &amp;thrust_coeff_standing, amrex::Vector&lt; amrex::Real &gt; &amp;wind_speed, amrex::Vector&lt; amrex::Real &gt; &amp;thrust_coeff, amrex::Vector&lt; amrex::Real &gt; &amp;power)</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:52</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_a85f4b30a21138dce73af7ea3769d5580"><div class="ttname"><a href="classNullWindFarm.html#a85f4b30a21138dce73af7ea3769d5580">NullWindFarm::get_turb_loc</a></div><div class="ttdeci">void get_turb_loc(amrex::Vector&lt; amrex::Real &gt; &amp;xloc, amrex::Vector&lt; amrex::Real &gt; &amp;yloc)</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:64</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_ac1242356bf27b796b89bea7db82e724b"><div class="ttname"><a href="classNullWindFarm.html#ac1242356bf27b796b89bea7db82e724b">NullWindFarm::get_turb_disk_angle</a></div><div class="ttdeci">void get_turb_disk_angle(amrex::Real &amp;turb_disk_angle)</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:71</div></div>
+<div class="fragment"><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;{</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="classNullWindFarm.html#a85f4b30a21138dce73af7ea3769d5580">get_turb_loc</a>(<a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>, <a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="classNullWindFarm.html#a11fd7bf185b205f71197da8ba41edfb6">get_turb_spec</a>(<a class="code" href="classGeneralAD.html#a5c234bf71184a01e624baf9f9247b3d5">rotor_rad</a>, <a class="code" href="classGeneralAD.html#ac82bba9c2818ca1e77adb01fdcdcaf66">hub_height</a>, <a class="code" href="classGeneralAD.html#ad96abbb1f20b4ea0abf49d0fb88b289a">thrust_coeff_standing</a>,</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                  <a class="code" href="classGeneralAD.html#a0c19baa06277206decbdc1da57c02ea5">wind_speed</a>, <a class="code" href="classGeneralAD.html#a45f8887ce8907918ceebf0a804eaffea">thrust_coeff</a>, <a class="code" href="classGeneralAD.html#a1a247dae534aad8b40e7780b3f296afe">power</a>);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <a class="code" href="classNullWindFarm.html#ac88481b8d5d1cf63fabe89edee9cc8cd">get_blade_spec</a>(<a class="code" href="classGeneralAD.html#abf37f6f4405fc016a3c6b9afda47b4ff">bld_rad_loc</a>,<a class="code" href="classGeneralAD.html#a7dd38f7dc025fcf192e502321ceddc3e">bld_twist</a>,<a class="code" href="classGeneralAD.html#ab4b3db7ac8efd8610b63ee32349e234e">bld_chord</a>);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <a class="code" href="classNullWindFarm.html#abc6967908665ee89bd0546d24ef6f2a6">get_blade_airfoil_spec</a>(<a class="code" href="classGeneralAD.html#ae95fc1dda876a138123f8eddce348d28">bld_airfoil_aoa</a>, <a class="code" href="classGeneralAD.html#a0db6baf8703517d3974b08ba7d854fc4">bld_airfoil_Cl</a>, <a class="code" href="classGeneralAD.html#af8542d68395d4daa200c5ea4e25514dc">bld_airfoil_Cd</a>);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <a class="code" href="classNullWindFarm.html#a77d2fbe9dc6053701fa98acf5c5c8b25">get_turb_spec_extra</a>(<a class="code" href="classGeneralAD.html#a5d98b31e348b25201d92055c16b6b6da">velocity</a>, <a class="code" href="classGeneralAD.html#a789afc5fc0d7b06f7dc79e6eb05a5760">C_P</a>, <a class="code" href="classGeneralAD.html#ae82cceda872623720416dc9221693379">C_T</a>, <a class="code" href="classGeneralAD.html#aeddf04c6e2386ba28aac00e2124c39a5">rotor_RPM</a>, <a class="code" href="classGeneralAD.html#a735e81390aef6a10e396bf4b7f1c7661">blade_pitch</a>);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    Real d_hub_height = <a class="code" href="classGeneralAD.html#ac82bba9c2818ca1e77adb01fdcdcaf66">hub_height</a>;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    Real d_rotor_rad = <a class="code" href="classGeneralAD.html#a5c234bf71184a01e624baf9f9247b3d5">rotor_rad</a>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_xloc(<a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.size());</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_yloc(<a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>.size());</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.begin(), <a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.end(), d_xloc.begin());</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>.begin(), <a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>.end(), d_yloc.begin());</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;      <span class="keyword">auto</span> dx = geom.CellSizeArray();</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="comment">// Domain valid box</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;      <span class="keyword">const</span> amrex::Box&amp; domain = geom.Domain();</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;      <span class="keyword">auto</span> ProbLoArr = geom.ProbLoArray();</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;      <span class="keywordtype">int</span> domlo_x = domain.smallEnd(0);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;      <span class="keywordtype">int</span> domhi_x = domain.bigEnd(0) + 1;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;      <span class="keywordtype">int</span> domlo_y = domain.smallEnd(1);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;      <span class="keywordtype">int</span> domhi_y = domain.bigEnd(1) + 1;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;      <span class="keywordtype">int</span> domlo_z = domain.smallEnd(2);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;      <span class="keywordtype">int</span> domhi_z = domain.bigEnd(2) + 1;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;      <span class="comment">// The order of variables are - Vabs dVabsdt, dudt, dvdt, dTKEdt</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;      mf_vars_generalAD.setVal(0.0);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;     <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nturbs = <a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.size();</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="comment">// This is the angle phi in Fig. 10 in Mirocha et. al. 2014</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="comment">// set_turb_disk angle in ERF_InitWindFarm.cpp sets this phi as</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="comment">// the turb_disk_angle</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="classNullWindFarm.html#ac1242356bf27b796b89bea7db82e724b">get_turb_disk_angle</a>(<a class="code" href="classGeneralAD.html#ad5945bec35f72c63369436bf3edce069">turb_disk_angle</a>);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    Real d_turb_disk_angle = <a class="code" href="classGeneralAD.html#ad5945bec35f72c63369436bf3edce069">turb_disk_angle</a>;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_freestream_velocity(nturbs);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_disk_cell_count(nturbs);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#a2232a2f38c6bfd8102e38e383b10ea0b">freestream_velocity</a>.begin(), <a class="code" href="classGeneralAD.html#a2232a2f38c6bfd8102e38e383b10ea0b">freestream_velocity</a>.end(), d_freestream_velocity.begin());</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#a4a6d71d880f30aeb756885ac4e8d2b5b">disk_cell_count</a>.begin(), <a class="code" href="classGeneralAD.html#a4a6d71d880f30aeb756885ac4e8d2b5b">disk_cell_count</a>.end(), d_disk_cell_count.begin());</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    Real* d_xloc_ptr = d_xloc.data();</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    Real* d_yloc_ptr = d_yloc.data();</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    Real* d_freestream_velocity_ptr = d_freestream_velocity.data();</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    Real* d_disk_cell_count_ptr     = d_disk_cell_count.data();</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordtype">int</span> n_bld_sections = <a class="code" href="classGeneralAD.html#abf37f6f4405fc016a3c6b9afda47b4ff">bld_rad_loc</a>.size();</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    Gpu::DeviceVector&lt;Real&gt;    d_bld_rad_loc(n_bld_sections);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    Gpu::DeviceVector&lt;Real&gt;    d_bld_twist(n_bld_sections);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    Gpu::DeviceVector&lt;Real&gt;    d_bld_chord(n_bld_sections);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#abf37f6f4405fc016a3c6b9afda47b4ff">bld_rad_loc</a>.begin(), <a class="code" href="classGeneralAD.html#abf37f6f4405fc016a3c6b9afda47b4ff">bld_rad_loc</a>.end(), d_bld_rad_loc.begin());</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#a7dd38f7dc025fcf192e502321ceddc3e">bld_twist</a>.begin(), <a class="code" href="classGeneralAD.html#a7dd38f7dc025fcf192e502321ceddc3e">bld_twist</a>.end(), d_bld_twist.begin());</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#ab4b3db7ac8efd8610b63ee32349e234e">bld_chord</a>.begin(), <a class="code" href="classGeneralAD.html#ab4b3db7ac8efd8610b63ee32349e234e">bld_chord</a>.end(), d_bld_chord.begin());</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    Real* bld_rad_loc_ptr = d_bld_rad_loc.data();</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    Real* bld_twist_ptr = d_bld_twist.data();</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    Real* bld_chord_ptr = d_bld_chord.data();</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    Vector&lt;Gpu::DeviceVector&lt;Real&gt;&gt; d_bld_airfoil_aoa(n_bld_sections);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    Vector&lt;Gpu::DeviceVector&lt;Real&gt;&gt; d_bld_airfoil_Cl(n_bld_sections);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    Vector&lt;Gpu::DeviceVector&lt;Real&gt;&gt; d_bld_airfoil_Cd(n_bld_sections);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keywordtype">int</span> n_pts_airfoil = <a class="code" href="classGeneralAD.html#ae95fc1dda876a138123f8eddce348d28">bld_airfoil_aoa</a>[0].size();</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;n_bld_sections;i++){</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        d_bld_airfoil_aoa[i].resize(n_pts_airfoil);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        d_bld_airfoil_Cl[i].resize(n_pts_airfoil);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        d_bld_airfoil_Cd[i].resize(n_pts_airfoil);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#ae95fc1dda876a138123f8eddce348d28">bld_airfoil_aoa</a>[i].begin(), <a class="code" href="classGeneralAD.html#ae95fc1dda876a138123f8eddce348d28">bld_airfoil_aoa</a>[i].end(), d_bld_airfoil_aoa[i].begin());</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#a0db6baf8703517d3974b08ba7d854fc4">bld_airfoil_Cl</a>[i].begin(), <a class="code" href="classGeneralAD.html#a0db6baf8703517d3974b08ba7d854fc4">bld_airfoil_Cl</a>[i].end(), d_bld_airfoil_Cl[i].begin());</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#af8542d68395d4daa200c5ea4e25514dc">bld_airfoil_Cd</a>[i].begin(), <a class="code" href="classGeneralAD.html#af8542d68395d4daa200c5ea4e25514dc">bld_airfoil_Cd</a>[i].end(), d_bld_airfoil_Cd[i].begin());</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    }</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    Vector&lt;Real*&gt; hp_bld_airfoil_aoa, hp_bld_airfoil_Cl, hp_bld_airfoil_Cd;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; v :d_bld_airfoil_aoa) {</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        hp_bld_airfoil_aoa.push_back(v.data());</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    }</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; v :d_bld_airfoil_Cl) {</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        hp_bld_airfoil_Cl.push_back(v.data());</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    }</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; v :d_bld_airfoil_Cd) {</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        hp_bld_airfoil_Cd.push_back(v.data());</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    Gpu::AsyncArray&lt;Real*&gt; aoa(hp_bld_airfoil_aoa.data(), n_bld_sections);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    Gpu::AsyncArray&lt;Real*&gt; Cl(hp_bld_airfoil_Cl.data(), n_bld_sections);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    Gpu::AsyncArray&lt;Real*&gt; Cd(hp_bld_airfoil_Cd.data(), n_bld_sections);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keyword">auto</span> d_bld_airfoil_aoa_ptr = aoa.data();</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keyword">auto</span> d_bld_airfoil_Cl_ptr  = Cl.data();</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keyword">auto</span> d_bld_airfoil_Cd_ptr  = Cd.data();</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordtype">int</span> n_spec_extra = <a class="code" href="classGeneralAD.html#a5d98b31e348b25201d92055c16b6b6da">velocity</a>.size();</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_velocity(n_spec_extra);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_rotor_RPM(n_spec_extra);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    Gpu::DeviceVector&lt;Real&gt; d_blade_pitch(n_spec_extra);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#a5d98b31e348b25201d92055c16b6b6da">velocity</a>.begin(), <a class="code" href="classGeneralAD.html#a5d98b31e348b25201d92055c16b6b6da">velocity</a>.end(), d_velocity.begin());</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#aeddf04c6e2386ba28aac00e2124c39a5">rotor_RPM</a>.begin(), <a class="code" href="classGeneralAD.html#aeddf04c6e2386ba28aac00e2124c39a5">rotor_RPM</a>.end(), d_rotor_RPM.begin());</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#a735e81390aef6a10e396bf4b7f1c7661">blade_pitch</a>.begin(), <a class="code" href="classGeneralAD.html#a735e81390aef6a10e396bf4b7f1c7661">blade_pitch</a>.end(), d_blade_pitch.begin());</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keyword">auto</span> d_velocity_ptr = d_velocity.data();</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keyword">auto</span> d_rotor_RPM_ptr = d_rotor_RPM.data();</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keyword">auto</span> d_blade_pitch_ptr = d_blade_pitch.data();</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        <span class="keyword">const</span> Box&amp; gbx      = mfi.growntilebox(1);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <span class="keyword">auto</span> SMark_array    = mf_SMark.array(mfi);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="keyword">auto</span> generalAD_array = mf_vars_generalAD.array(mfi);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i, domlo_x), domhi_x);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j, domlo_y), domhi_y);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            <span class="keywordtype">int</span> kk = amrex::min(amrex::max(k, domlo_z), domhi_z);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>   = ProbLoArr[0] + (ii+0.5)*dx[0];</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;            Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>   = ProbLoArr[1] + (jj+0.5)*dx[1];</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>   = ProbLoArr[2] + (kk+0.5)*dx[2];</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            <span class="comment">// ?? Density needed here</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            Real inv_dens_vol = 1.0/(1.0*dx[0]*dx[1]*dx[2]);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            <span class="keywordtype">int</span> check_int = 0;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            Real source_x = 0.0, source_y = 0.0, source_z = 0.0;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            std::array&lt;Real,2&gt; Fn_and_Ft;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> it=0;it&lt;nturbs;it++) {</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                 Real avg_vel  = d_freestream_velocity_ptr[it]/(d_disk_cell_count_ptr[it] + 1e-10);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                 Real phi = d_turb_disk_angle;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                <span class="comment">// This if check makes sure it is a point on the actuator disk</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                <span class="keywordflow">if</span>(SMark_array(ii,jj,kk,1) == <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(it)) {</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                    check_int++;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                    <span class="comment">// Find radial distance of the point and the zeta angle</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                    Real rad = std::pow( (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-d_xloc_ptr[it])*(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-d_xloc_ptr[it]) +</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                                         (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-d_yloc_ptr[it])*(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-d_yloc_ptr[it]) +</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                                         (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height)*(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height), 0.5 );</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                    <span class="keywordtype">int</span> index = <a class="code" href="ERF__AdvanceGeneralAD_8cpp.html#aa029813f35aa6d2dd949f67fa313066d">find_rad_loc_index</a>(rad, bld_rad_loc_ptr, n_bld_sections);</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                    <span class="comment">// This if check makes sure it is a point with radial distance</span></div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                    <span class="comment">// between the hub radius and the rotor radius.</span></div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                    <span class="comment">// ?? hub radius needed here</span></div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                    <span class="keywordflow">if</span>(rad &gt;= 2.0 and rad &lt;= d_rotor_rad) {</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                        <span class="comment">//AMREX_ASSERT( (z-d_hub_height) &lt;= rad );</span></div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                        <span class="comment">// Consider the vector that joines the point and the turbine center.</span></div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                        <span class="comment">// Dot it on to the vector that joins the turbine center and along</span></div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                        <span class="comment">// the plane of the disk. See fig. 10 in Mirocha et. al. 2014.</span></div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160; </div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                        Real vec_proj = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-d_xloc_ptr[it])*(std::sin(phi)) +</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                                        (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-d_yloc_ptr[it])*(-std::cos(phi));</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160; </div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                        Real zeta = std::atan2(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height, vec_proj);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                        <span class="comment">//printf(&quot;zeta val is %0.15g\n&quot;, zeta*180.0/PI);</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                        Fn_and_Ft = <a class="code" href="ERF__AdvanceGeneralAD_8cpp.html#afffd9801c692fcb424381db8ca2dc8f2">compute_source_terms_Fn_Ft</a>(rad, avg_vel,</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                                                               bld_rad_loc_ptr,</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;                                                               bld_twist_ptr,</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                                                               bld_chord_ptr,</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                                                               n_bld_sections,</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                                                               d_bld_airfoil_aoa_ptr[index],</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                                                               d_bld_airfoil_Cl_ptr[index],</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                                                               d_bld_airfoil_Cd_ptr[index],</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                                                               n_pts_airfoil,</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                                                               d_velocity_ptr,</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                                                               d_rotor_RPM_ptr,</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                                                               d_blade_pitch_ptr,</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                                                               n_spec_extra);</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                        Real Fn = Fn_and_Ft[0];</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                        Real Ft = Fn_and_Ft[1];</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                        <span class="comment">// Compute the source terms - pass in radial distance, free stream velocity</span></div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                        Real Fx = Fn*std::cos(phi) + Ft*std::sin(zeta)*std::sin(phi);</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                        Real Fy = Fn*std::sin(phi) - Ft*std::sin(zeta)*std::cos(phi);</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                        Real Fz = -Ft*std::cos(zeta);</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160; </div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                        source_x = -Fx*inv_dens_vol;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                        source_y = -Fy*inv_dens_vol;</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                        source_z = -Fz*inv_dens_vol;</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160; </div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160; </div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                        <span class="comment">//printf(&quot;Val source_x, is %0.15g, %0.15g, %0.15g %0.15g %0.15g %0.15g\n&quot;, rad, Fn, Ft, source_x, source_y, source_z);</span></div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                    }</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                }</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;            }</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160; </div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;            <span class="keywordflow">if</span>(check_int &gt; 1){</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                amrex::Error(<span class="stringliteral">&quot;Actuator disks are overlapping. Visualize actuator_disks.vtk &quot;</span></div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                             <span class="stringliteral">&quot;and check the windturbine locations input file. Exiting..&quot;</span>);</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            }</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160; </div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;            generalAD_array(i,j,k,0) = source_x;</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            generalAD_array(i,j,k,1) = source_y;</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;            generalAD_array(i,j,k,2) = source_z;</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;         });</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    }</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;}</div>
+<div class="ttc" id="aERF__AdvanceGeneralAD_8cpp_html_aa029813f35aa6d2dd949f67fa313066d"><div class="ttname"><a href="ERF__AdvanceGeneralAD_8cpp.html#aa029813f35aa6d2dd949f67fa313066d">find_rad_loc_index</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE int find_rad_loc_index(const Real rad, const Real *bld_rad_loc, const int n_bld_sections)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceGeneralAD.cpp:142</div></div>
+<div class="ttc" id="aERF__AdvanceGeneralAD_8cpp_html_afffd9801c692fcb424381db8ca2dc8f2"><div class="ttname"><a href="ERF__AdvanceGeneralAD_8cpp.html#afffd9801c692fcb424381db8ca2dc8f2">compute_source_terms_Fn_Ft</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE std::array&lt; Real, 2 &gt; compute_source_terms_Fn_Ft(const Real rad, const Real avg_vel, const Real *bld_rad_loc, const Real *bld_twist, const Real *bld_chord, int n_bld_sections, const Real *bld_airfoil_aoa, const Real *bld_airfoil_Cl, const Real *bld_airfoil_Cd, const int n_pts_airfoil, const Real *velocity, const Real *rotor_RPM, const Real *blade_pitch, const int n_spec_extra)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceGeneralAD.cpp:175</div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
+<div class="ttc" id="aclassGeneralAD_html_a0c19baa06277206decbdc1da57c02ea5"><div class="ttname"><a href="classGeneralAD.html#a0c19baa06277206decbdc1da57c02ea5">GeneralAD::wind_speed</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; wind_speed</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:47</div></div>
+<div class="ttc" id="aclassGeneralAD_html_a0db6baf8703517d3974b08ba7d854fc4"><div class="ttname"><a href="classGeneralAD.html#a0db6baf8703517d3974b08ba7d854fc4">GeneralAD::bld_airfoil_Cl</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; bld_airfoil_Cl</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:50</div></div>
+<div class="ttc" id="aclassGeneralAD_html_a1a247dae534aad8b40e7780b3f296afe"><div class="ttname"><a href="classGeneralAD.html#a1a247dae534aad8b40e7780b3f296afe">GeneralAD::power</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; power</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:47</div></div>
+<div class="ttc" id="aclassGeneralAD_html_a45f8887ce8907918ceebf0a804eaffea"><div class="ttname"><a href="classGeneralAD.html#a45f8887ce8907918ceebf0a804eaffea">GeneralAD::thrust_coeff</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; thrust_coeff</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:47</div></div>
+<div class="ttc" id="aclassGeneralAD_html_a5c234bf71184a01e624baf9f9247b3d5"><div class="ttname"><a href="classGeneralAD.html#a5c234bf71184a01e624baf9f9247b3d5">GeneralAD::rotor_rad</a></div><div class="ttdeci">amrex::Real rotor_rad</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:46</div></div>
+<div class="ttc" id="aclassGeneralAD_html_a5d98b31e348b25201d92055c16b6b6da"><div class="ttname"><a href="classGeneralAD.html#a5d98b31e348b25201d92055c16b6b6da">GeneralAD::velocity</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; velocity</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:51</div></div>
+<div class="ttc" id="aclassGeneralAD_html_a735e81390aef6a10e396bf4b7f1c7661"><div class="ttname"><a href="classGeneralAD.html#a735e81390aef6a10e396bf4b7f1c7661">GeneralAD::blade_pitch</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; blade_pitch</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:51</div></div>
+<div class="ttc" id="aclassGeneralAD_html_a789afc5fc0d7b06f7dc79e6eb05a5760"><div class="ttname"><a href="classGeneralAD.html#a789afc5fc0d7b06f7dc79e6eb05a5760">GeneralAD::C_P</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; C_P</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:51</div></div>
+<div class="ttc" id="aclassGeneralAD_html_a7dd38f7dc025fcf192e502321ceddc3e"><div class="ttname"><a href="classGeneralAD.html#a7dd38f7dc025fcf192e502321ceddc3e">GeneralAD::bld_twist</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; bld_twist</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:49</div></div>
+<div class="ttc" id="aclassGeneralAD_html_ab4b3db7ac8efd8610b63ee32349e234e"><div class="ttname"><a href="classGeneralAD.html#ab4b3db7ac8efd8610b63ee32349e234e">GeneralAD::bld_chord</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; bld_chord</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:49</div></div>
+<div class="ttc" id="aclassGeneralAD_html_abf37f6f4405fc016a3c6b9afda47b4ff"><div class="ttname"><a href="classGeneralAD.html#abf37f6f4405fc016a3c6b9afda47b4ff">GeneralAD::bld_rad_loc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; bld_rad_loc</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:49</div></div>
+<div class="ttc" id="aclassGeneralAD_html_ac82bba9c2818ca1e77adb01fdcdcaf66"><div class="ttname"><a href="classGeneralAD.html#ac82bba9c2818ca1e77adb01fdcdcaf66">GeneralAD::hub_height</a></div><div class="ttdeci">amrex::Real hub_height</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:46</div></div>
+<div class="ttc" id="aclassGeneralAD_html_ad5945bec35f72c63369436bf3edce069"><div class="ttname"><a href="classGeneralAD.html#ad5945bec35f72c63369436bf3edce069">GeneralAD::turb_disk_angle</a></div><div class="ttdeci">amrex::Real turb_disk_angle</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:45</div></div>
+<div class="ttc" id="aclassGeneralAD_html_ad96abbb1f20b4ea0abf49d0fb88b289a"><div class="ttname"><a href="classGeneralAD.html#ad96abbb1f20b4ea0abf49d0fb88b289a">GeneralAD::thrust_coeff_standing</a></div><div class="ttdeci">amrex::Real thrust_coeff_standing</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:46</div></div>
+<div class="ttc" id="aclassGeneralAD_html_ae82cceda872623720416dc9221693379"><div class="ttname"><a href="classGeneralAD.html#ae82cceda872623720416dc9221693379">GeneralAD::C_T</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; C_T</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:51</div></div>
+<div class="ttc" id="aclassGeneralAD_html_ae95fc1dda876a138123f8eddce348d28"><div class="ttname"><a href="classGeneralAD.html#ae95fc1dda876a138123f8eddce348d28">GeneralAD::bld_airfoil_aoa</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; bld_airfoil_aoa</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:50</div></div>
+<div class="ttc" id="aclassGeneralAD_html_aeddf04c6e2386ba28aac00e2124c39a5"><div class="ttname"><a href="classGeneralAD.html#aeddf04c6e2386ba28aac00e2124c39a5">GeneralAD::rotor_RPM</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; rotor_RPM</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:51</div></div>
+<div class="ttc" id="aclassGeneralAD_html_af8542d68395d4daa200c5ea4e25514dc"><div class="ttname"><a href="classGeneralAD.html#af8542d68395d4daa200c5ea4e25514dc">GeneralAD::bld_airfoil_Cd</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; bld_airfoil_Cd</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:50</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_a11fd7bf185b205f71197da8ba41edfb6"><div class="ttname"><a href="classNullWindFarm.html#a11fd7bf185b205f71197da8ba41edfb6">NullWindFarm::get_turb_spec</a></div><div class="ttdeci">void get_turb_spec(amrex::Real &amp;rotor_rad, amrex::Real &amp;hub_height, amrex::Real &amp;thrust_coeff_standing, amrex::Vector&lt; amrex::Real &gt; &amp;wind_speed, amrex::Vector&lt; amrex::Real &gt; &amp;thrust_coeff, amrex::Vector&lt; amrex::Real &gt; &amp;power)</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:83</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_a77d2fbe9dc6053701fa98acf5c5c8b25"><div class="ttname"><a href="classNullWindFarm.html#a77d2fbe9dc6053701fa98acf5c5c8b25">NullWindFarm::get_turb_spec_extra</a></div><div class="ttdeci">void get_turb_spec_extra(amrex::Vector&lt; amrex::Real &gt; &amp;velocity, amrex::Vector&lt; amrex::Real &gt; &amp;C_P, amrex::Vector&lt; amrex::Real &gt; &amp;C_T, amrex::Vector&lt; amrex::Real &gt; &amp;rotor_RPM, amrex::Vector&lt; amrex::Real &gt; &amp;blade_pitch)</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:125</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_abc6967908665ee89bd0546d24ef6f2a6"><div class="ttname"><a href="classNullWindFarm.html#abc6967908665ee89bd0546d24ef6f2a6">NullWindFarm::get_blade_airfoil_spec</a></div><div class="ttdeci">void get_blade_airfoil_spec(amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;bld_airfoil_aoa, amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;bld_airfoil_Cl, amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;bld_airfoil_Cd)</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:116</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_ac1242356bf27b796b89bea7db82e724b"><div class="ttname"><a href="classNullWindFarm.html#ac1242356bf27b796b89bea7db82e724b">NullWindFarm::get_turb_disk_angle</a></div><div class="ttdeci">void get_turb_disk_angle(amrex::Real &amp;turb_disk_angle)</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:102</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_ac88481b8d5d1cf63fabe89edee9cc8cd"><div class="ttname"><a href="classNullWindFarm.html#ac88481b8d5d1cf63fabe89edee9cc8cd">NullWindFarm::get_blade_spec</a></div><div class="ttdeci">void get_blade_spec(amrex::Vector&lt; amrex::Real &gt; &amp;bld_rad_loc, amrex::Vector&lt; amrex::Real &gt; &amp;bld_twist, amrex::Vector&lt; amrex::Real &gt; &amp;bld_chord)</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:107</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGeneralAD_a5be79013be63b8105a01534ca186de32_cgraph.png" border="0" usemap="#aclassGeneralAD_a5be79013be63b8105a01534ca186de32_cgraph" alt=""/></div>
 <map name="aclassGeneralAD_a5be79013be63b8105a01534ca186de32_cgraph" id="aclassGeneralAD_a5be79013be63b8105a01534ca186de32_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,193,47"/>
-<area shape="rect" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="241,13,357,39"/>
+<area shape="rect" title=" " alt="" coords="5,35,193,76"/>
+<area shape="rect" href="ERF__AdvanceGeneralAD_8cpp.html#afffd9801c692fcb424381db8ca2dc8f2" title=" " alt="" coords="241,5,416,47"/>
+<area shape="rect" href="ERF__AdvanceGeneralAD_8cpp.html#aa029813f35aa6d2dd949f67fa313066d" title=" " alt="" coords="257,71,400,98"/>
+<area shape="rect" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="464,13,580,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a0f119bf26de97ae78bd44df44c8c567e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f119bf26de97ae78bd44df44c8c567e">&#9670;&nbsp;</a></span>update()</h2>
+<a id="a2c22ccda2fdf9b29e4325c22b84bea2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c22ccda2fdf9b29e4325c22b84bea2c">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -528,6 +842,12 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>W_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
           <td class="paramname"><em>mf_vars</em>&#160;</td>
         </tr>
@@ -538,32 +858,237 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        Box tbx = mfi.nodaltilebox(0);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        Box tby = mfi.nodaltilebox(1);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">auto</span> generalAD_array = mf_vars_generalAD.array(mfi);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">auto</span> u_vel       = U_old.array(mfi);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">auto</span> v_vel       = V_old.array(mfi);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        ParallelFor(tbx, tby,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            u_vel(i,j,k) = u_vel(i,j,k) + (generalAD_array(i-1,j,k,0) + generalAD_array(i,j,k,0))/2.0*dt_advance;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        },</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            v_vel(i,j,k) = v_vel(i,j,k) + (generalAD_array(i,j-1,k,1) + generalAD_array(i,j,k,1))/2.0*dt_advance;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        });</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        Box tbx = mfi.nodaltilebox(0);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        Box tby = mfi.nodaltilebox(1);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        Box tbz = mfi.nodaltilebox(2);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">auto</span> generalAD_array = mf_vars_generalAD.array(mfi);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">auto</span> u_vel       = U_old.array(mfi);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">auto</span> v_vel       = V_old.array(mfi);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">auto</span> w_vel       = W_old.array(mfi);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        ParallelFor(tbx, tby, tbz,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            u_vel(i,j,k) = u_vel(i,j,k) + (generalAD_array(i-1,j,k,0) + generalAD_array(i,j,k,0))/2.0*dt_advance;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        },</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            v_vel(i,j,k) = v_vel(i,j,k) + (generalAD_array(i,j-1,k,1) + generalAD_array(i,j,k,1))/2.0*dt_advance;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        },</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            w_vel(i,j,k) = w_vel(i,j,k) + (generalAD_array(i,j,k-1,2) + generalAD_array(i,j,k,2))/2.0*dt_advance;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        });</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a735e81390aef6a10e396bf4b7f1c7661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a735e81390aef6a10e396bf4b7f1c7661">&#9670;&nbsp;</a></span>blade_pitch</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; GeneralAD::blade_pitch</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae95fc1dda876a138123f8eddce348d28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae95fc1dda876a138123f8eddce348d28">&#9670;&nbsp;</a></span>bld_airfoil_aoa</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; GeneralAD::bld_airfoil_aoa</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af8542d68395d4daa200c5ea4e25514dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8542d68395d4daa200c5ea4e25514dc">&#9670;&nbsp;</a></span>bld_airfoil_Cd</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; GeneralAD::bld_airfoil_Cd</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0db6baf8703517d3974b08ba7d854fc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0db6baf8703517d3974b08ba7d854fc4">&#9670;&nbsp;</a></span>bld_airfoil_Cl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt; GeneralAD::bld_airfoil_Cl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab4b3db7ac8efd8610b63ee32349e234e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4b3db7ac8efd8610b63ee32349e234e">&#9670;&nbsp;</a></span>bld_chord</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; GeneralAD::bld_chord</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf37f6f4405fc016a3c6b9afda47b4ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf37f6f4405fc016a3c6b9afda47b4ff">&#9670;&nbsp;</a></span>bld_rad_loc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; GeneralAD::bld_rad_loc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7dd38f7dc025fcf192e502321ceddc3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dd38f7dc025fcf192e502321ceddc3e">&#9670;&nbsp;</a></span>bld_twist</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; GeneralAD::bld_twist</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a789afc5fc0d7b06f7dc79e6eb05a5760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a789afc5fc0d7b06f7dc79e6eb05a5760">&#9670;&nbsp;</a></span>C_P</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; GeneralAD::C_P</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae82cceda872623720416dc9221693379"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae82cceda872623720416dc9221693379">&#9670;&nbsp;</a></span>C_T</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; GeneralAD::C_T</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a4a6d71d880f30aeb756885ac4e8d2b5b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4a6d71d880f30aeb756885ac4e8d2b5b">&#9670;&nbsp;</a></span>disk_cell_count</h2>
 
@@ -718,6 +1243,28 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="aeddf04c6e2386ba28aac00e2124c39a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeddf04c6e2386ba28aac00e2124c39a5">&#9670;&nbsp;</a></span>rotor_RPM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; GeneralAD::rotor_RPM</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a45f8887ce8907918ceebf0a804eaffea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a45f8887ce8907918ceebf0a804eaffea">&#9670;&nbsp;</a></span>thrust_coeff</h2>
 
@@ -773,6 +1320,28 @@ Here is the call graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">amrex::Real GeneralAD::turb_disk_angle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d98b31e348b25201d92055c16b6b6da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d98b31e348b25201d92055c16b6b6da">&#9670;&nbsp;</a></span>velocity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;amrex::Real&gt; GeneralAD::velocity</td>
         </tr>
       </table>
   </td>

@@ -20,6 +20,8 @@ var NAVTREEINDEX0 =
 "ERF__AdvanceFitch_8cpp.html#a68e0a40af0744df9f7e79d181225f615":[3,0,1,17,1,0,1],
 "ERF__AdvanceFitch_8cpp.html#a7b6c67da0ff16af60b10f434632b06ce":[3,0,1,17,1,0,0],
 "ERF__AdvanceGeneralAD_8cpp.html":[3,0,1,17,2,0],
+"ERF__AdvanceGeneralAD_8cpp.html#aa029813f35aa6d2dd949f67fa313066d":[3,0,1,17,2,0,1],
+"ERF__AdvanceGeneralAD_8cpp.html#afffd9801c692fcb424381db8ca2dc8f2":[3,0,1,17,2,0,0],
 "ERF__AdvanceSimpleAD_8cpp.html":[3,0,1,17,4,0],
 "ERF__Advance_8cpp.html":[3,0,1,15,0],
 "ERF__AdvectionSrcForMom_8cpp.html":[3,0,1,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__DiffStruct_8H_source.html":[3,0,1,2,2],
 "ERF__DiffusionSrcForMom__N_8cpp.html":[3,0,1,3,6],
 "ERF__DiffusionSrcForMom__N_8cpp.html#a426fe9fce28e7c29e11b29197e98f6a4":[3,0,1,3,6,0],
-"ERF__DiffusionSrcForMom__T_8cpp.html":[3,0,1,3,7],
-"ERF__DiffusionSrcForMom__T_8cpp.html#abd43ffde58dc80eec337c1fa12a0e2cf":[3,0,1,3,7,0],
-"ERF__DiffusionSrcForState__N_8cpp.html":[3,0,1,3,8]
+"ERF__DiffusionSrcForMom__T_8cpp.html":[3,0,1,3,7]
 };
