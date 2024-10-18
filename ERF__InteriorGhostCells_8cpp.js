@@ -2,6 +2,6 @@ var ERF__InteriorGhostCells_8cpp =
 [
     [ "compute_interior_ghost_bxs_xy", "ERF__InteriorGhostCells_8cpp.html#a58aa7f6d6812d4dea186477114d1a47c", null ],
     [ "fine_compute_interior_ghost_rhs", "ERF__InteriorGhostCells_8cpp.html#ae5ff4686584e657be0c2b4a10dd39553", null ],
-    [ "realbdy_compute_interior_ghost_rhs", "ERF__InteriorGhostCells_8cpp.html#a41e809a463649991c08af8667d3947cb", null ],
+    [ "realbdy_compute_interior_ghost_rhs", "ERF__InteriorGhostCells_8cpp.html#a910beecdd2b6435fb9b14ff590bc2241", null ],
     [ "void_bc", "ERF__InteriorGhostCells_8cpp.html#ab53ca744a656082f128b68f819aacbf5", null ]
 ];
