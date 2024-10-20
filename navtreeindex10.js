@@ -1,7 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"classWindFarm.html#a584e7ba8dd495cbedf35150dfce68f26":[2,0,103,10],
-"classWindFarm.html#a5d1dbc2f5df3a2ee2b239f04b82a2c6b":[2,0,103,43],
 "classWindFarm.html#a5defcbb732ba325db7b6e8a819ab381e":[2,0,103,17],
 "classWindFarm.html#a6206e875bd0ab78e9b997d115a6c7b33":[2,0,103,15],
 "classWindFarm.html#a638bdc717e37526689d507a5cd36735e":[2,0,103,20],
@@ -121,8 +119,8 @@ var NAVTREEINDEX10 =
 "dir_fbd11baa4baa1a8b78c4a3d08373cbc6.html":[3,0,1,10],
 "dir_fc0c15590968603ac439df7b0a572228.html":[3,0,1,3],
 "files.html":[3,0],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX10 =
 "globals_q.html":[3,1,0,15],
 "globals_r.html":[3,1,0,16],
 "globals_s.html":[3,1,0,17],
-"globals_t.html":[3,1,0,18]
+"globals_t.html":[3,1,0,18],
+"globals_type.html":[3,1,3],
+"globals_u.html":[3,1,0,19]
 };
