@@ -11,7 +11,10 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "ERF_BoundaryConditions_xvel.cpp", "ERF__BoundaryConditions__xvel_8cpp.html", null ],
     [ "ERF_BoundaryConditions_yvel.cpp", "ERF__BoundaryConditions__yvel_8cpp.html", null ],
     [ "ERF_BoundaryConditions_zvel.cpp", "ERF__BoundaryConditions__zvel_8cpp.html", null ],
-    [ "ERF_FillPatch.cpp", "ERF__FillPatch_8cpp.html", "ERF__FillPatch_8cpp" ],
+    [ "ERF_FillBdyCCVels.cpp", "ERF__FillBdyCCVels_8cpp.html", null ],
+    [ "ERF_FillCoarsePatch.cpp", "ERF__FillCoarsePatch_8cpp.html", null ],
+    [ "ERF_FillIntermediatePatch.cpp", "ERF__FillIntermediatePatch_8cpp.html", null ],
+    [ "ERF_FillPatch.cpp", "ERF__FillPatch_8cpp.html", null ],
     [ "ERF_FillPatcher.cpp", "ERF__FillPatcher_8cpp.html", null ],
     [ "ERF_FillPatcher.H", "ERF__FillPatcher_8H.html", [
       [ "ERFFillPatcher", "classERFFillPatcher.html", "classERFFillPatcher" ]
