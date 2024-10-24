@@ -6,6 +6,7 @@ var namespaces_dup =
       [ "buildInfoGetCompVersion", "namespaceamrex.html#aab3ca155f0d0a6d198817df9c35352f8", null ],
       [ "buildInfoGetGitHash", "namespaceamrex.html#afa2dbdd17ead719f97272c9a0a2b0f8a", null ]
     ] ],
+    [ "BaseState", "namespaceBaseState.html", null ],
     [ "BCVars", "namespaceBCVars.html", null ],
     [ "derived", "namespacederived.html", [
       [ "erf_derKE", "namespacederived.html#aeaeabd5f649796984f61651a6733e96b", null ],
