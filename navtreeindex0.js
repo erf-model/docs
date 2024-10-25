@@ -7,6 +7,7 @@ var NAVTREEINDEX0 =
 "ERFPC_8H_source.html":[3,0,1,10,1],
 "ERFTracers_8cpp.html":[3,0,1,10,5],
 "ERF_8H.html":[3,0,1,19],
+"ERF_8H.html#a07b88cfb51656f2c028a84625c97f5c9":[3,0,1,19,2],
 "ERF_8H.html#aa635954d4f3a0aed015141d979f70728":[3,0,1,19,1],
 "ERF_8H_source.html":[3,0,1,19],
 "ERF_8cpp.html":[3,0,1,18],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288":[3,0,1,2,2,1,2],
 "ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255":[3,0,1,2,2,1,1],
 "ERF__DiffStruct_8H_source.html":[3,0,1,2,2],
-"ERF__DiffusionSrcForMom__N_8cpp.html":[3,0,1,3,6],
-"ERF__DiffusionSrcForMom__N_8cpp.html#a426fe9fce28e7c29e11b29197e98f6a4":[3,0,1,3,6,0]
+"ERF__DiffusionSrcForMom__N_8cpp.html":[3,0,1,3,6]
 };

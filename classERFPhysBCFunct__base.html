@@ -111,10 +111,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1ff22d240bc676993afa98cb08272f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afef329f380053ae92fb49e65e39a7b58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__base.html#afef329f380053ae92fb49e65e39a7b58">~ERFPhysBCFunct_base</a> ()</td></tr>
 <tr class="separator:afef329f380053ae92fb49e65e39a7b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6878f6a6c3a01c4f395034adf993963a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__base.html#a6878f6a6c3a01c4f395034adf993963a">operator()</a> (amrex::MultiFab &amp;mf, int icomp, int ncomp, amrex::IntVect const &amp;nghost, const amrex::Real time, int bccomp_cons)</td></tr>
-<tr class="separator:a6878f6a6c3a01c4f395034adf993963a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfc7dc3b2d6c519fc557abad07f96325"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__base.html#adfc7dc3b2d6c519fc557abad07f96325">impose_lateral_basestate_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain)</td></tr>
-<tr class="separator:adfc7dc3b2d6c519fc557abad07f96325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2e8c70311e8e8e92a713ff1a5f18078"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__base.html#af2e8c70311e8e8e92a713ff1a5f18078">operator()</a> (amrex::MultiFab &amp;mf, int icomp, int ncomp, amrex::IntVect const &amp;nghost)</td></tr>
+<tr class="separator:af2e8c70311e8e8e92a713ff1a5f18078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2d46cdc32a713b4eb40a5c3552ef947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__base.html#ab2d46cdc32a713b4eb40a5c3552ef947">impose_lateral_basestate_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int ncomp, const amrex::IntVect &amp;nghost)</td></tr>
+<tr class="separator:ab2d46cdc32a713b4eb40a5c3552ef947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16a0a73ad13172027fc38b4c427f71ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__base.html#a16a0a73ad13172027fc38b4c427f71ff">impose_vertical_basestate_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int ncomp, const amrex::IntVect &amp;nghost)</td></tr>
+<tr class="separator:a16a0a73ad13172027fc38b4c427f71ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -177,10 +179,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;          <a class="code" href="classERFPhysBCFunct__base.html#af918f7e795b633cdb0c2d377634c2bac">m_domain_bcs_type</a>(domain_bcs_type),</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;          <a class="code" href="classERFPhysBCFunct__base.html#a1363b51788d4178be65ec64c462b7f30">m_domain_bcs_type_d</a>(domain_bcs_type_d)</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    {}</div>
-<div class="ttc" id="aclassERFPhysBCFunct__base_html_a1363b51788d4178be65ec64c462b7f30"><div class="ttname"><a href="classERFPhysBCFunct__base.html#a1363b51788d4178be65ec64c462b7f30">ERFPhysBCFunct_base::m_domain_bcs_type_d</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; m_domain_bcs_type_d</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:292</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__base_html_a55272dec44184034a24cfe54bb7df1fd"><div class="ttname"><a href="classERFPhysBCFunct__base.html#a55272dec44184034a24cfe54bb7df1fd">ERFPhysBCFunct_base::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:289</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__base_html_a8cde4476cef731ed821f25229ddb0c7b"><div class="ttname"><a href="classERFPhysBCFunct__base.html#a8cde4476cef731ed821f25229ddb0c7b">ERFPhysBCFunct_base::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:290</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__base_html_af918f7e795b633cdb0c2d377634c2bac"><div class="ttname"><a href="classERFPhysBCFunct__base.html#af918f7e795b633cdb0c2d377634c2bac">ERFPhysBCFunct_base::m_domain_bcs_type</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BCRec &gt; m_domain_bcs_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:291</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__base_html_a1363b51788d4178be65ec64c462b7f30"><div class="ttname"><a href="classERFPhysBCFunct__base.html#a1363b51788d4178be65ec64c462b7f30">ERFPhysBCFunct_base::m_domain_bcs_type_d</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; m_domain_bcs_type_d</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:295</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__base_html_a55272dec44184034a24cfe54bb7df1fd"><div class="ttname"><a href="classERFPhysBCFunct__base.html#a55272dec44184034a24cfe54bb7df1fd">ERFPhysBCFunct_base::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:292</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__base_html_a8cde4476cef731ed821f25229ddb0c7b"><div class="ttname"><a href="classERFPhysBCFunct__base.html#a8cde4476cef731ed821f25229ddb0c7b">ERFPhysBCFunct_base::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:293</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__base_html_af918f7e795b633cdb0c2d377634c2bac"><div class="ttname"><a href="classERFPhysBCFunct__base.html#af918f7e795b633cdb0c2d377634c2bac">ERFPhysBCFunct_base::m_domain_bcs_type</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BCRec &gt; m_domain_bcs_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:294</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -211,8 +213,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="adfc7dc3b2d6c519fc557abad07f96325"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfc7dc3b2d6c519fc557abad07f96325">&#9670;&nbsp;</a></span>impose_lateral_basestate_bcs()</h2>
+<a id="ab2d46cdc32a713b4eb40a5c3552ef947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2d46cdc32a713b4eb40a5c3552ef947">&#9670;&nbsp;</a></span>impose_lateral_basestate_bcs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,7 +235,19 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Box &amp;&#160;</td>
-          <td class="paramname"><em>domain</em>&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::IntVect &amp;&#160;</td>
+          <td class="paramname"><em>nghost</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -242,134 +256,131 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;impose_lateral_base_bcs()&quot;</span>,impose_lateral_base_bcs);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> icomp = 0;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> ncomp = 3;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* bxlo = bx.loVect();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* bxhi = bx.hiVect();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* dlo  = domain.loVect();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* dhi  = domain.hiVect();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_lo = lbound(domain);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_hi = ubound(domain);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// xlo: ori = 0</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// ylo: ori = 1</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// zlo: ori = 2</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// xhi: ori = 3</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// yhi: ori = 4</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// zhi: ori = 5</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// Based on BCRec for the domain, we need to make BCRec for this Box</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//      0 is used as starting index for bcrs</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    Vector&lt;BCRec&gt; bcrs(ncomp);</div>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;impose_lateral_base_bcs()&quot;</span>,impose_lateral_base_bcs);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* bxlo = bx.loVect();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* bxhi = bx.hiVect();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* dlo  = domain.loVect();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* dhi  = domain.hiVect();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_lo = lbound(domain);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_hi = ubound(domain);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// xlo: ori = 0</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// ylo: ori = 1</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// zlo: ori = 2</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// xhi: ori = 3</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// yhi: ori = 4</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// zhi: ori = 5</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Based on BCRec for the domain, we need to make BCRec for this Box</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//      0 is used as starting index for bcrs</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Vector&lt;BCRec&gt; bcrs(ncomp);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> bc_comp = <a class="code" href="namespaceBCVars.html#aa5bb40192aa03c435b8f7096cb02e16da970567f2fd13e49ae300e8d39fd2ae30">BCVars::base_bc</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> bc_comp = <a class="code" href="namespaceBCVars.html#aa5bb40192aa03c435b8f7096cb02e16da970567f2fd13e49ae300e8d39fd2ae30">BCVars::base_bc</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nc = 0; nc &lt; ncomp; nc++)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; dir++)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            bcrs[nc].setLo(dir, ( bxlo[dir]&lt;=dlo[dir]</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                 ? <a class="code" href="classERFPhysBCFunct__base.html#af918f7e795b633cdb0c2d377634c2bac">m_domain_bcs_type</a>[bc_comp].lo(dir) : <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca9f18284526a1054d4e7a4783852ead30">BCType::int_dir</a> ));</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            bcrs[nc].setHi(dir, ( bxhi[dir]&gt;=dhi[dir]</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                 ? <a class="code" href="classERFPhysBCFunct__base.html#af918f7e795b633cdb0c2d377634c2bac">m_domain_bcs_type</a>[bc_comp].hi(dir) : <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca9f18284526a1054d4e7a4783852ead30">BCType::int_dir</a> ));</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    Gpu::DeviceVector&lt;BCRec&gt; bcrs_d(ncomp);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    Gpu::copyAsync(Gpu::hostToDevice, bcrs.begin(), bcrs.end(), bcrs_d.begin());</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">const</span> BCRec* bc_ptr = bcrs_d.data();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    GeometryData <span class="keyword">const</span>&amp; geomdata = <a class="code" href="classERFPhysBCFunct__base.html#a8cde4476cef731ed821f25229ddb0c7b">m_geom</a>.data();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> is_periodic_in_x = geomdata.isPeriodic(0);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span> is_periodic_in_y = geomdata.isPeriodic(1);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Do ghost cells in x-direction but not reaching out in y</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// The corners we miss here will be covered in the y-loop below or by periodicity</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (!is_periodic_in_x)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">// Populate ghost cells on lo-x and hi-x domain boundaries</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        Box bx_xlo(bx);  bx_xlo.setBig  (0,dom_lo.x-1);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        Box bx_xhi(bx);  bx_xhi.setSmall(0,dom_hi.x+1);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> (bx_xlo.smallEnd(2) != domain.smallEnd(2)) bx_xlo.growLo(2,1);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (bx_xlo.bigEnd(2)   != domain.bigEnd(2))   bx_xlo.growHi(2,1);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> (bx_xhi.smallEnd(2) != domain.smallEnd(2)) bx_xhi.growLo(2,1);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span> (bx_xhi.bigEnd(2)   != domain.bigEnd(2))   bx_xhi.growHi(2,1);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        ParallelFor(</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            bx_xlo, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordtype">int</span> dest_comp = icomp+n;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordtype">int</span> l_bc_type = bc_ptr[n].lo(0);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordtype">int</span> iflip = dom_lo.x - 1 - i;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nc = 0; nc &lt; ncomp; nc++)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; dir++)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            bcrs[nc].setLo(dir, ( bxlo[dir]&lt;=dlo[dir]</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                 ? <a class="code" href="classERFPhysBCFunct__base.html#af918f7e795b633cdb0c2d377634c2bac">m_domain_bcs_type</a>[bc_comp].lo(dir) : <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca9f18284526a1054d4e7a4783852ead30">BCType::int_dir</a> ));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            bcrs[nc].setHi(dir, ( bxhi[dir]&gt;=dhi[dir]</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                 ? <a class="code" href="classERFPhysBCFunct__base.html#af918f7e795b633cdb0c2d377634c2bac">m_domain_bcs_type</a>[bc_comp].hi(dir) : <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca9f18284526a1054d4e7a4783852ead30">BCType::int_dir</a> ));</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    Gpu::DeviceVector&lt;BCRec&gt; bcrs_d(ncomp);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    Gpu::copyAsync(Gpu::hostToDevice, bcrs.begin(), bcrs.end(), bcrs_d.begin());</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> BCRec* bc_ptr = bcrs_d.data();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    GeometryData <span class="keyword">const</span>&amp; geomdata = <a class="code" href="classERFPhysBCFunct__base.html#a8cde4476cef731ed821f25229ddb0c7b">m_geom</a>.data();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">bool</span> is_periodic_in_x = geomdata.isPeriodic(0);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> is_periodic_in_y = geomdata.isPeriodic(1);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Do ghost cells in x-direction but not reaching out in y</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// The corners we miss here will be covered in the y-loop below or by periodicity</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> (!is_periodic_in_x)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">// Populate ghost cells on lo-x and hi-x domain boundaries</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        Box bx_xlo(bx);  bx_xlo.setBig  (0,dom_lo.x-nghost[0]);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        Box bx_xhi(bx);  bx_xhi.setSmall(0,dom_hi.x+nghost[0]);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> (bx_xlo.smallEnd(2) != domain.smallEnd(2)) bx_xlo.growLo(2,nghost[2]);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (bx_xlo.bigEnd(2)   != domain.bigEnd(2))   bx_xlo.growHi(2,nghost[2]);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> (bx_xhi.smallEnd(2) != domain.smallEnd(2)) bx_xhi.growLo(2,nghost[2]);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (bx_xhi.bigEnd(2)   != domain.bigEnd(2))   bx_xhi.growHi(2,nghost[2]);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        ParallelFor(</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            bx_xlo, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordtype">int</span> dest_comp = n;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordtype">int</span> l_bc_type = bc_ptr[n].lo(0);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordtype">int</span> iflip = dom_lo.x - 1 - i;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(dom_lo.x,j,k,dest_comp);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a>) {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(dom_lo.x,j,k,dest_comp);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a>) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(dom_lo.x,j,k,dest_comp);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9">ERFBCType::reflect_even</a>) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(iflip,j,k,dest_comp);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            },</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            bx_xhi, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordtype">int</span> dest_comp = icomp+n;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordtype">int</span> h_bc_type = bc_ptr[n].hi(0);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordtype">int</span> iflip =  2*dom_hi.x + 1 - i;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">if</span> (h_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9">ERFBCType::reflect_even</a>) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(iflip,j,k,dest_comp);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            },</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            bx_xhi, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordtype">int</span> dest_comp = n;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordtype">int</span> h_bc_type = bc_ptr[n].hi(0);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordtype">int</span> iflip =  2*dom_hi.x + 1 - i;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">if</span> (h_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(dom_hi.x,j,k,dest_comp);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (h_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a>) {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(dom_hi.x,j,k,dest_comp);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (h_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a>) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(dom_hi.x,j,k,dest_comp);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (h_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9">ERFBCType::reflect_even</a>) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(iflip,j,k,dest_comp);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        );</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span> (!is_periodic_in_y)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">// Populate ghost cells on lo-y and hi-y domain boundaries</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        Box bx_ylo(bx);  bx_ylo.setBig  (1,dom_lo.y-1);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        Box bx_yhi(bx);  bx_yhi.setSmall(1,dom_hi.y+1);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span> (bx_ylo.smallEnd(2) != domain.smallEnd(2)) bx_ylo.growLo(2,1);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (bx_ylo.bigEnd(2)   != domain.bigEnd(2))   bx_ylo.growHi(2,1);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">if</span> (bx_yhi.smallEnd(2) != domain.smallEnd(2)) bx_yhi.growLo(2,1);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span> (bx_yhi.bigEnd(2)   != domain.bigEnd(2))   bx_yhi.growHi(2,1);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        ParallelFor(</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            bx_ylo, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordtype">int</span> dest_comp = icomp+n;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordtype">int</span> l_bc_type = bc_ptr[n].lo(1);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keywordtype">int</span> jflip = dom_lo.y - 1 - j;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (h_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9">ERFBCType::reflect_even</a>) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(iflip,j,k,dest_comp);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (!is_periodic_in_y)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment">// Populate ghost cells on lo-y and hi-y domain boundaries</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        Box bx_ylo(bx);  bx_ylo.setBig  (1,dom_lo.y-nghost[1]);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        Box bx_yhi(bx);  bx_yhi.setSmall(1,dom_hi.y+nghost[1]);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span> (bx_ylo.smallEnd(2) != domain.smallEnd(2)) bx_ylo.growLo(2,nghost[2]);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> (bx_ylo.bigEnd(2)   != domain.bigEnd(2))   bx_ylo.growHi(2,nghost[2]);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span> (bx_yhi.smallEnd(2) != domain.smallEnd(2)) bx_yhi.growLo(2,nghost[2]);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (bx_yhi.bigEnd(2)   != domain.bigEnd(2))   bx_yhi.growHi(2,nghost[2]);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        ParallelFor(</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            bx_ylo, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordtype">int</span> dest_comp = n;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordtype">int</span> l_bc_type = bc_ptr[n].lo(1);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordtype">int</span> jflip = dom_lo.y - 1 - j;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(i,dom_lo.y,k,dest_comp);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a>) {</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(i,dom_lo.y,k,dest_comp);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a>) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(i,dom_lo.y,k,dest_comp);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9">ERFBCType::reflect_even</a>) {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(i,jflip,k,dest_comp);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            },</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            bx_yhi, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="keywordtype">int</span> dest_comp = icomp+n;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordtype">int</span> h_bc_type = bc_ptr[n].hi(1);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <span class="keywordtype">int</span> jflip =  2*dom_hi.y + 1 - j;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordflow">if</span> (h_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9">ERFBCType::reflect_even</a>) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(i,jflip,k,dest_comp);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            },</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            bx_yhi, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <span class="keywordtype">int</span> dest_comp = n;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keywordtype">int</span> h_bc_type = bc_ptr[n].hi(1);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="keywordtype">int</span> jflip =  2*dom_hi.y + 1 - j;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordflow">if</span> (h_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(i,dom_hi.y,k,dest_comp);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (h_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a>) {</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(i,dom_hi.y,k,dest_comp);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (h_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a>) {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(i,dom_hi.y,k,dest_comp);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (h_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9">ERFBCType::reflect_even</a>) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(i,jflip,k,dest_comp);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        );</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    Gpu::streamSynchronize();</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (h_bc_type == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9">ERFBCType::reflect_even</a>) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                    dest_arr(i,j,k,dest_comp) =  dest_arr(i,jflip,k,dest_comp);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        );</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
 <div class="ttc" id="anamespaceBCVars_html_aa5bb40192aa03c435b8f7096cb02e16da970567f2fd13e49ae300e8d39fd2ae30"><div class="ttname"><a href="namespaceBCVars.html#aa5bb40192aa03c435b8f7096cb02e16da970567f2fd13e49ae300e8d39fd2ae30">BCVars::base_bc</a></div><div class="ttdeci">@ base_bc</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:90</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a></div><div class="ttdeci">@ open</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:191</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a></div><div class="ttdeci">@ foextrap</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:184</div></div>
@@ -378,8 +389,73 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a6878f6a6c3a01c4f395034adf993963a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6878f6a6c3a01c4f395034adf993963a">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="a16a0a73ad13172027fc38b4c427f71ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16a0a73ad13172027fc38b4c427f71ff">&#9670;&nbsp;</a></span>impose_vertical_basestate_bcs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ERFPhysBCFunct_base::impose_vertical_basestate_bcs </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dest_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::IntVect &amp;&#160;</td>
+          <td class="paramname"><em>nghost</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;impose_vertical_base_bcs()&quot;</span>,impose_vertical_base_bcs);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_lo = lbound(domain);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dom_hi = ubound(domain);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    Box bx_zlo(bx);  bx_zlo.setBig(2,dom_lo.z-2);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    Box bx_zhi(bx);  bx_zhi.setSmall(2,dom_hi.z+2);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    ParallelFor(</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        bx_zlo, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            dest_arr(i,j,k,n) = dest_arr(i,j,dom_lo.z-1,n);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        },</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        bx_zhi, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            dest_arr(i,j,k,n) = dest_arr(i,j,dom_hi.z+1,n);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    );</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af2e8c70311e8e8e92a713ff1a5f18078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2e8c70311e8e8e92a713ff1a5f18078">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -406,19 +482,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::IntVect const &amp;&#160;</td>
-          <td class="paramname"><em>nghost</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Real&#160;</td>
-          <td class="paramname"><em>time</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bccomp_cons</em>&#160;</td>
+          <td class="paramname"><em>nghost</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -427,50 +491,52 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;{</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERFPhysBCFunct_base::()&quot;</span>);</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__base.html#a8cde4476cef731ed821f25229ddb0c7b">m_geom</a>.isAllPeriodic()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; domain = <a class="code" href="classERFPhysBCFunct__base.html#a8cde4476cef731ed821f25229ddb0c7b">m_geom</a>.Domain();</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="comment">// Create a grown domain box containing valid + periodic cells</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    Box gdomain  = domain;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__base.html#a8cde4476cef731ed821f25229ddb0c7b">m_geom</a>.isPeriodic(i)) {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            gdomain.grow(i, nghost[i]);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        }</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    }</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    {</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(mf,<span class="keyword">false</span>); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="comment">// This is the box we pass to the different routines</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="comment">// NOTE -- this is the full grid box NOT the tile box</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            Box bx  = mfi.validbox();</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="comment">// These are the boxes we use to test on relative to the domain</span></div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            Box cbx1 = bx; cbx1.grow(IntVect(nghost[0],nghost[1],0));</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            Box cbx2 = bx; cbx2.grow(nghost);</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            <span class="keywordflow">if</span> (!gdomain.contains(cbx2))</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            {</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt; cons_arr = mf.array(mfi);</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                <a class="code" href="classERFPhysBCFunct__base.html#adfc7dc3b2d6c519fc557abad07f96325">impose_lateral_basestate_bcs</a>(cons_arr,cbx1,domain);</div>
+<div class="fragment"><div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;{</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERFPhysBCFunct_base::()&quot;</span>);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__base.html#a8cde4476cef731ed821f25229ddb0c7b">m_geom</a>.isAllPeriodic()) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; domain = <a class="code" href="classERFPhysBCFunct__base.html#a8cde4476cef731ed821f25229ddb0c7b">m_geom</a>.Domain();</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="comment">// Create a grown domain box containing valid + periodic cells</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    Box gdomain  = domain;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__base.html#a8cde4476cef731ed821f25229ddb0c7b">m_geom</a>.isPeriodic(i)) {</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            gdomain.grow(i, nghost[i]);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        }</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    }</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    {</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(mf,<span class="keyword">false</span>); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        {</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="comment">// This is the box we pass to the different routines</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="comment">// NOTE -- this is the full grid box NOT the tile box</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            Box bx  = mfi.validbox();</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <span class="comment">// These are the boxes we use to test on relative to the domain</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            Box cbx1 = bx; cbx1.grow(IntVect(nghost[0],nghost[1],0));</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            Box cbx2 = bx; cbx2.grow(nghost);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            <span class="keywordflow">if</span> (!gdomain.contains(cbx2))</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            {</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt; base_arr = mf.array(mfi);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                <a class="code" href="classERFPhysBCFunct__base.html#ab2d46cdc32a713b4eb40a5c3552ef947">impose_lateral_basestate_bcs</a>(base_arr,cbx1,domain,ncomp,nghost);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                <a class="code" href="classERFPhysBCFunct__base.html#a16a0a73ad13172027fc38b4c427f71ff">impose_vertical_basestate_bcs</a>(base_arr,cbx2,domain,ncomp,nghost);</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            }</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        } <span class="comment">// MFIter</span></div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    } <span class="comment">// OpenMP</span></div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;} <span class="comment">// operator()</span></div>
-<div class="ttc" id="aclassERFPhysBCFunct__base_html_adfc7dc3b2d6c519fc557abad07f96325"><div class="ttname"><a href="classERFPhysBCFunct__base.html#adfc7dc3b2d6c519fc557abad07f96325">ERFPhysBCFunct_base::impose_lateral_basestate_bcs</a></div><div class="ttdeci">void impose_lateral_basestate_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain)</div><div class="ttdef"><b>Definition:</b> ERF_BoundaryConditions_basestate.cpp:14</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__base_html_a16a0a73ad13172027fc38b4c427f71ff"><div class="ttname"><a href="classERFPhysBCFunct__base.html#a16a0a73ad13172027fc38b4c427f71ff">ERFPhysBCFunct_base::impose_vertical_basestate_bcs</a></div><div class="ttdeci">void impose_vertical_basestate_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int ncomp, const amrex::IntVect &amp;nghost)</div><div class="ttdef"><b>Definition:</b> ERF_BoundaryConditions_basestate.cpp:142</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__base_html_ab2d46cdc32a713b4eb40a5c3552ef947"><div class="ttname"><a href="classERFPhysBCFunct__base.html#ab2d46cdc32a713b4eb40a5c3552ef947">ERFPhysBCFunct_base::impose_lateral_basestate_bcs</a></div><div class="ttdeci">void impose_lateral_basestate_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int ncomp, const amrex::IntVect &amp;nghost)</div><div class="ttdef"><b>Definition:</b> ERF_BoundaryConditions_basestate.cpp:14</div></div>
 </div><!-- fragment -->
 </div>
 </div>

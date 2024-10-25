@@ -1,5 +1,8 @@
 var NAVTREEINDEX14 =
 {
+"structdonelan__flux.html#ad2da09025b821f79782fa580010c4df2":[2,0,20,4],
+"structdonelan__flux.html#adb397919f3dc33f33d8bdc7b99c52efc":[2,0,20,1],
+"structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b":[2,0,20,6],
 "structmoeng__flux.html":[2,0,47],
 "structmoeng__flux.html#a2451f21fea8f87cec2e5f626c36489cb":[2,0,47,3],
 "structmoeng__flux.html#a2843a181e875e6599b04964c28117900":[2,0,47,0],
