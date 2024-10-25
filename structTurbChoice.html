@@ -161,12 +161,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a96c1a42307db82ece270acdac75da9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af274e04335b259bb7b35f7c836f8310f"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#af274e04335b259bb7b35f7c836f8310f">pbl_ysu_unst_Ribcr</a> = 0.0</td></tr>
 <tr class="separator:af274e04335b259bb7b35f7c836f8310f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81d6903354abbc64e7dc12b7da91070b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#a81d6903354abbc64e7dc12b7da91070b">use_QKE</a> = false</td></tr>
-<tr class="separator:a81d6903354abbc64e7dc12b7da91070b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf5c21916e9737e406ff55a62f12c781"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#abf5c21916e9737e406ff55a62f12c781">diffuse_QKE_3D</a> = false</td></tr>
-<tr class="separator:abf5c21916e9737e406ff55a62f12c781"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0da945128af7536d9fd82586a853de70"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#a0da945128af7536d9fd82586a853de70">advect_QKE</a> = true</td></tr>
-<tr class="separator:a0da945128af7536d9fd82586a853de70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cca3daa3eed11109607efa9983ae8ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#a1cca3daa3eed11109607efa9983ae8ed">use_KE</a> = true</td></tr>
+<tr class="separator:a1cca3daa3eed11109607efa9983ae8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5864f0fe05bcbd45554301ade763d5ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#a5864f0fe05bcbd45554301ade763d5ca">diffuse_KE_3D</a> = true</td></tr>
+<tr class="separator:a5864f0fe05bcbd45554301ade763d5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af151e25e9513f7c6a995ca82db98278c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#af151e25e9513f7c6a995ca82db98278c">advect_KE</a> = true</td></tr>
+<tr class="separator:af151e25e9513f7c6a995ca82db98278c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Container holding quantities related to turbulence parametrizations </p>
@@ -354,9 +354,9 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// Right now, solving the QKE equation is only supported when MYNN PBL is turned on</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNN25) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="structTurbChoice.html#a81d6903354abbc64e7dc12b7da91070b">use_QKE</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;advect_QKE&quot;</span>    , <a class="code" href="structTurbChoice.html#a0da945128af7536d9fd82586a853de70">advect_QKE</a>, lev, max_level);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;diffuse_QKE_3D&quot;</span>, <a class="code" href="structTurbChoice.html#abf5c21916e9737e406ff55a62f12c781">diffuse_QKE_3D</a>, lev, max_level);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="structTurbChoice.html#a1cca3daa3eed11109607efa9983ae8ed">use_KE</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;advect_KE&quot;</span>    , <a class="code" href="structTurbChoice.html#af151e25e9513f7c6a995ca82db98278c">advect_KE</a>, lev, max_level);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;diffuse_KE_3D&quot;</span>, <a class="code" href="structTurbChoice.html#a5864f0fe05bcbd45554301ade763d5ca">diffuse_KE_3D</a>, lev, max_level);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// LES constants...</span></div>
@@ -394,13 +394,13 @@ Public Attributes</h2></td></tr>
 <div class="ttc" id="astructMYNNLevel25_html_ac7e13ad757f1bdcc4d92f3065cf34931"><div class="ttname"><a href="structMYNNLevel25.html#ac7e13ad757f1bdcc4d92f3065cf34931">MYNNLevel25::SMmin</a></div><div class="ttdeci">amrex::Real SMmin</div><div class="ttdef"><b>Definition:</b> ERF_MYNNStruct.H:52</div></div>
 <div class="ttc" id="astructMYNNLevel25_html_af677ab24bae6b1f78751489a8df5b1be"><div class="ttname"><a href="structMYNNLevel25.html#af677ab24bae6b1f78751489a8df5b1be">MYNNLevel25::diffuse_moistvars</a></div><div class="ttdeci">bool diffuse_moistvars</div><div class="ttdef"><b>Definition:</b> ERF_MYNNStruct.H:60</div></div>
 <div class="ttc" id="astructMYNNLevel2_html_aaab2f004c0ddd5b3fce84004d9d450b6"><div class="ttname"><a href="structMYNNLevel2.html#aaab2f004c0ddd5b3fce84004d9d450b6">MYNNLevel2::init_coeffs</a></div><div class="ttdeci">void init_coeffs(amrex::Real A1_lvl25, amrex::Real A2_lvl25, amrex::Real B1, amrex::Real B2, amrex::Real C1, amrex::Real C2, amrex::Real C3, amrex::Real, amrex::Real C5)</div><div class="ttdef"><b>Definition:</b> ERF_MYNNStruct.H:64</div></div>
-<div class="ttc" id="astructTurbChoice_html_a0da945128af7536d9fd82586a853de70"><div class="ttname"><a href="structTurbChoice.html#a0da945128af7536d9fd82586a853de70">TurbChoice::advect_QKE</a></div><div class="ttdeci">bool advect_QKE</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:208</div></div>
+<div class="ttc" id="astructTurbChoice_html_a1cca3daa3eed11109607efa9983ae8ed"><div class="ttname"><a href="structTurbChoice.html#a1cca3daa3eed11109607efa9983ae8ed">TurbChoice::use_KE</a></div><div class="ttdeci">bool use_KE</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:206</div></div>
 <div class="ttc" id="astructTurbChoice_html_a2daa4d23f9d89ee777a0d0fbd43196b6"><div class="ttname"><a href="structTurbChoice.html#a2daa4d23f9d89ee777a0d0fbd43196b6">TurbChoice::Sc_t_inv</a></div><div class="ttdeci">amrex::Real Sc_t_inv</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:179</div></div>
 <div class="ttc" id="astructTurbChoice_html_a475d862a63ab672577fc2429f535feb9"><div class="ttname"><a href="structTurbChoice.html#a475d862a63ab672577fc2429f535feb9">TurbChoice::pbl_mynn_level2</a></div><div class="ttdeci">MYNNLevel2 pbl_mynn_level2</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:195</div></div>
+<div class="ttc" id="astructTurbChoice_html_a5864f0fe05bcbd45554301ade763d5ca"><div class="ttname"><a href="structTurbChoice.html#a5864f0fe05bcbd45554301ade763d5ca">TurbChoice::diffuse_KE_3D</a></div><div class="ttdeci">bool diffuse_KE_3D</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:207</div></div>
 <div class="ttc" id="astructTurbChoice_html_a6b8e56e5ace640df7834c013c6788020"><div class="ttname"><a href="structTurbChoice.html#a6b8e56e5ace640df7834c013c6788020">TurbChoice::pp_prefix</a></div><div class="ttdeci">std::string pp_prefix</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:166</div></div>
-<div class="ttc" id="astructTurbChoice_html_a81d6903354abbc64e7dc12b7da91070b"><div class="ttname"><a href="structTurbChoice.html#a81d6903354abbc64e7dc12b7da91070b">TurbChoice::use_QKE</a></div><div class="ttdeci">bool use_QKE</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:206</div></div>
 <div class="ttc" id="astructTurbChoice_html_aa90aa6c577f632a8c4582a3538d98ad5"><div class="ttname"><a href="structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5">TurbChoice::Pr_t_inv</a></div><div class="ttdeci">amrex::Real Pr_t_inv</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:176</div></div>
-<div class="ttc" id="astructTurbChoice_html_abf5c21916e9737e406ff55a62f12c781"><div class="ttname"><a href="structTurbChoice.html#abf5c21916e9737e406ff55a62f12c781">TurbChoice::diffuse_QKE_3D</a></div><div class="ttdeci">bool diffuse_QKE_3D</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:207</div></div>
+<div class="ttc" id="astructTurbChoice_html_af151e25e9513f7c6a995ca82db98278c"><div class="ttname"><a href="structTurbChoice.html#af151e25e9513f7c6a995ca82db98278c">TurbChoice::advect_KE</a></div><div class="ttdeci">bool advect_KE</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:208</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -416,14 +416,14 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a0da945128af7536d9fd82586a853de70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0da945128af7536d9fd82586a853de70">&#9670;&nbsp;</a></span>advect_QKE</h2>
+<a id="af151e25e9513f7c6a995ca82db98278c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af151e25e9513f7c6a995ca82db98278c">&#9670;&nbsp;</a></span>advect_KE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool TurbChoice::advect_QKE = true</td>
+          <td class="memname">bool TurbChoice::advect_KE = true</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -512,14 +512,14 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="abf5c21916e9737e406ff55a62f12c781"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf5c21916e9737e406ff55a62f12c781">&#9670;&nbsp;</a></span>diffuse_QKE_3D</h2>
+<a id="a5864f0fe05bcbd45554301ade763d5ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5864f0fe05bcbd45554301ade763d5ca">&#9670;&nbsp;</a></span>diffuse_KE_3D</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool TurbChoice::diffuse_QKE_3D = false</td>
+          <td class="memname">bool TurbChoice::diffuse_KE_3D = true</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -588,7 +588,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#af836d1bb05ac4c9f535358e14714f13e">ERF::advance_dycore()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3865612b809df828f44e9c18218b1e37">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__DiffusionSrcForState__N_8cpp.html#a61d842d8a45b6d97948ce19b106bba0a">DiffusionSrcForState_N()</a>, <a class="el" href="ERF__DiffusionSrcForState__T_8cpp.html#ab29316749b16c72caa2fe0b7558397c9">DiffusionSrcForState_T()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__make__tau__terms_8cpp.html#aeb0929ca1a4b2e5eb9719d51a5c18ab0">erf_make_tau_terms()</a>, <a class="el" href="ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a98e4d7df0dadc5b00fe3815fc11465c9">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a45aa6b97fa410c18f1eca312e43b21be">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#af836d1bb05ac4c9f535358e14714f13e">ERF::advance_dycore()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3865612b809df828f44e9c18218b1e37">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a730dd933a41b48fe17b15e46d4dce964">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__DiffusionSrcForState__N_8cpp.html#a61d842d8a45b6d97948ce19b106bba0a">DiffusionSrcForState_N()</a>, <a class="el" href="ERF__DiffusionSrcForState__T_8cpp.html#ab29316749b16c72caa2fe0b7558397c9">DiffusionSrcForState_T()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__make__tau__terms_8cpp.html#aeb0929ca1a4b2e5eb9719d51a5c18ab0">erf_make_tau_terms()</a>, <a class="el" href="ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a98e4d7df0dadc5b00fe3815fc11465c9">erf_slow_rhs_pre()</a>, <a class="el" href="structTurbChoice.html#a45aa6b97fa410c18f1eca312e43b21be">init_params()</a>, and <a class="el" href="ERF__make__sources_8cpp.html#a431216debad0efde24b80e0b5ce39c7b">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -784,19 +784,19 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a81d6903354abbc64e7dc12b7da91070b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81d6903354abbc64e7dc12b7da91070b">&#9670;&nbsp;</a></span>use_QKE</h2>
+<a id="a1cca3daa3eed11109607efa9983ae8ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cca3daa3eed11109607efa9983ae8ed">&#9670;&nbsp;</a></span>use_KE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool TurbChoice::use_QKE = false</td>
+          <td class="memname">bool TurbChoice::use_KE = true</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a730dd933a41b48fe17b15e46d4dce964">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__DiffusionSrcForState__N_8cpp.html#a61d842d8a45b6d97948ce19b106bba0a">DiffusionSrcForState_N()</a>, <a class="el" href="ERF__DiffusionSrcForState__T_8cpp.html#ab29316749b16c72caa2fe0b7558397c9">DiffusionSrcForState_T()</a>, <a class="el" href="ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, <a class="el" href="structTurbChoice.html#a45aa6b97fa410c18f1eca312e43b21be">init_params()</a>, and <a class="el" href="ERF__make__sources_8cpp.html#a431216debad0efde24b80e0b5ce39c7b">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structTurbChoice.html#a45aa6b97fa410c18f1eca312e43b21be">init_params()</a>.</p>
 
 </div>
 </div>

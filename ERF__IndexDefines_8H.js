@@ -13,7 +13,6 @@ var ERF__IndexDefines_8H =
     [ "PrimQ4_comp", "ERF__IndexDefines_8H.html#a2e038955a3c380beab1941e422ef83ea", null ],
     [ "PrimQ5_comp", "ERF__IndexDefines_8H.html#a7f9c844ee8a2e1930ade0911e8692667", null ],
     [ "PrimQ6_comp", "ERF__IndexDefines_8H.html#a4d0a4735b7019c88a28b42c3d4787154", null ],
-    [ "PrimQKE_comp", "ERF__IndexDefines_8H.html#ad6174e899597e766afde82f9c11def75", null ],
     [ "PrimScalar_comp", "ERF__IndexDefines_8H.html#aa9d1308b0d214f7bfbe9b8c11c4176b7", null ],
     [ "PrimTheta_comp", "ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040", null ],
     [ "Rho_comp", "ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49", null ],
@@ -24,7 +23,6 @@ var ERF__IndexDefines_8H =
     [ "RhoQ4_comp", "ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da", null ],
     [ "RhoQ5_comp", "ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7", null ],
     [ "RhoQ6_comp", "ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064", null ],
-    [ "RhoQKE_comp", "ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93", null ],
     [ "RhoScalar_comp", "ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f", null ],
     [ "RhoTheta_comp", "ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877", null ],
     [ "AdvType", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70", [

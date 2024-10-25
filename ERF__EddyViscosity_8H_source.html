@@ -127,42 +127,42 @@ $(document).ready(function(){initNavTree('ERF__EddyViscosity_8H_source.html','')
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; use_most,</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; exp_most)</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    amrex::Real s11bar = tau11(i,j,k);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    amrex::Real s22bar = tau22(i,j,k);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    amrex::Real s33bar = tau33(i,j,k);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    amrex::Real s12bar = 0.25 * ( tau12(i  , j  , k  ) + tau12(i  , j+1, k  )</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                + tau12(i+1, j  , k  ) + tau12(i+1, j+1, k  ) );</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// NOTES:</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// - If ERF_EXPLICIT_MOST_STRESS is not used, then we do not use the</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//   strains lying on the bottom boundary with MOST. These values are</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">//   corrupted with the reflect odd BC used to fill the ghost cells.</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// - Neglecting the strains on the bottom boundary and using a one-</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//   sided average implies that the strains are equal at klo and klo+1.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//   du/dz and dv/dz can be assumed to be equal through the first cell.</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">//   However, whereas dw/dx = dw/dy = 0 on the surface, this is not true at</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//   klo+1. Therefore, the strains are not equal in general.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// - If ERF_EXPLICIT_MOST_STRESS _is_ used, then strains may be correctly</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">//   evaluated at the surface and no assumptions are needed.</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    amrex::Real s13bar;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (use_most &amp;&amp; k==klo &amp;&amp; !exp_most) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        s13bar = 0.5  * ( tau13(i  , j  , k+1) + tau13(i+1, j  , k+1) );</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        s13bar = 0.25 * ( tau13(i  , j  , k  ) + tau13(i  , j  , k+1)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        + tau13(i+1, j  , k  ) + tau13(i+1, j  , k+1) );</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    amrex::Real s23bar;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (use_most &amp;&amp; k==klo &amp;&amp; !exp_most) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        s23bar = 0.5  * ( tau23(i  , j  , k+1) + tau23(i  , j+1, k+1) );</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        s23bar = 0.25 * ( tau23(i  , j  , k  ) + tau23(i  , j  , k+1)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        + tau23(i  , j+1, k  ) + tau23(i  , j+1, k+1) );</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// NOTES:</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// - If ERF_EXPLICIT_MOST_STRESS is not used, then we do not use the</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//   strains lying on the bottom boundary with MOST. These values are</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//   corrupted with the reflect odd BC used to fill the ghost cells.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// - Neglecting the strains on the bottom boundary and using a one-</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//   sided average implies that the strains are equal at klo and klo+1.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">//   du/dz and dv/dz can be assumed to be equal through the first cell.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//   However, whereas dw/dx = dw/dy = 0 on the surface, this is not true at</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//   klo+1. Therefore, the strains are not equal in general.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// - If ERF_EXPLICIT_MOST_STRESS _is_ used, then strains may be correctly</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">//   evaluated at the surface and no assumptions are needed.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    amrex::Real s13bar;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (use_most &amp;&amp; k==klo &amp;&amp; !exp_most) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        s13bar = 0.5  * ( tau13(i  , j  , k+1) + tau13(i+1, j  , k+1) );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        s13bar = 0.25 * ( tau13(i  , j  , k  ) + tau13(i  , j  , k+1)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        + tau13(i+1, j  , k  ) + tau13(i+1, j  , k+1) );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    amrex::Real s23bar;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (use_most &amp;&amp; k==klo &amp;&amp; !exp_most) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        s23bar = 0.5  * ( tau23(i  , j  , k+1) + tau23(i  , j+1, k+1) );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        s23bar = 0.25 * ( tau23(i  , j  , k  ) + tau23(i  , j  , k+1)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        + tau23(i  , j+1, k  ) + tau23(i  , j+1, k+1) );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    amrex::Real s11bar = tau11(i,j,k);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    amrex::Real s22bar = tau22(i,j,k);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    amrex::Real s33bar = tau33(i,j,k);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    amrex::Real s12bar = 0.25 * ( tau12(i  , j  , k  ) + tau12(i  , j+1, k  )</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                + tau12(i+1, j  , k  ) + tau12(i+1, j+1, k  ) );</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    amrex::Real SmnSmn = s11bar*s11bar + s22bar*s22bar + s33bar*s33bar</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                       + 2.0*s12bar*s12bar + 2.0*s13bar*s13bar + 2.0*s23bar*s23bar;</div>
@@ -174,8 +174,8 @@ $(document).ready(function(){initNavTree('ERF__EddyViscosity_8H_source.html','')
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__EddyViscosity_8H_html_a1d775f0ce64d37053b33d514438ee856"><div class="ttname"><a href="ERF__EddyViscosity_8H.html#a1d775f0ce64d37053b33d514438ee856">ComputeSmnSmn</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeSmnSmn(int &amp;i, int &amp;j, int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau11, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau22, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau33, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau12, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau13, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau23, const int &amp;klo, const bool &amp;use_most, const bool &amp;exp_most)</div><div class="ttdef"><b>Definition:</b> ERF_EddyViscosity.H:31</div></div>
 <div class="ttc" id="aERF__EddyViscosity_8H_html_a2b687f91a8d8385766be20222af4ccac"><div class="ttname"><a href="ERF__EddyViscosity_8H.html#a2b687f91a8d8385766be20222af4ccac">ComputeTurbulentViscosity</a></div><div class="ttdeci">void ComputeTurbulentViscosity(const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;Tau11, const amrex::MultiFab &amp;Tau22, const amrex::MultiFab &amp;Tau33, const amrex::MultiFab &amp;Tau12, const amrex::MultiFab &amp;Tau13, const amrex::MultiFab &amp;Tau23, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, amrex::MultiFab &amp;Hfx1, amrex::MultiFab &amp;Hfx2, amrex::MultiFab &amp;Hfx3, amrex::MultiFab &amp;Diss, const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;mapfac_u, const amrex::MultiFab &amp;mapfac_v, const std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; ABLMost &gt; &amp;most, const bool &amp;exp_most, const bool &amp;use_moisture, int level, const amrex::BCRec *bc_ptr, bool vert_only=false)</div></div>
-<div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:133</div></div>
-<div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:134</div></div>
+<div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:130</div></div>
+<div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:131</div></div>
 <div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:78</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

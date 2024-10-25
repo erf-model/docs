@@ -4,7 +4,6 @@ var ERF__Derive_8H =
     [ "erf_dermagvel", "ERF__Derive_8H.html#a5186c6ea33e82af321f529242a615dc2", null ],
     [ "erf_dermoisttemp", "ERF__Derive_8H.html#a7292c8c78a618eb0f6ca6a5356705362", null ],
     [ "erf_dernull", "ERF__Derive_8H.html#a7128ad75cf0f6b317ae8689bd7eb1597", null ],
-    [ "erf_derQKE", "ERF__Derive_8H.html#a268588c6b7dfb634a44ff9b66e852807", null ],
     [ "erf_derrhodivide", "ERF__Derive_8H.html#a9935603239fe8510b11179da8e76c39c", null ],
     [ "erf_derscalar", "ERF__Derive_8H.html#a13666be87e55d1759f57322b33f7e495", null ],
     [ "erf_dersoundspeed", "ERF__Derive_8H.html#abec1266940e40d642fca2aa685b7f314", null ],

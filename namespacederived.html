@@ -107,8 +107,6 @@ Functions</h2></td></tr>
 <tr class="separator:a37560f4d3e2c7c10f64d41db2ce76a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc3f245c73a0826afc9e7626f12126d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederived.html#acc3f245c73a0826afc9e7626f12126d3">erf_derKE</a> (const Box &amp;bx, FArrayBox &amp;derfab, int, int, const FArrayBox &amp;datfab, const Geometry &amp;, Real, const int *, const int)</td></tr>
 <tr class="separator:acc3f245c73a0826afc9e7626f12126d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3b06be920cca917ee17183db46d77ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederived.html#ad3b06be920cca917ee17183db46d77ba">erf_derQKE</a> (const Box &amp;bx, FArrayBox &amp;derfab, int, int, const FArrayBox &amp;datfab, const Geometry &amp;, Real, const int *, const int)</td></tr>
-<tr class="separator:ad3b06be920cca917ee17183db46d77ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a37dd4fa4a044e34891e6222d06654c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederived.html#a0a37dd4fa4a044e34891e6222d06654c">erf_dervortx</a> (const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real, const int *, const int)</td></tr>
 <tr class="separator:a0a37dd4fa4a044e34891e6222d06654c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a85aedf7c75ca416dbb931559c4b21e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederived.html#a2a85aedf7c75ca416dbb931559c4b21e">erf_dervorty</a> (const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real, const int *, const int)</td></tr>
@@ -133,8 +131,6 @@ Functions</h2></td></tr>
 <tr class="separator:a13666be87e55d1759f57322b33f7e495"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaeabd5f649796984f61651a6733e96b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederived.html#aeaeabd5f649796984f61651a6733e96b">erf_derKE</a> (const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real time, const int *bcrec, const int level)</td></tr>
 <tr class="separator:aeaeabd5f649796984f61651a6733e96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a268588c6b7dfb634a44ff9b66e852807"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederived.html#a268588c6b7dfb634a44ff9b66e852807">erf_derQKE</a> (const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real time, const int *bcrec, const int level)</td></tr>
-<tr class="separator:a268588c6b7dfb634a44ff9b66e852807"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aeaeabd5f649796984f61651a6733e96b"></a>
@@ -371,21 +367,21 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;{</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    AMREX_ALWAYS_ASSERT(dcomp == 0);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    AMREX_ALWAYS_ASSERT(ncomp == 1);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered magvel</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    {</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        Real u = dat(i,j,k,0);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        Real v = dat(i,j,k,1);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        Real w = dat(i,j,k,2);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        tfab(i,j,k,dcomp) = std::sqrt(u*u + v*v + w*w);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    });</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;{</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    AMREX_ALWAYS_ASSERT(dcomp == 0);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    AMREX_ALWAYS_ASSERT(ncomp == 1);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered magvel</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        Real u = dat(i,j,k,0);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        Real v = dat(i,j,k,1);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        Real w = dat(i,j,k,2);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        tfab(i,j,k,dcomp) = std::sqrt(u*u + v*v + w*w);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    });</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a98cccb83ca76c44d6ae583d051e76faf">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
@@ -553,7 +549,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__EOS_8H_html_a65cf1718b7a1fcc56cb16685642543da"><div class="ttname"><a href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:42</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:43</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a3e8bdf864aa73d27b5870cf155c3a86aa89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:30</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a3e8bdf864aa73d27b5870cf155c3a86aaf099273d19f4b8cdca199c5177231e35"><div class="ttname"><a href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aaf099273d19f4b8cdca199c5177231e35">MicVar_Kess::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:36</div></div>
 </div><!-- fragment -->
@@ -733,172 +729,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a268588c6b7dfb634a44ff9b66e852807"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a268588c6b7dfb634a44ff9b66e852807">&#9670;&nbsp;</a></span>erf_derQKE() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void derived::erf_derQKE </td>
-          <td>(</td>
-          <td class="paramtype">const amrex::Box &amp;&#160;</td>
-          <td class="paramname"><em>bx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::FArrayBox &amp;&#160;</td>
-          <td class="paramname"><em>derfab</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ncomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::FArrayBox &amp;&#160;</td>
-          <td class="paramname"><em>datfab</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
-          <td class="paramname"><em>geomdata</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Real&#160;</td>
-          <td class="paramname"><em>time</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int *&#160;</td>
-          <td class="paramname"><em>bcrec</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>level</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad3b06be920cca917ee17183db46d77ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3b06be920cca917ee17183db46d77ba">&#9670;&nbsp;</a></span>erf_derQKE() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void derived::erf_derQKE </td>
-          <td>(</td>
-          <td class="paramtype">const Box &amp;&#160;</td>
-          <td class="paramname"><em>bx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">FArrayBox &amp;&#160;</td>
-          <td class="paramname"><em>derfab</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const FArrayBox &amp;&#160;</td>
-          <td class="paramname"><em>datfab</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Geometry &amp;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Function to define QKE by dividing (rho QKE) by rho</p>
-<p>@params[in] bx box on which to divide by density @params[out] derfab array of derived quantity &ndash; here it holds QKE @params[in] datfab array of data used to construct derived quantity </p>
-<div class="fragment"><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;{</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a>);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_ac190f1f4846f6e6e31628041150f3d93"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ac190f1f4846f6e6e31628041150f3d93">RhoQKE_comp</a></div><div class="ttdeci">#define RhoQKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:39</div></div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a98cccb83ca76c44d6ae583d051e76faf">ERF::WritePlotFile()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacederived_ad3b06be920cca917ee17183db46d77ba_cgraph.png" border="0" usemap="#anamespacederived_ad3b06be920cca917ee17183db46d77ba_cgraph" alt=""/></div>
-<map name="anamespacederived_ad3b06be920cca917ee17183db46d77ba_cgraph" id="anamespacederived_ad3b06be920cca917ee17183db46d77ba_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,157,32"/>
-<area shape="rect" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1" title=" " alt="" coords="205,5,392,32"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacederived_ad3b06be920cca917ee17183db46d77ba_icgraph.png" border="0" usemap="#anamespacederived_ad3b06be920cca917ee17183db46d77ba_icgraph" alt=""/></div>
-<map name="anamespacederived_ad3b06be920cca917ee17183db46d77ba_icgraph" id="anamespacederived_ad3b06be920cca917ee17183db46d77ba_icgraph">
-<area shape="rect" title=" " alt="" coords="191,5,343,32"/>
-<area shape="rect" href="classERF.html#a98cccb83ca76c44d6ae583d051e76faf" title=" " alt="" coords="5,5,143,32"/>
-</map>
-</div>
-
-</div>
-</div>
 <a id="a9935603239fe8510b11179da8e76c39c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9935603239fe8510b11179da8e76c39c">&#9670;&nbsp;</a></span>erf_derrhodivide() <span class="overload">[1/2]</span></h2>
 
@@ -991,20 +821,19 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    });</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespacederived.html#acc3f245c73a0826afc9e7626f12126d3">erf_derKE()</a>, <a class="el" href="namespacederived.html#ad3b06be920cca917ee17183db46d77ba">erf_derQKE()</a>, <a class="el" href="namespacederived.html#a37560f4d3e2c7c10f64d41db2ce76a06">erf_derscalar()</a>, <a class="el" href="namespacederived.html#adc3c787125484205e4fc7cd85c25ab6c">erf_dertheta()</a>, and <a class="el" href="classWriteBndryPlanes.html#a7159618bddef843704e44e71cebd5d8b">WriteBndryPlanes::write_planes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespacederived.html#acc3f245c73a0826afc9e7626f12126d3">erf_derKE()</a>, <a class="el" href="namespacederived.html#a37560f4d3e2c7c10f64d41db2ce76a06">erf_derscalar()</a>, <a class="el" href="namespacederived.html#adc3c787125484205e4fc7cd85c25ab6c">erf_dertheta()</a>, and <a class="el" href="classWriteBndryPlanes.html#a7159618bddef843704e44e71cebd5d8b">WriteBndryPlanes::write_planes()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacederived_a3786c6a8399bc2508bc129337c446af1_icgraph.png" border="0" usemap="#anamespacederived_a3786c6a8399bc2508bc129337c446af1_icgraph" alt=""/></div>
 <map name="anamespacederived_a3786c6a8399bc2508bc129337c446af1_icgraph" id="anamespacederived_a3786c6a8399bc2508bc129337c446af1_icgraph">
-<area shape="rect" title=" " alt="" coords="417,107,604,133"/>
-<area shape="rect" href="namespacederived.html#acc3f245c73a0826afc9e7626f12126d3" title=" " alt="" coords="209,56,351,83"/>
-<area shape="rect" href="namespacederived.html#ad3b06be920cca917ee17183db46d77ba" title=" " alt="" coords="204,5,356,32"/>
-<area shape="rect" href="namespacederived.html#a37560f4d3e2c7c10f64d41db2ce76a06" title=" " alt="" coords="198,157,362,184"/>
+<area shape="rect" title=" " alt="" coords="417,81,604,108"/>
+<area shape="rect" href="namespacederived.html#acc3f245c73a0826afc9e7626f12126d3" title=" " alt="" coords="209,5,351,32"/>
+<area shape="rect" href="namespacederived.html#a37560f4d3e2c7c10f64d41db2ce76a06" title=" " alt="" coords="198,56,362,83"/>
 <area shape="rect" href="namespacederived.html#adc3c787125484205e4fc7cd85c25ab6c" title=" " alt="" coords="201,107,359,133"/>
-<area shape="rect" href="classWriteBndryPlanes.html#a7159618bddef843704e44e71cebd5d8b" title=" " alt="" coords="191,209,369,250"/>
-<area shape="rect" href="classERF.html#a98cccb83ca76c44d6ae583d051e76faf" title=" " alt="" coords="5,81,143,108"/>
-<area shape="rect" href="classERF.html#a18e6dbbf968b4492e78aa427791620f4" title=" " alt="" coords="21,132,127,159"/>
+<area shape="rect" href="classWriteBndryPlanes.html#a7159618bddef843704e44e71cebd5d8b" title=" " alt="" coords="191,158,369,199"/>
+<area shape="rect" href="classERF.html#a98cccb83ca76c44d6ae583d051e76faf" title=" " alt="" coords="5,56,143,83"/>
+<area shape="rect" href="classERF.html#a18e6dbbf968b4492e78aa427791620f4" title=" " alt="" coords="21,107,127,133"/>
 </map>
 </div>
 
@@ -1152,7 +981,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:41</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:40</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a18e6dbbf968b4492e78aa427791620f4">ERF::ErrorEst()</a>, and <a class="el" href="classERF.html#a98cccb83ca76c44d6ae583d051e76faf">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
@@ -1764,22 +1593,22 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;{</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    AMREX_ALWAYS_ASSERT(dcomp == 0);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    AMREX_ALWAYS_ASSERT(ncomp == 1);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity x-component</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keyword">const</span> Real dy = geomdata.CellSize(1);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keyword">const</span> Real dz = geomdata.CellSize(2);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        tfab(i,j,k,dcomp) = (dat(i,j+1,k,2) - dat(i,j-1,k,2)) / (2.0*dy)  <span class="comment">// dw/dy</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                          - (dat(i,j,k+1,1) - dat(i,j,k-1,1)) / (2.0*dz); <span class="comment">// dv/dz</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    });</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    AMREX_ALWAYS_ASSERT(dcomp == 0);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    AMREX_ALWAYS_ASSERT(ncomp == 1);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity x-component</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keyword">const</span> Real dy = geomdata.CellSize(1);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keyword">const</span> Real dz = geomdata.CellSize(2);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        tfab(i,j,k,dcomp) = (dat(i,j+1,k,2) - dat(i,j-1,k,2)) / (2.0*dy)  <span class="comment">// dw/dy</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                          - (dat(i,j,k+1,1) - dat(i,j,k-1,1)) / (2.0*dz); <span class="comment">// dv/dz</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    });</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a98cccb83ca76c44d6ae583d051e76faf">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
@@ -1861,22 +1690,22 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;{</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    AMREX_ALWAYS_ASSERT(dcomp == 0);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    AMREX_ALWAYS_ASSERT(ncomp == 1);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity y-component</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keyword">const</span> Real dx = geomdata.CellSize(0);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keyword">const</span> Real dz = geomdata.CellSize(2);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        tfab(i,j,k,dcomp) = (dat(i,j,k+1,0) - dat(i,j,k-1,0)) / (2.0*dz)  <span class="comment">// du/dz</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                          - (dat(i+1,j,k,2) - dat(i-1,j,k,2)) / (2.0*dx); <span class="comment">// dw/dx</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    });</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;{</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    AMREX_ALWAYS_ASSERT(dcomp == 0);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    AMREX_ALWAYS_ASSERT(ncomp == 1);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity y-component</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keyword">const</span> Real dx = geomdata.CellSize(0);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keyword">const</span> Real dz = geomdata.CellSize(2);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        tfab(i,j,k,dcomp) = (dat(i,j,k+1,0) - dat(i,j,k-1,0)) / (2.0*dz)  <span class="comment">// du/dz</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                          - (dat(i+1,j,k,2) - dat(i-1,j,k,2)) / (2.0*dx); <span class="comment">// dw/dx</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    });</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a98cccb83ca76c44d6ae583d051e76faf">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">
@@ -1958,22 +1787,22 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;{</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    AMREX_ALWAYS_ASSERT(dcomp == 0);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    AMREX_ALWAYS_ASSERT(ncomp == 1);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity z-component</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keyword">const</span> Real dx = geomdata.CellSize(0);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keyword">const</span> Real dy = geomdata.CellSize(2);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        tfab(i,j,k,dcomp) = (dat(i+1,j,k,1) - dat(i-1,j,k,1)) / (2.0*dx)  <span class="comment">// dv/dx</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                          - (dat(i,j+1,k,0) - dat(i,j-1,k,0)) / (2.0*dy); <span class="comment">// du/dy</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    });</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    AMREX_ALWAYS_ASSERT(dcomp == 0);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    AMREX_ALWAYS_ASSERT(ncomp == 1);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity z-component</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keyword">const</span> Real dx = geomdata.CellSize(0);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keyword">const</span> Real dy = geomdata.CellSize(2);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    ParallelFor(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    {</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        tfab(i,j,k,dcomp) = (dat(i+1,j,k,1) - dat(i-1,j,k,1)) / (2.0*dx)  <span class="comment">// dv/dx</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                          - (dat(i,j+1,k,0) - dat(i,j-1,k,0)) / (2.0*dy); <span class="comment">// du/dy</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    });</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a98cccb83ca76c44d6ae583d051e76faf">ERF::WritePlotFile()</a>.</p>
 <div class="dynheader">

@@ -16,8 +16,6 @@ var namespaces_dup =
       [ "erf_dermoisttemp", "namespacederived.html#add1791d7423c133ba6e7ab55975cf34f", null ],
       [ "erf_dernull", "namespacederived.html#a7128ad75cf0f6b317ae8689bd7eb1597", null ],
       [ "erf_dernull", "namespacederived.html#a7fb98e12fceaa6f691dfef83db453757", null ],
-      [ "erf_derQKE", "namespacederived.html#a268588c6b7dfb634a44ff9b66e852807", null ],
-      [ "erf_derQKE", "namespacederived.html#ad3b06be920cca917ee17183db46d77ba", null ],
       [ "erf_derrhodivide", "namespacederived.html#a9935603239fe8510b11179da8e76c39c", null ],
       [ "erf_derrhodivide", "namespacederived.html#a3786c6a8399bc2508bc129337c446af1", null ],
       [ "erf_derscalar", "namespacederived.html#a13666be87e55d1759f57322b33f7e495", null ],
