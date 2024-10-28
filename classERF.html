@@ -274,6 +274,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2135641de33dea5057799569c74cac42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae17524f168760cf435685a08d97480e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#ae17524f168760cf435685a08d97480e7">AverageDownTo</a> (int crse_lev, int scomp, int ncomp)</td></tr>
 <tr class="separator:ae17524f168760cf435685a08d97480e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad101fd46096db2d6b21544bfede6551f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#ad101fd46096db2d6b21544bfede6551f">WriteCheckpointFile</a> () const</td></tr>
+<tr class="separator:ad101fd46096db2d6b21544bfede6551f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af285247b24b173cd851fe49799d17f42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#af285247b24b173cd851fe49799d17f42">ReadCheckpointFile</a> ()</td></tr>
+<tr class="separator:af285247b24b173cd851fe49799d17f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53fbe0d6ca7ba034c618eb7052ed9771"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a53fbe0d6ca7ba034c618eb7052ed9771">ReadCheckpointFileMOST</a> ()</td></tr>
+<tr class="separator:a53fbe0d6ca7ba034c618eb7052ed9771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2d8099655a8779836e63e3e98ea4372"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#aa2d8099655a8779836e63e3e98ea4372">writeJobInfo</a> (const std::string &amp;dir) const</td></tr>
 <tr class="separator:aa2d8099655a8779836e63e3e98ea4372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -376,12 +382,6 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a7758f75dc7c9029eddc4c58ac0567654"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3079a30cce7e1a01d5c9705f393b5a63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a3079a30cce7e1a01d5c9705f393b5a63">init_Dirichlet_bc_data</a> (const std::string input_file)</td></tr>
 <tr class="separator:a3079a30cce7e1a01d5c9705f393b5a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad101fd46096db2d6b21544bfede6551f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#ad101fd46096db2d6b21544bfede6551f">WriteCheckpointFile</a> () const</td></tr>
-<tr class="separator:ad101fd46096db2d6b21544bfede6551f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af285247b24b173cd851fe49799d17f42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#af285247b24b173cd851fe49799d17f42">ReadCheckpointFile</a> ()</td></tr>
-<tr class="separator:af285247b24b173cd851fe49799d17f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53fbe0d6ca7ba034c618eb7052ed9771"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a53fbe0d6ca7ba034c618eb7052ed9771">ReadCheckpointFileMOST</a> ()</td></tr>
-<tr class="separator:a53fbe0d6ca7ba034c618eb7052ed9771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e1874d47d95c7c858c2a2336fd0eee6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a2e1874d47d95c7c858c2a2336fd0eee6">InitializeFromFile</a> ()</td></tr>
 <tr class="separator:a2e1874d47d95c7c858c2a2336fd0eee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a914f576acc2d1a54203a220cce10df62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a914f576acc2d1a54203a220cce10df62">InitializeLevelFromData</a> (int lev, const amrex::MultiFab &amp;initial_data)</td></tr>
@@ -4741,7 +4741,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a72a59614c6d5ab840b924c84d5682270"><div class="ttname"><a href="classERF.html#a72a59614c6d5ab840b924c84d5682270">ERF::z_t_rk</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; z_t_rk</div><div class="ttdef"><b>Definition:</b> ERF.H:795</div></div>
 <div class="ttc" id="aclassERF_html_a79705c02d6f25fbdcec14ca2432e5da1"><div class="ttname"><a href="classERF.html#a79705c02d6f25fbdcec14ca2432e5da1">ERF::plot_var_names_2</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; plot_var_names_2</div><div class="ttdef"><b>Definition:</b> ERF.H:897</div></div>
 <div class="ttc" id="aclassERF_html_a83473e4b18de294a8b97dcdbbf048551"><div class="ttname"><a href="classERF.html#a83473e4b18de294a8b97dcdbbf048551">ERF::Lwave_onegrid</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; Lwave_onegrid</div><div class="ttdef"><b>Definition:</b> ERF.H:808</div></div>
-<div class="ttc" id="aclassERF_html_a902f60d94be5eaf86361d1d5ad942105"><div class="ttname"><a href="classERF.html#a902f60d94be5eaf86361d1d5ad942105">ERF::xvel_bc_data</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt; xvel_bc_data</div><div class="ttdef"><b>Definition:</b> ERF.H:633</div></div>
+<div class="ttc" id="aclassERF_html_a902f60d94be5eaf86361d1d5ad942105"><div class="ttname"><a href="classERF.html#a902f60d94be5eaf86361d1d5ad942105">ERF::xvel_bc_data</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt; xvel_bc_data</div><div class="ttdef"><b>Definition:</b> ERF.H:642</div></div>
 <div class="ttc" id="aclassERF_html_a93bc9185c89cbeaceffaf40b8cf4a75c"><div class="ttname"><a href="classERF.html#a93bc9185c89cbeaceffaf40b8cf4a75c">ERF::ax</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; ax</div><div class="ttdef"><b>Definition:</b> ERF.H:779</div></div>
 <div class="ttc" id="aclassERF_html_a9a411e0ea9d9bdbfab957c8081229091"><div class="ttname"><a href="classERF.html#a9a411e0ea9d9bdbfab957c8081229091">ERF::detJ_cc_src</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; detJ_cc_src</div><div class="ttdef"><b>Definition:</b> ERF.H:784</div></div>
 <div class="ttc" id="aclassERF_html_aa20bd15dbe2c801bda2d3bfdb5b81eab"><div class="ttname"><a href="classERF.html#aa20bd15dbe2c801bda2d3bfdb5b81eab">ERF::ay_src</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; ay_src</div><div class="ttdef"><b>Definition:</b> ERF.H:786</div></div>
@@ -4758,9 +4758,9 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_ada098767690d194f89717b0deb3adeac"><div class="ttname"><a href="classERF.html#ada098767690d194f89717b0deb3adeac">ERF::zflux_imask</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; zflux_imask</div><div class="ttdef"><b>Definition:</b> ERF.H:835</div></div>
 <div class="ttc" id="aclassERF_html_ade870f983d113c64406bdcb8a9194044"><div class="ttname"><a href="classERF.html#ade870f983d113c64406bdcb8a9194044">ERF::ay</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; ay</div><div class="ttdef"><b>Definition:</b> ERF.H:780</div></div>
 <div class="ttc" id="aclassERF_html_adf9043b29880747cfe0cf12ab19bf4ae"><div class="ttname"><a href="classERF.html#adf9043b29880747cfe0cf12ab19bf4ae">ERF::ax_new</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; ax_new</div><div class="ttdef"><b>Definition:</b> ERF.H:791</div></div>
-<div class="ttc" id="aclassERF_html_ae08c25dcf643c6ef39f27d7dd0cb7423"><div class="ttname"><a href="classERF.html#ae08c25dcf643c6ef39f27d7dd0cb7423">ERF::zvel_bc_data</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt; zvel_bc_data</div><div class="ttdef"><b>Definition:</b> ERF.H:635</div></div>
+<div class="ttc" id="aclassERF_html_ae08c25dcf643c6ef39f27d7dd0cb7423"><div class="ttname"><a href="classERF.html#ae08c25dcf643c6ef39f27d7dd0cb7423">ERF::zvel_bc_data</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt; zvel_bc_data</div><div class="ttdef"><b>Definition:</b> ERF.H:644</div></div>
 <div class="ttc" id="aclassERF_html_ae39bf64c5306b1dd939d82d9df728daa"><div class="ttname"><a href="classERF.html#ae39bf64c5306b1dd939d82d9df728daa">ERF::detJ_cc_new</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; detJ_cc_new</div><div class="ttdef"><b>Definition:</b> ERF.H:790</div></div>
-<div class="ttc" id="aclassERF_html_ae5e40fcd6dd76c80d0b5b09be5baef97"><div class="ttname"><a href="classERF.html#ae5e40fcd6dd76c80d0b5b09be5baef97">ERF::yvel_bc_data</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt; yvel_bc_data</div><div class="ttdef"><b>Definition:</b> ERF.H:634</div></div>
+<div class="ttc" id="aclassERF_html_ae5e40fcd6dd76c80d0b5b09be5baef97"><div class="ttname"><a href="classERF.html#ae5e40fcd6dd76c80d0b5b09be5baef97">ERF::yvel_bc_data</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt; yvel_bc_data</div><div class="ttdef"><b>Definition:</b> ERF.H:643</div></div>
 <div class="ttc" id="aclassERF_html_aef05cf88e9e9d2b56112336761493977"><div class="ttname"><a href="classERF.html#aef05cf88e9e9d2b56112336761493977">ERF::Hwave</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; Hwave</div><div class="ttdef"><b>Definition:</b> ERF.H:805</div></div>
 <div class="ttc" id="aclassERF_html_aefa640a036c25b7b770e88a5f838eb2a"><div class="ttname"><a href="classERF.html#aefa640a036c25b7b770e88a5f838eb2a">ERF::istep</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; istep</div><div class="ttdef"><b>Definition:</b> ERF.H:673</div></div>
 <div class="ttc" id="aclassERF_html_af044f075df34caa2a530aa13e1801a5b"><div class="ttname"><a href="classERF.html#af044f075df34caa2a530aa13e1801a5b">ERF::xflux_imask</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; xflux_imask</div><div class="ttdef"><b>Definition:</b> ERF.H:833</div></div>
@@ -7649,7 +7649,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__init__from__input__sounding_8cpp_html_a3b07949826938e59fdd5ce25417d3676"><div class="ttname"><a href="ERF__init__from__input__sounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676">init_bx_scalars_from_input_sounding_hse</a></div><div class="ttdeci">void init_bx_scalars_from_input_sounding_hse(const Box &amp;bx, Array4&lt; Real &gt; const &amp;state, Array4&lt; Real &gt; const &amp;r_hse_arr, Array4&lt; Real &gt; const &amp;p_hse_arr, Array4&lt; Real &gt; const &amp;pi_hse_arr, Array4&lt; Real &gt; const &amp;th_hse_arr, GeometryData const &amp;geomdata, Array4&lt; const Real &gt; const &amp;z_cc_arr, const Real &amp;l_gravity, const Real &amp;l_rdOcp, const bool &amp;l_moist, InputSoundingData const &amp;inputSoundingData)</div><div class="ttdef"><b>Definition:</b> ERF_init_from_input_sounding.cpp:222</div></div>
 <div class="ttc" id="aERF__init__from__input__sounding_8cpp_html_a3e2549542024fc00744ba8077f71f1fb"><div class="ttname"><a href="ERF__init__from__input__sounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb">init_bx_velocities_from_input_sounding</a></div><div class="ttdeci">void init_bx_velocities_from_input_sounding(const Box &amp;bx, Array4&lt; Real &gt; const &amp;x_vel, Array4&lt; Real &gt; const &amp;y_vel, Array4&lt; Real &gt; const &amp;z_vel, GeometryData const &amp;geomdata, Array4&lt; const Real &gt; const &amp;z_nd_arr, InputSoundingData const &amp;inputSoundingData)</div><div class="ttdef"><b>Definition:</b> ERF_init_from_input_sounding.cpp:323</div></div>
 <div class="ttc" id="aclassERF_html_a2eb81c590271b429f132103c9af25830"><div class="ttname"><a href="classERF.html#a2eb81c590271b429f132103c9af25830">ERF::init_sounding_ideal</a></div><div class="ttdeci">static bool init_sounding_ideal</div><div class="ttdef"><b>Definition:</b> ERF.H:998</div></div>
-<div class="ttc" id="aclassERF_html_a83572d8dfad51158945b4a5ab06b2f72"><div class="ttname"><a href="classERF.html#a83572d8dfad51158945b4a5ab06b2f72">ERF::input_sounding_data</a></div><div class="ttdeci">InputSoundingData input_sounding_data</div><div class="ttdef"><b>Definition:</b> ERF.H:627</div></div>
+<div class="ttc" id="aclassERF_html_a83572d8dfad51158945b4a5ab06b2f72"><div class="ttname"><a href="classERF.html#a83572d8dfad51158945b4a5ab06b2f72">ERF::input_sounding_data</a></div><div class="ttdeci">InputSoundingData input_sounding_data</div><div class="ttdef"><b>Definition:</b> ERF.H:636</div></div>
 <div class="ttc" id="anamespaceBCVars_html_aa5bb40192aa03c435b8f7096cb02e16da970567f2fd13e49ae300e8d39fd2ae30"><div class="ttname"><a href="namespaceBCVars.html#aa5bb40192aa03c435b8f7096cb02e16da970567f2fd13e49ae300e8d39fd2ae30">BCVars::base_bc</a></div><div class="ttdeci">@ base_bc</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:87</div></div>
 <div class="ttc" id="anamespaceBaseState_html_aefae5e49424e5a49cb1583149be26dcaaaf394bbf6aa8da56fc479f2ed5a2a372"><div class="ttname"><a href="namespaceBaseState.html#aefae5e49424e5a49cb1583149be26dcaaaf394bbf6aa8da56fc479f2ed5a2a372">BaseState::th0_comp</a></div><div class="ttdeci">@ th0_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:66</div></div>
 <div class="ttc" id="astructInputSoundingData_html_a42fe67445aa283176274575444cbf7ef"><div class="ttname"><a href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">InputSoundingData::resize_arrays</a></div><div class="ttdeci">void resize_arrays()</div><div class="ttdef"><b>Definition:</b> ERF_InputSoundingData.H:60</div></div>
@@ -9851,7 +9851,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classERF.html#a8cb877a46fd94b5294425299dcb9cbaf">input_sponge_data</a>.<a class="code" href="structInputSpongeData.html#a75a39e770aef38396af5f31cda9879fc">read_from_file</a>(geom[lev], <a class="code" href="classERF.html#ace4f0c79f84075dd7a43bd2b0ede1a9b">zlevels_stag</a>[lev]);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="ttc" id="aclassERF_html_a8cb877a46fd94b5294425299dcb9cbaf"><div class="ttname"><a href="classERF.html#a8cb877a46fd94b5294425299dcb9cbaf">ERF::input_sponge_data</a></div><div class="ttdeci">InputSpongeData input_sponge_data</div><div class="ttdef"><b>Definition:</b> ERF.H:630</div></div>
+<div class="ttc" id="aclassERF_html_a8cb877a46fd94b5294425299dcb9cbaf"><div class="ttname"><a href="classERF.html#a8cb877a46fd94b5294425299dcb9cbaf">ERF::input_sponge_data</a></div><div class="ttdeci">InputSpongeData input_sponge_data</div><div class="ttdef"><b>Definition:</b> ERF.H:639</div></div>
 <div class="ttc" id="astructInputSpongeData_html_a75a39e770aef38396af5f31cda9879fc"><div class="ttname"><a href="structInputSpongeData.html#a75a39e770aef38396af5f31cda9879fc">InputSpongeData::read_from_file</a></div><div class="ttdeci">void read_from_file(const amrex::Geometry &amp;geom, const amrex::Vector&lt; amrex::Real &gt; &amp;zlevels_stag)</div><div class="ttdef"><b>Definition:</b> ERF_InputSpongeData.H:28</div></div>
 <div class="ttc" id="astructInputSpongeData_html_a944b8ce681cef2752c8797d83cae5eae"><div class="ttname"><a href="structInputSpongeData.html#a944b8ce681cef2752c8797d83cae5eae">InputSpongeData::input_sponge_file</a></div><div class="ttdeci">std::string input_sponge_file</div><div class="ttdef"><b>Definition:</b> ERF_InputSpongeData.H:111</div></div>
 </div><!-- fragment -->
@@ -12083,9 +12083,6 @@ Here is the call graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ERF::ReadCheckpointFile </td>
@@ -12094,11 +12091,6 @@ Here is the call graph for this function:</div>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p><a class="el" href="classERF.html">ERF</a> function for reading data from a checkpoint file during restart. </p>
 <div class="fragment"><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{</div>
@@ -12462,9 +12454,6 @@ Here is the call graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ERF::ReadCheckpointFileMOST </td>
@@ -12473,11 +12462,6 @@ Here is the call graph for this function:</div>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p><a class="el" href="classERF.html">ERF</a> function for reading additional data for MOST from a checkpoint file during restart.</p>
 <p>This is called after the <a class="el" href="classABLMost.html">ABLMost</a> object is instantiated. </p>
@@ -15581,9 +15565,6 @@ Here is the caller graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ERF::WriteCheckpointFile </td>
@@ -15592,11 +15573,6 @@ Here is the caller graph for this function:</div>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p><a class="el" href="classERF.html">ERF</a> function for writing a checkpoint file. </p>
 <div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
