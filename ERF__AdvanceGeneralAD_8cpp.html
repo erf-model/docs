@@ -284,7 +284,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        AMREX_ALWAYS_ASSERT(std::fabs(std::exp(-fhub))&lt;=1.0);</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        AMREX_ALWAYS_ASSERT(std::fabs(std::exp(-ftip))&lt;=1.0);</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <a class="code" href="classF.html">F</a> = 1.0;<span class="comment">//2.0/PI*(std::acos(std::exp(-ftip)) + std::acos(std::exp(-fhub)) );</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <a class="code" href="classF.html">F</a> = 2.0/<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*(std::acos(std::exp(-ftip)) + std::acos(std::exp(-fhub)) );</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        at_new = 1.0/ ( 4.0*<a class="code" href="classF.html">F</a>*std::sin(psi)*std::cos(psi)/(s*Ct+1e-10) - 1.0 );</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        an_new = 1.0/ ( 1.0 + 4.0*<a class="code" href="classF.html">F</a>*std::pow(std::sin(psi),2)/(s*Cn + 1e-10) );</div>
