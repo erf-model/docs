@@ -2,7 +2,7 @@ var classNullWindFarm =
 [
     [ "NullWindFarm", "classNullWindFarm.html#ae4797e5a94227d10ed3b39dfd7bf4444", null ],
     [ "~NullWindFarm", "classNullWindFarm.html#a0dbf7ce260bc3c29e53b3650a0a4c40f", null ],
-    [ "advance", "classNullWindFarm.html#a4a46aef32059d41812d54f3e15ed5e68", null ],
+    [ "advance", "classNullWindFarm.html#a6c0842d97c9d5d68030987bc76b61101", null ],
     [ "find_if_marked", "classNullWindFarm.html#a4d117768ddbdf31c864c4bc7eac57c46", null ],
     [ "get_blade_airfoil_spec", "classNullWindFarm.html#abc6967908665ee89bd0546d24ef6f2a6", null ],
     [ "get_blade_spec", "classNullWindFarm.html#ac88481b8d5d1cf63fabe89edee9cc8cd", null ],

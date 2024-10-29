@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"structMYNNLevel2.html#a8be91cd073c493f390653b79f0a8706c":[2,0,52,7],
 "structMYNNLevel2.html#a9db4e0ee0f3a124e8d702e806a361ef3":[2,0,52,15],
 "structMYNNLevel2.html#aaab2f004c0ddd5b3fce84004d9d450b6":[2,0,52,3],
 "structMYNNLevel2.html#ab4b88d6873a172ac886f94ea35c26a98":[2,0,52,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "structSpongeChoice.html#a830ff63e204ed6c9dd381fd2baa1b33e":[2,0,79,8],
 "structSpongeChoice.html#a980e2c4485a0769eb0405a77445e3db1":[2,0,79,9],
 "structSpongeChoice.html#aad5ca098e341c3f76dc8420daeb8b629":[2,0,79,6],
-"structSpongeChoice.html#ac20a8660aca19e9655611c3d2eb9f672":[2,0,79,1],
-"structSpongeChoice.html#ac335f4f1640ad959aadb8e9054c3fda2":[2,0,79,13]
+"structSpongeChoice.html#ac20a8660aca19e9655611c3d2eb9f672":[2,0,79,1]
 };

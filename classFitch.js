@@ -2,7 +2,7 @@ var classFitch =
 [
     [ "Fitch", "classFitch.html#a3682b755760d9e2543182ffbc0f3a618", null ],
     [ "~Fitch", "classFitch.html#af9bc97ca62d0611ab2a300992ca8304d", null ],
-    [ "advance", "classFitch.html#a53648a4417bdaf9964ec261152e9aad7", null ],
+    [ "advance", "classFitch.html#aa0af4287104d385bfcd5dc0c8fb5c68a", null ],
     [ "source_terms_cellcentered", "classFitch.html#aa56821341be1cf4d01558e297993c0f2", null ],
     [ "update", "classFitch.html#a1a2db68abb0185de73bd870884f0b019", null ],
     [ "hub_height", "classFitch.html#ae3af34c6c07fd2d8b9b081b5c7ceb443", null ],

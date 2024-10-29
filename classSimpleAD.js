@@ -2,8 +2,9 @@ var classSimpleAD =
 [
     [ "SimpleAD", "classSimpleAD.html#a708d4346c7d8900854def95ffd127985", null ],
     [ "~SimpleAD", "classSimpleAD.html#affe2efa65acb68bd027a69ad1410253a", null ],
-    [ "advance", "classSimpleAD.html#a4aee1b4f53e09550042cb18aeb6de028", null ],
+    [ "advance", "classSimpleAD.html#ad6791411508883ae0fe8925119750042", null ],
     [ "compute_freestream_velocity", "classSimpleAD.html#a1320fd9378b5802905f2a101a81b8067", null ],
+    [ "compute_power_output", "classSimpleAD.html#ab13cca46ef87d42822ab2228976fc9ed", null ],
     [ "source_terms_cellcentered", "classSimpleAD.html#ad5e7e7f089518b2158277c94013e4f01", null ],
     [ "update", "classSimpleAD.html#a1d87675adbb7e56ff0969cd1543c72c4", null ],
     [ "disk_cell_count", "classSimpleAD.html#a4a8f7fe612cdc61b58b386b0b3f61da7", null ],

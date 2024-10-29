@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"structSpongeChoice.html#ac335f4f1640ad959aadb8e9054c3fda2":[2,0,79,13],
 "structSpongeChoice.html#adacf43edb29544376743fa98ce7d8cb6":[2,0,79,17],
 "structSpongeChoice.html#adb74ee3cbc24251272d6ad5fafdb885d":[2,0,79,3],
 "structSpongeChoice.html#ae2907fb8c5755c951b765b7d835013f6":[2,0,79,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "structcustom__flux.html#ae9e13bc10b4594df556671d9a042b48b":[2,0,14,1],
 "structdonelan__flux.html":[2,0,20],
 "structdonelan__flux.html#a44a032acc6bd6f42ff90f5a0ac14f4cf":[2,0,20,3],
-"structdonelan__flux.html#a804902863523b5f641c44aadc3602e97":[2,0,20,0],
-"structdonelan__flux.html#a999e3bdb322d29fcdfbd51047fb32ee0":[2,0,20,2]
+"structdonelan__flux.html#a804902863523b5f641c44aadc3602e97":[2,0,20,0]
 };

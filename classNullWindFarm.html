@@ -124,8 +124,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae4797e5a94227d10ed3b39dfd7bf4444"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dbf7ce260bc3c29e53b3650a0a4c40f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a0dbf7ce260bc3c29e53b3650a0a4c40f">~NullWindFarm</a> ()=default</td></tr>
 <tr class="separator:a0dbf7ce260bc3c29e53b3650a0a4c40f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a46aef32059d41812d54f3e15ed5e68"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a4a46aef32059d41812d54f3e15ed5e68">advance</a> (const amrex::Geometry &amp;a_geom, const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;mf_vars_windfarm, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_Nturb, const amrex::MultiFab &amp;mf_SMark)=0</td></tr>
-<tr class="separator:a4a46aef32059d41812d54f3e15ed5e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c0842d97c9d5d68030987bc76b61101"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a6c0842d97c9d5d68030987bc76b61101">advance</a> (const amrex::Geometry &amp;a_geom, const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;mf_vars_windfarm, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_Nturb, const amrex::MultiFab &amp;mf_SMark, const amrex::Real &amp;time)=0</td></tr>
+<tr class="separator:a6c0842d97c9d5d68030987bc76b61101"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a745c730028714c13ff11fefb5440b2e5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#a745c730028714c13ff11fefb5440b2e5">set_turb_spec</a> (const amrex::Real &amp;rotor_rad, const amrex::Real &amp;hub_height, const amrex::Real &amp;thrust_coeff_standing, const amrex::Vector&lt; amrex::Real &gt; &amp;wind_speed, const amrex::Vector&lt; amrex::Real &gt; &amp;thrust_coeff, const amrex::Vector&lt; amrex::Real &gt; &amp;power)</td></tr>
 <tr class="separator:a745c730028714c13ff11fefb5440b2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadf3ba54909c2931d089f631889dbd5b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullWindFarm.html#aadf3ba54909c2931d089f631889dbd5b">set_turb_loc</a> (const amrex::Vector&lt; amrex::Real &gt; &amp;xloc, const amrex::Vector&lt; amrex::Real &gt; &amp;yloc)</td></tr>
@@ -254,8 +254,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4a46aef32059d41812d54f3e15ed5e68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a46aef32059d41812d54f3e15ed5e68">&#9670;&nbsp;</a></span>advance()</h2>
+<a id="a6c0842d97c9d5d68030987bc76b61101"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c0842d97c9d5d68030987bc76b61101">&#9670;&nbsp;</a></span>advance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -315,7 +315,13 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>mf_SMark</em>&#160;</td>
+          <td class="paramname"><em>mf_SMark</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -330,7 +336,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classSimpleAD.html#a4aee1b4f53e09550042cb18aeb6de028">SimpleAD</a>, <a class="el" href="classGeneralAD.html#aa612af6a1d5bd894e3e9196e0d9e78c9">GeneralAD</a>, <a class="el" href="classFitch.html#a53648a4417bdaf9964ec261152e9aad7">Fitch</a>, <a class="el" href="classEWP.html#a06191dd415ece10e7961384219ae6d59">EWP</a>, and <a class="el" href="classWindFarm.html#a1b6f55c412f969521eac4bded0b83d4b">WindFarm</a>.</p>
+<p>Implemented in <a class="el" href="classSimpleAD.html#ad6791411508883ae0fe8925119750042">SimpleAD</a>, <a class="el" href="classGeneralAD.html#aa2727df24bc4d49692be1e4fae865806">GeneralAD</a>, <a class="el" href="classFitch.html#aa0af4287104d385bfcd5dc0c8fb5c68a">Fitch</a>, <a class="el" href="classEWP.html#a675a92a8d9c16748a95412e48bae2457">EWP</a>, and <a class="el" href="classWindFarm.html#a2e5541f6986770bc1b8b48fa2720ba1c">WindFarm</a>.</p>
 
 </div>
 </div>
@@ -421,41 +427,41 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// Plane is (x-x0)*nx + (y-y0)*ny = 0. And the planes to intersect are</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// x = x1, x = x2, y = y1, y = y2. The intersections are</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">// (xval1,y1), (xval2,y2), (x1,yval1) and (x2,yval2)</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    amrex::Real xval1 = x0 - (y1-y0)*ny/(nx+1e-10);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    amrex::Real xval2 = x0 - (y2-y0)*ny/(nx+1e-10);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    amrex::Real yval1 = y0 - (x1-x0)*nx/(ny+1e-10);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    amrex::Real yval2 = y0 - (x2-x0)*nx/(ny+1e-10);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span>( xval1 &gt;=x1 and xval1 &lt;=x2 ) {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">if</span>(std::pow((xval1-x0)*(xval1-x0) + (y1-y0)*(y1-y0) + (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height)*(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height),0.5) &lt; d_rotor_rad ) {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span>( xval2 &gt;=x1 and xval2 &lt;=x2 ) {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">if</span>(std::pow((xval2-x0)*(xval2-x0) + (y2-y0)*(y2-y0) + (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height)*(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height),0.5) &lt; d_rotor_rad ) {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span> (yval1 &gt;=y1 and yval1 &lt;=y2) {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">if</span>(std::pow((x1-x0)*(x1-x0) + (yval1-y0)*(yval1-y0) + (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height)*(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height),0.5) &lt; d_rotor_rad ) {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> (yval2 &gt;=y1 and yval2 &lt;=y2) {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">if</span>(std::pow((x2-x0)*(x2-x0) + (yval2-y0)*(yval2-y0) + (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height)*(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height),0.5) &lt; d_rotor_rad ) {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// Plane is (x-x0)*nx + (y-y0)*ny = 0. And the planes to intersect are</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">// x = x1, x = x2, y = y1, y = y2. The intersections are</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// (xval1,y1), (xval2,y2), (x1,yval1) and (x2,yval2)</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    amrex::Real xval1 = x0 - (y1-y0)*ny/(nx+1e-10);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    amrex::Real xval2 = x0 - (y2-y0)*ny/(nx+1e-10);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    amrex::Real yval1 = y0 - (x1-x0)*nx/(ny+1e-10);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    amrex::Real yval2 = y0 - (x2-x0)*nx/(ny+1e-10);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">if</span>( xval1 &gt;=x1 and xval1 &lt;=x2 ) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">if</span>(std::pow((xval1-x0)*(xval1-x0) + (y1-y0)*(y1-y0) + (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height)*(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height),0.5) &lt; d_rotor_rad ) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span>( xval2 &gt;=x1 and xval2 &lt;=x2 ) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span>(std::pow((xval2-x0)*(xval2-x0) + (y2-y0)*(y2-y0) + (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height)*(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height),0.5) &lt; d_rotor_rad ) {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span> (yval1 &gt;=y1 and yval1 &lt;=y2) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">if</span>(std::pow((x1-x0)*(x1-x0) + (yval1-y0)*(yval1-y0) + (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height)*(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height),0.5) &lt; d_rotor_rad ) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">if</span> (yval2 &gt;=y1 and yval2 &lt;=y2) {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">if</span>(std::pow((x2-x0)*(x2-x0) + (yval2-y0)*(yval2-y0) + (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height)*(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-d_hub_height),0.5) &lt; d_rotor_rad ) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 </div><!-- fragment -->
 </div>
@@ -499,14 +505,14 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        bld_airfoil_aoa = <a class="code" href="classNullWindFarm.html#a6f6bd907d33ec99543896b82fac6b4e4">m_bld_airfoil_aoa</a>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        bld_airfoil_Cl = <a class="code" href="classNullWindFarm.html#ad337a725edf9efdaf1fd4a49ddd35505">m_bld_airfoil_Cl</a>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        bld_airfoil_Cd = <a class="code" href="classNullWindFarm.html#a85b5fcee1d9a35f884255e9dec414bfd">m_bld_airfoil_Cd</a>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
-<div class="ttc" id="aclassNullWindFarm_html_a6f6bd907d33ec99543896b82fac6b4e4"><div class="ttname"><a href="classNullWindFarm.html#a6f6bd907d33ec99543896b82fac6b4e4">NullWindFarm::m_bld_airfoil_aoa</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; m_bld_airfoil_aoa</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:186</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_a85b5fcee1d9a35f884255e9dec414bfd"><div class="ttname"><a href="classNullWindFarm.html#a85b5fcee1d9a35f884255e9dec414bfd">NullWindFarm::m_bld_airfoil_Cd</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; m_bld_airfoil_Cd</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:186</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_ad337a725edf9efdaf1fd4a49ddd35505"><div class="ttname"><a href="classNullWindFarm.html#ad337a725edf9efdaf1fd4a49ddd35505">NullWindFarm::m_bld_airfoil_Cl</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; m_bld_airfoil_Cl</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:186</div></div>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        bld_airfoil_aoa = <a class="code" href="classNullWindFarm.html#a6f6bd907d33ec99543896b82fac6b4e4">m_bld_airfoil_aoa</a>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        bld_airfoil_Cl = <a class="code" href="classNullWindFarm.html#ad337a725edf9efdaf1fd4a49ddd35505">m_bld_airfoil_Cl</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        bld_airfoil_Cd = <a class="code" href="classNullWindFarm.html#a85b5fcee1d9a35f884255e9dec414bfd">m_bld_airfoil_Cd</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="ttc" id="aclassNullWindFarm_html_a6f6bd907d33ec99543896b82fac6b4e4"><div class="ttname"><a href="classNullWindFarm.html#a6f6bd907d33ec99543896b82fac6b4e4">NullWindFarm::m_bld_airfoil_aoa</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; m_bld_airfoil_aoa</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:187</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_a85b5fcee1d9a35f884255e9dec414bfd"><div class="ttname"><a href="classNullWindFarm.html#a85b5fcee1d9a35f884255e9dec414bfd">NullWindFarm::m_bld_airfoil_Cd</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; m_bld_airfoil_Cd</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:187</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_ad337a725edf9efdaf1fd4a49ddd35505"><div class="ttname"><a href="classNullWindFarm.html#ad337a725edf9efdaf1fd4a49ddd35505">NullWindFarm::m_bld_airfoil_Cl</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; m_bld_airfoil_Cl</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:187</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -549,14 +555,14 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        bld_rad_loc = <a class="code" href="classNullWindFarm.html#a27f046283d051fb0abcf5f6d9080b471">m_bld_rad_loc</a>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        bld_twist = <a class="code" href="classNullWindFarm.html#a453673de82ca8ffbced1c32bfb27555d">m_bld_twist</a>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        bld_chord = <a class="code" href="classNullWindFarm.html#acbc82ecabc6211a7d2070f24a805fbc9">m_bld_chord</a>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
-<div class="ttc" id="aclassNullWindFarm_html_a27f046283d051fb0abcf5f6d9080b471"><div class="ttname"><a href="classNullWindFarm.html#a27f046283d051fb0abcf5f6d9080b471">NullWindFarm::m_bld_rad_loc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_bld_rad_loc</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:185</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_a453673de82ca8ffbced1c32bfb27555d"><div class="ttname"><a href="classNullWindFarm.html#a453673de82ca8ffbced1c32bfb27555d">NullWindFarm::m_bld_twist</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_bld_twist</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:185</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_acbc82ecabc6211a7d2070f24a805fbc9"><div class="ttname"><a href="classNullWindFarm.html#acbc82ecabc6211a7d2070f24a805fbc9">NullWindFarm::m_bld_chord</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_bld_chord</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:185</div></div>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        bld_rad_loc = <a class="code" href="classNullWindFarm.html#a27f046283d051fb0abcf5f6d9080b471">m_bld_rad_loc</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        bld_twist = <a class="code" href="classNullWindFarm.html#a453673de82ca8ffbced1c32bfb27555d">m_bld_twist</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        bld_chord = <a class="code" href="classNullWindFarm.html#acbc82ecabc6211a7d2070f24a805fbc9">m_bld_chord</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="ttc" id="aclassNullWindFarm_html_a27f046283d051fb0abcf5f6d9080b471"><div class="ttname"><a href="classNullWindFarm.html#a27f046283d051fb0abcf5f6d9080b471">NullWindFarm::m_bld_rad_loc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_bld_rad_loc</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:186</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_a453673de82ca8ffbced1c32bfb27555d"><div class="ttname"><a href="classNullWindFarm.html#a453673de82ca8ffbced1c32bfb27555d">NullWindFarm::m_bld_twist</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_bld_twist</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:186</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_acbc82ecabc6211a7d2070f24a805fbc9"><div class="ttname"><a href="classNullWindFarm.html#acbc82ecabc6211a7d2070f24a805fbc9">NullWindFarm::m_bld_chord</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_bld_chord</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:186</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -583,10 +589,10 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        turb_disk_angle = <a class="code" href="classNullWindFarm.html#a3b3156bf79da131a833a2a6a96b27421">m_turb_disk_angle</a>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="ttc" id="aclassNullWindFarm_html_a3b3156bf79da131a833a2a6a96b27421"><div class="ttname"><a href="classNullWindFarm.html#a3b3156bf79da131a833a2a6a96b27421">NullWindFarm::m_turb_disk_angle</a></div><div class="ttdeci">amrex::Real m_turb_disk_angle</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:182</div></div>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        turb_disk_angle = <a class="code" href="classNullWindFarm.html#a3b3156bf79da131a833a2a6a96b27421">m_turb_disk_angle</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="ttc" id="aclassNullWindFarm_html_a3b3156bf79da131a833a2a6a96b27421"><div class="ttname"><a href="classNullWindFarm.html#a3b3156bf79da131a833a2a6a96b27421">NullWindFarm::m_turb_disk_angle</a></div><div class="ttdeci">amrex::Real m_turb_disk_angle</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:183</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -623,12 +629,12 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        xloc = <a class="code" href="classNullWindFarm.html#ac8ff132b0d2d52032ec19344ec6a74c6">m_xloc</a>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        yloc = <a class="code" href="classNullWindFarm.html#a86792dc0d8fb3dfc9b9646c38a2926da">m_yloc</a>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="ttc" id="aclassNullWindFarm_html_a86792dc0d8fb3dfc9b9646c38a2926da"><div class="ttname"><a href="classNullWindFarm.html#a86792dc0d8fb3dfc9b9646c38a2926da">NullWindFarm::m_yloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_yloc</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:181</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_ac8ff132b0d2d52032ec19344ec6a74c6"><div class="ttname"><a href="classNullWindFarm.html#ac8ff132b0d2d52032ec19344ec6a74c6">NullWindFarm::m_xloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_xloc</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:181</div></div>
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        xloc = <a class="code" href="classNullWindFarm.html#ac8ff132b0d2d52032ec19344ec6a74c6">m_xloc</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        yloc = <a class="code" href="classNullWindFarm.html#a86792dc0d8fb3dfc9b9646c38a2926da">m_yloc</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="ttc" id="aclassNullWindFarm_html_a86792dc0d8fb3dfc9b9646c38a2926da"><div class="ttname"><a href="classNullWindFarm.html#a86792dc0d8fb3dfc9b9646c38a2926da">NullWindFarm::m_yloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_yloc</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:182</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_ac8ff132b0d2d52032ec19344ec6a74c6"><div class="ttname"><a href="classNullWindFarm.html#ac8ff132b0d2d52032ec19344ec6a74c6">NullWindFarm::m_xloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_xloc</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:182</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -689,20 +695,20 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        rotor_rad = <a class="code" href="classNullWindFarm.html#a06d46ff7212efd7893e94b99fa981b9d">m_rotor_rad</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        hub_height = <a class="code" href="classNullWindFarm.html#ad403f4133b2292495e5dd949fcc59207">m_hub_height</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        thrust_coeff_standing = <a class="code" href="classNullWindFarm.html#a5a95464f19af9063228d23981f3a75cd">m_thrust_coeff_standing</a>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        wind_speed = <a class="code" href="classNullWindFarm.html#a9beae3f8f39bb7bde432530da926d6ef">m_wind_speed</a>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        thrust_coeff = <a class="code" href="classNullWindFarm.html#a7fe11fbaf6a246c60156e40aec3835f7">m_thrust_coeff</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        power = <a class="code" href="classNullWindFarm.html#a61554384fc601d7ae2fb758a8bc7f4f4">m_power</a>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="ttc" id="aclassNullWindFarm_html_a06d46ff7212efd7893e94b99fa981b9d"><div class="ttname"><a href="classNullWindFarm.html#a06d46ff7212efd7893e94b99fa981b9d">NullWindFarm::m_rotor_rad</a></div><div class="ttdeci">amrex::Real m_rotor_rad</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:183</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_a5a95464f19af9063228d23981f3a75cd"><div class="ttname"><a href="classNullWindFarm.html#a5a95464f19af9063228d23981f3a75cd">NullWindFarm::m_thrust_coeff_standing</a></div><div class="ttdeci">amrex::Real m_thrust_coeff_standing</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:183</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_a61554384fc601d7ae2fb758a8bc7f4f4"><div class="ttname"><a href="classNullWindFarm.html#a61554384fc601d7ae2fb758a8bc7f4f4">NullWindFarm::m_power</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_power</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:184</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_a7fe11fbaf6a246c60156e40aec3835f7"><div class="ttname"><a href="classNullWindFarm.html#a7fe11fbaf6a246c60156e40aec3835f7">NullWindFarm::m_thrust_coeff</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_thrust_coeff</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:184</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_a9beae3f8f39bb7bde432530da926d6ef"><div class="ttname"><a href="classNullWindFarm.html#a9beae3f8f39bb7bde432530da926d6ef">NullWindFarm::m_wind_speed</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_wind_speed</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:184</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_ad403f4133b2292495e5dd949fcc59207"><div class="ttname"><a href="classNullWindFarm.html#ad403f4133b2292495e5dd949fcc59207">NullWindFarm::m_hub_height</a></div><div class="ttdeci">amrex::Real m_hub_height</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:183</div></div>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        rotor_rad = <a class="code" href="classNullWindFarm.html#a06d46ff7212efd7893e94b99fa981b9d">m_rotor_rad</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        hub_height = <a class="code" href="classNullWindFarm.html#ad403f4133b2292495e5dd949fcc59207">m_hub_height</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        thrust_coeff_standing = <a class="code" href="classNullWindFarm.html#a5a95464f19af9063228d23981f3a75cd">m_thrust_coeff_standing</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        wind_speed = <a class="code" href="classNullWindFarm.html#a9beae3f8f39bb7bde432530da926d6ef">m_wind_speed</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        thrust_coeff = <a class="code" href="classNullWindFarm.html#a7fe11fbaf6a246c60156e40aec3835f7">m_thrust_coeff</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        power = <a class="code" href="classNullWindFarm.html#a61554384fc601d7ae2fb758a8bc7f4f4">m_power</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="ttc" id="aclassNullWindFarm_html_a06d46ff7212efd7893e94b99fa981b9d"><div class="ttname"><a href="classNullWindFarm.html#a06d46ff7212efd7893e94b99fa981b9d">NullWindFarm::m_rotor_rad</a></div><div class="ttdeci">amrex::Real m_rotor_rad</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:184</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_a5a95464f19af9063228d23981f3a75cd"><div class="ttname"><a href="classNullWindFarm.html#a5a95464f19af9063228d23981f3a75cd">NullWindFarm::m_thrust_coeff_standing</a></div><div class="ttdeci">amrex::Real m_thrust_coeff_standing</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:184</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_a61554384fc601d7ae2fb758a8bc7f4f4"><div class="ttname"><a href="classNullWindFarm.html#a61554384fc601d7ae2fb758a8bc7f4f4">NullWindFarm::m_power</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_power</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:185</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_a7fe11fbaf6a246c60156e40aec3835f7"><div class="ttname"><a href="classNullWindFarm.html#a7fe11fbaf6a246c60156e40aec3835f7">NullWindFarm::m_thrust_coeff</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_thrust_coeff</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:185</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_a9beae3f8f39bb7bde432530da926d6ef"><div class="ttname"><a href="classNullWindFarm.html#a9beae3f8f39bb7bde432530da926d6ef">NullWindFarm::m_wind_speed</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_wind_speed</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:185</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_ad403f4133b2292495e5dd949fcc59207"><div class="ttname"><a href="classNullWindFarm.html#ad403f4133b2292495e5dd949fcc59207">NullWindFarm::m_hub_height</a></div><div class="ttdeci">amrex::Real m_hub_height</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:184</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -757,18 +763,18 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        velocity = <a class="code" href="classNullWindFarm.html#af83e2833c70c7374fa00ec94755e8038">m_velocity</a>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        C_P = <a class="code" href="classNullWindFarm.html#a2c312d78fc769a3d081c2df6492b5b35">m_C_P</a>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        C_T = <a class="code" href="classNullWindFarm.html#a5cb0849867fadd38770da912749adb50">m_C_T</a>;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        rotor_RPM = <a class="code" href="classNullWindFarm.html#ad19bb9c4842c561c0024ae6d686b1a78">m_rotor_RPM</a>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        blade_pitch = <a class="code" href="classNullWindFarm.html#aabb34a6b16b5001624bf06c98aa226a9">m_blade_pitch</a>;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
-<div class="ttc" id="aclassNullWindFarm_html_a2c312d78fc769a3d081c2df6492b5b35"><div class="ttname"><a href="classNullWindFarm.html#a2c312d78fc769a3d081c2df6492b5b35">NullWindFarm::m_C_P</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_C_P</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:187</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_a5cb0849867fadd38770da912749adb50"><div class="ttname"><a href="classNullWindFarm.html#a5cb0849867fadd38770da912749adb50">NullWindFarm::m_C_T</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_C_T</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:187</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_aabb34a6b16b5001624bf06c98aa226a9"><div class="ttname"><a href="classNullWindFarm.html#aabb34a6b16b5001624bf06c98aa226a9">NullWindFarm::m_blade_pitch</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_blade_pitch</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:187</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_ad19bb9c4842c561c0024ae6d686b1a78"><div class="ttname"><a href="classNullWindFarm.html#ad19bb9c4842c561c0024ae6d686b1a78">NullWindFarm::m_rotor_RPM</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_rotor_RPM</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:187</div></div>
-<div class="ttc" id="aclassNullWindFarm_html_af83e2833c70c7374fa00ec94755e8038"><div class="ttname"><a href="classNullWindFarm.html#af83e2833c70c7374fa00ec94755e8038">NullWindFarm::m_velocity</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_velocity</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:187</div></div>
+<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        velocity = <a class="code" href="classNullWindFarm.html#af83e2833c70c7374fa00ec94755e8038">m_velocity</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        C_P = <a class="code" href="classNullWindFarm.html#a2c312d78fc769a3d081c2df6492b5b35">m_C_P</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        C_T = <a class="code" href="classNullWindFarm.html#a5cb0849867fadd38770da912749adb50">m_C_T</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        rotor_RPM = <a class="code" href="classNullWindFarm.html#ad19bb9c4842c561c0024ae6d686b1a78">m_rotor_RPM</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        blade_pitch = <a class="code" href="classNullWindFarm.html#aabb34a6b16b5001624bf06c98aa226a9">m_blade_pitch</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
+<div class="ttc" id="aclassNullWindFarm_html_a2c312d78fc769a3d081c2df6492b5b35"><div class="ttname"><a href="classNullWindFarm.html#a2c312d78fc769a3d081c2df6492b5b35">NullWindFarm::m_C_P</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_C_P</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:188</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_a5cb0849867fadd38770da912749adb50"><div class="ttname"><a href="classNullWindFarm.html#a5cb0849867fadd38770da912749adb50">NullWindFarm::m_C_T</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_C_T</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:188</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_aabb34a6b16b5001624bf06c98aa226a9"><div class="ttname"><a href="classNullWindFarm.html#aabb34a6b16b5001624bf06c98aa226a9">NullWindFarm::m_blade_pitch</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_blade_pitch</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:188</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_ad19bb9c4842c561c0024ae6d686b1a78"><div class="ttname"><a href="classNullWindFarm.html#ad19bb9c4842c561c0024ae6d686b1a78">NullWindFarm::m_rotor_RPM</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_rotor_RPM</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:188</div></div>
+<div class="ttc" id="aclassNullWindFarm_html_af83e2833c70c7374fa00ec94755e8038"><div class="ttname"><a href="classNullWindFarm.html#af83e2833c70c7374fa00ec94755e8038">NullWindFarm::m_velocity</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_velocity</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:188</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -813,11 +819,11 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classWindFarm.html#aa96d62f2d3d93c79e318ed0e321973fa">WindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classNullWindFarm.html#a6f6bd907d33ec99543896b82fac6b4e4">m_bld_airfoil_aoa</a> = bld_airfoil_aoa;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classNullWindFarm.html#ad337a725edf9efdaf1fd4a49ddd35505">m_bld_airfoil_Cl</a> = bld_airfoil_Cl;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classNullWindFarm.html#a85b5fcee1d9a35f884255e9dec414bfd">m_bld_airfoil_Cd</a> = bld_airfoil_Cd;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classNullWindFarm.html#a6f6bd907d33ec99543896b82fac6b4e4">m_bld_airfoil_aoa</a> = bld_airfoil_aoa;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classNullWindFarm.html#ad337a725edf9efdaf1fd4a49ddd35505">m_bld_airfoil_Cl</a> = bld_airfoil_Cl;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="classNullWindFarm.html#a85b5fcee1d9a35f884255e9dec414bfd">m_bld_airfoil_Cd</a> = bld_airfoil_Cd;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -862,11 +868,11 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classWindFarm.html#a6206e875bd0ab78e9b997d115a6c7b33">WindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classNullWindFarm.html#a27f046283d051fb0abcf5f6d9080b471">m_bld_rad_loc</a> = bld_rad_loc;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classNullWindFarm.html#a453673de82ca8ffbced1c32bfb27555d">m_bld_twist</a> = bld_twist;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classNullWindFarm.html#acbc82ecabc6211a7d2070f24a805fbc9">m_bld_chord</a> = bld_chord;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classNullWindFarm.html#a27f046283d051fb0abcf5f6d9080b471">m_bld_rad_loc</a> = bld_rad_loc;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classNullWindFarm.html#a453673de82ca8ffbced1c32bfb27555d">m_bld_twist</a> = bld_twist;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classNullWindFarm.html#acbc82ecabc6211a7d2070f24a805fbc9">m_bld_chord</a> = bld_chord;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -895,9 +901,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classWindFarm.html#aed4eeef484f5e77b3c3038a1606f1875">WindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classNullWindFarm.html#a3b3156bf79da131a833a2a6a96b27421">m_turb_disk_angle</a> = turb_disk_angle;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classNullWindFarm.html#a3b3156bf79da131a833a2a6a96b27421">m_turb_disk_angle</a> = turb_disk_angle;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -936,10 +942,10 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classWindFarm.html#a5defcbb732ba325db7b6e8a819ab381e">WindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classNullWindFarm.html#ac8ff132b0d2d52032ec19344ec6a74c6">m_xloc</a> = xloc;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classNullWindFarm.html#a86792dc0d8fb3dfc9b9646c38a2926da">m_yloc</a> = yloc;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classNullWindFarm.html#ac8ff132b0d2d52032ec19344ec6a74c6">m_xloc</a> = xloc;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="classNullWindFarm.html#a86792dc0d8fb3dfc9b9646c38a2926da">m_yloc</a> = yloc;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1002,14 +1008,14 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classWindFarm.html#aabf18956cad4a8546eb60ff8300c94c8">WindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classNullWindFarm.html#a06d46ff7212efd7893e94b99fa981b9d">m_rotor_rad</a> = rotor_rad;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classNullWindFarm.html#ad403f4133b2292495e5dd949fcc59207">m_hub_height</a> = hub_height;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classNullWindFarm.html#a5a95464f19af9063228d23981f3a75cd">m_thrust_coeff_standing</a> = thrust_coeff_standing;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classNullWindFarm.html#a9beae3f8f39bb7bde432530da926d6ef">m_wind_speed</a> = wind_speed;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classNullWindFarm.html#a7fe11fbaf6a246c60156e40aec3835f7">m_thrust_coeff</a> = thrust_coeff;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classNullWindFarm.html#a61554384fc601d7ae2fb758a8bc7f4f4">m_power</a> = power;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classNullWindFarm.html#a06d46ff7212efd7893e94b99fa981b9d">m_rotor_rad</a> = rotor_rad;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classNullWindFarm.html#ad403f4133b2292495e5dd949fcc59207">m_hub_height</a> = hub_height;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classNullWindFarm.html#a5a95464f19af9063228d23981f3a75cd">m_thrust_coeff_standing</a> = thrust_coeff_standing;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classNullWindFarm.html#a9beae3f8f39bb7bde432530da926d6ef">m_wind_speed</a> = wind_speed;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classNullWindFarm.html#a7fe11fbaf6a246c60156e40aec3835f7">m_thrust_coeff</a> = thrust_coeff;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classNullWindFarm.html#a61554384fc601d7ae2fb758a8bc7f4f4">m_power</a> = power;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1066,13 +1072,13 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classWindFarm.html#a4afb42d44ea84a770d4dbfe8beb33f7e">WindFarm</a>.</p>
-<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="classNullWindFarm.html#af83e2833c70c7374fa00ec94755e8038">m_velocity</a> = velocity;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classNullWindFarm.html#a2c312d78fc769a3d081c2df6492b5b35">m_C_P</a> = C_P;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classNullWindFarm.html#a5cb0849867fadd38770da912749adb50">m_C_T</a> = C_T;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="classNullWindFarm.html#ad19bb9c4842c561c0024ae6d686b1a78">m_rotor_RPM</a> = rotor_RPM;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="classNullWindFarm.html#aabb34a6b16b5001624bf06c98aa226a9">m_blade_pitch</a> = blade_pitch;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classNullWindFarm.html#af83e2833c70c7374fa00ec94755e8038">m_velocity</a> = velocity;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classNullWindFarm.html#a2c312d78fc769a3d081c2df6492b5b35">m_C_P</a> = C_P;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="classNullWindFarm.html#a5cb0849867fadd38770da912749adb50">m_C_T</a> = C_T;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="classNullWindFarm.html#ad19bb9c4842c561c0024ae6d686b1a78">m_rotor_RPM</a> = rotor_RPM;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classNullWindFarm.html#aabb34a6b16b5001624bf06c98aa226a9">m_blade_pitch</a> = blade_pitch;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
