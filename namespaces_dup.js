@@ -60,7 +60,6 @@ var namespaces_dup =
       [ "initial_fluxes", "namespaceinternal.html#aaf4add7dd62294e7017ae4e65f656337", null ],
       [ "reordered", "namespaceinternal.html#a2e09ba4f36b78ebbb569741fedab06ed", null ]
     ] ],
-    [ "InterpType", "namespaceInterpType.html", null ],
     [ "IntVars", "namespaceIntVars.html", null ],
     [ "LsmVar_MM5", "namespaceLsmVar__MM5.html", null ],
     [ "LsmVar_SLM", "namespaceLsmVar__SLM.html", null ],

@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('ERF__Linear__interpolate_8H_source.htm
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2aeec66ba685aaa33115191d8f6bc9c0e6">   17</a></span>&#160;        <a class="code" href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2aeec66ba685aaa33115191d8f6bc9c0e6">extrap_method_cycle</a> = 2,</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    };</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structLinInterp_1_1InterpType.html">   20</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="namespaceInterpType.html">InterpType</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structLinInterp_1_1InterpType.html">   20</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structLinInterp_1_1InterpType.html">InterpType</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">   21</a></span>&#160;        real1d <a class="code" href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">wgts</a>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">   22</a></span>&#160;        real1d <a class="code" href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">wgtn</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">   23</a></span>&#160;        int1d <a class="code" href="structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c">jjm</a>;</div>
@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('ERF__Linear__interpolate_8H_source.htm
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                      <span class="keyword">const</span> real1d&amp; yout,</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; nout,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                      <span class="keyword">const</span> <a class="code" href="classLinInterp.html#a1f3e9aabd558af36cbc7accfc6e523a2">InterpMethod</a>&amp; extrap_method,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                      <a class="code" href="namespaceInterpType.html">InterpType</a>&amp; interp_wgts,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                      <a class="code" href="structLinInterp_1_1InterpType.html">InterpType</a>&amp; interp_wgts,</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                      real cyclicmin = 0.,</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                      real cyclicmax= 0.)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
@@ -357,7 +357,7 @@ $(document).ready(function(){initNavTree('ERF__Linear__interpolate_8H_source.htm
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; n1,</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                          <span class="keyword">const</span> real1d&amp; arrout,</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; m1,</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                          <span class="keyword">const</span> <a class="code" href="namespaceInterpType.html">InterpType</a>&amp; interp_wgts)</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                          <span class="keyword">const</span> <a class="code" href="structLinInterp_1_1InterpType.html">InterpType</a>&amp; interp_wgts)</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    {</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="comment">//</span></div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="comment">// Do the interpolation</span></div>
@@ -376,8 +376,8 @@ $(document).ready(function(){initNavTree('ERF__Linear__interpolate_8H_source.htm
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                            <span class="keyword">const</span> real2d&amp; arrout,</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; m1,</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; m2,</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                            <span class="keyword">const</span> <a class="code" href="namespaceInterpType.html">InterpType</a>&amp; wgt1,</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                            <span class="keyword">const</span> <a class="code" href="namespaceInterpType.html">InterpType</a>&amp; wgt2)</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                            <span class="keyword">const</span> <a class="code" href="structLinInterp_1_1InterpType.html">InterpType</a>&amp; wgt1,</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                            <span class="keyword">const</span> <a class="code" href="structLinInterp_1_1InterpType.html">InterpType</a>&amp; wgt2)</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    {</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        real2d arrtmp(<span class="stringliteral">&quot;arrtmp&quot;</span>,n1,m2);</div>
@@ -399,8 +399,8 @@ $(document).ready(function(){initNavTree('ERF__Linear__interpolate_8H_source.htm
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; n2,</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                            <span class="keyword">const</span> real1d&amp; arrout,</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; m1,</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                            <span class="keyword">const</span> <a class="code" href="namespaceInterpType.html">InterpType</a>&amp; wgt1,</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                            <span class="keyword">const</span> <a class="code" href="namespaceInterpType.html">InterpType</a>&amp; wgt2)</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                            <span class="keyword">const</span> <a class="code" href="structLinInterp_1_1InterpType.html">InterpType</a>&amp; wgt1,</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                            <span class="keyword">const</span> <a class="code" href="structLinInterp_1_1InterpType.html">InterpType</a>&amp; wgt2)</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    {</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        parallel_for(SimpleBounds&lt;1&gt;(m1), YAKL_LAMBDA (<span class="keywordtype">int</span> i)</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        {</div>
@@ -417,8 +417,8 @@ $(document).ready(function(){initNavTree('ERF__Linear__interpolate_8H_source.htm
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                            <span class="keyword">const</span> real2d&amp; arrout,</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; m1,</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; len1,</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                            <span class="keyword">const</span> <a class="code" href="namespaceInterpType.html">InterpType</a>&amp; wgt1,</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                            <span class="keyword">const</span> <a class="code" href="namespaceInterpType.html">InterpType</a>&amp; wgt2)</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                            <span class="keyword">const</span> <a class="code" href="structLinInterp_1_1InterpType.html">InterpType</a>&amp; wgt1,</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                            <span class="keyword">const</span> <a class="code" href="structLinInterp_1_1InterpType.html">InterpType</a>&amp; wgt2)</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    {</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        parallel_for(SimpleBounds&lt;2&gt;(m1, n3), YAKL_LAMBDA (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        {</div>
@@ -438,7 +438,7 @@ $(document).ready(function(){initNavTree('ERF__Linear__interpolate_8H_source.htm
 <div class="ttc" id="aclassLinInterp_html_a646cb2d20182e9d2073b08d0897dac76"><div class="ttname"><a href="classLinInterp.html#a646cb2d20182e9d2073b08d0897dac76">LinInterp::interp2d2d</a></div><div class="ttdeci">static YAKL_INLINE void interp2d2d(const real2d &amp;arrin, const int &amp;n1, const int &amp;n2, const real2d &amp;arrout, const int &amp;m1, const int &amp;m2, const InterpType &amp;wgt1, const InterpType &amp;wgt2)</div><div class="ttdef"><b>Definition:</b> ERF_Linear_interpolate.H:285</div></div>
 <div class="ttc" id="aclassLinInterp_html_aad318a6d1364e9369ea02fe34542de24"><div class="ttname"><a href="classLinInterp.html#aad318a6d1364e9369ea02fe34542de24">LinInterp::interp1d</a></div><div class="ttdeci">static YAKL_INLINE void interp1d(const real1d &amp;arrin, const int &amp;n1, const real1d &amp;arrout, const int &amp;m1, const InterpType &amp;interp_wgts)</div><div class="ttdef"><b>Definition:</b> ERF_Linear_interpolate.H:268</div></div>
 <div class="ttc" id="aclassLinInterp_html_adcd3fbce06341f370d0e7bcabb6a5e1c"><div class="ttname"><a href="classLinInterp.html#adcd3fbce06341f370d0e7bcabb6a5e1c">LinInterp::interp2d1d</a></div><div class="ttdeci">static YAKL_INLINE void interp2d1d(const real2d &amp;arrin, const int &amp;n1, const int &amp;n2, const real1d &amp;arrout, const int &amp;m1, const InterpType &amp;wgt1, const InterpType &amp;wgt2)</div><div class="ttdef"><b>Definition:</b> ERF_Linear_interpolate.H:309</div></div>
-<div class="ttc" id="anamespaceInterpType_html"><div class="ttname"><a href="namespaceInterpType.html">InterpType</a></div><div class="ttdef"><b>Definition:</b> ERF.H:92</div></div>
+<div class="ttc" id="astructLinInterp_1_1InterpType_html"><div class="ttname"><a href="structLinInterp_1_1InterpType.html">LinInterp::InterpType</a></div><div class="ttdef"><b>Definition:</b> ERF_Linear_interpolate.H:20</div></div>
 <div class="ttc" id="astructLinInterp_1_1InterpType_html_a445ddb0a782f40cab78521e5fdc3bd8b"><div class="ttname"><a href="structLinInterp_1_1InterpType.html#a445ddb0a782f40cab78521e5fdc3bd8b">LinInterp::InterpType::wgts</a></div><div class="ttdeci">real1d wgts</div><div class="ttdef"><b>Definition:</b> ERF_Linear_interpolate.H:21</div></div>
 <div class="ttc" id="astructLinInterp_1_1InterpType_html_a4afbbafb5bb8bf9742bdb82b166bef76"><div class="ttname"><a href="structLinInterp_1_1InterpType.html#a4afbbafb5bb8bf9742bdb82b166bef76">LinInterp::InterpType::jjp</a></div><div class="ttdeci">int1d jjp</div><div class="ttdef"><b>Definition:</b> ERF_Linear_interpolate.H:24</div></div>
 <div class="ttc" id="astructLinInterp_1_1InterpType_html_aa3befaac92860602bab896110eeb65da"><div class="ttname"><a href="structLinInterp_1_1InterpType.html#aa3befaac92860602bab896110eeb65da">LinInterp::InterpType::wgtn</a></div><div class="ttdeci">real1d wgtn</div><div class="ttdef"><b>Definition:</b> ERF_Linear_interpolate.H:22</div></div>

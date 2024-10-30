@@ -237,7 +237,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    Real pitch = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(velocity, blade_pitch, avg_vel, n_spec_extra);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    Real Omega = rpm/60.0*2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    Real <a class="code" href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa89de8c3bfc941080efb960e5119fbd61">rho</a> = 1.226;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> = 1.226;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    Real B = 3.0;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    Real rhub = 2.0;</div>
@@ -308,8 +308,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="comment">// Iterations converged. Now compute Ft, Fn</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    L = 0.5*<a class="code" href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa89de8c3bfc941080efb960e5119fbd61">rho</a>*Vr*Vr*c*Cl;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    D = 0.5*<a class="code" href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa89de8c3bfc941080efb960e5119fbd61">rho</a>*Vr*Vr*c*Cd;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    L = 0.5*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>*Vr*Vr*c*Cl;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    D = 0.5*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>*Vr*Vr*c*Cd;</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    Real Fn = L*std::cos(psi) + D*std::sin(psi);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    Real Ft = L*std::sin(psi) - D*std::cos(psi);</div>
@@ -327,7 +327,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__Interpolation__1D_8H_html_a803d0d35d4ca4791556cbe02bbf51cbb"><div class="ttname"><a href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real interpolate_1d(const amrex::Real *alpha, const amrex::Real *beta, const amrex::Real alpha_interp, const int alpha_size)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_1D.H:12</div></div>
 <div class="ttc" id="aclassF_html"><div class="ttname"><a href="classF.html">F</a></div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_a3e8bdf864aa73d27b5870cf155c3a86aa89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:30</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:30</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classGeneralAD.html#a5be79013be63b8105a01534ca186de32">GeneralAD::source_terms_cellcentered()</a>.</p>
 <div class="dynheader">

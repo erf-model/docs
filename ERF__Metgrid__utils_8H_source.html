@@ -354,7 +354,7 @@ $(document).ready(function(){initNavTree('ERF__Metgrid__utils_8H_source.html',''
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;             <span class="keywordtype">int</span> k,</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const&gt;&amp; rhum,</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const&gt;&amp; temp,</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const&gt;&amp; <a class="code" href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>,</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const&gt;&amp; <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>,</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; mxrat)</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;{</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    amrex::Real qv_max_p_safe = 10000.0; <span class="comment">// WRF default value</span></div>
@@ -371,12 +371,12 @@ $(document).ready(function(){initNavTree('ERF__Metgrid__utils_8H_source.html',''
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="comment">// WRF&#39;s method when model_config_rec%rh2qv_wrt_liquid=.true. (default behavior)</span></div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">if</span> (temp(i,j,k) != 0.0) {</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        amrex::Real es=0.01*rhum(i,j,k)*svp1*10.0*exp(svp2*(temp(i,j,k)-svpt0)/(temp(i,j,k)-svp3));</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordflow">if</span> (es &gt;= <a class="code" href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>(i,j,k)/100.0) {</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordflow">if</span> (es &gt;= <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>(i,j,k)/100.0) {</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="comment">// vapor pressure exceeds total pressure</span></div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            mxrat(i,j,k) = std::pow(10.0, -6);</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        }</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            mxrat(i,j,k) = amrex::max(eps*es/(<a class="code" href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>(i,j,k)/100.0-es), 1.0e-6);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            mxrat(i,j,k) = amrex::max(eps*es/(<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>(i,j,k)/100.0-es), 1.0e-6);</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        }</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">else</span> {</div>
@@ -390,12 +390,12 @@ $(document).ready(function(){initNavTree('ERF__Metgrid__utils_8H_source.html',''
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="comment">// probably had &quot;missing&quot; RH, and we filled in some values. This is an</span></div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="comment">// attempt to catch those. Also, set the minimum value for the entire</span></div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="comment">// domain that is above the selected pressure level.</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>(i,j,k) &lt; qv_max_p_safe) {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>(i,j,k) &lt; qv_max_p_safe) {</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">if</span> (mxrat(i,j,k) &gt; qv_max_flag) {</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            mxrat(i,j,k) = qv_max_value;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        }</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>(i,j,k) &lt; qv_min_p_safe) {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>(i,j,k) &lt; qv_min_p_safe) {</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keywordflow">if</span> (mxrat(i,j,k) &lt; qv_min_flag) {</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            mxrat(i,j,k) = qv_min_value;</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        }</div>
@@ -415,7 +415,7 @@ $(document).ready(function(){initNavTree('ERF__Metgrid__utils_8H_source.html',''
 <div class="ttc" id="aERF__Metgrid__utils_8H_html_ad3ae9b317366b5e880366135708ba5d5"><div class="ttname"><a href="ERF__Metgrid__utils_8H.html#ad3ae9b317366b5e880366135708ba5d5">init_terrain_from_metgrid</a></div><div class="ttdeci">void init_terrain_from_metgrid(amrex::FArrayBox &amp;z_phys_nd_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_hgt_fab)</div></div>
 <div class="ttc" id="aERF__Utils_8H_html"><div class="ttname"><a href="ERF__Utils_8H.html">ERF_Utils.H</a></div></div>
 <div class="ttc" id="aERF__prob__common_8H_html"><div class="ttname"><a href="ERF__prob__common_8H.html">ERF_prob_common.H</a></div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_a3e8bdf864aa73d27b5870cf155c3a86aa82dd7c202e6cce14520ac01cfaa4f4ad"><div class="ttname"><a href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa82dd7c202e6cce14520ac01cfaa4f4ad">MicVar_Kess::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:33</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_ad6f84c7e649afdd998b2f37ba87476bea82dd7c202e6cce14520ac01cfaa4f4ad"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea82dd7c202e6cce14520ac01cfaa4f4ad">MicVar_Kess::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

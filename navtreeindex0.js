@@ -8,6 +8,7 @@ var NAVTREEINDEX0 =
 "ERFTracers_8cpp.html":[3,0,1,10,5],
 "ERF_8H.html":[3,0,1,19],
 "ERF_8H.html#a07b88cfb51656f2c028a84625c97f5c9":[3,0,1,19,2],
+"ERF_8H.html#a5ec6fb22ac274a44a8dbf881fecbe144":[3,0,1,19,3],
 "ERF_8H.html#aa635954d4f3a0aed015141d979f70728":[3,0,1,19,1],
 "ERF_8H_source.html":[3,0,1,19],
 "ERF_8cpp.html":[3,0,1,18],
@@ -81,6 +82,7 @@ var NAVTREEINDEX0 =
 "ERF__ApplySpongeZoneBCs_8cpp.html#a2f0457a5cf90ed9e3f084a3951a80ae8":[3,0,1,14,1,1],
 "ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html":[3,0,1,14,2],
 "ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a43cc085fc4c8dd69e73541c28062925c":[3,0,1,14,2,0],
+"ERF__AverageDown_8cpp.html":[3,0,1,16,0],
 "ERF__BoundaryConditions__basestate_8cpp.html":[3,0,1,1,2],
 "ERF__BoundaryConditions__bndryreg_8cpp.html":[3,0,1,1,3],
 "ERF__BoundaryConditions__cons_8cpp.html":[3,0,1,1,4],
@@ -89,9 +91,9 @@ var NAVTREEINDEX0 =
 "ERF__BoundaryConditions__yvel_8cpp.html":[3,0,1,1,7],
 "ERF__BoundaryConditions__zvel_8cpp.html":[3,0,1,1,8],
 "ERF__Checkpoint_8cpp.html":[3,0,1,6,0],
-"ERF__ChopGrids_8cpp.html":[3,0,1,16,0],
-"ERF__ChopGrids_8cpp.html#a140e3056fee7f1dcd5a295d2efdaf0b2":[3,0,1,16,0,1],
-"ERF__ChopGrids_8cpp.html#a6fe49eeaa200ab6ab8ae0a6e048f3ded":[3,0,1,16,0,0],
+"ERF__ChopGrids_8cpp.html":[3,0,1,16,1],
+"ERF__ChopGrids_8cpp.html#a140e3056fee7f1dcd5a295d2efdaf0b2":[3,0,1,16,1,1],
+"ERF__ChopGrids_8cpp.html#a6fe49eeaa200ab6ab8ae0a6e048f3ded":[3,0,1,16,1,0],
 "ERF__Cloud__SAM_8cpp.html":[3,0,1,8,2,0],
 "ERF__Cloud__rad__props_8H.html":[3,0,1,13,5],
 "ERF__Cloud__rad__props_8H_source.html":[3,0,1,13,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288":[3,0,1,2,2,1,2],
 "ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735acb17869fe51048b5a5c4c6106551a255":[3,0,1,2,2,1,1],
 "ERF__DiffStruct_8H_source.html":[3,0,1,2,2],
-"ERF__DiffusionSrcForMom__N_8cpp.html":[3,0,1,3,6],
-"ERF__DiffusionSrcForMom__N_8cpp.html#a426fe9fce28e7c29e11b29197e98f6a4":[3,0,1,3,6,0],
-"ERF__DiffusionSrcForMom__T_8cpp.html":[3,0,1,3,7]
+"ERF__DiffusionSrcForMom__N_8cpp.html":[3,0,1,3,6]
 };
