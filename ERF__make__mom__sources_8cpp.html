@@ -158,12 +158,12 @@ Include dependency graph for ERF_make_mom_sources.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6cb4cc0547bb12c601d1625c288b690f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__make__mom__sources_8cpp.html#a6cb4cc0547bb12c601d1625c288b690f">make_mom_sources</a> (int level, int, Real dt, Real time, Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_cc, const MultiFab &amp;, const MultiFab &amp;, MultiFab &amp;xmom_src, MultiFab &amp;ymom_src, MultiFab &amp;zmom_src, MultiFab *r0, MultiFab *p0, const Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v, const Real *dptr_u_geos, const Real *dptr_v_geos, const Real *dptr_wbar_sub, const Vector&lt; Real * &gt; d_rayleigh_ptrs_at_lev, const Vector&lt; Real * &gt; d_sponge_ptrs_at_lev, <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;input_sounding_data, int n_qstate)</td></tr>
-<tr class="separator:a6cb4cc0547bb12c601d1625c288b690f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e441f9270d3428996da1361892612f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__make__mom__sources_8cpp.html#a6e441f9270d3428996da1361892612f6">make_mom_sources</a> (int level, int, Real dt, Real time, Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_cc, const MultiFab &amp;, const MultiFab &amp;, MultiFab &amp;xmom_src, MultiFab &amp;ymom_src, MultiFab &amp;zmom_src, const MultiFab &amp;base_state, const Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v, const Real *dptr_u_geos, const Real *dptr_v_geos, const Real *dptr_wbar_sub, const Vector&lt; Real * &gt; d_rayleigh_ptrs_at_lev, const Vector&lt; Real * &gt; d_sponge_ptrs_at_lev, <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;input_sounding_data, int n_qstate)</td></tr>
+<tr class="separator:a6e441f9270d3428996da1361892612f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a6cb4cc0547bb12c601d1625c288b690f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cb4cc0547bb12c601d1625c288b690f">&#9670;&nbsp;</a></span>make_mom_sources()</h2>
+<a id="a6e441f9270d3428996da1361892612f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e441f9270d3428996da1361892612f6">&#9670;&nbsp;</a></span>make_mom_sources()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,14 +249,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">MultiFab *&#160;</td>
-          <td class="paramname"><em>r0</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">MultiFab *&#160;</td>
-          <td class="paramname"><em>p0</em>, </td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>base_state</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -492,7 +486,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// *****************************************************************************</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// 1. Create the BUOYANCY forcing term in the z-direction</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="ERF__make__buoyancy_8cpp.html#aa89e56be7a54db2a79fc3a3541f70cb9">make_buoyancy</a>(S_data, S_prim, zmom_src, geom, solverChoice, r0, p0,</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="ERF__make__buoyancy_8cpp.html#a8088738885b030abe3022ba02503db7c">make_buoyancy</a>(S_data, S_prim, zmom_src, geom, solverChoice, base_state,</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                  n_qstate, solverChoice.<a class="code" href="structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec">anelastic</a>[level]);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="comment">// *****************************************************************************</span></div>
@@ -760,7 +754,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__NumericalDiffusion_8cpp_html_ae451ae3f674c2317abcabb5ccc2c8854"><div class="ttname"><a href="ERF__NumericalDiffusion_8cpp.html#ae451ae3f674c2317abcabb5ccc2c8854">NumericalDiffusion</a></div><div class="ttdeci">void NumericalDiffusion(const Box &amp;bx, const int start_comp, const int num_comp, const Real dt, const Real num_diff_coeff, const Array4&lt; const Real &gt; &amp;data, const Array4&lt; Real &gt; &amp;rhs, const Array4&lt; const Real &gt; &amp;mf_x, const Array4&lt; const Real &gt; &amp;mf_y, const bool avg_mf_x_y, const bool avg_mf_y_x)</div><div class="ttdef"><b>Definition:</b> ERF_NumericalDiffusion.cpp:20</div></div>
 <div class="ttc" id="aERF__ReadBndryPlanes_8cpp_html_a63d3125f6fd361f61d697799f46da817"><div class="ttname"><a href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a></div><div class="ttdeci">AMREX_FORCE_INLINE IntVect offset(const int face_dir, const int normal)</div><div class="ttdef"><b>Definition:</b> ERF_ReadBndryPlanes.cpp:28</div></div>
-<div class="ttc" id="aERF__make__buoyancy_8cpp_html_aa89e56be7a54db2a79fc3a3541f70cb9"><div class="ttname"><a href="ERF__make__buoyancy_8cpp.html#aa89e56be7a54db2a79fc3a3541f70cb9">make_buoyancy</a></div><div class="ttdeci">void make_buoyancy(Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, MultiFab &amp;buoyancy, const amrex::Geometry geom, const SolverChoice &amp;solverChoice, const MultiFab *r0, const MultiFab *p0, const int n_qstate, const int anelastic)</div><div class="ttdef"><b>Definition:</b> ERF_make_buoyancy.cpp:32</div></div>
+<div class="ttc" id="aERF__make__buoyancy_8cpp_html_a8088738885b030abe3022ba02503db7c"><div class="ttname"><a href="ERF__make__buoyancy_8cpp.html#a8088738885b030abe3022ba02503db7c">make_buoyancy</a></div><div class="ttdeci">void make_buoyancy(Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, MultiFab &amp;buoyancy, const amrex::Geometry geom, const SolverChoice &amp;solverChoice, const MultiFab &amp;base_state, const int n_qstate, const int anelastic)</div><div class="ttdef"><b>Definition:</b> ERF_make_buoyancy.cpp:32</div></div>
 <div class="ttc" id="aclassPlaneAverage_html"><div class="ttname"><a href="classPlaneAverage.html">PlaneAverage</a></div><div class="ttdef"><b>Definition:</b> ERF_PlaneAverage.H:14</div></div>
 <div class="ttc" id="anamespaceIntVars_html_afdaa1b64a98a711870ca86f30e7963daa2e60798bc45154a8f905b1aa228a24e5"><div class="ttname"><a href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e60798bc45154a8f905b1aa228a24e5">IntVars::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:141</div></div>
 <div class="ttc" id="anamespaceIntVars_html_afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a"><div class="ttname"><a href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:139</div></div>
@@ -795,28 +789,28 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__make__mom__sources_8cpp_a6cb4cc0547bb12c601d1625c288b690f_cgraph.png" border="0" usemap="#aERF__make__mom__sources_8cpp_a6cb4cc0547bb12c601d1625c288b690f_cgraph" alt=""/></div>
-<map name="aERF__make__mom__sources_8cpp_a6cb4cc0547bb12c601d1625c288b690f_cgraph" id="aERF__make__mom__sources_8cpp_a6cb4cc0547bb12c601d1625c288b690f_cgraph">
+<div class="center"><img src="ERF__make__mom__sources_8cpp_a6e441f9270d3428996da1361892612f6_cgraph.png" border="0" usemap="#aERF__make__mom__sources_8cpp_a6e441f9270d3428996da1361892612f6_cgraph" alt=""/></div>
+<map name="aERF__make__mom__sources_8cpp_a6e441f9270d3428996da1361892612f6_cgraph" id="aERF__make__mom__sources_8cpp_a6e441f9270d3428996da1361892612f6_cgraph">
 <area shape="rect" title=" " alt="" coords="5,224,161,251"/>
 <area shape="rect" href="ERF__ApplySpongeZoneBCs_8cpp.html#a2f0457a5cf90ed9e3f084a3951a80ae8" title=" " alt="" coords="209,5,428,32"/>
 <area shape="rect" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a43cc085fc4c8dd69e73541c28062925c" title=" " alt="" coords="209,57,428,98"/>
 <area shape="rect" href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e" title=" " alt="" coords="485,41,661,82"/>
 <area shape="rect" href="classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5" title=" " alt="" coords="500,107,647,133"/>
 <area shape="rect" href="classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949" title=" " alt="" coords="502,158,645,199"/>
-<area shape="rect" href="ERF__make__buoyancy_8cpp.html#aa89e56be7a54db2a79fc3a3541f70cb9" title=" " alt="" coords="255,275,383,301"/>
+<area shape="rect" href="ERF__make__buoyancy_8cpp.html#a8088738885b030abe3022ba02503db7c" title=" " alt="" coords="255,275,383,301"/>
 <area shape="rect" href="classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1" title=" " alt="" coords="483,579,664,605"/>
 <area shape="rect" href="ERF__NumericalDiffusion_8cpp.html#ae451ae3f674c2317abcabb5ccc2c8854" title=" " alt="" coords="245,376,392,403"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="289,427,348,453"/>
-<area shape="rect" href="ERF__buoyancy__utils_8H.html#a0938c293c554c98f8818f5c2d2b85711" title=" " alt="" coords="484,477,663,504"/>
-<area shape="rect" href="ERF__buoyancy__utils_8H.html#a0ecbf049dadf08f881e4cf6a1d658ac4" title=" " alt="" coords="490,325,657,352"/>
-<area shape="rect" href="ERF__buoyancy__utils_8H.html#a32cfb26f6543d17f63a9eb14959d895a" title=" " alt="" coords="476,528,671,555"/>
+<area shape="rect" href="ERF__buoyancy__utils_8H.html#accbee4674806652fd73a87a5d46b32d3" title=" " alt="" coords="484,224,663,251"/>
+<area shape="rect" href="ERF__buoyancy__utils_8H.html#adbe6d4b0c74e319d4ddd78f8499cb2e4" title=" " alt="" coords="490,275,657,301"/>
+<area shape="rect" href="ERF__buoyancy__utils_8H.html#a7ed47bf58371d45d6ae8060a81f60dfc" title=" " alt="" coords="476,325,671,352"/>
 <area shape="rect" href="ERF__buoyancy__utils_8H.html#aa3a43a1548572f306f89f1fe0d68c470" title=" " alt="" coords="509,376,638,403"/>
-<area shape="rect" href="ERF__buoyancy__utils_8H.html#a26fc88640f045b68ee840d0e3ca9c5b4" title=" " alt="" coords="509,224,638,251"/>
-<area shape="rect" href="ERF__buoyancy__utils_8H.html#a4a13d42f2955b06536439c62694e8c80" title=" " alt="" coords="509,275,638,301"/>
+<area shape="rect" href="ERF__buoyancy__utils_8H.html#a26fc88640f045b68ee840d0e3ca9c5b4" title=" " alt="" coords="509,528,638,555"/>
+<area shape="rect" href="ERF__buoyancy__utils_8H.html#a4a13d42f2955b06536439c62694e8c80" title=" " alt="" coords="509,477,638,504"/>
 <area shape="rect" href="ERF__buoyancy__utils_8H.html#a63617f7315553972dd394a9628b4dba1" title=" " alt="" coords="509,427,638,453"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="719,477,868,504"/>
-<area shape="rect" href="ERF__EOS_8H.html#ab7e70b271e9ea46c3fb0bb6c60eccb73" title=" " alt="" coords="726,325,861,352"/>
-<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="721,275,865,301"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="719,224,868,251"/>
+<area shape="rect" href="ERF__EOS_8H.html#ab7e70b271e9ea46c3fb0bb6c60eccb73" title=" " alt="" coords="726,275,861,301"/>
+<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="721,477,865,504"/>
 </map>
 </div>
 

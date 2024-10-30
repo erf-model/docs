@@ -337,8 +337,10 @@ var classERF =
     [ "vel_t_avg", "classERF.html#a3e146164ca6929ec6d4984b6a3f43c81", null ],
     [ "verbose", "classERF.html#a43d0b17f6e155691a1e9474526df3af5", null ],
     [ "xflux_imask", "classERF.html#af044f075df34caa2a530aa13e1801a5b", null ],
+    [ "xmom_crse_rhs", "classERF.html#a5c10f5dfd41e45aeb2aa9eadd6463d30", null ],
     [ "xvel_bc_data", "classERF.html#a902f60d94be5eaf86361d1d5ad942105", null ],
     [ "yflux_imask", "classERF.html#aa4448d06a3e4fe9740927a636030939d", null ],
+    [ "ymom_crse_rhs", "classERF.html#ab2bdb5e591b8083bf3bb325bada50660", null ],
     [ "yvel_bc_data", "classERF.html#ae5e40fcd6dd76c80d0b5b09be5baef97", null ],
     [ "z_phys_cc", "classERF.html#a31be0f1ae705c52c8ccc520369013284", null ],
     [ "z_phys_nd", "classERF.html#a93e63e5af35efa564fd4195e8703f84c", null ],
@@ -347,5 +349,6 @@ var classERF =
     [ "z_t_rk", "classERF.html#a72a59614c6d5ab840b924c84d5682270", null ],
     [ "zflux_imask", "classERF.html#ada098767690d194f89717b0deb3adeac", null ],
     [ "zlevels_stag", "classERF.html#ace4f0c79f84075dd7a43bd2b0ede1a9b", null ],
+    [ "zmom_crse_rhs", "classERF.html#aaf7e8e28172eebdfe2224e4ee823310d", null ],
     [ "zvel_bc_data", "classERF.html#ae08c25dcf643c6ef39f27d7dd0cb7423", null ]
 ];
