@@ -1,7 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"globals_eval.html":[3,1,5],
-"globals_f.html":[3,1,0,5],
 "globals_func.html":[3,1,1],
 "globals_func.html":[3,1,1,0],
 "globals_func_b.html":[3,1,1,1],
@@ -249,5 +247,7 @@ var NAVTREEINDEX11 =
 "structMYNNLevel2.html":[2,0,52],
 "structMYNNLevel2.html#a02ae067397dad9810d528dc84ffe631d":[2,0,52,5],
 "structMYNNLevel2.html#a195f36a73787dea436d798f20d28ebb3":[2,0,52,8],
-"structMYNNLevel2.html#a296d16ed3e332da46763edb04a2ba326":[2,0,52,12]
+"structMYNNLevel2.html#a296d16ed3e332da46763edb04a2ba326":[2,0,52,12],
+"structMYNNLevel2.html#a2970f316de64a2a1c605baaea1f34aec":[2,0,52,0],
+"structMYNNLevel2.html#a2c96a00a9adfdf0247139127ec62e75a":[2,0,52,13]
 };

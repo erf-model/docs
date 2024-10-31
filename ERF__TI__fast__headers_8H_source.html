@@ -107,118 +107,117 @@ $(document).ready(function(){initNavTree('ERF__TI__fast__headers_8H_source.html'
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * Function for computing the fast RHS with no terrain</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="ERF__TI__fast__headers_8H.html#ab00d09d43c84be40a609497c9605a5a7">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ERF__TI__fast__headers_8H.html#ab00d09d43c84be40a609497c9605a5a7">erf_fast_rhs_N</a> (<span class="keywordtype">int</span> step, <span class="keywordtype">int</span> nrk, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> finest_level,</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="ERF__TI__fast__headers_8H.html#a25b4f2c626cbe895f44d04b262cd0938">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ERF__TI__fast__headers_8H.html#a25b4f2c626cbe895f44d04b262cd0938">erf_fast_rhs_N</a> (<span class="keywordtype">int</span> step, <span class="keywordtype">int</span> nrk, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> finest_level,</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_slow_rhs,</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                     <span class="keyword">const</span> amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_prev,</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_stage_data,</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                     <span class="keyword">const</span> amrex::MultiFab&amp; S_stage_prim,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                     <span class="keyword">const</span> amrex::MultiFab&amp; pi_stage,</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                     <span class="keyword">const</span> amrex::MultiFab&amp; fast_coeffs,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                     <span class="keyword">const</span> amrex::MultiFab* zmom_crse_rhs,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_data,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_scratch,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                     <span class="keyword">const</span> amrex::Geometry geom,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                     <span class="keyword">const</span> amrex::Real gravity,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                     <span class="keyword">const</span> amrex::Real dtau, <span class="keyword">const</span> amrex::Real beta_s,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                     <span class="keyword">const</span> amrex::Real facinv,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_m,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_u,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_v,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                     amrex::YAFluxRegister* fr_as_crse,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                     amrex::YAFluxRegister* fr_as_fine,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                     <span class="keywordtype">bool</span> l_use_moisture, <span class="keywordtype">bool</span> l_reflux,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                     <span class="keywordtype">bool</span> l_implicit_substepping);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * Function for computing the fast RHS with fixed terrain</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="ERF__TI__fast__headers_8H.html#a600146ca54f6fbeecc08fe9c93e5031c">   48</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ERF__TI__fast__headers_8H.html#a600146ca54f6fbeecc08fe9c93e5031c">erf_fast_rhs_T</a> (<span class="keywordtype">int</span> step, <span class="keywordtype">int</span> nrk, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> finest_level,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_slow_rhs,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                     <span class="keyword">const</span> amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_prev,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_stage_data,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                     <span class="keyword">const</span> amrex::MultiFab&amp; S_stage_prim,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                     <span class="keyword">const</span> amrex::MultiFab&amp; pi_stage,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                     <span class="keyword">const</span> amrex::MultiFab&amp; fast_coeffs,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_data,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_scratch,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                     <span class="keyword">const</span> amrex::Geometry geom,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                     <span class="keyword">const</span> amrex::Real gravity,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                           amrex::MultiFab&amp; Omega,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; detJ_cc,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                     <span class="keyword">const</span> amrex::Real dtau, <span class="keyword">const</span> amrex::Real beta_s,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                     <span class="keyword">const</span> amrex::Real facinv,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_m,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_u,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_v,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                     amrex::YAFluxRegister* fr_as_crse,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                     amrex::YAFluxRegister* fr_as_fine,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                     <span class="keywordtype">bool</span> l_use_moisture, <span class="keywordtype">bool</span> l_reflux,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                     <span class="keywordtype">bool</span> l_implicit_substepping);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> * Function for computing the fast RHS with moving terrain</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="ERF__TI__fast__headers_8H.html#aa794768e78c35584724f923852dc5b79">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ERF__TI__fast__headers_8H.html#aa794768e78c35584724f923852dc5b79">erf_fast_rhs_MT</a> (<span class="keywordtype">int</span> step, <span class="keywordtype">int</span> nrk, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> finest_level,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                      amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_slow_rhs,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                      <span class="keyword">const</span> amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_prev,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                      amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_stg_data,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                      <span class="keyword">const</span> amrex::MultiFab&amp; S_stg_prim,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                      <span class="keyword">const</span> amrex::MultiFab&amp; pi_stage,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                      <span class="keyword">const</span> amrex::MultiFab&amp; fast_coeffs,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                      amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_data,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                      amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_scratch,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                      <span class="keyword">const</span> amrex::Geometry geom,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                      <span class="keyword">const</span> amrex::Real gravity,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">bool</span> use_lagged_delta_rt,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                            amrex::MultiFab&amp; Omega,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_t_rk,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                      <span class="keyword">const</span> amrex::MultiFab* z_t_pert,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd_old,</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd_new,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd_stg,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; detJ_cc_old,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; detJ_cc_new,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; detJ_cc_stg,</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                      <span class="keyword">const</span> amrex::Real dtau, <span class="keyword">const</span> amrex::Real beta_s,</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                      <span class="keyword">const</span> amrex::Real facinv,</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_m,</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_u,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_v,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                      amrex::YAFluxRegister* fr_as_crse,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                      amrex::YAFluxRegister* fr_as_fine,</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                      <span class="keywordtype">bool</span> l_use_moisture, <span class="keywordtype">bool</span> l_reflux,</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                      <span class="keywordtype">bool</span> l_implicit_substepping);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> * Function for computing the coefficients for the tridiagonal solver used in the fast</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"> * integrator (the acoustic substepping).</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="ERF__TI__fast__headers_8H.html#adfda58e818c53254b1fa053669e911e8">  111</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ERF__TI__fast__headers_8H.html#adfda58e818c53254b1fa053669e911e8">make_fast_coeffs</a> (<span class="keywordtype">int</span> level,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                       amrex::MultiFab&amp; fast_coeffs,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                       amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_stage_data,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                       <span class="keyword">const</span> amrex::MultiFab&amp; S_stage_prim,</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                       <span class="keyword">const</span> amrex::MultiFab&amp; pi_stage,</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                       <span class="keyword">const</span> amrex::Geometry geom,</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">bool</span> use_moisture,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">bool</span> use_terrain,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                       <span class="keyword">const</span> amrex::Real gravity,</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                       <span class="keyword">const</span> amrex::Real c_p,</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                       std::unique_ptr&lt;amrex::MultiFab&gt;&amp; detJ_cc,</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                       <span class="keyword">const</span> amrex::MultiFab* r0,</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                       <span class="keyword">const</span> amrex::MultiFab* pi0,</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                       <span class="keyword">const</span> amrex::Real dtau,</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                       <span class="keyword">const</span> amrex::Real beta_s,</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                       amrex::GpuArray&lt;ERF_BC, AMREX_SPACEDIM*2&gt; &amp;phys_bc_type);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_data,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_scratch,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                     <span class="keyword">const</span> amrex::Geometry geom,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                     <span class="keyword">const</span> amrex::Real gravity,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                     <span class="keyword">const</span> amrex::Real dtau, <span class="keyword">const</span> amrex::Real beta_s,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                     <span class="keyword">const</span> amrex::Real facinv,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_m,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_u,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_v,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                     amrex::YAFluxRegister* fr_as_crse,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                     amrex::YAFluxRegister* fr_as_fine,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                     <span class="keywordtype">bool</span> l_use_moisture, <span class="keywordtype">bool</span> l_reflux,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                     <span class="keywordtype">bool</span> l_implicit_substepping);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * Function for computing the fast RHS with fixed terrain</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="ERF__TI__fast__headers_8H.html#a600146ca54f6fbeecc08fe9c93e5031c">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ERF__TI__fast__headers_8H.html#a600146ca54f6fbeecc08fe9c93e5031c">erf_fast_rhs_T</a> (<span class="keywordtype">int</span> step, <span class="keywordtype">int</span> nrk, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> finest_level,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_slow_rhs,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                     <span class="keyword">const</span> amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_prev,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_stage_data,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                     <span class="keyword">const</span> amrex::MultiFab&amp; S_stage_prim,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                     <span class="keyword">const</span> amrex::MultiFab&amp; pi_stage,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                     <span class="keyword">const</span> amrex::MultiFab&amp; fast_coeffs,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_data,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                     amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_scratch,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                     <span class="keyword">const</span> amrex::Geometry geom,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                     <span class="keyword">const</span> amrex::Real gravity,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                           amrex::MultiFab&amp; Omega,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; detJ_cc,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                     <span class="keyword">const</span> amrex::Real dtau, <span class="keyword">const</span> amrex::Real beta_s,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                     <span class="keyword">const</span> amrex::Real facinv,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_m,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_u,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                     std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_v,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                     amrex::YAFluxRegister* fr_as_crse,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                     amrex::YAFluxRegister* fr_as_fine,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                     <span class="keywordtype">bool</span> l_use_moisture, <span class="keywordtype">bool</span> l_reflux,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                     <span class="keywordtype">bool</span> l_implicit_substepping);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> * Function for computing the fast RHS with moving terrain</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="ERF__TI__fast__headers_8H.html#aa794768e78c35584724f923852dc5b79">   75</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ERF__TI__fast__headers_8H.html#aa794768e78c35584724f923852dc5b79">erf_fast_rhs_MT</a> (<span class="keywordtype">int</span> step, <span class="keywordtype">int</span> nrk, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> finest_level,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                      amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_slow_rhs,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                      <span class="keyword">const</span> amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_prev,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                      amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_stg_data,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                      <span class="keyword">const</span> amrex::MultiFab&amp; S_stg_prim,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                      <span class="keyword">const</span> amrex::MultiFab&amp; pi_stage,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                      <span class="keyword">const</span> amrex::MultiFab&amp; fast_coeffs,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                      amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_data,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                      amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_scratch,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                      <span class="keyword">const</span> amrex::Geometry geom,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                      <span class="keyword">const</span> amrex::Real gravity,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">bool</span> use_lagged_delta_rt,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                            amrex::MultiFab&amp; Omega,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_t_rk,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                      <span class="keyword">const</span> amrex::MultiFab* z_t_pert,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd_old,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd_new,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd_stg,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; detJ_cc_old,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; detJ_cc_new,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; detJ_cc_stg,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                      <span class="keyword">const</span> amrex::Real dtau, <span class="keyword">const</span> amrex::Real beta_s,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                      <span class="keyword">const</span> amrex::Real facinv,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_m,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_u,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                      std::unique_ptr&lt;amrex::MultiFab&gt;&amp; mapfac_v,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                      amrex::YAFluxRegister* fr_as_crse,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                      amrex::YAFluxRegister* fr_as_fine,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                      <span class="keywordtype">bool</span> l_use_moisture, <span class="keywordtype">bool</span> l_reflux,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                      <span class="keywordtype">bool</span> l_implicit_substepping);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment"> * Function for computing the coefficients for the tridiagonal solver used in the fast</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> * integrator (the acoustic substepping).</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="ERF__TI__fast__headers_8H.html#adfda58e818c53254b1fa053669e911e8">  110</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ERF__TI__fast__headers_8H.html#adfda58e818c53254b1fa053669e911e8">make_fast_coeffs</a> (<span class="keywordtype">int</span> level,</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                       amrex::MultiFab&amp; fast_coeffs,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                       amrex::Vector&lt;amrex::MultiFab &gt;&amp; S_stage_data,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                       <span class="keyword">const</span> amrex::MultiFab&amp; S_stage_prim,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                       <span class="keyword">const</span> amrex::MultiFab&amp; pi_stage,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                       <span class="keyword">const</span> amrex::Geometry geom,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">bool</span> use_moisture,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">bool</span> use_terrain,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                       <span class="keyword">const</span> amrex::Real gravity,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                       <span class="keyword">const</span> amrex::Real c_p,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                       std::unique_ptr&lt;amrex::MultiFab&gt;&amp; detJ_cc,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                       <span class="keyword">const</span> amrex::MultiFab* r0,</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                       <span class="keyword">const</span> amrex::MultiFab* pi0,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                       <span class="keyword">const</span> amrex::Real dtau,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                       <span class="keyword">const</span> amrex::Real beta_s,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                       amrex::GpuArray&lt;ERF_BC, AMREX_SPACEDIM*2&gt; &amp;phys_bc_type);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html"><div class="ttname"><a href="ERF__IndexDefines_8H.html">ERF_IndexDefines.H</a></div></div>
+<div class="ttc" id="aERF__TI__fast__headers_8H_html_a25b4f2c626cbe895f44d04b262cd0938"><div class="ttname"><a href="ERF__TI__fast__headers_8H.html#a25b4f2c626cbe895f44d04b262cd0938">erf_fast_rhs_N</a></div><div class="ttdeci">void erf_fast_rhs_N(int step, int nrk, int level, int finest_level, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_slow_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_prev, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const amrex::Real gravity, const amrex::Real dtau, const amrex::Real beta_s, const amrex::Real facinv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine, bool l_use_moisture, bool l_reflux, bool l_implicit_substepping)</div></div>
 <div class="ttc" id="aERF__TI__fast__headers_8H_html_a600146ca54f6fbeecc08fe9c93e5031c"><div class="ttname"><a href="ERF__TI__fast__headers_8H.html#a600146ca54f6fbeecc08fe9c93e5031c">erf_fast_rhs_T</a></div><div class="ttdeci">void erf_fast_rhs_T(int step, int nrk, int level, int finest_level, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_slow_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_prev, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const amrex::Real gravity, amrex::MultiFab &amp;Omega, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc, const amrex::Real dtau, const amrex::Real beta_s, const amrex::Real facinv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine, bool l_use_moisture, bool l_reflux, bool l_implicit_substepping)</div></div>
 <div class="ttc" id="aERF__TI__fast__headers_8H_html_aa794768e78c35584724f923852dc5b79"><div class="ttname"><a href="ERF__TI__fast__headers_8H.html#aa794768e78c35584724f923852dc5b79">erf_fast_rhs_MT</a></div><div class="ttdeci">void erf_fast_rhs_MT(int step, int nrk, int level, int finest_level, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_slow_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_prev, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stg_data, const amrex::MultiFab &amp;S_stg_prim, const amrex::MultiFab &amp;pi_stage, const amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const amrex::Real gravity, const bool use_lagged_delta_rt, amrex::MultiFab &amp;Omega, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_t_rk, const amrex::MultiFab *z_t_pert, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd_stg, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc_stg, const amrex::Real dtau, const amrex::Real beta_s, const amrex::Real facinv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine, bool l_use_moisture, bool l_reflux, bool l_implicit_substepping)</div></div>
-<div class="ttc" id="aERF__TI__fast__headers_8H_html_ab00d09d43c84be40a609497c9605a5a7"><div class="ttname"><a href="ERF__TI__fast__headers_8H.html#ab00d09d43c84be40a609497c9605a5a7">erf_fast_rhs_N</a></div><div class="ttdeci">void erf_fast_rhs_N(int step, int nrk, int level, int finest_level, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_slow_rhs, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_prev, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::MultiFab &amp;fast_coeffs, const amrex::MultiFab *zmom_crse_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::Geometry geom, const amrex::Real gravity, const amrex::Real dtau, const amrex::Real beta_s, const amrex::Real facinv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine, bool l_use_moisture, bool l_reflux, bool l_implicit_substepping)</div></div>
 <div class="ttc" id="aERF__TI__fast__headers_8H_html_adfda58e818c53254b1fa053669e911e8"><div class="ttname"><a href="ERF__TI__fast__headers_8H.html#adfda58e818c53254b1fa053669e911e8">make_fast_coeffs</a></div><div class="ttdeci">void make_fast_coeffs(int level, amrex::MultiFab &amp;fast_coeffs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_stage_data, const amrex::MultiFab &amp;S_stage_prim, const amrex::MultiFab &amp;pi_stage, const amrex::Geometry geom, const bool use_moisture, const bool use_terrain, const amrex::Real gravity, const amrex::Real c_p, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc, const amrex::MultiFab *r0, const amrex::MultiFab *pi0, const amrex::Real dtau, const amrex::Real beta_s, amrex::GpuArray&lt; ERF_BC, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html">ERF_TerrainMetrics.H</a></div></div>
 <div class="ttc" id="aERF__TileNoZ_8H_html"><div class="ttname"><a href="ERF__TileNoZ_8H.html">ERF_TileNoZ.H</a></div></div>
