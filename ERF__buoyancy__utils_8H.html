@@ -204,7 +204,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    amrex::Real theta_d_0_wface = amrex::Real(0.5) * (theta_d_0_lo + theta_d_0_hi);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> (-grav_gpu * (theta_d_wface - theta_d_0_wface) / theta_d_0_wface);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> (-grav_gpu * (theta_d_wface - theta_d_0_wface) / theta_d_0_wface * 0.5 * (r0_arr(i,j,k) + r0_arr(i,j,k-1)));</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 <div class="ttc" id="aERF__EOS_8H_html_a3cc0ee7727b26e21a97acfc2ad2e6d4d"><div class="ttname"><a href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getRhoThetagivenP(const amrex::Real p, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:144</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
@@ -508,7 +508,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    amrex::Real theta_v_0_wface = amrex::Real(0.5) * (theta_v_0_lo + theta_v_0_hi);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> (-grav_gpu * (theta_v_wface - theta_v_0_wface) / theta_v_0_wface);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> (-grav_gpu * (theta_v_wface - theta_v_0_wface) / theta_v_0_wface * 0.5 * (r0_arr(i,j,k) + r0_arr(i,j,k-1)));</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a3bf0a4783e82ba30db2b7c0a332c2f16"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a></div><div class="ttdeci">#define RhoQ2_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:43</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>

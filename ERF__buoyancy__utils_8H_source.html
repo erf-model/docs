@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('ERF__buoyancy__utils_8H_source.html','
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    amrex::Real theta_d_0_wface = amrex::Real(0.5) * (theta_d_0_lo + theta_d_0_hi);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> (-grav_gpu * (theta_d_wface - theta_d_0_wface) / theta_d_0_wface);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> (-grav_gpu * (theta_d_wface - theta_d_0_wface) / theta_d_0_wface * 0.5 * (r0_arr(i,j,k) + r0_arr(i,j,k-1)));</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;AMREX_GPU_DEVICE</div>
@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('ERF__buoyancy__utils_8H_source.html','
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    amrex::Real theta_v_0_wface = amrex::Real(0.5) * (theta_v_0_lo + theta_v_0_hi);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> (-grav_gpu * (theta_v_wface - theta_v_0_wface) / theta_v_0_wface);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> (-grav_gpu * (theta_v_wface - theta_v_0_wface) / theta_v_0_wface * 0.5 * (r0_arr(i,j,k) + r0_arr(i,j,k-1)));</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;AMREX_GPU_DEVICE</div>
