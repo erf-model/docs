@@ -349,9 +349,9 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    {</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        amrex::Error(<span class="stringliteral">&quot;Should never call erf_init_rayleigh for &quot;</span>+<a class="code" href="classProblemBase.html#a3a8fb70110fb25623cdfa7b508dee9cf">name</a>()+<span class="stringliteral">&quot; problem&quot;</span>);</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    {</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        amrex::Error(<span class="stringliteral">&quot;Should never call erf_init_rayleigh for &quot;</span>+<a class="code" href="classProblemBase.html#a3a8fb70110fb25623cdfa7b508dee9cf">name</a>()+<span class="stringliteral">&quot; problem&quot;</span>);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -398,11 +398,11 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Function to update default base parameters, currently only used for init_type == InitType::Uniform </p>
-<div class="fragment"><div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                                                          {</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">rho_0</a> = rho_0;</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a> = T_0;</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    }</div>
-<div class="ttc" id="aclassProblemBase_html_ae21bdcbfbf32d1ec423b6a0edd92dbda"><div class="ttname"><a href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">ProblemBase::base_parms</a></div><div class="ttdeci">ProbParmDefaults base_parms</div><div class="ttdef"><b>Definition:</b> ERF_prob_common.H:467</div></div>
+<div class="fragment"><div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                                                          {</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">rho_0</a> = rho_0;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a> = T_0;</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    }</div>
+<div class="ttc" id="aclassProblemBase_html_ae21bdcbfbf32d1ec423b6a0edd92dbda"><div class="ttname"><a href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">ProblemBase::base_parms</a></div><div class="ttdeci">ProbParmDefaults base_parms</div><div class="ttdef"><b>Definition:</b> ERF_prob_common.H:470</div></div>
 <div class="ttc" id="astructProbParmDefaults_html_a16db7fa78b123f2a956bacbce26f32c6"><div class="ttname"><a href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">ProbParmDefaults::T_0</a></div><div class="ttdeci">amrex::Real T_0</div><div class="ttdef"><b>Definition:</b> ERF_prob_common.H:16</div></div>
 <div class="ttc" id="astructProbParmDefaults_html_af75997d9e4a94ab3b221657799ef720f"><div class="ttname"><a href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">ProbParmDefaults::rho_0</a></div><div class="ttdeci">amrex::Real rho_0</div><div class="ttdef"><b>Definition:</b> ERF_prob_common.H:15</div></div>
 </div><!-- fragment -->
@@ -619,22 +619,34 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to perform custom initialization of terrain</p>
 <p>This version takes a single FArrayBox instead of a MultiFab </p>
-<div class="fragment"><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    {</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="comment">// Note that this only sets the terrain value at the ground IF k=0 is in the box</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Initializing flat terrain at z=0&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="comment">// Bottom of domain</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordtype">int</span> k0 = 0;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="comment">// Grown box with no z range</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        amrex::Box bx = z_phys_nd.box();</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; z_arr = z_phys_nd.array();</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) {</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            z_arr(i,j,k0) = 0.0;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        });</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    }</div>
-</div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    {</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="comment">// Note that this only sets the terrain value at the ground IF k=0 is in the box</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Initializing flat terrain at z=0&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="comment">// Bottom of domain</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordtype">int</span> k0 = 0;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="comment">// Grown box with no z range</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        amrex::Box bx = z_phys_nd.box();</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; z_arr = z_phys_nd.array();</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) {</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            z_arr(i,j,k0) = 0.0;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        });</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <a class="code" href="structSolverChoice.html#a39a214d3b761245913bc3f80e5bde880">SolverChoice::set_flat_terrain_flag</a>();</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    }</div>
+<div class="ttc" id="astructSolverChoice_html_a39a214d3b761245913bc3f80e5bde880"><div class="ttname"><a href="structSolverChoice.html#a39a214d3b761245913bc3f80e5bde880">SolverChoice::set_flat_terrain_flag</a></div><div class="ttdeci">static void set_flat_terrain_flag()</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:526</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classProblemBase_af79c90b1e65ab01db0f17576818e3661_cgraph.png" border="0" usemap="#aclassProblemBase_af79c90b1e65ab01db0f17576818e3661_cgraph" alt=""/></div>
+<map name="aclassProblemBase_af79c90b1e65ab01db0f17576818e3661_cgraph" id="aclassProblemBase_af79c90b1e65ab01db0f17576818e3661_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,197,47"/>
+<area shape="rect" href="structSolverChoice.html#a39a214d3b761245913bc3f80e5bde880" title=" " alt="" coords="245,5,408,47"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a4a43dd346d2cafb2ba36eff6507613bf"></a>
@@ -718,18 +730,20 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                    });</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                }</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            }</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        }</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <a class="code" href="structSolverChoice.html#a39a214d3b761245913bc3f80e5bde880">SolverChoice::set_flat_terrain_flag</a>();</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        }</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
 <div class="ttc" id="aERF__Microphysics__Utils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics_Utils.H:203</div></div>
-<div class="ttc" id="aclassProblemBase_html_a7497a6e90bebb14387f5716ee2e51c2d"><div class="ttname"><a href="classProblemBase.html#a7497a6e90bebb14387f5716ee2e51c2d">ProblemBase::read_custom_terrain</a></div><div class="ttdeci">virtual void read_custom_terrain(const std::string &amp;fname, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, const amrex::Real &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_prob_common.H:346</div></div>
+<div class="ttc" id="aclassProblemBase_html_a7497a6e90bebb14387f5716ee2e51c2d"><div class="ttname"><a href="classProblemBase.html#a7497a6e90bebb14387f5716ee2e51c2d">ProblemBase::read_custom_terrain</a></div><div class="ttdeci">virtual void read_custom_terrain(const std::string &amp;fname, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, const amrex::Real &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_prob_common.H:349</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classProblemBase_a4a43dd346d2cafb2ba36eff6507613bf_cgraph.png" border="0" usemap="#aclassProblemBase_a4a43dd346d2cafb2ba36eff6507613bf_cgraph" alt=""/></div>
 <map name="aclassProblemBase_a4a43dd346d2cafb2ba36eff6507613bf_cgraph" id="aclassProblemBase_a4a43dd346d2cafb2ba36eff6507613bf_cgraph">
-<area shape="rect" title=" " alt="" coords="5,27,197,69"/>
+<area shape="rect" title=" " alt="" coords="5,57,197,98"/>
 <area shape="rect" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="326,5,365,32"/>
 <area shape="rect" href="classProblemBase.html#a7497a6e90bebb14387f5716ee2e51c2d" title=" " alt="" coords="245,57,445,98"/>
+<area shape="rect" href="structSolverChoice.html#a39a214d3b761245913bc3f80e5bde880" title=" " alt="" coords="264,122,427,163"/>
 </map>
 </div>
 
@@ -769,19 +783,19 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Function to set uniform background density and pressure fields </p>
-<div class="fragment"><div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    {</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;        amrex::Real rho_0 = <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">rho_0</a>;</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        amrex::Real T_0 = <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a>;</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Initializing uniform fields&quot;</span></div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; rho=&quot;</span> &lt;&lt; rho_0 &lt;&lt; <span class="stringliteral">&quot; theta=&quot;</span> &lt;&lt; T_0</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;            &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        {</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            state(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) = rho_0;</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            state(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = rho_0 * T_0;</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        });</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    {</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        amrex::Real rho_0 = <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f">rho_0</a>;</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        amrex::Real T_0 = <a class="code" href="classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda">base_parms</a>.<a class="code" href="structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6">T_0</a>;</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Initializing uniform fields&quot;</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; rho=&quot;</span> &lt;&lt; rho_0 &lt;&lt; <span class="stringliteral">&quot; theta=&quot;</span> &lt;&lt; T_0</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;            &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        {</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            state(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) = rho_0;</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;            state(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = rho_0 * T_0;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        });</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    }</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 </div><!-- fragment -->
@@ -884,78 +898,78 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    {</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="comment">// Read terrain file on the host</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        amrex::Print()&lt;&lt;<span class="stringliteral">&quot;Reading terrain file: &quot;</span>&lt;&lt; fname &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        std::ifstream file(fname);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        amrex::Gpu::HostVector&lt;amrex::Real&gt; m_xterrain,m_yterrain,m_zterrain;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        amrex::Real value1,value2,value3;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">while</span>(file&gt;&gt;value1&gt;&gt;value2&gt;&gt;value3){</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            m_xterrain.push_back(value1);</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            m_yterrain.push_back(value2);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            m_zterrain.push_back(value3);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        }</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        file.close();</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="comment">// Copy data to the GPU</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordtype">int</span> nnode = m_xterrain.size();</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        amrex::Gpu::DeviceVector&lt;amrex::Real&gt; d_xterrain(nnode),d_yterrain(nnode),d_zterrain(nnode);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, m_xterrain.begin(), m_xterrain.end(), d_xterrain.begin());</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, m_yterrain.begin(), m_yterrain.end(), d_yterrain.begin());</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, m_zterrain.begin(), m_zterrain.end(), d_zterrain.begin());</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        amrex::Real* d_xt = d_xterrain.data();</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        amrex::Real* d_yt = d_yterrain.data();</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        amrex::Real* d_zt = d_zterrain.data();</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="comment">// Populate z_phys data</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        amrex::Real tol = 1.0e-4;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordtype">int</span> ngrow = z_phys_nd.nGrow();</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keyword">auto</span> dx = geom.CellSizeArray();</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keyword">auto</span> ProbLoArr = geom.ProbLoArray();</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordtype">int</span> ilo = geom.Domain().smallEnd(0);</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordtype">int</span> jlo = geom.Domain().smallEnd(1);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keywordtype">int</span> klo = geom.Domain().smallEnd(2);</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordtype">int</span> ihi = geom.Domain().bigEnd(0) + 1;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordtype">int</span> jhi = geom.Domain().bigEnd(1) + 1;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(z_phys_nd,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        {</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            <span class="comment">// Grown box with no z range</span></div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            amrex::Box xybx = mfi.growntilebox(ngrow);</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            xybx.setRange(2,0);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; z_arr = z_phys_nd.array(mfi);</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            amrex::ParallelFor(xybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                <span class="comment">// Clip indices for ghost-cells</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,ilo),ihi);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,jlo),jhi);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                <span class="comment">// Location of nodes</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = ProbLoArr[0]  + ii  * dx[0];</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = ProbLoArr[1]  + jj  * dx[1];</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                <span class="keywordtype">int</span> inode = ii + jj * (ihi-ilo+2); <span class="comment">// stride is Nx+1</span></div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                <span class="keywordflow">if</span> (std::sqrt(std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-d_xt[inode],2)+std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-d_yt[inode],2)) &lt; tol) {</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                    z_arr(i,j,klo) = d_zt[inode];</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                    <span class="comment">// Unexpected list order, do brute force search</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    amrex::Real zloc = 0.0;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;nnode; ++n)</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                    {</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                        amrex::Real delta=std::sqrt(std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-d_xt[n],2)+std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-d_yt[n],2));</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                        <span class="keywordflow">if</span> (delta &lt; tol) {</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                            found = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                            zloc = d_zt[n];</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                        }</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                    }</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                    AMREX_ASSERT_WITH_MESSAGE(found, <span class="stringliteral">&quot;Location read from terrain file does not match the grid!&quot;</span>);</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                    amrex::ignore_unused(found);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                    z_arr(i,j,klo) = zloc;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                }</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            });</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        }</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    {</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="comment">// Read terrain file on the host</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        amrex::Print()&lt;&lt;<span class="stringliteral">&quot;Reading terrain file: &quot;</span>&lt;&lt; fname &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        std::ifstream file(fname);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        amrex::Gpu::HostVector&lt;amrex::Real&gt; m_xterrain,m_yterrain,m_zterrain;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        amrex::Real value1,value2,value3;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">while</span>(file&gt;&gt;value1&gt;&gt;value2&gt;&gt;value3){</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            m_xterrain.push_back(value1);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            m_yterrain.push_back(value2);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            m_zterrain.push_back(value3);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        }</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        file.close();</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="comment">// Copy data to the GPU</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordtype">int</span> nnode = m_xterrain.size();</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        amrex::Gpu::DeviceVector&lt;amrex::Real&gt; d_xterrain(nnode),d_yterrain(nnode),d_zterrain(nnode);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, m_xterrain.begin(), m_xterrain.end(), d_xterrain.begin());</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, m_yterrain.begin(), m_yterrain.end(), d_yterrain.begin());</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, m_zterrain.begin(), m_zterrain.end(), d_zterrain.begin());</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        amrex::Real* d_xt = d_xterrain.data();</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        amrex::Real* d_yt = d_yterrain.data();</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        amrex::Real* d_zt = d_zterrain.data();</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="comment">// Populate z_phys data</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        amrex::Real tol = 1.0e-4;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordtype">int</span> ngrow = z_phys_nd.nGrow();</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keyword">auto</span> dx = geom.CellSizeArray();</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keyword">auto</span> ProbLoArr = geom.ProbLoArray();</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordtype">int</span> ilo = geom.Domain().smallEnd(0);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordtype">int</span> jlo = geom.Domain().smallEnd(1);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordtype">int</span> klo = geom.Domain().smallEnd(2);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordtype">int</span> ihi = geom.Domain().bigEnd(0) + 1;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordtype">int</span> jhi = geom.Domain().bigEnd(1) + 1;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(z_phys_nd,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        {</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="comment">// Grown box with no z range</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            amrex::Box xybx = mfi.growntilebox(ngrow);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            xybx.setRange(2,0);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; z_arr = z_phys_nd.array(mfi);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            amrex::ParallelFor(xybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                <span class="comment">// Clip indices for ghost-cells</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,ilo),ihi);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,jlo),jhi);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                <span class="comment">// Location of nodes</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = ProbLoArr[0]  + ii  * dx[0];</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = ProbLoArr[1]  + jj  * dx[1];</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                <span class="keywordtype">int</span> inode = ii + jj * (ihi-ilo+2); <span class="comment">// stride is Nx+1</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                <span class="keywordflow">if</span> (std::sqrt(std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-d_xt[inode],2)+std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-d_yt[inode],2)) &lt; tol) {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    z_arr(i,j,klo) = d_zt[inode];</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                    <span class="comment">// Unexpected list order, do brute force search</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                    amrex::Real zloc = 0.0;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;nnode; ++n)</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                    {</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                        amrex::Real delta=std::sqrt(std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-d_xt[n],2)+std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-d_yt[n],2));</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                        <span class="keywordflow">if</span> (delta &lt; tol) {</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                            found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                            zloc = d_zt[n];</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                        }</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                    }</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                    AMREX_ASSERT_WITH_MESSAGE(found, <span class="stringliteral">&quot;Location read from terrain file does not match the grid!&quot;</span>);</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                    amrex::ignore_unused(found);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                    z_arr(i,j,klo) = zloc;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                }</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            });</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        }</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    }</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 </div><!-- fragment -->

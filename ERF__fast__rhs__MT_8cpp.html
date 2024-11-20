@@ -133,12 +133,12 @@ Include dependency graph for ERF_fast_rhs_MT.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a526d3733938e64ccdcb7e99b2944b456"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__fast__rhs__MT_8cpp.html#a526d3733938e64ccdcb7e99b2944b456">erf_fast_rhs_MT</a> (int step, int nrk, int level, int finest_level, Vector&lt; MultiFab &gt; &amp;S_slow_rhs, const Vector&lt; MultiFab &gt; &amp;S_prev, Vector&lt; MultiFab &gt; &amp;S_stg_data, const MultiFab &amp;S_stg_prim, const MultiFab &amp;pi_stage, const MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_data, Vector&lt; MultiFab &gt; &amp;S_scratch, const Geometry geom, const Real gravity, const bool use_lagged_delta_rt, MultiFab &amp;Omega, std::unique_ptr&lt; MultiFab &gt; &amp;z_t_rk, const MultiFab *z_t_pert, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd_old, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd_new, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd_stg, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc_old, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc_new, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc_stg, const Real dtau, const Real beta_s, const Real facinv, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v, YAFluxRegister *fr_as_crse, YAFluxRegister *fr_as_fine, bool l_use_moisture, bool l_reflux, bool)</td></tr>
-<tr class="separator:a526d3733938e64ccdcb7e99b2944b456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d569dbe264703bf1e1c6ae59d14b4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__fast__rhs__MT_8cpp.html#af5d569dbe264703bf1e1c6ae59d14b4c">erf_fast_rhs_MT</a> (int step, int nrk, int level, int finest_level, Vector&lt; MultiFab &gt; &amp;S_slow_rhs, const Vector&lt; MultiFab &gt; &amp;S_prev, Vector&lt; MultiFab &gt; &amp;S_stg_data, const MultiFab &amp;S_stg_prim, const MultiFab &amp;pi_stage, const MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_data, Vector&lt; MultiFab &gt; &amp;S_scratch, const Geometry geom, const Real gravity, const bool use_lagged_delta_rt, std::unique_ptr&lt; MultiFab &gt; &amp;z_t_rk, const MultiFab *z_t_pert, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd_old, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd_new, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd_stg, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc_old, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc_new, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc_stg, const Real dtau, const Real beta_s, const Real facinv, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; MultiFab &gt; &amp;mapfac_v, YAFluxRegister *fr_as_crse, YAFluxRegister *fr_as_fine, bool l_use_moisture, bool l_reflux, bool)</td></tr>
+<tr class="separator:af5d569dbe264703bf1e1c6ae59d14b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a526d3733938e64ccdcb7e99b2944b456"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a526d3733938e64ccdcb7e99b2944b456">&#9670;&nbsp;</a></span>erf_fast_rhs_MT()</h2>
+<a id="af5d569dbe264703bf1e1c6ae59d14b4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5d569dbe264703bf1e1c6ae59d14b4c">&#9670;&nbsp;</a></span>erf_fast_rhs_MT()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,12 +232,6 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">const bool&#160;</td>
           <td class="paramname"><em>use_lagged_delta_rt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>Omega</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -378,7 +372,6 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>container for geometric information </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">gravity</td><td>Magnitude of gravity </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">use_lagged_delta_rt</td><td>define lagged_delta_rt for our next step </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">Omega</td><td>component of the momentum normal to the z-coordinate surface </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">z_t_rk</td><td>rate of change of grid height &ndash; only relevant for moving terrain </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">z_t_pert</td><td>rate of change of grid height &ndash; interpolated between RK stages </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">z_phys_nd_old</td><td>height coordinate at nodes at old time </td></tr>
@@ -401,34 +394,36 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    BL_PROFILE_REGION(<span class="stringliteral">&quot;erf_fast_rhs_MT()&quot;</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    Real beta_1 = 0.5 * (1.0 - beta_s);  <span class="comment">// multiplies explicit terms</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    Real beta_2 = 0.5 * (1.0 + beta_s);  <span class="comment">// multiplies implicit terms</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// How much do we project forward the (rho theta) that is used in the horizontal momentum equations</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    Real beta_d = 0.1;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">const</span> Real* dx = geom.CellSize();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dxInv = geom.InvCellSizeArray();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    Real dxi = dxInv[0];</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    Real dyi = dxInv[1];</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    Real dzi = dxInv[2];</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    MultiFab     coeff_A_mf(fast_coeffs, make_alias, 0, 1);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    MultiFab inv_coeff_B_mf(fast_coeffs, make_alias, 1, 1);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    MultiFab     coeff_C_mf(fast_coeffs, make_alias, 2, 1);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    MultiFab     coeff_P_mf(fast_coeffs, make_alias, 3, 1);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    MultiFab     coeff_Q_mf(fast_coeffs, make_alias, 4, 1);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// *************************************************************************</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Set gravity as a vector</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">const</span>    Array&lt;Real,AMREX_SPACEDIM&gt; grav{0.0, 0.0, -gravity};</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real,AMREX_SPACEDIM&gt; grav_gpu{grav[0], grav[1], grav[2]};</div>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    BL_PROFILE_REGION(<span class="stringliteral">&quot;erf_fast_rhs_MT()&quot;</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    Real beta_1 = 0.5 * (1.0 - beta_s);  <span class="comment">// multiplies explicit terms</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    Real beta_2 = 0.5 * (1.0 + beta_s);  <span class="comment">// multiplies implicit terms</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// How much do we project forward the (rho theta) that is used in the horizontal momentum equations</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    Real beta_d = 0.1;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">const</span> Real* dx = geom.CellSize();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dxInv = geom.InvCellSizeArray();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    Real dxi = dxInv[0];</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    Real dyi = dxInv[1];</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    Real dzi = dxInv[2];</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    MultiFab     coeff_A_mf(fast_coeffs, make_alias, 0, 1);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    MultiFab inv_coeff_B_mf(fast_coeffs, make_alias, 1, 1);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    MultiFab     coeff_C_mf(fast_coeffs, make_alias, 2, 1);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    MultiFab     coeff_P_mf(fast_coeffs, make_alias, 3, 1);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    MultiFab     coeff_Q_mf(fast_coeffs, make_alias, 4, 1);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// *************************************************************************</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Set gravity as a vector</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">const</span>    Array&lt;Real,AMREX_SPACEDIM&gt; grav{0.0, 0.0, -gravity};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real,AMREX_SPACEDIM&gt; grav_gpu{grav[0], grav[1], grav[2]};</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    MultiFab extrap(S_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].boxArray(),S_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].DistributionMap(),1,1);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    MultiFab extrap(S_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].boxArray(),S_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].DistributionMap(),1,1);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    MultiFab Omega(S_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daaaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a>].boxArray(), S_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daaaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a>].DistributionMap(), 1, 1);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// *************************************************************************</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// Define updates in the current RK stg</span></div>
@@ -962,12 +957,12 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:50</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a2116df83b61a39fb50b9a2d7474c00d7"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_xi_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:99</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a53ec395d493c2308315f7512c5438087"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real WFromOmega(int i, int j, int k, amrex::Real omega, amrex::Real u, amrex::Real v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:405</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a6a4bf1524412edfd6efcbb867256db18"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18">OmegaFromW</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real OmegaFromW(int i, int j, int k, amrex::Real w, const amrex::Array4&lt; const amrex::Real &gt; u_arr, const amrex::Array4&lt; const amrex::Real &gt; v_arr, const amrex::Array4&lt; const amrex::Real &gt; z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:372</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a8d96671d41364f1e24391375a2bc0f1e"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:85</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_ada12bcb6beb3fa0d00dbdacb37f3c60f"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:128</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_ae609a5c1f84347b66e9a8b712271c4ce"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:156</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_a2116df83b61a39fb50b9a2d7474c00d7"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_xi_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:101</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_a53ec395d493c2308315f7512c5438087"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real WFromOmega(int i, int j, int k, amrex::Real omega, amrex::Real u, amrex::Real v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:407</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_a6a4bf1524412edfd6efcbb867256db18"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18">OmegaFromW</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real OmegaFromW(int i, int j, int k, amrex::Real w, const amrex::Array4&lt; const amrex::Real &gt; u_arr, const amrex::Array4&lt; const amrex::Real &gt; v_arr, const amrex::Array4&lt; const amrex::Real &gt; z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:374</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_a8d96671d41364f1e24391375a2bc0f1e"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:87</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_ada12bcb6beb3fa0d00dbdacb37f3c60f"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:130</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_ae609a5c1f84347b66e9a8b712271c4ce"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:158</div></div>
 <div class="ttc" id="anamespaceIntVars_html_afdaa1b64a98a711870ca86f30e7963daa2e60798bc45154a8f905b1aa228a24e5"><div class="ttname"><a href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e60798bc45154a8f905b1aa228a24e5">IntVars::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:141</div></div>
 <div class="ttc" id="anamespaceIntVars_html_afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a"><div class="ttname"><a href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:139</div></div>
 <div class="ttc" id="anamespaceIntVars_html_afdaa1b64a98a711870ca86f30e7963daaaab25f707cae69bfadac2abcd17a2188"><div class="ttname"><a href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daaaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:142</div></div>
@@ -975,8 +970,8 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__fast__rhs__MT_8cpp_a526d3733938e64ccdcb7e99b2944b456_cgraph.png" border="0" usemap="#aERF__fast__rhs__MT_8cpp_a526d3733938e64ccdcb7e99b2944b456_cgraph" alt=""/></div>
-<map name="aERF__fast__rhs__MT_8cpp_a526d3733938e64ccdcb7e99b2944b456_cgraph" id="aERF__fast__rhs__MT_8cpp_a526d3733938e64ccdcb7e99b2944b456_cgraph">
+<div class="center"><img src="ERF__fast__rhs__MT_8cpp_af5d569dbe264703bf1e1c6ae59d14b4c_cgraph.png" border="0" usemap="#aERF__fast__rhs__MT_8cpp_af5d569dbe264703bf1e1c6ae59d14b4c_cgraph" alt=""/></div>
+<map name="aERF__fast__rhs__MT_8cpp_af5d569dbe264703bf1e1c6ae59d14b4c_cgraph" id="aERF__fast__rhs__MT_8cpp_af5d569dbe264703bf1e1c6ae59d14b4c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,132,132,159"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce" title=" " alt="" coords="183,5,361,32"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7" title=" " alt="" coords="188,56,356,83"/>

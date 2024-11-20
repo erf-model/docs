@@ -17,10 +17,10 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_slow_rhs_post.cpp", "ERF__slow__rhs__post_8cpp.html", "ERF__slow__rhs__post_8cpp" ],
     [ "ERF_slow_rhs_pre.cpp", "ERF__slow__rhs__pre_8cpp.html", "ERF__slow__rhs__pre_8cpp" ],
     [ "ERF_TI_fast_headers.H", "ERF__TI__fast__headers_8H.html", "ERF__TI__fast__headers_8H" ],
-    [ "ERF_TI_fast_rhs_fun.H", "ERF__TI__fast__rhs__fun_8H.html", "ERF__TI__fast__rhs__fun_8H" ],
     [ "ERF_TI_no_substep_fun.H", "ERF__TI__no__substep__fun_8H.html", "ERF__TI__no__substep__fun_8H" ],
     [ "ERF_TI_slow_headers.H", "ERF__TI__slow__headers_8H.html", "ERF__TI__slow__headers_8H" ],
     [ "ERF_TI_slow_rhs_fun.H", "ERF__TI__slow__rhs__fun_8H.html", "ERF__TI__slow__rhs__fun_8H" ],
+    [ "ERF_TI_substep_fun.H", "ERF__TI__substep__fun_8H.html", "ERF__TI__substep__fun_8H" ],
     [ "ERF_TI_utils.H", "ERF__TI__utils_8H.html", "ERF__TI__utils_8H" ],
     [ "ERF_TimeStep.cpp", "ERF__TimeStep_8cpp.html", null ]
 ];

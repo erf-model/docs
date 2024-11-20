@@ -286,7 +286,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="comment">// evaluate surface quantities (k=0): total pressure and dry air</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;          <a class="code" href="structInputSoundingData.html#a30ed369fe55e1a25d9f1e871c70506d0">pm_integ</a>[0] = <a class="code" href="structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa">press_ref_inp_sound</a>;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <a class="code" href="structInputSoundingData.html#a401b589250214e7bb84555050c5b6657">rhod_integ</a>[0] = <a class="code" href="ERF__EOS_8H.html#ae6954ba7deb6ec80482087dbbc51f4ed">getRhogivenThetaPress</a>(<a class="code" href="structInputSoundingData.html#a15782809644a4daa0e8de9c3cc4c346a">theta_ref_inp_sound</a>,</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <a class="code" href="structInputSoundingData.html#a401b589250214e7bb84555050c5b6657">rhod_integ</a>[0] = <a class="code" href="ERF__EOS_8H.html#a3ee1ea27d3b9f25afcc603f3e5b17955">getRhogivenThetaPress</a>(<a class="code" href="structInputSoundingData.html#a15782809644a4daa0e8de9c3cc4c346a">theta_ref_inp_sound</a>,</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                                              <a class="code" href="structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa">press_ref_inp_sound</a>,</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                                              <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>,</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                                              <a class="code" href="structInputSoundingData.html#a9cb5ab7b69363eca08231b634e94e109">qv_ref_inp_sound</a>);</div>
@@ -327,7 +327,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="comment">// Initial guess and residual</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <a class="code" href="structInputSoundingData.html#a30ed369fe55e1a25d9f1e871c70506d0">pm_integ</a>[k]   = <a class="code" href="structInputSoundingData.html#a30ed369fe55e1a25d9f1e871c70506d0">pm_integ</a>[k-1];</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <a class="code" href="structInputSoundingData.html#a401b589250214e7bb84555050c5b6657">rhod_integ</a>[k] = <a class="code" href="ERF__EOS_8H.html#ae6954ba7deb6ec80482087dbbc51f4ed">getRhogivenThetaPress</a>(<a class="code" href="structInputSoundingData.html#a7cde9c67da9ade1d385047732b106943">theta_inp_sound</a>[itime][k],</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <a class="code" href="structInputSoundingData.html#a401b589250214e7bb84555050c5b6657">rhod_integ</a>[k] = <a class="code" href="ERF__EOS_8H.html#a3ee1ea27d3b9f25afcc603f3e5b17955">getRhogivenThetaPress</a>(<a class="code" href="structInputSoundingData.html#a7cde9c67da9ade1d385047732b106943">theta_inp_sound</a>[itime][k],</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                                  <a class="code" href="structInputSoundingData.html#a30ed369fe55e1a25d9f1e871c70506d0">pm_integ</a>[k],</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                                  <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>,</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                                  <a class="code" href="structInputSoundingData.html#aa6507429847a67925f1c7562f1c71553">qv_inp_sound</a>[itime][k]);</div>
@@ -359,7 +359,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
-<div class="ttc" id="aERF__EOS_8H_html_ae6954ba7deb6ec80482087dbbc51f4ed"><div class="ttname"><a href="ERF__EOS_8H.html#ae6954ba7deb6ec80482087dbbc51f4ed">getRhogivenThetaPress</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getRhogivenThetaPress(const amrex::Real theta, const amrex::Real p, const amrex::Real rdOcp, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:89</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_a3ee1ea27d3b9f25afcc603f3e5b17955"><div class="ttname"><a href="ERF__EOS_8H.html#a3ee1ea27d3b9f25afcc603f3e5b17955">getRhogivenThetaPress</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getRhogivenThetaPress(const amrex::Real th, const amrex::Real p, const amrex::Real rdOcp, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:99</div></div>
 <div class="ttc" id="aclassF_html"><div class="ttname"><a href="classF.html">F</a></div></div>
 <div class="ttc" id="anamespaceHSEutils_html_a49a3ecd8dc0be35accd87a453bc1224e"><div class="ttname"><a href="namespaceHSEutils.html#a49a3ecd8dc0be35accd87a453bc1224e">HSEutils::Newton_Raphson_hse</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void Newton_Raphson_hse(const Real &amp;m_tol, const Real &amp;RdOCp, const Real &amp;dz, const Real &amp;g, const Real &amp;C, const Real &amp;T, const Real &amp;qt, const Real &amp;qv, Real &amp;P, Real &amp;rd, Real &amp;F)</div><div class="ttdef"><b>Definition:</b> ERF_HSE_utils.H:35</div></div>
 <div class="ttc" id="astructInputSoundingData_html_a09ac90305ea3a4559d83ca589678a5aa"><div class="ttname"><a href="structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa">InputSoundingData::press_ref_inp_sound</a></div><div class="ttdeci">amrex::Real press_ref_inp_sound</div><div class="ttdef"><b>Definition:</b> ERF_InputSoundingData.H:320</div></div>
@@ -380,7 +380,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structInputSoundingData_a830608de7ca272770d8ddb659d65eb31_cgraph.png" border="0" usemap="#astructInputSoundingData_a830608de7ca272770d8ddb659d65eb31_cgraph" alt=""/></div>
 <map name="astructInputSoundingData_a830608de7ca272770d8ddb659d65eb31_cgraph" id="astructInputSoundingData_a830608de7ca272770d8ddb659d65eb31_cgraph">
 <area shape="rect" title=" " alt="" coords="5,55,160,96"/>
-<area shape="rect" href="ERF__EOS_8H.html#ae6954ba7deb6ec80482087dbbc51f4ed" title=" " alt="" coords="485,8,661,34"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3ee1ea27d3b9f25afcc603f3e5b17955" title=" " alt="" coords="485,8,661,34"/>
 <area shape="rect" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8" title=" " alt="" coords="244,84,399,126"/>
 <area shape="rect" href="structInputSoundingData.html#ae67ebe7a35af74165a1d2e7ee31a1bbc" title=" " alt="" coords="483,121,663,148"/>
 <area shape="rect" href="namespaceHSEutils.html#a49a3ecd8dc0be35accd87a453bc1224e" title=" " alt="" coords="208,33,435,60"/>
@@ -754,7 +754,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3">InputSoundingData()</a>, <a class="el" href="ERF__make__mom__sources_8cpp.html#a6e441f9270d3428996da1361892612f6">make_mom_sources()</a>, and <a class="el" href="ERF__make__sources_8cpp.html#a431216debad0efde24b80e0b5ce39c7b">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3">InputSoundingData()</a>, <a class="el" href="ERF__make__mom__sources_8cpp.html#a9d7475a902e3d2b95e27f95d0681c1eb">make_mom_sources()</a>, and <a class="el" href="ERF__make__sources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -946,7 +946,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3">InputSoundingData()</a>, <a class="el" href="ERF__make__mom__sources_8cpp.html#a6e441f9270d3428996da1361892612f6">make_mom_sources()</a>, and <a class="el" href="ERF__make__sources_8cpp.html#a431216debad0efde24b80e0b5ce39c7b">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3">InputSoundingData()</a>, <a class="el" href="ERF__make__mom__sources_8cpp.html#a9d7475a902e3d2b95e27f95d0681c1eb">make_mom_sources()</a>, and <a class="el" href="ERF__make__sources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -978,7 +978,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e">init_bx_scalars_from_input_sounding()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676">init_bx_scalars_from_input_sounding_hse()</a>, <a class="el" href="ERF__make__sources_8cpp.html#a431216debad0efde24b80e0b5ce39c7b">make_sources()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e">init_bx_scalars_from_input_sounding()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676">init_bx_scalars_from_input_sounding_hse()</a>, <a class="el" href="ERF__make__sources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
 
 </div>
 </div>
@@ -1026,7 +1026,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb">init_bx_velocities_from_input_sounding()</a>, <a class="el" href="ERF__make__mom__sources_8cpp.html#a6e441f9270d3428996da1361892612f6">make_mom_sources()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb">init_bx_velocities_from_input_sounding()</a>, <a class="el" href="ERF__make__mom__sources_8cpp.html#a9d7475a902e3d2b95e27f95d0681c1eb">make_mom_sources()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
 
 </div>
 </div>
@@ -1058,7 +1058,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb">init_bx_velocities_from_input_sounding()</a>, <a class="el" href="ERF__make__mom__sources_8cpp.html#a6e441f9270d3428996da1361892612f6">make_mom_sources()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb">init_bx_velocities_from_input_sounding()</a>, <a class="el" href="ERF__make__mom__sources_8cpp.html#a9d7475a902e3d2b95e27f95d0681c1eb">make_mom_sources()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
 
 </div>
 </div>

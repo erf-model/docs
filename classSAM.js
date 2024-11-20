@@ -25,6 +25,7 @@ var classSAM =
     [ "accrrc", "classSAM.html#a74856cc0ee48b638ee5263cd51fd1090", null ],
     [ "accrsc", "classSAM.html#aa32720be8b27907466650050dc73e110", null ],
     [ "accrsi", "classSAM.html#a6b848cc96480f05c0c7b1e811cdb50d7", null ],
+    [ "CFL_MAX", "classSAM.html#ab22f37f1f2b5d72ee2d20af56a29fc40", null ],
     [ "coefice", "classSAM.html#aad8c4616221c01599e4e32f2ebb08698", null ],
     [ "docloud", "classSAM.html#a77c335e68b7ad8e6069d1318ea673a16", null ],
     [ "doprecip", "classSAM.html#a54766f324324d579d2591a0bdc60e359", null ],

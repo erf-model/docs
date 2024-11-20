@@ -138,20 +138,96 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aac5237931765783ba1e8aba39e37b4e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NumericalDiffusion_8H.html#aac5237931765783ba1e8aba39e37b4e1">NumericalDiffusion</a> (const amrex::Box &amp;bx, const int start_comp, const int num_comp, const amrex::Real dt, const amrex::Real num_diff_coeff, const amrex::Array4&lt; const amrex::Real &gt; &amp;data, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_x, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_y, const bool avg_mf_x_y, const bool avg_mf_y_x)</td></tr>
-<tr class="separator:aac5237931765783ba1e8aba39e37b4e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e0d8ff49fd56c19488385130631c161"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NumericalDiffusion_8H.html#a6e0d8ff49fd56c19488385130631c161">NumericalDiffusionVert</a> (const amrex::Box &amp;bx, const int start_comp, const int num_comp, const amrex::Real dt, const amrex::Real num_diff_coeff, const amrex::Array4&lt; const amrex::Real &gt; &amp;data, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs)</td></tr>
-<tr class="separator:a6e0d8ff49fd56c19488385130631c161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2985fd8720853d6b8c663c68744dbd97"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NumericalDiffusion_8H.html#a2985fd8720853d6b8c663c68744dbd97">calc_fifth_order_deriv</a> (const amrex::Real &amp;dnp2, const amrex::Real &amp;dnp1, const amrex::Real &amp;dn, const amrex::Real &amp;dnm1, const amrex::Real &amp;dnm2, const amrex::Real &amp;dnm3)</td></tr>
+<tr class="separator:a2985fd8720853d6b8c663c68744dbd97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a231a4d5cc3c381f4a0bba39d4b8fc460"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NumericalDiffusion_8H.html#a231a4d5cc3c381f4a0bba39d4b8fc460">NumericalDiffusion_Scal</a> (const amrex::Box &amp;bx, const int start_comp, const int num_comp, const amrex::Real dt, const amrex::Real num_diff_coeff, const amrex::Array4&lt; const amrex::Real &gt; &amp;prim_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf)</td></tr>
+<tr class="separator:a231a4d5cc3c381f4a0bba39d4b8fc460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9392f73e09c527163678cf94f127c9fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NumericalDiffusion_8H.html#a9392f73e09c527163678cf94f127c9fb">NumericalDiffusion_Xmom</a> (const amrex::Box &amp;bx, const amrex::Real dt, const amrex::Real num_diff_coeff, const amrex::Array4&lt; const amrex::Real &gt; &amp;prim_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf)</td></tr>
+<tr class="separator:a9392f73e09c527163678cf94f127c9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae71cfd40557c03c4bcf51029271a9d3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NumericalDiffusion_8H.html#ae71cfd40557c03c4bcf51029271a9d3e">NumericalDiffusion_Ymom</a> (const amrex::Box &amp;bx, const amrex::Real dt, const amrex::Real num_diff_coeff, const amrex::Array4&lt; const amrex::Real &gt; &amp;prim_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf)</td></tr>
+<tr class="separator:ae71cfd40557c03c4bcf51029271a9d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aac5237931765783ba1e8aba39e37b4e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac5237931765783ba1e8aba39e37b4e1">&#9670;&nbsp;</a></span>NumericalDiffusion()</h2>
+<a id="a2985fd8720853d6b8c663c68744dbd97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2985fd8720853d6b8c663c68744dbd97">&#9670;&nbsp;</a></span>calc_fifth_order_deriv()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void NumericalDiffusion </td>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real calc_fifth_order_deriv </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramname"><em>dnp2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramname"><em>dnp1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramname"><em>dn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramname"><em>dnm1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramname"><em>dnm2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramname"><em>dnm3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    amrex::Real interp = 10. * (dn   - dnm1)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                        - 5. * (dnp1 - dnm2)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                             + (dnp2 - dnm3);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> interp;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__NumericalDiffusion_8cpp.html#a30fb08f7243e9aee2d21db11d13e5a45">NumericalDiffusion_Scal()</a>, <a class="el" href="ERF__NumericalDiffusion_8cpp.html#ad355f314c945d0369e22634f91dd8171">NumericalDiffusion_Xmom()</a>, and <a class="el" href="ERF__NumericalDiffusion_8cpp.html#aff44d94f94c7e0b150e51ccdbd43c164">NumericalDiffusion_Ymom()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__NumericalDiffusion_8H_a2985fd8720853d6b8c663c68744dbd97_icgraph.png" border="0" usemap="#aERF__NumericalDiffusion_8H_a2985fd8720853d6b8c663c68744dbd97_icgraph" alt=""/></div>
+<map name="aERF__NumericalDiffusion_8H_a2985fd8720853d6b8c663c68744dbd97_icgraph" id="aERF__NumericalDiffusion_8H_a2985fd8720853d6b8c663c68744dbd97_icgraph">
+<area shape="rect" title=" " alt="" coords="413,56,575,83"/>
+<area shape="rect" href="ERF__NumericalDiffusion_8cpp.html#a30fb08f7243e9aee2d21db11d13e5a45" title=" " alt="" coords="176,5,357,32"/>
+<area shape="rect" href="ERF__NumericalDiffusion_8cpp.html#ad355f314c945d0369e22634f91dd8171" title=" " alt="" coords="168,56,365,83"/>
+<area shape="rect" href="ERF__NumericalDiffusion_8cpp.html#aff44d94f94c7e0b150e51ccdbd43c164" title=" " alt="" coords="169,107,365,133"/>
+<area shape="rect" href="ERF__make__sources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a" title=" " alt="" coords="5,5,120,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a231a4d5cc3c381f4a0bba39d4b8fc460"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a231a4d5cc3c381f4a0bba39d4b8fc460">&#9670;&nbsp;</a></span>NumericalDiffusion_Scal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NumericalDiffusion_Scal </td>
           <td>(</td>
           <td class="paramtype">const amrex::Box &amp;&#160;</td>
           <td class="paramname"><em>bx</em>, </td>
@@ -184,7 +260,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramname"><em>prim_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cell_data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -196,25 +278,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>mf_x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>mf_y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>avg_mf_x_y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>avg_mf_y_x</em>&#160;</td>
+          <td class="paramname"><em>mf</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -226,29 +290,17 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6e0d8ff49fd56c19488385130631c161"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e0d8ff49fd56c19488385130631c161">&#9670;&nbsp;</a></span>NumericalDiffusionVert()</h2>
+<a id="a9392f73e09c527163678cf94f127c9fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9392f73e09c527163678cf94f127c9fb">&#9670;&nbsp;</a></span>NumericalDiffusion_Xmom()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void NumericalDiffusionVert </td>
+          <td class="memname">void NumericalDiffusion_Xmom </td>
           <td>(</td>
           <td class="paramtype">const amrex::Box &amp;&#160;</td>
           <td class="paramname"><em>bx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>start_comp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>num_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -266,13 +318,83 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramname"><em>prim_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cell_data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae71cfd40557c03c4bcf51029271a9d3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae71cfd40557c03c4bcf51029271a9d3e">&#9670;&nbsp;</a></span>NumericalDiffusion_Ymom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NumericalDiffusion_Ymom </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>num_diff_coeff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>prim_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cell_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

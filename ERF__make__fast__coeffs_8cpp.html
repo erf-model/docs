@@ -135,12 +135,12 @@ Include dependency graph for ERF_make_fast_coeffs.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a76dfae5a4d6b6037b1261e5c42936616"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__make__fast__coeffs_8cpp.html#a76dfae5a4d6b6037b1261e5c42936616">make_fast_coeffs</a> (int, MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const amrex::Geometry geom, bool l_use_moisture, bool l_use_terrain, Real gravity, Real c_p, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc, const MultiFab *r0, const MultiFab *pi0, Real dtau, Real beta_s, amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</td></tr>
-<tr class="separator:a76dfae5a4d6b6037b1261e5c42936616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80df873ba0b5195d2b4e77ca0cdc4d0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__make__fast__coeffs_8cpp.html#a80df873ba0b5195d2b4e77ca0cdc4d0e">make_fast_coeffs</a> (int, MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const amrex::Geometry geom, bool l_use_moisture, TerrainType terrain_type, Real gravity, Real c_p, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc, const MultiFab *r0, const MultiFab *pi0, Real dtau, Real beta_s, amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</td></tr>
+<tr class="separator:a80df873ba0b5195d2b4e77ca0cdc4d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a76dfae5a4d6b6037b1261e5c42936616"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76dfae5a4d6b6037b1261e5c42936616">&#9670;&nbsp;</a></span>make_fast_coeffs()</h2>
+<a id="a80df873ba0b5195d2b4e77ca0cdc4d0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80df873ba0b5195d2b4e77ca0cdc4d0e">&#9670;&nbsp;</a></span>make_fast_coeffs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,8 +190,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>l_use_terrain</em>, </td>
+          <td class="paramtype">TerrainType&#160;</td>
+          <td class="paramname"><em>terrain_type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -257,7 +257,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">S_stage_prim</td><td>primitive variables (i.e. conserved variables divided by density) at the last stage </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pi_stage</td><td>Exner function at the last stage </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>Container for geometric information </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">l_use_terrain</td><td>Are we using terrain-fitted coordinates </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">terrain_type</td><td>Are we using terrain-fitted coordinates </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">gravity</td><td>Magnitude of gravity </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">c_p</td><td>Coefficient at constant pressure </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">r0</td><td>Reference (hydrostatically stratified) density </td></tr>
@@ -268,7 +268,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;make_fast_coeffs()&quot;</span>,<a class="code" href="ERF__make__fast__coeffs_8cpp.html#a76dfae5a4d6b6037b1261e5c42936616">make_fast_coeffs</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;make_fast_coeffs()&quot;</span>,<a class="code" href="ERF__make__fast__coeffs_8cpp.html#a80df873ba0b5195d2b4e77ca0cdc4d0e">make_fast_coeffs</a>);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Real beta_2 = 0.5 * (1.0 + beta_s);  <span class="comment">// multiplies implicit terms</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
@@ -307,7 +307,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; stage_cons = S_stage_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].const_array(mfi);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt; &amp; prim       = S_stage_prim.const_array(mfi);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; detJ   = l_use_terrain ?   detJ_cc-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; detJ        = (terrain_type != TerrainType::None) ? detJ_cc-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; r0_ca       = r0-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; pi0_ca      = pi0-&gt;const_array(mfi);</div>
@@ -338,7 +338,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        Real halfg = std::abs(0.5 * grav_gpu[2]);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="comment">//Note we don&#39;t act on the bottom or top boundaries of the domain</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">if</span> (l_use_terrain)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">if</span> (terrain_type != TerrainType::None)</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        {</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            ParallelFor(bx_shrunk_in_k, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            {</div>
@@ -531,13 +531,13 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__IndexDefines_8H_html_adf340bf1893bad34b2bf452d987d86c9a7a78e4cea7eaa21ad14a6fa92fbdc549"><div class="ttname"><a href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a7a78e4cea7eaa21ad14a6fa92fbdc549">ERF_BC::ho_outflow</a></div><div class="ttdeci">@ ho_outflow</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_adf340bf1893bad34b2bf452d987d86c9acac0c32caf84a889ec9b2b4cb2d56972"><div class="ttname"><a href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acac0c32caf84a889ec9b2b4cb2d56972">ERF_BC::outflow</a></div><div class="ttdeci">@ outflow</div></div>
 <div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
-<div class="ttc" id="aERF__make__fast__coeffs_8cpp_html_a76dfae5a4d6b6037b1261e5c42936616"><div class="ttname"><a href="ERF__make__fast__coeffs_8cpp.html#a76dfae5a4d6b6037b1261e5c42936616">make_fast_coeffs</a></div><div class="ttdeci">void make_fast_coeffs(int, MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const amrex::Geometry geom, bool l_use_moisture, bool l_use_terrain, Real gravity, Real c_p, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc, const MultiFab *r0, const MultiFab *pi0, Real dtau, Real beta_s, amrex::GpuArray&lt; ERF_BC, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</div><div class="ttdef"><b>Definition:</b> ERF_make_fast_coeffs.cpp:27</div></div>
+<div class="ttc" id="aERF__make__fast__coeffs_8cpp_html_a80df873ba0b5195d2b4e77ca0cdc4d0e"><div class="ttname"><a href="ERF__make__fast__coeffs_8cpp.html#a80df873ba0b5195d2b4e77ca0cdc4d0e">make_fast_coeffs</a></div><div class="ttdeci">void make_fast_coeffs(int, MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const amrex::Geometry geom, bool l_use_moisture, TerrainType terrain_type, Real gravity, Real c_p, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc, const MultiFab *r0, const MultiFab *pi0, Real dtau, Real beta_s, amrex::GpuArray&lt; ERF_BC, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</div><div class="ttdef"><b>Definition:</b> ERF_make_fast_coeffs.cpp:27</div></div>
 <div class="ttc" id="anamespaceIntVars_html_afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a"><div class="ttname"><a href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:139</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__make__fast__coeffs_8cpp_a76dfae5a4d6b6037b1261e5c42936616_cgraph.png" border="0" usemap="#aERF__make__fast__coeffs_8cpp_a76dfae5a4d6b6037b1261e5c42936616_cgraph" alt=""/></div>
-<map name="aERF__make__fast__coeffs_8cpp_a76dfae5a4d6b6037b1261e5c42936616_cgraph" id="aERF__make__fast__coeffs_8cpp_a76dfae5a4d6b6037b1261e5c42936616_cgraph">
+<div class="center"><img src="ERF__make__fast__coeffs_8cpp_a80df873ba0b5195d2b4e77ca0cdc4d0e_cgraph.png" border="0" usemap="#aERF__make__fast__coeffs_8cpp_a80df873ba0b5195d2b4e77ca0cdc4d0e_cgraph" alt=""/></div>
+<map name="aERF__make__fast__coeffs_8cpp_a80df873ba0b5195d2b4e77ca0cdc4d0e_cgraph" id="aERF__make__fast__coeffs_8cpp_a80df873ba0b5195d2b4e77ca0cdc4d0e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,141,32"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="189,5,263,32"/>
 </map>
