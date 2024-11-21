@@ -1,5 +1,7 @@
 var NAVTREEINDEX10 =
 {
+"classUnionCIF.html#a80348b91b25ded6d92276a198493d906":[2,0,94,6],
+"classUnionCIF.html#aafc94c60436bf1ae2decb6fb84ce300f":[2,0,94,3],
 "classUnionCIF.html#ae309467c4c5a1af20d285441d1fb9670":[2,0,94,0],
 "classUnionCIF.html#ae667fc60d687ed9cec3c0744123565ca":[2,0,94,5],
 "classUnionCIF.html#af61467caa94146f97d5e7b64daf57d44":[2,0,94,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX10 =
 "functions_x.html":[2,3,0,23],
 "functions_y.html":[2,3,0,24],
 "functions_z.html":[2,3,0,25],
-"functions_~.html":[2,3,0,26],
-"globals.html":[3,1,0],
-"globals.html":[3,1,0,0]
+"functions_~.html":[2,3,0,26]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"structLineSampler.html#ac889ff22f183b545b4360af78068b503":[2,0,40,0],
+"structLineSampler.html#acf84e5ae60cbfd1faaf2e8ac6c9ff5eb":[2,0,40,3],
 "structLineSampler.html#af19a023c3d9e68973017453e2ae93c6f":[2,0,40,2],
 "structLineSampler.html#af614a59976e85627d9b5d41222265cde":[2,0,40,5],
 "structMYNNLevel2.html":[2,0,52],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "structSolverChoice.html#af3dab90d6c6d356aa2f35c3dbe151411":[2,0,78,70],
 "structSolverChoice.html#af5219ce0c2a4f7ab4481e3fdabd3af8e":[2,0,78,47],
 "structSolverChoice.html#af976afa61859c07e6249963edc367c2d":[2,0,78,19],
-"structSolverChoice.html#af9c11d4a044eea88bad0b2e32318b412":[2,0,78,71],
-"structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c":[2,0,78,12],
-"structSpongeChoice.html":[2,0,79]
+"structSolverChoice.html#af9c11d4a044eea88bad0b2e32318b412":[2,0,78,71]
 };

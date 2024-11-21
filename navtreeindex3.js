@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"ERF__advance__microphysics_8cpp.html":[3,0,1,15,3],
+"ERF__advance__radiation_8cpp.html":[3,0,1,15,4],
 "ERF__buoyancy__utils_8H.html":[3,0,1,14,3],
 "ERF__buoyancy__utils_8H.html#a26fc88640f045b68ee840d0e3ca9c5b4":[3,0,1,14,3,5],
 "ERF__buoyancy__utils_8H.html#a4a13d42f2955b06536439c62694e8c80":[3,0,1,14,3,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "classERF.html#a01987b2556834788694f2f3741a2afe4":[2,0,22,69],
 "classERF.html#a01f3db32272f53dc68025f0a98195e57":[2,0,22,284],
 "classERF.html#a02722d16f3c26efe590702200f1296d7":[2,0,22,217],
-"classERF.html#a039a764a1d942c484e8aea49e87bc046":[2,0,22,63],
-"classERF.html#a03a4ad7368c1c98b492cd9d9fec9cbc5":[2,0,22,325],
-"classERF.html#a050dbd236c9bf246554a53008e09f683":[2,0,22,146]
+"classERF.html#a039a764a1d942c484e8aea49e87bc046":[2,0,22,63]
 };
