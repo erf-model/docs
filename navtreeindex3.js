@@ -78,10 +78,12 @@ var NAVTREEINDEX3 =
 "ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66":[3,0,1,15,12,0],
 "ERF__slow__rhs__pre_8cpp.html":[3,0,1,15,13],
 "ERF__slow__rhs__pre_8cpp.html#a7f9a468e8f9594554d88b4b0b55e8b9f":[3,0,1,15,13,0],
-"ERF__solve__with__fft_8cpp.html":[3,0,1,16,20],
-"ERF__solve__with__gmres_8cpp.html":[3,0,1,16,21],
-"ERF__solve__with__mlmg_8cpp.html":[3,0,1,16,22],
-"ERF__solve__with__mlmg_8cpp.html#ad583385d33cdb5a9c28bf474b72cad1c":[3,0,1,16,22,0],
+"ERF__solve__with__EB__mlmg_8cpp.html":[3,0,1,16,20],
+"ERF__solve__with__EB__mlmg_8cpp.html#ad583385d33cdb5a9c28bf474b72cad1c":[3,0,1,16,20,0],
+"ERF__solve__with__fft_8cpp.html":[3,0,1,16,21],
+"ERF__solve__with__gmres_8cpp.html":[3,0,1,16,22],
+"ERF__solve__with__mlmg_8cpp.html":[3,0,1,16,23],
+"ERF__solve__with__mlmg_8cpp.html#ad583385d33cdb5a9c28bf474b72cad1c":[3,0,1,16,23,0],
 "ERF__writeEBsurface_8cpp.html":[3,0,1,4,7],
 "ERF__writeJobInfo_8cpp.html":[3,0,1,6,21],
 "ERF__writeJobInfo_8cpp.html#aabaa127a3a319c1b86090d6c88568965":[3,0,1,6,21,0],
@@ -246,8 +248,6 @@ var NAVTREEINDEX3 =
 "classCloudRadProps.html#ae7091519e3c4dfa0929e088c6234be73":[2,0,13,25],
 "classCloudRadProps.html#aeee4ab1a6887ab34c966028c45079199":[2,0,13,26],
 "classERF.html":[2,0,22],
-"classERF.html#a01987b2556834788694f2f3741a2afe4":[2,0,22,69],
-"classERF.html#a01f3db32272f53dc68025f0a98195e57":[2,0,22,284],
-"classERF.html#a02722d16f3c26efe590702200f1296d7":[2,0,22,217],
-"classERF.html#a039a764a1d942c484e8aea49e87bc046":[2,0,22,63]
+"classERF.html#a01987b2556834788694f2f3741a2afe4":[2,0,22,68],
+"classERF.html#a01f3db32272f53dc68025f0a98195e57":[2,0,22,283]
 };

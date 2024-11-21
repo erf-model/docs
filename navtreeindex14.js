@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"structadiabatic__wave__coupled.html#aa4eb74455480668121e37e678f596d07":[2,0,6,6],
 "structadiabatic__wave__coupled.html#ab4bae3bcb6d202acedfa914203374506":[2,0,6,0],
 "structadiabatic__wave__coupled.html#ab5f4ad8ae9907cf15e3eba1129ea1375":[2,0,6,4],
 "structadiabatic__wave__coupled.html#ad18802ec131991fbaaebfb80a1a12d07":[2,0,6,5],

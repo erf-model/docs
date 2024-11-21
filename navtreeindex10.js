@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"classUnionCIF.html#a7a543347d220b1e1345c2af564cc0bd5":[2,0,94,9],
 "classUnionCIF.html#a80348b91b25ded6d92276a198493d906":[2,0,94,6],
 "classUnionCIF.html#aafc94c60436bf1ae2decb6fb84ce300f":[2,0,94,3],
 "classUnionCIF.html#ae309467c4c5a1af20d285441d1fb9670":[2,0,94,0],
@@ -165,8 +166,8 @@ var NAVTREEINDEX10 =
 "dir_fbd11baa4baa1a8b78c4a3d08373cbc6.html":[3,0,1,10],
 "dir_fc0c15590968603ac439df7b0a572228.html":[3,0,1,3],
 "files.html":[3,0],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -218,8 +219,8 @@ var NAVTREEINDEX10 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "functions_w.html":[2,3,0,22],
 "functions_x.html":[2,3,0,23],
 "functions_y.html":[2,3,0,24],
-"functions_z.html":[2,3,0,25],
-"functions_~.html":[2,3,0,26]
+"functions_z.html":[2,3,0,25]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"functions_~.html":[2,3,0,26],
 "globals.html":[3,1,0,0],
 "globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "structLinInterp_1_1InterpType.html#aa81271a903001f119594cdced62b748c":[2,0,41,0,0],
 "structLineSampler.html":[2,0,40],
 "structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e":[2,0,40,6],
-"structLineSampler.html#a290c3f1bc30a85e67ca18f2bbd3e2cdf":[2,0,40,1],
-"structLineSampler.html#a8fc089e1d316a8d694fd521baae9f076":[2,0,40,4]
+"structLineSampler.html#a290c3f1bc30a85e67ca18f2bbd3e2cdf":[2,0,40,1]
 };

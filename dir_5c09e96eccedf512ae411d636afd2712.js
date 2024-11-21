@@ -40,6 +40,7 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_Sat_methods.H", "ERF__Sat__methods_8H.html", [
       [ "SatMethods", "classSatMethods.html", "classSatMethods" ]
     ] ],
+    [ "ERF_solve_with_EB_mlmg.cpp", "ERF__solve__with__EB__mlmg_8cpp.html", "ERF__solve__with__EB__mlmg_8cpp" ],
     [ "ERF_solve_with_fft.cpp", "ERF__solve__with__fft_8cpp.html", null ],
     [ "ERF_solve_with_gmres.cpp", "ERF__solve__with__gmres_8cpp.html", null ],
     [ "ERF_solve_with_mlmg.cpp", "ERF__solve__with__mlmg_8cpp.html", "ERF__solve__with__mlmg_8cpp" ],
