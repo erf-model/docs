@@ -735,12 +735,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                      - cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) )*dzInv;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                }</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                Real E              = amrex::max(cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>)/cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),Real(0.0));</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keyword">volatile</span> Real stratification = l_abs_g * dtheta_dz * l_inv_theta0;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                Real stratification = l_abs_g * dtheta_dz * l_inv_theta0;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                Real length;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <span class="keywordflow">if</span> (stratification &lt;= eps) {</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    length = DeltaMsf;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    length = 0.76 * std::sqrt(E / stratification);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    length = 0.76 * std::sqrt(E / amrex::max(stratification,eps));</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    <span class="comment">// mixing length should be _reduced_ for stable stratification</span></div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    length = amrex::min(length, DeltaMsf);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    <span class="comment">// following WRF, make sure the mixing length isn&#39;t too small</span></div>
