@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"classSlingo.html#ab37f1c288e0dcc71337629a65fb65e17":[2,0,77,1],
 "classSlingo.html#aedbfc95f917b864354b84a9a78d74c94":[2,0,77,0],
 "classTerrainIF.html":[2,0,91],
 "classTerrainIF.html#a3e1f2814d20da7b5dd6d1d620b04784c":[2,0,91,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "functions_h.html":[2,3,0,7],
 "functions_i.html":[2,3,0,8],
 "functions_j.html":[2,3,0,9],
-"functions_k.html":[2,3,0,10],
-"functions_l.html":[2,3,0,11]
+"functions_k.html":[2,3,0,10]
 };

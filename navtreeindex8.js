@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"classOptics.html#ad044034219080c4d8bc696c4c259cb4d":[2,0,61,4],
 "classOptics.html#ae33a3d262417ad9bb96adc3a32519e5f":[2,0,61,2],
 "classOptics.html#aecf608be7db530dc74beb0a03b2279f2":[2,0,61,11],
 "classOptics.html#aee82856b88240c428aefc6f47bf9500c":[2,0,61,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "classRadiation.html#ab0801286969e7a03277b4813611c691f":[2,0,68,28],
 "classRadiation.html#ab11967968e25e70b72d975ceb99fe9a6":[2,0,68,27],
 "classRadiation.html#ab4092f9e967d5107e1722b0345e31053":[2,0,68,68],
-"classRadiation.html#ab4451562115b24b40e0f04cae677c6e3":[2,0,68,96],
-"classRadiation.html#ab6dca247a6c812364c208e9e9801baeb":[2,0,68,75]
+"classRadiation.html#ab4451562115b24b40e0f04cae677c6e3":[2,0,68,96]
 };

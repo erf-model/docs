@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"classMRISplitIntegrator.html#aaf865e066a3c327ff296c99cd0566373":[2,0,51,6],
 "classMRISplitIntegrator.html#aafed3f1d61d477bd1f01bdeb71a9ab11":[2,0,51,13],
 "classMRISplitIntegrator.html#ab0f2e5848bf5e8f4959b6f990cb73053":[2,0,51,30],
 "classMRISplitIntegrator.html#ab52d9ee591fe145af3feb31d8176e63a":[2,0,51,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "classOptics.html#aadaf34955cffcf141d182624b38f7898":[2,0,61,1],
 "classOptics.html#aba268b2221309fdc437349b1427c5c6d":[2,0,61,15],
 "classOptics.html#abb94e5d9dc89e539796740c6f0b9a229":[2,0,61,18],
-"classOptics.html#abf585c4bba33e85f0eb2f685c87b22a7":[2,0,61,10],
-"classOptics.html#ad044034219080c4d8bc696c4c259cb4d":[2,0,61,4]
+"classOptics.html#abf585c4bba33e85f0eb2f685c87b22a7":[2,0,61,10]
 };
