@@ -35,15 +35,9 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_PlaneAverage.H", "ERF__PlaneAverage_8H.html", [
       [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ]
     ] ],
-    [ "ERF_PoissonSolve.cpp", "ERF__PoissonSolve_8cpp.html", null ],
-    [ "ERF_PoissonSolve_tb.cpp", "ERF__PoissonSolve__tb_8cpp.html", null ],
     [ "ERF_Sat_methods.H", "ERF__Sat__methods_8H.html", [
       [ "SatMethods", "classSatMethods.html", "classSatMethods" ]
     ] ],
-    [ "ERF_solve_with_EB_mlmg.cpp", "ERF__solve__with__EB__mlmg_8cpp.html", "ERF__solve__with__EB__mlmg_8cpp" ],
-    [ "ERF_solve_with_fft.cpp", "ERF__solve__with__fft_8cpp.html", null ],
-    [ "ERF_solve_with_gmres.cpp", "ERF__solve__with__gmres_8cpp.html", null ],
-    [ "ERF_solve_with_mlmg.cpp", "ERF__solve__with__mlmg_8cpp.html", "ERF__solve__with__mlmg_8cpp" ],
     [ "ERF_TerrainMetrics.cpp", "ERF__TerrainMetrics_8cpp.html", "ERF__TerrainMetrics_8cpp" ],
     [ "ERF_TerrainMetrics.H", "ERF__TerrainMetrics_8H.html", "ERF__TerrainMetrics_8H" ],
     [ "ERF_Thetav.H", "ERF__Thetav_8H.html", "ERF__Thetav_8H" ],

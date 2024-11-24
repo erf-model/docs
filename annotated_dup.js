@@ -1,5 +1,10 @@
 var annotated_dup =
 [
+    [ "amrex", "namespaceamrex.html", [
+      [ "FFT", "namespaceamrex_1_1FFT.html", [
+        [ "PoissonTerrainPrecond", "classamrex_1_1FFT_1_1PoissonTerrainPrecond.html", "classamrex_1_1FFT_1_1PoissonTerrainPrecond" ]
+      ] ]
+    ] ],
     [ "ncutils", "namespacencutils.html", [
       [ "NCDType", "structncutils_1_1NCDType.html", "structncutils_1_1NCDType" ],
       [ "NCDim", "structncutils_1_1NCDim.html", "structncutils_1_1NCDim" ],
@@ -97,6 +102,7 @@ var annotated_dup =
     [ "surface_temp_mod_charnock", "structsurface__temp__mod__charnock.html", "structsurface__temp__mod__charnock" ],
     [ "surface_temp_wave_coupled", "structsurface__temp__wave__coupled.html", "structsurface__temp__wave__coupled" ],
     [ "TerrainIF", "classTerrainIF.html", "classTerrainIF" ],
+    [ "TerrainPoisson", "classTerrainPoisson.html", "classTerrainPoisson" ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ],
     [ "TurbChoice", "structTurbChoice.html", "structTurbChoice" ],
     [ "TurbulentPerturbation", "structTurbulentPerturbation.html", "structTurbulentPerturbation" ],
