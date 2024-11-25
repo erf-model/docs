@@ -34,6 +34,7 @@ var hierarchy =
     [ "F", "classF.html", [
       [ "CIF< F >", "classCIF.html", null ]
     ] ],
+    [ "ForestDrag", "classForestDrag.html", null ],
     [ "MamConstituents::gas_t", "structMamConstituents_1_1gas__t.html", null ],
     [ "MamConstituents::gaslist_t", "structMamConstituents_1_1gaslist__t.html", null ],
     [ "amrex::GPUable", null, [

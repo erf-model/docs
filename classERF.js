@@ -232,6 +232,7 @@ var classERF =
     [ "m_check_per", "classERF.html#a5fbf17cfc8d9e5b994783e05ec3594b2", null ],
     [ "m_expand_plotvars_to_unif_rr", "classERF.html#adb272adf862040a2f1a6226c57c35627", null ],
     [ "m_factory", "classERF.html#abd4f9db387b864a97ac18c8dfe71f4e4", null ],
+    [ "m_forest", "classERF.html#a28cc050008267e4138c5a716ecf689a2", null ],
     [ "m_most", "classERF.html#a051364b2373d8d86151c0b4a958035bd", null ],
     [ "m_plot_int_1", "classERF.html#a57cfb4bfead8525174646964992c7e69", null ],
     [ "m_plot_int_2", "classERF.html#ad3311c9ceacd17f34bdb5e03cefa33b3", null ],

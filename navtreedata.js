@@ -74,19 +74,19 @@ var NAVTREEINDEX =
 [
 "ERFPCEvolve_8cpp.html",
 "ERF__DiffusionSrcForMom__N_8cpp.html#a426fe9fce28e7c29e11b29197e98f6a4",
-"ERF__NCWpsFile_8H.html",
-"ERF__WriteBndryPlanes_8cpp.html",
-"classCloudRadProps.html#aa32eef207df809527562060ba064baf4",
-"classERF.html#aab564dd3009ef83466b50db6d997b563",
-"classF.html",
-"classMRISplitIntegrator.html#aaf865e066a3c327ff296c99cd0566373",
-"classOptics.html#ad044034219080c4d8bc696c4c259cb4d",
-"classRadiation.html#ab6dca247a6c812364c208e9e9801baeb",
-"classSlingo.html#ab37f1c288e0dcc71337629a65fb65e17",
-"functions_l.html",
-"structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa",
-"structSolverChoice.html#a5ffe405695bf4304d2ea61be6efaca1c",
-"structWENO__Z7.html"
+"ERF__NCPlotFile_8H.html#aabaa127a3a319c1b86090d6c88568965",
+"ERF__Write1DProfiles__stag_8cpp.html",
+"classCloudRadProps.html#a6a070723376d30c2d64c808898faebfb",
+"classERF.html#aa8b243c093bd872b6f7592603ff97792",
+"classEulerianMicrophysics.html#aa882ea75f222099b16b43a579d11e2c1",
+"classMRISplitIntegrator.html#a277f590efb755921c145d09f84e740af",
+"classNullWindFarm.html#ae4797e5a94227d10ed3b39dfd7bf4444",
+"classRadiation.html#a8f47b85f948822c0e450beddb92373f4",
+"classSimpleAD.html#a1665d726556fc42558e77fe94e732d43",
+"functions_func_o.html",
+"structDiffChoice.html#a574cf6ad397fd50169cafe025c9da5f3",
+"structSolverChoice.html#a3b31e3a91b502cabfc9fd8778492ad46",
+"structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
