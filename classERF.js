@@ -234,6 +234,7 @@ var classERF =
     [ "m_factory", "classERF.html#abd4f9db387b864a97ac18c8dfe71f4e4", null ],
     [ "m_forest", "classERF.html#a28cc050008267e4138c5a716ecf689a2", null ],
     [ "m_most", "classERF.html#a051364b2373d8d86151c0b4a958035bd", null ],
+    [ "m_plot_face_vels", "classERF.html#a367a3daba5d844efbed84c52e647cea6", null ],
     [ "m_plot_int_1", "classERF.html#a57cfb4bfead8525174646964992c7e69", null ],
     [ "m_plot_int_2", "classERF.html#ad3311c9ceacd17f34bdb5e03cefa33b3", null ],
     [ "m_plot_per_1", "classERF.html#a3167adc9518cce649a90ab82e9f9c85d", null ],
