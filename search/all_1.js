@@ -18,7 +18,7 @@ var searchData=
   ['betaelq_154',['betaelq',['../ERF__Constants_8H.html#a2bf4e906e54dd5044116807d54709e48',1,'ERF_Constants.H']]],
   ['binterp_155',['binterp',['../classMam4__aer.html#ac1ba4ccab45c000472b4d40cb43c9ef9',1,'Mam4_aer']]],
   ['bjr_5fbeta_156',['Bjr_beta',['../structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d',1,'most_data']]],
-  ['blade_5fpitch_157',['blade_pitch',['../classGeneralAD.html#a735e81390aef6a10e396bf4b7f1c7661',1,'GeneralAD::blade_pitch()'],['../classWindFarm.html#a2fc81cd15b5bbaec6e10bab30997fa7c',1,'WindFarm::blade_pitch()']]],
+  ['blade_5fpitch_157',['blade_pitch',['../classWindFarm.html#a2fc81cd15b5bbaec6e10bab30997fa7c',1,'WindFarm::blade_pitch()'],['../classGeneralAD.html#a735e81390aef6a10e396bf4b7f1c7661',1,'GeneralAD::blade_pitch()']]],
   ['bld_5fairfoil_5faoa_158',['bld_airfoil_aoa',['../classWindFarm.html#a5746b9a61d306dc1b8a8ca121e2906bb',1,'WindFarm::bld_airfoil_aoa()'],['../classGeneralAD.html#ae95fc1dda876a138123f8eddce348d28',1,'GeneralAD::bld_airfoil_aoa()']]],
   ['bld_5fairfoil_5fcd_159',['bld_airfoil_Cd',['../classWindFarm.html#a80014fbca537f74f24f5c54d69467866',1,'WindFarm::bld_airfoil_Cd()'],['../classGeneralAD.html#af8542d68395d4daa200c5ea4e25514dc',1,'GeneralAD::bld_airfoil_Cd()']]],
   ['bld_5fairfoil_5fcl_160',['bld_airfoil_Cl',['../classGeneralAD.html#a0db6baf8703517d3974b08ba7d854fc4',1,'GeneralAD::bld_airfoil_Cl()'],['../classWindFarm.html#a2a7411926b7f581556ab806dc2d9f3db',1,'WindFarm::bld_airfoil_Cl()']]],
@@ -48,12 +48,11 @@ var searchData=
   ['bulk_5fprops_5finit_184',['bulk_props_init',['../classPhysProp.html#a1bd98e99ebbc4373a913a6522b7a604f',1,'PhysProp']]],
   ['buoyancy_5fdry_5fanelastic_185',['buoyancy_dry_anelastic',['../ERF__buoyancy__utils_8H.html#a5011865b681ba8438cde409a3d072ab7',1,'ERF_buoyancy_utils.H']]],
   ['buoyancy_5fdry_5fanelastic_5ft_186',['buoyancy_dry_anelastic_T',['../ERF__buoyancy__utils_8H.html#abb7188746139971e303834720b94464a',1,'ERF_buoyancy_utils.H']]],
-  ['buoyancy_5fdry_5fdefault_187',['buoyancy_dry_default',['../ERF__buoyancy__utils_8H.html#adbe6d4b0c74e319d4ddd78f8499cb2e4',1,'ERF_buoyancy_utils.H']]],
+  ['buoyancy_5fdry_5fthpert_187',['buoyancy_dry_Thpert',['../ERF__buoyancy__utils_8H.html#a5d830f8d1f69f421243bb525f1cb3451',1,'ERF_buoyancy_utils.H']]],
   ['buoyancy_5fdry_5ftpert_188',['buoyancy_dry_Tpert',['../ERF__buoyancy__utils_8H.html#a7619875c059558175b6df4771ccc8515',1,'ERF_buoyancy_utils.H']]],
   ['buoyancy_5fmoist_5fanelastic_189',['buoyancy_moist_anelastic',['../ERF__buoyancy__utils_8H.html#a7ed47bf58371d45d6ae8060a81f60dfc',1,'ERF_buoyancy_utils.H']]],
-  ['buoyancy_5frhopert_190',['buoyancy_rhopert',['../ERF__buoyancy__utils_8H.html#a43ed1d4e549a33792364f14118214fac',1,'ERF_buoyancy_utils.H']]],
-  ['buoyancy_5ftype_191',['buoyancy_type',['../structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0',1,'SolverChoice']]],
-  ['buoyancy_5ftype2_192',['buoyancy_type2',['../ERF__buoyancy__utils_8H.html#a26fc88640f045b68ee840d0e3ca9c5b4',1,'ERF_buoyancy_utils.H']]],
-  ['buoyancy_5ftype3_193',['buoyancy_type3',['../ERF__buoyancy__utils_8H.html#a4a13d42f2955b06536439c62694e8c80',1,'ERF_buoyancy_utils.H']]],
-  ['buoyancy_5ftype4_194',['buoyancy_type4',['../ERF__buoyancy__utils_8H.html#a63617f7315553972dd394a9628b4dba1',1,'ERF_buoyancy_utils.H']]]
+  ['buoyancy_5fmoist_5fthpert_190',['buoyancy_moist_Thpert',['../ERF__buoyancy__utils_8H.html#aa012a8c78677190d8b51abe67b6526eb',1,'ERF_buoyancy_utils.H']]],
+  ['buoyancy_5fmoist_5ftpert_191',['buoyancy_moist_Tpert',['../ERF__buoyancy__utils_8H.html#aa3a740bcf18b82738afde22ade07fff9',1,'ERF_buoyancy_utils.H']]],
+  ['buoyancy_5frhopert_192',['buoyancy_rhopert',['../ERF__buoyancy__utils_8H.html#a43ed1d4e549a33792364f14118214fac',1,'ERF_buoyancy_utils.H']]],
+  ['buoyancy_5ftype_193',['buoyancy_type',['../structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0',1,'SolverChoice']]]
 ];
