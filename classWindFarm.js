@@ -4,8 +4,9 @@ var classWindFarm =
     [ "~WindFarm", "classWindFarm.html#a1be0e27ac213ad5faaf2fb2e114eab48", null ],
     [ "WindFarm", "classWindFarm.html#aa029a9a7efa768d39849b4fb27ab5eeb", null ],
     [ "advance", "classWindFarm.html#a2e5541f6986770bc1b8b48fa2720ba1c", null ],
-    [ "fill_Nturb_multifab", "classWindFarm.html#ad1f03a5472c55db1f73bec1f100bbee6", null ],
-    [ "fill_SMark_multifab", "classWindFarm.html#a4cb87b6581b901cbc1b7130abaea4ad9", null ],
+    [ "fill_Nturb_multifab", "classWindFarm.html#aea0f3ab253607ca28ab0085c9a0865e7", null ],
+    [ "fill_SMark_multifab", "classWindFarm.html#ad4c606e93225c44abd0e854081602c2a", null ],
+    [ "gatherKeyValuePairs", "classWindFarm.html#aaa0f45adf2528c2f8c5be67ac4a18e8b", null ],
     [ "init_windfarm_lat_lon", "classWindFarm.html#aab3b5df05c4a5f0604ad7c378ba34d1e", null ],
     [ "init_windfarm_x_y", "classWindFarm.html#aaa79cb89d8f18f2a059d1ff62c5e5dd3", null ],
     [ "read_tables", "classWindFarm.html#a4bfca70fee27062cd4eca4209ddfb16b", null ],
@@ -21,7 +22,7 @@ var classWindFarm =
     [ "set_turb_spec", "classWindFarm.html#aabf18956cad4a8546eb60ff8300c94c8", null ],
     [ "set_turb_spec_extra", "classWindFarm.html#a4afb42d44ea84a770d4dbfe8beb33f7e", null ],
     [ "SetModel", "classWindFarm.html#a638bdc717e37526689d507a5cd36735e", null ],
-    [ "write_actuator_disks_vtk", "classWindFarm.html#aeb24dd1b6590eece2c625a9076b4dcdc", null ],
+    [ "write_actuator_disks_vtk", "classWindFarm.html#a759d6e1b93757a50ff7001382399ae9c", null ],
     [ "write_turbine_locations_vtk", "classWindFarm.html#ad777d1138832963ea3158ec66c86e0c7", null ],
     [ "blade_pitch", "classWindFarm.html#a2fc81cd15b5bbaec6e10bab30997fa7c", null ],
     [ "bld_airfoil_aoa", "classWindFarm.html#a5746b9a61d306dc1b8a8ca121e2906bb", null ],
@@ -42,8 +43,10 @@ var classWindFarm =
     [ "rotor_RPM", "classWindFarm.html#ae10dbee3f3d8b126e52df83ea97d57b1", null ],
     [ "thrust_coeff", "classWindFarm.html#a8d5e6333f2f9f8e36dfd4766ad171b84", null ],
     [ "thrust_coeff_standing", "classWindFarm.html#ab8d68a72cf4346074daf47f825eff105", null ],
+    [ "turb_index", "classWindFarm.html#af3061fab41eb0d20c97164376cc370dc", null ],
     [ "velocity", "classWindFarm.html#a57a72ded446162e2e365dc0ff7c6e06a", null ],
     [ "wind_speed", "classWindFarm.html#a5d1dbc2f5df3a2ee2b239f04b82a2c6b", null ],
     [ "xloc", "classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c", null ],
-    [ "yloc", "classWindFarm.html#a18280646bd55077f0a59ea45506a630b", null ]
+    [ "yloc", "classWindFarm.html#a18280646bd55077f0a59ea45506a630b", null ],
+    [ "zloc", "classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27", null ]
 ];
