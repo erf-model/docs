@@ -3,6 +3,7 @@ var classEWP =
     [ "EWP", "classEWP.html#a4c32d700e8ba91dfbc07c332ad91ca71", null ],
     [ "~EWP", "classEWP.html#ad500c0f4245245d407e31633ec7cecff", null ],
     [ "advance", "classEWP.html#a675a92a8d9c16748a95412e48bae2457", null ],
+    [ "compute_power_output", "classEWP.html#af9cd3be628c58fca164e35db4a559fd9", null ],
     [ "source_terms_cellcentered", "classEWP.html#a4f28000173748f88919eda5fbed1368e", null ],
     [ "update", "classEWP.html#a762189d5d9c02d32fa1e6186adb35ae0", null ],
     [ "hub_height", "classEWP.html#a2ee471b0dcad3057297b809f4c5141ab", null ],

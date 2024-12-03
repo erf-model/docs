@@ -26,10 +26,11 @@ var searchData=
   ['host_5fto_5fdevice_1118',['host_to_device',['../structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8',1,'InputSoundingData']]],
   ['hseutils_1119',['HSEutils',['../namespaceHSEutils.html',1,'']]],
   ['hub_5fheight_1120',['hub_height',['../classEWP.html#a2ee471b0dcad3057297b809f4c5141ab',1,'EWP::hub_height()'],['../classFitch.html#ae3af34c6c07fd2d8b9b081b5c7ceb443',1,'Fitch::hub_height()'],['../classGeneralAD.html#ac82bba9c2818ca1e77adb01fdcdcaf66',1,'GeneralAD::hub_height()'],['../classSimpleAD.html#a4c17a08ad746b342bf62d7a1ad93781a',1,'SimpleAD::hub_height()'],['../classWindFarm.html#a6dfd6451498f50c17cb67c386d13ddfb',1,'WindFarm::hub_height()']]],
-  ['huge_5freal_1121',['huge_real',['../classModalAeroWateruptake.html#a7b99efd9601245afe2274c268afb5305',1,'ModalAeroWateruptake']]],
-  ['hwave_1122',['Hwave',['../classERF.html#aef05cf88e9e9d2b56112336761493977',1,'ERF']]],
-  ['hwave_5fonegrid_1123',['Hwave_onegrid',['../classERF.html#a11f2d48d9af9b8f4574975cae06838f1',1,'ERF']]],
-  ['hygro_5faer_1124',['hygro_aer',['../structPhysProp_1_1physprop__t.html#af60d655c402eb7e47763c631b9432552',1,'PhysProp::physprop_t']]],
-  ['hygro_5foptics_5finit_1125',['hygro_optics_init',['../classPhysProp.html#a6c73b423727e5d04394d0c030fd217f0',1,'PhysProp']]],
-  ['hygroscopic_5foptics_5finit_1126',['hygroscopic_optics_init',['../classPhysProp.html#a012aafa0dfffea201ceb407815094ffd',1,'PhysProp']]]
+  ['hub_5fheight_5fvelocity_1121',['hub_height_velocity',['../classFitch.html#af01d3f69b4f952f91970964d2f498e61',1,'Fitch']]],
+  ['huge_5freal_1122',['huge_real',['../classModalAeroWateruptake.html#a7b99efd9601245afe2274c268afb5305',1,'ModalAeroWateruptake']]],
+  ['hwave_1123',['Hwave',['../classERF.html#aef05cf88e9e9d2b56112336761493977',1,'ERF']]],
+  ['hwave_5fonegrid_1124',['Hwave_onegrid',['../classERF.html#a11f2d48d9af9b8f4574975cae06838f1',1,'ERF']]],
+  ['hygro_5faer_1125',['hygro_aer',['../structPhysProp_1_1physprop__t.html#af60d655c402eb7e47763c631b9432552',1,'PhysProp::physprop_t']]],
+  ['hygro_5foptics_5finit_1126',['hygro_optics_init',['../classPhysProp.html#a6c73b423727e5d04394d0c030fd217f0',1,'PhysProp']]],
+  ['hygroscopic_5foptics_5finit_1127',['hygroscopic_optics_init',['../classPhysProp.html#a012aafa0dfffea201ceb407815094ffd',1,'PhysProp']]]
 ];

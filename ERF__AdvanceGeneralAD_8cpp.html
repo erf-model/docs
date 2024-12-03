@@ -231,99 +231,99 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    Real rpm = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(velocity, rotor_RPM, avg_vel, n_spec_extra);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    Real pitch = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(velocity, blade_pitch, avg_vel, n_spec_extra);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    Real Omega = rpm/60.0*2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> = 1.226;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    Real B = 3.0;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    Real rhub = 2.0;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    Real rtip = 63.5;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    Real twist = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(bld_rad_loc, bld_twist, rad, n_bld_sections);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    Real c = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(bld_rad_loc, bld_chord, rad, n_bld_sections);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">// Iteration procedure</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    Real s = 0.5*c*B/(<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rad);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    Real at, an, V1, Vt, Vr, psi, L, D, Cn, Ct;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    Real ftip, fhub, <a class="code" href="classF.html">F</a>, Cl, Cd, at_new, an_new;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    at = 0.1;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    an = 0.1;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordtype">bool</span> is_converged = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;100;i++) {</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        V1 = avg_vel*(1-an);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        Vt = Omega*(1.0+at)*rad;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        Vr = std::pow(V1*V1+Vt*Vt,0.5);</div>
+<div class="fragment"><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;{</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        psi = std::atan2(V1,Vt);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        Real aoa = psi*180.0/<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> - twist + pitch;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        Cl = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(bld_airfoil_aoa, bld_airfoil_Cl, aoa, n_pts_airfoil);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        Cd = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(bld_airfoil_aoa, bld_airfoil_Cd, aoa, n_pts_airfoil);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="comment">//Cl = 1.37;</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="comment">//Cd = 0.014;</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    Real rpm = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(velocity, rotor_RPM, avg_vel, n_spec_extra);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    Real pitch = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(velocity, blade_pitch, avg_vel, n_spec_extra);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    Real Omega = rpm/60.0*2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    Real <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a> = 1.226;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    Real B = 3.0;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    Real rhub = 2.0;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    Real rtip = 63.5;</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="comment">//printf(&quot;rad, aoa, Cl, Cd    = %0.15g %0.15g %0.15g %0.15g\n&quot;, rad, aoa, Cl, Cd);</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        Cn = Cl*std::cos(psi) + Cd*std::sin(psi);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        Ct = Cl*std::sin(psi) - Cd*std::cos(psi);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    Real twist = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(bld_rad_loc, bld_twist, rad, n_bld_sections);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    Real c = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(bld_rad_loc, bld_chord, rad, n_bld_sections);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="comment">// Iteration procedure</span></div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        ftip = B*(rtip-rad)/(2.0*rad*std::sin(psi)+1e-10);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        fhub = B*(rad-rhub)/(2.0*rad*std::sin(psi)+1e-10);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        AMREX_ALWAYS_ASSERT(std::fabs(std::exp(-fhub))&lt;=1.0);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        AMREX_ALWAYS_ASSERT(std::fabs(std::exp(-ftip))&lt;=1.0);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <a class="code" href="classF.html">F</a> = 2.0/<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*(std::acos(std::exp(-ftip)) + std::acos(std::exp(-fhub)) );</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    Real s = 0.5*c*B/(<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rad);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    Real at, an, V1, Vt, Vr, psi, L, D, Cn, Ct;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    Real ftip, fhub, <a class="code" href="classF.html">F</a>, Cl, Cd, at_new, an_new;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    at = 0.1;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    an = 0.1;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        at_new = 1.0/ ( 4.0*<a class="code" href="classF.html">F</a>*std::sin(psi)*std::cos(psi)/(s*Ct+1e-10) - 1.0 );</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        an_new = 1.0/ ( 1.0 + 4.0*<a class="code" href="classF.html">F</a>*std::pow(std::sin(psi),2)/(s*Cn + 1e-10) );</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        at_new = std::max(0.0, at_new);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">if</span>(std::fabs(at_new-at) &lt; 1e-5 and std::fabs(an_new-an) &lt; 1e-5) {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="comment">//printf(&quot;Converged at, an = %d %0.15g %0.15g %0.15g\n&quot;,i, at, an, psi);</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            at = at_new;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            an = an_new;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            is_converged = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        at = at_new;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        an = an_new;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="comment">//printf(&quot;Iteration, at, an = %0.15g %0.15g %0.15g\n&quot;,at, an, psi);</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">if</span>(!is_converged) {</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        Abort(<span class="stringliteral">&quot;The iteration procedure for the generalized actuator disk did not converge. Exiting...&quot;</span>);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="comment">// Iterations converged. Now compute Ft, Fn</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordtype">bool</span> is_converged = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;100;i++) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        V1 = avg_vel*(1-an);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        Vt = Omega*(1.0+at)*rad;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        Vr = std::pow(V1*V1+Vt*Vt,0.5);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        psi = std::atan2(V1,Vt);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        Real aoa = psi*180.0/<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> - twist + pitch;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        Cl = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(bld_airfoil_aoa, bld_airfoil_Cl, aoa, n_pts_airfoil);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        Cd = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(bld_airfoil_aoa, bld_airfoil_Cd, aoa, n_pts_airfoil);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="comment">//Cl = 1.37;</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="comment">//Cd = 0.014;</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="comment">//printf(&quot;rad, aoa, Cl, Cd    = %0.15g %0.15g %0.15g %0.15g\n&quot;, rad, aoa, Cl, Cd);</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        Cn = Cl*std::cos(psi) + Cd*std::sin(psi);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        Ct = Cl*std::sin(psi) - Cd*std::cos(psi);</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    L = 0.5*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>*Vr*Vr*c*Cl;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    D = 0.5*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>*Vr*Vr*c*Cd;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        ftip = B*(rtip-rad)/(2.0*rad*std::sin(psi)+1e-10);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        fhub = B*(rad-rhub)/(2.0*rad*std::sin(psi)+1e-10);</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    Real Fn = L*std::cos(psi) + D*std::sin(psi);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    Real Ft = L*std::sin(psi) - D*std::cos(psi);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        AMREX_ALWAYS_ASSERT(std::fabs(std::exp(-fhub))&lt;=1.0);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        AMREX_ALWAYS_ASSERT(std::fabs(std::exp(-ftip))&lt;=1.0);</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;     <span class="comment">//printf(&quot;Fn and Ft %0.15g %0.15g %0.15g %0.15g\n&quot;, L, D, std::cos(psi), std::sin(psi));</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <a class="code" href="classF.html">F</a> = 2.0/<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*(std::acos(std::exp(-ftip)) + std::acos(std::exp(-fhub)) );</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    std::array&lt;Real, 2&gt; Fn_and_Ft;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    Fn_and_Ft[0] = Fn;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    Fn_and_Ft[1] = Ft;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        at_new = 1.0/ ( 4.0*<a class="code" href="classF.html">F</a>*std::sin(psi)*std::cos(psi)/(s*Ct+1e-10) - 1.0 );</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        an_new = 1.0/ ( 1.0 + 4.0*<a class="code" href="classF.html">F</a>*std::pow(std::sin(psi),2)/(s*Cn + 1e-10) );</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        at_new = std::max(0.0, at_new);</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">return</span> Fn_and_Ft;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="comment">//exit(0);</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordflow">if</span>(std::fabs(at_new-at) &lt; 1e-5 and std::fabs(an_new-an) &lt; 1e-5) {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="comment">//printf(&quot;Converged at, an = %d %0.15g %0.15g %0.15g\n&quot;,i, at, an, psi);</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            at = at_new;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            an = an_new;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            is_converged = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        at = at_new;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        an = an_new;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="comment">//printf(&quot;Iteration, at, an = %0.15g %0.15g %0.15g\n&quot;,at, an, psi);</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">if</span>(!is_converged) {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        Abort(<span class="stringliteral">&quot;The iteration procedure for the generalized actuator disk did not converge. Exiting...&quot;</span>);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// Iterations converged. Now compute Ft, Fn</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    L = 0.5*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>*Vr*Vr*c*Cl;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    D = 0.5*<a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">rho</a>*Vr*Vr*c*Cd;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    Real Fn = L*std::cos(psi) + D*std::sin(psi);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    Real Ft = L*std::sin(psi) - D*std::cos(psi);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;     <span class="comment">//printf(&quot;Fn and Ft %0.15g %0.15g %0.15g %0.15g\n&quot;, L, D, std::cos(psi), std::sin(psi));</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    std::array&lt;Real, 2&gt; Fn_and_Ft;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    Fn_and_Ft[0] = Fn;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    Fn_and_Ft[1] = Ft;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">return</span> Fn_and_Ft;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="comment">//exit(0);</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__Interpolation__1D_8H_html_a803d0d35d4ca4791556cbe02bbf51cbb"><div class="ttname"><a href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real interpolate_1d(const amrex::Real *alpha, const amrex::Real *beta, const amrex::Real alpha_interp, const int alpha_size)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_1D.H:12</div></div>
 <div class="ttc" id="aclassF_html"><div class="ttname"><a href="classF.html">F</a></div></div>
@@ -382,32 +382,32 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      <span class="comment">// Find the index of the radial location</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">int</span> index=-1;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    Real rhub = 2.0;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    Real rad_from_hub = rad - rhub;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">if</span>(rad_from_hub &lt; 0.0) {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        index = 0;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;n_bld_sections;i++){</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">if</span>(bld_rad_loc[i] &gt; rad) {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                index = i;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            }</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span>(index == -1 and rad &gt; bld_rad_loc[n_bld_sections-1]) {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        index = n_bld_sections-1;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span>(index == -1) {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="comment">//printf(&quot;The radial section is at %0.15g m\n&quot;,rad);</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        Abort(<span class="stringliteral">&quot;Could not find index of the radial section.&quot;</span>);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">return</span> index;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;{</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      <span class="comment">// Find the index of the radial location</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">int</span> index=-1;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    Real rhub = 2.0;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    Real rad_from_hub = rad - rhub;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">if</span>(rad_from_hub &lt; 0.0) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        index = 0;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;n_bld_sections;i++){</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">if</span>(bld_rad_loc[i] &gt; rad) {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                index = i;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">if</span>(index == -1 and rad &gt; bld_rad_loc[n_bld_sections-1]) {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        index = n_bld_sections-1;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">if</span>(index == -1) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="comment">//printf(&quot;The radial section is at %0.15g m\n&quot;,rad);</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        Abort(<span class="stringliteral">&quot;Could not find index of the radial section.&quot;</span>);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">return</span> index;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classGeneralAD.html#a5be79013be63b8105a01534ca186de32">GeneralAD::source_terms_cellcentered()</a>.</p>
 <div class="dynheader">

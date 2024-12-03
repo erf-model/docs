@@ -1,5 +1,10 @@
 var NAVTREEINDEX13 =
 {
+"structSolverChoice.html#a29517ec608149342f25aa89f18204fac":[2,0,80,49],
+"structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a":[2,0,80,51],
+"structSolverChoice.html#a31e016e3da7c175ac02427767286bc42":[2,0,80,4],
+"structSolverChoice.html#a34c427126677860aa8acad633e6fb2be":[2,0,80,76],
+"structSolverChoice.html#a3660145ad90d59b2a6693fd88bb01381":[2,0,80,69],
 "structSolverChoice.html#a396122e87a3d15c4ec8666d7dd18c095":[2,0,80,25],
 "structSolverChoice.html#a39a214d3b761245913bc3f80e5bde880":[2,0,80,5],
 "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5":[2,0,80,66],
@@ -244,10 +249,5 @@ var NAVTREEINDEX13 =
 "structWENO__MZQ3.html#a8dcc9655166c1217b7056f244d4cfde2":[2,0,106,1],
 "structWENO__MZQ3.html#a97cfb78afa5c496fb3194141f284556c":[2,0,106,8],
 "structWENO__MZQ3.html#a9d80ce41fb8ce4487f97fe4448fcb131":[2,0,106,0],
-"structWENO__MZQ3.html#ab9cb2f483989b377e7de79587d44c8c1":[2,0,106,3],
-"structWENO__MZQ3.html#ad02f88cd05b6e31261fb3380887a2099":[2,0,106,5],
-"structWENO__MZQ3.html#ad6c988889194e31f809b878a8b75390e":[2,0,106,6],
-"structWENO__MZQ3.html#af1d30022fe1ebe59529f45843dff3ae5":[2,0,106,10],
-"structWENO__Z3.html":[2,0,107],
-"structWENO__Z3.html#a04370c4cf4d845f967ec610ff66f5d2b":[2,0,107,5]
+"structWENO__MZQ3.html#ab9cb2f483989b377e7de79587d44c8c1":[2,0,106,3]
 };

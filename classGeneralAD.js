@@ -4,6 +4,7 @@ var classGeneralAD =
     [ "~GeneralAD", "classGeneralAD.html#ac44ff0908ec3c419196fb45efd0c7c13", null ],
     [ "advance", "classGeneralAD.html#aa2727df24bc4d49692be1e4fae865806", null ],
     [ "compute_freestream_velocity", "classGeneralAD.html#aaa071c6bfd4e647404242328fd1b3643", null ],
+    [ "compute_power_output", "classGeneralAD.html#af6b71032fe0417e12b9aefff0ba2066b", null ],
     [ "source_terms_cellcentered", "classGeneralAD.html#a5be79013be63b8105a01534ca186de32", null ],
     [ "update", "classGeneralAD.html#a2c22ccda2fdf9b29e4325c22b84bea2c", null ],
     [ "blade_pitch", "classGeneralAD.html#a735e81390aef6a10e396bf4b7f1c7661", null ],
