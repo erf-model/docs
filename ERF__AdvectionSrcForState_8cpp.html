@@ -736,41 +736,45 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    ParallelFor(bx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    {</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        Real invdetJ = (detJ(i,j,k) &gt; 0.) ?  1. / detJ(i,j,k) : 1.;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        Real mfsq = mf_m(i,j,0) * mf_m(i,j,0);</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        advectionSrc(i,j,k,cons_index) = - invdetJ * mfsq * (</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;          ( (flx_arr[0])(i+1,j,k,cons_index) - (flx_arr[0])(i  ,j,k,cons_index) ) * dxInv +</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;          ( (flx_arr[1])(i,j+1,k,cons_index) - (flx_arr[1])(i,j  ,k,cons_index) ) * dyInv +</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;          ( (flx_arr[2])(i,j,k+1,cons_index) - (flx_arr[2])(i,j,k  ,cons_index) ) * dzInv );</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    });</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="comment">// Special advection operator for open BC (bndry tangent operations)</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordflow">if</span> (xlo_open) {</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordtype">bool</span> do_lo = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <a class="code" href="ERF__Advection_8H.html#abd84d0909db1f87c22b5a92aae03e919">AdvectionSrcForOpenBC_Tangent_Cons</a>(bx_xlo, 0, icomp, ncomp, advectionSrc, cell_prim,</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                                           avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                                           detJ, cellSizeInv, do_lo);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    }</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordflow">if</span> (xhi_open) {</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <a class="code" href="ERF__Advection_8H.html#abd84d0909db1f87c22b5a92aae03e919">AdvectionSrcForOpenBC_Tangent_Cons</a>(bx_xhi, 0, icomp, ncomp, advectionSrc, cell_prim,</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                                           avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                                           detJ, cellSizeInv);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    }</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">if</span> (ylo_open) {</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordtype">bool</span> do_lo = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <a class="code" href="ERF__Advection_8H.html#abd84d0909db1f87c22b5a92aae03e919">AdvectionSrcForOpenBC_Tangent_Cons</a>(bx_ylo, 1, icomp, ncomp, advectionSrc, cell_prim,</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                                           avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                                           detJ, cellSizeInv, do_lo);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    }</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="keywordflow">if</span> (yhi_open) {</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <a class="code" href="ERF__Advection_8H.html#abd84d0909db1f87c22b5a92aae03e919">AdvectionSrcForOpenBC_Tangent_Cons</a>(bx_yhi, 1, icomp, ncomp, advectionSrc, cell_prim,</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                                           avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                                           detJ, cellSizeInv);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    }</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;}</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordflow">if</span> (detJ(i,j,k) &gt; 0.)</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        {</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            Real invdetJ = 1.0 / detJ(i,j,k);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            Real mfsq    = mf_m(i,j,0) * mf_m(i,j,0);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            advectionSrc(i,j,k,cons_index) = - invdetJ * mfsq * (</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;              ( (flx_arr[0])(i+1,j,k,cons_index) - (flx_arr[0])(i  ,j,k,cons_index) ) * dxInv +</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;              ( (flx_arr[1])(i,j+1,k,cons_index) - (flx_arr[1])(i,j  ,k,cons_index) ) * dyInv +</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;              ( (flx_arr[2])(i,j,k+1,cons_index) - (flx_arr[2])(i,j,k  ,cons_index) ) * dzInv );</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            advectionSrc(i,j,k,cons_index) = 0.;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        }</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    });</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="comment">// Special advection operator for open BC (bndry tangent operations)</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">if</span> (xlo_open) {</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordtype">bool</span> do_lo = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <a class="code" href="ERF__Advection_8H.html#abd84d0909db1f87c22b5a92aae03e919">AdvectionSrcForOpenBC_Tangent_Cons</a>(bx_xlo, 0, icomp, ncomp, advectionSrc, cell_prim,</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                           avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                                           detJ, cellSizeInv, do_lo);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    }</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordflow">if</span> (xhi_open) {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <a class="code" href="ERF__Advection_8H.html#abd84d0909db1f87c22b5a92aae03e919">AdvectionSrcForOpenBC_Tangent_Cons</a>(bx_xhi, 0, icomp, ncomp, advectionSrc, cell_prim,</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                                           avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                                           detJ, cellSizeInv);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    }</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">if</span> (ylo_open) {</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordtype">bool</span> do_lo = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <a class="code" href="ERF__Advection_8H.html#abd84d0909db1f87c22b5a92aae03e919">AdvectionSrcForOpenBC_Tangent_Cons</a>(bx_ylo, 1, icomp, ncomp, advectionSrc, cell_prim,</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                                           avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                                           detJ, cellSizeInv, do_lo);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordflow">if</span> (yhi_open) {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <a class="code" href="ERF__Advection_8H.html#abd84d0909db1f87c22b5a92aae03e919">AdvectionSrcForOpenBC_Tangent_Cons</a>(bx_yhi, 1, icomp, ncomp, advectionSrc, cell_prim,</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                                           avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                                           detJ, cellSizeInv);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    }</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;}</div>
 <div class="ttc" id="aERF__AdvectionSrcForState_8cpp_html_a244d2d95f771960db0f0ec982d3595f8"><div class="ttname"><a href="ERF__AdvectionSrcForState_8cpp.html#a244d2d95f771960db0f0ec982d3595f8">AdvectionSrcForScalars</a></div><div class="ttdeci">void AdvectionSrcForScalars(const Real &amp;dt, const Box &amp;bx, const int icomp, const int ncomp, const Array4&lt; const Real &gt; &amp;avg_xmom, const Array4&lt; const Real &gt; &amp;avg_ymom, const Array4&lt; const Real &gt; &amp;avg_zmom, const Array4&lt; const Real &gt; &amp;cur_cons, const Array4&lt; const Real &gt; &amp;cell_prim, const Array4&lt; Real &gt; &amp;advectionSrc, const bool &amp;use_mono_adv, Real *max_s_ptr, Real *min_s_ptr, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; const Real &gt; &amp;mf_m, const AdvType horiz_adv_type, const AdvType vert_adv_type, const Real horiz_upw_frac, const Real vert_upw_frac, const GpuArray&lt; const Array4&lt; Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr, const GpuArray&lt; Array4&lt; Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_tmp_arr, const Box &amp;domain, const BCRec *bc_ptr_h)</div><div class="ttdef"><b>Definition:</b> ERF_AdvectionSrcForState.cpp:119</div></div>
 <div class="ttc" id="aERF__Advection_8H_html_abd84d0909db1f87c22b5a92aae03e919"><div class="ttname"><a href="ERF__Advection_8H.html#abd84d0909db1f87c22b5a92aae03e919">AdvectionSrcForOpenBC_Tangent_Cons</a></div><div class="ttdeci">void AdvectionSrcForOpenBC_Tangent_Cons(const amrex::Box &amp;bx, const int &amp;dir, const int &amp;icomp, const int &amp;ncomp, const amrex::Array4&lt; amrex::Real &gt; &amp;cell_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const bool do_lo=false)</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a3095d588151e351b421893f62411d15e"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a3095d588151e351b421893f62411d15e">AdvType::Weno_7</a></div><div class="ttdeci">@ Weno_7</div></div>

@@ -13,6 +13,7 @@ var dir_9c08f4b6b7cd879dc853cee646ab55d3 =
       [ "FlowerIF", "classFlowerIF.html", "classFlowerIF" ]
     ] ],
     [ "ERF_initEB.cpp", "ERF__initEB_8cpp.html", null ],
+    [ "ERF_redistribute.cpp", "ERF__redistribute_8cpp.html", null ],
     [ "ERF_TerrainIF.H", "ERF__TerrainIF_8H.html", [
       [ "TerrainIF", "classTerrainIF.html", "classTerrainIF" ]
     ] ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"classNullWindFarm.html#ad19bb9c4842c561c0024ae6d686b1a78":[2,0,61,29],
 "classNullWindFarm.html#ad337a725edf9efdaf1fd4a49ddd35505":[2,0,61,19],
 "classNullWindFarm.html#ad3f68562d1b6b5a224644e283f8a146d":[2,0,61,12],
 "classNullWindFarm.html#ad403f4133b2292495e5dd949fcc59207":[2,0,61,25],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "classRadiation.html#a875467ba1e77ce2c0af0911c09422b42":[2,0,69,66],
 "classRadiation.html#a889a5f62e829af86690ece49bf2f9c6e":[2,0,69,29],
 "classRadiation.html#a89625b089dbe4acbc85a7241fcbd3839":[2,0,69,97],
-"classRadiation.html#a8a48736892a600948ffa42c9d1b38700":[2,0,69,63],
-"classRadiation.html#a8ac40edc77ac51d941c954c15bb9dbf5":[2,0,69,130]
+"classRadiation.html#a8a48736892a600948ffa42c9d1b38700":[2,0,69,63]
 };

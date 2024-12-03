@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e":[2,0,75,11],
 "classSimpleAD.html":[2,0,77],
 "classSimpleAD.html#a04490ef9f591e86588c5bb7870c1b77f":[2,0,77,13],
 "classSimpleAD.html#a0d915eaf360210453a081a2b721d0fa0":[2,0,77,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "functions_func.html":[2,3,1,0],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
-"functions_func_d.html":[2,3,1,3],
-"functions_func_e.html":[2,3,1,4]
+"functions_func_d.html":[2,3,1,3]
 };

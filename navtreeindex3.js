@@ -89,6 +89,7 @@ var NAVTREEINDEX3 =
 "ERF__prob__common_8H.html#af9d998a7ea02a8866bcbbf8d3d1f8882":[3,0,1,27,2],
 "ERF__prob__common_8H_source.html":[3,0,1,27],
 "ERF__read__waves_8cpp.html":[3,0,1,28],
+"ERF__redistribute_8cpp.html":[3,0,1,4,6],
 "ERF__slow__rhs__post_8cpp.html":[3,0,1,16,12],
 "ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66":[3,0,1,16,12,0],
 "ERF__slow__rhs__pre_8cpp.html":[3,0,1,16,13],
@@ -99,7 +100,7 @@ var NAVTREEINDEX3 =
 "ERF__solve__with__gmres_8cpp.html":[3,0,1,8,6],
 "ERF__solve__with__mlmg_8cpp.html":[3,0,1,8,7],
 "ERF__solve__with__mlmg_8cpp.html#ad583385d33cdb5a9c28bf474b72cad1c":[3,0,1,8,7,0],
-"ERF__writeEBsurface_8cpp.html":[3,0,1,4,7],
+"ERF__writeEBsurface_8cpp.html":[3,0,1,4,8],
 "ERF__writeJobInfo_8cpp.html":[3,0,1,6,21],
 "ERF__writeJobInfo_8cpp.html#aabaa127a3a319c1b86090d6c88568965":[3,0,1,6,21,0],
 "annotated.html":[2,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classCloudRadProps.html#a4bdca9fbb3d26b9b013ea06b9385017e":[2,0,14,19],
 "classCloudRadProps.html#a5772a63dc315f019d951785ebdb9c13d":[2,0,14,2],
 "classCloudRadProps.html#a58599e69fa4af17830d28c4836e386db":[2,0,14,17],
-"classCloudRadProps.html#a65b15fc94853bc17e04f24926155b7c5":[2,0,14,27],
-"classCloudRadProps.html#a6a070723376d30c2d64c808898faebfb":[2,0,14,28]
+"classCloudRadProps.html#a65b15fc94853bc17e04f24926155b7c5":[2,0,14,27]
 };
