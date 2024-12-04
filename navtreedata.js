@@ -83,11 +83,11 @@ var NAVTREEINDEX =
 "classNullWindFarm.html#ad19bb9c4842c561c0024ae6d686b1a78",
 "classRadiation.html#a8ac40edc77ac51d941c954c15bb9dbf5",
 "classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e",
-"functions_func_e.html",
-"structCENTERED6.html#a732a4a686c30a3233c939f453b74f0b9",
-"structSolverChoice.html#a238b0871f38f8b134ff3fe5af0d05479",
-"structWENO__MZQ3.html#ab9cb2f483989b377e7de79587d44c8c1",
-"structsurface__temp__wave__coupled.html#abd39570dca269dda79fbb946df0a02ca"
+"functions_func_g.html",
+"structCENTERED6.html#acedba4c2b029f363a47c32ad0c6f30e8",
+"structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a",
+"structWENO__MZQ3.html#ad6c988889194e31f809b878a8b75390e",
+"structsurface__temp__wave__coupled.html#aedbd53ee9bf7b4c98f5a2b88207cbb01"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,7 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"functions_func_e.html":[2,3,1,4],
-"functions_func_f.html":[2,3,1,5],
 "functions_func_g.html":[2,3,1,6],
 "functions_func_h.html":[2,3,1,7],
 "functions_func_i.html":[2,3,1,8],
@@ -249,5 +247,7 @@ var NAVTREEINDEX11 =
 "structCENTERED6.html":[2,0,12],
 "structCENTERED6.html#a16a6ea9f7d0663518b97353b2224ee33":[2,0,12,3],
 "structCENTERED6.html#a32c3566f07adb5481cf94c54893a4206":[2,0,12,6],
-"structCENTERED6.html#a6ffd5cab531876c4cb61598e3021e401":[2,0,12,5]
+"structCENTERED6.html#a6ffd5cab531876c4cb61598e3021e401":[2,0,12,5],
+"structCENTERED6.html#a732a4a686c30a3233c939f453b74f0b9":[2,0,12,8],
+"structCENTERED6.html#aacd79f8ed62a166d5f4d44a20d09fc13":[2,0,12,1]
 };
