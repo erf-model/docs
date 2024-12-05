@@ -1,10 +1,5 @@
 var annotated_dup =
 [
-    [ "amrex", "namespaceamrex.html", [
-      [ "FFT", "namespaceamrex_1_1FFT.html", [
-        [ "PoissonTerrainPrecond", "classamrex_1_1FFT_1_1PoissonTerrainPrecond.html", "classamrex_1_1FFT_1_1PoissonTerrainPrecond" ]
-      ] ]
-    ] ],
     [ "ncutils", "namespacencutils.html", [
       [ "NCDType", "structncutils_1_1NCDType.html", "structncutils_1_1NCDType" ],
       [ "NCDim", "structncutils_1_1NCDim.html", "structncutils_1_1NCDim" ],

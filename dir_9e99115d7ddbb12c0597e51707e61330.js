@@ -1,9 +1,7 @@
 var dir_9e99115d7ddbb12c0597e51707e61330 =
 [
     [ "ERF_compute_divergence.cpp", "ERF__compute__divergence_8cpp.html", null ],
-    [ "ERF_FFT_TerrainPrecond.H", "ERF__FFT__TerrainPrecond_8H.html", [
-      [ "PoissonTerrainPrecond", "classamrex_1_1FFT_1_1PoissonTerrainPrecond.html", "classamrex_1_1FFT_1_1PoissonTerrainPrecond" ]
-    ] ],
+    [ "ERF_FFT_Utils.H", "ERF__FFT__Utils_8H.html", null ],
     [ "ERF_PoissonSolve.cpp", "ERF__PoissonSolve_8cpp.html", null ],
     [ "ERF_PoissonSolve_tb.cpp", "ERF__PoissonSolve__tb_8cpp.html", null ],
     [ "ERF_solve_with_EB_mlmg.cpp", "ERF__solve__with__EB__mlmg_8cpp.html", "ERF__solve__with__EB__mlmg_8cpp" ],

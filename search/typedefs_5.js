@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['t_5179',['T',['../classamrex_1_1FFT_1_1PoissonTerrainPrecond.html#ab1e71d06328d046d89eca8c2745b8eb8',1,'amrex::FFT::PoissonTerrainPrecond']]]
+  ['xdir_5169',['XDir',['../ERF__DirectionSelector_8H.html#a68edfbe7326d0d1476e796beb668072f',1,'ERF_DirectionSelector.H']]]
 ];

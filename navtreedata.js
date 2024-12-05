@@ -77,17 +77,16 @@ var NAVTREEINDEX =
 "ERF__NCPlotFile_8H.html#aabaa127a3a319c1b86090d6c88568965",
 "ERF__Write1DProfiles__stag_8cpp.html",
 "classCloudRadProps.html#a6a070723376d30c2d64c808898faebfb",
-"classERF.html#aa89efe0abf37918ce3f212fb0e26f1bc",
+"classERF.html#aa87242f053bfae4efb2a7698ef417ab9",
 "classEulerianMicrophysics.html#a6cc7efaa2f4f27f8a7f485fd96e5635b",
 "classMRISplitIntegrator.html#a137a1ceb1e8051b5a97aaab40492c0e1",
 "classNullWindFarm.html#ad19bb9c4842c561c0024ae6d686b1a78",
 "classRadiation.html#a8ac40edc77ac51d941c954c15bb9dbf5",
 "classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e",
-"functions_func_g.html",
-"structCENTERED6.html#acedba4c2b029f363a47c32ad0c6f30e8",
-"structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a",
-"structWENO__MZQ3.html#ad6c988889194e31f809b878a8b75390e",
-"structsurface__temp__wave__coupled.html#aedbd53ee9bf7b4c98f5a2b88207cbb01"
+"functions_func_n.html",
+"structDiffChoice.html#a574cf6ad397fd50169cafe025c9da5f3",
+"structSolverChoice.html#a3b31e3a91b502cabfc9fd8778492ad46",
+"structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

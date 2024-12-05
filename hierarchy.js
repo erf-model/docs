@@ -93,7 +93,6 @@ var hierarchy =
     [ "PhysProp::physprop_t", "structPhysProp_1_1physprop__t.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
     [ "PlaneSampler", "structPlaneSampler.html", null ],
-    [ "amrex::FFT::PoissonTerrainPrecond< MF >", "classamrex_1_1FFT_1_1PoissonTerrainPrecond.html", null ],
     [ "ProblemBase", "classProblemBase.html", null ],
     [ "ProbParmDefaults", "structProbParmDefaults.html", null ],
     [ "RadConstants", "classRadConstants.html", null ],
