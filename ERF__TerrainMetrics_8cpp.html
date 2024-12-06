@@ -345,7 +345,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,31,131,57"/>
 <area shape="rect" href="ERF__ChopGrids_8cpp.html#a6fe49eeaa200ab6ab8ae0a6e048f3ded" title=" " alt="" coords="211,5,317,32"/>
 <area shape="rect" href="ERF__TerrainMetrics_8cpp.html#ac59abef116a0b274b84ab3d89771ef22" title=" " alt="" coords="179,56,349,83"/>
-<area shape="rect" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="397,56,436,83"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="397,56,436,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -400,9 +400,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;{</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="comment">// User-selected method from inputs file (BTF default)</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    ParmParse <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordtype">int</span> terrain_smoothing = 0;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;terrain_smoothing&quot;</span>, terrain_smoothing);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;terrain_smoothing&quot;</span>, terrain_smoothing);</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">if</span> (lev &gt; 0 &amp;&amp; terrain_smoothing != 0) {</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        Abort(<span class="stringliteral">&quot;Must use terrain_smoothing = 0 when doing multilevel&quot;</span>);</div>
@@ -572,7 +572,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="comment">// Minimum allowed fractional grid spacing</span></div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        Real gamma_m = 0.5;</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;terrain_gamma_m&quot;</span>, gamma_m);</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;terrain_gamma_m&quot;</span>, gamma_m);</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        Real z_H     = 2.44*h_m/(1-gamma_m); <span class="comment">// Klemp2011 Eqn. 11</span></div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="comment">// Populate h_mf at k&gt;0 with h_s, solving in ordered 2D slices</span></div>
@@ -755,7 +755,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
-<div class="ttc" id="aERF__Microphysics__Utils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics_Utils.H:219</div></div>
+<div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:219</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae"><div class="ttname"><a href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae">MicVar::omega</a></div><div class="ttdeci">@ omega</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:49</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__TerrainMetrics_8cpp.html#a6184f65a98c75d738ea36165cb0ddf8d">init_terrain_grid()</a>.</p>
@@ -765,7 +765,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__TerrainMetrics_8cpp_ac59abef116a0b274b84ab3d89771ef22_cgraph.png" border="0" usemap="#aERF__TerrainMetrics_8cpp_ac59abef116a0b274b84ab3d89771ef22_cgraph" alt=""/></div>
 <map name="aERF__TerrainMetrics_8cpp_ac59abef116a0b274b84ab3d89771ef22_cgraph" id="aERF__TerrainMetrics_8cpp_ac59abef116a0b274b84ab3d89771ef22_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,176,32"/>
-<area shape="rect" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="224,5,263,32"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="224,5,263,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -895,8 +895,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Try reading in terrain_z_levels, which allows arbitrarily spaced grid</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// levels to be specified and will take precedence over the</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// grid_stretching_ratio parameter</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ParmParse <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> n_zlevels = <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.countval(<span class="stringliteral">&quot;terrain_z_levels&quot;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> n_zlevels = <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.countval(<span class="stringliteral">&quot;terrain_z_levels&quot;</span>);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (n_zlevels &gt; 0)</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">int</span> nz = geom[0].Domain().length(2)+1; <span class="comment">// staggered</span></div>
@@ -910,7 +910,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;Note: Found terrain_z_levels, ignoring grid_stretching_ratio&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.getarr(<span class="stringliteral">&quot;terrain_z_levels&quot;</span>, zlevels_stag[0], 0, nz);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.getarr(<span class="stringliteral">&quot;terrain_z_levels&quot;</span>, zlevels_stag[0], 0, nz);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// These levels should range from 0 at the surface to the height of the</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// top of model domain (see the coordinate surface height, zeta, in</span></div>
@@ -946,7 +946,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__TerrainMetrics_8cpp_a6a0ddf4ef447c8f0129b403c8fd889fd_cgraph" id="aERF__TerrainMetrics_8cpp_a6a0ddf4ef447c8f0129b403c8fd889fd_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,101,57"/>
 <area shape="rect" href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f" title=" " alt="" coords="149,5,352,32"/>
-<area shape="rect" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="231,56,270,83"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="231,56,270,83"/>
 </map>
 </div>
 <div class="dynheader">

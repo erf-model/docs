@@ -38,7 +38,6 @@ var hierarchy =
     [ "MamConstituents::gas_t", "structMamConstituents_1_1gas__t.html", null ],
     [ "MamConstituents::gaslist_t", "structMamConstituents_1_1gaslist__t.html", null ],
     [ "amrex::GPUable", null, [
-      [ "FlowerIF", "classFlowerIF.html", null ],
       [ "TerrainIF", "classTerrainIF.html", null ]
     ] ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],

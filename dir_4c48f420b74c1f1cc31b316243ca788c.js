@@ -1,7 +1,7 @@
 var dir_4c48f420b74c1f1cc31b316243ca788c =
 [
     [ "ERF_Checkpoint.cpp", "ERF__Checkpoint_8cpp.html", null ],
-    [ "ERF_console_io.cpp", "ERF__console__io_8cpp.html", "ERF__console__io_8cpp" ],
+    [ "ERF_ConsoleIO.cpp", "ERF__ConsoleIO_8cpp.html", "ERF__ConsoleIO_8cpp" ],
     [ "ERF_NCCheckpoint.cpp", "ERF__NCCheckpoint_8cpp.html", null ],
     [ "ERF_NCColumnFile.cpp", "ERF__NCColumnFile_8cpp.html", null ],
     [ "ERF_NCInterface.cpp", "ERF__NCInterface_8cpp.html", "ERF__NCInterface_8cpp" ],
@@ -33,6 +33,6 @@ var dir_4c48f420b74c1f1cc31b316243ca788c =
     [ "ERF_WriteBndryPlanes.H", "ERF__WriteBndryPlanes_8H.html", [
       [ "WriteBndryPlanes", "classWriteBndryPlanes.html", "classWriteBndryPlanes" ]
     ] ],
-    [ "ERF_writeJobInfo.cpp", "ERF__writeJobInfo_8cpp.html", "ERF__writeJobInfo_8cpp" ],
+    [ "ERF_WriteJobInfo.cpp", "ERF__WriteJobInfo_8cpp.html", "ERF__WriteJobInfo_8cpp" ],
     [ "ERF_WriteScalarProfiles.cpp", "ERF__WriteScalarProfiles_8cpp.html", null ]
 ];

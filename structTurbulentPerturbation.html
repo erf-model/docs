@@ -298,14 +298,14 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
 <div class="ttc" id="astructTurbulentPerturbation_html_a37cd2d582d2102a94d25a3fa6631e8dc"><div class="ttname"><a href="structTurbulentPerturbation.html#a37cd2d582d2102a94d25a3fa6631e8dc">TurbulentPerturbation::pb_ba</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BoxArray &gt; pb_ba</div><div class="ttdef"><b>Definition:</b> ERF_TurbPertStruct.H:531</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__make__sources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__MakeSources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_icgraph.png" border="0" usemap="#astructTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_icgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_icgraph" id="astructTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_icgraph">
 <area shape="rect" title=" " alt="" coords="168,5,331,47"/>
-<area shape="rect" href="ERF__make__sources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a" title=" " alt="" coords="5,13,120,39"/>
+<area shape="rect" href="ERF__MakeSources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a" title=" " alt="" coords="5,13,120,39"/>
 </map>
 </div>
 
@@ -709,7 +709,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="structTurbulentPerturbation.html#a237c085bf6fa265eef471d19bbca613f" title=" " alt="" coords="469,71,632,112"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="514,146,587,173"/>
 <area shape="rect" href="structTurbulentPerturbation.html#aa8a048ec67a9e110cef012105dd615cf" title=" " alt="" coords="469,201,632,243"/>
-<area shape="rect" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="531,274,570,301"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="531,274,570,301"/>
 </map>
 </div>
 
@@ -895,17 +895,17 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="structTurbulentPerturbation.html#aa2c2e894fc858d8cdaa9cde0092e896e">tpi_Ti</a> = 0.;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="structTurbulentPerturbation.html#a20940c88c5c2f6ef1b90d1984867777a">tpi_Tinf</a> = 300.;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        amrex::ParmParse <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<a class="code" href="structTurbulentPerturbation.html#a40f3307cf523b625489b8591869bbb47">pp_prefix</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        amrex::ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<a class="code" href="structTurbulentPerturbation.html#a40f3307cf523b625489b8591869bbb47">pp_prefix</a>);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// Reading inputs, and placing assertion for the perturbation inflow to work</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;perturbation_box_dims&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#ab90f89bf4bf3d497f88c27d1b92f3d39">tpi_boxDim</a>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;perturbation_direction&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#af2a72d18ce8c0f5bc011d3682ad93e0f">tpi_direction</a>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;perturbation_layers&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a17f060634e44ba5701cc1febba23c915">tpi_layers</a>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;perturbation_offset&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a7bcb39c84b03deefaa166c89f22c229c">tpi_offset</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;perturbation_box_dims&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#ab90f89bf4bf3d497f88c27d1b92f3d39">tpi_boxDim</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;perturbation_direction&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#af2a72d18ce8c0f5bc011d3682ad93e0f">tpi_direction</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;perturbation_layers&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a17f060634e44ba5701cc1febba23c915">tpi_layers</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;perturbation_offset&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a7bcb39c84b03deefaa166c89f22c229c">tpi_offset</a>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;perturbation_nondimensional&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#abe0155dd9b530c537b1f639ab4dc8691">tpi_nonDim</a>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;perturbation_T_infinity&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a20940c88c5c2f6ef1b90d1984867777a">tpi_Tinf</a>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;perturbation_T_intensity&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#aa2c2e894fc858d8cdaa9cde0092e896e">tpi_Ti</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;perturbation_nondimensional&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#abe0155dd9b530c537b1f639ab4dc8691">tpi_nonDim</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;perturbation_T_infinity&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a20940c88c5c2f6ef1b90d1984867777a">tpi_Tinf</a>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;perturbation_T_intensity&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#aa2c2e894fc858d8cdaa9cde0092e896e">tpi_Ti</a>);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">// Check variables message</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structTurbulentPerturbation.html#a17f060634e44ba5701cc1febba23c915">tpi_layers</a> &lt; 0) { amrex::Abort(<span class="stringliteral">&quot;Please provide a valid perturbation layer value (ie. 3-5)&quot;</span>); }</div>
@@ -1031,7 +1031,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">        amrex::PrintToFile(&quot;BoxPerturbationOutput&quot;) &lt;&lt; &quot;Turbulent perturbation BoxArray:\n&quot; &lt;&lt; pb_ba[lev] &lt;&lt; &quot;\n&quot;;</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">        */</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
-<div class="ttc" id="aERF__Microphysics__Utils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics_Utils.H:219</div></div>
+<div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:219</div></div>
 <div class="ttc" id="astructTurbulentPerturbation_html_a17f060634e44ba5701cc1febba23c915"><div class="ttname"><a href="structTurbulentPerturbation.html#a17f060634e44ba5701cc1febba23c915">TurbulentPerturbation::tpi_layers</a></div><div class="ttdeci">int tpi_layers</div><div class="ttdef"><b>Definition:</b> ERF_TurbPertStruct.H:541</div></div>
 <div class="ttc" id="astructTurbulentPerturbation_html_a21d9b84c0b8eac4d49ae5ca764247442"><div class="ttname"><a href="structTurbulentPerturbation.html#a21d9b84c0b8eac4d49ae5ca764247442">TurbulentPerturbation::tpi_Wpb</a></div><div class="ttdeci">amrex::Real tpi_Wpb</div><div class="ttdef"><b>Definition:</b> ERF_TurbPertStruct.H:555</div></div>
 <div class="ttc" id="astructTurbulentPerturbation_html_a22bb01b7314fa13bdfc1966456f5deed"><div class="ttname"><a href="structTurbulentPerturbation.html#a22bb01b7314fa13bdfc1966456f5deed">TurbulentPerturbation::tpi_Lpb</a></div><div class="ttdeci">amrex::Real tpi_Lpb</div><div class="ttdef"><b>Definition:</b> ERF_TurbPertStruct.H:554</div></div>
@@ -1046,7 +1046,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structTurbulentPerturbation_a6f6d1321050b4a5709f3eaecff1a8926_cgraph.png" border="0" usemap="#astructTurbulentPerturbation_a6f6d1321050b4a5709f3eaecff1a8926_cgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_a6f6d1321050b4a5709f3eaecff1a8926_cgraph" id="astructTurbulentPerturbation_a6f6d1321050b4a5709f3eaecff1a8926_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,168,47"/>
-<area shape="rect" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="216,13,255,39"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="216,13,255,39"/>
 </map>
 </div>
 
@@ -1254,7 +1254,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    {</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="comment">// Seed the random generator at 1024UL for regression testing</span></div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordtype">int</span> fix_random_seed = 0;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        amrex::ParmParse <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>); <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;fix_random_seed&quot;</span>, fix_random_seed);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        amrex::ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>); <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;fix_random_seed&quot;</span>, fix_random_seed);</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keywordflow">if</span> (fix_random_seed) {</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            amrex::InitRandom(1024UL);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        }</div>
@@ -1281,7 +1281,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph.png" border="0" usemap="#astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph" id="astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,168,65"/>
-<area shape="rect" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="233,5,272,32"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="233,5,272,32"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="216,56,289,83"/>
 </map>
 </div>
@@ -1401,7 +1401,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structTurbulentPerturbation.html#a6f6d1321050b4a5709f3eaecff1a8926">init_tpi()</a>, <a class="el" href="ERF__make__sources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources()</a>, <a class="el" href="structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60">netZeroBuoyantAdd()</a>, <a class="el" href="structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527">netZeroBuoyantAdjust()</a>, and <a class="el" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1">pseudoRandomPert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structTurbulentPerturbation.html#a6f6d1321050b4a5709f3eaecff1a8926">init_tpi()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources()</a>, <a class="el" href="structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60">netZeroBuoyantAdd()</a>, <a class="el" href="structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527">netZeroBuoyantAdjust()</a>, and <a class="el" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1">pseudoRandomPert()</a>.</p>
 
 </div>
 </div>

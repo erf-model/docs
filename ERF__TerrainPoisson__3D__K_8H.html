@@ -103,10 +103,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__TerrainPoisson__3D__K_8H__dep__incl.png" border="0" usemap="#aSource_2LinearSolvers_2ERF__TerrainPoisson__3D__K_8Hdep" alt=""/></div>
 <map name="aSource_2LinearSolvers_2ERF__TerrainPoisson__3D__K_8Hdep" id="aSource_2LinearSolvers_2ERF__TerrainPoisson__3D__K_8Hdep">
-<area shape="rect" title=" " alt="" coords="110,5,317,47"/>
-<area shape="rect" href="ERF__TerrainPoisson_8H.html" title=" " alt="" coords="130,95,297,136"/>
-<area shape="rect" href="ERF__solve__with__gmres_8cpp.html" title=" " alt="" coords="5,184,208,225"/>
-<area shape="rect" href="ERF__TerrainPoisson_8cpp.html" title=" " alt="" coords="232,184,411,225"/>
+<area shape="rect" title=" " alt="" coords="108,5,315,47"/>
+<area shape="rect" href="ERF__TerrainPoisson_8H.html" title=" " alt="" coords="128,95,295,136"/>
+<area shape="rect" href="ERF__SolveWithGMRES_8cpp.html" title=" " alt="" coords="5,184,204,225"/>
+<area shape="rect" href="ERF__TerrainPoisson_8cpp.html" title=" " alt="" coords="229,184,407,225"/>
 </map>
 </div>
 </div>
@@ -341,69 +341,67 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    Real hzeta_inv_on_zhi = 8.0 / ( (zp(i,j,k+2) + zp(i+1,j,k+2) + zp(i,j+1,k+2) + zp(i+1,j+1,k+2))</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                   -(zp(i,j,k  ) + zp(i+1,j,k  ) + zp(i,j+1,k  ) + zp(i+1,j+1,k  )) );</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="comment">// pz_hi *= hzeta_inv_on_zhi * (1.0 + h_xi_on_zhi*h_xi_on_zhi + h_eta_on_zhi*h_eta_on_zhi);</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    pz_hi *= hzeta_inv_on_zhi;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    pz_hi -= 0.5 * h_xi_on_zhi  * ( (px_hi_md_hi + px_lo_md_hi) - (pz_hi_md_hi + pz_lo_md_hi) );</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    pz_hi -= 0.5 * h_eta_on_zhi * ( (py_md_hi_hi + py_md_lo_hi) - (pz_md_hi_hi + pz_md_lo_hi) );</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="comment">// *********************************************************</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="comment">// Lo z-face</span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">// *********************************************************</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="comment">// On z-face</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    Real pz_lo = <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i,j,k  ) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i,j,k-1);</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="comment">// On corners</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    Real px_hi_md_lo = Real(0.5) * ( <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i+1,j  ,k  ) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k  )</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                                    +<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i+1,j  ,k-1) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k-1)) * dxinv;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    Real px_lo_md_lo = Real(0.5) * ( <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k  ) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i-1,j  ,k  )</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                                    +<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k-1) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i-1,j  ,k-1)) * dxinv;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    Real py_md_hi_lo = Real(0.5) * ( <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j+1,k  ) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k  )</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                                    +<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j+1,k-1) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k-1)) * dyinv;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    Real py_md_lo_lo = Real(0.5) * ( <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k  ) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j-1,k  )</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                    +<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k-1) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j-1,k-1)) * dyinv;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="comment">// On z-face</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    Real h_xi_on_zlo  = 0.5 * (zp(i+1,j+1,k) + zp(i+1,j,k) - zp(i,j+1,k) - zp(i,j,k)) * dxinv;</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    Real h_eta_on_zlo = 0.5 * (zp(i+1,j+1,k) + zp(i,j+1,k) - zp(i+1,j,k) - zp(i,j,k)) * dyinv;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    Real hzeta_inv_on_zlo = 8.0 / ( (zp(i,j,k+1) + zp(i+1,j,k+1) + zp(i,j+1,k+1) + zp(i+1,j+1,k+1))</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                                   -(zp(i,j,k-1) + zp(i+1,j,k-1) + zp(i,j+1,k-1) + zp(i+1,j+1,k-1)) );</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="comment">// pz_lo *= hzeta_inv_on_zlo * (1.0 + h_xi_on_zlo*h_xi_on_zlo + h_eta_on_zlo*h_eta_on_zlo);</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    pz_lo *= hzeta_inv_on_zlo;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    pz_lo -= 0.5 * h_xi_on_zlo  * ( (px_hi_md_lo + px_lo_md_lo) - (pz_hi_md_lo + pz_lo_md_lo) );</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    pz_lo -= 0.5 * h_eta_on_zlo * ( (py_md_hi_lo + py_md_lo_lo) - (pz_md_hi_lo + pz_md_lo_lo) );</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">// This option uses calls to the flux routines so there is</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="comment">//      some duplicated computation</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="comment">// This option should give the same answer as above</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    Real px_lo = -<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html#a9294de99c716848153792ad0aef09ea8">terrpoisson_flux_x</a>(i  ,j,k,x,zp,dxinv);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    Real px_hi = -<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html#a9294de99c716848153792ad0aef09ea8">terrpoisson_flux_x</a>(i+1,j,k,x,zp,dxinv);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    Real py_lo = -<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html#af2928deaaa17341fbd0de55109c6efc8">terrpoisson_flux_y</a>(i,j  ,k,x,zp,dxinv);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    Real py_hi = -<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html#af2928deaaa17341fbd0de55109c6efc8">terrpoisson_flux_y</a>(i,j+1,k,x,zp,dyinv);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    Real pz_lo = -<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html#aca6415c5bc3af42823005c2348f2b050">terrpoisson_flux_z</a>(i,j,k  ,x,zp,dxinv,dyinv);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    Real pz_hi = -<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html#aca6415c5bc3af42823005c2348f2b050">terrpoisson_flux_z</a>(i,j,k+1,x,zp,dxinv,dyinv);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    pz_hi *= hzeta_inv_on_zhi * (1.0 + h_xi_on_zhi*h_xi_on_zhi + h_eta_on_zhi*h_eta_on_zhi);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    pz_hi -= 0.5 * h_xi_on_zhi  * ( (px_hi_md_hi + px_lo_md_hi) - (pz_hi_md_hi + pz_lo_md_hi) );</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    pz_hi -= 0.5 * h_eta_on_zhi * ( (py_md_hi_hi + py_md_lo_hi) - (pz_md_hi_hi + pz_md_lo_hi) );</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="comment">// *********************************************************</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="comment">// Lo z-face</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="comment">// *********************************************************</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">// On z-face</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    Real pz_lo = <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i,j,k  ) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i,j,k-1);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="comment">// On corners</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    Real px_hi_md_lo = Real(0.5) * ( <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i+1,j  ,k  ) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k  )</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                                    +<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i+1,j  ,k-1) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k-1)) * dxinv;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    Real px_lo_md_lo = Real(0.5) * ( <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k  ) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i-1,j  ,k  )</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                                    +<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k-1) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i-1,j  ,k-1)) * dxinv;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    Real py_md_hi_lo = Real(0.5) * ( <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j+1,k  ) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k  )</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                                    +<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j+1,k-1) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k-1)) * dyinv;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    Real py_md_lo_lo = Real(0.5) * ( <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k  ) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j-1,k  )</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                    +<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j  ,k-1) - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>(i  ,j-1,k-1)) * dyinv;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">// On z-face</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    Real h_xi_on_zlo  = 0.5 * (zp(i+1,j+1,k) + zp(i+1,j,k) - zp(i,j+1,k) - zp(i,j,k)) * dxinv;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    Real h_eta_on_zlo = 0.5 * (zp(i+1,j+1,k) + zp(i,j+1,k) - zp(i+1,j,k) - zp(i,j,k)) * dyinv;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    Real hzeta_inv_on_zlo = 8.0 / ( (zp(i,j,k+1) + zp(i+1,j,k+1) + zp(i,j+1,k+1) + zp(i+1,j+1,k+1))</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                                   -(zp(i,j,k-1) + zp(i+1,j,k-1) + zp(i,j+1,k-1) + zp(i+1,j+1,k-1)) );</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    pz_lo *= hzeta_inv_on_zlo * (1.0 + h_xi_on_zlo*h_xi_on_zlo + h_eta_on_zlo*h_eta_on_zlo);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    pz_lo -= 0.5 * h_xi_on_zlo  * ( (px_hi_md_lo + px_lo_md_lo) - (pz_hi_md_lo + pz_lo_md_lo) );</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    pz_lo -= 0.5 * h_eta_on_zlo * ( (py_md_hi_lo + py_md_lo_lo) - (pz_md_hi_lo + pz_md_lo_lo) );</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="comment">// This option uses calls to the flux routines so there is</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">//      some duplicated computation</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">// This option should give the same answer as above</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    Real px_lo = -<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html#a9294de99c716848153792ad0aef09ea8">terrpoisson_flux_x</a>(i  ,j,k,x,zp,dxinv);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    Real px_hi = -<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html#a9294de99c716848153792ad0aef09ea8">terrpoisson_flux_x</a>(i+1,j,k,x,zp,dxinv);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    Real py_lo = -<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html#af2928deaaa17341fbd0de55109c6efc8">terrpoisson_flux_y</a>(i,j  ,k,x,zp,dxinv);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    Real py_hi = -<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html#af2928deaaa17341fbd0de55109c6efc8">terrpoisson_flux_y</a>(i,j+1,k,x,zp,dyinv);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    Real pz_lo = -<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html#aca6415c5bc3af42823005c2348f2b050">terrpoisson_flux_z</a>(i,j,k  ,x,zp,dxinv,dyinv);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    Real pz_hi = -<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html#aca6415c5bc3af42823005c2348f2b050">terrpoisson_flux_z</a>(i,j,k+1,x,zp,dxinv,dyinv);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="comment">// *********************************************************</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="comment">// Adotx</span></div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="comment">// *********************************************************</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="comment">// Adotx</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="comment">// *********************************************************</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    Real invdJ = 4.0 / ( zp(i,j,k+1) + zp(i+1,j,k+1) + zp(i,j+1,k+1) + zp(i+1,j+1,k+1)</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                        -zp(i,j,k  ) - zp(i+1,j,k  ) - zp(i,j+1,k  ) - zp(i+1,j+1,k  ) );</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    Real ax_lo = .5 * (zp(i  ,j,k+1) + zp(i  ,j+1,k+1) - zp(i  ,j,k) - zp(i  ,j+1,k));</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    Real ax_hi = .5 * (zp(i+1,j,k+1) + zp(i+1,j+1,k+1) - zp(i+1,j,k) - zp(i+1,j+1,k));</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    Real ay_lo = .5 * (zp(i,j  ,k+1) + zp(i+1,j  ,k+1) - zp(i,j  ,k) - zp(i+1,j  ,k));</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    Real ay_hi = .5 * (zp(i,j+1,k+1) + zp(i+1,j+1,k+1) - zp(i,j+1,k) - zp(i+1,j+1,k));</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>(i,j,k) =  ( (ax_hi*px_hi - ax_lo*px_lo) * dxinv</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                 +(ay_hi*py_hi - ay_lo*py_lo) * dyinv</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                 +(      pz_hi -       pz_lo)        ) * invdJ;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;}</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    Real invdJ = 4.0 / ( zp(i,j,k+1) + zp(i+1,j,k+1) + zp(i,j+1,k+1) + zp(i+1,j+1,k+1)</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                        -zp(i,j,k  ) - zp(i+1,j,k  ) - zp(i,j+1,k  ) - zp(i+1,j+1,k  ) );</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    Real ax_lo = .5 * (zp(i  ,j,k+1) + zp(i  ,j+1,k+1) - zp(i  ,j,k) - zp(i  ,j+1,k));</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    Real ax_hi = .5 * (zp(i+1,j,k+1) + zp(i+1,j+1,k+1) - zp(i+1,j,k) - zp(i+1,j+1,k));</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    Real ay_lo = .5 * (zp(i,j  ,k+1) + zp(i+1,j  ,k+1) - zp(i,j  ,k) - zp(i+1,j  ,k));</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    Real ay_hi = .5 * (zp(i,j+1,k+1) + zp(i+1,j+1,k+1) - zp(i,j+1,k) - zp(i+1,j+1,k));</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>(i,j,k) =  ( (ax_hi*px_hi - ax_lo*px_lo) * dxinv</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                 +(ay_hi*py_hi - ay_lo*py_lo) * dyinv</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                 +(      pz_hi -       pz_lo)        ) * invdJ;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aERF__TerrainPoisson__3D__K_8H_html_a9294de99c716848153792ad0aef09ea8"><div class="ttname"><a href="ERF__TerrainPoisson__3D__K_8H.html#a9294de99c716848153792ad0aef09ea8">terrpoisson_flux_x</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE T terrpoisson_flux_x(int i, int j, int k, amrex::Array4&lt; T const &gt; const &amp;sol, amrex::Array4&lt; T const &gt; const &amp;zp, T dxinv) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson_3D_K.H:8</div></div>

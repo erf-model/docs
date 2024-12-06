@@ -1,17 +1,17 @@
 var dir_71a4420ed1f8982e7234eb6a0b7e6d5d =
 [
-    [ "ERF_init1d.cpp", "ERF__init1d_8cpp.html", null ],
-    [ "ERF_init_bcs.cpp", "ERF__init__bcs_8cpp.html", null ],
-    [ "ERF_init_custom.cpp", "ERF__init__custom_8cpp.html", null ],
-    [ "ERF_init_from_hse.cpp", "ERF__init__from__hse_8cpp.html", null ],
-    [ "ERF_init_from_input_sounding.cpp", "ERF__init__from__input__sounding_8cpp.html", "ERF__init__from__input__sounding_8cpp" ],
-    [ "ERF_init_from_metgrid.cpp", "ERF__init__from__metgrid_8cpp.html", null ],
-    [ "ERF_init_from_wrfinput.cpp", "ERF__init__from__wrfinput_8cpp.html", null ],
-    [ "ERF_init_geowind.cpp", "ERF__init__geowind_8cpp.html", null ],
-    [ "ERF_init_rayleigh.cpp", "ERF__init__rayleigh_8cpp.html", null ],
-    [ "ERF_init_sponge.cpp", "ERF__init__sponge_8cpp.html", null ],
-    [ "ERF_init_TurbPert.cpp", "ERF__init__TurbPert_8cpp.html", null ],
-    [ "ERF_init_uniform.cpp", "ERF__init__uniform_8cpp.html", null ],
-    [ "ERF_init_windfarm.cpp", "ERF__init__windfarm_8cpp.html", null ],
-    [ "ERF_Metgrid_utils.H", "ERF__Metgrid__utils_8H.html", "ERF__Metgrid__utils_8H" ]
+    [ "ERF_Init1D.cpp", "ERF__Init1D_8cpp.html", null ],
+    [ "ERF_InitBCs.cpp", "ERF__InitBCs_8cpp.html", null ],
+    [ "ERF_InitCustom.cpp", "ERF__InitCustom_8cpp.html", null ],
+    [ "ERF_InitFromHSE.cpp", "ERF__InitFromHSE_8cpp.html", null ],
+    [ "ERF_InitFromInputSounding.cpp", "ERF__InitFromInputSounding_8cpp.html", "ERF__InitFromInputSounding_8cpp" ],
+    [ "ERF_InitFromMetgrid.cpp", "ERF__InitFromMetgrid_8cpp.html", null ],
+    [ "ERF_InitFromWRFInput.cpp", "ERF__InitFromWRFInput_8cpp.html", null ],
+    [ "ERF_InitGeowind.cpp", "ERF__InitGeowind_8cpp.html", null ],
+    [ "ERF_InitRayleigh.cpp", "ERF__InitRayleigh_8cpp.html", null ],
+    [ "ERF_InitSponge.cpp", "ERF__InitSponge_8cpp.html", null ],
+    [ "ERF_InitTurbPert.cpp", "ERF__InitTurbPert_8cpp.html", null ],
+    [ "ERF_InitUniform.cpp", "ERF__InitUniform_8cpp.html", null ],
+    [ "ERF_InitWindFarm.cpp", "Initialization_2ERF__InitWindFarm_8cpp.html", null ],
+    [ "ERF_MetgridUtils.H", "ERF__MetgridUtils_8H.html", "ERF__MetgridUtils_8H" ]
 ];

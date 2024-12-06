@@ -25,10 +25,10 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ERF_Derive.cpp", "ERF__Derive_8cpp.html", "ERF__Derive_8cpp" ],
     [ "ERF_Derive.H", "ERF__Derive_8H.html", "ERF__Derive_8H" ],
     [ "ERF_IndexDefines.H", "ERF__IndexDefines_8H.html", "ERF__IndexDefines_8H" ],
-    [ "ERF_make_new_arrays.cpp", "ERF__make__new__arrays_8cpp.html", null ],
-    [ "ERF_make_new_level.cpp", "ERF__make__new__level_8cpp.html", null ],
-    [ "ERF_prob_common.H", "ERF__prob__common_8H.html", "ERF__prob__common_8H" ],
-    [ "ERF_read_waves.cpp", "ERF__read__waves_8cpp.html", null ],
+    [ "ERF_MakeNewArrays.cpp", "ERF__MakeNewArrays_8cpp.html", null ],
+    [ "ERF_MakeNewLevel.cpp", "ERF__MakeNewLevel_8cpp.html", null ],
+    [ "ERF_ProbCommon.H", "ERF__ProbCommon_8H.html", "ERF__ProbCommon_8H" ],
+    [ "ERF_ReadWaves.cpp", "ERF__ReadWaves_8cpp.html", null ],
     [ "ERF_Tagging.cpp", "ERF__Tagging_8cpp.html", null ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ]
 ];

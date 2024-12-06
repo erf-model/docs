@@ -407,20 +407,20 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        amrex::ParmParse <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<a class="code" href="structAdvChoice.html#a667cbedb89514e330b6ca144298857da">pp_prefix</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        amrex::ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<a class="code" href="structAdvChoice.html#a667cbedb89514e330b6ca144298857da">pp_prefix</a>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// Order and type of spatial discretizations used in advection</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;use_efficient_advection&quot;</span>, <a class="code" href="structAdvChoice.html#a50c43113d4bd0ccaf9f1878134f00bb8">use_efficient_advection</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;use_efficient_advection&quot;</span>, <a class="code" href="structAdvChoice.html#a50c43113d4bd0ccaf9f1878134f00bb8">use_efficient_advection</a>);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        std::string dycore_horiz_adv_string    = <span class="stringliteral">&quot;&quot;</span> ; std::string dycore_vert_adv_string   = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        std::string dryscal_horiz_adv_string   = <span class="stringliteral">&quot;&quot;</span> ; std::string dryscal_vert_adv_string  = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dycore_horiz_adv_type&quot;</span>   , dycore_horiz_adv_string);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dycore_vert_adv_type&quot;</span>    , dycore_vert_adv_string);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dryscal_horiz_adv_type&quot;</span>  , dryscal_horiz_adv_string);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dryscal_vert_adv_type&quot;</span>   , dryscal_vert_adv_string);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dycore_horiz_adv_type&quot;</span>   , dycore_horiz_adv_string);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dycore_vert_adv_type&quot;</span>    , dycore_vert_adv_string);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dryscal_horiz_adv_type&quot;</span>  , dryscal_horiz_adv_string);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dryscal_vert_adv_type&quot;</span>   , dryscal_vert_adv_string);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        std::string moistscal_horiz_adv_string = <span class="stringliteral">&quot;&quot;</span>; std::string moistscal_vert_adv_string = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;moistscal_horiz_adv_type&quot;</span>, moistscal_horiz_adv_string);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;moistscal_vert_adv_type&quot;</span> , moistscal_vert_adv_string);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;moistscal_horiz_adv_type&quot;</span>, moistscal_horiz_adv_string);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;moistscal_vert_adv_type&quot;</span> , moistscal_vert_adv_string);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structAdvChoice.html#a50c43113d4bd0ccaf9f1878134f00bb8">use_efficient_advection</a>){</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;           amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Using efficient advection scheme&quot;</span> &lt;&lt; std::endl;</div>
@@ -429,7 +429,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> ( (dycore_horiz_adv_string == <span class="stringliteral">&quot;Blended_3rd4th&quot;</span>) ||</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;             (dycore_horiz_adv_string == <span class="stringliteral">&quot;Blended_5th6th&quot;</span>) )</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dycore_horiz_upw_frac&quot;</span> , <a class="code" href="structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43">dycore_horiz_upw_frac</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dycore_horiz_upw_frac&quot;</span> , <a class="code" href="structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43">dycore_horiz_upw_frac</a>);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            AMREX_ASSERT_WITH_MESSAGE((<a class="code" href="structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43">dycore_horiz_upw_frac</a> &gt;= 0.) &amp;&amp; (<a class="code" href="structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43">dycore_horiz_upw_frac</a> &lt;= 1.),</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                      <span class="stringliteral">&quot;The dycore horizontal upwinding fraction must be between 0 and 1&quot;</span>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
@@ -437,7 +437,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> ( (dycore_vert_adv_string == <span class="stringliteral">&quot;Blended_3rd4th&quot;</span>) ||</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;             (dycore_vert_adv_string == <span class="stringliteral">&quot;Blended_5th6th&quot;</span>) )</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dycore_vert_upw_frac&quot;</span> , <a class="code" href="structAdvChoice.html#a48a2a3eb5899f899e202df67fd8bb2e0">dycore_vert_upw_frac</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dycore_vert_upw_frac&quot;</span> , <a class="code" href="structAdvChoice.html#a48a2a3eb5899f899e202df67fd8bb2e0">dycore_vert_upw_frac</a>);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            AMREX_ASSERT_WITH_MESSAGE((<a class="code" href="structAdvChoice.html#a48a2a3eb5899f899e202df67fd8bb2e0">dycore_vert_upw_frac</a> &gt;= 0.) &amp;&amp; (<a class="code" href="structAdvChoice.html#a48a2a3eb5899f899e202df67fd8bb2e0">dycore_vert_upw_frac</a> &lt;= 1.),</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                      <span class="stringliteral">&quot;The dycore vertical upwinding fraction must be between 0 and 1&quot;</span>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
@@ -445,7 +445,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> ( (dryscal_horiz_adv_string == <span class="stringliteral">&quot;Blended_3rd4th&quot;</span>) ||</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;             (dryscal_horiz_adv_string == <span class="stringliteral">&quot;Blended_5th6th&quot;</span>) )</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dryscal_horiz_upw_frac&quot;</span> , <a class="code" href="structAdvChoice.html#afb0ff64219a9e79d077b1a06da7817ae">dryscal_horiz_upw_frac</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dryscal_horiz_upw_frac&quot;</span> , <a class="code" href="structAdvChoice.html#afb0ff64219a9e79d077b1a06da7817ae">dryscal_horiz_upw_frac</a>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            AMREX_ASSERT_WITH_MESSAGE((<a class="code" href="structAdvChoice.html#afb0ff64219a9e79d077b1a06da7817ae">dryscal_horiz_upw_frac</a> &gt;= 0.) &amp;&amp; (<a class="code" href="structAdvChoice.html#afb0ff64219a9e79d077b1a06da7817ae">dryscal_horiz_upw_frac</a> &lt;= 1.),</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                      <span class="stringliteral">&quot;The dry scalar horizontal upwinding fraction must be between 0 and 1&quot;</span>);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
@@ -453,7 +453,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> ( (dryscal_vert_adv_string == <span class="stringliteral">&quot;Blended_3rd4th&quot;</span>) ||</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;             (dryscal_vert_adv_string == <span class="stringliteral">&quot;Blended_5th6th&quot;</span>) )</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dryscal_vert_upw_frac&quot;</span> , <a class="code" href="structAdvChoice.html#a1fc6421356a6c2ecfea0a46b3928d9cf">dryscal_vert_upw_frac</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;dryscal_vert_upw_frac&quot;</span> , <a class="code" href="structAdvChoice.html#a1fc6421356a6c2ecfea0a46b3928d9cf">dryscal_vert_upw_frac</a>);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            AMREX_ASSERT_WITH_MESSAGE((<a class="code" href="structAdvChoice.html#a1fc6421356a6c2ecfea0a46b3928d9cf">dryscal_vert_upw_frac</a> &gt;= 0.) &amp;&amp; (<a class="code" href="structAdvChoice.html#a1fc6421356a6c2ecfea0a46b3928d9cf">dryscal_vert_upw_frac</a> &lt;= 1.),</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                      <span class="stringliteral">&quot;The dry scalar vertical upwinding fraction must be between 0 and 1&quot;</span>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
@@ -461,7 +461,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">if</span> ( (moistscal_horiz_adv_string == <span class="stringliteral">&quot;Blended_3rd4th&quot;</span>) ||</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;             (moistscal_horiz_adv_string == <span class="stringliteral">&quot;Blended_5th6th&quot;</span>) )</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;moistscal_horiz_upw_frac&quot;</span> , <a class="code" href="structAdvChoice.html#a69b32bcee6cd30f3f88280d0ec49cd35">moistscal_horiz_upw_frac</a>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;moistscal_horiz_upw_frac&quot;</span> , <a class="code" href="structAdvChoice.html#a69b32bcee6cd30f3f88280d0ec49cd35">moistscal_horiz_upw_frac</a>);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            AMREX_ASSERT_WITH_MESSAGE((<a class="code" href="structAdvChoice.html#a69b32bcee6cd30f3f88280d0ec49cd35">moistscal_horiz_upw_frac</a> &gt;= 0.) &amp;&amp; (<a class="code" href="structAdvChoice.html#a69b32bcee6cd30f3f88280d0ec49cd35">moistscal_horiz_upw_frac</a> &lt;= 1.),</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                      <span class="stringliteral">&quot;The moist scalar horizontal upwinding fraction must be between 0 and 1&quot;</span>);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
@@ -469,7 +469,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> ( (moistscal_vert_adv_string == <span class="stringliteral">&quot;Blended_3rd4th&quot;</span>) ||</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;             (moistscal_vert_adv_string == <span class="stringliteral">&quot;Blended_5th6th&quot;</span>) )</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;moistscal_vert_upw_frac&quot;</span> , <a class="code" href="structAdvChoice.html#a334139583accdc5718a939b20b308bb9">moistscal_vert_upw_frac</a>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;moistscal_vert_upw_frac&quot;</span> , <a class="code" href="structAdvChoice.html#a334139583accdc5718a939b20b308bb9">moistscal_vert_upw_frac</a>);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            AMREX_ASSERT_WITH_MESSAGE((<a class="code" href="structAdvChoice.html#a334139583accdc5718a939b20b308bb9">moistscal_vert_upw_frac</a> &gt;= 0.) &amp;&amp; (<a class="code" href="structAdvChoice.html#a334139583accdc5718a939b20b308bb9">moistscal_vert_upw_frac</a> &lt;= 1.),</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                      <span class="stringliteral">&quot;The moist scalar vertical upwinding fraction must be between 0 and 1&quot;</span>);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
@@ -568,11 +568,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <a class="code" href="structAdvChoice.html#a2f888dfcb79cdb766ee04f21aada83ec">moistscal_vert_adv_type</a> = <a class="code" href="structAdvChoice.html#a191cb08c4e809d1982ea90e4b4f9a528">adv_type_convert_string_to_advtype</a>(moistscal_vert_adv_string);</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        }</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;zero_xflux_faces&quot;</span>, <a class="code" href="structAdvChoice.html#a7a086b9e2aabb65d2e5e9053e7bd6018">zero_xflux</a>);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;zero_yflux_faces&quot;</span>, <a class="code" href="structAdvChoice.html#a118575fe302e72fcd231e77be6d117a9">zero_yflux</a>);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;zero_zflux_faces&quot;</span>, <a class="code" href="structAdvChoice.html#a7da4e5242e05aeba4822b71fab596954">zero_zflux</a>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;zero_xflux_faces&quot;</span>, <a class="code" href="structAdvChoice.html#a7a086b9e2aabb65d2e5e9053e7bd6018">zero_xflux</a>);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;zero_yflux_faces&quot;</span>, <a class="code" href="structAdvChoice.html#a118575fe302e72fcd231e77be6d117a9">zero_yflux</a>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;zero_zflux_faces&quot;</span>, <a class="code" href="structAdvChoice.html#a7da4e5242e05aeba4822b71fab596954">zero_zflux</a>);</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
-<div class="ttc" id="aERF__Microphysics__Utils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics_Utils.H:219</div></div>
+<div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:219</div></div>
 <div class="ttc" id="astructAdvChoice_html_a118575fe302e72fcd231e77be6d117a9"><div class="ttname"><a href="structAdvChoice.html#a118575fe302e72fcd231e77be6d117a9">AdvChoice::zero_yflux</a></div><div class="ttdeci">amrex::Vector&lt; amrex::IntVect &gt; zero_yflux</div><div class="ttdef"><b>Definition:</b> ERF_AdvStruct.H:300</div></div>
 <div class="ttc" id="astructAdvChoice_html_a191cb08c4e809d1982ea90e4b4f9a528"><div class="ttname"><a href="structAdvChoice.html#a191cb08c4e809d1982ea90e4b4f9a528">AdvChoice::adv_type_convert_string_to_advtype</a></div><div class="ttdeci">AdvType adv_type_convert_string_to_advtype(std::string adv_string)</div><div class="ttdef"><b>Definition:</b> ERF_AdvStruct.H:244</div></div>
 <div class="ttc" id="astructAdvChoice_html_a50c43113d4bd0ccaf9f1878134f00bb8"><div class="ttname"><a href="structAdvChoice.html#a50c43113d4bd0ccaf9f1878134f00bb8">AdvChoice::use_efficient_advection</a></div><div class="ttdeci">bool use_efficient_advection</div><div class="ttdef"><b>Definition:</b> ERF_AdvStruct.H:280</div></div>
@@ -588,7 +588,7 @@ Here is the call graph for this function:</div>
 <map name="astructAdvChoice_a58637d5ba66800c4c83c928d0a3e13d1_cgraph" id="astructAdvChoice_a58637d5ba66800c4c83c928d0a3e13d1_cgraph">
 <area shape="rect" title=" " alt="" coords="5,42,181,69"/>
 <area shape="rect" href="structAdvChoice.html#a191cb08c4e809d1982ea90e4b4f9a528" title=" " alt="" coords="229,5,432,47"/>
-<area shape="rect" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="311,71,350,98"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="311,71,350,98"/>
 </map>
 </div>
 <div class="dynheader">
@@ -616,7 +616,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ERF::ComputeGhostCells()</a>, <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ERF::ComputeGhostCells()</a>, <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
 
 </div>
 </div>
@@ -632,7 +632,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
 
 </div>
 </div>
@@ -648,7 +648,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ERF::ComputeGhostCells()</a>, <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ERF::ComputeGhostCells()</a>, <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
 
 </div>
 </div>
@@ -664,7 +664,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
 
 </div>
 </div>
@@ -680,7 +680,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ERF::ComputeGhostCells()</a>, <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a7f9a468e8f9594554d88b4b0b55e8b9f">erf_slow_rhs_pre()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ERF::ComputeGhostCells()</a>, <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a7f9a468e8f9594554d88b4b0b55e8b9f">erf_slow_rhs_pre()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
 
 </div>
 </div>
@@ -696,7 +696,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a7f9a468e8f9594554d88b4b0b55e8b9f">erf_slow_rhs_pre()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a7f9a468e8f9594554d88b4b0b55e8b9f">erf_slow_rhs_pre()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
 
 </div>
 </div>
@@ -712,7 +712,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ERF::ComputeGhostCells()</a>, <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a7f9a468e8f9594554d88b4b0b55e8b9f">erf_slow_rhs_pre()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ERF::ComputeGhostCells()</a>, <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a7f9a468e8f9594554d88b4b0b55e8b9f">erf_slow_rhs_pre()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
 
 </div>
 </div>
@@ -728,7 +728,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__slow__rhs__pre_8cpp.html#a7f9a468e8f9594554d88b4b0b55e8b9f">erf_slow_rhs_pre()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a7f9a468e8f9594554d88b4b0b55e8b9f">erf_slow_rhs_pre()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
 
 </div>
 </div>
@@ -744,7 +744,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ERF::ComputeGhostCells()</a>, <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ERF::ComputeGhostCells()</a>, <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
 
 </div>
 </div>
@@ -760,7 +760,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
 
 </div>
 </div>
@@ -776,7 +776,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ERF::ComputeGhostCells()</a>, <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ERF::ComputeGhostCells()</a>, <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
 
 </div>
 </div>
@@ -792,7 +792,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
 
 </div>
 </div>
@@ -824,7 +824,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__slow__rhs__post_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#ad4185a682dcd69d6a29ce11039296d66">erf_slow_rhs_post()</a>, and <a class="el" href="structAdvChoice.html#a58637d5ba66800c4c83c928d0a3e13d1">init_params()</a>.</p>
 
 </div>
 </div>

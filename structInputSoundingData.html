@@ -198,14 +198,14 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        amrex::ParmParse <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;tau_nudging&quot;</span>, <a class="code" href="structInputSoundingData.html#a5c190ab2ffec63277427ed6c92d4f53f">tau_nudging</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        amrex::ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;tau_nudging&quot;</span>, <a class="code" href="structInputSoundingData.html#a5c190ab2ffec63277427ed6c92d4f53f">tau_nudging</a>);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// Read in input_sounding filename</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="structInputSoundingData.html#a5655f2f77d75c1b8a2abd92a0b264813">n_sounding_files</a> = <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.countval(<span class="stringliteral">&quot;input_sounding_file&quot;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="structInputSoundingData.html#a5655f2f77d75c1b8a2abd92a0b264813">n_sounding_files</a> = <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.countval(<span class="stringliteral">&quot;input_sounding_file&quot;</span>);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structInputSoundingData.html#a5655f2f77d75c1b8a2abd92a0b264813">n_sounding_files</a> &gt; 0) {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="structInputSoundingData.html#a704d3ca6f9b6a480ad2f8c5e4b4e32f1">input_sounding_file</a>.resize(<a class="code" href="structInputSoundingData.html#a5655f2f77d75c1b8a2abd92a0b264813">n_sounding_files</a>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;input_sounding_file&quot;</span>, <a class="code" href="structInputSoundingData.html#a704d3ca6f9b6a480ad2f8c5e4b4e32f1">input_sounding_file</a>, 0, <a class="code" href="structInputSoundingData.html#a5655f2f77d75c1b8a2abd92a0b264813">n_sounding_files</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;input_sounding_file&quot;</span>, <a class="code" href="structInputSoundingData.html#a704d3ca6f9b6a480ad2f8c5e4b4e32f1">input_sounding_file</a>, 0, <a class="code" href="structInputSoundingData.html#a5655f2f77d75c1b8a2abd92a0b264813">n_sounding_files</a>);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="structInputSoundingData.html#a5655f2f77d75c1b8a2abd92a0b264813">n_sounding_files</a> = 1;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="structInputSoundingData.html#a704d3ca6f9b6a480ad2f8c5e4b4e32f1">input_sounding_file</a>.resize(<a class="code" href="structInputSoundingData.html#a5655f2f77d75c1b8a2abd92a0b264813">n_sounding_files</a>);</div>
@@ -213,11 +213,11 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// Read in input_sounding times</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="structInputSoundingData.html#a47b2b2090f654ad7578b992b207d5b18">n_sounding_times</a> = <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.countval(<span class="stringliteral">&quot;input_sounding_time&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="structInputSoundingData.html#a47b2b2090f654ad7578b992b207d5b18">n_sounding_times</a> = <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.countval(<span class="stringliteral">&quot;input_sounding_time&quot;</span>);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structInputSoundingData.html#a47b2b2090f654ad7578b992b207d5b18">n_sounding_times</a> &gt; 0) {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="structInputSoundingData.html#a4f3f4e6859d978e727af01ca625aea1b">input_sounding_time</a>.resize(<a class="code" href="structInputSoundingData.html#a47b2b2090f654ad7578b992b207d5b18">n_sounding_times</a>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;input_sounding_time&quot;</span>, <a class="code" href="structInputSoundingData.html#a4f3f4e6859d978e727af01ca625aea1b">input_sounding_time</a>, 0, <a class="code" href="structInputSoundingData.html#a47b2b2090f654ad7578b992b207d5b18">n_sounding_times</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;input_sounding_time&quot;</span>, <a class="code" href="structInputSoundingData.html#a4f3f4e6859d978e727af01ca625aea1b">input_sounding_time</a>, 0, <a class="code" href="structInputSoundingData.html#a47b2b2090f654ad7578b992b207d5b18">n_sounding_times</a>);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="structInputSoundingData.html#a47b2b2090f654ad7578b992b207d5b18">n_sounding_times</a> = 1;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="structInputSoundingData.html#a4f3f4e6859d978e727af01ca625aea1b">input_sounding_time</a>.resize(<a class="code" href="structInputSoundingData.html#a47b2b2090f654ad7578b992b207d5b18">n_sounding_times</a>);</div>
@@ -231,7 +231,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="structInputSoundingData.html#a704d3ca6f9b6a480ad2f8c5e4b4e32f1">input_sounding_file</a>.resize(n);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="structInputSoundingData.html#a4f3f4e6859d978e727af01ca625aea1b">input_sounding_time</a>.resize(n);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="ttc" id="aERF__Microphysics__Utils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics_Utils.H:219</div></div>
+<div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:219</div></div>
 <div class="ttc" id="astructInputSoundingData_html_a47b2b2090f654ad7578b992b207d5b18"><div class="ttname"><a href="structInputSoundingData.html#a47b2b2090f654ad7578b992b207d5b18">InputSoundingData::n_sounding_times</a></div><div class="ttdeci">int n_sounding_times</div><div class="ttdef"><b>Definition:</b> ERF_InputSoundingData.H:317</div></div>
 <div class="ttc" id="astructInputSoundingData_html_a4f3f4e6859d978e727af01ca625aea1b"><div class="ttname"><a href="structInputSoundingData.html#a4f3f4e6859d978e727af01ca625aea1b">InputSoundingData::input_sounding_time</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; input_sounding_time</div><div class="ttdef"><b>Definition:</b> ERF_InputSoundingData.H:315</div></div>
 <div class="ttc" id="astructInputSoundingData_html_a5655f2f77d75c1b8a2abd92a0b264813"><div class="ttname"><a href="structInputSoundingData.html#a5655f2f77d75c1b8a2abd92a0b264813">InputSoundingData::n_sounding_files</a></div><div class="ttdeci">int n_sounding_files</div><div class="ttdef"><b>Definition:</b> ERF_InputSoundingData.H:316</div></div>
@@ -243,7 +243,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structInputSoundingData_ade438454b2da656ce7f98df041f25cc3_cgraph.png" border="0" usemap="#astructInputSoundingData_ade438454b2da656ce7f98df041f25cc3_cgraph" alt=""/></div>
 <map name="astructInputSoundingData_ade438454b2da656ce7f98df041f25cc3_cgraph" id="astructInputSoundingData_ade438454b2da656ce7f98df041f25cc3_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,160,47"/>
-<area shape="rect" href="ERF__Microphysics__Utils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="208,13,247,39"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="208,13,247,39"/>
 </map>
 </div>
 
@@ -361,7 +361,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_a3ee1ea27d3b9f25afcc603f3e5b17955"><div class="ttname"><a href="ERF__EOS_8H.html#a3ee1ea27d3b9f25afcc603f3e5b17955">getRhogivenThetaPress</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getRhogivenThetaPress(const amrex::Real th, const amrex::Real p, const amrex::Real rdOcp, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:99</div></div>
 <div class="ttc" id="aclassF_html"><div class="ttname"><a href="classF.html">F</a></div></div>
-<div class="ttc" id="anamespaceHSEutils_html_a49a3ecd8dc0be35accd87a453bc1224e"><div class="ttname"><a href="namespaceHSEutils.html#a49a3ecd8dc0be35accd87a453bc1224e">HSEutils::Newton_Raphson_hse</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void Newton_Raphson_hse(const Real &amp;m_tol, const Real &amp;RdOCp, const Real &amp;dz, const Real &amp;g, const Real &amp;C, const Real &amp;T, const Real &amp;qt, const Real &amp;qv, Real &amp;P, Real &amp;rd, Real &amp;F)</div><div class="ttdef"><b>Definition:</b> ERF_HSE_utils.H:35</div></div>
+<div class="ttc" id="anamespaceHSEutils_html_a49a3ecd8dc0be35accd87a453bc1224e"><div class="ttname"><a href="namespaceHSEutils.html#a49a3ecd8dc0be35accd87a453bc1224e">HSEutils::Newton_Raphson_hse</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void Newton_Raphson_hse(const Real &amp;m_tol, const Real &amp;RdOCp, const Real &amp;dz, const Real &amp;g, const Real &amp;C, const Real &amp;T, const Real &amp;qt, const Real &amp;qv, Real &amp;P, Real &amp;rd, Real &amp;F)</div><div class="ttdef"><b>Definition:</b> ERF_HSEUtils.H:35</div></div>
 <div class="ttc" id="astructInputSoundingData_html_a09ac90305ea3a4559d83ca589678a5aa"><div class="ttname"><a href="structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa">InputSoundingData::press_ref_inp_sound</a></div><div class="ttdeci">amrex::Real press_ref_inp_sound</div><div class="ttdef"><b>Definition:</b> ERF_InputSoundingData.H:320</div></div>
 <div class="ttc" id="astructInputSoundingData_html_a0e0cddb5da1a173092eeaf3c9489dfb8"><div class="ttname"><a href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">InputSoundingData::host_to_device</a></div><div class="ttdeci">void host_to_device(int itime)</div><div class="ttdef"><b>Definition:</b> ERF_InputSoundingData.H:261</div></div>
 <div class="ttc" id="astructInputSoundingData_html_a15782809644a4daa0e8de9c3cc4c346a"><div class="ttname"><a href="structInputSoundingData.html#a15782809644a4daa0e8de9c3cc4c346a">InputSoundingData::theta_ref_inp_sound</a></div><div class="ttdeci">amrex::Real theta_ref_inp_sound</div><div class="ttdef"><b>Definition:</b> ERF_InputSoundingData.H:320</div></div>
@@ -706,7 +706,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structInputSoundingData.html#a9f73eb54af79291b72454e2840455b71">z_inp_sound</a>[itime].size();</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31">calc_rho_p()</a>, <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e">init_bx_scalars_from_input_sounding()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676">init_bx_scalars_from_input_sounding_hse()</a>, and <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb">init_bx_velocities_from_input_sounding()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31">calc_rho_p()</a>, <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e">init_bx_scalars_from_input_sounding()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676">init_bx_scalars_from_input_sounding_hse()</a>, and <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb">init_bx_velocities_from_input_sounding()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -715,9 +715,9 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="423,137,603,163"/>
 <area shape="rect" href="structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31" title=" " alt="" coords="5,5,160,47"/>
 <area shape="rect" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8" title=" " alt="" coords="214,64,369,105"/>
-<area shape="rect" href="ERF__init__from__input__sounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e" title=" " alt="" coords="213,129,370,171"/>
-<area shape="rect" href="ERF__init__from__input__sounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676" title=" " alt="" coords="212,195,371,236"/>
-<area shape="rect" href="ERF__init__from__input__sounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb" title=" " alt="" coords="208,260,375,301"/>
+<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e" title=" " alt="" coords="213,129,370,171"/>
+<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676" title=" " alt="" coords="212,195,371,236"/>
+<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb" title=" " alt="" coords="208,260,375,301"/>
 <area shape="rect" href="structInputSoundingData.html#a6742e8e0e37fd817097963bbd965692c" title=" " alt="" coords="5,71,160,112"/>
 <area shape="rect" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec" title=" " alt="" coords="6,195,159,236"/>
 </map>
@@ -754,7 +754,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3">InputSoundingData()</a>, <a class="el" href="ERF__make__mom__sources_8cpp.html#aa780c98d6544f91efc38dfbf3c2f7211">make_mom_sources()</a>, and <a class="el" href="ERF__make__sources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3">InputSoundingData()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aa780c98d6544f91efc38dfbf3c2f7211">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -882,7 +882,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e">init_bx_scalars_from_input_sounding()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676">init_bx_scalars_from_input_sounding_hse()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e">init_bx_scalars_from_input_sounding()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676">init_bx_scalars_from_input_sounding_hse()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
 
 </div>
 </div>
@@ -914,7 +914,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, and <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676">init_bx_scalars_from_input_sounding_hse()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, and <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676">init_bx_scalars_from_input_sounding_hse()</a>.</p>
 
 </div>
 </div>
@@ -946,7 +946,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3">InputSoundingData()</a>, <a class="el" href="ERF__make__mom__sources_8cpp.html#aa780c98d6544f91efc38dfbf3c2f7211">make_mom_sources()</a>, and <a class="el" href="ERF__make__sources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3">InputSoundingData()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aa780c98d6544f91efc38dfbf3c2f7211">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -978,7 +978,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e">init_bx_scalars_from_input_sounding()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676">init_bx_scalars_from_input_sounding_hse()</a>, <a class="el" href="ERF__make__sources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e">init_bx_scalars_from_input_sounding()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676">init_bx_scalars_from_input_sounding_hse()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
 
 </div>
 </div>
@@ -1026,7 +1026,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb">init_bx_velocities_from_input_sounding()</a>, <a class="el" href="ERF__make__mom__sources_8cpp.html#aa780c98d6544f91efc38dfbf3c2f7211">make_mom_sources()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb">init_bx_velocities_from_input_sounding()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aa780c98d6544f91efc38dfbf3c2f7211">make_mom_sources()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
 
 </div>
 </div>
@@ -1058,7 +1058,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb">init_bx_velocities_from_input_sounding()</a>, <a class="el" href="ERF__make__mom__sources_8cpp.html#aa780c98d6544f91efc38dfbf3c2f7211">make_mom_sources()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb">init_bx_velocities_from_input_sounding()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aa780c98d6544f91efc38dfbf3c2f7211">make_mom_sources()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
 
 </div>
 </div>
@@ -1090,7 +1090,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e">init_bx_scalars_from_input_sounding()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676">init_bx_scalars_from_input_sounding_hse()</a>, <a class="el" href="ERF__init__from__input__sounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb">init_bx_velocities_from_input_sounding()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8">host_to_device()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e">init_bx_scalars_from_input_sounding()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a3b07949826938e59fdd5ce25417d3676">init_bx_scalars_from_input_sounding_hse()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb">init_bx_velocities_from_input_sounding()</a>, and <a class="el" href="structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef">resize_arrays()</a>.</p>
 
 </div>
 </div>

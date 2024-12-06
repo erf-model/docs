@@ -39,7 +39,6 @@ var annotated_dup =
     [ "EWP", "classEWP.html", "classEWP" ],
     [ "F", "classF.html", null ],
     [ "Fitch", "classFitch.html", "classFitch" ],
-    [ "FlowerIF", "classFlowerIF.html", "classFlowerIF" ],
     [ "ForestDrag", "classForestDrag.html", "classForestDrag" ],
     [ "GeneralAD", "classGeneralAD.html", "classGeneralAD" ],
     [ "InputSoundingData", "structInputSoundingData.html", "structInputSoundingData" ],

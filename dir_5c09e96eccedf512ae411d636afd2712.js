@@ -4,7 +4,7 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_ChopGrids.cpp", "ERF__ChopGrids_8cpp.html", "ERF__ChopGrids_8cpp" ],
     [ "ERF_DirectionSelector.H", "ERF__DirectionSelector_8H.html", "ERF__DirectionSelector_8H" ],
     [ "ERF_EOS.H", "ERF__EOS_8H.html", "ERF__EOS_8H" ],
-    [ "ERF_HSE_utils.H", "ERF__HSE__utils_8H.html", "ERF__HSE__utils_8H" ],
+    [ "ERF_HSEUtils.H", "ERF__HSEUtils_8H.html", "ERF__HSEUtils_8H" ],
     [ "ERF_InteriorGhostCells.cpp", "ERF__InteriorGhostCells_8cpp.html", "ERF__InteriorGhostCells_8cpp" ],
     [ "ERF_Interpolation.H", "ERF__Interpolation_8H.html", "ERF__Interpolation_8H" ],
     [ "ERF_Interpolation_1D.H", "ERF__Interpolation__1D_8H.html", "ERF__Interpolation__1D_8H" ],
@@ -27,7 +27,7 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
       [ "WENO_Z5", "structWENO__Z5.html", "structWENO__Z5" ],
       [ "WENO_Z7", "structWENO__Z7.html", "structWENO__Z7" ]
     ] ],
-    [ "ERF_Microphysics_Utils.H", "ERF__Microphysics__Utils_8H.html", "ERF__Microphysics__Utils_8H" ],
+    [ "ERF_MicrophysicsUtils.H", "ERF__MicrophysicsUtils_8H.html", "ERF__MicrophysicsUtils_8H" ],
     [ "ERF_MomentumToVelocity.cpp", "ERF__MomentumToVelocity_8cpp.html", "ERF__MomentumToVelocity_8cpp" ],
     [ "ERF_Orbit.cpp", "ERF__Orbit_8cpp.html", "ERF__Orbit_8cpp" ],
     [ "ERF_Orbit.H", "ERF__Orbit_8H.html", "ERF__Orbit_8H" ],
@@ -42,10 +42,10 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_TerrainMetrics.H", "ERF__TerrainMetrics_8H.html", "ERF__TerrainMetrics_8H" ],
     [ "ERF_Thetav.H", "ERF__Thetav_8H.html", "ERF__Thetav_8H" ],
     [ "ERF_TileNoZ.H", "ERF__TileNoZ_8H.html", "ERF__TileNoZ_8H" ],
-    [ "ERF_Time_Avg_Vel.cpp", "ERF__Time__Avg__Vel_8cpp.html", "ERF__Time__Avg__Vel_8cpp" ],
+    [ "ERF_TimeAvgVel.cpp", "ERF__TimeAvgVel_8cpp.html", "ERF__TimeAvgVel_8cpp" ],
     [ "ERF_Utils.H", "ERF__Utils_8H.html", "ERF__Utils_8H" ],
     [ "ERF_VelocityToMomentum.cpp", "ERF__VelocityToMomentum_8cpp.html", "ERF__VelocityToMomentum_8cpp" ],
-    [ "ERF_Water_vapor_saturation.H", "ERF__Water__vapor__saturation_8H.html", [
+    [ "ERF_WaterVaporSaturation.H", "ERF__WaterVaporSaturation_8H.html", [
       [ "WaterVaporSat", "classWaterVaporSat.html", "classWaterVaporSat" ]
     ] ],
     [ "ERF_Wstar.H", "ERF__Wstar_8H.html", "ERF__Wstar_8H" ]
