@@ -75,18 +75,19 @@ var NAVTREEINDEX =
 "ERFPCEvolve_8cpp.html",
 "ERF__Derive_8H.html#af5e075e5b8b2e3964ae6af3f5f06f497",
 "ERF__MOSTRoughness_8H_source.html",
-"ERF__TerrainMetrics_8H.html#a32b8b3f0c8d28024951dd02521086d3b",
-"classCloudRadProps.html#a7c91a5b46f8d85666e0ca0d1de8d23aa",
-"classERF.html#aa89efe0abf37918ce3f212fb0e26f1bc",
-"classEulerianMicrophysics.html#a6f0dc90119a228e56c5616267eba6009",
-"classMRISplitIntegrator.html#a5ae771a094162dc22bfdded7b12fd5c4",
-"classOptics.html#a2153b2cf09af64100464587e8afb6d8f",
-"classRadiation.html#a9cedc778ea026393eace9912b4ec8d5b",
-"classSimpleAD.html#a67d11cb5167af18f4beb8fdf4fe917ad",
-"functions_func_y.html",
-"structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e",
-"structSolverChoice.html#a4e81a09c9f454c680568b7776a3ed90e",
-"structWENO__Z5.html#a920795e7ec43cf67356aaf8943fde456"
+"ERF__TerrainMetrics_8H.html#a1582797e6ac6cf0c1e0b94a619bc13b8",
+"classCloudRadProps.html#a5772a63dc315f019d951785ebdb9c13d",
+"classERF.html#aa2c3ee1910008b828b9da79ccdfe3871",
+"classEWP.html#ad500c0f4245245d407e31633ec7cecff",
+"classMOSTAverage.html#aefb42b9f2a5c3347e7ab87abdfcab3d7",
+"classNullWindFarm.html#aafc6a8e226961e71a95bda3b3f040225",
+"classRadiation.html#a86954a9c03e7c7eb9cd610b4e533b27e",
+"classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db",
+"functions_func_g.html",
+"structCENTERED6.html#ad80522d3ef86f7d5dc0173d50132d80e",
+"structSolverChoice.html#a31e016e3da7c175ac02427767286bc42",
+"structWENO__MZQ3.html#af1d30022fe1ebe59529f45843dff3ae5",
+"structsurface__temp__wave__coupled.html#af09bca4efd34fd9d8b6bb6a2f363ebee"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

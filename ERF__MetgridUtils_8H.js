@@ -1,10 +1,14 @@
 var ERF__MetgridUtils_8H =
 [
-    [ "init_base_state_from_metgrid", "ERF__MetgridUtils_8H.html#ad127bd2619dfdddcebfb71049433659f", null ],
-    [ "init_msfs_from_metgrid", "ERF__MetgridUtils_8H.html#a85cf6fab999905de4234fa639771bbe1", null ],
-    [ "init_state_from_metgrid", "ERF__MetgridUtils_8H.html#a92d40e10695502f2d12d5e71437b9003", null ],
+    [ "calc_p_isothermal", "ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217", null ],
+    [ "init_base_state_from_metgrid", "ERF__MetgridUtils_8H.html#a21db49779c2d5514ad48151b9dc33788", null ],
+    [ "init_msfs_from_metgrid", "ERF__MetgridUtils_8H.html#af6ab8359bb0f978ab5c5573b54a844e3", null ],
+    [ "init_state_from_metgrid", "ERF__MetgridUtils_8H.html#a7e474bb44a0280e9ffafcfd80c0c0c59", null ],
     [ "init_terrain_from_metgrid", "ERF__MetgridUtils_8H.html#ad3ae9b317366b5e880366135708ba5d5", null ],
-    [ "interpolate_column_metgrid", "ERF__MetgridUtils_8H.html#a491c8a5ef196d5e0811d90d74ef7428f", null ],
-    [ "read_from_metgrid", "ERF__MetgridUtils_8H.html#a1c4ef6b718a4e7c9c225b35ba096ebf9", null ],
+    [ "interpolate_column_metgrid", "ERF__MetgridUtils_8H.html#a0d45af76ffa24db61d16ea49cc18143e", null ],
+    [ "interpolate_column_metgrid_linear", "ERF__MetgridUtils_8H.html#a4ddd248579795dad2845170d2c73e170", null ],
+    [ "lagrange_interp", "ERF__MetgridUtils_8H.html#a4978953bdc5bd682e32d3941a44fb6ce", null ],
+    [ "lagrange_setup", "ERF__MetgridUtils_8H.html#ad4a14b9729d55361ead1229a6df4e026", null ],
+    [ "read_from_metgrid", "ERF__MetgridUtils_8H.html#a7b0efa8ff3ba587956865b8bddaacfa4", null ],
     [ "rh_to_mxrat", "ERF__MetgridUtils_8H.html#a8458220de6985f12501aa040c218bff0", null ]
 ];
