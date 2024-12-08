@@ -89,91 +89,71 @@ $(document).ready(function(){initNavTree('ERF__TerrainPoisson_8H_source.html',''
 <a href="ERF__TerrainPoisson_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ERF_TERRAIN_POISSON_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ERF_TERRAIN_POISSON_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html">ERF_TerrainPoisson_3D_K.H</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifdef ERF_USE_FFT</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;AMReX_FFT_Poisson.H&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;AMReX_Geometry.H&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;AMReX_MultiFab.H&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classTerrainPoisson.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTerrainPoisson.html">TerrainPoisson</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classTerrainPoisson.html#a8b28ebe7d558fc2ce19d674e33f78fec">   17</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="classTerrainPoisson.html#a8b28ebe7d558fc2ce19d674e33f78fec">RT</a> = amrex::Real;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classTerrainPoisson.html#abdf75de53e268b1d4ac364c1469b83c9">TerrainPoisson</a> (amrex::Geometry <span class="keyword">const</span>&amp; geom, amrex::BoxArray <span class="keyword">const</span>&amp; ba,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    amrex::DistributionMapping <span class="keyword">const</span>&amp; dm,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    amrex::Gpu::DeviceVector&lt;amrex::Real&gt;&amp; stretched_dz_lev_d,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    amrex::MultiFab <span class="keyword">const</span>* z_phys_nd,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    amrex::Array&lt;std::string,2*AMREX_SPACEDIM&gt;&amp; domain_bc_type);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTerrainPoisson.html#a12f05bd12a1597f260ef84172b86a10a">apply</a>(amrex::MultiFab&amp; lhs, amrex::MultiFab <span class="keyword">const</span>&amp; rhs);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTerrainPoisson.html#a84101265b9a07eb379b04ae678beda18">usePrecond</a>(<span class="keywordtype">bool</span> precond_flag);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTerrainPoisson.html#ab2c2fee50d531c3bcc1f0c92d548e3a6">getFluxes</a>(amrex::MultiFab&amp; phi, amrex::Array&lt;amrex::MultiFab,AMREX_SPACEDIM&gt;&amp; fluxes);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTerrainPoisson.html#a23fe3be2f87c13e7c222daf0109e7f61">assign</a>(amrex::MultiFab&amp; lhs, amrex::MultiFab <span class="keyword">const</span>&amp; rhs);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTerrainPoisson.html#a50c40660fd8d2fa8e0e4d941e2c4ebe4">scale</a>(amrex::MultiFab&amp; lhs, amrex::Real fac);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    amrex::Real <a class="code" href="classTerrainPoisson.html#ae39163799e9dc745a0f42d223e9568ff">dotProduct</a>(amrex::MultiFab <span class="keyword">const</span>&amp; v1, amrex::MultiFab <span class="keyword">const</span>&amp; v2);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTerrainPoisson.html#a675e172f3e8a103807ad776019242fdd">increment</a>(amrex::MultiFab&amp; lhs, amrex::MultiFab <span class="keyword">const</span>&amp; rhs, amrex::Real a);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTerrainPoisson.html#ae61e06904156694b3fc10e3868b6fcea">linComb</a>(amrex::MultiFab&amp; lhs, amrex::Real a, amrex::MultiFab <span class="keyword">const</span>&amp; rhs_a,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                 amrex::Real b, amrex::MultiFab <span class="keyword">const</span>&amp; rhs_b);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    amrex::MultiFab <a class="code" href="classTerrainPoisson.html#a6da7c7d41395bb603d09d649dc8f6a9d">makeVecRHS</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    amrex::MultiFab <a class="code" href="classTerrainPoisson.html#aaaa3599628c5a60c6d396e97d2a0b935">makeVecLHS</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    amrex::Real <a class="code" href="classTerrainPoisson.html#ad7f1bf80838f9f1d30c2ef0e052e5580">norm2</a>(amrex::MultiFab <span class="keyword">const</span>&amp; v);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTerrainPoisson.html#a38066ca256d99cd8f0364f9c6178b64a">precond</a>(amrex::MultiFab&amp; lhs, amrex::MultiFab <span class="keyword">const</span>&amp; rhs);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTerrainPoisson.html#ae145d482e895bf84eabe8d6850ed8bdf">setToZero</a>(amrex::MultiFab&amp; v);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classTerrainPoisson.html#a8dcf3ca721769bc5f8bf7c1b2ea9634e">   53</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classTerrainPoisson.html#a8dcf3ca721769bc5f8bf7c1b2ea9634e">m_use_precond</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classTerrainPoisson.html#a15e050b9bd993409e07ceef1650ebb31">   54</a></span>&#160;    amrex::Geometry <a class="code" href="classTerrainPoisson.html#a15e050b9bd993409e07ceef1650ebb31">m_geom</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classTerrainPoisson.html#ada942a4488d49acc588f1afe2a4cc877">   55</a></span>&#160;    amrex::BoxArray <a class="code" href="classTerrainPoisson.html#ada942a4488d49acc588f1afe2a4cc877">m_grids</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classTerrainPoisson.html#adf44ae8fab76f41f31a9f340ffa0aa1b">   56</a></span>&#160;    amrex::DistributionMapping <a class="code" href="classTerrainPoisson.html#adf44ae8fab76f41f31a9f340ffa0aa1b">m_dmap</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classTerrainPoisson.html#a880adff4034ee956f1e2ac75c54b9dbb">   57</a></span>&#160;    amrex::Gpu::DeviceVector&lt;amrex::Real&gt; <a class="code" href="classTerrainPoisson.html#a880adff4034ee956f1e2ac75c54b9dbb">m_stretched_dz_d</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classTerrainPoisson.html#a11b0c98e8dbdb9c050a17603e1b6fd30">   58</a></span>&#160;    <span class="keyword">const</span> amrex::MultiFab* <a class="code" href="classTerrainPoisson.html#a11b0c98e8dbdb9c050a17603e1b6fd30">m_zphys</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifdef ERF_USE_FFT</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;AMReX_Geometry.H&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;AMReX_MultiFab.H&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifdef ERF_USE_FFT</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__TerrainPoisson__3D__K_8H.html">ERF_TerrainPoisson_3D_K.H</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;AMReX_FFT_Poisson.H&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span>TerrainPoisson</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">using</span> RT = amrex::Real;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    TerrainPoisson (amrex::Geometry <span class="keyword">const</span>&amp; geom, amrex::BoxArray <span class="keyword">const</span>&amp; ba,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                    amrex::DistributionMapping <span class="keyword">const</span>&amp; dm,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    amrex::Gpu::DeviceVector&lt;amrex::Real&gt;&amp; stretched_dz_lev_d,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    amrex::MultiFab <span class="keyword">const</span>* z_phys_nd,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    amrex::Array&lt;std::string,2*AMREX_SPACEDIM&gt;&amp; domain_bc_type);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> apply(amrex::MultiFab&amp; lhs, amrex::MultiFab <span class="keyword">const</span>&amp; rhs);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="ERF__TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a>(amrex::MultiFab&amp; phi);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> usePrecond(<span class="keywordtype">bool</span> precond_flag);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> getFluxes(amrex::MultiFab&amp; phi, amrex::Array&lt;amrex::MultiFab,AMREX_SPACEDIM&gt;&amp; fluxes);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> assign(amrex::MultiFab&amp; lhs, amrex::MultiFab <span class="keyword">const</span>&amp; rhs);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> scale(amrex::MultiFab&amp; lhs, amrex::Real fac);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    amrex::Real dotProduct(amrex::MultiFab <span class="keyword">const</span>&amp; v1, amrex::MultiFab <span class="keyword">const</span>&amp; v2);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> increment(amrex::MultiFab&amp; lhs, amrex::MultiFab <span class="keyword">const</span>&amp; rhs, amrex::Real a);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> linComb(amrex::MultiFab&amp; lhs, amrex::Real a, amrex::MultiFab <span class="keyword">const</span>&amp; rhs_a,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                 amrex::Real b, amrex::MultiFab <span class="keyword">const</span>&amp; rhs_b);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    amrex::MultiFab makeVecRHS();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    amrex::MultiFab makeVecLHS();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    amrex::Real norm2(amrex::MultiFab <span class="keyword">const</span>&amp; v);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> precond(amrex::MultiFab&amp; lhs, amrex::MultiFab <span class="keyword">const</span>&amp; rhs);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> setToZero(amrex::MultiFab&amp; v);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">bool</span> m_use_precond = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    amrex::Geometry m_geom;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    amrex::BoxArray m_grids;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    amrex::DistributionMapping m_dmap;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    amrex::Gpu::DeviceVector&lt;amrex::Real&gt; m_stretched_dz_d;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> amrex::MultiFab* m_zphys;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::unique_ptr&lt;amrex::FFT::PoissonHybrid&lt;amrex::MultiFab&gt;&gt; m_2D_fft_precond;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    amrex::Array&lt;std::pair&lt;amrex::FFT::Boundary,amrex::FFT::Boundary&gt;,AMREX_SPACEDIM&gt; bc_fft;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aERF__TI__utils_8H_html_a5e7934b18ef63bc8c4c16db42277c52f"><div class="ttname"><a href="ERF__TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a></div><div class="ttdeci">auto apply_bcs</div><div class="ttdef"><b>Definition:</b> ERF_TI_utils.H:50</div></div>
 <div class="ttc" id="aERF__TerrainPoisson__3D__K_8H_html"><div class="ttname"><a href="ERF__TerrainPoisson__3D__K_8H.html">ERF_TerrainPoisson_3D_K.H</a></div></div>
-<div class="ttc" id="aclassTerrainPoisson_html"><div class="ttname"><a href="classTerrainPoisson.html">TerrainPoisson</a></div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.H:14</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_a11b0c98e8dbdb9c050a17603e1b6fd30"><div class="ttname"><a href="classTerrainPoisson.html#a11b0c98e8dbdb9c050a17603e1b6fd30">TerrainPoisson::m_zphys</a></div><div class="ttdeci">const amrex::MultiFab * m_zphys</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.H:58</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_a12f05bd12a1597f260ef84172b86a10a"><div class="ttname"><a href="classTerrainPoisson.html#a12f05bd12a1597f260ef84172b86a10a">TerrainPoisson::apply</a></div><div class="ttdeci">void apply(amrex::MultiFab &amp;lhs, amrex::MultiFab const &amp;rhs)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:33</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_a15e050b9bd993409e07ceef1650ebb31"><div class="ttname"><a href="classTerrainPoisson.html#a15e050b9bd993409e07ceef1650ebb31">TerrainPoisson::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.H:54</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_a23fe3be2f87c13e7c222daf0109e7f61"><div class="ttname"><a href="classTerrainPoisson.html#a23fe3be2f87c13e7c222daf0109e7f61">TerrainPoisson::assign</a></div><div class="ttdeci">void assign(amrex::MultiFab &amp;lhs, amrex::MultiFab const &amp;rhs)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:155</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_a38066ca256d99cd8f0364f9c6178b64a"><div class="ttname"><a href="classTerrainPoisson.html#a38066ca256d99cd8f0364f9c6178b64a">TerrainPoisson::precond</a></div><div class="ttdeci">void precond(amrex::MultiFab &amp;lhs, amrex::MultiFab const &amp;rhs)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:197</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_a50c40660fd8d2fa8e0e4d941e2c4ebe4"><div class="ttname"><a href="classTerrainPoisson.html#a50c40660fd8d2fa8e0e4d941e2c4ebe4">TerrainPoisson::scale</a></div><div class="ttdeci">void scale(amrex::MultiFab &amp;lhs, amrex::Real fac)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:160</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_a675e172f3e8a103807ad776019242fdd"><div class="ttname"><a href="classTerrainPoisson.html#a675e172f3e8a103807ad776019242fdd">TerrainPoisson::increment</a></div><div class="ttdeci">void increment(amrex::MultiFab &amp;lhs, amrex::MultiFab const &amp;rhs, amrex::Real a)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:170</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_a6da7c7d41395bb603d09d649dc8f6a9d"><div class="ttname"><a href="classTerrainPoisson.html#a6da7c7d41395bb603d09d649dc8f6a9d">TerrainPoisson::makeVecRHS</a></div><div class="ttdeci">amrex::MultiFab makeVecRHS()</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:182</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_a84101265b9a07eb379b04ae678beda18"><div class="ttname"><a href="classTerrainPoisson.html#a84101265b9a07eb379b04ae678beda18">TerrainPoisson::usePrecond</a></div><div class="ttdeci">void usePrecond(bool precond_flag)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:28</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_a880adff4034ee956f1e2ac75c54b9dbb"><div class="ttname"><a href="classTerrainPoisson.html#a880adff4034ee956f1e2ac75c54b9dbb">TerrainPoisson::m_stretched_dz_d</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::Real &gt; m_stretched_dz_d</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.H:57</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_a8b28ebe7d558fc2ce19d674e33f78fec"><div class="ttname"><a href="classTerrainPoisson.html#a8b28ebe7d558fc2ce19d674e33f78fec">TerrainPoisson::RT</a></div><div class="ttdeci">amrex::Real RT</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.H:17</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_a8dcf3ca721769bc5f8bf7c1b2ea9634e"><div class="ttname"><a href="classTerrainPoisson.html#a8dcf3ca721769bc5f8bf7c1b2ea9634e">TerrainPoisson::m_use_precond</a></div><div class="ttdeci">bool m_use_precond</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.H:53</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_aaaa3599628c5a60c6d396e97d2a0b935"><div class="ttname"><a href="classTerrainPoisson.html#aaaa3599628c5a60c6d396e97d2a0b935">TerrainPoisson::makeVecLHS</a></div><div class="ttdeci">amrex::MultiFab makeVecLHS()</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:187</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_ab2c2fee50d531c3bcc1f0c92d548e3a6"><div class="ttname"><a href="classTerrainPoisson.html#ab2c2fee50d531c3bcc1f0c92d548e3a6">TerrainPoisson::getFluxes</a></div><div class="ttdeci">void getFluxes(amrex::MultiFab &amp;phi, amrex::Array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt; &amp;fluxes)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:105</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_abdf75de53e268b1d4ac364c1469b83c9"><div class="ttname"><a href="classTerrainPoisson.html#abdf75de53e268b1d4ac364c1469b83c9">TerrainPoisson::TerrainPoisson</a></div><div class="ttdeci">TerrainPoisson(amrex::Geometry const &amp;geom, amrex::BoxArray const &amp;ba, amrex::DistributionMapping const &amp;dm, amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &amp;stretched_dz_lev_d, amrex::MultiFab const *z_phys_nd, amrex::Array&lt; std::string, 2 *AMREX_SPACEDIM &gt; &amp;domain_bc_type)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:6</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_ad7f1bf80838f9f1d30c2ef0e052e5580"><div class="ttname"><a href="classTerrainPoisson.html#ad7f1bf80838f9f1d30c2ef0e052e5580">TerrainPoisson::norm2</a></div><div class="ttdeci">amrex::Real norm2(amrex::MultiFab const &amp;v)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:192</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_ada942a4488d49acc588f1afe2a4cc877"><div class="ttname"><a href="classTerrainPoisson.html#ada942a4488d49acc588f1afe2a4cc877">TerrainPoisson::m_grids</a></div><div class="ttdeci">amrex::BoxArray m_grids</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.H:55</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_adf44ae8fab76f41f31a9f340ffa0aa1b"><div class="ttname"><a href="classTerrainPoisson.html#adf44ae8fab76f41f31a9f340ffa0aa1b">TerrainPoisson::m_dmap</a></div><div class="ttdeci">amrex::DistributionMapping m_dmap</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.H:56</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_ae145d482e895bf84eabe8d6850ed8bdf"><div class="ttname"><a href="classTerrainPoisson.html#ae145d482e895bf84eabe8d6850ed8bdf">TerrainPoisson::setToZero</a></div><div class="ttdeci">void setToZero(amrex::MultiFab &amp;v)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:248</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_ae39163799e9dc745a0f42d223e9568ff"><div class="ttname"><a href="classTerrainPoisson.html#ae39163799e9dc745a0f42d223e9568ff">TerrainPoisson::dotProduct</a></div><div class="ttdeci">amrex::Real dotProduct(amrex::MultiFab const &amp;v1, amrex::MultiFab const &amp;v2)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:165</div></div>
-<div class="ttc" id="aclassTerrainPoisson_html_ae61e06904156694b3fc10e3868b6fcea"><div class="ttname"><a href="classTerrainPoisson.html#ae61e06904156694b3fc10e3868b6fcea">TerrainPoisson::linComb</a></div><div class="ttdeci">void linComb(amrex::MultiFab &amp;lhs, amrex::Real a, amrex::MultiFab const &amp;rhs_a, amrex::Real b, amrex::MultiFab const &amp;rhs_b)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainPoisson.cpp:175</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
