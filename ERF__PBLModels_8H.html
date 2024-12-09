@@ -116,18 +116,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af2bea8fffff60778a8e48189b4406a03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PBLModels_8H.html#af2bea8fffff60778a8e48189b4406a03">ComputeDiffusivityMYNN25</a> (const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, const amrex::Geometry &amp;geom, const <a class="el" href="structTurbChoice.html">TurbChoice</a> &amp;turbChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, bool use_moisture, int level, const amrex::BCRec *bc_ptr, bool, const std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, const int RhoQv_comp, const int RhoQr_comp)</td></tr>
-<tr class="separator:af2bea8fffff60778a8e48189b4406a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee11be8e39b591f52c42b82f6bf2aaea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PBLModels_8H.html#aee11be8e39b591f52c42b82f6bf2aaea">ComputeDiffusivityMYNN25</a> (const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, const amrex::Geometry &amp;geom, const <a class="el" href="structTurbChoice.html">TurbChoice</a> &amp;turbChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, bool use_moisture, int level, const amrex::BCRec *bc_ptr, bool, const std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, const int RhoQv_comp, const int RhoQc_comp, const int RhoQr_comp)</td></tr>
+<tr class="separator:aee11be8e39b591f52c42b82f6bf2aaea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace7a2f37421af958b8f63b049b7c0835"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PBLModels_8H.html#ace7a2f37421af958b8f63b049b7c0835">ComputeDiffusivityYSU</a> (const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, const amrex::Geometry &amp;geom, const <a class="el" href="structTurbChoice.html">TurbChoice</a> &amp;turbChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, bool use_moisture, int level, const amrex::BCRec *bc_ptr, bool, const std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd)</td></tr>
 <tr class="separator:ace7a2f37421af958b8f63b049b7c0835"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33bb37a040bfadb1956539905ef016c3"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PBLModels_8H.html#a33bb37a040bfadb1956539905ef016c3">ComputeVerticalDerivativesPBL</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int izmin, const int izmax, const amrex::Real &amp;dz_inv, const bool c_ext_dir_on_zlo, const bool c_ext_dir_on_zhi, const bool u_ext_dir_on_zlo, const bool u_ext_dir_on_zhi, const bool v_ext_dir_on_zlo, const bool v_ext_dir_on_zhi, amrex::Real &amp;dthetadz, amrex::Real &amp;dudz, amrex::Real &amp;dvdz, const int RhoQv_comp, const int RhoQr_comp, const bool use_most=true)</td></tr>
-<tr class="separator:a33bb37a040bfadb1956539905ef016c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeebffefd91e8d17e6af632b6076ce455"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PBLModels_8H.html#aeebffefd91e8d17e6af632b6076ce455">ComputeQKESourceTerms</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;K_turb, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Box &amp;domain, amrex::Real pbl_mynn_B1_l, const amrex::Real theta_mean, const int RhoQv_comp, const int RhoQr_comp, bool c_ext_dir_on_zlo, bool c_ext_dir_on_zhi, bool u_ext_dir_on_zlo, bool u_ext_dir_on_zhi, bool v_ext_dir_on_zlo, bool v_ext_dir_on_zhi, const bool use_most=false, const amrex::Real met_h_zeta=1.0)</td></tr>
-<tr class="separator:aeebffefd91e8d17e6af632b6076ce455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb354f0d34a376d6c1769d0a3b1521d5"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PBLModels_8H.html#acb354f0d34a376d6c1769d0a3b1521d5">ComputeVerticalDerivativesPBL</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int izmin, const int izmax, const amrex::Real &amp;dz_inv, const bool c_ext_dir_on_zlo, const bool c_ext_dir_on_zhi, const bool u_ext_dir_on_zlo, const bool u_ext_dir_on_zhi, const bool v_ext_dir_on_zlo, const bool v_ext_dir_on_zhi, amrex::Real &amp;dthetadz, amrex::Real &amp;dudz, amrex::Real &amp;dvdz, const int RhoQv_comp, const int RhoQc_comp, const int RhoQr_comp, const bool use_most=true)</td></tr>
+<tr class="separator:acb354f0d34a376d6c1769d0a3b1521d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cbd00ebb80bad6442be17509b800240"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PBLModels_8H.html#a3cbd00ebb80bad6442be17509b800240">ComputeQKESourceTerms</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;K_turb, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Box &amp;domain, amrex::Real pbl_mynn_B1_l, const amrex::Real theta_mean, const int RhoQv_comp, const int RhoQc_comp, const int RhoQr_comp, bool c_ext_dir_on_zlo, bool c_ext_dir_on_zhi, bool u_ext_dir_on_zlo, bool u_ext_dir_on_zhi, bool v_ext_dir_on_zlo, bool v_ext_dir_on_zhi, const bool use_most=false, const amrex::Real met_h_zeta=1.0)</td></tr>
+<tr class="separator:a3cbd00ebb80bad6442be17509b800240"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af2bea8fffff60778a8e48189b4406a03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2bea8fffff60778a8e48189b4406a03">&#9670;&nbsp;</a></span>ComputeDiffusivityMYNN25()</h2>
+<a id="aee11be8e39b591f52c42b82f6bf2aaea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee11be8e39b591f52c42b82f6bf2aaea">&#9670;&nbsp;</a></span>ComputeDiffusivityMYNN25()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,6 +209,12 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>RhoQv_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>RhoQc_comp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -350,8 +356,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aeebffefd91e8d17e6af632b6076ce455"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeebffefd91e8d17e6af632b6076ce455">&#9670;&nbsp;</a></span>ComputeQKESourceTerms()</h2>
+<a id="a3cbd00ebb80bad6442be17509b800240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cbd00ebb80bad6442be17509b800240">&#9670;&nbsp;</a></span>ComputeQKESourceTerms()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -438,6 +444,12 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>RhoQc_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>RhoQr_comp</em>, </td>
         </tr>
         <tr>
@@ -510,51 +522,51 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;{</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">// Compute some relevant derivatives</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    amrex::Real dthetadz, dudz, dvdz;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    amrex::Real source_term = 0.0;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    amrex::Real dz_inv = cellSizeInv[2];</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">int</span> izmin = domain.smallEnd(2);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">int</span> izmax = domain.bigEnd(2);</div>
+<div class="fragment"><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="comment">// Compute some relevant derivatives</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    amrex::Real dthetadz, dudz, dvdz;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    amrex::Real source_term = 0.0;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="comment">// NOTE: With MOST, the ghost cells are filled AFTER k_turb is computed</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="comment">//       so that the non-explicit pathway works. Therefore, at this</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">//       point we DO have valid ghost cells from MOST. We are passing</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment">//       the MOST flag to use one-sided diffs here to be consistent with</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">//       the explicit pathway.</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="ERF__PBLModels_8H.html#a33bb37a040bfadb1956539905ef016c3">ComputeVerticalDerivativesPBL</a>(i, j, k,</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                                  uvel, vvel, cell_data, izmin, izmax, dz_inv/met_h_zeta,</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                                  c_ext_dir_on_zlo, c_ext_dir_on_zhi,</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                                  u_ext_dir_on_zlo, u_ext_dir_on_zhi,</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                                  v_ext_dir_on_zlo, v_ext_dir_on_zhi,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                                  dthetadz, dudz, dvdz,</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                  RhoQv_comp, RhoQr_comp, use_most);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">// Note: Transport terms due to turbulence and pressure are included when</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// DiffusionSrcForState_* is called from ERF_slow_rhs_post.</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">// Shear Production</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    source_term += K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * (dudz*dudz + dvdz*dvdz);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">// Buoyancy Production</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    source_term -= (<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta_mean)*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>)*dthetadz;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">// Dissipation</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    amrex::Real qke = 2.0 * cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a>);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">if</span> (std::abs(qke) &gt; 0.0) {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        source_term -= cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,1.5) /</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                       (pbl_mynn_B1_l * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea1fd996857fe3699ac7f9454e88d6ae76">EddyDiff::Turb_lengthscale</a>));</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">return</span> source_term;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    amrex::Real dz_inv = cellSizeInv[2];</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">int</span> izmin = domain.smallEnd(2);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">int</span> izmax = domain.bigEnd(2);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// NOTE: With MOST, the ghost cells are filled AFTER k_turb is computed</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">//       so that the non-explicit pathway works. Therefore, at this</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">//       point we DO have valid ghost cells from MOST. We are passing</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">//       the MOST flag to use one-sided diffs here to be consistent with</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">//       the explicit pathway.</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="ERF__PBLModels_8H.html#acb354f0d34a376d6c1769d0a3b1521d5">ComputeVerticalDerivativesPBL</a>(i, j, k,</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                                  uvel, vvel, cell_data, izmin, izmax, dz_inv/met_h_zeta,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                  c_ext_dir_on_zlo, c_ext_dir_on_zhi,</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                  u_ext_dir_on_zlo, u_ext_dir_on_zhi,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                  v_ext_dir_on_zlo, v_ext_dir_on_zhi,</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                                  dthetadz, dudz, dvdz,</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                                  RhoQv_comp, RhoQc_comp, RhoQr_comp, use_most);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="comment">// Note: Transport terms due to turbulence and pressure are included when</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="comment">// DiffusionSrcForState_* is called from ERF_slow_rhs_post.</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment">// Shear Production</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    source_term += K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * (dudz*dudz + dvdz*dvdz);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="comment">// Buoyancy Production</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    source_term -= (<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta_mean)*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>)*dthetadz;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="comment">// Dissipation</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    amrex::Real qke = 2.0 * cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a>);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">if</span> (std::abs(qke) &gt; 0.0) {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        source_term -= cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,1.5) /</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                       (pbl_mynn_B1_l * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea1fd996857fe3699ac7f9454e88d6ae76">EddyDiff::Turb_lengthscale</a>));</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">return</span> source_term;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a9ab6bf01b348d4b7cef99f3655c9dbb2"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a></div><div class="ttdeci">#define PrimKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:51</div></div>
-<div class="ttc" id="aERF__PBLModels_8H_html_a33bb37a040bfadb1956539905ef016c3"><div class="ttname"><a href="ERF__PBLModels_8H.html#a33bb37a040bfadb1956539905ef016c3">ComputeVerticalDerivativesPBL</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void ComputeVerticalDerivativesPBL(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int izmin, const int izmax, const amrex::Real &amp;dz_inv, const bool c_ext_dir_on_zlo, const bool c_ext_dir_on_zhi, const bool u_ext_dir_on_zlo, const bool u_ext_dir_on_zhi, const bool v_ext_dir_on_zlo, const bool v_ext_dir_on_zhi, amrex::Real &amp;dthetadz, amrex::Real &amp;dudz, amrex::Real &amp;dvdz, const int RhoQv_comp, const int RhoQr_comp, const bool use_most=true)</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:80</div></div>
+<div class="ttc" id="aERF__PBLModels_8H_html_acb354f0d34a376d6c1769d0a3b1521d5"><div class="ttname"><a href="ERF__PBLModels_8H.html#acb354f0d34a376d6c1769d0a3b1521d5">ComputeVerticalDerivativesPBL</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void ComputeVerticalDerivativesPBL(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int izmin, const int izmax, const amrex::Real &amp;dz_inv, const bool c_ext_dir_on_zlo, const bool c_ext_dir_on_zhi, const bool u_ext_dir_on_zlo, const bool u_ext_dir_on_zhi, const bool v_ext_dir_on_zlo, const bool v_ext_dir_on_zhi, amrex::Real &amp;dthetadz, amrex::Real &amp;dudz, amrex::Real &amp;dvdz, const int RhoQv_comp, const int RhoQc_comp, const int RhoQr_comp, const bool use_most=true)</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:82</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:157</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea1fd996857fe3699ac7f9454e88d6ae76"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea1fd996857fe3699ac7f9454e88d6ae76">EddyDiff::Turb_lengthscale</a></div><div class="ttdeci">@ Turb_lengthscale</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:161</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#a7e7e94a6b49fe20d106a1ea7317d149ea61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:156</div></div>
@@ -563,18 +575,18 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__PBLModels_8H_aeebffefd91e8d17e6af632b6076ce455_cgraph.png" border="0" usemap="#aERF__PBLModels_8H_aeebffefd91e8d17e6af632b6076ce455_cgraph" alt=""/></div>
-<map name="aERF__PBLModels_8H_aeebffefd91e8d17e6af632b6076ce455_cgraph" id="aERF__PBLModels_8H_aeebffefd91e8d17e6af632b6076ce455_cgraph">
+<div class="center"><img src="ERF__PBLModels_8H_a3cbd00ebb80bad6442be17509b800240_cgraph.png" border="0" usemap="#aERF__PBLModels_8H_a3cbd00ebb80bad6442be17509b800240_cgraph" alt=""/></div>
+<map name="aERF__PBLModels_8H_a3cbd00ebb80bad6442be17509b800240_cgraph" id="aERF__PBLModels_8H_a3cbd00ebb80bad6442be17509b800240_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,196,32"/>
-<area shape="rect" href="ERF__PBLModels_8H.html#a33bb37a040bfadb1956539905ef016c3" title=" " alt="" coords="244,5,473,32"/>
-<area shape="rect" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e" title=" " alt="" coords="521,5,588,32"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#acb354f0d34a376d6c1769d0a3b1521d5" title=" " alt="" coords="244,5,473,32"/>
+<area shape="rect" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5" title=" " alt="" coords="521,5,588,32"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__PBLModels_8H_aeebffefd91e8d17e6af632b6076ce455_icgraph.png" border="0" usemap="#aERF__PBLModels_8H_aeebffefd91e8d17e6af632b6076ce455_icgraph" alt=""/></div>
-<map name="aERF__PBLModels_8H_aeebffefd91e8d17e6af632b6076ce455_icgraph" id="aERF__PBLModels_8H_aeebffefd91e8d17e6af632b6076ce455_icgraph">
+<div class="center"><img src="ERF__PBLModels_8H_a3cbd00ebb80bad6442be17509b800240_icgraph.png" border="0" usemap="#aERF__PBLModels_8H_a3cbd00ebb80bad6442be17509b800240_icgraph" alt=""/></div>
+<map name="aERF__PBLModels_8H_a3cbd00ebb80bad6442be17509b800240_icgraph" id="aERF__PBLModels_8H_a3cbd00ebb80bad6442be17509b800240_icgraph">
 <area shape="rect" title=" " alt="" coords="224,31,415,57"/>
 <area shape="rect" href="ERF__DiffusionSrcForState__N_8cpp.html#a61d842d8a45b6d97948ce19b106bba0a" title=" " alt="" coords="5,5,176,32"/>
 <area shape="rect" href="ERF__DiffusionSrcForState__T_8cpp.html#ab29316749b16c72caa2fe0b7558397c9" title=" " alt="" coords="6,56,175,83"/>
@@ -583,8 +595,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a33bb37a040bfadb1956539905ef016c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33bb37a040bfadb1956539905ef016c3">&#9670;&nbsp;</a></span>ComputeVerticalDerivativesPBL()</h2>
+<a id="acb354f0d34a376d6c1769d0a3b1521d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb354f0d34a376d6c1769d0a3b1521d5">&#9670;&nbsp;</a></span>ComputeVerticalDerivativesPBL()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -707,6 +719,12 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>RhoQc_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>RhoQr_comp</em>, </td>
         </tr>
         <tr>
@@ -731,68 +749,68 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> ( k==izmax &amp;&amp; c_ext_dir_on_zhi ) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        dthetadz = (1.0/3.0)*(       -<a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k-1,cell_data,RhoQv_comp,RhoQr_comp)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                              - 3.0 * <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k  ,cell_data,RhoQv_comp,RhoQr_comp)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                              + 4.0 * <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k+1,cell_data,RhoQv_comp,RhoQr_comp) )*dz_inv;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; c_ext_dir_on_zlo ) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        dthetadz = (1.0/3.0)*(        <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k+1,cell_data,RhoQv_comp,RhoQr_comp)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                              + 3.0 * <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k  ,cell_data,RhoQv_comp,RhoQr_comp)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                              - 4.0 * <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k-1,cell_data,RhoQv_comp,RhoQr_comp) )*dz_inv;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; use_most ) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        dthetadz = (  <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k+1,cell_data,RhoQv_comp,RhoQr_comp)</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    - <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k  ,cell_data,RhoQv_comp,RhoQr_comp) )*dz_inv;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        dthetadz = 0.5*(  <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k+1,cell_data,RhoQv_comp,RhoQr_comp)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                        - <a class="code" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a>(i,j,k-1,cell_data,RhoQv_comp,RhoQr_comp) )*dz_inv;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> ( k==izmax &amp;&amp; u_ext_dir_on_zhi ) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        dudz = (1.0/6.0)*( (-uvel(i  ,j,k-1) - 3.0 * uvel(i  ,j,k  ) + 4.0 * uvel(i  ,j,k+1))</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                         + (-uvel(i+1,j,k-1) - 3.0 * uvel(i+1,j,k  ) + 4.0 * uvel(i+1,j,k+1)) )*dz_inv;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; u_ext_dir_on_zlo ) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        dudz = (1.0/6.0)*( (uvel(i  ,j,k+1) + 3.0 * uvel(i  ,j,k  ) - 4.0 * uvel(i  ,j,k-1))</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                         + (uvel(i+1,j,k+1) + 3.0 * uvel(i+1,j,k  ) - 4.0 * uvel(i+1,j,k-1)) )*dz_inv;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; use_most ) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        dudz = 0.50*( uvel(i,j,k+1) - uvel(i,j,k  ) + uvel(i+1,j,k+1) - uvel(i+1,j,k  ) )*dz_inv;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        dudz = 0.25*( uvel(i,j,k+1) - uvel(i,j,k-1) + uvel(i+1,j,k+1) - uvel(i+1,j,k-1) )*dz_inv;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">if</span> ( k==izmax &amp;&amp; v_ext_dir_on_zhi ) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        dvdz = (1.0/6.0)*( (-vvel(i,j  ,k-1) - 3.0 * vvel(i,j  ,k  ) + 4.0 * vvel(i,j  ,k+1))</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                         + (-vvel(i,j+1,k-1) - 3.0 * vvel(i,j+1,k  ) + 4.0 * vvel(i,j+1,k+1)) )*dz_inv;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; v_ext_dir_on_zlo ) {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        dvdz = (1.0/6.0)*( (vvel(i,j  ,k+1) + 3.0 * vvel(i,j  ,k  ) - 4.0 * vvel(i,j  ,k-1))</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                         + (vvel(i,j+1,k+1) + 3.0 * vvel(i,j+1,k  ) - 4.0 * vvel(i,j+1,k-1)) )*dz_inv;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; use_most ) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        dvdz = 0.50*( vvel(i,j,k+1) - vvel(i,j,k  ) + vvel(i,j+1,k+1) - vvel(i,j+1,k  ) )*dz_inv;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        dvdz = 0.25*( vvel(i,j,k+1) - vvel(i,j,k-1) + vvel(i,j+1,k+1) - vvel(i,j+1,k-1) )*dz_inv;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
-<div class="ttc" id="aERF__Thetav_8H_html_a7af8b3624ec46045f269761983ec238e"><div class="ttname"><a href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Thetav(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int RhoQv_comp, const int RhoQr_comp)</div><div class="ttdef"><b>Definition:</b> ERF_Thetav.H:10</div></div>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> ( k==izmax &amp;&amp; c_ext_dir_on_zhi ) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        dthetadz = (1.0/3.0)*(       -<a class="code" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5">Thetav</a>(i,j,k-1,cell_data,RhoQv_comp,RhoQc_comp,RhoQr_comp)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                              - 3.0 * <a class="code" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5">Thetav</a>(i,j,k  ,cell_data,RhoQv_comp,RhoQc_comp,RhoQr_comp)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                              + 4.0 * <a class="code" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5">Thetav</a>(i,j,k+1,cell_data,RhoQv_comp,RhoQc_comp,RhoQr_comp) )*dz_inv;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; c_ext_dir_on_zlo ) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        dthetadz = (1.0/3.0)*(        <a class="code" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5">Thetav</a>(i,j,k+1,cell_data,RhoQv_comp,RhoQc_comp,RhoQr_comp)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                              + 3.0 * <a class="code" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5">Thetav</a>(i,j,k  ,cell_data,RhoQv_comp,RhoQc_comp,RhoQr_comp)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                              - 4.0 * <a class="code" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5">Thetav</a>(i,j,k-1,cell_data,RhoQv_comp,RhoQc_comp,RhoQr_comp) )*dz_inv;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; use_most ) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        dthetadz = (  <a class="code" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5">Thetav</a>(i,j,k+1,cell_data,RhoQv_comp,RhoQc_comp,RhoQr_comp)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    - <a class="code" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5">Thetav</a>(i,j,k  ,cell_data,RhoQv_comp,RhoQc_comp,RhoQr_comp) )*dz_inv;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        dthetadz = 0.5*(  <a class="code" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5">Thetav</a>(i,j,k+1,cell_data,RhoQv_comp,RhoQc_comp,RhoQr_comp)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                        - <a class="code" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5">Thetav</a>(i,j,k-1,cell_data,RhoQv_comp,RhoQc_comp,RhoQr_comp) )*dz_inv;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> ( k==izmax &amp;&amp; u_ext_dir_on_zhi ) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        dudz = (1.0/6.0)*( (-uvel(i  ,j,k-1) - 3.0 * uvel(i  ,j,k  ) + 4.0 * uvel(i  ,j,k+1))</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                         + (-uvel(i+1,j,k-1) - 3.0 * uvel(i+1,j,k  ) + 4.0 * uvel(i+1,j,k+1)) )*dz_inv;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; u_ext_dir_on_zlo ) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        dudz = (1.0/6.0)*( (uvel(i  ,j,k+1) + 3.0 * uvel(i  ,j,k  ) - 4.0 * uvel(i  ,j,k-1))</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                         + (uvel(i+1,j,k+1) + 3.0 * uvel(i+1,j,k  ) - 4.0 * uvel(i+1,j,k-1)) )*dz_inv;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; use_most ) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        dudz = 0.50*( uvel(i,j,k+1) - uvel(i,j,k  ) + uvel(i+1,j,k+1) - uvel(i+1,j,k  ) )*dz_inv;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        dudz = 0.25*( uvel(i,j,k+1) - uvel(i,j,k-1) + uvel(i+1,j,k+1) - uvel(i+1,j,k-1) )*dz_inv;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">if</span> ( k==izmax &amp;&amp; v_ext_dir_on_zhi ) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        dvdz = (1.0/6.0)*( (-vvel(i,j  ,k-1) - 3.0 * vvel(i,j  ,k  ) + 4.0 * vvel(i,j  ,k+1))</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                         + (-vvel(i,j+1,k-1) - 3.0 * vvel(i,j+1,k  ) + 4.0 * vvel(i,j+1,k+1)) )*dz_inv;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; v_ext_dir_on_zlo ) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        dvdz = (1.0/6.0)*( (vvel(i,j  ,k+1) + 3.0 * vvel(i,j  ,k  ) - 4.0 * vvel(i,j  ,k-1))</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                         + (vvel(i,j+1,k+1) + 3.0 * vvel(i,j+1,k  ) - 4.0 * vvel(i,j+1,k-1)) )*dz_inv;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; use_most ) {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        dvdz = 0.50*( vvel(i,j,k+1) - vvel(i,j,k  ) + vvel(i,j+1,k+1) - vvel(i,j+1,k  ) )*dz_inv;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        dvdz = 0.25*( vvel(i,j,k+1) - vvel(i,j,k-1) + vvel(i,j+1,k+1) - vvel(i,j+1,k-1) )*dz_inv;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="ttc" id="aERF__Thetav_8H_html_a560eb559ee1d5b8dceaae23f4f4581d5"><div class="ttname"><a href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5">Thetav</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Thetav(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int RhoQv_comp, const int RhoQc_comp, const int RhoQr_comp)</div><div class="ttdef"><b>Definition:</b> ERF_Thetav.H:10</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a4b51698073bd67922bc46675fce968cf">ComputeDiffusivityMYNN25()</a>, <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#a22f1a268ea7d16d0817f082a47ffc98a">ComputeDiffusivityYSU()</a>, and <a class="el" href="ERF__PBLModels_8H.html#aeebffefd91e8d17e6af632b6076ce455">ComputeQKESourceTerms()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a391c08e1e3f5dbbe1bc501f0ad9ee26f">ComputeDiffusivityMYNN25()</a>, <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#a22f1a268ea7d16d0817f082a47ffc98a">ComputeDiffusivityYSU()</a>, and <a class="el" href="ERF__PBLModels_8H.html#a3cbd00ebb80bad6442be17509b800240">ComputeQKESourceTerms()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__PBLModels_8H_a33bb37a040bfadb1956539905ef016c3_cgraph.png" border="0" usemap="#aERF__PBLModels_8H_a33bb37a040bfadb1956539905ef016c3_cgraph" alt=""/></div>
-<map name="aERF__PBLModels_8H_a33bb37a040bfadb1956539905ef016c3_cgraph" id="aERF__PBLModels_8H_a33bb37a040bfadb1956539905ef016c3_cgraph">
+<div class="center"><img src="ERF__PBLModels_8H_acb354f0d34a376d6c1769d0a3b1521d5_cgraph.png" border="0" usemap="#aERF__PBLModels_8H_acb354f0d34a376d6c1769d0a3b1521d5_cgraph" alt=""/></div>
+<map name="aERF__PBLModels_8H_acb354f0d34a376d6c1769d0a3b1521d5_cgraph" id="aERF__PBLModels_8H_acb354f0d34a376d6c1769d0a3b1521d5_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,235,32"/>
-<area shape="rect" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e" title=" " alt="" coords="283,5,349,32"/>
+<area shape="rect" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5" title=" " alt="" coords="283,5,349,32"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__PBLModels_8H_a33bb37a040bfadb1956539905ef016c3_icgraph.png" border="0" usemap="#aERF__PBLModels_8H_a33bb37a040bfadb1956539905ef016c3_icgraph" alt=""/></div>
-<map name="aERF__PBLModels_8H_a33bb37a040bfadb1956539905ef016c3_icgraph" id="aERF__PBLModels_8H_a33bb37a040bfadb1956539905ef016c3_icgraph">
+<div class="center"><img src="ERF__PBLModels_8H_acb354f0d34a376d6c1769d0a3b1521d5_icgraph.png" border="0" usemap="#aERF__PBLModels_8H_acb354f0d34a376d6c1769d0a3b1521d5_icgraph" alt=""/></div>
+<map name="aERF__PBLModels_8H_acb354f0d34a376d6c1769d0a3b1521d5_icgraph" id="aERF__PBLModels_8H_acb354f0d34a376d6c1769d0a3b1521d5_icgraph">
 <area shape="rect" title=" " alt="" coords="713,56,943,83"/>
-<area shape="rect" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a4b51698073bd67922bc46675fce968cf" title=" " alt="" coords="461,5,665,32"/>
+<area shape="rect" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a391c08e1e3f5dbbe1bc501f0ad9ee26f" title=" " alt="" coords="461,5,665,32"/>
 <area shape="rect" href="ERF__ComputeDiffusivityYSU_8cpp.html#a22f1a268ea7d16d0817f082a47ffc98a" title=" " alt="" coords="476,56,651,83"/>
-<area shape="rect" href="ERF__PBLModels_8H.html#aeebffefd91e8d17e6af632b6076ce455" title=" " alt="" coords="468,107,659,133"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#a3cbd00ebb80bad6442be17509b800240" title=" " alt="" coords="468,107,659,133"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3865612b809df828f44e9c18218b1e37" title=" " alt="" coords="213,19,413,45"/>
 <area shape="rect" href="classERF.html#af836d1bb05ac4c9f535358e14714f13e" title=" " alt="" coords="5,19,165,45"/>
 <area shape="rect" href="ERF__DiffusionSrcForState__N_8cpp.html#a61d842d8a45b6d97948ce19b106bba0a" title=" " alt="" coords="228,81,399,108"/>

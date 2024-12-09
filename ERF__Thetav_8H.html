@@ -150,12 +150,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7af8b3624ec46045f269761983ec238e"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Thetav_8H.html#a7af8b3624ec46045f269761983ec238e">Thetav</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int RhoQv_comp, const int RhoQr_comp)</td></tr>
-<tr class="separator:a7af8b3624ec46045f269761983ec238e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a560eb559ee1d5b8dceaae23f4f4581d5"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5">Thetav</a> (int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int RhoQv_comp, const int RhoQc_comp, const int RhoQr_comp)</td></tr>
+<tr class="separator:a560eb559ee1d5b8dceaae23f4f4581d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a7af8b3624ec46045f269761983ec238e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7af8b3624ec46045f269761983ec238e">&#9670;&nbsp;</a></span>Thetav()</h2>
+<a id="a560eb559ee1d5b8dceaae23f4f4581d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a560eb559ee1d5b8dceaae23f4f4581d5">&#9670;&nbsp;</a></span>Thetav()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,6 +194,12 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>RhoQc_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>RhoQr_comp</em>&#160;</td>
         </tr>
         <tr>
@@ -203,34 +209,36 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    amrex::Real thetav = cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (RhoQr_comp &gt; 0) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        thetav *= (1.0 + 0.61 * cell_data(i,j,k,RhoQv_comp) / cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                              - cell_data(i,j,k,RhoQr_comp) / cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (RhoQv_comp &gt; 0) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        thetav *= (1.0 + 0.61 * cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> thetav;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    amrex::Real thetav = cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span> (RhoQr_comp &gt; 0) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        thetav *= (1.0 + 0.61 * cell_data(i,j,k,RhoQv_comp) / cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                              - cell_data(i,j,k,RhoQc_comp) / cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                              - cell_data(i,j,k,RhoQr_comp) / cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (RhoQv_comp &gt; 0) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        thetav *= (1.0 + 0.61 * cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                              - cell_data(i,j,k,RhoQc_comp) / cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> thetav;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="structMYNNPBLH.html#a3911e13c78754ba2bf50e3e94f74bba8">MYNNPBLH::compute_pblh()</a>, and <a class="el" href="ERF__PBLModels_8H.html#a33bb37a040bfadb1956539905ef016c3">ComputeVerticalDerivativesPBL()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structMYNNPBLH.html#a50906c85ebea73eda08db05473370ccf">MYNNPBLH::compute_pblh()</a>, and <a class="el" href="ERF__PBLModels_8H.html#acb354f0d34a376d6c1769d0a3b1521d5">ComputeVerticalDerivativesPBL()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__Thetav_8H_a7af8b3624ec46045f269761983ec238e_icgraph.png" border="0" usemap="#aERF__Thetav_8H_a7af8b3624ec46045f269761983ec238e_icgraph" alt=""/></div>
-<map name="aERF__Thetav_8H_a7af8b3624ec46045f269761983ec238e_icgraph" id="aERF__Thetav_8H_a7af8b3624ec46045f269761983ec238e_icgraph">
+<div class="center"><img src="ERF__Thetav_8H_a560eb559ee1d5b8dceaae23f4f4581d5_icgraph.png" border="0" usemap="#aERF__Thetav_8H_a560eb559ee1d5b8dceaae23f4f4581d5_icgraph" alt=""/></div>
+<map name="aERF__Thetav_8H_a560eb559ee1d5b8dceaae23f4f4581d5_icgraph" id="aERF__Thetav_8H_a560eb559ee1d5b8dceaae23f4f4581d5_icgraph">
 <area shape="rect" title=" " alt="" coords="991,31,1057,57"/>
-<area shape="rect" href="structMYNNPBLH.html#a3911e13c78754ba2bf50e3e94f74bba8" title=" " alt="" coords="730,5,926,32"/>
-<area shape="rect" href="ERF__PBLModels_8H.html#a33bb37a040bfadb1956539905ef016c3" title=" " alt="" coords="713,56,943,83"/>
-<area shape="rect" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a4b51698073bd67922bc46675fce968cf" title=" " alt="" coords="461,5,665,32"/>
+<area shape="rect" href="structMYNNPBLH.html#a50906c85ebea73eda08db05473370ccf" title=" " alt="" coords="730,5,926,32"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#acb354f0d34a376d6c1769d0a3b1521d5" title=" " alt="" coords="713,56,943,83"/>
+<area shape="rect" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a391c08e1e3f5dbbe1bc501f0ad9ee26f" title=" " alt="" coords="461,5,665,32"/>
 <area shape="rect" href="ERF__ComputeDiffusivityYSU_8cpp.html#a22f1a268ea7d16d0817f082a47ffc98a" title=" " alt="" coords="476,56,651,83"/>
-<area shape="rect" href="ERF__PBLModels_8H.html#aeebffefd91e8d17e6af632b6076ce455" title=" " alt="" coords="468,107,659,133"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#a3cbd00ebb80bad6442be17509b800240" title=" " alt="" coords="468,107,659,133"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3865612b809df828f44e9c18218b1e37" title=" " alt="" coords="213,19,413,45"/>
 <area shape="rect" href="classERF.html#af836d1bb05ac4c9f535358e14714f13e" title=" " alt="" coords="5,19,165,45"/>
 <area shape="rect" href="ERF__DiffusionSrcForState__N_8cpp.html#a61d842d8a45b6d97948ce19b106bba0a" title=" " alt="" coords="228,81,399,108"/>

@@ -52,6 +52,7 @@ var structSolverChoice =
     [ "rayleigh_zdamp", "structSolverChoice.html#a29517ec608149342f25aa89f18204fac", null ],
     [ "rayleigh_ztop", "structSolverChoice.html#a5ffe405695bf4304d2ea61be6efaca1c", null ],
     [ "rdOcp", "structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a", null ],
+    [ "RhoQc_comp", "structSolverChoice.html#a5dc385a342ac6c50e0f9a638a0e31f9f", null ],
     [ "RhoQr_comp", "structSolverChoice.html#a1d9237205fd632dcde1599511f203131", null ],
     [ "RhoQv_comp", "structSolverChoice.html#a9ac649bbebc73403e291d2af180d4061", null ],
     [ "sampling_distance_by_D", "structSolverChoice.html#a9029114db3f1983d2d720210dcf87c69", null ],
