@@ -14,7 +14,7 @@ var classERF =
     [ "build_fine_mask", "classERF.html#af46289079e053a6d74ddef0bf1a5d8a3", null ],
     [ "ClearLevel", "classERF.html#ac44e400a7ce68e18fa44e9416cb1344e", null ],
     [ "cloud_fraction", "classERF.html#a0f6effb7eeed11385b20e4bbf516b459", null ],
-    [ "compute_divergence", "classERF.html#a4aaad0c261cb89d575d46083a509dbb9", null ],
+    [ "compute_divergence", "classERF.html#a757e8303ce8ed936c05f559349f10aa5", null ],
     [ "ComputeDt", "classERF.html#aa38639155e79bab8a0c283aa6e7afa81", null ],
     [ "ComputeGhostCells", "classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5", null ],
     [ "Construct_ERFFillPatchers", "classERF.html#adc284f421c5fd9dd15c0e5cbe4ff5fc8", null ],
