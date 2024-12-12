@@ -1,5 +1,10 @@
 var NAVTREEINDEX9 =
 {
+"classRadiation.html#a753f36a08e04e4332b9f6851dbd34128":[2,0,67,18],
+"classRadiation.html#a76bb14b6a6eafd04ffad69f50547be41":[2,0,67,131],
+"classRadiation.html#a7d59cd8c1bc45b5c128726107a71b6bb":[2,0,67,64],
+"classRadiation.html#a7fd0d1f49797bc9d2c248cd334b44e36":[2,0,67,136],
+"classRadiation.html#a830faa00a602447dd4ebeb868837f4ee":[2,0,67,14],
 "classRadiation.html#a86954a9c03e7c7eb9cd610b4e533b27e":[2,0,67,106],
 "classRadiation.html#a8718e64a2e3ba0aa52e12bcac9dcb202":[2,0,67,33],
 "classRadiation.html#a875467ba1e77ce2c0af0911c09422b42":[2,0,67,66],
@@ -244,10 +249,5 @@ var NAVTREEINDEX9 =
 "classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa":[2,0,73,12],
 "classSatMethods.html#a264a283910d028a29c374900fc03017f":[2,0,73,3],
 "classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887":[2,0,73,10],
-"classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579":[2,0,73,8],
-"classSatMethods.html#a62096d95f324cd2a3504554437067ef7":[2,0,73,0],
-"classSatMethods.html#a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a":[2,0,73,0,3],
-"classSatMethods.html#a62096d95f324cd2a3504554437067ef7aacd427431253b9fe6b472b6db3685edb":[2,0,73,0,0],
-"classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d":[2,0,73,0,4],
-"classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455":[2,0,73,0,2]
+"classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579":[2,0,73,8]
 };

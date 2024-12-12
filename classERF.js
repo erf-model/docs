@@ -240,6 +240,7 @@ var classERF =
     [ "m_plot_per_1", "classERF.html#a3167adc9518cce649a90ab82e9f9c85d", null ],
     [ "m_plot_per_2", "classERF.html#aff879a9c686293a10a3a03027b765c51", null ],
     [ "m_r2d", "classERF.html#addf62bfc534515447b94e928ac0b7135", null ],
+    [ "m_terrain", "classERF.html#a3808b4c464aea9ef0da8223475c9b7bb", null ],
     [ "m_w2d", "classERF.html#aa53035f34ba133b86172e180abda4209", null ],
     [ "mapfac_m", "classERF.html#a23aacdb72e9d2dfed8e2ebd2c2526497", null ],
     [ "mapfac_u", "classERF.html#a1e8afee1508b720dab56f5d044deb301", null ],
