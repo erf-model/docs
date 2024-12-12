@@ -76,8 +76,8 @@ var NAVTREEINDEX1 =
 "ERF__EddyViscosity_8H.html#a1d775f0ce64d37053b33d514438ee856":[3,0,1,3,10,0],
 "ERF__EddyViscosity_8H.html#a2b687f91a8d8385766be20222af4ccac":[3,0,1,3,10,1],
 "ERF__EddyViscosity_8H_source.html":[3,0,1,3,10],
-"ERF__EulerianMicrophysics_8H.html":[3,0,1,9,3],
-"ERF__EulerianMicrophysics_8H_source.html":[3,0,1,9,3],
+"ERF__EulerianMicrophysics_8H.html":[3,0,1,9,4],
+"ERF__EulerianMicrophysics_8H_source.html":[3,0,1,9,4],
 "ERF__FFTUtils_8H.html":[3,0,1,8,1],
 "ERF__FFTUtils_8H_source.html":[3,0,1,8,1],
 "ERF__FastRhs__MT_8cpp.html":[3,0,1,16,6],
@@ -200,6 +200,7 @@ var NAVTREEINDEX1 =
 "ERF__InitRayleighDamping_8H_source.html":[3,0,1,13,2],
 "ERF__InitRayleigh_8cpp.html":[3,0,1,5,8],
 "ERF__InitSAM_8cpp.html":[3,0,1,9,2,2],
+"ERF__InitSatAdj_8cpp.html":[3,0,1,9,3,0],
 "ERF__InitSponge_8cpp.html":[3,0,1,5,9],
 "ERF__InitTurbPert_8cpp.html":[3,0,1,5,10],
 "ERF__InitUniform_8cpp.html":[3,0,1,5,11],
@@ -233,8 +234,8 @@ var NAVTREEINDEX1 =
 "ERF__Kessler_8H.html":[3,0,1,9,0,2],
 "ERF__Kessler_8H_source.html":[3,0,1,9,0,2],
 "ERF__Kessler_8cpp.html":[3,0,1,9,0,1],
-"ERF__LagrangianMicrophysics_8H.html":[3,0,1,9,4],
-"ERF__LagrangianMicrophysics_8H_source.html":[3,0,1,9,4],
+"ERF__LagrangianMicrophysics_8H.html":[3,0,1,9,5],
+"ERF__LagrangianMicrophysics_8H_source.html":[3,0,1,9,5],
 "ERF__LandSurface_8H.html":[3,0,1,7,4],
 "ERF__LandSurface_8H_source.html":[3,0,1,7,4],
 "ERF__LinearInterpolate_8H.html":[3,0,1,14,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__MOSTAverage_8H.html":[3,0,1,1,16],
 "ERF__MOSTAverage_8H_source.html":[3,0,1,1,16],
 "ERF__MOSTAverage_8cpp.html":[3,0,1,1,15],
-"ERF__MOSTRoughness_8H.html":[3,0,1,1,17],
-"ERF__MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860":[3,0,1,1,17,1]
+"ERF__MOSTRoughness_8H.html":[3,0,1,1,17]
 };

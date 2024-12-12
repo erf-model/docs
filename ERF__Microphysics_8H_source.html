@@ -146,28 +146,32 @@ $(document).ready(function(){initNavTree('ERF__Microphysics_8H_source.html','');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">    /*! \brief get the indices and names of moisture model variables for restart</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">               at a given level */</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a96e15433c5277151700438dc2f6fba6f">   61</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a96e15433c5277151700438dc2f6fba6f">Get_Qmoist_Restart_Vars</a> ( <span class="keywordtype">int</span>, <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp;, std::vector&lt;int&gt;&amp;, std::vector&lt;std::string&gt;&amp; ) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">    /*! \brief query if a specified moisture model is Eulerian or Lagrangian */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">   64</a></span>&#160;    <span class="keyword">static</span> MoistureModelType <a class="code" href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">modelType</a> (<span class="keyword">const</span> MoistureType a_moisture_type)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> (    (a_moisture_type == MoistureType::SAM)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;             || (a_moisture_type == MoistureType::SAM_NoIce)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;             || (a_moisture_type == MoistureType::SAM_NoPrecip_NoIce)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;             || (a_moisture_type == MoistureType::Kessler)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;             || (a_moisture_type == MoistureType::Kessler_NoRain)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;             || (a_moisture_type == MoistureType::None) ) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Eulerian;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Dont know this moisture_type!&quot;</span>) ;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Undefined;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classMicrophysics.html#a96e15433c5277151700438dc2f6fba6f">   61</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a96e15433c5277151700438dc2f6fba6f">Get_Qmoist_Restart_Vars</a> (<span class="keywordtype">int</span>,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                          <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp;,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                          std::vector&lt;int&gt;&amp;,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                          std::vector&lt;std::string&gt;&amp; ) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">    /*! \brief query if a specified moisture model is Eulerian or Lagrangian */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">   67</a></span>&#160;    <span class="keyword">static</span> MoistureModelType <a class="code" href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">modelType</a> (<span class="keyword">const</span> MoistureType a_moisture_type)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (    (a_moisture_type == MoistureType::SAM)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;             || (a_moisture_type == MoistureType::SAM_NoIce)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;             || (a_moisture_type == MoistureType::SAM_NoPrecip_NoIce)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;             || (a_moisture_type == MoistureType::Kessler)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;             || (a_moisture_type == MoistureType::Kessler_NoRain)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;             || (a_moisture_type == MoistureType::SatAdj)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;             || (a_moisture_type == MoistureType::None) ) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Eulerian;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Dont know this moisture_type!&quot;</span>) ;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Undefined;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aclassMicrophysics_html"><div class="ttname"><a href="classMicrophysics.html">Microphysics</a></div><div class="ttdoc">Base class for microphysics interface.</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics.H:13</div></div>
 <div class="ttc" id="aclassMicrophysics_html_a069e6013efb78d268394868d0cfc6382"><div class="ttname"><a href="classMicrophysics.html#a069e6013efb78d268394868d0cfc6382">Microphysics::Get_Qmoist_Size</a></div><div class="ttdeci">virtual int Get_Qmoist_Size(const int &amp;)=0</div><div class="ttdoc">get the number of moisture model variables</div></div>
@@ -181,7 +185,7 @@ $(document).ready(function(){initNavTree('ERF__Microphysics_8H_source.html','');
 <div class="ttc" id="aclassMicrophysics_html_a88b5020f081efbf8805cffff5cde298c"><div class="ttname"><a href="classMicrophysics.html#a88b5020f081efbf8805cffff5cde298c">Microphysics::Advance</a></div><div class="ttdeci">virtual void Advance(const int &amp;, const amrex::Real &amp;, const int &amp;, const amrex::Real &amp;, const SolverChoice &amp;, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;)=0</div><div class="ttdoc">advance microphysics for one time step</div></div>
 <div class="ttc" id="aclassMicrophysics_html_a8edecc53bfdfd0d916d37e3584ebb9ff"><div class="ttname"><a href="classMicrophysics.html#a8edecc53bfdfd0d916d37e3584ebb9ff">Microphysics::Get_Qmoist_Ptr</a></div><div class="ttdeci">virtual amrex::MultiFab * Get_Qmoist_Ptr(const int &amp;, const int &amp;)=0</div><div class="ttdoc">get pointer to a moisture variable</div></div>
 <div class="ttc" id="aclassMicrophysics_html_a96e15433c5277151700438dc2f6fba6f"><div class="ttname"><a href="classMicrophysics.html#a96e15433c5277151700438dc2f6fba6f">Microphysics::Get_Qmoist_Restart_Vars</a></div><div class="ttdeci">virtual void Get_Qmoist_Restart_Vars(int, const SolverChoice &amp;, std::vector&lt; int &gt; &amp;, std::vector&lt; std::string &gt; &amp;) const =0</div><div class="ttdoc">get the indices and names of moisture model variables for restart at a given level</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ac10e6fce2e6cb49373d56ca0e1a5b366"><div class="ttname"><a href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a></div><div class="ttdeci">static MoistureModelType modelType(const MoistureType a_moisture_type)</div><div class="ttdoc">query if a specified moisture model is Eulerian or Lagrangian</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics.H:64</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ac10e6fce2e6cb49373d56ca0e1a5b366"><div class="ttname"><a href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a></div><div class="ttdeci">static MoistureModelType modelType(const MoistureType a_moisture_type)</div><div class="ttdoc">query if a specified moisture model is Eulerian or Lagrangian</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics.H:67</div></div>
 <div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:82</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

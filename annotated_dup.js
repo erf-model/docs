@@ -79,6 +79,7 @@ var annotated_dup =
     [ "Rrtmgp", "classRrtmgp.html", "classRrtmgp" ],
     [ "SAM", "classSAM.html", "classSAM" ],
     [ "SampleData", "classSampleData.html", "classSampleData" ],
+    [ "SatAdj", "classSatAdj.html", "classSatAdj" ],
     [ "SatMethods", "classSatMethods.html", "classSatMethods" ],
     [ "similarity_funs", "structsimilarity__funs.html", "structsimilarity__funs" ],
     [ "SimpleAD", "classSimpleAD.html", "classSimpleAD" ],

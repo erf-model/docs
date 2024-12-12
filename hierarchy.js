@@ -73,7 +73,8 @@ var hierarchy =
     [ "NDArray< DataType >", "structNDArray.html", null ],
     [ "NullMoist", "classNullMoist.html", [
       [ "Kessler", "classKessler.html", null ],
-      [ "SAM", "classSAM.html", null ]
+      [ "SAM", "classSAM.html", null ],
+      [ "SatAdj", "classSatAdj.html", null ]
     ] ],
     [ "NullSurf", "classNullSurf.html", [
       [ "MM5", "classMM5.html", null ],

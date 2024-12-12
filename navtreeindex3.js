@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"ERF__Tagging_8cpp.html":[3,0,1,29],
+"ERF__TerrainDrag_8H.html":[3,0,1,15,14],
+"ERF__TerrainDrag_8H_source.html":[3,0,1,15,14],
+"ERF__TerrainDrag_8cpp.html":[3,0,1,15,13],
 "ERF__TerrainIF_8H.html":[3,0,1,4,6],
 "ERF__TerrainIF_8H_source.html":[3,0,1,4,6],
 "ERF__TerrainMetrics_8H.html":[3,0,1,17,19],
@@ -71,6 +75,7 @@ var NAVTREEINDEX3 =
 "ERF__TurbStruct_8H_source.html":[3,0,1,2,7],
 "ERF__UpdateKessler_8cpp.html":[3,0,1,9,0,3],
 "ERF__UpdateSAM_8cpp.html":[3,0,1,9,2,6],
+"ERF__UpdateSatAdj_8cpp.html":[3,0,1,9,3,3],
 "ERF__Utils_8H.html":[3,0,1,17,23],
 "ERF__Utils_8H.html#a26382a1781acfcd6b4740685db28d6b2":[3,0,1,17,23,9],
 "ERF__Utils_8H.html#a5e2e36af19c0192915a2ca721c0cded4":[3,0,1,17,23,14],
@@ -244,10 +249,5 @@ var NAVTREEINDEX3 =
 "classCloudRadProps.html#a076ffd7ff44497eac9d3cace27964b0a":[2,0,13,20],
 "classCloudRadProps.html#a0e0fa4537c3e0c1dd695229f63ff42a0":[2,0,13,10],
 "classCloudRadProps.html#a1ab01da075a2a82b9fb4c341ff85e373":[2,0,13,8],
-"classCloudRadProps.html#a24ce2602b37e1f5c1becf3ba0baee9d1":[2,0,13,18],
-"classCloudRadProps.html#a2890fa11a8f395809fe215447e339c20":[2,0,13,3],
-"classCloudRadProps.html#a31a396f1997438a7cbb347767dca311a":[2,0,13,4],
-"classCloudRadProps.html#a32483def8d0d82a6d1cb57834fe04b7d":[2,0,13,9],
-"classCloudRadProps.html#a35a276009636e1ac17beeb5343656e29":[2,0,13,1],
-"classCloudRadProps.html#a3aaf016afa4dfea8f3dd0ed574ec3570":[2,0,13,11]
+"classCloudRadProps.html#a24ce2602b37e1f5c1becf3ba0baee9d1":[2,0,13,18]
 };
