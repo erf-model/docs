@@ -150,10 +150,10 @@ $(document).ready(function(){initNavTree('ERF__TI__slow__rhs__fun_8H_source.html
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">// Canopy data for mom sources</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        MultiFab* forest_drag = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (solverChoice.do_forest) { forest_drag = m_forest[level]-&gt;get_drag_field(); }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (solverChoice.do_forest_drag) { forest_drag = m_forest_drag[level]-&gt;get_drag_field(); }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// Immersed Forcing</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        MultiFab* terrain_blank = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span>(solverChoice.do_terrain) { terrain_blank = m_terrain[level]-&gt;get_terrain_blank_field(); }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span>(solverChoice.do_terrain_drag) { terrain_blank = m_terrain_drag[level]-&gt;get_terrain_blank_field(); }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">// Moving terrain</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span> ( solverChoice.terrain_type == TerrainType::Moving )</div>
@@ -523,10 +523,10 @@ $(document).ready(function(){initNavTree('ERF__TI__slow__rhs__fun_8H_source.html
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        <span class="comment">// Canopy data for mom sources</span></div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        MultiFab* forest_drag = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="keywordflow">if</span> (solverChoice.do_forest) { forest_drag = m_forest[level]-&gt;get_drag_field(); }</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="keywordflow">if</span> (solverChoice.do_forest_drag) { forest_drag = m_forest_drag[level]-&gt;get_drag_field(); }</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="comment">// Immersed Forcing</span></div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        MultiFab* terrain_blank = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">if</span>(solverChoice.do_terrain) { terrain_blank = m_terrain[level]-&gt;get_terrain_blank_field(); }</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">if</span>(solverChoice.do_terrain_drag) { terrain_blank = m_terrain_drag[level]-&gt;get_terrain_blank_field(); }</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        <a class="code" href="ERF__MakeSources_8cpp.html#af209fc716b0c00a0f434ae2c18d6f45a">make_sources</a>(level, nrk, slow_dt, old_stage_time, S_data, S_prim, cc_src, z_phys_cc[level],</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;#<span class="keywordflow">if</span> defined(ERF_USE_RRTMGP)</div>
