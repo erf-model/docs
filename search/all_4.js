@@ -244,7 +244,7 @@ var searchData=
   ['erf_5freadfromwrfbdy_2ecpp_730',['ERF_ReadFromWRFBdy.cpp',['../ERF__ReadFromWRFBdy_8cpp.html',1,'']]],
   ['erf_5freadfromwrfinput_2ecpp_731',['ERF_ReadFromWRFInput.cpp',['../ERF__ReadFromWRFInput_8cpp.html',1,'']]],
   ['erf_5freadwaves_2ecpp_732',['ERF_ReadWaves.cpp',['../ERF__ReadWaves_8cpp.html',1,'']]],
-  ['erf_5fredistribute_2ecpp_733',['ERF_redistribute.cpp',['../ERF__redistribute_8cpp.html',1,'']]],
+  ['erf_5fredistribute_2ecpp_733',['ERF_Redistribute.cpp',['../ERF__Redistribute_8cpp.html',1,'']]],
   ['erf_5frrtmgp_2eh_734',['ERF_RRTMGP.H',['../ERF__RRTMGP_8H.html',1,'']]],
   ['erf_5frunlongwaverrtmgp_2ecpp_735',['ERF_RunLongWaveRRTMGP.cpp',['../ERF__RunLongWaveRRTMGP_8cpp.html',1,'']]],
   ['erf_5frunshortwaverrtmgp_2ecpp_736',['ERF_RunShortWaveRRTMGP.cpp',['../ERF__RunShortWaveRRTMGP_8cpp.html',1,'']]],

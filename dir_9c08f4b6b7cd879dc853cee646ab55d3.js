@@ -10,7 +10,7 @@ var dir_9c08f4b6b7cd879dc853cee646ab55d3 =
     ] ],
     [ "ERF_EBRegular.cpp", "ERF__EBRegular_8cpp.html", null ],
     [ "ERF_InitEB.cpp", "ERF__InitEB_8cpp.html", null ],
-    [ "ERF_redistribute.cpp", "ERF__redistribute_8cpp.html", null ],
+    [ "ERF_Redistribute.cpp", "ERF__Redistribute_8cpp.html", null ],
     [ "ERF_TerrainIF.H", "ERF__TerrainIF_8H.html", [
       [ "TerrainIF", "classTerrainIF.html", "classTerrainIF" ]
     ] ],
