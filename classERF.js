@@ -331,6 +331,7 @@ var classERF =
     [ "stop_time", "classERF.html#a405556a52bef334ab68294c1a540e107", null ],
     [ "stretched_dz_d", "classERF.html#a6600f30f1043a4c5e62b5cdd05f0a99f", null ],
     [ "stretched_dz_h", "classERF.html#ad0981b0ff70e6d78acbb7769f7a142b7", null ],
+    [ "sub_cfl", "classERF.html#addc2ee5eba2264ae2b2475970b0b8c2d", null ],
     [ "sum_interval", "classERF.html#a5232e98479611a24fe97994640c61faa", null ],
     [ "sum_per", "classERF.html#a1cf2ba396f4404724824516da4c4a084", null ],
     [ "t_avg_cnt", "classERF.html#a6837423e9248e923fcaa1987b59d8160", null ],

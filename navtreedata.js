@@ -78,16 +78,16 @@ var NAVTREEINDEX =
 "ERF__Tagging_8cpp.html",
 "classCloudRadProps.html#a2890fa11a8f395809fe215447e339c20",
 "classERF.html#a980e94505df2ee0925612b004126df77",
-"classEWP.html#a2ee471b0dcad3057297b809f4c5141ab",
-"classMOSTAverage.html#ac755f71a35f1231c8add20993364832a",
-"classNullWindFarm.html#a745c730028714c13ff11fefb5440b2e5",
-"classRadiation.html#a6bfa4de58353a68895bb2b8cc76a51a7",
-"classSatAdj.html#a126f7c9b97c2cbb757483e1935470a44",
-"dir_bdd53b4ab41f9298767ca9bc7bc670ad.html",
-"structCENTERED2.html",
-"structPlaneSampler.html",
-"structWENO5.html#acab4e47113826df9a8469d5647507385",
-"structsurface__temp__charnock.html#a95809501feb05aea7aa17bb4ab21a0fb"
+"classEWP.html#a22f50393881ced019cae2a74ee04cdea",
+"classMOSTAverage.html#ac3c62b4015d62ae8d1ad85cb6ad651ad",
+"classNullWindFarm.html#a6f6bd907d33ec99543896b82fac6b4e4",
+"classRadiation.html#a6a65d086e75212c5d372c2fbdb694843",
+"classSatAdj.html#a126716cce4ed479136e5f6cd8513149d",
+"dir_bd16358c53c2d54003a0d897897bd9c8.html",
+"structAdvChoice.html#afb0ff64219a9e79d077b1a06da7817ae",
+"structPhysProp_1_1physprop__t.html#aff3fc87f8134cab71058c4372ddb853f",
+"structWENO5.html#aad28f5b549554b6f04ac3c27e29b9588",
+"structsurface__temp__charnock.html#a073ad08e0d652e792b459878e10dc41b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
