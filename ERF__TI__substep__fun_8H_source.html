@@ -269,10 +269,10 @@ $(document).ready(function(){initNavTree('ERF__TI__substep__fun_8H_source.html',
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment">// NOTE: Numerical diffusion is tested on in FillPatchIntermediate and dictates the size of the</span></div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="comment">//       box over which VelocityToMomentum is computed. V2M requires one more ghost cell be</span></div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="comment">//       filled for rho than velocity. This logical condition ensures we fill enough ghost cells</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment">//       when use_NumDiff is true.</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment">//       when use_num_diff is true.</span></div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordtype">int</span> ng_cons = S_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].nGrowVect().max() - 1;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordtype">int</span> ng_vel  = S_data[<a class="code" href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daaf661293a5a71ca532c214929b98c0bad">IntVars::xmom</a>].nGrowVect().max();</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">if</span> (!solverChoice.use_NumDiff) {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">if</span> (!solverChoice.use_num_diff) {</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            ng_cons = 1;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            ng_vel  = 1;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
@@ -290,7 +290,7 @@ $(document).ready(function(){initNavTree('ERF__TI__substep__fun_8H_source.html',
 <div class="ttc" id="anamespaceIntVars_html_afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a"><div class="ttname"><a href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daa2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:139</div></div>
 <div class="ttc" id="anamespaceIntVars_html_afdaa1b64a98a711870ca86f30e7963daaaab25f707cae69bfadac2abcd17a2188"><div class="ttname"><a href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daaaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:142</div></div>
 <div class="ttc" id="anamespaceIntVars_html_afdaa1b64a98a711870ca86f30e7963daaf661293a5a71ca532c214929b98c0bad"><div class="ttname"><a href="namespaceIntVars.html#afdaa1b64a98a711870ca86f30e7963daaf661293a5a71ca532c214929b98c0bad">IntVars::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:140</div></div>
-<div class="ttc" id="astructSolverChoice_html_a1952672901901b0b3a628f2298dc72c2"><div class="ttname"><a href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">SolverChoice::mesh_type</a></div><div class="ttdeci">static MeshType mesh_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:569</div></div>
+<div class="ttc" id="astructSolverChoice_html_a1952672901901b0b3a628f2298dc72c2"><div class="ttname"><a href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">SolverChoice::mesh_type</a></div><div class="ttdeci">static MeshType mesh_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:570</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

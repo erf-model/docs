@@ -98,7 +98,7 @@ var searchData=
   ['dycore_5fhoriz_5fupw_5ffrac_487',['dycore_horiz_upw_frac',['../structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43',1,'AdvChoice']]],
   ['dycore_5fvert_5fadv_5ftype_488',['dycore_vert_adv_type',['../structAdvChoice.html#a2dd44749e2d4f224ae1da4f9e53e257a',1,'AdvChoice']]],
   ['dycore_5fvert_5fupw_5ffrac_489',['dycore_vert_upw_frac',['../structAdvChoice.html#a48a2a3eb5899f899e202df67fd8bb2e0',1,'AdvChoice']]],
-  ['dynamicviscosity_490',['dynamicViscosity',['../structDiffChoice.html#abaff02e5f99628d6a91b546f3ad1fae6',1,'DiffChoice']]],
+  ['dynamic_5fviscosity_490',['dynamic_viscosity',['../structDiffChoice.html#afaba089738f1b77e58dd43bf1c964817',1,'DiffChoice']]],
   ['dz0_491',['dz0',['../structSolverChoice.html#a0a4f1c55ea1e3a7d50f926ee0d20a21c',1,'SolverChoice']]],
   ['dz_5fmin_492',['dz_min',['../classERF.html#a15db5266359edba700f523f16da303a7',1,'ERF']]]
 ];
