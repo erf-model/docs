@@ -12,6 +12,6 @@ var dir_71a4420ed1f8982e7234eb6a0b7e6d5d =
     [ "ERF_InitSponge.cpp", "ERF__InitSponge_8cpp.html", null ],
     [ "ERF_InitTurbPert.cpp", "ERF__InitTurbPert_8cpp.html", null ],
     [ "ERF_InitUniform.cpp", "ERF__InitUniform_8cpp.html", null ],
-    [ "ERF_InitWindFarm.cpp", "Initialization_2ERF__InitWindFarm_8cpp.html", null ],
+    [ "ERF_InitWindFarm.cpp", "ERF__InitWindFarm_8cpp.html", null ],
     [ "ERF_MetgridUtils.H", "ERF__MetgridUtils_8H.html", "ERF__MetgridUtils_8H" ]
 ];
