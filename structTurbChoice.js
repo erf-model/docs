@@ -21,6 +21,7 @@ var structTurbChoice =
     [ "pp_prefix", "structTurbChoice.html#a6b8e56e5ace640df7834c013c6788020", null ],
     [ "Pr_t", "structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566", null ],
     [ "Pr_t_inv", "structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5", null ],
+    [ "rans_type", "structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8", null ],
     [ "Sc_t", "structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a", null ],
     [ "Sc_t_inv", "structTurbChoice.html#a2daa4d23f9d89ee777a0d0fbd43196b6", null ],
     [ "sigma_k", "structTurbChoice.html#a0bb2b38f64a12b0b50552e05dee629e7", null ],

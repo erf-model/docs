@@ -12,6 +12,7 @@ var structAdvChoice =
     [ "dycore_horiz_upw_frac", "structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43", null ],
     [ "dycore_vert_adv_type", "structAdvChoice.html#a2dd44749e2d4f224ae1da4f9e53e257a", null ],
     [ "dycore_vert_upw_frac", "structAdvChoice.html#a48a2a3eb5899f899e202df67fd8bb2e0", null ],
+    [ "have_zero_flux_faces", "structAdvChoice.html#a94de4907b3d6742071d5542b60e8f393", null ],
     [ "moistscal_horiz_adv_type", "structAdvChoice.html#a22f84c60e56d4b3bde6b7f9548c87af3", null ],
     [ "moistscal_horiz_upw_frac", "structAdvChoice.html#a69b32bcee6cd30f3f88280d0ec49cd35", null ],
     [ "moistscal_vert_adv_type", "structAdvChoice.html#a2f888dfcb79cdb766ee04f21aada83ec", null ],
