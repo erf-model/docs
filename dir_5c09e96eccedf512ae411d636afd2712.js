@@ -35,7 +35,7 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_PlaneAverage.H", "ERF__PlaneAverage_8H.html", [
       [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ]
     ] ],
-    [ "ERF_Sat_methods.H", "ERF__Sat__methods_8H.html", [
+    [ "ERF_SatMethods.H", "ERF__SatMethods_8H.html", [
       [ "SatMethods", "classSatMethods.html", "classSatMethods" ]
     ] ],
     [ "ERF_TerrainMetrics.cpp", "ERF__TerrainMetrics_8cpp.html", "ERF__TerrainMetrics_8cpp" ],

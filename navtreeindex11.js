@@ -1,6 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"dir_9c08f4b6b7cd879dc853cee646ab55d3.html":[3,0,1,4],
 "dir_9e99115d7ddbb12c0597e51707e61330.html":[3,0,1,8],
 "dir_aba9de7b86b72c00c61e401832cdb2fc.html":[3,0,1,2],
 "dir_ae0b7467bb3c74d292c83ac9fdeb56bf.html":[3,0,1,12],
@@ -249,5 +248,6 @@ var NAVTREEINDEX11 =
 "structAdvChoice.html#a667cbedb89514e330b6ca144298857da":[2,0,7,17],
 "structAdvChoice.html#a69b32bcee6cd30f3f88280d0ec49cd35":[2,0,7,14],
 "structAdvChoice.html#a74a383e01c24980b72b920054ee5c1ab":[2,0,7,4],
-"structAdvChoice.html#a7a086b9e2aabb65d2e5e9053e7bd6018":[2,0,7,19]
+"structAdvChoice.html#a7a086b9e2aabb65d2e5e9053e7bd6018":[2,0,7,19],
+"structAdvChoice.html#a7da4e5242e05aeba4822b71fab596954":[2,0,7,21]
 };

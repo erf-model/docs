@@ -23,8 +23,17 @@ var dir_6ac3198e61556f99812dcb8dcfabb874 =
     [ "ERF_Mam4Aero.H", "ERF__Mam4Aero_8H.html", [
       [ "Mam4_aer", "classMam4__aer.html", "classMam4__aer" ]
     ] ],
-    [ "ERF_Mam4Constitutents.H", "ERF__Mam4Constitutents_8H.html", "ERF__Mam4Constitutents_8H" ],
-    [ "ERF_ModalAeroWaterUpdate.H", "ERF__ModalAeroWaterUpdate_8H.html", [
+    [ "ERF_Mam4Constituents.H", "ERF__Mam4Constituents_8H.html", [
+      [ "MamConstituents", "classMamConstituents.html", "classMamConstituents" ],
+      [ "mode_component_t", "structMamConstituents_1_1mode__component__t.html", "structMamConstituents_1_1mode__component__t" ],
+      [ "modes_t", "structMamConstituents_1_1modes__t.html", "structMamConstituents_1_1modes__t" ],
+      [ "gas_t", "structMamConstituents_1_1gas__t.html", "structMamConstituents_1_1gas__t" ],
+      [ "gaslist_t", "structMamConstituents_1_1gaslist__t.html", "structMamConstituents_1_1gaslist__t" ],
+      [ "aerosol_t", "structMamConstituents_1_1aerosol__t.html", "structMamConstituents_1_1aerosol__t" ],
+      [ "aerlist_t", "structMamConstituents_1_1aerlist__t.html", "structMamConstituents_1_1aerlist__t" ],
+      [ "modelist_t", "structMamConstituents_1_1modelist__t.html", "structMamConstituents_1_1modelist__t" ]
+    ] ],
+    [ "ERF_ModalAeroWaterUptake.H", "ERF__ModalAeroWaterUptake_8H.html", [
       [ "ModalAeroWateruptake", "classModalAeroWateruptake.html", "classModalAeroWateruptake" ]
     ] ],
     [ "ERF_Optics.cpp", "ERF__Optics_8cpp.html", null ],
