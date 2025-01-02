@@ -8,7 +8,7 @@ var ERF__MetgridUtils_8H =
     [ "interpolate_column_metgrid", "ERF__MetgridUtils_8H.html#a0d45af76ffa24db61d16ea49cc18143e", null ],
     [ "interpolate_column_metgrid_linear", "ERF__MetgridUtils_8H.html#a4ddd248579795dad2845170d2c73e170", null ],
     [ "lagrange_interp", "ERF__MetgridUtils_8H.html#a4978953bdc5bd682e32d3941a44fb6ce", null ],
-    [ "lagrange_setup", "ERF__MetgridUtils_8H.html#ad4a14b9729d55361ead1229a6df4e026", null ],
+    [ "lagrange_setup", "ERF__MetgridUtils_8H.html#aae3d64d412906a3bcc4359a188dc2422", null ],
     [ "read_from_metgrid", "ERF__MetgridUtils_8H.html#a7b0efa8ff3ba587956865b8bddaacfa4", null ],
     [ "rh_to_mxrat", "ERF__MetgridUtils_8H.html#a8458220de6985f12501aa040c218bff0", null ]
 ];
