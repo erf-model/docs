@@ -5,7 +5,6 @@ var structTurbChoice =
     [ "advect_KE", "structTurbChoice.html#af151e25e9513f7c6a995ca82db98278c", null ],
     [ "Ce", "structTurbChoice.html#ab6d0ae39e92dcbe7362abf53364c1a8e", null ],
     [ "Ce_wall", "structTurbChoice.html#ab2d1ecb36171ca19ea851e8e682a1478", null ],
-    [ "CI", "structTurbChoice.html#afbf3b28d53a35977d4ff77e6928122c0", null ],
     [ "Ck", "structTurbChoice.html#a61ff7dc6ee4001ae8f2978efd5ff57e4", null ],
     [ "Cs", "structTurbChoice.html#aa75682bb872d7917ffb8fddb21532f40", null ],
     [ "diffuse_KE_3D", "structTurbChoice.html#a5864f0fe05bcbd45554301ade763d5ca", null ],
