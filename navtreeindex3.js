@@ -1,12 +1,11 @@
 var NAVTREEINDEX3 =
 {
-"ERF__TI__utils_8H_source.html":[3,0,1,16,19],
 "ERF__Tagging_8cpp.html":[3,0,1,29],
 "ERF__TerrainDrag_8H.html":[3,0,1,15,14],
 "ERF__TerrainDrag_8H_source.html":[3,0,1,15,14],
 "ERF__TerrainDrag_8cpp.html":[3,0,1,15,13],
-"ERF__TerrainIF_8H.html":[3,0,1,4,6],
-"ERF__TerrainIF_8H_source.html":[3,0,1,4,6],
+"ERF__TerrainIF_8H.html":[3,0,1,4,5],
+"ERF__TerrainIF_8H_source.html":[3,0,1,4,5],
 "ERF__TerrainMetrics_8H.html":[3,0,1,17,19],
 "ERF__TerrainMetrics_8H.html#a0251c09947155307e047f79fccdbd463":[3,0,1,17,19,2],
 "ERF__TerrainMetrics_8H.html#a07e83bf0f142a953679c9edfa42b398d":[3,0,1,17,19,10],
@@ -108,7 +107,7 @@ var NAVTREEINDEX3 =
 "ERF__WriteBndryPlanes_8H_source.html":[3,0,1,6,20],
 "ERF__WriteBndryPlanes_8cpp.html":[3,0,1,6,19],
 "ERF__WriteBndryPlanes_8cpp.html#a84c19e5c5555fe13da12dc8ba44e7da8":[3,0,1,6,19,0],
-"ERF__WriteEBSurface_8cpp.html":[3,0,1,4,7],
+"ERF__WriteEBSurface_8cpp.html":[3,0,1,4,6],
 "ERF__WriteJobInfo_8cpp.html":[3,0,1,6,21],
 "ERF__WriteJobInfo_8cpp.html#aabaa127a3a319c1b86090d6c88568965":[3,0,1,6,21,0],
 "ERF__WriteScalarProfiles_8cpp.html":[3,0,1,6,22],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "classCloudRadProps.html":[2,0,13],
 "classCloudRadProps.html#a076ffd7ff44497eac9d3cace27964b0a":[2,0,13,20],
 "classCloudRadProps.html#a0e0fa4537c3e0c1dd695229f63ff42a0":[2,0,13,10],
-"classCloudRadProps.html#a1ab01da075a2a82b9fb4c341ff85e373":[2,0,13,8]
+"classCloudRadProps.html#a1ab01da075a2a82b9fb4c341ff85e373":[2,0,13,8],
+"classCloudRadProps.html#a24ce2602b37e1f5c1becf3ba0baee9d1":[2,0,13,18]
 };

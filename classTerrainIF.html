@@ -106,10 +106,12 @@ Collaboration diagram for TerrainIF:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTerrainIF__coll__graph.png" border="0" usemap="#aTerrainIF_coll__map" alt="Collaboration graph"/></div>
 <map name="aTerrainIF_coll__map" id="aTerrainIF_coll__map">
-<area shape="rect" title=" " alt="" coords="169,95,247,121"/>
-<area shape="rect" title=" " alt="" coords="5,5,133,32"/>
-<area shape="rect" title=" " alt="" coords="157,5,259,32"/>
-<area shape="rect" title=" " alt="" coords="283,5,386,32"/>
+<area shape="rect" title=" " alt="" coords="323,124,402,151"/>
+<area shape="rect" title=" " alt="" coords="5,13,133,39"/>
+<area shape="rect" title=" " alt="" coords="157,13,259,39"/>
+<area shape="rect" title=" " alt="" coords="283,5,442,47"/>
+<area shape="rect" title=" " alt="" coords="466,13,569,39"/>
+<area shape="rect" title=" " alt="" coords="593,13,644,39"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -126,8 +128,14 @@ Public Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a3e1f2814d20da7b5dd6d1d620b04784c"><td class="memItemLeft" align="right" valign="top">amrex::FArrayBox &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTerrainIF.html#a3e1f2814d20da7b5dd6d1d620b04784c">m_terr</a></td></tr>
 <tr class="separator:a3e1f2814d20da7b5dd6d1d620b04784c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a523acccd9975c290c18bf83f740f3522"><td class="memItemLeft" align="right" valign="top">amrex::Array4&lt; amrex::Real const  &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTerrainIF.html#a523acccd9975c290c18bf83f740f3522">terr_arr</a></td></tr>
+<tr class="separator:a523acccd9975c290c18bf83f740f3522"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb902107efd92150abad59ec0a8cf088"><td class="memItemLeft" align="right" valign="top">amrex::Geometry &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTerrainIF.html#aeb902107efd92150abad59ec0a8cf088">m_geom</a></td></tr>
 <tr class="separator:aeb902107efd92150abad59ec0a8cf088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef300b60a513a54e515d7230c9fa6b6"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTerrainIF.html#a9ef300b60a513a54e515d7230c9fa6b6">dx</a></td></tr>
+<tr class="separator:a9ef300b60a513a54e515d7230c9fa6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2403d44976a4f6f3b1b9e163a1f93a41"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTerrainIF.html#a2403d44976a4f6f3b1b9e163a1f93a41">dy</a></td></tr>
+<tr class="separator:a2403d44976a4f6f3b1b9e163a1f93a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac037e7de054cca909a921eccc620ef4a"></a>
@@ -167,9 +175,17 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;          <a class="code" href="classTerrainIF.html#aeb902107efd92150abad59ec0a8cf088">m_geom</a>(a_geom)</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot; EB type = Terrain &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classTerrainIF.html#a9ef300b60a513a54e515d7230c9fa6b6">dx</a> = <a class="code" href="classTerrainIF.html#aeb902107efd92150abad59ec0a8cf088">m_geom</a>.CellSizeArray()[0];</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classTerrainIF.html#a2403d44976a4f6f3b1b9e163a1f93a41">dy</a> = <a class="code" href="classTerrainIF.html#aeb902107efd92150abad59ec0a8cf088">m_geom</a>.CellSizeArray()[1];</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classTerrainIF.html#a523acccd9975c290c18bf83f740f3522">terr_arr</a> = <a class="code" href="classTerrainIF.html#a3e1f2814d20da7b5dd6d1d620b04784c">m_terr</a>.const_array();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="ttc" id="aclassTerrainIF_html_a2403d44976a4f6f3b1b9e163a1f93a41"><div class="ttname"><a href="classTerrainIF.html#a2403d44976a4f6f3b1b9e163a1f93a41">TerrainIF::dy</a></div><div class="ttdeci">amrex::Real dy</div><div class="ttdef"><b>Definition:</b> ERF_TerrainIF.H:49</div></div>
 <div class="ttc" id="aclassTerrainIF_html_a3e1f2814d20da7b5dd6d1d620b04784c"><div class="ttname"><a href="classTerrainIF.html#a3e1f2814d20da7b5dd6d1d620b04784c">TerrainIF::m_terr</a></div><div class="ttdeci">amrex::FArrayBox &amp; m_terr</div><div class="ttdef"><b>Definition:</b> ERF_TerrainIF.H:45</div></div>
-<div class="ttc" id="aclassTerrainIF_html_aeb902107efd92150abad59ec0a8cf088"><div class="ttname"><a href="classTerrainIF.html#aeb902107efd92150abad59ec0a8cf088">TerrainIF::m_geom</a></div><div class="ttdeci">amrex::Geometry &amp; m_geom</div><div class="ttdef"><b>Definition:</b> ERF_TerrainIF.H:46</div></div>
+<div class="ttc" id="aclassTerrainIF_html_a523acccd9975c290c18bf83f740f3522"><div class="ttname"><a href="classTerrainIF.html#a523acccd9975c290c18bf83f740f3522">TerrainIF::terr_arr</a></div><div class="ttdeci">amrex::Array4&lt; amrex::Real const  &gt; terr_arr</div><div class="ttdef"><b>Definition:</b> ERF_TerrainIF.H:46</div></div>
+<div class="ttc" id="aclassTerrainIF_html_a9ef300b60a513a54e515d7230c9fa6b6"><div class="ttname"><a href="classTerrainIF.html#a9ef300b60a513a54e515d7230c9fa6b6">TerrainIF::dx</a></div><div class="ttdeci">amrex::Real dx</div><div class="ttdef"><b>Definition:</b> ERF_TerrainIF.H:49</div></div>
+<div class="ttc" id="aclassTerrainIF_html_aeb902107efd92150abad59ec0a8cf088"><div class="ttname"><a href="classTerrainIF.html#aeb902107efd92150abad59ec0a8cf088">TerrainIF::m_geom</a></div><div class="ttdeci">amrex::Geometry &amp; m_geom</div><div class="ttdef"><b>Definition:</b> ERF_TerrainIF.H:48</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -197,16 +213,11 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        amrex::Real dx = <a class="code" href="classTerrainIF.html#aeb902107efd92150abad59ec0a8cf088">m_geom</a>.CellSizeArray()[0];</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        amrex::Real dy = <a class="code" href="classTerrainIF.html#aeb902107efd92150abad59ec0a8cf088">m_geom</a>.CellSizeArray()[1];</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> i = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> / dx);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> j = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> / dy);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; terr_arr = <a class="code" href="classTerrainIF.html#a3e1f2814d20da7b5dd6d1d620b04784c">m_terr</a>.const_array();</div>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> i = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> / <a class="code" href="classTerrainIF.html#a9ef300b60a513a54e515d7230c9fa6b6">dx</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> j = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> / <a class="code" href="classTerrainIF.html#a2403d44976a4f6f3b1b9e163a1f93a41">dy</a>);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> -(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - terr_arr(i,j,0));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> -(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - <a class="code" href="classTerrainIF.html#a523acccd9975c290c18bf83f740f3522">terr_arr</a>(i,j,0));</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
@@ -251,7 +262,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> this-&gt;<a class="code" href="classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110">operator() </a>(AMREX_D_DECL(p[0], p[1], p[2]));</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="ttc" id="aclassTerrainIF_html_ad7eb62071230ad12fbaa91ec2a13f110"><div class="ttname"><a href="classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110">TerrainIF::operator()</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE amrex::Real operator()(AMREX_D_DECL(amrex::Real x, amrex::Real y, amrex::Real z)) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_TerrainIF.H:25</div></div>
+<div class="ttc" id="aclassTerrainIF_html_ad7eb62071230ad12fbaa91ec2a13f110"><div class="ttname"><a href="classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110">TerrainIF::operator()</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE amrex::Real operator()(AMREX_D_DECL(amrex::Real x, amrex::Real y, amrex::Real z)) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_TerrainIF.H:30</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -265,6 +276,54 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a9ef300b60a513a54e515d7230c9fa6b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef300b60a513a54e515d7230c9fa6b6">&#9670;&nbsp;</a></span>dx</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Real TerrainIF::dx</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110">operator()()</a>, and <a class="el" href="classTerrainIF.html#ac037e7de054cca909a921eccc620ef4a">TerrainIF()</a>.</p>
+
+</div>
+</div>
+<a id="a2403d44976a4f6f3b1b9e163a1f93a41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2403d44976a4f6f3b1b9e163a1f93a41">&#9670;&nbsp;</a></span>dy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Real TerrainIF::dy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110">operator()()</a>, and <a class="el" href="classTerrainIF.html#ac037e7de054cca909a921eccc620ef4a">TerrainIF()</a>.</p>
+
+</div>
+</div>
 <a id="aeb902107efd92150abad59ec0a8cf088"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb902107efd92150abad59ec0a8cf088">&#9670;&nbsp;</a></span>m_geom</h2>
 
@@ -285,7 +344,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110">operator()()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTerrainIF.html#ac037e7de054cca909a921eccc620ef4a">TerrainIF()</a>.</p>
 
 </div>
 </div>
@@ -309,7 +368,31 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110">operator()()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTerrainIF.html#ac037e7de054cca909a921eccc620ef4a">TerrainIF()</a>.</p>
+
+</div>
+</div>
+<a id="a523acccd9975c290c18bf83f740f3522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a523acccd9975c290c18bf83f740f3522">&#9670;&nbsp;</a></span>terr_arr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Array4&lt;amrex::Real const&gt; TerrainIF::terr_arr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110">operator()()</a>, and <a class="el" href="classTerrainIF.html#ac037e7de054cca909a921eccc620ef4a">TerrainIF()</a>.</p>
 
 </div>
 </div>

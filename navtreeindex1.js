@@ -50,10 +50,9 @@ var NAVTREEINDEX1 =
 "ERF__DirectionSelector_8H.html#aef11f5662c1574638970c58b8421afa9":[3,0,1,17,2,8],
 "ERF__DirectionSelector_8H_source.html":[3,0,1,17,2],
 "ERF__EBBox_8cpp.html":[3,0,1,4,0],
-"ERF__EBCylinder_8cpp.html":[3,0,1,4,1],
-"ERF__EBIF_8H.html":[3,0,1,4,2],
-"ERF__EBIF_8H_source.html":[3,0,1,4,2],
-"ERF__EBRegular_8cpp.html":[3,0,1,4,3],
+"ERF__EBIF_8H.html":[3,0,1,4,1],
+"ERF__EBIF_8H_source.html":[3,0,1,4,1],
+"ERF__EBRegular_8cpp.html":[3,0,1,4,2],
 "ERF__EOS_8H.html":[3,0,1,17,3],
 "ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e":[3,0,1,17,3,4],
 "ERF__EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a":[3,0,1,17,3,3],
@@ -184,7 +183,7 @@ var NAVTREEINDEX1 =
 "ERF__InitDensityHSEDry_8H.html":[3,0,1,13,1],
 "ERF__InitDensityHSEDry_8H.html#a2e1d042f9d82e4b78d00e99ab25e9311":[3,0,1,13,1,0],
 "ERF__InitDensityHSEDry_8H_source.html":[3,0,1,13,1],
-"ERF__InitEB_8cpp.html":[3,0,1,4,4],
+"ERF__InitEB_8cpp.html":[3,0,1,4,3],
 "ERF__InitFromHSE_8cpp.html":[3,0,1,5,3],
 "ERF__InitFromInputSounding_8cpp.html":[3,0,1,5,4],
 "ERF__InitFromInputSounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e":[3,0,1,5,4,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "ERF__MM5_8cpp.html":[3,0,1,7,0,0],
 "ERF__MOSTAverage_8H.html":[3,0,1,1,16],
 "ERF__MOSTAverage_8H_source.html":[3,0,1,1,16],
-"ERF__MOSTAverage_8cpp.html":[3,0,1,1,15]
+"ERF__MOSTAverage_8cpp.html":[3,0,1,1,15],
+"ERF__MOSTRoughness_8H.html":[3,0,1,1,17]
 };

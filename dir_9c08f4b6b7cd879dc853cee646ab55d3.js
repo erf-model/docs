@@ -1,7 +1,6 @@
 var dir_9c08f4b6b7cd879dc853cee646ab55d3 =
 [
     [ "ERF_EBBox.cpp", "ERF__EBBox_8cpp.html", null ],
-    [ "ERF_EBCylinder.cpp", "ERF__EBCylinder_8cpp.html", null ],
     [ "ERF_EBIF.H", "ERF__EBIF_8H.html", [
       [ "UnionListIF", "classUnionListIF.html", "classUnionListIF" ],
       [ "CIF", "classCIF.html", "classCIF" ],

@@ -91,6 +91,8 @@ $(document).ready(function(){initNavTree('ERF__TI__slow__headers_8H.html',''); i
 <div class="textblock"><code>#include &lt;AMReX_MultiFab.H&gt;</code><br />
 <code>#include &lt;AMReX_BCRec.H&gt;</code><br />
 <code>#include &lt;AMReX_YAFluxRegister.H&gt;</code><br />
+<code>#include &lt;AMReX_MultiCutFab.H&gt;</code><br />
+<code>#include &lt;AMReX_EBMultiFabUtil.H&gt;</code><br />
 <code>#include &quot;<a class="el" href="ERF__DataStruct_8H_source.html">ERF_DataStruct.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__IndexDefines_8H_source.html">ERF_IndexDefines.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__ABLMost_8H_source.html">ERF_ABLMost.H</a>&quot;</code><br />
@@ -105,49 +107,51 @@ Include dependency graph for ERF_TI_slow_headers.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__TI__slow__headers_8H__incl.png" border="0" usemap="#aSource_2TimeIntegration_2ERF__TI__slow__headers_8H" alt=""/></div>
 <map name="aSource_2TimeIntegration_2ERF__TI__slow__headers_8H" id="aSource_2TimeIntegration_2ERF__TI__slow__headers_8H">
-<area shape="rect" title=" " alt="" coords="1759,5,1939,47"/>
-<area shape="rect" title=" " alt="" coords="2658,393,2803,420"/>
-<area shape="rect" title=" " alt="" coords="1369,169,1501,196"/>
-<area shape="rect" title=" " alt="" coords="2591,169,2777,196"/>
-<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1134,169,1271,196"/>
-<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="1919,393,2073,420"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="293,319,411,345"/>
-<area shape="rect" href="ERF__ABLMost_8H.html" title=" " alt="" coords="1943,169,2068,196"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html" title=" " alt="" coords="1773,319,1933,345"/>
-<area shape="rect" href="ERF__Advection_8H.html" title=" " alt="" coords="1831,95,1964,121"/>
-<area shape="rect" href="ERF__Diffusion_8H.html" title=" " alt="" coords="1627,95,1754,121"/>
-<area shape="rect" href="ERF__EddyViscosity_8H.html" title=" " alt="" coords="1445,95,1603,121"/>
-<area shape="rect" href="ERF__PlaneAverage_8H.html" title=" " alt="" coords="2852,169,3009,196"/>
-<area shape="rect" title=" " alt="" coords="1012,319,1071,345"/>
-<area shape="rect" title=" " alt="" coords="908,319,988,345"/>
-<area shape="rect" title=" " alt="" coords="1197,319,1355,345"/>
-<area shape="rect" title=" " alt="" coords="764,319,884,345"/>
-<area shape="rect" title=" " alt="" coords="1379,319,1495,345"/>
-<area shape="rect" title=" " alt="" coords="1245,393,1398,420"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="3144,393,3277,420"/>
-<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="1219,244,1349,271"/>
-<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="1065,244,1194,271"/>
-<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="885,244,1040,271"/>
-<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="233,244,367,271"/>
-<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="391,244,550,271"/>
-<area shape="rect" title=" " alt="" coords="2629,468,2752,495"/>
-<area shape="rect" title=" " alt="" coords="1932,468,2060,495"/>
-<area shape="rect" href="ERF__MYNNStruct_8H.html" title=" " alt="" coords="33,319,180,345"/>
-<area shape="rect" title=" " alt="" coords="436,319,604,345"/>
-<area shape="rect" title=" " alt="" coords="204,319,268,345"/>
-<area shape="rect" title=" " alt="" coords="1640,393,1723,420"/>
-<area shape="rect" title=" " alt="" coords="2161,319,2317,345"/>
-<area shape="rect" title=" " alt="" coords="2341,319,2491,345"/>
-<area shape="rect" title=" " alt="" coords="2216,244,2381,271"/>
-<area shape="rect" href="ERF__MOSTAverage_8H.html" title=" " alt="" coords="1931,244,2090,271"/>
-<area shape="rect" href="ERF__MOSTStress_8H.html" title=" " alt="" coords="3137,244,3284,271"/>
-<area shape="rect" href="ERF__PBLHeight_8H.html" title=" " alt="" coords="574,244,709,271"/>
-<area shape="rect" href="ERF__MOSTRoughness_8H.html" title=" " alt="" coords="3122,319,3299,345"/>
-<area shape="rect" href="ERF__Wstar_8H.html" title=" " alt="" coords="3323,319,3429,345"/>
-<area shape="rect" href="ERF__Thetav_8H.html" title=" " alt="" coords="628,319,740,345"/>
-<area shape="rect" title=" " alt="" coords="3555,244,3741,271"/>
-<area shape="rect" href="ERF__DirectionSelector_8H.html" title=" " alt="" coords="2811,244,2989,271"/>
-<area shape="rect" title=" " alt="" coords="2831,319,2945,345"/>
+<area shape="rect" title=" " alt="" coords="1698,5,1878,47"/>
+<area shape="rect" title=" " alt="" coords="3101,393,3246,420"/>
+<area shape="rect" title=" " alt="" coords="3098,169,3230,196"/>
+<area shape="rect" title=" " alt="" coords="93,169,280,196"/>
+<area shape="rect" title=" " alt="" coords="1191,95,1358,121"/>
+<area shape="rect" title=" " alt="" coords="1382,95,1567,121"/>
+<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1029,169,1166,196"/>
+<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="1691,393,1845,420"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="1173,319,1291,345"/>
+<area shape="rect" href="ERF__ABLMost_8H.html" title=" " alt="" coords="2069,169,2195,196"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html" title=" " alt="" coords="1935,319,2095,345"/>
+<area shape="rect" href="ERF__Advection_8H.html" title=" " alt="" coords="1592,95,1725,121"/>
+<area shape="rect" href="ERF__Diffusion_8H.html" title=" " alt="" coords="1851,95,1978,121"/>
+<area shape="rect" href="ERF__EddyViscosity_8H.html" title=" " alt="" coords="2053,95,2211,121"/>
+<area shape="rect" href="ERF__PlaneAverage_8H.html" title=" " alt="" coords="3255,169,3412,196"/>
+<area shape="rect" title=" " alt="" coords="144,319,203,345"/>
+<area shape="rect" title=" " alt="" coords="371,319,451,345"/>
+<area shape="rect" title=" " alt="" coords="678,319,837,345"/>
+<area shape="rect" title=" " alt="" coords="227,319,347,345"/>
+<area shape="rect" title=" " alt="" coords="861,319,977,345"/>
+<area shape="rect" title=" " alt="" coords="1893,393,2046,420"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="2525,393,2659,420"/>
+<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="700,244,831,271"/>
+<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="317,244,446,271"/>
+<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="471,244,625,271"/>
+<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="1108,244,1241,271"/>
+<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="1266,244,1425,271"/>
+<area shape="rect" title=" " alt="" coords="2204,468,2327,495"/>
+<area shape="rect" title=" " alt="" coords="1704,468,1832,495"/>
+<area shape="rect" href="ERF__MYNNStruct_8H.html" title=" " alt="" coords="1001,319,1148,345"/>
+<area shape="rect" title=" " alt="" coords="1404,319,1572,345"/>
+<area shape="rect" title=" " alt="" coords="1316,319,1380,345"/>
+<area shape="rect" title=" " alt="" coords="603,393,685,420"/>
+<area shape="rect" title=" " alt="" coords="2221,319,2377,345"/>
+<area shape="rect" title=" " alt="" coords="2987,319,3136,345"/>
+<area shape="rect" title=" " alt="" coords="2287,244,2452,271"/>
+<area shape="rect" href="ERF__MOSTAverage_8H.html" title=" " alt="" coords="2053,244,2211,271"/>
+<area shape="rect" href="ERF__MOSTStress_8H.html" title=" " alt="" coords="2527,244,2673,271"/>
+<area shape="rect" href="ERF__PBLHeight_8H.html" title=" " alt="" coords="1515,244,1650,271"/>
+<area shape="rect" href="ERF__MOSTRoughness_8H.html" title=" " alt="" coords="2503,319,2681,345"/>
+<area shape="rect" href="ERF__Wstar_8H.html" title=" " alt="" coords="2705,319,2810,345"/>
+<area shape="rect" href="ERF__Thetav_8H.html" title=" " alt="" coords="1596,319,1708,345"/>
+<area shape="rect" title=" " alt="" coords="3451,244,3637,271"/>
+<area shape="rect" href="ERF__DirectionSelector_8H.html" title=" " alt="" coords="3197,244,3376,271"/>
+<area shape="rect" title=" " alt="" coords="3261,319,3376,345"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -155,16 +159,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__TI__slow__headers_8H__dep__incl.png" border="0" usemap="#aSource_2TimeIntegration_2ERF__TI__slow__headers_8Hdep" alt=""/></div>
 <map name="aSource_2TimeIntegration_2ERF__TI__slow__headers_8Hdep" id="aSource_2TimeIntegration_2ERF__TI__slow__headers_8Hdep">
-<area shape="rect" title=" " alt="" coords="5561,5,5741,47"/>
-<area shape="rect" href="ERF__AddThinBodySources_8cpp.html" title=" " alt="" coords="4891,95,5113,136"/>
-<area shape="rect" href="ERF__MakeMomSources_8cpp.html" title=" " alt="" coords="5137,95,5341,136"/>
-<area shape="rect" href="ERF__MakeSources_8cpp.html" title=" " alt="" coords="5366,95,5537,136"/>
-<area shape="rect" href="ERF__MakeTauTerms_8cpp.html" title=" " alt="" coords="5561,95,5742,136"/>
-<area shape="rect" href="ERF__MRI_8H.html" title=" " alt="" coords="5767,95,5941,136"/>
-<area shape="rect" href="ERF__SlowRhsPost_8cpp.html" title=" " alt="" coords="5965,95,6140,136"/>
-<area shape="rect" href="ERF__SlowRhsPre_8cpp.html" title=" " alt="" coords="6164,95,6339,136"/>
-<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="4698,184,4805,211"/>
-<area shape="rect" href="ERF__AdvanceDycore_8cpp.html" title=" " alt="" coords="8977,259,9163,300"/>
+<area shape="rect" title=" " alt="" coords="5569,5,5749,47"/>
+<area shape="rect" href="ERF__AddThinBodySources_8cpp.html" title=" " alt="" coords="4899,95,5121,136"/>
+<area shape="rect" href="ERF__MakeMomSources_8cpp.html" title=" " alt="" coords="5145,95,5349,136"/>
+<area shape="rect" href="ERF__MakeSources_8cpp.html" title=" " alt="" coords="5374,95,5545,136"/>
+<area shape="rect" href="ERF__MakeTauTerms_8cpp.html" title=" " alt="" coords="5569,95,5750,136"/>
+<area shape="rect" href="ERF__MRI_8H.html" title=" " alt="" coords="5775,95,5949,136"/>
+<area shape="rect" href="ERF__SlowRhsPost_8cpp.html" title=" " alt="" coords="5973,95,6148,136"/>
+<area shape="rect" href="ERF__SlowRhsPre_8cpp.html" title=" " alt="" coords="6172,95,6347,136"/>
+<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="4706,184,4813,211"/>
+<area shape="rect" href="ERF__AdvanceDycore_8cpp.html" title=" " alt="" coords="8985,259,9171,300"/>
 <area shape="rect" href="ERF__BoundaryConditionsBndryReg_8cpp.html" title=" " alt="" coords="5,259,284,300"/>
 <area shape="rect" href="ERF__BoundaryConditionsRealbdy_8cpp.html" title=" " alt="" coords="309,259,575,300"/>
 <area shape="rect" href="ERF__FillBdyCCVels_8cpp.html" title=" " alt="" coords="600,259,801,300"/>
@@ -172,39 +176,39 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" href="ERF__FillIntermediatePatch_8cpp.html" title=" " alt="" coords="1051,259,1273,300"/>
 <area shape="rect" href="ERF__FillPatch_8cpp.html" title=" " alt="" coords="1297,259,1499,300"/>
 <area shape="rect" href="ERF__EBBox_8cpp.html" title=" " alt="" coords="1523,266,1715,293"/>
-<area shape="rect" href="ERF__EBCylinder_8cpp.html" title=" " alt="" coords="1740,266,1960,293"/>
-<area shape="rect" href="ERF__EBRegular_8cpp.html" title=" " alt="" coords="1985,266,2201,293"/>
-<area shape="rect" href="ERF__InitEB_8cpp.html" title=" " alt="" coords="2225,266,2413,293"/>
-<area shape="rect" href="ERF__WriteEBSurface_8cpp.html" title=" " alt="" coords="2438,266,2689,293"/>
-<area shape="rect" href="ERF_8cpp.html" title=" " alt="" coords="2713,266,2833,293"/>
-<area shape="rect" href="ERF__MakeNewArrays_8cpp.html" title=" " alt="" coords="2857,266,3091,293"/>
-<area shape="rect" href="ERF__MakeNewLevel_8cpp.html" title=" " alt="" coords="3116,266,3344,293"/>
-<area shape="rect" href="ERF__Tagging_8cpp.html" title=" " alt="" coords="3369,266,3547,293"/>
-<area shape="rect" href="ERF__Init1D_8cpp.html" title=" " alt="" coords="3572,259,3723,300"/>
-<area shape="rect" href="ERF__InitBCs_8cpp.html" title=" " alt="" coords="3747,259,3897,300"/>
-<area shape="rect" href="ERF__InitCustom_8cpp.html" title=" " alt="" coords="3921,259,4077,300"/>
-<area shape="rect" href="ERF__InitFromHSE_8cpp.html" title=" " alt="" coords="4102,259,4267,300"/>
-<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html" title=" " alt="" coords="4291,259,4523,300"/>
-<area shape="rect" href="ERF__InitFromWRFInput_8cpp.html" title=" " alt="" coords="4547,259,4750,300"/>
-<area shape="rect" href="ERF__InitGeowind_8cpp.html" title=" " alt="" coords="4774,259,4937,300"/>
-<area shape="rect" href="ERF__InitRayleigh_8cpp.html" title=" " alt="" coords="4961,259,5123,300"/>
-<area shape="rect" href="ERF__InitSponge_8cpp.html" title=" " alt="" coords="5147,259,5302,300"/>
-<area shape="rect" href="ERF__InitTurbPert_8cpp.html" title=" " alt="" coords="5327,259,5485,300"/>
-<area shape="rect" href="ERF__InitUniform_8cpp.html" title=" " alt="" coords="5509,259,5668,300"/>
-<area shape="rect" href="ERF__InitWindFarm_8cpp.html" title=" " alt="" coords="5693,259,5863,300"/>
-<area shape="rect" href="ERF__MetgridUtils_8H.html" title=" " alt="" coords="5887,259,6039,300"/>
-<area shape="rect" href="ERF__Checkpoint_8cpp.html" title=" " alt="" coords="6064,266,6284,293"/>
-<area shape="rect" href="ERF__ConsoleIO_8cpp.html" title=" " alt="" coords="6309,266,6522,293"/>
-<area shape="rect" href="ERF__NCCheckpoint_8cpp.html" title=" " alt="" coords="6547,266,6785,293"/>
-<area shape="rect" href="ERF__NCColumnFile_8cpp.html" title=" " alt="" coords="6809,266,7048,293"/>
-<area shape="rect" href="ERF__NCMultiFabFile_8cpp.html" title=" " alt="" coords="7073,259,7267,300"/>
-<area shape="rect" href="ERF__NCPlotFile_8cpp.html" title=" " alt="" coords="7292,266,7507,293"/>
-<area shape="rect" href="ERF__Plotfile_8cpp.html" title=" " alt="" coords="7531,266,7723,293"/>
-<area shape="rect" href="ERF__Write1DProfiles_8cpp.html" title=" " alt="" coords="7747,266,7995,293"/>
-<area shape="rect" href="ERF__Write1DProfiles__stag_8cpp.html" title=" " alt="" coords="8019,259,8241,300"/>
-<area shape="rect" href="ERF__WriteJobInfo_8cpp.html" title=" " alt="" coords="8265,266,8491,293"/>
-<area shape="rect" href="ERF__WriteScalarProfiles_8cpp.html" title=" " alt="" coords="8515,259,8710,300"/>
-<area shape="rect" href="ERF__ComputeDivergence_8cpp.html" title=" " alt="" coords="8734,259,8953,300"/>
+<area shape="rect" href="ERF__EBRegular_8cpp.html" title=" " alt="" coords="1739,266,1955,293"/>
+<area shape="rect" href="ERF__InitEB_8cpp.html" title=" " alt="" coords="1980,266,2168,293"/>
+<area shape="rect" href="ERF__Redistribute_8cpp.html" title=" " alt="" coords="2193,266,2422,293"/>
+<area shape="rect" href="ERF__WriteEBSurface_8cpp.html" title=" " alt="" coords="2446,266,2697,293"/>
+<area shape="rect" href="ERF_8cpp.html" title=" " alt="" coords="2721,266,2841,293"/>
+<area shape="rect" href="ERF__MakeNewArrays_8cpp.html" title=" " alt="" coords="2865,266,3099,293"/>
+<area shape="rect" href="ERF__MakeNewLevel_8cpp.html" title=" " alt="" coords="3124,266,3352,293"/>
+<area shape="rect" href="ERF__Tagging_8cpp.html" title=" " alt="" coords="3377,266,3555,293"/>
+<area shape="rect" href="ERF__Init1D_8cpp.html" title=" " alt="" coords="3580,259,3731,300"/>
+<area shape="rect" href="ERF__InitBCs_8cpp.html" title=" " alt="" coords="3755,259,3905,300"/>
+<area shape="rect" href="ERF__InitCustom_8cpp.html" title=" " alt="" coords="3929,259,4085,300"/>
+<area shape="rect" href="ERF__InitFromHSE_8cpp.html" title=" " alt="" coords="4110,259,4275,300"/>
+<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html" title=" " alt="" coords="4299,259,4531,300"/>
+<area shape="rect" href="ERF__InitFromWRFInput_8cpp.html" title=" " alt="" coords="4555,259,4758,300"/>
+<area shape="rect" href="ERF__InitGeowind_8cpp.html" title=" " alt="" coords="4782,259,4945,300"/>
+<area shape="rect" href="ERF__InitRayleigh_8cpp.html" title=" " alt="" coords="4969,259,5131,300"/>
+<area shape="rect" href="ERF__InitSponge_8cpp.html" title=" " alt="" coords="5155,259,5310,300"/>
+<area shape="rect" href="ERF__InitTurbPert_8cpp.html" title=" " alt="" coords="5335,259,5493,300"/>
+<area shape="rect" href="ERF__InitUniform_8cpp.html" title=" " alt="" coords="5517,259,5676,300"/>
+<area shape="rect" href="ERF__InitWindFarm_8cpp.html" title=" " alt="" coords="5701,259,5871,300"/>
+<area shape="rect" href="ERF__MetgridUtils_8H.html" title=" " alt="" coords="5895,259,6047,300"/>
+<area shape="rect" href="ERF__Checkpoint_8cpp.html" title=" " alt="" coords="6072,266,6292,293"/>
+<area shape="rect" href="ERF__ConsoleIO_8cpp.html" title=" " alt="" coords="6317,266,6530,293"/>
+<area shape="rect" href="ERF__NCCheckpoint_8cpp.html" title=" " alt="" coords="6555,266,6793,293"/>
+<area shape="rect" href="ERF__NCColumnFile_8cpp.html" title=" " alt="" coords="6817,266,7056,293"/>
+<area shape="rect" href="ERF__NCMultiFabFile_8cpp.html" title=" " alt="" coords="7081,259,7275,300"/>
+<area shape="rect" href="ERF__NCPlotFile_8cpp.html" title=" " alt="" coords="7300,266,7515,293"/>
+<area shape="rect" href="ERF__Plotfile_8cpp.html" title=" " alt="" coords="7539,266,7731,293"/>
+<area shape="rect" href="ERF__Write1DProfiles_8cpp.html" title=" " alt="" coords="7755,266,8003,293"/>
+<area shape="rect" href="ERF__Write1DProfiles__stag_8cpp.html" title=" " alt="" coords="8027,259,8249,300"/>
+<area shape="rect" href="ERF__WriteJobInfo_8cpp.html" title=" " alt="" coords="8273,266,8499,293"/>
+<area shape="rect" href="ERF__WriteScalarProfiles_8cpp.html" title=" " alt="" coords="8523,259,8718,300"/>
+<area shape="rect" href="ERF__ComputeDivergence_8cpp.html" title=" " alt="" coords="8742,259,8961,300"/>
 </map>
 </div>
 </div>
@@ -214,10 +218,10 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a5664b227e5906334181ecc88eb7aba30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#a5664b227e5906334181ecc88eb7aba30">erf_make_tau_terms</a> (int level, int nrk, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, amrex::MultiFab *Tau11, amrex::MultiFab *Tau22, amrex::MultiFab *Tau33, amrex::MultiFab *Tau12, amrex::MultiFab *Tau13, amrex::MultiFab *Tau21, amrex::MultiFab *Tau23, amrex::MultiFab *Tau31, amrex::MultiFab *Tau32, amrex::MultiFab *SmnSmn, amrex::MultiFab *eddyDiffs, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v)</td></tr>
 <tr class="separator:a5664b227e5906334181ecc88eb7aba30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08e56aada7b66b087c1a2b9dc0efe933"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#a08e56aada7b66b087c1a2b9dc0efe933">erf_slow_rhs_pre</a> (int level, int finest_level, int nrk, amrex::Real dt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_t, const amrex::MultiFab &amp;cc_src, const amrex::MultiFab &amp;xmom_src, const amrex::MultiFab &amp;ymom_src, const amrex::MultiFab &amp;zmom_src, const amrex::MultiFab *zmom_crse_rhs, amrex::MultiFab *Tau11, amrex::MultiFab *Tau22, amrex::MultiFab *Tau33, amrex::MultiFab *Tau12, amrex::MultiFab *Tau13, amrex::MultiFab *Tau21, amrex::MultiFab *Tau23, amrex::MultiFab *Tau31, amrex::MultiFab *Tau32, amrex::MultiFab *SmnSmn, amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx1, amrex::MultiFab *Hfx2, amrex::MultiFab *Hfx3, amrex::MultiFab *Q1fx1, amrex::MultiFab *Q1fx2, amrex::MultiFab *Q1fx3, amrex::MultiFab *Q2fx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ax, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ay, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;az, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ, const amrex::MultiFab *p0, const amrex::MultiFab &amp;pp_inc, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine)</td></tr>
-<tr class="separator:a08e56aada7b66b087c1a2b9dc0efe933"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b8b04e54f9f960d4c661a110cbdbcd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#a5b8b04e54f9f960d4c661a110cbdbcd4">erf_slow_rhs_post</a> (int level, int finest_level, int nrk, amrex::Real dt, int n_qstate, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_new, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, const amrex::MultiFab &amp;source, const amrex::MultiFab *SmnSmn, const amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx1, amrex::MultiFab *Hfx2, amrex::MultiFab *Hfx3, amrex::MultiFab *Q1fx1, amrex::MultiFab *Q1fx2, amrex::MultiFab *Q1fx3, amrex::MultiFab *Q2fx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ax, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ay, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;az, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine)</td></tr>
-<tr class="separator:a5b8b04e54f9f960d4c661a110cbdbcd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ec2bf70fe68e4b4d2cce96979722a92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#a9ec2bf70fe68e4b4d2cce96979722a92">erf_slow_rhs_pre</a> (int level, int finest_level, int nrk, amrex::Real dt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_t, const amrex::MultiFab &amp;cc_src, const amrex::MultiFab &amp;xmom_src, const amrex::MultiFab &amp;ymom_src, const amrex::MultiFab &amp;zmom_src, const amrex::MultiFab *zmom_crse_rhs, amrex::MultiFab *Tau11, amrex::MultiFab *Tau22, amrex::MultiFab *Tau33, amrex::MultiFab *Tau12, amrex::MultiFab *Tau13, amrex::MultiFab *Tau21, amrex::MultiFab *Tau23, amrex::MultiFab *Tau31, amrex::MultiFab *Tau32, amrex::MultiFab *SmnSmn, amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx1, amrex::MultiFab *Hfx2, amrex::MultiFab *Hfx3, amrex::MultiFab *Q1fx1, amrex::MultiFab *Q1fx2, amrex::MultiFab *Q1fx3, amrex::MultiFab *Q2fx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ax, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ay, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;az, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ, const amrex::MultiFab *p0, const amrex::MultiFab &amp;pp_inc, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, amrex::EBFArrayBoxFactory const &amp;ebfact, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine)</td></tr>
+<tr class="separator:a9ec2bf70fe68e4b4d2cce96979722a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48318df69e87074786e2f74304ce984e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#a48318df69e87074786e2f74304ce984e">erf_slow_rhs_post</a> (int level, int finest_level, int nrk, amrex::Real dt, int n_qstate, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_new, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, const amrex::MultiFab &amp;source, const amrex::MultiFab *SmnSmn, const amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx1, amrex::MultiFab *Hfx2, amrex::MultiFab *Hfx3, amrex::MultiFab *Q1fx1, amrex::MultiFab *Q1fx2, amrex::MultiFab *Q1fx3, amrex::MultiFab *Q2fx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ax, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ay, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;az, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_new, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, amrex::EBFArrayBoxFactory const &amp;ebfact, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine)</td></tr>
+<tr class="separator:a48318df69e87074786e2f74304ce984e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd0e57c37da16481cde9d2fe85792cd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#afd0e57c37da16481cde9d2fe85792cd0">erf_slow_rhs_inc</a> (int level, int nrk, amrex::Real dt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, amrex::MultiFab &amp;Omega, const amrex::MultiFab &amp;cc_src, const amrex::MultiFab &amp;xmom_src, const amrex::MultiFab &amp;ymom_src, const amrex::MultiFab &amp;zmom_src, amrex::MultiFab *Tau11, amrex::MultiFab *Tau22, amrex::MultiFab *Tau33, amrex::MultiFab *Tau12, amrex::MultiFab *Tau13, amrex::MultiFab *Tau21, amrex::MultiFab *Tau23, amrex::MultiFab *Tau31, amrex::MultiFab *Tau32, amrex::MultiFab *SmnSmn, amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ax, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ay, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;az, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ, const amrex::MultiFab *p0, const amrex::MultiFab &amp;pp_inc, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v)</td></tr>
 <tr class="separator:afd0e57c37da16481cde9d2fe85792cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -675,8 +679,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5b8b04e54f9f960d4c661a110cbdbcd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b8b04e54f9f960d4c661a110cbdbcd4">&#9670;&nbsp;</a></span>erf_slow_rhs_post()</h2>
+<a id="a48318df69e87074786e2f74304ce984e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48318df69e87074786e2f74304ce984e">&#9670;&nbsp;</a></span>erf_slow_rhs_post()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -918,6 +922,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">amrex::EBFArrayBoxFactory const &amp;&#160;</td>
+          <td class="paramname"><em>ebfact</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">amrex::YAFluxRegister *&#160;</td>
           <td class="paramname"><em>fr_as_crse</em>, </td>
         </tr>
@@ -938,8 +948,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a08e56aada7b66b087c1a2b9dc0efe933"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08e56aada7b66b087c1a2b9dc0efe933">&#9670;&nbsp;</a></span>erf_slow_rhs_pre()</h2>
+<a id="a9ec2bf70fe68e4b4d2cce96979722a92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ec2bf70fe68e4b4d2cce96979722a92">&#9670;&nbsp;</a></span>erf_slow_rhs_pre()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1255,6 +1265,12 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td>
           <td class="paramname"><em>mapfac_v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::EBFArrayBoxFactory const &amp;&#160;</td>
+          <td class="paramname"><em>ebfact</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
