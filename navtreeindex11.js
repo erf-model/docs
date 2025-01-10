@@ -1,7 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"dir_55b16bd18c560281815e784b0a64105f.html":[3,0,1,18,1],
-"dir_5baf679cf4943df8904dce5d41d4d3dc.html":[3,0,0],
 "dir_5c09e96eccedf512ae411d636afd2712.html":[3,0,1,17],
 "dir_6ac3198e61556f99812dcb8dcfabb874.html":[3,0,1,14],
 "dir_71a4420ed1f8982e7234eb6a0b7e6d5d.html":[3,0,1,5],
@@ -26,8 +24,8 @@ var NAVTREEINDEX11 =
 "dir_fbd11baa4baa1a8b78c4a3d08373cbc6.html":[3,0,1,11],
 "dir_fc0c15590968603ac439df7b0a572228.html":[3,0,1,3],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -79,8 +77,8 @@ var NAVTREEINDEX11 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -111,8 +109,8 @@ var NAVTREEINDEX11 =
 "functions_y.html":[2,3,0,24],
 "functions_z.html":[2,3,0,25],
 "functions_~.html":[2,3,0,26],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -121,8 +119,8 @@ var NAVTREEINDEX11 =
 "globals_enum.html":[3,1,4],
 "globals_eval.html":[3,1,5],
 "globals_f.html":[3,1,0,5],
-"globals_func.html":[3,1,1,0],
 "globals_func.html":[3,1,1],
+"globals_func.html":[3,1,1,0],
 "globals_func_b.html":[3,1,1,1],
 "globals_func_c.html":[3,1,1,2],
 "globals_func_d.html":[3,1,1,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX11 =
 "pages.html":[],
 "structAdvChoice.html":[2,0,7],
 "structAdvChoice.html#a118575fe302e72fcd231e77be6d117a9":[2,0,7,20],
-"structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c":[2,0,7,2]
+"structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c":[2,0,7,2],
+"structAdvChoice.html#a191cb08c4e809d1982ea90e4b4f9a528":[2,0,7,1],
+"structAdvChoice.html#a1fc6421356a6c2ecfea0a46b3928d9cf":[2,0,7,7]
 };

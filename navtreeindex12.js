@@ -1,7 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"structAdvChoice.html#a191cb08c4e809d1982ea90e4b4f9a528":[2,0,7,1],
-"structAdvChoice.html#a1fc6421356a6c2ecfea0a46b3928d9cf":[2,0,7,7],
 "structAdvChoice.html#a22f84c60e56d4b3bde6b7f9548c87af3":[2,0,7,13],
 "structAdvChoice.html#a2dd44749e2d4f224ae1da4f9e53e257a":[2,0,7,10],
 "structAdvChoice.html#a2f888dfcb79cdb766ee04f21aada83ec":[2,0,7,15],
@@ -249,5 +247,7 @@ var NAVTREEINDEX12 =
 "structPhysProp_1_1physprop__t.html#a7f49b6334fdf3ec5c8cbcef509a0cf7e":[2,0,61,0,12],
 "structPhysProp_1_1physprop__t.html#a8c8ef5042c0b53fa05d1d97a49de3833":[2,0,61,0,28],
 "structPhysProp_1_1physprop__t.html#a8df74558339352f0e8c0031fc3160a09":[2,0,61,0,4],
-"structPhysProp_1_1physprop__t.html#a8f237360219885a558fb5c5bfeb5c015":[2,0,61,0,21]
+"structPhysProp_1_1physprop__t.html#a8f237360219885a558fb5c5bfeb5c015":[2,0,61,0,21],
+"structPhysProp_1_1physprop__t.html#aa23d4f11099641ffb9c395c327156980":[2,0,61,0,14],
+"structPhysProp_1_1physprop__t.html#aa4cb3b830849d849a08227041fff62cd":[2,0,61,0,17]
 };

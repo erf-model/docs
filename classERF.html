@@ -10583,24 +10583,28 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\n Building EB geometry based on idealized terrain.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        Real dummy_time = 0.0;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        Box bx(surroundingNodes(Geom(0).Domain())); bx.grow(2);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        FArrayBox terrain_fab(makeSlab(bx,2,0),1);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classERF.html#a60e8cb933f237903e3fbcd6376c26db0">prob</a>-&gt;init_custom_terrain(Geom(0), terrain_fab, dummy_time);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classTerrainIF.html">TerrainIF</a> ebterrain(terrain_fab, Geom(0));</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">auto</span> gshop = EB2::makeShop(ebterrain);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        EB2::Build(gshop, geom.back(), max_level, max_level+max_coarsening_level);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(geom_type == <span class="stringliteral">&quot;box&quot;</span>) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\n Building box geometry.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classERF.html#a0cf9cd65604501647629fd69a0d28bb6">make_eb_box</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">static</span> FArrayBox terrain_fab;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (!terrain_fab.isAllocated()) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            amrex::ExecOnFinalize([&amp;] () { terrain_fab.clear(); });</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        terrain_fab.resize(makeSlab(bx,2,0),1);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classERF.html#a60e8cb933f237903e3fbcd6376c26db0">prob</a>-&gt;init_custom_terrain(Geom(0), terrain_fab, dummy_time);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="classTerrainIF.html">TerrainIF</a> ebterrain(terrain_fab, Geom(0));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">auto</span> gshop = EB2::makeShop(ebterrain);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        EB2::Build(gshop, geom.back(), max_level, max_level+max_coarsening_level);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\n No EB geometry declared in inputs =&gt; &quot;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                       &lt;&lt; <span class="stringliteral">&quot; Will build all regular geometry.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classERF.html#aeca994ecf1b09d58cdc991920504ec34">make_eb_regular</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Done making the geometry ebfactory.\n&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(geom_type == <span class="stringliteral">&quot;box&quot;</span>) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\n Building box geometry.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classERF.html#a0cf9cd65604501647629fd69a0d28bb6">make_eb_box</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\n No EB geometry declared in inputs =&gt; &quot;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                       &lt;&lt; <span class="stringliteral">&quot; Will build all regular geometry.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classERF.html#aeca994ecf1b09d58cdc991920504ec34">make_eb_regular</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Done making the geometry ebfactory.\n&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 <div class="ttc" id="aclassERF_html_a0cf9cd65604501647629fd69a0d28bb6"><div class="ttname"><a href="classERF.html#a0cf9cd65604501647629fd69a0d28bb6">ERF::make_eb_box</a></div><div class="ttdeci">void make_eb_box()</div><div class="ttdef"><b>Definition:</b> ERF_EBBox.cpp:14</div></div>
 <div class="ttc" id="aclassTerrainIF_html"><div class="ttname"><a href="classTerrainIF.html">TerrainIF</a></div><div class="ttdef"><b>Definition:</b> ERF_TerrainIF.H:14</div></div>
 </div><!-- fragment --><div class="dynheader">
