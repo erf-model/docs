@@ -170,8 +170,8 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a32b8b3f0c8d28024951dd02521086d3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8H.html#a32b8b3f0c8d28024951dd02521086d3b">init_zlevels</a> (amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;zlevels_stag, amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;stretched_dz_h, amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt;&gt; &amp;stretched_dz_d, amrex::Vector&lt; amrex::Geometry &gt; const &amp;geom, amrex::Vector&lt; amrex::IntVect &gt; const &amp;ref_ratio, const amrex::Real grid_stretching_ratio, const amrex::Real zsurf, const amrex::Real dz0)</td></tr>
 <tr class="separator:a32b8b3f0c8d28024951dd02521086d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad179b260b388fdbca904a7bb89a27849"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8H.html#ad179b260b388fdbca904a7bb89a27849">init_terrain_grid</a> (int lev, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::Vector&lt; amrex::Real &gt; const &amp;z_levels_h, amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</td></tr>
-<tr class="separator:ad179b260b388fdbca904a7bb89a27849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af534c6c9916430a728f3fb33d21b19b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8H.html#af534c6c9916430a728f3fb33d21b19b3">make_terrain_fitted_coords</a> (int lev, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::Vector&lt; amrex::Real &gt; const &amp;z_levels_h, amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</td></tr>
+<tr class="separator:af534c6c9916430a728f3fb33d21b19b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2675c866cd76d03067861a6f79abfc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8H.html#ac2675c866cd76d03067861a6f79abfc9">init_which_terrain_grid</a> (int lev, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::Vector&lt; amrex::Real &gt; const &amp;z_levels_h)</td></tr>
 <tr class="separator:ac2675c866cd76d03067861a6f79abfc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32eeeb066c70da970aa6a60918515987"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE AMREX_GPU_DEVICE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a> (const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</td></tr>
@@ -1732,52 +1732,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ad179b260b388fdbca904a7bb89a27849"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad179b260b388fdbca904a7bb89a27849">&#9670;&nbsp;</a></span>init_terrain_grid()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void init_terrain_grid </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>lev</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
-          <td class="paramname"><em>geom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>z_phys_nd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Vector&lt; amrex::Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>z_levels_h</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>phys_bc_type</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ac2675c866cd76d03067861a6f79abfc9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac2675c866cd76d03067861a6f79abfc9">&#9670;&nbsp;</a></span>init_which_terrain_grid()</h2>
 
@@ -1880,6 +1834,52 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Utility routines for constructing terrain metric terms </p>
+
+</div>
+</div>
+<a id="af534c6c9916430a728f3fb33d21b19b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af534c6c9916430a728f3fb33d21b19b3">&#9670;&nbsp;</a></span>make_terrain_fitted_coords()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void make_terrain_fitted_coords </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>z_phys_nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Vector&lt; amrex::Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>z_levels_h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>phys_bc_type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

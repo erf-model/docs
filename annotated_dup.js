@@ -97,7 +97,6 @@ var annotated_dup =
     [ "surface_temp_donelan", "structsurface__temp__donelan.html", "structsurface__temp__donelan" ],
     [ "surface_temp_mod_charnock", "structsurface__temp__mod__charnock.html", "structsurface__temp__mod__charnock" ],
     [ "surface_temp_wave_coupled", "structsurface__temp__wave__coupled.html", "structsurface__temp__wave__coupled" ],
-    [ "TerrainDrag", "classTerrainDrag.html", "classTerrainDrag" ],
     [ "TerrainIF", "classTerrainIF.html", "classTerrainIF" ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ],
     [ "TurbChoice", "structTurbChoice.html", "structTurbChoice" ],

@@ -116,7 +116,6 @@ var hierarchy =
     [ "surface_temp_donelan", "structsurface__temp__donelan.html", null ],
     [ "surface_temp_mod_charnock", "structsurface__temp__mod__charnock.html", null ],
     [ "surface_temp_wave_coupled", "structsurface__temp__wave__coupled.html", null ],
-    [ "TerrainDrag", "classTerrainDrag.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
     [ "TurbChoice", "structTurbChoice.html", null ],
     [ "TurbulentPerturbation", "structTurbulentPerturbation.html", null ],

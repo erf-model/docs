@@ -547,7 +547,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ax</td><td>area fractions on x-faces </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ay</td><td>area fractions on y-faces </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">az</td><td>area fractions on z-faces </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">detJ</td><td>Jacobian of the metric transformation (= 1 if use_terrain is false) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">detJ</td><td>Jacobian of the metric transformation (= 1 if use_terrain_fitted_coords is false) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">p0</td><td>Reference (hydrostatically stratified) pressure </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pp_inc</td><td>Perturbational pressure only used for anelastic flow </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mapfac_m</td><td>map factor at cell centers </td></tr>
@@ -578,9 +578,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> l_vert_adv_type  = solverChoice.<a class="code" href="structSolverChoice.html#aaadbd092e9e176b7f088c7992c866c6e">advChoice</a>.<a class="code" href="structAdvChoice.html#a2dd44749e2d4f224ae1da4f9e53e257a">dycore_vert_adv_type</a>;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">const</span> Real    l_horiz_upw_frac = solverChoice.<a class="code" href="structSolverChoice.html#aaadbd092e9e176b7f088c7992c866c6e">advChoice</a>.<a class="code" href="structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43">dycore_horiz_upw_frac</a>;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">const</span> Real    l_vert_upw_frac  = solverChoice.<a class="code" href="structSolverChoice.html#aaadbd092e9e176b7f088c7992c866c6e">advChoice</a>.<a class="code" href="structAdvChoice.html#a48a2a3eb5899f899e202df67fd8bb2e0">dycore_vert_upw_frac</a>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span>    l_use_terrain    = (solverChoice.<a class="code" href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">terrain_type</a> != TerrainType::None);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span>    l_use_terrain_fitted_coords    = (z_phys_nd != <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span>    l_moving_terrain = (solverChoice.<a class="code" href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">terrain_type</a> == TerrainType::MovingFittedMesh);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (l_moving_terrain) AMREX_ALWAYS_ASSERT (l_use_terrain);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (l_moving_terrain) AMREX_ALWAYS_ASSERT (l_use_terrain_fitted_coords);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_use_mono_adv   = solverChoice.<a class="code" href="structSolverChoice.html#a3660145ad90d59b2a6693fd88bb01381">use_mono_adv</a>;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_reflux = (solverChoice.<a class="code" href="structSolverChoice.html#af976afa61859c07e6249963edc367c2d">coupling_type</a> == CouplingType::TwoWay);</div>
@@ -747,7 +747,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; mu_turb = l_use_turb ? eddyDiffs-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="comment">// Terrain metrics</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd     = l_use_terrain ? z_phys_nd-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd     = l_use_terrain_fitted_coords ? z_phys_nd-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="comment">// Base state</span></div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; p0_arr = p0-&gt;const_array(mfi);</div>
@@ -809,7 +809,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            <span class="comment">// ONLY if not doing anelastic + terrain -- in that case Omega will be defined coming</span></div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <span class="comment">// out of the projection</span></div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <span class="keywordflow">if</span> (!l_use_terrain) {</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <span class="keywordflow">if</span> (!l_use_terrain_fitted_coords) {</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                ParallelFor(gbxo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                    omega_arr(i,j,k) = rho_w(i,j,k);</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                });</div>
@@ -943,7 +943,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            <span class="keywordtype">int</span> n_start = amrex::max(start_comp,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;            <span class="keywordtype">int</span> n_comp  = end_comp - n_start + 1;</div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain) {</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                <a class="code" href="ERF__Diffusion_8H.html#ae72c4a9e8ca7e9d1c84d96bb7bc9c7d0">DiffusionSrcForState_T</a>(bx, domain, n_start, n_comp, l_exp_most, l_rot_most, u, v,</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;                                       cell_data, cell_prim, cell_rhs,</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                                       diffflux_x, diffflux_y, diffflux_z,</div>
@@ -971,7 +971,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        });</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <span class="comment">// Multiply the slow RHS for rho and rhotheta by detJ here so we don&#39;t have to later</span></div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        <span class="keywordflow">if</span> (l_use_terrain &amp;&amp; l_moving_terrain) {</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        <span class="keywordflow">if</span> (l_use_terrain_fitted_coords &amp;&amp; l_moving_terrain) {</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;            {</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)      *= detJ_arr(i,j,k);</div>
@@ -1015,7 +1015,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            <span class="comment">// viscosity&quot;) means that there is no contribution from a</span></div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            <span class="comment">// turbulence model. However, whether this field truly is constant</span></div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            <span class="comment">// depends on whether MolecDiffType is Constant or ConstantAlpha.</span></div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain) {</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                <a class="code" href="ERF__Diffusion_8H.html#a9c81dadeb1784c3274f6f8c9a9d1bcb7">DiffusionSrcForMom_T</a>(tbx, tby, tbz,</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                                     rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                                     tau11, tau22, tau33,</div>
@@ -1043,7 +1043,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;            Real gp_xi = dxInv[0] * (pp_arr(i,j,k) - pp_arr(i-1,j,k));</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            Real gpx = gp_xi;</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain) {</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                Real met_h_xi   = <a class="code" href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a>  (i, j, k, dxInv, z_nd);</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                Real met_h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i, j, k, dxInv, z_nd);</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
@@ -1093,7 +1093,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            Real gp_eta = dxInv[1] * (pp_arr(i,j,k) - pp_arr(i,j-1,k));</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;            Real gpy = gp_eta;</div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160; </div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain) {</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                Real met_h_eta  = <a class="code" href="ERF__TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a> (i, j, k, dxInv, z_nd);</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                Real met_h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i, j, k, dxInv, z_nd);</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                Real gp_zeta_on_jface;</div>
@@ -1111,7 +1111,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                                                       - pp_arr(i,j,k-1) - pp_arr(i,j-1,k-1) );</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                }</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                gpy -= (met_h_eta / met_h_zeta) * gp_zeta_on_jface;</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;            } <span class="comment">// l_use_terrain</span></div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;            } <span class="comment">// l_use_terrain_fitted_coords</span></div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160; </div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;            gpy *= mf_v(i,j,0);</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160; </div>
@@ -1173,7 +1173,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        ParallelFor(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        { <span class="comment">// z-momentum equation</span></div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160; </div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            Real met_h_zeta = (l_use_terrain) ? <a class="code" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i, j, k, dxInv, z_nd) : 1;</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            Real met_h_zeta = (l_use_terrain_fitted_coords) ? <a class="code" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i, j, k, dxInv, z_nd) : 1;</div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;            Real gpz = dxInv[2] * ( pp_arr(i,j,k)-pp_arr(i,j,k-1) )  / met_h_zeta;</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;            Real q = 0.0;</div>
@@ -1183,7 +1183,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            }</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            rho_w_rhs(i, j, k) += (zmom_src_arr(i,j,k) - gpz - abl_pressure_grad[2]) / (1.0_rt + q);</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160; </div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain &amp;&amp; l_moving_terrain) {</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords &amp;&amp; l_moving_terrain) {</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                 rho_w_rhs(i, j, k) *= 0.5 * (detJ_arr(i,j,k) + detJ_arr(i,j,k-1));</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;            }</div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        });</div>
@@ -1283,19 +1283,19 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructAdvChoice_html_abde30f55d66f1716d7459a09001d3f43"><div class="ttname"><a href="structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43">AdvChoice::dycore_horiz_upw_frac</a></div><div class="ttdeci">amrex::Real dycore_horiz_upw_frac</div><div class="ttdef"><b>Definition:</b> ERF_AdvStruct.H:292</div></div>
 <div class="ttc" id="astructDiffChoice_html"><div class="ttname"><a href="structDiffChoice.html">DiffChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_DiffStruct.H:19</div></div>
 <div class="ttc" id="astructDiffChoice_html_aed5c75ec58e358a735d97869147b2baf"><div class="ttname"><a href="structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf">DiffChoice::molec_diff_type</a></div><div class="ttdeci">MolecDiffType molec_diff_type</div><div class="ttdef"><b>Definition:</b> ERF_DiffStruct.H:84</div></div>
-<div class="ttc" id="astructSolverChoice_html_a15db794855101421e20ba970dcd634e9"><div class="ttname"><a href="structSolverChoice.html#a15db794855101421e20ba970dcd634e9">SolverChoice::use_explicit_most</a></div><div class="ttdeci">bool use_explicit_most</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:654</div></div>
-<div class="ttc" id="astructSolverChoice_html_a3660145ad90d59b2a6693fd88bb01381"><div class="ttname"><a href="structSolverChoice.html#a3660145ad90d59b2a6693fd88bb01381">SolverChoice::use_mono_adv</a></div><div class="ttdeci">bool use_mono_adv</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:670</div></div>
-<div class="ttc" id="astructSolverChoice_html_a396122e87a3d15c4ec8666d7dd18c095"><div class="ttname"><a href="structSolverChoice.html#a396122e87a3d15c4ec8666d7dd18c095">SolverChoice::diffChoice</a></div><div class="ttdeci">DiffChoice diffChoice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:588</div></div>
-<div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:626</div></div>
-<div class="ttc" id="astructSolverChoice_html_a69e2f0b874cba8faae57987ead4e3ebb"><div class="ttname"><a href="structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb">SolverChoice::abl_pressure_grad</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; abl_pressure_grad</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:679</div></div>
-<div class="ttc" id="astructSolverChoice_html_aa53b017d79e0067923180a0aa59367b4"><div class="ttname"><a href="structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4">SolverChoice::turbChoice</a></div><div class="ttdeci">amrex::Vector&lt; TurbChoice &gt; turbChoice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:590</div></div>
-<div class="ttc" id="astructSolverChoice_html_aa7be0d60ce3de3441d44082cc1b725ec"><div class="ttname"><a href="structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec">SolverChoice::anelastic</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; anelastic</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:598</div></div>
-<div class="ttc" id="astructSolverChoice_html_aa9cf425ef14a7e28ec3411044e737b23"><div class="ttname"><a href="structSolverChoice.html#aa9cf425ef14a7e28ec3411044e737b23">SolverChoice::constant_density</a></div><div class="ttdeci">int constant_density</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:600</div></div>
-<div class="ttc" id="astructSolverChoice_html_aaadbd092e9e176b7f088c7992c866c6e"><div class="ttname"><a href="structSolverChoice.html#aaadbd092e9e176b7f088c7992c866c6e">SolverChoice::advChoice</a></div><div class="ttdeci">AdvChoice advChoice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:587</div></div>
-<div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:673</div></div>
-<div class="ttc" id="astructSolverChoice_html_ab734eb0a5147b93dc6590038b6decc60"><div class="ttname"><a href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">SolverChoice::terrain_type</a></div><div class="ttdeci">static TerrainType terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:576</div></div>
-<div class="ttc" id="astructSolverChoice_html_af3dab90d6c6d356aa2f35c3dbe151411"><div class="ttname"><a href="structSolverChoice.html#af3dab90d6c6d356aa2f35c3dbe151411">SolverChoice::use_rotate_most</a></div><div class="ttdeci">bool use_rotate_most</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:657</div></div>
-<div class="ttc" id="astructSolverChoice_html_af976afa61859c07e6249963edc367c2d"><div class="ttname"><a href="structSolverChoice.html#af976afa61859c07e6249963edc367c2d">SolverChoice::coupling_type</a></div><div class="ttdeci">CouplingType coupling_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:672</div></div>
+<div class="ttc" id="astructSolverChoice_html_a15db794855101421e20ba970dcd634e9"><div class="ttname"><a href="structSolverChoice.html#a15db794855101421e20ba970dcd634e9">SolverChoice::use_explicit_most</a></div><div class="ttdeci">bool use_explicit_most</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:659</div></div>
+<div class="ttc" id="astructSolverChoice_html_a3660145ad90d59b2a6693fd88bb01381"><div class="ttname"><a href="structSolverChoice.html#a3660145ad90d59b2a6693fd88bb01381">SolverChoice::use_mono_adv</a></div><div class="ttdeci">bool use_mono_adv</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:675</div></div>
+<div class="ttc" id="astructSolverChoice_html_a396122e87a3d15c4ec8666d7dd18c095"><div class="ttname"><a href="structSolverChoice.html#a396122e87a3d15c4ec8666d7dd18c095">SolverChoice::diffChoice</a></div><div class="ttdeci">DiffChoice diffChoice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:593</div></div>
+<div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:631</div></div>
+<div class="ttc" id="astructSolverChoice_html_a69e2f0b874cba8faae57987ead4e3ebb"><div class="ttname"><a href="structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb">SolverChoice::abl_pressure_grad</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; abl_pressure_grad</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:684</div></div>
+<div class="ttc" id="astructSolverChoice_html_aa53b017d79e0067923180a0aa59367b4"><div class="ttname"><a href="structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4">SolverChoice::turbChoice</a></div><div class="ttdeci">amrex::Vector&lt; TurbChoice &gt; turbChoice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:595</div></div>
+<div class="ttc" id="astructSolverChoice_html_aa7be0d60ce3de3441d44082cc1b725ec"><div class="ttname"><a href="structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec">SolverChoice::anelastic</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; anelastic</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:603</div></div>
+<div class="ttc" id="astructSolverChoice_html_aa9cf425ef14a7e28ec3411044e737b23"><div class="ttname"><a href="structSolverChoice.html#aa9cf425ef14a7e28ec3411044e737b23">SolverChoice::constant_density</a></div><div class="ttdeci">int constant_density</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:605</div></div>
+<div class="ttc" id="astructSolverChoice_html_aaadbd092e9e176b7f088c7992c866c6e"><div class="ttname"><a href="structSolverChoice.html#aaadbd092e9e176b7f088c7992c866c6e">SolverChoice::advChoice</a></div><div class="ttdeci">AdvChoice advChoice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:592</div></div>
+<div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:678</div></div>
+<div class="ttc" id="astructSolverChoice_html_ab734eb0a5147b93dc6590038b6decc60"><div class="ttname"><a href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">SolverChoice::terrain_type</a></div><div class="ttdeci">static TerrainType terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:581</div></div>
+<div class="ttc" id="astructSolverChoice_html_af3dab90d6c6d356aa2f35c3dbe151411"><div class="ttname"><a href="structSolverChoice.html#af3dab90d6c6d356aa2f35c3dbe151411">SolverChoice::use_rotate_most</a></div><div class="ttdeci">bool use_rotate_most</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:662</div></div>
+<div class="ttc" id="astructSolverChoice_html_af976afa61859c07e6249963edc367c2d"><div class="ttname"><a href="structSolverChoice.html#af976afa61859c07e6249963edc367c2d">SolverChoice::coupling_type</a></div><div class="ttdeci">CouplingType coupling_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:677</div></div>
 <div class="ttc" id="astructTurbChoice_html"><div class="ttname"><a href="structTurbChoice.html">TurbChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:31</div></div>
 <div class="ttc" id="astructTurbChoice_html_a15b9bb58cde72bab3f5714934125f3f9"><div class="ttname"><a href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">TurbChoice::pbl_type</a></div><div class="ttdeci">PBLType pbl_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:205</div></div>
 <div class="ttc" id="astructTurbChoice_html_abbba68e0d699dd97701d31a0e37d5304"><div class="ttname"><a href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">TurbChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:176</div></div>
