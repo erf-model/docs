@@ -219,6 +219,8 @@ Functions</h2></td></tr>
 <tr class="separator:acebead6f3a33cb7737a1fea98341c3ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbc6116a3309adf87b7dc24242dc50ec"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#acbc6116a3309adf87b7dc24242dc50ec">ApplyInvertedMask</a> (amrex::MultiFab &amp;dst, const amrex::iMultiFab &amp;imask, const int nghost=0)</td></tr>
 <tr class="separator:acbc6116a3309adf87b7dc24242dc50ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99650b0d59ae9542586a873ea8ac142e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a99650b0d59ae9542586a873ea8ac142e">thinbody_wall_dist</a> (std::unique_ptr&lt; amrex::MultiFab &gt; &amp;wdist, amrex::Vector&lt; amrex::IntVect &gt; &amp;xfaces, amrex::Vector&lt; amrex::IntVect &gt; &amp;yfaces, amrex::Vector&lt; amrex::IntVect &gt; &amp;zfaces, const amrex::Geometry &amp;geomdata, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc)</td></tr>
+<tr class="separator:a99650b0d59ae9542586a873ea8ac142e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="acbc6116a3309adf87b7dc24242dc50ec"></a>
@@ -252,21 +254,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;{</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(dst,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    {</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; bx = mfi.growntilebox(nghost);</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <span class="keywordflow">if</span> (bx.ok())</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="keyword">auto</span>        dstFab = dst.array(mfi);</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> maskFab = imask.const_array(mfi);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            {</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                dstFab(i,j,k) *= (1-maskFab(i,j,k));</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            });</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        }</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    }</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;{</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(dst,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    {</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; bx = mfi.growntilebox(nghost);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordflow">if</span> (bx.ok())</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        {</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="keyword">auto</span>        dstFab = dst.array(mfi);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> maskFab = imask.const_array(mfi);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            {</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                dstFab(i,j,k) *= (1-maskFab(i,j,k));</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            });</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        }</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    }</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__AddThinBodySources_8cpp.html#afe1f106475861ba9ed98d5163c7f4e20">add_thin_body_sources()</a>, and <a class="el" href="classERF.html#a2847cfdeb389a173ee587ba30a474686">ERF::project_velocities_tb()</a>.</p>
 <div class="dynheader">
@@ -1297,6 +1299,58 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#a910beecdd2b6435fb9b14ff590bc2241" title=" " alt="" coords="5,5,195,47"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a99650b0d59ae9542586a873ea8ac142e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99650b0d59ae9542586a873ea8ac142e">&#9670;&nbsp;</a></span>thinbody_wall_dist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void thinbody_wall_dist </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname"><em>wdist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Vector&lt; amrex::IntVect &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xfaces</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Vector&lt; amrex::IntVect &gt; &amp;&#160;</td>
+          <td class="paramname"><em>yfaces</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Vector&lt; amrex::IntVect &gt; &amp;&#160;</td>
+          <td class="paramname"><em>zfaces</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geomdata</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname"><em>z_phys_cc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

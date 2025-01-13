@@ -195,8 +195,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2b687f91a8d8385766be20222af4ccac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EddyViscosity_8H.html#a2b687f91a8d8385766be20222af4ccac">ComputeTurbulentViscosity</a> (const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;Tau11, const amrex::MultiFab &amp;Tau22, const amrex::MultiFab &amp;Tau33, const amrex::MultiFab &amp;Tau12, const amrex::MultiFab &amp;Tau13, const amrex::MultiFab &amp;Tau23, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;eddyViscosity, amrex::MultiFab &amp;Hfx1, amrex::MultiFab &amp;Hfx2, amrex::MultiFab &amp;Hfx3, amrex::MultiFab &amp;Diss, const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;mapfac_u, const amrex::MultiFab &amp;mapfac_v, const std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const bool &amp;exp_most, const bool &amp;use_moisture, int level, const amrex::BCRec *bc_ptr, bool vert_only=false)</td></tr>
-<tr class="separator:a2b687f91a8d8385766be20222af4ccac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af997dc3f466bd48c7b0c0e71bbf43e0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EddyViscosity_8H.html#af997dc3f466bd48c7b0c0e71bbf43e0e">ComputeTurbulentViscosity</a> (const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;Tau11, const amrex::MultiFab &amp;Tau22, const amrex::MultiFab &amp;Tau33, const amrex::MultiFab &amp;Tau12, const amrex::MultiFab &amp;Tau13, const amrex::MultiFab &amp;Tau23, const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;wdist, amrex::MultiFab &amp;eddyViscosity, amrex::MultiFab &amp;Hfx1, amrex::MultiFab &amp;Hfx2, amrex::MultiFab &amp;Hfx3, amrex::MultiFab &amp;Diss, const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;mapfac_u, const amrex::MultiFab &amp;mapfac_v, const std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;most, const amrex::FArrayBox *z_0, const bool &amp;exp_most, const bool &amp;use_moisture, int level, const amrex::BCRec *bc_ptr, bool vert_only=false)</td></tr>
+<tr class="separator:af997dc3f466bd48c7b0c0e71bbf43e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d775f0ce64d37053b33d514438ee856"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EddyViscosity_8H.html#a1d775f0ce64d37053b33d514438ee856">ComputeSmnSmn</a> (int &amp;i, int &amp;j, int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau11, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau22, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau33, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau12, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau13, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau23, const int &amp;klo, const bool &amp;use_most, const bool &amp;exp_most)</td></tr>
 <tr class="separator:a1d775f0ce64d37053b33d514438ee856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -286,49 +286,49 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// NOTES:</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// - If ERF_EXPLICIT_MOST_STRESS is not used, then we do not use the</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//   strains lying on the bottom boundary with MOST. These values are</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//   corrupted with the reflect odd BC used to fill the ghost cells.</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// - Neglecting the strains on the bottom boundary and using a one-</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//   sided average implies that the strains are equal at klo and klo+1.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">//   du/dz and dv/dz can be assumed to be equal through the first cell.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//   However, whereas dw/dx = dw/dy = 0 on the surface, this is not true at</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//   klo+1. Therefore, the strains are not equal in general.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// - If ERF_EXPLICIT_MOST_STRESS _is_ used, then strains may be correctly</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">//   evaluated at the surface and no assumptions are needed.</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    amrex::Real s13bar;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (use_most &amp;&amp; k==klo &amp;&amp; !exp_most) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        s13bar = 0.5  * ( tau13(i  , j  , k+1) + tau13(i+1, j  , k+1) );</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        s13bar = 0.25 * ( tau13(i  , j  , k  ) + tau13(i  , j  , k+1)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        + tau13(i+1, j  , k  ) + tau13(i+1, j  , k+1) );</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    amrex::Real s23bar;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (use_most &amp;&amp; k==klo &amp;&amp; !exp_most) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        s23bar = 0.5  * ( tau23(i  , j  , k+1) + tau23(i  , j+1, k+1) );</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        s23bar = 0.25 * ( tau23(i  , j  , k  ) + tau23(i  , j  , k+1)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        + tau23(i  , j+1, k  ) + tau23(i  , j+1, k+1) );</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    amrex::Real s11bar = tau11(i,j,k);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    amrex::Real s22bar = tau22(i,j,k);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    amrex::Real s33bar = tau33(i,j,k);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    amrex::Real s12bar = 0.25 * ( tau12(i  , j  , k  ) + tau12(i  , j+1, k  )</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                + tau12(i+1, j  , k  ) + tau12(i+1, j+1, k  ) );</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    amrex::Real SmnSmn = s11bar*s11bar + s22bar*s22bar + s33bar*s33bar</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                       + 2.0*s12bar*s12bar + 2.0*s13bar*s13bar + 2.0*s23bar*s23bar;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> SmnSmn;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// NOTES:</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// - If ERF_EXPLICIT_MOST_STRESS is not used, then we do not use the</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//   strains lying on the bottom boundary with MOST. These values are</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//   corrupted with the reflect odd BC used to fill the ghost cells.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// - Neglecting the strains on the bottom boundary and using a one-</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">//   sided average implies that the strains are equal at klo and klo+1.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//   du/dz and dv/dz can be assumed to be equal through the first cell.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//   However, whereas dw/dx = dw/dy = 0 on the surface, this is not true at</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">//   klo+1. Therefore, the strains are not equal in general.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// - If ERF_EXPLICIT_MOST_STRESS _is_ used, then strains may be correctly</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//   evaluated at the surface and no assumptions are needed.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    amrex::Real s13bar;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (use_most &amp;&amp; k==klo &amp;&amp; !exp_most) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        s13bar = 0.5  * ( tau13(i  , j  , k+1) + tau13(i+1, j  , k+1) );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        s13bar = 0.25 * ( tau13(i  , j  , k  ) + tau13(i  , j  , k+1)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        + tau13(i+1, j  , k  ) + tau13(i+1, j  , k+1) );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    amrex::Real s23bar;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (use_most &amp;&amp; k==klo &amp;&amp; !exp_most) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        s23bar = 0.5  * ( tau23(i  , j  , k+1) + tau23(i  , j+1, k+1) );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        s23bar = 0.25 * ( tau23(i  , j  , k  ) + tau23(i  , j  , k+1)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        + tau23(i  , j+1, k  ) + tau23(i  , j+1, k+1) );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    amrex::Real s11bar = tau11(i,j,k);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    amrex::Real s22bar = tau22(i,j,k);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    amrex::Real s33bar = tau33(i,j,k);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    amrex::Real s12bar = 0.25 * ( tau12(i  , j  , k  ) + tau12(i  , j+1, k  )</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                + tau12(i+1, j  , k  ) + tau12(i+1, j+1, k  ) );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    amrex::Real SmnSmn = s11bar*s11bar + s22bar*s22bar + s33bar*s33bar</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                       + 2.0*s12bar*s12bar + 2.0*s13bar*s13bar + 2.0*s23bar*s23bar;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> SmnSmn;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a730dd933a41b48fe17b15e46d4dce964">ComputeTurbulentViscosityLES()</a>, and <a class="el" href="ERF__MakeTauTerms_8cpp.html#a7a7d71e3e796b67737a6931399588ae8">erf_make_tau_terms()</a>.</p>
 <div class="dynheader">
@@ -339,7 +339,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="732,31,871,57"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a730dd933a41b48fe17b15e46d4dce964" title=" " alt="" coords="461,5,684,32"/>
 <area shape="rect" href="ERF__MakeTauTerms_8cpp.html#a7a7d71e3e796b67737a6931399588ae8" title=" " alt="" coords="495,56,651,83"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3865612b809df828f44e9c18218b1e37" title=" " alt="" coords="213,5,413,32"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a971a6577b2681826d09a39f771792c82" title=" " alt="" coords="213,5,413,32"/>
 <area shape="rect" href="classERF.html#af836d1bb05ac4c9f535358e14714f13e" title=" " alt="" coords="5,5,165,32"/>
 <area shape="rect" href="ERF__SlowRhsPre_8cpp.html#a6c2d70665e946bc3b3afb054a52e0746" title=" " alt="" coords="247,56,379,83"/>
 </map>
@@ -347,8 +347,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a2b687f91a8d8385766be20222af4ccac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b687f91a8d8385766be20222af4ccac">&#9670;&nbsp;</a></span>ComputeTurbulentViscosity()</h2>
+<a id="af997dc3f466bd48c7b0c0e71bbf43e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af997dc3f466bd48c7b0c0e71bbf43e0e">&#9670;&nbsp;</a></span>ComputeTurbulentViscosity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -406,6 +406,12 @@ Here is the caller graph for this function:</div>
           <td></td>
           <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
           <td class="paramname"><em>cons_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>wdist</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -472,6 +478,12 @@ Here is the caller graph for this function:</div>
           <td></td>
           <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classABLMost.html">ABLMost</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>most</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::FArrayBox *&#160;</td>
+          <td class="paramname"><em>z_0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

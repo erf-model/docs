@@ -41,6 +41,7 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_TerrainMetrics.cpp", "ERF__TerrainMetrics_8cpp.html", "ERF__TerrainMetrics_8cpp" ],
     [ "ERF_TerrainMetrics.H", "ERF__TerrainMetrics_8H.html", "ERF__TerrainMetrics_8H" ],
     [ "ERF_Thetav.H", "ERF__Thetav_8H.html", "ERF__Thetav_8H" ],
+    [ "ERF_ThinBodyWallDist.cpp", "ERF__ThinBodyWallDist_8cpp.html", "ERF__ThinBodyWallDist_8cpp" ],
     [ "ERF_TileNoZ.H", "ERF__TileNoZ_8H.html", "ERF__TileNoZ_8H" ],
     [ "ERF_TimeAvgVel.cpp", "ERF__TimeAvgVel_8cpp.html", "ERF__TimeAvgVel_8cpp" ],
     [ "ERF_Utils.H", "ERF__Utils_8H.html", "ERF__Utils_8H" ],

@@ -13,6 +13,7 @@ var ERF__Utils_8H =
     [ "realbdy_compute_interior_ghost_rhs", "ERF__Utils_8H.html#ab51cededbebe104355921aada3218c65", null ],
     [ "realbdy_compute_laplacian_relaxation", "ERF__Utils_8H.html#afb1f55b5c43428fa5569f60ebd790767", null ],
     [ "realbdy_set_rhs_in_spec_region", "ERF__Utils_8H.html#a92c9d088cc086d0371aba0cb690b5c9c", null ],
+    [ "thinbody_wall_dist", "ERF__Utils_8H.html#a99650b0d59ae9542586a873ea8ac142e", null ],
     [ "Time_Avg_Vel_atCC", "ERF__Utils_8H.html#ac3d734b65fd91857925d381c476e7965", null ],
     [ "VelocityToMomentum", "ERF__Utils_8H.html#a5e2e36af19c0192915a2ca721c0cded4", null ]
 ];

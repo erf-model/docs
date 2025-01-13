@@ -131,8 +131,9 @@ var NAVTREEINDEX0 =
 "ERF__ComputeStress__T_8cpp.html#af10fca5e9a1f97c4743e76cc935230bd":[3,0,1,3,3,0],
 "ERF__ComputeTimestep_8cpp.html":[3,0,1,16,5],
 "ERF__ComputeTurbulentViscosity_8cpp.html":[3,0,1,3,4],
-"ERF__ComputeTurbulentViscosity_8cpp.html#a3865612b809df828f44e9c18218b1e37":[3,0,1,3,4,0],
 "ERF__ComputeTurbulentViscosity_8cpp.html#a730dd933a41b48fe17b15e46d4dce964":[3,0,1,3,4,1],
+"ERF__ComputeTurbulentViscosity_8cpp.html#a971a6577b2681826d09a39f771792c82":[3,0,1,3,4,0],
+"ERF__ComputeTurbulentViscosity_8cpp.html#ab2b4cc822593425895f471aad1cda078":[3,0,1,3,4,2],
 "ERF__ConsoleIO_8cpp.html":[3,0,1,6,1],
 "ERF__ConsoleIO_8cpp.html#a8f794ff24efbc4b60058492d1a073c78":[3,0,1,6,1,0],
 "ERF__ConsoleIO_8cpp.html#a9d270ec83f99e836cca454cac4e0af5e":[3,0,1,6,1,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__Derive_8H.html#a7128ad75cf0f6b317ae8689bd7eb1597":[3,0,1,23,3],
 "ERF__Derive_8H.html#a7292c8c78a618eb0f6ca6a5356705362":[3,0,1,23,2],
 "ERF__Derive_8H.html#a8bc196f7dfb365c426b0b7e720e479e2":[3,0,1,23,11],
-"ERF__Derive_8H.html#a9935603239fe8510b11179da8e76c39c":[3,0,1,23,4],
-"ERF__Derive_8H.html#abec1266940e40d642fca2aa685b7f314":[3,0,1,23,6]
+"ERF__Derive_8H.html#a9935603239fe8510b11179da8e76c39c":[3,0,1,23,4]
 };
