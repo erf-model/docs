@@ -1,5 +1,8 @@
 var NAVTREEINDEX14 =
 {
+"structWENO3.html#a7726242b3b06bf75643f8141d2ca78c8":[2,0,101,7],
+"structWENO3.html#a95e7df06f162d0ff74c057f6a4253a83":[2,0,101,3],
+"structWENO3.html#aa02f985763b5a70539e23704c5eb63f5":[2,0,101,0],
 "structWENO3.html#aa09b52432a69d89bef16a06015252661":[2,0,101,9],
 "structWENO3.html#ab09e1cf66eb2ab4f42b37ae64a762d83":[2,0,101,2],
 "structWENO3.html#ad693dfd8b54bf52e2076b911df389c2a":[2,0,101,4],
@@ -246,8 +249,5 @@ var NAVTREEINDEX14 =
 "structsurface__flux__mod__charnock.html#aeed3a1d89568498a381abca31ecff25d":[2,0,84,1],
 "structsurface__flux__wave__coupled.html":[2,0,85],
 "structsurface__flux__wave__coupled.html#a10d71fe6dd2f38c54562aa3ab207ef25":[2,0,85,6],
-"structsurface__flux__wave__coupled.html#a1f7495d05cf04a69be3d51e6535644d6":[2,0,85,0],
-"structsurface__flux__wave__coupled.html#a303023c95fd8121c335eb33b5efbc0bf":[2,0,85,1],
-"structsurface__flux__wave__coupled.html#a4f273873e2304563f10674c497cfad30":[2,0,85,8],
-"structsurface__flux__wave__coupled.html#a6cf8c26b09960af5adea37c6e7ccbb0b":[2,0,85,7]
+"structsurface__flux__wave__coupled.html#a1f7495d05cf04a69be3d51e6535644d6":[2,0,85,0]
 };
