@@ -10619,7 +10619,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\n Building EB geometry based on idealized terrain.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        Real dummy_time = 0.0;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        Box bx(surroundingNodes(Geom(lev).Domain())); bx.grow(1);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        Box bx(surroundingNodes(Geom(lev).Domain())); bx.grow(3);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        FArrayBox terrain_fab(makeSlab(bx,2,0),1);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classERF.html#a60e8cb933f237903e3fbcd6376c26db0">prob</a>-&gt;init_terrain_surface(Geom(lev), terrain_fab, dummy_time);</div>
