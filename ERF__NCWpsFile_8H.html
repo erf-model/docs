@@ -166,12 +166,12 @@ Functions</h2></td></tr>
 <tr class="memitem:aa682cd5b28ee9ffaf36c6944bd124af0"><td class="memTemplParams" colspan="2">template&lt;typename DType &gt; </td></tr>
 <tr class="memitem:aa682cd5b28ee9ffaf36c6944bd124af0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__NCWpsFile_8H.html#aa682cd5b28ee9ffaf36c6944bd124af0">ReadNetCDFFile</a> (const std::string &amp;fname, amrex::Vector&lt; std::string &gt; names, amrex::Vector&lt; <a class="el" href="structNDArray.html">NDArray</a>&lt; DType &gt; &gt; &amp;arrays)</td></tr>
 <tr class="separator:aa682cd5b28ee9ffaf36c6944bd124af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64f2a31eac0693c65ffb19e37014426a"><td class="memTemplParams" colspan="2">template&lt;class FAB , typename DType &gt; </td></tr>
-<tr class="memitem:a64f2a31eac0693c65ffb19e37014426a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__NCWpsFile_8H.html#a64f2a31eac0693c65ffb19e37014426a">fill_fab_from_arrays</a> (int iv, amrex::Real &amp;Latitude, amrex::Real &amp;Longitude, std::string &amp;Lat_var_name, std::string &amp;Lon_var_name, amrex::Vector&lt; <a class="el" href="structNDArray.html">NDArray</a>&lt; float &gt;&gt; &amp;nc_arrays, const std::string &amp;var_name, <a class="el" href="ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06">NC_Data_Dims_Type</a> &amp;NC_dim_type, FAB &amp;temp)</td></tr>
-<tr class="separator:a64f2a31eac0693c65ffb19e37014426a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2228af687d21c7fde3d80c4b89e4027"><td class="memTemplParams" colspan="2">template&lt;class FAB , typename DType &gt; </td></tr>
-<tr class="memitem:ac2228af687d21c7fde3d80c4b89e4027"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__NCWpsFile_8H.html#ac2228af687d21c7fde3d80c4b89e4027">BuildFABsFromNetCDFFile</a> (const amrex::Box &amp;domain, amrex::Real &amp;Latitude, amrex::Real &amp;Longitude, std::string &amp;Lat_var_name, std::string &amp;Lon_var_name, const std::string &amp;fname, amrex::Vector&lt; std::string &gt; nc_var_names, amrex::Vector&lt; enum <a class="el" href="ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06">NC_Data_Dims_Type</a> &gt; NC_dim_types, amrex::Vector&lt; FAB * &gt; fab_vars)</td></tr>
-<tr class="separator:ac2228af687d21c7fde3d80c4b89e4027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fbca9044ab6c565786cf158ff9a6c0f"><td class="memTemplParams" colspan="2">template&lt;class FAB , typename DType &gt; </td></tr>
+<tr class="memitem:a5fbca9044ab6c565786cf158ff9a6c0f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__NCWpsFile_8H.html#a5fbca9044ab6c565786cf158ff9a6c0f">fill_fab_from_arrays</a> (int iv, amrex::Vector&lt; <a class="el" href="structNDArray.html">NDArray</a>&lt; float &gt;&gt; &amp;nc_arrays, const std::string &amp;var_name, <a class="el" href="ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06">NC_Data_Dims_Type</a> &amp;NC_dim_type, FAB &amp;temp)</td></tr>
+<tr class="separator:a5fbca9044ab6c565786cf158ff9a6c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcadbd0591038f7d3c9bb13c37df21f9"><td class="memTemplParams" colspan="2">template&lt;class FAB , typename DType &gt; </td></tr>
+<tr class="memitem:abcadbd0591038f7d3c9bb13c37df21f9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__NCWpsFile_8H.html#abcadbd0591038f7d3c9bb13c37df21f9">BuildFABsFromNetCDFFile</a> (const amrex::Box &amp;domain, const std::string &amp;fname, amrex::Vector&lt; std::string &gt; nc_var_names, amrex::Vector&lt; enum <a class="el" href="ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06">NC_Data_Dims_Type</a> &gt; NC_dim_types, amrex::Vector&lt; FAB * &gt; fab_vars)</td></tr>
+<tr class="separator:abcadbd0591038f7d3c9bb13c37df21f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a60014a8d74bed0d5ae984e600c68dc85"></a>
@@ -240,8 +240,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ac2228af687d21c7fde3d80c4b89e4027"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2228af687d21c7fde3d80c4b89e4027">&#9670;&nbsp;</a></span>BuildFABsFromNetCDFFile()</h2>
+<a id="abcadbd0591038f7d3c9bb13c37df21f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcadbd0591038f7d3c9bb13c37df21f9">&#9670;&nbsp;</a></span>BuildFABsFromNetCDFFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -253,30 +253,6 @@ template&lt;class FAB , typename DType &gt; </div>
           <td>(</td>
           <td class="paramtype">const amrex::Box &amp;&#160;</td>
           <td class="paramname"><em>domain</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Real &amp;&#160;</td>
-          <td class="paramname"><em>Latitude</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Real &amp;&#160;</td>
-          <td class="paramname"><em>Longitude</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>Lat_var_name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>Lon_var_name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -319,64 +295,61 @@ template&lt;class FAB , typename DType &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;{</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordtype">int</span> ioproc = amrex::ParallelDescriptor::IOProcessorNumber();  <span class="comment">// I/O rank</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    amrex::Vector&lt;NDArray&lt;float&gt;&gt; nc_arrays(nc_var_names.size());</div>
+<div class="fragment"><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;{</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordtype">int</span> ioproc = amrex::ParallelDescriptor::IOProcessorNumber();  <span class="comment">// I/O rank</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    amrex::Vector&lt;NDArray&lt;float&gt;&gt; nc_arrays(nc_var_names.size());</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor())</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <a class="code" href="ERF__NCWpsFile_8H.html#aa682cd5b28ee9ffaf36c6944bd124af0">ReadNetCDFFile</a>(fname, nc_var_names, nc_arrays);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iv = 0; iv &lt; nc_var_names.size(); iv++)</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        FAB tmp;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            fill_fab_from_arrays&lt;FAB,DType&gt;(iv, nc_arrays, nc_var_names[iv], NC_dim_types[iv], tmp);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keywordtype">int</span> ncomp = tmp.nComp();</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        amrex::Box box = tmp.box();</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor())</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <a class="code" href="ERF__NCWpsFile_8H.html#aa682cd5b28ee9ffaf36c6944bd124af0">ReadNetCDFFile</a>(fname, nc_var_names, nc_arrays);</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iv = 0; iv &lt; nc_var_names.size(); iv++)</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    {</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        FAB tmp;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            fill_fab_from_arrays&lt;FAB,DType&gt;(iv, Latitude, Longitude,</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                                            Lat_var_name, Lon_var_name,</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                                            nc_arrays, nc_var_names[iv],</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                            NC_dim_types[iv], tmp);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        }</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordtype">int</span> ncomp = tmp.nComp();</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        amrex::Box box = tmp.box();</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        amrex::ParallelDescriptor::Bcast(&amp;box,   1, ioproc);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        amrex::ParallelDescriptor::Bcast(&amp;ncomp, 1, ioproc);</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">if</span> (!amrex::ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            tmp.resize(box,ncomp,amrex::The_Pinned_Arena());</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            tmp.resize(box,ncomp);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        amrex::ParallelDescriptor::Bcast(&amp;box,   1, ioproc);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        amrex::ParallelDescriptor::Bcast(&amp;ncomp, 1, ioproc);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordflow">if</span> (!amrex::ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            tmp.resize(box,ncomp,amrex::The_Pinned_Arena());</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            tmp.resize(box,ncomp);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        }</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        amrex::ParallelDescriptor::Bcast(tmp.dataPtr(), tmp.size(), ioproc);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="comment">// Shift box by the domain lower corner</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        amrex::Box  fab_bx = tmp.box();</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        amrex::Dim3 dom_lb = lbound(domain);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        fab_bx += amrex::IntVect(dom_lb.x,dom_lb.y,dom_lb.z);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="comment">// fab_vars points to data on device</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        fab_vars[iv]-&gt;resize(fab_bx,1);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice,</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                         tmp.dataPtr(), tmp.dataPtr() + tmp.size(),</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                         fab_vars[iv]-&gt;dataPtr());</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="comment">// Provided by BaseFab inheritance through FArrayBox</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        fab_vars[iv]-&gt;copy(tmp,tmp.box(),0,fab_bx,0,1);</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        }</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        amrex::ParallelDescriptor::Bcast(tmp.dataPtr(), tmp.size(), ioproc);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="comment">// Shift box by the domain lower corner</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        amrex::Box  fab_bx = tmp.box();</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        amrex::Dim3 dom_lb = lbound(domain);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        fab_bx += amrex::IntVect(dom_lb.x,dom_lb.y,dom_lb.z);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="comment">// fab_vars points to data on device</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        fab_vars[iv]-&gt;resize(fab_bx,1);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice,</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                         tmp.dataPtr(), tmp.dataPtr() + tmp.size(),</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                         fab_vars[iv]-&gt;dataPtr());</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="comment">// Provided by BaseFab inheritance through FArrayBox</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        fab_vars[iv]-&gt;copy(tmp,tmp.box(),0,fab_bx,0,1);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    }</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;}</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    }</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
 <div class="ttc" id="aERF__NCWpsFile_8H_html_aa682cd5b28ee9ffaf36c6944bd124af0"><div class="ttname"><a href="ERF__NCWpsFile_8H.html#aa682cd5b28ee9ffaf36c6944bd124af0">ReadNetCDFFile</a></div><div class="ttdeci">void ReadNetCDFFile(const std::string &amp;fname, amrex::Vector&lt; std::string &gt; names, amrex::Vector&lt; NDArray&lt; DType &gt; &gt; &amp;arrays)</div><div class="ttdef"><b>Definition:</b> ERF_NCWpsFile.H:157</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__NCWpsFile_8H_ac2228af687d21c7fde3d80c4b89e4027_cgraph.png" border="0" usemap="#aERF__NCWpsFile_8H_ac2228af687d21c7fde3d80c4b89e4027_cgraph" alt=""/></div>
-<map name="aERF__NCWpsFile_8H_ac2228af687d21c7fde3d80c4b89e4027_cgraph" id="aERF__NCWpsFile_8H_ac2228af687d21c7fde3d80c4b89e4027_cgraph">
+<div class="center"><img src="ERF__NCWpsFile_8H_abcadbd0591038f7d3c9bb13c37df21f9_cgraph.png" border="0" usemap="#aERF__NCWpsFile_8H_abcadbd0591038f7d3c9bb13c37df21f9_cgraph" alt=""/></div>
+<map name="aERF__NCWpsFile_8H_abcadbd0591038f7d3c9bb13c37df21f9_cgraph" id="aERF__NCWpsFile_8H_abcadbd0591038f7d3c9bb13c37df21f9_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,197,57"/>
 <area shape="rect" href="ERF__NCWpsFile_8H.html#aa682cd5b28ee9ffaf36c6944bd124af0" title=" " alt="" coords="245,31,373,57"/>
 <area shape="rect" href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885" title=" " alt="" coords="421,31,576,57"/>
@@ -433,8 +406,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a64f2a31eac0693c65ffb19e37014426a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64f2a31eac0693c65ffb19e37014426a">&#9670;&nbsp;</a></span>fill_fab_from_arrays()</h2>
+<a id="a5fbca9044ab6c565786cf158ff9a6c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fbca9044ab6c565786cf158ff9a6c0f">&#9670;&nbsp;</a></span>fill_fab_from_arrays()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -446,30 +419,6 @@ template&lt;class FAB , typename DType &gt; </div>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>iv</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Real &amp;&#160;</td>
-          <td class="paramname"><em>Latitude</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Real &amp;&#160;</td>
-          <td class="paramname"><em>Longitude</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>Lat_var_name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>Lon_var_name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -513,63 +462,56 @@ template&lt;class FAB , typename DType &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;{</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordtype">int</span> ns1, ns2, ns3;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">if</span> (NC_dim_type == <a class="code" href="ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a539ca443eab3c322b2b37046e896dc62">NC_Data_Dims_Type::Time_BT</a>) {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        ns1 = nc_arrays[iv].get_vshape()[1];</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        ns2 = 1;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        ns3 = 1;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="comment">// amrex::Print() &lt;&lt; &quot;TYPE BT &quot; &lt;&lt; ns1 &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (NC_dim_type == <a class="code" href="ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a5f93bace93896872075eae75770cadc4">NC_Data_Dims_Type::Time_SN_WE</a>) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        ns1 = 1;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        ns2 = nc_arrays[iv].get_vshape()[1];</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        ns3 = nc_arrays[iv].get_vshape()[2];</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="comment">// amrex::Print() &lt;&lt; &quot;TYPE SN WE &quot; &lt;&lt; ns2 &lt;&lt; &quot; &quot; &lt;&lt; ns3 &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (NC_dim_type == <a class="code" href="ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aa3968158227ea04595d4003503cca22b">NC_Data_Dims_Type::Time_BT_SN_WE</a>) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        ns1 = nc_arrays[iv].get_vshape()[1];</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        ns2 = nc_arrays[iv].get_vshape()[2];</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        ns3 = nc_arrays[iv].get_vshape()[3];</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="comment">// amrex::Print() &lt;&lt; &quot;TYPE BT SN WE &quot; &lt;&lt; ns1 &lt;&lt; &quot; &quot; &lt;&lt; ns2 &lt;&lt; &quot; &quot; &lt;&lt; ns3 &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Dont know this NC_Data_Dims_Type&quot;</span>);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="comment">// TODO:  The box will only start at (0,0,0) at level 0 -- we need to generalize this</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    amrex::Box my_box(amrex::IntVect(0,0,0), amrex::IntVect(ns3-1,ns2-1,ns1-1));</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">// amrex::Print() &lt;&lt;&quot; MY BOX &quot; &lt;&lt; my_box &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;U&quot;</span> || var_name == <span class="stringliteral">&quot;UU&quot;</span> ||</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        var_name == <span class="stringliteral">&quot;MAPFAC_U&quot;</span> || var_name == <span class="stringliteral">&quot;MAPFAC_UY&quot;</span>) my_box.setType(amrex::IndexType(amrex::IntVect(1,0,0)));</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;V&quot;</span> || var_name == <span class="stringliteral">&quot;VV&quot;</span> ||</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        var_name == <span class="stringliteral">&quot;MAPFAC_V&quot;</span> || var_name == <span class="stringliteral">&quot;MAPFAC_VY&quot;</span>) my_box.setType(amrex::IndexType(amrex::IntVect(0,1,0)));</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;W&quot;</span> || var_name == <span class="stringliteral">&quot;WW&quot;</span>) my_box.setType(amrex::IndexType(amrex::IntVect(0,0,1)));</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    amrex::Arena* Arena_Used = amrex::The_Arena();</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="comment">// Make sure temp lives on CPU since nc_arrays lives on CPU only</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    Arena_Used = amrex::The_Pinned_Arena();</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    temp.resize(my_box,1, Arena_Used);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    amrex::Array4&lt;DType&gt; fab_arr = temp.array();</div>
+<div class="fragment"><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;{</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">int</span> ns1, ns2, ns3;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">if</span> (NC_dim_type == <a class="code" href="ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a539ca443eab3c322b2b37046e896dc62">NC_Data_Dims_Type::Time_BT</a>) {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        ns1 = nc_arrays[iv].get_vshape()[1];</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        ns2 = 1;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        ns3 = 1;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="comment">// amrex::Print() &lt;&lt; &quot;TYPE BT &quot; &lt;&lt; ns1 &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (NC_dim_type == <a class="code" href="ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06a5f93bace93896872075eae75770cadc4">NC_Data_Dims_Type::Time_SN_WE</a>) {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        ns1 = 1;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        ns2 = nc_arrays[iv].get_vshape()[1];</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        ns3 = nc_arrays[iv].get_vshape()[2];</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="comment">// amrex::Print() &lt;&lt; &quot;TYPE SN WE &quot; &lt;&lt; ns2 &lt;&lt; &quot; &quot; &lt;&lt; ns3 &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (NC_dim_type == <a class="code" href="ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aa3968158227ea04595d4003503cca22b">NC_Data_Dims_Type::Time_BT_SN_WE</a>) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        ns1 = nc_arrays[iv].get_vshape()[1];</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        ns2 = nc_arrays[iv].get_vshape()[2];</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        ns3 = nc_arrays[iv].get_vshape()[3];</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="comment">// amrex::Print() &lt;&lt; &quot;TYPE BT SN WE &quot; &lt;&lt; ns1 &lt;&lt; &quot; &quot; &lt;&lt; ns2 &lt;&lt; &quot; &quot; &lt;&lt; ns3 &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Dont know this NC_Data_Dims_Type&quot;</span>);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="comment">// TODO:  The box will only start at (0,0,0) at level 0 -- we need to generalize this</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    amrex::Box my_box(amrex::IntVect(0,0,0), amrex::IntVect(ns3-1,ns2-1,ns1-1));</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;U&quot;</span> || var_name == <span class="stringliteral">&quot;UU&quot;</span> ||</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        var_name == <span class="stringliteral">&quot;MAPFAC_U&quot;</span> || var_name == <span class="stringliteral">&quot;MAPFAC_UY&quot;</span>) my_box.setType(amrex::IndexType(amrex::IntVect(1,0,0)));</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;V&quot;</span> || var_name == <span class="stringliteral">&quot;VV&quot;</span> ||</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        var_name == <span class="stringliteral">&quot;MAPFAC_V&quot;</span> || var_name == <span class="stringliteral">&quot;MAPFAC_VY&quot;</span>) my_box.setType(amrex::IndexType(amrex::IntVect(0,1,0)));</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">if</span> (var_name == <span class="stringliteral">&quot;W&quot;</span> || var_name == <span class="stringliteral">&quot;WW&quot;</span>) my_box.setType(amrex::IndexType(amrex::IntVect(0,0,1)));</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    amrex::Arena* Arena_Used = amrex::The_Arena();</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment">// Make sure temp lives on CPU since nc_arrays lives on CPU only</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    Arena_Used = amrex::The_Pinned_Arena();</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    temp.resize(my_box,1, Arena_Used);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    amrex::Array4&lt;DType&gt; fab_arr = temp.array();</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordtype">int</span> ioff = temp.box().smallEnd()[0];</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordtype">int</span> joff = temp.box().smallEnd()[1];</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keyword">auto</span> num_pts = my_box.numPts();</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordtype">int</span> ioff = temp.box().smallEnd()[0];</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordtype">int</span> joff = temp.box().smallEnd()[1];</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keyword">auto</span> num_pts = my_box.numPts();</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment">// amrex::Print() &lt;&lt;&quot; ns1 * ns2 * ns3 &quot; &lt;&lt; ns1 * ns2 * ns3 &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="comment">// amrex::Print() &lt;&lt;&quot; NUMPTS &quot; &lt;&lt; num_pts &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n(0); n &lt; num_pts; ++n) {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordtype">int</span> k  = n / (ns2*ns3);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordtype">int</span> j  = (n - k*(ns2*ns3)) / ns3 + joff;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordtype">int</span> i  = n - k*(ns2*ns3) - (j-joff) * ns3 + ioff;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        fab_arr(i,j,k,0) = <span class="keyword">static_cast&lt;</span>DType<span class="keyword">&gt;</span>(*(nc_arrays[iv].get_data()+n));</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    }</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">if</span> (var_name == Lat_var_name) Latitude  = fab_arr(0,0,0);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">if</span> (var_name == Lon_var_name) Longitude = fab_arr(0,0,0);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n(0); n &lt; num_pts; ++n) {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordtype">int</span> k  = n / (ns2*ns3);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordtype">int</span> j  = (n - k*(ns2*ns3)) / ns3 + joff;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordtype">int</span> i  = n - k*(ns2*ns3) - (j-joff) * ns3 + ioff;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        fab_arr(i,j,k,0) = <span class="keyword">static_cast&lt;</span>DType<span class="keyword">&gt;</span>(*(nc_arrays[iv].get_data()+n));</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -711,7 +653,7 @@ template&lt;typename DType &gt; </div>
 <div class="ttc" id="aclassncutils_1_1NCFile_html_a2881b70e450e11f01b474c538b8d6885"><div class="ttname"><a href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885">ncutils::NCFile::open</a></div><div class="ttdeci">static NCFile open(const std::string &amp;name, const int cmode=NC_NOWRITE)</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:674</div></div>
 <div class="ttc" id="astructNDArray_html"><div class="ttname"><a href="structNDArray.html">NDArray</a></div><div class="ttdef"><b>Definition:</b> ERF_NCWpsFile.H:51</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__NCWpsFile_8H.html#ac2228af687d21c7fde3d80c4b89e4027">BuildFABsFromNetCDFFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__NCWpsFile_8H.html#abcadbd0591038f7d3c9bb13c37df21f9">BuildFABsFromNetCDFFile()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -729,7 +671,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__NCWpsFile_8H_aa682cd5b28ee9ffaf36c6944bd124af0_icgraph.png" border="0" usemap="#aERF__NCWpsFile_8H_aa682cd5b28ee9ffaf36c6944bd124af0_icgraph" alt=""/></div>
 <map name="aERF__NCWpsFile_8H_aa682cd5b28ee9ffaf36c6944bd124af0_icgraph" id="aERF__NCWpsFile_8H_aa682cd5b28ee9ffaf36c6944bd124af0_icgraph">
 <area shape="rect" title=" " alt="" coords="245,5,373,32"/>
-<area shape="rect" href="ERF__NCWpsFile_8H.html#ac2228af687d21c7fde3d80c4b89e4027" title=" " alt="" coords="5,5,197,32"/>
+<area shape="rect" href="ERF__NCWpsFile_8H.html#abcadbd0591038f7d3c9bb13c37df21f9" title=" " alt="" coords="5,5,197,32"/>
 </map>
 </div>
 
