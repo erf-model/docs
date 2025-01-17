@@ -196,6 +196,8 @@ var classERF =
     [ "domain_bcs_type", "classERF.html#a574521986a6e403159f83c8b8123ba90", null ],
     [ "domain_bcs_type_d", "classERF.html#a8a99e22b1111c803e31b4afd5fcdea60", null ],
     [ "dt", "classERF.html#ad34bae243fdb6c3029f5abe4fb4bca2d", null ],
+    [ "dt_max", "classERF.html#a3ec36cbd96abc7ac706fee7007ae9aeb", null ],
+    [ "dt_max_initial", "classERF.html#ad4b3bb9d744fb5dde65a21951b86e132", null ],
     [ "dt_mri_ratio", "classERF.html#a3cf7cb2e51eb7b69cb4079ffc6722459", null ],
     [ "dz_min", "classERF.html#a15db5266359edba700f523f16da303a7", null ],
     [ "eddyDiffs_lev", "classERF.html#a327d704704abd516be19339cb2d226f9", null ],

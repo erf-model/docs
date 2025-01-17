@@ -1,5 +1,7 @@
 var NAVTREEINDEX7 =
 {
+"classMOSTAverage.html#a7d43a66f7518f75e694e0582dd40ec44":[2,0,49,47],
+"classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2":[2,0,49,42],
 "classMOSTAverage.html#a81ff1b7e8d026f0cd74147cbcc016d15":[2,0,49,55],
 "classMOSTAverage.html#a8928b9f9d6d45fdd9fd88053fcae34e2":[2,0,49,11],
 "classMOSTAverage.html#a89b9ec10eb8dee9a8be7c9597a3f5008":[2,0,49,38],
@@ -247,7 +249,5 @@ var NAVTREEINDEX7 =
 "classNullSurf.html#ab6d3582e156056b1b230809fe499a0cf":[2,0,58,0],
 "classNullSurf.html#ac722d317f14ff1793ce7a38362987513":[2,0,58,14],
 "classNullSurf.html#acd221d04045bb8114c1a2ae55a509252":[2,0,58,11],
-"classNullSurf.html#adf5c64f43a59af0d6caae7211cdfa480":[2,0,58,8],
-"classNullSurf.html#ae096eaa2ce9385fabf5692c6a7ac6c26":[2,0,58,16],
-"classNullSurf.html#aec12d8aa3e358ea40f7d4371651eb73a":[2,0,58,13]
+"classNullSurf.html#adf5c64f43a59af0d6caae7211cdfa480":[2,0,58,8]
 };
