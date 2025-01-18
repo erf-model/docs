@@ -447,7 +447,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="comment">// Index: 0=u (vol/slab_lo), 1=v (vol/slab_lo)</span></div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="comment">//        2=u (slab_hi),     3=v (slab_hi)</span></div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keywordtype">int</span> n_avg = 4;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        amrex::Vector&lt;amrex::Real&gt; avg_h(n_avg,0.);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        amrex::Vector&lt;amrex::Real&gt; <a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>(n_avg,0.);</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        amrex::Gpu::DeviceVector&lt;amrex::Real&gt; avg_d(n_avg,0.);</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        amrex::Real* avg = avg_d.data();</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
@@ -541,19 +541,20 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;        } <span class="comment">// MFIter</span></div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160; </div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        <span class="comment">// Copy from device back to host</span></div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        amrex::Gpu::copy(amrex::Gpu::deviceToHost, avg_d.begin(), avg_d.end(), avg_h.begin());</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        amrex::Gpu::copy(amrex::Gpu::deviceToHost, avg_d.begin(), avg_d.end(), <a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>.begin());</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        <span class="comment">// Computing the average magnitude within PB</span></div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;<span class="preprocessor">        #ifdef USE_VOLUME_AVERAGE</span></div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        m_pb_mag[boxIdx] = sqrt(avg_h[0]*avg_h[0] + avg_h[1]*avg_h[1]);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        m_pb_mag[boxIdx] = sqrt(<a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>[0]*<a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>[0] + <a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>[1]*<a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>[1]);</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;<span class="preprocessor">        #endif</span></div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160; </div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;<span class="preprocessor">        #ifdef USE_SLAB_AVERAGE</span></div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        m_pb_mag[boxIdx] = 0.5*( sqrt(avg_h[0]*avg_h[0] + avg_h[1]*avg_h[1])</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                               + sqrt(avg_h[2]*avg_h[2] + avg_h[3]*avg_h[3]));</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        m_pb_mag[boxIdx] = 0.5*( sqrt(<a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>[0]*<a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>[0] + <a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>[1]*<a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>[1])</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                               + sqrt(<a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>[2]*<a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>[2] + <a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>[3]*<a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>[3]));</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="preprocessor">        #endif</span></div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    }</div>
 <div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
+<div class="ttc" id="anamespaceutils_html_afd70db91466598d8531fdb706be70271"><div class="ttname"><a href="namespaceutils.html#afd70db91466598d8531fdb706be70271">utils::avg_h</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real avg_h(amrex::Real XXXm, amrex::Real XXXp)</div><div class="ttdef"><b>Definition:</b> ERF_EBUtils.H:10</div></div>
 <div class="ttc" id="astructTurbulentPerturbation_html_a237c085bf6fa265eef471d19bbca613f"><div class="ttname"><a href="structTurbulentPerturbation.html#a237c085bf6fa265eef471d19bbca613f">TurbulentPerturbation::get_pb_mag</a></div><div class="ttdeci">amrex::Real * get_pb_mag()</div><div class="ttdef"><b>Definition:</b> ERF_TurbPertStruct.H:504</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structTurbulentPerturbation.html#a5e6200f8b6bea3c4944dccc6c7285102">calc_tpi_update()</a>.</p>
@@ -562,9 +563,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structTurbulentPerturbation_ac2f49dd6a95ab0bb291fa4977d9682e5_cgraph.png" border="0" usemap="#astructTurbulentPerturbation_ac2f49dd6a95ab0bb291fa4977d9682e5_cgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_ac2f49dd6a95ab0bb291fa4977d9682e5_cgraph" id="astructTurbulentPerturbation_ac2f49dd6a95ab0bb291fa4977d9682e5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,35,211,76"/>
-<area shape="rect" href="structTurbulentPerturbation.html#a237c085bf6fa265eef471d19bbca613f" title=" " alt="" coords="259,5,421,47"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="303,71,377,98"/>
+<area shape="rect" title=" " alt="" coords="5,57,211,98"/>
+<area shape="rect" href="namespaceutils.html#afd70db91466598d8531fdb706be70271" title=" " alt="" coords="291,5,389,32"/>
+<area shape="rect" href="structTurbulentPerturbation.html#a237c085bf6fa265eef471d19bbca613f" title=" " alt="" coords="259,57,421,98"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="303,123,377,149"/>
 </map>
 </div>
 <div class="dynheader">
@@ -701,14 +703,15 @@ Here is the call graph for this function:</div>
 <map name="astructTurbulentPerturbation_a5e6200f8b6bea3c4944dccc6c7285102_cgraph" id="astructTurbulentPerturbation_a5e6200f8b6bea3c4944dccc6c7285102_cgraph">
 <area shape="rect" title=" " alt="" coords="5,169,168,211"/>
 <area shape="rect" href="structTurbulentPerturbation.html#a6690a1ccf037f5cf892e72724c21b3a5" title=" " alt="" coords="237,5,400,47"/>
-<area shape="rect" href="structTurbulentPerturbation.html#ac2f49dd6a95ab0bb291fa4977d9682e5" title=" " alt="" coords="216,71,421,112"/>
-<area shape="rect" href="structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60" title=" " alt="" coords="237,201,400,243"/>
-<area shape="rect" href="structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527" title=" " alt="" coords="231,136,407,177"/>
+<area shape="rect" href="structTurbulentPerturbation.html#ac2f49dd6a95ab0bb291fa4977d9682e5" title=" " alt="" coords="216,136,421,177"/>
+<area shape="rect" href="structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60" title=" " alt="" coords="237,71,400,112"/>
+<area shape="rect" href="structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527" title=" " alt="" coords="231,201,407,243"/>
 <area shape="rect" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1" title=" " alt="" coords="237,267,400,308"/>
 <area shape="rect" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7" title=" " alt="" coords="237,332,400,373"/>
-<area shape="rect" href="structTurbulentPerturbation.html#a237c085bf6fa265eef471d19bbca613f" title=" " alt="" coords="469,71,632,112"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="514,146,587,173"/>
-<area shape="rect" href="structTurbulentPerturbation.html#aa8a048ec67a9e110cef012105dd615cf" title=" " alt="" coords="469,201,632,243"/>
+<area shape="rect" href="namespaceutils.html#afd70db91466598d8531fdb706be70271" title=" " alt="" coords="502,87,599,114"/>
+<area shape="rect" href="structTurbulentPerturbation.html#a237c085bf6fa265eef471d19bbca613f" title=" " alt="" coords="469,139,632,180"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="514,207,587,234"/>
+<area shape="rect" href="structTurbulentPerturbation.html#aa8a048ec67a9e110cef012105dd615cf" title=" " alt="" coords="469,21,632,63"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="531,274,570,301"/>
 </map>
 </div>
@@ -1091,7 +1094,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        amrex::Real* m_pb_netZero = <a class="code" href="structTurbulentPerturbation.html#aa8a048ec67a9e110cef012105dd615cf">get_pb_netZero</a>();</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="comment">// Create device array for summation</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        amrex::Vector&lt;amrex::Real&gt; avg_h(1,0.);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        amrex::Vector&lt;amrex::Real&gt; <a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>(1,0.);</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        amrex::Gpu::DeviceVector&lt;amrex::Real&gt; avg_d(1,0.);</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        amrex::Real* avg = avg_d.data();</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
@@ -1108,10 +1111,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Gpu::Handler <span class="keyword">const</span>&amp; handler) noexcept {</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                    amrex::Gpu::deviceReduceSum(&amp;avg[0], pert_cell(i,j,k)*norm, handler);</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                });</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                amrex::Gpu::copy(amrex::Gpu::deviceToHost, avg_d.begin(), avg_d.end(), avg_h.begin());</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                amrex::Gpu::copy(amrex::Gpu::deviceToHost, avg_d.begin(), avg_d.end(), <a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>.begin());</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                <span class="comment">// Assigning onto storage array</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                m_pb_netZero[boxIdx] = avg_h[0];</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                m_pb_netZero[boxIdx] = <a class="code" href="namespaceutils.html#afd70db91466598d8531fdb706be70271">avg_h</a>[0];</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            }</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        }</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    }</div>
@@ -1123,9 +1126,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structTurbulentPerturbation_acf1a844ac4076c4af8ef38963f3fcc60_cgraph.png" border="0" usemap="#astructTurbulentPerturbation_acf1a844ac4076c4af8ef38963f3fcc60_cgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_acf1a844ac4076c4af8ef38963f3fcc60_cgraph" id="astructTurbulentPerturbation_acf1a844ac4076c4af8ef38963f3fcc60_cgraph">
-<area shape="rect" title=" " alt="" coords="5,35,168,76"/>
-<area shape="rect" href="structTurbulentPerturbation.html#aa8a048ec67a9e110cef012105dd615cf" title=" " alt="" coords="216,5,379,47"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="261,71,334,98"/>
+<area shape="rect" title=" " alt="" coords="5,57,168,98"/>
+<area shape="rect" href="namespaceutils.html#afd70db91466598d8531fdb706be70271" title=" " alt="" coords="249,5,346,32"/>
+<area shape="rect" href="structTurbulentPerturbation.html#aa8a048ec67a9e110cef012105dd615cf" title=" " alt="" coords="216,57,379,98"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="261,123,334,149"/>
 </map>
 </div>
 <div class="dynheader">

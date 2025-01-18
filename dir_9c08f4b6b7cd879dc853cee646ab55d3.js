@@ -1,17 +1,28 @@
 var dir_9c08f4b6b7cd879dc853cee646ab55d3 =
 [
-    [ "ERF_EBBox.cpp", "ERF__EBBox_8cpp.html", null ],
-    [ "ERF_EBIF.H", "ERF__EBIF_8H.html", [
-      [ "UnionListIF", "classUnionListIF.html", "classUnionListIF" ],
-      [ "CIF", "classCIF.html", "classCIF" ],
-      [ "UnionCIF", "classUnionCIF.html", "classUnionCIF" ],
-      [ "IntersectionCIF", "classIntersectionCIF.html", "classIntersectionCIF" ]
+    [ "ERF_EB.cpp", "ERF__EB_8cpp.html", null ],
+    [ "ERF_EB.H", "ERF__EB_8H.html", [
+      [ "eb_", "classeb__.html", "classeb__" ]
     ] ],
-    [ "ERF_EBRegular.cpp", "ERF__EBRegular_8cpp.html", null ],
-    [ "ERF_InitEB.cpp", "ERF__InitEB_8cpp.html", null ],
-    [ "ERF_Redistribute.cpp", "ERF__Redistribute_8cpp.html", null ],
-    [ "ERF_TerrainIF.H", "ERF__TerrainIF_8H.html", [
+    [ "ERF_EBAux.cpp", "ERF__EBAux_8cpp.html", null ],
+    [ "ERF_EBAux.H", "ERF__EBAux_8H.html", [
+      [ "eb_aux_", "classeb__aux__.html", "classeb__aux__" ]
+    ] ],
+    [ "ERF_EBBox.cpp", "ERF__EBBox_8cpp.html", null ],
+    [ "ERF_EBCutCell.cpp", "ERF__EBCutCell_8cpp.html", null ],
+    [ "ERF_EBCutCell.H", "ERF__EBCutCell_8H.html", [
+      [ "eb_cut_cell_", "classeb__cut__cell__.html", "classeb__cut__cell__" ]
+    ] ],
+    [ "ERF_EBIF.H", "ERF__EBIF_8H.html", [
+      [ "UnionListIF", "classUnionListIF.html", "classUnionListIF" ]
+    ] ],
+    [ "ERF_EBIFTerrain.H", "ERF__EBIFTerrain_8H.html", [
       [ "TerrainIF", "classTerrainIF.html", "classTerrainIF" ]
     ] ],
-    [ "ERF_WriteEBSurface.cpp", "ERF__WriteEBSurface_8cpp.html", null ]
+    [ "ERF_EBPolygon.H", "ERF__EBPolygon_8H.html", [
+      [ "polygon_", "classpolygon__.html", "classpolygon__" ]
+    ] ],
+    [ "ERF_EBRedistribute.cpp", "ERF__EBRedistribute_8cpp.html", null ],
+    [ "ERF_EBUtils.H", "ERF__EBUtils_8H.html", "ERF__EBUtils_8H" ],
+    [ "ERF_EBWriteSurface.cpp", "ERF__EBWriteSurface_8cpp.html", null ]
 ];

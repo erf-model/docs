@@ -69,6 +69,11 @@ var namespaces_dup =
     [ "MicVar_SatAdj", "namespaceMicVar__SatAdj.html", null ],
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
     [ "RealBdyVars", "namespaceRealBdyVars.html", null ],
+    [ "utils", "namespaceutils.html", [
+      [ "avg_h", "namespaceutils.html#afd70db91466598d8531fdb706be70271", null ],
+      [ "intersect_plane_edge", "namespaceutils.html#a96faac6dfc503c947d30616ef766d77c", null ],
+      [ "trD", "namespaceutils.html#ad80671a1807608fc40809f586dcf506a", null ]
+    ] ],
     [ "Vars", "namespaceVars.html", null ],
     [ "WRFBdyVars", "namespaceWRFBdyVars.html", null ]
 ];

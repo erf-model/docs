@@ -251,7 +251,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    Real s = 0.5*c*B/(<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rad);</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    Real at, an, V1, Vt, Vr, psi, L, D, Cn, Ct;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    Real ftip, fhub, <a class="code" href="classF.html">F</a>, Cl, Cd, at_new, an_new;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    Real ftip, fhub, F, Cl, Cd, at_new, an_new;</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    at = 0.1;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    an = 0.1;</div>
@@ -284,10 +284,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        AMREX_ALWAYS_ASSERT(std::fabs(std::exp(-fhub))&lt;=1.0);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        AMREX_ALWAYS_ASSERT(std::fabs(std::exp(-ftip))&lt;=1.0);</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <a class="code" href="classF.html">F</a> = 2.0/<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*(std::acos(std::exp(-ftip)) + std::acos(std::exp(-fhub)) );</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        F = 2.0/<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*(std::acos(std::exp(-ftip)) + std::acos(std::exp(-fhub)) );</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        at_new = 1.0/ ( 4.0*<a class="code" href="classF.html">F</a>*std::sin(psi)*std::cos(psi)/(s*Ct+1e-10) - 1.0 );</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        an_new = 1.0/ ( 1.0 + 4.0*<a class="code" href="classF.html">F</a>*std::pow(std::sin(psi),2)/(s*Cn + 1e-10) );</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        at_new = 1.0/ ( 4.0*F*std::sin(psi)*std::cos(psi)/(s*Ct+1e-10) - 1.0 );</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        an_new = 1.0/ ( 1.0 + 4.0*F*std::pow(std::sin(psi),2)/(s*Cn + 1e-10) );</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        at_new = std::max(0.0, at_new);</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordflow">if</span>(std::fabs(at_new-at) &lt; 1e-5 and std::fabs(an_new-an) &lt; 1e-5) {</div>
@@ -326,7 +326,6 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__Interpolation__1D_8H_html_a803d0d35d4ca4791556cbe02bbf51cbb"><div class="ttname"><a href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real interpolate_1d(const amrex::Real *alpha, const amrex::Real *beta, const amrex::Real alpha_interp, const int alpha_size)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_1D.H:12</div></div>
-<div class="ttc" id="aclassF_html"><div class="ttname"><a href="classF.html">F</a></div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:30</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classGeneralAD.html#a5be79013be63b8105a01534ca186de32">GeneralAD::source_terms_cellcentered()</a>.</p>
