@@ -4624,118 +4624,122 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;{</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    Real l_gravity = <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">gravity</a>;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">bool</span> l_use_terrain = (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">mesh_type</a> != MeshType::ConstantDz);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> geomdata = geom[lev].data();</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keyword">const</span> Real dz = geomdata.CellSize(2);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(dens, <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi )</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="comment">// Create a flat box with same horizontal extent but only one cell in vertical</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keyword">const</span> Box&amp; tbz = mfi.nodaltilebox(2);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordtype">int</span> klo = tbz.smallEnd(2);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordtype">int</span> khi = tbz.bigEnd(2);</div>
+<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;{</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    Real l_gravity = <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">gravity</a>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">bool</span> l_use_terrain = (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">mesh_type</a> != MeshType::ConstantDz);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="comment">// Note we only grow by 1 because that is how big z_cc is.</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        Box b2d = tbz; <span class="comment">// Copy constructor</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        b2d.grow(0,1);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        b2d.grow(1,1);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        b2d.setRange(2,0);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="comment">// We integrate to the first cell (and below) by using rho in this cell</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="comment">// If gravity == 0 this is constant pressure</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment">// If gravity != 0, hence this is a wall, this gives gp0 = dens[0] * gravity</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="comment">// (dens_hse*gravity would also be dens[0]*gravity because we use foextrap for rho at k = -1)</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="comment">// Note ng_pres_hse = 1</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;       <span class="comment">// We start by assuming pressure on the ground is p_0 (in ERF_Constants.H)</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;       <span class="comment">// Note that gravity is positive</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        Array4&lt;Real&gt;  rho_arr = dens.array(mfi);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        Array4&lt;Real&gt; pres_arr = <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>.array(mfi);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        Array4&lt;Real&gt;   pi_arr =   pi.array(mfi);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        Array4&lt;Real&gt;   th_arr = <a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a>.array(mfi);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        Array4&lt;Real&gt; zcc_arr;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">if</span> (l_use_terrain) {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;           zcc_arr = z_cc-&gt;array(mfi);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keyword">const</span> Real rdOcp = <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">rdOcp</a>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> geomdata = geom[lev].data();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keyword">const</span> Real dz = geomdata.CellSize(2);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(dens, <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi )</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment">// Create a flat box with same horizontal extent but only one cell in vertical</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keyword">const</span> Box&amp; tbz = mfi.nodaltilebox(2);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordtype">int</span> klo = tbz.smallEnd(2);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordtype">int</span> khi = tbz.bigEnd(2);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="comment">// Note we only grow by 1 because that is how big z_cc is.</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        Box b2d = tbz; <span class="comment">// Copy constructor</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        b2d.grow(0,1);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        b2d.grow(1,1);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        b2d.setRange(2,0);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="comment">// Intersect this box with the domain</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        Box zdomain = convert(geom[lev].Domain(),tbz.ixType());</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        b2d &amp;= zdomain;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="comment">// We integrate to the first cell (and below) by using rho in this cell</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">// If gravity == 0 this is constant pressure</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="comment">// If gravity != 0, hence this is a wall, this gives gp0 = dens[0] * gravity</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="comment">// (dens_hse*gravity would also be dens[0]*gravity because we use foextrap for rho at k = -1)</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="comment">// Note ng_pres_hse = 1</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="comment">// Set value at surface from Newton iteration for rho</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordflow">if</span> (klo == 0)</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="comment">// Physical height of the terrain at cell center</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                Real hz;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="keywordflow">if</span> (l_use_terrain) {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    hz = zcc_arr(i,j,klo);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    hz = 0.5*dz;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                pres_arr(i,j,klo) = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> - hz * rho_arr(i,j,klo) * l_gravity;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                  pi_arr(i,j,klo) = <a class="code" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(pres_arr(i,j,klo), rdOcp);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                  th_arr(i,j,klo) =<a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(pres_arr(i,j,klo)) / rho_arr(i,j,klo);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <span class="comment">//</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                <span class="comment">// Set ghost cell with dz and rho at boundary</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                <span class="comment">// (We will set the rest of the ghost cells in the boundary condition routine)</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                <span class="comment">//</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                pres_arr(i,j,klo-1) = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> + hz * rho_arr(i,j,klo) * l_gravity;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                  pi_arr(i,j,klo-1) = <a class="code" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(pres_arr(i,j,klo-1), rdOcp);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                  th_arr(i,j,klo-1) = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(pres_arr(i,j,klo-1)) / rho_arr(i,j,klo-1);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;       <span class="comment">// We start by assuming pressure on the ground is p_0 (in ERF_Constants.H)</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;       <span class="comment">// Note that gravity is positive</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        Array4&lt;Real&gt;  rho_arr = dens.array(mfi);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        Array4&lt;Real&gt; pres_arr = <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>.array(mfi);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        Array4&lt;Real&gt;   pi_arr =   pi.array(mfi);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        Array4&lt;Real&gt;   th_arr = <a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a>.array(mfi);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        Array4&lt;Real&gt; zcc_arr;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> (l_use_terrain) {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;           zcc_arr = z_cc-&gt;array(mfi);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keyword">const</span> Real rdOcp = <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">rdOcp</a>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="comment">// Set value at surface from Newton iteration for rho</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">if</span> (klo == 0)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                <span class="comment">// Physical height of the terrain at cell center</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                Real hz;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                <span class="keywordflow">if</span> (l_use_terrain) {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    hz = zcc_arr(i,j,klo);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    hz = 0.5*dz;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                }</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <span class="comment">// If level &gt; 0 and klo &gt; 0, we need to use the value of pres_arr(i,j,klo-1) which was</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <span class="comment">//    filled from FillPatch-ing it.</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                Real dz_loc;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                <span class="keywordflow">if</span> (l_use_terrain) {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                    dz_loc = (zcc_arr(i,j,klo) - zcc_arr(i,j,klo-1));</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    dz_loc = dz;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                }</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                Real dens_interp = 0.5*(rho_arr(i,j,klo) + rho_arr(i,j,klo-1));</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                pres_arr(i,j,klo) = pres_arr(i,j,klo-1) - dz_loc * dens_interp * l_gravity;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                pres_arr(i,j,klo) = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> - hz * rho_arr(i,j,klo) * l_gravity;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                  pi_arr(i,j,klo) = <a class="code" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(pres_arr(i,j,klo), rdOcp);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                  th_arr(i,j,klo) =<a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(pres_arr(i,j,klo)) / rho_arr(i,j,klo);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <span class="comment">//</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                <span class="comment">// Set ghost cell with dz and rho at boundary</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                <span class="comment">// (We will set the rest of the ghost cells in the boundary condition routine)</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="comment">//</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                pres_arr(i,j,klo-1) = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> + hz * rho_arr(i,j,klo) * l_gravity;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                  pi_arr(i,j,klo-1) = <a class="code" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(pres_arr(i,j,klo-1), rdOcp);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                  th_arr(i,j,klo-1) = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(pres_arr(i,j,klo-1)) / rho_arr(i,j,klo-1);</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                pi_arr(i,j,klo  ) = <a class="code" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(pres_arr(i,j,klo  ), rdOcp);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                th_arr(i,j,klo  ) = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(pres_arr(i,j,klo  )) / rho_arr(i,j,klo  );</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                pi_arr(i,j,klo-1) = <a class="code" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(pres_arr(i,j,klo-1), rdOcp);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                th_arr(i,j,klo-1) = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(pres_arr(i,j,klo-1)) / rho_arr(i,j,klo-1);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            }</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            Real dens_interp;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain) {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo+1; k &lt;= khi; k++) {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                    Real dz_loc = (zcc_arr(i,j,k) - zcc_arr(i,j,k-1));</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                    dens_interp = 0.5*(rho_arr(i,j,k) + rho_arr(i,j,k-1));</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    pres_arr(i,j,k) = pres_arr(i,j,k-1) - dz_loc * dens_interp * l_gravity;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    pi_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(pres_arr(i,j,k), rdOcp);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                    th_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(pres_arr(i,j,k)) / rho_arr(i,j,k);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo+1; k &lt;= khi; k++) {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    dens_interp = 0.5*(rho_arr(i,j,k) + rho_arr(i,j,k-1));</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    pres_arr(i,j,k) = pres_arr(i,j,k-1) - dz * dens_interp * l_gravity;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    pi_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(pres_arr(i,j,k), rdOcp);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    th_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(pres_arr(i,j,k)) / rho_arr(i,j,k);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                }</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            }</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        });</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;     dens.FillBoundary(geom[lev].periodicity());</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;     <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>.FillBoundary(geom[lev].periodicity());</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;       pi.FillBoundary(geom[lev].periodicity());</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a>.FillBoundary(geom[lev].periodicity());</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="comment">// If level &gt; 0 and klo &gt; 0, we need to use the value of pres_arr(i,j,klo-1) which was</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="comment">//    filled from FillPatch-ing it.</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                Real dz_loc;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="keywordflow">if</span> (l_use_terrain) {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                    dz_loc = (zcc_arr(i,j,klo) - zcc_arr(i,j,klo-1));</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                    dz_loc = dz;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                Real dens_interp = 0.5*(rho_arr(i,j,klo) + rho_arr(i,j,klo-1));</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                pres_arr(i,j,klo) = pres_arr(i,j,klo-1) - dz_loc * dens_interp * l_gravity;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                pi_arr(i,j,klo  ) = <a class="code" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(pres_arr(i,j,klo  ), rdOcp);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                th_arr(i,j,klo  ) = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(pres_arr(i,j,klo  )) / rho_arr(i,j,klo  );</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                pi_arr(i,j,klo-1) = <a class="code" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(pres_arr(i,j,klo-1), rdOcp);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                th_arr(i,j,klo-1) = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(pres_arr(i,j,klo-1)) / rho_arr(i,j,klo-1);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            Real dens_interp;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain) {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo+1; k &lt;= khi; k++) {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    Real dz_loc = (zcc_arr(i,j,k) - zcc_arr(i,j,k-1));</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    dens_interp = 0.5*(rho_arr(i,j,k) + rho_arr(i,j,k-1));</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    pres_arr(i,j,k) = pres_arr(i,j,k-1) - dz_loc * dens_interp * l_gravity;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    pi_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(pres_arr(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    th_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(pres_arr(i,j,k)) / rho_arr(i,j,k);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo+1; k &lt;= khi; k++) {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    dens_interp = 0.5*(rho_arr(i,j,k) + rho_arr(i,j,k-1));</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                    pres_arr(i,j,k) = pres_arr(i,j,k-1) - dz * dens_interp * l_gravity;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                    pi_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a>(pres_arr(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                    th_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(pres_arr(i,j,k)) / rho_arr(i,j,k);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        });</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;     dens.FillBoundary(geom[lev].periodicity());</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;     <a class="code" href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>.FillBoundary(geom[lev].periodicity());</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;       pi.FillBoundary(geom[lev].periodicity());</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <a class="code" href="namespaceLsmVar__MM5.html#a0c17a1ae9d9db120b8947e6da767cd3baf198df5800148ff3680d005b5fb09c68">theta</a>.FillBoundary(geom[lev].periodicity());</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a994fea25f28c33c2e8f1e9c63d5b8b56"><div class="ttname"><a href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a></div><div class="ttdeci">constexpr amrex::Real p_0</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:18</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_a3cc0ee7727b26e21a97acfc2ad2e6d4d"><div class="ttname"><a href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getRhoThetagivenP(const amrex::Real p, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:175</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_ab415ab4061cbbea05723267a0bf82c6b"><div class="ttname"><a href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenP(const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:144</div></div>
@@ -6124,66 +6128,70 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                          geom[lev-1], geom[lev],</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                          refRatio(lev-1), mapper_c, <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//************************************************************************************************</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Interpolate x-momentum from coarse to fine level</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// with InterpFromCoarseLevel which ASSUMES that all ghost cells have already been filled</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// ************************************************************************************************</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// Physical bc&#39;s for cell centered variables at domain boundary</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    (*<a class="code" href="classERF.html#a2e9b04043853d25f2d76edbc0bed2e72">physbcs_cons</a>[lev])(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],0,ncomp_cons,ngvect_cons,time,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>,<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    InterpFromCoarseLevel(<a class="code" href="classERF.html#a01f3db32272f53dc68025f0a98195e57">rU_new</a>[lev], IntVect{0}, IntVect{0}, <a class="code" href="classERF.html#a01f3db32272f53dc68025f0a98195e57">rU_new</a>[lev-1], 0, 0, 1,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                          geom[lev-1], geom[lev],</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                          refRatio(lev-1), mapper_f, <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">//************************************************************************************************</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Interpolate x-momentum from coarse to fine level</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// with InterpFromCoarseLevel which ASSUMES that all ghost cells have already been filled</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// ************************************************************************************************</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">//************************************************************************************************</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// Interpolate y-momentum from coarse to fine level</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// with InterpFromCoarseLevel which ASSUMES that all ghost cells have already been filled</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// ************************************************************************************************</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    InterpFromCoarseLevel(<a class="code" href="classERF.html#a01f3db32272f53dc68025f0a98195e57">rU_new</a>[lev], IntVect{0}, IntVect{0}, <a class="code" href="classERF.html#a01f3db32272f53dc68025f0a98195e57">rU_new</a>[lev-1], 0, 0, 1,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                          geom[lev-1], geom[lev],</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                          refRatio(lev-1), mapper_f, <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    InterpFromCoarseLevel(<a class="code" href="classERF.html#a54e37988486ef96e55e84bd8e91bb688">rV_new</a>[lev], IntVect{0}, IntVect{0}, <a class="code" href="classERF.html#a54e37988486ef96e55e84bd8e91bb688">rV_new</a>[lev-1], 0, 0, 1,</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                          geom[lev-1], geom[lev],</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                          refRatio(lev-1), mapper_f, <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">//************************************************************************************************</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Interpolate z-momentum from coarse to fine level</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// with InterpFromCoarseLevel which ASSUMES that all ghost cells have already been filled</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// ************************************************************************************************</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    InterpFromCoarseLevel(<a class="code" href="classERF.html#aa46c0b0d20525aed10f447923e54dde7">rW_new</a>[lev],  IntVect{0}, IntVect{0}, <a class="code" href="classERF.html#aa46c0b0d20525aed10f447923e54dde7">rW_new</a>[lev-1], 0, 0, 1,</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                          geom[lev-1], geom[lev],</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                          refRatio(lev-1), mapper_f, <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// *********************************************************</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// After interpolation of momentum, convert back to velocity</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// *********************************************************</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> which_lev = lev-1; which_lev &lt;= lev; which_lev++)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="ERF__MomentumToVelocity_8cpp.html#a4909cdce4c261c6dae5564fb714881ea">MomentumToVelocity</a>(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[which_lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                           <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[which_lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                           <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[which_lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>],</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                           <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[which_lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                             <a class="code" href="classERF.html#a01f3db32272f53dc68025f0a98195e57">rU_new</a>[which_lev],</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                             <a class="code" href="classERF.html#a54e37988486ef96e55e84bd8e91bb688">rV_new</a>[which_lev],</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                             <a class="code" href="classERF.html#aa46c0b0d20525aed10f447923e54dde7">rW_new</a>[which_lev],</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                           Geom(lev).Domain(),</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                           <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// Physical bc&#39;s at domain boundary</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    IntVect ngvect_vels = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>].nGrowVect();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">//************************************************************************************************</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Interpolate y-momentum from coarse to fine level</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// with InterpFromCoarseLevel which ASSUMES that all ghost cells have already been filled</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// ************************************************************************************************</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    InterpFromCoarseLevel(<a class="code" href="classERF.html#a54e37988486ef96e55e84bd8e91bb688">rV_new</a>[lev], IntVect{0}, IntVect{0}, <a class="code" href="classERF.html#a54e37988486ef96e55e84bd8e91bb688">rV_new</a>[lev-1], 0, 0, 1,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                          geom[lev-1], geom[lev],</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                          refRatio(lev-1), mapper_f, <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">//************************************************************************************************</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// Interpolate z-momentum from coarse to fine level</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// with InterpFromCoarseLevel which ASSUMES that all ghost cells have already been filled</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// ************************************************************************************************</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    InterpFromCoarseLevel(<a class="code" href="classERF.html#aa46c0b0d20525aed10f447923e54dde7">rW_new</a>[lev],  IntVect{0}, IntVect{0}, <a class="code" href="classERF.html#aa46c0b0d20525aed10f447923e54dde7">rW_new</a>[lev-1], 0, 0, 1,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                          geom[lev-1], geom[lev],</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                          refRatio(lev-1), mapper_f, <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>, <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// *********************************************************</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// After interpolation of momentum, convert back to velocity</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// *********************************************************</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> which_lev = lev-1; which_lev &lt;= lev; which_lev++)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="ERF__MomentumToVelocity_8cpp.html#a4909cdce4c261c6dae5564fb714881ea">MomentumToVelocity</a>(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[which_lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                           <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[which_lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                           <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[which_lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>],</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                           <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[which_lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                             <a class="code" href="classERF.html#a01f3db32272f53dc68025f0a98195e57">rU_new</a>[which_lev],</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                             <a class="code" href="classERF.html#a54e37988486ef96e55e84bd8e91bb688">rV_new</a>[which_lev],</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                             <a class="code" href="classERF.html#aa46c0b0d20525aed10f447923e54dde7">rW_new</a>[which_lev],</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                           Geom(lev).Domain(),</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                           <a class="code" href="classERF.html#a574521986a6e403159f83c8b8123ba90">domain_bcs_type</a>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    (*<a class="code" href="classERF.html#a2e9b04043853d25f2d76edbc0bed2e72">physbcs_cons</a>[lev])(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],0,ncomp_cons,ngvect_cons,time,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>,<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    (   *<a class="code" href="classERF.html#a64e55e5ae9df06433146db657eb9e72e">physbcs_u</a>[lev])(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],0,1         ,ngvect_vels,time,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>,<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    (   *<a class="code" href="classERF.html#a79231b5cfd4576a742e46ae0082b5121">physbcs_v</a>[lev])(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],0,1         ,ngvect_vels,time,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>,<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    (   *<a class="code" href="classERF.html#a45c8ecd777f47732993777a0afb8e140">physbcs_w</a>[lev])(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>],<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                         ngvect_vels,time,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>,<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="comment">// Since lev &gt; 0 here we don&#39;t worry about m_r2d or wrfbdy data</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// Physical bc&#39;s at domain boundary</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    IntVect ngvect_vels = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>].nGrowVect();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    (   *<a class="code" href="classERF.html#a64e55e5ae9df06433146db657eb9e72e">physbcs_u</a>[lev])(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],0,1         ,ngvect_vels,time,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>,<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    (   *<a class="code" href="classERF.html#a79231b5cfd4576a742e46ae0082b5121">physbcs_v</a>[lev])(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],0,1         ,ngvect_vels,time,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>,<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    (   *<a class="code" href="classERF.html#a45c8ecd777f47732993777a0afb8e140">physbcs_w</a>[lev])(<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>],<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],<a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                         ngvect_vels,time,<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa03b35ec9e83f34bb1349a86965d34e34">BCVars::zvel_bc</a>,<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// Since lev &gt; 0 here we don&#39;t worry about m_r2d or wrfbdy data</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">// ***************************************************************************</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
 <div class="ttc" id="aclassERF_html_ac4497025ab94461899960ee067c2c72a"><div class="ttname"><a href="classERF.html#ac4497025ab94461899960ee067c2c72a">ERF::FillCoarsePatch</a></div><div class="ttdeci">void FillCoarsePatch(int lev, amrex::Real time)</div><div class="ttdef"><b>Definition:</b> ERF_FillCoarsePatch.cpp:21</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -8283,7 +8291,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a604939a8058f7efa36a427adb889739c"><div class="ttname"><a href="classERF.html#a604939a8058f7efa36a427adb889739c">ERF::init_custom</a></div><div class="ttdeci">void init_custom(int lev)</div><div class="ttdef"><b>Definition:</b> ERF_InitCustom.cpp:26</div></div>
 <div class="ttc" id="aclassERF_html_a618e8fdff3239cc79d4145d02b1ecaa2"><div class="ttname"><a href="classERF.html#a618e8fdff3239cc79d4145d02b1ecaa2">ERF::init_bcs</a></div><div class="ttdeci">void init_bcs()</div><div class="ttdef"><b>Definition:</b> ERF_InitBCs.cpp:20</div></div>
 <div class="ttc" id="aclassERF_html_a857a8f76768ec4451b995cbf4f4ac176"><div class="ttname"><a href="classERF.html#a857a8f76768ec4451b995cbf4f4ac176">ERF::init_from_hse</a></div><div class="ttdeci">void init_from_hse(int lev)</div><div class="ttdef"><b>Definition:</b> ERF_InitFromHSE.cpp:32</div></div>
-<div class="ttc" id="aclassERF_html_a92c020bfaa43e40fb5ffc449427a0318"><div class="ttname"><a href="classERF.html#a92c020bfaa43e40fb5ffc449427a0318">ERF::initHSE</a></div><div class="ttdeci">void initHSE()</div><div class="ttdoc">Initialize HSE.</div><div class="ttdef"><b>Definition:</b> ERF_Init1D.cpp:130</div></div>
+<div class="ttc" id="aclassERF_html_a92c020bfaa43e40fb5ffc449427a0318"><div class="ttname"><a href="classERF.html#a92c020bfaa43e40fb5ffc449427a0318">ERF::initHSE</a></div><div class="ttdeci">void initHSE()</div><div class="ttdoc">Initialize HSE.</div><div class="ttdef"><b>Definition:</b> ERF_Init1D.cpp:140</div></div>
 <div class="ttc" id="aclassERF_html_aa89efe0abf37918ce3f212fb0e26f1bc"><div class="ttname"><a href="classERF.html#aa89efe0abf37918ce3f212fb0e26f1bc">ERF::turbPert_update</a></div><div class="ttdeci">void turbPert_update(const int lev, const amrex::Real dt)</div><div class="ttdef"><b>Definition:</b> ERF_InitTurbPert.cpp:12</div></div>
 <div class="ttc" id="aclassERF_html_abfdc95a7c3cf7e413c1352bac38c93e8"><div class="ttname"><a href="classERF.html#abfdc95a7c3cf7e413c1352bac38c93e8">ERF::input_sponge</a></div><div class="ttdeci">void input_sponge(int lev)</div><div class="ttdef"><b>Definition:</b> ERF_InitSponge.cpp:17</div></div>
 <div class="ttc" id="aclassERF_html_ac81ec7f74a1be1c4a1e6e15e08385ed5"><div class="ttname"><a href="classERF.html#ac81ec7f74a1be1c4a1e6e15e08385ed5">ERF::make_physbcs</a></div><div class="ttdeci">void make_physbcs(int lev)</div><div class="ttdef"><b>Definition:</b> ERF_MakeNewArrays.cpp:610</div></div>
@@ -9758,13 +9766,13 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Initialize HSE. </p>
-<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    AMREX_ALWAYS_ASSERT(!<a class="code" href="classERF.html#a2eb81c590271b429f132103c9af25830">init_sounding_ideal</a>);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++)</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <a class="code" href="classERF.html#a92c020bfaa43e40fb5ffc449427a0318">initHSE</a>(lev);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    AMREX_ALWAYS_ASSERT(!<a class="code" href="classERF.html#a2eb81c590271b429f132103c9af25830">init_sounding_ideal</a>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="classERF.html#a92c020bfaa43e40fb5ffc449427a0318">initHSE</a>(lev);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -9850,57 +9858,67 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classERF.html#a5dd85954df2df1edf0adde3c7c6ae48f">erf_enforce_hse</a>(lev, r_hse, p_hse, pi_hse, th_hse, <a class="code" href="classERF.html#a31be0f1ae705c52c8ccc520369013284">z_phys_cc</a>[lev]);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        BoxArray ba_new(domain);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="ERF__ChopGrids_8cpp.html#a6fe49eeaa200ab6ab8ae0a6e048f3ded">ChopGrids2D</a>(ba_new, domain, ParallelDescriptor::NProcs());</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        DistributionMapping dm_new(ba_new);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        MultiFab new_base_state(ba_new, dm_new, <a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91a088c1232c30770df1105d3cdf66ee582">BaseState::num_comps</a>, <a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect());</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        new_base_state.ParallelCopy(<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev],0,0,<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nComp(),</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                    <a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect(),<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect());</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        MultiFab new_r_hse (new_base_state, make_alias, <a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91abc888a343d4fcc4fc4ffb79c6ac7cb93">BaseState::r0_comp</a>, 1);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        MultiFab new_p_hse (new_base_state, make_alias, <a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e">BaseState::p0_comp</a>, 1);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        MultiFab new_pi_hse(new_base_state, make_alias, <a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91a3d99e10d828f251e465bc2c66062badf">BaseState::pi0_comp</a>, 1);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        MultiFab new_th_hse(new_base_state, make_alias, <a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aaf394bbf6aa8da56fc479f2ed5a2a372">BaseState::th0_comp</a>, 1);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// Impose physical bc&#39;s on the base state</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        (*<a class="code" href="classERF.html#af4e7dc93dae16aa2cc94bbb20b699a6f">physbcs_base</a>[lev])(<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev],0,<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nComp(),<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect());</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        BoxArray ba_new(domain);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="ERF__ChopGrids_8cpp.html#a6fe49eeaa200ab6ab8ae0a6e048f3ded">ChopGrids2D</a>(ba_new, domain, ParallelDescriptor::NProcs());</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        DistributionMapping dm_new(ba_new);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        MultiFab new_base_state(ba_new, dm_new, <a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91a088c1232c30770df1105d3cdf66ee582">BaseState::num_comps</a>, <a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect());</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        new_base_state.ParallelCopy(<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev],0,0,<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nComp(),</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                    <a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect(),<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect());</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        std::unique_ptr&lt;MultiFab&gt; new_z_phys_cc;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        std::unique_ptr&lt;MultiFab&gt; new_z_phys_nd;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">mesh_type</a> != MeshType::ConstantDz) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            new_z_phys_cc = std::make_unique&lt;MultiFab&gt;(ba_new,dm_new,1,1);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            new_z_phys_cc-&gt;ParallelCopy(*<a class="code" href="classERF.html#a31be0f1ae705c52c8ccc520369013284">z_phys_cc</a>[lev],0,0,1,1,1);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            BoxArray ba_new_nd(ba_new);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            ba_new_nd.surroundingNodes();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            new_z_phys_nd = std::make_unique&lt;MultiFab&gt;(ba_new_nd,dm_new,1,1);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            new_z_phys_nd-&gt;ParallelCopy(*<a class="code" href="classERF.html#a93e63e5af35efa564fd4195e8703f84c">z_phys_nd</a>[lev],0,0,1,1,1);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="comment">// Initial r_hse may or may not be in HSE -- defined in ERF_Prob.cpp</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aab88dd74d39b1ad369ae6324e05d7a35">use_moist_background</a>){</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <a class="code" href="classERF.html#a60e8cb933f237903e3fbcd6376c26db0">prob</a>-&gt;erf_init_dens_hse_moist(new_r_hse, new_z_phys_nd, geom[lev]);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <a class="code" href="classERF.html#a60e8cb933f237903e3fbcd6376c26db0">prob</a>-&gt;erf_init_dens_hse(new_r_hse, new_z_phys_nd, new_z_phys_cc, geom[lev]);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="classERF.html#a5dd85954df2df1edf0adde3c7c6ae48f">erf_enforce_hse</a>(lev, new_r_hse, new_p_hse, new_pi_hse, new_th_hse, new_z_phys_cc);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment">// Now copy back into the original arrays</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].ParallelCopy(new_base_state,0,0,<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nComp(),</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                     <a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect(),<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect());</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        MultiFab new_r_hse (new_base_state, make_alias, <a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91abc888a343d4fcc4fc4ffb79c6ac7cb93">BaseState::r0_comp</a>, 1);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        MultiFab new_p_hse (new_base_state, make_alias, <a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e">BaseState::p0_comp</a>, 1);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        MultiFab new_pi_hse(new_base_state, make_alias, <a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91a3d99e10d828f251e465bc2c66062badf">BaseState::pi0_comp</a>, 1);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        MultiFab new_th_hse(new_base_state, make_alias, <a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aaf394bbf6aa8da56fc479f2ed5a2a372">BaseState::th0_comp</a>, 1);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        std::unique_ptr&lt;MultiFab&gt; new_z_phys_cc;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        std::unique_ptr&lt;MultiFab&gt; new_z_phys_nd;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">mesh_type</a> != MeshType::ConstantDz) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            new_z_phys_cc = std::make_unique&lt;MultiFab&gt;(ba_new,dm_new,1,1);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            new_z_phys_cc-&gt;ParallelCopy(*<a class="code" href="classERF.html#a31be0f1ae705c52c8ccc520369013284">z_phys_cc</a>[lev],0,0,1,1,1);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            BoxArray ba_new_nd(ba_new);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            ba_new_nd.surroundingNodes();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            new_z_phys_nd = std::make_unique&lt;MultiFab&gt;(ba_new_nd,dm_new,1,1);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            new_z_phys_nd-&gt;ParallelCopy(*<a class="code" href="classERF.html#a93e63e5af35efa564fd4195e8703f84c">z_phys_nd</a>[lev],0,0,1,1,1);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="comment">// Initial r_hse may or may not be in HSE -- defined in ERF_Prob.cpp</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aab88dd74d39b1ad369ae6324e05d7a35">use_moist_background</a>){</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <a class="code" href="classERF.html#a60e8cb933f237903e3fbcd6376c26db0">prob</a>-&gt;erf_init_dens_hse_moist(new_r_hse, new_z_phys_nd, geom[lev]);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <a class="code" href="classERF.html#a60e8cb933f237903e3fbcd6376c26db0">prob</a>-&gt;erf_init_dens_hse(new_r_hse, new_z_phys_nd, new_z_phys_cc, geom[lev]);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="classERF.html#a5dd85954df2df1edf0adde3c7c6ae48f">erf_enforce_hse</a>(lev, new_r_hse, new_p_hse, new_pi_hse, new_th_hse, new_z_phys_cc);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// Impose physical bc&#39;s on the base state -- the values outside the fine region</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">//   but inside the domain have already been filled in the call above to InterpFromCoarseLevel</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    (*<a class="code" href="classERF.html#af4e7dc93dae16aa2cc94bbb20b699a6f">physbcs_base</a>[lev])(<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev],0,<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nComp(),<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect());</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="comment">// Impose physical bc&#39;s on the base state</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        (*<a class="code" href="classERF.html#af4e7dc93dae16aa2cc94bbb20b699a6f">physbcs_base</a>[lev])(new_base_state,0,new_base_state.nComp(),new_base_state.nGrowVect());</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="comment">// Now copy back into the original arrays</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].ParallelCopy(new_base_state,0,0,<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nComp(),</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                     <a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect(),<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect());</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// Impose physical bc&#39;s on the base state -- the values outside the fine region</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">//   but inside the domain have already been filled in the call above to InterpFromCoarseLevel</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    (*<a class="code" href="classERF.html#af4e7dc93dae16aa2cc94bbb20b699a6f">physbcs_base</a>[lev])(<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev],0,<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nComp(),<a class="code" href="classERF.html#a4c1fae5e620fcd64cc9ede73715e3b7c">base_state</a>[lev].nGrowVect());</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
 <div class="ttc" id="aERF__ChopGrids_8cpp_html_a6fe49eeaa200ab6ab8ae0a6e048f3ded"><div class="ttname"><a href="ERF__ChopGrids_8cpp.html#a6fe49eeaa200ab6ab8ae0a6e048f3ded">ChopGrids2D</a></div><div class="ttdeci">void ChopGrids2D(BoxArray &amp;ba, const Box &amp;domain, int target_size)</div><div class="ttdef"><b>Definition:</b> ERF_ChopGrids.cpp:21</div></div>
-<div class="ttc" id="aclassERF_html_a5dd85954df2df1edf0adde3c7c6ae48f"><div class="ttname"><a href="classERF.html#a5dd85954df2df1edf0adde3c7c6ae48f">ERF::erf_enforce_hse</a></div><div class="ttdeci">void erf_enforce_hse(int lev, amrex::MultiFab &amp;dens, amrex::MultiFab &amp;pres, amrex::MultiFab &amp;pi, amrex::MultiFab &amp;th, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_cc)</div><div class="ttdef"><b>Definition:</b> ERF_Init1D.cpp:149</div></div>
+<div class="ttc" id="aclassERF_html_a5dd85954df2df1edf0adde3c7c6ae48f"><div class="ttname"><a href="classERF.html#a5dd85954df2df1edf0adde3c7c6ae48f">ERF::erf_enforce_hse</a></div><div class="ttdeci">void erf_enforce_hse(int lev, amrex::MultiFab &amp;dens, amrex::MultiFab &amp;pres, amrex::MultiFab &amp;pi, amrex::MultiFab &amp;th, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_cc)</div><div class="ttdef"><b>Definition:</b> ERF_Init1D.cpp:159</div></div>
 <div class="ttc" id="astructSolverChoice_html_aab88dd74d39b1ad369ae6324e05d7a35"><div class="ttname"><a href="structSolverChoice.html#aab88dd74d39b1ad369ae6324e05d7a35">SolverChoice::use_moist_background</a></div><div class="ttdeci">bool use_moist_background</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:692</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
