@@ -88,60 +88,76 @@ $(document).ready(function(){initNavTree('ERF__Radiation_8H.html',''); initResiz
 <div class="title">ERF_Radiation.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<div class="textblock"><code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;mo_gas_concentrations.h&gt;</code><br />
+<code>#include &lt;YAKL.h&gt;</code><br />
+<code>#include &lt;AMReX_ParmParse.H&gt;</code><br />
 <code>#include &lt;AMReX_FArrayBox.H&gt;</code><br />
 <code>#include &lt;AMReX_Geometry.H&gt;</code><br />
 <code>#include &lt;AMReX_TableData.H&gt;</code><br />
 <code>#include &lt;AMReX_MultiFabUtil.H&gt;</code><br />
-<code>#include &quot;ERF_Config.H&quot;</code><br />
-<code>#include &quot;<a class="el" href="ERF__Constants_8H_source.html">ERF_Constants.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ERF__RadConstants_8H_source.html">ERF_RadConstants.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ERF__RRTMGP_8H_source.html">ERF_RRTMGP.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ERF__Optics_8H_source.html">ERF_Optics.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ERF__AeroRadProps_8H_source.html">ERF_AeroRadProps.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ERF__Parameterizations_8H_source.html">ERF_Parameterizations.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ERF__Albedo_8H_source.html">ERF_Albedo.H</a>&quot;</code><br />
+<code>#include &lt;AMReX_PlotFileUtil.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__RRTMGP__Interface_8H_source.html">ERF_RRTMGP_Interface.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__RRTMGP__Utils_8H_source.html">ERF_RRTMGP_Utils.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__OrbCosZenith_8H_source.html">ERF_OrbCosZenith.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__Constants_8H_source.html">ERF_Constants.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__IndexDefines_8H_source.html">ERF_IndexDefines.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__DataStruct_8H_source.html">ERF_DataStruct.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__EOS_8H_source.html">ERF_EOS.H</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_Radiation.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Radiation_8H__incl.png" border="0" usemap="#aSource_2Radiation_2ERF__Radiation_8H" alt=""/></div>
 <map name="aSource_2Radiation_2ERF__Radiation_8H" id="aSource_2Radiation_2ERF__Radiation_8H">
-<area shape="rect" title=" " alt="" coords="2027,5,2189,47"/>
-<area shape="rect" title=" " alt="" coords="469,393,528,420"/>
-<area shape="rect" title=" " alt="" coords="1501,393,1563,420"/>
-<area shape="rect" title=" " alt="" coords="1816,393,1893,420"/>
-<area shape="rect" title=" " alt="" coords="1355,169,1511,196"/>
-<area shape="rect" title=" " alt="" coords="1535,169,1689,196"/>
-<area shape="rect" title=" " alt="" coords="1713,169,1868,196"/>
-<area shape="rect" title=" " alt="" coords="2633,244,2801,271"/>
-<area shape="rect" title=" " alt="" coords="2500,244,2609,271"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="2041,393,2175,420"/>
-<area shape="rect" href="ERF__RadConstants_8H.html" title=" " alt="" coords="3643,244,3802,271"/>
-<area shape="rect" href="ERF__RRTMGP_8H.html" title=" " alt="" coords="1058,244,1179,271"/>
-<area shape="rect" href="ERF__Optics_8H.html" title=" " alt="" coords="1952,95,2061,121"/>
-<area shape="rect" href="ERF__AeroRadProps_8H.html" title=" " alt="" coords="2814,169,2973,196"/>
-<area shape="rect" href="ERF__Parameterizations_8H.html" title=" " alt="" coords="3499,169,3685,196"/>
-<area shape="rect" href="ERF__Albedo_8H.html" title=" " alt="" coords="3761,95,3874,121"/>
-<area shape="rect" title=" " alt="" coords="2047,468,2169,495"/>
-<area shape="rect" title=" " alt="" coords="2591,319,2711,345"/>
-<area shape="rect" title=" " alt="" coords="273,319,461,345"/>
-<area shape="rect" title=" " alt="" coords="537,319,719,345"/>
-<area shape="rect" title=" " alt="" coords="743,319,915,345"/>
-<area shape="rect" title=" " alt="" coords="940,319,1044,345"/>
-<area shape="rect" title=" " alt="" coords="1068,319,1169,345"/>
-<area shape="rect" title=" " alt="" coords="1193,319,1343,345"/>
-<area shape="rect" title=" " alt="" coords="93,319,248,345"/>
-<area shape="rect" href="ERF__CloudRadProps_8H.html" title=" " alt="" coords="2253,169,2419,196"/>
-<area shape="rect" title=" " alt="" coords="2877,244,3022,271"/>
-<area shape="rect" title=" " alt="" coords="3046,244,3159,271"/>
-<area shape="rect" title=" " alt="" coords="3184,244,3347,271"/>
-<area shape="rect" title=" " alt="" coords="3371,244,3567,271"/>
-<area shape="rect" href="ERF__WaterVaporSaturation_8H.html" title=" " alt="" coords="1668,244,1879,271"/>
-<area shape="rect" href="ERF__LinearInterpolate_8H.html" title=" " alt="" coords="2247,244,2425,271"/>
-<area shape="rect" href="ERF__SatMethods_8H.html" title=" " alt="" coords="1621,319,1766,345"/>
-<area shape="rect" title=" " alt="" coords="1662,393,1725,420"/>
+<area shape="rect" title=" " alt="" coords="3066,5,3227,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,64,121"/>
+<area shape="rect" title=" " alt="" coords="456,244,515,271"/>
+<area shape="rect" title=" " alt="" coords="3369,169,3431,196"/>
+<area shape="rect" title=" " alt="" coords="3677,95,3755,121"/>
+<area shape="rect" title=" " alt="" coords="2921,169,3109,196"/>
+<area shape="rect" title=" " alt="" coords="3431,244,3497,271"/>
+<area shape="rect" title=" " alt="" coords="539,244,698,271"/>
+<area shape="rect" title=" " alt="" coords="3779,95,3935,121"/>
+<area shape="rect" title=" " alt="" coords="278,244,431,271"/>
+<area shape="rect" title=" " alt="" coords="3960,95,4115,121"/>
+<area shape="rect" title=" " alt="" coords="1521,244,1689,271"/>
+<area shape="rect" title=" " alt="" coords="4139,95,4301,121"/>
+<area shape="rect" href="ERF__RRTMGP__Interface_8H.html" title=" " alt="" coords="2390,95,2578,121"/>
+<area shape="rect" href="ERF__RRTMGP__Utils_8H.html" title=" " alt="" coords="3184,169,3344,196"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="2781,244,2915,271"/>
+<area shape="rect" href="ERF__OrbCosZenith_8H.html" title=" " alt="" coords="3323,95,3480,121"/>
+<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="101,244,254,271"/>
+<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="862,95,999,121"/>
+<area shape="rect" href="ERF__EOS_8H.html" title=" " alt="" coords="3558,95,3653,121"/>
+<area shape="rect" title=" " alt="" coords="2517,244,2637,271"/>
+<area shape="rect" title=" " alt="" coords="2547,169,2730,196"/>
+<area shape="rect" title=" " alt="" coords="2754,169,2897,196"/>
+<area shape="rect" title=" " alt="" coords="1576,169,1731,196"/>
+<area shape="rect" title=" " alt="" coords="1755,169,1927,196"/>
+<area shape="rect" title=" " alt="" coords="1952,169,2056,196"/>
+<area shape="rect" title=" " alt="" coords="2080,169,2181,196"/>
+<area shape="rect" title=" " alt="" coords="2206,169,2421,196"/>
+<area shape="rect" title=" " alt="" coords="3178,244,3350,271"/>
+<area shape="rect" title=" " alt="" coords="1773,319,1896,345"/>
+<area shape="rect" title=" " alt="" coords="3558,169,3621,196"/>
+<area shape="rect" title=" " alt="" coords="113,319,241,345"/>
+<area shape="rect" title=" " alt="" coords="723,244,803,271"/>
+<area shape="rect" title=" " alt="" coords="968,244,1088,271"/>
+<area shape="rect" title=" " alt="" coords="827,244,943,271"/>
+<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="493,169,624,196"/>
+<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="699,169,829,196"/>
+<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="853,169,1008,196"/>
+<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="1133,169,1267,196"/>
+<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="1291,169,1450,196"/>
+<area shape="rect" href="ERF__MYNNStruct_8H.html" title=" " alt="" coords="1119,244,1265,271"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="1378,244,1497,271"/>
+<area shape="rect" title=" " alt="" coords="1289,244,1353,271"/>
+<area shape="rect" title=" " alt="" coords="2408,319,2491,345"/>
+<area shape="rect" title=" " alt="" coords="3902,169,4037,196"/>
+<area shape="rect" title=" " alt="" coords="3645,169,3776,196"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['rayleigh_5385',['Rayleigh',['../ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239',1,'ERF_DataStruct.H']]],
-  ['roughcalctype_5386',['RoughCalcType',['../classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13',1,'ABLMost']]]
+  ['sponge_4676',['Sponge',['../ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcb',1,'ERF_DataStruct.H']]]
 ];

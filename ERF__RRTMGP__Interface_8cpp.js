@@ -1,0 +1,28 @@
+var ERF__RRTMGP__Interface_8cpp =
+[
+    [ "compute_aerocom_cloudtop", "ERF__RRTMGP__Interface_8cpp.html#a596e32b383e273f4355948b05366ad66", null ],
+    [ "compute_band_by_band_surface_albedos", "ERF__RRTMGP__Interface_8cpp.html#a4bc3c3c0bfb4314acb12c4bc7191de51", null ],
+    [ "compute_broadband_surface_fluxes", "ERF__RRTMGP__Interface_8cpp.html#abe00ea0e677675e3d283bb6c0edb4393", null ],
+    [ "compute_cloud_area", "ERF__RRTMGP__Interface_8cpp.html#a8af5568f61a43a1985762f9df07f0557", null ],
+    [ "finalize_kls", "ERF__RRTMGP__Interface_8cpp.html#ab21691e9747229e589f3d4758e51e0c0", null ],
+    [ "get_cloud_optics_lw", "ERF__RRTMGP__Interface_8cpp.html#ad8e77738714ea055005897bd76f6eabb", null ],
+    [ "get_cloud_optics_sw", "ERF__RRTMGP__Interface_8cpp.html#acaa235a2f5177c80af989b4ee45e985a", null ],
+    [ "get_subcolumn_mask", "ERF__RRTMGP__Interface_8cpp.html#a17dded4bc8d5f1da9fe401226ebdcf95", null ],
+    [ "get_subsampled_clouds", "ERF__RRTMGP__Interface_8cpp.html#a4b0b8286f5fee695d3d38e00375eb120", null ],
+    [ "get_subsampled_clouds", "ERF__RRTMGP__Interface_8cpp.html#a4d85ce915c09aacaa00f7eee114e510b", null ],
+    [ "get_wavelength_index", "ERF__RRTMGP__Interface_8cpp.html#aa97baa913e924dfefd5171f9c94e3216", null ],
+    [ "get_wavelength_index_lw", "ERF__RRTMGP__Interface_8cpp.html#a52228aa7239950f074075cfd57c1207f", null ],
+    [ "get_wavelength_index_sw", "ERF__RRTMGP__Interface_8cpp.html#a7aace8b2376cb438643c8631b76a1603", null ],
+    [ "init_kls", "ERF__RRTMGP__Interface_8cpp.html#a8c92d15c28f0d375ae1e399359c4c3fb", null ],
+    [ "rrtmgp_finalize", "ERF__RRTMGP__Interface_8cpp.html#a009ddf7de8b3d47a8732243e945e431c", null ],
+    [ "rrtmgp_initialize", "ERF__RRTMGP__Interface_8cpp.html#a7d6bd0d2d81458bf0a624da720d39ebf", null ],
+    [ "rrtmgp_lw", "ERF__RRTMGP__Interface_8cpp.html#a51cc9ae3b0ec6f502bf5f085d563dd30", null ],
+    [ "rrtmgp_main", "ERF__RRTMGP__Interface_8cpp.html#a7c563b9d0cff01d27e91936598c3585d", null ],
+    [ "rrtmgp_sw", "ERF__RRTMGP__Interface_8cpp.html#a4111d3c5505330953cc8139593b7be55", null ],
+    [ "cloud_optics_lw", "ERF__RRTMGP__Interface_8cpp.html#a69cffdacfe257eaf0f6373fe2015bfab", null ],
+    [ "cloud_optics_sw", "ERF__RRTMGP__Interface_8cpp.html#a06a67ef393d75f01c70b93039eac0191", null ],
+    [ "initialized", "ERF__RRTMGP__Interface_8cpp.html#ac823ff1c3775e0e3a1e231b5ae5a9e3d", null ],
+    [ "initialized_k", "ERF__RRTMGP__Interface_8cpp.html#a7cc65d37cc4fa6bb23480db5afb15275", null ],
+    [ "k_dist_lw", "ERF__RRTMGP__Interface_8cpp.html#a7dfbb4f01c5ad59272461c41085bd6e5", null ],
+    [ "k_dist_sw", "ERF__RRTMGP__Interface_8cpp.html#a9f1be05eb65f5c50fa593e237dabeb9b", null ]
+];

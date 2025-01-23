@@ -46,6 +46,7 @@ var ERF__Constants_8H =
     [ "nzeror", "ERF__Constants_8H.html#aaa2fd2941341ea7699a9acfb434b2ee1", null ],
     [ "nzeros", "ERF__Constants_8H.html#ae56996ced8497f129d813e2f9c94786e", null ],
     [ "omeps", "ERF__Constants_8H.html#af04ee89db2f653c028681f044bd16222", null ],
+    [ "ORB_UNDEF_INT", "ERF__Constants_8H.html#a432b0c6e52c518d2923bd05ba945f17d", null ],
     [ "p_0", "ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56", null ],
     [ "PI", "ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428", null ],
     [ "PIoTwo", "ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e", null ],
