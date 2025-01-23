@@ -74,18 +74,18 @@ var NAVTREEINDEX =
 [
 "ERFPCEvolve_8cpp.html",
 "ERF__Derive_8cpp.html#a7fb98e12fceaa6f691dfef83db453757",
-"ERF__MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860",
-"ERF__SrcHeaders_8H.html#a2cafd6a78e2987d7566c34f8f1f57cff",
-"classERF.html#a0be12798b46f52fa4b5a995f147c3f96",
-"classERF.html#aaee255b031e63bd9b5807f6612739dbd",
-"classEulerianMicrophysics.html#ac68028f2920ccb380c605099adb7d604",
-"classMicrophysics.html",
-"classRadiation.html#aabbb1a47cbf8d39754360c0b284bcd70",
-"classSimpleAD.html#a83857d42fc25895b88b10b52af871b3d",
-"dir_8e137399e310a4eba9aad8aaa56311f6.html",
-"namespacerrtmgp.html#abe00ea0e677675e3d283bb6c0edb4393",
-"structSolverChoice.html#a9d26abef2007eb7c93180b0a6699cf8e",
-"structWENO__Z7.html#aa624ec88d9ed4687fcd83c60c86d1515"
+"ERF__LandSurface_8H.html",
+"ERF__SolveWithEBMLMG_8cpp.html#ad583385d33cdb5a9c28bf474b72cad1c",
+"classERF.html#a050dbd236c9bf246554a53008e09f683",
+"classERF.html#aa8b243c093bd872b6f7592603ff97792",
+"classEulerianMicrophysics.html#a26a985c76efcd1dd68b5c853bbd264f6",
+"classMRISplitIntegrator.html#abb86ebaf6ca5a42e59670d2b15549658",
+"classRadiation.html#a967753f42dd28f755d3968765eb8e80b",
+"classSimpleAD.html#a1665d726556fc42558e77fe94e732d43",
+"dir_5baf679cf4943df8904dce5d41d4d3dc.html",
+"namespacerrtmgp.html#a7aace8b2376cb438643c8631b76a1603",
+"structSolverChoice.html#a63b6fffe930de9eb25f92c2bafb00c00",
+"structWENO__Z5.html#a962862416f273b267eb55802eff59edf"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

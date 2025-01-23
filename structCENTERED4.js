@@ -2,6 +2,7 @@ var structCENTERED4 =
 [
     [ "CENTERED4", "structCENTERED4.html#a36a14bbf9f418feee5e1af3685e1b4fb", null ],
     [ "Evaluate", "structCENTERED4.html#ae67620f7c851fbadb31ff439601ac7fe", null ],
+    [ "GetUpwindCellNumber", "structCENTERED4.html#a3dd024785aa558e59d35faaa20b7eecc", null ],
     [ "InterpolateInX", "structCENTERED4.html#a548363e6720cc5e30fe3e0968bfa7ace", null ],
     [ "InterpolateInY", "structCENTERED4.html#a0fa7b6e32435f939963adf76f9a461f1", null ],
     [ "InterpolateInZ", "structCENTERED4.html#a0ab3e64ef904a4890845941199c3fccf", null ],

@@ -116,6 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a45235061b7460611c20eef7d77754881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f9232868e37a452630ccfa8ec34be91"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91">Evaluate</a> (const amrex::Real &amp;s, const amrex::Real &amp;sm1) const</td></tr>
 <tr class="separator:a1f9232868e37a452630ccfa8ec34be91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49f65cb094600a7ef7c91423426cff09"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCENTERED2.html#a49f65cb094600a7ef7c91423426cff09">GetUpwindCellNumber</a> () const</td></tr>
+<tr class="separator:a49f65cb094600a7ef7c91423426cff09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -154,7 +156,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        : <a class="code" href="structCENTERED2.html#ac162099524c29536f1d08dcbb7c6c67a">m_phi</a>(phi) {}</div>
-<div class="ttc" id="astructCENTERED2_html_ac162099524c29536f1d08dcbb7c6c67a"><div class="ttname"><a href="structCENTERED2.html#ac162099524c29536f1d08dcbb7c6c67a">CENTERED2::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:85</div></div>
+<div class="ttc" id="astructCENTERED2_html_ac162099524c29536f1d08dcbb7c6c67a"><div class="ttname"><a href="structCENTERED2.html#ac162099524c29536f1d08dcbb7c6c67a">CENTERED2::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:87</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -199,7 +201,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// Interpolated value</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> ( <a class="code" href="structCENTERED2.html#ac8bd01fa97a379612f9457f992ea0782">g1</a>*a1 );</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="ttc" id="astructCENTERED2_html_ac8bd01fa97a379612f9457f992ea0782"><div class="ttname"><a href="structCENTERED2.html#ac8bd01fa97a379612f9457f992ea0782">CENTERED2::g1</a></div><div class="ttdeci">static constexpr amrex::Real g1</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:86</div></div>
+<div class="ttc" id="astructCENTERED2_html_ac8bd01fa97a379612f9457f992ea0782"><div class="ttname"><a href="structCENTERED2.html#ac8bd01fa97a379612f9457f992ea0782">CENTERED2::g1</a></div><div class="ttdeci">static constexpr amrex::Real g1</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:88</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structCENTERED2.html#ae2a1fcb6b769ae483dc9a52320b84eb9">InterpolateInX()</a>, <a class="el" href="structCENTERED2.html#ab661f0f36acb976738a81c5b3eb003c7">InterpolateInY()</a>, and <a class="el" href="structCENTERED2.html#a45235061b7460611c20eef7d77754881">InterpolateInZ()</a>.</p>
 <div class="dynheader">
@@ -207,13 +209,40 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structCENTERED2_a1f9232868e37a452630ccfa8ec34be91_icgraph.png" border="0" usemap="#astructCENTERED2_a1f9232868e37a452630ccfa8ec34be91_icgraph" alt=""/></div>
 <map name="astructCENTERED2_a1f9232868e37a452630ccfa8ec34be91_icgraph" id="astructCENTERED2_a1f9232868e37a452630ccfa8ec34be91_icgraph">
-<area shape="rect" title=" " alt="" coords="253,56,419,83"/>
-<area shape="rect" href="structCENTERED2.html#ae2a1fcb6b769ae483dc9a52320b84eb9" title=" " alt="" coords="5,5,205,32"/>
-<area shape="rect" href="structCENTERED2.html#ab661f0f36acb976738a81c5b3eb003c7" title=" " alt="" coords="6,56,205,83"/>
-<area shape="rect" href="structCENTERED2.html#a45235061b7460611c20eef7d77754881" title=" " alt="" coords="5,107,205,133"/>
+<area shape="rect" title=" " alt="" coords="492,56,657,83"/>
+<area shape="rect" href="structCENTERED2.html#ae2a1fcb6b769ae483dc9a52320b84eb9" title=" " alt="" coords="244,5,444,32"/>
+<area shape="rect" href="structCENTERED2.html#ab661f0f36acb976738a81c5b3eb003c7" title=" " alt="" coords="245,56,443,83"/>
+<area shape="rect" href="structCENTERED2.html#a45235061b7460611c20eef7d77754881" title=" " alt="" coords="244,107,444,133"/>
+<area shape="rect" href="ERF__EBAdvectionSrcForScalars_8H.html#add5efd63d823caa0afcb44c57c9abb9f" title=" " alt="" coords="5,49,196,90"/>
 </map>
 </div>
 
+</div>
+</div>
+<a id="a49f65cb094600a7ef7c91423426cff09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49f65cb094600a7ef7c91423426cff09">&#9670;&nbsp;</a></span>GetUpwindCellNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CENTERED2::GetUpwindCellNumber </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{<span class="keywordflow">return</span> 1;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae2a1fcb6b769ae483dc9a52320b84eb9"></a>
@@ -288,13 +317,24 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        val_lo = <a class="code" href="structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91">Evaluate</a>(s,sm1);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
 <div class="ttc" id="astructCENTERED2_html_a1f9232868e37a452630ccfa8ec34be91"><div class="ttname"><a href="structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91">CENTERED2::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;s, const amrex::Real &amp;sm1) const</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:74</div></div>
-</div><!-- fragment --><div class="dynheader">
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__EBAdvectionSrcForScalars_8H.html#add5efd63d823caa0afcb44c57c9abb9f">EBAdvectionSrcForScalarsWrapper()</a>.</p>
+<div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structCENTERED2_ae2a1fcb6b769ae483dc9a52320b84eb9_cgraph.png" border="0" usemap="#astructCENTERED2_ae2a1fcb6b769ae483dc9a52320b84eb9_cgraph" alt=""/></div>
 <map name="astructCENTERED2_ae2a1fcb6b769ae483dc9a52320b84eb9_cgraph" id="astructCENTERED2_ae2a1fcb6b769ae483dc9a52320b84eb9_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,205,32"/>
 <area shape="rect" href="structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91" title=" " alt="" coords="253,5,419,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structCENTERED2_ae2a1fcb6b769ae483dc9a52320b84eb9_icgraph.png" border="0" usemap="#astructCENTERED2_ae2a1fcb6b769ae483dc9a52320b84eb9_icgraph" alt=""/></div>
+<map name="astructCENTERED2_ae2a1fcb6b769ae483dc9a52320b84eb9_icgraph" id="astructCENTERED2_ae2a1fcb6b769ae483dc9a52320b84eb9_icgraph">
+<area shape="rect" title=" " alt="" coords="244,13,444,39"/>
+<area shape="rect" href="ERF__EBAdvectionSrcForScalars_8H.html#add5efd63d823caa0afcb44c57c9abb9f" title=" " alt="" coords="5,5,196,47"/>
 </map>
 </div>
 
@@ -371,13 +411,24 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// Interpolate lo</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        val_lo = <a class="code" href="structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91">Evaluate</a>(s,sm1);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-</div><!-- fragment --><div class="dynheader">
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__EBAdvectionSrcForScalars_8H.html#add5efd63d823caa0afcb44c57c9abb9f">EBAdvectionSrcForScalarsWrapper()</a>.</p>
+<div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structCENTERED2_ab661f0f36acb976738a81c5b3eb003c7_cgraph.png" border="0" usemap="#astructCENTERED2_ab661f0f36acb976738a81c5b3eb003c7_cgraph" alt=""/></div>
 <map name="astructCENTERED2_ab661f0f36acb976738a81c5b3eb003c7_cgraph" id="astructCENTERED2_ab661f0f36acb976738a81c5b3eb003c7_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,204,32"/>
 <area shape="rect" href="structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91" title=" " alt="" coords="252,5,417,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structCENTERED2_ab661f0f36acb976738a81c5b3eb003c7_icgraph.png" border="0" usemap="#astructCENTERED2_ab661f0f36acb976738a81c5b3eb003c7_icgraph" alt=""/></div>
+<map name="astructCENTERED2_ab661f0f36acb976738a81c5b3eb003c7_icgraph" id="astructCENTERED2_ab661f0f36acb976738a81c5b3eb003c7_icgraph">
+<area shape="rect" title=" " alt="" coords="244,13,443,39"/>
+<area shape="rect" href="ERF__EBAdvectionSrcForScalars_8H.html#add5efd63d823caa0afcb44c57c9abb9f" title=" " alt="" coords="5,5,196,47"/>
 </map>
 </div>
 
@@ -454,13 +505,24 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">// Interpolate lo</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        val_lo = <a class="code" href="structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91">Evaluate</a>(s,sm1);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-</div><!-- fragment --><div class="dynheader">
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__EBAdvectionSrcForScalars_8H.html#add5efd63d823caa0afcb44c57c9abb9f">EBAdvectionSrcForScalarsWrapper()</a>.</p>
+<div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structCENTERED2_a45235061b7460611c20eef7d77754881_cgraph.png" border="0" usemap="#astructCENTERED2_a45235061b7460611c20eef7d77754881_cgraph" alt=""/></div>
 <map name="astructCENTERED2_a45235061b7460611c20eef7d77754881_cgraph" id="astructCENTERED2_a45235061b7460611c20eef7d77754881_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,205,32"/>
 <area shape="rect" href="structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91" title=" " alt="" coords="253,5,419,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structCENTERED2_a45235061b7460611c20eef7d77754881_icgraph.png" border="0" usemap="#astructCENTERED2_a45235061b7460611c20eef7d77754881_icgraph" alt=""/></div>
+<map name="astructCENTERED2_a45235061b7460611c20eef7d77754881_icgraph" id="astructCENTERED2_a45235061b7460611c20eef7d77754881_icgraph">
+<area shape="rect" title=" " alt="" coords="244,13,444,39"/>
+<area shape="rect" href="ERF__EBAdvectionSrcForScalars_8H.html#add5efd63d823caa0afcb44c57c9abb9f" title=" " alt="" coords="5,5,196,47"/>
 </map>
 </div>
 
