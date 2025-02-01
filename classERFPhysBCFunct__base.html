@@ -556,7 +556,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keyword">const</span> Real hz = Real(0.5) * <a class="code" href="classERFPhysBCFunct__base.html#a8cde4476cef731ed821f25229ddb0c7b">m_geom</a>.CellSize(2);</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    Box bx_zlo1(bx);  bx_zlo1.setBig(2,dom_lo.z-1);  <span class="keywordflow">if</span> (bx_zlo1.ok()) bx_zlo1.setSmall(2,dom_lo.z-1);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    Box bx_zlo1(bx); bx_zlo1.setBig(2,dom_lo.z-1); <span class="keywordflow">if</span> (bx_zlo1.ok()) bx_zlo1.setSmall(2,dom_lo.z-1);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    ParallelFor(</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        bx_zlo1, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        {</div>
@@ -568,8 +568,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        }</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    );</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    Box bx_zlo(bx);  bx_zlo.setBig(2,dom_lo.z-2);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    Box bx_zhi(bx);  bx_zhi.setSmall(2,dom_hi.z+1);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    Box bx_zlo(bx); bx_zlo.setBig(2,dom_lo.z-2);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    Box bx_zhi(bx); bx_zhi.setSmall(2,dom_hi.z+1);</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    ParallelFor(</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        bx_zlo, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        {</div>
