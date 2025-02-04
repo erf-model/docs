@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['mathematicalbndrytypes_4703',['mathematicalBndryTypes',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c',1,'ERFBCType']]],
-  ['molecdifftype_4704',['MolecDiffType',['../ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735',1,'ERF_DiffStruct.H']]],
-  ['mynnconfigtype_4705',['MYNNConfigType',['../ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25',1,'ERF_MYNNStruct.H']]]
+  ['mathematicalbndrytypes_4706',['mathematicalBndryTypes',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c',1,'ERFBCType']]],
+  ['molecdifftype_4707',['MolecDiffType',['../ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735',1,'ERF_DiffStruct.H']]],
+  ['mynnconfigtype_4708',['MYNNConfigType',['../ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25',1,'ERF_MYNNStruct.H']]]
 ];

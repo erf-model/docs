@@ -1,5 +1,7 @@
 var NAVTREEINDEX9 =
 {
+"classSatMethods.html#a62096d95f324cd2a3504554437067ef7aacd427431253b9fe6b472b6db3685edb":[2,0,64,0,0],
+"classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d":[2,0,64,0,4],
 "classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455":[2,0,64,0,2],
 "classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db":[2,0,64,0,1],
 "classSatMethods.html#a8458bd6a233082c463c070ddc692080f":[2,0,64,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX9 =
 "classpolygon__.html#ab7787d0004cda4ac8cd3bf06daebb188":[2,0,55,13],
 "classpolygon__.html#abc74b533800e809c1ccc98c95e27fd34":[2,0,55,15],
 "classpolygon__.html#abe76c7126ae5539676381c6c179f80f9":[2,0,55,8],
-"classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8":[2,0,55,4],
-"classpolygon__.html#ad2a32b3fcf9c2c014834472601641be4":[2,0,55,1],
-"classpolygon__.html#ad2f931a8223ce05a3ad8cb20e34cf200":[2,0,55,0]
+"classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8":[2,0,55,4]
 };
