@@ -50,7 +50,6 @@ var annotated_dup =
     [ "most_data", "structmost__data.html", "structmost__data" ],
     [ "MOSTAverage", "classMOSTAverage.html", "classMOSTAverage" ],
     [ "MRISplitIntegrator", "classMRISplitIntegrator.html", "classMRISplitIntegrator" ],
-    [ "MultiBlockContainer", "classMultiBlockContainer.html", "classMultiBlockContainer" ],
     [ "MYNNLevel2", "structMYNNLevel2.html", "structMYNNLevel2" ],
     [ "MYNNLevel25", "structMYNNLevel25.html", "structMYNNLevel25" ],
     [ "MYNNPBLH", "structMYNNPBLH.html", "structMYNNPBLH" ],

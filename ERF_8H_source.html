@@ -161,7 +161,7 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MULTIBLOCK</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">class </span><a class="code" href="classMultiBlockContainer.html">MultiBlockContainer</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">class </span>MultiBlockContainer;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">/**</span></div>
@@ -517,7 +517,7 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keywordtype">void</span> SetParmParsePrefix (std::string name) { <a class="code" href="classERF.html#a59df30e7a5537c8543bb00772bd98b58">pp_prefix</a> = name; }</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="comment">// Set &#39;this&#39; from multiblock container</span></div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordtype">void</span> SetMultiBlockPointer (<a class="code" href="classMultiBlockContainer.html">MultiBlockContainer</a> *mbc) { m_mbc = mbc; }</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordtype">void</span> SetMultiBlockPointer (MultiBlockContainer *mbc) { m_mbc = mbc; }</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="comment">// Public data copy for MB</span></div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    std::vector&lt;amrex::Box&gt; domain_p;</div>
@@ -1128,7 +1128,7 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160; </div>
 <div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MULTIBLOCK</span></div>
-<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;    <a class="code" href="classMultiBlockContainer.html">MultiBlockContainer</a> *m_mbc = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;    MultiBlockContainer *m_mbc = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160; </div>
 <div class="line"><a name="l01046"></a><span class="lineno"><a class="line" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5"> 1046</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a>;</div>
@@ -1935,7 +1935,6 @@ $(document).ready(function(){initNavTree('ERF_8H_source.html',''); initResizable
 <div class="ttc" id="aclassERF_html_aff397ccf7eb99c51d7c705a35e85ec5f"><div class="ttname"><a href="classERF.html#aff397ccf7eb99c51d7c705a35e85ec5f">ERF::timeStep</a></div><div class="ttdeci">void timeStep(int lev, amrex::Real time, int iteration)</div><div class="ttdef"><b>Definition:</b> ERF_TimeStep.cpp:16</div></div>
 <div class="ttc" id="aclassERF_html_aff879a9c686293a10a3a03027b765c51"><div class="ttname"><a href="classERF.html#aff879a9c686293a10a3a03027b765c51">ERF::m_plot_per_2</a></div><div class="ttdeci">amrex::Real m_plot_per_2</div><div class="ttdef"><b>Definition:</b> ERF.H:950</div></div>
 <div class="ttc" id="aclassLandSurface_html"><div class="ttname"><a href="classLandSurface.html">LandSurface</a></div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:14</div></div>
-<div class="ttc" id="aclassMultiBlockContainer_html"><div class="ttname"><a href="classMultiBlockContainer.html">MultiBlockContainer</a></div><div class="ttdef"><b>Definition:</b> ERF_MultiBlockContainer.H:8</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_ad6f84c7e649afdd998b2f37ba87476bea82dd7c202e6cce14520ac01cfaa4f4ad"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad6f84c7e649afdd998b2f37ba87476bea82dd7c202e6cce14520ac01cfaa4f4ad">MicVar_Kess::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:33</div></div>
 <div class="ttc" id="anamespaceRealBdyVars_html_aa4743649b85ade11df23692d7c3947bda8ecd2dbb16824e5c68db7daf2254fc79"><div class="ttname"><a href="namespaceRealBdyVars.html#aa4743649b85ade11df23692d7c3947bda8ecd2dbb16824e5c68db7daf2254fc79">RealBdyVars::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:99</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:12</div></div>

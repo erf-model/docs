@@ -45,7 +45,6 @@ var hierarchy =
     [ "most_data", "structmost__data.html", null ],
     [ "MOSTAverage", "classMOSTAverage.html", null ],
     [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ],
-    [ "MultiBlockContainer", "classMultiBlockContainer.html", null ],
     [ "MYNNLevel2", "structMYNNLevel2.html", null ],
     [ "MYNNLevel25", "structMYNNLevel25.html", null ],
     [ "MYNNPBLH", "structMYNNPBLH.html", null ],
