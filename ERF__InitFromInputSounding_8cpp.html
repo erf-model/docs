@@ -435,7 +435,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        r_hse_arr (i,j,k) = rho_k * (1.0 + qv_k);</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        p_hse_arr (i,j,k) = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(rhoTh_k, qv_k);</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        pi_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a">getExnergivenRTh</a>(rhoTh_k, l_rdOcp);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        th_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(p_hse_arr(i,j,k)) / r_hse_arr(i,j,k);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        th_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(p_hse_arr(i,j,k), qv_k) / rho_k;</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="comment">// TODO: we should be setting this to the number of ghost cells of base_state[lev]</span></div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="comment">//       instead of hard-wiring it here!</span></div>
