@@ -23,6 +23,7 @@ var hierarchy =
     [ "eb_", "classeb__.html", null ],
     [ "eb_aux_", "classeb__aux__.html", null ],
     [ "eb_cut_cell_", "classeb__cut__cell__.html", null ],
+    [ "eb_::EBToPVD", "classeb___1_1EBToPVD.html", null ],
     [ "ERFFillPatcher", "classERFFillPatcher.html", null ],
     [ "ERFPhysBCFunct_base", "classERFPhysBCFunct__base.html", null ],
     [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html", null ],

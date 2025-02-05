@@ -1,5 +1,6 @@
 var classeb__ =
 [
+    [ "EBToPVD", "classeb___1_1EBToPVD.html", "classeb___1_1EBToPVD" ],
     [ "~eb_", "classeb__.html#aaba2e6e2c803801d036e989a9c5799b2", null ],
     [ "eb_", "classeb__.html#abcc4045a128dd42fe09f45af4f602576", null ],
     [ "build_level", "classeb__.html#a37b3fc548dfc8eb2ad7723de8e357b8b", null ],
@@ -11,6 +12,8 @@ var classeb__ =
     [ "nghost_basic", "classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8", null ],
     [ "nghost_full", "classeb__.html#ad927cf323e89587952b632234487f9f9", null ],
     [ "nghost_volume", "classeb__.html#a8e61525cf6488d04f457068fc40f47df", null ],
+    [ "WriteEBSurface", "classeb__.html#a9ca9503c82771b860b569b156996e198", null ],
+    [ "m_cellflags", "classeb__.html#a7280bf4b77fa95e970f101fbbf53c836", null ],
     [ "m_eb_level", "classeb__.html#a69d11eeaf4f696d04884679db6c80d2f", null ],
     [ "m_factory", "classeb__.html#a832e47bbc65d2e895fe295ad43df8556", null ],
     [ "m_has_eb", "classeb__.html#ad75676c73387956ec2319062fc2a7a08", null ],

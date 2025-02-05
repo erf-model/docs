@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"ERF__SLM_8cpp.html":[3,0,1,7,3,0],
+"ERF__SampleData_8H.html":[3,0,1,6,16],
+"ERF__SampleData_8H_source.html":[3,0,1,6,16],
 "ERF__SatAdj_8H.html":[3,0,1,9,3,2],
 "ERF__SatAdj_8H_source.html":[3,0,1,9,3,2],
 "ERF__SatAdj_8cpp.html":[3,0,1,9,3,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX3 =
 "classABLMost.html#ae638411093a2d3cc6cc525d4d7efa7ed":[2,0,1,21],
 "classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13":[2,0,1,2],
 "classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13a266bf3048d67b1b3187c0189bc232fde":[2,0,1,2,2],
-"classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13a3e1545d84d0cc7da6edf47adda8a80f9":[2,0,1,2,4],
-"classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13a8d6b5cada83510220f59e00ce86d4d92":[2,0,1,2,0],
-"classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13addbb8213265f3ad773f7af2cb8147062":[2,0,1,2,1],
-"classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13afbf950ece84b8c4c7ebcf6492db726f7":[2,0,1,2,3]
+"classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13a3e1545d84d0cc7da6edf47adda8a80f9":[2,0,1,2,4]
 };

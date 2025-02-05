@@ -74,19 +74,19 @@ var NAVTREEINDEX =
 [
 "ERFPCEvolve_8cpp.html",
 "ERF__Derive_8H.html#a8bc196f7dfb365c426b0b7e720e479e2",
-"ERF__Interpolation__1D_8H_source.html",
-"ERF__SatAdj_8H.html",
-"classABLMost.html#aef7480dbb43cafff3be93a95240c1ec3",
-"classERF.html#aa31ae8bd097ec65d711070aedf11a14a",
-"classEWP.html#a4f28000173748f88919eda5fbed1368e",
-"classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa",
-"classRadiation.html#a700997bc1c01c48c7ca46b01da979783",
-"classSatMethods.html#a62096d95f324cd2a3504554437067ef7aacd427431253b9fe6b472b6db3685edb",
-"classpolygon__.html#ad2a32b3fcf9c2c014834472601641be4",
-"namespacencutils.html",
-"structSolverChoice.html#a44bc0227f088664e4e2c1090ebb1381d",
-"structWENO__MZQ3.html#af1d30022fe1ebe59529f45843dff3ae5",
-"structsurface__temp__wave__coupled.html#af09bca4efd34fd9d8b6bb6a2f363ebee"
+"ERF__Interpolation__1D_8H.html",
+"ERF__SLM_8cpp.html",
+"classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13a8d6b5cada83510220f59e00ce86d4d92",
+"classERF.html#aa28182226262c67cfd686d35bfeabcad",
+"classEWP.html#a2ee471b0dcad3057297b809f4c5141ab",
+"classMRISplitIntegrator.html#a5ae771a094162dc22bfdded7b12fd5c4",
+"classRadiation.html#a6daa7ea8b0cb6d3fe1b6054ab5f2173c",
+"classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579",
+"classncutils_1_1NCGroup.html#aef6b6e2be36e6179a001d9873e94df82",
+"namespacederived.html#a3786c6a8399bc2508bc129337c446af1",
+"structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3",
+"structWENO7.html#a51bb3b4aafa54396917073e91d53140b",
+"structsurface__temp__donelan.html#a236c8eeebacbe63a2d87e101a90c70dc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

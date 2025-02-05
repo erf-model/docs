@@ -336,7 +336,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                                         {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      AMREX_ASSERT( a_idim &gt; 0 &amp;&amp; a_idim &lt; AMREX_SPACEDIM );</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      AMREX_ASSERT( a_idim &gt;= 0 &amp;&amp; a_idim &lt; AMREX_SPACEDIM );</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classeb__cut__cell__.html#a9ede77f892127062ab461d5ffa797f21">m_flag</a>.isCovered() ) { <span class="keywordflow">return</span> 0.; }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classeb__cut__cell__.html#a9ede77f892127062ab461d5ffa797f21">m_flag</a>.isRegular() ) { <span class="keywordflow">return</span> 1.; }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      amrex::Real <span class="keyword">const</span> area(<a class="code" href="classeb__cut__cell__.html#af9fd96f68a03b17a42abcd2aa33ae9f4">m_hi_faces</a>[a_idim]-&gt;area());</div>
@@ -350,9 +350,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classeb__cut__cell___a3f6f3621c5e96f2a99b319eab1110c87_icgraph.png" border="0" usemap="#aclasseb__cut__cell___a3f6f3621c5e96f2a99b319eab1110c87_icgraph" alt=""/></div>
 <map name="aclasseb__cut__cell___a3f6f3621c5e96f2a99b319eab1110c87_icgraph" id="aclasseb__cut__cell___a3f6f3621c5e96f2a99b319eab1110c87_icgraph">
-<area shape="rect" title=" " alt="" coords="368,5,521,32"/>
-<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="196,5,320,32"/>
-<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="5,5,148,32"/>
+<area shape="rect" title=" " alt="" coords="492,5,645,32"/>
+<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="320,5,444,32"/>
+<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="129,5,272,32"/>
+<area shape="rect" href="classeb__.html#abcc4045a128dd42fe09f45af4f602576" title=" " alt="" coords="5,5,81,32"/>
 </map>
 </div>
 
@@ -382,7 +383,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                         {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      AMREX_ASSERT( a_idim &gt;0 &amp;&amp; a_idim &lt; AMREX_SPACEDIM );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      AMREX_ASSERT( a_idim &gt;=0 &amp;&amp; a_idim &lt; AMREX_SPACEDIM );</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classeb__cut__cell__.html#a9ede77f892127062ab461d5ffa797f21">m_flag</a>.isCovered() ) { <span class="keywordflow">return</span> 0.; }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classeb__cut__cell__.html#a9ede77f892127062ab461d5ffa797f21">m_flag</a>.isRegular() ) { <span class="keywordflow">return</span> 1.; }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      amrex::Real <span class="keyword">const</span> area(<a class="code" href="classeb__cut__cell__.html#a1753d69058a8091784c4d68f8684adcb">m_lo_faces</a>[a_idim]-&gt;area());</div>
@@ -396,9 +397,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classeb__cut__cell___a52124747641fcdaa42763486b82b7369_icgraph.png" border="0" usemap="#aclasseb__cut__cell___a52124747641fcdaa42763486b82b7369_icgraph" alt=""/></div>
 <map name="aclasseb__cut__cell___a52124747641fcdaa42763486b82b7369_icgraph" id="aclasseb__cut__cell___a52124747641fcdaa42763486b82b7369_icgraph">
-<area shape="rect" title=" " alt="" coords="368,5,523,32"/>
-<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="196,5,320,32"/>
-<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="5,5,148,32"/>
+<area shape="rect" title=" " alt="" coords="492,5,647,32"/>
+<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="320,5,444,32"/>
+<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="129,5,272,32"/>
+<area shape="rect" href="classeb__.html#abcc4045a128dd42fe09f45af4f602576" title=" " alt="" coords="5,5,81,32"/>
 </map>
 </div>
 
@@ -1034,9 +1036,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classeb__cut__cell___adb7a2ca015b47f83012ee1a6efc8ea52_icgraph.png" border="0" usemap="#aclasseb__cut__cell___adb7a2ca015b47f83012ee1a6efc8ea52_icgraph" alt=""/></div>
 <map name="aclasseb__cut__cell___adb7a2ca015b47f83012ee1a6efc8ea52_icgraph" id="aclasseb__cut__cell___adb7a2ca015b47f83012ee1a6efc8ea52_icgraph">
-<area shape="rect" title=" " alt="" coords="368,5,519,32"/>
-<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="196,5,320,32"/>
-<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="5,5,148,32"/>
+<area shape="rect" title=" " alt="" coords="492,5,643,32"/>
+<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="320,5,444,32"/>
+<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="129,5,272,32"/>
+<area shape="rect" href="classeb__.html#abcc4045a128dd42fe09f45af4f602576" title=" " alt="" coords="5,5,81,32"/>
 </map>
 </div>
 
@@ -1072,9 +1075,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classeb__cut__cell___ad7ab269e2aeb35becf84e7a782f4ad3f_icgraph.png" border="0" usemap="#aclasseb__cut__cell___ad7ab269e2aeb35becf84e7a782f4ad3f_icgraph" alt=""/></div>
 <map name="aclasseb__cut__cell___ad7ab269e2aeb35becf84e7a782f4ad3f_icgraph" id="aclasseb__cut__cell___ad7ab269e2aeb35becf84e7a782f4ad3f_icgraph">
-<area shape="rect" title=" " alt="" coords="368,5,543,32"/>
-<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="196,5,320,32"/>
-<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="5,5,148,32"/>
+<area shape="rect" title=" " alt="" coords="492,5,667,32"/>
+<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="320,5,444,32"/>
+<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="129,5,272,32"/>
+<area shape="rect" href="classeb__.html#abcc4045a128dd42fe09f45af4f602576" title=" " alt="" coords="5,5,81,32"/>
 </map>
 </div>
 
@@ -1110,9 +1114,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classeb__cut__cell___a264bea343a9a2c8552fb8873e8e7e6c8_icgraph.png" border="0" usemap="#aclasseb__cut__cell___a264bea343a9a2c8552fb8873e8e7e6c8_icgraph" alt=""/></div>
 <map name="aclasseb__cut__cell___a264bea343a9a2c8552fb8873e8e7e6c8_icgraph" id="aclasseb__cut__cell___a264bea343a9a2c8552fb8873e8e7e6c8_icgraph">
-<area shape="rect" title=" " alt="" coords="368,5,539,32"/>
-<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="196,5,320,32"/>
-<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="5,5,148,32"/>
+<area shape="rect" title=" " alt="" coords="492,5,663,32"/>
+<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="320,5,444,32"/>
+<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="129,5,272,32"/>
+<area shape="rect" href="classeb__.html#abcc4045a128dd42fe09f45af4f602576" title=" " alt="" coords="5,5,81,32"/>
 </map>
 </div>
 
@@ -1306,9 +1311,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classeb__cut__cell___ad554ff3176ce611cba882fd61246cc60_icgraph.png" border="0" usemap="#aclasseb__cut__cell___ad554ff3176ce611cba882fd61246cc60_icgraph" alt=""/></div>
 <map name="aclasseb__cut__cell___ad554ff3176ce611cba882fd61246cc60_icgraph" id="aclasseb__cut__cell___ad554ff3176ce611cba882fd61246cc60_icgraph">
-<area shape="rect" title=" " alt="" coords="368,5,527,32"/>
-<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="196,5,320,32"/>
-<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="5,5,148,32"/>
+<area shape="rect" title=" " alt="" coords="492,5,651,32"/>
+<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="320,5,444,32"/>
+<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="129,5,272,32"/>
+<area shape="rect" href="classeb__.html#abcc4045a128dd42fe09f45af4f602576" title=" " alt="" coords="5,5,81,32"/>
 </map>
 </div>
 
