@@ -333,22 +333,22 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;AdvectionSrcForMom_ConstantDz&quot;</span>, <a class="code" href="ERF__AdvectionSrcForMom__ConstantDz_8cpp.html#ad6d0299436dece25618ed15938c5ef6b">AdvectionSrcForMom_ConstantDz</a>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">auto</span> dxInv = cellSizeInv[0], dyInv = cellSizeInv[1], dzInv = cellSizeInv[2];</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    AMREX_ALWAYS_ASSERT(bxz.smallEnd(2) &gt; 0);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    AMREX_ALWAYS_ASSERT(bxz.smallEnd(2) &gt; 0);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">auto</span> dxInv = cellSizeInv[0], dyInv = cellSizeInv[1], dzInv = cellSizeInv[2];</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// compute mapfactor inverses</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    Box box2d_u(bxx);   box2d_u.setRange(2,0);   box2d_u.grow({3,3,0});</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    Box box2d_v(bxy);   box2d_v.setRange(2,0);   box2d_v.grow({3,3,0});</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    FArrayBox mf_u_invFAB(box2d_u,1,The_Async_Arena());</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    FArrayBox mf_v_invFAB(box2d_v,1,The_Async_Arena());</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mf_u_inv = mf_u_invFAB.array();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mf_v_inv = mf_v_invFAB.array();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> use_terrain_fitted_coords = ( terrain_type == TerrainType::StaticFittedMesh ||</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                             terrain_type == TerrainType::MovingFittedMesh);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    AMREX_ALWAYS_ASSERT(!use_terrain_fitted_coords &amp;&amp; (terrain_type != TerrainType::EB));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> use_terrain_fitted_coords = ( terrain_type == TerrainType::StaticFittedMesh ||</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                             terrain_type == TerrainType::MovingFittedMesh);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    AMREX_ALWAYS_ASSERT(!use_terrain_fitted_coords &amp;&amp; (terrain_type != TerrainType::EB));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// compute mapfactor inverses</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    Box box2d_u(bxx);   box2d_u.setRange(2,0);   box2d_u.grow({3,3,0});</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Box box2d_v(bxy);   box2d_v.setRange(2,0);   box2d_v.grow({3,3,0});</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    FArrayBox mf_u_invFAB(box2d_u,1,The_Async_Arena());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    FArrayBox mf_v_invFAB(box2d_v,1,The_Async_Arena());</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mf_u_inv = mf_u_invFAB.array();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mf_v_inv = mf_v_invFAB.array();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ParallelFor(box2d_u, box2d_v,</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
@@ -425,12 +425,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">if</span> (horiz_adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>) {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                AdvectionSrcForMomVert_N&lt;CENTERED2&gt;(bxx, bxy, bxz,</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                                  rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                                  rho_u, rho_v, <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae">omega</a>, u, v, w,</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                                                  cellSizeInv, stretched_dz_d, mf_m,</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                                  mf_u_inv, mf_v_inv,</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                                  horiz_upw_frac, vert_upw_frac,</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                                  vert_adv_type, lo_z_face, hi_z_face);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                                    rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                                    rho_u, rho_v, <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae">omega</a>, u, v, w,</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                                                    cellSizeInv, stretched_dz_d, mf_m,</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                                    mf_u_inv, mf_v_inv,</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                                    horiz_upw_frac, vert_upw_frac,</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                                    vert_adv_type, lo_z_face, hi_z_face);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (horiz_adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>) {</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                AdvectionSrcForMomVert_N&lt;UPWIND3&gt;(bxx, bxy, bxz,</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                                  rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
@@ -441,12 +441,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                                  vert_adv_type, lo_z_face, hi_z_face);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (horiz_adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>) {</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                AdvectionSrcForMomVert_N&lt;CENTERED4&gt;(bxx, bxy, bxz,</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                                  rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                                  rho_u, rho_v, <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae">omega</a>, u, v, w,</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                                  cellSizeInv, stretched_dz_d, mf_m,</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                                  mf_u_inv, mf_v_inv,</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                                                  horiz_upw_frac, vert_upw_frac,</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                                                  vert_adv_type, lo_z_face, hi_z_face);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                                    rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                                    rho_u, rho_v, <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae">omega</a>, u, v, w,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                                    cellSizeInv, stretched_dz_d, mf_m,</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                                    mf_u_inv, mf_v_inv,</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                                                    horiz_upw_frac, vert_upw_frac,</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                                                    vert_adv_type, lo_z_face, hi_z_face);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (horiz_adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>) {</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                AdvectionSrcForMomVert_N&lt;UPWIND5&gt;(bxx, bxy, bxz,</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                                  rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
@@ -457,12 +457,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                                                  vert_adv_type, lo_z_face, hi_z_face);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (horiz_adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a>) {</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                AdvectionSrcForMomVert_N&lt;CENTERED6&gt;(bxx, bxy, bxz,</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                                                  rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                                  rho_u, rho_v, <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae">omega</a>, u, v, w,</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                                                  cellSizeInv, stretched_dz_d, mf_m,</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                                                  mf_u_inv, mf_v_inv,</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                                                  horiz_upw_frac, vert_upw_frac,</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                                                  vert_adv_type, lo_z_face, hi_z_face);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                                                    rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                                    rho_u, rho_v, <a class="code" href="namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae">omega</a>, u, v, w,</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                                                    cellSizeInv, stretched_dz_d, mf_m,</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                                                    mf_u_inv, mf_v_inv,</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                                                    horiz_upw_frac, vert_upw_frac,</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                                                    vert_adv_type, lo_z_face, hi_z_face);</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            AMREX_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown advection scheme!&quot;</span>);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        }</div>

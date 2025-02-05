@@ -256,47 +256,47 @@ template&lt;typename InterpType_H &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>When terrain_type == TerreinType::EB, Wrapper function for templating the vertical advective tendency w/ spatial order &gt; 2. </p>
-<div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;{</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">switch</span>(vert_adv_type) {</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>:</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        EBAdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED2&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                                                            flx_arr, cell_prim,</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                                                            cellflag, ax_arr, ay_arr, az_arr,</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>:</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        EBAdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND3&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                                            flx_arr, cell_prim,</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                                            cellflag, ax_arr, ay_arr, az_arr,</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>:</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        EBAdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED4&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                                            flx_arr, cell_prim,</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                                            cellflag, ax_arr, ay_arr, az_arr,</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>:</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        EBAdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND5&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                                            flx_arr, cell_prim,</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                                                            cellflag, ax_arr, ay_arr, az_arr,</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a>:</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        EBAdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED6&gt;(bx, ncomp, icomp,</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                                                            flx_arr, cell_prim,</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                                                            cellflag, ax_arr, ay_arr, az_arr,</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        AMREX_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown vertical advection scheme!&quot;</span>);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    }</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;{</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">switch</span>(vert_adv_type) {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>:</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        EBAdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED2&gt;(bx, ncomp, icomp,</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                                                            flx_arr, cell_prim,</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                                                            cellflag, ax_arr, ay_arr, az_arr,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>:</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        EBAdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND3&gt;(bx, ncomp, icomp,</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                                            flx_arr, cell_prim,</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                                                            cellflag, ax_arr, ay_arr, az_arr,</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>:</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        EBAdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED4&gt;(bx, ncomp, icomp,</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                                            flx_arr, cell_prim,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                                            cellflag, ax_arr, ay_arr, az_arr,</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>:</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        EBAdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND5&gt;(bx, ncomp, icomp,</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                                                            flx_arr, cell_prim,</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                                                            cellflag, ax_arr, ay_arr, az_arr,</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a>:</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        EBAdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED6&gt;(bx, ncomp, icomp,</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                                                            flx_arr, cell_prim,</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                                                            cellflag, ax_arr, ay_arr, az_arr,</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        AMREX_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown vertical advection scheme!&quot;</span>);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a></div><div class="ttdeci">@ Upwind_3rd</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a></div><div class="ttdeci">@ Centered_4th</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a></div><div class="ttdeci">@ Upwind_5th</div></div>
@@ -407,15 +407,15 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
 <p>When terrain_type == TerreinType::EB, Wrapper function for computing the advective tendency w/ spatial order &gt; 2 </p>
 <div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// Instantiate structs for vert/horiz interp</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    InterpType_H interp_prim_h(cell_prim);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    InterpType_V interp_prim_v(cell_prim);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    InterpType_H interp_prim_h(cell_prim, horiz_upw_frac);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    InterpType_V interp_prim_v(cell_prim, vert_upw_frac);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncells_h = interp_prim_h.GetUpwindCellNumber();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncells_v = interp_prim_v.GetUpwindCellNumber();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Instantiate structs for lower-order vert/horiz interp</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="structCENTERED2.html">CENTERED2</a> interp_prim_CEN2(cell_prim);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="structUPWIND3.html">UPWIND3</a>   interp_prim_UPW3(cell_prim);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="structCENTERED2.html">CENTERED2</a> interp_prim_CEN2(cell_prim, 0);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="structUPWIND3.html">UPWIND3</a>   interp_prim_UPW3(cell_prim, horiz_upw_frac);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> amrex::Box xbx = amrex::surroundingNodes(bx,0);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> amrex::Box ybx = amrex::surroundingNodes(bx,1);</div>
@@ -454,12 +454,12 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            amrex::Real interpx(0.);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> (icell==ncells_h-1) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                interp_prim_h.InterpolateInX(i,j,k,prim_index,interpx,avg_xmom(i,j,k),horiz_upw_frac);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                interp_prim_h.InterpolateInX(i,j,k,prim_index,interpx,avg_xmom(i,j,k));</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">if</span> (icell==1) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    interp_prim_CEN2.InterpolateInX(i,j,k,prim_index,interpx,avg_xmom(i,j,k),horiz_upw_frac);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    interp_prim_CEN2.InterpolateInX(i,j,k,prim_index,interpx,avg_xmom(i,j,k));</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (icell==2) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    interp_prim_UPW3.InterpolateInX(i,j,k,prim_index,interpx,avg_xmom(i,j,k),horiz_upw_frac);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    interp_prim_UPW3.InterpolateInX(i,j,k,prim_index,interpx,avg_xmom(i,j,k));</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            (flx_arr[0])(i,j,k,cons_index) = avg_xmom(i,j,k) * interpx;</div>
@@ -503,12 +503,12 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            amrex::Real interpy(0.);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">if</span> (jcell==ncells_h-1) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                interp_prim_h.InterpolateInY(i,j,k,prim_index,interpy,avg_ymom(i,j,k),horiz_upw_frac);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                interp_prim_h.InterpolateInY(i,j,k,prim_index,interpy,avg_ymom(i,j,k));</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keywordflow">if</span> (jcell==1) {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    interp_prim_CEN2.InterpolateInY(i,j,k,prim_index,interpy,avg_ymom(i,j,k),horiz_upw_frac);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    interp_prim_CEN2.InterpolateInY(i,j,k,prim_index,interpy,avg_ymom(i,j,k));</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (jcell==2) {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                    interp_prim_UPW3.InterpolateInY(i,j,k,prim_index,interpy,avg_ymom(i,j,k),horiz_upw_frac);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                    interp_prim_UPW3.InterpolateInY(i,j,k,prim_index,interpy,avg_ymom(i,j,k));</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                }</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            }</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            (flx_arr[1])(i,j,k,cons_index) = avg_ymom(i,j,k) * interpy;</div>
@@ -519,69 +519,72 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    });</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    amrex::ParallelFor(zbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">if</span> ( az_arr(i,j,k) &gt; 0. )</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="comment">// Find the highest upwind order based on the cell flag</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordtype">int</span> kcell = 0;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    interp_prim_UPW3.SetUpwinding(vert_upw_frac);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    amrex::ParallelFor(zbx, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">if</span> ( az_arr(i,j,k) &gt; 0. )</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="comment">// Find the highest upwind order based on the cell flag</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="keywordflow">if</span> (avg_zmom(i,j,k)&gt;0.)</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <span class="keywordflow">for</span> (kcell=0; kcell&lt;ncells_v; ++kcell) {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                    <span class="keywordflow">if</span> (cellflag(i,j,k-kcell-1).isCovered()) {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (avg_zmom(i,j,k)&lt;0.)</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="keywordflow">for</span> (kcell=0; kcell&lt;ncells_v; ++kcell) {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                    <span class="keywordflow">if</span> (cellflag(i,j,k+kcell).isCovered()) {</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                    }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            }</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="comment">// Interpolate the scalar variable (cell_prim) using the highest-order scheme</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="keywordtype">int</span> kcell = 0;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keywordflow">if</span> (avg_zmom(i,j,k)&gt;0.)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="keywordflow">for</span> (kcell=0; kcell&lt;ncells_v; ++kcell) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    <span class="keywordflow">if</span> (cellflag(i,j,k-kcell-1).isCovered()) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (avg_zmom(i,j,k)&lt;0.)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="keywordflow">for</span> (kcell=0; kcell&lt;ncells_v; ++kcell) {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                    <span class="keywordflow">if</span> (cellflag(i,j,k+kcell).isCovered()) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            }</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            amrex::Real interpz(0.);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="keywordflow">if</span> (kcell==ncells_v-1) {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                interp_prim_v.InterpolateInZ(i,j,k,prim_index,interpz,avg_zmom(i,j,k),vert_upw_frac);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                <span class="keywordflow">if</span> (kcell==1) {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                    interp_prim_CEN2.InterpolateInZ(i,j,k,prim_index,interpz,avg_zmom(i,j,k),vert_upw_frac);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (kcell==2) {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    interp_prim_UPW3.InterpolateInZ(i,j,k,prim_index,interpz,avg_zmom(i,j,k),vert_upw_frac);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                }</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            (flx_arr[2])(i,j,k,cons_index) = avg_zmom(i,j,k) * interpz;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        }</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            (flx_arr[2])(i,j,k,cons_index) = 0.;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    });</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="comment">// Interpolate the scalar variable (cell_prim) using the highest-order scheme</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            amrex::Real interpz(0.);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">if</span> (kcell==ncells_v-1) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                interp_prim_v.InterpolateInZ(i,j,k,prim_index,interpz,avg_zmom(i,j,k));</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">if</span> (kcell==1) {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    interp_prim_CEN2.InterpolateInZ(i,j,k,prim_index,interpz,avg_zmom(i,j,k));</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (kcell==2) {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                    interp_prim_UPW3.InterpolateInZ(i,j,k,prim_index,interpz,avg_zmom(i,j,k));</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            (flx_arr[2])(i,j,k,cons_index) = avg_zmom(i,j,k) * interpz;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            (flx_arr[2])(i,j,k,cons_index) = 0.;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    });</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
 <div class="ttc" id="astructCENTERED2_html"><div class="ttname"><a href="structCENTERED2.html">CENTERED2</a></div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:10</div></div>
-<div class="ttc" id="astructUPWIND3_html"><div class="ttname"><a href="structUPWIND3.html">UPWIND3</a></div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:95</div></div>
+<div class="ttc" id="astructUPWIND3_html"><div class="ttname"><a href="structUPWIND3.html">UPWIND3</a></div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:93</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__EBAdvectionSrcForScalars_8H_add5efd63d823caa0afcb44c57c9abb9f_cgraph.png" border="0" usemap="#aERF__EBAdvectionSrcForScalars_8H_add5efd63d823caa0afcb44c57c9abb9f_cgraph" alt=""/></div>
 <map name="aERF__EBAdvectionSrcForScalars_8H_add5efd63d823caa0afcb44c57c9abb9f_cgraph" id="aERF__EBAdvectionSrcForScalars_8H_add5efd63d823caa0afcb44c57c9abb9f_cgraph">
-<area shape="rect" title=" " alt="" coords="5,125,196,166"/>
-<area shape="rect" href="structUPWIND3.html#ab5aa8215b1d63920781081235329e88f" title=" " alt="" coords="251,5,437,32"/>
-<area shape="rect" href="structCENTERED2.html#ae2a1fcb6b769ae483dc9a52320b84eb9" title=" " alt="" coords="244,157,444,184"/>
-<area shape="rect" href="structUPWIND3.html#a49e40adf20c8ec95cfb5a27e87a6d01a" title=" " alt="" coords="252,56,436,83"/>
-<area shape="rect" href="structCENTERED2.html#ab661f0f36acb976738a81c5b3eb003c7" title=" " alt="" coords="245,208,443,235"/>
-<area shape="rect" href="structUPWIND3.html#ae5281fb5aa8b8c66e1612fa6a749f5b7" title=" " alt="" coords="251,107,437,133"/>
-<area shape="rect" href="structCENTERED2.html#a45235061b7460611c20eef7d77754881" title=" " alt="" coords="244,259,444,285"/>
+<area shape="rect" title=" " alt="" coords="5,150,196,191"/>
+<area shape="rect" href="structUPWIND3.html#afd23b4297df2e3daf4a1b1e40cf40fe2" title=" " alt="" coords="251,5,437,32"/>
+<area shape="rect" href="structCENTERED2.html#adb613a538275649aec33db89afd0e822" title=" " alt="" coords="244,157,444,184"/>
+<area shape="rect" href="structUPWIND3.html#a6719e6c075ae163173c16f37b9e9c4b2" title=" " alt="" coords="252,56,436,83"/>
+<area shape="rect" href="structCENTERED2.html#a2b0e42ec56f22f97bb65ed044f6f77a0" title=" " alt="" coords="245,208,443,235"/>
+<area shape="rect" href="structUPWIND3.html#a420b9e841d549ce4f116205928f1743c" title=" " alt="" coords="251,107,437,133"/>
+<area shape="rect" href="structCENTERED2.html#a66de83f17cc1fa457cb89af60afb0041" title=" " alt="" coords="244,259,444,285"/>
+<area shape="rect" href="structUPWIND3.html#a424f3d6e525d4e195377c034deb8a345" title=" " alt="" coords="253,309,435,336"/>
 <area shape="rect" href="structUPWIND3.html#a247a547b52d1bf118e8a9cb44d46b744" title=" " alt="" coords="499,56,650,83"/>
 <area shape="rect" href="structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91" title=" " alt="" coords="492,208,657,235"/>
 </map>
