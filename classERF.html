@@ -8985,7 +8985,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        }</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        <span class="keywordtype">int</span> ngrow = <a class="code" href="classERF.html#ae68b1f54d196d0a4b19716d65a59d4c5">ComputeGhostCells</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aaadbd092e9e176b7f088c7992c866c6e">advChoice</a>, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a8d039800497a1e5084afeef94d367932">use_num_diff</a>) + 2;</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        Box bx(surroundingNodes(Geom(0).Domain())); bx.grow(ngrow);</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        Box bx(surroundingNodes(Geom(lev).Domain())); bx.grow(ngrow);</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        FArrayBox terrain_fab(makeSlab(bx,2,0),1);</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160; </div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        <span class="comment">//</span></div>
