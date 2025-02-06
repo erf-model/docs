@@ -1,9 +1,9 @@
 var structSolverChoice =
 [
-    [ "build_coriolis_forcings", "structSolverChoice.html#a3b31e3a91b502cabfc9fd8778492ad46", null ],
+    [ "build_coriolis_forcings", "structSolverChoice.html#a0d66e0f0c534a2d5b3eea16a6a0c1cc1", null ],
     [ "check_params", "structSolverChoice.html#a4c875e5fe0f3dd69fbcc145b7066c766", null ],
     [ "display", "structSolverChoice.html#a9d26abef2007eb7c93180b0a6699cf8e", null ],
-    [ "init_params", "structSolverChoice.html#a8c15b7cf354e53ddb58bad9577d124d5", null ],
+    [ "init_params", "structSolverChoice.html#a76659aa69edd3370626e3648cbead9be", null ],
     [ "read_int_string", "structSolverChoice.html#a31e016e3da7c175ac02427767286bc42", null ],
     [ "set_mesh_type", "structSolverChoice.html#afb997b932bbc5dfb58145ea90580d518", null ],
     [ "abl_driver_type", "structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f", null ],
@@ -43,7 +43,6 @@ var structSolverChoice =
     [ "pert_type", "structSolverChoice.html#abfd94767b3721755632c45a5ef290544", null ],
     [ "poisson_abstol", "structSolverChoice.html#ad7f586d62fb0872ba0340fb03d462c64", null ],
     [ "poisson_reltol", "structSolverChoice.html#a238b0871f38f8b134ff3fe5af0d05479", null ],
-    [ "pp_prefix", "structSolverChoice.html#a4b0edf29a032ff18b10a42825fa9e4b6", null ],
     [ "project_initial_velocity", "structSolverChoice.html#aa7bb7f3c8b475b0e446c271d8aa5497f", null ],
     [ "rayleigh_damp_T", "structSolverChoice.html#a06a0dd1c8f7c1ed73a4f8d24b6b31cdf", null ],
     [ "rayleigh_damp_U", "structSolverChoice.html#a5aed4016dd7d17a2d2904c60af59ae9d", null ],

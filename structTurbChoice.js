@@ -1,7 +1,7 @@
 var structTurbChoice =
 [
     [ "display", "structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f", null ],
-    [ "init_params", "structTurbChoice.html#a45aa6b97fa410c18f1eca312e43b21be", null ],
+    [ "init_params", "structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422", null ],
     [ "advect_KE", "structTurbChoice.html#af151e25e9513f7c6a995ca82db98278c", null ],
     [ "Cb", "structTurbChoice.html#a83a6313a910638e87513e6aac7149f6a", null ],
     [ "Ce", "structTurbChoice.html#ab6d0ae39e92dcbe7362abf53364c1a8e", null ],
@@ -20,7 +20,6 @@ var structTurbChoice =
     [ "pbl_ysu_land_Ribcr", "structTurbChoice.html#a96c1a42307db82ece270acdac75da9a3", null ],
     [ "pbl_ysu_unst_Ribcr", "structTurbChoice.html#af274e04335b259bb7b35f7c836f8310f", null ],
     [ "pbl_ysu_use_consistent_coriolis", "structTurbChoice.html#a727a9673de0517e62e58647a5d939b07", null ],
-    [ "pp_prefix", "structTurbChoice.html#a6b8e56e5ace640df7834c013c6788020", null ],
     [ "Pr_t", "structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566", null ],
     [ "Pr_t_inv", "structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5", null ],
     [ "rans_type", "structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8", null ],

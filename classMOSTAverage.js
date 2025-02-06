@@ -1,6 +1,6 @@
 var classMOSTAverage =
 [
-    [ "MOSTAverage", "classMOSTAverage.html#a34f7739b8ddf40b53393fb25fb2f0ed4", null ],
+    [ "MOSTAverage", "classMOSTAverage.html#ae8ede531cb9b0f9b259cfbda17e7d41a", null ],
     [ "~MOSTAverage", "classMOSTAverage.html#ac755f71a35f1231c8add20993364832a", null ],
     [ "MOSTAverage", "classMOSTAverage.html#acfc77dc21a0821d4b446f7be289c64d6", null ],
     [ "MOSTAverage", "classMOSTAverage.html#add74667e947201bbb2ddf2785f02ee0c", null ],

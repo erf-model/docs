@@ -156,8 +156,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6f26e3c90a22c770346fadb84fb6210a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost</a> (const amrex::Vector&lt; amrex::Geometry &gt; &amp;geom, bool &amp;use_exp_most, bool &amp;use_rot_most, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Qv_prim, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;z_phys_nd, amrex::Real start_bdy_time=0.0, amrex::Real bdy_time_interval=0.0)</td></tr>
-<tr class="separator:a6f26e3c90a22c770346fadb84fb6210a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9551e9fdb471574d805295aac5b2de49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost</a> (const amrex::Vector&lt; amrex::Geometry &gt; &amp;geom, bool &amp;use_exp_most, bool &amp;use_rot_most, std::string a_pp_prefix, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Qv_prim, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;z_phys_nd, amrex::Real start_bdy_time=0.0, amrex::Real bdy_time_interval=0.0)</td></tr>
+<tr class="separator:a9551e9fdb471574d805295aac5b2de49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb630bd65e0cd2946a4a99d2e395db58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#afb630bd65e0cd2946a4a99d2e395db58">make_MOST_at_level</a> (const int &amp;lev, int nlevs, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;mfv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Theta_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Qv_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Qr_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, amrex::MultiFab *Hwave, amrex::MultiFab *Lwave, amrex::MultiFab *eddyDiffs, amrex::Vector&lt; amrex::MultiFab * &gt; lsm_data, amrex::Vector&lt; amrex::MultiFab * &gt; lsm_flux, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;sst_lev, amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt;&gt; &amp;lmask_lev)</td></tr>
 <tr class="separator:afb630bd65e0cd2946a4a99d2e395db58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af82057d4fbaaf1d8347cf18c7efd7b53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#af82057d4fbaaf1d8347cf18c7efd7b53">update_fluxes</a> (const int &amp;lev, const amrex::Real &amp;time, int max_iters=25)</td></tr>
@@ -233,12 +233,16 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ab55a547b6b74a177128af6c6a107930c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#ab55a547b6b74a177128af6c6a107930c">use_moisture</a></td></tr>
-<tr class="separator:ab55a547b6b74a177128af6c6a107930c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1795a510d08fbd88e6599e014f97b6c5"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Geometry &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a></td></tr>
+<tr class="separator:a1795a510d08fbd88e6599e014f97b6c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3de35be0d6cf3841e9a868830fc42c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#ac3de35be0d6cf3841e9a868830fc42c5">m_exp_most</a> = false</td></tr>
 <tr class="separator:ac3de35be0d6cf3841e9a868830fc42c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab107efa0b6bdf80ee44d232919f6a7ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#ab107efa0b6bdf80ee44d232919f6a7ad">m_rotate</a> = false</td></tr>
 <tr class="separator:ab107efa0b6bdf80ee44d232919f6a7ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fb97b28e44e9ff6930f18083923343a"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a4fb97b28e44e9ff6930f18083923343a">m_start_bdy_time</a></td></tr>
+<tr class="separator:a4fb97b28e44e9ff6930f18083923343a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a049bc06685178431599f3bfaa57d63bd"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a049bc06685178431599f3bfaa57d63bd">m_bdy_time_interval</a></td></tr>
+<tr class="separator:a049bc06685178431599f3bfaa57d63bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2e247ec9fd06cd15c788b83bf2c9ba6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#ac2e247ec9fd06cd15c788b83bf2c9ba6">m_include_wstar</a> = false</td></tr>
 <tr class="separator:ac2e247ec9fd06cd15c788b83bf2c9ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfc9a08ed0d029602e2e8e99232d0149"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#acfc9a08ed0d029602e2e8e99232d0149">z0_const</a> {0.1}</td></tr>
@@ -261,16 +265,12 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a4f97d1d8c347710155ead2c1310338a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38ed37dd984fcc7be3b5ae04b7272459"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a38ed37dd984fcc7be3b5ae04b7272459">depth</a> {30.0}</td></tr>
 <tr class="separator:a38ed37dd984fcc7be3b5ae04b7272459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fb97b28e44e9ff6930f18083923343a"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a4fb97b28e44e9ff6930f18083923343a">m_start_bdy_time</a></td></tr>
-<tr class="separator:a4fb97b28e44e9ff6930f18083923343a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a049bc06685178431599f3bfaa57d63bd"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a049bc06685178431599f3bfaa57d63bd">m_bdy_time_interval</a></td></tr>
-<tr class="separator:a049bc06685178431599f3bfaa57d63bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1795a510d08fbd88e6599e014f97b6c5"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Geometry &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a></td></tr>
-<tr class="separator:a1795a510d08fbd88e6599e014f97b6c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1301dd4cb6875c7bdf5d69126b972f91"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::FArrayBox &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a1301dd4cb6875c7bdf5d69126b972f91">z_0</a></td></tr>
 <tr class="separator:a1301dd4cb6875c7bdf5d69126b972f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1da46aefd129763fb25f5a6839e48dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#ab1da46aefd129763fb25f5a6839e48dd">m_var_z0</a> {false}</td></tr>
 <tr class="separator:ab1da46aefd129763fb25f5a6839e48dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab55a547b6b74a177128af6c6a107930c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#ab55a547b6b74a177128af6c6a107930c">use_moisture</a></td></tr>
+<tr class="separator:ab55a547b6b74a177128af6c6a107930c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a466bfcda8ae4337d9c8781ab28e3f6fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMOSTAverage.html">MOSTAverage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a></td></tr>
 <tr class="separator:a466bfcda8ae4337d9c8781ab28e3f6fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd5510d2f47502a57107f12c66f8a552"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classABLMost.html#acd5510d2f47502a57107f12c66f8a552">u_star</a></td></tr>
@@ -448,8 +448,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6f26e3c90a22c770346fadb84fb6210a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f26e3c90a22c770346fadb84fb6210a">&#9670;&nbsp;</a></span>ABLMost()</h2>
+<a id="a9551e9fdb471574d805295aac5b2de49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9551e9fdb471574d805295aac5b2de49">&#9670;&nbsp;</a></span>ABLMost()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -474,6 +474,12 @@ Private Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype">bool &amp;&#160;</td>
           <td class="paramname"><em>use_rot_most</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>a_pp_prefix</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -511,12 +517,12 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    : <a class="code" href="classABLMost.html#ac3de35be0d6cf3841e9a868830fc42c5">m_exp_most</a>(use_exp_most),</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <a class="code" href="classABLMost.html#ab107efa0b6bdf80ee44d232919f6a7ad">m_rotate</a>(use_rot_most),</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <a class="code" href="classABLMost.html#a4fb97b28e44e9ff6930f18083923343a">m_start_bdy_time</a>(start_bdy_time),</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <a class="code" href="classABLMost.html#a049bc06685178431599f3bfaa57d63bd">m_bdy_time_interval</a>(bdy_time_interval),</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <a class="code" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a>(geom),</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>(geom,(z_phys_nd[0]!=<span class="keyword">nullptr</span>))</div>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    : <a class="code" href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">m_geom</a>(geom),</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <a class="code" href="classABLMost.html#ac3de35be0d6cf3841e9a868830fc42c5">m_exp_most</a>(use_exp_most),</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <a class="code" href="classABLMost.html#ab107efa0b6bdf80ee44d232919f6a7ad">m_rotate</a>(use_rot_most),</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <a class="code" href="classABLMost.html#a4fb97b28e44e9ff6930f18083923343a">m_start_bdy_time</a>(start_bdy_time),</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <a class="code" href="classABLMost.html#a049bc06685178431599f3bfaa57d63bd">m_bdy_time_interval</a>(bdy_time_interval),</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>(geom,(z_phys_nd[0]!=<span class="keyword">nullptr</span>),a_pp_prefix)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// We have a moisture model if Qv_prim is a valid pointer</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classABLMost.html#ab55a547b6b74a177128af6c6a107930c">use_moisture</a> = (Qv_prim[0].get());</div>
@@ -644,49 +650,49 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        }</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    } <span class="comment">// constructor</span></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:219</div></div>
-<div class="ttc" id="aclassABLMost_html_a049bc06685178431599f3bfaa57d63bd"><div class="ttname"><a href="classABLMost.html#a049bc06685178431599f3bfaa57d63bd">ABLMost::m_bdy_time_interval</a></div><div class="ttdeci">amrex::Real m_bdy_time_interval</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:537</div></div>
-<div class="ttc" id="aclassABLMost_html_a1795a510d08fbd88e6599e014f97b6c5"><div class="ttname"><a href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">ABLMost::m_geom</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Geometry &gt; m_geom</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:538</div></div>
-<div class="ttc" id="aclassABLMost_html_a1bce26c6253a6191424e7b753cd24cfa"><div class="ttname"><a href="classABLMost.html#a1bce26c6253a6191424e7b753cd24cfa">ABLMost::custom_ustar</a></div><div class="ttdeci">amrex::Real custom_ustar</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:530</div></div>
-<div class="ttc" id="aclassABLMost_html_a31707b89fbbbdeb445ba35ed240046c3"><div class="ttname"><a href="classABLMost.html#a31707b89fbbbdeb445ba35ed240046c3">ABLMost::custom_qstar</a></div><div class="ttdeci">amrex::Real custom_qstar</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:532</div></div>
-<div class="ttc" id="aclassABLMost_html_a38ed37dd984fcc7be3b5ae04b7272459"><div class="ttname"><a href="classABLMost.html#a38ed37dd984fcc7be3b5ae04b7272459">ABLMost::depth</a></div><div class="ttdeci">amrex::Real depth</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:535</div></div>
-<div class="ttc" id="aclassABLMost_html_a39402ac3794b9a218289cd0d4adec670"><div class="ttname"><a href="classABLMost.html#a39402ac3794b9a218289cd0d4adec670">ABLMost::surf_heating_rate</a></div><div class="ttdeci">amrex::Real surf_heating_rate</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:528</div></div>
-<div class="ttc" id="aclassABLMost_html_a466bfcda8ae4337d9c8781ab28e3f6fe"><div class="ttname"><a href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">ABLMost::m_ma</a></div><div class="ttdeci">MOSTAverage m_ma</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:542</div></div>
+<div class="ttc" id="aclassABLMost_html_a049bc06685178431599f3bfaa57d63bd"><div class="ttname"><a href="classABLMost.html#a049bc06685178431599f3bfaa57d63bd">ABLMost::m_bdy_time_interval</a></div><div class="ttdeci">amrex::Real m_bdy_time_interval</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:527</div></div>
+<div class="ttc" id="aclassABLMost_html_a1795a510d08fbd88e6599e014f97b6c5"><div class="ttname"><a href="classABLMost.html#a1795a510d08fbd88e6599e014f97b6c5">ABLMost::m_geom</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Geometry &gt; m_geom</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:523</div></div>
+<div class="ttc" id="aclassABLMost_html_a1bce26c6253a6191424e7b753cd24cfa"><div class="ttname"><a href="classABLMost.html#a1bce26c6253a6191424e7b753cd24cfa">ABLMost::custom_ustar</a></div><div class="ttdeci">amrex::Real custom_ustar</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:534</div></div>
+<div class="ttc" id="aclassABLMost_html_a31707b89fbbbdeb445ba35ed240046c3"><div class="ttname"><a href="classABLMost.html#a31707b89fbbbdeb445ba35ed240046c3">ABLMost::custom_qstar</a></div><div class="ttdeci">amrex::Real custom_qstar</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:536</div></div>
+<div class="ttc" id="aclassABLMost_html_a38ed37dd984fcc7be3b5ae04b7272459"><div class="ttname"><a href="classABLMost.html#a38ed37dd984fcc7be3b5ae04b7272459">ABLMost::depth</a></div><div class="ttdeci">amrex::Real depth</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:539</div></div>
+<div class="ttc" id="aclassABLMost_html_a39402ac3794b9a218289cd0d4adec670"><div class="ttname"><a href="classABLMost.html#a39402ac3794b9a218289cd0d4adec670">ABLMost::surf_heating_rate</a></div><div class="ttdeci">amrex::Real surf_heating_rate</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:532</div></div>
+<div class="ttc" id="aclassABLMost_html_a466bfcda8ae4337d9c8781ab28e3f6fe"><div class="ttname"><a href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">ABLMost::m_ma</a></div><div class="ttdeci">MOSTAverage m_ma</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:545</div></div>
 <div class="ttc" id="aclassABLMost_html_a46fbd9260d2adfa7c18edad6452f9baba10548012f42e962e7945ce998b571c5c"><div class="ttname"><a href="classABLMost.html#a46fbd9260d2adfa7c18edad6452f9baba10548012f42e962e7945ce998b571c5c">ABLMost::ThetaCalcType::ADIABATIC</a></div><div class="ttdeci">@ ADIABATIC</div></div>
 <div class="ttc" id="aclassABLMost_html_a46fbd9260d2adfa7c18edad6452f9baba317cef85d14b4909f1d76becb00dc0f1"><div class="ttname"><a href="classABLMost.html#a46fbd9260d2adfa7c18edad6452f9baba317cef85d14b4909f1d76becb00dc0f1">ABLMost::ThetaCalcType::SURFACE_TEMPERATURE</a></div><div class="ttdeci">@ SURFACE_TEMPERATURE</div><div class="ttdoc">Surface temperature specified.</div></div>
 <div class="ttc" id="aclassABLMost_html_a46fbd9260d2adfa7c18edad6452f9babac03b743c56d9316fbd3d327453b22226"><div class="ttname"><a href="classABLMost.html#a46fbd9260d2adfa7c18edad6452f9babac03b743c56d9316fbd3d327453b22226">ABLMost::ThetaCalcType::HEAT_FLUX</a></div><div class="ttdeci">@ HEAT_FLUX</div><div class="ttdoc">Heat-flux specified.</div></div>
-<div class="ttc" id="aclassABLMost_html_a4f97d1d8c347710155ead2c1310338a0"><div class="ttname"><a href="classABLMost.html#a4f97d1d8c347710155ead2c1310338a0">ABLMost::cnk_visc</a></div><div class="ttdeci">bool cnk_visc</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:534</div></div>
-<div class="ttc" id="aclassABLMost_html_a4fb97b28e44e9ff6930f18083923343a"><div class="ttname"><a href="classABLMost.html#a4fb97b28e44e9ff6930f18083923343a">ABLMost::m_start_bdy_time</a></div><div class="ttdeci">amrex::Real m_start_bdy_time</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:536</div></div>
-<div class="ttc" id="aclassABLMost_html_a73621a1b429f2e910a29adac72b7c581"><div class="ttname"><a href="classABLMost.html#a73621a1b429f2e910a29adac72b7c581">ABLMost::surf_temp</a></div><div class="ttdeci">amrex::Real surf_temp</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:527</div></div>
-<div class="ttc" id="aclassABLMost_html_a75310e9079ee238a932900feaad85ac5"><div class="ttname"><a href="classABLMost.html#a75310e9079ee238a932900feaad85ac5">ABLMost::cnk_a</a></div><div class="ttdeci">amrex::Real cnk_a</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:533</div></div>
+<div class="ttc" id="aclassABLMost_html_a4f97d1d8c347710155ead2c1310338a0"><div class="ttname"><a href="classABLMost.html#a4f97d1d8c347710155ead2c1310338a0">ABLMost::cnk_visc</a></div><div class="ttdeci">bool cnk_visc</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:538</div></div>
+<div class="ttc" id="aclassABLMost_html_a4fb97b28e44e9ff6930f18083923343a"><div class="ttname"><a href="classABLMost.html#a4fb97b28e44e9ff6930f18083923343a">ABLMost::m_start_bdy_time</a></div><div class="ttdeci">amrex::Real m_start_bdy_time</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:526</div></div>
+<div class="ttc" id="aclassABLMost_html_a73621a1b429f2e910a29adac72b7c581"><div class="ttname"><a href="classABLMost.html#a73621a1b429f2e910a29adac72b7c581">ABLMost::surf_temp</a></div><div class="ttdeci">amrex::Real surf_temp</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:531</div></div>
+<div class="ttc" id="aclassABLMost_html_a75310e9079ee238a932900feaad85ac5"><div class="ttname"><a href="classABLMost.html#a75310e9079ee238a932900feaad85ac5">ABLMost::cnk_a</a></div><div class="ttdeci">amrex::Real cnk_a</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:537</div></div>
 <div class="ttc" id="aclassABLMost_html_a7d1394fa01c8c29b20dfb790c0f3ec6b"><div class="ttname"><a href="classABLMost.html#a7d1394fa01c8c29b20dfb790c0f3ec6b">ABLMost::theta_type</a></div><div class="ttdeci">ThetaCalcType theta_type</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:516</div></div>
 <div class="ttc" id="aclassABLMost_html_a84782c98096a1cc4395071cde97469ed"><div class="ttname"><a href="classABLMost.html#a84782c98096a1cc4395071cde97469ed">ABLMost::pblh_type</a></div><div class="ttdeci">PBLHeightCalcType pblh_type</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:519</div></div>
 <div class="ttc" id="aclassABLMost_html_a92e41ba7a650b4768aa6bc006b2241e0a0525d4394471c332f3c0a497584923d5"><div class="ttname"><a href="classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0a0525d4394471c332f3c0a497584923d5">ABLMost::FluxCalcType::MOENG</a></div><div class="ttdeci">@ MOENG</div><div class="ttdoc">Moeng functional form.</div></div>
 <div class="ttc" id="aclassABLMost_html_a92e41ba7a650b4768aa6bc006b2241e0a72baef04098f035e8a320b03ad197818"><div class="ttname"><a href="classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0a72baef04098f035e8a320b03ad197818">ABLMost::FluxCalcType::CUSTOM</a></div><div class="ttdeci">@ CUSTOM</div><div class="ttdoc">Custom constant flux functional form.</div></div>
 <div class="ttc" id="aclassABLMost_html_a92e41ba7a650b4768aa6bc006b2241e0a9faf4e337734315fde20af1922cc6f9d"><div class="ttname"><a href="classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0a9faf4e337734315fde20af1922cc6f9d">ABLMost::FluxCalcType::ROTATE</a></div><div class="ttdeci">@ ROTATE</div><div class="ttdoc">Terrain rotation flux functional form.</div></div>
 <div class="ttc" id="aclassABLMost_html_a92e41ba7a650b4768aa6bc006b2241e0afbf950ece84b8c4c7ebcf6492db726f7"><div class="ttname"><a href="classABLMost.html#a92e41ba7a650b4768aa6bc006b2241e0afbf950ece84b8c4c7ebcf6492db726f7">ABLMost::FluxCalcType::DONELAN</a></div><div class="ttdeci">@ DONELAN</div><div class="ttdoc">Donelan functional form.</div></div>
-<div class="ttc" id="aclassABLMost_html_a98390481d302c2a2c7346bf2328305a8"><div class="ttname"><a href="classABLMost.html#a98390481d302c2a2c7346bf2328305a8">ABLMost::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:529</div></div>
+<div class="ttc" id="aclassABLMost_html_a98390481d302c2a2c7346bf2328305a8"><div class="ttname"><a href="classABLMost.html#a98390481d302c2a2c7346bf2328305a8">ABLMost::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:533</div></div>
 <div class="ttc" id="aclassABLMost_html_ab052d62a07e8765a6de67264d05aff37"><div class="ttname"><a href="classABLMost.html#ab052d62a07e8765a6de67264d05aff37">ABLMost::rough_type_land</a></div><div class="ttdeci">RoughCalcType rough_type_land</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:517</div></div>
-<div class="ttc" id="aclassABLMost_html_ab107efa0b6bdf80ee44d232919f6a7ad"><div class="ttname"><a href="classABLMost.html#ab107efa0b6bdf80ee44d232919f6a7ad">ABLMost::m_rotate</a></div><div class="ttdeci">bool m_rotate</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:524</div></div>
+<div class="ttc" id="aclassABLMost_html_ab107efa0b6bdf80ee44d232919f6a7ad"><div class="ttname"><a href="classABLMost.html#ab107efa0b6bdf80ee44d232919f6a7ad">ABLMost::m_rotate</a></div><div class="ttdeci">bool m_rotate</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:525</div></div>
 <div class="ttc" id="aclassABLMost_html_ab5041b7c6a15b759a8f33dadd1a67e92"><div class="ttname"><a href="classABLMost.html#ab5041b7c6a15b759a8f33dadd1a67e92">ABLMost::rough_type_sea</a></div><div class="ttdeci">RoughCalcType rough_type_sea</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:518</div></div>
-<div class="ttc" id="aclassABLMost_html_ab55a547b6b74a177128af6c6a107930c"><div class="ttname"><a href="classABLMost.html#ab55a547b6b74a177128af6c6a107930c">ABLMost::use_moisture</a></div><div class="ttdeci">bool use_moisture</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:522</div></div>
-<div class="ttc" id="aclassABLMost_html_ac2e247ec9fd06cd15c788b83bf2c9ba6"><div class="ttname"><a href="classABLMost.html#ac2e247ec9fd06cd15c788b83bf2c9ba6">ABLMost::m_include_wstar</a></div><div class="ttdeci">bool m_include_wstar</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:525</div></div>
-<div class="ttc" id="aclassABLMost_html_ac3de35be0d6cf3841e9a868830fc42c5"><div class="ttname"><a href="classABLMost.html#ac3de35be0d6cf3841e9a868830fc42c5">ABLMost::m_exp_most</a></div><div class="ttdeci">bool m_exp_most</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:523</div></div>
+<div class="ttc" id="aclassABLMost_html_ab55a547b6b74a177128af6c6a107930c"><div class="ttname"><a href="classABLMost.html#ab55a547b6b74a177128af6c6a107930c">ABLMost::use_moisture</a></div><div class="ttdeci">bool use_moisture</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:543</div></div>
+<div class="ttc" id="aclassABLMost_html_ac2e247ec9fd06cd15c788b83bf2c9ba6"><div class="ttname"><a href="classABLMost.html#ac2e247ec9fd06cd15c788b83bf2c9ba6">ABLMost::m_include_wstar</a></div><div class="ttdeci">bool m_include_wstar</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:529</div></div>
+<div class="ttc" id="aclassABLMost_html_ac3de35be0d6cf3841e9a868830fc42c5"><div class="ttname"><a href="classABLMost.html#ac3de35be0d6cf3841e9a868830fc42c5">ABLMost::m_exp_most</a></div><div class="ttdeci">bool m_exp_most</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:524</div></div>
 <div class="ttc" id="aclassABLMost_html_acf73526a7a2b05be8d48c0af94742841a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="classABLMost.html#acf73526a7a2b05be8d48c0af94742841a6adf97f83acf6453d4a6a4b1070f3754">ABLMost::PBLHeightCalcType::None</a></div><div class="ttdeci">@ None</div></div>
 <div class="ttc" id="aclassABLMost_html_acf73526a7a2b05be8d48c0af94742841abdeb9a753db1d1f3fe0e944eab1d0601"><div class="ttname"><a href="classABLMost.html#acf73526a7a2b05be8d48c0af94742841abdeb9a753db1d1f3fe0e944eab1d0601">ABLMost::PBLHeightCalcType::MYNN25</a></div><div class="ttdeci">@ MYNN25</div></div>
 <div class="ttc" id="aclassABLMost_html_acf73526a7a2b05be8d48c0af94742841ad032bccff1ff2e272cc68da5a0de09fe"><div class="ttname"><a href="classABLMost.html#acf73526a7a2b05be8d48c0af94742841ad032bccff1ff2e272cc68da5a0de09fe">ABLMost::PBLHeightCalcType::YSU</a></div><div class="ttdeci">@ YSU</div></div>
-<div class="ttc" id="aclassABLMost_html_acfc9a08ed0d029602e2e8e99232d0149"><div class="ttname"><a href="classABLMost.html#acfc9a08ed0d029602e2e8e99232d0149">ABLMost::z0_const</a></div><div class="ttdeci">amrex::Real z0_const</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:526</div></div>
+<div class="ttc" id="aclassABLMost_html_acfc9a08ed0d029602e2e8e99232d0149"><div class="ttname"><a href="classABLMost.html#acfc9a08ed0d029602e2e8e99232d0149">ABLMost::z0_const</a></div><div class="ttdeci">amrex::Real z0_const</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:530</div></div>
 <div class="ttc" id="aclassABLMost_html_ad837d92390012682056ffac0b5f9a8f9"><div class="ttname"><a href="classABLMost.html#ad837d92390012682056ffac0b5f9a8f9">ABLMost::flux_type</a></div><div class="ttdeci">FluxCalcType flux_type</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:515</div></div>
 <div class="ttc" id="aclassABLMost_html_ae825f96c2d098b3e070642a74e6a3f13a266bf3048d67b1b3187c0189bc232fde"><div class="ttname"><a href="classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13a266bf3048d67b1b3187c0189bc232fde">ABLMost::RoughCalcType::MODIFIED_CHARNOCK</a></div><div class="ttdeci">@ MODIFIED_CHARNOCK</div></div>
 <div class="ttc" id="aclassABLMost_html_ae825f96c2d098b3e070642a74e6a3f13a3e1545d84d0cc7da6edf47adda8a80f9"><div class="ttname"><a href="classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13a3e1545d84d0cc7da6edf47adda8a80f9">ABLMost::RoughCalcType::WAVE_COUPLED</a></div><div class="ttdeci">@ WAVE_COUPLED</div></div>
 <div class="ttc" id="aclassABLMost_html_ae825f96c2d098b3e070642a74e6a3f13a8d6b5cada83510220f59e00ce86d4d92"><div class="ttname"><a href="classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13a8d6b5cada83510220f59e00ce86d4d92">ABLMost::RoughCalcType::CONSTANT</a></div><div class="ttdeci">@ CONSTANT</div><div class="ttdoc">Constant z0.</div></div>
 <div class="ttc" id="aclassABLMost_html_ae825f96c2d098b3e070642a74e6a3f13addbb8213265f3ad773f7af2cb8147062"><div class="ttname"><a href="classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13addbb8213265f3ad773f7af2cb8147062">ABLMost::RoughCalcType::CHARNOCK</a></div><div class="ttdeci">@ CHARNOCK</div></div>
 <div class="ttc" id="aclassABLMost_html_ae825f96c2d098b3e070642a74e6a3f13afbf950ece84b8c4c7ebcf6492db726f7"><div class="ttname"><a href="classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13afbf950ece84b8c4c7ebcf6492db726f7">ABLMost::RoughCalcType::DONELAN</a></div><div class="ttdeci">@ DONELAN</div></div>
-<div class="ttc" id="aclassABLMost_html_afbd0b1a37d9e9d716d82910db203e82f"><div class="ttname"><a href="classABLMost.html#afbd0b1a37d9e9d716d82910db203e82f">ABLMost::custom_tstar</a></div><div class="ttdeci">amrex::Real custom_tstar</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:531</div></div>
+<div class="ttc" id="aclassABLMost_html_afbd0b1a37d9e9d716d82910db203e82f"><div class="ttname"><a href="classABLMost.html#afbd0b1a37d9e9d716d82910db203e82f">ABLMost::custom_tstar</a></div><div class="ttdeci">amrex::Real custom_tstar</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:535</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classABLMost_a6f26e3c90a22c770346fadb84fb6210a_cgraph.png" border="0" usemap="#aclassABLMost_a6f26e3c90a22c770346fadb84fb6210a_cgraph" alt=""/></div>
-<map name="aclassABLMost_a6f26e3c90a22c770346fadb84fb6210a_cgraph" id="aclassABLMost_a6f26e3c90a22c770346fadb84fb6210a_cgraph">
+<div class="center"><img src="classABLMost_a9551e9fdb471574d805295aac5b2de49_cgraph.png" border="0" usemap="#aclassABLMost_a9551e9fdb471574d805295aac5b2de49_cgraph" alt=""/></div>
+<map name="aclassABLMost_a9551e9fdb471574d805295aac5b2de49_cgraph" id="aclassABLMost_a9551e9fdb471574d805295aac5b2de49_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,149,32"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="197,5,236,32"/>
 </map>
@@ -795,18 +801,18 @@ template&lt;typename FluxIter &gt; </div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        });</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
-<div class="ttc" id="aclassABLMost_html_a05cc96f74b89c4e277fe3db4ea01d3fa"><div class="ttname"><a href="classABLMost.html#a05cc96f74b89c4e277fe3db4ea01d3fa">ABLMost::m_eddyDiffs_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_eddyDiffs_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:557</div></div>
-<div class="ttc" id="aclassABLMost_html_a0630def935d5ca0d24160b9b9567f3e1"><div class="ttname"><a href="classABLMost.html#a0630def935d5ca0d24160b9b9567f3e1">ABLMost::q_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; q_star</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:546</div></div>
-<div class="ttc" id="aclassABLMost_html_a0d6aa5a113a45ae1e56c0284241cfd01"><div class="ttname"><a href="classABLMost.html#a0d6aa5a113a45ae1e56c0284241cfd01">ABLMost::olen</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; olen</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:547</div></div>
-<div class="ttc" id="aclassABLMost_html_a11a418842597c03a5782fc53ec0a1fb1"><div class="ttname"><a href="classABLMost.html#a11a418842597c03a5782fc53ec0a1fb1">ABLMost::w_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; w_star</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:544</div></div>
-<div class="ttc" id="aclassABLMost_html_a1301dd4cb6875c7bdf5d69126b972f91"><div class="ttname"><a href="classABLMost.html#a1301dd4cb6875c7bdf5d69126b972f91">ABLMost::z_0</a></div><div class="ttdeci">amrex::Vector&lt; amrex::FArrayBox &gt; z_0</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:539</div></div>
-<div class="ttc" id="aclassABLMost_html_a1f488836fca7c3da2bed67c63a94951b"><div class="ttname"><a href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">ABLMost::t_surf</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; t_surf</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:549</div></div>
-<div class="ttc" id="aclassABLMost_html_a5ab8e9f3fdf7debf1c54bd0d8a1554db"><div class="ttname"><a href="classABLMost.html#a5ab8e9f3fdf7debf1c54bd0d8a1554db">ABLMost::pblh</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; pblh</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:548</div></div>
-<div class="ttc" id="aclassABLMost_html_a644ccdc438574061ec7ae75cdc714ec6"><div class="ttname"><a href="classABLMost.html#a644ccdc438574061ec7ae75cdc714ec6">ABLMost::m_Hwave_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_Hwave_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:555</div></div>
-<div class="ttc" id="aclassABLMost_html_aaa5bbc610662825ddd8a184b43f3541b"><div class="ttname"><a href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">ABLMost::m_lmask_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::iMultiFab * &gt; &gt; m_lmask_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:552</div></div>
-<div class="ttc" id="aclassABLMost_html_ab12af4a41dbc189d69850a81447434f7"><div class="ttname"><a href="classABLMost.html#ab12af4a41dbc189d69850a81447434f7">ABLMost::m_Lwave_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_Lwave_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:556</div></div>
-<div class="ttc" id="aclassABLMost_html_ac9d90016f196c3861d225132e8b6a921"><div class="ttname"><a href="classABLMost.html#ac9d90016f196c3861d225132e8b6a921">ABLMost::t_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; t_star</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:545</div></div>
-<div class="ttc" id="aclassABLMost_html_acd5510d2f47502a57107f12c66f8a552"><div class="ttname"><a href="classABLMost.html#acd5510d2f47502a57107f12c66f8a552">ABLMost::u_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; u_star</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:543</div></div>
+<div class="ttc" id="aclassABLMost_html_a05cc96f74b89c4e277fe3db4ea01d3fa"><div class="ttname"><a href="classABLMost.html#a05cc96f74b89c4e277fe3db4ea01d3fa">ABLMost::m_eddyDiffs_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_eddyDiffs_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:560</div></div>
+<div class="ttc" id="aclassABLMost_html_a0630def935d5ca0d24160b9b9567f3e1"><div class="ttname"><a href="classABLMost.html#a0630def935d5ca0d24160b9b9567f3e1">ABLMost::q_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; q_star</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:549</div></div>
+<div class="ttc" id="aclassABLMost_html_a0d6aa5a113a45ae1e56c0284241cfd01"><div class="ttname"><a href="classABLMost.html#a0d6aa5a113a45ae1e56c0284241cfd01">ABLMost::olen</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; olen</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:550</div></div>
+<div class="ttc" id="aclassABLMost_html_a11a418842597c03a5782fc53ec0a1fb1"><div class="ttname"><a href="classABLMost.html#a11a418842597c03a5782fc53ec0a1fb1">ABLMost::w_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; w_star</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:547</div></div>
+<div class="ttc" id="aclassABLMost_html_a1301dd4cb6875c7bdf5d69126b972f91"><div class="ttname"><a href="classABLMost.html#a1301dd4cb6875c7bdf5d69126b972f91">ABLMost::z_0</a></div><div class="ttdeci">amrex::Vector&lt; amrex::FArrayBox &gt; z_0</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:540</div></div>
+<div class="ttc" id="aclassABLMost_html_a1f488836fca7c3da2bed67c63a94951b"><div class="ttname"><a href="classABLMost.html#a1f488836fca7c3da2bed67c63a94951b">ABLMost::t_surf</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; t_surf</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:552</div></div>
+<div class="ttc" id="aclassABLMost_html_a5ab8e9f3fdf7debf1c54bd0d8a1554db"><div class="ttname"><a href="classABLMost.html#a5ab8e9f3fdf7debf1c54bd0d8a1554db">ABLMost::pblh</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; pblh</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:551</div></div>
+<div class="ttc" id="aclassABLMost_html_a644ccdc438574061ec7ae75cdc714ec6"><div class="ttname"><a href="classABLMost.html#a644ccdc438574061ec7ae75cdc714ec6">ABLMost::m_Hwave_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_Hwave_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:558</div></div>
+<div class="ttc" id="aclassABLMost_html_aaa5bbc610662825ddd8a184b43f3541b"><div class="ttname"><a href="classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b">ABLMost::m_lmask_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::iMultiFab * &gt; &gt; m_lmask_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:555</div></div>
+<div class="ttc" id="aclassABLMost_html_ab12af4a41dbc189d69850a81447434f7"><div class="ttname"><a href="classABLMost.html#ab12af4a41dbc189d69850a81447434f7">ABLMost::m_Lwave_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_Lwave_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:559</div></div>
+<div class="ttc" id="aclassABLMost_html_ac9d90016f196c3861d225132e8b6a921"><div class="ttname"><a href="classABLMost.html#ac9d90016f196c3861d225132e8b6a921">ABLMost::t_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; t_star</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:548</div></div>
+<div class="ttc" id="aclassABLMost_html_acd5510d2f47502a57107f12c66f8a552"><div class="ttname"><a href="classABLMost.html#acd5510d2f47502a57107f12c66f8a552">ABLMost::u_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; u_star</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:546</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_ac08baeafe98b80401526bfe20562aa5d"><div class="ttname"><a href="classMOSTAverage.html#ac08baeafe98b80401526bfe20562aa5d">MOSTAverage::get_average</a></div><div class="ttdeci">const amrex::MultiFab * get_average(const int &amp;lev, const int &amp;comp) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:98</div></div>
 </div><!-- fragment -->
 </div>
@@ -1271,7 +1277,7 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a648544a94d2694aa6ea7e3e037f3eaae"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae">rotate_scalar_flux</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void rotate_scalar_flux(const int &amp;i, const int &amp;j, const int &amp;klo, const amrex::Real &amp;flux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;zphys_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi1_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi2_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi3_arr)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:454</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a9b3eb880f98843461a7d64193ee6879b"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b">rotate_stress_tensor</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void rotate_stress_tensor(const int &amp;i, const int &amp;j, const int &amp;klo, const amrex::Real &amp;flux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;zphys_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;w_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau11_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau22_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau33_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau12_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau21_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau13_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau31_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau23_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau32_arr)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:475</div></div>
-<div class="ttc" id="aclassABLMost_html_a422336bc908d29f98dafb3b745b4f060"><div class="ttname"><a href="classABLMost.html#a422336bc908d29f98dafb3b745b4f060">ABLMost::m_lsm_flux_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_lsm_flux_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:554</div></div>
+<div class="ttc" id="aclassABLMost_html_a422336bc908d29f98dafb3b745b4f060"><div class="ttname"><a href="classABLMost.html#a422336bc908d29f98dafb3b745b4f060">ABLMost::m_lsm_flux_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_lsm_flux_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:557</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:130</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:129</div></div>
 <div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:132</div></div>
@@ -1491,7 +1497,7 @@ template&lt;typename PBLHeightEstimator &gt; </div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        });</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    }</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;}</div>
-<div class="ttc" id="aclassABLMost_html_a958aaaf9e040462197c88c6c77f2aaf6"><div class="ttname"><a href="classABLMost.html#a958aaaf9e040462197c88c6c77f2aaf6">ABLMost::m_lsm_data_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_lsm_data_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:553</div></div>
+<div class="ttc" id="aclassABLMost_html_a958aaaf9e040462197c88c6c77f2aaf6"><div class="ttname"><a href="classABLMost.html#a958aaaf9e040462197c88c6c77f2aaf6">ABLMost::m_lsm_data_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_lsm_data_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:556</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1816,7 +1822,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classABLMost.html#ab1da46aefd129763fb25f5a6839e48dd">m_var_z0</a>; }</div>
-<div class="ttc" id="aclassABLMost_html_ab1da46aefd129763fb25f5a6839e48dd"><div class="ttname"><a href="classABLMost.html#ab1da46aefd129763fb25f5a6839e48dd">ABLMost::m_var_z0</a></div><div class="ttdeci">bool m_var_z0</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:540</div></div>
+<div class="ttc" id="aclassABLMost_html_ab1da46aefd129763fb25f5a6839e48dd"><div class="ttname"><a href="classABLMost.html#ab1da46aefd129763fb25f5a6839e48dd">ABLMost::m_var_z0</a></div><div class="ttdeci">bool m_var_z0</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:541</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2323,8 +2329,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }</div>
 <div class="ttc" id="aclassABLMost_html_a4a8ee389a82fe46164ffed9417500a98"><div class="ttname"><a href="classABLMost.html#a4a8ee389a82fe46164ffed9417500a98">ABLMost::lmask_min_reduce</a></div><div class="ttdeci">int lmask_min_reduce(amrex::iMultiFab &amp;lmask, const int &amp;nghost)</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:471</div></div>
 <div class="ttc" id="aclassABLMost_html_a659a78a3d5c58ec4dff9ea0933413474"><div class="ttname"><a href="classABLMost.html#a659a78a3d5c58ec4dff9ea0933413474">ABLMost::read_custom_roughness</a></div><div class="ttdeci">void read_custom_roughness(const int &amp;lev, const std::string &amp;fname)</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.cpp:592</div></div>
-<div class="ttc" id="aclassABLMost_html_ad8f1957bba407e17edb0a84ace515cde"><div class="ttname"><a href="classABLMost.html#ad8f1957bba407e17edb0a84ace515cde">ABLMost::m_sst_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_sst_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:551</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_aceb8c4ce27021d371b85abb7350a36db"><div class="ttname"><a href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db">MOSTAverage::make_MOSTAverage_at_level</a></div><div class="ttdeci">void make_MOSTAverage_at_level(const int &amp;lev, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;vars_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Theta_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Qv_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Qr_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:64</div></div>
+<div class="ttc" id="aclassABLMost_html_ad8f1957bba407e17edb0a84ace515cde"><div class="ttname"><a href="classABLMost.html#ad8f1957bba407e17edb0a84ace515cde">ABLMost::m_sst_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_sst_lev</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:554</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_aceb8c4ce27021d371b85abb7350a36db"><div class="ttname"><a href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db">MOSTAverage::make_MOSTAverage_at_level</a></div><div class="ttdeci">void make_MOSTAverage_at_level(const int &amp;lev, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;vars_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Theta_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Qv_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Qr_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:66</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2710,7 +2716,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassABLMost_html_aaeef06eb7d0ab7e3d100e583337121cc"><div class="ttname"><a href="classABLMost.html#aaeef06eb7d0ab7e3d100e583337121cc">ABLMost::time_interp_sst</a></div><div class="ttdeci">void time_interp_sst(const int &amp;lev, const amrex::Real &amp;time)</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.cpp:493</div></div>
 <div class="ttc" id="aclassABLMost_html_ad878840b1c998160ba79c1e9714adc70"><div class="ttname"><a href="classABLMost.html#ad878840b1c998160ba79c1e9714adc70">ABLMost::update_surf_temp</a></div><div class="ttdeci">void update_surf_temp(const amrex::Real &amp;time)</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.H:412</div></div>
 <div class="ttc" id="aclassABLMost_html_ae28fd8a21f4b514875c24fe4b8e85081"><div class="ttname"><a href="classABLMost.html#ae28fd8a21f4b514875c24fe4b8e85081">ABLMost::get_lsm_tsurf</a></div><div class="ttdeci">void get_lsm_tsurf(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_ABLMost.cpp:528</div></div>
-<div class="ttc" id="aclassMOSTAverage_html_a41ef10e076e2099d0fd845e318fd00a0"><div class="ttname"><a href="classMOSTAverage.html#a41ef10e076e2099d0fd845e318fd00a0">MOSTAverage::compute_averages</a></div><div class="ttdeci">void compute_averages(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:657</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_a41ef10e076e2099d0fd845e318fd00a0"><div class="ttname"><a href="classMOSTAverage.html#a41ef10e076e2099d0fd845e318fd00a0">MOSTAverage::compute_averages</a></div><div class="ttdeci">void compute_averages(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:659</div></div>
 <div class="ttc" id="astructadiabatic__charnock_html"><div class="ttname"><a href="structadiabatic__charnock.html">adiabatic_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:136</div></div>
 <div class="ttc" id="astructadiabatic__donelan_html"><div class="ttname"><a href="structadiabatic__donelan.html">adiabatic_donelan</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:270</div></div>
 <div class="ttc" id="astructadiabatic__mod__charnock_html"><div class="ttname"><a href="structadiabatic__mod__charnock.html">adiabatic_mod_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:207</div></div>
@@ -2781,7 +2787,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    { <a class="code" href="classABLMost.html#a466bfcda8ae4337d9c8781ab28e3f6fe">m_ma</a>.<a class="code" href="classMOSTAverage.html#ac5470caa62893417ee6eadc28da3816f">update_field_ptrs</a>(lev,vars_old,Theta_prim,Qv_prim,Qr_prim); }</div>
-<div class="ttc" id="aclassMOSTAverage_html_ac5470caa62893417ee6eadc28da3816f"><div class="ttname"><a href="classMOSTAverage.html#ac5470caa62893417ee6eadc28da3816f">MOSTAverage::update_field_ptrs</a></div><div class="ttdeci">void update_field_ptrs(const int &amp;lev, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;vars_old, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Theta_prim, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Qv_prim, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Qr_prim)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:236</div></div>
+<div class="ttc" id="aclassMOSTAverage_html_ac5470caa62893417ee6eadc28da3816f"><div class="ttname"><a href="classMOSTAverage.html#ac5470caa62893417ee6eadc28da3816f">MOSTAverage::update_field_ptrs</a></div><div class="ttdeci">void update_field_ptrs(const int &amp;lev, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;vars_old, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Theta_prim, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Qv_prim, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Qr_prim)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:238</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2916,7 +2922,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>.</p>
 
 </div>
 </div>
@@ -2940,7 +2946,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>.</p>
 
 </div>
 </div>
@@ -2964,7 +2970,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>.</p>
 
 </div>
 </div>
@@ -2988,7 +2994,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>.</p>
 
 </div>
 </div>
@@ -3012,7 +3018,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>.</p>
 
 </div>
 </div>
@@ -3036,7 +3042,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>.</p>
 
 </div>
 </div>
@@ -3052,7 +3058,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>, and <a class="el" href="classABLMost.html#afb630bd65e0cd2946a4a99d2e395db58">make_MOST_at_level()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>, and <a class="el" href="classABLMost.html#afb630bd65e0cd2946a4a99d2e395db58">make_MOST_at_level()</a>.</p>
 
 </div>
 </div>
@@ -3192,7 +3198,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>.</p>
 
 </div>
 </div>
@@ -3468,7 +3474,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>.</p>
 
 </div>
 </div>
@@ -3508,7 +3514,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>.</p>
 
 </div>
 </div>
@@ -3524,7 +3530,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>, and <a class="el" href="classABLMost.html#afb630bd65e0cd2946a4a99d2e395db58">make_MOST_at_level()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>, and <a class="el" href="classABLMost.html#afb630bd65e0cd2946a4a99d2e395db58">make_MOST_at_level()</a>.</p>
 
 </div>
 </div>
@@ -3548,7 +3554,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>, and <a class="el" href="classABLMost.html#ad878840b1c998160ba79c1e9714adc70">update_surf_temp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>, and <a class="el" href="classABLMost.html#ad878840b1c998160ba79c1e9714adc70">update_surf_temp()</a>.</p>
 
 </div>
 </div>
@@ -3572,7 +3578,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>, <a class="el" href="classABLMost.html#afb630bd65e0cd2946a4a99d2e395db58">make_MOST_at_level()</a>, and <a class="el" href="classABLMost.html#ad878840b1c998160ba79c1e9714adc70">update_surf_temp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>, <a class="el" href="classABLMost.html#afb630bd65e0cd2946a4a99d2e395db58">make_MOST_at_level()</a>, and <a class="el" href="classABLMost.html#ad878840b1c998160ba79c1e9714adc70">update_surf_temp()</a>.</p>
 
 </div>
 </div>
@@ -3596,7 +3602,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>.</p>
 
 </div>
 </div>
@@ -3660,7 +3666,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>, and <a class="el" href="classABLMost.html#afb630bd65e0cd2946a4a99d2e395db58">make_MOST_at_level()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>, and <a class="el" href="classABLMost.html#afb630bd65e0cd2946a4a99d2e395db58">make_MOST_at_level()</a>.</p>
 
 </div>
 </div>
@@ -3708,7 +3714,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>.</p>
 
 </div>
 </div>
@@ -3756,7 +3762,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classABLMost.html#a6f26e3c90a22c770346fadb84fb6210a">ABLMost()</a>, and <a class="el" href="classABLMost.html#afb630bd65e0cd2946a4a99d2e395db58">make_MOST_at_level()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classABLMost.html#a9551e9fdb471574d805295aac5b2de49">ABLMost()</a>, and <a class="el" href="classABLMost.html#afb630bd65e0cd2946a4a99d2e395db58">make_MOST_at_level()</a>.</p>
 
 </div>
 </div>

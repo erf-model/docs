@@ -47,7 +47,7 @@ var searchData=
   ['poisson_5freltol_4360',['poisson_reltol',['../structSolverChoice.html#a238b0871f38f8b134ff3fe5af0d05479',1,'SolverChoice']]],
   ['power_4361',['power',['../classFitch.html#a88af1c4430e37f4950396b5a92e9ba03',1,'Fitch::power()'],['../classWindFarm.html#aea801fd8c22bf9d4bdcec847f4e7f50a',1,'WindFarm::power()'],['../classEWP.html#ab9a34e54d36268a3f7a0b376543bbff5',1,'EWP::power()'],['../classGeneralAD.html#a1a247dae534aad8b40e7780b3f296afe',1,'GeneralAD::power()'],['../classSimpleAD.html#a4beb1f1734f5ba3b037cd6c89d79b351',1,'SimpleAD::power()']]],
   ['pp_5finc_4362',['pp_inc',['../classERF.html#a0c5206542d4193bb687f5271be6fe5e5',1,'ERF']]],
-  ['pp_5fprefix_4363',['pp_prefix',['../structAdvChoice.html#a667cbedb89514e330b6ca144298857da',1,'AdvChoice::pp_prefix()'],['../classERF.html#a59df30e7a5537c8543bb00772bd98b58',1,'ERF::pp_prefix()'],['../structTurbulentPerturbation.html#a40f3307cf523b625489b8591869bbb47',1,'TurbulentPerturbation::pp_prefix()'],['../structSolverChoice.html#a4b0edf29a032ff18b10a42825fa9e4b6',1,'SolverChoice::pp_prefix()'],['../structDiffChoice.html#a9e8b6878f4d18ee6fe61a220612d70df',1,'DiffChoice::pp_prefix()'],['../structSpongeChoice.html#af06b59184315514abdadd3b54c073909',1,'SpongeChoice::pp_prefix()'],['../structTurbChoice.html#a6b8e56e5ace640df7834c013c6788020',1,'TurbChoice::pp_prefix()']]],
+  ['pp_5fprefix_4363',['pp_prefix',['../classERF.html#a59df30e7a5537c8543bb00772bd98b58',1,'ERF']]],
   ['pr_5ft_4364',['Pr_t',['../structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566',1,'TurbChoice']]],
   ['pr_5ft_5finv_4365',['Pr_t_inv',['../structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5',1,'TurbChoice']]],
   ['pres1d_4366',['pres1d',['../classSAM.html#a77e43f5c8a68a43f8109aa18b71fa64e',1,'SAM']]],

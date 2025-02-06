@@ -1,8 +1,7 @@
 var structSpongeChoice =
 [
     [ "display", "structSpongeChoice.html#a66fd55eceebbe3e97e31325cc55369de", null ],
-    [ "init_params", "structSpongeChoice.html#ac20a8660aca19e9655611c3d2eb9f672", null ],
-    [ "pp_prefix", "structSpongeChoice.html#af06b59184315514abdadd3b54c073909", null ],
+    [ "init_params", "structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76", null ],
     [ "sponge_density", "structSpongeChoice.html#adb74ee3cbc24251272d6ad5fafdb885d", null ],
     [ "sponge_strength", "structSpongeChoice.html#a48f4b8a95b93cf8fa36d00d355757a1e", null ],
     [ "sponge_type", "structSpongeChoice.html#a1a41f754595d713df32583f0b0fa606e", null ],
