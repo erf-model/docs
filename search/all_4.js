@@ -121,7 +121,7 @@ var searchData=
   ['erf_5febutils_2eh_555',['ERF_EBUtils.H',['../ERF__EBUtils_8H.html',1,'']]],
   ['erf_5febwritesurface_2ecpp_556',['ERF_EBWriteSurface.cpp',['../ERF__EBWriteSurface_8cpp.html',1,'']]],
   ['erf_5feddyviscosity_2eh_557',['ERF_EddyViscosity.H',['../ERF__EddyViscosity_8H.html',1,'']]],
-  ['erf_5fenforce_5fhse_558',['erf_enforce_hse',['../classERF.html#a5dd85954df2df1edf0adde3c7c6ae48f',1,'ERF']]],
+  ['erf_5fenforce_5fhse_558',['erf_enforce_hse',['../classERF.html#a29929644893f3e44beb5ed9403cbdaac',1,'ERF']]],
   ['erf_5feos_2eh_559',['ERF_EOS.H',['../ERF__EOS_8H.html',1,'']]],
   ['erf_5fesati_560',['erf_esati',['../ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1',1,'ERF_MicrophysicsUtils.H']]],
   ['erf_5fesatw_561',['erf_esatw',['../ERF__MicrophysicsUtils_8H.html#a16a390366e7e68ca35fdac4cad824428',1,'ERF_MicrophysicsUtils.H']]],

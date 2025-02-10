@@ -1,7 +1,7 @@
 var ERF__MetgridUtils_8H =
 [
     [ "calc_p_isothermal", "ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217", null ],
-    [ "init_base_state_from_metgrid", "ERF__MetgridUtils_8H.html#a21db49779c2d5514ad48151b9dc33788", null ],
+    [ "init_base_state_from_metgrid", "ERF__MetgridUtils_8H.html#acb974936d5d6a851c3dd5147e9666dd6", null ],
     [ "init_msfs_from_metgrid", "ERF__MetgridUtils_8H.html#af6ab8359bb0f978ab5c5573b54a844e3", null ],
     [ "init_state_from_metgrid", "ERF__MetgridUtils_8H.html#a7e474bb44a0280e9ffafcfd80c0c0c59", null ],
     [ "init_terrain_from_metgrid", "ERF__MetgridUtils_8H.html#ad3ae9b317366b5e880366135708ba5d5", null ],
