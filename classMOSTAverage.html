@@ -1291,7 +1291,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev].resize(<a class="code" href="classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6">m_navg</a>);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4">m_z_phys_nd</a>[lev] = z_phys_nd.get();</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    { <span class="comment">// Nodal in x</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">auto</span>&amp; mf = *vars_old[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">auto</span>&amp; mf = *vars_old[<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// Create a 2D ba, dm, &amp; ghost cells</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> BoxArray&amp; ba = mf.boxArray();</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        BoxList bl2d = ba.boxList();</div>
@@ -1301,7 +1301,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = 1;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        IntVect ng = mf.nGrowVect(); ng[2]=0;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][0] = vars_old[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][0] = vars_old[<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][0] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,ng);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][0]-&gt;setVal(1.E34);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classMOSTAverage.html#a7d43a66f7518f75e694e0582dd40ec44">m_rotate</a>) {</div>
@@ -1312,7 +1312,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    { <span class="comment">// Nodal in y</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">auto</span>&amp; mf  = *vars_old[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">auto</span>&amp; mf  = *vars_old[<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">// Create a 2D ba, dm, &amp; ghost cells</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">const</span> BoxArray&amp; ba = mf.boxArray();</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        BoxList bl2d = ba.boxList();</div>
@@ -1322,7 +1322,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = 1;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        IntVect ng = mf.nGrowVect(); ng[2]=0;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][1] = vars_old[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][1] = vars_old[<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][1] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,ng);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][1]-&gt;setVal(1.E34);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classMOSTAverage.html#a7d43a66f7518f75e694e0582dd40ec44">m_rotate</a>) {</div>
@@ -1385,7 +1385,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        }</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">// Nodal in z (only used with terrain stress rotations)</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][4] = vars_old[<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>];</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][4] = vars_old[<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>];</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">// Setup auxiliary data for spatial configuration &amp; policy</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">//--------------------------------------------------------</span></div>
@@ -1453,9 +1453,9 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassMOSTAverage_html_ac3c62b4015d62ae8d1ad85cb6ad651ad"><div class="ttname"><a href="classMOSTAverage.html#ac3c62b4015d62ae8d1ad85cb6ad651ad">MOSTAverage::include_subgrid_vel</a></div><div class="ttdeci">bool include_subgrid_vel</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:222</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_ac95147c0d7961323ca8b079f63cd4be9"><div class="ttname"><a href="classMOSTAverage.html#ac95147c0d7961323ca8b079f63cd4be9">MOSTAverage::m_time_window</a></div><div class="ttdeci">amrex::Real m_time_window</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:217</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_acea63f9601c5d2ee2cb21eee27d843fc"><div class="ttname"><a href="classMOSTAverage.html#acea63f9601c5d2ee2cb21eee27d843fc">MOSTAverage::set_k_indices_N</a></div><div class="ttdeci">void set_k_indices_N(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:374</div></div>
-<div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:131</div></div>
-<div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:133</div></div>
-<div class="ttc" id="anamespaceVars_html_a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:132</div></div>
+<div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:141</div></div>
+<div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:143</div></div>
+<div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:142</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classABLMost.html#afb630bd65e0cd2946a4a99d2e395db58">ABLMost::make_MOST_at_level()</a>.</p>
 <div class="dynheader">
@@ -2416,12 +2416,12 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;{</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][0] = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][1] = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][0] = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][1] = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][2] = Theta_prim[lev].get();</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][3] = Qv_prim[lev].get();</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][4] = Qr_prim[lev].get();</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][5] = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a161eed9b529c2108b15a09099729c3b9a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>];</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][5] = &amp;vars_old[lev][<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>];</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classABLMost.html#a5fcdd773bc7314a2655bf3ce0e7536fe">ABLMost::update_mac_ptrs()</a>.</p>

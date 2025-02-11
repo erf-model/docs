@@ -7,7 +7,7 @@ var searchData=
   ['oldgoffgratch_5fsvp_5fice_1579',['OldGoffGratch_svp_ice',['../classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd',1,'SatMethods']]],
   ['oldgoffgratch_5fsvp_5fwater_1580',['OldGoffGratch_svp_water',['../classSatMethods.html#a8458bd6a233082c463c070ddc692080f',1,'SatMethods']]],
   ['olen_1581',['olen',['../classABLMost.html#a0d6aa5a113a45ae1e56c0284241cfd01',1,'ABLMost']]],
-  ['omega_1582',['omega',['../namespaceMicVar.html#a1609c4386a90fb1c27791fa3cd511fa8a40820295afd4707e596461de893e54ae',1,'MicVar']]],
+  ['omega_1582',['omega',['../namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a40820295afd4707e596461de893e54ae',1,'MicVar']]],
   ['omegafromw_1583',['OmegaFromW',['../ERF__TerrainMetrics_8H.html#a6a4bf1524412edfd6efcbb867256db18',1,'ERF_TerrainMetrics.H']]],
   ['omeps_1584',['omeps',['../ERF__Constants_8H.html#af04ee89db2f653c028681f044bd16222',1,'ERF_Constants.H']]],
   ['open_1585',['open',['../classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885',1,'ncutils::NCFile::open()'],['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914',1,'ERFBCType::open()'],['../ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a7cef8a734855777c2a9d0caf42666e69',1,'open():&#160;ERF_IndexDefines.H']]],

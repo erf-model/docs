@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"structSolverChoice.html#a43c1741535574c7e6f4fe6bf90552f31":[2,0,67,34],
 "structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a":[2,0,67,14],
 "structSolverChoice.html#a44bc0227f088664e4e2c1090ebb1381d":[2,0,67,74],
 "structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b":[2,0,67,31],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "structWENO__MZQ3.html#aea3bc4d1f25b7d3484b6b08a6aa59f0a":[2,0,91,2],
 "structWENO__MZQ3.html#aedec59f75efddc702de61260a205a368":[2,0,91,3],
 "structWENO__MZQ3.html#af1d30022fe1ebe59529f45843dff3ae5":[2,0,91,10],
-"structWENO__Z3.html":[2,0,92],
-"structWENO__Z3.html#a04370c4cf4d845f967ec610ff66f5d2b":[2,0,92,5]
+"structWENO__Z3.html":[2,0,92]
 };
