@@ -1,5 +1,13 @@
 var NAVTREEINDEX11 =
 {
+"namespaceamrex.html#a9d270ec83f99e836cca454cac4e0af5e":[1,0,0,1],
+"namespaceamrex.html#aab3ca155f0d0a6d198817df9c35352f8":[1,0,0,2],
+"namespaceamrex.html#afa2dbdd17ead719f97272c9a0a2b0f8a":[1,0,0,3],
+"namespacederived.html":[1,0,4],
+"namespacederived.html#a0a37dd4fa4a044e34891e6222d06654c":[1,0,4,17],
+"namespacederived.html#a13666be87e55d1759f57322b33f7e495":[1,0,4,9],
+"namespacederived.html#a2a85aedf7c75ca416dbb931559c4b21e":[1,0,4,18],
+"namespacederived.html#a37560f4d3e2c7c10f64d41db2ce76a06":[1,0,4,10],
 "namespacederived.html#a3786c6a8399bc2508bc129337c446af1":[1,0,4,8],
 "namespacederived.html#a37ac1508c4001f9f1e38ca507dd15f31":[1,0,4,13],
 "namespacederived.html#a5186c6ea33e82af321f529242a615dc2":[1,0,4,2],
@@ -241,13 +249,5 @@ var NAVTREEINDEX11 =
 "structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24":[2,0,53,4],
 "structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca":[2,0,53,0],
 "structPlaneSampler.html#af0e51bfa323d9383c69be4ba0aeca978":[2,0,53,3],
-"structProbParmDefaults.html":[2,0,56],
-"structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6":[2,0,56,1],
-"structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f":[2,0,56,0],
-"structSolverChoice.html":[2,0,67],
-"structSolverChoice.html#a06a0dd1c8f7c1ed73a4f8d24b6b31cdf":[2,0,67,44],
-"structSolverChoice.html#a0a4f1c55ea1e3a7d50f926ee0d20a21c":[2,0,67,29],
-"structSolverChoice.html#a0d66e0f0c534a2d5b3eea16a6a0c1cc1":[2,0,67,0],
-"structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0":[2,0,67,67],
-"structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3":[2,0,67,17]
+"structProbParmDefaults.html":[2,0,56]
 };

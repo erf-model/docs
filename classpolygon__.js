@@ -7,6 +7,7 @@ var classpolygon__ =
     [ "define", "classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8", null ],
     [ "distance", "classpolygon__.html#a558e318b4655635bf2a4f9b21bc2674a", null ],
     [ "get_centroid", "classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac", null ],
+    [ "normal", "classpolygon__.html#a95e11b016903fad384380abc97c34a3d", null ],
     [ "ok", "classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f", null ],
     [ "report", "classpolygon__.html#abe76c7126ae5539676381c6c179f80f9", null ],
     [ "set_area", "classpolygon__.html#a6ab3d0fa0f9d6faebc53101265068216", null ],

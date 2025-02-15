@@ -128,6 +128,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a558e318b4655635bf2a4f9b21bc2674a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a085dc307c51e6dca9b4bb9d5b0db54ac"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::RealVect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac">get_centroid</a> () const noexcept</td></tr>
 <tr class="separator:a085dc307c51e6dca9b4bb9d5b0db54ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95e11b016903fad384380abc97c34a3d"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::RealVect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolygon__.html#a95e11b016903fad384380abc97c34a3d">normal</a> () const noexcept</td></tr>
+<tr class="separator:a95e11b016903fad384380abc97c34a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe76c7126ae5539676381c6c179f80f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9">report</a> (int const a_id, amrex::RealVect a_v0)</td></tr>
 <tr class="separator:abe76c7126ae5539676381c6c179f80f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -204,15 +206,15 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                  amrex::RealVect(0.), amrex::RealVect(0.), amrex::RealVect(0.)})</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      , <a class="code" href="classpolygon__.html#af9569a9cee1fabb0f38dfad19fa0b3f8">m_zdir</a>(0.)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {}</div>
-<div class="ttc" id="aclasspolygon___html_a0a63e984b9b965787959eecffd2dfb97"><div class="ttname"><a href="classpolygon__.html#a0a63e984b9b965787959eecffd2dfb97">polygon_::m_defined</a></div><div class="ttdeci">int m_defined</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:180</div></div>
-<div class="ttc" id="aclasspolygon___html_a156f350b46e9dfd7439e3cbb2c690b4e"><div class="ttname"><a href="classpolygon__.html#a156f350b46e9dfd7439e3cbb2c690b4e">polygon_::m_area</a></div><div class="ttdeci">amrex::Real m_area</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:184</div></div>
-<div class="ttc" id="aclasspolygon___html_a7ec649c72fe6b15afb87fad88e167bad"><div class="ttname"><a href="classpolygon__.html#a7ec649c72fe6b15afb87fad88e167bad">polygon_::m_cell_face</a></div><div class="ttdeci">int const m_cell_face</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:175</div></div>
-<div class="ttc" id="aclasspolygon___html_a992af088c8ea38dadb89c326edd0596f"><div class="ttname"><a href="classpolygon__.html#a992af088c8ea38dadb89c326edd0596f">polygon_::m_sorted</a></div><div class="ttdeci">int m_sorted</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:186</div></div>
-<div class="ttc" id="aclasspolygon___html_aaf42b332796fc92f5cf20418d9495327"><div class="ttname"><a href="classpolygon__.html#aaf42b332796fc92f5cf20418d9495327">polygon_::m_vertices</a></div><div class="ttdeci">int m_vertices</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:182</div></div>
-<div class="ttc" id="aclasspolygon___html_ab65796606dfca13c8fe1a7fced702e19"><div class="ttname"><a href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">polygon_::m_vertex</a></div><div class="ttdeci">amrex::Array&lt; amrex::RealVect, m_max_vertices &gt; m_vertex</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:188</div></div>
-<div class="ttc" id="aclasspolygon___html_ab7787d0004cda4ac8cd3bf06daebb188"><div class="ttname"><a href="classpolygon__.html#ab7787d0004cda4ac8cd3bf06daebb188">polygon_::m_eb_normal</a></div><div class="ttdeci">amrex::RealVect const m_eb_normal</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:178</div></div>
-<div class="ttc" id="aclasspolygon___html_ae432e46f27d065022a056deb0c0fbc23"><div class="ttname"><a href="classpolygon__.html#ae432e46f27d065022a056deb0c0fbc23">polygon_::m_eb_point</a></div><div class="ttdeci">amrex::RealVect const m_eb_point</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:177</div></div>
-<div class="ttc" id="aclasspolygon___html_af9569a9cee1fabb0f38dfad19fa0b3f8"><div class="ttname"><a href="classpolygon__.html#af9569a9cee1fabb0f38dfad19fa0b3f8">polygon_::m_zdir</a></div><div class="ttdeci">amrex::RealVect m_zdir</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:192</div></div>
+<div class="ttc" id="aclasspolygon___html_a0a63e984b9b965787959eecffd2dfb97"><div class="ttname"><a href="classpolygon__.html#a0a63e984b9b965787959eecffd2dfb97">polygon_::m_defined</a></div><div class="ttdeci">int m_defined</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:201</div></div>
+<div class="ttc" id="aclasspolygon___html_a156f350b46e9dfd7439e3cbb2c690b4e"><div class="ttname"><a href="classpolygon__.html#a156f350b46e9dfd7439e3cbb2c690b4e">polygon_::m_area</a></div><div class="ttdeci">amrex::Real m_area</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:205</div></div>
+<div class="ttc" id="aclasspolygon___html_a7ec649c72fe6b15afb87fad88e167bad"><div class="ttname"><a href="classpolygon__.html#a7ec649c72fe6b15afb87fad88e167bad">polygon_::m_cell_face</a></div><div class="ttdeci">int const m_cell_face</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:196</div></div>
+<div class="ttc" id="aclasspolygon___html_a992af088c8ea38dadb89c326edd0596f"><div class="ttname"><a href="classpolygon__.html#a992af088c8ea38dadb89c326edd0596f">polygon_::m_sorted</a></div><div class="ttdeci">int m_sorted</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:207</div></div>
+<div class="ttc" id="aclasspolygon___html_aaf42b332796fc92f5cf20418d9495327"><div class="ttname"><a href="classpolygon__.html#aaf42b332796fc92f5cf20418d9495327">polygon_::m_vertices</a></div><div class="ttdeci">int m_vertices</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:203</div></div>
+<div class="ttc" id="aclasspolygon___html_ab65796606dfca13c8fe1a7fced702e19"><div class="ttname"><a href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">polygon_::m_vertex</a></div><div class="ttdeci">amrex::Array&lt; amrex::RealVect, m_max_vertices &gt; m_vertex</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:209</div></div>
+<div class="ttc" id="aclasspolygon___html_ab7787d0004cda4ac8cd3bf06daebb188"><div class="ttname"><a href="classpolygon__.html#ab7787d0004cda4ac8cd3bf06daebb188">polygon_::m_eb_normal</a></div><div class="ttdeci">amrex::RealVect const m_eb_normal</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:199</div></div>
+<div class="ttc" id="aclasspolygon___html_ae432e46f27d065022a056deb0c0fbc23"><div class="ttname"><a href="classpolygon__.html#ae432e46f27d065022a056deb0c0fbc23">polygon_::m_eb_point</a></div><div class="ttdeci">amrex::RealVect const m_eb_point</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:198</div></div>
+<div class="ttc" id="aclasspolygon___html_af9569a9cee1fabb0f38dfad19fa0b3f8"><div class="ttname"><a href="classpolygon__.html#af9569a9cee1fabb0f38dfad19fa0b3f8">polygon_::m_zdir</a></div><div class="ttdeci">amrex::RealVect m_zdir</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:213</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -281,7 +283,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[<a class="code" href="classpolygon__.html#aaf42b332796fc92f5cf20418d9495327">m_vertices</a>] = a_v;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <a class="code" href="classpolygon__.html#aaf42b332796fc92f5cf20418d9495327">m_vertices</a>++;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="ttc" id="aclasspolygon___html_abc74b533800e809c1ccc98c95e27fd34"><div class="ttname"><a href="classpolygon__.html#abc74b533800e809c1ccc98c95e27fd34">polygon_::m_max_vertices</a></div><div class="ttdeci">static constexpr int m_max_vertices</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:173</div></div>
+<div class="ttc" id="aclasspolygon___html_abc74b533800e809c1ccc98c95e27fd34"><div class="ttname"><a href="classpolygon__.html#abc74b533800e809c1ccc98c95e27fd34">polygon_::m_max_vertices</a></div><div class="ttdeci">static constexpr int m_max_vertices</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:194</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__cut__cell__.html#ab1b3165bf53dae6da4930eacbe60652f">eb_cut_cell_::calc_edge_intersections()</a>, and <a class="el" href="classeb__cut__cell__.html#a80fa6b8f94a7d0c4623ce9f0f74b7de2">eb_cut_cell_::set_covered_regular_cell_vertices()</a>.</p>
 <div class="dynheader">
@@ -289,10 +291,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpolygon___a418204875c722510d5b0396ac1639a2b_icgraph.png" border="0" usemap="#aclasspolygon___a418204875c722510d5b0396ac1639a2b_icgraph" alt=""/></div>
 <map name="aclasspolygon___a418204875c722510d5b0396ac1639a2b_icgraph" id="aclasspolygon___a418204875c722510d5b0396ac1639a2b_icgraph">
-<area shape="rect" title=" " alt="" coords="444,46,607,73"/>
-<area shape="rect" href="classeb__cut__cell__.html#ab1b3165bf53dae6da4930eacbe60652f" title=" " alt="" coords="225,5,377,47"/>
-<area shape="rect" href="classeb__cut__cell__.html#a80fa6b8f94a7d0c4623ce9f0f74b7de2" title=" " alt="" coords="207,71,396,112"/>
-<area shape="rect" href="classeb__cut__cell__.html#ad2a23220e37e28746aa0e3cc17898e79" title=" " alt="" coords="5,39,159,80"/>
+<area shape="rect" title=" " alt="" coords="243,46,405,73"/>
+<area shape="rect" href="classeb__cut__cell__.html#ab1b3165bf53dae6da4930eacbe60652f" title=" " alt="" coords="24,5,176,47"/>
+<area shape="rect" href="classeb__cut__cell__.html#a80fa6b8f94a7d0c4623ce9f0f74b7de2" title=" " alt="" coords="5,71,195,112"/>
 </map>
 </div>
 
@@ -326,7 +327,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
 <div class="ttc" id="aclasspolygon___html_a20ac05a7f6b1ce01fa1789b0d264dd4f"><div class="ttname"><a href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f">polygon_::ok</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int ok() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:119</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classeb__cut__cell__.html#ad554ff3176ce611cba882fd61246cc60">eb_cut_cell_::volume()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__cut__cell__.html#a8f3ed8e0c96b5b6e44292fa0450e130d">eb_cut_cell_::areaBoun()</a>, <a class="el" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac">get_centroid()</a>, and <a class="el" href="classeb__cut__cell__.html#ad554ff3176ce611cba882fd61246cc60">eb_cut_cell_::volume()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -341,11 +342,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpolygon___a63823b326fd4b97b2622be664dedb6d4_icgraph.png" border="0" usemap="#aclasspolygon___a63823b326fd4b97b2622be664dedb6d4_icgraph" alt=""/></div>
 <map name="aclasspolygon___a63823b326fd4b97b2622be664dedb6d4_icgraph" id="aclasspolygon___a63823b326fd4b97b2622be664dedb6d4_icgraph">
-<area shape="rect" title=" " alt="" coords="699,5,817,32"/>
-<area shape="rect" href="classeb__cut__cell__.html#ad554ff3176ce611cba882fd61246cc60" title=" " alt="" coords="492,5,651,32"/>
-<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="320,5,444,32"/>
-<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="129,5,272,32"/>
-<area shape="rect" href="classeb__.html#abcc4045a128dd42fe09f45af4f602576" title=" " alt="" coords="5,5,81,32"/>
+<area shape="rect" title=" " alt="" coords="931,81,1049,108"/>
+<area shape="rect" href="classeb__cut__cell__.html#a8f3ed8e0c96b5b6e44292fa0450e130d" title=" " alt="" coords="711,5,883,32"/>
+<area shape="rect" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac" title=" " alt="" coords="711,81,882,108"/>
+<area shape="rect" href="classeb__cut__cell__.html#ad554ff3176ce611cba882fd61246cc60" title=" " alt="" coords="717,157,876,184"/>
+<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="320,31,444,57"/>
+<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="129,31,272,57"/>
+<area shape="rect" href="classeb__.html#abcc4045a128dd42fe09f45af4f602576" title=" " alt="" coords="5,31,81,57"/>
+<area shape="rect" href="classeb__cut__cell__.html#a80da66e8132ed7235d083a40375ff37c" title=" " alt="" coords="492,31,663,57"/>
+<area shape="rect" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8" title=" " alt="" coords="513,81,642,108"/>
+<area shape="rect" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9" title=" " alt="" coords="513,132,641,159"/>
 </map>
 </div>
 
@@ -439,25 +445,16 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aclasspolygon___html_a085dc307c51e6dca9b4bb9d5b0db54ac"><div class="ttname"><a href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac">polygon_::get_centroid</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::RealVect get_centroid() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:138</div></div>
-<div class="ttc" id="aclasspolygon___html_a29c4ebc9696b5b3ae8480e2bc4cbeaa9"><div class="ttname"><a href="classpolygon__.html#a29c4ebc9696b5b3ae8480e2bc4cbeaa9">polygon_::m_theta</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, m_max_vertices &gt; m_theta</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:190</div></div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classeb__cut__cell__.html#ad2a23220e37e28746aa0e3cc17898e79">eb_cut_cell_::eb_cut_cell_()</a>.</p>
-<div class="dynheader">
+<div class="ttc" id="aclasspolygon___html_a29c4ebc9696b5b3ae8480e2bc4cbeaa9"><div class="ttname"><a href="classpolygon__.html#a29c4ebc9696b5b3ae8480e2bc4cbeaa9">polygon_::m_theta</a></div><div class="ttdeci">amrex::GpuArray&lt; amrex::Real, m_max_vertices &gt; m_theta</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:211</div></div>
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpolygon___ac30eafa3d2fcdf357082dda5a53a03a8_cgraph.png" border="0" usemap="#aclasspolygon___ac30eafa3d2fcdf357082dda5a53a03a8_cgraph" alt=""/></div>
 <map name="aclasspolygon___ac30eafa3d2fcdf357082dda5a53a03a8_cgraph" id="aclasspolygon___ac30eafa3d2fcdf357082dda5a53a03a8_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,135,32"/>
 <area shape="rect" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac" title=" " alt="" coords="183,5,353,32"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classpolygon___ac30eafa3d2fcdf357082dda5a53a03a8_icgraph.png" border="0" usemap="#aclasspolygon___ac30eafa3d2fcdf357082dda5a53a03a8_icgraph" alt=""/></div>
-<map name="aclasspolygon___ac30eafa3d2fcdf357082dda5a53a03a8_icgraph" id="aclasspolygon___ac30eafa3d2fcdf357082dda5a53a03a8_icgraph">
-<area shape="rect" title=" " alt="" coords="207,13,336,39"/>
-<area shape="rect" href="classeb__cut__cell__.html#ad2a23220e37e28746aa0e3cc17898e79" title=" " alt="" coords="5,5,159,47"/>
+<area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="401,5,520,32"/>
+<area shape="rect" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f" title=" " alt="" coords="568,5,673,32"/>
 </map>
 </div>
 
@@ -533,23 +530,80 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                                                  {</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      amrex::RealVect cent(0.);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i(0); i&lt;<a class="code" href="classpolygon__.html#aaf42b332796fc92f5cf20418d9495327">m_vertices</a>; ++i) { cent += <a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[i]; }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      <span class="keywordflow">return</span> cent / <span class="keyword">static_cast&lt;</span>amrex::Real<span class="keyword">&gt;</span>(<a class="code" href="classpolygon__.html#aaf42b332796fc92f5cf20418d9495327">m_vertices</a>);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classpolygon__.html#aaf42b332796fc92f5cf20418d9495327">m_vertices</a>==3) {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        cent = (<a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[0] + <a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[1] + <a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[2]) / 3.0;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="comment">// Loop over sub-triangles</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        amrex::Real <a class="code" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4">area</a>(0.);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i(0); i&lt;<a class="code" href="classpolygon__.html#aaf42b332796fc92f5cf20418d9495327">m_vertices</a>-2; ++i) {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;          amrex::RealVect <span class="keyword">const</span> v0 (<a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[i+1] - <a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[0]);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;          amrex::RealVect <span class="keyword">const</span> v1 (<a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[i+2] - <a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[0]);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;          amrex::RealVect v0_cross_v1 = v0.crossProduct(v1);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;          amrex::Real area_tri = 0.5 * v0_cross_v1.vectorLength();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;          amrex::RealVect cent_tri = (<a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[0] + <a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[i+1] + <a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[i+2]) / 3.0;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;          <a class="code" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4">area</a> += area_tri;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;          cent += area_tri * cent_tri;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        cent = cent / <a class="code" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4">area</a>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      <span class="keywordflow">return</span> cent;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="ttc" id="aclasspolygon___html_a63823b326fd4b97b2622be664dedb6d4"><div class="ttname"><a href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4">polygon_::area</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real area() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:123</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8">define()</a>, and <a class="el" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9">report()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__cut__cell__.html#a80da66e8132ed7235d083a40375ff37c">eb_cut_cell_::centBoun()</a>, <a class="el" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8">define()</a>, and <a class="el" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9">report()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_cgraph.png" border="0" usemap="#aclasspolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_cgraph" alt=""/></div>
+<map name="aclasspolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_cgraph" id="aclasspolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,176,32"/>
+<area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="224,5,343,32"/>
+<area shape="rect" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f" title=" " alt="" coords="391,5,496,32"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_icgraph.png" border="0" usemap="#aclasspolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_icgraph" alt=""/></div>
 <map name="aclasspolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_icgraph" id="aclasspolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_icgraph">
-<area shape="rect" title=" " alt="" coords="384,38,555,65"/>
-<area shape="rect" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8" title=" " alt="" coords="207,13,336,39"/>
-<area shape="rect" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9" title=" " alt="" coords="207,63,335,90"/>
-<area shape="rect" href="classeb__cut__cell__.html#ad2a23220e37e28746aa0e3cc17898e79" title=" " alt="" coords="5,5,159,47"/>
+<area shape="rect" title=" " alt="" coords="711,56,881,83"/>
+<area shape="rect" href="classeb__cut__cell__.html#a80da66e8132ed7235d083a40375ff37c" title=" " alt="" coords="492,5,663,32"/>
+<area shape="rect" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8" title=" " alt="" coords="513,56,642,83"/>
+<area shape="rect" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9" title=" " alt="" coords="513,107,641,133"/>
+<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="320,5,444,32"/>
+<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="129,5,272,32"/>
+<area shape="rect" href="classeb__.html#abcc4045a128dd42fe09f45af4f602576" title=" " alt="" coords="5,5,81,32"/>
 </map>
 </div>
 
+</div>
+</div>
+<a id="a95e11b016903fad384380abc97c34a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95e11b016903fad384380abc97c34a3d">&#9670;&nbsp;</a></span>normal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::RealVect polygon_::normal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                           {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classpolygon__.html#af9569a9cee1fabb0f38dfad19fa0b3f8">m_zdir</a>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a20ac05a7f6b1ce01fa1789b0d264dd4f"></a>
@@ -582,13 +636,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpolygon___a20ac05a7f6b1ce01fa1789b0d264dd4f_icgraph.png" border="0" usemap="#aclasspolygon___a20ac05a7f6b1ce01fa1789b0d264dd4f_icgraph" alt=""/></div>
 <map name="aclasspolygon___a20ac05a7f6b1ce01fa1789b0d264dd4f_icgraph" id="aclasspolygon___a20ac05a7f6b1ce01fa1789b0d264dd4f_icgraph">
-<area shape="rect" title=" " alt="" coords="875,56,980,83"/>
-<area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="703,5,822,32"/>
-<area shape="rect" href="classeb__cut__cell__.html#ad554ff3176ce611cba882fd61246cc60" title=" " alt="" coords="492,31,651,57"/>
-<area shape="rect" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9" title=" " alt="" coords="699,107,827,133"/>
-<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="320,31,444,57"/>
-<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="129,31,272,57"/>
-<area shape="rect" href="classeb__.html#abcc4045a128dd42fe09f45af4f602576" title=" " alt="" coords="5,31,81,57"/>
+<area shape="rect" title=" " alt="" coords="1097,56,1203,83"/>
+<area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="931,107,1049,133"/>
+<area shape="rect" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9" title=" " alt="" coords="513,56,641,83"/>
+<area shape="rect" href="classeb__cut__cell__.html#ad554ff3176ce611cba882fd61246cc60" title=" " alt="" coords="717,5,876,32"/>
+<area shape="rect" href="classeb__cut__cell__.html#a8f3ed8e0c96b5b6e44292fa0450e130d" title=" " alt="" coords="711,183,883,209"/>
+<area shape="rect" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac" title=" " alt="" coords="711,107,882,133"/>
+<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="320,107,444,133"/>
+<area shape="rect" href="classeb__.html#a05d907b70c71d1da547a12e97a63e177" title=" " alt="" coords="129,107,272,133"/>
+<area shape="rect" href="classeb__.html#abcc4045a128dd42fe09f45af4f602576" title=" " alt="" coords="5,107,81,133"/>
+<area shape="rect" href="classeb__cut__cell__.html#a80da66e8132ed7235d083a40375ff37c" title=" " alt="" coords="492,107,663,133"/>
+<area shape="rect" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8" title=" " alt="" coords="513,157,642,184"/>
 </map>
 </div>
 
@@ -627,27 +685,27 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      amrex::RealVect centroid = <a class="code" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac">get_centroid</a>();</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Face &quot;</span> &lt;&lt; a_id</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; -------------------------------------------\n&quot;</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;\nok? &quot;</span> &lt;&lt; (<a class="code" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f">ok</a>() ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;\n\n&quot;</span>;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i(0); i&lt;<a class="code" href="classpolygon__.html#aaf42b332796fc92f5cf20418d9495327">m_vertices</a>; ++i) {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;v&quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;:  &quot;</span> &lt;&lt; <a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[i] &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\nvc: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; centroid &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      amrex::Real <span class="keyword">const</span> dist = <a class="code" href="classpolygon__.html#a558e318b4655635bf2a4f9b21bc2674a">distance</a>( a_v0 );</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <span class="comment">// amrex::Real const vol  = ok() ? m_area * dist : 0.;</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\narea:     &quot;</span> &lt;&lt; <a class="code" href="classpolygon__.html#a156f350b46e9dfd7439e3cbb2c690b4e">m_area</a></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                     &lt;&lt; <span class="stringliteral">&quot;\ndistance: &quot;</span> &lt;&lt; dist</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                     &lt;&lt; <span class="stringliteral">&quot;\nvolume:   &quot;</span> &lt;&lt; dist*<a class="code" href="classpolygon__.html#a156f350b46e9dfd7439e3cbb2c690b4e">m_area</a></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      &lt;&lt; <span class="stringliteral">&quot;\n==================================================\n\n&quot;</span>;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      amrex::RealVect centroid = <a class="code" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac">get_centroid</a>();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Face &quot;</span> &lt;&lt; a_id</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; -------------------------------------------\n&quot;</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;\nok? &quot;</span> &lt;&lt; (<a class="code" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f">ok</a>() ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;\n\n&quot;</span>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i(0); i&lt;<a class="code" href="classpolygon__.html#aaf42b332796fc92f5cf20418d9495327">m_vertices</a>; ++i) {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;v&quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;:  &quot;</span> &lt;&lt; <a class="code" href="classpolygon__.html#ab65796606dfca13c8fe1a7fced702e19">m_vertex</a>[i] &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;      }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\nvc: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; centroid &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      amrex::Real <span class="keyword">const</span> dist = <a class="code" href="classpolygon__.html#a558e318b4655635bf2a4f9b21bc2674a">distance</a>( a_v0 );</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      <span class="comment">// amrex::Real const vol  = ok() ? m_area * dist : 0.;</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;\narea:     &quot;</span> &lt;&lt; <a class="code" href="classpolygon__.html#a156f350b46e9dfd7439e3cbb2c690b4e">m_area</a></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                     &lt;&lt; <span class="stringliteral">&quot;\ndistance: &quot;</span> &lt;&lt; dist</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                     &lt;&lt; <span class="stringliteral">&quot;\nvolume:   &quot;</span> &lt;&lt; dist*<a class="code" href="classpolygon__.html#a156f350b46e9dfd7439e3cbb2c690b4e">m_area</a></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      &lt;&lt; <span class="stringliteral">&quot;\n==================================================\n\n&quot;</span>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
 <div class="ttc" id="aclasspolygon___html_a558e318b4655635bf2a4f9b21bc2674a"><div class="ttname"><a href="classpolygon__.html#a558e318b4655635bf2a4f9b21bc2674a">polygon_::distance</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real distance(amrex::RealVect const &amp;a_point) const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:130</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -657,7 +715,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,56,133,83"/>
 <area shape="rect" href="classpolygon__.html#a558e318b4655635bf2a4f9b21bc2674a" title=" " alt="" coords="195,5,339,32"/>
 <area shape="rect" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac" title=" " alt="" coords="181,56,352,83"/>
-<area shape="rect" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f" title=" " alt="" coords="214,107,319,133"/>
+<area shape="rect" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f" title=" " alt="" coords="567,81,672,108"/>
+<area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="400,56,519,83"/>
 </map>
 </div>
 
@@ -694,9 +753,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpolygon___a6ab3d0fa0f9d6faebc53101265068216_icgraph.png" border="0" usemap="#aclasspolygon___a6ab3d0fa0f9d6faebc53101265068216_icgraph" alt=""/></div>
 <map name="aclasspolygon___a6ab3d0fa0f9d6faebc53101265068216_icgraph" id="aclasspolygon___a6ab3d0fa0f9d6faebc53101265068216_icgraph">
-<area shape="rect" title=" " alt="" coords="437,13,583,39"/>
-<area shape="rect" href="classeb__cut__cell__.html#a836262e1893a59bf86dbbd587fe71f21" title=" " alt="" coords="207,13,389,39"/>
-<area shape="rect" href="classeb__cut__cell__.html#ad2a23220e37e28746aa0e3cc17898e79" title=" " alt="" coords="5,5,159,47"/>
+<area shape="rect" title=" " alt="" coords="236,5,381,32"/>
+<area shape="rect" href="classeb__cut__cell__.html#a836262e1893a59bf86dbbd587fe71f21" title=" " alt="" coords="5,5,188,32"/>
 </map>
 </div>
 
@@ -963,7 +1021,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8">define()</a>, and <a class="el" href="classpolygon__.html#a558e318b4655635bf2a4f9b21bc2674a">distance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8">define()</a>, <a class="el" href="classpolygon__.html#a558e318b4655635bf2a4f9b21bc2674a">distance()</a>, and <a class="el" href="classpolygon__.html#a95e11b016903fad384380abc97c34a3d">normal()</a>.</p>
 
 </div>
 </div>
