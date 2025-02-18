@@ -7,5 +7,6 @@ var structPlaneSampler =
     [ "m_bnd_rbx", "structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24", null ],
     [ "m_dir", "structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6", null ],
     [ "m_lev", "structPlaneSampler.html#a31b77c80e1831ceb775ed63819016fd4", null ],
+    [ "m_name", "structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc", null ],
     [ "m_ps_mf", "structPlaneSampler.html#a697a9d0158c0c14f796a7a016759d2f7", null ]
 ];

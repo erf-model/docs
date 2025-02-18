@@ -1,6 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"namespaceamrex.html#a9d270ec83f99e836cca454cac4e0af5e":[1,0,0,1],
 "namespaceamrex.html#aab3ca155f0d0a6d198817df9c35352f8":[1,0,0,2],
 "namespaceamrex.html#afa2dbdd17ead719f97272c9a0a2b0f8a":[1,0,0,3],
 "namespacederived.html":[1,0,4],
@@ -173,13 +172,19 @@ var NAVTREEINDEX11 =
 "structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917":[2,0,34,4],
 "structInputSpongeData.html#aff9684faaf6b3a26494766819e4ba6dd":[2,0,34,2],
 "structLineSampler.html":[2,0,37],
-"structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e":[2,0,37,6],
+"structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d":[2,0,37,11],
+"structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e":[2,0,37,9],
 "structLineSampler.html#a290c3f1bc30a85e67ca18f2bbd3e2cdf":[2,0,37,1],
-"structLineSampler.html#a8fc089e1d316a8d694fd521baae9f076":[2,0,37,4],
+"structLineSampler.html#a56da044954a236b411c1c52e42338883":[2,0,37,6],
+"structLineSampler.html#a62712c6e41a0e98a8a7d5841cc52cd09":[2,0,37,4],
+"structLineSampler.html#a8fc089e1d316a8d694fd521baae9f076":[2,0,37,7],
+"structLineSampler.html#ab090838f2c0a95330992b0f95cdf0904":[2,0,37,10],
+"structLineSampler.html#ab18910cadac8faadee4c2ee541ea56ed":[2,0,37,2],
 "structLineSampler.html#ac889ff22f183b545b4360af78068b503":[2,0,37,0],
-"structLineSampler.html#acf84e5ae60cbfd1faaf2e8ac6c9ff5eb":[2,0,37,3],
-"structLineSampler.html#af19a023c3d9e68973017453e2ae93c6f":[2,0,37,2],
-"structLineSampler.html#af614a59976e85627d9b5d41222265cde":[2,0,37,5],
+"structLineSampler.html#acf84e5ae60cbfd1faaf2e8ac6c9ff5eb":[2,0,37,5],
+"structLineSampler.html#ae9a6d776b596cd26b9b11c0a1298f7da":[2,0,37,12],
+"structLineSampler.html#af19a023c3d9e68973017453e2ae93c6f":[2,0,37,3],
+"structLineSampler.html#af614a59976e85627d9b5d41222265cde":[2,0,37,8],
 "structMYNNLevel2.html":[2,0,44],
 "structMYNNLevel2.html#a02ae067397dad9810d528dc84ffe631d":[2,0,44,5],
 "structMYNNLevel2.html#a195f36a73787dea436d798f20d28ebb3":[2,0,44,8],
@@ -244,10 +249,5 @@ var NAVTREEINDEX11 =
 "structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6":[2,0,53,5],
 "structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d":[2,0,53,2],
 "structPlaneSampler.html#a31b77c80e1831ceb775ed63819016fd4":[2,0,53,6],
-"structPlaneSampler.html#a68ea5715d34cefd4d9a2c2cbc38114f2":[2,0,53,1],
-"structPlaneSampler.html#a697a9d0158c0c14f796a7a016759d2f7":[2,0,53,7],
-"structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24":[2,0,53,4],
-"structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca":[2,0,53,0],
-"structPlaneSampler.html#af0e51bfa323d9383c69be4ba0aeca978":[2,0,53,3],
-"structProbParmDefaults.html":[2,0,56]
+"structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc":[2,0,53,7]
 };

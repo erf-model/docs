@@ -312,6 +312,7 @@ var classERF =
     [ "real_width", "classERF.html#abb15119348ad5399947bc8883084b230", null ],
     [ "ref_tags", "classERF.html#ac81b3dfd7c6f21ba8479834e2ff1e652", null ],
     [ "regrid_int", "classERF.html#a3937527f96c81674fa38dc34ed24f3f5", null ],
+    [ "regrid_level_0_on_restart", "classERF.html#a833c301baf4bb3ee3c944faad7bf6ee7", null ],
     [ "restart_chkfile", "classERF.html#a8e758060d3dede9694fbfcabddc17169", null ],
     [ "restart_type", "classERF.html#a30a0b9e3a037c71580d1feb3b30a8258", null ],
     [ "rU_new", "classERF.html#a01f3db32272f53dc68025f0a98195e57", null ],

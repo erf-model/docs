@@ -109,17 +109,16 @@ Collaboration diagram for SAM:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSAM__coll__graph.png" border="0" usemap="#aSAM_coll__map" alt="Collaboration graph"/></div>
 <map name="aSAM_coll__map" id="aSAM_coll__map">
-<area shape="rect" title=" " alt="" coords="547,509,599,536"/>
-<area shape="rect" href="classNullMoist.html" title=" " alt="" coords="259,165,343,192"/>
-<area shape="rect" title=" " alt="" coords="5,135,44,161"/>
-<area shape="rect" title=" " alt="" coords="257,216,344,243"/>
-<area shape="rect" title=" " alt="" coords="195,391,407,417"/>
-<area shape="rect" title=" " alt="" coords="219,442,383,483"/>
-<area shape="rect" title=" " alt="" coords="275,509,326,536"/>
-<area shape="rect" title=" " alt="" coords="245,560,356,587"/>
-<area shape="rect" title=" " alt="" coords="275,665,326,692"/>
-<area shape="rect" title=" " alt="" coords="257,779,345,805"/>
-<area shape="rect" title=" " alt="" coords="259,829,342,856"/>
+<area shape="rect" title=" " alt="" coords="547,471,599,497"/>
+<area shape="rect" href="classNullMoist.html" title=" " alt="" coords="259,164,343,191"/>
+<area shape="rect" title=" " alt="" coords="5,133,44,160"/>
+<area shape="rect" title=" " alt="" coords="257,215,344,241"/>
+<area shape="rect" title=" " alt="" coords="195,389,407,416"/>
+<area shape="rect" title=" " alt="" coords="219,441,383,482"/>
+<area shape="rect" title=" " alt="" coords="245,507,356,533"/>
+<area shape="rect" title=" " alt="" coords="275,608,326,635"/>
+<area shape="rect" title=" " alt="" coords="257,717,345,744"/>
+<area shape="rect" title=" " alt="" coords="259,768,342,795"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -199,10 +198,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aaf2fc082e80f1c5cc9de339ff25ca27b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37854ec84283a4229cf86b54cfcfc72b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a37854ec84283a4229cf86b54cfcfc72b">m_axis</a></td></tr>
 <tr class="separator:a37854ec84283a4229cf86b54cfcfc72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77c335e68b7ad8e6069d1318ea673a16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a77c335e68b7ad8e6069d1318ea673a16">docloud</a></td></tr>
-<tr class="separator:a77c335e68b7ad8e6069d1318ea673a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54766f324324d579d2591a0bdc60e359"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a54766f324324d579d2591a0bdc60e359">doprecip</a></td></tr>
-<tr class="separator:a54766f324324d579d2591a0bdc60e359"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66b0ffc2f98c96c5a3b3c760a854be95"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a></td></tr>
 <tr class="separator:a66b0ffc2f98c96c5a3b3c760a854be95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53d38219476c32ba2dd751c02bcae53c"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a></td></tr>
@@ -376,19 +371,19 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#aa2f97dcd622bc4ef212421d496ee2297">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a> = dt_advance;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a48d25f57da2ba1d7ddb503ede0b8d998">Cloud</a>(sc);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a363b3bb27b6e6cdad8693363b3262419">IceFall</a>(sc);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a05218bdc2187b79e456ade5b6f5bdb3c">Precip</a>(sc);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        this-&gt;<a class="code" href="classSAM.html#ae870dc821f7cd01ffc3bfd7925b1d18b">PrecipFall</a>(sc);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a> = dt_advance;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a48d25f57da2ba1d7ddb503ede0b8d998">Cloud</a>(sc);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a363b3bb27b6e6cdad8693363b3262419">IceFall</a>(sc);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a05218bdc2187b79e456ade5b6f5bdb3c">Precip</a>(sc);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        this-&gt;<a class="code" href="classSAM.html#ae870dc821f7cd01ffc3bfd7925b1d18b">PrecipFall</a>(sc);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
 <div class="ttc" id="aclassSAM_html_a05218bdc2187b79e456ade5b6f5bdb3c"><div class="ttname"><a href="classSAM.html#a05218bdc2187b79e456ade5b6f5bdb3c">SAM::Precip</a></div><div class="ttdeci">void Precip(const SolverChoice &amp;sc)</div><div class="ttdef"><b>Definition:</b> ERF_Precip.cpp:10</div></div>
 <div class="ttc" id="aclassSAM_html_a363b3bb27b6e6cdad8693363b3262419"><div class="ttname"><a href="classSAM.html#a363b3bb27b6e6cdad8693363b3262419">SAM::IceFall</a></div><div class="ttdeci">void IceFall(const SolverChoice &amp;sc)</div><div class="ttdef"><b>Definition:</b> ERF_IceFall.cpp:11</div></div>
 <div class="ttc" id="aclassSAM_html_a48d25f57da2ba1d7ddb503ede0b8d998"><div class="ttname"><a href="classSAM.html#a48d25f57da2ba1d7ddb503ede0b8d998">SAM::Cloud</a></div><div class="ttdeci">void Cloud(const SolverChoice &amp;sc)</div><div class="ttdef"><b>Definition:</b> ERF_CloudSAM.cpp:12</div></div>
 <div class="ttc" id="aclassSAM_html_ae870dc821f7cd01ffc3bfd7925b1d18b"><div class="ttname"><a href="classSAM.html#ae870dc821f7cd01ffc3bfd7925b1d18b">SAM::PrecipFall</a></div><div class="ttdeci">void PrecipFall(const SolverChoice &amp;sc)</div><div class="ttdef"><b>Definition:</b> ERF_PrecipFall.cpp:16</div></div>
-<div class="ttc" id="aclassSAM_html_af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9"><div class="ttname"><a href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">SAM::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:302</div></div>
+<div class="ttc" id="aclassSAM_html_af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9"><div class="ttname"><a href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">SAM::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:300</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -602,12 +597,12 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__EOS_8H_html_acd37b404bbf95073ffef2a1003dc56c5"><div class="ttname"><a href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getThgivenPandT(const amrex::Real T, const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:18</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a8e4b0c6ed8b95c2040dc0c9e8fcb8615"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;qsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:158</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac39ef2a869ef543f708d5ed7da4754d3"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsati(amrex::Real t, amrex::Real p, amrex::Real &amp;qsati)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:151</div></div>
-<div class="ttc" id="aclassSAM_html_a0154097dd0c769a35dcc52c484dd0dc6"><div class="ttname"><a href="classSAM.html#a0154097dd0c769a35dcc52c484dd0dc6">SAM::NewtonIterSat</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real NewtonIterSat(int &amp;i, int &amp;j, int &amp;k, const int &amp;SAM_moisture_type, const amrex::Real &amp;fac_cond, const amrex::Real &amp;fac_fus, const amrex::Real &amp;fac_sub, const amrex::Real &amp;an, const amrex::Real &amp;bn, const amrex::Array4&lt; amrex::Real &gt; &amp;tabs_array, const amrex::Array4&lt; amrex::Real &gt; &amp;pres_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qv_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qc_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qi_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qn_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qt_array)</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:153</div></div>
-<div class="ttc" id="aclassSAM_html_a36ee9e1e1a94d22304f46e064f16e11e"><div class="ttname"><a href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">SAM::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:325</div></div>
-<div class="ttc" id="aclassSAM_html_a3b461d5620f6b9a08a1e62b60a463af7"><div class="ttname"><a href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">SAM::m_rdOcp</a></div><div class="ttdeci">amrex::Real m_rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:318</div></div>
-<div class="ttc" id="aclassSAM_html_a53d38219476c32ba2dd751c02bcae53c"><div class="ttname"><a href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">SAM::m_fac_fus</a></div><div class="ttdeci">amrex::Real m_fac_fus</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:315</div></div>
-<div class="ttc" id="aclassSAM_html_a66b0ffc2f98c96c5a3b3c760a854be95"><div class="ttname"><a href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">SAM::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:314</div></div>
-<div class="ttc" id="aclassSAM_html_a8653cbf2c13ac3595f5f8710a3f1beec"><div class="ttname"><a href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">SAM::m_fac_sub</a></div><div class="ttdeci">amrex::Real m_fac_sub</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:316</div></div>
+<div class="ttc" id="aclassSAM_html_a0154097dd0c769a35dcc52c484dd0dc6"><div class="ttname"><a href="classSAM.html#a0154097dd0c769a35dcc52c484dd0dc6">SAM::NewtonIterSat</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real NewtonIterSat(int &amp;i, int &amp;j, int &amp;k, const int &amp;SAM_moisture_type, const amrex::Real &amp;fac_cond, const amrex::Real &amp;fac_fus, const amrex::Real &amp;fac_sub, const amrex::Real &amp;an, const amrex::Real &amp;bn, const amrex::Array4&lt; amrex::Real &gt; &amp;tabs_array, const amrex::Array4&lt; amrex::Real &gt; &amp;pres_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qv_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qc_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qi_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qn_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qt_array)</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:151</div></div>
+<div class="ttc" id="aclassSAM_html_a36ee9e1e1a94d22304f46e064f16e11e"><div class="ttname"><a href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">SAM::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:320</div></div>
+<div class="ttc" id="aclassSAM_html_a3b461d5620f6b9a08a1e62b60a463af7"><div class="ttname"><a href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">SAM::m_rdOcp</a></div><div class="ttdeci">amrex::Real m_rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:313</div></div>
+<div class="ttc" id="aclassSAM_html_a53d38219476c32ba2dd751c02bcae53c"><div class="ttname"><a href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">SAM::m_fac_fus</a></div><div class="ttdeci">amrex::Real m_fac_fus</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:310</div></div>
+<div class="ttc" id="aclassSAM_html_a66b0ffc2f98c96c5a3b3c760a854be95"><div class="ttname"><a href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">SAM::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:309</div></div>
+<div class="ttc" id="aclassSAM_html_a8653cbf2c13ac3595f5f8710a3f1beec"><div class="ttname"><a href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">SAM::m_fac_sub</a></div><div class="ttdeci">amrex::Real m_fac_sub</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:311</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37">MicVar::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:33</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34a1bb53b1131a676fadffc9e0a53c0309a"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a1bb53b1131a676fadffc9e0a53c0309a">MicVar::qci</a></div><div class="ttdeci">@ qci</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:39</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34a24d3a4784c4c0b3c8ab827a784198261"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a24d3a4784c4c0b3c8ab827a784198261">MicVar::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:37</div></div>
@@ -617,7 +612,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34a96295e93c39d249775ba2498eb3d4fc1"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a96295e93c39d249775ba2498eb3d4fc1">MicVar::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:31</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34a9b5910b49731b9337307885dee73e090"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a9b5910b49731b9337307885dee73e090">MicVar::qcl</a></div><div class="ttdeci">@ qcl</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:38</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">MicVar::tabs</a></div><div class="ttdeci">@ tabs</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:32</div></div>
-<div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:714</div></div>
+<div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:710</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSAM.html#a012056ae20ded7928adf1be8afa665b9">Advance()</a>.</p>
 <div class="dynheader">
@@ -823,27 +818,27 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a4ea516e89f4e87b4ffc305504e8f0bf1"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1">erf_esati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_esati(amrex::Real t)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:24</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_abd125e107924437493cbcbac9a97c017"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_gammafff(amrex::Real x)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:15</div></div>
 <div class="ttc" id="aclassPlaneAverage_html"><div class="ttname"><a href="classPlaneAverage.html">PlaneAverage</a></div><div class="ttdef"><b>Definition:</b> ERF_PlaneAverage.H:14</div></div>
-<div class="ttc" id="aclassSAM_html_a0853b1a3a4ec94178ca208ea594fc455"><div class="ttname"><a href="classSAM.html#a0853b1a3a4ec94178ca208ea594fc455">SAM::rho1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; rho1d</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:342</div></div>
-<div class="ttc" id="aclassSAM_html_a0edeaaddf7573079fdc9af1484ce5582"><div class="ttname"><a href="classSAM.html#a0edeaaddf7573079fdc9af1484ce5582">SAM::evapr2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr2</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:339</div></div>
-<div class="ttc" id="aclassSAM_html_a2e241fff555231e1cc87947a624bb5d6"><div class="ttname"><a href="classSAM.html#a2e241fff555231e1cc87947a624bb5d6">SAM::evapg1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg1</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:336</div></div>
-<div class="ttc" id="aclassSAM_html_a2ec33470030fdfd34b9b9436f0b56cfd"><div class="ttname"><a href="classSAM.html#a2ec33470030fdfd34b9b9436f0b56cfd">SAM::accrgi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgi</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:334</div></div>
-<div class="ttc" id="aclassSAM_html_a3117e23160d027ccb4dacf744a477a40"><div class="ttname"><a href="classSAM.html#a3117e23160d027ccb4dacf744a477a40">SAM::evapg2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg2</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:337</div></div>
-<div class="ttc" id="aclassSAM_html_a37854ec84283a4229cf86b54cfcfc72b"><div class="ttname"><a href="classSAM.html#a37854ec84283a4229cf86b54cfcfc72b">SAM::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:308</div></div>
-<div class="ttc" id="aclassSAM_html_a3a76b3fc76d33c147dcaab81a738f41c"><div class="ttname"><a href="classSAM.html#a3a76b3fc76d33c147dcaab81a738f41c">SAM::m_gOcp</a></div><div class="ttdeci">amrex::Real m_gOcp</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:317</div></div>
-<div class="ttc" id="aclassSAM_html_a56c463cbd313722b567dd88e7ac6fccd"><div class="ttname"><a href="classSAM.html#a56c463cbd313722b567dd88e7ac6fccd">SAM::evaps1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps1</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:332</div></div>
-<div class="ttc" id="aclassSAM_html_a5a5228929f2e9032152efe0a5cb9476b"><div class="ttname"><a href="classSAM.html#a5a5228929f2e9032152efe0a5cb9476b">SAM::zmid</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; zmid</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:350</div></div>
-<div class="ttc" id="aclassSAM_html_a6b848cc96480f05c0c7b1e811cdb50d7"><div class="ttname"><a href="classSAM.html#a6b848cc96480f05c0c7b1e811cdb50d7">SAM::accrsi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsi</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:329</div></div>
-<div class="ttc" id="aclassSAM_html_a74856cc0ee48b638ee5263cd51fd1090"><div class="ttname"><a href="classSAM.html#a74856cc0ee48b638ee5263cd51fd1090">SAM::accrrc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrrc</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:328</div></div>
-<div class="ttc" id="aclassSAM_html_a77e43f5c8a68a43f8109aa18b71fa64e"><div class="ttname"><a href="classSAM.html#a77e43f5c8a68a43f8109aa18b71fa64e">SAM::pres1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; pres1d</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:343</div></div>
-<div class="ttc" id="aclassSAM_html_a7da420869410dc959c2442962524259f"><div class="ttname"><a href="classSAM.html#a7da420869410dc959c2442962524259f">SAM::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:305</div></div>
-<div class="ttc" id="aclassSAM_html_a8242fff43eb2cf417036eb36f5e4a3d8"><div class="ttname"><a href="classSAM.html#a8242fff43eb2cf417036eb36f5e4a3d8">SAM::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:296</div></div>
-<div class="ttc" id="aclassSAM_html_a8350a31a9f29bedee48b24bb43d5b0fc"><div class="ttname"><a href="classSAM.html#a8350a31a9f29bedee48b24bb43d5b0fc">SAM::evapr1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr1</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:338</div></div>
-<div class="ttc" id="aclassSAM_html_a8f9e9699afd94d393be846cd26933fd0"><div class="ttname"><a href="classSAM.html#a8f9e9699afd94d393be846cd26933fd0">SAM::evaps2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps2</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:333</div></div>
-<div class="ttc" id="aclassSAM_html_aa2de795ae7721e5070a8f4844e3897f6"><div class="ttname"><a href="classSAM.html#aa2de795ae7721e5070a8f4844e3897f6">SAM::accrgc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgc</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:335</div></div>
-<div class="ttc" id="aclassSAM_html_aa32720be8b27907466650050dc73e110"><div class="ttname"><a href="classSAM.html#aa32720be8b27907466650050dc73e110">SAM::accrsc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsc</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:330</div></div>
-<div class="ttc" id="aclassSAM_html_aad8c4616221c01599e4e32f2ebb08698"><div class="ttname"><a href="classSAM.html#aad8c4616221c01599e4e32f2ebb08698">SAM::coefice</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; coefice</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:331</div></div>
-<div class="ttc" id="aclassSAM_html_aee5da977a069c0b9cb98d150027f746c"><div class="ttname"><a href="classSAM.html#aee5da977a069c0b9cb98d150027f746c">SAM::tabs1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; tabs1d</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:344</div></div>
-<div class="ttc" id="aclassSAM_html_af47c1dda6481ee4549b60f2c03bdec18"><div class="ttname"><a href="classSAM.html#af47c1dda6481ee4549b60f2c03bdec18">SAM::gamaz</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; gamaz</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:349</div></div>
+<div class="ttc" id="aclassSAM_html_a0853b1a3a4ec94178ca208ea594fc455"><div class="ttname"><a href="classSAM.html#a0853b1a3a4ec94178ca208ea594fc455">SAM::rho1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; rho1d</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:337</div></div>
+<div class="ttc" id="aclassSAM_html_a0edeaaddf7573079fdc9af1484ce5582"><div class="ttname"><a href="classSAM.html#a0edeaaddf7573079fdc9af1484ce5582">SAM::evapr2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr2</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:334</div></div>
+<div class="ttc" id="aclassSAM_html_a2e241fff555231e1cc87947a624bb5d6"><div class="ttname"><a href="classSAM.html#a2e241fff555231e1cc87947a624bb5d6">SAM::evapg1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg1</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:331</div></div>
+<div class="ttc" id="aclassSAM_html_a2ec33470030fdfd34b9b9436f0b56cfd"><div class="ttname"><a href="classSAM.html#a2ec33470030fdfd34b9b9436f0b56cfd">SAM::accrgi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgi</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:329</div></div>
+<div class="ttc" id="aclassSAM_html_a3117e23160d027ccb4dacf744a477a40"><div class="ttname"><a href="classSAM.html#a3117e23160d027ccb4dacf744a477a40">SAM::evapg2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg2</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:332</div></div>
+<div class="ttc" id="aclassSAM_html_a37854ec84283a4229cf86b54cfcfc72b"><div class="ttname"><a href="classSAM.html#a37854ec84283a4229cf86b54cfcfc72b">SAM::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:306</div></div>
+<div class="ttc" id="aclassSAM_html_a3a76b3fc76d33c147dcaab81a738f41c"><div class="ttname"><a href="classSAM.html#a3a76b3fc76d33c147dcaab81a738f41c">SAM::m_gOcp</a></div><div class="ttdeci">amrex::Real m_gOcp</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:312</div></div>
+<div class="ttc" id="aclassSAM_html_a56c463cbd313722b567dd88e7ac6fccd"><div class="ttname"><a href="classSAM.html#a56c463cbd313722b567dd88e7ac6fccd">SAM::evaps1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps1</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:327</div></div>
+<div class="ttc" id="aclassSAM_html_a5a5228929f2e9032152efe0a5cb9476b"><div class="ttname"><a href="classSAM.html#a5a5228929f2e9032152efe0a5cb9476b">SAM::zmid</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; zmid</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:345</div></div>
+<div class="ttc" id="aclassSAM_html_a6b848cc96480f05c0c7b1e811cdb50d7"><div class="ttname"><a href="classSAM.html#a6b848cc96480f05c0c7b1e811cdb50d7">SAM::accrsi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsi</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:324</div></div>
+<div class="ttc" id="aclassSAM_html_a74856cc0ee48b638ee5263cd51fd1090"><div class="ttname"><a href="classSAM.html#a74856cc0ee48b638ee5263cd51fd1090">SAM::accrrc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrrc</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:323</div></div>
+<div class="ttc" id="aclassSAM_html_a77e43f5c8a68a43f8109aa18b71fa64e"><div class="ttname"><a href="classSAM.html#a77e43f5c8a68a43f8109aa18b71fa64e">SAM::pres1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; pres1d</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:338</div></div>
+<div class="ttc" id="aclassSAM_html_a7da420869410dc959c2442962524259f"><div class="ttname"><a href="classSAM.html#a7da420869410dc959c2442962524259f">SAM::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:303</div></div>
+<div class="ttc" id="aclassSAM_html_a8242fff43eb2cf417036eb36f5e4a3d8"><div class="ttname"><a href="classSAM.html#a8242fff43eb2cf417036eb36f5e4a3d8">SAM::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:294</div></div>
+<div class="ttc" id="aclassSAM_html_a8350a31a9f29bedee48b24bb43d5b0fc"><div class="ttname"><a href="classSAM.html#a8350a31a9f29bedee48b24bb43d5b0fc">SAM::evapr1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr1</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:333</div></div>
+<div class="ttc" id="aclassSAM_html_a8f9e9699afd94d393be846cd26933fd0"><div class="ttname"><a href="classSAM.html#a8f9e9699afd94d393be846cd26933fd0">SAM::evaps2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps2</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:328</div></div>
+<div class="ttc" id="aclassSAM_html_aa2de795ae7721e5070a8f4844e3897f6"><div class="ttname"><a href="classSAM.html#aa2de795ae7721e5070a8f4844e3897f6">SAM::accrgc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgc</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:330</div></div>
+<div class="ttc" id="aclassSAM_html_aa32720be8b27907466650050dc73e110"><div class="ttname"><a href="classSAM.html#aa32720be8b27907466650050dc73e110">SAM::accrsc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsc</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:325</div></div>
+<div class="ttc" id="aclassSAM_html_aad8c4616221c01599e4e32f2ebb08698"><div class="ttname"><a href="classSAM.html#aad8c4616221c01599e4e32f2ebb08698">SAM::coefice</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; coefice</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:326</div></div>
+<div class="ttc" id="aclassSAM_html_aee5da977a069c0b9cb98d150027f746c"><div class="ttname"><a href="classSAM.html#aee5da977a069c0b9cb98d150027f746c">SAM::tabs1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; tabs1d</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:339</div></div>
+<div class="ttc" id="aclassSAM_html_af47c1dda6481ee4549b60f2c03bdec18"><div class="ttname"><a href="classSAM.html#af47c1dda6481ee4549b60f2c03bdec18">SAM::gamaz</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; gamaz</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:344</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSAM.html#a2e6ff95cf827306bbcf3661c954a692e">Update_Micro_Vars()</a>.</p>
 <div class="dynheader">
@@ -1103,24 +1098,18 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#aab112947c592c330b45a2d7e5529ec07">NullMoist</a>.</p>
 <div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classSAM.html#a77c335e68b7ad8e6069d1318ea673a16">docloud</a>    = sc.<a class="code" href="structSolverChoice.html#af352bb75ceaeae4ac534d3378fbf393a">do_cloud</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classSAM.html#a54766f324324d579d2591a0bdc60e359">doprecip</a>   = sc.<a class="code" href="structSolverChoice.html#a766e5884354ed6483704f8257036ee75">do_precip</a>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a> = <a class="code" href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a>  = <a class="code" href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">m_fac_sub</a>  = <a class="code" href="ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classSAM.html#a3a76b3fc76d33c147dcaab81a738f41c">m_gOcp</a>     = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="classSAM.html#a37854ec84283a4229cf86b54cfcfc72b">m_axis</a>     = sc.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">m_rdOcp</a>    = sc.<a class="code" href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">rdOcp</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a> = <a class="code" href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a>  = <a class="code" href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">m_fac_sub</a>  = <a class="code" href="ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="classSAM.html#a3a76b3fc76d33c147dcaab81a738f41c">m_gOcp</a>     = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classSAM.html#a37854ec84283a4229cf86b54cfcfc72b">m_axis</a>     = sc.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">m_rdOcp</a>    = sc.<a class="code" href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">rdOcp</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0f65ea12b4405c50f1d777f7ca82dcfd"><div class="ttname"><a href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a></div><div class="ttdeci">constexpr amrex::Real lfus</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:67</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
-<div class="ttc" id="aclassSAM_html_a54766f324324d579d2591a0bdc60e359"><div class="ttname"><a href="classSAM.html#a54766f324324d579d2591a0bdc60e359">SAM::doprecip</a></div><div class="ttdeci">bool doprecip</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:311</div></div>
-<div class="ttc" id="aclassSAM_html_a77c335e68b7ad8e6069d1318ea673a16"><div class="ttname"><a href="classSAM.html#a77c335e68b7ad8e6069d1318ea673a16">SAM::docloud</a></div><div class="ttdeci">bool docloud</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:311</div></div>
-<div class="ttc" id="astructSolverChoice_html_a2e1ef762ee1dc1bd3d4cbd08125c758a"><div class="ttname"><a href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">SolverChoice::rdOcp</a></div><div class="ttdeci">amrex::Real rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:669</div></div>
-<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:668</div></div>
-<div class="ttc" id="astructSolverChoice_html_a766e5884354ed6483704f8257036ee75"><div class="ttname"><a href="structSolverChoice.html#a766e5884354ed6483704f8257036ee75">SolverChoice::do_precip</a></div><div class="ttdeci">bool do_precip</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:728</div></div>
-<div class="ttc" id="astructSolverChoice_html_af352bb75ceaeae4ac534d3378fbf393a"><div class="ttname"><a href="structSolverChoice.html#af352bb75ceaeae4ac534d3378fbf393a">SolverChoice::do_cloud</a></div><div class="ttdeci">bool do_cloud</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:727</div></div>
-<div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:725</div></div>
+<div class="ttc" id="astructSolverChoice_html_a2e1ef762ee1dc1bd3d4cbd08125c758a"><div class="ttname"><a href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">SolverChoice::rdOcp</a></div><div class="ttdeci">amrex::Real rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:665</div></div>
+<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:664</div></div>
+<div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:721</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1282,8 +1271,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    } <span class="comment">// nsub</span></div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
 <div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
-<div class="ttc" id="aclassSAM_html_a1b09febe32fbfebb402091fd31cd9996"><div class="ttname"><a href="classSAM.html#a1b09febe32fbfebb402091fd31cd9996">SAM::m_detJ_cc</a></div><div class="ttdeci">amrex::MultiFab * m_detJ_cc</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:322</div></div>
-<div class="ttc" id="aclassSAM_html_ab22f37f1f2b5d72ee2d20af56a29fc40"><div class="ttname"><a href="classSAM.html#ab22f37f1f2b5d72ee2d20af56a29fc40">SAM::CFL_MAX</a></div><div class="ttdeci">static constexpr amrex::Real CFL_MAX</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:290</div></div>
+<div class="ttc" id="aclassSAM_html_a1b09febe32fbfebb402091fd31cd9996"><div class="ttname"><a href="classSAM.html#a1b09febe32fbfebb402091fd31cd9996">SAM::m_detJ_cc</a></div><div class="ttdeci">amrex::MultiFab * m_detJ_cc</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:317</div></div>
+<div class="ttc" id="aclassSAM_html_ab22f37f1f2b5d72ee2d20af56a29fc40"><div class="ttname"><a href="classSAM.html#ab22f37f1f2b5d72ee2d20af56a29fc40">SAM::CFL_MAX</a></div><div class="ttdeci">static constexpr amrex::Real CFL_MAX</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:288</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a3e8bdf864aa73d27b5870cf155c3a86aa6b81d3dc642e339490ef9ab50db41a65"><div class="ttname"><a href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa6b81d3dc642e339490ef9ab50db41a65">MicVar_Kess::qcl</a></div><div class="ttdeci">@ qcl</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:37</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a3e8bdf864aa73d27b5870cf155c3a86aa7cde81843cd190a3122d7c3912a39b74"><div class="ttname"><a href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa7cde81843cd190a3122d7c3912a39b74">MicVar_Kess::tabs</a></div><div class="ttdeci">@ tabs</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:32</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a3e8bdf864aa73d27b5870cf155c3a86aa89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:30</div></div>
@@ -1435,12 +1424,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classSAM.html#a5a5228929f2e9032152efe0a5cb9476b">zmid</a>.resize({<a class="code" href="classSAM.html#a0473906305a6eaea0bad212893b9c911">zlo</a>}, {<a class="code" href="classSAM.html#aaf2fc082e80f1c5cc9de339ff25ca27b">zhi</a>});</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="ttc" id="aclassSAM_html_a0473906305a6eaea0bad212893b9c911"><div class="ttname"><a href="classSAM.html#a0473906305a6eaea0bad212893b9c911">SAM::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:305</div></div>
-<div class="ttc" id="aclassSAM_html_a4bf36ad050daafdcfea1aa83ad75f9cf"><div class="ttname"><a href="classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf">SAM::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:284</div></div>
-<div class="ttc" id="aclassSAM_html_a51af1452ad89711f8ddaa554cdc49ee6"><div class="ttname"><a href="classSAM.html#a51af1452ad89711f8ddaa554cdc49ee6">SAM::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:321</div></div>
-<div class="ttc" id="aclassSAM_html_a579b5a1e16d7b9d8d317e475a6a43705"><div class="ttname"><a href="classSAM.html#a579b5a1e16d7b9d8d317e475a6a43705">SAM::m_gtoe</a></div><div class="ttdeci">amrex::BoxArray m_gtoe</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:299</div></div>
-<div class="ttc" id="aclassSAM_html_a6008487ad12ada77acdcb3ee41371c98"><div class="ttname"><a href="classSAM.html#a6008487ad12ada77acdcb3ee41371c98">SAM::MicVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; MicVarMap</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:293</div></div>
-<div class="ttc" id="aclassSAM_html_aaf2fc082e80f1c5cc9de339ff25ca27b"><div class="ttname"><a href="classSAM.html#aaf2fc082e80f1c5cc9de339ff25ca27b">SAM::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:305</div></div>
+<div class="ttc" id="aclassSAM_html_a0473906305a6eaea0bad212893b9c911"><div class="ttname"><a href="classSAM.html#a0473906305a6eaea0bad212893b9c911">SAM::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:303</div></div>
+<div class="ttc" id="aclassSAM_html_a4bf36ad050daafdcfea1aa83ad75f9cf"><div class="ttname"><a href="classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf">SAM::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:282</div></div>
+<div class="ttc" id="aclassSAM_html_a51af1452ad89711f8ddaa554cdc49ee6"><div class="ttname"><a href="classSAM.html#a51af1452ad89711f8ddaa554cdc49ee6">SAM::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:316</div></div>
+<div class="ttc" id="aclassSAM_html_a579b5a1e16d7b9d8d317e475a6a43705"><div class="ttname"><a href="classSAM.html#a579b5a1e16d7b9d8d317e475a6a43705">SAM::m_gtoe</a></div><div class="ttdeci">amrex::BoxArray m_gtoe</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:297</div></div>
+<div class="ttc" id="aclassSAM_html_a6008487ad12ada77acdcb3ee41371c98"><div class="ttname"><a href="classSAM.html#a6008487ad12ada77acdcb3ee41371c98">SAM::MicVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; MicVarMap</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:291</div></div>
+<div class="ttc" id="aclassSAM_html_aaf2fc082e80f1c5cc9de339ff25ca27b"><div class="ttname"><a href="classSAM.html#aaf2fc082e80f1c5cc9de339ff25ca27b">SAM::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:303</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34a0a8da919c111613d4806217dce5cd1e3"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a0a8da919c111613d4806217dce5cd1e3">MicVar::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:50</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34a310c28c6a2a5e209f43302921d535af2"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a310c28c6a2a5e209f43302921d535af2">MicVar::snow_accum</a></div><div class="ttdeci">@ snow_accum</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:47</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a4216c2119642fca8b56734b6a3de0f34a710fb698c72c08828c86a3efa6e28614"><div class="ttname"><a href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a710fb698c72c08828c86a3efa6e28614">MicVar::rain_accum</a></div><div class="ttdeci">@ rain_accum</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:46</div></div>
@@ -1574,104 +1563,104 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="comment">// Solution tolerance</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        amrex::Real tol = 1.0e-4;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment">// Saturation moisture fractions</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        amrex::Real omn, domn;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        amrex::Real qsat, dqsat;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        amrex::Real qsatw, dqsatw;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        amrex::Real qsati, dqsati;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">// Newton iteration vars</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordtype">int</span>  niter;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        amrex::Real fff, dfff, dtabs;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        amrex::Real lstar, dlstar;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        amrex::Real lstarw, lstari;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        amrex::Real delta_qv, delta_qc, delta_qi;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment">// Initial guess for temperature &amp; pressure</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a> = tabs_array(i,j,k);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37">pres</a> = pres_array(i,j,k);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        niter = 0;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        dtabs = 1;</div>
+<div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="comment">// Solution tolerance</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        amrex::Real tol = 1.0e-4;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="comment">// Saturation moisture fractions</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        amrex::Real omn, domn;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        amrex::Real qsat, dqsat;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        amrex::Real qsatw, dqsatw;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        amrex::Real qsati, dqsati;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="comment">// Newton iteration vars</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordtype">int</span>  niter;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        amrex::Real fff, dfff, dtabs;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        amrex::Real lstar, dlstar;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        amrex::Real lstarw, lstari;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        amrex::Real delta_qv, delta_qc, delta_qi;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="comment">// Initial guess for temperature &amp; pressure</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a> = tabs_array(i,j,k);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37">pres</a> = pres_array(i,j,k);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        niter = 0;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        dtabs = 1;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="comment">//==================================================</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="comment">// Newton iteration to qv=qsat (cloud phase only)</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="comment">//==================================================</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">// Newton iteration to qv=qsat (cloud phase only)</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">//==================================================</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="comment">// Latent heats and their derivatives wrt to T</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            lstarw  = fac_cond;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            lstari  = fac_fus;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            domn    = 0.0;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="comment">// Saturation moisture fractions</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a>, <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37">pres</a>, qsatw);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a>(<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a>, <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37">pres</a>, qsati);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a>(<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a>, <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37">pres</a>, dqsatw);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec">erf_dtqsati</a>(<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a>, <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37">pres</a>, dqsati);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordflow">if</span> (SAM_moisture_type == 1) {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                <span class="comment">// Cloud ice not permitted (condensation &amp; fusion)</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a> &gt;= <a class="code" href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a>) {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                    omn   = 1.0;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                }</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                <span class="comment">// Cloud water not permitted (sublimation &amp; fusion)</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a> &lt;= <a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>) {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    omn    = 0.0;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    lstarw = fac_sub;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                <span class="comment">// Mixed cloud phase (condensation &amp; fusion)</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    omn   = an*<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a>-bn;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                    domn  = an;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (SAM_moisture_type == 2) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                omn  = 1.0;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                domn = 0.0;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            }</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="comment">// Linear combination of each component</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            qsat   =  omn * qsatw  + (1.0-omn) * qsati;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            dqsat  =  omn * dqsatw + (1.0-omn) * dqsati</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                   + domn *  qsatw -     domn  *  qsati;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            lstar  =  omn * lstarw + (1.0-omn) * lstari;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            dlstar = domn * lstarw -     domn  * lstari;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="comment">// Function for root finding:</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="comment">// 0 = -T_new + T_old + L_eff/C_p * (qv - qsat)</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            fff   = -<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a> + tabs_array(i,j,k) +  lstar*(qv_array(i,j,k) - qsat);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <span class="comment">// Derivative of function (T_new iterated on)</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            dfff  = -1.0 + dlstar*(qv_array(i,j,k) - qsat) - lstar*dqsat;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="comment">// Update the temperature</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            dtabs = -fff/dfff;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a> += dtabs;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="comment">// Update iteration</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            niter = niter+1;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        } <span class="keywordflow">while</span>(std::abs(dtabs) &gt; tol &amp;&amp; niter &lt; 20);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="comment">// Update qsat from last iteration (dq = dq/dt * dt)</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        qsat += dqsat*dtabs;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="comment">// Changes in each component</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        delta_qv = qv_array(i,j,k) - qsat;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        delta_qc = std::max(-qc_array(i,j,k), delta_qv * omn);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        delta_qi = std::max(-qi_array(i,j,k), delta_qv * (1.0-omn));</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="comment">// Partition the change in non-precipitating q</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        qv_array(i,j,k)  = qsat;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        qc_array(i,j,k) += delta_qc;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        qi_array(i,j,k) += delta_qi;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        qn_array(i,j,k)  = qc_array(i,j,k) + qi_array(i,j,k);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        qt_array(i,j,k)  = qv_array(i,j,k) + qn_array(i,j,k);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="comment">// Return to temperature</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a>;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="comment">// Latent heats and their derivatives wrt to T</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            lstarw  = fac_cond;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            lstari  = fac_fus;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            domn    = 0.0;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="comment">// Saturation moisture fractions</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a>, <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37">pres</a>, qsatw);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a>(<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a>, <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37">pres</a>, qsati);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a>(<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a>, <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37">pres</a>, dqsatw);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec">erf_dtqsati</a>(<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a>, <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34a147204d9af51dec01fb0d95c5cde8d37">pres</a>, dqsati);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keywordflow">if</span> (SAM_moisture_type == 1) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <span class="comment">// Cloud ice not permitted (condensation &amp; fusion)</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a> &gt;= <a class="code" href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a>) {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                    omn   = 1.0;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                <span class="comment">// Cloud water not permitted (sublimation &amp; fusion)</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a> &lt;= <a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>) {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    omn    = 0.0;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    lstarw = fac_sub;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                <span class="comment">// Mixed cloud phase (condensation &amp; fusion)</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    omn   = an*<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a>-bn;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    domn  = an;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (SAM_moisture_type == 2) {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                omn  = 1.0;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                domn = 0.0;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="comment">// Linear combination of each component</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            qsat   =  omn * qsatw  + (1.0-omn) * qsati;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            dqsat  =  omn * dqsatw + (1.0-omn) * dqsati</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                   + domn *  qsatw -     domn  *  qsati;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            lstar  =  omn * lstarw + (1.0-omn) * lstari;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            dlstar = domn * lstarw -     domn  * lstari;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <span class="comment">// Function for root finding:</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="comment">// 0 = -T_new + T_old + L_eff/C_p * (qv - qsat)</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            fff   = -<a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a> + tabs_array(i,j,k) +  lstar*(qv_array(i,j,k) - qsat);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="comment">// Derivative of function (T_new iterated on)</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            dfff  = -1.0 + dlstar*(qv_array(i,j,k) - qsat) - lstar*dqsat;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="comment">// Update the temperature</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            dtabs = -fff/dfff;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a> += dtabs;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="comment">// Update iteration</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            niter = niter+1;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        } <span class="keywordflow">while</span>(std::abs(dtabs) &gt; tol &amp;&amp; niter &lt; 20);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="comment">// Update qsat from last iteration (dq = dq/dt * dt)</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        qsat += dqsat*dtabs;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="comment">// Changes in each component</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        delta_qv = qv_array(i,j,k) - qsat;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        delta_qc = std::max(-qc_array(i,j,k), delta_qv * omn);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        delta_qi = std::max(-qi_array(i,j,k), delta_qv * (1.0-omn));</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="comment">// Partition the change in non-precipitating q</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        qv_array(i,j,k)  = qsat;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        qc_array(i,j,k) += delta_qc;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        qi_array(i,j,k) += delta_qi;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        qn_array(i,j,k)  = qc_array(i,j,k) + qi_array(i,j,k);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        qt_array(i,j,k)  = qv_array(i,j,k) + qn_array(i,j,k);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="comment">// Return to temperature</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar.html#a4216c2119642fca8b56734b6a3de0f34aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a>;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a41126403c4da6ee876e9e391f3f67699"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_dtqsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;dtqsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:170</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a7baba5d74922033bf93526933a0d77ec"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec">erf_dtqsati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_dtqsati(amrex::Real t, amrex::Real p, amrex::Real &amp;dtqsati)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:165</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -2279,10 +2268,10 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a1b6a72d67d9b2642e99a5b768315476c">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        AMREX_ALWAYS_ASSERT(varIdx &lt; <a class="code" href="classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf">m_qmoist_size</a>);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="classSAM.html#a6008487ad12ada77acdcb3ee41371c98">MicVarMap</a>[varIdx]].get();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        AMREX_ALWAYS_ASSERT(varIdx &lt; <a class="code" href="classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf">m_qmoist_size</a>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="classSAM.html#a6008487ad12ada77acdcb3ee41371c98">MicVarMap</a>[varIdx]].get();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2327,17 +2316,17 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a77d6c9875f6a3a7242b090e6fece5c0f">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        a_idx.clear();</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        a_names.clear();</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordflow">if</span> (a_sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::SAM) {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            a_idx.push_back( 8); a_names.push_back(<span class="stringliteral">&quot;RainAccum&quot;</span>);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            a_idx.push_back( 9); a_names.push_back(<span class="stringliteral">&quot;SnowAccum&quot;</span>);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            a_idx.push_back(10); a_names.push_back(<span class="stringliteral">&quot;GraupAccum&quot;</span>);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::SAM_NoIce) {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            a_idx.push_back( 8); a_names.push_back(<span class="stringliteral">&quot;RainAccum&quot;</span>);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        }</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        a_idx.clear();</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        a_names.clear();</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">if</span> (a_sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::SAM) {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            a_idx.push_back( 8); a_names.push_back(<span class="stringliteral">&quot;RainAccum&quot;</span>);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            a_idx.push_back( 9); a_names.push_back(<span class="stringliteral">&quot;SnowAccum&quot;</span>);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            a_idx.push_back(10); a_names.push_back(<span class="stringliteral">&quot;GraupAccum&quot;</span>);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::SAM_NoIce) {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            a_idx.push_back( 8); a_names.push_back(<span class="stringliteral">&quot;RainAccum&quot;</span>);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2365,7 +2354,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#abdf706f193bbb09c62e41734570f3cd1">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf">SAM::m_qmoist_size</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf">SAM::m_qmoist_size</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2393,8 +2382,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#afaa201a3a1dc21c18888d9c6a068f956">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSAM.html#a81c775ecb78f3f228a98a9c39d1d098d">SAM::m_qstate_size</a>; }</div>
-<div class="ttc" id="aclassSAM_html_a81c775ecb78f3f228a98a9c39d1d098d"><div class="ttname"><a href="classSAM.html#a81c775ecb78f3f228a98a9c39d1d098d">SAM::m_qstate_size</a></div><div class="ttdeci">int m_qstate_size</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:287</div></div>
+<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSAM.html#a81c775ecb78f3f228a98a9c39d1d098d">SAM::m_qstate_size</a>; }</div>
+<div class="ttc" id="aclassSAM_html_a81c775ecb78f3f228a98a9c39d1d098d"><div class="ttname"><a href="classSAM.html#a81c775ecb78f3f228a98a9c39d1d098d">SAM::m_qstate_size</a></div><div class="ttdeci">int m_qstate_size</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:285</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2423,10 +2412,10 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#aece7a50f16bf40e3e9d536cc030458f7">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a1df931f91be89514c09f69f24cfeca53">Copy_State_to_Micro</a>(cons_in);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40">Compute_Coefficients</a>();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a1df931f91be89514c09f69f24cfeca53">Copy_State_to_Micro</a>(cons_in);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40">Compute_Coefficients</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
 <div class="ttc" id="aclassSAM_html_a1df931f91be89514c09f69f24cfeca53"><div class="ttname"><a href="classSAM.html#a1df931f91be89514c09f69f24cfeca53">SAM::Copy_State_to_Micro</a></div><div class="ttdeci">void Copy_State_to_Micro(const amrex::MultiFab &amp;cons_in) override</div><div class="ttdef"><b>Definition:</b> ERF_InitSAM.cpp:88</div></div>
 <div class="ttc" id="aclassSAM_html_a77dd99de0896cf9f9bf8299c2c80bc40"><div class="ttname"><a href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40">SAM::Compute_Coefficients</a></div><div class="ttdeci">void Compute_Coefficients()</div><div class="ttdef"><b>Definition:</b> ERF_InitSAM.cpp:140</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -2477,9 +2466,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a24f0528f7d31b89f36a3c225c7e53010">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a007ed40ac7278996d257b4c0ab6c1320">Copy_Micro_to_State</a>(cons_in);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        this-&gt;<a class="code" href="classSAM.html#a007ed40ac7278996d257b4c0ab6c1320">Copy_Micro_to_State</a>(cons_in);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
 <div class="ttc" id="aclassSAM_html_a007ed40ac7278996d257b4c0ab6c1320"><div class="ttname"><a href="classSAM.html#a007ed40ac7278996d257b4c0ab6c1320">SAM::Copy_Micro_to_State</a></div><div class="ttdeci">void Copy_Micro_to_State(amrex::MultiFab &amp;cons_in) override</div><div class="ttdef"><b>Definition:</b> ERF_UpdateSAM.cpp:15</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -2645,54 +2634,6 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a77c335e68b7ad8e6069d1318ea673a16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77c335e68b7ad8e6069d1318ea673a16">&#9670;&nbsp;</a></span>docloud</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool SAM::docloud</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classSAM.html#aba6460f2d34882d6b512574106e44531">Define()</a>.</p>
-
-</div>
-</div>
-<a id="a54766f324324d579d2591a0bdc60e359"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54766f324324d579d2591a0bdc60e359">&#9670;&nbsp;</a></span>doprecip</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool SAM::doprecip</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classSAM.html#aba6460f2d34882d6b512574106e44531">Define()</a>.</p>
 
 </div>
 </div>

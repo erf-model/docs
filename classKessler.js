@@ -16,8 +16,6 @@ var classKessler =
     [ "Update_Micro_Vars", "classKessler.html#a05b9426e9fd6af90ea40aa77ed0cbe66", null ],
     [ "Update_State_Vars", "classKessler.html#add7ed88ab0086ee53aa15e87cc8686ef", null ],
     [ "CFL_MAX", "classKessler.html#ab65a6b7181e08edaa8de14ea26bb8d62", null ],
-    [ "docloud", "classKessler.html#a7335cec5eabf2a33c8cd274b09863c28", null ],
-    [ "doprecip", "classKessler.html#a2d8ae6f03c19821ef6279dcadd5cb36e", null ],
     [ "dt", "classKessler.html#a86cf1c45a302d0e4a860860dab3dbe65", null ],
     [ "m_axis", "classKessler.html#afea161a2b985d4c0eb4aa9390a808ab4", null ],
     [ "m_detJ_cc", "classKessler.html#a534c115146bedf2e3f600ac351162252", null ],

@@ -27,8 +27,6 @@ var classSAM =
     [ "accrsi", "classSAM.html#a6b848cc96480f05c0c7b1e811cdb50d7", null ],
     [ "CFL_MAX", "classSAM.html#ab22f37f1f2b5d72ee2d20af56a29fc40", null ],
     [ "coefice", "classSAM.html#aad8c4616221c01599e4e32f2ebb08698", null ],
-    [ "docloud", "classSAM.html#a77c335e68b7ad8e6069d1318ea673a16", null ],
-    [ "doprecip", "classSAM.html#a54766f324324d579d2591a0bdc60e359", null ],
     [ "dt", "classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9", null ],
     [ "evapg1", "classSAM.html#a2e241fff555231e1cc87947a624bb5d6", null ],
     [ "evapg2", "classSAM.html#a3117e23160d027ccb4dacf744a477a40", null ],
