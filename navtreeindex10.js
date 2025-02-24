@@ -1,5 +1,8 @@
 var NAVTREEINDEX10 =
 {
+"classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192":[2,0,0,3,20],
+"classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042":[2,0,0,3,18],
+"classncutils_1_1NCGroup.html#ac25f1ca78fc2cd66e7b80fdcc30f512f":[2,0,0,3,14],
 "classncutils_1_1NCGroup.html#ac5beadfdf8519b384504dc82f6bdecc5":[2,0,0,3,15],
 "classncutils_1_1NCGroup.html#acf2801c26458fb99bd82733b1302285a":[2,0,0,3,29],
 "classncutils_1_1NCGroup.html#acf73ea254afaf7d74596fa07523b322f":[2,0,0,3,26],
@@ -148,8 +151,8 @@ var NAVTREEINDEX10 =
 "functions_y.html":[2,3,0,23],
 "functions_z.html":[2,3,0,24],
 "functions_~.html":[2,3,0,25],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX10 =
 "namespaceMicVar__SatAdj.html":[1,0,14],
 "namespaceRealBdyVars.html":[1,0,16],
 "namespaceVars.html":[1,0,19],
-"namespaceWRFBdyVars.html":[1,0,20],
-"namespaceamrex.html":[1,0,0],
-"namespaceamrex.html#a8f794ff24efbc4b60058492d1a073c78":[1,0,0,0],
-"namespaceamrex.html#a9d270ec83f99e836cca454cac4e0af5e":[1,0,0,1]
+"namespaceWRFBdyVars.html":[1,0,20]
 };

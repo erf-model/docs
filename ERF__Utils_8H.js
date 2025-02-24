@@ -4,6 +4,7 @@ var ERF__Utils_8H =
     [ "ApplyMask", "ERF__Utils_8H.html#acebead6f3a33cb7737a1fea98341c3ae", null ],
     [ "ChopGrids2D", "ERF__Utils_8H.html#ae73f998519cf6628e7c4a90cea4cb4f5", null ],
     [ "compute_interior_ghost_bxs_xy", "ERF__Utils_8H.html#aaa3f051b9681a4e20d0d88b3715d8897", null ],
+    [ "ConvertForProjection", "ERF__Utils_8H.html#ae4ec302147b124c88534706646a1cd71", null ],
     [ "ERFPostProcessBaseGrids", "ERF__Utils_8H.html#aa333d30d88adfbad5d860b704845f857", null ],
     [ "fine_compute_interior_ghost_rhs", "ERF__Utils_8H.html#a666ef6030bc3baa94198a32754fc65f2", null ],
     [ "make_areas", "ERF__Utils_8H.html#afd5f5cf174d096726815e6d7dc325c41", null ],

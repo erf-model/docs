@@ -1,5 +1,8 @@
 var NAVTREEINDEX11 =
 {
+"namespaceamrex.html":[1,0,0],
+"namespaceamrex.html#a8f794ff24efbc4b60058492d1a073c78":[1,0,0,0],
+"namespaceamrex.html#a9d270ec83f99e836cca454cac4e0af5e":[1,0,0,1],
 "namespaceamrex.html#aab3ca155f0d0a6d198817df9c35352f8":[1,0,0,2],
 "namespaceamrex.html#afa2dbdd17ead719f97272c9a0a2b0f8a":[1,0,0,3],
 "namespacederived.html":[1,0,4],
@@ -246,8 +249,5 @@ var NAVTREEINDEX11 =
 "structNDArray.html#ad839c3c65bd755311afb6f0dad08f336":[2,0,47,7],
 "structNDArray.html#afb8008f414c4404e3a6b425c12401d9d":[2,0,47,4],
 "structPlaneSampler.html":[2,0,53],
-"structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6":[2,0,53,5],
-"structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d":[2,0,53,2],
-"structPlaneSampler.html#a31b77c80e1831ceb775ed63819016fd4":[2,0,53,6],
-"structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc":[2,0,53,7]
+"structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6":[2,0,53,5]
 };

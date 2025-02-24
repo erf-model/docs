@@ -73,20 +73,20 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ERFPCEvolve_8cpp.html",
-"ERF__Derive_8H.html#a5186c6ea33e82af321f529242a615dc2",
-"ERF__Interpolation_8H.html#ad9844abfa5c6530dc10d582e1adbb26c",
-"ERF__SampleData_8H.html",
-"classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13addbb8213265f3ad773f7af2cb8147062",
-"classERF.html#aa28182226262c67cfd686d35bfeabcad",
-"classEWP.html#a2ee471b0dcad3057297b809f4c5141ab",
-"classMRISplitIntegrator.html#a69e19ac4b8c02d71269e741e71b74c23",
-"classRadiation.html#a939cb453e9c7997e34c07a989b614ed6",
-"classSimpleAD.html#a171f86e19e21f7c5632ca2c459d489f5",
-"classncutils_1_1NCGroup.html#ac5beadfdf8519b384504dc82f6bdecc5",
-"namespaceamrex.html#aab3ca155f0d0a6d198817df9c35352f8",
-"structPlaneSampler.html#a68ea5715d34cefd4d9a2c2cbc38114f2",
-"structWENO5.html#acab4e47113826df9a8469d5647507385",
-"structsurface__temp__charnock.html#a95809501feb05aea7aa17bb4ab21a0fb"
+"ERF__Derive_8H.html#a2a85aedf7c75ca416dbb931559c4b21e",
+"ERF__Interpolation_8H.html#a7db2e03d98477dc9033d7c99e2223898",
+"ERF__SLM_8H_source.html",
+"classABLMost.html#ae825f96c2d098b3e070642a74e6a3f13a266bf3048d67b1b3187c0189bc232fde",
+"classERF.html#a9fc0f6e6ca35036d2e3a36dd42e66435",
+"classEWP.html",
+"classMRISplitIntegrator.html#a526041af494ee08e31efefc98aaa07ab",
+"classRadiation.html#a8f3074e278d23525b99f02a1c9311d1e",
+"classSimpleAD.html#a0d915eaf360210453a081a2b721d0fa0",
+"classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192",
+"namespaceamrex.html",
+"structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d",
+"structWENO5.html#a6d43a1b69bdf59e629cc778c62a5e2f1",
+"structsurface__temp.html#afec351f7cde260c6e96a27297cb4010f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
