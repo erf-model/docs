@@ -2,7 +2,7 @@ var structAdvChoice =
 [
     [ "adv_type_convert_int_to_string", "structAdvChoice.html#abea240033571adc8f3993bd56bf28fa2", null ],
     [ "adv_type_convert_string_to_advtype", "structAdvChoice.html#a191cb08c4e809d1982ea90e4b4f9a528", null ],
-    [ "display", "structAdvChoice.html#a15e63c1b409b5e09359441b5b5d7d00c", null ],
+    [ "display", "structAdvChoice.html#a064ffc0bac9fc0fdd1aa41a45f4e5ed4", null ],
     [ "init_params", "structAdvChoice.html#a0913a61ad5530639cdbf84579c34041a", null ],
     [ "dryscal_horiz_adv_type", "structAdvChoice.html#a74a383e01c24980b72b920054ee5c1ab", null ],
     [ "dryscal_horiz_upw_frac", "structAdvChoice.html#afb0ff64219a9e79d077b1a06da7817ae", null ],
