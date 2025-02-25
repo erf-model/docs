@@ -16,6 +16,7 @@ var classncutils_1_1NCGroup =
     [ "get_attr", "classncutils_1_1NCGroup.html#a0f24e998915e60b177d036595f0f2734", null ],
     [ "get_attr", "classncutils_1_1NCGroup.html#ac25f1ca78fc2cd66e7b80fdcc30f512f", null ],
     [ "get_attr", "classncutils_1_1NCGroup.html#ac5beadfdf8519b384504dc82f6bdecc5", null ],
+    [ "get_id", "classncutils_1_1NCGroup.html#ac8222aa66293539bf13d89804645ceb1", null ],
     [ "group", "classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333", null ],
     [ "has_attr", "classncutils_1_1NCGroup.html#a1bfb961e66e7c635ae92cee3f8cdeeac", null ],
     [ "has_dim", "classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042", null ],

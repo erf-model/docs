@@ -532,7 +532,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                    <span class="keywordtype">int</span> ii = amrex::max(amrex::min(i,imax),imin);</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;                    <span class="keywordtype">int</span> jj = amrex::max(amrex::min(j,jmax),jmin);</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                    <span class="comment">// Fill values outside the lateral boundaries and below the bottom surface (necessary if init_type = &quot;real&quot;)</span></div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                    <span class="comment">// Fill values outside the lateral boundaries and below the bottom surface (necessary if init_type = &quot;WRFInput&quot;)</span></div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                    <span class="keywordflow">if</span> (k == k0+1) {</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                        z_arr(i,j,k) = <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> + z_arr(ii,jj,k0);</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                    } <span class="keywordflow">else</span> {</div>

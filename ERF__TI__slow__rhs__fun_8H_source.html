@@ -378,7 +378,7 @@ $(document).ready(function(){initNavTree('ERF__TI__slow__rhs__fun_8H_source.html
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="comment">// Populate RHS for relaxation zones if using real bcs</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">if</span> (use_real_bcs &amp;&amp; (level == 0)) {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">if</span> (solverChoice.use_real_bcs &amp;&amp; (level == 0)) {</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keywordflow">if</span> (real_width&gt;0) {</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                <a class="code" href="ERF__InteriorGhostCells_8cpp.html#a910beecdd2b6435fb9b14ff590bc2241">realbdy_compute_interior_ghost_rhs</a>(bdy_time_interval, start_bdy_time, new_stage_time, slow_dt,</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                                   real_width, real_set_width, fine_geom,</div>
@@ -430,7 +430,7 @@ $(document).ready(function(){initNavTree('ERF__TI__slow__rhs__fun_8H_source.html
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="preprocessor">#if defined(ERF_USE_NETCDF)</span></div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordtype">bool</span> moist_set_rhs = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">if</span> ( use_real_bcs &amp;&amp;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">if</span> ( solverChoice.use_real_bcs &amp;&amp;</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;             (level==0)   &amp;&amp;</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;             (real_set_width &gt; 0) &amp;&amp;</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;             (solverChoice.moisture_type != MoistureType::None) )</div>
@@ -586,7 +586,7 @@ $(document).ready(function(){initNavTree('ERF__TI__slow__rhs__fun_8H_source.html
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        <span class="comment">// Populate RHS for relaxation zones if using real bcs</span></div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        <span class="keywordflow">if</span> (use_real_bcs &amp;&amp; (level == 0)) {</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        <span class="keywordflow">if</span> (solverChoice.use_real_bcs &amp;&amp; (level == 0)) {</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;            <span class="keywordflow">if</span> (real_width&gt;0) {</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                    <a class="code" href="ERF__InteriorGhostCells_8cpp.html#a910beecdd2b6435fb9b14ff590bc2241">realbdy_compute_interior_ghost_rhs</a>(bdy_time_interval, start_bdy_time, new_stage_time, slow_dt,</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                                                       real_width, real_set_width, fine_geom,</div>
