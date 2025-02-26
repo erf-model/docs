@@ -1163,31 +1163,21 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Computation of z_phys at cell-center </p>
 <div class="fragment"><div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;{</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <span class="comment">// Domain valid box (z_nd is nodal)</span></div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="keywordtype">int</span> domlo_z = domain.smallEnd(2);</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160; </div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="comment">// Number of ghost cells</span></div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <span class="keywordtype">int</span> ngrow= z_phys_cc.nGrow();</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160; </div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(z_phys_cc, TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    {</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        Box gbx = mfi.growntilebox(ngrow);</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        <span class="keywordflow">if</span> (gbx.smallEnd(2) &lt; domlo_z) {</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;            gbx.setSmall(2,domlo_z);</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        }</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        Array4&lt;Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        Array4&lt;Real      &gt; z_cc = z_phys_cc.array(mfi);</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;           z_cc(i, j, k) = .125 * ( z_nd(i,j,k  ) + z_nd(i+1,j,k  ) + z_nd(i,j+1,k  ) + z_nd(i+1,j+1,k  )</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;                                   +z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1) );</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;       });</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    }</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    z_phys_cc.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;}</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(z_phys_cc, TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    {</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        Box gbx = mfi.growntilebox();</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        Array4&lt;Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        Array4&lt;Real      &gt; z_cc = z_phys_cc.array(mfi);</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;           z_cc(i, j, k) = .125 * ( z_nd(i,j,k  ) + z_nd(i+1,j,k  ) + z_nd(i,j+1,k  ) + z_nd(i+1,j+1,k  )</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                                   +z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1) );</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;       });</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    }</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    z_phys_cc.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a58f6683aff0fbe6949bfe8b49275a8b3">ERF::post_timestep()</a>, and <a class="el" href="classERF.html#a7dba7f9e6bd3f6898fac9ac2efcec692">ERF::update_terrain_arrays()</a>.</p>
 <div class="dynheader">
