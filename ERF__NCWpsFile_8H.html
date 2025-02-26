@@ -346,7 +346,7 @@ template&lt;class FAB , typename DType &gt; </div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            amrex::Gpu::copy(amrex::Gpu::hostToDevice,</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                             tmp.dataPtr(), tmp.dataPtr() + tmp.size(),</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                             fab_vars-&gt;dataPtr());</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                             fab_vars[iv]-&gt;dataPtr());</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <span class="comment">// Provided by BaseFab inheritance through FArrayBox</span></div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            fab_vars[iv]-&gt;copy(tmp,tmp.box(),0,fab_bx,0,1);</div>
