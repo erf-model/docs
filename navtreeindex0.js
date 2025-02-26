@@ -116,8 +116,10 @@ var NAVTREEINDEX0 =
 "ERF__CloudSAM_8cpp.html":[3,0,1,9,2,0],
 "ERF__ComputeDiffusivityMYNN25_8cpp.html":[3,0,1,11,0],
 "ERF__ComputeDiffusivityMYNN25_8cpp.html#a391c08e1e3f5dbbe1bc501f0ad9ee26f":[3,0,1,11,0,0],
-"ERF__ComputeDiffusivityYSU_8cpp.html":[3,0,1,11,1],
-"ERF__ComputeDiffusivityYSU_8cpp.html#a22f1a268ea7d16d0817f082a47ffc98a":[3,0,1,11,1,0],
+"ERF__ComputeDiffusivityMYNNEDMF_8cpp.html":[3,0,1,11,1],
+"ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#ab511205b40a7f576a74bffb21db091fd":[3,0,1,11,1,0],
+"ERF__ComputeDiffusivityYSU_8cpp.html":[3,0,1,11,2],
+"ERF__ComputeDiffusivityYSU_8cpp.html#a22f1a268ea7d16d0817f082a47ffc98a":[3,0,1,11,2,0],
 "ERF__ComputeDivergence_8cpp.html":[3,0,1,8,0],
 "ERF__ComputeStrain__N_8cpp.html":[3,0,1,3,0],
 "ERF__ComputeStrain__N_8cpp.html#a72f6c981375a19d6e96b875837b57ae0":[3,0,1,3,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__DataStruct_8H.html#acdc002a92ddacce9c7f56a850ef3ea8c":[3,0,1,2,1,7],
 "ERF__DataStruct_8H.html#afb582070899c7011b2fb9c732a9b1f86":[3,0,1,2,1,14],
 "ERF__DataStruct_8H_source.html":[3,0,1,2,1],
-"ERF__Derive_8H.html":[3,0,1,22],
-"ERF__Derive_8H.html#a0a37dd4fa4a044e34891e6222d06654c":[3,0,1,22,9],
-"ERF__Derive_8H.html#a13666be87e55d1759f57322b33f7e495":[3,0,1,22,5]
+"ERF__Derive_8H.html":[3,0,1,22]
 };

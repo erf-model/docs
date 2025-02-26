@@ -1,5 +1,8 @@
 var NAVTREEINDEX12 =
 {
+"structPlaneSampler.html":[2,0,53],
+"structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6":[2,0,53,5],
+"structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d":[2,0,53,2],
 "structPlaneSampler.html#a31b77c80e1831ceb775ed63819016fd4":[2,0,53,6],
 "structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc":[2,0,53,7],
 "structPlaneSampler.html#a68ea5715d34cefd4d9a2c2cbc38114f2":[2,0,53,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX12 =
 "structWENO3.html#aec5bab848821a83049c5596669980424":[2,0,88,0],
 "structWENO5.html":[2,0,89],
 "structWENO5.html#a0eb3eb8be72f02731cd24f03d5c2b9ca":[2,0,89,6],
-"structWENO5.html#a23a4f65c0c04ac32ebf019c7ae707072":[2,0,89,2],
-"structWENO5.html#a28727bda47dc47677cf20c4d4bbda9a8":[2,0,89,10],
-"structWENO5.html#a3acb5e8bde92b17f3eefb2a0cc3dad2e":[2,0,89,5],
-"structWENO5.html#a4e300b80fa08a8a265ca1b3caa1fe009":[2,0,89,8]
+"structWENO5.html#a23a4f65c0c04ac32ebf019c7ae707072":[2,0,89,2]
 };
