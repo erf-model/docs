@@ -943,25 +943,25 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                AMREX_ASSERT(m_yterrain.size() == <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(ny));</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                AMREX_ASSERT(m_zterrain.size() == <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(nx*ny));</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            file &gt;&gt; nx; file &gt;&gt; ny;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            AMREX_ALWAYS_ASSERT(nx &gt; 0);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            AMREX_ALWAYS_ASSERT(ny &gt; 0);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            m_xterrain.resize(nx);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            m_yterrain.resize(ny);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            m_zterrain.resize(nx * ny);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; nx; n++) {</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                file &gt;&gt; m_xterrain[n];</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            }</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ny; n++) {</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                file &gt;&gt; m_yterrain[n];</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; nx * ny; n++) {</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                file &gt;&gt; m_zterrain[n];</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            }</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                file &gt;&gt; nx; file &gt;&gt; ny;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                AMREX_ALWAYS_ASSERT(nx &gt; 0);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                AMREX_ALWAYS_ASSERT(ny &gt; 0);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                m_xterrain.resize(nx);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                m_yterrain.resize(ny);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                m_zterrain.resize(nx * ny);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; nx; n++) {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                    file &gt;&gt; m_xterrain[n];</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                }</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ny; n++) {</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                    file &gt;&gt; m_yterrain[n];</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                }</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; nx * ny; n++) {</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                    file &gt;&gt; m_zterrain[n];</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                }</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            }</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;NX &quot;</span> &lt;&lt; nx &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; ny &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;NX &quot;</span> &lt;&lt; nx &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; ny &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <span class="comment">// Close the file after reading</span></div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            file.close();</div>
