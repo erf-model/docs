@@ -1632,7 +1632,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">// Update the day and month</span></div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    time_t timestamp = time_t(<span class="keywordtype">int</span>(time));</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">struct </span>tm *timeinfo = localtime(&amp;timestamp);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">struct </span>tm *timeinfo = gmtime(&amp;timestamp);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classRadiation.html#ad69a515d735698f357e6ac6f57217610">m_fixed_orbital_year</a>) {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="classRadiation.html#a7fc8f574727681ce8b28296e7718f267">m_orbital_mon</a>  = timeinfo-&gt;tm_mon + 1;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="classRadiation.html#ad0fd3a8edfe807f225e4d07bd4725cb5">m_orbital_day</a>  = timeinfo-&gt;tm_mday;</div>
