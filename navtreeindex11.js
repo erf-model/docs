@@ -1,5 +1,9 @@
 var NAVTREEINDEX11 =
 {
+"globals_func_q.html":[3,1,1,13],
+"globals_func_r.html":[3,1,1,14],
+"globals_func_s.html":[3,1,1,15],
+"globals_func_t.html":[3,1,1,16],
 "globals_func_v.html":[3,1,1,17],
 "globals_func_w.html":[3,1,1,18],
 "globals_func_z.html":[3,1,1,19],
@@ -245,9 +249,5 @@ var NAVTREEINDEX11 =
 "structInputSpongeData.html#a944b8ce681cef2752c8797d83cae5eae":[2,0,34,3],
 "structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155":[2,0,34,6],
 "structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917":[2,0,34,4],
-"structInputSpongeData.html#aff9684faaf6b3a26494766819e4ba6dd":[2,0,34,2],
-"structLineSampler.html":[2,0,37],
-"structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d":[2,0,37,11],
-"structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e":[2,0,37,9],
-"structLineSampler.html#a290c3f1bc30a85e67ca18f2bbd3e2cdf":[2,0,37,1]
+"structInputSpongeData.html#aff9684faaf6b3a26494766819e4ba6dd":[2,0,34,2]
 };

@@ -1,6 +1,6 @@
 var classMOSTAverage =
 [
-    [ "MOSTAverage", "classMOSTAverage.html#ae8ede531cb9b0f9b259cfbda17e7d41a", null ],
+    [ "MOSTAverage", "classMOSTAverage.html#a7f93efc44ed61584cada6cdeb7af325f", null ],
     [ "~MOSTAverage", "classMOSTAverage.html#ac755f71a35f1231c8add20993364832a", null ],
     [ "MOSTAverage", "classMOSTAverage.html#acfc77dc21a0821d4b446f7be289c64d6", null ],
     [ "MOSTAverage", "classMOSTAverage.html#add74667e947201bbb2ddf2785f02ee0c", null ],
@@ -51,6 +51,7 @@ var classMOSTAverage =
     [ "m_rotate", "classMOSTAverage.html#a7d43a66f7518f75e694e0582dd40ec44", null ],
     [ "m_t_avg", "classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47", null ],
     [ "m_t_init", "classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c", null ],
+    [ "m_terrain_type", "classMOSTAverage.html#a8b2f4bb5cbc870ec5dee6644c1eed174", null ],
     [ "m_time_window", "classMOSTAverage.html#ac95147c0d7961323ca8b079f63cd4be9", null ],
     [ "m_Vsg", "classMOSTAverage.html#a5dfb4235703aaa2364d49d7fbb8d1512", null ],
     [ "m_x_pos", "classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea", null ],

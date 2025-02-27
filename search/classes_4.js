@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['fitch_2485',['Fitch',['../classFitch.html',1,'']]],
-  ['forestdrag_2486',['ForestDrag',['../classForestDrag.html',1,'']]]
+  ['fitch_2488',['Fitch',['../classFitch.html',1,'']]],
+  ['forestdrag_2489',['ForestDrag',['../classForestDrag.html',1,'']]]
 ];

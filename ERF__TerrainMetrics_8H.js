@@ -22,6 +22,7 @@ var ERF__TerrainMetrics_8H =
     [ "Compute_h_zeta_AtJface", "ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f", null ],
     [ "Compute_h_zeta_AtKface", "ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0", null ],
     [ "Compute_Zrel_AtCellCenter", "ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565", null ],
+    [ "init_default_zphys", "ERF__TerrainMetrics_8H.html#a6fa86eef52ba7908d35320a10e96bd25", null ],
     [ "init_which_terrain_grid", "ERF__TerrainMetrics_8H.html#ac2675c866cd76d03067861a6f79abfc9", null ],
     [ "init_zlevels", "ERF__TerrainMetrics_8H.html#a32b8b3f0c8d28024951dd02521086d3b", null ],
     [ "make_terrain_fitted_coords", "ERF__TerrainMetrics_8H.html#af534c6c9916430a728f3fb33d21b19b3", null ],
