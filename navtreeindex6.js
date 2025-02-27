@@ -1,5 +1,16 @@
 var NAVTREEINDEX6 =
 {
+"classERFPhysBCFunct__v.html#a9e295ac17321f4d577f1d103f6b665a2":[2,0,26,3],
+"classERFPhysBCFunct__v.html#aa17ac5983f98d1b13f952fa7f2c39b54":[2,0,26,11],
+"classERFPhysBCFunct__v.html#adee10e9098b1261837e642a76632c141":[2,0,26,2],
+"classERFPhysBCFunct__v.html#ae26c0b8c1a5145f1e1f2d44717745cfd":[2,0,26,7],
+"classERFPhysBCFunct__v.html#afac2b29228e83f3693609ae1374d91e2":[2,0,26,5],
+"classERFPhysBCFunct__v.html#afd661b649e3fdf8e660145f34370902c":[2,0,26,4],
+"classERFPhysBCFunct__v.html#afffa0e227916c179928f9a3eb7a07c3c":[2,0,26,13],
+"classERFPhysBCFunct__w.html":[2,0,27],
+"classERFPhysBCFunct__w.html#a052d31c743d030292761e95702615467":[2,0,27,7],
+"classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878":[2,0,27,9],
+"classERFPhysBCFunct__w.html#a277641c1cc5a27c2a01e49d21a9c88f4":[2,0,27,10],
 "classERFPhysBCFunct__w.html#a4c66456080eb954ef8c80fc3dcfc4c3a":[2,0,27,13],
 "classERFPhysBCFunct__w.html#a5a2724aec1ad2f9758e5a6ecc67dd55c":[2,0,27,4],
 "classERFPhysBCFunct__w.html#a6e6cdc32da147f7bc00d8c408b5df9a1":[2,0,27,12],
@@ -238,16 +249,5 @@ var NAVTREEINDEX6 =
 "classMOSTAverage.html#ac95147c0d7961323ca8b079f63cd4be9":[2,0,43,52],
 "classMOSTAverage.html#acdc75484e6ed5d2fadfb93573b6dded2":[2,0,43,34],
 "classMOSTAverage.html#acea63f9601c5d2ee2cb21eee27d843fc":[2,0,43,12],
-"classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db":[2,0,43,9],
-"classMOSTAverage.html#acfc77dc21a0821d4b446f7be289c64d6":[2,0,43,2],
-"classMOSTAverage.html#ad100930fbf216f0482922cb62df43432":[2,0,43,24],
-"classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69":[2,0,43,30],
-"classMOSTAverage.html#ad570edb25d41640aa2d52122ae303884":[2,0,43,35],
-"classMOSTAverage.html#add74667e947201bbb2ddf2785f02ee0c":[2,0,43,3],
-"classMOSTAverage.html#ae1d62c88d62bbef8458d0084200f65f2":[2,0,43,29],
-"classMOSTAverage.html#aeac5da9c3972fdde64f60720f88efe2e":[2,0,43,33],
-"classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1":[2,0,43,31],
-"classMOSTAverage.html#aefb42b9f2a5c3347e7ab87abdfcab3d7":[2,0,43,20],
-"classMOSTAverage.html#af2f1477f6bc5e4b2f2ddee27d17dab9f":[2,0,43,58],
-"classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda":[2,0,43,36]
+"classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db":[2,0,43,9]
 };

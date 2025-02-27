@@ -1,5 +1,16 @@
 var NAVTREEINDEX7 =
 {
+"classMOSTAverage.html#acfc77dc21a0821d4b446f7be289c64d6":[2,0,43,2],
+"classMOSTAverage.html#ad100930fbf216f0482922cb62df43432":[2,0,43,24],
+"classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69":[2,0,43,30],
+"classMOSTAverage.html#ad570edb25d41640aa2d52122ae303884":[2,0,43,35],
+"classMOSTAverage.html#add74667e947201bbb2ddf2785f02ee0c":[2,0,43,3],
+"classMOSTAverage.html#ae1d62c88d62bbef8458d0084200f65f2":[2,0,43,29],
+"classMOSTAverage.html#aeac5da9c3972fdde64f60720f88efe2e":[2,0,43,33],
+"classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1":[2,0,43,31],
+"classMOSTAverage.html#aefb42b9f2a5c3347e7ab87abdfcab3d7":[2,0,43,20],
+"classMOSTAverage.html#af2f1477f6bc5e4b2f2ddee27d17dab9f":[2,0,43,58],
+"classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda":[2,0,43,36],
 "classMRISplitIntegrator.html":[2,0,44],
 "classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7":[2,0,44,24],
 "classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80":[2,0,44,37],
@@ -238,16 +249,5 @@ var NAVTREEINDEX7 =
 "classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f":[2,0,56,4],
 "classProblemBase.html#ac458b1e9108b54e2dd1621d6fb7e4de6":[2,0,56,6],
 "classProblemBase.html#ac7201619fcd9464f851b0cae82dfbcd1":[2,0,56,0],
-"classProblemBase.html#ad1a7277d332001542789e488458096b9":[2,0,56,2],
-"classProblemBase.html#ad8f582edde4d124612f67d9d2a17f4a4":[2,0,56,13],
-"classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda":[2,0,56,15],
-"classProblemBase.html#aef7d3d9788867d83e6ec8b2c9499de56":[2,0,56,1],
-"classRadiation.html":[2,0,58],
-"classRadiation.html#a0069d200496f037a5bffa96e4bf9bce0":[2,0,58,63],
-"classRadiation.html#a00ff17c8b2df30603e47749e9ab1b6e9":[2,0,58,143],
-"classRadiation.html#a02dfa61a45d315396aff2cb0fe64bde0":[2,0,58,102],
-"classRadiation.html#a038d9e3ccb7508cd774bd24a24ff2666":[2,0,58,119],
-"classRadiation.html#a040d84b77a2c859600d445c4e0a5dd86":[2,0,58,135],
-"classRadiation.html#a04d51f5c74018101b1eaafb2bf115a17":[2,0,58,115],
-"classRadiation.html#a04e4141569aba776265c5a974ffc76c1":[2,0,58,79]
+"classProblemBase.html#ad1a7277d332001542789e488458096b9":[2,0,56,2]
 };

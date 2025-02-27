@@ -10,9 +10,11 @@ var namespaces_dup =
     [ "BaseState", "namespaceBaseState.html", null ],
     [ "BCVars", "namespaceBCVars.html", null ],
     [ "derived", "namespacederived.html", [
+      [ "erf_derenstrophysq", "namespacederived.html#a9c2ed59aaacbee455c81838aef86035d", null ],
       [ "erf_derKE", "namespacederived.html#aeaeabd5f649796984f61651a6733e96b", null ],
       [ "erf_derKE", "namespacederived.html#acc3f245c73a0826afc9e7626f12126d3", null ],
       [ "erf_dermagvel", "namespacederived.html#a5186c6ea33e82af321f529242a615dc2", null ],
+      [ "erf_dermagvelsq", "namespacederived.html#a9118d89c9fb844952c2cb55661c15a3e", null ],
       [ "erf_dermoisttemp", "namespacederived.html#a7292c8c78a618eb0f6ca6a5356705362", null ],
       [ "erf_dermoisttemp", "namespacederived.html#add1791d7423c133ba6e7ab55975cf34f", null ],
       [ "erf_dernull", "namespacederived.html#a7128ad75cf0f6b317ae8689bd7eb1597", null ],

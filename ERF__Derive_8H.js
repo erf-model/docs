@@ -1,7 +1,9 @@
 var ERF__Derive_8H =
 [
+    [ "erf_derenstrophysq", "ERF__Derive_8H.html#a9c2ed59aaacbee455c81838aef86035d", null ],
     [ "erf_derKE", "ERF__Derive_8H.html#aeaeabd5f649796984f61651a6733e96b", null ],
     [ "erf_dermagvel", "ERF__Derive_8H.html#a5186c6ea33e82af321f529242a615dc2", null ],
+    [ "erf_dermagvelsq", "ERF__Derive_8H.html#a9118d89c9fb844952c2cb55661c15a3e", null ],
     [ "erf_dermoisttemp", "ERF__Derive_8H.html#a7292c8c78a618eb0f6ca6a5356705362", null ],
     [ "erf_dernull", "ERF__Derive_8H.html#a7128ad75cf0f6b317ae8689bd7eb1597", null ],
     [ "erf_derrhodivide", "ERF__Derive_8H.html#a9935603239fe8510b11179da8e76c39c", null ],
