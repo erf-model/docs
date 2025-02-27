@@ -322,7 +322,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;        <span class="comment">// highest is assumed to have no clouds</span></div>
 <div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ilay = 2; ilay &lt;= nlay; ++ilay) {</div>
 <div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;            <span class="comment">// Only do the calculation if certain conditions are met</span></div>
-<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;            <span class="keywordflow">if</span>((<a class="code" href="namespaceMicVar__SatAdj.html#a336ae17bb20723b51885300e0b419db9aea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) + qi(icol, ilay)) &gt; q_threshold &amp;&amp;</div>
+<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;            <span class="keywordflow">if</span>((<a class="code" href="namespaceMicVar__SatAdj.html#aa2fa0da70292a21204aa3cc792b9274faea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) + qi(icol, ilay)) &gt; q_threshold &amp;&amp;</div>
 <div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;               (cldfrac_tot(icol, ilay) &gt; cldfrac_tot_threshold)) {</div>
 <div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;                <span class="comment">/* PART I: Probabilistically determining cloud top */</span></div>
 <div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;                <span class="comment">// Populate aerocom_tmp as the clear-sky fraction</span></div>
@@ -336,7 +336,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;                <span class="comment">// Temporary variable for probability &quot;weights&quot;</span></div>
 <div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;                <span class="keyword">auto</span> aerocom_wts = aerocom_clr(icol) - aerocom_tmp;</div>
 <div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;                <span class="comment">// Temporary variable for liquid &quot;phase&quot;</span></div>
-<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;                <span class="keyword">auto</span> aerocom_phi = <a class="code" href="namespaceMicVar__SatAdj.html#a336ae17bb20723b51885300e0b419db9aea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) / (<a class="code" href="namespaceMicVar__SatAdj.html#a336ae17bb20723b51885300e0b419db9aea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) + qi(icol, ilay));</div>
+<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;                <span class="keyword">auto</span> aerocom_phi = <a class="code" href="namespaceMicVar__SatAdj.html#aa2fa0da70292a21204aa3cc792b9274faea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) / (<a class="code" href="namespaceMicVar__SatAdj.html#aa2fa0da70292a21204aa3cc792b9274faea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) + qi(icol, ilay));</div>
 <div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;                <span class="comment">/* PART II: The inferred properties */</span></div>
 <div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;                <span class="comment">/* In general, converting a 3D property X to a 2D cloud-top</span></div>
 <div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;<span class="comment">                 * counterpart x follows: x(i) += X(i,k) * weights * Phase</span></div>
@@ -374,7 +374,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
 <div class="ttc" id="aERF__OrbCosZenith_8H_html_a11d147c64891830c9e79b3315b1b2e21"><div class="ttname"><a href="ERF__OrbCosZenith_8H.html#a11d147c64891830c9e79b3315b1b2e21">real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> ERF_OrbCosZenith.H:9</div></div>
-<div class="ttc" id="anamespaceMicVar__SatAdj_html_a336ae17bb20723b51885300e0b419db9aea3777efcbbb3712ce373924287c2cb3"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#a336ae17bb20723b51885300e0b419db9aea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:36</div></div>
+<div class="ttc" id="anamespaceMicVar__SatAdj_html_aa2fa0da70292a21204aa3cc792b9274faea3777efcbbb3712ce373924287c2cb3"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#aa2fa0da70292a21204aa3cc792b9274faea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:36</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -790,7 +790,7 @@ template&lt;class T , int myMem, int myStyle&gt; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    });</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_a3e8bdf864aa73d27b5870cf155c3a86aa89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:30</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_a3e8bdf864aa73d27b5870cf155c3a86aa89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a3e8bdf864aa73d27b5870cf155c3a86aa89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:22</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classRadiation.html#a3eab5714d47ed767884a66a8dc1058df">Radiation::run_impl()</a>.</p>
 <div class="dynheader">

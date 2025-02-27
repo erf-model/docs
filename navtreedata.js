@@ -74,19 +74,19 @@ var NAVTREEINDEX =
 [
 "ERFPCEvolve_8cpp.html",
 "ERF__Derive_8H.html#a0a37dd4fa4a044e34891e6222d06654c",
-"ERF__Interpolation_8H.html#a0623363b49ea9794f302ec9e69c525ea",
-"ERF__SAM_8H.html",
-"classABLMost.html#ae28fd8a21f4b514875c24fe4b8e85081",
-"classERF.html#a9faaa96a7c270d2b2b062d9f30f19711",
-"classERFPhysBCFunct__w.html#afcaa9deb9258f849737281efb4327694",
-"classMRISplitIntegrator.html#a51f92090a883eae0fa605c4a0a033311",
-"classRadiation.html#a8cce11b642ac5b7cbc95667a1837a17a",
-"classSimpleAD.html#a04490ef9f591e86588c5bb7870c1b77f",
-"classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65",
-"namespaceVars.html",
-"structPlaneSampler.html",
-"structWENO5.html#a28727bda47dc47677cf20c4d4bbda9a8",
-"structsurface__temp.html#a66e248c3558685f25206441914e8dfbf"
+"ERF__Interpolation_8H.html",
+"ERF__ReadBndryPlanes_8cpp.html",
+"classABLMost.html#acf73526a7a2b05be8d48c0af94742841",
+"classERF.html#a9683c7b07c287e57856ee5a9c99917a1",
+"classERFPhysBCFunct__w.html#a87159676dd29c47ebd69e40b6dda5f1a",
+"classMRISplitIntegrator.html#a14fd551d7a7ff5bf6c58500740a64547",
+"classRadiation.html#a0ef2c70037a73cf3ce0b1c5e27aa4b85",
+"classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a",
+"classeb__aux__.html#aecbc7be6c13d62a9aeb9d14e75003121",
+"globals_func_v.html",
+"structLineSampler.html#a56da044954a236b411c1c52e42338883",
+"structTurbulentPerturbation.html#a7bcb39c84b03deefaa166c89f22c229c",
+"structncutils_1_1NCVar.html#aa5b83489bee14205286a757e0789ddbd"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
