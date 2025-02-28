@@ -147,7 +147,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac233f0c14bd6b340fcd5a14da53b5042 inherit pub_methods_classncutils_1_1NCGroup"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a dimension exists by name.  <a href="classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042">More...</a><br /></td></tr>
 <tr class="separator:ac233f0c14bd6b340fcd5a14da53b5042 inherit pub_methods_classncutils_1_1NCGroup"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8222aa66293539bf13d89804645ceb1 inherit pub_methods_classncutils_1_1NCGroup"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classncutils_1_1NCGroup.html#ac8222aa66293539bf13d89804645ceb1">get_id</a> (const std::string &amp;) const</td></tr>
-<tr class="memdesc:ac8222aa66293539bf13d89804645ceb1 inherit pub_methods_classncutils_1_1NCGroup"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a variable exists by name.  <a href="classncutils_1_1NCGroup.html#ac8222aa66293539bf13d89804645ceb1">More...</a><br /></td></tr>
 <tr class="separator:ac8222aa66293539bf13d89804645ceb1 inherit pub_methods_classncutils_1_1NCGroup"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaad218c7ea51b515386d5f1ce8a90192 inherit pub_methods_classncutils_1_1NCGroup"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192">has_var</a> (const std::string &amp;) const</td></tr>
 <tr class="memdesc:aaad218c7ea51b515386d5f1ce8a90192 inherit pub_methods_classncutils_1_1NCGroup"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a variable exists by name.  <a href="classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192">More...</a><br /></td></tr>
@@ -255,10 +254,10 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;{</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379">is_open</a>) check_nc_error(nc_close(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>));</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;}</div>
-<div class="ttc" id="aclassncutils_1_1NCFile_html_aa98d902ef67803393e80929bb73cb379"><div class="ttname"><a href="classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379">ncutils::NCFile::is_open</a></div><div class="ttdeci">bool is_open</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:312</div></div>
+<div class="fragment"><div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;{</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379">is_open</a>) check_nc_error(nc_close(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>));</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;}</div>
+<div class="ttc" id="aclassncutils_1_1NCFile_html_aa98d902ef67803393e80929bb73cb379"><div class="ttname"><a href="classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379">ncutils::NCFile::is_open</a></div><div class="ttdeci">bool is_open</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:315</div></div>
 <div class="ttc" id="aclassncutils_1_1NCGroup_html_a860fe8aaf1cd7859541c67594fb8eabd"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncutils::NCGroup::ncid</a></div><div class="ttdeci">const int ncid</div><div class="ttdoc">Identifier used with NetCDF API calls.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:190</div></div>
 </div><!-- fragment -->
 </div>
@@ -286,8 +285,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;: <a class="code" href="classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65">NCGroup</a>(<span class="keywordtype">id</span>), <a class="code" href="classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379">is_open</a>{<span class="keyword">true</span>} {}</div>
-<div class="ttc" id="aclassncutils_1_1NCGroup_html_a99e8b68dcdebf6a3df74c3575c3a3c65"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65">ncutils::NCGroup::NCGroup</a></div><div class="ttdeci">NCGroup(const int id)</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:279</div></div>
+<div class="fragment"><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;: <a class="code" href="classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65">NCGroup</a>(<span class="keywordtype">id</span>), <a class="code" href="classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379">is_open</a>{<span class="keyword">true</span>} {}</div>
+<div class="ttc" id="aclassncutils_1_1NCGroup_html_a99e8b68dcdebf6a3df74c3575c3a3c65"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65">ncutils::NCGroup::NCGroup</a></div><div class="ttdeci">NCGroup(const int id)</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:282</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classncutils_1_1NCFile.html#a47bdccee2cc22a735ca715d9c88e4f6b">create()</a>, <a class="el" href="classncutils_1_1NCFile.html#a6607bd5f3f75b451e2436ff713931f19">create_par()</a>, <a class="el" href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885">open()</a>, and <a class="el" href="classncutils_1_1NCFile.html#a4ebf9e1dc5ce07255330478f050e9f1f">open_par()</a>.</p>
 <div class="dynheader">
@@ -322,10 +321,10 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;{</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    <a class="code" href="classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379">is_open</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    check_nc_error(nc_close(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>));</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;{</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <a class="code" href="classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379">is_open</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    check_nc_error(nc_close(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>));</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -362,12 +361,12 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;{</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>;</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    check_nc_error(nc_create(<a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), cmode, &amp;<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>));</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423">NCFile</a>(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>);</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;}</div>
-<div class="ttc" id="aclassncutils_1_1NCFile_html_aec0e1a7f0f93f2f806c0a0abaae66423"><div class="ttname"><a href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423">ncutils::NCFile::NCFile</a></div><div class="ttdeci">NCFile(const int id)</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:310</div></div>
+<div class="fragment"><div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;{</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>;</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    check_nc_error(nc_create(<a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), cmode, &amp;<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>));</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423">NCFile</a>(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>);</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;}</div>
+<div class="ttc" id="aclassncutils_1_1NCFile_html_aec0e1a7f0f93f2f806c0a0abaae66423"><div class="ttname"><a href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423">ncutils::NCFile::NCFile</a></div><div class="ttdeci">NCFile(const int id)</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:313</div></div>
 <div class="ttc" id="aclassncutils_1_1NCGroup_html_a3d53c2f625cc6fc286e76c9137b5b1b0"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">ncutils::NCGroup::name</a></div><div class="ttdeci">std::string name() const</div><div class="ttdoc">Name of this group.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:443</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -427,11 +426,11 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;{</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>;</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    check_nc_error(nc_create_par(<a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), cmode, comm, info, &amp;<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>));</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423">NCFile</a>(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>);</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;{</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>;</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    check_nc_error(nc_create_par(<a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), cmode, comm, info, &amp;<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>));</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423">NCFile</a>(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>);</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -478,11 +477,11 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;{</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>;</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    check_nc_error(nc_open(<a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), cmode, &amp;<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>));</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423">NCFile</a>(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>);</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;{</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>;</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    check_nc_error(nc_open(<a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), cmode, &amp;<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>));</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423">NCFile</a>(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>);</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__NCWpsFile_8H.html#a053a882ba4b357447131554d5ca64848">ReadNetCDFFile()</a>.</p>
 <div class="dynheader">
@@ -553,11 +552,11 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;{</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>;</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    check_nc_error(nc_open_par(<a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), cmode, comm, info, &amp;<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>));</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423">NCFile</a>(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>);</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;{</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>;</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    check_nc_error(nc_open_par(<a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), cmode, comm, info, &amp;<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>));</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423">NCFile</a>(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>);</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
