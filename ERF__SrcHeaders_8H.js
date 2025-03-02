@@ -1,9 +1,9 @@
 var ERF__SrcHeaders_8H =
 [
     [ "add_thin_body_sources", "ERF__SrcHeaders_8H.html#a5b82614fa1590f73caf25dc65b1c937d", null ],
-    [ "ApplySpongeZoneBCsForCC", "ERF__SrcHeaders_8H.html#a2cafd6a78e2987d7566c34f8f1f57cff", null ],
-    [ "ApplySpongeZoneBCsForMom", "ERF__SrcHeaders_8H.html#a0d9796507be7a7f2072d5f15928e05fc", null ],
-    [ "ApplySpongeZoneBCsForMom_ReadFromFile", "ERF__SrcHeaders_8H.html#ae22ef4440a73ae73f46775e3b8f635ac", null ],
+    [ "ApplySpongeZoneBCsForCC", "ERF__SrcHeaders_8H.html#aa8b250f60d9e2ee59cb63e85f8719a06", null ],
+    [ "ApplySpongeZoneBCsForMom", "ERF__SrcHeaders_8H.html#ac6a58618c63dac71ba9fcb8ccb5eecaf", null ],
+    [ "ApplySpongeZoneBCsForMom_ReadFromFile", "ERF__SrcHeaders_8H.html#acb54c33a007d2d0e105102983da18eac", null ],
     [ "make_buoyancy", "ERF__SrcHeaders_8H.html#a558d09c3ede64096bd3e5a792e6424e4", null ],
     [ "make_mom_sources", "ERF__SrcHeaders_8H.html#a9243570136f81cbe41d4051e010d8028", null ],
     [ "make_sources", "ERF__SrcHeaders_8H.html#aae29ae84d140812966e4807c0af64cf0", null ]
