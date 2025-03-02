@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"globals_func_b.html":[3,1,1,1],
 "globals_func_c.html":[3,1,1,2],
 "globals_func_d.html":[3,1,1,3],
 "globals_func_e.html":[3,1,1,4],
@@ -40,8 +41,8 @@ var NAVTREEINDEX11 =
 "globals_y.html":[3,1,0,23],
 "globals_z.html":[3,1,0,24],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31":[2,0,33,1],
 "structInputSoundingData.html#a9cb5ab7b69363eca08231b634e94e109":[2,0,33,16],
 "structInputSoundingData.html#a9f73eb54af79291b72454e2840455b71":[2,0,33,27],
-"structInputSoundingData.html#aa6507429847a67925f1c7562f1c71553":[2,0,33,14],
-"structInputSoundingData.html#ab040f8bf9b86d53f6acda8c10844c20f":[2,0,33,24]
+"structInputSoundingData.html#aa6507429847a67925f1c7562f1c71553":[2,0,33,14]
 };
