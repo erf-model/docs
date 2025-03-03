@@ -85,8 +85,8 @@ var NAVTREEINDEX =
 "classeb__aux__.html",
 "globals_func.html",
 "structInputSoundingData.html#a9f73eb54af79291b72454e2840455b71",
-"structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a",
-"structncutils_1_1NCVar.html#a0a7990c37360c27e7ba2fb47617f5255"
+"structTurbChoice.html#aeb3c184b540858407426a606327fba3a",
+"structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
