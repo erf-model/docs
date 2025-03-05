@@ -465,7 +465,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            {</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <span class="comment">// Short-wavelength and long-wavelength radiation source terms</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                cell_src(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += qheating_arr(i,j,k,0) + qheating_arr(i,j,k,1);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                cell_src(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * ( qheating_arr(i,j,k,0) + qheating_arr(i,j,k,1) );</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            });</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        }</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>

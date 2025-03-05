@@ -11,7 +11,7 @@ var searchData=
   ['netzerobuoyantadd_3418',['netZeroBuoyantAdd',['../structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60',1,'TurbulentPerturbation']]],
   ['netzerobuoyantadjust_3419',['netZeroBuoyantAdjust',['../structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527',1,'TurbulentPerturbation']]],
   ['newton_5fraphson_5fhse_3420',['Newton_Raphson_hse',['../namespaceHSEutils.html#a49a3ecd8dc0be35accd87a453bc1224e',1,'HSEutils']]],
-  ['newtonitersat_3421',['NewtonIterSat',['../classMorrison.html#a9899e6e638c26d33096fd5f40a2f7704',1,'Morrison::NewtonIterSat()'],['../classSAM.html#a0154097dd0c769a35dcc52c484dd0dc6',1,'SAM::NewtonIterSat()'],['../classSatAdj.html#a76548bd9c2adb222480e5f5725a05048',1,'SatAdj::NewtonIterSat()']]],
+  ['newtonitersat_3421',['NewtonIterSat',['../classMorrison.html#a9899e6e638c26d33096fd5f40a2f7704',1,'Morrison::NewtonIterSat()'],['../classSAM.html#ad5815a7090e447ca821df2b09b1ea0f7',1,'SAM::NewtonIterSat()'],['../classSatAdj.html#a76548bd9c2adb222480e5f5725a05048',1,'SatAdj::NewtonIterSat()']]],
   ['nghost_5fbasic_3422',['nghost_basic',['../classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8',1,'eb_']]],
   ['nghost_5feb_5fbasic_3423',['nghost_eb_basic',['../classERF.html#a4601db3087123d6a13e492f742b30d57',1,'ERF']]],
   ['nghost_5feb_5ffull_3424',['nghost_eb_full',['../classERF.html#aae2f7aa83a893d93b92761cd311f4790',1,'ERF']]],
