@@ -207,6 +207,7 @@ var classERF =
     [ "dt_max_initial", "classERF.html#ad4b3bb9d744fb5dde65a21951b86e132", null ],
     [ "dt_mri_ratio", "classERF.html#a3cf7cb2e51eb7b69cb4079ffc6722459", null ],
     [ "dz_min", "classERF.html#a15db5266359edba700f523f16da303a7", null ],
+    [ "eb", "classERF.html#a9f0ec58ae5e9e6b43cce70aa4ce810d7", null ],
     [ "eddyDiffs_lev", "classERF.html#a327d704704abd516be19339cb2d226f9", null ],
     [ "fine_mask", "classERF.html#a83c244120a15f0d9b9bca54e93976428", null ],
     [ "finished_wave", "classERF.html#af282e3bdfdad38a0b898ed567ea446ee", null ],

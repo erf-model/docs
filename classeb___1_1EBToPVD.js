@@ -10,7 +10,7 @@ var classeb___1_1EBToPVD =
     [ "print_grids", "classeb___1_1EBToPVD.html#ab2ac42fa1f3038ae788a7b4a97c0384d", null ],
     [ "print_points", "classeb___1_1EBToPVD.html#a7ea94faf98878c7bec19742be046cc77", null ],
     [ "reorder_polygon", "classeb___1_1EBToPVD.html#a98083be4304f99bb4d84d5612bbd1a20", null ],
-    [ "WriteEBVTP", "classeb___1_1EBToPVD.html#a7019b3b2e812f8c02864ea5ab4ed09ca", null ],
+    [ "WriteEBVTP", "classeb___1_1EBToPVD.html#a0cb35dbe5e0099793c3b4e5f6c6de5cd", null ],
     [ "WritePVTP", "classeb___1_1EBToPVD.html#ac23096a61190ba185bdf10d64c02f2ab", null ],
     [ "m_connectivity", "classeb___1_1EBToPVD.html#ab38e00350c3cd7c11a9f526a878e41ca", null ],
     [ "m_grid", "classeb___1_1EBToPVD.html#a477074d98710b8774cdde2118a92538c", null ],
