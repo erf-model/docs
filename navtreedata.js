@@ -77,16 +77,16 @@ var NAVTREEINDEX =
 "ERF__InputSpongeData_8H_source.html",
 "ERF__RRTMGP__Utils_8H.html#aff494d67f2566f594c5e54f30fce4021",
 "classABLMost.html#ab12af4a41dbc189d69850a81447434f7",
-"classERF.html#a9084860e0049795487636a9e0ccbc89e",
-"classERFPhysBCFunct__v.html#a22e73a039ee130b072f3a9ad079fc160",
-"classMOSTAverage.html#ac95147c0d7961323ca8b079f63cd4be9",
-"classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f",
-"classSAM.html#aee5da977a069c0b9cb98d150027f746c",
-"classeb___1_1EBToPVD.html#ab8e3be6226df0d88e8650addd5d1b5e2",
-"globals_enum.html",
-"structInputSoundingData.html#a7cde9c67da9ade1d385047732b106943",
-"structTurbChoice.html#ac49c18b95424fe04c6a7c8eec934ec36",
-"structncutils_1_1NCDim.html#af22c5abe9e67d9825f372f4102c0c06f"
+"classERF.html#a902f60d94be5eaf86361d1d5ad942105",
+"classERFPhysBCFunct__v.html#a0bc0f76b47d1d805161695e977dad5fb",
+"classMOSTAverage.html#ac5470caa62893417ee6eadc28da3816f",
+"classProblemBase.html#a9ef723333579aac2295b535c79193088",
+"classSAM.html#ae870dc821f7cd01ffc3bfd7925b1d18b",
+"classeb___1_1EBToPVD.html#ab2ac42fa1f3038ae788a7b4a97c0384d",
+"globals_defs.html",
+"structInputSoundingData.html#a704d3ca6f9b6a480ad2f8c5e4b4e32f1",
+"structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304",
+"structncutils_1_1NCDim.html#a3272d1768518ba020b9bcd0d3699d544"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

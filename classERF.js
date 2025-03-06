@@ -369,6 +369,7 @@ var classERF =
     [ "Tau32_lev", "classERF.html#aa650bf1f6885b179fd8d4c24b48668cb", null ],
     [ "Tau33_lev", "classERF.html#a60a185c47f07bf4fb537a15d5a226d8a", null ],
     [ "terrain_blanking", "classERF.html#a4a18cc3befd0911ccb011f9bb3b2efc2", null ],
+    [ "th_bc_data", "classERF.html#a67c86c65b27f8ceee58b5ca989116e14", null ],
     [ "Theta_prim", "classERF.html#a71629ae2fda396472198691b75d83b2e", null ],
     [ "thin_xforce", "classERF.html#a5b9b8d719a87a6940f611c6a30e8ccf5", null ],
     [ "thin_yforce", "classERF.html#a18c1142552120bbd22987f34995ee939", null ],
