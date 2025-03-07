@@ -327,7 +327,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
 <div class="ttc" id="aclasspolygon___html_a20ac05a7f6b1ce01fa1789b0d264dd4f"><div class="ttname"><a href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f">polygon_::ok</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int ok() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:119</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classeb__cut__cell__.html#a8f3ed8e0c96b5b6e44292fa0450e130d">eb_cut_cell_::areaBoun()</a>, <a class="el" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac">get_centroid()</a>, and <a class="el" href="classeb__cut__cell__.html#ad554ff3176ce611cba882fd61246cc60">eb_cut_cell_::volume()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__cut__cell__.html#a8f3ed8e0c96b5b6e44292fa0450e130d">eb_cut_cell_::areaBoun()</a>, <a class="el" href="classeb__cut__cell__.html#ac5eff123e3db45b6b7bf7237a0afc2fc">eb_cut_cell_::centVol()</a>, <a class="el" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac">get_centroid()</a>, and <a class="el" href="classeb__cut__cell__.html#a0b96c29535764e3ab1f8089af487265a">eb_cut_cell_::volume()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -342,16 +342,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpolygon___a63823b326fd4b97b2622be664dedb6d4_icgraph.png" border="0" usemap="#aclasspolygon___a63823b326fd4b97b2622be664dedb6d4_icgraph" alt=""/></div>
 <map name="aclasspolygon___a63823b326fd4b97b2622be664dedb6d4_icgraph" id="aclasspolygon___a63823b326fd4b97b2622be664dedb6d4_icgraph">
-<area shape="rect" title=" " alt="" coords="948,81,1067,108"/>
-<area shape="rect" href="classeb__cut__cell__.html#a8f3ed8e0c96b5b6e44292fa0450e130d" title=" " alt="" coords="728,5,900,32"/>
-<area shape="rect" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac" title=" " alt="" coords="729,81,899,108"/>
-<area shape="rect" href="classeb__cut__cell__.html#ad554ff3176ce611cba882fd61246cc60" title=" " alt="" coords="735,157,893,184"/>
-<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="337,31,461,57"/>
-<area shape="rect" href="classeb__.html#a23b6714671a3fbd23623753fbe5184ad" title=" " alt="" coords="147,31,289,57"/>
-<area shape="rect" href="classeb__.html#a2888567cad2fc0e89060094a589ce214" title=" " alt="" coords="5,31,99,57"/>
-<area shape="rect" href="classeb__cut__cell__.html#a80da66e8132ed7235d083a40375ff37c" title=" " alt="" coords="509,31,680,57"/>
-<area shape="rect" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8" title=" " alt="" coords="530,81,659,108"/>
-<area shape="rect" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9" title=" " alt="" coords="531,132,659,159"/>
+<area shape="rect" title=" " alt="" coords="948,144,1067,170"/>
+<area shape="rect" href="classeb__cut__cell__.html#a8f3ed8e0c96b5b6e44292fa0450e130d" title=" " alt="" coords="728,30,900,57"/>
+<area shape="rect" href="classeb__cut__cell__.html#ac5eff123e3db45b6b7bf7237a0afc2fc" title=" " alt="" coords="515,194,674,221"/>
+<area shape="rect" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac" title=" " alt="" coords="729,118,899,145"/>
+<area shape="rect" href="classeb__cut__cell__.html#a0b96c29535764e3ab1f8089af487265a" title=" " alt="" coords="735,220,893,246"/>
+<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="337,169,461,196"/>
+<area shape="rect" href="classeb__.html#a23b6714671a3fbd23623753fbe5184ad" title=" " alt="" coords="147,169,289,196"/>
+<area shape="rect" href="classeb__.html#a2888567cad2fc0e89060094a589ce214" title=" " alt="" coords="5,169,99,196"/>
+<area shape="rect" href="classeb__cut__cell__.html#a80da66e8132ed7235d083a40375ff37c" title=" " alt="" coords="509,144,680,170"/>
+<area shape="rect" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8" title=" " alt="" coords="530,42,659,69"/>
+<area shape="rect" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9" title=" " alt="" coords="531,93,659,120"/>
 </map>
 </div>
 
@@ -489,15 +490,16 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <span class="keywordflow">return</span> amrex::Math::abs(x0.dotProduct(<a class="code" href="classpolygon__.html#af9569a9cee1fabb0f38dfad19fa0b3f8">m_zdir</a>));</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9">report()</a>, and <a class="el" href="classeb__cut__cell__.html#ad554ff3176ce611cba882fd61246cc60">eb_cut_cell_::volume()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9">report()</a>, and <a class="el" href="classeb__cut__cell__.html#a0b96c29535764e3ab1f8089af487265a">eb_cut_cell_::volume()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpolygon___a558e318b4655635bf2a4f9b21bc2674a_icgraph.png" border="0" usemap="#aclasspolygon___a558e318b4655635bf2a4f9b21bc2674a_icgraph" alt=""/></div>
 <map name="aclasspolygon___a558e318b4655635bf2a4f9b21bc2674a_icgraph" id="aclasspolygon___a558e318b4655635bf2a4f9b21bc2674a_icgraph">
-<area shape="rect" title=" " alt="" coords="716,31,860,57"/>
-<area shape="rect" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9" title=" " alt="" coords="525,5,653,32"/>
-<area shape="rect" href="classeb__cut__cell__.html#ad554ff3176ce611cba882fd61246cc60" title=" " alt="" coords="509,56,668,83"/>
+<area shape="rect" title=" " alt="" coords="923,31,1067,57"/>
+<area shape="rect" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9" title=" " alt="" coords="731,5,859,32"/>
+<area shape="rect" href="classeb__cut__cell__.html#a0b96c29535764e3ab1f8089af487265a" title=" " alt="" coords="716,56,875,83"/>
+<area shape="rect" href="classeb__cut__cell__.html#ac5eff123e3db45b6b7bf7237a0afc2fc" title=" " alt="" coords="509,31,668,57"/>
 <area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="337,56,461,83"/>
 <area shape="rect" href="classeb__.html#a23b6714671a3fbd23623753fbe5184ad" title=" " alt="" coords="147,56,289,83"/>
 <area shape="rect" href="classeb__.html#a2888567cad2fc0e89060094a589ce214" title=" " alt="" coords="5,56,99,83"/>
@@ -550,7 +552,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
 <div class="ttc" id="aclasspolygon___html_a63823b326fd4b97b2622be664dedb6d4"><div class="ttname"><a href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4">polygon_::area</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real area() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:123</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classeb__cut__cell__.html#a80da66e8132ed7235d083a40375ff37c">eb_cut_cell_::centBoun()</a>, <a class="el" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8">define()</a>, and <a class="el" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9">report()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeb__cut__cell__.html#a80da66e8132ed7235d083a40375ff37c">eb_cut_cell_::centBoun()</a>, <a class="el" href="classeb__cut__cell__.html#ac5eff123e3db45b6b7bf7237a0afc2fc">eb_cut_cell_::centVol()</a>, <a class="el" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8">define()</a>, and <a class="el" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9">report()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -566,13 +568,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_icgraph.png" border="0" usemap="#aclasspolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_icgraph" alt=""/></div>
 <map name="aclasspolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_icgraph" id="aclasspolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_icgraph">
-<area shape="rect" title=" " alt="" coords="728,56,899,83"/>
+<area shape="rect" title=" " alt="" coords="728,81,899,108"/>
 <area shape="rect" href="classeb__cut__cell__.html#a80da66e8132ed7235d083a40375ff37c" title=" " alt="" coords="509,5,680,32"/>
-<area shape="rect" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8" title=" " alt="" coords="530,56,659,83"/>
-<area shape="rect" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9" title=" " alt="" coords="531,107,659,133"/>
-<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="337,5,461,32"/>
-<area shape="rect" href="classeb__.html#a23b6714671a3fbd23623753fbe5184ad" title=" " alt="" coords="147,5,289,32"/>
-<area shape="rect" href="classeb__.html#a2888567cad2fc0e89060094a589ce214" title=" " alt="" coords="5,5,99,32"/>
+<area shape="rect" href="classeb__cut__cell__.html#ac5eff123e3db45b6b7bf7237a0afc2fc" title=" " alt="" coords="515,56,674,83"/>
+<area shape="rect" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8" title=" " alt="" coords="530,107,659,133"/>
+<area shape="rect" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9" title=" " alt="" coords="531,157,659,184"/>
+<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="337,31,461,57"/>
+<area shape="rect" href="classeb__.html#a23b6714671a3fbd23623753fbe5184ad" title=" " alt="" coords="147,31,289,57"/>
+<area shape="rect" href="classeb__.html#a2888567cad2fc0e89060094a589ce214" title=" " alt="" coords="5,31,99,57"/>
 </map>
 </div>
 
@@ -630,23 +633,24 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    { <span class="keywordflow">return</span> ((<a class="code" href="classpolygon__.html#a156f350b46e9dfd7439e3cbb2c690b4e">m_area</a> &gt; 0. || (<a class="code" href="classpolygon__.html#a156f350b46e9dfd7439e3cbb2c690b4e">m_area</a> == 0. &amp;&amp; <a class="code" href="classpolygon__.html#a0a63e984b9b965787959eecffd2dfb97">m_defined</a> == 1)) ? 1 : 0); }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4">area()</a>, <a class="el" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9">report()</a>, and <a class="el" href="classeb__cut__cell__.html#ad554ff3176ce611cba882fd61246cc60">eb_cut_cell_::volume()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4">area()</a>, <a class="el" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9">report()</a>, and <a class="el" href="classeb__cut__cell__.html#a0b96c29535764e3ab1f8089af487265a">eb_cut_cell_::volume()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpolygon___a20ac05a7f6b1ce01fa1789b0d264dd4f_icgraph.png" border="0" usemap="#aclasspolygon___a20ac05a7f6b1ce01fa1789b0d264dd4f_icgraph" alt=""/></div>
 <map name="aclasspolygon___a20ac05a7f6b1ce01fa1789b0d264dd4f_icgraph" id="aclasspolygon___a20ac05a7f6b1ce01fa1789b0d264dd4f_icgraph">
-<area shape="rect" title=" " alt="" coords="1115,56,1220,83"/>
-<area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="948,107,1067,133"/>
-<area shape="rect" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9" title=" " alt="" coords="531,56,659,83"/>
-<area shape="rect" href="classeb__cut__cell__.html#ad554ff3176ce611cba882fd61246cc60" title=" " alt="" coords="735,5,893,32"/>
-<area shape="rect" href="classeb__cut__cell__.html#a8f3ed8e0c96b5b6e44292fa0450e130d" title=" " alt="" coords="728,183,900,209"/>
+<area shape="rect" title=" " alt="" coords="1115,132,1220,159"/>
+<area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="948,132,1067,159"/>
+<area shape="rect" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9" title=" " alt="" coords="531,5,659,32"/>
+<area shape="rect" href="classeb__cut__cell__.html#a0b96c29535764e3ab1f8089af487265a" title=" " alt="" coords="735,208,893,235"/>
+<area shape="rect" href="classeb__cut__cell__.html#a8f3ed8e0c96b5b6e44292fa0450e130d" title=" " alt="" coords="728,56,900,83"/>
+<area shape="rect" href="classeb__cut__cell__.html#ac5eff123e3db45b6b7bf7237a0afc2fc" title=" " alt="" coords="515,208,674,235"/>
 <area shape="rect" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac" title=" " alt="" coords="729,107,899,133"/>
-<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="337,107,461,133"/>
-<area shape="rect" href="classeb__.html#a23b6714671a3fbd23623753fbe5184ad" title=" " alt="" coords="147,107,289,133"/>
-<area shape="rect" href="classeb__.html#a2888567cad2fc0e89060094a589ce214" title=" " alt="" coords="5,107,99,133"/>
-<area shape="rect" href="classeb__cut__cell__.html#a80da66e8132ed7235d083a40375ff37c" title=" " alt="" coords="509,107,680,133"/>
-<area shape="rect" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8" title=" " alt="" coords="530,157,659,184"/>
+<area shape="rect" href="classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a" title=" " alt="" coords="337,183,461,209"/>
+<area shape="rect" href="classeb__.html#a23b6714671a3fbd23623753fbe5184ad" title=" " alt="" coords="147,183,289,209"/>
+<area shape="rect" href="classeb__.html#a2888567cad2fc0e89060094a589ce214" title=" " alt="" coords="5,183,99,209"/>
+<area shape="rect" href="classeb__cut__cell__.html#a80da66e8132ed7235d083a40375ff37c" title=" " alt="" coords="509,157,680,184"/>
+<area shape="rect" href="classpolygon__.html#ac30eafa3d2fcdf357082dda5a53a03a8" title=" " alt="" coords="530,107,659,133"/>
 </map>
 </div>
 

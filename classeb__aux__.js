@@ -8,6 +8,7 @@ var classeb__aux__ =
     [ "getBndryCent", "classeb__aux__.html#a85b90f178a3b3204c9b6b60569f3bcf0", null ],
     [ "getBndryNorm", "classeb__aux__.html#aecbc7be6c13d62a9aeb9d14e75003121", null ],
     [ "getFaceCent", "classeb__aux__.html#abd85bc238892ce8c7176b739b5d80fef", null ],
+    [ "getVolCent", "classeb__aux__.html#adff9f13ee882099d2489635e9a927748", null ],
     [ "getVolFrac", "classeb__aux__.html#a8fa82793a77e8a7c97a94f58ad617b34", null ],
     [ "set_verbose", "classeb__aux__.html#a6cf718854c86282eefcdd32c3a9e40cd", null ],
     [ "m_areafrac", "classeb__aux__.html#ab655fed42c3e1ec76000601b299b428b", null ],
@@ -17,5 +18,6 @@ var classeb__aux__ =
     [ "m_cellflags", "classeb__aux__.html#a5c0a48220b066b1aae77df9fd93bd941", null ],
     [ "m_facecent", "classeb__aux__.html#ae06eb43494ff5cf88d3b5f12092671f5", null ],
     [ "m_verbose", "classeb__aux__.html#a8ae8f5c65d8f24092095ba0058293864", null ],
+    [ "m_volcent", "classeb__aux__.html#accbe4a4534a20eb1b054e817aea0d0e4", null ],
     [ "m_volfrac", "classeb__aux__.html#a982bec8ebf44ae49614d4246cc396608", null ]
 ];

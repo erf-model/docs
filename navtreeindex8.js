@@ -1,5 +1,10 @@
 var NAVTREEINDEX8 =
 {
+"classProblemBase.html#a53293c82c3265faecaae170bcdde443f":[2,0,56,14],
+"classProblemBase.html#a6752f5d7122d68914e67896d21db6c43":[2,0,56,8],
+"classProblemBase.html#a6a5f24caf2ce8eaf89097520455c70e4":[2,0,56,7],
+"classProblemBase.html#a7ca260b5527bb1ecbae0aa78897dd666":[2,0,56,11],
+"classProblemBase.html#a8d354473db4a51e21149d110a41fbccc":[2,0,56,10],
 "classProblemBase.html#a9ef723333579aac2295b535c79193088":[2,0,56,12],
 "classProblemBase.html#aaf5cb14c8033c99df446fd943b1f2216":[2,0,56,3],
 "classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f":[2,0,56,4],
@@ -244,10 +249,5 @@ var NAVTREEINDEX8 =
 "classSAM.html#aaa3dd79bbd6ac41ae1170d003b1a423d":[2,0,61,52],
 "classSAM.html#aad8c4616221c01599e4e32f2ebb08698":[2,0,61,26],
 "classSAM.html#aaf2fc082e80f1c5cc9de339ff25ca27b":[2,0,61,56],
-"classSAM.html#ab22f37f1f2b5d72ee2d20af56a29fc40":[2,0,61,25],
-"classSAM.html#aba6460f2d34882d6b512574106e44531":[2,0,61,8],
-"classSAM.html#aba750ad815594f21255d26d24810d3fe":[2,0,61,17],
-"classSAM.html#ac7854fbde48bad0aadc203adcb1508a5":[2,0,61,15],
-"classSAM.html#ad5815a7090e447ca821df2b09b1ea0f7":[2,0,61,11],
-"classSAM.html#ae27c1d50525a70f838fa9ba73e61ef46":[2,0,61,16]
+"classSAM.html#ab22f37f1f2b5d72ee2d20af56a29fc40":[2,0,61,25]
 };
