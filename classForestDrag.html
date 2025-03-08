@@ -111,8 +111,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a122891e509293a8cce46fe26ef94caca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf2562ce29faa67b57b82a5998df3a95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForestDrag.html#acf2562ce29faa67b57b82a5998df3a95">~ForestDrag</a> ()=default</td></tr>
 <tr class="separator:acf2562ce29faa67b57b82a5998df3a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf4abd455b45d7a38422ffe2dc7b499f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForestDrag.html#adf4abd455b45d7a38422ffe2dc7b499f">define_drag_field</a> (const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dm, amrex::Geometry &amp;geom, amrex::MultiFab *z_phys_nd)</td></tr>
-<tr class="separator:adf4abd455b45d7a38422ffe2dc7b499f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fcf74c4d037087a18ffe0be8b3e3694"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForestDrag.html#a9fcf74c4d037087a18ffe0be8b3e3694">define_drag_field</a> (const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dm, amrex::Geometry &amp;geom, amrex::MultiFab *z_phys_cc)</td></tr>
+<tr class="separator:a9fcf74c4d037087a18ffe0be8b3e3694"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbfaec28be888963879442d65e61839c"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForestDrag.html#abbfaec28be888963879442d65e61839c">get_drag_field</a> ()</td></tr>
 <tr class="separator:abbfaec28be888963879442d65e61839c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -218,8 +218,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="adf4abd455b45d7a38422ffe2dc7b499f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf4abd455b45d7a38422ffe2dc7b499f">&#9670;&nbsp;</a></span>define_drag_field()</h2>
+<a id="a9fcf74c4d037087a18ffe0be8b3e3694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fcf74c4d037087a18ffe0be8b3e3694">&#9670;&nbsp;</a></span>define_drag_field()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +246,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::MultiFab *&#160;</td>
-          <td class="paramname"><em>z_phys_nd</em>&#160;</td>
+          <td class="paramname"><em>z_phys_cc</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -267,8 +267,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classForestDrag.html#acb32d6e1088af2621a723601500db7b3">m_forest_drag</a>-&gt;setVal(0.);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Loop over forest types and pre-compute factors</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> ii = 0; ii &lt; <a class="code" href="classForestDrag.html#a6f6067a4f71428c8ab3039240a3207e4">m_x_forest</a>.size(); ++ii) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> ii = 0; ii &lt; <a class="code" href="classForestDrag.html#a6f6067a4f71428c8ab3039240a3207e4">m_x_forest</a>.size(); ++ii)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">// Expose CPU data for GPU capture</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        Real af; <span class="comment">// Depends upon the type of forest (tf)</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        Real treeZm = 0.0; <span class="comment">// Only for forest type 2</span></div>
@@ -309,49 +309,41 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="classForestDrag.html#acb32d6e1088af2621a723601500db7b3">m_forest_drag</a>); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            Box gtbx = mfi.growntilebox();</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; levelDrag  = <a class="code" href="classForestDrag.html#acb32d6e1088af2621a723601500db7b3">m_forest_drag</a>-&gt;array(mfi);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd = (z_phys_nd) ? z_phys_nd-&gt;const_array(mfi) :</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                           Array4&lt;const Real&gt;{};</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            ParallelFor(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="comment">// Physical positions of cell-centers</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = prob_lo[0] + (i + 0.5) * dx[0];</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = prob_lo[1] + (j + 0.5) * dx[1];</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                      Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = prob_lo[2] + (k + 0.5) * dx[2];</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordflow">if</span> (z_nd) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = 0.125 * ( z_nd(i  ,j  ,k  ) + z_nd(i+1,j  ,k  )</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                + z_nd(i  ,j+1,k  ) + z_nd(i+1,j+1,k  )</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                + z_nd(i  ,j  ,k+1) + z_nd(i+1,j  ,k+1)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                + z_nd(i  ,j+1,k+1) + z_nd(i+1,j+1,k+1) );</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = std::max(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>,0.0);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="comment">// Proximity to the forest</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keyword">const</span> Real radius = std::sqrt((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - xf) * (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - xf) +</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                              (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> - yf) * (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> - yf));</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="comment">// Hit for canopy region</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                Real factor = 1;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">if</span> ((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt;= hf) &amp;&amp; (radius &lt;= (0.5 * df))) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    <span class="keywordflow">if</span> (tf == 2) {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                        Real ratio = (hf - treeZm) / (hf - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt; treeZm) {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                            factor = std::pow(ratio, 6.0) *</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                     std::exp(6.0 * (1.0 - ratio));</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt;= hf) {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                            factor = std::pow(ratio, 0.5) *</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                     std::exp(0.5 * (1.0 - ratio));</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                        }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    levelDrag(i, j, k) = cdf * af * factor;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            });</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    } <span class="comment">// ii (forest type)</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// Fillboundary for periodic ghost cell copy</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="classForestDrag.html#acb32d6e1088af2621a723601500db7b3">m_forest_drag</a>-&gt;FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;} <span class="comment">// init_drag_field</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_cc = z_phys_cc-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            ParallelFor(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="comment">// Physical positions of cell-centers</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = prob_lo[0] + (i + 0.5) * dx[0];</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = prob_lo[1] + (j + 0.5) * dx[1];</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = std::max(z_cc(i,j,k),0.0);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="comment">// Proximity to the forest</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keyword">const</span> Real radius = std::sqrt((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - xf) * (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - xf) +</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                              (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> - yf) * (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> - yf));</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="comment">// Hit for canopy region</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                Real factor = 1;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">if</span> ((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt;= hf) &amp;&amp; (radius &lt;= (0.5 * df))) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    <span class="keywordflow">if</span> (tf == 2) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                        Real ratio = (hf - treeZm) / (hf - <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt; treeZm) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                            factor = std::pow(ratio, 6.0) *</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                     std::exp(6.0 * (1.0 - ratio));</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> &lt;= hf) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                            factor = std::pow(ratio, 0.5) *</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                     std::exp(0.5 * (1.0 - ratio));</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                        }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    levelDrag(i, j, k) = cdf * af * factor;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            });</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    } <span class="comment">// ii (forest type)</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// Fillboundary for periodic ghost cell copy</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="classForestDrag.html#acb32d6e1088af2621a723601500db7b3">m_forest_drag</a>-&gt;FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;} <span class="comment">// init_drag_field</span></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
