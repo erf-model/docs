@@ -44,6 +44,7 @@ var ERF__IndexDefines_8H =
       [ "symmetry", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a40e712f30d56083318ab20a2402921d2", null ],
       [ "inflow", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9ad37e67db17cfd059f2852e2673b9e8ef", null ],
       [ "outflow", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acac0c32caf84a889ec9b2b4cb2d56972", null ],
+      [ "inflow_outflow", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9aa9725058404b592f304cb28626db99ab", null ],
       [ "ho_outflow", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a7a78e4cea7eaa21ad14a6fa92fbdc549", null ],
       [ "open", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a7cef8a734855777c2a9d0caf42666e69", null ],
       [ "no_slip_wall", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3", null ],
@@ -65,6 +66,7 @@ var ERF__IndexDefines_8H =
       [ "neumann", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60", null ],
       [ "neumann_int", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9", null ],
       [ "open", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914", null ],
-      [ "hoextrapcc", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca71e344f745a7b29eb00c25df691f410d", null ]
+      [ "hoextrapcc", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca71e344f745a7b29eb00c25df691f410d", null ],
+      [ "ext_dir_upwind", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d", null ]
     ] ]
 ];

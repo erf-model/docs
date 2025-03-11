@@ -1,12 +1,14 @@
 var NAVTREEINDEX11 =
 {
+"functions_vars_y.html":[2,3,2,23],
+"functions_vars_z.html":[2,3,2,24],
 "functions_w.html":[2,3,0,21],
 "functions_x.html":[2,3,0,22],
 "functions_y.html":[2,3,0,23],
 "functions_z.html":[2,3,0,24],
 "functions_~.html":[2,3,0,25],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -58,8 +60,8 @@ var NAVTREEINDEX11 =
 "globals_y.html":[3,1,0,23],
 "globals_z.html":[3,1,0,24],
 "hierarchy.html":[2,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -84,6 +86,7 @@ var NAVTREEINDEX11 =
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca52a76d5c6aeb74655f726be3ae8a1eab":[1,0,6,0,7],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca5e7251ff4badd9a198c0601a7929b1c4":[1,0,6,0,0],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca71e344f745a7b29eb00c25df691f410d":[1,0,6,0,12],
+"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d":[1,0,6,0,13],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca9f18284526a1054d4e7a4783852ead30":[1,0,6,0,2],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9":[1,0,6,0,10],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9":[1,0,6,0,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX11 =
 "structInputSoundingData.html":[2,0,33],
 "structInputSoundingData.html#a00054ef7905b250d663dd8c9d69a112e":[2,0,33,21],
 "structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa":[2,0,33,13],
-"structInputSoundingData.html#a0db7861e0fee3f8f0760c6685df3176f":[2,0,33,11],
-"structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8":[2,0,33,2],
-"structInputSoundingData.html#a15782809644a4daa0e8de9c3cc4c346a":[2,0,33,22],
-"structInputSoundingData.html#a30ed369fe55e1a25d9f1e871c70506d0":[2,0,33,12]
+"structInputSoundingData.html#a0db7861e0fee3f8f0760c6685df3176f":[2,0,33,11]
 };
