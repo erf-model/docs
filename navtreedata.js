@@ -76,17 +76,17 @@ var NAVTREEINDEX =
 "ERF__Derive_8H.html#a0a37dd4fa4a044e34891e6222d06654c",
 "ERF__InitWindFarm_8cpp.html",
 "ERF__RRTMGP__Interface_8cpp.html#ad8e77738714ea055005897bd76f6eabb",
-"classABLMost.html#aaa5bbc610662825ddd8a184b43f3541b",
-"classERF.html#a8bfff875038f8c24055067117e192960",
-"classERFPhysBCFunct__u.html#a90c9e642d2c31bc2245cf57f3fb4adc8",
-"classMOSTAverage.html#a94ece9d178d0e85296cce07bab556bc7",
-"classProblemBase.html#a1c41568b22a4f37247d816a8d20b0757",
-"classSAM.html#aaf2fc082e80f1c5cc9de339ff25ca27b",
-"classeb___1_1EBToPVD.html#a38d099c7ef5299011a8d2951874931e0",
-"functions_vars_y.html",
-"structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8",
-"structTurbChoice.html#a475d862a63ab672577fc2429f535feb9",
-"structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b"
+"classABLMost.html#aa6c480227398080885f5bd48466c71e0",
+"classERF.html#a89f605d1a1eae06a7c79f9b6b65c637f",
+"classERFPhysBCFunct__u.html#a3b17acdd618c58f48856b4fa7a35abfc",
+"classMOSTAverage.html#a89b9ec10eb8dee9a8be7c9597a3f5008",
+"classPlaneAverage.html#ae359b042dfa8a0b951a3d34706c3c385",
+"classSAM.html#a927f4531f9c2452e5b7fc7ab965c5b78",
+"classeb__.html#af5283f2e5aabd1f57e89ca2d9fe10be6",
+"functions_vars_s.html",
+"structDirectionSelector_3_012_01_4.html",
+"structTurbChoice.html#a0bb2b38f64a12b0b50552e05dee629e7",
+"structmost__data.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
