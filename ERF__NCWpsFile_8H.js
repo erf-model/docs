@@ -15,5 +15,6 @@ var ERF__NCWpsFile_8H =
     [ "BuildFABsFromNetCDFFile", "ERF__NCWpsFile_8H.html#a4498010c6623fa41ffa2ac0dd60184e2", null ],
     [ "BuildFABsFromWRFBdyFile", "ERF__NCWpsFile_8H.html#aae7cfa7d43851de007130e9a44b7f1c0", null ],
     [ "fill_fab_from_arrays", "ERF__NCWpsFile_8H.html#a5fbca9044ab6c565786cf158ff9a6c0f", null ],
-    [ "ReadNetCDFFile", "ERF__NCWpsFile_8H.html#a053a882ba4b357447131554d5ca64848", null ]
+    [ "ReadNetCDFFile", "ERF__NCWpsFile_8H.html#a053a882ba4b357447131554d5ca64848", null ],
+    [ "ReadTimeSliceFromNetCDFFile", "ERF__NCWpsFile_8H.html#ae91c399cd5b8eec700dd4d66d62954d1", null ]
 ];

@@ -1,5 +1,9 @@
 var NAVTREEINDEX6 =
 {
+"classERFPhysBCFunct__u.html":[2,0,25],
+"classERFPhysBCFunct__u.html#a02e58c56eb025621156c134d7782e495":[2,0,25,0],
+"classERFPhysBCFunct__u.html#a12a1e078b61a3e00958bf0f3f69bfe5f":[2,0,25,9],
+"classERFPhysBCFunct__u.html#a24b743a8e87bbc7ff9a62c2abbe2b28c":[2,0,25,5],
 "classERFPhysBCFunct__u.html#a3b17acdd618c58f48856b4fa7a35abfc":[2,0,25,8],
 "classERFPhysBCFunct__u.html#a4a1ce4ec8f730cb61568aee6eceefe1f":[2,0,25,12],
 "classERFPhysBCFunct__u.html#a5b9cbbd733227f1cad1032feb2f93efe":[2,0,25,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX6 =
 "classMOSTAverage.html#a5d4563f98ba7112ceb8be723f1799b7a":[2,0,43,15],
 "classMOSTAverage.html#a5dfb4235703aaa2364d49d7fbb8d1512":[2,0,43,53],
 "classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9":[2,0,43,13],
-"classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277":[2,0,43,47],
-"classMOSTAverage.html#a7d43a66f7518f75e694e0582dd40ec44":[2,0,43,48],
-"classMOSTAverage.html#a7f93efc44ed61584cada6cdeb7af325f":[2,0,43,0],
-"classMOSTAverage.html#a81ad3bc2787e30025f8bee91bc5c9dc2":[2,0,43,43],
-"classMOSTAverage.html#a81ff1b7e8d026f0cd74147cbcc016d15":[2,0,43,57]
+"classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277":[2,0,43,47]
 };

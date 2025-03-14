@@ -237,8 +237,8 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;: <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>(<span class="keywordtype">id</span>) {}</div>
-<div class="ttc" id="aclassncutils_1_1NCGroup_html_a860fe8aaf1cd7859541c67594fb8eabd"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncutils::NCGroup::ncid</a></div><div class="ttdeci">const int ncid</div><div class="ttdoc">Identifier used with NetCDF API calls.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:190</div></div>
+<div class="fragment"><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;: <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>(<span class="keywordtype">id</span>) {}</div>
+<div class="ttc" id="aclassncutils_1_1NCGroup_html_a860fe8aaf1cd7859541c67594fb8eabd"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncutils::NCGroup::ncid</a></div><div class="ttdeci">const int ncid</div><div class="ttdoc">Identifier used with NetCDF API calls.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:193</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333">group()</a>.</p>
 <div class="dynheader">
@@ -286,7 +286,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;: <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>(<span class="keywordtype">id</span>) {}</div>
+<div class="fragment"><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;: <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>(<span class="keywordtype">id</span>) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -307,16 +307,16 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return a list of all dimensions defined in this group. </p>
-<div class="fragment"><div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;{</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    std::vector&lt;NCDim&gt; adims;</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    <span class="keywordtype">int</span> ndims = <a class="code" href="classncutils_1_1NCGroup.html#a44b1b3b0a86df383ffa6ab4e68a7dea6">num_dimensions</a>();</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    adims.reserve(ndims);</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ndims; ++i) {</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        adims.emplace_back(NCDim{<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, i});</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    }</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    <span class="keywordflow">return</span> adims;</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;}</div>
-<div class="ttc" id="aclassncutils_1_1NCGroup_html_a44b1b3b0a86df383ffa6ab4e68a7dea6"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a44b1b3b0a86df383ffa6ab4e68a7dea6">ncutils::NCGroup::num_dimensions</a></div><div class="ttdeci">int num_dimensions() const</div><div class="ttdoc">Number of dimensions in this group.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:511</div></div>
+<div class="fragment"><div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;{</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    std::vector&lt;NCDim&gt; adims;</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <span class="keywordtype">int</span> ndims = <a class="code" href="classncutils_1_1NCGroup.html#a44b1b3b0a86df383ffa6ab4e68a7dea6">num_dimensions</a>();</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    adims.reserve(ndims);</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ndims; ++i) {</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        adims.emplace_back(NCDim{<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, i});</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    }</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="keywordflow">return</span> adims;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;}</div>
+<div class="ttc" id="aclassncutils_1_1NCGroup_html_a44b1b3b0a86df383ffa6ab4e68a7dea6"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a44b1b3b0a86df383ffa6ab4e68a7dea6">ncutils::NCGroup::num_dimensions</a></div><div class="ttdeci">int num_dimensions() const</div><div class="ttdoc">Number of dimensions in this group.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:532</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -345,21 +345,21 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return a list of all groups defined in this group. </p>
-<div class="fragment"><div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;{</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    std::vector&lt;NCGroup&gt; grps;</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordtype">int</span> ngrps = <a class="code" href="classncutils_1_1NCGroup.html#a4efddc44f72cc32a58849982bb7e8bce">num_groups</a>();</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <span class="comment">// Empty list of groups return early without error</span></div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="keywordflow">if</span> (ngrps &lt; 1) <span class="keywordflow">return</span> grps;</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160; </div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    std::vector&lt;int&gt; gids(ngrps);</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    check_nc_error(nc_inq_grps(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, &amp;ngrps, gids.data()));</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    grps.reserve(ngrps);</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ngrps; ++i) grps.emplace_back(<a class="code" href="classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65">NCGroup</a>(gids[i], <span class="keyword">this</span>));</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <span class="keywordflow">return</span> grps;</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;}</div>
-<div class="ttc" id="aclassncutils_1_1NCGroup_html_a4efddc44f72cc32a58849982bb7e8bce"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a4efddc44f72cc32a58849982bb7e8bce">ncutils::NCGroup::num_groups</a></div><div class="ttdeci">int num_groups() const</div><div class="ttdoc">Number of sub-groups within this group.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:504</div></div>
-<div class="ttc" id="aclassncutils_1_1NCGroup_html_a99e8b68dcdebf6a3df74c3575c3a3c65"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65">ncutils::NCGroup::NCGroup</a></div><div class="ttdeci">NCGroup(const int id)</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:282</div></div>
+<div class="fragment"><div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;{</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    std::vector&lt;NCGroup&gt; grps;</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <span class="keywordtype">int</span> ngrps = <a class="code" href="classncutils_1_1NCGroup.html#a4efddc44f72cc32a58849982bb7e8bce">num_groups</a>();</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160; </div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    <span class="comment">// Empty list of groups return early without error</span></div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    <span class="keywordflow">if</span> (ngrps &lt; 1) <span class="keywordflow">return</span> grps;</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; </div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    std::vector&lt;int&gt; gids(ngrps);</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    check_nc_error(nc_inq_grps(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, &amp;ngrps, gids.data()));</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    grps.reserve(ngrps);</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ngrps; ++i) grps.emplace_back(<a class="code" href="classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65">NCGroup</a>(gids[i], <span class="keyword">this</span>));</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    <span class="keywordflow">return</span> grps;</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;}</div>
+<div class="ttc" id="aclassncutils_1_1NCGroup_html_a4efddc44f72cc32a58849982bb7e8bce"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a4efddc44f72cc32a58849982bb7e8bce">ncutils::NCGroup::num_groups</a></div><div class="ttdeci">int num_groups() const</div><div class="ttdoc">Number of sub-groups within this group.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:525</div></div>
+<div class="ttc" id="aclassncutils_1_1NCGroup_html_a99e8b68dcdebf6a3df74c3575c3a3c65"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65">ncutils::NCGroup::NCGroup</a></div><div class="ttdeci">NCGroup(const int id)</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:285</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -388,17 +388,17 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Return a list of all variables defined in this group. </p>
-<div class="fragment"><div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;{</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    std::vector&lt;NCVar&gt; avars;</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a> = <a class="code" href="classncutils_1_1NCGroup.html#a4721cc36bd0f188be0250112329d3ba1">num_variables</a>();</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    avars.reserve(<a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>);</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>; ++i) {</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;        avars.emplace_back(NCVar{<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, i});</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    }</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <span class="keywordflow">return</span> avars;</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;{</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    std::vector&lt;NCVar&gt; avars;</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a> = <a class="code" href="classncutils_1_1NCGroup.html#a4721cc36bd0f188be0250112329d3ba1">num_variables</a>();</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    avars.reserve(<a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>);</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>; ++i) {</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        avars.emplace_back(NCVar{<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, i});</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    }</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="keywordflow">return</span> avars;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39"><div class="ttname"><a href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a></div><div class="ttdeci">@ nvars</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:74</div></div>
-<div class="ttc" id="aclassncutils_1_1NCGroup_html_a4721cc36bd0f188be0250112329d3ba1"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a4721cc36bd0f188be0250112329d3ba1">ncutils::NCGroup::num_variables</a></div><div class="ttdeci">int num_variables() const</div><div class="ttdoc">Number of variables within this group.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:525</div></div>
+<div class="ttc" id="aclassncutils_1_1NCGroup_html_a4721cc36bd0f188be0250112329d3ba1"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a4721cc36bd0f188be0250112329d3ba1">ncutils::NCGroup::num_variables</a></div><div class="ttdeci">int num_variables() const</div><div class="ttdoc">Number of variables within this group.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:546</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -444,17 +444,17 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Define an array. </p>
-<div class="fragment"><div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;{</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="keywordtype">int</span> newid;</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <span class="keywordtype">int</span> ndims = dnames.size();</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    std::vector&lt;int&gt; dimids(ndims);</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ndims; ++i) dimids[i] = <a class="code" href="classncutils_1_1NCGroup.html#addc8bbac9a2cfa8d9c49497b7da0310f">dim</a>(dnames[i]).<a class="code" href="structncutils_1_1NCDim.html#a1c5560c95be35dbcedaf1390972175f8">dimid</a>;</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160; </div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    check_nc_error(</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        nc_def_var(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), dtype, ndims, dimids.data(), &amp;newid));</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;}</div>
-<div class="ttc" id="aclassncutils_1_1NCGroup_html_a3d53c2f625cc6fc286e76c9137b5b1b0"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">ncutils::NCGroup::name</a></div><div class="ttdeci">std::string name() const</div><div class="ttdoc">Name of this group.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:443</div></div>
-<div class="ttc" id="aclassncutils_1_1NCGroup_html_addc8bbac9a2cfa8d9c49497b7da0310f"><div class="ttname"><a href="classncutils_1_1NCGroup.html#addc8bbac9a2cfa8d9c49497b7da0310f">ncutils::NCGroup::dim</a></div><div class="ttdeci">NCDim dim(const std::string &amp;) const</div><div class="ttdoc">Get the dimension instance by name.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:470</div></div>
+<div class="fragment"><div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;{</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    <span class="keywordtype">int</span> newid;</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keywordtype">int</span> ndims = dnames.size();</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    std::vector&lt;int&gt; dimids(ndims);</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ndims; ++i) dimids[i] = <a class="code" href="classncutils_1_1NCGroup.html#addc8bbac9a2cfa8d9c49497b7da0310f">dim</a>(dnames[i]).<a class="code" href="structncutils_1_1NCDim.html#a1c5560c95be35dbcedaf1390972175f8">dimid</a>;</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160; </div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    check_nc_error(</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        nc_def_var(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), dtype, ndims, dimids.data(), &amp;newid));</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;}</div>
+<div class="ttc" id="aclassncutils_1_1NCGroup_html_a3d53c2f625cc6fc286e76c9137b5b1b0"><div class="ttname"><a href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">ncutils::NCGroup::name</a></div><div class="ttdeci">std::string name() const</div><div class="ttdoc">Name of this group.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:464</div></div>
+<div class="ttc" id="aclassncutils_1_1NCGroup_html_addc8bbac9a2cfa8d9c49497b7da0310f"><div class="ttname"><a href="classncutils_1_1NCGroup.html#addc8bbac9a2cfa8d9c49497b7da0310f">ncutils::NCGroup::dim</a></div><div class="ttdeci">NCDim dim(const std::string &amp;) const</div><div class="ttdoc">Get the dimension instance by name.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:491</div></div>
 <div class="ttc" id="astructncutils_1_1NCDim_html_a1c5560c95be35dbcedaf1390972175f8"><div class="ttname"><a href="structncutils_1_1NCDim.html#a1c5560c95be35dbcedaf1390972175f8">ncutils::NCDim::dimid</a></div><div class="ttdeci">const int dimid</div><div class="ttdoc">Dimension ID used with NetCDF API.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.H:42</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classncutils_1_1NCGroup.html#ae640d6aef18835f643e3cbaacb43e682">def_var()</a>.</p>
@@ -507,11 +507,11 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Define new dimension. </p>
-<div class="fragment"><div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;{</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    <span class="keywordtype">int</span> newid;</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    check_nc_error(nc_def_dim(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), len, &amp;newid));</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <span class="comment">// NCDim{ncid, newid};</span></div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;{</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    <span class="keywordtype">int</span> newid;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    check_nc_error(nc_def_dim(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), len, &amp;newid));</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="comment">// NCDim{ncid, newid};</span></div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -565,10 +565,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Define a variable (wrapper for def_array) </p>
-<div class="fragment"><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <a class="code" href="classncutils_1_1NCGroup.html#acf969a6598527e2d00a84d35e0522fa1">def_array</a>(<a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>, dtype, dnames);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
-<div class="ttc" id="aclassncutils_1_1NCGroup_html_acf969a6598527e2d00a84d35e0522fa1"><div class="ttname"><a href="classncutils_1_1NCGroup.html#acf969a6598527e2d00a84d35e0522fa1">ncutils::NCGroup::def_array</a></div><div class="ttdeci">void def_array(const std::string &amp;name, nc_type dtype, const std::vector&lt; std::string &gt; &amp;) const</div><div class="ttdoc">Define an array.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:484</div></div>
+<div class="fragment"><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    {</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <a class="code" href="classncutils_1_1NCGroup.html#acf969a6598527e2d00a84d35e0522fa1">def_array</a>(<a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>, dtype, dnames);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    }</div>
+<div class="ttc" id="aclassncutils_1_1NCGroup_html_acf969a6598527e2d00a84d35e0522fa1"><div class="ttname"><a href="classncutils_1_1NCGroup.html#acf969a6598527e2d00a84d35e0522fa1">ncutils::NCGroup::def_array</a></div><div class="ttdeci">void def_array(const std::string &amp;name, nc_type dtype, const std::vector&lt; std::string &gt; &amp;) const</div><div class="ttdoc">Define an array.</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:505</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -600,11 +600,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Get the dimension instance by name. </p>
-<div class="fragment"><div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;{</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="keywordtype">int</span> newid;</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    check_nc_error(nc_inq_dimid(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;newid));</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <span class="keywordflow">return</span> NCDim{<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, newid};</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;{</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="keywordtype">int</span> newid;</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    check_nc_error(nc_inq_dimid(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;newid));</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="keywordflow">return</span> NCDim{<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, newid};</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classncutils_1_1NCGroup.html#acf969a6598527e2d00a84d35e0522fa1">def_array()</a>.</p>
 <div class="dynheader">
@@ -645,15 +645,15 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Enter definition mode (not needed for NetCDF4 format) </p>
-<div class="fragment"><div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;{</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <span class="keywordtype">int</span> ierr;</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    ierr = nc_redef(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>);</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160; </div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <span class="comment">// Ignore already in define mode error</span></div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <span class="keywordflow">if</span> (ierr == NC_EINDEFINE) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="comment">// Handle all other errors</span></div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    check_nc_error(ierr);</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;{</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <span class="keywordtype">int</span> ierr;</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    ierr = nc_redef(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>);</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160; </div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="comment">// Ignore already in define mode error</span></div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="keywordflow">if</span> (ierr == NC_EINDEFINE) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="comment">// Handle all other errors</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    check_nc_error(ierr);</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -673,7 +673,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Exit definition mode. </p>
-<div class="fragment"><div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;{ check_nc_error(nc_enddef(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>)); }</div>
+<div class="fragment"><div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;{ check_nc_error(nc_enddef(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>)); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -693,14 +693,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Full name for this group. </p>
-<div class="fragment"><div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;{</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    <span class="keywordtype">size_t</span> nlen;</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    std::vector&lt;char&gt; grpname;</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    check_nc_error(nc_inq_grpname_full(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, &amp;nlen, <span class="keyword">nullptr</span>));</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    grpname.resize(nlen);</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    check_nc_error(nc_inq_grpname_full(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, &amp;nlen, grpname.data()));</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    <span class="keywordflow">return</span> std::string{grpname.begin(), grpname.end()};</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;{</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <span class="keywordtype">size_t</span> nlen;</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    std::vector&lt;char&gt; grpname;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    check_nc_error(nc_inq_grpname_full(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, &amp;nlen, <span class="keyword">nullptr</span>));</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    grpname.resize(nlen);</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    check_nc_error(nc_inq_grpname_full(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, &amp;nlen, grpname.data()));</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <span class="keywordflow">return</span> std::string{grpname.begin(), grpname.end()};</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -719,14 +719,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;{</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    std::vector&lt;char&gt; aval;</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;lenp));</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    aval.resize(lenp);</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    check_nc_error(nc_get_att_text(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), aval.data()));</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="keywordflow">return</span> std::string{aval.begin(), aval.end()};</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;{</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    std::vector&lt;char&gt; aval;</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;lenp));</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    aval.resize(lenp);</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    check_nc_error(nc_get_att_text(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), aval.data()));</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="keywordflow">return</span> std::string{aval.begin(), aval.end()};</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -764,13 +764,13 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;{</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;lenp));</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    values.resize(lenp);</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    check_nc_error(</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        nc_get_att_double(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), values.data()));</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;{</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;lenp));</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    values.resize(lenp);</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    check_nc_error(</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        nc_get_att_double(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), values.data()));</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -808,13 +808,13 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;{</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;lenp));</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    values.resize(lenp);</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    check_nc_error(</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        nc_get_att_float(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), values.data()));</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;{</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;lenp));</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    values.resize(lenp);</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    check_nc_error(</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        nc_get_att_float(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), values.data()));</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -852,12 +852,12 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;{</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;lenp));</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    values.resize(lenp);</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    check_nc_error(nc_get_att_int(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), values.data()));</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;{</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    check_nc_error(nc_inq_attlen(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;lenp));</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    values.resize(lenp);</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    check_nc_error(nc_get_att_int(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), values.data()));</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -887,14 +887,14 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Return id of variable by name</p>
 <p>Throws error if variable does not exist, use 'has_var' to check </p>
-<div class="fragment"><div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;{</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <span class="keywordtype">int</span> temp_id = 0;</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <span class="keywordtype">int</span> ierr = nc_inq_varid (<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;temp_id);</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <span class="keywordflow">if</span> (ierr == NC_ENOTVAR) {</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;NetCDF variable &#39;&quot;</span> + <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a> + <span class="stringliteral">&quot;&#39; does not exist&quot;</span>);</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    }</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    <span class="keywordflow">return</span> temp_id;</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;{</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="keywordtype">int</span> temp_id = 0;</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <span class="keywordtype">int</span> ierr = nc_inq_varid (<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;temp_id);</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    <span class="keywordflow">if</span> (ierr == NC_ENOTVAR) {</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;NetCDF variable &#39;&quot;</span> + <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a> + <span class="stringliteral">&quot;&#39; does not exist&quot;</span>);</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    }</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <span class="keywordflow">return</span> temp_id;</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -924,11 +924,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Get the group by name</p>
 <p>Throws error if the group doesn't exist, use <code>has_group</code> to check </p>
-<div class="fragment"><div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;{</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    <span class="keywordtype">int</span> newid;</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    check_nc_error(nc_inq_ncid(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;newid));</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65">NCGroup</a>(newid, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;{</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <span class="keywordtype">int</span> newid;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    check_nc_error(nc_inq_ncid(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;newid));</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classncutils_1_1NCGroup.html#a99e8b68dcdebf6a3df74c3575c3a3c65">NCGroup</a>(newid, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -959,12 +959,12 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Check if an attribute exists. </p>
-<div class="fragment"><div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;{</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="keywordtype">int</span> ierr;</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    ierr = nc_inq_att(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), <span class="keyword">nullptr</span>, &amp;lenp);</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    <span class="keywordflow">return</span> (ierr == NC_NOERR);</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;{</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="keywordtype">int</span> ierr;</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="keywordtype">size_t</span> lenp;</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    ierr = nc_inq_att(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), <span class="keyword">nullptr</span>, &amp;lenp);</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="keywordflow">return</span> (ierr == NC_NOERR);</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -994,10 +994,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Check if a dimension exists by name. </p>
-<div class="fragment"><div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;{</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <span class="keywordtype">int</span> ierr = nc_inq_dimid(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="keywordflow">return</span> (ierr == NC_NOERR);</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;{</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <span class="keywordtype">int</span> ierr = nc_inq_dimid(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="keywordflow">return</span> (ierr == NC_NOERR);</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1027,10 +1027,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Check if a group exists. </p>
-<div class="fragment"><div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;{</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="keywordtype">int</span> ierr = nc_inq_ncid(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    <span class="keywordflow">return</span> (ierr == NC_NOERR);</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;{</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keywordtype">int</span> ierr = nc_inq_ncid(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    <span class="keywordflow">return</span> (ierr == NC_NOERR);</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1060,11 +1060,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Check if a variable exists by name. </p>
-<div class="fragment"><div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;{</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    <span class="keywordtype">int</span> rh_id = 0;</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    <span class="keywordtype">int</span> ierr = nc_inq_varid(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;rh_id);</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <span class="keywordflow">return</span> (ierr  == NC_NOERR);</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;{</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="keywordtype">int</span> rh_id = 0;</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <span class="keywordtype">int</span> ierr = nc_inq_varid(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;rh_id);</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <span class="keywordflow">return</span> (ierr  == NC_NOERR);</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1093,14 +1093,14 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Name of this group. </p>
-<div class="fragment"><div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;{</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keywordtype">size_t</span> nlen;</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    std::vector&lt;char&gt; grpname;</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    check_nc_error(nc_inq_grpname_len(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, &amp;nlen));</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    grpname.resize(nlen + 1);</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    check_nc_error(nc_inq_grpname(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, grpname.data()));</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keywordflow">return</span> std::string{grpname.begin(), grpname.end()};</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;{</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    <span class="keywordtype">size_t</span> nlen;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    std::vector&lt;char&gt; grpname;</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    check_nc_error(nc_inq_grpname_len(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, &amp;nlen));</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    grpname.resize(nlen + 1);</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    check_nc_error(nc_inq_grpname(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, grpname.data()));</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="keywordflow">return</span> std::string{grpname.begin(), grpname.end()};</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classncutils_1_1NCFile.html#a47bdccee2cc22a735ca715d9c88e4f6b">ncutils::NCFile::create()</a>, <a class="el" href="classncutils_1_1NCFile.html#a6607bd5f3f75b451e2436ff713931f19">ncutils::NCFile::create_par()</a>, <a class="el" href="classncutils_1_1NCGroup.html#acf969a6598527e2d00a84d35e0522fa1">def_array()</a>, <a class="el" href="classncutils_1_1NCGroup.html#a8c9376a217f29012f565a13f131bea84">def_dim()</a>, <a class="el" href="classncutils_1_1NCGroup.html#ae640d6aef18835f643e3cbaacb43e682">def_var()</a>, <a class="el" href="classncutils_1_1NCGroup.html#addc8bbac9a2cfa8d9c49497b7da0310f">dim()</a>, <a class="el" href="classncutils_1_1NCGroup.html#a2f10bc405d66f794c4e8a8fd71dc718d">get_attr()</a>, <a class="el" href="classncutils_1_1NCGroup.html#ac8222aa66293539bf13d89804645ceb1">get_id()</a>, <a class="el" href="classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333">group()</a>, <a class="el" href="classncutils_1_1NCGroup.html#a1bfb961e66e7c635ae92cee3f8cdeeac">has_attr()</a>, <a class="el" href="classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042">has_dim()</a>, <a class="el" href="classncutils_1_1NCGroup.html#a00ea1ccd06adafc43396239ec842b23f">has_group()</a>, <a class="el" href="classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192">has_var()</a>, <a class="el" href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885">ncutils::NCFile::open()</a>, <a class="el" href="classncutils_1_1NCFile.html#a4ebf9e1dc5ce07255330478f050e9f1f">ncutils::NCFile::open_par()</a>, <a class="el" href="classncutils_1_1NCGroup.html#acf73ea254afaf7d74596fa07523b322f">put_attr()</a>, and <a class="el" href="classncutils_1_1NCGroup.html#a79bef315da5cff7bcf8bbcfbdd122115">var()</a>.</p>
 <div class="dynheader">
@@ -1108,26 +1108,27 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classncutils_1_1NCGroup_a3d53c2f625cc6fc286e76c9137b5b1b0_icgraph.png" border="0" usemap="#aclassncutils_1_1NCGroup_a3d53c2f625cc6fc286e76c9137b5b1b0_icgraph" alt=""/></div>
 <map name="aclassncutils_1_1NCGroup_a3d53c2f625cc6fc286e76c9137b5b1b0_icgraph" id="aclassncutils_1_1NCGroup_a3d53c2f625cc6fc286e76c9137b5b1b0_icgraph">
-<area shape="rect" title="Name of this group." alt="" coords="696,411,872,437"/>
-<area shape="rect" href="classncutils_1_1NCFile.html#a47bdccee2cc22a735ca715d9c88e4f6b" title=" " alt="" coords="469,5,633,32"/>
-<area shape="rect" href="classncutils_1_1NCFile.html#a6607bd5f3f75b451e2436ff713931f19" title=" " alt="" coords="455,56,647,83"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#acf969a6598527e2d00a84d35e0522fa1" title="Define an array." alt="" coords="245,158,405,199"/>
+<area shape="rect" title="Name of this group." alt="" coords="761,411,937,437"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#a47bdccee2cc22a735ca715d9c88e4f6b" title=" " alt="" coords="534,5,698,32"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#a6607bd5f3f75b451e2436ff713931f19" title=" " alt="" coords="520,56,712,83"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#acf969a6598527e2d00a84d35e0522fa1" title="Define an array." alt="" coords="278,158,438,199"/>
 <area shape="rect" href="classncutils_1_1NCGroup.html#ae640d6aef18835f643e3cbaacb43e682" title="Define a variable (wrapper for def_array)" alt="" coords="7,136,195,163"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#a8c9376a217f29012f565a13f131bea84" title="Define new dimension." alt="" coords="455,208,647,235"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#addc8bbac9a2cfa8d9c49497b7da0310f" title="Get the dimension instance by name." alt="" coords="469,259,633,285"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#a2f10bc405d66f794c4e8a8fd71dc718d" title=" " alt="" coords="455,309,646,336"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#ac8222aa66293539bf13d89804645ceb1" title=" " alt="" coords="461,360,640,387"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333" title=" " alt="" coords="463,411,639,437"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#a1bfb961e66e7c635ae92cee3f8cdeeac" title="Check if an attribute exists." alt="" coords="455,461,647,488"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042" title="Check if a dimension exists by name." alt="" coords="453,512,648,539"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#a00ea1ccd06adafc43396239ec842b23f" title="Check if a group exists." alt="" coords="469,563,632,605"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192" title="Check if a variable exists by name." alt="" coords="455,629,646,656"/>
-<area shape="rect" href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885" title=" " alt="" coords="473,680,628,707"/>
-<area shape="rect" href="classncutils_1_1NCFile.html#a4ebf9e1dc5ce07255330478f050e9f1f" title=" " alt="" coords="459,731,642,757"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#acf73ea254afaf7d74596fa07523b322f" title=" " alt="" coords="455,781,646,808"/>
-<area shape="rect" href="classncutils_1_1NCGroup.html#a79bef315da5cff7bcf8bbcfbdd122115" title="Get the variable instance by name." alt="" coords="471,832,631,859"/>
-<area shape="rect" href="ERF__NCWpsFile_8H.html#a053a882ba4b357447131554d5ca64848" title=" " alt="" coords="261,680,389,707"/>
-<area shape="rect" href="ERF__NCWpsFile_8H.html#a4498010c6623fa41ffa2ac0dd60184e2" title=" " alt="" coords="5,680,197,707"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#a8c9376a217f29012f565a13f131bea84" title="Define new dimension." alt="" coords="520,208,712,235"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#addc8bbac9a2cfa8d9c49497b7da0310f" title="Get the dimension instance by name." alt="" coords="534,259,698,285"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#a2f10bc405d66f794c4e8a8fd71dc718d" title=" " alt="" coords="521,309,711,336"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#ac8222aa66293539bf13d89804645ceb1" title=" " alt="" coords="527,360,705,387"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#a757c592cddc2272a86033fe888232333" title=" " alt="" coords="528,411,704,437"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#a1bfb961e66e7c635ae92cee3f8cdeeac" title="Check if an attribute exists." alt="" coords="520,461,712,488"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042" title="Check if a dimension exists by name." alt="" coords="519,512,713,539"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#a00ea1ccd06adafc43396239ec842b23f" title="Check if a group exists." alt="" coords="535,563,697,605"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192" title="Check if a variable exists by name." alt="" coords="521,629,711,656"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#a2881b70e450e11f01b474c538b8d6885" title=" " alt="" coords="539,680,693,707"/>
+<area shape="rect" href="classncutils_1_1NCFile.html#a4ebf9e1dc5ce07255330478f050e9f1f" title=" " alt="" coords="525,731,707,757"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#acf73ea254afaf7d74596fa07523b322f" title=" " alt="" coords="521,781,711,808"/>
+<area shape="rect" href="classncutils_1_1NCGroup.html#a79bef315da5cff7bcf8bbcfbdd122115" title="Get the variable instance by name." alt="" coords="536,832,696,859"/>
+<area shape="rect" href="ERF__NCWpsFile_8H.html#a053a882ba4b357447131554d5ca64848" title=" " alt="" coords="294,655,422,681"/>
+<area shape="rect" href="ERF__NCWpsFile_8H.html#ae91c399cd5b8eec700dd4d66d62954d1" title=" " alt="" coords="245,705,471,732"/>
+<area shape="rect" href="ERF__NCWpsFile_8H.html#a4498010c6623fa41ffa2ac0dd60184e2" title=" " alt="" coords="5,655,197,681"/>
 </map>
 </div>
 
@@ -1149,11 +1150,11 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Number of attributes within this group. </p>
-<div class="fragment"><div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;{</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <span class="keywordtype">int</span> nattrs;</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    check_nc_error(nc_inq(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, &amp;nattrs, <span class="keyword">nullptr</span>));</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keywordflow">return</span> nattrs;</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;{</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="keywordtype">int</span> nattrs;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    check_nc_error(nc_inq(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, &amp;nattrs, <span class="keyword">nullptr</span>));</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <span class="keywordflow">return</span> nattrs;</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1173,11 +1174,11 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Number of dimensions in this group. </p>
-<div class="fragment"><div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;{</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <span class="keywordtype">int</span> ndims;</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    check_nc_error(nc_inq(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, &amp;ndims, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>));</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <span class="keywordflow">return</span> ndims;</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;{</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="keywordtype">int</span> ndims;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    check_nc_error(nc_inq(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, &amp;ndims, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>));</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <span class="keywordflow">return</span> ndims;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classncutils_1_1NCGroup.html#a8e01fe072fa48f4fa9c8be33a3a401b0">all_dims()</a>.</p>
 <div class="dynheader">
@@ -1208,11 +1209,11 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Number of sub-groups within this group. </p>
-<div class="fragment"><div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;{</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="keywordtype">int</span> ngrps;</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    check_nc_error(nc_inq_grps(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, &amp;ngrps, <span class="keyword">nullptr</span>));</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="keywordflow">return</span> ngrps;</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;{</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <span class="keywordtype">int</span> ngrps;</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    check_nc_error(nc_inq_grps(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, &amp;ngrps, <span class="keyword">nullptr</span>));</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="keywordflow">return</span> ngrps;</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classncutils_1_1NCGroup.html#a82a48643f27b33b27cdd87c60e63f5f5">all_groups()</a>.</p>
 <div class="dynheader">
@@ -1243,11 +1244,11 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Number of variables within this group. </p>
-<div class="fragment"><div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;{</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>;</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    check_nc_error(nc_inq(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <span class="keyword">nullptr</span>, &amp;<a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>));</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>;</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;{</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>;</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    check_nc_error(nc_inq(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <span class="keyword">nullptr</span>, &amp;<a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>));</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>;</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classncutils_1_1NCGroup.html#affa2e62434110dd4fa47d093162e56cf">all_vars()</a>.</p>
 <div class="dynheader">
@@ -1287,10 +1288,10 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;{</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    check_nc_error(nc_put_att_text(</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), value.size(), value.data()));</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;{</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    check_nc_error(nc_put_att_text(</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), value.size(), value.data()));</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1328,10 +1329,10 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;{</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    check_nc_error(nc_put_att_double(</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), NC_DOUBLE, value.size(), value.data()));</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;{</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    check_nc_error(nc_put_att_double(</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), NC_DOUBLE, value.size(), value.data()));</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1369,10 +1370,10 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;{</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    check_nc_error(nc_put_att_float(</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), NC_FLOAT, value.size(), value.data()));</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;{</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    check_nc_error(nc_put_att_float(</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), NC_FLOAT, value.size(), value.data()));</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1410,10 +1411,10 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;{</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    check_nc_error(nc_put_att_int(</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), NC_INT, value.size(), value.data()));</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;{</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    check_nc_error(nc_put_att_int(</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        <a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, NC_GLOBAL, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), NC_INT, value.size(), value.data()));</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1443,11 +1444,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Get the variable instance by name. </p>
-<div class="fragment"><div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;{</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordtype">int</span> varid;</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    check_nc_error(nc_inq_varid(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;varid));</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <span class="keywordflow">return</span> NCVar{<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, varid};</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;{</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <span class="keywordtype">int</span> varid;</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    check_nc_error(nc_inq_varid(<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, <a class="code" href="classncutils_1_1NCGroup.html#a3d53c2f625cc6fc286e76c9137b5b1b0">name</a>.data(), &amp;varid));</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keywordflow">return</span> NCVar{<a class="code" href="classncutils_1_1NCGroup.html#a860fe8aaf1cd7859541c67594fb8eabd">ncid</a>, varid};</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

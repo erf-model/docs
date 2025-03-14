@@ -1,5 +1,6 @@
 var structncutils_1_1NCVar =
 [
+    [ "dimnames", "structncutils_1_1NCVar.html#abb1bb14e34a0cfef21a3a5572f9d446a", null ],
     [ "get", "structncutils_1_1NCVar.html#a7fe596943d518530da29a356d393090d", null ],
     [ "get", "structncutils_1_1NCVar.html#ad73293d8faae951e5f91cc3ba49d0f8c", null ],
     [ "get", "structncutils_1_1NCVar.html#ac88fd209afde1f05e4f8f62e4c628bba", null ],
