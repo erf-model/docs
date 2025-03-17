@@ -20343,7 +20343,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Box domain(geom[lev_for_sub].Domain());</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    Box bx(IntVect(i0,j0,k0),IntVect(i0+ncell[0],j0+ncell[1],k0+ncell[2]));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    Box bx(IntVect(i0,j0,k0),IntVect(i0+ncell[0]-1,j0+ncell[1]-1,k0+ncell[2]-1));</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Box requested is &quot;</span> &lt;&lt; bx &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (!domain.contains(bx))</div>
