@@ -61,6 +61,7 @@ var namespaces_dup =
     ] ],
     [ "IntVars", "namespaceIntVars.html", null ],
     [ "LsmVar_MM5", "namespaceLsmVar__MM5.html", null ],
+    [ "LsmVar_NOAH", "namespaceLsmVar__NOAH.html", null ],
     [ "LsmVar_SLM", "namespaceLsmVar__SLM.html", null ],
     [ "MetGridBdyVars", "namespaceMetGridBdyVars.html", null ],
     [ "MicVar", "namespaceMicVar.html", null ],

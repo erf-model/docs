@@ -2013,10 +2013,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  amrex::Real v = (k == 0) ? 1.5 * (0.5*(v_arr(i,j,k)+v_arr(i,j+1,k))) - 0.5*(0.5*(v_arr(i,j,k+1)+v_arr(i,j+1,k+1))) :</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    0.25 * ( v_arr(i,j,k-1) + v_arr(i,j+1,k-1) + v_arr(i,j,k) + v_arr(i,j+1,k) );</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  amrex::Real <a class="code" href="namespaceMicVar__Morr.html#a0e6d3e48831ed5f94c7f1bd17f3d5ec4a93264ee6dc9b23e994674a68250a2f16">omega</a> =  w - met_zlo_xi * u - met_zlo_eta * v;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar__Morr.html#a0e6d3e48831ed5f94c7f1bd17f3d5ec4a93264ee6dc9b23e994674a68250a2f16">omega</a>;</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  amrex::Real <a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a93264ee6dc9b23e994674a68250a2f16">omega</a> =  w - met_zlo_xi * u - met_zlo_eta * v;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a93264ee6dc9b23e994674a68250a2f16">omega</a>;</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;}</div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a0e6d3e48831ed5f94c7f1bd17f3d5ec4a93264ee6dc9b23e994674a68250a2f16"><div class="ttname"><a href="namespaceMicVar__Morr.html#a0e6d3e48831ed5f94c7f1bd17f3d5ec4a93264ee6dc9b23e994674a68250a2f16">MicVar_Morr::omega</a></div><div class="ttdeci">@ omega</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:45</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a3bbcd161d5650f41b41f14a1977ee2a0a93264ee6dc9b23e994674a68250a2f16"><div class="ttname"><a href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a93264ee6dc9b23e994674a68250a2f16">MicVar_Morr::omega</a></div><div class="ttdeci">@ omega</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:45</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__FastRhs__MT_8cpp.html#af5d569dbe264703bf1e1c6ae59d14b4c">erf_fast_rhs_MT()</a>, <a class="el" href="ERF__FastRhs__T_8cpp.html#a83ebca7dc0d4507076941aa3a971e877">erf_fast_rhs_T()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#a7a7d71e3e796b67737a6931399588ae8">erf_make_tau_terms()</a>, and <a class="el" href="ERF__SlowRhsPre_8cpp.html#a89177637ddacf44609b00a4fa9798de6">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
@@ -2430,7 +2430,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    ( z_nd(i+1,j+1,k  ) + z_nd(i  ,j+1,k  )    <span class="comment">// hi j, lo k</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;     -z_nd(i+1,j  ,k  ) - z_nd(i  ,j  ,k  ) ); <span class="comment">// lo j, lo k</span></div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;  amrex::Real w = <a class="code" href="namespaceMicVar__Morr.html#a0e6d3e48831ed5f94c7f1bd17f3d5ec4a93264ee6dc9b23e994674a68250a2f16">omega</a> + met_zlo_xi * u + met_zlo_eta * v;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;  amrex::Real w = <a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a93264ee6dc9b23e994674a68250a2f16">omega</a> + met_zlo_xi * u + met_zlo_eta * v;</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;  <span class="keywordflow">return</span> w;</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;}</div>
 </div><!-- fragment -->
@@ -2521,7 +2521,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;  amrex::Real v = (k == 0) ? 1.5 * (0.5*(v_arr(i,j,k)+v_arr(i,j+1,k))) - 0.5*(0.5*(v_arr(i,j,k+1)+v_arr(i,j+1,k+1))) :</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    0.25 * ( v_arr(i,j,k-1) + v_arr(i,j+1,k-1) + v_arr(i,j,k) + v_arr(i,j+1,k) );</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160; </div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;  amrex::Real w = <a class="code" href="ERF__TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a>(i,j,k,<a class="code" href="namespaceMicVar__Morr.html#a0e6d3e48831ed5f94c7f1bd17f3d5ec4a93264ee6dc9b23e994674a68250a2f16">omega</a>,u,v,z_nd,dxInv);</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;  amrex::Real w = <a class="code" href="ERF__TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a>(i,j,k,<a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a93264ee6dc9b23e994674a68250a2f16">omega</a>,u,v,z_nd,dxInv);</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;  <span class="keywordflow">return</span> w;</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;}</div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a53ec395d493c2308315f7512c5438087"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a53ec395d493c2308315f7512c5438087">WFromOmega</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real WFromOmega(int i, int j, int k, amrex::Real omega, amrex::Real u, amrex::Real v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:414</div></div>
