@@ -34,7 +34,7 @@ var searchData=
   ['boltz_146',['boltz',['../ERF__Constants_8H.html#a6700ceab4c13f15657c8137f8dd8c039',1,'ERF_Constants.H']]],
   ['boxes_5fat_5flevel_147',['boxes_at_level',['../classERF.html#a050dbd236c9bf246554a53008e09f683',1,'ERF']]],
   ['br_5fshift_148',['br_shift',['../ERF__WriteBndryPlanes_8cpp.html#a84c19e5c5555fe13da12dc8ba44e7da8',1,'ERF_WriteBndryPlanes.cpp']]],
-  ['build_5fcoriolis_5fforcings_149',['build_coriolis_forcings',['../structSolverChoice.html#a0d66e0f0c534a2d5b3eea16a6a0c1cc1',1,'SolverChoice']]],
+  ['build_5fcoriolis_5fforcings_5fconst_5flat_149',['build_coriolis_forcings_const_lat',['../structSolverChoice.html#a261513d94d9fb4fdfe03b9778d53c590',1,'SolverChoice']]],
   ['build_5ffine_5fmask_150',['build_fine_mask',['../classERF.html#af46289079e053a6d74ddef0bf1a5d8a3',1,'ERF']]],
   ['build_5flevel_151',['build_level',['../classeb__.html#a37b3fc548dfc8eb2ad7723de8e357b8b',1,'eb_']]],
   ['buildfabsfromnetcdffile_152',['BuildFABsFromNetCDFFile',['../ERF__NCWpsFile_8H.html#a4498010c6623fa41ffa2ac0dd60184e2',1,'ERF_NCWpsFile.H']]],

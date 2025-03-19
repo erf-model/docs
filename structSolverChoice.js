@@ -1,6 +1,6 @@
 var structSolverChoice =
 [
-    [ "build_coriolis_forcings", "structSolverChoice.html#a0d66e0f0c534a2d5b3eea16a6a0c1cc1", null ],
+    [ "build_coriolis_forcings_const_lat", "structSolverChoice.html#a261513d94d9fb4fdfe03b9778d53c590", null ],
     [ "check_params", "structSolverChoice.html#a4c875e5fe0f3dd69fbcc145b7066c766", null ],
     [ "display", "structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671", null ],
     [ "init_params", "structSolverChoice.html#a76659aa69edd3370626e3648cbead9be", null ],
@@ -31,6 +31,7 @@ var structSolverChoice =
     [ "force_stage1_single_substep", "structSolverChoice.html#a3f8ae511632557066f6662eec79591e1", null ],
     [ "gravity", "structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b", null ],
     [ "grid_stretching_ratio", "structSolverChoice.html#a63b6fffe930de9eb25f92c2bafb00c00", null ],
+    [ "has_lat_lon", "structSolverChoice.html#ae2c963893d0c53465ac84c0bd8998a38", null ],
     [ "have_geo_wind_profile", "structSolverChoice.html#a65faffc1ea490b3934a9df768cfa26f1", null ],
     [ "init_type", "structSolverChoice.html#ac1ddc9c301ac98689bf3b7b7184b24e1", null ],
     [ "lsm_type", "structSolverChoice.html#a43c1741535574c7e6f4fe6bf90552f31", null ],
@@ -73,6 +74,7 @@ var structSolverChoice =
     [ "use_num_diff", "structSolverChoice.html#a8d039800497a1e5084afeef94d367932", null ],
     [ "use_real_bcs", "structSolverChoice.html#ad57b63939b19e90b87dd61d3f293b0d7", null ],
     [ "use_rotate_most", "structSolverChoice.html#af3dab90d6c6d356aa2f35c3dbe151411", null ],
+    [ "variable_coriolis", "structSolverChoice.html#aa54aafe316efc6cf474326d690fb2fbf", null ],
     [ "windfarm_airfoil_tables", "structSolverChoice.html#af9c11d4a044eea88bad0b2e32318b412", null ],
     [ "windfarm_blade_table", "structSolverChoice.html#aa401d2a5d51cb382e0b6e18502d961a9", null ],
     [ "windfarm_loc_table", "structSolverChoice.html#a44bc0227f088664e4e2c1090ebb1381d", null ],
