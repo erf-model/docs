@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['advtype_4893',['AdvType',['../ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70',1,'ERF_IndexDefines.H']]]
+  ['advtype_4898',['AdvType',['../ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70',1,'ERF_IndexDefines.H']]]
 ];
