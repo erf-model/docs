@@ -228,8 +228,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a39efa3a0f3ae3deb7a43f4ce110ee49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f6effb7eeed11385b20e4bbf516b459"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a0f6effb7eeed11385b20e4bbf516b459">cloud_fraction</a> (amrex::Real time)</td></tr>
 <tr class="separator:a0f6effb7eeed11385b20e4bbf516b459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19c8017ca1ff0eead61abd7e0ce62232"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a19c8017ca1ff0eead61abd7e0ce62232">FillBdyCCVels</a> (amrex::Vector&lt; amrex::MultiFab &gt; &amp;mf_cc_vel)</td></tr>
-<tr class="separator:a19c8017ca1ff0eead61abd7e0ce62232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0857fa7f21e3077bb8bd7808023a6d09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a0857fa7f21e3077bb8bd7808023a6d09">FillBdyCCVels</a> (amrex::Vector&lt; amrex::MultiFab &gt; &amp;mf_cc_vel, int levc=0)</td></tr>
+<tr class="separator:a0857fa7f21e3077bb8bd7808023a6d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa28182226262c67cfd686d35bfeabcad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#aa28182226262c67cfd686d35bfeabcad">sample_points</a> (int lev, amrex::Real time, amrex::IntVect cell, amrex::MultiFab &amp;mf)</td></tr>
 <tr class="separator:aa28182226262c67cfd686d35bfeabcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb798c72ea4fde6f4da8d01a24c8c165"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#afb798c72ea4fde6f4da8d01a24c8c165">sample_lines</a> (int lev, amrex::Real time, amrex::IntVect cell, amrex::MultiFab &amp;mf)</td></tr>
@@ -5394,7 +5394,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            average_face_to_cellcenter(mf_cc_vel[0],0,Array&lt;const MultiFab*,3&gt;{&amp;U_new, &amp;V_new, &amp;W_new});</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">// Impose bc&#39;s at domain boundaries at all levels</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="classERF.html#a19c8017ca1ff0eead61abd7e0ce62232">FillBdyCCVels</a>(mf_cc_vel);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="classERF.html#a0857fa7f21e3077bb8bd7808023a6d09">FillBdyCCVels</a>(mf_cc_vel,levc);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            mf-&gt;setVal(0.);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
@@ -5469,7 +5469,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="classERF.html#ac81b3dfd7c6f21ba8479834e2ff1e652">ref_tags</a>[j](tags,mf.get(),clearval,tagval,time,levc,geom[levc]);</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    } <span class="comment">// loop over j</span></div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
-<div class="ttc" id="aclassERF_html_a19c8017ca1ff0eead61abd7e0ce62232"><div class="ttname"><a href="classERF.html#a19c8017ca1ff0eead61abd7e0ce62232">ERF::FillBdyCCVels</a></div><div class="ttdeci">void FillBdyCCVels(amrex::Vector&lt; amrex::MultiFab &gt; &amp;mf_cc_vel)</div><div class="ttdef"><b>Definition:</b> ERF_FillBdyCCVels.cpp:11</div></div>
+<div class="ttc" id="aclassERF_html_a0857fa7f21e3077bb8bd7808023a6d09"><div class="ttname"><a href="classERF.html#a0857fa7f21e3077bb8bd7808023a6d09">ERF::FillBdyCCVels</a></div><div class="ttdeci">void FillBdyCCVels(amrex::Vector&lt; amrex::MultiFab &gt; &amp;mf_cc_vel, int levc=0)</div><div class="ttdef"><b>Definition:</b> ERF_FillBdyCCVels.cpp:11</div></div>
 <div class="ttc" id="aclassERF_html_ac81b3dfd7c6f21ba8479834e2ff1e652"><div class="ttname"><a href="classERF.html#ac81b3dfd7c6f21ba8479834e2ff1e652">ERF::ref_tags</a></div><div class="ttdeci">static amrex::Vector&lt; amrex::AMRErrorTag &gt; ref_tags</div><div class="ttdef"><b>Definition:</b> ERF.H:1191</div></div>
 <div class="ttc" id="anamespacederived_html_a37560f4d3e2c7c10f64d41db2ce76a06"><div class="ttname"><a href="namespacederived.html#a37560f4d3e2c7c10f64d41db2ce76a06">derived::erf_derscalar</a></div><div class="ttdeci">void erf_derscalar(const Box &amp;bx, FArrayBox &amp;derfab, int, int, const FArrayBox &amp;datfab, const Geometry &amp;, Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> ERF_Derive.cpp:165</div></div>
 <div class="ttc" id="anamespacederived_html_a8bc196f7dfb365c426b0b7e720e479e2"><div class="ttname"><a href="namespacederived.html#a8bc196f7dfb365c426b0b7e720e479e2">derived::erf_dervortz</a></div><div class="ttdeci">void erf_dervortz(const amrex::Box &amp;bx, amrex::FArrayBox &amp;derfab, int dcomp, int ncomp, const amrex::FArrayBox &amp;datfab, const amrex::Geometry &amp;geomdata, amrex::Real, const int *, const int)</div><div class="ttdef"><b>Definition:</b> ERF_Derive.cpp:256</div></div>
@@ -6154,8 +6154,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a19c8017ca1ff0eead61abd7e0ce62232"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19c8017ca1ff0eead61abd7e0ce62232">&#9670;&nbsp;</a></span>FillBdyCCVels()</h2>
+<a id="a0857fa7f21e3077bb8bd7808023a6d09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0857fa7f21e3077bb8bd7808023a6d09">&#9670;&nbsp;</a></span>FillBdyCCVels()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6164,100 +6164,111 @@ Here is the caller graph for this function:</div>
           <td class="memname">void ERF::FillBdyCCVels </td>
           <td>(</td>
           <td class="paramtype">amrex::Vector&lt; amrex::MultiFab &gt; &amp;&#160;</td>
-          <td class="paramname"><em>mf_cc_vel</em></td><td>)</td>
+          <td class="paramname"><em>mf_cc_vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>levc</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">// Impose bc&#39;s at domain boundaries</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev(0); ilev &lt; mf_cc_vel.size(); ++ilev)</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        Box domain(Geom(lev).Domain());</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">int</span> ihi = domain.bigEnd(0);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">int</span> jhi = domain.bigEnd(1);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">int</span> khi = domain.bigEnd(2);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">// Impose periodicity first</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        mf_cc_vel[lev].FillBoundary(geom[lev].periodicity());</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(mf_cc_vel[lev], TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="comment">// Note that we don&#39;t fill corners here -- only the cells that share a face</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="comment">//      with interior cells -- this is all that is needed to calculate vorticity</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; vel_arr = mf_cc_vel[lev].array(mfi);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (!Geom(lev).isPeriodic(0)) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="comment">// Low-x side</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">if</span> (bx.smallEnd(0) &lt;= domain.smallEnd(0)) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    Real mult = (<a class="code" href="classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15">phys_bc_type</a>[0] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3">ERF_BC::no_slip_wall</a>) ? -1. : 1.;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    ParallelFor(makeSlab(bx,0,0), [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> , <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        vel_arr(-1,j,k,1) = mult*vel_arr(0,j,k,1); <span class="comment">// v</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        vel_arr(-1,j,k,2) = mult*vel_arr(0,j,k,2); <span class="comment">// w</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    });</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="comment">// High-x side</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">if</span> (bx.bigEnd(0) &gt;= domain.bigEnd(0)) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    Real mult = (<a class="code" href="classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15">phys_bc_type</a>[3] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3">ERF_BC::no_slip_wall</a>) ? -1. : 1.;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    ParallelFor(makeSlab(bx,0,0), [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> , <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        vel_arr(ihi+1,j,k,1) = mult*vel_arr(ihi,j,k,1); <span class="comment">// v</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        vel_arr(ihi+1,j,k,2) = mult*vel_arr(ihi,j,k,2); <span class="comment">// w</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    });</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            } <span class="comment">// !periodic</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span> (!Geom(lev).isPeriodic(1)) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="comment">// Low-y side</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">if</span> (bx.smallEnd(1) &lt;= domain.smallEnd(1)) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    Real mult = (<a class="code" href="classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15">phys_bc_type</a>[1] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3">ERF_BC::no_slip_wall</a>) ? -1. : 1.;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    ParallelFor(makeSlab(bx,1,0), [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span>  , <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        vel_arr(i,-1,k,0) = mult*vel_arr(i,0,k,0); <span class="comment">// u</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        vel_arr(i,-1,k,2) = mult*vel_arr(i,0,k,2); <span class="comment">// w</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    });</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="comment">// High-y side</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">if</span> (bx.bigEnd(1) &gt;= domain.bigEnd(1)) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    Real mult = (<a class="code" href="classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15">phys_bc_type</a>[4] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3">ERF_BC::no_slip_wall</a>) ? -1. : 1.;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    ParallelFor(makeSlab(bx,1,0), [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> , <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        vel_arr(i,jhi+1,k,0) = mult*vel_arr(i,jhi,k,0); <span class="comment">// u</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        vel_arr(i,jhi+1,k,2) = mult*-vel_arr(i,jhi,k,2); <span class="comment">// w</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    });</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            } <span class="comment">// !periodic</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span> (!Geom(lev).isPeriodic(2)) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="comment">// Low-z side</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">if</span> (bx.smallEnd(2) &lt;= domain.smallEnd(2)) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    Real mult = (<a class="code" href="classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15">phys_bc_type</a>[2] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3">ERF_BC::no_slip_wall</a>) ? -1. : 1.;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    ParallelFor(makeSlab(bx,2,0), [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        vel_arr(i,j,-1,0) = mult*vel_arr(i,j,0,0); <span class="comment">// u</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        vel_arr(i,j,-1,1) = mult*vel_arr(i,j,0,1); <span class="comment">// v</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    });</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="comment">// High-z side</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">if</span> (bx.bigEnd(2) &gt;= domain.bigEnd(2)) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    Real mult = (<a class="code" href="classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15">phys_bc_type</a>[5] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3">ERF_BC::no_slip_wall</a>) ? -1. : 1.;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    ParallelFor(makeSlab(bx,2,0), [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        vel_arr(i,j,khi+1,0) = mult*vel_arr(i,j,khi,0); <span class="comment">// u</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        vel_arr(i,j,khi+1,1) = mult*vel_arr(i,j,khi,1); <span class="comment">// v</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    });</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            } <span class="comment">// !periodic</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        } <span class="comment">// MFIter</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    } <span class="comment">// lev</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">int</span> lev = ilev + levc;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        Box domain(Geom(lev).Domain());</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">int</span> ihi = domain.bigEnd(0);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">int</span> jhi = domain.bigEnd(1);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">int</span> khi = domain.bigEnd(2);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">// Impose periodicity first</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        mf_cc_vel[lev].FillBoundary(geom[lev].periodicity());</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(mf_cc_vel[lev], TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="comment">// Note that we don&#39;t fill corners here -- only the cells that share a face</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="comment">//      with interior cells -- this is all that is needed to calculate vorticity</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; vel_arr = mf_cc_vel[lev].array(mfi);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">if</span> (!Geom(lev).isPeriodic(0)) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="comment">// Low-x side</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">if</span> (bx.smallEnd(0) &lt;= domain.smallEnd(0)) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    Real mult = (<a class="code" href="classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15">phys_bc_type</a>[0] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3">ERF_BC::no_slip_wall</a>) ? -1. : 1.;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    ParallelFor(makeSlab(bx,0,0), [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> , <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        vel_arr(-1,j,k,1) = mult*vel_arr(0,j,k,1); <span class="comment">// v</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        vel_arr(-1,j,k,2) = mult*vel_arr(0,j,k,2); <span class="comment">// w</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    });</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="comment">// High-x side</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">if</span> (bx.bigEnd(0) &gt;= domain.bigEnd(0)) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    Real mult = (<a class="code" href="classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15">phys_bc_type</a>[3] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3">ERF_BC::no_slip_wall</a>) ? -1. : 1.;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    ParallelFor(makeSlab(bx,0,0), [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> , <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        vel_arr(ihi+1,j,k,1) = mult*vel_arr(ihi,j,k,1); <span class="comment">// v</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        vel_arr(ihi+1,j,k,2) = mult*vel_arr(ihi,j,k,2); <span class="comment">// w</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    });</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            } <span class="comment">// !periodic</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (!Geom(lev).isPeriodic(1)) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="comment">// Low-y side</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">if</span> (bx.smallEnd(1) &lt;= domain.smallEnd(1)) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    Real mult = (<a class="code" href="classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15">phys_bc_type</a>[1] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3">ERF_BC::no_slip_wall</a>) ? -1. : 1.;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    ParallelFor(makeSlab(bx,1,0), [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span>  , <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        vel_arr(i,-1,k,0) = mult*vel_arr(i,0,k,0); <span class="comment">// u</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        vel_arr(i,-1,k,2) = mult*vel_arr(i,0,k,2); <span class="comment">// w</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    });</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="comment">// High-y side</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">if</span> (bx.bigEnd(1) &gt;= domain.bigEnd(1)) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    Real mult = (<a class="code" href="classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15">phys_bc_type</a>[4] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3">ERF_BC::no_slip_wall</a>) ? -1. : 1.;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    ParallelFor(makeSlab(bx,1,0), [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> , <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        vel_arr(i,jhi+1,k,0) = mult*vel_arr(i,jhi,k,0); <span class="comment">// u</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        vel_arr(i,jhi+1,k,2) = mult*-vel_arr(i,jhi,k,2); <span class="comment">// w</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    });</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            } <span class="comment">// !periodic</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">if</span> (!Geom(lev).isPeriodic(2)) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="comment">// Low-z side</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">if</span> (bx.smallEnd(2) &lt;= domain.smallEnd(2)) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    Real mult = (<a class="code" href="classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15">phys_bc_type</a>[2] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3">ERF_BC::no_slip_wall</a>) ? -1. : 1.;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    ParallelFor(makeSlab(bx,2,0), [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        vel_arr(i,j,-1,0) = mult*vel_arr(i,j,0,0); <span class="comment">// u</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        vel_arr(i,j,-1,1) = mult*vel_arr(i,j,0,1); <span class="comment">// v</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    });</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="comment">// High-z side</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">if</span> (bx.bigEnd(2) &gt;= domain.bigEnd(2)) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    Real mult = (<a class="code" href="classERF.html#ae6df94c25ac21bf6a2e856a9901e3a15">phys_bc_type</a>[5] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3">ERF_BC::no_slip_wall</a>) ? -1. : 1.;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    ParallelFor(makeSlab(bx,2,0), [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        vel_arr(i,j,khi+1,0) = mult*vel_arr(i,j,khi,0); <span class="comment">// u</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                        vel_arr(i,j,khi+1,1) = mult*vel_arr(i,j,khi,1); <span class="comment">// v</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    });</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            } <span class="comment">// !periodic</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        } <span class="comment">// MFIter</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    } <span class="comment">// lev</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3"><div class="ttname"><a href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3">ERF_BC::no_slip_wall</a></div><div class="ttdeci">@ no_slip_wall</div></div>
 </div><!-- fragment -->
 </div>
@@ -18963,7 +18974,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        } <span class="comment">// lev</span></div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="comment">// Impose bc&#39;s at domain boundaries at all levels</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <a class="code" href="classERF.html#a19c8017ca1ff0eead61abd7e0ce62232">FillBdyCCVels</a>(mf_cc_vel);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <a class="code" href="classERF.html#a0857fa7f21e3077bb8bd7808023a6d09">FillBdyCCVels</a>(mf_cc_vel);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    } <span class="comment">// if (vort)</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev)</div>
