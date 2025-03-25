@@ -22,6 +22,5 @@ var classSatAdj =
     [ "m_qmoist_size", "classSatAdj.html#ac0fec328145e0aaad664481b9723601f", null ],
     [ "m_qstate_size", "classSatAdj.html#a7a2085bd641420e70c2b113a63406b7e", null ],
     [ "m_rdOcp", "classSatAdj.html#a27114b820d031f82462a0f378294042c", null ],
-    [ "mic_fab_vars", "classSatAdj.html#a26ca294f334ada4b91534e1e9e105442", null ],
-    [ "MicVarMap", "classSatAdj.html#aace4f71353cc6a4640bad37476b65936", null ]
+    [ "mic_fab_vars", "classSatAdj.html#a26ca294f334ada4b91534e1e9e105442", null ]
 ];

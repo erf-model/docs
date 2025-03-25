@@ -108,13 +108,12 @@ Collaboration diagram for SatAdj:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatAdj__coll__graph.png" border="0" usemap="#aSatAdj_coll__map" alt="Collaboration graph"/></div>
 <map name="aSatAdj_coll__map" id="aSatAdj_coll__map">
-<area shape="rect" title=" " alt="" coords="328,243,392,269"/>
+<area shape="rect" title=" " alt="" coords="253,243,317,269"/>
 <area shape="rect" href="classNullMoist.html" title=" " alt="" coords="134,117,218,143"/>
-<area shape="rect" title=" " alt="" coords="9,5,48,32"/>
-<area shape="rect" title=" " alt="" coords="242,117,329,143"/>
-<area shape="rect" title=" " alt="" coords="353,109,517,151"/>
-<area shape="rect" title=" " alt="" coords="541,117,652,143"/>
-<area shape="rect" title=" " alt="" coords="678,117,728,143"/>
+<area shape="rect" title=" " alt="" coords="8,5,47,32"/>
+<area shape="rect" title=" " alt="" coords="242,117,328,143"/>
+<area shape="rect" title=" " alt="" coords="352,109,516,151"/>
+<area shape="rect" title=" " alt="" coords="541,117,592,143"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -166,12 +165,10 @@ Private Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ac0fec328145e0aaad664481b9723601f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatAdj.html#ac0fec328145e0aaad664481b9723601f">m_qmoist_size</a> = 2</td></tr>
+<tr class="memitem:ac0fec328145e0aaad664481b9723601f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatAdj.html#ac0fec328145e0aaad664481b9723601f">m_qmoist_size</a> = 0</td></tr>
 <tr class="separator:ac0fec328145e0aaad664481b9723601f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a2085bd641420e70c2b113a63406b7e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatAdj.html#a7a2085bd641420e70c2b113a63406b7e">m_qstate_size</a> = 2</td></tr>
 <tr class="separator:a7a2085bd641420e70c2b113a63406b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aace4f71353cc6a4640bad37476b65936"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatAdj.html#aace4f71353cc6a4640bad37476b65936">MicVarMap</a></td></tr>
-<tr class="separator:aace4f71353cc6a4640bad37476b65936"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a126f7c9b97c2cbb757483e1935470a44"><td class="memItemLeft" align="right" valign="top">amrex::Geometry&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatAdj.html#a126f7c9b97c2cbb757483e1935470a44">m_geom</a></td></tr>
 <tr class="separator:a126f7c9b97c2cbb757483e1935470a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acac2100a462c3a8e75a6d20c69673001"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatAdj.html#acac2100a462c3a8e75a6d20c69673001">dt</a></td></tr>
@@ -300,7 +297,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        this-&gt;<a class="code" href="classSatAdj.html#ac8aac0161bb9518a1c0909cd99d4c4d6">AdvanceSatAdj</a>(solverChoice);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
 <div class="ttc" id="aclassSatAdj_html_ac8aac0161bb9518a1c0909cd99d4c4d6"><div class="ttname"><a href="classSatAdj.html#ac8aac0161bb9518a1c0909cd99d4c4d6">SatAdj::AdvanceSatAdj</a></div><div class="ttdeci">void AdvanceSatAdj(const SolverChoice &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.cpp:8</div></div>
-<div class="ttc" id="aclassSatAdj_html_acac2100a462c3a8e75a6d20c69673001"><div class="ttname"><a href="classSatAdj.html#acac2100a462c3a8e75a6d20c69673001">SatAdj::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:205</div></div>
+<div class="ttc" id="aclassSatAdj_html_acac2100a462c3a8e75a6d20c69673001"><div class="ttname"><a href="classSatAdj.html#acac2100a462c3a8e75a6d20c69673001">SatAdj::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:202</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -410,9 +407,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="ttc" id="aERF__EOS_8H_html_acd37b404bbf95073ffef2a1003dc56c5"><div class="ttname"><a href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getThgivenPandT(const amrex::Real T, const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:18</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a8e4b0c6ed8b95c2040dc0c9e8fcb8615"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;qsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:158</div></div>
-<div class="ttc" id="aclassSatAdj_html_a0ae1171544417b83878bf00916cefb64"><div class="ttname"><a href="classSatAdj.html#a0ae1171544417b83878bf00916cefb64">SatAdj::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:208</div></div>
-<div class="ttc" id="aclassSatAdj_html_a26ca294f334ada4b91534e1e9e105442"><div class="ttname"><a href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">SatAdj::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar_SatAdj::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:212</div></div>
-<div class="ttc" id="aclassSatAdj_html_a27114b820d031f82462a0f378294042c"><div class="ttname"><a href="classSatAdj.html#a27114b820d031f82462a0f378294042c">SatAdj::m_rdOcp</a></div><div class="ttdeci">amrex::Real m_rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:209</div></div>
+<div class="ttc" id="aclassSatAdj_html_a0ae1171544417b83878bf00916cefb64"><div class="ttname"><a href="classSatAdj.html#a0ae1171544417b83878bf00916cefb64">SatAdj::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:205</div></div>
+<div class="ttc" id="aclassSatAdj_html_a26ca294f334ada4b91534e1e9e105442"><div class="ttname"><a href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">SatAdj::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar_SatAdj::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:209</div></div>
+<div class="ttc" id="aclassSatAdj_html_a27114b820d031f82462a0f378294042c"><div class="ttname"><a href="classSatAdj.html#a27114b820d031f82462a0f378294042c">SatAdj::m_rdOcp</a></div><div class="ttdeci">amrex::Real m_rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:206</div></div>
 <div class="ttc" id="aclassSatAdj_html_a76548bd9c2adb222480e5f5725a05048"><div class="ttname"><a href="classSatAdj.html#a76548bd9c2adb222480e5f5725a05048">SatAdj::NewtonIterSat</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real NewtonIterSat(int &amp;i, int &amp;j, int &amp;k, const amrex::Real &amp;fac_cond, const amrex::Array4&lt; amrex::Real &gt; &amp;tabs_array, const amrex::Array4&lt; amrex::Real &gt; &amp;pres_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qv_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qc_array)</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:129</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a889f8349e0684381d06cc26a8b1f49ffa7cde81843cd190a3122d7c3912a39b74"><div class="ttname"><a href="namespaceMicVar__Kess.html#a889f8349e0684381d06cc26a8b1f49ffa7cde81843cd190a3122d7c3912a39b74">MicVar_Kess::tabs</a></div><div class="ttdeci">@ tabs</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:24</div></div>
 <div class="ttc" id="anamespaceMicVar__SatAdj_html_ab8acc7ef47a63b5f03d4beeab01b214ea0afe2a4054f7555add0acedfdb74cd91"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea0afe2a4054f7555add0acedfdb74cd91">MicVar_SatAdj::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:31</div></div>
@@ -506,7 +503,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a3bf0a4783e82ba30db2b7c0a332c2f16"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a></div><div class="ttdeci">#define RhoQ2_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:43</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
-<div class="ttc" id="aclassSatAdj_html_a126f7c9b97c2cbb757483e1935470a44"><div class="ttname"><a href="classSatAdj.html#a126f7c9b97c2cbb757483e1935470a44">SatAdj::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:202</div></div>
+<div class="ttc" id="aclassSatAdj_html_a126f7c9b97c2cbb757483e1935470a44"><div class="ttname"><a href="classSatAdj.html#a126f7c9b97c2cbb757483e1935470a44">SatAdj::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:199</div></div>
 <div class="ttc" id="anamespaceMicVar__SatAdj_html_ab8acc7ef47a63b5f03d4beeab01b214ea37c8367a4790a51443f48cbc019408c8"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea37c8367a4790a51443f48cbc019408c8">MicVar_SatAdj::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:30</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:140</div></div>
 </div><!-- fragment -->
@@ -555,38 +552,38 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#aacb06ee696c6870e899d1bc26aa9933e">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Get the temperature, density, theta, qt and qp from input</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(cons_in); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tbx = mfi.tilebox();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">auto</span> states_array = cons_in.array(mfi);</div>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Get the temperature, density, theta, qt and qp from input</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(cons_in); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tbx = mfi.tilebox();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">auto</span> states_array = cons_in.array(mfi);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">auto</span> qv_array    = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea947b4c7f8127c8ef257b1696a137081e">MicVar_SatAdj::qv</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">auto</span> qc_array    = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214eaea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">auto</span> qv_array    = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea947b4c7f8127c8ef257b1696a137081e">MicVar_SatAdj::qv</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">auto</span> qc_array    = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214eaea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">auto</span> rho_array   = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea37c8367a4790a51443f48cbc019408c8">MicVar_SatAdj::rho</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea0afe2a4054f7555add0acedfdb74cd91">MicVar_SatAdj::theta</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">auto</span> tabs_array  = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214eae89a849a90bf6b73e4a4daf59228ac54">MicVar_SatAdj::tabs</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">auto</span> pres_array  = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea5a09034692ed5833456ae20e7c8954b0">MicVar_SatAdj::pres</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// Get pressure, theta, temperature, density, and qt, qp</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        ParallelFor(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            rho_array(i,j,k)   = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            theta_array(i,j,k) = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            qv_array(i,j,k)    = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            qc_array(i,j,k)    = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)/states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            tabs_array(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                  states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                  qv_array(i,j,k));</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="comment">// Pressure in [mbar] for qsat evaluation</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            pres_array(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_array(i,j,k)) * 0.01;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        });</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">auto</span> rho_array   = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea37c8367a4790a51443f48cbc019408c8">MicVar_SatAdj::rho</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea0afe2a4054f7555add0acedfdb74cd91">MicVar_SatAdj::theta</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">auto</span> tabs_array  = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214eae89a849a90bf6b73e4a4daf59228ac54">MicVar_SatAdj::tabs</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">auto</span> pres_array  = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea5a09034692ed5833456ae20e7c8954b0">MicVar_SatAdj::pres</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// Get pressure, theta, temperature, density, and qt, qp</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        ParallelFor(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            rho_array(i,j,k)   = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            theta_array(i,j,k) = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            qv_array(i,j,k)    = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            qc_array(i,j,k)    = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)/states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            tabs_array(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                  states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                                  qv_array(i,j,k));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">// Pressure in [mbar] for qsat evaluation</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            pres_array(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_array(i,j,k)) * 0.01;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        });</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 <div class="ttc" id="aERF__EOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:84</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_a65cf1718b7a1fcc56cb16685642543da"><div class="ttname"><a href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:46</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
@@ -725,18 +722,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classSatAdj.html#acac2100a462c3a8e75a6d20c69673001">dt</a> = dt_advance;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classSatAdj.html#a126f7c9b97c2cbb757483e1935470a44">m_geom</a> = geom;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classSatAdj.html#aace4f71353cc6a4640bad37476b65936">MicVarMap</a>.resize(<a class="code" href="classSatAdj.html#ac0fec328145e0aaad664481b9723601f">m_qmoist_size</a>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classSatAdj.html#aace4f71353cc6a4640bad37476b65936">MicVarMap</a> = {<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea947b4c7f8127c8ef257b1696a137081e">MicVar_SatAdj::qv</a>, <a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214eaea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a>};</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// initialize microphysics variables</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ivar = 0; ivar &lt; <a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea7bd5807a173878745441aff033f389ea">MicVar_SatAdj::NumVars</a>; ++ivar) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[ivar] = std::make_shared&lt;MultiFab&gt;(cons_in.boxArray(), cons_in.DistributionMap(),</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                        1, cons_in.nGrowVect());</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[ivar]-&gt;setVal(0.);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="ttc" id="aclassSatAdj_html_aace4f71353cc6a4640bad37476b65936"><div class="ttname"><a href="classSatAdj.html#aace4f71353cc6a4640bad37476b65936">SatAdj::MicVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; MicVarMap</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:199</div></div>
-<div class="ttc" id="aclassSatAdj_html_ac0fec328145e0aaad664481b9723601f"><div class="ttname"><a href="classSatAdj.html#ac0fec328145e0aaad664481b9723601f">SatAdj::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:193</div></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// initialize microphysics variables</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ivar = 0; ivar &lt; <a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea7bd5807a173878745441aff033f389ea">MicVar_SatAdj::NumVars</a>; ++ivar) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[ivar] = std::make_shared&lt;MultiFab&gt;(cons_in.boxArray(), cons_in.DistributionMap(),</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                                        1, cons_in.nGrowVect());</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[ivar]-&gt;setVal(0.);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="ttc" id="anamespaceMicVar__SatAdj_html_ab8acc7ef47a63b5f03d4beeab01b214ea7bd5807a173878745441aff033f389ea"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214ea7bd5807a173878745441aff033f389ea">MicVar_SatAdj::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:37</div></div>
 </div><!-- fragment -->
 </div>
@@ -910,8 +902,9 @@ Here is the call graph for this function:</div>
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a1b6a72d67d9b2642e99a5b768315476c">NullMoist</a>.</p>
 <div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        AMREX_ALWAYS_ASSERT(varIdx &lt; <a class="code" href="classSatAdj.html#ac0fec328145e0aaad664481b9723601f">m_qmoist_size</a>);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="classSatAdj.html#aace4f71353cc6a4640bad37476b65936">MicVarMap</a>[varIdx]].get();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="ttc" id="aclassSatAdj_html_ac0fec328145e0aaad664481b9723601f"><div class="ttname"><a href="classSatAdj.html#ac0fec328145e0aaad664481b9723601f">SatAdj::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:193</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1048,7 +1041,7 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        this-&gt;<a class="code" href="classSatAdj.html#afb1e467461c3ff020db1c5a9117904d3">Copy_State_to_Micro</a>(cons_in);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="ttc" id="aclassSatAdj_html_afb1e467461c3ff020db1c5a9117904d3"><div class="ttname"><a href="classSatAdj.html#afb1e467461c3ff020db1c5a9117904d3">SatAdj::Copy_State_to_Micro</a></div><div class="ttdeci">void Copy_State_to_Micro(const amrex::MultiFab &amp;cons_in) override</div><div class="ttdef"><b>Definition:</b> ERF_InitSatAdj.cpp:43</div></div>
+<div class="ttc" id="aclassSatAdj_html_afb1e467461c3ff020db1c5a9117904d3"><div class="ttname"><a href="classSatAdj.html#afb1e467461c3ff020db1c5a9117904d3">SatAdj::Copy_State_to_Micro</a></div><div class="ttdeci">void Copy_State_to_Micro(const amrex::MultiFab &amp;cons_in) override</div><div class="ttdef"><b>Definition:</b> ERF_InitSatAdj.cpp:40</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1185,7 +1178,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int SatAdj::m_qmoist_size = 2</td>
+          <td class="memname">int SatAdj::m_qmoist_size = 0</td>
         </tr>
       </table>
   </td>
@@ -1266,32 +1259,6 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classSatAdj.html#a4ecfd56a3aa5536012700ba1ff843fa2">Qmoist_Ptr()</a>.</p>
-
-</div>
-</div>
-<a id="aace4f71353cc6a4640bad37476b65936"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aace4f71353cc6a4640bad37476b65936">&#9670;&nbsp;</a></span>MicVarMap</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">amrex::Vector&lt;int&gt; SatAdj::MicVarMap</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classSatAdj.html#a4ecfd56a3aa5536012700ba1ff843fa2">Qmoist_Ptr()</a>.</p>
 
 </div>
 </div>

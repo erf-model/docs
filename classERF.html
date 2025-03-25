@@ -8168,9 +8168,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        <span class="comment">// z_inp_tmp[N-1] &gt;= ztop. Now, interpolate to grid level 0 heights</span></div>
 <div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> Ninp = z_inp_tmp.size();</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(0); k&lt;Nz; ++k) {</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;            zcc_inp[k] = (use_terrain) ? 0.5 * (<a class="code" href="classERF.html#ace4f0c79f84075dd7a43bd2b0ede1a9b">zlevels_stag</a>[0][k] + <a class="code" href="classERF.html#ace4f0c79f84075dd7a43bd2b0ede1a9b">zlevels_stag</a>[0][k+1])</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;            zcc_inp[k] = (use_terrain) ? 0.5 * (<a class="code" href="classERF.html#ace4f0c79f84075dd7a43bd2b0ede1a9b">zlevels_stag</a>[lev][k] + <a class="code" href="classERF.html#ace4f0c79f84075dd7a43bd2b0ede1a9b">zlevels_stag</a>[lev][k+1])</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                                         : zbot + (k + 0.5) * dz;</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;            znd_inp[k] = (use_terrain) ? <a class="code" href="classERF.html#ace4f0c79f84075dd7a43bd2b0ede1a9b">zlevels_stag</a>[0][k+1] : zbot + (k) * dz;</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;            znd_inp[k] = (use_terrain) ? <a class="code" href="classERF.html#ace4f0c79f84075dd7a43bd2b0ede1a9b">zlevels_stag</a>[lev][k+1] : zbot + (k) * dz;</div>
 <div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;            u_inp[k]   = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_tmp.dataPtr(), u_inp_tmp.dataPtr(), zcc_inp[k], Ninp);</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;            v_inp[k]   = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_tmp.dataPtr(), v_inp_tmp.dataPtr(), zcc_inp[k], Ninp);</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;            w_inp[k]   = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_tmp.dataPtr(), w_inp_tmp.dataPtr(), znd_inp[k], Ninp);</div>
@@ -13728,16 +13728,16 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        }</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        <span class="comment">// Read in the moisture model restart variables</span></div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        std::vector&lt;int&gt; qmoist_indices(0);</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        std::vector&lt;std::string&gt; qmoist_names(0);</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        std::vector&lt;int&gt; qmoist_indices;</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        std::vector&lt;std::string&gt; qmoist_names;</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        <a class="code" href="classERF.html#a4b7277d54649219f31fe286eee9d415a">micro</a>-&gt;Get_Qmoist_Restart_Vars(lev, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>, qmoist_indices, qmoist_names);</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        <span class="keywordtype">int</span> qmoist_nvar = qmoist_indices.size();</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var = 0; var &lt; qmoist_nvar; var++) {</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;            IntVect ng_moist = <a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][qmoist_indices[var]]-&gt;nGrowVect();</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp_moist = 1;</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            MultiFab moist_vars(grids[lev],dmap[lev],ncomp_moist,ng_moist);</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp  = 1;</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;            IntVect ng_moist = <a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][qmoist_indices[var]]-&gt;nGrowVect();</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            MultiFab moist_vars(grids[lev],dmap[lev],ncomp,ng_moist);</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;            VisMF::Read(moist_vars, amrex::MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, qmoist_names[var]));</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            MultiFab::Copy(*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][qmoist_indices[var]]),moist_vars,0,0,ncomp_moist,ng_moist);</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            MultiFab::Copy(*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][qmoist_indices[var]]),moist_vars,0,0,ncomp,ng_moist);</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        }</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160; </div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;<span class="preprocessor">#if defined(ERF_USE_WINDFARM)</span></div>
@@ -18080,16 +18080,16 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">// We must read and write qmoist with ghost cells because we don&#39;t directly impose BCs on these vars</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="comment">// Write the moisture model restart variables</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        std::vector&lt;int&gt; qmoist_indices(0);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        std::vector&lt;std::string&gt; qmoist_names(0);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        std::vector&lt;int&gt; qmoist_indices;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        std::vector&lt;std::string&gt; qmoist_names;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="classERF.html#a4b7277d54649219f31fe286eee9d415a">micro</a>-&gt;Get_Qmoist_Restart_Vars(lev, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>, qmoist_indices, qmoist_names);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordtype">int</span> qmoist_nvar = qmoist_indices.size();</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var = 0; var &lt; qmoist_nvar; var++) {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;           IntVect ng_moist = <a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][qmoist_indices[var]]-&gt;nGrowVect();</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;           <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = 1;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;           MultiFab moist_vars(grids[lev],dmap[lev],ncomp,ng_moist);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;           MultiFab::Copy(moist_vars,*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][qmoist_indices[var]]),0,0,ncomp,ng_moist);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;           VisMF::Write(moist_vars, amrex::MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, qmoist_names[var]));</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp  = 1;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            IntVect ng_moist = <a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][qmoist_indices[var]]-&gt;nGrowVect();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            MultiFab moist_vars(grids[lev],dmap[lev],ncomp,ng_moist);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            MultiFab::Copy(moist_vars,*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][qmoist_indices[var]]),0,0,ncomp,ng_moist);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            VisMF::Write(moist_vars, amrex::MultiFabFileFullPrefix(lev, checkpointname, <span class="stringliteral">&quot;Level_&quot;</span>, qmoist_names[var]));</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#if defined(ERF_USE_WINDFARM)</span></div>
@@ -19843,7 +19843,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::Kessler){</div>
 <div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(plot_var_names, <span class="stringliteral">&quot;rain_accum&quot;</span>))</div>
 <div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;                {</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;                    MultiFab::Copy(mf[lev],*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][4]),0,mf_comp,1,0);</div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;                    MultiFab::Copy(mf[lev],*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][0]),0,mf_comp,1,0);</div>
 <div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;                    mf_comp += 1;</div>
 <div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;                }</div>
 <div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;            }</div>
@@ -19851,17 +19851,17 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;            {</div>
 <div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(plot_var_names, <span class="stringliteral">&quot;rain_accum&quot;</span>))</div>
 <div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;                {</div>
-<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;                    MultiFab::Copy(mf[lev],*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][8]),0,mf_comp,1,0);</div>
+<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;                    MultiFab::Copy(mf[lev],*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][0]),0,mf_comp,1,0);</div>
 <div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;                    mf_comp += 1;</div>
 <div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;                }</div>
 <div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(plot_var_names, <span class="stringliteral">&quot;snow_accum&quot;</span>))</div>
 <div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;                {</div>
-<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;                    MultiFab::Copy(mf[lev],*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][9]),0,mf_comp,1,0);</div>
+<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;                    MultiFab::Copy(mf[lev],*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][1]),0,mf_comp,1,0);</div>
 <div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;                    mf_comp += 1;</div>
 <div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;                }</div>
 <div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(plot_var_names, <span class="stringliteral">&quot;graup_accum&quot;</span>))</div>
 <div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;                {</div>
-<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;                    MultiFab::Copy(mf[lev],*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][10]),0,mf_comp,1,0);</div>
+<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;                    MultiFab::Copy(mf[lev],*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][2]),0,mf_comp,1,0);</div>
 <div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;                    mf_comp += 1;</div>
 <div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;                }</div>
 <div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;            }</div>
