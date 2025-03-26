@@ -25,7 +25,8 @@ var dir_9c08f4b6b7cd879dc853cee646ab55d3 =
     [ "ERF_EBPolygon.H", "ERF__EBPolygon_8H.html", [
       [ "polygon_", "classpolygon__.html", "classpolygon__" ]
     ] ],
-    [ "ERF_EBRedistribute.cpp", "ERF__EBRedistribute_8cpp.html", null ],
+    [ "ERF_EBRedistribute.cpp", "ERF__EBRedistribute_8cpp.html", "ERF__EBRedistribute_8cpp" ],
+    [ "ERF_EBRedistribute.H", "ERF__EBRedistribute_8H.html", "ERF__EBRedistribute_8H" ],
     [ "ERF_EBToPVD.cpp", "ERF__EBToPVD_8cpp.html", null ],
     [ "ERF_EBToPVD.H", "ERF__EBToPVD_8H.html", [
       [ "EBToPVD", "classeb___1_1EBToPVD.html", "classeb___1_1EBToPVD" ]

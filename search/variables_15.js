@@ -1,16 +1,16 @@
 var searchData=
 [
-  ['w_5fstar_4835',['w_star',['../classABLMost.html#a11a418842597c03a5782fc53ec0a1fb1',1,'ABLMost']]],
-  ['walldist_4836',['walldist',['../classERF.html#a0276b556fdefec8b99be95846a3a35fe',1,'ERF']]],
-  ['wind_5fspeed_4837',['wind_speed',['../classWindFarm.html#a5d1dbc2f5df3a2ee2b239f04b82a2c6b',1,'WindFarm::wind_speed()'],['../classEWP.html#a30275b7045b523cfe7afb5683f66d87a',1,'EWP::wind_speed()'],['../classFitch.html#aed06c922f243b8a80c17d17770430af5',1,'Fitch::wind_speed()'],['../classGeneralAD.html#a0c19baa06277206decbdc1da57c02ea5',1,'GeneralAD::wind_speed()'],['../classSimpleAD.html#a171f86e19e21f7c5632ca2c459d489f5',1,'SimpleAD::wind_speed()']]],
-  ['windfarm_5fairfoil_5ftables_4838',['windfarm_airfoil_tables',['../structSolverChoice.html#af9c11d4a044eea88bad0b2e32318b412',1,'SolverChoice']]],
-  ['windfarm_5fblade_5ftable_4839',['windfarm_blade_table',['../structSolverChoice.html#aa401d2a5d51cb382e0b6e18502d961a9',1,'SolverChoice']]],
-  ['windfarm_5floc_5ftable_4840',['windfarm_loc_table',['../structSolverChoice.html#a44bc0227f088664e4e2c1090ebb1381d',1,'SolverChoice']]],
-  ['windfarm_5floc_5ftype_4841',['windfarm_loc_type',['../structSolverChoice.html#a54214b71edb43f251f04b79281c39375',1,'SolverChoice']]],
-  ['windfarm_5fspec_5ftable_4842',['windfarm_spec_table',['../structSolverChoice.html#a34c427126677860aa8acad633e6fb2be',1,'SolverChoice']]],
-  ['windfarm_5fspec_5ftable_5fextra_4843',['windfarm_spec_table_extra',['../structSolverChoice.html#a40de8b74e8c60f617558ef8a2fa72ddb',1,'SolverChoice']]],
-  ['windfarm_5ftype_4844',['windfarm_type',['../structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645',1,'SolverChoice']]],
-  ['windfarm_5fx_5fshift_4845',['windfarm_x_shift',['../structSolverChoice.html#a1b2950247c4d2789597b7610c69ff5b6',1,'SolverChoice']]],
-  ['windfarm_5fy_5fshift_4846',['windfarm_y_shift',['../structSolverChoice.html#adec260ba3c7bd01ffa4fd40bd90920cd',1,'SolverChoice']]],
-  ['wsmin_4847',['WSMIN',['../structadiabatic__charnock.html#a0e78cee7d7f845969fe2da8b72ef7955',1,'adiabatic_charnock::WSMIN()'],['../structadiabatic__mod__charnock.html#a8e4da74a6cba0d34e62f4d40255b48dc',1,'adiabatic_mod_charnock::WSMIN()'],['../structadiabatic__donelan.html#a22f8894821e62c7be32e764b2855a6ea',1,'adiabatic_donelan::WSMIN()'],['../structadiabatic__wave__coupled.html#aa4eb74455480668121e37e678f596d07',1,'adiabatic_wave_coupled::WSMIN()'],['../structsurface__flux.html#a6f66a7f868790814d4c30aee5c2502e5',1,'surface_flux::WSMIN()'],['../structsurface__flux__charnock.html#aadc72e53ca70ae1475fd787a0b71e717',1,'surface_flux_charnock::WSMIN()'],['../structsurface__flux__mod__charnock.html#a47b9c65ba7662c9f860179104b67b9d8',1,'surface_flux_mod_charnock::WSMIN()'],['../structsurface__flux__donelan.html#aa0c92783f88aeb52db12fd0b1b40bca7',1,'surface_flux_donelan::WSMIN()'],['../structsurface__flux__wave__coupled.html#a10d71fe6dd2f38c54562aa3ab207ef25',1,'surface_flux_wave_coupled::WSMIN()'],['../structsurface__temp.html#aeb169255fca0a94d9fb3a74c62606eed',1,'surface_temp::WSMIN()'],['../structsurface__temp__charnock.html#aa4c95644bfaf0b6071ae0d7072a9345f',1,'surface_temp_charnock::WSMIN()'],['../structsurface__temp__mod__charnock.html#a85bd49a9221c24cd27422abc18190628',1,'surface_temp_mod_charnock::WSMIN()'],['../structsurface__temp__donelan.html#ac568df907108f755ab450ffbcac18041',1,'surface_temp_donelan::WSMIN()'],['../structsurface__temp__wave__coupled.html#af09bca4efd34fd9d8b6bb6a2f363ebee',1,'surface_temp_wave_coupled::WSMIN()'],['../structmoeng__flux.html#a8fc4fe08604d2d3b15373d19075481f3',1,'moeng_flux::WSMIN()']]]
+  ['v_5finp_5fsound_4832',['V_inp_sound',['../structInputSoundingData.html#adba2e69559670861133145572ed6aa2a',1,'InputSoundingData']]],
+  ['v_5finp_5fsound_5fd_4833',['V_inp_sound_d',['../structInputSoundingData.html#a36f5c3dc9c536d7a6da2f87d67ea6a08',1,'InputSoundingData']]],
+  ['v_5finp_5fsponge_4834',['V_inp_sponge',['../structInputSpongeData.html#a8cc25a2bbb25e676dadc57cf3e8f6db1',1,'InputSpongeData']]],
+  ['variable_5fcoriolis_4835',['variable_coriolis',['../structSolverChoice.html#aa54aafe316efc6cf474326d690fb2fbf',1,'SolverChoice']]],
+  ['varid_4836',['varid',['../structncutils_1_1NCVar.html#a2dce982c1ddb8f3b89b071bc3bf15532',1,'ncutils::NCVar']]],
+  ['varname_4837',['varname',['../classNullSurf.html#ae096eaa2ce9385fabf5692c6a7ac6c26',1,'NullSurf']]],
+  ['vars_5fnew_4838',['vars_new',['../classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b',1,'ERF']]],
+  ['vars_5fold_4839',['vars_old',['../classERF.html#af31e928baa970a1507dfb0233b352542',1,'ERF']]],
+  ['vel_5ft_5favg_4840',['vel_t_avg',['../classERF.html#a3e146164ca6929ec6d4984b6a3f43c81',1,'ERF']]],
+  ['velocity_4841',['velocity',['../classWindFarm.html#a57a72ded446162e2e365dc0ff7c6e06a',1,'WindFarm::velocity()'],['../classGeneralAD.html#a5d98b31e348b25201d92055c16b6b6da',1,'GeneralAD::velocity()']]],
+  ['verbose_4842',['verbose',['../classERF.html#a43d0b17f6e155691a1e9474526df3af5',1,'ERF']]],
+  ['visc_4843',['visc',['../structmost__data.html#add81c9cef613709d079f42a22c7d15ac',1,'most_data']]],
+  ['void_5fbc_4844',['void_bc',['../ERF__InteriorGhostCells_8cpp.html#ab53ca744a656082f128b68f819aacbf5',1,'ERF_InteriorGhostCells.cpp']]]
 ];

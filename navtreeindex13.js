@@ -1,5 +1,15 @@
 var NAVTREEINDEX13 =
 {
+"structSolverChoice.html#af3dab90d6c6d356aa2f35c3dbe151411":[2,0,68,73],
+"structSolverChoice.html#af5219ce0c2a4f7ab4481e3fdabd3af8e":[2,0,68,48],
+"structSolverChoice.html#af976afa61859c07e6249963edc367c2d":[2,0,68,18],
+"structSolverChoice.html#af9c11d4a044eea88bad0b2e32318b412":[2,0,68,75],
+"structSolverChoice.html#afb997b932bbc5dfb58145ea90580d518":[2,0,68,5],
+"structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c":[2,0,68,12],
+"structSpongeChoice.html":[2,0,69],
+"structSpongeChoice.html#a0d60faef2ee2597c1df7807fc25204e2":[2,0,69,9],
+"structSpongeChoice.html#a13c70085162f73a4b6c36f7161be7260":[2,0,69,6],
+"structSpongeChoice.html#a18f392fd75ac69b62674b70ee67b9c61":[2,0,69,15],
 "structSpongeChoice.html#a1a41f754595d713df32583f0b0fa606e":[2,0,69,4],
 "structSpongeChoice.html#a1a79f8e32354ec98857597ddabfe884e":[2,0,69,19],
 "structSpongeChoice.html#a2ac1def940f7e6666a1076be69b3cc33":[2,0,69,13],
@@ -239,15 +249,5 @@ var NAVTREEINDEX13 =
 "structadiabatic__donelan.html#a2ad15699c4fd0a566c45dca957df4e48":[2,0,4,1],
 "structadiabatic__donelan.html#a624c0ce51ab19d526d3e934735770bb0":[2,0,4,0],
 "structadiabatic__donelan.html#a6b220db789638a784c51dfedcda1ffb9":[2,0,4,2],
-"structadiabatic__donelan.html#aaba2ad764346c1a35eacc4b89c993bea":[2,0,4,4],
-"structadiabatic__mod__charnock.html":[2,0,5],
-"structadiabatic__mod__charnock.html#a4d85da446411e8d3f4dfb8e47e4c14b4":[2,0,5,0],
-"structadiabatic__mod__charnock.html#a66df1185e73be51b2bb72b55e70b64cd":[2,0,5,3],
-"structadiabatic__mod__charnock.html#a8a007e09d416f6879b7ba68c7e4ac29e":[2,0,5,4],
-"structadiabatic__mod__charnock.html#a8e4da74a6cba0d34e62f4d40255b48dc":[2,0,5,5],
-"structadiabatic__mod__charnock.html#acfe52a64ebafd1135f6f215b8462d718":[2,0,5,1],
-"structadiabatic__mod__charnock.html#ad33aa4fea2aa05dbb4057dcef251e0da":[2,0,5,2],
-"structadiabatic__wave__coupled.html":[2,0,6],
-"structadiabatic__wave__coupled.html#a3f907fc7025d3d3f7e44c222e12b4df1":[2,0,6,2],
-"structadiabatic__wave__coupled.html#a4604487fd489620672f85bc517a4729a":[2,0,6,1]
+"structadiabatic__donelan.html#aaba2ad764346c1a35eacc4b89c993bea":[2,0,4,4]
 };
