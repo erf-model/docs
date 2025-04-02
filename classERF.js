@@ -136,7 +136,7 @@ var classERF =
     [ "turbPert_update", "classERF.html#aa89efe0abf37918ce3f212fb0e26f1bc", null ],
     [ "update_diffusive_arrays", "classERF.html#a419510fced05e9afc05c466beeeb66f7", null ],
     [ "update_terrain_arrays", "classERF.html#a7dba7f9e6bd3f6898fac9ac2efcec692", null ],
-    [ "volWgtSumMF", "classERF.html#ae959fa22a0c888a6da28d385054edf82", null ],
+    [ "volWgtSumMF", "classERF.html#a379ddb8c6e4e37f8aad17a9fed5270ff", null ],
     [ "write_1D_profiles", "classERF.html#a55eae94c5363e227b571739738bb26b7", null ],
     [ "write_1D_profiles_stag", "classERF.html#a39efa3a0f3ae3deb7a43f4ce110ee49a", null ],
     [ "writeBuildInfo", "classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa", null ],

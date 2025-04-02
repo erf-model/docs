@@ -77,7 +77,7 @@ var NAVTREEINDEX =
 "ERF__InitRayleigh_8cpp.html",
 "ERF__RRTMGP__Interface_8cpp.html#a7cc65d37cc4fa6bb23480db5afb15275",
 "classABLMost.html#a829339fc8e70a5dff8b7c85f3c2e4138",
-"classERF.html#a838687881ef3626f932d0e95ceff0e53",
+"classERF.html#a83572d8dfad51158945b4a5ab06b2f72",
 "classERFPhysBCFunct__cons.html#a75432b37b6dee17ad36faba2c359b64e",
 "classMOSTAverage.html#a514120312387f28a1624387b0e3af360",
 "classNullWindFarm.html#ad19bb9c4842c561c0024ae6d686b1a78",
