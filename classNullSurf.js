@@ -3,7 +3,7 @@ var classNullSurf =
     [ "NullSurf", "classNullSurf.html#ab6d3582e156056b1b230809fe499a0cf", null ],
     [ "~NullSurf", "classNullSurf.html#afc622f13e248dbe6bc5843241c4afb0f", null ],
     [ "Advance", "classNullSurf.html#a70a49bad633a2a87c4df7de8f368ef95", null ],
-    [ "Advance", "classNullSurf.html#a5aa2b379950ff1a474f35025bf7bb5bf", null ],
+    [ "Advance_With_State", "classNullSurf.html#a32d8152097460c363440cee9b98353da", null ],
     [ "Copy_Micro_to_State", "classNullSurf.html#a45d066ae7b9d2435f5477e35dd75bcfb", null ],
     [ "Copy_State_to_Micro", "classNullSurf.html#a1c31c18677e12226716217ca87cd526c", null ],
     [ "Define", "classNullSurf.html#a5aec888a24181ce049b48ed10817489c", null ],

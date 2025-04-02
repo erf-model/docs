@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"ERF__InitMorrison_8cpp.html":[3,0,1,9,1,0],
+"ERF__InitRayleighDamping_8H.html":[3,0,1,12,2],
+"ERF__InitRayleighDamping_8H.html#aa0988e9ca7c21c75ca232ea0ee850195":[3,0,1,12,2,0],
+"ERF__InitRayleighDamping_8H_source.html":[3,0,1,12,2],
 "ERF__InitRayleigh_8cpp.html":[3,0,1,5,8],
 "ERF__InitSAM_8cpp.html":[3,0,1,9,3,2],
 "ERF__InitSatAdj_8cpp.html":[3,0,1,9,4,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__RRTMGP__Interface_8cpp.html#a4bc3c3c0bfb4314acb12c4bc7191de51":[3,0,1,13,4,1],
 "ERF__RRTMGP__Interface_8cpp.html#a4d85ce915c09aacaa00f7eee114e510b":[3,0,1,13,4,9],
 "ERF__RRTMGP__Interface_8cpp.html#a51cc9ae3b0ec6f502bf5f085d563dd30":[3,0,1,13,4,16],
-"ERF__RRTMGP__Interface_8cpp.html#a52228aa7239950f074075cfd57c1207f":[3,0,1,13,4,11],
-"ERF__RRTMGP__Interface_8cpp.html#a596e32b383e273f4355948b05366ad66":[3,0,1,13,4,0],
-"ERF__RRTMGP__Interface_8cpp.html#a69cffdacfe257eaf0f6373fe2015bfab":[3,0,1,13,4,19],
-"ERF__RRTMGP__Interface_8cpp.html#a7aace8b2376cb438643c8631b76a1603":[3,0,1,13,4,12],
-"ERF__RRTMGP__Interface_8cpp.html#a7c563b9d0cff01d27e91936598c3585d":[3,0,1,13,4,17]
+"ERF__RRTMGP__Interface_8cpp.html#a52228aa7239950f074075cfd57c1207f":[3,0,1,13,4,11]
 };

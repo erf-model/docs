@@ -8,6 +8,7 @@ var classeb__aux__ =
     [ "getBndryCent", "classeb__aux__.html#a85b90f178a3b3204c9b6b60569f3bcf0", null ],
     [ "getBndryNorm", "classeb__aux__.html#aecbc7be6c13d62a9aeb9d14e75003121", null ],
     [ "getFaceCent", "classeb__aux__.html#abd85bc238892ce8c7176b739b5d80fef", null ],
+    [ "getMultiEBCellFlagFab", "classeb__aux__.html#aa782343e2bd11203f360485eb4395a29", null ],
     [ "getVolCent", "classeb__aux__.html#adff9f13ee882099d2489635e9a927748", null ],
     [ "getVolFrac", "classeb__aux__.html#a8fa82793a77e8a7c97a94f58ad617b34", null ],
     [ "set_verbose", "classeb__aux__.html#a6cf718854c86282eefcdd32c3a9e40cd", null ],

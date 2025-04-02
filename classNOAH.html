@@ -131,8 +131,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aeae83a3a4495ab9eb7c452c35af6c064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0ff47476a81fcce3b170eec23033c27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNOAH.html#ae0ff47476a81fcce3b170eec23033c27">Init</a> (const amrex::MultiFab &amp;cons_in, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt) override</td></tr>
 <tr class="separator:ae0ff47476a81fcce3b170eec23033c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab61db22b704ea1c92cf8added3624f5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNOAH.html#ab61db22b704ea1c92cf8added3624f5d">Advance</a> (const int &amp;lev, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;xvel_in, amrex::MultiFab &amp;yvel_in, amrex::MultiFab *hfx3_out, amrex::MultiFab *qfx3_out, const amrex::Real &amp;dt, const int &amp;nstep) override</td></tr>
-<tr class="separator:ab61db22b704ea1c92cf8added3624f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa267c7fe89c9a7b8328caa0930bc22bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNOAH.html#aa267c7fe89c9a7b8328caa0930bc22bd">Advance_With_State</a> (const int &amp;lev, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;xvel_in, amrex::MultiFab &amp;yvel_in, amrex::MultiFab *hfx3_out, amrex::MultiFab *qfx3_out, const amrex::Real &amp;dt, const int &amp;nstep) override</td></tr>
+<tr class="separator:aa267c7fe89c9a7b8328caa0930bc22bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e950426374f524e7a58d78630ea25de"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNOAH.html#a2e950426374f524e7a58d78630ea25de">Lsm_Data_Ptr</a> (const int &amp;varIdx) override</td></tr>
 <tr class="separator:a2e950426374f524e7a58d78630ea25de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d075d6523e66f3f27060050d55112ef"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNOAH.html#a4d075d6523e66f3f27060050d55112ef">Lsm_Flux_Ptr</a> (const int &amp;varIdx) override</td></tr>
@@ -275,8 +275,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab61db22b704ea1c92cf8added3624f5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab61db22b704ea1c92cf8added3624f5d">&#9670;&nbsp;</a></span>Advance()</h2>
+<a id="aa267c7fe89c9a7b8328caa0930bc22bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa267c7fe89c9a7b8328caa0930bc22bd">&#9670;&nbsp;</a></span>Advance_With_State()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -285,7 +285,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void NOAH::Advance </td>
+          <td class="memname">void NOAH::Advance_With_State </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>lev</em>, </td>
@@ -345,8 +345,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classNullSurf.html#a5aa2b379950ff1a474f35025bf7bb5bf">NullSurf</a>.</p>
-<div class="fragment"><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                                 {</div>
+<p>Reimplemented from <a class="el" href="classNullSurf.html#a32d8152097460c363440cee9b98353da">NullSurf</a>.</p>
+<div class="fragment"><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                                            {</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    Box domain = <a class="code" href="classNOAH.html#ac41a6cfdb3b5f3ff9e3650320ba36cb2">m_geom</a>.Domain();</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>

@@ -1,5 +1,10 @@
 var NAVTREEINDEX11 =
 {
+"functions_func_p.html":[2,3,1,14],
+"functions_func_q.html":[2,3,1,15],
+"functions_func_r.html":[2,3,1,16],
+"functions_func_s.html":[2,3,1,17],
+"functions_func_t.html":[2,3,1,18],
 "functions_func_u.html":[2,3,1,19],
 "functions_func_v.html":[2,3,1,20],
 "functions_func_w.html":[2,3,1,21],
@@ -244,10 +249,5 @@ var NAVTREEINDEX11 =
 "structAdvChoice.html#a81152997920406ea2aa97cbb5af2d9b6":[2,0,7,8],
 "structAdvChoice.html#a94de4907b3d6742071d5542b60e8f393":[2,0,7,12],
 "structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43":[2,0,7,9],
-"structAdvChoice.html#abea240033571adc8f3993bd56bf28fa2":[2,0,7,0],
-"structAdvChoice.html#add9ddd5d61fc695bd2df0e3818767b78":[2,0,7,6],
-"structAdvChoice.html#afb0ff64219a9e79d077b1a06da7817ae":[2,0,7,5],
-"structCENTERED2.html":[2,0,8],
-"structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91":[2,0,8,1],
-"structCENTERED2.html#a2b0e42ec56f22f97bb65ed044f6f77a0":[2,0,8,4]
+"structAdvChoice.html#abea240033571adc8f3993bd56bf28fa2":[2,0,7,0]
 };
