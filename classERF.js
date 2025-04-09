@@ -46,6 +46,7 @@ var classERF =
     [ "getAdvFluxReg", "classERF.html#a4d6d990d8111c170692b1e9cc0e918b8", null ],
     [ "getCPUTime", "classERF.html#ae0597da6edf955cd138e52fd00380ff2", null ],
     [ "GotoNextLine", "classERF.html#aaee255b031e63bd9b5807f6612739dbd", null ],
+    [ "HurricaneTracker", "classERF.html#a9fb4e2bfc184e1e8eafae6a87dea3a33", null ],
     [ "init1DArrays", "classERF.html#a7261c4eb7722af0dfe6cdfb8e2e9e4db", null ],
     [ "init_bcs", "classERF.html#a618e8fdff3239cc79d4145d02b1ecaa2", null ],
     [ "init_custom", "classERF.html#a604939a8058f7efa36a427adb889739c", null ],

@@ -28,6 +28,7 @@ var searchData=
   ['hseutils_995',['HSEutils',['../namespaceHSEutils.html',1,'']]],
   ['hub_5fheight_996',['hub_height',['../classEWP.html#a2ee471b0dcad3057297b809f4c5141ab',1,'EWP::hub_height()'],['../classFitch.html#ae3af34c6c07fd2d8b9b081b5c7ceb443',1,'Fitch::hub_height()'],['../classGeneralAD.html#ac82bba9c2818ca1e77adb01fdcdcaf66',1,'GeneralAD::hub_height()'],['../classSimpleAD.html#a4c17a08ad746b342bf62d7a1ad93781a',1,'SimpleAD::hub_height()'],['../classWindFarm.html#a6dfd6451498f50c17cb67c386d13ddfb',1,'WindFarm::hub_height()']]],
   ['hub_5fheight_5fvelocity_997',['hub_height_velocity',['../classFitch.html#af01d3f69b4f952f91970964d2f498e61',1,'Fitch']]],
-  ['hwave_998',['Hwave',['../classERF.html#aef05cf88e9e9d2b56112336761493977',1,'ERF']]],
-  ['hwave_5fonegrid_999',['Hwave_onegrid',['../classERF.html#a11f2d48d9af9b8f4574975cae06838f1',1,'ERF']]]
+  ['hurricanetracker_998',['HurricaneTracker',['../classERF.html#a9fb4e2bfc184e1e8eafae6a87dea3a33',1,'ERF']]],
+  ['hwave_999',['Hwave',['../classERF.html#aef05cf88e9e9d2b56112336761493977',1,'ERF']]],
+  ['hwave_5fonegrid_1000',['Hwave_onegrid',['../classERF.html#a11f2d48d9af9b8f4574975cae06838f1',1,'ERF']]]
 ];
