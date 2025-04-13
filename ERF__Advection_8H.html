@@ -211,16 +211,16 @@ Functions</h2></td></tr>
 <tr class="separator:adbec177ad2516ac6cb21f8510257715f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7db315b7b7eeb4afbf05c007fadc84f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#af7db315b7b7eeb4afbf05c007fadc84f">AdvectionSrcForScalars</a> (const amrex::Real &amp;dt, const amrex::Box &amp;bx, const int icomp, const int ncomp, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;cur_cons, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const bool &amp;use_mono_adv, amrex::Real *max_s_ptr, amrex::Real *min_s_ptr, const amrex::Array4&lt; const amrex::Real &gt; &amp;vf_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr, const amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_tmp_arr, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr_h)</td></tr>
 <tr class="separator:af7db315b7b7eeb4afbf05c007fadc84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97586f42116f6c165679d2e8af1bad93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a97586f42116f6c165679d2e8af1bad93">AdvectionSrcForMom</a> (const amrex::MFIter &amp;mfi, const amrex::Box &amp;bx, const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Vector&lt; amrex::Box &gt; &amp;bxx_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxy_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxz_grown, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;Omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;ax, const amrex::Array4&lt; const amrex::Real &gt; &amp;ay, const amrex::Array4&lt; const amrex::Real &gt; &amp;az, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &amp;stretched_dz_d, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, MeshType &amp;mesh_type, TerrainType &amp;terrain_type, const <a class="el" href="classeb__.html">eb_</a> &amp;ebfact, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_u_arr, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_v_arr, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_w_arr, const int lo_z_face, const int hi_z_face, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr_h)</td></tr>
-<tr class="separator:a97586f42116f6c165679d2e8af1bad93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac993b98689846d1504c0ea785f38207d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#ac993b98689846d1504c0ea785f38207d">AdvectionSrcForMom</a> (const amrex::MFIter &amp;mfi, const amrex::Box &amp;bx, const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Vector&lt; amrex::Box &gt; &amp;bxx_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxy_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxz_grown, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;Omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;ax, const amrex::Array4&lt; const amrex::Real &gt; &amp;ay, const amrex::Array4&lt; const amrex::Real &gt; &amp;az, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &amp;stretched_dz_d, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, MeshType &amp;mesh_type, TerrainType &amp;terrain_type, const <a class="el" href="classeb__.html">eb_</a> &amp;ebfact, amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_u_arr, amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_v_arr, amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_w_arr, const int lo_z_face, const int hi_z_face, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr_h)</td></tr>
+<tr class="separator:ac993b98689846d1504c0ea785f38207d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af530916918f7ac0c607fb5f7e77397e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#af530916918f7ac0c607fb5f7e77397e7">AdvectionSrcForMom_ConstantDz</a> (const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;Omega, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &amp;stretched_dz_d, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, TerrainType &amp;terrain_type, const int lo_z_face, const int hi_z_face)</td></tr>
 <tr class="separator:af530916918f7ac0c607fb5f7e77397e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d5d0d01844dc383f8a415512080ad0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a7d5d0d01844dc383f8a415512080ad0c">AdvectionSrcForMom_StretchedDz</a> (const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;Omega, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &amp;stretched_dz_d, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const int lo_z_face, const int hi_z_face)</td></tr>
 <tr class="separator:a7d5d0d01844dc383f8a415512080ad0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86ea6aa33bdf7d2d3044a6d3849cd20f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a86ea6aa33bdf7d2d3044a6d3849cd20f">AdvectionSrcForMom_TF</a> (const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;Omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;ax, const amrex::Array4&lt; const amrex::Real &gt; &amp;ay, const amrex::Array4&lt; const amrex::Real &gt; &amp;az, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const int lo_z_face, const int hi_z_face)</td></tr>
 <tr class="separator:a86ea6aa33bdf7d2d3044a6d3849cd20f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81b4817cd1db47c6efd77dca5490c9ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a81b4817cd1db47c6efd77dca5490c9ff">AdvectionSrcForMom_EB</a> (const amrex::MFIter &amp;mfi, const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Vector&lt; amrex::Box &gt; &amp;bxx_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxy_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxz_grown, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;Omega, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const <a class="el" href="classeb__.html">eb_</a> &amp;ebfact, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_u_arr, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_v_arr, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_w_arr, const int lo_z_face, const int hi_z_face, const amrex::Box &amp;domain)</td></tr>
-<tr class="separator:a81b4817cd1db47c6efd77dca5490c9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69455185da8a2e9f15900886ae83921e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a69455185da8a2e9f15900886ae83921e">AdvectionSrcForMom_EB</a> (const amrex::MFIter &amp;mfi, const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Vector&lt; amrex::Box &gt; &amp;bxx_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxy_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxz_grown, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;Omega, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const <a class="el" href="classeb__.html">eb_</a> &amp;ebfact, amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_u_arr, amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_v_arr, amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_w_arr, const int lo_z_face, const int hi_z_face, const amrex::Box &amp;domain)</td></tr>
+<tr class="separator:a69455185da8a2e9f15900886ae83921e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a93a1f4fa830e853896360758c1185c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a8a93a1f4fa830e853896360758c1185c">AdvectionSrcForOpenBC_Normal</a> (const amrex::Box &amp;bx, const int &amp;dir, const amrex::Array4&lt; amrex::Real &gt; &amp;rhs_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;vel_norm_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const bool do_lo=false)</td></tr>
 <tr class="separator:a8a93a1f4fa830e853896360758c1185c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77a3da224ebc848d774a465bc4edbb6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Advection_8H.html#a77a3da224ebc848d774a465bc4edbb6d">AdvectionSrcForOpenBC_Tangent_Xmom</a> (const amrex::Box &amp;bxx, const int &amp;dir, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;Omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;ax, const amrex::Array4&lt; const amrex::Real &gt; &amp;az, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const bool do_lo=false)</td></tr>
@@ -237,8 +237,8 @@ Functions</h2></td></tr>
 <tr class="separator:aff14fe9e4f76b499843517b2c41c0fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a97586f42116f6c165679d2e8af1bad93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97586f42116f6c165679d2e8af1bad93">&#9670;&nbsp;</a></span>AdvectionSrcForMom()</h2>
+<a id="ac993b98689846d1504c0ea785f38207d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac993b98689846d1504c0ea785f38207d">&#9670;&nbsp;</a></span>AdvectionSrcForMom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -456,19 +456,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>flx_u_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>flx_v_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>flx_w_arr</em>, </td>
         </tr>
         <tr>
@@ -508,8 +508,8 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__Advection_8H_a97586f42116f6c165679d2e8af1bad93_icgraph.png" border="0" usemap="#aERF__Advection_8H_a97586f42116f6c165679d2e8af1bad93_icgraph" alt=""/></div>
-<map name="aERF__Advection_8H_a97586f42116f6c165679d2e8af1bad93_icgraph" id="aERF__Advection_8H_a97586f42116f6c165679d2e8af1bad93_icgraph">
+<div class="center"><img src="ERF__Advection_8H_ac993b98689846d1504c0ea785f38207d_icgraph.png" border="0" usemap="#aERF__Advection_8H_ac993b98689846d1504c0ea785f38207d_icgraph" alt=""/></div>
+<map name="aERF__Advection_8H_ac993b98689846d1504c0ea785f38207d_icgraph" id="aERF__Advection_8H_ac993b98689846d1504c0ea785f38207d_icgraph">
 <area shape="rect" title=" " alt="" coords="185,5,345,32"/>
 <area shape="rect" href="ERF__SlowRhsPre_8cpp.html#a1522175302047617fa098c536f87288d" title=" " alt="" coords="5,5,137,32"/>
 </map>
@@ -676,21 +676,21 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for all components of momentum when dz is constant </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_af530916918f7ac0c607fb5f7e77397e7_icgraph.png" border="0" usemap="#aERF__Advection_8H_af530916918f7ac0c607fb5f7e77397e7_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_af530916918f7ac0c607fb5f7e77397e7_icgraph" id="aERF__Advection_8H_af530916918f7ac0c607fb5f7e77397e7_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,373,47"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d" title=" " alt="" coords="5,13,165,39"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a81b4817cd1db47c6efd77dca5490c9ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81b4817cd1db47c6efd77dca5490c9ff">&#9670;&nbsp;</a></span>AdvectionSrcForMom_EB()</h2>
+<a id="a69455185da8a2e9f15900886ae83921e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69455185da8a2e9f15900886ae83921e">&#9670;&nbsp;</a></span>AdvectionSrcForMom_EB()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -848,19 +848,19 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>flx_u_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>flx_v_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramtype">amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>flx_w_arr</em>, </td>
         </tr>
         <tr>
@@ -890,14 +890,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for all components of momentum when using EB for terrain </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__Advection_8H_a81b4817cd1db47c6efd77dca5490c9ff_icgraph.png" border="0" usemap="#aERF__Advection_8H_a81b4817cd1db47c6efd77dca5490c9ff_icgraph" alt=""/></div>
-<map name="aERF__Advection_8H_a81b4817cd1db47c6efd77dca5490c9ff_icgraph" id="aERF__Advection_8H_a81b4817cd1db47c6efd77dca5490c9ff_icgraph">
+<div class="center"><img src="ERF__Advection_8H_a69455185da8a2e9f15900886ae83921e_icgraph.png" border="0" usemap="#aERF__Advection_8H_a69455185da8a2e9f15900886ae83921e_icgraph" alt=""/></div>
+<map name="aERF__Advection_8H_a69455185da8a2e9f15900886ae83921e_icgraph" id="aERF__Advection_8H_a69455185da8a2e9f15900886ae83921e_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,397,32"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d" title=" " alt="" coords="5,5,165,32"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a" title=" " alt="" coords="5,5,165,32"/>
 </map>
 </div>
 
@@ -1056,14 +1056,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for all components of momentum when dz is stretched </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_a7d5d0d01844dc383f8a415512080ad0c_icgraph.png" border="0" usemap="#aERF__Advection_8H_a7d5d0d01844dc383f8a415512080ad0c_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_a7d5d0d01844dc383f8a415512080ad0c_icgraph" id="aERF__Advection_8H_a7d5d0d01844dc383f8a415512080ad0c_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,373,47"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d" title=" " alt="" coords="5,13,165,39"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
 
@@ -1246,14 +1246,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for all components of momentum for TERRAIN-FITTED COORDS only </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_a86ea6aa33bdf7d2d3044a6d3849cd20f_icgraph.png" border="0" usemap="#aERF__Advection_8H_a86ea6aa33bdf7d2d3044a6d3849cd20f_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_a86ea6aa33bdf7d2d3044a6d3849cd20f_icgraph" id="aERF__Advection_8H_a86ea6aa33bdf7d2d3044a6d3849cd20f_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,396,32"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d" title=" " alt="" coords="5,5,165,32"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a" title=" " alt="" coords="5,5,165,32"/>
 </map>
 </div>
 
@@ -1316,14 +1316,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for all normal components of momentum </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_a8a93a1f4fa830e853896360758c1185c_icgraph.png" border="0" usemap="#aERF__Advection_8H_a8a93a1f4fa830e853896360758c1185c_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_a8a93a1f4fa830e853896360758c1185c_icgraph" id="aERF__Advection_8H_a8a93a1f4fa830e853896360758c1185c_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,392,47"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d" title=" " alt="" coords="5,13,165,39"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
 
@@ -1588,14 +1588,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for u momentum tangent to open bc </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_a77a3da224ebc848d774a465bc4edbb6d_icgraph.png" border="0" usemap="#aERF__Advection_8H_a77a3da224ebc848d774a465bc4edbb6d_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_a77a3da224ebc848d774a465bc4edbb6d_icgraph" id="aERF__Advection_8H_a77a3da224ebc848d774a465bc4edbb6d_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,392,47"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d" title=" " alt="" coords="5,13,165,39"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
 
@@ -1688,14 +1688,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for v momentum tangent to open bc </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_a4ff38549b044becdf35e0331f8361756_icgraph.png" border="0" usemap="#aERF__Advection_8H_a4ff38549b044becdf35e0331f8361756_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_a4ff38549b044becdf35e0331f8361756_icgraph" id="aERF__Advection_8H_a4ff38549b044becdf35e0331f8361756_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,392,47"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d" title=" " alt="" coords="5,13,165,39"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
 
@@ -1800,14 +1800,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for w momentum tangent to open bc </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d">AdvectionSrcForMom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a">AdvectionSrcForMom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Advection_8H_ac890a386e0e9ef50f62ae1ae7a3297fb_icgraph.png" border="0" usemap="#aERF__Advection_8H_ac890a386e0e9ef50f62ae1ae7a3297fb_icgraph" alt=""/></div>
 <map name="aERF__Advection_8H_ac890a386e0e9ef50f62ae1ae7a3297fb_icgraph" id="aERF__Advection_8H_ac890a386e0e9ef50f62ae1ae7a3297fb_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,392,47"/>
-<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#ab371e371f91668817e38b8345b1a9b8d" title=" " alt="" coords="5,13,165,39"/>
+<area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html#a23fb62ff971b5efcb3acb53fcfa9ee5a" title=" " alt="" coords="5,13,165,39"/>
 </map>
 </div>
 

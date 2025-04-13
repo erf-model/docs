@@ -93,17 +93,24 @@ $(document).ready(function(){initNavTree('ERF__EBRedistribute_8H.html',''); init
 <code>#include &lt;AMReX_Geometry.H&gt;</code><br />
 <code>#include &lt;AMReX_BCRec.H&gt;</code><br />
 <code>#include &lt;AMReX_MFIter.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__EB_8H_source.html">ERF_EB.H</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_EBRedistribute.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__EBRedistribute_8H__incl.png" border="0" usemap="#aSource_2EB_2ERF__EBRedistribute_8H" alt=""/></div>
 <map name="aSource_2EB_2ERF__EBRedistribute_8H" id="aSource_2EB_2ERF__EBRedistribute_8H">
-<area shape="rect" title=" " alt="" coords="242,5,475,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,88,107"/>
-<area shape="rect" title=" " alt="" coords="113,80,258,107"/>
-<area shape="rect" title=" " alt="" coords="282,80,435,107"/>
-<area shape="rect" title=" " alt="" coords="459,80,591,107"/>
-<area shape="rect" title=" " alt="" coords="616,80,747,107"/>
+<area shape="rect" title=" " alt="" coords="525,5,759,32"/>
+<area shape="rect" title=" " alt="" coords="271,80,354,107"/>
+<area shape="rect" title=" " alt="" coords="379,80,524,107"/>
+<area shape="rect" title=" " alt="" coords="763,229,916,256"/>
+<area shape="rect" title=" " alt="" coords="731,80,863,107"/>
+<area shape="rect" title=" " alt="" coords="887,80,1018,107"/>
+<area shape="rect" href="ERF__EB_8H.html" title=" " alt="" coords="549,80,634,107"/>
+<area shape="rect" title=" " alt="" coords="516,229,739,256"/>
+<area shape="rect" title=" " alt="" coords="5,229,153,256"/>
+<area shape="rect" title=" " alt="" coords="178,229,293,256"/>
+<area shape="rect" title=" " alt="" coords="317,229,492,256"/>
+<area shape="rect" href="ERF__EBAux_8H.html" title=" " alt="" coords="443,155,553,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -124,12 +131,12 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:aa0f4e5eb5fa9158981ed7d2aad0f110e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EBRedistribute_8H.html#aa0f4e5eb5fa9158981ed7d2aad0f110e">redistribute_term</a> (int ncomp, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;result, amrex::MultiFab &amp;result_tmp, amrex::MultiFab const &amp;state, amrex::EBFArrayBoxFactory const &amp;ebfact, amrex::BCRec const *bc, amrex::Real const dt)</td></tr>
 <tr class="separator:aa0f4e5eb5fa9158981ed7d2aad0f110e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6152b0ce93bca4dfed40072e3aa35b10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EBRedistribute_8H.html#a6152b0ce93bca4dfed40072e3aa35b10">redistribute_term</a> (amrex::MFIter const &amp;mfi, int ncomp, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;result, amrex::MultiFab &amp;result_tmp, amrex::MultiFab const &amp;state, amrex::EBFArrayBoxFactory const &amp;ebfact, amrex::BCRec const *bc, amrex::Real const dt)</td></tr>
-<tr class="separator:a6152b0ce93bca4dfed40072e3aa35b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2d767f4b6e51395a8f4247f5d1fc003"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EBRedistribute_8H.html#ad2d767f4b6e51395a8f4247f5d1fc003">redistribute_term</a> (int ncomp, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;result, amrex::MultiFab &amp;result_tmp, amrex::MultiFab const &amp;state, <a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;ebfact, amrex::BCRec const *bc, amrex::Real const dt)</td></tr>
+<tr class="separator:ad2d767f4b6e51395a8f4247f5d1fc003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a6152b0ce93bca4dfed40072e3aa35b10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6152b0ce93bca4dfed40072e3aa35b10">&#9670;&nbsp;</a></span>redistribute_term() <span class="overload">[1/2]</span></h2>
+<a id="aa0f4e5eb5fa9158981ed7d2aad0f110e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0f4e5eb5fa9158981ed7d2aad0f110e">&#9670;&nbsp;</a></span>redistribute_term() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,12 +144,6 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void redistribute_term </td>
           <td>(</td>
-          <td class="paramtype">amrex::MFIter const &amp;&#160;</td>
-          <td class="paramname"><em>mfi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>ncomp</em>, </td>
         </tr>
@@ -198,8 +199,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa0f4e5eb5fa9158981ed7d2aad0f110e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0f4e5eb5fa9158981ed7d2aad0f110e">&#9670;&nbsp;</a></span>redistribute_term() <span class="overload">[2/2]</span></h2>
+<a id="ad2d767f4b6e51395a8f4247f5d1fc003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2d767f4b6e51395a8f4247f5d1fc003">&#9670;&nbsp;</a></span>redistribute_term() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -237,7 +238,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::EBFArrayBoxFactory const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;&#160;</td>
           <td class="paramname"><em>ebfact</em>, </td>
         </tr>
         <tr>
