@@ -1,5 +1,9 @@
 var NAVTREEINDEX13 =
 {
+"structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645":[2,0,68,81],
+"structSolverChoice.html#ac1ddc9c301ac98689bf3b7b7184b24e1":[2,0,68,33],
+"structSolverChoice.html#ad57b63939b19e90b87dd61d3f293b0d7":[2,0,68,72],
+"structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0":[2,0,68,13],
 "structSolverChoice.html#ad7f586d62fb0872ba0340fb03d462c64":[2,0,68,41],
 "structSolverChoice.html#addcff0f25c6925df38673747b4dea91e":[2,0,68,63],
 "structSolverChoice.html#adec260ba3c7bd01ffa4fd40bd90920cd":[2,0,68,83],
@@ -245,9 +249,5 @@ var NAVTREEINDEX13 =
 "structadiabatic__charnock.html":[2,0,3],
 "structadiabatic__charnock.html#a0e78cee7d7f845969fe2da8b72ef7955":[2,0,3,5],
 "structadiabatic__charnock.html#a2eef318caa20cd79a27d0413a0608789":[2,0,3,0],
-"structadiabatic__charnock.html#a4b2881e7b3fb5730c6e2d55a41dd9bd0":[2,0,3,1],
-"structadiabatic__charnock.html#a5c11064c35d6eefd22558180155d6ede":[2,0,3,2],
-"structadiabatic__charnock.html#abb822b2278b8cd500c6fb0fb0a028709":[2,0,3,4],
-"structadiabatic__charnock.html#ad4c4fe599c1b8692fa8ef8346866c349":[2,0,3,3],
-"structadiabatic__donelan.html":[2,0,4]
+"structadiabatic__charnock.html#a4b2881e7b3fb5730c6e2d55a41dd9bd0":[2,0,3,1]
 };
