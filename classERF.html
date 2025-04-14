@@ -909,14 +909,14 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a1cade630b005dbcc0f644987ef3db287"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab33e7fff801543a43961ca6d7cac818f"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#ab33e7fff801543a43961ca6d7cac818f">der_datalog</a></td></tr>
 <tr class="separator:ab33e7fff801543a43961ca6d7cac818f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0267d56c45aea80864fb01e22b9b0622"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a0267d56c45aea80864fb01e22b9b0622">energy_datalog</a></td></tr>
-<tr class="separator:a0267d56c45aea80864fb01e22b9b0622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab546bcca3968440c6c24097f59b87f23"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#ab546bcca3968440c6c24097f59b87f23">tot_e_datalog</a></td></tr>
+<tr class="separator:ab546bcca3968440c6c24097f59b87f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9248a4eb025c2647e003f838cba52a21"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a9248a4eb025c2647e003f838cba52a21">datalogname</a></td></tr>
 <tr class="separator:a9248a4eb025c2647e003f838cba52a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e7650abd3df579a98be0c750aa61ba8"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a9e7650abd3df579a98be0c750aa61ba8">der_datalogname</a></td></tr>
 <tr class="separator:a9e7650abd3df579a98be0c750aa61ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8521e6fa86590f808ec227f3c8287cc6"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a8521e6fa86590f808ec227f3c8287cc6">energy_datalogname</a></td></tr>
-<tr class="separator:a8521e6fa86590f808ec227f3c8287cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bba2a8c0e4d0a0d5a6478301bf6c3fa"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a7bba2a8c0e4d0a0d5a6478301bf6c3fa">tot_e_datalogname</a></td></tr>
+<tr class="separator:a7bba2a8c0e4d0a0d5a6478301bf6c3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9737ddb0de6b9e8a5b17c109d5ad3e08"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a9737ddb0de6b9e8a5b17c109d5ad3e08">sampleptlog</a></td></tr>
 <tr class="separator:a9737ddb0de6b9e8a5b17c109d5ad3e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fbfa8bb47c0a3b53e244081aa1e8ad3"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERF.html#a8fbfa8bb47c0a3b53e244081aa1e8ad3">sampleptlogname</a></td></tr>
@@ -10167,11 +10167,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.contains(<span class="stringliteral">&quot;energy_data_log&quot;</span>))</div>
 <div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;    {</div>
 <div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;        <span class="keywordtype">int</span> num_energy_datalogs = <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.countval(<span class="stringliteral">&quot;energy_data_log&quot;</span>);</div>
-<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;        <a class="code" href="classERF.html#a0267d56c45aea80864fb01e22b9b0622">energy_datalog</a>.resize(num_energy_datalogs);</div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;        <a class="code" href="classERF.html#a8521e6fa86590f808ec227f3c8287cc6">energy_datalogname</a>.resize(num_energy_datalogs);</div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;energy_data_log&quot;</span>,<a class="code" href="classERF.html#a8521e6fa86590f808ec227f3c8287cc6">energy_datalogname</a>,0,num_energy_datalogs);</div>
+<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;        <a class="code" href="classERF.html#ab546bcca3968440c6c24097f59b87f23">tot_e_datalog</a>.resize(num_energy_datalogs);</div>
+<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;        <a class="code" href="classERF.html#a7bba2a8c0e4d0a0d5a6478301bf6c3fa">tot_e_datalogname</a>.resize(num_energy_datalogs);</div>
+<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryarr(<span class="stringliteral">&quot;energy_data_log&quot;</span>,<a class="code" href="classERF.html#a7bba2a8c0e4d0a0d5a6478301bf6c3fa">tot_e_datalogname</a>,0,num_energy_datalogs);</div>
 <div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_energy_datalogs; i++) {</div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;            <a class="code" href="classERF.html#ac1a50d2d5abc5bd1d51417583184ac52">setRecordEnergyDataInfo</a>(i,<a class="code" href="classERF.html#a8521e6fa86590f808ec227f3c8287cc6">energy_datalogname</a>[i]);</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;            <a class="code" href="classERF.html#ac1a50d2d5abc5bd1d51417583184ac52">setRecordEnergyDataInfo</a>(i,<a class="code" href="classERF.html#a7bba2a8c0e4d0a0d5a6478301bf6c3fa">tot_e_datalogname</a>[i]);</div>
 <div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;        }</div>
 <div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;    }</div>
 <div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160; </div>
@@ -10266,7 +10266,6 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;    }</div>
 <div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160; </div>
 <div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;}</div>
-<div class="ttc" id="aclassERF_html_a0267d56c45aea80864fb01e22b9b0622"><div class="ttname"><a href="classERF.html#a0267d56c45aea80864fb01e22b9b0622">ERF::energy_datalog</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt; energy_datalog</div><div class="ttdef"><b>Definition:</b> ERF.H:1442</div></div>
 <div class="ttc" id="aclassERF_html_a039a764a1d942c484e8aea49e87bc046"><div class="ttname"><a href="classERF.html#a039a764a1d942c484e8aea49e87bc046">ERF::initRayleigh</a></div><div class="ttdeci">void initRayleigh()</div><div class="ttdoc">Initialize Rayleigh damping profiles.</div><div class="ttdef"><b>Definition:</b> ERF_InitRayleigh.cpp:14</div></div>
 <div class="ttc" id="aclassERF_html_a0553967f1131860bb8ecb47c0f192eaa"><div class="ttname"><a href="classERF.html#a0553967f1131860bb8ecb47c0f192eaa">ERF::samplelinelogname</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; samplelinelogname</div><div class="ttdef"><b>Definition:</b> ERF.H:1452</div></div>
 <div class="ttc" id="aclassERF_html_a0877d5a0263641c13b92d2d16f47b689"><div class="ttname"><a href="classERF.html#a0877d5a0263641c13b92d2d16f47b689">ERF::setRayleighRefFromSounding</a></div><div class="ttdeci">void setRayleighRefFromSounding(bool restarting)</div><div class="ttdoc">Set Rayleigh mean profiles from input sounding.</div><div class="ttdef"><b>Definition:</b> ERF_InitRayleigh.cpp:55</div></div>
@@ -10285,10 +10284,10 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassERF_html_a633cd0b44d2e38f02c23e953aecd69eb"><div class="ttname"><a href="classERF.html#a633cd0b44d2e38f02c23e953aecd69eb">ERF::profile_int</a></div><div class="ttdeci">int profile_int</div><div class="ttdef"><b>Definition:</b> ERF.H:972</div></div>
 <div class="ttc" id="aclassERF_html_a65f19c55c8d3669445866a1c3bbb628d"><div class="ttname"><a href="classERF.html#a65f19c55c8d3669445866a1c3bbb628d">ERF::destag_profiles</a></div><div class="ttdeci">bool destag_profiles</div><div class="ttdef"><b>Definition:</b> ERF.H:973</div></div>
 <div class="ttc" id="aclassERF_html_a7758f75dc7c9029eddc4c58ac0567654"><div class="ttname"><a href="classERF.html#a7758f75dc7c9029eddc4c58ac0567654">ERF::appendPlotVariables</a></div><div class="ttdeci">void appendPlotVariables(const std::string &amp;pp_plot_var_names, amrex::Vector&lt; std::string &gt; &amp;plot_var_names)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile.cpp:169</div></div>
+<div class="ttc" id="aclassERF_html_a7bba2a8c0e4d0a0d5a6478301bf6c3fa"><div class="ttname"><a href="classERF.html#a7bba2a8c0e4d0a0d5a6478301bf6c3fa">ERF::tot_e_datalogname</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; tot_e_datalogname</div><div class="ttdef"><b>Definition:</b> ERF.H:1445</div></div>
 <div class="ttc" id="aclassERF_html_a7c448670f7a5cadd6fe56f7e615c9eb6"><div class="ttname"><a href="classERF.html#a7c448670f7a5cadd6fe56f7e615c9eb6">ERF::output_bndry_planes</a></div><div class="ttdeci">static int output_bndry_planes</div><div class="ttdef"><b>Definition:</b> ERF.H:1116</div></div>
 <div class="ttc" id="aclassERF_html_a8202de1f8f372e3e6fdc483447c6a55f"><div class="ttname"><a href="classERF.html#a8202de1f8f372e3e6fdc483447c6a55f">ERF::AverageDown</a></div><div class="ttdeci">void AverageDown()</div><div class="ttdef"><b>Definition:</b> ERF_AverageDown.cpp:16</div></div>
 <div class="ttc" id="aclassERF_html_a83ad7f8f4cf9920a6798f3b931355a2f"><div class="ttname"><a href="classERF.html#a83ad7f8f4cf9920a6798f3b931355a2f">ERF::data_sampler</a></div><div class="ttdeci">std::unique_ptr&lt; SampleData &gt; data_sampler</div><div class="ttdef"><b>Definition:</b> ERF.H:1438</div></div>
-<div class="ttc" id="aclassERF_html_a8521e6fa86590f808ec227f3c8287cc6"><div class="ttname"><a href="classERF.html#a8521e6fa86590f808ec227f3c8287cc6">ERF::energy_datalogname</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; energy_datalogname</div><div class="ttdef"><b>Definition:</b> ERF.H:1445</div></div>
 <div class="ttc" id="aclassERF_html_a87e58f16f44a6cb35d6983ed3fe7d3c1"><div class="ttname"><a href="classERF.html#a87e58f16f44a6cb35d6983ed3fe7d3c1">ERF::bndry_output_planes_start_time</a></div><div class="ttdeci">static amrex::Real bndry_output_planes_start_time</div><div class="ttdef"><b>Definition:</b> ERF.H:1119</div></div>
 <div class="ttc" id="aclassERF_html_a8e758060d3dede9694fbfcabddc17169"><div class="ttname"><a href="classERF.html#a8e758060d3dede9694fbfcabddc17169">ERF::restart_chkfile</a></div><div class="ttdeci">std::string restart_chkfile</div><div class="ttdef"><b>Definition:</b> ERF.H:933</div></div>
 <div class="ttc" id="aclassERF_html_a8fbfa8bb47c0a3b53e244081aa1e8ad3"><div class="ttname"><a href="classERF.html#a8fbfa8bb47c0a3b53e244081aa1e8ad3">ERF::sampleptlogname</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; sampleptlogname</div><div class="ttdef"><b>Definition:</b> ERF.H:1448</div></div>
@@ -10299,6 +10298,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassERF_html_aa53035f34ba133b86172e180abda4209"><div class="ttname"><a href="classERF.html#aa53035f34ba133b86172e180abda4209">ERF::m_w2d</a></div><div class="ttdeci">std::unique_ptr&lt; WriteBndryPlanes &gt; m_w2d</div><div class="ttdef"><b>Definition:</b> ERF.H:1178</div></div>
 <div class="ttc" id="aclassERF_html_aab564dd3009ef83466b50db6d997b563"><div class="ttname"><a href="classERF.html#aab564dd3009ef83466b50db6d997b563">ERF::init_geo_wind_profile</a></div><div class="ttdeci">void init_geo_wind_profile(const std::string input_file, amrex::Vector&lt; amrex::Real &gt; &amp;u_geos, amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &amp;u_geos_d, amrex::Vector&lt; amrex::Real &gt; &amp;v_geos, amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &amp;v_geos_d, const amrex::Geometry &amp;lgeom, const amrex::Vector&lt; amrex::Real &gt; &amp;zlev_stag)</div><div class="ttdef"><b>Definition:</b> ERF_InitGeowind.cpp:10</div></div>
 <div class="ttc" id="aclassERF_html_ab26ec4f9c35a519063af2a938c1012e6"><div class="ttname"><a href="classERF.html#ab26ec4f9c35a519063af2a938c1012e6">ERF::initSponge</a></div><div class="ttdeci">void initSponge()</div><div class="ttdoc">Initialize sponge profiles.</div><div class="ttdef"><b>Definition:</b> ERF_InitSponge.cpp:35</div></div>
+<div class="ttc" id="aclassERF_html_ab546bcca3968440c6c24097f59b87f23"><div class="ttname"><a href="classERF.html#ab546bcca3968440c6c24097f59b87f23">ERF::tot_e_datalog</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt; tot_e_datalog</div><div class="ttdef"><b>Definition:</b> ERF.H:1442</div></div>
 <div class="ttc" id="aclassERF_html_ac1a50d2d5abc5bd1d51417583184ac52"><div class="ttname"><a href="classERF.html#ac1a50d2d5abc5bd1d51417583184ac52">ERF::setRecordEnergyDataInfo</a></div><div class="ttdeci">void setRecordEnergyDataInfo(int i, const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> ERF.H:1388</div></div>
 <div class="ttc" id="aclassERF_html_ad4c61fad53912d1e8d0f774d365bcf0f"><div class="ttname"><a href="classERF.html#ad4c61fad53912d1e8d0f774d365bcf0f">ERF::is_it_time_for_action</a></div><div class="ttdeci">static bool is_it_time_for_action(int nstep, amrex::Real time, amrex::Real dt, int action_interval, amrex::Real action_per)</div><div class="ttdef"><b>Definition:</b> ERF_WriteScalarProfiles.cpp:685</div></div>
 <div class="ttc" id="aclassERF_html_ad6c0181fed533a5b5a79864b44895506"><div class="ttname"><a href="classERF.html#ad6c0181fed533a5b5a79864b44895506">ERF::project_velocities</a></div><div class="ttdeci">void project_velocities(int lev, amrex::Real dt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;vars, amrex::MultiFab &amp;p)</div><div class="ttdef"><b>Definition:</b> ERF_PoissonSolve.cpp:10</div></div>
@@ -16002,13 +16002,13 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;    {</div>
 <div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;        <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor())</div>
 <div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;        {</div>
-<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;            <a class="code" href="classERF.html#a0267d56c45aea80864fb01e22b9b0622">energy_datalog</a>[i] = std::make_unique&lt;std::fstream&gt;();</div>
-<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;            <a class="code" href="classERF.html#a0267d56c45aea80864fb01e22b9b0622">energy_datalog</a>[i]-&gt;open(filename.c_str(),std::ios::out|std::ios::app);</div>
-<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classERF.html#a0267d56c45aea80864fb01e22b9b0622">energy_datalog</a>[i]-&gt;good()) {</div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;            <a class="code" href="classERF.html#ab546bcca3968440c6c24097f59b87f23">tot_e_datalog</a>[i] = std::make_unique&lt;std::fstream&gt;();</div>
+<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;            <a class="code" href="classERF.html#ab546bcca3968440c6c24097f59b87f23">tot_e_datalog</a>[i]-&gt;open(filename.c_str(),std::ios::out|std::ios::app);</div>
+<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classERF.html#ab546bcca3968440c6c24097f59b87f23">tot_e_datalog</a>[i]-&gt;good()) {</div>
 <div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;                amrex::FileOpenFailed(filename);</div>
 <div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;            }</div>
 <div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;        }</div>
-<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;        amrex::ParallelDescriptor::Barrier(<span class="stringliteral">&quot;ERF::setRecordDerDataInfo&quot;</span>);</div>
+<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;        amrex::ParallelDescriptor::Barrier(<span class="stringliteral">&quot;ERF::setRecordEnergyDataInfo&quot;</span>);</div>
 <div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
@@ -16828,7 +16828,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;{</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">if</span> ( (<a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a> &lt;= 0) || (<a class="code" href="classERF.html#a0267d56c45aea80864fb01e22b9b0622">energy_datalog</a>.size() &lt;= 0) ) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">if</span> ( (<a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a> &lt;= 0) || (<a class="code" href="classERF.html#ab546bcca3968440c6c24097f59b87f23">tot_e_datalog</a>.size() &lt; 1) ) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordtype">int</span> lev = 0;</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
@@ -16926,7 +16926,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        tot_mass_avg   = foo[i++];</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        tot_energy_avg = foo[i++];</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        std::ostream&amp; data_log_energy = *<a class="code" href="classERF.html#a0267d56c45aea80864fb01e22b9b0622">energy_datalog</a>[0];</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        std::ostream&amp; data_log_energy = *<a class="code" href="classERF.html#ab546bcca3968440c6c24097f59b87f23">tot_e_datalog</a>[0];</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordflow">if</span> (time == 0.0) {</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            data_log_energy &lt;&lt; std::setw(<a class="code" href="classERF.html#a8b1cdf332a93c6b0889fd309e43f9a91">datwidth</a>) &lt;&lt; <span class="stringliteral">&quot;          time&quot;</span>;</div>
@@ -22284,52 +22284,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a0267d56c45aea80864fb01e22b9b0622"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0267d56c45aea80864fb01e22b9b0622">&#9670;&nbsp;</a></span>energy_datalog</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">amrex::Vector&lt;std::unique_ptr&lt;std::fstream&gt; &gt; ERF::energy_datalog</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classERF.html#ac1a50d2d5abc5bd1d51417583184ac52">setRecordEnergyDataInfo()</a>.</p>
-
-</div>
-</div>
-<a id="a8521e6fa86590f808ec227f3c8287cc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8521e6fa86590f808ec227f3c8287cc6">&#9670;&nbsp;</a></span>energy_datalogname</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">amrex::Vector&lt;std::string&gt; ERF::energy_datalogname</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a83c244120a15f0d9b9bca54e93976428"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a83c244120a15f0d9b9bca54e93976428">&#9670;&nbsp;</a></span>fine_mask</h2>
 
@@ -26067,6 +26021,52 @@ Here is the call graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">const int ERF::timeprecision = 13</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab546bcca3968440c6c24097f59b87f23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab546bcca3968440c6c24097f59b87f23">&#9670;&nbsp;</a></span>tot_e_datalog</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;std::unique_ptr&lt;std::fstream&gt; &gt; ERF::tot_e_datalog</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classERF.html#ac1a50d2d5abc5bd1d51417583184ac52">setRecordEnergyDataInfo()</a>.</p>
+
+</div>
+</div>
+<a id="a7bba2a8c0e4d0a0d5a6478301bf6c3fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bba2a8c0e4d0a0d5a6478301bf6c3fa">&#9670;&nbsp;</a></span>tot_e_datalogname</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;std::string&gt; ERF::tot_e_datalogname</td>
         </tr>
       </table>
   </td>
