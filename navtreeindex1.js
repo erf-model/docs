@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"ERF__Derive_8H.html#a0a37dd4fa4a044e34891e6222d06654c":[3,0,1,22,11],
 "ERF__Derive_8H.html#a13666be87e55d1759f57322b33f7e495":[3,0,1,22,7],
 "ERF__Derive_8H.html#a2a85aedf7c75ca416dbb931559c4b21e":[3,0,1,22,12],
 "ERF__Derive_8H.html#a37ac1508c4001f9f1e38ca507dd15f31":[3,0,1,22,9],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "ERF__InitFromMetgrid_8cpp.html":[3,0,1,5,5],
 "ERF__InitFromWRFInput_8cpp.html":[3,0,1,5,6],
 "ERF__InitGeowind_8cpp.html":[3,0,1,5,7],
-"ERF__InitKessler_8cpp.html":[3,0,1,9,0,0]
+"ERF__InitKessler_8cpp.html":[3,0,1,9,0,0],
+"ERF__InitMorrison_8cpp.html":[3,0,1,9,1,0]
 };

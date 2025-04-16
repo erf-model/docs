@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"ERF__RRTMGP__Interface_8cpp.html#a596e32b383e273f4355948b05366ad66":[3,0,1,13,4,0],
 "ERF__RRTMGP__Interface_8cpp.html#a69cffdacfe257eaf0f6373fe2015bfab":[3,0,1,13,4,19],
 "ERF__RRTMGP__Interface_8cpp.html#a7aace8b2376cb438643c8631b76a1603":[3,0,1,13,4,12],
 "ERF__RRTMGP__Interface_8cpp.html#a7c563b9d0cff01d27e91936598c3585d":[3,0,1,13,4,17],
@@ -162,6 +161,7 @@ var NAVTREEINDEX3 =
 "ERF__TimeStep_8cpp.html":[3,0,1,15,20],
 "ERF__TurbPertStruct_8H.html":[3,0,1,2,6],
 "ERF__TurbPertStruct_8H.html#a1cd6e2210df20afb1fdec3183cbef7ba":[3,0,1,2,6,1],
+"ERF__TurbPertStruct_8H.html#acd6a302b68c9b439b0ae8fdcf77de732":[3,0,1,2,6,2],
 "ERF__TurbPertStruct_8H_source.html":[3,0,1,2,6],
 "ERF__TurbStruct_8H.html":[3,0,1,2,7],
 "ERF__TurbStruct_8H.html#a366eb3a7d508374fda1324a610da7ece":[3,0,1,2,7,3],

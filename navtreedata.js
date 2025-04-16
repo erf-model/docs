@@ -73,9 +73,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ERFPCEvolve_8cpp.html",
-"ERF__Derive_8H.html#a0a37dd4fa4a044e34891e6222d06654c",
-"ERF__InitMorrison_8cpp.html",
-"ERF__RRTMGP__Interface_8cpp.html#a596e32b383e273f4355948b05366ad66",
+"ERF__Derive_8H.html#a13666be87e55d1759f57322b33f7e495",
+"ERF__InitRayleighDamping_8H.html",
+"ERF__RRTMGP__Interface_8cpp.html#a69cffdacfe257eaf0f6373fe2015bfab",
 "classABLMost.html#a659a78a3d5c58ec4dff9ea0933413474",
 "classERF.html#a8199cc1ec38b9dfd47262ccc7df6a941",
 "classERFPhysBCFunct__base.html#af2e8c70311e8e8e92a713ff1a5f18078",
@@ -86,7 +86,7 @@ var NAVTREEINDEX =
 "functions_func_k.html",
 "structAdvChoice.html#a7da4e5242e05aeba4822b71fab596954",
 "structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645",
-"structadiabatic__charnock.html#a5c11064c35d6eefd22558180155d6ede"
+"structadiabatic__charnock.html#a4b2881e7b3fb5730c6e2d55a41dd9bd0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -7,6 +7,7 @@ var structTurbulentPerturbation =
     [ "calc_tpi_update", "structTurbulentPerturbation.html#a5e6200f8b6bea3c4944dccc6c7285102", null ],
     [ "debug", "structTurbulentPerturbation.html#aa7c1ce943bf06d347d762131ec0c24cf", null ],
     [ "init_tpi", "structTurbulentPerturbation.html#ac7df65e193131bbf6014eb04a6efdf7f", null ],
+    [ "init_tpi_type", "structTurbulentPerturbation.html#a94366398d00c059caf03cb7aec880431", null ],
     [ "netZeroBuoyantAdd", "structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60", null ],
     [ "netZeroBuoyantAdjust", "structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527", null ],
     [ "pseudoRandomPert", "structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1", null ],
