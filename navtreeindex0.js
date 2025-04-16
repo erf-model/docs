@@ -29,6 +29,11 @@ var NAVTREEINDEX0 =
 "ERF__AdvanceGeneralAD_8cpp.html#afffd9801c692fcb424381db8ca2dc8f2":[3,0,1,17,2,0,0],
 "ERF__AdvanceLSM_8cpp.html":[3,0,1,15,2],
 "ERF__AdvanceMicrophysics_8cpp.html":[3,0,1,15,3],
+"ERF__AdvanceMorrison_8cpp.html":[3,0,1,9,1,0],
+"ERF__AdvanceMorrison_8cpp.html#a1d61dd254dd6d74236cdd989226eb4d7":[3,0,1,9,1,0,0],
+"ERF__AdvanceMorrison_8cpp.html#a79f9c6159f68ac54125bd28fbb157de8":[3,0,1,9,1,0,2],
+"ERF__AdvanceMorrison_8cpp.html#aa0e32c66abf2997fca8789c97d0986fe":[3,0,1,9,1,0,3],
+"ERF__AdvanceMorrison_8cpp.html#af8756cf103eb5b43c28400e574f81bd5":[3,0,1,9,1,0,1],
 "ERF__AdvanceRadiation_8cpp.html":[3,0,1,15,4],
 "ERF__AdvanceSimpleAD_8cpp.html":[3,0,1,17,4,0],
 "ERF__Advance_8cpp.html":[3,0,1,15,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__DataStruct_8H.html#a6f87a8134a146aad179f011f937a27d7":[3,0,1,2,1,11],
 "ERF__DataStruct_8H.html#a7596cfba18ef8aeb937cfab4f9018550":[3,0,1,2,1,6],
 "ERF__DataStruct_8H.html#a7957c75d5849d43f9e71c8bd89987237":[3,0,1,2,1,10],
-"ERF__DataStruct_8H.html#acd4fd6918903c5072ef3380dcbadecc7":[3,0,1,2,1,12],
-"ERF__DataStruct_8H.html#acdc002a92ddacce9c7f56a850ef3ea8c":[3,0,1,2,1,7],
-"ERF__DataStruct_8H.html#afb582070899c7011b2fb9c732a9b1f86":[3,0,1,2,1,13],
-"ERF__DataStruct_8H_source.html":[3,0,1,2,1],
-"ERF__Derive_8H.html":[3,0,1,22],
-"ERF__Derive_8H.html#a0a37dd4fa4a044e34891e6222d06654c":[3,0,1,22,11]
+"ERF__DataStruct_8H.html#acd4fd6918903c5072ef3380dcbadecc7":[3,0,1,2,1,12]
 };

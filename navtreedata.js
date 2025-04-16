@@ -35,9 +35,9 @@ var NAVTREE =
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
+        [ "All", "namespacemembers.html", "namespacemembers_dup" ],
         [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ],
+        [ "Variables", "namespacemembers_vars.html", "namespacemembers_vars" ],
         [ "Enumerations", "namespacemembers_enum.html", null ],
         [ "Enumerator", "namespacemembers_eval.html", null ]
       ] ]
@@ -73,20 +73,22 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ERFPCEvolve_8cpp.html",
-"ERF__Derive_8H.html#a13666be87e55d1759f57322b33f7e495",
-"ERF__InitRayleighDamping_8H.html",
-"ERF__RRTMGP__Interface_8cpp.html#a69cffdacfe257eaf0f6373fe2015bfab",
-"classABLMost.html#a659a78a3d5c58ec4dff9ea0933413474",
-"classERF.html#a8199cc1ec38b9dfd47262ccc7df6a941",
-"classERFPhysBCFunct__base.html#af2e8c70311e8e8e92a713ff1a5f18078",
-"classMOSTAverage.html#a1beb0dad926be2f2d9cb1de69a1a3374",
-"classNullWindFarm.html#aabb34a6b16b5001624bf06c98aa226a9",
-"classReadBndryPlanes.html#ade779c58aa5ea62cf1e03cbfaf98bb61",
-"classWindFarm.html#ac57fc0cf5e0666fd8aabbf7863412eb5",
-"functions_func_k.html",
-"structAdvChoice.html#a7da4e5242e05aeba4822b71fab596954",
-"structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645",
-"structadiabatic__charnock.html#a4b2881e7b3fb5730c6e2d55a41dd9bd0"
+"ERF__DataStruct_8H.html#acdc002a92ddacce9c7f56a850ef3ea8c",
+"ERF__InitFromMetgrid_8cpp.html",
+"ERF__RRTMGP__Interface_8cpp.html#a4bc3c3c0bfb4314acb12c4bc7191de51",
+"ERF__module__model__constants_8F90.html#a536d9843742c5b181fb4fcdb946b1521",
+"classABLMost.html#a958aaaf9e040462197c88c6c77f2aaf6",
+"classERF.html#a8536c38a2a5f44a5719cad3c44d0d438",
+"classERFPhysBCFunct__cons.html#ab131fcff8649a5dde5f39fe890b6b383",
+"classMOSTAverage.html#a56f533937767a348d7c1dff755989531",
+"classNullWindFarm.html#af83e2833c70c7374fa00ec94755e8038",
+"classSAM.html#a2e241fff555231e1cc87947a624bb5d6",
+"classWriteBndryPlanes.html#a460f7f20cb59e7f2f8546ebf423585d5",
+"functions_g.html",
+"namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a",
+"structAdvChoice.html",
+"structSolverChoice.html#aa4659e9babdc5d7327266f967d9a80ff",
+"structWENO__Z7.html#a6b88f1c08d225ec89798e8bd18dd733c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

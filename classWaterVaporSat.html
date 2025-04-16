@@ -415,14 +415,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        amrex::Real es;                   <span class="comment">// sat. vapor pressure</span></div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        amrex::Real gam;                  <span class="comment">// change in sat spec. hum. wrt temperature (times hltalt/cpair)</span></div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        amrex::Real dgdt;                 <span class="comment">// work variable</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        amrex::Real g;                    <span class="comment">// work variable</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        amrex::Real <a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a>;                    <span class="comment">// work variable</span></div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        amrex::Real hltalt;               <span class="comment">// lat. heat. of vap.</span></div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        amrex::Real qs;                   <span class="comment">// spec. hum. of water vapor</span></div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="comment">// work variables</span></div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        amrex::Real t1, q1, dt, dq;</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        amrex::Real qvd;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        amrex::Real r1b, c1, c2, c3;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        amrex::Real r1b, <a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a>, <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a>, c3;</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        constexpr amrex::Real dttol = 1.e-4; <span class="comment">// the relative temp error tolerance required to quit the iteration</span></div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        constexpr amrex::Real dqtol = 1.e-4; <span class="comment">// the relative moisture error tolerance required to quit the iteration</span></div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        amrex::Real enin, enout;</div>
@@ -460,9 +460,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        enin = <a class="code" href="classWaterVaporSat.html#afae0dfb4f85c8ac528ff330ccfa182b2">tq_enthalpy</a>(t, q, hltalt);</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="comment">// make a guess at the wet bulb temp using a UKMO algorithm (from J. Petch)</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        c1 = hltalt*c3;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        c2 = std::pow(t + 36., 2);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        r1b = c2/(c2 + c1*qs);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a> = hltalt*c3;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> = std::pow(t + 36., 2);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        r1b = <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a>/(<a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> + <a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a>*qs);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        qvd = r1b * (q - qs);</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        tsp = t + ((hltalt/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>)*qvd);</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
@@ -475,11 +475,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="comment">// iterate on first guess</span></div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> l = 1; l &lt; iter; ++l) {</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            g = enin - enout;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a> = enin - enout;</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            dgdt = -<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> * (1 + gam);</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <span class="comment">// New tsp</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            t1 = tsp - g/dgdt;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            t1 = tsp - <a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a>/dgdt;</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            dt = abs(t1 - tsp)/t1;</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            tsp = t1;</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
@@ -524,6 +524,9 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassWaterVaporSat_html_ac7a0c53f3985416b26f43135e25accca"><div class="ttname"><a href="classWaterVaporSat.html#ac7a0c53f3985416b26f43135e25accca">WaterVaporSat::tmin</a></div><div class="ttdeci">static constexpr amrex::Real tmin</div><div class="ttdef"><b>Definition:</b> ERF_WaterVaporSaturation.H:32</div></div>
 <div class="ttc" id="aclassWaterVaporSat_html_acb27b106d02d30d688faa223d7f5131b"><div class="ttname"><a href="classWaterVaporSat.html#acb27b106d02d30d688faa223d7f5131b">WaterVaporSat::qsat_water</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE void qsat_water(const amrex::Real &amp;t, const amrex::Real &amp;p, amrex::Real &amp;es, amrex::Real &amp;qs, amrex::Real *gam=nullptr, amrex::Real *dqsdt=nullptr, amrex::Real *enthalpy=nullptr)</div><div class="ttdef"><b>Definition:</b> ERF_WaterVaporSaturation.H:191</div></div>
 <div class="ttc" id="aclassWaterVaporSat_html_afae0dfb4f85c8ac528ff330ccfa182b2"><div class="ttname"><a href="classWaterVaporSat.html#afae0dfb4f85c8ac528ff330ccfa182b2">WaterVaporSat::tq_enthalpy</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real tq_enthalpy(const amrex::Real &amp;t, const amrex::Real &amp;q, const amrex::Real &amp;hltalt)</div><div class="ttdef"><b>Definition:</b> ERF_WaterVaporSaturation.H:67</div></div>
+<div class="ttc" id="anamespacemodule__model__constants_html_a1f0c74f0fd17b1b38de53299cadb3fdf"><div class="ttname"><a href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">module_model_constants::g</a></div><div class="ttdeci">real(c_double), parameter g</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:19</div></div>
+<div class="ttc" id="anamespacemodule__model__constants_html_ae746419ec0ae3521a26369d366c01247"><div class="ttname"><a href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">module_model_constants::c2</a></div><div class="ttdeci">real(c_double), parameter c2</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:35</div></div>
+<div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a5921cee170609ce1181cd5025f636653"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">module_mp_morr_two_moment::c1</a></div><div class="ttdeci">real(c_double), private c1</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:211</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

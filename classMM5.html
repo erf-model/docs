@@ -562,7 +562,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//       direct copying between lsm data/flux vars cannot be done in a parfor.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Set box array for lsm data</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    IntVect ng(0,0,1);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a281c2ff050bdb2a9349d3408926af821">ng</a>(0,0,1);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    BoxArray ba = cons_in.boxArray();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    DistributionMapping dm = cons_in.DistributionMap();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    BoxList bl_lsm = ba.boxList();</div>
@@ -586,7 +586,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ivar = 0; ivar &lt; <a class="code" href="namespaceLsmVar__MM5.html#a2c554783e98d43b104bf2ed2f745eaaba9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a>; ++ivar) {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">// State vars are CC</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        Real theta_0 = <a class="code" href="classMM5.html#ab8187a0b9206d9c1d6632d494a149d1a">m_theta_dir</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[ivar] = std::make_shared&lt;MultiFab&gt;(ba_lsm, dm, 1, ng);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[ivar] = std::make_shared&lt;MultiFab&gt;(ba_lsm, dm, 1, <a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[ivar]-&gt;setVal(theta_0);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">// Fluxes are nodal in z</span></div>
@@ -602,6 +602,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassMM5_html_ab8187a0b9206d9c1d6632d494a149d1a"><div class="ttname"><a href="classMM5.html#ab8187a0b9206d9c1d6632d494a149d1a">MM5::m_theta_dir</a></div><div class="ttdeci">amrex::Real m_theta_dir</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:158</div></div>
 <div class="ttc" id="aclassMM5_html_abb2bfd47b01eb3f85f6466a886a00dc9"><div class="ttname"><a href="classMM5.html#abb2bfd47b01eb3f85f6466a886a00dc9">MM5::LsmVarName</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; LsmVarName</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:117</div></div>
 <div class="ttc" id="anamespaceLsmVar__MM5_html_a2c554783e98d43b104bf2ed2f745eaaba9295a4d95dbd36001a7b1beaa15e14b9"><div class="ttname"><a href="namespaceLsmVar__MM5.html#a2c554783e98d43b104bf2ed2f745eaaba9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:21</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a3bbcd161d5650f41b41f14a1977ee2a0a281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:48</div></div>
 </div><!-- fragment -->
 </div>
 </div>

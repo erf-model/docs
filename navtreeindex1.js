@@ -1,5 +1,10 @@
 var NAVTREEINDEX1 =
 {
+"ERF__DataStruct_8H.html#acdc002a92ddacce9c7f56a850ef3ea8c":[3,0,1,2,1,7],
+"ERF__DataStruct_8H.html#afb582070899c7011b2fb9c732a9b1f86":[3,0,1,2,1,13],
+"ERF__DataStruct_8H_source.html":[3,0,1,2,1],
+"ERF__Derive_8H.html":[3,0,1,22],
+"ERF__Derive_8H.html#a0a37dd4fa4a044e34891e6222d06654c":[3,0,1,22,11],
 "ERF__Derive_8H.html#a13666be87e55d1759f57322b33f7e495":[3,0,1,22,7],
 "ERF__Derive_8H.html#a2a85aedf7c75ca416dbb931559c4b21e":[3,0,1,22,12],
 "ERF__Derive_8H.html#a37ac1508c4001f9f1e38ca507dd15f31":[3,0,1,22,9],
@@ -244,10 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__InitFromInputSounding_8cpp.html":[3,0,1,5,4],
 "ERF__InitFromInputSounding_8cpp.html#a2fa99eca7f2a1ca02c504e6a3a2026b2":[3,0,1,5,4,1],
 "ERF__InitFromInputSounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e":[3,0,1,5,4,0],
-"ERF__InitFromInputSounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb":[3,0,1,5,4,2],
-"ERF__InitFromMetgrid_8cpp.html":[3,0,1,5,5],
-"ERF__InitFromWRFInput_8cpp.html":[3,0,1,5,6],
-"ERF__InitGeowind_8cpp.html":[3,0,1,5,7],
-"ERF__InitKessler_8cpp.html":[3,0,1,9,0,0],
-"ERF__InitMorrison_8cpp.html":[3,0,1,9,1,0]
+"ERF__InitFromInputSounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb":[3,0,1,5,4,2]
 };

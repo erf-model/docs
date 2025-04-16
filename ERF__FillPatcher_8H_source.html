@@ -210,7 +210,7 @@ $(document).ready(function(){initNavTree('ERF__FillPatcher_8H_source.html',''); 
 <div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classERFFillPatcher.html#a045ae741822ced1684eddf019cd7f219">  122</a></span>&#160;<a class="code" href="classERFFillPatcher.html#a045ae741822ced1684eddf019cd7f219">ERFFillPatcher::Fill</a> (amrex::MultiFab&amp; mf, amrex::Real time,</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                      BC&amp; cbc, amrex::Vector&lt;amrex::BCRec&gt; <span class="keyword">const</span>&amp; bcs, <span class="keywordtype">int</span> mask_val)</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    constexpr amrex::Real eps = std::numeric_limits&lt;float&gt;::epsilon();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    constexpr amrex::Real eps = <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;float&gt;::epsilon</a>();</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    AMREX_ALWAYS_ASSERT((time &gt;= <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[0]-eps) &amp;&amp; (time &lt;= <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[1]+eps));</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
@@ -275,6 +275,7 @@ $(document).ready(function(){initNavTree('ERF__FillPatcher_8H_source.html',''); 
 <div class="ttc" id="aclassERFFillPatcher_html_ae89877908970649653ae09c42d3c7b05"><div class="ttname"><a href="classERFFillPatcher.html#ae89877908970649653ae09c42d3c7b05">ERFFillPatcher::m_dt_crse</a></div><div class="ttdeci">amrex::Real m_dt_crse</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:74</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_afdb02cfc6d41b23967ff0a6f0e22b849"><div class="ttname"><a href="classERFFillPatcher.html#afdb02cfc6d41b23967ff0a6f0e22b849">ERFFillPatcher::m_nghost</a></div><div class="ttdeci">int m_nghost</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:65</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_afef007cab3f3a1e4a7deea141f397e51"><div class="ttname"><a href="classERFFillPatcher.html#afef007cab3f3a1e4a7deea141f397e51">ERFFillPatcher::m_fdm</a></div><div class="ttdeci">amrex::DistributionMapping m_fdm</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:61</div></div>
+<div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

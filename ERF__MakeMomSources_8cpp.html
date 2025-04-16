@@ -702,7 +702,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a596f061b796ada0389c81a6125150b6e">custom_w_subsidence</a>) {</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#aae4f377d36d01b85a1f322c45009ac75">custom_forcing_prim_vars</a>) {</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> nr = <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a6764e4c83976308b665ab846e77b53b0">nr</a> = <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>;</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                ParallelFor(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                {</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                    Real dzInv = 0.5*dxInv[2];</div>
@@ -713,7 +713,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                                              + z_nd_arr(i,j,k+2) + z_nd_arr(i,j+1,k+2) );</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                        dzInv = 1.0 / (z_xf_hi - z_xf_lo);</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                    }</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                    Real rho_on_u_face = 0.5 * ( cell_data(i,j,k,nr) + cell_data(i-1,j,k,nr) );</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                    Real rho_on_u_face = 0.5 * ( cell_data(i,j,k,<a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a6764e4c83976308b665ab846e77b53b0">nr</a>) + cell_data(i-1,j,k,<a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a6764e4c83976308b665ab846e77b53b0">nr</a>) );</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                    Real U_hi = dptr_u_plane(k+1) / dptr_r_plane(k+1);</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                    Real U_lo = dptr_u_plane(k-1) / dptr_r_plane(k-1);</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                    Real wbar_xf = 0.5 * (dptr_wbar_sub[k] + dptr_wbar_sub[k+1]);</div>
@@ -729,7 +729,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                                              + z_nd_arr(i,j,k+2) + z_nd_arr(i+1,j,k+2) );</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                        dzInv = 1.0 / (z_yf_hi - z_yf_lo);</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                    }</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                    Real rho_on_v_face = 0.5 * ( cell_data(i,j,k,nr) + cell_data(i,j-1,k,nr) );</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                    Real rho_on_v_face = 0.5 * ( cell_data(i,j,k,<a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a6764e4c83976308b665ab846e77b53b0">nr</a>) + cell_data(i,j-1,k,<a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a6764e4c83976308b665ab846e77b53b0">nr</a>) );</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                    Real V_hi = dptr_v_plane(k+1) / dptr_r_plane(k+1);</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                    Real V_lo = dptr_v_plane(k-1) / dptr_r_plane(k-1);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                    Real wbar_yf = 0.5 * (dptr_wbar_sub[k] + dptr_wbar_sub[k+1]);</div>
@@ -795,7 +795,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                coeff_n   = Real(1.0) - coeff_np1;</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            }</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160; </div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;            <span class="keywordtype">int</span> nr = <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>;</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a6764e4c83976308b665ab846e77b53b0">nr</a> = <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>;</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;            <span class="keyword">const</span> Real* u_inp_sound_n   = input_sounding_data.<a class="code" href="structInputSoundingData.html#ab040f8bf9b86d53f6acda8c10844c20f">U_inp_sound_d</a>[itime_n].dataPtr();</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;            <span class="keyword">const</span> Real* u_inp_sound_np1 = input_sounding_data.<a class="code" href="structInputSoundingData.html#ab040f8bf9b86d53f6acda8c10844c20f">U_inp_sound_d</a>[itime_np1].dataPtr();</div>
@@ -803,7 +803,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;            {</div>
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                Real nudge_u = (coeff_n*u_inp_sound_n[k] + coeff_np1*u_inp_sound_np1[k]) - (dptr_u_plane(k)/dptr_r_plane(k));</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                nudge_u *= tau_inv;</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                xmom_src_arr(i, j, k) += cell_data(i, j, k, nr) * nudge_u;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                xmom_src_arr(i, j, k) += cell_data(i, j, k, <a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a6764e4c83976308b665ab846e77b53b0">nr</a>) * nudge_u;</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;            });</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;            <span class="keyword">const</span> Real* v_inp_sound_n   = input_sounding_data.<a class="code" href="structInputSoundingData.html#a36f5c3dc9c536d7a6da2f87d67ea6a08">V_inp_sound_d</a>[itime_n].dataPtr();</div>
@@ -812,7 +812,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;            {</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                Real nudge_v = (coeff_n*v_inp_sound_n[k] + coeff_np1*v_inp_sound_np1[k]) - (dptr_v_plane(k)/dptr_r_plane(k));</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                nudge_v *= tau_inv;</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                ymom_src_arr(i, j, k) += cell_data(i, j, k, nr) * nudge_v;</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                ymom_src_arr(i, j, k) += cell_data(i, j, k, <a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a6764e4c83976308b665ab846e77b53b0">nr</a>) * nudge_v;</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            });</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        }</div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
@@ -889,7 +889,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">terrain_type</a> == TerrainType::ImmersedForcing) {</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            <span class="keyword">const</span> Real drag_coefficient=10.0/dz;</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            <span class="keyword">const</span> Real tiny = std::numeric_limits&lt;amrex::Real&gt;::epsilon();</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            <span class="keyword">const</span> Real tiny = <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;amrex::Real&gt;::epsilon</a>();</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            ParallelFor(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            {</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                <span class="keyword">const</span> Real ux = u(i, j, k);</div>
@@ -946,8 +946,10 @@ Functions</h2></td></tr>
 <div class="ttc" id="anamespaceIntVars_html_acdcfd9be55632ae5a8db4ddc7b0a7384a2e7100afbf5e7a39371f1cb29f6f570a"><div class="ttname"><a href="namespaceIntVars.html#acdcfd9be55632ae5a8db4ddc7b0a7384a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:150</div></div>
 <div class="ttc" id="anamespaceIntVars_html_acdcfd9be55632ae5a8db4ddc7b0a7384aaab25f707cae69bfadac2abcd17a2188"><div class="ttname"><a href="namespaceIntVars.html#acdcfd9be55632ae5a8db4ddc7b0a7384aaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:153</div></div>
 <div class="ttc" id="anamespaceIntVars_html_acdcfd9be55632ae5a8db4ddc7b0a7384af661293a5a71ca532c214929b98c0bad"><div class="ttname"><a href="namespaceIntVars.html#acdcfd9be55632ae5a8db4ddc7b0a7384af661293a5a71ca532c214929b98c0bad">IntVars::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:151</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a3bbcd161d5650f41b41f14a1977ee2a0a6764e4c83976308b665ab846e77b53b0"><div class="ttname"><a href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a6764e4c83976308b665ab846e77b53b0">MicVar_Morr::nr</a></div><div class="ttdeci">@ nr</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:45</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:141</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:142</div></div>
+<div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
 <div class="ttc" id="astructInputSoundingData_html_a36f5c3dc9c536d7a6da2f87d67ea6a08"><div class="ttname"><a href="structInputSoundingData.html#a36f5c3dc9c536d7a6da2f87d67ea6a08">InputSoundingData::V_inp_sound_d</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &gt; V_inp_sound_d</div><div class="ttdef"><b>Definition:</b> ERF_InputSoundingData.H:326</div></div>
 <div class="ttc" id="astructInputSoundingData_html_a4f3f4e6859d978e727af01ca625aea1b"><div class="ttname"><a href="structInputSoundingData.html#a4f3f4e6859d978e727af01ca625aea1b">InputSoundingData::input_sounding_time</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; input_sounding_time</div><div class="ttdef"><b>Definition:</b> ERF_InputSoundingData.H:315</div></div>
 <div class="ttc" id="astructInputSoundingData_html_a5c190ab2ffec63277427ed6c92d4f53f"><div class="ttname"><a href="structInputSoundingData.html#a5c190ab2ffec63277427ed6c92d4f53f">InputSoundingData::tau_nudging</a></div><div class="ttdeci">amrex::Real tau_nudging</div><div class="ttdef"><b>Definition:</b> ERF_InputSoundingData.H:312</div></div>

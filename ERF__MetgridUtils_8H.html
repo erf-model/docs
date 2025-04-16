@@ -2092,13 +2092,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;    amrex::Real qv_min_flag   = 1.0e-6; <span class="comment">// WRF default value</span></div>
 <div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;    amrex::Real qv_min_value  = 1.0e-6; <span class="comment">// WRF default value</span></div>
 <div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;    amrex::Real eps   = 0.622;</div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    amrex::Real svp1  = 0.6112;</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;    amrex::Real svp2  = 17.67;</div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    amrex::Real svp3  = 29.65;</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;    amrex::Real svpt0 = 273.15;</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    amrex::Real <a class="code" href="namespacemodule__model__constants.html#a0c790757e0bcf5c5976f371555cd17a3">svp1</a>  = 0.6112;</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;    amrex::Real <a class="code" href="namespacemodule__model__constants.html#ac9f2f11346e57df8a52fbe2722d416c8">svp2</a>  = 17.67;</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    amrex::Real <a class="code" href="namespacemodule__model__constants.html#ab5f21f26bfa36b240b5afa3a27e958b3">svp3</a>  = 29.65;</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;    amrex::Real <a class="code" href="namespacemodule__model__constants.html#aed12b9f809865f0de9bb764d662b734e">svpt0</a> = 273.15;</div>
 <div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;    <span class="comment">// WRF&#39;s method when model_config_rec%rh2qv_wrt_liquid=.true. (default behavior)</span></div>
 <div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;    <span class="keywordflow">if</span> (temp(i,j,k) != 0.0) {</div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;        amrex::Real es=0.01*rhum(i,j,k)*svp1*10.0*exp(svp2*(temp(i,j,k)-svpt0)/(temp(i,j,k)-svp3));</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;        amrex::Real es=0.01*rhum(i,j,k)*<a class="code" href="namespacemodule__model__constants.html#a0c790757e0bcf5c5976f371555cd17a3">svp1</a>*10.0*exp(<a class="code" href="namespacemodule__model__constants.html#ac9f2f11346e57df8a52fbe2722d416c8">svp2</a>*(temp(i,j,k)-<a class="code" href="namespacemodule__model__constants.html#aed12b9f809865f0de9bb764d662b734e">svpt0</a>)/(temp(i,j,k)-<a class="code" href="namespacemodule__model__constants.html#ab5f21f26bfa36b240b5afa3a27e958b3">svp3</a>));</div>
 <div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;        <span class="keywordflow">if</span> (es &gt;= <a class="code" href="namespaceMicVar__Kess.html#a889f8349e0684381d06cc26a8b1f49ffa82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>(i,j,k)/100.0) {</div>
 <div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;            <span class="comment">// vapor pressure exceeds total pressure</span></div>
 <div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;            mxrat(i,j,k) = std::pow(10.0, -6);</div>
@@ -2130,6 +2130,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;    }</div>
 <div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;}</div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a889f8349e0684381d06cc26a8b1f49ffa82dd7c202e6cce14520ac01cfaa4f4ad"><div class="ttname"><a href="namespaceMicVar__Kess.html#a889f8349e0684381d06cc26a8b1f49ffa82dd7c202e6cce14520ac01cfaa4f4ad">MicVar_Kess::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:25</div></div>
+<div class="ttc" id="anamespacemodule__model__constants_html_a0c790757e0bcf5c5976f371555cd17a3"><div class="ttname"><a href="namespacemodule__model__constants.html#a0c790757e0bcf5c5976f371555cd17a3">module_model_constants::svp1</a></div><div class="ttdeci">real(c_double), parameter svp1</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:78</div></div>
+<div class="ttc" id="anamespacemodule__model__constants_html_ab5f21f26bfa36b240b5afa3a27e958b3"><div class="ttname"><a href="namespacemodule__model__constants.html#ab5f21f26bfa36b240b5afa3a27e958b3">module_model_constants::svp3</a></div><div class="ttdeci">real(c_double), parameter svp3</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:80</div></div>
+<div class="ttc" id="anamespacemodule__model__constants_html_ac9f2f11346e57df8a52fbe2722d416c8"><div class="ttname"><a href="namespacemodule__model__constants.html#ac9f2f11346e57df8a52fbe2722d416c8">module_model_constants::svp2</a></div><div class="ttdeci">real(c_double), parameter svp2</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:79</div></div>
+<div class="ttc" id="anamespacemodule__model__constants_html_aed12b9f809865f0de9bb764d662b734e"><div class="ttname"><a href="namespacemodule__model__constants.html#aed12b9f809865f0de9bb764d662b734e">module_model_constants::svpt0</a></div><div class="ttdeci">real(c_double), parameter svpt0</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:81</div></div>
 </div><!-- fragment -->
 </div>
 </div>

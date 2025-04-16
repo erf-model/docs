@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('ERF__TI__utils_8H_source.html',''); in
 <a href="ERF__TI__utils_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *  Define the primitive variables by dividing the conserved variables by density</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="ERF__TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">    4</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a> = [&amp;](<span class="keyword">const</span> MultiFab&amp; cons_state, <span class="keywordtype">int</span> ng)</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="ERF__TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">    4</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a> = [&amp;](<span class="keyword">const</span> MultiFab&amp; cons_state, <span class="keywordtype">int</span> <a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a281c2ff050bdb2a9349d3408926af821">ng</a>)</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    {</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;cons_to_prim()&quot;</span>);</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('ERF__TI__utils_8H_source.html',''); in
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;      <span class="keywordflow">for</span> (MFIter mfi(cons_state,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;      {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;          <span class="keyword">const</span> Box&amp; gbx = mfi.growntilebox(ng);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;          <span class="keyword">const</span> Box&amp; gbx = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;          <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cons_arr     = cons_state.array(mfi);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;          <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; prim_arr     = S_prim.array(mfi);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
@@ -244,6 +244,7 @@ $(document).ready(function(){initNavTree('ERF__TI__utils_8H_source.html',''); in
 <div class="ttc" id="anamespaceIntVars_html_acdcfd9be55632ae5a8db4ddc7b0a7384aaab25f707cae69bfadac2abcd17a2188"><div class="ttname"><a href="namespaceIntVars.html#acdcfd9be55632ae5a8db4ddc7b0a7384aaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:153</div></div>
 <div class="ttc" id="anamespaceIntVars_html_acdcfd9be55632ae5a8db4ddc7b0a7384af661293a5a71ca532c214929b98c0bad"><div class="ttname"><a href="namespaceIntVars.html#acdcfd9be55632ae5a8db4ddc7b0a7384af661293a5a71ca532c214929b98c0bad">IntVars::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:151</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a889f8349e0684381d06cc26a8b1f49ffa89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a889f8349e0684381d06cc26a8b1f49ffa89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:22</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a3bbcd161d5650f41b41f14a1977ee2a0a281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
