@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"classNullWindFarm.html#af31330323768a6cc38c99205d987b558":[2,0,52,10],
 "classNullWindFarm.html#af83e2833c70c7374fa00ec94755e8038":[2,0,52,33],
 "classPlaneAverage.html":[2,0,53],
 "classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5":[2,0,53,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "classSAM.html#a0853b1a3a4ec94178ca208ea594fc455":[2,0,61,54],
 "classSAM.html#a0edeaaddf7573079fdc9af1484ce5582":[2,0,61,31],
 "classSAM.html#a14fc54f233862c3c339abcc16412078c":[2,0,61,1],
-"classSAM.html#a1b09febe32fbfebb402091fd31cd9996":[2,0,61,36],
-"classSAM.html#a1df931f91be89514c09f69f24cfeca53":[2,0,61,7]
+"classSAM.html#a1b09febe32fbfebb402091fd31cd9996":[2,0,61,36]
 };
