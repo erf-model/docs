@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"namespaceutils.html#ad80671a1807608fc40809f586dcf506a":[1,0,23,2],
+"namespaceutils.html#afd70db91466598d8531fdb706be70271":[1,0,23,0],
 "pages.html":[],
 "structAdvChoice.html":[2,0,7],
 "structAdvChoice.html#a064ffc0bac9fc0fdd1aa41a45f4e5ed4":[2,0,7,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "structSolverChoice.html#a9ac649bbebc73403e291d2af180d4061":[2,0,68,55],
 "structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107":[2,0,68,61],
 "structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606":[2,0,68,65],
-"structSolverChoice.html#aa2e312b4e6d08797fc3c1b6d67313d48":[2,0,68,21],
-"structSolverChoice.html#aa368e98496254e9aaf594ecf0e4e9981":[2,0,68,39],
-"structSolverChoice.html#aa401d2a5d51cb382e0b6e18502d961a9":[2,0,68,76]
+"structSolverChoice.html#aa2e312b4e6d08797fc3c1b6d67313d48":[2,0,68,21]
 };

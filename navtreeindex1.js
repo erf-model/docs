@@ -168,6 +168,7 @@ var NAVTREEINDEX1 =
 "ERF__HSEUtils_8H.html#acea3d9d853ef0fbeee3f94b4b62cc224":[3,0,1,16,7,0],
 "ERF__HSEUtils_8H_source.html":[3,0,1,16,7],
 "ERF__IceFall_8cpp.html":[3,0,1,9,3,1],
+"ERF__ImposeBCsOnPhi_8cpp.html":[3,0,1,8,2],
 "ERF__IndexDefines_8H.html":[3,0,1,23],
 "ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f":[3,0,1,23,23],
 "ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29":[3,0,1,23,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__InitFromHSE_8cpp.html":[3,0,1,5,3],
 "ERF__InitFromInputSounding_8cpp.html":[3,0,1,5,4],
 "ERF__InitFromInputSounding_8cpp.html#a2fa99eca7f2a1ca02c504e6a3a2026b2":[3,0,1,5,4,1],
-"ERF__InitFromInputSounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e":[3,0,1,5,4,0],
-"ERF__InitFromInputSounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb":[3,0,1,5,4,2]
+"ERF__InitFromInputSounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e":[3,0,1,5,4,0]
 };
