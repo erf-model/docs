@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['has_5fattr_3577',['has_attr',['../structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf',1,'ncutils::NCVar::has_attr()'],['../classncutils_1_1NCGroup.html#a1bfb961e66e7c635ae92cee3f8cdeeac',1,'ncutils::NCGroup::has_attr(const std::string &amp;) const']]],
-  ['has_5fdim_3578',['has_dim',['../classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042',1,'ncutils::NCGroup']]],
-  ['has_5fgroup_3579',['has_group',['../classncutils_1_1NCGroup.html#a00ea1ccd06adafc43396239ec842b23f',1,'ncutils::NCGroup']]],
-  ['has_5fvar_3580',['has_var',['../classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192',1,'ncutils::NCGroup']]],
-  ['have_5fvariable_5fsea_5froughness_3581',['have_variable_sea_roughness',['../classABLMost.html#a4c4d9a950ce5f1115f701100795ac405',1,'ABLMost']]],
-  ['host_5fto_5fdevice_3582',['host_to_device',['../structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8',1,'InputSoundingData']]],
-  ['hurricanetracker_3583',['HurricaneTracker',['../classERF.html#a9fb4e2bfc184e1e8eafae6a87dea3a33',1,'ERF']]]
+  ['has_5fattr_3581',['has_attr',['../structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf',1,'ncutils::NCVar::has_attr()'],['../classncutils_1_1NCGroup.html#a1bfb961e66e7c635ae92cee3f8cdeeac',1,'ncutils::NCGroup::has_attr(const std::string &amp;) const']]],
+  ['has_5fdim_3582',['has_dim',['../classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042',1,'ncutils::NCGroup']]],
+  ['has_5fgroup_3583',['has_group',['../classncutils_1_1NCGroup.html#a00ea1ccd06adafc43396239ec842b23f',1,'ncutils::NCGroup']]],
+  ['has_5fvar_3584',['has_var',['../classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192',1,'ncutils::NCGroup']]],
+  ['have_5fvariable_5fsea_5froughness_3585',['have_variable_sea_roughness',['../classABLMost.html#a4c4d9a950ce5f1115f701100795ac405',1,'ABLMost']]],
+  ['host_5fto_5fdevice_3586',['host_to_device',['../structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8',1,'InputSoundingData']]],
+  ['hurricanetracker_3587',['HurricaneTracker',['../classERF.html#a2710f0ac329fa022dd2df41679998b3b',1,'ERF']]]
 ];
